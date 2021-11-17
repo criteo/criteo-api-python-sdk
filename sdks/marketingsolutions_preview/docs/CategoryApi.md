@@ -136,7 +136,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     categories_per_catalog = [
         CategoryUpdatesPerCatalog(
             catalog_id=1,
-            categories=[
+            categoriess=[
                 CategoryUpdateInput(
                     category_hash_code=1,
                     enabled=True,
