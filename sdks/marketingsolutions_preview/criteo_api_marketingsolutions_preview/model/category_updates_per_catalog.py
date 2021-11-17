@@ -88,7 +88,7 @@ class CategoryUpdatesPerCatalog(ModelNormal):
         lazy_import()
         return {
             'catalog_id': (int,),  # noqa: E501
-            'categoriess': ([CategoryUpdateInput],),  # noqa: E501
+            'categories': ([CategoryUpdateInput],),  # noqa: E501
         }
 
     @cached_property
@@ -98,7 +98,7 @@ class CategoryUpdatesPerCatalog(ModelNormal):
 
     attribute_map = {
         'catalog_id': 'catalogId',  # noqa: E501
-        'categoriess': 'categoriess',  # noqa: E501
+        'categories': 'categories',  # noqa: E501
     }
 
     read_only_vars = {
@@ -143,7 +143,7 @@ class CategoryUpdatesPerCatalog(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             catalog_id (int): [optional]  # noqa: E501
-            categoriess ([CategoryUpdateInput]): [optional]  # noqa: E501
+            categories ([CategoryUpdateInput]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +226,7 @@ class CategoryUpdatesPerCatalog(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             catalog_id (int): [optional]  # noqa: E501
-            categoriess ([CategoryUpdateInput]): [optional]  # noqa: E501
+            categories ([CategoryUpdateInput]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
