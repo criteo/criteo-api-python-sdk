@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**find_pets_by_status**](PetApi.md#find_pets_by_status) | **GET** /pet/findByStatus | Finds Pets by status
 [**find_pets_by_tags**](PetApi.md#find_pets_by_tags) | **GET** /pet/findByTags | Finds Pets by tags
 [**get_pet_by_id**](PetApi.md#get_pet_by_id) | **GET** /pet/{petId} | Find pet by ID
+[**update_pet**](PetApi.md#update_pet) | **PUT** /pet | Update an existing pet
 [**update_pet_with_form**](PetApi.md#update_pet_with_form) | **POST** /pet/{petId} | Updates a pet in the store with form data
 [**upload_file**](PetApi.md#upload_file) | **POST** /pet/{petId}/uploadImage | uploads an image
 
@@ -429,6 +430,102 @@ Name | Type | Description  | Notes
 **200** | successful operation |  -  |
 **400** | Invalid ID supplied |  -  |
 **404** | Pet not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_pet**
+> Pet update_pet(pet)
+
+Update an existing pet
+
+Update an existing pet by Id
+
+### Example
+
+* OAuth Authentication (petstore_auth):
+```python
+import time
+import criteo_api_petstore_preview
+from criteo_api_petstore_preview.api import pet_api
+from criteo_api_petstore_preview.model.pet import Pet
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost/api/v3
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_petstore_preview.Configuration(
+    host = "http://localhost/api/v3"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: petstore_auth
+configuration = criteo_api_petstore_preview.Configuration(
+    host = "http://localhost/api/v3"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_petstore_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = pet_api.PetApi(api_client)
+    pet = Pet(
+        id=10,
+        name="doggie",
+        category=Category(
+            id=1,
+            name="Dogs",
+        ),
+        photo_urls=[
+            "photo_urls_example",
+        ],
+        tags=[
+            Tag(
+                id=1,
+                name="name_example",
+            ),
+        ],
+        status="available",
+    ) # Pet | Update an existent pet in the store
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Update an existing pet
+        api_response = api_instance.update_pet(pet)
+        pprint(api_response)
+    except criteo_api_petstore_preview.ApiException as e:
+        print("Exception when calling PetApi->update_pet: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pet** | [**Pet**](Pet.md)| Update an existent pet in the store |
+
+### Return type
+
+[**Pet**](Pet.md)
+
+### Authorization
+
+[petstore_auth](../README.md#petstore_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml, application/x-www-form-urlencoded
+ - **Accept**: application/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Invalid ID supplied |  -  |
+**404** | Pet not found |  -  |
+**405** | Validation exception |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
