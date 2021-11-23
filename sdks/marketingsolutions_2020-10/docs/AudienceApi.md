@@ -4,12 +4,12 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_audience**](AudienceApi.md#create_audience) | **POST** /2021-04/audiences | 
-[**delete_identifiers**](AudienceApi.md#delete_identifiers) | **DELETE** /2021-04/audiences/{audience-id}/contactlist | 
-[**get_audiences**](AudienceApi.md#get_audiences) | **GET** /2021-04/audiences | 
-[**modify_audience**](AudienceApi.md#modify_audience) | **PATCH** /2021-04/audiences/{audience-id} | 
-[**modify_audience_users**](AudienceApi.md#modify_audience_users) | **PATCH** /2021-04/audiences/{audience-id}/contactlist | 
-[**remove_audience**](AudienceApi.md#remove_audience) | **DELETE** /2021-04/audiences/{audience-id} | 
+[**create_audience**](AudienceApi.md#create_audience) | **POST** /2021-10/audiences | 
+[**delete_identifiers**](AudienceApi.md#delete_identifiers) | **DELETE** /2021-10/audiences/{audience-id}/contactlist | 
+[**get_audiences**](AudienceApi.md#get_audiences) | **GET** /2021-10/audiences | 
+[**modify_audience**](AudienceApi.md#modify_audience) | **PATCH** /2021-10/audiences/{audience-id} | 
+[**modify_audience_users**](AudienceApi.md#modify_audience_users) | **PATCH** /2021-10/audiences/{audience-id}/contactlist | 
+[**remove_audience**](AudienceApi.md#remove_audience) | **DELETE** /2021-10/audiences/{audience-id} | 
 
 
 # **create_audience**
@@ -21,7 +21,7 @@ Create an Audience for an Advertiser
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -41,7 +41,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -108,7 +108,7 @@ delete all identifiers from an Audience
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -127,7 +127,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -185,7 +185,7 @@ Get a list of all the audiences for the user or for the given advertiser_id
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -204,7 +204,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -263,7 +263,7 @@ Update user audience specified by the audience id
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -283,7 +283,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -351,7 +351,7 @@ Add/remove users to or from an audience
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -371,7 +371,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -445,7 +445,7 @@ Delete an audience by id
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -464,7 +464,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 

@@ -4,7 +4,7 @@ from setuptools import setup, find_packages  # noqa: H301
 import os
 
 NAME = "criteo-api-marketingsolutions-v2020-10"
-VERSION = "2020_10.1.211118"
+VERSION = "2020_10.1.211123"
 # To install the library, run the following
 #
 # python setup.py install
