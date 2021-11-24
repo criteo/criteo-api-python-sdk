@@ -16,7 +16,7 @@ Creates a token when the supplied client credentials are valid
 
 ### Example
 
-* OAuth Authentication (oauth):
+* OAuth Authentication (Authorization):
 ```python
 import time
 import criteo_api_marketingsolutions_v2020_10
@@ -35,7 +35,7 @@ configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: oauth
+# Configure OAuth2 access token for authorization: Authorization
 configuration = criteo_api_marketingsolutions_v2020_10.Configuration(
     host = "https://api.criteo.com"
 )
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

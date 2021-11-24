@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Name of the ad set | [optional] 
 **advertiser_id** | **str** | Advertiser id of the campaign this ad set belongs to | [optional] 
-**dataset_id** | **str** | Dataset id of this ad set | [optional] 
 **campaign_id** | **str** | Campaign id this ad set belongs to | [optional] 
 **destination_environment** | **str** | The environment that an ad click will lead a user to | [optional] 
 **schedule** | [**ReadAdSetSchedule**](ReadAdSetSchedule.md) |  | [optional] 

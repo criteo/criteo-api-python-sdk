@@ -110,7 +110,7 @@ class PetApi(object):
                 'auth': [
                     'petstore_auth'
                 ],
-                'endpoint_path': '/pet',
+                'endpoint_path': '/pet-test',
                 'operation_id': 'add_pet',
                 'http_method': 'POST',
                 'servers': None,

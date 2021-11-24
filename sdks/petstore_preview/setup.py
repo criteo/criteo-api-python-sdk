@@ -4,7 +4,7 @@ from setuptools import setup, find_packages  # noqa: H301
 import os
 
 NAME = "criteo-api-petstore-preview"
-VERSION = "preview.1.211118"
+VERSION = "preview.1.211124"
 # To install the library, run the following
 #
 # python setup.py install

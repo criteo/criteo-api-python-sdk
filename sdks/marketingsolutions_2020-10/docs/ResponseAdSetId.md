@@ -5,7 +5,7 @@ output resource
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ReadModelAdSetId**](ReadModelAdSetId.md) |  | [optional] 
+**data** | [**[ReadModelAdSetId]**](ReadModelAdSetId.md) |  | [optional] [readonly] 
 **warnings** | [**[ProblemDetails]**](ProblemDetails.md) |  | [optional] [readonly] 
 **errors** | [**[ProblemDetails]**](ProblemDetails.md) |  | [optional] [readonly] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
