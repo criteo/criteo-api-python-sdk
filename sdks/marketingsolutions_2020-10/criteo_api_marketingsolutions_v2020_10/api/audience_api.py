@@ -117,7 +117,7 @@ class AudienceApi(object):
                 'auth': [
                     'Authorization'
                 ],
-                'endpoint_path': '/2021-04/audiences',
+                'endpoint_path': '/2021-10/audiences',
                 'operation_id': 'create_audience',
                 'http_method': 'POST',
                 'servers': None,
@@ -352,7 +352,7 @@ class AudienceApi(object):
                 'auth': [
                     'Authorization'
                 ],
-                'endpoint_path': '/2021-04/audiences',
+                'endpoint_path': '/2021-10/audiences',
                 'operation_id': 'get_audiences',
                 'http_method': 'GET',
                 'servers': None,

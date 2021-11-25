@@ -10,7 +10,7 @@
 """
 
 
-__version__ = "2020_10.1.211124"
+__version__ = "2020_10.1.211125"
 
 # import ApiClient
 from criteo_api_marketingsolutions_v2020_10.api_client import ApiClient
