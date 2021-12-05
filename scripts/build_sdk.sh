@@ -4,7 +4,7 @@ for dir in ../sdks/*;
 			then (
 				echo "$dir" &&  		
 				cd "$dir" && 			
-				python -m build --sdist --wheel --outdir ./sdks/packages/
+				python -m build --sdist --wheel --outdir packages/
 			);
 		fi
 	); 
