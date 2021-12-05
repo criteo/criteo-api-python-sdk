@@ -9,3 +9,4 @@ for dir in ../sdks/*;
 		fi
 	); 
 done
+
