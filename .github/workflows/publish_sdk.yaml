@@ -33,7 +33,6 @@ jobs:
         shell: bash
         
       - name: Publish distribution 📦 to Test PyPI
-        working-directory: ./
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
