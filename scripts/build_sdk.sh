@@ -1,5 +1,3 @@
-echo $PWD
-
 for dir in ../sdks/*;
 	do ( 
 		if [ -d "$dir" ]; 			
@@ -11,6 +9,4 @@ for dir in ../sdks/*;
 		fi
 	); 
 done
-
-echo $PWD
 
