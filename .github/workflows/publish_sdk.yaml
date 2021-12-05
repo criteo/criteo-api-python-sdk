@@ -28,17 +28,8 @@ jobs:
 
       - name:  Build a binary wheel and a source tarball for each sdk
         run: |
-          for dir in ../sdks/*;
-            do ( 
-              if [ -d "$dir" ]; 			
-                then (
-                  echo "$dir" &&  		
-                  cd "$dir" && 			
-                  python -m build --sdist --wheel --outdir packages/
-                );
-              fi
-            ); 
-          done
+          chmod +x ./scripts/build_sdk.sh
+          ./scripts/build_sdk.sh
         shell: bash
         
       - name: Publish distribution 📦 to Test PyPI
