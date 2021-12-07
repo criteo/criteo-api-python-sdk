@@ -9,33 +9,3 @@ for dir in ./sdks/*;
 	); 
 done
 
-for dir in ./*;
-	do ( 
-		if [ -d "$dir" ]; 			
-			then (
-				echo "$dir"
-			);
-		fi
-	); 
-done
-
-for dir in ./sdks/*;
-	do ( 
-		if [ -d "$dir" ]; 			
-			then (
-				echo "$dir"
-			);
-		fi
-	); 
-done
-
-for dir in ./scripts/*;
-	do ( 
-		if [ -d "$dir" ]; 			
-			then (
-				echo "$dir"
-			);
-		fi
-	); 
-done
-
