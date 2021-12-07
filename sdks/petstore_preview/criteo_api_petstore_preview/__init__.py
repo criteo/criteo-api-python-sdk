@@ -11,7 +11,7 @@
 """
 
 
-__version__ = "preview.1.211125"
+__version__ = "0.0.211207"
 
 # import ApiClient
 from criteo_api_petstore_preview.api_client import ApiClient
