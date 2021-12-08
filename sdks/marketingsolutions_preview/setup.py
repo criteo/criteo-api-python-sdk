@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 import os
 
-NAME = ""
+NAME = "criteo-api-marketingsolutions-sdk"
 VERSION = "0.0.211208"
 # To install the library, run the following
 #
