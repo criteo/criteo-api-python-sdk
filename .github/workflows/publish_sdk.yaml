@@ -37,3 +37,26 @@ jobs:
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
           packages_dir: packages/
+
+      - name: Send success notification plugin
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: criteo-api-sdk-generator
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: Python publish succeeded. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>
+          SLACK_USERNAME: sdk-generation-bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_FOOTER: ''
+          SLACK_ICON_EMOJI: green_check_mark
+
+      - name: Send failure notification plugin
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: criteo-api-sdk-generator
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: Python publish failed. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>
+          SLACK_USERNAME: sdk-generation-bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_FOOTER: ''
+          SLACK_ICON_EMOJI: x
