@@ -4,7 +4,7 @@ from setuptools import setup, find_packages  # noqa: H301
 import os
 
 NAME = "criteo-api-retailmedia-sdk"
-VERSION = "2021.10.0.211209"
+VERSION = "2021.10.0.211215"
 # To install the library, run the following
 #
 # python setup.py install
