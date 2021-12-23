@@ -4,9 +4,10 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_portfolio_get**](AdvertiserApi.md#api_portfolio_get) | **GET** /2021-04/advertisers/me | 
-[**get_categories**](AdvertiserApi.md#get_categories) | **GET** /legacy/marketing/v1/advertisers/{advertiserId}/categories | Gets all advertiser&#39;s categories
-[**get_category**](AdvertiserApi.md#get_category) | **GET** /legacy/marketing/v1/advertisers/{advertiserId}/categories/{categoryHashCode} | Gets a specific advertiser&#39;s category
+[**api_portfolio_get**](AdvertiserApi.md#api_portfolio_get) | **GET** /preview/advertisers/me | 
+[**create_advertiser**](AdvertiserApi.md#create_advertiser) | **POST** /preview/advertisers | 
+[**get_dataset_list**](AdvertiserApi.md#get_dataset_list) | **GET** /preview/advertisers/{advertiser-id}/datasets | 
+[**list_industries**](AdvertiserApi.md#list_industries) | **GET** /preview/industries | 
 
 
 # **api_portfolio_get**
@@ -14,11 +15,11 @@ Method | HTTP request | Description
 
 
 
-Use this call to fetch a list of all advertisers in your account.
+Fetch the portfolio of Advertisers for this account
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -36,7 +37,7 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
@@ -65,12 +66,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json, text/plain, text/json
 
 
 ### HTTP response details
@@ -81,21 +82,23 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_categories**
-> [CategoryMessage] get_categories(advertiser_id)
+# **create_advertiser**
+> AdvertiserCreationResponse create_advertiser(advertiser_creation_request)
 
-Gets all advertiser's categories
 
-Get the list of all the categories linked to the requested advertiser.
+
+Create a new advertiser based on provided parameters. This could take up to 30 seconds.
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import advertiser_api
-from criteo_api_marketingsolutions_preview.model.category_message import CategoryMessage
+from criteo_api_marketingsolutions_preview.model.advertiser_creation_response import AdvertiserCreationResponse
+from criteo_api_marketingsolutions_preview.model.advertiser_creation_request import AdvertiserCreationRequest
+from criteo_api_marketingsolutions_preview.model.unauthorized_response_v2 import UnauthorizedResponseV2
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -108,7 +111,7 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
@@ -118,25 +121,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = advertiser_api.AdvertiserApi(api_client)
-    advertiser_id = 1 # int | Mandatory. The id of the advertiser to return.
-    enabled_only = True # bool | Optional. Returns only categories you can bid on. Defaults to false. (optional)
+    advertiser_creation_request = AdvertiserCreationRequest(
+        type="campaign",
+        data=AdvertiserCreationInput(
+            account_name="account_name_example",
+            website_url="website_url_example",
+            country_iso_code="country_iso_code_example",
+            currency_iso_code="currency_iso_code_example",
+            industry_id="industry_id_example",
+        ),
+    ) # AdvertiserCreationRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        # Gets all advertiser's categories
-        api_response = api_instance.get_categories(advertiser_id)
+        api_response = api_instance.create_advertiser(advertiser_creation_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AdvertiserApi->get_categories: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # Gets all advertiser's categories
-        api_response = api_instance.get_categories(advertiser_id, enabled_only=enabled_only)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AdvertiserApi->get_categories: %s\n" % e)
+        print("Exception when calling AdvertiserApi->create_advertiser: %s\n" % e)
 ```
 
 
@@ -144,49 +145,47 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Mandatory. The id of the advertiser to return. |
- **enabled_only** | **bool**| Optional. Returns only categories you can bid on. Defaults to false. | [optional]
+ **advertiser_creation_request** | [**AdvertiserCreationRequest**](AdvertiserCreationRequest.md)|  |
 
 ### Return type
 
-[**[CategoryMessage]**](CategoryMessage.md)
+[**AdvertiserCreationResponse**](AdvertiserCreationResponse.md)
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, text/html
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json, text/plain, text/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Categories returned OK. |  -  |
-**401** | Authentication failed. |  -  |
-**403** | The requested advertiser is missing from current user’s portfolio. |  -  |
-**429** | Throttling failure. Maximum sending rate exceeded. |  -  |
-**500** | Unknown error. |  -  |
+**201** | Success |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_category**
-> [CategoryMessage] get_category(advertiser_id, category_hash_code)
+# **get_dataset_list**
+> AdvertiserDatasetListResponse get_dataset_list(advertiser_id)
 
-Gets a specific advertiser's category
 
-Get a specific category linked to the requested advertiser.
+
+Retrieves corresponding Datasets for a given Advertiser. Only those Datasets are included for which the given Advertiser is marked a primary.
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import advertiser_api
-from criteo_api_marketingsolutions_preview.model.category_message import CategoryMessage
+from criteo_api_marketingsolutions_preview.model.advertiser_dataset_list_response import AdvertiserDatasetListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -199,7 +198,7 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
@@ -209,16 +208,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = advertiser_api.AdvertiserApi(api_client)
-    advertiser_id = 1 # int | Mandatory. The id of the advertiser to return.
-    category_hash_code = 1 # int | Mandatory. The id of the category to return.
+    advertiser_id = "advertiser-id_example" # str | The id of the Advertiser for which Datasets are being retrieved.
 
     # example passing only required values which don't have defaults set
     try:
-        # Gets a specific advertiser's category
-        api_response = api_instance.get_category(advertiser_id, category_hash_code)
+        api_response = api_instance.get_dataset_list(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AdvertiserApi->get_category: %s\n" % e)
+        print("Exception when calling AdvertiserApi->get_dataset_list: %s\n" % e)
 ```
 
 
@@ -226,32 +223,99 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Mandatory. The id of the advertiser to return. |
- **category_hash_code** | **int**| Mandatory. The id of the category to return. |
+ **advertiser_id** | **str**| The id of the Advertiser for which Datasets are being retrieved. |
 
 ### Return type
 
-[**[CategoryMessage]**](CategoryMessage.md)
+[**AdvertiserDatasetListResponse**](AdvertiserDatasetListResponse.md)
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, text/html
+ - **Accept**: application/json, text/plain, text/json
 
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Category returned OK. |  -  |
-**401** | Authentication failed. |  -  |
-**403** | The requested advertiser is missing from current user’s portfolio. |  -  |
-**404** | The requested category was not found for the advertiser. |  -  |
-**429** | Throttling failure. Maximum sending rate exceeded. |  -  |
-**500** | Unknown error. |  -  |
+**200** | Success |  -  |
+**403** | Forbidden |  -  |
+**401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_industries**
+> ListAvailableIndustriesResponse list_industries()
+
+
+
+Returns the list of available industries for new advertisers.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import advertiser_api
+from criteo_api_marketingsolutions_preview.model.list_available_industries_response import ListAvailableIndustriesResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = advertiser_api.AdvertiserApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        api_response = api_instance.list_industries()
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AdvertiserApi->list_industries: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ListAvailableIndustriesResponse**](ListAvailableIndustriesResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/plain, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

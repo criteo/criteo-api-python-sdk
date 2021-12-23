@@ -18,4 +18,5 @@ from criteo_api_marketingsolutions_v2021_10.api.advertiser_api import Advertiser
 from criteo_api_marketingsolutions_v2021_10.api.analytics_api import AnalyticsApi
 from criteo_api_marketingsolutions_v2021_10.api.audience_api import AudienceApi
 from criteo_api_marketingsolutions_v2021_10.api.campaign_api import CampaignApi
+from criteo_api_marketingsolutions_v2021_10.api.gateway_api import GatewayApi
 from criteo_api_marketingsolutions_v2021_10.api.o_auth_api import OAuthApi

@@ -21,8 +21,8 @@ from criteo_api_marketingsolutions_v2021_10.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_marketingsolutions_v2021_10.model.jwt_model import JwtModel
-from criteo_api_marketingsolutions_v2021_10.model.o_auth2_error import OAuth2Error
+from criteo_api_marketingsolutions_v2021_10.model.access_token_model import AccessTokenModel
+from criteo_api_marketingsolutions_v2021_10.model.o_auth_error_model import OAuthErrorModel
 
 
 class OAuthApi(object):
@@ -37,24 +37,21 @@ class OAuthApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __create_token(
+        def __client_credentials(
             self,
             **kwargs
         ):
-            """create_token  # noqa: E501
+            """Creates a token when the supplied client credentials are valid  # noqa: E501
 
             Creates a token when the supplied client credentials are valid  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.create_token(async_req=True)
+            >>> thread = api.client_credentials(async_req=True)
             >>> result = thread.get()
 
 
             Keyword Args:
-                client_id (str): API Client-Id or Username. [optional]
-                client_secret (str): API Client secret or password. [optional]
-                grant_type (str): Other grant types are not available. [optional] if omitted the server will use the default value of "client_credentials"
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -76,7 +73,7 @@ class OAuthApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                JwtModel
+                AccessTokenModel
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -101,22 +98,19 @@ class OAuthApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.create_token = _Endpoint(
+        self.client_credentials = _Endpoint(
             settings={
-                'response_type': (JwtModel,),
+                'response_type': (AccessTokenModel,),
                 'auth': [
                     'oauth'
                 ],
                 'endpoint_path': '/oauth2/token',
-                'operation_id': 'create_token',
+                'operation_id': 'client_credentials',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'client_id',
-                    'client_secret',
-                    'grant_type',
                 ],
                 'required': [],
                 'nullable': [
@@ -132,22 +126,10 @@ class OAuthApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'client_id':
-                        (str,),
-                    'client_secret':
-                        (str,),
-                    'grant_type':
-                        (str,),
                 },
                 'attribute_map': {
-                    'client_id': 'client_id',
-                    'client_secret': 'client_secret',
-                    'grant_type': 'grant_type',
                 },
                 'location_map': {
-                    'client_id': 'form',
-                    'client_secret': 'form',
-                    'grant_type': 'form',
                 },
                 'collection_format_map': {
                 }
@@ -158,10 +140,8 @@ class OAuthApi(object):
                     'application/json',
                     'text/json'
                 ],
-                'content_type': [
-                    'application/x-www-form-urlencoded'
-                ]
+                'content_type': [],
             },
             api_client=api_client,
-            callable=__create_token
+            callable=__client_credentials
         )

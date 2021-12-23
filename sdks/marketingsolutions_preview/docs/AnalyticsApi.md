@@ -4,8 +4,11 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /2021-04/statistics/report | 
-[**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /2021-04/transactions/report | 
+[**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /preview/statistics/report | 
+[**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | 
+[**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | 
+[**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | 
+[**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /preview/log-level/advertisers/{advertiser-id}/report | 
 
 
 # **get_adset_report**
@@ -17,7 +20,7 @@ This Statistics endpoint provides adset related data. It is an upgrade of our pr
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -36,7 +39,7 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
@@ -83,7 +86,208 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_categories_report**
+> str get_categories_report()
+
+
+
+With this endpoint you can analyse what are the categories of the placements' domains your ads are placed in.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
+from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    generate_categories_report_request = GenerateCategoriesReportRequest(
+        data=GenerateCategoriesReportRequestData(
+            type="type_example",
+            attributes=GenerateCategoriesReportRequestAttributes(
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_id="campaign_id_example",
+                adset_id="adset_id_example",
+                domain="domain_example",
+                category="category_example",
+                should_display_domain_dimension=True,
+                format="format_example",
+                timezone="UTC",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+            ),
+        ),
+    ) # GenerateCategoriesReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_categories_report(generate_categories_report_request=generate_categories_report_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_categories_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_categories_report_request** | [**GenerateCategoriesReportRequest**](GenerateCategoriesReportRequest.md)|  | [optional]
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_placements_report**
+> str get_placements_report()
+
+
+
+Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_preview.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    placements_report_query_data_message = PlacementsReportQueryDataMessage(
+        data=[
+            PlacementsReportQueryEntityMessage(
+                type="type_example",
+                attributes=PlacementsReportQueryMessage(
+                    advertiser_ids="advertiser_ids_example",
+                    campaign_ids="campaign_ids_example",
+                    adset_ids="adset_ids_example",
+                    environment="environment_example",
+                    placement="placement_example",
+                    dimensions=[
+                        "AdsetId",
+                    ],
+                    metrics=[
+                        "metrics_example",
+                    ],
+                    currency="currency_example",
+                    disclosed=True,
+                    format="format_example",
+                    timezone="UTC",
+                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                ),
+            ),
+        ],
+    ) # PlacementsReportQueryDataMessage |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_placements_report(placements_report_query_data_message=placements_report_query_data_message)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_placements_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **placements_report_query_data_message** | [**PlacementsReportQueryDataMessage**](PlacementsReportQueryDataMessage.md)|  | [optional]
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -109,7 +313,7 @@ This Transactions endpoint provides transactions id related data.
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -128,7 +332,7 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
@@ -177,12 +381,105 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_transparency_report**
+> TransparencyReportDataMessage get_transparency_report(advertiser_id)
+
+
+
+This Statistics endpoint provides publisher data.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.transparency_report_data_message import TransparencyReportDataMessage
+from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_preview.model.transparency_query_message import TransparencyQueryMessage
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    advertiser_id = 1 # int | The advertiser id to fetch the transparency data.
+    transparency_query_message = TransparencyQueryMessage(
+        should_display_product_ids=False,
+        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+    ) # TransparencyQueryMessage |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_transparency_report(advertiser_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_transparency_report: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_transparency_report(advertiser_id, transparency_query_message=transparency_query_message)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_transparency_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **int**| The advertiser id to fetch the transparency data. |
+ **transparency_query_message** | [**TransparencyQueryMessage**](TransparencyQueryMessage.md)|  | [optional]
+
+### Return type
+
+[**TransparencyReportDataMessage**](TransparencyReportDataMessage.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json, text/plain, text/json
 
 
 ### HTTP response details

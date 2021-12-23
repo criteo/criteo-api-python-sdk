@@ -4,25 +4,25 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_token**](OAuthApi.md#create_token) | **POST** /oauth2/token | 
+[**client_credentials**](OAuthApi.md#client_credentials) | **POST** /oauth2/token | Creates a token when the supplied client credentials are valid
 
 
-# **create_token**
-> JwtModel create_token()
+# **client_credentials**
+> AccessTokenModel client_credentials()
 
-
+Creates a token when the supplied client credentials are valid
 
 Creates a token when the supplied client credentials are valid
 
 ### Example
 
-* OAuth Authentication (Authorization):
+* OAuth Authentication (oauth):
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import o_auth_api
-from criteo_api_marketingsolutions_preview.model.jwt_model import JwtModel
-from criteo_api_marketingsolutions_preview.model.o_auth2_error import OAuth2Error
+from criteo_api_marketingsolutions_preview.model.access_token_model import AccessTokenModel
+from criteo_api_marketingsolutions_preview.model.o_auth_error_model import OAuthErrorModel
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -35,7 +35,7 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-# Configure OAuth2 access token for authorization: Authorization
+# Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
@@ -45,39 +45,31 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = o_auth_api.OAuthApi(api_client)
-    client_id = "client_id_example" # str | API Client-Id or Username (optional)
-    client_secret = "client_secret_example" # str | API Client secret or password (optional)
-    grant_type = "client_credentials" # str | Other grant types are not available (optional) if omitted the server will use the default value of "client_credentials"
 
-    # example passing only required values which don't have defaults set
-    # and optional values
+    # example, this endpoint has no required or optional parameters
     try:
-        api_response = api_instance.create_token(client_id=client_id, client_secret=client_secret, grant_type=grant_type)
+        # Creates a token when the supplied client credentials are valid
+        api_response = api_instance.client_credentials()
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling OAuthApi->create_token: %s\n" % e)
+        print("Exception when calling OAuthApi->client_credentials: %s\n" % e)
 ```
 
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **client_id** | **str**| API Client-Id or Username | [optional]
- **client_secret** | **str**| API Client secret or password | [optional]
- **grant_type** | **str**| Other grant types are not available | [optional] if omitted the server will use the default value of "client_credentials"
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**JwtModel**](JwtModel.md)
+[**AccessTokenModel**](AccessTokenModel.md)
 
 ### Authorization
 
-[Authorization](../README.md#Authorization)
+[oauth](../README.md#oauth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/x-www-form-urlencoded
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 
@@ -86,6 +78,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

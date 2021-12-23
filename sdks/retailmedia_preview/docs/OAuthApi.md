@@ -1,0 +1,84 @@
+# criteo_api_retailmedia_preview.OAuthApi
+
+All URIs are relative to *https://api.criteo.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**client_credentials**](OAuthApi.md#client_credentials) | **POST** /oauth2/token | Creates a token when the supplied client credentials are valid
+
+
+# **client_credentials**
+> AccessTokenModel client_credentials()
+
+Creates a token when the supplied client credentials are valid
+
+Creates a token when the supplied client credentials are valid
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import o_auth_api
+from criteo_api_retailmedia_preview.model.access_token_model import AccessTokenModel
+from criteo_api_retailmedia_preview.model.o_auth_error_model import OAuthErrorModel
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = o_auth_api.OAuthApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        # Creates a token when the supplied client credentials are valid
+        api_response = api_instance.client_credentials()
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling OAuthApi->client_credentials: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AccessTokenModel**](AccessTokenModel.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad request |  -  |
+**401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
