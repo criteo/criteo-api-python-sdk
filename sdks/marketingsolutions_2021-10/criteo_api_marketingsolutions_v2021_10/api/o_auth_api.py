@@ -37,21 +37,27 @@ class OAuthApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-        def __client_credentials(
+        def __get_token(
             self,
             **kwargs
         ):
-            """Creates a token when the supplied client credentials are valid  # noqa: E501
+            """Creates a token based either on supplied client credentials or on single use authorization code  # noqa: E501
 
             Creates a token when the supplied client credentials are valid  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.client_credentials(async_req=True)
+            >>> thread = api.get_token(async_req=True)
             >>> result = thread.get()
 
 
             Keyword Args:
+                grant_type (str): [optional]
+                client_id (str): [optional]
+                client_secret (str): [optional]
+                redirect_uri (str): [optional]
+                code (str): [optional]
+                refresh_token (str): [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -98,19 +104,25 @@ class OAuthApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             return self.call_with_http_info(**kwargs)
 
-        self.client_credentials = _Endpoint(
+        self.get_token = _Endpoint(
             settings={
                 'response_type': (AccessTokenModel,),
                 'auth': [
                     'oauth'
                 ],
                 'endpoint_path': '/oauth2/token',
-                'operation_id': 'client_credentials',
+                'operation_id': 'get_token',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'grant_type',
+                    'client_id',
+                    'client_secret',
+                    'redirect_uri',
+                    'code',
+                    'refresh_token',
                 ],
                 'required': [],
                 'nullable': [
@@ -126,10 +138,34 @@ class OAuthApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'grant_type':
+                        (str,),
+                    'client_id':
+                        (str,),
+                    'client_secret':
+                        (str,),
+                    'redirect_uri':
+                        (str,),
+                    'code':
+                        (str,),
+                    'refresh_token':
+                        (str,),
                 },
                 'attribute_map': {
+                    'grant_type': 'grant_type',
+                    'client_id': 'client_id',
+                    'client_secret': 'client_secret',
+                    'redirect_uri': 'redirect_uri',
+                    'code': 'code',
+                    'refresh_token': 'refresh_token',
                 },
                 'location_map': {
+                    'grant_type': 'form',
+                    'client_id': 'form',
+                    'client_secret': 'form',
+                    'redirect_uri': 'form',
+                    'code': 'form',
+                    'refresh_token': 'form',
                 },
                 'collection_format_map': {
                 }
@@ -140,8 +176,10 @@ class OAuthApi(object):
                     'application/json',
                     'text/json'
                 ],
-                'content_type': [],
+                'content_type': [
+                    'multipart/form-data'
+                ]
             },
             api_client=api_client,
-            callable=__client_credentials
+            callable=__get_token
         )

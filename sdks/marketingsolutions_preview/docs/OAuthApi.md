@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**client_credentials**](OAuthApi.md#client_credentials) | **POST** /oauth2/token | Creates a token when the supplied client credentials are valid
+[**get_token**](OAuthApi.md#get_token) | **POST** /oauth2/token | Creates a token based either on supplied client credentials or on single use authorization code
 
 
-# **client_credentials**
-> AccessTokenModel client_credentials()
+# **get_token**
+> AccessTokenModel get_token()
 
-Creates a token when the supplied client credentials are valid
+Creates a token based either on supplied client credentials or on single use authorization code
 
 Creates a token when the supplied client credentials are valid
 
@@ -45,19 +45,34 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = o_auth_api.OAuthApi(api_client)
+    grant_type = "grant_type_example" # str |  (optional)
+    client_id = "client_id_example" # str |  (optional)
+    client_secret = "client_secret_example" # str |  (optional)
+    redirect_uri = "redirect_uri_example" # str |  (optional)
+    code = "code_example" # str |  (optional)
+    refresh_token = "refresh_token_example" # str |  (optional)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    # and optional values
     try:
-        # Creates a token when the supplied client credentials are valid
-        api_response = api_instance.client_credentials()
+        # Creates a token based either on supplied client credentials or on single use authorization code
+        api_response = api_instance.get_token(grant_type=grant_type, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, code=code, refresh_token=refresh_token)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling OAuthApi->client_credentials: %s\n" % e)
+        print("Exception when calling OAuthApi->get_token: %s\n" % e)
 ```
 
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **grant_type** | **str**|  | [optional]
+ **client_id** | **str**|  | [optional]
+ **client_secret** | **str**|  | [optional]
+ **redirect_uri** | **str**|  | [optional]
+ **code** | **str**|  | [optional]
+ **refresh_token** | **str**|  | [optional]
 
 ### Return type
 
@@ -69,7 +84,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: text/plain, application/json, text/json
 
 
