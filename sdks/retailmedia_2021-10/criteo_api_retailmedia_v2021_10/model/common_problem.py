@@ -98,7 +98,6 @@ class CommonProblem(ModelNormal):
             'title': (str,),  # noqa: E501
             'detail': (str,),  # noqa: E501
             'source': ({str: (str,)},),  # noqa: E501
-            'stack_trace': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -107,14 +106,13 @@ class CommonProblem(ModelNormal):
 
 
     attribute_map = {
-        'trace_identifier': 'traceIdentifier',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'code': 'code',  # noqa: E501
-        'instance': 'instance',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'detail': 'detail',  # noqa: E501
-        'source': 'source',  # noqa: E501
-        'stack_trace': 'stackTrace',  # noqa: E501
+        'trace_identifier': 'TraceIdentifier',  # noqa: E501
+        'type': 'Type',  # noqa: E501
+        'code': 'Code',  # noqa: E501
+        'instance': 'Instance',  # noqa: E501
+        'title': 'Title',  # noqa: E501
+        'detail': 'Detail',  # noqa: E501
+        'source': 'Source',  # noqa: E501
     }
 
     read_only_vars = {
@@ -165,7 +163,6 @@ class CommonProblem(ModelNormal):
             title (str): A short human-readable description of the problem type. [optional]  # noqa: E501
             detail (str): A human-readable explanation specific to this occurrence of the problem. [optional]  # noqa: E501
             source ({str: (str,)}): A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
-            stack_trace (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,7 +251,6 @@ class CommonProblem(ModelNormal):
             title (str): A short human-readable description of the problem type. [optional]  # noqa: E501
             detail (str): A human-readable explanation specific to this occurrence of the problem. [optional]  # noqa: E501
             source ({str: (str,)}): A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
-            stack_trace (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -177,7 +177,7 @@ class OAuthApi(object):
                     'text/json'
                 ],
                 'content_type': [
-                    'multipart/form-data'
+                    'application/x-www-form-urlencoded'
                 ]
             },
             api_client=api_client,
