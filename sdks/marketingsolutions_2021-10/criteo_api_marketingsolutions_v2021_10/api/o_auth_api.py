@@ -39,6 +39,9 @@ class OAuthApi(object):
 
         def __get_token(
             self,
+            grant_type,
+            client_id,
+            client_secret,
             **kwargs
         ):
             """Creates a token based either on supplied client credentials or on single use authorization code  # noqa: E501
@@ -47,14 +50,15 @@ class OAuthApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.get_token(async_req=True)
+            >>> thread = api.get_token(grant_type, client_id, client_secret, async_req=True)
             >>> result = thread.get()
 
+            Args:
+                grant_type (str):
+                client_id (str):
+                client_secret (str):
 
             Keyword Args:
-                grant_type (str): [optional]
-                client_id (str): [optional]
-                client_secret (str): [optional]
                 redirect_uri (str): [optional]
                 code (str): [optional]
                 refresh_token (str): [optional]
@@ -102,6 +106,12 @@ class OAuthApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['grant_type'] = \
+                grant_type
+            kwargs['client_id'] = \
+                client_id
+            kwargs['client_secret'] = \
+                client_secret
             return self.call_with_http_info(**kwargs)
 
         self.get_token = _Endpoint(
@@ -124,7 +134,11 @@ class OAuthApi(object):
                     'code',
                     'refresh_token',
                 ],
-                'required': [],
+                'required': [
+                    'grant_type',
+                    'client_id',
+                    'client_secret',
+                ],
                 'nullable': [
                 ],
                 'enum': [

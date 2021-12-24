@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_token**
-> AccessTokenModel get_token()
+> AccessTokenModel get_token(grant_type, client_id, client_secret)
 
 Creates a token based either on supplied client credentials or on single use authorization code
 
@@ -45,18 +45,26 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = o_auth_api.OAuthApi(api_client)
-    grant_type = "grant_type_example" # str |  (optional)
-    client_id = "client_id_example" # str |  (optional)
-    client_secret = "client_secret_example" # str |  (optional)
+    grant_type = "grant_type_example" # str | 
+    client_id = "client_id_example" # str | 
+    client_secret = "client_secret_example" # str | 
     redirect_uri = "redirect_uri_example" # str |  (optional)
     code = "code_example" # str |  (optional)
     refresh_token = "refresh_token_example" # str |  (optional)
 
     # example passing only required values which don't have defaults set
+    try:
+        # Creates a token based either on supplied client credentials or on single use authorization code
+        api_response = api_instance.get_token(grant_type, client_id, client_secret)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling OAuthApi->get_token: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
     # and optional values
     try:
         # Creates a token based either on supplied client credentials or on single use authorization code
-        api_response = api_instance.get_token(grant_type=grant_type, client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri, code=code, refresh_token=refresh_token)
+        api_response = api_instance.get_token(grant_type, client_id, client_secret, redirect_uri=redirect_uri, code=code, refresh_token=refresh_token)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling OAuthApi->get_token: %s\n" % e)
@@ -67,9 +75,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grant_type** | **str**|  | [optional]
- **client_id** | **str**|  | [optional]
- **client_secret** | **str**|  | [optional]
+ **grant_type** | **str**|  |
+ **client_id** | **str**|  |
+ **client_secret** | **str**|  |
  **redirect_uri** | **str**|  | [optional]
  **code** | **str**|  | [optional]
  **refresh_token** | **str**|  | [optional]
