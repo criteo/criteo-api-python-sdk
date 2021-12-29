@@ -480,6 +480,4 @@ requirements.txt
 setup.cfg
 setup.py
 test-requirements.txt
-test/test_gateway_api.py
-test/test_oauth_api.py
 tox.ini
