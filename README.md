@@ -9,7 +9,7 @@ API clients are generated for each support API version and service. You can find
 
 ## Pypi artefacts
 
-Each of the generated SDKs is also published on MavenCentral
+Each of the generated SDKs is also published on PyPi
 * https://pypi.org/project/criteo-api-retailmedia-sdk/
 * https://pypi.org/project/criteo-api-marketingsolutions-sdk/
 
@@ -21,12 +21,12 @@ The version number contains the API version in its first two digits:
 
 Example for the marketingsolutions API and using the most recent stable API version
 ```sh
-pip install criteo_api_marketingsolutions
+pip install criteo-api-marketingsolutions-sdk
 ```
 
 Example for the marketingsolutions API and 2021-10 version
 ```sh
-pip install criteo_api_marketingsolutions==2021.10.*
+pip install criteo-api-marketingsolutions-sdk==2021.10.*
 ```
 
 Then import the package:
