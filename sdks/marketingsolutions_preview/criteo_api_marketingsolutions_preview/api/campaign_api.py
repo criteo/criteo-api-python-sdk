@@ -197,7 +197,7 @@ class CampaignApi(object):
 
 
             Keyword Args:
-                create_campaign_request (CreateCampaignRequest): [optional]
+                create_campaign_request (CreateCampaignRequest): the campaigns to create. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

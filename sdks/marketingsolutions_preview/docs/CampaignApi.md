@@ -174,6 +174,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     ),
                 ),
                 tracking_code="tracking_code_example",
+                media_type="display",
             ),
         ),
     ) # CreateAdSetRequest | the ad sets to create (optional)
@@ -269,7 +270,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ),
-    ) # CreateCampaignRequest |  (optional)
+    ) # CreateCampaignRequest | the campaigns to create (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -285,7 +286,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_campaign_request** | [**CreateCampaignRequest**](CreateCampaignRequest.md)|  | [optional]
+ **create_campaign_request** | [**CreateCampaignRequest**](CreateCampaignRequest.md)| the campaigns to create | [optional]
 
 ### Return type
 

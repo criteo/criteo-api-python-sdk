@@ -67,6 +67,10 @@ class CreateAdSet(ModelNormal):
     """
 
     allowed_values = {
+        ('media_type',): {
+            'DISPLAY': "display",
+            'VIDEO': "video",
+        },
     }
 
     validations = {
@@ -104,6 +108,7 @@ class CreateAdSet(ModelNormal):
             'budget': (CreateAdSetBudget,),  # noqa: E501
             'audience_configuration': (CreateAdSetAudienceConfiguration,),  # noqa: E501
             'tracking_code': (str,),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -121,6 +126,7 @@ class CreateAdSet(ModelNormal):
         'budget': 'budget',  # noqa: E501
         'audience_configuration': 'audienceConfiguration',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
     }
 
     read_only_vars = {
@@ -173,6 +179,7 @@ class CreateAdSet(ModelNormal):
             budget (CreateAdSetBudget): [optional]  # noqa: E501
             audience_configuration (CreateAdSetAudienceConfiguration): [optional]  # noqa: E501
             tracking_code (str): The click tracking code associated to this Ad Set.. [optional]  # noqa: E501
+            media_type (str): Media type for the ad set. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,6 +270,7 @@ class CreateAdSet(ModelNormal):
             budget (CreateAdSetBudget): [optional]  # noqa: E501
             audience_configuration (CreateAdSetAudienceConfiguration): [optional]  # noqa: E501
             tracking_code (str): The click tracking code associated to this Ad Set.. [optional]  # noqa: E501
+            media_type (str): Media type for the ad set. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

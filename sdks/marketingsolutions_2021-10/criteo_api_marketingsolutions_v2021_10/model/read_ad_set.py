@@ -70,6 +70,10 @@ class ReadAdSet(ModelNormal):
             'WEB': "web",
             'APP': "app",
         },
+        ('media_type',): {
+            'DISPLAY': "display",
+            'VIDEO': "video",
+        },
     }
 
     validations = {
@@ -107,6 +111,7 @@ class ReadAdSet(ModelNormal):
             'bidding': (ReadAdSetBidding,),  # noqa: E501
             'targeting': (AdSetTargeting,),  # noqa: E501
             'budget': (ReadAdSetBudget,),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -124,6 +129,7 @@ class ReadAdSet(ModelNormal):
         'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
         'budget': 'budget',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
     }
 
     read_only_vars = {
@@ -176,6 +182,7 @@ class ReadAdSet(ModelNormal):
             bidding (ReadAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
             budget (ReadAdSetBudget): [optional]  # noqa: E501
+            media_type (str): Media type for the ad set. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -266,6 +273,7 @@ class ReadAdSet(ModelNormal):
             bidding (ReadAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
             budget (ReadAdSetBudget): [optional]  # noqa: E501
+            media_type (str): Media type for the ad set. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
