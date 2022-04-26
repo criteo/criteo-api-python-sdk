@@ -20,6 +20,8 @@ criteo_api_retailmedia_preview/model/application_summary_model.py
 criteo_api_retailmedia_preview/model/application_summary_model_resource.py
 criteo_api_retailmedia_preview/model/application_summary_model_response.py
 criteo_api_retailmedia_preview/model/bad_request.py
+criteo_api_retailmedia_preview/model/brand_preview.py
+criteo_api_retailmedia_preview/model/brand_preview_list_response.py
 criteo_api_retailmedia_preview/model/common_error.py
 criteo_api_retailmedia_preview/model/common_problem.py
 criteo_api_retailmedia_preview/model/common_warning.py
@@ -86,6 +88,7 @@ criteo_api_retailmedia_preview/model/report_request.py
 criteo_api_retailmedia_preview/model/report_request_attributes.py
 criteo_api_retailmedia_preview/model/report_status.py
 criteo_api_retailmedia_preview/model/report_status_attributes.py
+criteo_api_retailmedia_preview/model/resource_of_brand_preview.py
 criteo_api_retailmedia_preview/model/resource_of_seller_preview.py
 criteo_api_retailmedia_preview/model/resource_of_sku_data_preview.py
 criteo_api_retailmedia_preview/model/resource_of_sku_search_request_preview.py
@@ -107,6 +110,8 @@ docs/ApplicationSummaryModelResource.md
 docs/ApplicationSummaryModelResponse.md
 docs/AudienceApi.md
 docs/BadRequest.md
+docs/BrandPreview.md
+docs/BrandPreviewListResponse.md
 docs/CampaignApi.md
 docs/CommonError.md
 docs/CommonProblem.md
@@ -176,6 +181,7 @@ docs/ReportRequest.md
 docs/ReportRequestAttributes.md
 docs/ReportStatus.md
 docs/ReportStatusAttributes.md
+docs/ResourceOfBrandPreview.md
 docs/ResourceOfSellerPreview.md
 docs/ResourceOfSkuDataPreview.md
 docs/ResourceOfSkuSearchRequestPreview.md

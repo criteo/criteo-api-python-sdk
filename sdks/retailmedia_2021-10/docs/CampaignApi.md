@@ -33,6 +33,8 @@ Method | HTTP request | Description
 [**post_api202110_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#post_api202110_external_campaign_preferred_line_items_by_campaign_id) | **POST** /2021-10/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**post_api202110_external_line_item_products_append_by_line_item_id**](CampaignApi.md#post_api202110_external_line_item_products_append_by_line_item_id) | **POST** /2021-10/retail-media/line-items/{line-item-id}/products/append | 
 [**post_api202110_external_line_item_products_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_line_item_products_delete_by_line_item_id) | **POST** /2021-10/retail-media/line-items/{line-item-id}/products/delete | 
+[**post_api202110_external_line_item_products_pause_by_line_item_id**](CampaignApi.md#post_api202110_external_line_item_products_pause_by_line_item_id) | **POST** /2021-10/retail-media/line-items/{line-item-id}/products/pause | 
+[**post_api202110_external_line_item_products_unpause_by_line_item_id**](CampaignApi.md#post_api202110_external_line_item_products_unpause_by_line_item_id) | **POST** /2021-10/retail-media/line-items/{line-item-id}/products/unpause | 
 [**post_api202110_external_preferred_line_item_targeting_add_to_basket_append_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_add_to_basket_append_by_line_item_id) | **POST** /2021-10/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append | 
 [**post_api202110_external_preferred_line_item_targeting_add_to_basket_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_add_to_basket_delete_by_line_item_id) | **POST** /2021-10/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete | 
 [**post_api202110_external_preferred_line_item_targeting_audiences_append_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_audiences_append_by_line_item_id) | **POST** /2021-10/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append | 
@@ -2553,6 +2555,192 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **post_api202110_external_line_item_products_pause_by_line_item_id**
+> post_api202110_external_line_item_products_pause_by_line_item_id(line_item_id)
+
+
+
+This endpoint pauses one or more promoted products on a specified line item.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_v2021_10
+from criteo_api_retailmedia_v2021_10.api import campaign_api
+from criteo_api_retailmedia_v2021_10.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2021_10.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2021_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2021_10.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The line item to interact with.
+    promoted_product202110_list_request = PromotedProduct202110ListRequest(
+        data=[
+            ResourceOfPromotedProduct202110(
+                id="id_example",
+                type="type_example",
+                attributes=ExternalPromotedProduct202110(
+                    bid_override=3.14,
+                ),
+            ),
+        ],
+    ) # PromotedProduct202110ListRequest | The products from which their IDs will be used to pause. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.post_api202110_external_line_item_products_pause_by_line_item_id(line_item_id)
+    except criteo_api_retailmedia_v2021_10.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202110_external_line_item_products_pause_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_instance.post_api202110_external_line_item_products_pause_by_line_item_id(line_item_id, promoted_product202110_list_request=promoted_product202110_list_request)
+    except criteo_api_retailmedia_v2021_10.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202110_external_line_item_products_pause_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item to interact with. |
+ **promoted_product202110_list_request** | [**PromotedProduct202110ListRequest**](PromotedProduct202110ListRequest.md)| The products from which their IDs will be used to pause. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_api202110_external_line_item_products_unpause_by_line_item_id**
+> post_api202110_external_line_item_products_unpause_by_line_item_id(line_item_id)
+
+
+
+This endpoint unpauses one or more promoted products on a specified line item.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_v2021_10
+from criteo_api_retailmedia_v2021_10.api import campaign_api
+from criteo_api_retailmedia_v2021_10.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2021_10.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2021_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2021_10.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The line item to interact with.
+    promoted_product202110_list_request = PromotedProduct202110ListRequest(
+        data=[
+            ResourceOfPromotedProduct202110(
+                id="id_example",
+                type="type_example",
+                attributes=ExternalPromotedProduct202110(
+                    bid_override=3.14,
+                ),
+            ),
+        ],
+    ) # PromotedProduct202110ListRequest | The products from which their IDs will be used to unpause. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.post_api202110_external_line_item_products_unpause_by_line_item_id(line_item_id)
+    except criteo_api_retailmedia_v2021_10.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202110_external_line_item_products_unpause_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_instance.post_api202110_external_line_item_products_unpause_by_line_item_id(line_item_id, promoted_product202110_list_request=promoted_product202110_list_request)
+    except criteo_api_retailmedia_v2021_10.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202110_external_line_item_products_unpause_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item to interact with. |
+ **promoted_product202110_list_request** | [**PromotedProduct202110ListRequest**](PromotedProduct202110ListRequest.md)| The products from which their IDs will be used to unpause. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_api202110_external_preferred_line_item_targeting_add_to_basket_append_by_line_item_id**
 > AddToBasketTarget202110Response post_api202110_external_preferred_line_item_targeting_add_to_basket_append_by_line_item_id(line_item_id)
 
@@ -3233,8 +3421,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Success |  -  |
 **200** | OK |  -  |
+**201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

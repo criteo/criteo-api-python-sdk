@@ -6,7 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /preview/statistics/report | 
 [**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | 
+[**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | 
 [**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | 
+[**get_top_products_report**](AnalyticsApi.md#get_top_products_report) | **POST** /preview/reports/top-products | 
 [**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | 
 [**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /preview/log-level/advertisers/{advertiser-id}/report | 
 
@@ -51,6 +53,15 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     statistics_report_query_message = StatisticsReportQueryMessage(
         advertiser_ids="advertiser_ids_example",
+        ad_set_ids=[
+            "ad_set_ids_example",
+        ],
+        ad_set_names=[
+            "ad_set_names_example",
+        ],
+        ad_set_status=[
+            "ad_set_status_example",
+        ],
         dimensions=[
             "AdsetId",
         ],
@@ -118,7 +129,7 @@ import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
-from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -180,6 +191,134 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_creatives_report**
+> ReportDataMessage get_creatives_report()
+
+
+
+With Creatives endpoint, you can analyse the daily performances of your creatives on the main metrics: clicks, ctr, displays.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.generate_creatives_report_request import GenerateCreativesReportRequest
+from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
+from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    generate_creatives_report_request = GenerateCreativesReportRequest(
+        data=GenerateCreativesReportRequestData(
+            type="type_example",
+            attributes=GenerateCreativesReportRequestAttributes(
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                metrics=[
+                    "Clicks",
+                ],
+                dimensions=[
+                    "AdFormat",
+                ],
+                timezone="timezone_example",
+                ad_types=[
+                    "ad_types_example",
+                ],
+                ad_formats=[
+                    "ad_formats_example",
+                ],
+                display_sizes=[
+                    "display_sizes_example",
+                ],
+                coupon_names=[
+                    "coupon_names_example",
+                ],
+                coupon_ids=[
+                    "coupon_ids_example",
+                ],
+                ad_names=[
+                    "ad_names_example",
+                ],
+                ad_ids=[
+                    "ad_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                ad_set_ids=[
+                    "ad_set_ids_example",
+                ],
+                ad_set_status=[
+                    "ad_set_status_example",
+                ],
+            ),
+        ),
+    ) # GenerateCreativesReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_creatives_report(generate_creatives_report_request=generate_creatives_report_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_creatives_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_creatives_report_request** | [**GenerateCreativesReportRequest**](GenerateCreativesReportRequest.md)|  | [optional]
+
+### Return type
+
+[**ReportDataMessage**](ReportDataMessage.md)
 
 ### Authorization
 
@@ -284,6 +423,120 @@ Name | Type | Description  | Notes
 ### Return type
 
 **str**
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_top_products_report**
+> ReportDataMessage get_top_products_report()
+
+
+
+With the topProducts endpoint, you can analyse the performances for each publisher, by top displays, top clicks or top sales.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
+from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
+from criteo_api_marketingsolutions_preview.model.generate_top_products_report_request import GenerateTopProductsReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    generate_top_products_report_request = GenerateTopProductsReportRequest(
+        data=GenerateTopProductsReportRequestData(
+            type="type_example",
+            attributes=GenerateTopProductsReportRequestAttributes(
+                timezone="UTC",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                advertiser_id="advertiser_id_example",
+                limit=1,
+                rank_products_by="Clicks",
+                dimensions=[
+                    "Campaign",
+                ],
+                metrics=[
+                    "Clicks",
+                ],
+                currency="EUR",
+                brands=[
+                    "brands_example",
+                ],
+                category_ids=[
+                    "category_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                ad_set_ids=[
+                    "ad_set_ids_example",
+                ],
+                ad_set_status=[
+                    "ad_set_status_example",
+                ],
+            ),
+        ),
+    ) # GenerateTopProductsReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_top_products_report(generate_top_products_report_request=generate_top_products_report_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_top_products_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_top_products_report_request** | [**GenerateTopProductsReportRequest**](GenerateTopProductsReportRequest.md)|  | [optional]
+
+### Return type
+
+[**ReportDataMessage**](ReportDataMessage.md)
 
 ### Authorization
 

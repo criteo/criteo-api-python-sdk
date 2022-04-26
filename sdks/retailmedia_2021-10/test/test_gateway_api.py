@@ -10,14 +10,14 @@ class TestGatewayApi:
   def before_each(self):
     self.client_id = os.environ.get("TEST_CLIENT_ID")
     self.client_secret = os.environ.get("TEST_CLIENT_SECRET")
-    self.application_id = os.environ.get("TEST_APPLICATION_ID")
+    self.application_id = int(os.environ.get("TEST_APPLICATION_ID"))
   
     self.client = ApiClient(Configuration(username=self.client_id, password=self.client_secret))
 
   def test_environment_variables(self):
     assert len(self.client_id) > 0, "Environment variable \"TEST_CLIENT_ID\" not found."
     assert len(self.client_secret) > 0, "Environment variable \"TEST_CLIENT_SECRET\" not found."
-    assert len(self.application_id) > 0, "Environment variable \"TEST_APPLICATION_ID\" not found."
+    assert self.application_id > 0, "Environment variable \"TEST_APPLICATION_ID\" not found."
 
   def test_get_current_application_should_succeed_with_valid_token(self):
     # Arrange
@@ -27,7 +27,7 @@ class TestGatewayApi:
     http_response = api.get_current_application()
 
     # Assert
-    assert self.application_id == http_response.data.id
+    assert self.application_id == http_response.data.attributes.application_id
 
 
   def test_get_current_application_should_succeed_with_renewed_invalid_token(self):
@@ -40,7 +40,7 @@ class TestGatewayApi:
       http_response = api.get_current_application()
 
       # Assert
-      assert self.application_id == http_response.data.id
+      assert self.application_id == http_response.data.attributes.application_id
 
 
   def test_get_current_application_should_fail_without_token(self):

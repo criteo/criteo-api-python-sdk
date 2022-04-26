@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**get_api_v1_external_campaign_line_items_by_campaign_id**](CampaignApi.md#get_api_v1_external_campaign_line_items_by_campaign_id) | **GET** /preview/retail-media/campaigns/{campaignId}/line-items | 
 [**get_api_v1_external_line_item_by_line_item_id**](CampaignApi.md#get_api_v1_external_line_item_by_line_item_id) | **GET** /preview/retail-media/line-items/{lineItemId} | 
 [**get_api_v1_external_line_item_products_by_line_item_id**](CampaignApi.md#get_api_v1_external_line_item_products_by_line_item_id) | **GET** /preview/retail-media/line-items/{lineItemId}/products | 
+[**get_api_v1_external_retailer_brands_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_brands_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailerId}/brands | 
 [**get_api_v1_external_retailer_by_retailer_id_seller_by_seller**](CampaignApi.md#get_api_v1_external_retailer_by_retailer_id_seller_by_seller) | **GET** /preview/retail-media/retailers/{retailerId}/sellers/{seller} | 
 [**post_api_v0_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v0_external_account_catalogs_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/catalogs | 
 [**post_api_v1_external_account_campaigns_by_account_id**](CampaignApi.md#post_api_v1_external_account_campaigns_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/campaigns | 
@@ -1238,6 +1239,81 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_api_v1_external_retailer_brands_by_retailer_id**
+> BrandPreviewListResponse get_api_v1_external_retailer_brands_by_retailer_id(retailer_id)
+
+
+
+Gets the brands for the given retailer
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.brand_preview_list_response import BrandPreviewListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | The retailer id for which brands should be fetched.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api_v1_external_retailer_brands_by_retailer_id(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_api_v1_external_retailer_brands_by_retailer_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| The retailer id for which brands should be fetched. |
+
+### Return type
+
+[**BrandPreviewListResponse**](BrandPreviewListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Brands found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_api_v1_external_retailer_by_retailer_id_seller_by_seller**
 > SellerPreviewResponse get_api_v1_external_retailer_by_retailer_id_seller_by_seller(retailer_id, seller)
 
@@ -1506,8 +1582,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Success |  -  |
 **200** | OK |  -  |
+**201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1611,8 +1687,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Success |  -  |
 **200** | OK |  -  |
+**201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1751,6 +1827,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 brand_ids=[
                     "brand_ids_example",
                 ],
+                sku_type="brand",
             ),
         ),
     ) # SkuSearchRequestPreviewRequest |  (optional)

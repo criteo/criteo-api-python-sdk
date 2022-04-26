@@ -87,7 +87,6 @@ class ApplicationSummaryModelResource(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'attributes': (ApplicationSummaryModel,),  # noqa: E501
         }
@@ -98,7 +97,6 @@ class ApplicationSummaryModelResource(ModelNormal):
 
 
     attribute_map = {
-        'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
         'attributes': 'attributes',  # noqa: E501
     }
@@ -144,7 +142,6 @@ class ApplicationSummaryModelResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             attributes (ApplicationSummaryModel): [optional]  # noqa: E501
         """
@@ -228,7 +225,6 @@ class ApplicationSummaryModelResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             attributes (ApplicationSummaryModel): [optional]  # noqa: E501
         """

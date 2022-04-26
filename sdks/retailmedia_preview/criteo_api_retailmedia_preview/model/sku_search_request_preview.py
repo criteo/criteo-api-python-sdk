@@ -55,6 +55,11 @@ class SkuSearchRequestPreview(ModelNormal):
     """
 
     allowed_values = {
+        ('sku_type',): {
+            'BRAND': "brand",
+            'SELLER': "seller",
+            'ALL': "all",
+        },
     }
 
     validations = {
@@ -85,6 +90,7 @@ class SkuSearchRequestPreview(ModelNormal):
             'retailer_id': (str,),  # noqa: E501
             'sellers': ([str],),  # noqa: E501
             'brand_ids': ([str],),  # noqa: E501
+            'sku_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +103,7 @@ class SkuSearchRequestPreview(ModelNormal):
         'retailer_id': 'retailerId',  # noqa: E501
         'sellers': 'sellers',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
+        'sku_type': 'skuType',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,6 +153,7 @@ class SkuSearchRequestPreview(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             sellers ([str]): A list of seller names and/or seller Id's. [optional]  # noqa: E501
             brand_ids ([str]): A list of brand Id's. [optional]  # noqa: E501
+            sku_type (str): Enum to set isSellerSku field. [optional] if omitted the server will use the default value of "brand"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,6 +243,7 @@ class SkuSearchRequestPreview(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             sellers ([str]): A list of seller names and/or seller Id's. [optional]  # noqa: E501
             brand_ids ([str]): A list of brand Id's. [optional]  # noqa: E501
+            sku_type (str): Enum to set isSellerSku field. [optional] if omitted the server will use the default value of "brand"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -5,6 +5,7 @@ Model of ApplicationSummary
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**application_id** | **int** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organization_id** | **int** |  | [optional] 
 **description** | **str** |  | [optional] 

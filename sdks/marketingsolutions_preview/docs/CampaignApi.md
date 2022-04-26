@@ -82,7 +82,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = campaign_api.CampaignApi(api_client)
     create_ad_set_request = CreateAdSetRequest(
         data=CreateAdSetResource(
-            type="AdSet",
             attributes=CreateAdSet(
                 name="name_example",
                 dataset_id="dataset_id_example",
@@ -146,19 +145,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     excluded_audience_ids=[
                         "excluded_audience_ids_example",
                     ],
-                    audience_similar=AudienceSimilar(
-                        audience_name="audience_name_example",
-                        visitor_types=[
-                            "nonVisitor",
-                        ],
-                    ),
                     audience_website_visitor=AudienceWebsiteVisitor(
-                        visitor_types=[
-                            "nonVisitor",
-                        ],
-                    ),
-                    audience_contact_list=AudienceContactList(
-                        audience_id="audience_id_example",
                         visitor_types=[
                             "nonVisitor",
                         ],
@@ -176,6 +163,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 tracking_code="tracking_code_example",
                 media_type="display",
             ),
+            type="AdSet",
         ),
     ) # CreateAdSetRequest | the ad sets to create (optional)
 
@@ -258,7 +246,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = campaign_api.CampaignApi(api_client)
     create_campaign_request = CreateCampaignRequest(
         data=CreateCampaignResource(
-            type="Campaign",
             attributes=CreateCampaign(
                 name="name_example",
                 advertiser_id="advertiser_id_example",
@@ -269,6 +256,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     spend_limit_amount=3.14,
                 ),
             ),
+            type="Campaign",
         ),
     ) # CreateCampaignRequest | the campaigns to create (optional)
 
@@ -1974,11 +1962,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     patch_ad_set_category_bid_list_request = PatchAdSetCategoryBidListRequest(
         data=[
             PatchAdSetCategoryBidResource(
-                id="id_example",
-                type="AdSetCategoryBid",
                 attributes=PatchAdSetCategoryBid(
                     bid_amount=3.14,
                 ),
+                id="id_example",
+                type="AdSetCategoryBid",
             ),
         ],
     ) # PatchAdSetCategoryBidListRequest |  (optional)
@@ -2073,11 +2061,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     patch_ad_set_display_multiplier_list_request = PatchAdSetDisplayMultiplierListRequest(
         data=[
             PatchAdSetDisplayMultiplierResource(
-                id="id_example",
-                type="AdSetDisplayMultiplier",
                 attributes=PatchAdSetDisplayMultiplier(
                     display_multiplier=3.14,
                 ),
+                id="id_example",
+                type="AdSetDisplayMultiplier",
             ),
         ],
     ) # PatchAdSetDisplayMultiplierListRequest |  (optional)

@@ -71,6 +71,14 @@ class StatisticsReportQueryMessage(ModelNormal):
             'DEVICE': "Device",
             'CAMPAIGNID': "CampaignId",
             'CAMPAIGN': "Campaign",
+            'ADID': "AdId",
+            'AD': "Ad",
+            'COUPONID': "CouponId",
+            'COUPON': "Coupon",
+            'MARKETINGOBJECTIVEID': "MarketingObjectiveId",
+            'MARKETINGOBJECTIVE': "MarketingObjective",
+            'CHANNELID': "ChannelId",
+            'CHANNEL': "Channel",
         },
     }
 
@@ -78,6 +86,12 @@ class StatisticsReportQueryMessage(ModelNormal):
         ('dimensions',): {
         },
         ('metrics',): {
+        },
+        ('ad_set_ids',): {
+        },
+        ('ad_set_names',): {
+        },
+        ('ad_set_status',): {
         },
     }
 
@@ -109,6 +123,9 @@ class StatisticsReportQueryMessage(ModelNormal):
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
             'advertiser_ids': (str,),  # noqa: E501
+            'ad_set_ids': ([str],),  # noqa: E501
+            'ad_set_names': ([str],),  # noqa: E501
+            'ad_set_status': ([str],),  # noqa: E501
             'timezone': (str,),  # noqa: E501
         }
 
@@ -125,6 +142,9 @@ class StatisticsReportQueryMessage(ModelNormal):
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'advertiser_ids': 'advertiserIds',  # noqa: E501
+        'ad_set_ids': 'adSetIds',  # noqa: E501
+        'ad_set_names': 'adSetNames',  # noqa: E501
+        'ad_set_status': 'adSetStatus',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
 
@@ -178,6 +198,9 @@ class StatisticsReportQueryMessage(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             advertiser_ids (str): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
+            ad_set_ids ([str]): list of adSets ids. If empty, all the adSets will be fetched. [optional]  # noqa: E501
+            ad_set_names ([str]): list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
+            ad_set_status ([str]): list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
             timezone (str): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -275,6 +298,9 @@ class StatisticsReportQueryMessage(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             advertiser_ids (str): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
+            ad_set_ids ([str]): list of adSets ids. If empty, all the adSets will be fetched. [optional]  # noqa: E501
+            ad_set_names ([str]): list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
+            ad_set_status ([str]): list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
             timezone (str): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 

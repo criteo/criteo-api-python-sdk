@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **description** | **str** | A product description. | [optional] 
 **category_id** | **str** | The category Id. | [optional] 
 **category** | **str** | The full category breadcrumb in the retailers catalog. | [optional] 
+**is_seller_sku** | **bool** | An indication of if the sku is seller sku. | [optional] 
 **seller_id** | **str** | The id of the seller. | [optional] 
 **seller_name** | **str** | The name of the seller. | [optional] 
 **gtin** | **str** | A GTIN identifier for the product if available. Covers variations such as EANs and UPCs. | [optional] 

@@ -82,6 +82,7 @@ class ErrorMessage(ModelNormal):
         """
         return {
             'trace_id': (str,),  # noqa: E501
+            'trace_identifier': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'code': (str,),  # noqa: E501
             'instance': (str,),  # noqa: E501
@@ -96,6 +97,7 @@ class ErrorMessage(ModelNormal):
 
     attribute_map = {
         'trace_id': 'traceId',  # noqa: E501
+        'trace_identifier': 'traceIdentifier',  # noqa: E501
         'type': 'type',  # noqa: E501
         'code': 'code',  # noqa: E501
         'instance': 'instance',  # noqa: E501
@@ -105,6 +107,7 @@ class ErrorMessage(ModelNormal):
 
     read_only_vars = {
         'trace_id',  # noqa: E501
+        'trace_identifier',  # noqa: E501
         'type',  # noqa: E501
         'code',  # noqa: E501
         'instance',  # noqa: E501
@@ -151,6 +154,7 @@ class ErrorMessage(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             trace_id (str): [optional]  # noqa: E501
+            trace_identifier (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             code (str): [optional]  # noqa: E501
             instance (str): [optional]  # noqa: E501
@@ -238,6 +242,7 @@ class ErrorMessage(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             trace_id (str): [optional]  # noqa: E501
+            trace_identifier (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
             code (str): [optional]  # noqa: E501
             instance (str): [optional]  # noqa: E501

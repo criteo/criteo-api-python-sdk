@@ -81,6 +81,7 @@ class ApplicationSummaryModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'application_id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'organization_id': (int,),  # noqa: E501
             'description': (str,),  # noqa: E501
@@ -93,6 +94,7 @@ class ApplicationSummaryModel(ModelNormal):
 
 
     attribute_map = {
+        'application_id': 'applicationId',  # noqa: E501
         'name': 'name',  # noqa: E501
         'organization_id': 'organizationId',  # noqa: E501
         'description': 'description',  # noqa: E501
@@ -140,6 +142,7 @@ class ApplicationSummaryModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            application_id (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             organization_id (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501
@@ -225,6 +228,7 @@ class ApplicationSummaryModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            application_id (int): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             organization_id (int): [optional]  # noqa: E501
             description (str): [optional]  # noqa: E501

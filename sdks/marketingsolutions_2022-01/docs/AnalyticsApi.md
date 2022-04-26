@@ -50,6 +50,15 @@ with criteo_api_marketingsolutions_v2022_01.ApiClient(configuration) as api_clie
     api_instance = analytics_api.AnalyticsApi(api_client)
     statistics_report_query_message = StatisticsReportQueryMessage(
         advertiser_ids="advertiser_ids_example",
+        ad_set_ids=[
+            "ad_set_ids_example",
+        ],
+        ad_set_names=[
+            "ad_set_names_example",
+        ],
+        ad_set_status=[
+            "ad_set_status_example",
+        ],
         dimensions=[
             "AdsetId",
         ],

@@ -55,6 +55,11 @@ class ExternalRetailer(ModelNormal):
     """
 
     allowed_values = {
+        ('campaign_eligibilities',): {
+            'UNKNOWN': "unknown",
+            'AUCTION': "auction",
+            'PREFERRED': "preferred",
+        },
     }
 
     validations = {
@@ -85,6 +90,7 @@ class ExternalRetailer(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
+            'campaign_eligibilities': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -94,6 +100,7 @@ class ExternalRetailer(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
+        'campaign_eligibilities': 'campaignEligibilities',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,6 +147,7 @@ class ExternalRetailer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            campaign_eligibilities ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,6 +233,7 @@ class ExternalRetailer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            campaign_eligibilities ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

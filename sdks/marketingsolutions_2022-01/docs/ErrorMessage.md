@@ -6,6 +6,7 @@ This is the message defining an error
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **trace_id** | **str** |  | [optional] [readonly] 
+**trace_identifier** | **str** |  | [optional] [readonly] 
 **type** | **str** |  | [optional] [readonly] 
 **code** | **str** |  | [optional] [readonly] 
 **instance** | **str** |  | [optional] [readonly] 

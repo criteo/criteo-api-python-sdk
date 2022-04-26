@@ -30,13 +30,9 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.audience_contact_list import AudienceContactList
     from criteo_api_marketingsolutions_preview.model.audience_custom import AudienceCustom
-    from criteo_api_marketingsolutions_preview.model.audience_similar import AudienceSimilar
     from criteo_api_marketingsolutions_preview.model.audience_website_visitor import AudienceWebsiteVisitor
-    globals()['AudienceContactList'] = AudienceContactList
     globals()['AudienceCustom'] = AudienceCustom
-    globals()['AudienceSimilar'] = AudienceSimilar
     globals()['AudienceWebsiteVisitor'] = AudienceWebsiteVisitor
 
 
@@ -98,9 +94,7 @@ class CreateAdSetAudienceConfiguration(ModelNormal):
             'min_days_since_last_visit': (int,),  # noqa: E501
             'max_days_since_last_visit': (int,),  # noqa: E501
             'excluded_audience_ids': ([str],),  # noqa: E501
-            'audience_similar': (AudienceSimilar,),  # noqa: E501
             'audience_website_visitor': (AudienceWebsiteVisitor,),  # noqa: E501
-            'audience_contact_list': (AudienceContactList,),  # noqa: E501
             'audience_custom': (AudienceCustom,),  # noqa: E501
         }
 
@@ -113,9 +107,7 @@ class CreateAdSetAudienceConfiguration(ModelNormal):
         'min_days_since_last_visit': 'minDaysSinceLastVisit',  # noqa: E501
         'max_days_since_last_visit': 'maxDaysSinceLastVisit',  # noqa: E501
         'excluded_audience_ids': 'excludedAudienceIds',  # noqa: E501
-        'audience_similar': 'audienceSimilar',  # noqa: E501
         'audience_website_visitor': 'audienceWebsiteVisitor',  # noqa: E501
-        'audience_contact_list': 'audienceContactList',  # noqa: E501
         'audience_custom': 'audienceCustom',  # noqa: E501
     }
 
@@ -163,9 +155,7 @@ class CreateAdSetAudienceConfiguration(ModelNormal):
             min_days_since_last_visit (int): The minimum days since last visit on the advertiser web site for being part of this audience, if not null. [optional]  # noqa: E501
             max_days_since_last_visit (int): The maximum days since last visit on the advertiser web site for being part of this audience, if not null. [optional]  # noqa: E501
             excluded_audience_ids ([str]): The list of audience ids that define who CANNOT be targeted by the ad set. So far, only contact list are supported here. [optional]  # noqa: E501
-            audience_similar (AudienceSimilar): [optional]  # noqa: E501
             audience_website_visitor (AudienceWebsiteVisitor): [optional]  # noqa: E501
-            audience_contact_list (AudienceContactList): [optional]  # noqa: E501
             audience_custom (AudienceCustom): [optional]  # noqa: E501
         """
 
@@ -251,9 +241,7 @@ class CreateAdSetAudienceConfiguration(ModelNormal):
             min_days_since_last_visit (int): The minimum days since last visit on the advertiser web site for being part of this audience, if not null. [optional]  # noqa: E501
             max_days_since_last_visit (int): The maximum days since last visit on the advertiser web site for being part of this audience, if not null. [optional]  # noqa: E501
             excluded_audience_ids ([str]): The list of audience ids that define who CANNOT be targeted by the ad set. So far, only contact list are supported here. [optional]  # noqa: E501
-            audience_similar (AudienceSimilar): [optional]  # noqa: E501
             audience_website_visitor (AudienceWebsiteVisitor): [optional]  # noqa: E501
-            audience_contact_list (AudienceContactList): [optional]  # noqa: E501
             audience_custom (AudienceCustom): [optional]  # noqa: E501
         """
 
