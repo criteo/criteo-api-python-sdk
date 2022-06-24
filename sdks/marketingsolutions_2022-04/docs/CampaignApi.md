@@ -400,28 +400,13 @@ with criteo_api_marketingsolutions_v2022_04.ApiClient(configuration) as api_clie
                         ),
                         geo_location=AdSetGeoLocation(
                             countries=NillableAdSetTargetingRule(
-                                value=AdSetTargetingRule(
-                                    operand="undefined",
-                                    values=[
-                                        "values_example",
-                                    ],
-                                ),
+                                value=,
                             ),
                             subdivisions=NillableAdSetTargetingRule(
-                                value=AdSetTargetingRule(
-                                    operand="undefined",
-                                    values=[
-                                        "values_example",
-                                    ],
-                                ),
+                                value=,
                             ),
                             zip_codes=NillableAdSetTargetingRule(
-                                value=AdSetTargetingRule(
-                                    operand="undefined",
-                                    values=[
-                                        "values_example",
-                                    ],
-                                ),
+                                value=,
                             ),
                         ),
                         frequency_capping=AdSetFrequencyCapping(

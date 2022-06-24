@@ -1743,28 +1743,13 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                         ),
                         geo_location=AdSetGeoLocation(
                             countries=NillableAdSetTargetingRule(
-                                value=AdSetTargetingRule(
-                                    operand="undefined",
-                                    values=[
-                                        "values_example",
-                                    ],
-                                ),
+                                value=,
                             ),
                             subdivisions=NillableAdSetTargetingRule(
-                                value=AdSetTargetingRule(
-                                    operand="undefined",
-                                    values=[
-                                        "values_example",
-                                    ],
-                                ),
+                                value=,
                             ),
                             zip_codes=NillableAdSetTargetingRule(
-                                value=AdSetTargetingRule(
-                                    operand="undefined",
-                                    values=[
-                                        "values_example",
-                                    ],
-                                ),
+                                value=,
                             ),
                         ),
                         frequency_capping=AdSetFrequencyCapping(
