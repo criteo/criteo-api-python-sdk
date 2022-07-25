@@ -97,7 +97,7 @@ class ProductSet(ModelNormal):
         """
         lazy_import()
         return {
-            'partner_id': (str,),  # noqa: E501
+            'dataset_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'is_enabled': (bool,),  # noqa: E501
@@ -113,7 +113,7 @@ class ProductSet(ModelNormal):
 
 
     attribute_map = {
-        'partner_id': 'partnerId',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
         'name': 'name',  # noqa: E501
         'status': 'status',  # noqa: E501
         'is_enabled': 'isEnabled',  # noqa: E501
@@ -164,7 +164,7 @@ class ProductSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            partner_id (str): The partner to which the product set belong. [optional]  # noqa: E501
+            dataset_id (str): The dataset to which the product set belong. [optional]  # noqa: E501
             name (str): The name of the product set. [optional]  # noqa: E501
             status (str): The status of the product set. [optional]  # noqa: E501
             is_enabled (bool): True if the product set is active. [optional]  # noqa: E501
@@ -253,7 +253,7 @@ class ProductSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            partner_id (str): The partner to which the product set belong. [optional]  # noqa: E501
+            dataset_id (str): The dataset to which the product set belong. [optional]  # noqa: E501
             name (str): The name of the product set. [optional]  # noqa: E501
             status (str): The status of the product set. [optional]  # noqa: E501
             is_enabled (bool): True if the product set is active. [optional]  # noqa: E501

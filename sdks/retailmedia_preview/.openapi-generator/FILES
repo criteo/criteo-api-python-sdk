@@ -25,9 +25,12 @@ criteo_api_retailmedia_preview/model/brand_preview_list_response.py
 criteo_api_retailmedia_preview/model/common_error.py
 criteo_api_retailmedia_preview/model/common_problem.py
 criteo_api_retailmedia_preview/model/common_warning.py
-criteo_api_retailmedia_preview/model/create_audience_body.py
-criteo_api_retailmedia_preview/model/create_audience_request.py
+criteo_api_retailmedia_preview/model/create_retail_media_audience.py
+criteo_api_retailmedia_preview/model/create_retail_media_audience_attributes.py
+criteo_api_retailmedia_preview/model/create_retail_media_audience_body.py
+criteo_api_retailmedia_preview/model/create_retail_media_audience_request.py
 criteo_api_retailmedia_preview/model/create_retail_media_audience_response.py
+criteo_api_retailmedia_preview/model/customer_list_details.py
 criteo_api_retailmedia_preview/model/envelope_report_request.py
 criteo_api_retailmedia_preview/model/envelope_report_status.py
 criteo_api_retailmedia_preview/model/error.py
@@ -100,6 +103,7 @@ criteo_api_retailmedia_preview/model/sku_data_preview.py
 criteo_api_retailmedia_preview/model/sku_data_preview_list_response.py
 criteo_api_retailmedia_preview/model/sku_search_request_preview.py
 criteo_api_retailmedia_preview/model/sku_search_request_preview_request.py
+criteo_api_retailmedia_preview/model/user_behavior_details.py
 criteo_api_retailmedia_preview/model_utils.py
 criteo_api_retailmedia_preview/models/__init__.py
 criteo_api_retailmedia_preview/rest.py
@@ -116,9 +120,12 @@ docs/CampaignApi.md
 docs/CommonError.md
 docs/CommonProblem.md
 docs/CommonWarning.md
-docs/CreateAudienceBody.md
-docs/CreateAudienceRequest.md
+docs/CreateRetailMediaAudience.md
+docs/CreateRetailMediaAudienceAttributes.md
+docs/CreateRetailMediaAudienceBody.md
+docs/CreateRetailMediaAudienceRequest.md
 docs/CreateRetailMediaAudienceResponse.md
+docs/CustomerListDetails.md
 docs/EnvelopeReportRequest.md
 docs/EnvelopeReportStatus.md
 docs/Error.md
@@ -193,6 +200,7 @@ docs/SkuDataPreview.md
 docs/SkuDataPreviewListResponse.md
 docs/SkuSearchRequestPreview.md
 docs/SkuSearchRequestPreviewRequest.md
+docs/UserBehaviorDetails.md
 git_push.sh
 requirements.txt
 setup.cfg

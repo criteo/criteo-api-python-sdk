@@ -142,7 +142,7 @@ class Tag(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            html_tag (str): Third party html tag. [optional]  # noqa: E501
+            html_tag (str): Html tag. [optional]  # noqa: E501
             size (Size): [optional]  # noqa: E501
         """
 
@@ -225,7 +225,7 @@ class Tag(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            html_tag (str): Third party html tag. [optional]  # noqa: E501
+            html_tag (str): Html tag. [optional]  # noqa: E501
             size (Size): [optional]  # noqa: E501
         """
 

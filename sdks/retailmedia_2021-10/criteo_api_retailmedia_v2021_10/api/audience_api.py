@@ -21,7 +21,7 @@ from criteo_api_retailmedia_v2021_10.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_v2021_10.model.create_audience_request import CreateAudienceRequest
+from criteo_api_retailmedia_v2021_10.model.create_retail_media_audience_request import CreateRetailMediaAudienceRequest
 from criteo_api_retailmedia_v2021_10.model.create_retail_media_audience_response import CreateRetailMediaAudienceResponse
 from criteo_api_retailmedia_v2021_10.model.get_page_of_audiences_by_account_id_response import GetPageOfAudiencesByAccountIdResponse
 
@@ -41,7 +41,7 @@ class AudienceApi(object):
         def __create_audience(
             self,
             account_id,
-            create_audience_request,
+            create_retail_media_audience_request,
             **kwargs
         ):
             """create_audience  # noqa: E501
@@ -50,12 +50,12 @@ class AudienceApi(object):
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.create_audience(account_id, create_audience_request, async_req=True)
+            >>> thread = api.create_audience(account_id, create_retail_media_audience_request, async_req=True)
             >>> result = thread.get()
 
             Args:
                 account_id (str): ID of the account to which this audience belongs.
-                create_audience_request (CreateAudienceRequest):
+                create_retail_media_audience_request (CreateRetailMediaAudienceRequest):
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -104,8 +104,8 @@ class AudienceApi(object):
             kwargs['_host_index'] = kwargs.get('_host_index')
             kwargs['account_id'] = \
                 account_id
-            kwargs['create_audience_request'] = \
-                create_audience_request
+            kwargs['create_retail_media_audience_request'] = \
+                create_retail_media_audience_request
             return self.call_with_http_info(**kwargs)
 
         self.create_audience = _Endpoint(
@@ -122,11 +122,11 @@ class AudienceApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'create_audience_request',
+                    'create_retail_media_audience_request',
                 ],
                 'required': [
                     'account_id',
-                    'create_audience_request',
+                    'create_retail_media_audience_request',
                 ],
                 'nullable': [
                 ],
@@ -143,15 +143,15 @@ class AudienceApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'create_audience_request':
-                        (CreateAudienceRequest,),
+                    'create_retail_media_audience_request':
+                        (CreateRetailMediaAudienceRequest,),
                 },
                 'attribute_map': {
                     'account_id': 'accountId',
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'create_audience_request': 'body',
+                    'create_retail_media_audience_request': 'body',
                 },
                 'collection_format_map': {
                 }

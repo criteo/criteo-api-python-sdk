@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **create_audience**
-> CreateRetailMediaAudienceResponse create_audience(account_id, create_audience_request)
+> CreateRetailMediaAudienceResponse create_audience(account_id, create_retail_media_audience_request)
 
 
 
@@ -22,8 +22,8 @@ Create an audience for a given account ID
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import audience_api
-from criteo_api_retailmedia_preview.model.create_audience_request import CreateAudienceRequest
 from criteo_api_retailmedia_preview.model.create_retail_media_audience_response import CreateRetailMediaAudienceResponse
+from criteo_api_retailmedia_preview.model.create_retail_media_audience_request import CreateRetailMediaAudienceRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -47,10 +47,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
     account_id = "68004146450571264" # str | ID of the account to which this audience belongs.
-    create_audience_request = CreateAudienceRequest(
-        data=CreateAudienceBody(
+    create_retail_media_audience_request = CreateRetailMediaAudienceRequest(
+        data=CreateRetailMediaAudienceBody(
             type="RetailMediaAudience",
-            attributes=RetailMediaAudienceAttributes(
+            attributes=CreateRetailMediaAudienceAttributes(
                 user_type="viewer",
                 lookback_window="P7D",
                 brand_ids=[
@@ -60,14 +60,14 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                     "category_ids_example",
                 ],
                 retailer_id="68004146450571264",
-                name="name_example",
+                name="Test audience",
             ),
         ),
-    ) # CreateAudienceRequest | 
+    ) # CreateRetailMediaAudienceRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_audience(account_id, create_audience_request)
+        api_response = api_instance.create_audience(account_id, create_retail_media_audience_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling AudienceApi->create_audience: %s\n" % e)
@@ -79,7 +79,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| ID of the account to which this audience belongs. |
- **create_audience_request** | [**CreateAudienceRequest**](CreateAudienceRequest.md)|  |
+ **create_retail_media_audience_request** | [**CreateRetailMediaAudienceRequest**](CreateRetailMediaAudienceRequest.md)|  |
 
 ### Return type
 

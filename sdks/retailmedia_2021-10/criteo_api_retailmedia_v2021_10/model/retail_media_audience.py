@@ -59,6 +59,10 @@ class RetailMediaAudience(ModelNormal):
     """
 
     allowed_values = {
+        ('audience_type',): {
+            'CUSTOMERLIST': "customerList",
+            'USERBEHAVIOR': "userBehavior",
+        },
     }
 
     validations = {
@@ -87,8 +91,9 @@ class RetailMediaAudience(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (str,),  # noqa: E501
+            'audience_type': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
+            'type': (str,),  # noqa: E501
             'attributes': (RetailMediaAudienceAttributes,),  # noqa: E501
         }
 
@@ -98,8 +103,9 @@ class RetailMediaAudience(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
+        'audience_type': 'audienceType',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'type': 'type',  # noqa: E501
         'attributes': 'attributes',  # noqa: E501
     }
 
@@ -110,12 +116,13 @@ class RetailMediaAudience(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, id, attributes, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, audience_type, id, type, attributes, *args, **kwargs):  # noqa: E501
         """RetailMediaAudience - a model defined in OpenAPI
 
         Args:
-            type (str): the name of the entity type
+            audience_type (str): Type of the audience
             id (str): Unique ID of this audience.
+            type (str): Name of the entity i.e. RetailMediaAudienceSummary
             attributes (RetailMediaAudienceAttributes):
 
         Keyword Args:
@@ -176,8 +183,9 @@ class RetailMediaAudience(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
+        self.audience_type = audience_type
         self.id = id
+        self.type = type
         self.attributes = attributes
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -199,12 +207,13 @@ class RetailMediaAudience(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, id, attributes, *args, **kwargs):  # noqa: E501
+    def __init__(self, audience_type, id, type, attributes, *args, **kwargs):  # noqa: E501
         """RetailMediaAudience - a model defined in OpenAPI
 
         Args:
-            type (str): the name of the entity type
+            audience_type (str): Type of the audience
             id (str): Unique ID of this audience.
+            type (str): Name of the entity i.e. RetailMediaAudienceSummary
             attributes (RetailMediaAudienceAttributes):
 
         Keyword Args:
@@ -263,8 +272,9 @@ class RetailMediaAudience(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
+        self.audience_type = audience_type
         self.id = id
+        self.type = type
         self.attributes = attributes
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

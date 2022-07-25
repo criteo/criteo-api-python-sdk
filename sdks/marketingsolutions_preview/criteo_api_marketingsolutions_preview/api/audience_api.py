@@ -21,6 +21,31 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_marketingsolutions_preview.model.audience_bulk_create_input_v1 import AudienceBulkCreateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_bulk_delete_input_v1 import AudienceBulkDeleteInputV1
+from criteo_api_marketingsolutions_preview.model.audience_bulk_update_input_v1 import AudienceBulkUpdateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_compute_sizes_input_v1 import AudienceComputeSizesInputV1
+from criteo_api_marketingsolutions_preview.model.audience_entity_v1_audience_search_metadata_v1_list_response import AudienceEntityV1AudienceSearchMetadataV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_entity_v1_list_response import AudienceEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_estimate_size_input_v1 import AudienceEstimateSizeInputV1
+from criteo_api_marketingsolutions_preview.model.audience_id_entity_v1_list_response import AudienceIdEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_search_input_v1 import AudienceSearchInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_create_input_v1 import AudienceSegmentBulkCreateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_delete_input_v1 import AudienceSegmentBulkDeleteInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_update_input_v1 import AudienceSegmentBulkUpdateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_compute_sizes_input_v1 import AudienceSegmentComputeSizesInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_entity_v1_audience_segment_search_metadata_v1_list_response import AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_segment_entity_v1_list_response import AudienceSegmentEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_segment_estimate_size_input_v1 import AudienceSegmentEstimateSizeInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_id_entity_v1_list_response import AudienceSegmentIdEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_segment_search_input_v1 import AudienceSegmentSearchInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_size_entity_v1_list_response import AudienceSegmentSizeEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_segment_size_estimation_v1_response import AudienceSegmentSizeEstimationV1Response
+from criteo_api_marketingsolutions_preview.model.audience_size_entity_v1_list_response import AudienceSizeEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_size_estimation_v1_response import AudienceSizeEstimationV1Response
+from criteo_api_marketingsolutions_preview.model.commerce_audience_segment_brand_entity_v1_list_response import CommerceAudienceSegmentBrandEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.commerce_audience_segment_interest_entity_v1_list_response import CommerceAudienceSegmentInterestEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.contact_list_statistics_entity_v1_response import ContactListStatisticsEntityV1Response
 from criteo_api_marketingsolutions_preview.model.contactlist_amendment_request import ContactlistAmendmentRequest
 from criteo_api_marketingsolutions_preview.model.contactlist_with_attributes_amendment_request import ContactlistWithAttributesAmendmentRequest
 from criteo_api_marketingsolutions_preview.model.delete_audience_contact_list_response import DeleteAudienceContactListResponse
@@ -45,6 +70,958 @@ class AudienceApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        def __bulk_create_audience_segments(
+            self,
+            **kwargs
+        ):
+            """bulk_create_audience_segments  # noqa: E501
+
+            Creates all segments with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.bulk_create_audience_segments(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_segment_bulk_create_input_v1 (AudienceSegmentBulkCreateInputV1): Segment creation parameter. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSegmentEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.bulk_create_audience_segments = _Endpoint(
+            settings={
+                'response_type': (AudienceSegmentEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/create',
+                'operation_id': 'bulk_create_audience_segments',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_bulk_create_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_bulk_create_input_v1':
+                        (AudienceSegmentBulkCreateInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_segment_bulk_create_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__bulk_create_audience_segments
+        )
+
+        def __bulk_create_audiences(
+            self,
+            **kwargs
+        ):
+            """bulk_create_audiences  # noqa: E501
+
+            Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.bulk_create_audiences(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_bulk_create_input_v1 (AudienceBulkCreateInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.bulk_create_audiences = _Endpoint(
+            settings={
+                'response_type': (AudienceEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audiences/create',
+                'operation_id': 'bulk_create_audiences',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_bulk_create_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_bulk_create_input_v1':
+                        (AudienceBulkCreateInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_bulk_create_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__bulk_create_audiences
+        )
+
+        def __bulk_delete_audience_segment(
+            self,
+            **kwargs
+        ):
+            """bulk_delete_audience_segment  # noqa: E501
+
+            Delete the segments associated to the given audience IDs.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.bulk_delete_audience_segment(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_segment_bulk_delete_input_v1 (AudienceSegmentBulkDeleteInputV1): Segment delete request.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSegmentIdEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.bulk_delete_audience_segment = _Endpoint(
+            settings={
+                'response_type': (AudienceSegmentIdEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/delete',
+                'operation_id': 'bulk_delete_audience_segment',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_bulk_delete_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_bulk_delete_input_v1':
+                        (AudienceSegmentBulkDeleteInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_segment_bulk_delete_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__bulk_delete_audience_segment
+        )
+
+        def __bulk_delete_audiences(
+            self,
+            **kwargs
+        ):
+            """bulk_delete_audiences  # noqa: E501
+
+            Deletes the audiences associated to the given audience IDs.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.bulk_delete_audiences(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_bulk_delete_input_v1 (AudienceBulkDeleteInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceIdEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.bulk_delete_audiences = _Endpoint(
+            settings={
+                'response_type': (AudienceIdEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audiences/delete',
+                'operation_id': 'bulk_delete_audiences',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_bulk_delete_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_bulk_delete_input_v1':
+                        (AudienceBulkDeleteInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_bulk_delete_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__bulk_delete_audiences
+        )
+
+        def __bulk_update_audience_segments(
+            self,
+            **kwargs
+        ):
+            """bulk_update_audience_segments  # noqa: E501
+
+            Updates the properties of all segments with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.bulk_update_audience_segments(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_segment_bulk_update_input_v1 (AudienceSegmentBulkUpdateInputV1): Segment Update request. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSegmentEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.bulk_update_audience_segments = _Endpoint(
+            settings={
+                'response_type': (AudienceSegmentEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments',
+                'operation_id': 'bulk_update_audience_segments',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_bulk_update_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_bulk_update_input_v1':
+                        (AudienceSegmentBulkUpdateInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_segment_bulk_update_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__bulk_update_audience_segments
+        )
+
+        def __bulk_update_audiences(
+            self,
+            **kwargs
+        ):
+            """bulk_update_audiences  # noqa: E501
+
+            Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.bulk_update_audiences(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_bulk_update_input_v1 (AudienceBulkUpdateInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.bulk_update_audiences = _Endpoint(
+            settings={
+                'response_type': (AudienceEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audiences',
+                'operation_id': 'bulk_update_audiences',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_bulk_update_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_bulk_update_input_v1':
+                        (AudienceBulkUpdateInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_bulk_update_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__bulk_update_audiences
+        )
+
+        def __compute_audience_segments_sizes(
+            self,
+            **kwargs
+        ):
+            """compute_audience_segments_sizes  # noqa: E501
+
+            Gets the size of all segments. An error is returned for those whose size calculation is not supported.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.compute_audience_segments_sizes(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_segment_compute_sizes_input_v1 (AudienceSegmentComputeSizesInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSegmentSizeEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.compute_audience_segments_sizes = _Endpoint(
+            settings={
+                'response_type': (AudienceSegmentSizeEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/compute-sizes',
+                'operation_id': 'compute_audience_segments_sizes',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_compute_sizes_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_compute_sizes_input_v1':
+                        (AudienceSegmentComputeSizesInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_segment_compute_sizes_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__compute_audience_segments_sizes
+        )
+
+        def __compute_audiences_sizes(
+            self,
+            **kwargs
+        ):
+            """compute_audiences_sizes  # noqa: E501
+
+            Gets the size of all audiences. An error is returned for those whose size calculation is not supported.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.compute_audiences_sizes(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_compute_sizes_input_v1 (AudienceComputeSizesInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSizeEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.compute_audiences_sizes = _Endpoint(
+            settings={
+                'response_type': (AudienceSizeEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audiences/compute-sizes',
+                'operation_id': 'compute_audiences_sizes',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_compute_sizes_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_compute_sizes_input_v1':
+                        (AudienceComputeSizesInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_compute_sizes_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__compute_audiences_sizes
+        )
 
         def __create_audience(
             self,
@@ -285,6 +1262,244 @@ class AudienceApi(object):
             callable=__delete_identifiers
         )
 
+        def __estimate_audience_segment_size(
+            self,
+            **kwargs
+        ):
+            """estimate_audience_segment_size  # noqa: E501
+
+            Gets the size estimation of a non existent segment . An error is returned when size calculation is not supported.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.estimate_audience_segment_size(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_segment_estimate_size_input_v1 (AudienceSegmentEstimateSizeInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSegmentSizeEstimationV1Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.estimate_audience_segment_size = _Endpoint(
+            settings={
+                'response_type': (AudienceSegmentSizeEstimationV1Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/estimate-size',
+                'operation_id': 'estimate_audience_segment_size',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_estimate_size_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_estimate_size_input_v1':
+                        (AudienceSegmentEstimateSizeInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_segment_estimate_size_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__estimate_audience_segment_size
+        )
+
+        def __estimate_audience_size(
+            self,
+            **kwargs
+        ):
+            """estimate_audience_size  # noqa: E501
+
+            Gets the size estimation of a non existent audience. An error is returned when size calculation is not supported.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.estimate_audience_size(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                audience_estimate_size_input_v1 (AudienceEstimateSizeInputV1): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSizeEstimationV1Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.estimate_audience_size = _Endpoint(
+            settings={
+                'response_type': (AudienceSizeEstimationV1Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audiences/estimate-size',
+                'operation_id': 'estimate_audience_size',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_estimate_size_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_estimate_size_input_v1':
+                        (AudienceEstimateSizeInputV1,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'audience_estimate_size_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__estimate_audience_size
+        )
+
         def __get_audiences(
             self,
             **kwargs
@@ -396,6 +1611,389 @@ class AudienceApi(object):
             },
             api_client=api_client,
             callable=__get_audiences
+        )
+
+        def __get_commerce_brands(
+            self,
+            advertiser_id,
+            country,
+            **kwargs
+        ):
+            """get_commerce_brands  # noqa: E501
+
+            Returns a list with all available commerce brands that can be used to define a commerce segment.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_commerce_brands(advertiser_id, country, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                advertiser_id (str): The advertiser ID.
+                country (str): The ISO 3166-1 alpha-2 country code.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                CommerceAudienceSegmentBrandEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['advertiser_id'] = \
+                advertiser_id
+            kwargs['country'] = \
+                country
+            return self.call_with_http_info(**kwargs)
+
+        self.get_commerce_brands = _Endpoint(
+            settings={
+                'response_type': (CommerceAudienceSegmentBrandEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/commerce-brands',
+                'operation_id': 'get_commerce_brands',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'required': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (str,),
+                    'country':
+                        (str,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiser-id',
+                    'country': 'country',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'country': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_commerce_brands
+        )
+
+        def __get_commerce_interests(
+            self,
+            advertiser_id,
+            country,
+            **kwargs
+        ):
+            """get_commerce_interests  # noqa: E501
+
+            Returns a list with all available commerce interests that can be used to define a commerce segment. These commerce interests correspond to the Google product taxonomy.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_commerce_interests(advertiser_id, country, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                advertiser_id (str): The advertiser ID.
+                country (str): The ISO 3166-1 alpha-2 country code.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                CommerceAudienceSegmentInterestEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['advertiser_id'] = \
+                advertiser_id
+            kwargs['country'] = \
+                country
+            return self.call_with_http_info(**kwargs)
+
+        self.get_commerce_interests = _Endpoint(
+            settings={
+                'response_type': (CommerceAudienceSegmentInterestEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/commerce-interests',
+                'operation_id': 'get_commerce_interests',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'required': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (str,),
+                    'country':
+                        (str,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiser-id',
+                    'country': 'country',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'country': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_commerce_interests
+        )
+
+        def __get_contact_list_statistics(
+            self,
+            audience_segment_id,
+            **kwargs
+        ):
+            """get_contact_list_statistics  # noqa: E501
+
+            Returns the statistics of a contact list segment.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_contact_list_statistics(audience_segment_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                audience_segment_id (int): The segment ID.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ContactListStatisticsEntityV1Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['audience_segment_id'] = \
+                audience_segment_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_contact_list_statistics = _Endpoint(
+            settings={
+                'response_type': (ContactListStatisticsEntityV1Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
+                'operation_id': 'get_contact_list_statistics',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_id',
+                ],
+                'required': [
+                    'audience_segment_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'audience_segment_id': 'audience-segment-id',
+                },
+                'location_map': {
+                    'audience_segment_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_contact_list_statistics
         )
 
         def __modify_audience(
@@ -905,4 +2503,266 @@ class AudienceApi(object):
             },
             api_client=api_client,
             callable=__remove_audience
+        )
+
+        def __search_audience_segments(
+            self,
+            **kwargs
+        ):
+            """search_audience_segments  # noqa: E501
+
+            Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.search_audience_segments(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional]
+                offset (int): The (zero-based) offset into the collection. The default is 0.. [optional]
+                audience_segment_search_input_v1 (AudienceSegmentSearchInputV1): Segment search filters.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.search_audience_segments = _Endpoint(
+            settings={
+                'response_type': (AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/search',
+                'operation_id': 'search_audience_segments',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'limit',
+                    'offset',
+                    'audience_segment_search_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'audience_segment_search_input_v1':
+                        (AudienceSegmentSearchInputV1,),
+                },
+                'attribute_map': {
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'limit': 'query',
+                    'offset': 'query',
+                    'audience_segment_search_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__search_audience_segments
+        )
+
+        def __search_audiences(
+            self,
+            **kwargs
+        ):
+            """search_audiences  # noqa: E501
+
+            Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.search_audiences(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional]
+                offset (int): The (zero-based) offset into the collection. The default is 0.. [optional]
+                audience_search_input_v1 (AudienceSearchInputV1): Audience search filters.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AudienceEntityV1AudienceSearchMetadataV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.search_audiences = _Endpoint(
+            settings={
+                'response_type': (AudienceEntityV1AudienceSearchMetadataV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audiences/search',
+                'operation_id': 'search_audiences',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'limit',
+                    'offset',
+                    'audience_search_input_v1',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'audience_search_input_v1':
+                        (AudienceSearchInputV1,),
+                },
+                'attribute_map': {
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'limit': 'query',
+                    'offset': 'query',
+                    'audience_search_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__search_audiences
         )

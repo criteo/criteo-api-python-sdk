@@ -30,12 +30,14 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_preview.model.adaptive_write_attributes import AdaptiveWriteAttributes
     from criteo_api_marketingsolutions_preview.model.dynamic_write_attributes import DynamicWriteAttributes
+    from criteo_api_marketingsolutions_preview.model.html_tag_write_attributes import HtmlTagWriteAttributes
     from criteo_api_marketingsolutions_preview.model.image_write_attributes import ImageWriteAttributes
-    from criteo_api_marketingsolutions_preview.model.third_party_html_write_attributes import ThirdPartyHtmlWriteAttributes
+    globals()['AdaptiveWriteAttributes'] = AdaptiveWriteAttributes
     globals()['DynamicWriteAttributes'] = DynamicWriteAttributes
+    globals()['HtmlTagWriteAttributes'] = HtmlTagWriteAttributes
     globals()['ImageWriteAttributes'] = ImageWriteAttributes
-    globals()['ThirdPartyHtmlWriteAttributes'] = ThirdPartyHtmlWriteAttributes
 
 
 class CreativeWrite(ModelNormal):
@@ -92,14 +94,14 @@ class CreativeWrite(ModelNormal):
         lazy_import()
         return {
             'name': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
-            'advertiser_id': (str,),  # noqa: E501
-            'partner_id': (str,),  # noqa: E501
             'ad_set_id': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'format': (str,),  # noqa: E501
+            'dataset_id': (str,),  # noqa: E501
             'image_write_attributes': (ImageWriteAttributes,),  # noqa: E501
-            'third_party_html_write_attributes': (ThirdPartyHtmlWriteAttributes,),  # noqa: E501
+            'html_tag_write_attributes': (HtmlTagWriteAttributes,),  # noqa: E501
             'dynamic_write_attributes': (DynamicWriteAttributes,),  # noqa: E501
+            'adaptive_write_attributes': (AdaptiveWriteAttributes,),  # noqa: E501
         }
 
     @cached_property
@@ -109,14 +111,14 @@ class CreativeWrite(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'advertiser_id': 'advertiserId',  # noqa: E501
-        'partner_id': 'partnerId',  # noqa: E501
         'ad_set_id': 'adSetId',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'format': 'format',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
         'image_write_attributes': 'imageWriteAttributes',  # noqa: E501
-        'third_party_html_write_attributes': 'thirdPartyHtmlWriteAttributes',  # noqa: E501
+        'html_tag_write_attributes': 'htmlTagWriteAttributes',  # noqa: E501
         'dynamic_write_attributes': 'dynamicWriteAttributes',  # noqa: E501
+        'adaptive_write_attributes': 'adaptiveWriteAttributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -126,14 +128,12 @@ class CreativeWrite(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, type, advertiser_id, partner_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, ad_set_id, *args, **kwargs):  # noqa: E501
         """CreativeWrite - a model defined in OpenAPI
 
         Args:
             name (str): The name of the creative
-            type (str): The type of the creative  You can use \"Image\", \" ThirdPartyHtml\" or \"Dynamic\"
-            advertiser_id (str): Advertiser linked to the Creative
-            partner_id (str): Partner linked to the Creative
+            ad_set_id (str): Ad set on which Creative will be applied
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -166,11 +166,13 @@ class CreativeWrite(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_id (str): Ad set on which Creative will be applied. [optional]  # noqa: E501
             description (str): The description of the creative. [optional]  # noqa: E501
+            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\" or \"Dynamic\". [optional]  # noqa: E501
+            dataset_id (str): Dataset linked to the Creative. [optional]  # noqa: E501
             image_write_attributes (ImageWriteAttributes): [optional]  # noqa: E501
-            third_party_html_write_attributes (ThirdPartyHtmlWriteAttributes): [optional]  # noqa: E501
+            html_tag_write_attributes (HtmlTagWriteAttributes): [optional]  # noqa: E501
             dynamic_write_attributes (DynamicWriteAttributes): [optional]  # noqa: E501
+            adaptive_write_attributes (AdaptiveWriteAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -199,9 +201,7 @@ class CreativeWrite(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.type = type
-        self.advertiser_id = advertiser_id
-        self.partner_id = partner_id
+        self.ad_set_id = ad_set_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -222,14 +222,12 @@ class CreativeWrite(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, type, advertiser_id, partner_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, ad_set_id, *args, **kwargs):  # noqa: E501
         """CreativeWrite - a model defined in OpenAPI
 
         Args:
             name (str): The name of the creative
-            type (str): The type of the creative  You can use \"Image\", \" ThirdPartyHtml\" or \"Dynamic\"
-            advertiser_id (str): Advertiser linked to the Creative
-            partner_id (str): Partner linked to the Creative
+            ad_set_id (str): Ad set on which Creative will be applied
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -262,11 +260,13 @@ class CreativeWrite(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_id (str): Ad set on which Creative will be applied. [optional]  # noqa: E501
             description (str): The description of the creative. [optional]  # noqa: E501
+            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\" or \"Dynamic\". [optional]  # noqa: E501
+            dataset_id (str): Dataset linked to the Creative. [optional]  # noqa: E501
             image_write_attributes (ImageWriteAttributes): [optional]  # noqa: E501
-            third_party_html_write_attributes (ThirdPartyHtmlWriteAttributes): [optional]  # noqa: E501
+            html_tag_write_attributes (HtmlTagWriteAttributes): [optional]  # noqa: E501
             dynamic_write_attributes (DynamicWriteAttributes): [optional]  # noqa: E501
+            adaptive_write_attributes (AdaptiveWriteAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -293,9 +293,7 @@ class CreativeWrite(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.type = type
-        self.advertiser_id = advertiser_id
-        self.partner_id = partner_id
+        self.ad_set_id = ad_set_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

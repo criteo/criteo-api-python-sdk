@@ -5,7 +5,7 @@ Entity to create a product set
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**partner_id** | **str** |  | [optional] 
+**dataset_id** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **is_draft** | **bool** |  | [optional] 
 **rules** | [**[ProductSetRule]**](ProductSetRule.md) |  | [optional] 

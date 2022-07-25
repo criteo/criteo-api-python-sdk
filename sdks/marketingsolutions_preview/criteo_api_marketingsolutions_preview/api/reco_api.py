@@ -284,20 +284,20 @@ class RecoApi(object):
 
         def __fetch_product_sets(
             self,
-            partner_id,
+            dataset_id,
             **kwargs
         ):
             """fetch_product_sets  # noqa: E501
 
-            Fetch product sets of a given partner  # noqa: E501
+            Fetch product sets of a given dataset  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
-            >>> thread = api.fetch_product_sets(partner_id, async_req=True)
+            >>> thread = api.fetch_product_sets(dataset_id, async_req=True)
             >>> result = thread.get()
 
             Args:
-                partner_id (str): The ID of the partner that should be used for product set retrieval
+                dataset_id (str): The ID of the dataset that should be used for product set retrieval
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -344,8 +344,8 @@ class RecoApi(object):
                 '_check_return_type', True
             )
             kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['partner_id'] = \
-                partner_id
+            kwargs['dataset_id'] = \
+                dataset_id
             return self.call_with_http_info(**kwargs)
 
         self.fetch_product_sets = _Endpoint(
@@ -354,17 +354,17 @@ class RecoApi(object):
                 'auth': [
                     'oauth'
                 ],
-                'endpoint_path': '/preview/product-sets/partner/{partner-id}',
+                'endpoint_path': '/preview/product-sets/dataset/{dataset-id}',
                 'operation_id': 'fetch_product_sets',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'partner_id',
+                    'dataset_id',
                 ],
                 'required': [
-                    'partner_id',
+                    'dataset_id',
                 ],
                 'nullable': [
                 ],
@@ -379,14 +379,14 @@ class RecoApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'partner_id':
+                    'dataset_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'partner_id': 'partner-id',
+                    'dataset_id': 'dataset-id',
                 },
                 'location_map': {
-                    'partner_id': 'path',
+                    'dataset_id': 'path',
                 },
                 'collection_format_map': {
                 }

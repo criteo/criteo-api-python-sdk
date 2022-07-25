@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_product_set**](RecoApi.md#create_product_set) | **POST** /preview/product-sets | 
 [**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /preview/product-sets/{product-set-id} | 
-[**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /preview/product-sets/partner/{partner-id} | 
+[**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /preview/product-sets/dataset/{dataset-id} | 
 [**preview_product_sets_preview_post**](RecoApi.md#preview_product_sets_preview_post) | **POST** /preview/product-sets/preview | 
 [**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /preview/product-sets/{product-set-id} | 
 
@@ -54,7 +54,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=ValueResourceOfCreateProductSetRequest(
             type="type_example",
             attributes=CreateProductSetRequest(
-                partner_id="partner_id_example",
+                dataset_id="dataset_id_example",
                 name="name_example",
                 is_draft=True,
                 rules=[
@@ -191,11 +191,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_product_sets**
-> ResourceCollectionOutcomeOfProductSet fetch_product_sets(partner_id)
+> ResourceCollectionOutcomeOfProductSet fetch_product_sets(dataset_id)
 
 
 
-Fetch product sets of a given partner
+Fetch product sets of a given dataset
 
 ### Example
 
@@ -228,11 +228,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = reco_api.RecoApi(api_client)
-    partner_id = "partner-id_example" # str | The ID of the partner that should be used for product set retrieval
+    dataset_id = "dataset-id_example" # str | The ID of the dataset that should be used for product set retrieval
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.fetch_product_sets(partner_id)
+        api_response = api_instance.fetch_product_sets(dataset_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling RecoApi->fetch_product_sets: %s\n" % e)
@@ -243,7 +243,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **partner_id** | **str**| The ID of the partner that should be used for product set retrieval |
+ **dataset_id** | **str**| The ID of the dataset that should be used for product set retrieval |
 
 ### Return type
 

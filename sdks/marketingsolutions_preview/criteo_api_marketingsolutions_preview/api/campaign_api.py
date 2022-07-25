@@ -21,15 +21,22 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_entity_v1_response import AdSetAudienceLinkEntityV1Response
+from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_input_entity_v1 import AdSetAudienceLinkInputEntityV1
 from criteo_api_marketingsolutions_preview.model.ad_set_category_bid_list_response import AdSetCategoryBidListResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_display_multiplier_list_response import AdSetDisplayMultiplierListResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_disable_result_response import AdSetTargetingDealIdsDisableResultResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_response import AdSetTargetingDealIdsResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_set_result_response import AdSetTargetingDealIdsSetResultResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_disable_result_response import AdSetTargetingVideoPositioningDisableResultResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_response import AdSetTargetingVideoPositioningResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_set_result_response import AdSetTargetingVideoPositioningSetResultResponse
 from criteo_api_marketingsolutions_preview.model.api_error_response import ApiErrorResponse
 from criteo_api_marketingsolutions_preview.model.api_request_of_targeting_entity import ApiRequestOfTargetingEntity
 from criteo_api_marketingsolutions_preview.model.api_response_of_targeting_entity import ApiResponseOfTargetingEntity
 from criteo_api_marketingsolutions_preview.model.campaign_list_response import CampaignListResponse
 from criteo_api_marketingsolutions_preview.model.campaign_response import CampaignResponse
 from criteo_api_marketingsolutions_preview.model.campaign_search_request import CampaignSearchRequest
-from criteo_api_marketingsolutions_preview.model.create_ad_set_request import CreateAdSetRequest
 from criteo_api_marketingsolutions_preview.model.create_campaign_request import CreateCampaignRequest
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_rule import OciBrandSafetyRule
@@ -48,6 +55,9 @@ from criteo_api_marketingsolutions_preview.model.response_ad_set_id import Respo
 from criteo_api_marketingsolutions_preview.model.response_read_ad_set import ResponseReadAdSet
 from criteo_api_marketingsolutions_preview.model.responses_ad_set_id import ResponsesAdSetId
 from criteo_api_marketingsolutions_preview.model.responses_read_ad_set import ResponsesReadAdSet
+from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_deal_ids_request import SetAdSetTargetingDealIdsRequest
+from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_video_positioning_request import SetAdSetTargetingVideoPositioningRequest
+from criteo_api_marketingsolutions_preview.model.supply_vendor_list_response import SupplyVendorListResponse
 from criteo_api_marketingsolutions_preview.model.target_type import TargetType
 
 
@@ -62,125 +72,6 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-
-        def __create_ad_set(
-            self,
-            **kwargs
-        ):
-            """create_ad_set  # noqa: E501
-
-            Create the specified ad set  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.create_ad_set(async_req=True)
-            >>> result = thread.get()
-
-
-            Keyword Args:
-                create_ad_set_request (CreateAdSetRequest): the ad sets to create. [optional]
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (int/float/tuple): timeout setting for this request. If
-                    one number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                ResponseReadAdSet
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            return self.call_with_http_info(**kwargs)
-
-        self.create_ad_set = _Endpoint(
-            settings={
-                'response_type': (ResponseReadAdSet,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/ad-sets',
-                'operation_id': 'create_ad_set',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'create_ad_set_request',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'create_ad_set_request':
-                        (CreateAdSetRequest,),
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                    'create_ad_set_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
-                ]
-            },
-            api_client=api_client,
-            callable=__create_ad_set
-        )
 
         def __create_campaign(
             self,
@@ -1093,6 +984,248 @@ class CampaignApi(object):
             callable=__delete_oc_itargeting_rule
         )
 
+        def __disable_ad_set_targeting_deal_ids(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """disable_ad_set_targeting_deal_ids  # noqa: E501
+
+            Disable the Deal Id Targeting configuration for the ad set whose id is specified  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.disable_ad_set_targeting_deal_ids(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Id of the Ad Set
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetTargetingDealIdsDisableResultResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.disable_ad_set_targeting_deal_ids = _Endpoint(
+            settings={
+                'response_type': (AdSetTargetingDealIdsDisableResultResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable',
+                'operation_id': 'disable_ad_set_targeting_deal_ids',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__disable_ad_set_targeting_deal_ids
+        )
+
+        def __disable_ad_set_targeting_video_positioning(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """disable_ad_set_targeting_video_positioning  # noqa: E501
+
+            Disable the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.disable_ad_set_targeting_video_positioning(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Id of the Ad Set
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetTargetingVideoPositioningDisableResultResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.disable_ad_set_targeting_video_positioning = _Endpoint(
+            settings={
+                'response_type': (AdSetTargetingVideoPositioningDisableResultResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable',
+                'operation_id': 'disable_ad_set_targeting_video_positioning',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__disable_ad_set_targeting_video_positioning
+        )
+
         def __get_ad_set(
             self,
             ad_set_id,
@@ -1212,6 +1345,248 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__get_ad_set
+        )
+
+        def __get_ad_set_targeting_deal_ids(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """get_ad_set_targeting_deal_ids  # noqa: E501
+
+            Get the Deal Id Targeting configuration for the ad set whose id is specified  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_ad_set_targeting_deal_ids(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Id of the Ad Set
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetTargetingDealIdsResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_ad_set_targeting_deal_ids = _Endpoint(
+            settings={
+                'response_type': (AdSetTargetingDealIdsResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids',
+                'operation_id': 'get_ad_set_targeting_deal_ids',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_ad_set_targeting_deal_ids
+        )
+
+        def __get_ad_set_targeting_video_positioning(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """get_ad_set_targeting_video_positioning  # noqa: E501
+
+            Get the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_ad_set_targeting_video_positioning(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Id of the Ad Set
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetTargetingVideoPositioningResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_ad_set_targeting_video_positioning = _Endpoint(
+            settings={
+                'response_type': (AdSetTargetingVideoPositioningResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning',
+                'operation_id': 'get_ad_set_targeting_video_positioning',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_ad_set_targeting_video_positioning
         )
 
         def __get_advertiser_bundle_rules(
@@ -2327,6 +2702,115 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__get_oc_itargeting_rule
+        )
+
+        def __get_supply_vendor_list(
+            self,
+            **kwargs
+        ):
+            """get_supply_vendor_list  # noqa: E501
+
+            Fetch the list of available supply vendors for any Ad Set targetings  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_supply_vendor_list(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                SupplyVendorListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.get_supply_vendor_list = _Endpoint(
+            settings={
+                'response_type': (SupplyVendorListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/targeting/supply-vendors',
+                'operation_id': 'get_supply_vendor_list',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_supply_vendor_list
         )
 
         def __patch_ad_sets(
@@ -4115,6 +4599,268 @@ class CampaignApi(object):
             callable=__search_campaigns
         )
 
+        def __set_ad_set_targeting_deal_ids(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """set_ad_set_targeting_deal_ids  # noqa: E501
+
+            Set the Deal Id Targeting configuration for the ad set whose id is specified  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.set_ad_set_targeting_deal_ids(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Id of the Ad Set
+
+            Keyword Args:
+                set_ad_set_targeting_deal_ids_request (SetAdSetTargetingDealIdsRequest): the new Deal Id Targeting configuration. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetTargetingDealIdsSetResultResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.set_ad_set_targeting_deal_ids = _Endpoint(
+            settings={
+                'response_type': (AdSetTargetingDealIdsSetResultResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids',
+                'operation_id': 'set_ad_set_targeting_deal_ids',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                    'set_ad_set_targeting_deal_ids_request',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                    'set_ad_set_targeting_deal_ids_request':
+                        (SetAdSetTargetingDealIdsRequest,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                    'set_ad_set_targeting_deal_ids_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__set_ad_set_targeting_deal_ids
+        )
+
+        def __set_ad_set_targeting_video_positioning(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """set_ad_set_targeting_video_positioning  # noqa: E501
+
+            Set the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.set_ad_set_targeting_video_positioning(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Id of the Ad Set
+
+            Keyword Args:
+                set_ad_set_targeting_video_positioning_request (SetAdSetTargetingVideoPositioningRequest): the new Video Positioning Targeting configuration. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetTargetingVideoPositioningSetResultResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.set_ad_set_targeting_video_positioning = _Endpoint(
+            settings={
+                'response_type': (AdSetTargetingVideoPositioningSetResultResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning',
+                'operation_id': 'set_ad_set_targeting_video_positioning',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                    'set_ad_set_targeting_video_positioning_request',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                    'set_ad_set_targeting_video_positioning_request':
+                        (SetAdSetTargetingVideoPositioningRequest,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                    'set_ad_set_targeting_video_positioning_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__set_ad_set_targeting_video_positioning
+        )
+
         def __start_ad_sets(
             self,
             **kwargs
@@ -4351,6 +5097,137 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__stop_ad_sets
+        )
+
+        def __update_ad_set_audience(
+            self,
+            ad_set_id,
+            **kwargs
+        ):
+            """update_ad_set_audience  # noqa: E501
+
+            Link or unlink an audience with an ad set  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.update_ad_set_audience(ad_set_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                ad_set_id (str): Ad set id
+
+            Keyword Args:
+                ad_set_audience_link_input_entity_v1 (AdSetAudienceLinkInputEntityV1): Audience and ad set to link. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AdSetAudienceLinkEntityV1Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['ad_set_id'] = \
+                ad_set_id
+            return self.call_with_http_info(**kwargs)
+
+        self.update_ad_set_audience = _Endpoint(
+            settings={
+                'response_type': (AdSetAudienceLinkEntityV1Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/audience',
+                'operation_id': 'update_ad_set_audience',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                    'ad_set_audience_link_input_entity_v1',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                    'ad_set_audience_link_input_entity_v1':
+                        (AdSetAudienceLinkInputEntityV1,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                    'ad_set_audience_link_input_entity_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__update_ad_set_audience
         )
 
         def __upsert_oc_ibrand_safety_rule(

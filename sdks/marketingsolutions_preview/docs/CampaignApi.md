@@ -4,7 +4,6 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ad_set**](CampaignApi.md#create_ad_set) | **POST** /preview/marketing-solutions/ad-sets | 
 [**create_campaign**](CampaignApi.md#create_campaign) | **POST** /preview/marketing-solutions/campaigns | 
 [**delete_advertiser_bundle_rules**](CampaignApi.md#delete_advertiser_bundle_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
 [**delete_advertiser_domain_rules**](CampaignApi.md#delete_advertiser_domain_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
@@ -12,7 +11,11 @@ Method | HTTP request | Description
 [**delete_campaign_domain_rules**](CampaignApi.md#delete_campaign_domain_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/domain-rules | 
 [**delete_oc_ibrand_safety_rule**](CampaignApi.md#delete_oc_ibrand_safety_rule) | **DELETE** /preview/brand-safety/oci | 
 [**delete_oc_itargeting_rule**](CampaignApi.md#delete_oc_itargeting_rule) | **DELETE** /preview/targeting/oci | 
+[**disable_ad_set_targeting_deal_ids**](CampaignApi.md#disable_ad_set_targeting_deal_ids) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable | 
+[**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | 
 [**get_ad_set**](CampaignApi.md#get_ad_set) | **GET** /preview/marketing-solutions/ad-sets/{adSetId} | 
+[**get_ad_set_targeting_deal_ids**](CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
+[**get_ad_set_targeting_video_positioning**](CampaignApi.md#get_ad_set_targeting_video_positioning) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | 
 [**get_advertiser_bundle_rules**](CampaignApi.md#get_advertiser_bundle_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
 [**get_advertiser_domain_rules**](CampaignApi.md#get_advertiser_domain_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
 [**get_campaign**](CampaignApi.md#get_campaign) | **GET** /preview/marketing-solutions/campaigns/{campaign-id} | 
@@ -22,6 +25,7 @@ Method | HTTP request | Description
 [**get_display_multipliers**](CampaignApi.md#get_display_multipliers) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
 [**get_oc_ibrand_safety_rule**](CampaignApi.md#get_oc_ibrand_safety_rule) | **GET** /preview/brand-safety/oci | 
 [**get_oc_itargeting_rule**](CampaignApi.md#get_oc_itargeting_rule) | **GET** /preview/targeting/oci | 
+[**get_supply_vendor_list**](CampaignApi.md#get_supply_vendor_list) | **GET** /preview/marketing-solutions/ad-sets/targeting/supply-vendors | 
 [**patch_ad_sets**](CampaignApi.md#patch_ad_sets) | **PATCH** /preview/marketing-solutions/ad-sets | 
 [**patch_campaigns**](CampaignApi.md#patch_campaigns) | **PATCH** /preview/marketing-solutions/campaigns | 
 [**patch_category_bid_list**](CampaignApi.md#patch_category_bid_list) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
@@ -36,175 +40,14 @@ Method | HTTP request | Description
 [**put_campaign_domain_rules**](CampaignApi.md#put_campaign_domain_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/domain-rules | 
 [**search_ad_sets**](CampaignApi.md#search_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/search | 
 [**search_campaigns**](CampaignApi.md#search_campaigns) | **POST** /preview/marketing-solutions/campaigns/search | 
+[**set_ad_set_targeting_deal_ids**](CampaignApi.md#set_ad_set_targeting_deal_ids) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
+[**set_ad_set_targeting_video_positioning**](CampaignApi.md#set_ad_set_targeting_video_positioning) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | 
 [**start_ad_sets**](CampaignApi.md#start_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/start | 
 [**stop_ad_sets**](CampaignApi.md#stop_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/stop | 
+[**update_ad_set_audience**](CampaignApi.md#update_ad_set_audience) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/audience | 
 [**upsert_oc_ibrand_safety_rule**](CampaignApi.md#upsert_oc_ibrand_safety_rule) | **POST** /preview/brand-safety/oci | 
 [**upsert_oc_itargeting_rule**](CampaignApi.md#upsert_oc_itargeting_rule) | **POST** /preview/targeting/oci | 
 
-
-# **create_ad_set**
-> ResponseReadAdSet create_ad_set()
-
-
-
-Create the specified ad set
-
-### Example
-
-* OAuth Authentication (oauth):
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.response_read_ad_set import ResponseReadAdSet
-from criteo_api_marketingsolutions_preview.model.create_ad_set_request import CreateAdSetRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    create_ad_set_request = CreateAdSetRequest(
-        data=CreateAdSetResource(
-            attributes=CreateAdSet(
-                name="name_example",
-                dataset_id="dataset_id_example",
-                campaign_id="campaign_id_example",
-                schedule=CreateAdSetSchedule(
-                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                ),
-                bidding=CreateAdSetBidding(
-                    bid_amount=3.14,
-                    bid_strategy="actions",
-                    cost_controller="COS",
-                ),
-                targeting=CreateAdSetTargeting(
-                    delivery_limitations=AdSetDeliveryLimitations(
-                        environments=[
-                            "web",
-                        ],
-                        devices=[
-                            "other",
-                        ],
-                        operating_systems=[
-                            "android",
-                        ],
-                    ),
-                    geo_location=CreateAdSetGeoLocation(
-                        countries=AdSetTargetingRule(
-                            operand="undefined",
-                            values=[
-                                "values_example",
-                            ],
-                        ),
-                        subdivisions=AdSetTargetingRule(
-                            operand="undefined",
-                            values=[
-                                "values_example",
-                            ],
-                        ),
-                        zip_codes=AdSetTargetingRule(
-                            operand="undefined",
-                            values=[
-                                "values_example",
-                            ],
-                        ),
-                    ),
-                    frequency_capping=AdSetFrequencyCapping(
-                        frequency="hourly",
-                        maximum_impressions=1,
-                    ),
-                ),
-                budget=CreateAdSetBudget(
-                    budget_strategy="capped",
-                    budget_renewal="undefined",
-                    budget_delivery_smoothing="accelerated",
-                    budget_delivery_week="undefined",
-                    budget_amount=3.14,
-                ),
-                audience_configuration=CreateAdSetAudienceConfiguration(
-                    min_days_since_last_visit=1,
-                    max_days_since_last_visit=1,
-                    excluded_audience_ids=[
-                        "excluded_audience_ids_example",
-                    ],
-                    audience_website_visitor=AudienceWebsiteVisitor(
-                        visitor_types=[
-                            "nonVisitor",
-                        ],
-                    ),
-                    audience_custom=AudienceCustom(
-                        audience_name="audience_name_example",
-                        included_audience_ids=[
-                            "included_audience_ids_example",
-                        ],
-                        visitor_types=[
-                            "nonVisitor",
-                        ],
-                    ),
-                ),
-                tracking_code="tracking_code_example",
-                media_type="display",
-            ),
-            type="AdSet",
-        ),
-    ) # CreateAdSetRequest | the ad sets to create (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_ad_set(create_ad_set_request=create_ad_set_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->create_ad_set: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **create_ad_set_request** | [**CreateAdSetRequest**](CreateAdSetRequest.md)| the ad sets to create | [optional]
-
-### Return type
-
-[**ResponseReadAdSet**](ResponseReadAdSet.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | The ad set that has been created and errors / warnings |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_campaign**
 > CampaignResponse create_campaign()
@@ -250,6 +93,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 name="name_example",
                 advertiser_id="advertiser_id_example",
                 objective="objective_example",
+                goal="Unspecified",
                 spend_limit=CreateCampaignSpendLimit(
                     spend_limit_type="capped",
                     spend_limit_renewal="undefined",
@@ -881,6 +725,161 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **disable_ad_set_targeting_deal_ids**
+> AdSetTargetingDealIdsDisableResultResponse disable_ad_set_targeting_deal_ids(ad_set_id)
+
+
+
+Disable the Deal Id Targeting configuration for the ad set whose id is specified
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_disable_result_response import AdSetTargetingDealIdsDisableResultResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.disable_ad_set_targeting_deal_ids(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->disable_ad_set_targeting_deal_ids: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+
+### Return type
+
+[**AdSetTargetingDealIdsDisableResultResponse**](AdSetTargetingDealIdsDisableResultResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the errors/warnings if any |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disable_ad_set_targeting_video_positioning**
+> AdSetTargetingVideoPositioningDisableResultResponse disable_ad_set_targeting_video_positioning(ad_set_id)
+
+
+
+Disable the Video Positioning Targeting configuration for the ad set whose id is specified
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_disable_result_response import AdSetTargetingVideoPositioningDisableResultResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.disable_ad_set_targeting_video_positioning(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->disable_ad_set_targeting_video_positioning: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+
+### Return type
+
+[**AdSetTargetingVideoPositioningDisableResultResponse**](AdSetTargetingVideoPositioningDisableResultResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the errors/warnings if any |  -  |
+**400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_ad_set**
 > ResponseReadAdSet get_ad_set(ad_set_id)
 
@@ -953,6 +952,161 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | data for the ad set |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ad_set_targeting_deal_ids**
+> AdSetTargetingDealIdsResponse get_ad_set_targeting_deal_ids(ad_set_id)
+
+
+
+Get the Deal Id Targeting configuration for the ad set whose id is specified
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_response import AdSetTargetingDealIdsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_ad_set_targeting_deal_ids(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_ad_set_targeting_deal_ids: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+
+### Return type
+
+[**AdSetTargetingDealIdsResponse**](AdSetTargetingDealIdsResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the Deal Id Targeting configuration |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ad_set_targeting_video_positioning**
+> AdSetTargetingVideoPositioningResponse get_ad_set_targeting_video_positioning(ad_set_id)
+
+
+
+Get the Video Positioning Targeting configuration for the ad set whose id is specified
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_response import AdSetTargetingVideoPositioningResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_ad_set_targeting_video_positioning(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_ad_set_targeting_video_positioning: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+
+### Return type
+
+[**AdSetTargetingVideoPositioningResponse**](AdSetTargetingVideoPositioningResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the Video Positioning Targeting configuration |  -  |
+**400** | Bad Request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
@@ -1668,6 +1822,79 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **500** | Internal service error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_supply_vendor_list**
+> SupplyVendorListResponse get_supply_vendor_list()
+
+
+
+Fetch the list of available supply vendors for any Ad Set targetings
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.supply_vendor_list_response import SupplyVendorListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+
+    # example, this endpoint has no required or optional parameters
+    try:
+        api_response = api_instance.get_supply_vendor_list()
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_supply_vendor_list: %s\n" % e)
+```
+
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SupplyVendorListResponse**](SupplyVendorListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the errors/warnings if any |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3120,6 +3347,218 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **set_ad_set_targeting_deal_ids**
+> AdSetTargetingDealIdsSetResultResponse set_ad_set_targeting_deal_ids(ad_set_id)
+
+
+
+Set the Deal Id Targeting configuration for the ad set whose id is specified
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_deal_ids_request import SetAdSetTargetingDealIdsRequest
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_set_result_response import AdSetTargetingDealIdsSetResultResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+    set_ad_set_targeting_deal_ids_request = SetAdSetTargetingDealIdsRequest(
+        data=SetAdSetTargetingDealIdsResource(
+            type="type_example",
+            attributes=SetAdSetTargetingDealIds(
+                deal_ids=[
+                    DealId(
+                        deal_identifier="deal_identifier_example",
+                        supply_vendor_id="supply_vendor_id_example",
+                    ),
+                ],
+            ),
+        ),
+    ) # SetAdSetTargetingDealIdsRequest | the new Deal Id Targeting configuration (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.set_ad_set_targeting_deal_ids(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->set_ad_set_targeting_deal_ids: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request=set_ad_set_targeting_deal_ids_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->set_ad_set_targeting_deal_ids: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+ **set_ad_set_targeting_deal_ids_request** | [**SetAdSetTargetingDealIdsRequest**](SetAdSetTargetingDealIdsRequest.md)| the new Deal Id Targeting configuration | [optional]
+
+### Return type
+
+[**AdSetTargetingDealIdsSetResultResponse**](AdSetTargetingDealIdsSetResultResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the errors/warnings if any |  -  |
+**400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_ad_set_targeting_video_positioning**
+> AdSetTargetingVideoPositioningSetResultResponse set_ad_set_targeting_video_positioning(ad_set_id)
+
+
+
+Set the Video Positioning Targeting configuration for the ad set whose id is specified
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_video_positioning_request import SetAdSetTargetingVideoPositioningRequest
+from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_set_result_response import AdSetTargetingVideoPositioningSetResultResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+    set_ad_set_targeting_video_positioning_request = SetAdSetTargetingVideoPositioningRequest(
+        data=SetAdSetTargetingVideoPositioningResource(
+            type="type_example",
+            attributes=SetAdSetTargetingVideoPositioning(
+                video_placement=[
+                    "InBanner",
+                ],
+                playback_method=[
+                    "AutoSoundOn",
+                ],
+                skippable="Required",
+                video_in_stream_position=[
+                    "PreRoll",
+                ],
+                video_player_size=[
+                    "Small",
+                ],
+                video_aspect_ratio=[
+                    "Horizontal",
+                ],
+            ),
+        ),
+    ) # SetAdSetTargetingVideoPositioningRequest | the new Video Positioning Targeting configuration (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.set_ad_set_targeting_video_positioning(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->set_ad_set_targeting_video_positioning: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request=set_ad_set_targeting_video_positioning_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->set_ad_set_targeting_video_positioning: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+ **set_ad_set_targeting_video_positioning_request** | [**SetAdSetTargetingVideoPositioningRequest**](SetAdSetTargetingVideoPositioningRequest.md)| the new Video Positioning Targeting configuration | [optional]
+
+### Return type
+
+[**AdSetTargetingVideoPositioningSetResultResponse**](AdSetTargetingVideoPositioningSetResultResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | the errors/warnings if any |  -  |
+**400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **start_ad_sets**
 > ResponsesAdSetId start_ad_sets()
 
@@ -3289,6 +3728,103 @@ Name | Type | Description  | Notes
 **200** | List of ad sets that have been stopped and errors / warnings by ad set |  -  |
 **400** | Bad Request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_ad_set_audience**
+> AdSetAudienceLinkEntityV1Response update_ad_set_audience(ad_set_id)
+
+
+
+Link or unlink an audience with an ad set
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_entity_v1_response import AdSetAudienceLinkEntityV1Response
+from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_input_entity_v1 import AdSetAudienceLinkInputEntityV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Ad set id
+    ad_set_audience_link_input_entity_v1 = AdSetAudienceLinkInputEntityV1(
+        data=AdSetAudienceLinkEntityV1Resource(
+            attributes=AdSetAudienceLinkEntityV1(
+                audience_id="audience_id_example",
+            ),
+            id="id_example",
+            type="type_example",
+        ),
+    ) # AdSetAudienceLinkInputEntityV1 | Audience and ad set to link (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_ad_set_audience(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_ad_set_audience: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_ad_set_audience(ad_set_id, ad_set_audience_link_input_entity_v1=ad_set_audience_link_input_entity_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_ad_set_audience: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Ad set id |
+ **ad_set_audience_link_input_entity_v1** | [**AdSetAudienceLinkInputEntityV1**](AdSetAudienceLinkInputEntityV1.md)| Audience and ad set to link | [optional]
+
+### Return type
+
+[**AdSetAudienceLinkEntityV1Response**](AdSetAudienceLinkEntityV1Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

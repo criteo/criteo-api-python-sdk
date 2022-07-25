@@ -89,7 +89,7 @@ class CreateProductSetRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'partner_id': (str,),  # noqa: E501
+            'dataset_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'is_draft': (bool,),  # noqa: E501
             'rules': ([ProductSetRule],),  # noqa: E501
@@ -101,7 +101,7 @@ class CreateProductSetRequest(ModelNormal):
 
 
     attribute_map = {
-        'partner_id': 'partnerId',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
         'name': 'name',  # noqa: E501
         'is_draft': 'isDraft',  # noqa: E501
         'rules': 'rules',  # noqa: E501
@@ -148,7 +148,7 @@ class CreateProductSetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            partner_id (str): [optional]  # noqa: E501
+            dataset_id (str): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             is_draft (bool): [optional]  # noqa: E501
             rules ([ProductSetRule]): [optional]  # noqa: E501
@@ -233,7 +233,7 @@ class CreateProductSetRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            partner_id (str): [optional]  # noqa: E501
+            dataset_id (str): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             is_draft (bool): [optional]  # noqa: E501
             rules ([ProductSetRule]): [optional]  # noqa: E501

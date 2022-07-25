@@ -58,6 +58,7 @@ class Ad(ModelNormal):
         ('inventory_type',): {
             'NATIVE': "Native",
             'DISPLAY': "Display",
+            'VIDEO': "Video",
         },
     }
 

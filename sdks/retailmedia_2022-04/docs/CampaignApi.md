@@ -4,6 +4,7 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_asset**](CampaignApi.md#create_asset) | **POST** /2022-04/retail-media/assets | 
 [**get_api202110_external_account_balances_by_account_id**](CampaignApi.md#get_api202110_external_account_balances_by_account_id) | **GET** /2022-04/retail-media/accounts/{account-id}/balances | 
 [**get_api202110_external_account_creatives_by_account_id**](CampaignApi.md#get_api202110_external_account_creatives_by_account_id) | **GET** /2022-04/retail-media/accounts/{account-id}/creatives | 
 [**get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id**](CampaignApi.md#get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id) | **GET** /2022-04/retail-media/auction-line-items/{line-item-id}/targeting/keywords | 
@@ -14,6 +15,8 @@ Method | HTTP request | Description
 [**get_api202110_external_preferred_line_item_targeting_audiences_by_line_item_id**](CampaignApi.md#get_api202110_external_preferred_line_item_targeting_audiences_by_line_item_id) | **GET** /2022-04/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
 [**get_api202110_external_preferred_line_item_targeting_stores_by_line_item_id**](CampaignApi.md#get_api202110_external_preferred_line_item_targeting_stores_by_line_item_id) | **GET** /2022-04/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
 [**get_api202110_external_retailer_pages_by_retailer_id**](CampaignApi.md#get_api202110_external_retailer_pages_by_retailer_id) | **GET** /2022-04/retail-media/retailers/{retailerId}/pages | 
+[**get_api202204_external_categorie_by_category_id**](CampaignApi.md#get_api202204_external_categorie_by_category_id) | **GET** /2022-04/retail-media/categories/{categoryId} | 
+[**get_api202204_external_categories**](CampaignApi.md#get_api202204_external_categories) | **GET** /2022-04/retail-media/categories | 
 [**get_api_v1_external_account_brands_by_account_id**](CampaignApi.md#get_api_v1_external_account_brands_by_account_id) | **GET** /2022-04/retail-media/accounts/{accountId}/brands | 
 [**get_api_v1_external_account_campaigns_by_account_id**](CampaignApi.md#get_api_v1_external_account_campaigns_by_account_id) | **GET** /2022-04/retail-media/accounts/{accountId}/campaigns | 
 [**get_api_v1_external_account_retailers_by_account_id**](CampaignApi.md#get_api_v1_external_account_retailers_by_account_id) | **GET** /2022-04/retail-media/accounts/{accountId}/retailers | 
@@ -51,6 +54,81 @@ Method | HTTP request | Description
 [**put_api_v2_external_auction_line_item_by_line_item_id**](CampaignApi.md#put_api_v2_external_auction_line_item_by_line_item_id) | **PUT** /2022-04/retail-media/auction-line-items/{line-item-id} | 
 [**put_api_v2_external_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api_v2_external_preferred_line_item_by_line_item_id) | **PUT** /2022-04/retail-media/preferred-line-items/{line-item-id} | 
 
+
+# **create_asset**
+> AssetResponse create_asset(asset_file)
+
+
+
+Creates an asset
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_v2022_04
+from criteo_api_retailmedia_v2022_04.api import campaign_api
+from criteo_api_retailmedia_v2022_04.model.asset_response import AssetResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    asset_file =  # file | The asset binary content
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_asset(asset_file)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2022_04.ApiException as e:
+        print("Exception when calling CampaignApi->create_asset: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset_file** | **file**| The asset binary content |
+
+### Return type
+
+[**AssetResponse**](AssetResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_api202110_external_account_balances_by_account_id**
 > Balance202110PagedListResponse get_api202110_external_account_balances_by_account_id(account_id)
@@ -868,6 +946,165 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Pages fetched successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api202204_external_categorie_by_category_id**
+> Category202204 get_api202204_external_categorie_by_category_id(category_id)
+
+
+
+Endpoint to search for a specific category by categoryId.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_v2022_04
+from criteo_api_retailmedia_v2022_04.api import campaign_api
+from criteo_api_retailmedia_v2022_04.model.category202204 import Category202204
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    category_id = 1 # int | ID of the desired category
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api202204_external_categorie_by_category_id(category_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2022_04.ApiException as e:
+        print("Exception when calling CampaignApi->get_api202204_external_categorie_by_category_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category_id** | **int**| ID of the desired category |
+
+### Return type
+
+[**Category202204**](Category202204.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Retrieval completed and category is returned. |  -  |
+**400** | No IDs were passed in. |  -  |
+**500** | A non-request input based error occurred in the server. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api202204_external_categories**
+> Category202204ListResponse get_api202204_external_categories()
+
+
+
+Endpoint to search categories by text and retailer.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_v2022_04
+from criteo_api_retailmedia_v2022_04.api import campaign_api
+from criteo_api_retailmedia_v2022_04.model.category202204_list_response import Category202204ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | The retailer id for which Categories fetched (optional)
+    text_substring = "textSubstring_example" # str | Query string to search across Categories (optional)
+    page_index = 0 # int | The start position in the overall list of matches. Must be zero or greater. (optional) if omitted the server will use the default value of 0
+    page_size = 100 # int | The maximum number of results to return with each call. Must be greater than zero. (optional) if omitted the server will use the default value of 100
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_api202204_external_categories(retailer_id=retailer_id, text_substring=text_substring, page_index=page_index, page_size=page_size)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2022_04.ApiException as e:
+        print("Exception when calling CampaignApi->get_api202204_external_categories: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| The retailer id for which Categories fetched | [optional]
+ **text_substring** | **str**| Query string to search across Categories | [optional]
+ **page_index** | **int**| The start position in the overall list of matches. Must be zero or greater. | [optional] if omitted the server will use the default value of 0
+ **page_size** | **int**| The maximum number of results to return with each call. Must be greater than zero. | [optional] if omitted the server will use the default value of 100
+
+### Return type
+
+[**Category202204ListResponse**](Category202204ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Categories found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

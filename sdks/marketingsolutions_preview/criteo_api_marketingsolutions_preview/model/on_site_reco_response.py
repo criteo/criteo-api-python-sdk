@@ -142,8 +142,8 @@ class OnSiteRecoResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            products ([RecommendedProduct]): Recommended products.. [optional]  # noqa: E501
-            extra_infos ([int]): Additional information in case of non blocking warnings or errors.... [optional]  # noqa: E501
+            products ([RecommendedProduct]): Recommended products. [optional]  # noqa: E501
+            extra_infos ([int]): Additional information in case of warnings, errors.... [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,8 +225,8 @@ class OnSiteRecoResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            products ([RecommendedProduct]): Recommended products.. [optional]  # noqa: E501
-            extra_infos ([int]): Additional information in case of non blocking warnings or errors.... [optional]  # noqa: E501
+            products ([RecommendedProduct]): Recommended products. [optional]  # noqa: E501
+            extra_infos ([int]): Additional information in case of warnings, errors.... [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

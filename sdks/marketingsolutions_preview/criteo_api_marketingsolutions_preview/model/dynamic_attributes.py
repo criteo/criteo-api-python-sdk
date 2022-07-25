@@ -30,8 +30,8 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.creative_logo import CreativeLogo
-    globals()['CreativeLogo'] = CreativeLogo
+    from criteo_api_marketingsolutions_preview.model.image_shape import ImageShape
+    globals()['ImageShape'] = ImageShape
 
 
 class DynamicAttributes(ModelNormal):
@@ -95,7 +95,7 @@ class DynamicAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            'logos': ([CreativeLogo],),  # noqa: E501
+            'logos': ([ImageShape],),  # noqa: E501
             'creative_background_color': (str,),  # noqa: E501
             'body_text_color': (str,),  # noqa: E501
             'prices_color': (str,),  # noqa: E501
@@ -160,7 +160,7 @@ class DynamicAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logos ([CreativeLogo]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
+            logos ([ImageShape]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
             creative_background_color (str): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
             body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
             prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
@@ -248,7 +248,7 @@ class DynamicAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logos ([CreativeLogo]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
+            logos ([ImageShape]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
             creative_background_color (str): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
             body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
             prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501

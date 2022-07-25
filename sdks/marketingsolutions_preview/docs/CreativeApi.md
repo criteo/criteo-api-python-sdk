@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_coupons**](CreativeApi.md#get_coupons) | **GET** /preview/advertisers/{advertiser-id}/coupons | 
 [**get_creative**](CreativeApi.md#get_creative) | **GET** /preview/creatives/{id} | 
 [**get_creative_preview**](CreativeApi.md#get_creative_preview) | **GET** /preview/creatives/{id}/preview | 
+[**get_creative_preview_post**](CreativeApi.md#get_creative_preview_post) | **POST** /preview/creatives/{id}/preview | 
 [**get_creatives**](CreativeApi.md#get_creatives) | **GET** /preview/advertisers/{advertiser-id}/creatives | 
 
 
@@ -64,8 +65,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
     ad_write_request = AdWriteRequest(
         data=AdWriteResource(
-            id="id_example",
-            type="type_example",
             attributes=AdWrite(
                 name="name_example",
                 description="description_example",
@@ -75,6 +74,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 start_date="start_date_example",
                 end_date="end_date_example",
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # AdWriteRequest |  (optional)
 
@@ -127,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_coupon**
-> create_coupon(advertiser_id)
+> CouponResponse create_coupon(advertiser_id)
 
 
 
@@ -167,8 +168,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
     create_coupon_request = CreateCouponRequest(
         data=CreateCouponResource(
-            id="id_example",
-            type="type_example",
             attributes=CreateCoupon(
                 name="name_example",
                 description="description_example",
@@ -190,19 +189,23 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 show_duration=1,
                 rotations_number=1,
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # CreateCouponRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.create_coupon(advertiser_id)
+        api_response = api_instance.create_coupon(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CreativeApi->create_coupon: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_instance.create_coupon(advertiser_id, create_coupon_request=create_coupon_request)
+        api_response = api_instance.create_coupon(advertiser_id, create_coupon_request=create_coupon_request)
+        pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CreativeApi->create_coupon: %s\n" % e)
 ```
@@ -217,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**CouponResponse**](CouponResponse.md)
 
 ### Authorization
 
@@ -232,8 +235,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The created Coupon is returned. |  -  |
-**201** | Success |  -  |
+**201** | The created Coupon is returned. |  -  |
 **400** | The request contained invalid parameters. |  -  |
 **403** | The request was not properly authorized. |  -  |
 
@@ -280,22 +282,19 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
     creative_write_request = CreativeWriteRequest(
         data=CreativeWriteResource(
-            id="id_example",
-            type="type_example",
             attributes=CreativeWrite(
                 name="name_example",
                 ad_set_id="ad_set_id_example",
                 description="description_example",
-                type="type_example",
-                advertiser_id="advertiser_id_example",
-                partner_id="partner_id_example",
+                format="format_example",
+                dataset_id="dataset_id_example",
                 image_write_attributes=ImageWriteAttributes(
                     base64_strings=[
                         "base64_strings_example",
                     ],
                     landing_page_url="landing_page_url_example",
                 ),
-                third_party_html_write_attributes=ThirdPartyHtmlWriteAttributes(
+                html_tag_write_attributes=HtmlTagWriteAttributes(
                     tags=[
                         Tag(
                             html_tag="html_tag_example",
@@ -317,7 +316,43 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     ],
                     product_image_display="product_image_display_example",
                 ),
+                adaptive_write_attributes=AdaptiveWriteAttributes(
+                    layouts=[
+                        "layouts_example",
+                    ],
+                    logo_base64_string="logo_base64_string_example",
+                    headline_text="headline_text_example",
+                    headline_font="headline_font_example",
+                    description_text="description_text_example",
+                    description_font="description_font_example",
+                    calls_to_action=[
+                        "calls_to_action_example",
+                    ],
+                    colors=AdaptiveColors(
+                        logo_area_and_title_color="logo_area_and_title_color_example",
+                        background_color="background_color_example",
+                        text1_color="text1_color_example",
+                        text2_color="text2_color_example",
+                        cta_background_color="cta_background_color_example",
+                        cta_text_color="cta_text_color_example",
+                    ),
+                    image_sets_base64=[
+                        ImageSetBase64(
+                            image_base64_strings=[
+                                "image_base64_strings_example",
+                            ],
+                            headline_text="headline_text_example",
+                        ),
+                    ],
+                    image_display="image_display_example",
+                    video_base64_strings=[
+                        "video_base64_strings_example",
+                    ],
+                    landing_page_url="landing_page_url_example",
+                ),
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # CreativeWriteRequest |  (optional)
 
@@ -640,12 +675,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     id = "id_example" # str | The Coupon identifier to edit.
     update_coupon_request = UpdateCouponRequest(
         data=UpdateCouponResource(
-            id="id_example",
-            type="type_example",
             attributes=UpdateCoupon(
                 start_date="start_date_example",
                 end_date="end_date_example",
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # UpdateCouponRequest |  (optional)
 
@@ -738,22 +773,19 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     id = "id_example" # str | The creative identifier to edit.
     creative_write_request = CreativeWriteRequest(
         data=CreativeWriteResource(
-            id="id_example",
-            type="type_example",
             attributes=CreativeWrite(
                 name="name_example",
                 ad_set_id="ad_set_id_example",
                 description="description_example",
-                type="type_example",
-                advertiser_id="advertiser_id_example",
-                partner_id="partner_id_example",
+                format="format_example",
+                dataset_id="dataset_id_example",
                 image_write_attributes=ImageWriteAttributes(
                     base64_strings=[
                         "base64_strings_example",
                     ],
                     landing_page_url="landing_page_url_example",
                 ),
-                third_party_html_write_attributes=ThirdPartyHtmlWriteAttributes(
+                html_tag_write_attributes=HtmlTagWriteAttributes(
                     tags=[
                         Tag(
                             html_tag="html_tag_example",
@@ -775,7 +807,43 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     ],
                     product_image_display="product_image_display_example",
                 ),
+                adaptive_write_attributes=AdaptiveWriteAttributes(
+                    layouts=[
+                        "layouts_example",
+                    ],
+                    logo_base64_string="logo_base64_string_example",
+                    headline_text="headline_text_example",
+                    headline_font="headline_font_example",
+                    description_text="description_text_example",
+                    description_font="description_font_example",
+                    calls_to_action=[
+                        "calls_to_action_example",
+                    ],
+                    colors=AdaptiveColors(
+                        logo_area_and_title_color="logo_area_and_title_color_example",
+                        background_color="background_color_example",
+                        text1_color="text1_color_example",
+                        text2_color="text2_color_example",
+                        cta_background_color="cta_background_color_example",
+                        cta_text_color="cta_text_color_example",
+                    ),
+                    image_sets_base64=[
+                        ImageSetBase64(
+                            image_base64_strings=[
+                                "image_base64_strings_example",
+                            ],
+                            headline_text="headline_text_example",
+                        ),
+                    ],
+                    image_display="image_display_example",
+                    video_base64_strings=[
+                        "video_base64_strings_example",
+                    ],
+                    landing_page_url="landing_page_url_example",
+                ),
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # CreativeWriteRequest |  (optional)
 
@@ -910,7 +978,7 @@ Name | Type | Description  | Notes
 
 
 
-Get the list of self-services Ads (50 by default, to get a different number of Ads, you can use the offset and limit parameters in the query string) for a given advertiser
+Get the list of self-services Ads for a given advertiser
 
 ### Example
 
@@ -1256,7 +1324,7 @@ Name | Type | Description  | Notes
 
 
 
-Get the list of self-services Coupons (50 by default, to get a different number of Coupons, you can use the offset and limit parameters in the query string) for a given advertiser
+Get the list of self-services Coupons for a given advertiser
 
 ### Example
 
@@ -1506,12 +1574,100 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_creative_preview_post**
+> str get_creative_preview_post(id)
+
+
+
+Get the preview of a specific Creative
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import creative_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = creative_api.CreativeApi(api_client)
+    id = "id_example" # str | The Creative identifier to preview.
+    width = 1 # int | The width of the Creative to preview. (optional)
+    height = 1 # int | The height of the Creative to preview. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_creative_preview_post(id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->get_creative_preview_post: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_creative_preview_post(id, width=width, height=height)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->get_creative_preview_post: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| The Creative identifier to preview. |
+ **width** | **int**| The width of the Creative to preview. | [optional]
+ **height** | **int**| The height of the Creative to preview. | [optional]
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/html, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The preview HTML of a specific Creative is returned. |  -  |
+**400** | The request contained invalid parameters. |  -  |
+**403** | The request was not properly authorized. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_creatives**
 > CreativeListResponse get_creatives(advertiser_id)
 
 
 
-Get the list of self-services Creatives (50 by default, to get a different number of Creatives, you can use the offset and limit parameters in the query string) for a given advertiser
+Get the list of self-services Creatives for a given advertiser
 
 ### Example
 

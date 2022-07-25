@@ -84,6 +84,10 @@ class RecommendedProduct(ModelNormal):
             'product_external_id': (str,),  # noqa: E501
             'click_url': (str,),  # noqa: E501
             'image_url': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'description': (str,),  # noqa: E501
+            'price': (float,),  # noqa: E501
+            'google_category': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -95,6 +99,10 @@ class RecommendedProduct(ModelNormal):
         'product_external_id': 'productExternalId',  # noqa: E501
         'click_url': 'clickUrl',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'price': 'price',  # noqa: E501
+        'google_category': 'googleCategory',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,7 +148,11 @@ class RecommendedProduct(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             product_external_id (str): Product external id. Same id than what is used in user events.. [optional]  # noqa: E501
             click_url (str): Url leading to product details page and also used to track user click.. [optional]  # noqa: E501
-            image_url (str): Product image url.. [optional]  # noqa: E501
+            image_url (str): Product image.. [optional]  # noqa: E501
+            name (str): Product name.. [optional]  # noqa: E501
+            description (str): Product description.. [optional]  # noqa: E501
+            price (float): Product price.. [optional]  # noqa: E501
+            google_category (str): Product google category.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,7 +236,11 @@ class RecommendedProduct(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             product_external_id (str): Product external id. Same id than what is used in user events.. [optional]  # noqa: E501
             click_url (str): Url leading to product details page and also used to track user click.. [optional]  # noqa: E501
-            image_url (str): Product image url.. [optional]  # noqa: E501
+            image_url (str): Product image.. [optional]  # noqa: E501
+            name (str): Product name.. [optional]  # noqa: E501
+            description (str): Product description.. [optional]  # noqa: E501
+            price (float): Product price.. [optional]  # noqa: E501
+            google_category (str): Product google category.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

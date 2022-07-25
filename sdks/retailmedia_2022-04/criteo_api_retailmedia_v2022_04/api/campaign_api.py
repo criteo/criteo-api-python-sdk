@@ -24,6 +24,7 @@ from criteo_api_retailmedia_v2022_04.model_utils import (  # noqa: F401
 from criteo_api_retailmedia_v2022_04.model.add_to_basket_ids_update_model202110_request import AddToBasketIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2022_04.model.add_to_basket_target202110_request import AddToBasketTarget202110Request
 from criteo_api_retailmedia_v2022_04.model.add_to_basket_target202110_response import AddToBasketTarget202110Response
+from criteo_api_retailmedia_v2022_04.model.asset_response import AssetResponse
 from criteo_api_retailmedia_v2022_04.model.auction_line_item_create_model_request import AuctionLineItemCreateModelRequest
 from criteo_api_retailmedia_v2022_04.model.auction_line_item_paged_list_response import AuctionLineItemPagedListResponse
 from criteo_api_retailmedia_v2022_04.model.auction_line_item_response import AuctionLineItemResponse
@@ -34,6 +35,8 @@ from criteo_api_retailmedia_v2022_04.model.audience_target202110_response import
 from criteo_api_retailmedia_v2022_04.model.balance202110_paged_list_response import Balance202110PagedListResponse
 from criteo_api_retailmedia_v2022_04.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
 from criteo_api_retailmedia_v2022_04.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
+from criteo_api_retailmedia_v2022_04.model.category202204 import Category202204
+from criteo_api_retailmedia_v2022_04.model.category202204_list_response import Category202204ListResponse
 from criteo_api_retailmedia_v2022_04.model.common_line_item_paged_list_response import CommonLineItemPagedListResponse
 from criteo_api_retailmedia_v2022_04.model.common_line_item_response import CommonLineItemResponse
 from criteo_api_retailmedia_v2022_04.model.creative202110_list_response import Creative202110ListResponse
@@ -72,6 +75,129 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        def __create_asset(
+            self,
+            asset_file,
+            **kwargs
+        ):
+            """create_asset  # noqa: E501
+
+            Creates an asset  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.create_asset(asset_file, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                asset_file (file): The asset binary content
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                AssetResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['asset_file'] = \
+                asset_file
+            return self.call_with_http_info(**kwargs)
+
+        self.create_asset = _Endpoint(
+            settings={
+                'response_type': (AssetResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/2022-04/retail-media/assets',
+                'operation_id': 'create_asset',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'asset_file',
+                ],
+                'required': [
+                    'asset_file',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'asset_file':
+                        (file,),
+                },
+                'attribute_map': {
+                    'asset_file': 'AssetFile',
+                },
+                'location_map': {
+                    'asset_file': 'form',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'multipart/form-data'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_asset
+        )
 
         def __get_api202110_external_account_balances_by_account_id(
             self,
@@ -1337,6 +1463,268 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__get_api202110_external_retailer_pages_by_retailer_id
+        )
+
+        def __get_api202204_external_categorie_by_category_id(
+            self,
+            category_id,
+            **kwargs
+        ):
+            """get_api202204_external_categorie_by_category_id  # noqa: E501
+
+            Endpoint to search for a specific category by categoryId.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api202204_external_categorie_by_category_id(category_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                category_id (int): ID of the desired category
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                Category202204
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['category_id'] = \
+                category_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api202204_external_categorie_by_category_id = _Endpoint(
+            settings={
+                'response_type': (Category202204,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/2022-04/retail-media/categories/{categoryId}',
+                'operation_id': 'get_api202204_external_categorie_by_category_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'category_id',
+                ],
+                'required': [
+                    'category_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'category_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'category_id': 'categoryId',
+                },
+                'location_map': {
+                    'category_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api202204_external_categorie_by_category_id
+        )
+
+        def __get_api202204_external_categories(
+            self,
+            **kwargs
+        ):
+            """get_api202204_external_categories  # noqa: E501
+
+            Endpoint to search categories by text and retailer.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api202204_external_categories(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                retailer_id (int): The retailer id for which Categories fetched. [optional]
+                text_substring (str): Query string to search across Categories. [optional]
+                page_index (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
+                page_size (int): The maximum number of results to return with each call. Must be greater than zero.. [optional] if omitted the server will use the default value of 100
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                Category202204ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api202204_external_categories = _Endpoint(
+            settings={
+                'response_type': (Category202204ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/2022-04/retail-media/categories',
+                'operation_id': 'get_api202204_external_categories',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'text_substring',
+                    'page_index',
+                    'page_size',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'page_index',
+                    'page_size',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('page_index',): {
+
+                        'inclusive_maximum': 500,
+                        'inclusive_minimum': 0,
+                    },
+                    ('page_size',): {
+
+                        'inclusive_maximum': 100,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'text_substring':
+                        (str,),
+                    'page_index':
+                        (int,),
+                    'page_size':
+                        (int,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailerId',
+                    'text_substring': 'textSubstring',
+                    'page_index': 'pageIndex',
+                    'page_size': 'pageSize',
+                },
+                'location_map': {
+                    'retailer_id': 'query',
+                    'text_substring': 'query',
+                    'page_index': 'query',
+                    'page_size': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api202204_external_categories
         )
 
         def __get_api_v1_external_account_brands_by_account_id(

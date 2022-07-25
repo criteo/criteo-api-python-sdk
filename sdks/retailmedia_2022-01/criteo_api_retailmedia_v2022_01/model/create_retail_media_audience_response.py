@@ -32,10 +32,10 @@ from criteo_api_retailmedia_v2022_01.exceptions import ApiAttributeError
 def lazy_import():
     from criteo_api_retailmedia_v2022_01.model.common_error import CommonError
     from criteo_api_retailmedia_v2022_01.model.common_warning import CommonWarning
-    from criteo_api_retailmedia_v2022_01.model.retail_media_audience import RetailMediaAudience
+    from criteo_api_retailmedia_v2022_01.model.create_retail_media_audience import CreateRetailMediaAudience
     globals()['CommonError'] = CommonError
     globals()['CommonWarning'] = CommonWarning
-    globals()['RetailMediaAudience'] = RetailMediaAudience
+    globals()['CreateRetailMediaAudience'] = CreateRetailMediaAudience
 
 
 class CreateRetailMediaAudienceResponse(ModelNormal):
@@ -91,7 +91,7 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'data': (RetailMediaAudience,),  # noqa: E501
+            'data': (CreateRetailMediaAudience,),  # noqa: E501
             'errors': ([CommonError],),  # noqa: E501
             'warnings': ([CommonWarning],),  # noqa: E501
         }
@@ -108,17 +108,16 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
     }
 
     read_only_vars = {
+        'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, data, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """CreateRetailMediaAudienceResponse - a model defined in OpenAPI
-
-        Args:
-            data (RetailMediaAudience):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,8 +150,9 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonError]): [optional]  # noqa: E501
-            warnings ([CommonWarning]): [optional]  # noqa: E501
+            data (CreateRetailMediaAudience): [optional]  # noqa: E501
+            errors ([CommonError]): errors. [optional]  # noqa: E501
+            warnings ([CommonWarning]): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -180,7 +180,6 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.data = data
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,11 +200,8 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, data, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """CreateRetailMediaAudienceResponse - a model defined in OpenAPI
-
-        Args:
-            data (RetailMediaAudience):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -238,8 +234,9 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonError]): [optional]  # noqa: E501
-            warnings ([CommonWarning]): [optional]  # noqa: E501
+            data (CreateRetailMediaAudience): [optional]  # noqa: E501
+            errors ([CommonError]): errors. [optional]  # noqa: E501
+            warnings ([CommonWarning]): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -265,7 +262,6 @@ class CreateRetailMediaAudienceResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.data = data
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

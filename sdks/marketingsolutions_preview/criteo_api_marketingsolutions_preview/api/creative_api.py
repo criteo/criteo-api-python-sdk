@@ -217,7 +217,7 @@ class CreativeApi(object):
                 async_req (bool): execute request asynchronously
 
             Returns:
-                None
+                CouponResponse
                     If the method is called asynchronously, returns the request
                     thread.
             """
@@ -246,7 +246,7 @@ class CreativeApi(object):
 
         self.create_coupon = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (CouponResponse,),
                 'auth': [
                     'oauth'
                 ],
@@ -1200,7 +1200,7 @@ class CreativeApi(object):
         ):
             """get_ads  # noqa: E501
 
-            Get the list of self-services Ads (50 by default, to get a different number of Ads, you can use the offset and limit parameters in the query string) for a given advertiser  # noqa: E501
+            Get the list of self-services Ads for a given advertiser  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -1734,7 +1734,7 @@ class CreativeApi(object):
         ):
             """get_coupons  # noqa: E501
 
-            Get the list of self-services Coupons (50 by default, to get a different number of Coupons, you can use the offset and limit parameters in the query string) for a given advertiser  # noqa: E501
+            Get the list of self-services Coupons for a given advertiser  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -2114,6 +2114,139 @@ class CreativeApi(object):
             callable=__get_creative_preview
         )
 
+        def __get_creative_preview_post(
+            self,
+            id,
+            **kwargs
+        ):
+            """get_creative_preview_post  # noqa: E501
+
+            Get the preview of a specific Creative  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_creative_preview_post(id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                id (str): The Creative identifier to preview.
+
+            Keyword Args:
+                width (int): The width of the Creative to preview.. [optional]
+                height (int): The height of the Creative to preview.. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                str
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['id'] = \
+                id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_creative_preview_post = _Endpoint(
+            settings={
+                'response_type': (str,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/creatives/{id}/preview',
+                'operation_id': 'get_creative_preview_post',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'width',
+                    'height',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'width':
+                        (int,),
+                    'height':
+                        (int,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                    'width': 'width',
+                    'height': 'height',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'width': 'query',
+                    'height': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/html',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_creative_preview_post
+        )
+
         def __get_creatives(
             self,
             advertiser_id,
@@ -2121,7 +2254,7 @@ class CreativeApi(object):
         ):
             """get_creatives  # noqa: E501
 
-            Get the list of self-services Creatives (50 by default, to get a different number of Creatives, you can use the offset and limit parameters in the query string) for a given advertiser  # noqa: E501
+            Get the list of self-services Creatives for a given advertiser  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
