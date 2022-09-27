@@ -88,6 +88,7 @@ class OnSiteRecoRequest(ModelNormal):
         lazy_import()
         return {
             'nb_requested_products': (int,),  # noqa: E501
+            'partner_id': (int,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
             'user_events': ([UserEvent],),  # noqa: E501
         }
@@ -99,6 +100,7 @@ class OnSiteRecoRequest(ModelNormal):
 
     attribute_map = {
         'nb_requested_products': 'nbRequestedProducts',  # noqa: E501
+        'partner_id': 'partnerId',  # noqa: E501
         'user_id': 'userId',  # noqa: E501
         'user_events': 'userEvents',  # noqa: E501
     }
@@ -110,11 +112,12 @@ class OnSiteRecoRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, nb_requested_products, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, nb_requested_products, partner_id, *args, **kwargs):  # noqa: E501
         """OnSiteRecoRequest - a model defined in OpenAPI
 
         Args:
             nb_requested_products (int): Amount of products to recommend.
+            partner_id (int): Id of the partner.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,6 +180,7 @@ class OnSiteRecoRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.nb_requested_products = nb_requested_products
+        self.partner_id = partner_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -197,11 +201,12 @@ class OnSiteRecoRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, nb_requested_products, *args, **kwargs):  # noqa: E501
+    def __init__(self, nb_requested_products, partner_id, *args, **kwargs):  # noqa: E501
         """OnSiteRecoRequest - a model defined in OpenAPI
 
         Args:
             nb_requested_products (int): Amount of products to recommend.
+            partner_id (int): Id of the partner.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -262,6 +267,7 @@ class OnSiteRecoRequest(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.nb_requested_products = nb_requested_products
+        self.partner_id = partner_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

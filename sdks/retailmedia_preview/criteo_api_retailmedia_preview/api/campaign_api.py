@@ -1897,6 +1897,7 @@ class CampaignApi(object):
                 retailer_id (int): The retailer id for which brands should be fetched.
 
             Keyword Args:
+                sku_stock_type_filter (str): Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1959,6 +1960,7 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'retailer_id',
+                    'sku_stock_type_filter',
                 ],
                 'required': [
                     'retailer_id',
@@ -1966,6 +1968,7 @@ class CampaignApi(object):
                 'nullable': [
                 ],
                 'enum': [
+                    'sku_stock_type_filter',
                 ],
                 'validation': [
                 ]
@@ -1974,16 +1977,26 @@ class CampaignApi(object):
                 'validations': {
                 },
                 'allowed_values': {
+                    ('sku_stock_type_filter',): {
+
+                        "FIRST-PARTY": "first-party",
+                        "THIRD-PARTY": "third-party",
+                        "FIRST-AND-THIRD-PARTY": "first-and-third-party"
+                    },
                 },
                 'openapi_types': {
                     'retailer_id':
                         (int,),
+                    'sku_stock_type_filter':
+                        (str,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailerId',
+                    'sku_stock_type_filter': 'sku-stock-type-filter',
                 },
                 'location_map': {
                     'retailer_id': 'path',
+                    'sku_stock_type_filter': 'query',
                 },
                 'collection_format_map': {
                 }

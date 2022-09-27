@@ -94,7 +94,6 @@ class CreativeWrite(ModelNormal):
         lazy_import()
         return {
             'name': (str,),  # noqa: E501
-            'ad_set_id': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
             'dataset_id': (str,),  # noqa: E501
@@ -111,7 +110,6 @@ class CreativeWrite(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'ad_set_id': 'adSetId',  # noqa: E501
         'description': 'description',  # noqa: E501
         'format': 'format',  # noqa: E501
         'dataset_id': 'datasetId',  # noqa: E501
@@ -128,12 +126,11 @@ class CreativeWrite(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, ad_set_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, *args, **kwargs):  # noqa: E501
         """CreativeWrite - a model defined in OpenAPI
 
         Args:
             name (str): The name of the creative
-            ad_set_id (str): Ad set on which Creative will be applied
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -167,7 +164,7 @@ class CreativeWrite(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): The description of the creative. [optional]  # noqa: E501
-            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\" or \"Dynamic\". [optional]  # noqa: E501
+            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\", \"Dynamic\" or \"Adaptive\". [optional]  # noqa: E501
             dataset_id (str): Dataset linked to the Creative. [optional]  # noqa: E501
             image_write_attributes (ImageWriteAttributes): [optional]  # noqa: E501
             html_tag_write_attributes (HtmlTagWriteAttributes): [optional]  # noqa: E501
@@ -201,7 +198,6 @@ class CreativeWrite(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.ad_set_id = ad_set_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -222,12 +218,11 @@ class CreativeWrite(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, ad_set_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, *args, **kwargs):  # noqa: E501
         """CreativeWrite - a model defined in OpenAPI
 
         Args:
             name (str): The name of the creative
-            ad_set_id (str): Ad set on which Creative will be applied
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -261,7 +256,7 @@ class CreativeWrite(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (str): The description of the creative. [optional]  # noqa: E501
-            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\" or \"Dynamic\". [optional]  # noqa: E501
+            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\", \"Dynamic\" or \"Adaptive\". [optional]  # noqa: E501
             dataset_id (str): Dataset linked to the Creative. [optional]  # noqa: E501
             image_write_attributes (ImageWriteAttributes): [optional]  # noqa: E501
             html_tag_write_attributes (HtmlTagWriteAttributes): [optional]  # noqa: E501
@@ -293,7 +288,6 @@ class CreativeWrite(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.ad_set_id = ad_set_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

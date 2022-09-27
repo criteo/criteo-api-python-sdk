@@ -55,6 +55,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
             ),
         ],
+        partner_id=1,
     ) # OnSiteRecoRequest |  (optional)
 
     # example passing only required values which don't have defaults set

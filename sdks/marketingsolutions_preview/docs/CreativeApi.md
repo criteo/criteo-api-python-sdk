@@ -19,7 +19,6 @@ Method | HTTP request | Description
 [**get_coupon_supported_sizes**](CreativeApi.md#get_coupon_supported_sizes) | **GET** /preview/advertisers/{advertiser-id}/coupons-supported-sizes | 
 [**get_coupons**](CreativeApi.md#get_coupons) | **GET** /preview/advertisers/{advertiser-id}/coupons | 
 [**get_creative**](CreativeApi.md#get_creative) | **GET** /preview/creatives/{id} | 
-[**get_creative_preview**](CreativeApi.md#get_creative_preview) | **GET** /preview/creatives/{id}/preview | 
 [**get_creative_preview_post**](CreativeApi.md#get_creative_preview_post) | **POST** /preview/creatives/{id}/preview | 
 [**get_creatives**](CreativeApi.md#get_creatives) | **GET** /preview/advertisers/{advertiser-id}/creatives | 
 
@@ -284,7 +283,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=CreativeWriteResource(
             attributes=CreativeWrite(
                 name="name_example",
-                ad_set_id="ad_set_id_example",
                 description="description_example",
                 format="format_example",
                 dataset_id="dataset_id_example",
@@ -775,7 +773,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=CreativeWriteResource(
             attributes=CreativeWrite(
                 name="name_example",
-                ad_set_id="ad_set_id_example",
                 description="description_example",
                 format="format_example",
                 dataset_id="dataset_id_example",
@@ -1483,94 +1480,6 @@ Name | Type | Description  | Notes
 **400** | The request contained invalid parameters. |  -  |
 **401** | The request was not properly authorized. |  -  |
 **500** | A non-request based error occurred on the server. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_creative_preview**
-> str get_creative_preview(id)
-
-
-
-Get the preview of a specific Creative
-
-### Example
-
-* OAuth Authentication (oauth):
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import creative_api
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = creative_api.CreativeApi(api_client)
-    id = "id_example" # str | The Creative identifier to preview.
-    width = 1 # int | The width of the Creative to preview. (optional)
-    height = 1 # int | The height of the Creative to preview. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_creative_preview(id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_creative_preview: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_creative_preview(id, width=width, height=height)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_creative_preview: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| The Creative identifier to preview. |
- **width** | **int**| The width of the Creative to preview. | [optional]
- **height** | **int**| The height of the Creative to preview. | [optional]
-
-### Return type
-
-**str**
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/html, application/json, text/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The preview HTML of a specific Creative is returned. |  -  |
-**400** | The request contained invalid parameters. |  -  |
-**403** | The request was not properly authorized. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

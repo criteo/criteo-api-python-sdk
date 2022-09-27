@@ -73,8 +73,6 @@ criteo_api_marketingsolutions_preview/model/application_summary_model.py
 criteo_api_marketingsolutions_preview/model/application_summary_model_resource.py
 criteo_api_marketingsolutions_preview/model/application_summary_model_response.py
 criteo_api_marketingsolutions_preview/model/attribute.py
-criteo_api_marketingsolutions_preview/model/audience.py
-criteo_api_marketingsolutions_preview/model/audience_attributes.py
 criteo_api_marketingsolutions_preview/model/audience_bulk_create_input_v1.py
 criteo_api_marketingsolutions_preview/model/audience_bulk_delete_input_v1.py
 criteo_api_marketingsolutions_preview/model/audience_bulk_update_input_v1.py
@@ -175,6 +173,14 @@ criteo_api_marketingsolutions_preview/model/coupon_response.py
 criteo_api_marketingsolutions_preview/model/coupon_supported_sizes.py
 criteo_api_marketingsolutions_preview/model/coupon_supported_sizes_resource.py
 criteo_api_marketingsolutions_preview/model/coupon_supported_sizes_response.py
+criteo_api_marketingsolutions_preview/model/create_ad_set.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_bidding.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_budget.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_geo_location.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_request.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_resource.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_schedule.py
+criteo_api_marketingsolutions_preview/model/create_ad_set_targeting.py
 criteo_api_marketingsolutions_preview/model/create_campaign.py
 criteo_api_marketingsolutions_preview/model/create_campaign_request.py
 criteo_api_marketingsolutions_preview/model/create_campaign_resource.py
@@ -199,7 +205,6 @@ criteo_api_marketingsolutions_preview/model/custom_attribute.py
 criteo_api_marketingsolutions_preview/model/dataset.py
 criteo_api_marketingsolutions_preview/model/deal_id.py
 criteo_api_marketingsolutions_preview/model/delete_audience_contact_list_response.py
-criteo_api_marketingsolutions_preview/model/delete_audience_response.py
 criteo_api_marketingsolutions_preview/model/dynamic_attributes.py
 criteo_api_marketingsolutions_preview/model/dynamic_write_attributes.py
 criteo_api_marketingsolutions_preview/model/entity_filter.py
@@ -221,7 +226,6 @@ criteo_api_marketingsolutions_preview/model/generate_top_products_report_request
 criteo_api_marketingsolutions_preview/model/generate_top_products_report_request_attributes.py
 criteo_api_marketingsolutions_preview/model/generate_top_products_report_request_data.py
 criteo_api_marketingsolutions_preview/model/geo_division_v1.py
-criteo_api_marketingsolutions_preview/model/get_audiences_response.py
 criteo_api_marketingsolutions_preview/model/get_portfolio_response.py
 criteo_api_marketingsolutions_preview/model/html_tag_attributes.py
 criteo_api_marketingsolutions_preview/model/html_tag_write_attributes.py
@@ -240,10 +244,6 @@ criteo_api_marketingsolutions_preview/model/location_update_v1.py
 criteo_api_marketingsolutions_preview/model/location_v1.py
 criteo_api_marketingsolutions_preview/model/loyalty_points.py
 criteo_api_marketingsolutions_preview/model/modify_audience_response.py
-criteo_api_marketingsolutions_preview/model/new_audience.py
-criteo_api_marketingsolutions_preview/model/new_audience_attributes.py
-criteo_api_marketingsolutions_preview/model/new_audience_request.py
-criteo_api_marketingsolutions_preview/model/new_audience_response.py
 criteo_api_marketingsolutions_preview/model/nillable_ad_set_targeting_rule.py
 criteo_api_marketingsolutions_preview/model/nillable_date_time.py
 criteo_api_marketingsolutions_preview/model/nillable_decimal.py
@@ -316,9 +316,6 @@ criteo_api_marketingsolutions_preview/model/read_ad_set_schedule.py
 criteo_api_marketingsolutions_preview/model/read_model_ad_set_id.py
 criteo_api_marketingsolutions_preview/model/read_model_read_ad_set.py
 criteo_api_marketingsolutions_preview/model/recommended_product.py
-criteo_api_marketingsolutions_preview/model/replace_audience.py
-criteo_api_marketingsolutions_preview/model/replace_audience_request.py
-criteo_api_marketingsolutions_preview/model/replace_audience_response.py
 criteo_api_marketingsolutions_preview/model/report_data_message.py
 criteo_api_marketingsolutions_preview/model/report_detail_error.py
 criteo_api_marketingsolutions_preview/model/report_detail_errors.py
@@ -432,9 +429,7 @@ docs/ApplicationSummaryModel.md
 docs/ApplicationSummaryModelResource.md
 docs/ApplicationSummaryModelResponse.md
 docs/Attribute.md
-docs/Audience.md
 docs/AudienceApi.md
-docs/AudienceAttributes.md
 docs/AudienceBulkCreateInputV1.md
 docs/AudienceBulkDeleteInputV1.md
 docs/AudienceBulkUpdateInputV1.md
@@ -537,6 +532,14 @@ docs/CouponResponse.md
 docs/CouponSupportedSizes.md
 docs/CouponSupportedSizesResource.md
 docs/CouponSupportedSizesResponse.md
+docs/CreateAdSet.md
+docs/CreateAdSetBidding.md
+docs/CreateAdSetBudget.md
+docs/CreateAdSetGeoLocation.md
+docs/CreateAdSetRequest.md
+docs/CreateAdSetResource.md
+docs/CreateAdSetSchedule.md
+docs/CreateAdSetTargeting.md
 docs/CreateCampaign.md
 docs/CreateCampaignRequest.md
 docs/CreateCampaignResource.md
@@ -562,7 +565,6 @@ docs/CustomAttribute.md
 docs/Dataset.md
 docs/DealId.md
 docs/DeleteAudienceContactListResponse.md
-docs/DeleteAudienceResponse.md
 docs/DynamicAttributes.md
 docs/DynamicWriteAttributes.md
 docs/EntityFilter.md
@@ -585,7 +587,6 @@ docs/GenerateTopProductsReportRequest.md
 docs/GenerateTopProductsReportRequestAttributes.md
 docs/GenerateTopProductsReportRequestData.md
 docs/GeoDivisionV1.md
-docs/GetAudiencesResponse.md
 docs/GetPortfolioResponse.md
 docs/HtmlTagAttributes.md
 docs/HtmlTagWriteAttributes.md
@@ -604,10 +605,6 @@ docs/LocationUpdateV1.md
 docs/LocationV1.md
 docs/LoyaltyPoints.md
 docs/ModifyAudienceResponse.md
-docs/NewAudience.md
-docs/NewAudienceAttributes.md
-docs/NewAudienceRequest.md
-docs/NewAudienceResponse.md
 docs/NillableAdSetTargetingRule.md
 docs/NillableDateTime.md
 docs/NillableDecimal.md
@@ -683,9 +680,6 @@ docs/ReadModelAdSetId.md
 docs/ReadModelReadAdSet.md
 docs/RecoApi.md
 docs/RecommendedProduct.md
-docs/ReplaceAudience.md
-docs/ReplaceAudienceRequest.md
-docs/ReplaceAudienceResponse.md
 docs/ReportDataMessage.md
 docs/ReportDetailError.md
 docs/ReportDetailErrors.md

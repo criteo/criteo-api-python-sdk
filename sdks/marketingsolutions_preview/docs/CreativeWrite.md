@@ -6,9 +6,8 @@ Entity to create or update a creative
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The name of the creative | 
-**ad_set_id** | **str** | Ad set on which Creative will be applied | 
 **description** | **str** | The description of the creative | [optional] 
-**format** | **str** | The format of the creative  You can use \&quot;Image\&quot;, \&quot; HtmlTag\&quot; or \&quot;Dynamic\&quot; | [optional] 
+**format** | **str** | The format of the creative  You can use \&quot;Image\&quot;, \&quot; HtmlTag\&quot;, \&quot;Dynamic\&quot; or \&quot;Adaptive\&quot; | [optional] 
 **dataset_id** | **str** | Dataset linked to the Creative | [optional] 
 **image_write_attributes** | [**ImageWriteAttributes**](ImageWriteAttributes.md) |  | [optional] 
 **html_tag_write_attributes** | [**HtmlTagWriteAttributes**](HtmlTagWriteAttributes.md) |  | [optional] 

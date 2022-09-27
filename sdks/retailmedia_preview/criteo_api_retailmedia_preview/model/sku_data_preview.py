@@ -110,6 +110,7 @@ class SkuDataPreview(ModelNormal):
             'category_id': (str,),  # noqa: E501
             'category': (str,),  # noqa: E501
             'is_seller_sku': (bool,),  # noqa: E501
+            'is_buybox': (bool,),  # noqa: E501
             'seller_id': (str,),  # noqa: E501
             'seller_name': (str,),  # noqa: E501
             'gtin': (str,),  # noqa: E501
@@ -137,6 +138,7 @@ class SkuDataPreview(ModelNormal):
         'category_id': 'categoryId',  # noqa: E501
         'category': 'category',  # noqa: E501
         'is_seller_sku': 'isSellerSku',  # noqa: E501
+        'is_buybox': 'isBuybox',  # noqa: E501
         'seller_id': 'sellerId',  # noqa: E501
         'seller_name': 'sellerName',  # noqa: E501
         'gtin': 'gtin',  # noqa: E501
@@ -201,6 +203,7 @@ class SkuDataPreview(ModelNormal):
             category_id (str): The category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
+            is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
             seller_id (str): The id of the seller.. [optional]  # noqa: E501
             seller_name (str): The name of the seller.. [optional]  # noqa: E501
             gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
@@ -311,6 +314,7 @@ class SkuDataPreview(ModelNormal):
             category_id (str): The category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
+            is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
             seller_id (str): The id of the seller.. [optional]  # noqa: E501
             seller_name (str): The name of the seller.. [optional]  # noqa: E501
             gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501

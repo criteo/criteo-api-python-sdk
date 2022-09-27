@@ -4,6 +4,7 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_ad_set**](CampaignApi.md#create_ad_set) | **POST** /preview/marketing-solutions/ad-sets | 
 [**create_campaign**](CampaignApi.md#create_campaign) | **POST** /preview/marketing-solutions/campaigns | 
 [**delete_advertiser_bundle_rules**](CampaignApi.md#delete_advertiser_bundle_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
 [**delete_advertiser_domain_rules**](CampaignApi.md#delete_advertiser_domain_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
@@ -48,6 +49,149 @@ Method | HTTP request | Description
 [**upsert_oc_ibrand_safety_rule**](CampaignApi.md#upsert_oc_ibrand_safety_rule) | **POST** /preview/brand-safety/oci | 
 [**upsert_oc_itargeting_rule**](CampaignApi.md#upsert_oc_itargeting_rule) | **POST** /preview/targeting/oci | 
 
+
+# **create_ad_set**
+> ResponseReadAdSet create_ad_set()
+
+
+
+Create the specified ad set
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import campaign_api
+from criteo_api_marketingsolutions_preview.model.response_read_ad_set import ResponseReadAdSet
+from criteo_api_marketingsolutions_preview.model.create_ad_set_request import CreateAdSetRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    create_ad_set_request = CreateAdSetRequest(
+        data=CreateAdSetResource(
+            attributes=CreateAdSet(
+                name="name_example",
+                dataset_id="dataset_id_example",
+                campaign_id="campaign_id_example",
+                schedule=CreateAdSetSchedule(
+                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                ),
+                bidding=CreateAdSetBidding(
+                    bid_amount=3.14,
+                    bid_strategy="actions",
+                    cost_controller="COS",
+                ),
+                targeting=CreateAdSetTargeting(
+                    delivery_limitations=AdSetDeliveryLimitations(
+                        environments=[
+                            "web",
+                        ],
+                        devices=[
+                            "other",
+                        ],
+                        operating_systems=[
+                            "android",
+                        ],
+                    ),
+                    geo_location=CreateAdSetGeoLocation(
+                        countries=AdSetTargetingRule(
+                            operand="undefined",
+                            values=[
+                                "values_example",
+                            ],
+                        ),
+                        subdivisions=AdSetTargetingRule(
+                            operand="undefined",
+                            values=[
+                                "values_example",
+                            ],
+                        ),
+                        zip_codes=AdSetTargetingRule(
+                            operand="undefined",
+                            values=[
+                                "values_example",
+                            ],
+                        ),
+                    ),
+                    frequency_capping=AdSetFrequencyCapping(
+                        frequency="hourly",
+                        maximum_impressions=1,
+                    ),
+                ),
+                budget=CreateAdSetBudget(
+                    budget_strategy="capped",
+                    budget_renewal="undefined",
+                    budget_delivery_smoothing="accelerated",
+                    budget_delivery_week="undefined",
+                    budget_amount=3.14,
+                ),
+                tracking_code="tracking_code_example",
+                media_type="display",
+            ),
+            type="AdSet",
+        ),
+    ) # CreateAdSetRequest | the ad sets to create (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.create_ad_set(create_ad_set_request=create_ad_set_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_ad_set: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_ad_set_request** | [**CreateAdSetRequest**](CreateAdSetRequest.md)| the ad sets to create | [optional]
+
+### Return type
+
+[**ResponseReadAdSet**](ResponseReadAdSet.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | The ad set that has been created and errors / warnings |  -  |
+**400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_campaign**
 > CampaignResponse create_campaign()

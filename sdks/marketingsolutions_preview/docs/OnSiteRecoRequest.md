@@ -6,6 +6,7 @@ Recommendation request parameters.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nb_requested_products** | **int** | Amount of products to recommend. | 
+**partner_id** | **int** | Id of the partner. | 
 **user_id** | **str** | Used to retrieve user events from Criteo trackers. Optional if UserEvents are passed. | [optional] 
 **user_events** | [**[UserEvent]**](UserEvent.md) | Used to perform a recommendation without relying on events stored for a UserId. Optional if UserId is passed. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
