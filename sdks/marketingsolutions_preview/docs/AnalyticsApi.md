@@ -30,21 +30,19 @@ from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.statistics_report_query_message import StatisticsReportQueryMessage
 from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -131,21 +129,19 @@ from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
 from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -229,21 +225,19 @@ from criteo_api_marketingsolutions_preview.model.generate_creatives_report_reque
 from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
 from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -356,21 +350,19 @@ from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from criteo_api_marketingsolutions_preview.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -461,21 +453,19 @@ from criteo_api_marketingsolutions_preview.model.report_data_message import Repo
 from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
 from criteo_api_marketingsolutions_preview.model.generate_top_products_report_request import GenerateTopProductsReportRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -574,21 +564,19 @@ from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
 from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -669,21 +657,19 @@ from criteo_api_marketingsolutions_preview.model.transparency_report_data_messag
 from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from criteo_api_marketingsolutions_preview.model.transparency_query_message import TransparencyQueryMessage
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client

@@ -4,6 +4,7 @@ import os
 from criteo_api_marketingsolutions_preview.configuration import Configuration
 from criteo_api_marketingsolutions_preview.api.gateway_api import GatewayApi
 from criteo_api_marketingsolutions_preview.api_client import ApiClient
+from criteo_api_marketingsolutions_preview.rest import ApiException
 
 class TestGatewayApi:
   @pytest.fixture(autouse=True)
@@ -50,6 +51,7 @@ class TestGatewayApi:
     # Act
     try:
       api.get_current_application()
+
     # Assert
-    except AttributeError as exception:
-      assert str(exception) == "'NoneType' object has no attribute 'access_token'"
+    except ApiException as exception:
+      assert exception.status == 401

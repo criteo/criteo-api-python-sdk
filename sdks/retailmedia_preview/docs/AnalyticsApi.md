@@ -25,21 +25,19 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -103,21 +101,19 @@ import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
 from criteo_api_retailmedia_preview.model.envelope_report_status import EnvelopeReportStatus
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -183,21 +179,19 @@ from criteo_api_retailmedia_preview.model.envelope_report_status import Envelope
 from criteo_api_retailmedia_preview.model.bad_request import BadRequest
 from criteo_api_retailmedia_preview.model.envelope_report_request import EnvelopeReportRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -280,21 +274,19 @@ from criteo_api_retailmedia_preview.model.envelope_report_status import Envelope
 from criteo_api_retailmedia_preview.model.bad_request import BadRequest
 from criteo_api_retailmedia_preview.model.envelope_report_request import EnvelopeReportRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client

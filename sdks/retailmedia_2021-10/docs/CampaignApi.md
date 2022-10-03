@@ -68,21 +68,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.balance202110_paged_list_response import Balance202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -159,21 +157,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.creative202110_list_response import Creative202110ListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -234,21 +230,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.keyword_target202110_response import KeywordTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -310,21 +304,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -401,21 +393,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.preferred_line_item202110_paged_list_response import PreferredLineItem202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -493,21 +483,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_paged_list_response import PromotedProduct202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -584,21 +572,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.preferred_line_item202110_response import PreferredLineItem202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -660,21 +646,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_target202110_response import AddToBasketTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -736,21 +720,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.audience_target202110_response import AudienceTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -812,21 +794,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.store_target202110_response import StoreTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -888,21 +868,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.external_retailer_pages202110 import ExternalRetailerPages202110
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -963,21 +941,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_page_response_of_brand import JsonApiPageResponseOfBrand
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1054,21 +1030,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_page_response_of_campaign import JsonApiPageResponseOfCampaign
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1145,21 +1119,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_page_response_of_retailer import JsonApiPageResponseOfRetailer
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1236,21 +1208,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1318,21 +1288,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_single_response_of_campaign import JsonApiSingleResponseOfCampaign
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1392,21 +1360,19 @@ import time
 import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1467,21 +1433,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1542,21 +1506,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.common_line_item_paged_list_response import CommonLineItemPagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1639,21 +1601,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.auction_line_item_response import AuctionLineItemResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1715,21 +1675,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.auction_line_item_paged_list_response import AuctionLineItemPagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1807,21 +1765,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.common_line_item_response import CommonLineItemResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1883,21 +1839,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.keyword_target202110_request import KeywordTarget202110Request
 from criteo_api_retailmedia_v2021_10.model.keyword_target202110_response import KeywordTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1979,21 +1933,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.keyword_target202110_request import KeywordTarget202110Request
 from criteo_api_retailmedia_v2021_10.model.keyword_target202110_response import KeywordTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2075,21 +2027,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
 from criteo_api_retailmedia_v2021_10.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2169,21 +2119,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
 from criteo_api_retailmedia_v2021_10.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2263,21 +2211,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.preferred_line_item202110_response import PreferredLineItem202110Response
 from criteo_api_retailmedia_v2021_10.model.preferred_line_item_create_model202110_request import PreferredLineItemCreateModel202110Request
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2380,21 +2326,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_paged_list_response import PromotedProduct202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2476,21 +2420,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_paged_list_response import PromotedProduct202110PagedListResponse
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2571,21 +2513,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2664,21 +2604,19 @@ import criteo_api_retailmedia_v2021_10
 from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2758,21 +2696,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_target202110_response import AddToBasketTarget202110Response
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_ids_update_model202110_request import AddToBasketIdsUpdateModel202110Request
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2857,21 +2793,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_target202110_response import AddToBasketTarget202110Response
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_ids_update_model202110_request import AddToBasketIdsUpdateModel202110Request
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -2956,21 +2890,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.audience_ids_update_model202110_request import AudienceIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2021_10.model.audience_target202110_response import AudienceTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3052,21 +2984,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.audience_ids_update_model202110_request import AudienceIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2021_10.model.audience_target202110_response import AudienceTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3148,21 +3078,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.store_ids_update_model202110_request import StoreIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2021_10.model.store_target202110_response import StoreTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3244,21 +3172,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.store_ids_update_model202110_request import StoreIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2021_10.model.store_target202110_response import StoreTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3340,21 +3266,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.external_post_campaign import ExternalPostCampaign
 from criteo_api_retailmedia_v2021_10.model.json_api_single_response_of_campaign import JsonApiSingleResponseOfCampaign
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3443,21 +3367,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
 from criteo_api_retailmedia_v2021_10.model.json_api_request_of_catalog_request import JsonApiRequestOfCatalogRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3539,21 +3461,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.auction_line_item_response import AuctionLineItemResponse
 from criteo_api_retailmedia_v2021_10.model.auction_line_item_create_model_request import AuctionLineItemCreateModelRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3644,21 +3564,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.preferred_line_item202110_response import PreferredLineItem202110Response
 from criteo_api_retailmedia_v2021_10.model.preferred_line_item_update_model202110_request import PreferredLineItemUpdateModel202110Request
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3761,21 +3679,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_target202110_response import AddToBasketTarget202110Response
 from criteo_api_retailmedia_v2021_10.model.add_to_basket_target202110_request import AddToBasketTarget202110Request
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3861,21 +3777,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.audience_target202110_request import AudienceTarget202110Request
 from criteo_api_retailmedia_v2021_10.model.audience_target202110_response import AudienceTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -3958,21 +3872,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.store_target202110_request import StoreTarget202110Request
 from criteo_api_retailmedia_v2021_10.model.store_target202110_response import StoreTarget202110Response
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -4055,21 +3967,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.external_put_campaign import ExternalPutCampaign
 from criteo_api_retailmedia_v2021_10.model.json_api_single_response_of_campaign import JsonApiSingleResponseOfCampaign
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -4154,21 +4064,19 @@ from criteo_api_retailmedia_v2021_10.api import campaign_api
 from criteo_api_retailmedia_v2021_10.model.auction_line_item_response import AuctionLineItemResponse
 from criteo_api_retailmedia_v2021_10.model.auction_line_item_update_model_request import AuctionLineItemUpdateModelRequest
 from pprint import pprint
+
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_retailmedia_v2021_10.Configuration(
     host = "https://api.criteo.com"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
 
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2021_10.Configuration(
-    host = "https://api.criteo.com"
-)
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client

@@ -62,6 +62,7 @@ class RESTClientObject(object):
         self.client_id = configuration.username
         self.client_secret = configuration.password
         self.grant_type = 'client_credentials'
+        self.access_token = configuration.access_token
         self.host = configuration.host
 
         # cert_reqs
@@ -139,8 +140,8 @@ class RESTClientObject(object):
         headers = headers or {}
 
         if not no_auth:
-            self.refresh_token(headers)
-            headers['Authorization'] = 'Bearer ' + self.token.access_token
+            access_token = self.refresh_token(headers)
+            headers['Authorization'] = 'Bearer ' + (access_token or '')
 
         timeout = None
         if _request_timeout:
@@ -293,15 +294,20 @@ class RESTClientObject(object):
                             _request_timeout=_request_timeout,
                             body=body)
 
-    def refresh_token(self, headers):
+    def refresh_token(self, headers) -> str:
         missing_credentials = self.client_id is None or self.client_id == '' \
                               or self.client_secret is None or self.client_secret == ''
-        missing_or_expired_token = self.token is None or not self.token.is_valid_enough()
 
-        if not missing_credentials and missing_or_expired_token:
+        if self.token and not self.token.is_valid_enough():
+            self.token = None
+
+        if self.token is None:
+            if missing_credentials:
+                return self.access_token
+
             self.token = self.call_auth_endpoint(headers)
-            return True
-        return False
+
+        return self.token.access_token
 
     def call_auth_endpoint(self, headers):
         oauth_url = self.host + '/oauth2/token'
