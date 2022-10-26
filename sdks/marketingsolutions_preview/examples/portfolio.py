@@ -4,9 +4,9 @@ import logging
 import sys
 from pprint import pprint
 
-from criteo_api_sdk.api.advertiser_api import AdvertiserApi 
+from criteo_api_marketingsolutions_preview.api.advertiser_api import AdvertiserApi 
 
-from criteo_api_sdk import Configuration, ApiClient
+from criteo_api_marketingsolutions_preview import Configuration, ApiClient
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:

@@ -41,6 +41,10 @@ from criteo_api_retailmedia_preview.model.json_api_single_response_of_campaign i
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item import JsonApiSingleResponseOfLineItem
 from criteo_api_retailmedia_preview.model.page_of_balance_campaign import PageOfBalanceCampaign
+from criteo_api_retailmedia_preview.model.product_button_list_request import ProductButtonListRequest
+from criteo_api_retailmedia_preview.model.product_button_list_response import ProductButtonListResponse
+from criteo_api_retailmedia_preview.model.product_button_request import ProductButtonRequest
+from criteo_api_retailmedia_preview.model.product_button_response import ProductButtonResponse
 from criteo_api_retailmedia_preview.model.seller_preview_response import SellerPreviewResponse
 from criteo_api_retailmedia_preview.model.sku_data_preview_list_response import SkuDataPreviewListResponse
 from criteo_api_retailmedia_preview.model.sku_search_request_preview_request import SkuSearchRequestPreviewRequest
@@ -57,6 +61,133 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        def __delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(
+            self,
+            line_item_id,
+            product_button_id,
+            **kwargs
+        ):
+            """delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id  # noqa: E501
+
+            Delete a product button  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+                product_button_id (str): Sequential id of the product button
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            kwargs['product_button_id'] = \
+                product_button_id
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
+                'operation_id': 'delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'required': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                    'product_button_id': 'product-button-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id
+        )
 
         def __delete_api_v1_external_balance_campaigns_by_balance_id(
             self,
@@ -308,6 +439,254 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__delete_api_v1_external_line_item_products_by_line_item_id
+        )
+
+        def __get_api202210_external_line_item_product_buttons_by_line_item_id(
+            self,
+            line_item_id,
+            **kwargs
+        ):
+            """get_api202210_external_line_item_product_buttons_by_line_item_id  # noqa: E501
+
+            Get all the product buttons associated with a line item  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api202210_external_line_item_product_buttons_by_line_item_id(line_item_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ProductButtonListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api202210_external_line_item_product_buttons_by_line_item_id = _Endpoint(
+            settings={
+                'response_type': (ProductButtonListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons',
+                'operation_id': 'get_api202210_external_line_item_product_buttons_by_line_item_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api202210_external_line_item_product_buttons_by_line_item_id
+        )
+
+        def __get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(
+            self,
+            line_item_id,
+            product_button_id,
+            **kwargs
+        ):
+            """get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id  # noqa: E501
+
+            Get a single product button  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+                product_button_id (str): Sequential id of the product button
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ProductButtonResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            kwargs['product_button_id'] = \
+                product_button_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id = _Endpoint(
+            settings={
+                'response_type': (ProductButtonResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
+                'operation_id': 'get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'required': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                    'product_button_id': 'product-button-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id
         )
 
         def __get_api_v0_external_catalog_output_by_catalog_id(
@@ -2140,6 +2519,132 @@ class CampaignApi(object):
             callable=__get_api_v1_external_retailer_by_retailer_id_seller_by_seller
         )
 
+        def __post_api202210_external_line_item_product_buttons_create_by_line_item_id(
+            self,
+            line_item_id,
+            **kwargs
+        ):
+            """post_api202210_external_line_item_product_buttons_create_by_line_item_id  # noqa: E501
+
+            Append new product buttons to a line item  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.post_api202210_external_line_item_product_buttons_create_by_line_item_id(line_item_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+
+            Keyword Args:
+                product_button_list_request (ProductButtonListRequest): List of product buttons to append to the specified line item. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ProductButtonListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            return self.call_with_http_info(**kwargs)
+
+        self.post_api202210_external_line_item_product_buttons_create_by_line_item_id = _Endpoint(
+            settings={
+                'response_type': (ProductButtonListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/create',
+                'operation_id': 'post_api202210_external_line_item_product_buttons_create_by_line_item_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_list_request',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_list_request':
+                        (ProductButtonListRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_list_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__post_api202210_external_line_item_product_buttons_create_by_line_item_id
+        )
+
         def __post_api_v0_external_account_catalogs_by_account_id(
             self,
             account_id,
@@ -2796,6 +3301,142 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__post_api_v1_external_catalogs_sku_search
+        )
+
+        def __put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(
+            self,
+            line_item_id,
+            product_button_id,
+            **kwargs
+        ):
+            """put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id  # noqa: E501
+
+            Update a product button  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+                product_button_id (str): Sequential id of the product button
+
+            Keyword Args:
+                product_button_request (ProductButtonRequest): Details of the updated product button. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ProductButtonResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            kwargs['product_button_id'] = \
+                product_button_id
+            return self.call_with_http_info(**kwargs)
+
+        self.put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id = _Endpoint(
+            settings={
+                'response_type': (ProductButtonResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
+                'operation_id': 'put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_id',
+                    'product_button_request',
+                ],
+                'required': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_id':
+                        (str,),
+                    'product_button_request':
+                        (ProductButtonRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                    'product_button_id': 'product-button-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_id': 'path',
+                    'product_button_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id
         )
 
         def __put_api_v1_external_balance_campaigns_by_balance_id(

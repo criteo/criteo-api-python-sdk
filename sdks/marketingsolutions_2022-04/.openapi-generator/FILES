@@ -235,6 +235,9 @@ docs/TransparencyReportEntityMessage.md
 docs/TransparencyReportFile.md
 docs/WriteModelAdSetId.md
 docs/WriteModelPatchAdSet.md
+examples/__init__.py
+examples/portfolio.py
+examples/statistics.py
 git_push.sh
 requirements.txt
 setup.cfg

@@ -47,12 +47,12 @@ Method | HTTP request | Description
 [**post_api_v1_external_account_campaigns_by_account_id**](CampaignApi.md#post_api_v1_external_account_campaigns_by_account_id) | **POST** /2022-04/retail-media/accounts/{accountId}/campaigns | 
 [**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2022-04/retail-media/accounts/{accountId}/catalogs | 
 [**post_api_v2_external_campaign_auction_line_items_by_campaign_id**](CampaignApi.md#post_api_v2_external_campaign_auction_line_items_by_campaign_id) | **POST** /2022-04/retail-media/campaigns/{campaign-id}/auction-line-items | 
+[**put_api202110_external_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_by_line_item_id) | **PUT** /2022-04/retail-media/preferred-line-items/{line-item-id} | 
 [**put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id) | **PUT** /2022-04/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
 [**put_api202110_external_preferred_line_item_targeting_audiences_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_audiences_by_line_item_id) | **PUT** /2022-04/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
 [**put_api202110_external_preferred_line_item_targeting_stores_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_stores_by_line_item_id) | **PUT** /2022-04/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
 [**put_api_v1_external_campaign_by_campaign_id**](CampaignApi.md#put_api_v1_external_campaign_by_campaign_id) | **PUT** /2022-04/retail-media/campaigns/{campaignId} | 
 [**put_api_v2_external_auction_line_item_by_line_item_id**](CampaignApi.md#put_api_v2_external_auction_line_item_by_line_item_id) | **PUT** /2022-04/retail-media/auction-line-items/{line-item-id} | 
-[**put_api_v2_external_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api_v2_external_preferred_line_item_by_line_item_id) | **PUT** /2022-04/retail-media/preferred-line-items/{line-item-id} | 
 
 
 # **create_asset**
@@ -3778,6 +3778,121 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **put_api202110_external_preferred_line_item_by_line_item_id**
+> PreferredLineItem202110Response put_api202110_external_preferred_line_item_by_line_item_id(line_item_id)
+
+
+
+Updates the preferred line item for the given line item id
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_v2022_04
+from criteo_api_retailmedia_v2022_04.api import campaign_api
+from criteo_api_retailmedia_v2022_04.model.preferred_line_item_update_model202110_request import PreferredLineItemUpdateModel202110Request
+from criteo_api_retailmedia_v2022_04.model.preferred_line_item202110_response import PreferredLineItem202110Response
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2022_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The given line item id
+    preferred_line_item_update_model202110_request = PreferredLineItemUpdateModel202110Request(
+        data=ResourceOfPreferredLineItemUpdateModel202110(
+            id="id_example",
+            type="type_example",
+            attributes=ExternalPreferredLineItemUpdateModel202110(
+                name="name_example",
+                start_date=dateutil_parser('1970-01-01').date(),
+                end_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
+                pacing="accelerated",
+                capping=ExternalLineItemCapping202110(
+                    type="unknown",
+                    count=1,
+                ),
+                page=ExternalLineItemPage202110(
+                    page_type="search",
+                    categories=[
+                        ExternalLineItemPageCategory202110(
+                            category_id="category_id_example",
+                            include_children=True,
+                        ),
+                    ],
+                    search_keywords=[
+                        "search_keywords_example",
+                    ],
+                ),
+                budget=3.14,
+                creative_id="creative_id_example",
+            ),
+        ),
+    ) # PreferredLineItemUpdateModel202110Request | The line item settings to create a line item with (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.put_api202110_external_preferred_line_item_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2022_04.ApiException as e:
+        print("Exception when calling CampaignApi->put_api202110_external_preferred_line_item_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.put_api202110_external_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model202110_request=preferred_line_item_update_model202110_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2022_04.ApiException as e:
+        print("Exception when calling CampaignApi->put_api202110_external_preferred_line_item_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The given line item id |
+ **preferred_line_item_update_model202110_request** | [**PreferredLineItemUpdateModel202110Request**](PreferredLineItemUpdateModel202110Request.md)| The line item settings to create a line item with | [optional]
+
+### Return type
+
+[**PreferredLineItem202110Response**](PreferredLineItem202110Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id**
 > AddToBasketTarget202110Response put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id(line_item_id)
 
@@ -4247,107 +4362,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuctionLineItemResponse**](AuctionLineItemResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **put_api_v2_external_preferred_line_item_by_line_item_id**
-> PreferredLineItemResponse put_api_v2_external_preferred_line_item_by_line_item_id(line_item_id)
-
-
-
-Updates the preferred line item for the given line item id
-
-### Example
-
-* OAuth Authentication (oauth):
-```python
-import time
-import criteo_api_retailmedia_v2022_04
-from criteo_api_retailmedia_v2022_04.api import campaign_api
-from criteo_api_retailmedia_v2022_04.model.preferred_line_item_response import PreferredLineItemResponse
-from criteo_api_retailmedia_v2022_04.model.preferred_line_item_update_model_request import PreferredLineItemUpdateModelRequest
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2022_04.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
-
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | The given line item id
-    preferred_line_item_update_model_request = PreferredLineItemUpdateModelRequest(
-        data=ResourceOfPreferredLineItemUpdateModel(
-            id="id_example",
-            type="type_example",
-            attributes=ExternalPreferredLineItemUpdateModel(
-                name="name_example",
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
-                pacing="accelerated",
-                capping=ExternalLineItemCapping(
-                    type="unknown",
-                    count=1,
-                ),
-            ),
-        ),
-    ) # PreferredLineItemUpdateModelRequest | The line item settings to create a line item with (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.put_api_v2_external_preferred_line_item_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2022_04.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_v2_external_preferred_line_item_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_api_v2_external_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_request=preferred_line_item_update_model_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2022_04.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_v2_external_preferred_line_item_by_line_item_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The given line item id |
- **preferred_line_item_update_model_request** | [**PreferredLineItemUpdateModelRequest**](PreferredLineItemUpdateModelRequest.md)| The line item settings to create a line item with | [optional]
-
-### Return type
-
-[**PreferredLineItemResponse**](PreferredLineItemResponse.md)
 
 ### Authorization
 

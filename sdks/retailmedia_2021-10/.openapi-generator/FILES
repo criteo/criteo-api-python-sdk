@@ -263,6 +263,9 @@ docs/ValueTypeResourceOfAudienceTarget202110.md
 docs/ValueTypeResourceOfKeywordTarget202110.md
 docs/ValueTypeResourceOfStoreIdsUpdateModel202110.md
 docs/ValueTypeResourceOfStoreTarget202110.md
+examples/__init__.py
+examples/portfolio.py
+examples/statistics.py
 git_push.sh
 requirements.txt
 setup.cfg
