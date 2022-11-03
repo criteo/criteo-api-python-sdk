@@ -4,7 +4,7 @@ from setuptools import setup, find_packages  # noqa: H301
 import os
 
 NAME = "criteo-api-marketingsolutions-sdk"
-VERSION = "2022.10.0.221102"
+VERSION = "2022.10.0.221103"
 # To install the library, run the following
 #
 # python setup.py install
@@ -30,9 +30,9 @@ Python 2.7 and 3.5+
 
 
 ```sh
-pip install criteo-api-marketingsolutions-sdk==2022.10.0.221102
+pip install criteo-api-marketingsolutions-sdk==2022.10.0.221103
 ```
-(you may need to run `pip` with root permission: `sudo pip install criteo-api-marketingsolutions-sdk==2022.10.0.221102`)
+(you may need to run `pip` with root permission: `sudo pip install criteo-api-marketingsolutions-sdk==2022.10.0.221103`)
 
 Then import the package:
 ```python
