@@ -30,15 +30,17 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.commerce_v1 import CommerceV1
+    from criteo_api_marketingsolutions_preview.model.behavioral_v1 import BehavioralV1
     from criteo_api_marketingsolutions_preview.model.contact_list_v1 import ContactListV1
+    from criteo_api_marketingsolutions_preview.model.in_market_v1 import InMarketV1
     from criteo_api_marketingsolutions_preview.model.location_v1 import LocationV1
-    from criteo_api_marketingsolutions_preview.model.prebuilt_v1 import PrebuiltV1
+    from criteo_api_marketingsolutions_preview.model.lookalike_v1 import LookalikeV1
     from criteo_api_marketingsolutions_preview.model.retargeting_v1 import RetargetingV1
-    globals()['CommerceV1'] = CommerceV1
+    globals()['BehavioralV1'] = BehavioralV1
     globals()['ContactListV1'] = ContactListV1
+    globals()['InMarketV1'] = InMarketV1
     globals()['LocationV1'] = LocationV1
-    globals()['PrebuiltV1'] = PrebuiltV1
+    globals()['LookalikeV1'] = LookalikeV1
     globals()['RetargetingV1'] = RetargetingV1
 
 
@@ -69,12 +71,13 @@ class AudienceSegmentEntityV1(ModelNormal):
     allowed_values = {
         ('type',): {
             'UNKNOWN': "Unknown",
-            'COMMERCE': "Commerce",
-            'SIMILAR': "Similar",
+            'INMARKET': "InMarket",
+            'PROSPECTING': "Prospecting",
             'CONTACTLIST': "ContactList",
             'LOCATION': "Location",
-            'PREBUILT': "Prebuilt",
+            'BEHAVIORAL': "Behavioral",
             'RETARGETING': "Retargeting",
+            'LOOKALIKE': "Lookalike",
         },
     }
 
@@ -110,12 +113,13 @@ class AudienceSegmentEntityV1(ModelNormal):
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
-            'commerce': (CommerceV1,),  # noqa: E501
-            'similar': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'in_market': (InMarketV1,),  # noqa: E501
+            'prospecting': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'contact_list': (ContactListV1,),  # noqa: E501
             'location': (LocationV1,),  # noqa: E501
-            'prebuilt': (PrebuiltV1,),  # noqa: E501
+            'behavioral': (BehavioralV1,),  # noqa: E501
             'retargeting': (RetargetingV1,),  # noqa: E501
+            'lookalike': (LookalikeV1,),  # noqa: E501
         }
 
     @cached_property
@@ -130,12 +134,13 @@ class AudienceSegmentEntityV1(ModelNormal):
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'commerce': 'commerce',  # noqa: E501
-        'similar': 'similar',  # noqa: E501
+        'in_market': 'inMarket',  # noqa: E501
+        'prospecting': 'prospecting',  # noqa: E501
         'contact_list': 'contactList',  # noqa: E501
         'location': 'location',  # noqa: E501
-        'prebuilt': 'prebuilt',  # noqa: E501
+        'behavioral': 'behavioral',  # noqa: E501
         'retargeting': 'retargeting',  # noqa: E501
+        'lookalike': 'lookalike',  # noqa: E501
     }
 
     read_only_vars = {
@@ -185,12 +190,13 @@ class AudienceSegmentEntityV1(ModelNormal):
             created_at (datetime): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             updated_at (datetime): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
             advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
-            commerce (CommerceV1): [optional]  # noqa: E501
-            similar ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target similar users to website visitors.. [optional]  # noqa: E501
+            in_market (InMarketV1): [optional]  # noqa: E501
+            prospecting ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target prospecting users to website visitors.. [optional]  # noqa: E501
             contact_list (ContactListV1): [optional]  # noqa: E501
             location (LocationV1): [optional]  # noqa: E501
-            prebuilt (PrebuiltV1): [optional]  # noqa: E501
+            behavioral (BehavioralV1): [optional]  # noqa: E501
             retargeting (RetargetingV1): [optional]  # noqa: E501
+            lookalike (LookalikeV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -278,12 +284,13 @@ class AudienceSegmentEntityV1(ModelNormal):
             created_at (datetime): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             updated_at (datetime): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
             advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
-            commerce (CommerceV1): [optional]  # noqa: E501
-            similar ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target similar users to website visitors.. [optional]  # noqa: E501
+            in_market (InMarketV1): [optional]  # noqa: E501
+            prospecting ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target prospecting users to website visitors.. [optional]  # noqa: E501
             contact_list (ContactListV1): [optional]  # noqa: E501
             location (LocationV1): [optional]  # noqa: E501
-            prebuilt (PrebuiltV1): [optional]  # noqa: E501
+            behavioral (BehavioralV1): [optional]  # noqa: E501
             retargeting (RetargetingV1): [optional]  # noqa: E501
+            lookalike (LookalikeV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -80,7 +80,7 @@ Name | Type | Description | Notes
 **max_energy_efficiency_class** | **str** | The energy efficiency class as defined in EU directive 2010/30/EU. | [optional] 
 **tax_category** | **str** | The tax category of the product, used to configure detailed tax nexus in account-level tax settings. | [optional] 
 **transit_time_label** | **str** | The transit time label of the product, used to group product in account-level transit time tables. | [optional] 
-**seller_id** | **str** | The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Resellers Program. | [optional] 
+**seller_id** | **str** | The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

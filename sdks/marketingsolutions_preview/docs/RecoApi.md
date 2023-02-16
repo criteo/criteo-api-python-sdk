@@ -103,8 +103,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Product set created successfully |  -  |
 **400** | Unable to parse the request parameters |  -  |
-**403** | Operation forbidden |  -  |
 **422** | Cannot process entity content |  -  |
+**403** | Operation forbidden |  -  |
 **500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

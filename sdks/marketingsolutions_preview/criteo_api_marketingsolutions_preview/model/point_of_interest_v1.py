@@ -139,8 +139,8 @@ class PointOfInterestV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): Name of the point of interest. [optional]  # noqa: E501
-            latitude (float): ISO-6709 latitude. [optional]  # noqa: E501
-            longitude (float): ISO-6709 longitude. [optional]  # noqa: E501
+            latitude (float): ISO-6709 latitude (rounded at 5 decimals). [optional]  # noqa: E501
+            longitude (float): ISO-6709 longitude (rounded at 5 decimals). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class PointOfInterestV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): Name of the point of interest. [optional]  # noqa: E501
-            latitude (float): ISO-6709 latitude. [optional]  # noqa: E501
-            longitude (float): ISO-6709 longitude. [optional]  # noqa: E501
+            latitude (float): ISO-6709 latitude (rounded at 5 decimals). [optional]  # noqa: E501
+            longitude (float): ISO-6709 longitude (rounded at 5 decimals). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

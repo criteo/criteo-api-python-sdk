@@ -388,7 +388,7 @@ class Product(ModelNormal):
             max_energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
             tax_category (str): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
             transit_time_label (str): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str): The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Resellers Program.. [optional]  # noqa: E501
+            seller_id (str): The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")
@@ -553,7 +553,7 @@ class Product(ModelNormal):
             max_energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
             tax_category (str): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
             transit_time_label (str): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str): The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Resellers Program.. [optional]  # noqa: E501
+            seller_id (str): The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")

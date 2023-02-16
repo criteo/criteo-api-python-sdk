@@ -100,8 +100,8 @@ class ReportDetailError(ModelNormal):
         """
         return {
             'type': (str,),  # noqa: E501
-            'is_server_related': (bool,),  # noqa: E501
             'message': (str,),  # noqa: E501
+            'is_server_related': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -111,8 +111,8 @@ class ReportDetailError(ModelNormal):
 
     attribute_map = {
         'type': 'type',  # noqa: E501
-        'is_server_related': 'isServerRelated',  # noqa: E501
         'message': 'message',  # noqa: E501
+        'is_server_related': 'isServerRelated',  # noqa: E501
     }
 
     read_only_vars = {
@@ -122,11 +122,12 @@ class ReportDetailError(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, is_server_related, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, message, is_server_related, *args, **kwargs):  # noqa: E501
         """ReportDetailError - a model defined in OpenAPI
 
         Args:
             type (str):
+            message (str):
             is_server_related (bool):
 
         Keyword Args:
@@ -160,7 +161,6 @@ class ReportDetailError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -189,6 +189,7 @@ class ReportDetailError(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
+        self.message = message
         self.is_server_related = is_server_related
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -210,11 +211,12 @@ class ReportDetailError(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, is_server_related, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, message, is_server_related, *args, **kwargs):  # noqa: E501
         """ReportDetailError - a model defined in OpenAPI
 
         Args:
             type (str):
+            message (str):
             is_server_related (bool):
 
         Keyword Args:
@@ -248,7 +250,6 @@ class ReportDetailError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            message (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -275,6 +276,7 @@ class ReportDetailError(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
+        self.message = message
         self.is_server_related = is_server_related
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

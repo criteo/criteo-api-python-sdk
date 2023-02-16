@@ -1,6 +1,6 @@
 # AudienceIdEntityV1ListResponse
 
-A class implementing the response  of the Criteo API as described in API Guild Guidelines with collection of entities as body
+A top-level object that encapsulates a Criteo API response for several entities
 
 ## Properties
 Name | Type | Description | Notes

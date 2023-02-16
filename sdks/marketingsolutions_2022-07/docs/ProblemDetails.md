@@ -5,7 +5,8 @@ Data model for common error or warning
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**trace_identifier** | **str** |  | [optional] 
+**trace_id** | **str** | The request correlation ID this problem comes from. | [optional] 
+**trace_identifier** | **str** | The request correlation ID this problem comes from. (deprecated, use traceId instead) | [optional] 
 **type** | **str** |  | [optional] 
 **code** | **str** |  | [optional] 
 **instance** | **str** |  | [optional] 

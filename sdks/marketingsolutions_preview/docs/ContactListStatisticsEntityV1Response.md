@@ -1,6 +1,6 @@
 # ContactListStatisticsEntityV1Response
 
-A class implementing the response of the Criteo API as described in API Guild Guidelines with a single entity as body
+A top-level object that encapsulates a Criteo API response for a single entity
 
 ## Properties
 Name | Type | Description | Notes

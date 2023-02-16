@@ -4,11 +4,17 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /preview/retail-media/line-items/{id}/keywords/add-remove | 
 [**delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**delete_api_v1_external_balance_campaigns_by_balance_id**](CampaignApi.md#delete_api_v1_external_balance_campaigns_by_balance_id) | **DELETE** /preview/retail-media/balances/{balanceId}/campaigns | 
 [**delete_api_v1_external_line_item_products_by_line_item_id**](CampaignApi.md#delete_api_v1_external_line_item_products_by_line_item_id) | **DELETE** /preview/retail-media/line-items/{lineItemId}/products | 
+[**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /preview/retail-media/line-items/{id}/keywords | 
+[**fetch_proposal**](CampaignApi.md#fetch_proposal) | **GET** /preview/retail-media/preferred-deal-line-items/{id}/proposal | 
+[**get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id**](CampaignApi.md#get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/retailer-cpc-rates | 
+[**get_api202210_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api202210_external_account_by_account_id_creativescreative_id) | **GET** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_api202210_external_line_item_product_buttons_by_line_item_id**](CampaignApi.md#get_api202210_external_line_item_product_buttons_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons | 
 [**get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
+[**get_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#get_api202301_external_line_item_bid_multipliers_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**get_api_v0_external_catalog_output_by_catalog_id**](CampaignApi.md#get_api_v0_external_catalog_output_by_catalog_id) | **GET** /preview/retail-media/catalogs/{catalogId}/output | 
 [**get_api_v0_external_catalog_status_by_catalog_id**](CampaignApi.md#get_api_v0_external_catalog_status_by_catalog_id) | **GET** /preview/retail-media/catalogs/{catalogId}/status | 
 [**get_api_v1_external_account_balances_by_account_id**](CampaignApi.md#get_api_v1_external_account_balances_by_account_id) | **GET** /preview/retail-media/accounts/{accountId}/balances | 
@@ -23,18 +29,125 @@ Method | HTTP request | Description
 [**get_api_v1_external_line_item_products_by_line_item_id**](CampaignApi.md#get_api_v1_external_line_item_products_by_line_item_id) | **GET** /preview/retail-media/line-items/{lineItemId}/products | 
 [**get_api_v1_external_retailer_brands_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_brands_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailerId}/brands | 
 [**get_api_v1_external_retailer_by_retailer_id_seller_by_seller**](CampaignApi.md#get_api_v1_external_retailer_by_retailer_id_seller_by_seller) | **GET** /preview/retail-media/retailers/{retailerId}/sellers/{seller} | 
+[**get_api_v1_external_retailer_category_cpc_rates_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_category_cpc_rates_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/category-cpc-rates | 
+[**get_api_v1_external_retailer_placements_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_placements_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/placements | 
+[**post_api202210_external_account_creatives_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
+[**post_api202210_external_account_creatives_search_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_search_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives/search | 
 [**post_api202210_external_line_item_product_buttons_create_by_line_item_id**](CampaignApi.md#post_api202210_external_line_item_product_buttons_create_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**post_api_v0_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v0_external_account_catalogs_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/catalogs | 
 [**post_api_v1_external_account_campaigns_by_account_id**](CampaignApi.md#post_api_v1_external_account_campaigns_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/campaigns | 
 [**post_api_v1_external_campaign_line_items_by_campaign_id**](CampaignApi.md#post_api_v1_external_campaign_line_items_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaignId}/line-items | 
 [**post_api_v1_external_catalogs_sku_retrieval**](CampaignApi.md#post_api_v1_external_catalogs_sku_retrieval) | **POST** /preview/retail-media/catalogs/sku-retrieval | 
 [**post_api_v1_external_catalogs_sku_search**](CampaignApi.md#post_api_v1_external_catalogs_sku_search) | **POST** /preview/retail-media/catalogs/sku-search | 
+[**put_api202210_external_account_by_account_id_creativescreative_id**](CampaignApi.md#put_api202210_external_account_by_account_id_creativescreative_id) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
+[**put_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#put_api202301_external_line_item_bid_multipliers_by_line_item_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**put_api_v1_external_balance_campaigns_by_balance_id**](CampaignApi.md#put_api_v1_external_balance_campaigns_by_balance_id) | **PUT** /preview/retail-media/balances/{balanceId}/campaigns | 
 [**put_api_v1_external_campaign_by_campaign_id**](CampaignApi.md#put_api_v1_external_campaign_by_campaign_id) | **PUT** /preview/retail-media/campaigns/{campaignId} | 
 [**put_api_v1_external_line_item_by_line_item_id**](CampaignApi.md#put_api_v1_external_line_item_by_line_item_id) | **PUT** /preview/retail-media/line-items/{lineItemId} | 
 [**put_api_v1_external_line_item_products_by_line_item_id**](CampaignApi.md#put_api_v1_external_line_item_products_by_line_item_id) | **PUT** /preview/retail-media/line-items/{lineItemId}/products | 
+[**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
+[**submit_proposal**](CampaignApi.md#submit_proposal) | **POST** /preview/retail-media/preferred-deal-line-items/{id}/proposal/submit | 
 
+
+# **add_remove_keywords**
+> RetailMediaExternalv1ResourceOutcome add_remove_keywords(id)
+
+
+
+Add or Remove keywords from the associated line item in bulk
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_add_remove_keywords_model_request import RetailMediaExternalv1AddRemoveKeywordsModelRequest
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    id = "id_example" # str | Long external id of the associated line item
+    retail_media_externalv1_add_remove_keywords_model_request = RetailMediaExternalv1AddRemoveKeywordsModelRequest(
+        data=RetailMediaExternalv1AddRemoveKeywordsModelResource(
+            id="id_example",
+            type="type_example",
+            attributes=RetailMediaExternalv1AddRemoveKeywordsModel(
+                keywords=[
+                    RetailMediaExternalv1AddRemoveKeywordModel(
+                        phrase="phrase_example",
+                        match_type="PositiveExactMatch",
+                        is_deleted=True,
+                    ),
+                ],
+            ),
+        ),
+    ) # RetailMediaExternalv1AddRemoveKeywordsModelRequest | Object containing keywords to be added or removed (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.add_remove_keywords(id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->add_remove_keywords: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.add_remove_keywords(id, retail_media_externalv1_add_remove_keywords_model_request=retail_media_externalv1_add_remove_keywords_model_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->add_remove_keywords: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Long external id of the associated line item |
+ **retail_media_externalv1_add_remove_keywords_model_request** | [**RetailMediaExternalv1AddRemoveKeywordsModelRequest**](RetailMediaExternalv1AddRemoveKeywordsModelRequest.md)| Object containing keywords to be added or removed | [optional]
+
+### Return type
+
+[**RetailMediaExternalv1ResourceOutcome**](RetailMediaExternalv1ResourceOutcome.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**
 > delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id)
@@ -295,6 +408,305 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_keywords**
+> RetailMediaExternalv1KeywordsModelResponse fetch_keywords(id)
+
+
+
+Fetch keywords associated with the specified line item
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_keywords_model_response import RetailMediaExternalv1KeywordsModelResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    id = "id_example" # str | Long external id of the associated line item
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.fetch_keywords(id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->fetch_keywords: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Long external id of the associated line item |
+
+### Return type
+
+[**RetailMediaExternalv1KeywordsModelResponse**](RetailMediaExternalv1KeywordsModelResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_proposal**
+> RetailMediaExternalv1ProposalStatusModelResponse fetch_proposal(id)
+
+
+
+Fetch the status of a proposal to modify a Preferred Deal Line Item.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    id = "id_example" # str | The external id of a line item.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.fetch_proposal(id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->fetch_proposal: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| The external id of a line item. |
+
+### Return type
+
+[**RetailMediaExternalv1ProposalStatusModelResponse**](RetailMediaExternalv1ProposalStatusModelResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**500** | Server Error |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id**
+> RetailerCpcRateCardPreviewResponse get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id(retailer_id)
+
+
+
+Gets the minimum cpc bid for a retailer
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.retailer_cpc_rate_card_preview_response import RetailerCpcRateCardPreviewResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = "retailer-id_example" # str | The retailer id
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **str**| The retailer id |
+
+### Return type
+
+[**RetailerCpcRateCardPreviewResponse**](RetailerCpcRateCardPreviewResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | bids found |  -  |
+**403** | forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api202210_external_account_by_account_id_creativescreative_id**
+> Creative202210Response get_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id)
+
+
+
+Get the specified creative
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative202210_response import Creative202210Response
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to retrieve creatives for
+    creative_id = "creative-id_example" # str | Creative to get
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_api202210_external_account_by_account_id_creativescreative_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to retrieve creatives for |
+ **creative_id** | **str**| Creative to get |
+
+### Return type
+
+[**Creative202210Response**](Creative202210Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Creatives found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_api202210_external_line_item_product_buttons_by_line_item_id**
 > ProductButtonListResponse get_api202210_external_line_item_product_buttons_by_line_item_id(line_item_id)
 
@@ -434,6 +846,79 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api202301_external_line_item_bid_multipliers_by_line_item_id**
+> JsonApiSingleResponseOfLineItemBidMultipliers get_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id)
+
+
+
+Get bid multipliers by line item
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item_bid_multipliers import JsonApiSingleResponseOfLineItemBidMultipliers
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | Long external id of the associated line item
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_api202301_external_line_item_bid_multipliers_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| Long external id of the associated line item |
+
+### Return type
+
+[**JsonApiSingleResponseOfLineItemBidMultipliers**](JsonApiSingleResponseOfLineItemBidMultipliers.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -1595,6 +2080,352 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_api_v1_external_retailer_category_cpc_rates_by_retailer_id**
+> CategoryCpcRateCardPreviewListResponse get_api_v1_external_retailer_category_cpc_rates_by_retailer_id(retailer_id)
+
+
+
+Gets the minimum cpc bid for all categories for a retailer
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.category_cpc_rate_card_preview_list_response import CategoryCpcRateCardPreviewListResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = "retailer-id_example" # str | The retailer id
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api_v1_external_retailer_category_cpc_rates_by_retailer_id(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_api_v1_external_retailer_category_cpc_rates_by_retailer_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **str**| The retailer id |
+
+### Return type
+
+[**CategoryCpcRateCardPreviewListResponse**](CategoryCpcRateCardPreviewListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | bids found |  -  |
+**403** | forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api_v1_external_retailer_placements_by_retailer_id**
+> PlacementPreviewListResponse get_api_v1_external_retailer_placements_by_retailer_id(retailer_id)
+
+
+
+Gets all placement information for the given retailer
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.placement_preview_list_response import PlacementPreviewListResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = "retailer-id_example" # str | The retailer id for which placements should be fetched.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api_v1_external_retailer_placements_by_retailer_id(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_api_v1_external_retailer_placements_by_retailer_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **str**| The retailer id for which placements should be fetched. |
+
+### Return type
+
+[**PlacementPreviewListResponse**](PlacementPreviewListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | placements records. |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_api202210_external_account_creatives_by_account_id**
+> Creative202210Response post_api202210_external_account_creatives_by_account_id(account_id)
+
+
+
+Create a creative for an account
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative202210_response import Creative202210Response
+from criteo_api_retailmedia_preview.model.creative_create_model202207 import CreativeCreateModel202207
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to create a creative for
+    creative_create_model202207 = CreativeCreateModel202207(
+        name="name_example",
+        brand_id=1,
+        retailer_id=1,
+        template_id=1,
+        template_variable_values=[
+            TemplateVariableValue(
+                id="id_example",
+                text_variable_value=TextVariableValue(
+                    text="text_example",
+                ),
+                choice_variable_value=ChoiceVariableValue(
+                    chosen_options=[
+                        "chosen_options_example",
+                    ],
+                ),
+                color_variable_value=ColorVariableValue(
+                    color="#2EC",
+                ),
+                files_variable_value=FilesVariableValue(
+                    asset_ids=[
+                        "asset_ids_example",
+                    ],
+                ),
+                hyperlink_variable_value=HyperlinkVariableValue(
+                    url="url_example",
+                ),
+            ),
+        ],
+    ) # CreativeCreateModel202207 | The creative to create (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.post_api202210_external_account_creatives_by_account_id(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202210_external_account_creatives_by_account_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.post_api202210_external_account_creatives_by_account_id(account_id, creative_create_model202207=creative_create_model202207)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202210_external_account_creatives_by_account_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to create a creative for |
+ **creative_create_model202207** | [**CreativeCreateModel202207**](CreativeCreateModel202207.md)| The creative to create | [optional]
+
+### Return type
+
+[**Creative202210Response**](Creative202210Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Creatives created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_api202210_external_account_creatives_search_by_account_id**
+> Creative202210ListResponse post_api202210_external_account_creatives_search_by_account_id(account_id)
+
+
+
+Get account creatives
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative202210_list_response import Creative202210ListResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to retrieve creatives for
+    creative_ids = [
+        "creative-ids_example",
+    ] # [str] | Creatives to filter by (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.post_api202210_external_account_creatives_search_by_account_id(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202210_external_account_creatives_search_by_account_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.post_api202210_external_account_creatives_search_by_account_id(account_id, creative_ids=creative_ids)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->post_api202210_external_account_creatives_search_by_account_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to retrieve creatives for |
+ **creative_ids** | **[str]**| Creatives to filter by | [optional]
+
+### Return type
+
+[**Creative202210ListResponse**](Creative202210ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Creatives found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **post_api202210_external_line_item_product_buttons_create_by_line_item_id**
 > ProductButtonListResponse post_api202210_external_line_item_product_buttons_create_by_line_item_id(line_item_id)
 
@@ -1881,8 +2712,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
 **201** | Success |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1984,8 +2815,8 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
 **201** | Success |  -  |
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2164,6 +2995,122 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **put_api202210_external_account_by_account_id_creativescreative_id**
+> Creative202210Response put_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id)
+
+
+
+Update a creative
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative202210_response import Creative202210Response
+from criteo_api_retailmedia_preview.model.creative_update_model202207 import CreativeUpdateModel202207
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id containing the creative
+    creative_id = "creative-id_example" # str | Creative to update
+    creative_update_model202207 = CreativeUpdateModel202207(
+        name="name_example",
+        brand_id=1,
+        retailer_id=1,
+        template_id=1,
+        template_variable_values=[
+            TemplateVariableValue(
+                id="id_example",
+                text_variable_value=TextVariableValue(
+                    text="text_example",
+                ),
+                choice_variable_value=ChoiceVariableValue(
+                    chosen_options=[
+                        "chosen_options_example",
+                    ],
+                ),
+                color_variable_value=ColorVariableValue(
+                    color="#2EC",
+                ),
+                files_variable_value=FilesVariableValue(
+                    asset_ids=[
+                        "asset_ids_example",
+                    ],
+                ),
+                hyperlink_variable_value=HyperlinkVariableValue(
+                    url="url_example",
+                ),
+            ),
+        ],
+    ) # CreativeUpdateModel202207 | The creative to create (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.put_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->put_api202210_external_account_by_account_id_creativescreative_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.put_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id, creative_update_model202207=creative_update_model202207)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->put_api202210_external_account_by_account_id_creativescreative_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id containing the creative |
+ **creative_id** | **str**| Creative to update |
+ **creative_update_model202207** | [**CreativeUpdateModel202207**](CreativeUpdateModel202207.md)| The creative to create | [optional]
+
+### Return type
+
+[**Creative202210Response**](Creative202210Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**204** | Creative updated |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**
 > ProductButtonResponse put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id)
 
@@ -2254,6 +3201,105 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **put_api202301_external_line_item_bid_multipliers_by_line_item_id**
+> LineItemBidMultipliersResponse put_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id)
+
+
+
+Replace bid multipliers on a line item
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_response import LineItemBidMultipliersResponse
+from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_request import LineItemBidMultipliersRequest
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | Long external id of the associated line item
+    line_item_bid_multipliers_request = LineItemBidMultipliersRequest(
+        data=ResourceOfLineItemBidMultipliers(
+            attributes=LineItemBidMultipliers(
+                search=3.14,
+                homepage=3.14,
+                categories=3.14,
+                product_detail=3.14,
+                confirmation=3.14,
+                merchandising=3.14,
+                deals=3.14,
+                checkout=3.14,
+            ),
+            id="id_example",
+            type="type_example",
+        ),
+    ) # LineItemBidMultipliersRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.put_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->put_api202301_external_line_item_bid_multipliers_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.put_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id, line_item_bid_multipliers_request=line_item_bid_multipliers_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->put_api202301_external_line_item_bid_multipliers_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| Long external id of the associated line item |
+ **line_item_bid_multipliers_request** | [**LineItemBidMultipliersRequest**](LineItemBidMultipliersRequest.md)|  | [optional]
+
+### Return type
+
+[**LineItemBidMultipliersResponse**](LineItemBidMultipliersResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -2645,6 +3691,180 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **set_keyword_bids**
+> RetailMediaExternalv1ResourceOutcome set_keyword_bids(id)
+
+
+
+Set bid overrides for associated keywords to the given line item in bulk
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_set_bids_model_request import RetailMediaExternalv1SetBidsModelRequest
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    id = "id_example" # str | Long external id of the associated line item
+    retail_media_externalv1_set_bids_model_request = RetailMediaExternalv1SetBidsModelRequest(
+        data=RetailMediaExternalv1SetBidsModelResource(
+            id="id_example",
+            type="type_example",
+            attributes=RetailMediaExternalv1SetBidsModel(
+                keywords=[
+                    RetailMediaExternalv1SetBidModel(
+                        phrase="phrase_example",
+                        bid=3.14,
+                    ),
+                ],
+            ),
+        ),
+    ) # RetailMediaExternalv1SetBidsModelRequest | Object containing a list of bid overrides for associated keywords (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.set_keyword_bids(id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->set_keyword_bids: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.set_keyword_bids(id, retail_media_externalv1_set_bids_model_request=retail_media_externalv1_set_bids_model_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->set_keyword_bids: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Long external id of the associated line item |
+ **retail_media_externalv1_set_bids_model_request** | [**RetailMediaExternalv1SetBidsModelRequest**](RetailMediaExternalv1SetBidsModelRequest.md)| Object containing a list of bid overrides for associated keywords | [optional]
+
+### Return type
+
+[**RetailMediaExternalv1ResourceOutcome**](RetailMediaExternalv1ResourceOutcome.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **submit_proposal**
+> RetailMediaExternalv1ProposalStatusModelResponse submit_proposal(id)
+
+
+
+Submit a proposal to modify a Preferred Deal Line Item for review.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    id = "id_example" # str | The external id of a line item.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.submit_proposal(id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->submit_proposal: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| The external id of a line item. |
+
+### Return type
+
+[**RetailMediaExternalv1ProposalStatusModelResponse**](RetailMediaExternalv1ProposalStatusModelResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**500** | Server Error |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

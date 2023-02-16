@@ -56,7 +56,6 @@ class NillableGenderV1(ModelNormal):
 
     allowed_values = {
         ('value',): {
-            'UNKNOWN': "Unknown",
             'MALE': "Male",
             'FEMALE': "Female",
         },

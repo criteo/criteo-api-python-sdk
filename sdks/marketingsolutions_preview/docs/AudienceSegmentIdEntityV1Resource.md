@@ -1,6 +1,6 @@
 # AudienceSegmentIdEntityV1Resource
 
-A class that represents an entity in a guild compliant way
+A class that represents a domain entity exposed by an API
 
 ## Properties
 Name | Type | Description | Notes

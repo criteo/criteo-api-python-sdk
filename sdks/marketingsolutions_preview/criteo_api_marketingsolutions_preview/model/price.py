@@ -136,8 +136,8 @@ class Price(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            currency (str): The price represented as a number.. [optional]  # noqa: E501
-            value (str): The currency of the price.. [optional]  # noqa: E501
+            currency (str): The currency of the price.. [optional]  # noqa: E501
+            value (str): The price represented as a number. See JSON's number specification for more details.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -219,8 +219,8 @@ class Price(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            currency (str): The price represented as a number.. [optional]  # noqa: E501
-            value (str): The currency of the price.. [optional]  # noqa: E501
+            currency (str): The currency of the price.. [optional]  # noqa: E501
+            value (str): The price represented as a number. See JSON's number specification for more details.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

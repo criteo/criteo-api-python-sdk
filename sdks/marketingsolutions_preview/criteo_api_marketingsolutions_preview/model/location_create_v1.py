@@ -30,9 +30,7 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.geo_division_v1 import GeoDivisionV1
     from criteo_api_marketingsolutions_preview.model.point_of_interest_v1 import PointOfInterestV1
-    globals()['GeoDivisionV1'] = GeoDivisionV1
     globals()['PointOfInterestV1'] = PointOfInterestV1
 
 
@@ -61,18 +59,10 @@ class LocationCreateV1(ModelNormal):
     """
 
     allowed_values = {
-        ('registry_type',): {
-            'CATALOG': "Catalog",
-            'STORE': "Store",
-            'POINTOFINTEREST': "PointOfInterest",
-            'GEODIVISION': "GeoDivision",
-        },
     }
 
     validations = {
         ('points_of_interest',): {
-        },
-        ('geo_divisions',): {
         },
     }
 
@@ -99,9 +89,7 @@ class LocationCreateV1(ModelNormal):
         """
         lazy_import()
         return {
-            'registry_type': (str,),  # noqa: E501
             'points_of_interest': ([PointOfInterestV1],),  # noqa: E501
-            'geo_divisions': ([GeoDivisionV1],),  # noqa: E501
             'radius_in_km': (int,),  # noqa: E501
         }
 
@@ -111,9 +99,7 @@ class LocationCreateV1(ModelNormal):
 
 
     attribute_map = {
-        'registry_type': 'registryType',  # noqa: E501
         'points_of_interest': 'pointsOfInterest',  # noqa: E501
-        'geo_divisions': 'geoDivisions',  # noqa: E501
         'radius_in_km': 'radiusInKm',  # noqa: E501
     }
 
@@ -158,9 +144,7 @@ class LocationCreateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            registry_type (str): [optional]  # noqa: E501
             points_of_interest ([PointOfInterestV1]): [optional]  # noqa: E501
-            geo_divisions ([GeoDivisionV1]): [optional]  # noqa: E501
             radius_in_km (int): [optional]  # noqa: E501
         """
 
@@ -243,9 +227,7 @@ class LocationCreateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            registry_type (str): [optional]  # noqa: E501
             points_of_interest ([PointOfInterestV1]): [optional]  # noqa: E501
-            geo_divisions ([GeoDivisionV1]): [optional]  # noqa: E501
             radius_in_km (int): [optional]  # noqa: E501
         """
 

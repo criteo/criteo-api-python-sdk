@@ -138,7 +138,7 @@ class AudienceDeleteEntityV1Resource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Audience of people of interest for a marketer.. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Audience to delete. [optional]  # noqa: E501
             id (str): Id of the entity. [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
@@ -222,7 +222,7 @@ class AudienceDeleteEntityV1Resource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Audience of people of interest for a marketer.. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Audience to delete. [optional]  # noqa: E501
             id (str): Id of the entity. [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """

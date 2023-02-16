@@ -95,13 +95,13 @@ class PlacementsReportQueryMessage(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'advertiser_ids': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'currency': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'advertiser_ids': (str,),  # noqa: E501
             'campaign_ids': (str,),  # noqa: E501
             'adset_ids': (str,),  # noqa: E501
             'environment': (str,),  # noqa: E501
@@ -116,13 +116,13 @@ class PlacementsReportQueryMessage(ModelNormal):
 
 
     attribute_map = {
+        'advertiser_ids': 'advertiserIds',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'currency': 'currency',  # noqa: E501
         'format': 'format',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'advertiser_ids': 'advertiserIds',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
         'adset_ids': 'adsetIds',  # noqa: E501
         'environment': 'environment',  # noqa: E501
@@ -138,10 +138,11 @@ class PlacementsReportQueryMessage(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, dimensions, metrics, currency, format, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_ids, dimensions, metrics, currency, format, start_date, end_date, *args, **kwargs):  # noqa: E501
         """PlacementsReportQueryMessage - a model defined in OpenAPI
 
         Args:
+            advertiser_ids (str): The comma-separated list of advertiser ids.
             dimensions ([str]): The dimensions for the report.
             metrics ([str]): The list of metrics to report.
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
@@ -180,7 +181,6 @@ class PlacementsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_ids (str): The comma-separated list of advertiser ids.. [optional]  # noqa: E501
             campaign_ids (str): The comma-separated list of campaign ids.. [optional]  # noqa: E501
             adset_ids (str): The comma-separated list of adSet ids.. [optional]  # noqa: E501
             environment (str): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
@@ -214,6 +214,7 @@ class PlacementsReportQueryMessage(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.advertiser_ids = advertiser_ids
         self.dimensions = dimensions
         self.metrics = metrics
         self.currency = currency
@@ -240,10 +241,11 @@ class PlacementsReportQueryMessage(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, dimensions, metrics, currency, format, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_ids, dimensions, metrics, currency, format, start_date, end_date, *args, **kwargs):  # noqa: E501
         """PlacementsReportQueryMessage - a model defined in OpenAPI
 
         Args:
+            advertiser_ids (str): The comma-separated list of advertiser ids.
             dimensions ([str]): The dimensions for the report.
             metrics ([str]): The list of metrics to report.
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
@@ -282,7 +284,6 @@ class PlacementsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_ids (str): The comma-separated list of advertiser ids.. [optional]  # noqa: E501
             campaign_ids (str): The comma-separated list of campaign ids.. [optional]  # noqa: E501
             adset_ids (str): The comma-separated list of adSet ids.. [optional]  # noqa: E501
             environment (str): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
@@ -314,6 +315,7 @@ class PlacementsReportQueryMessage(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.advertiser_ids = advertiser_ids
         self.dimensions = dimensions
         self.metrics = metrics
         self.currency = currency

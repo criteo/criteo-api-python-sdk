@@ -91,6 +91,7 @@ class CommonProblem(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'trace_id': (str,),  # noqa: E501
             'trace_identifier': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'code': (str,),  # noqa: E501
@@ -107,6 +108,7 @@ class CommonProblem(ModelNormal):
 
 
     attribute_map = {
+        'trace_id': 'traceId',  # noqa: E501
         'trace_identifier': 'traceIdentifier',  # noqa: E501
         'type': 'type',  # noqa: E501
         'code': 'code',  # noqa: E501
@@ -158,7 +160,8 @@ class CommonProblem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_identifier (str): The request correlation ID this problem comes from.. [optional]  # noqa: E501
+            trace_id (str): The request correlation ID this problem comes from.. [optional]  # noqa: E501
+            trace_identifier (str): The request correlation ID this problem comes from. (deprecated, use traceId instead). [optional]  # noqa: E501
             type (str): The problem's category.. [optional]  # noqa: E501
             code (str): A machine-readable  error code, expressed as a string value.. [optional]  # noqa: E501
             instance (str): A URI that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
@@ -247,7 +250,8 @@ class CommonProblem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_identifier (str): The request correlation ID this problem comes from.. [optional]  # noqa: E501
+            trace_id (str): The request correlation ID this problem comes from.. [optional]  # noqa: E501
+            trace_identifier (str): The request correlation ID this problem comes from. (deprecated, use traceId instead). [optional]  # noqa: E501
             type (str): The problem's category.. [optional]  # noqa: E501
             code (str): A machine-readable  error code, expressed as a string value.. [optional]  # noqa: E501
             instance (str): A URI that identifies the specific occurrence of the problem.. [optional]  # noqa: E501

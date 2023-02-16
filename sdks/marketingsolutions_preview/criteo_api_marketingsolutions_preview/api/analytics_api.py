@@ -22,11 +22,15 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_preview.model.export_result import ExportResult
+from criteo_api_marketingsolutions_preview.model.generate_audience_performance_report_request import GenerateAudiencePerformanceReportRequest
 from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
 from criteo_api_marketingsolutions_preview.model.generate_creatives_report_request import GenerateCreativesReportRequest
+from criteo_api_marketingsolutions_preview.model.generate_statistics_report_request import GenerateStatisticsReportRequest
 from criteo_api_marketingsolutions_preview.model.generate_top_products_report_request import GenerateTopProductsReportRequest
+from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
 from criteo_api_marketingsolutions_preview.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
-from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
 from criteo_api_marketingsolutions_preview.model.statistics_report_query_message import StatisticsReportQueryMessage
 from criteo_api_marketingsolutions_preview.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
@@ -163,6 +167,486 @@ class AnalyticsApi(object):
             },
             api_client=api_client,
             callable=__get_adset_report
+        )
+
+        def __get_async_adset_report(
+            self,
+            **kwargs
+        ):
+            """get_async_adset_report  # noqa: E501
+
+            This Statistics endpoint provides an export Id that let you retrieve data.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_async_adset_report(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                generate_statistics_report_request (GenerateStatisticsReportRequest): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                MarketingSolutionsReportStatusResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.get_async_adset_report = _Endpoint(
+            settings={
+                'response_type': (MarketingSolutionsReportStatusResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/reports/async-statistics',
+                'operation_id': 'get_async_adset_report',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'generate_statistics_report_request',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'generate_statistics_report_request':
+                        (GenerateStatisticsReportRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'generate_statistics_report_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__get_async_adset_report
+        )
+
+        def __get_async_audience_report(
+            self,
+            **kwargs
+        ):
+            """get_async_audience_report  # noqa: E501
+
+            This Statistics endpoint provides an export Id that lets you retrieve data.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_async_audience_report(async_req=True)
+            >>> result = thread.get()
+
+
+            Keyword Args:
+                generate_audience_performance_report_request (GenerateAudiencePerformanceReportRequest): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                MarketingSolutionsReportStatusResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            return self.call_with_http_info(**kwargs)
+
+        self.get_async_audience_report = _Endpoint(
+            settings={
+                'response_type': (MarketingSolutionsReportStatusResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/reports/async-audience-performance',
+                'operation_id': 'get_async_audience_report',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'generate_audience_performance_report_request',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'generate_audience_performance_report_request':
+                        (GenerateAudiencePerformanceReportRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'generate_audience_performance_report_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__get_async_audience_report
+        )
+
+        def __get_async_export_output(
+            self,
+            report_id,
+            **kwargs
+        ):
+            """get_async_export_output  # noqa: E501
+
+            This endpoint gives you the output of the report.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_async_export_output(report_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                report_id (str): Id of the report
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                ExportResult
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['report_id'] = \
+                report_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_async_export_output = _Endpoint(
+            settings={
+                'response_type': (ExportResult,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/reports/{report-id}/output',
+                'operation_id': 'get_async_export_output',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'report_id',
+                ],
+                'required': [
+                    'report_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'report_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'report_id': 'report-id',
+                },
+                'location_map': {
+                    'report_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_async_export_output
+        )
+
+        def __get_async_export_status(
+            self,
+            report_id,
+            **kwargs
+        ):
+            """get_async_export_status  # noqa: E501
+
+            This endpoint gives you the status of the report.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_async_export_status(report_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                report_id (str): Id of the report
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                MarketingSolutionsReportStatusResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['report_id'] = \
+                report_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_async_export_status = _Endpoint(
+            settings={
+                'response_type': (MarketingSolutionsReportStatusResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/reports/{report-id}/status',
+                'operation_id': 'get_async_export_status',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'report_id',
+                ],
+                'required': [
+                    'report_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'report_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'report_id': 'report-id',
+                },
+                'location_map': {
+                    'report_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_async_export_status
         )
 
         def __get_categories_report(

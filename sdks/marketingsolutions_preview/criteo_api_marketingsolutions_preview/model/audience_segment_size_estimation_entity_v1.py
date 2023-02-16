@@ -30,9 +30,9 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.commerce_size_estimation_v1 import CommerceSizeEstimationV1
+    from criteo_api_marketingsolutions_preview.model.in_market_size_estimation_v1 import InMarketSizeEstimationV1
     from criteo_api_marketingsolutions_preview.model.location_size_estimation_v1 import LocationSizeEstimationV1
-    globals()['CommerceSizeEstimationV1'] = CommerceSizeEstimationV1
+    globals()['InMarketSizeEstimationV1'] = InMarketSizeEstimationV1
     globals()['LocationSizeEstimationV1'] = LocationSizeEstimationV1
 
 
@@ -90,7 +90,7 @@ class AudienceSegmentSizeEstimationEntityV1(ModelNormal):
         lazy_import()
         return {
             'advertiser_id': (str,),  # noqa: E501
-            'commerce': (CommerceSizeEstimationV1,),  # noqa: E501
+            'in_market': (InMarketSizeEstimationV1,),  # noqa: E501
             'location': (LocationSizeEstimationV1,),  # noqa: E501
         }
 
@@ -101,7 +101,7 @@ class AudienceSegmentSizeEstimationEntityV1(ModelNormal):
 
     attribute_map = {
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'commerce': 'commerce',  # noqa: E501
+        'in_market': 'inMarket',  # noqa: E501
         'location': 'location',  # noqa: E501
     }
 
@@ -147,7 +147,7 @@ class AudienceSegmentSizeEstimationEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
-            commerce (CommerceSizeEstimationV1): [optional]  # noqa: E501
+            in_market (InMarketSizeEstimationV1): [optional]  # noqa: E501
             location (LocationSizeEstimationV1): [optional]  # noqa: E501
         """
 
@@ -231,7 +231,7 @@ class AudienceSegmentSizeEstimationEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
-            commerce (CommerceSizeEstimationV1): [optional]  # noqa: E501
+            in_market (InMarketSizeEstimationV1): [optional]  # noqa: E501
             location (LocationSizeEstimationV1): [optional]  # noqa: E501
         """
 

@@ -22,6 +22,11 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_preview.model.brand_preview_list_response import BrandPreviewListResponse
+from criteo_api_retailmedia_preview.model.category_cpc_rate_card_preview_list_response import CategoryCpcRateCardPreviewListResponse
+from criteo_api_retailmedia_preview.model.creative202210_list_response import Creative202210ListResponse
+from criteo_api_retailmedia_preview.model.creative202210_response import Creative202210Response
+from criteo_api_retailmedia_preview.model.creative_create_model202207 import CreativeCreateModel202207
+from criteo_api_retailmedia_preview.model.creative_update_model202207 import CreativeUpdateModel202207
 from criteo_api_retailmedia_preview.model.external_post_campaign import ExternalPostCampaign
 from criteo_api_retailmedia_preview.model.external_post_line_item import ExternalPostLineItem
 from criteo_api_retailmedia_preview.model.external_put_campaign import ExternalPutCampaign
@@ -40,11 +45,21 @@ from criteo_api_retailmedia_preview.model.json_api_request_of_catalog_request_pr
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_campaign import JsonApiSingleResponseOfCampaign
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item import JsonApiSingleResponseOfLineItem
+from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item_bid_multipliers import JsonApiSingleResponseOfLineItemBidMultipliers
+from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_request import LineItemBidMultipliersRequest
+from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_response import LineItemBidMultipliersResponse
 from criteo_api_retailmedia_preview.model.page_of_balance_campaign import PageOfBalanceCampaign
+from criteo_api_retailmedia_preview.model.placement_preview_list_response import PlacementPreviewListResponse
 from criteo_api_retailmedia_preview.model.product_button_list_request import ProductButtonListRequest
 from criteo_api_retailmedia_preview.model.product_button_list_response import ProductButtonListResponse
 from criteo_api_retailmedia_preview.model.product_button_request import ProductButtonRequest
 from criteo_api_retailmedia_preview.model.product_button_response import ProductButtonResponse
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_add_remove_keywords_model_request import RetailMediaExternalv1AddRemoveKeywordsModelRequest
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_keywords_model_response import RetailMediaExternalv1KeywordsModelResponse
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
+from criteo_api_retailmedia_preview.model.retail_media_externalv1_set_bids_model_request import RetailMediaExternalv1SetBidsModelRequest
+from criteo_api_retailmedia_preview.model.retailer_cpc_rate_card_preview_response import RetailerCpcRateCardPreviewResponse
 from criteo_api_retailmedia_preview.model.seller_preview_response import SellerPreviewResponse
 from criteo_api_retailmedia_preview.model.sku_data_preview_list_response import SkuDataPreviewListResponse
 from criteo_api_retailmedia_preview.model.sku_search_request_preview_request import SkuSearchRequestPreviewRequest
@@ -61,6 +76,134 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+
+        def __add_remove_keywords(
+            self,
+            id,
+            **kwargs
+        ):
+            """add_remove_keywords  # noqa: E501
+
+            Add or Remove keywords from the associated line item in bulk  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.add_remove_keywords(id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                id (str): Long external id of the associated line item
+
+            Keyword Args:
+                retail_media_externalv1_add_remove_keywords_model_request (RetailMediaExternalv1AddRemoveKeywordsModelRequest): Object containing keywords to be added or removed. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaExternalv1ResourceOutcome
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['id'] = \
+                id
+            return self.call_with_http_info(**kwargs)
+
+        self.add_remove_keywords = _Endpoint(
+            settings={
+                'response_type': (RetailMediaExternalv1ResourceOutcome,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{id}/keywords/add-remove',
+                'operation_id': 'add_remove_keywords',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'retail_media_externalv1_add_remove_keywords_model_request',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'retail_media_externalv1_add_remove_keywords_model_request':
+                        (RetailMediaExternalv1AddRemoveKeywordsModelRequest,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'retail_media_externalv1_add_remove_keywords_model_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__add_remove_keywords
+        )
 
         def __delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(
             self,
@@ -441,6 +584,496 @@ class CampaignApi(object):
             callable=__delete_api_v1_external_line_item_products_by_line_item_id
         )
 
+        def __fetch_keywords(
+            self,
+            id,
+            **kwargs
+        ):
+            """fetch_keywords  # noqa: E501
+
+            Fetch keywords associated with the specified line item  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.fetch_keywords(id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                id (str): Long external id of the associated line item
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaExternalv1KeywordsModelResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['id'] = \
+                id
+            return self.call_with_http_info(**kwargs)
+
+        self.fetch_keywords = _Endpoint(
+            settings={
+                'response_type': (RetailMediaExternalv1KeywordsModelResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{id}/keywords',
+                'operation_id': 'fetch_keywords',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                },
+                'location_map': {
+                    'id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__fetch_keywords
+        )
+
+        def __fetch_proposal(
+            self,
+            id,
+            **kwargs
+        ):
+            """fetch_proposal  # noqa: E501
+
+            Fetch the status of a proposal to modify a Preferred Deal Line Item.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.fetch_proposal(id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                id (str): The external id of a line item.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaExternalv1ProposalStatusModelResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['id'] = \
+                id
+            return self.call_with_http_info(**kwargs)
+
+        self.fetch_proposal = _Endpoint(
+            settings={
+                'response_type': (RetailMediaExternalv1ProposalStatusModelResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/preferred-deal-line-items/{id}/proposal',
+                'operation_id': 'fetch_proposal',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                },
+                'location_map': {
+                    'id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__fetch_proposal
+        )
+
+        def __get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id(
+            self,
+            retailer_id,
+            **kwargs
+        ):
+            """get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id  # noqa: E501
+
+            Gets the minimum cpc bid for a retailer  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id(retailer_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                retailer_id (str): The retailer id
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailerCpcRateCardPreviewResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['retailer_id'] = \
+                retailer_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id = _Endpoint(
+            settings={
+                'response_type': (RetailerCpcRateCardPreviewResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/retailer-cpc-rates',
+                'operation_id': 'get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailer-id',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id
+        )
+
+        def __get_api202210_external_account_by_account_id_creativescreative_id(
+            self,
+            account_id,
+            creative_id,
+            **kwargs
+        ):
+            """get_api202210_external_account_by_account_id_creativescreative_id  # noqa: E501
+
+            Get the specified creative  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): External account id to retrieve creatives for
+                creative_id (str): Creative to get
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                Creative202210Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            kwargs['creative_id'] = \
+                creative_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api202210_external_account_by_account_id_creativescreative_id = _Endpoint(
+            settings={
+                'response_type': (Creative202210Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
+                'operation_id': 'get_api202210_external_account_by_account_id_creativescreative_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_id',
+                ],
+                'required': [
+                    'account_id',
+                    'creative_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'creative_id': 'creative-id',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api202210_external_account_by_account_id_creativescreative_id
+        )
+
         def __get_api202210_external_line_item_product_buttons_by_line_item_id(
             self,
             line_item_id,
@@ -687,6 +1320,127 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id
+        )
+
+        def __get_api202301_external_line_item_bid_multipliers_by_line_item_id(
+            self,
+            line_item_id,
+            **kwargs
+        ):
+            """get_api202301_external_line_item_bid_multipliers_by_line_item_id  # noqa: E501
+
+            Get bid multipliers by line item  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                JsonApiSingleResponseOfLineItemBidMultipliers
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api202301_external_line_item_bid_multipliers_by_line_item_id = _Endpoint(
+            settings={
+                'response_type': (JsonApiSingleResponseOfLineItemBidMultipliers,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/bid-multipliers',
+                'operation_id': 'get_api202301_external_line_item_bid_multipliers_by_line_item_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api202301_external_line_item_bid_multipliers_by_line_item_id
         )
 
         def __get_api_v0_external_catalog_output_by_catalog_id(
@@ -2519,6 +3273,496 @@ class CampaignApi(object):
             callable=__get_api_v1_external_retailer_by_retailer_id_seller_by_seller
         )
 
+        def __get_api_v1_external_retailer_category_cpc_rates_by_retailer_id(
+            self,
+            retailer_id,
+            **kwargs
+        ):
+            """get_api_v1_external_retailer_category_cpc_rates_by_retailer_id  # noqa: E501
+
+            Gets the minimum cpc bid for all categories for a retailer  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api_v1_external_retailer_category_cpc_rates_by_retailer_id(retailer_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                retailer_id (str): The retailer id
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                CategoryCpcRateCardPreviewListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['retailer_id'] = \
+                retailer_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api_v1_external_retailer_category_cpc_rates_by_retailer_id = _Endpoint(
+            settings={
+                'response_type': (CategoryCpcRateCardPreviewListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/category-cpc-rates',
+                'operation_id': 'get_api_v1_external_retailer_category_cpc_rates_by_retailer_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailer-id',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api_v1_external_retailer_category_cpc_rates_by_retailer_id
+        )
+
+        def __get_api_v1_external_retailer_placements_by_retailer_id(
+            self,
+            retailer_id,
+            **kwargs
+        ):
+            """get_api_v1_external_retailer_placements_by_retailer_id  # noqa: E501
+
+            Gets all placement information for the given retailer  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_api_v1_external_retailer_placements_by_retailer_id(retailer_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                retailer_id (str): The retailer id for which placements should be fetched.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                PlacementPreviewListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['retailer_id'] = \
+                retailer_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_api_v1_external_retailer_placements_by_retailer_id = _Endpoint(
+            settings={
+                'response_type': (PlacementPreviewListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/placements',
+                'operation_id': 'get_api_v1_external_retailer_placements_by_retailer_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailer-id',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_api_v1_external_retailer_placements_by_retailer_id
+        )
+
+        def __post_api202210_external_account_creatives_by_account_id(
+            self,
+            account_id,
+            **kwargs
+        ):
+            """post_api202210_external_account_creatives_by_account_id  # noqa: E501
+
+            Create a creative for an account  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.post_api202210_external_account_creatives_by_account_id(account_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): External account id to create a creative for
+
+            Keyword Args:
+                creative_create_model202207 (CreativeCreateModel202207): The creative to create. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                Creative202210Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            return self.call_with_http_info(**kwargs)
+
+        self.post_api202210_external_account_creatives_by_account_id = _Endpoint(
+            settings={
+                'response_type': (Creative202210Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives',
+                'operation_id': 'post_api202210_external_account_creatives_by_account_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_create_model202207',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_create_model202207':
+                        (CreativeCreateModel202207,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_create_model202207': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__post_api202210_external_account_creatives_by_account_id
+        )
+
+        def __post_api202210_external_account_creatives_search_by_account_id(
+            self,
+            account_id,
+            **kwargs
+        ):
+            """post_api202210_external_account_creatives_search_by_account_id  # noqa: E501
+
+            Get account creatives  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.post_api202210_external_account_creatives_search_by_account_id(account_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): External account id to retrieve creatives for
+
+            Keyword Args:
+                creative_ids ([str]): Creatives to filter by. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                Creative202210ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            return self.call_with_http_info(**kwargs)
+
+        self.post_api202210_external_account_creatives_search_by_account_id = _Endpoint(
+            settings={
+                'response_type': (Creative202210ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/search',
+                'operation_id': 'post_api202210_external_account_creatives_search_by_account_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_ids',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_ids':
+                        ([str],),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'creative_ids': 'creative-ids',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_ids': 'query',
+                },
+                'collection_format_map': {
+                    'creative_ids': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__post_api202210_external_account_creatives_search_by_account_id
+        )
+
         def __post_api202210_external_line_item_product_buttons_create_by_line_item_id(
             self,
             line_item_id,
@@ -3303,6 +4547,142 @@ class CampaignApi(object):
             callable=__post_api_v1_external_catalogs_sku_search
         )
 
+        def __put_api202210_external_account_by_account_id_creativescreative_id(
+            self,
+            account_id,
+            creative_id,
+            **kwargs
+        ):
+            """put_api202210_external_account_by_account_id_creativescreative_id  # noqa: E501
+
+            Update a creative  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.put_api202210_external_account_by_account_id_creativescreative_id(account_id, creative_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): External account id containing the creative
+                creative_id (str): Creative to update
+
+            Keyword Args:
+                creative_update_model202207 (CreativeUpdateModel202207): The creative to create. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                Creative202210Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            kwargs['creative_id'] = \
+                creative_id
+            return self.call_with_http_info(**kwargs)
+
+        self.put_api202210_external_account_by_account_id_creativescreative_id = _Endpoint(
+            settings={
+                'response_type': (Creative202210Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
+                'operation_id': 'put_api202210_external_account_by_account_id_creativescreative_id',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_id',
+                    'creative_update_model202207',
+                ],
+                'required': [
+                    'account_id',
+                    'creative_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_id':
+                        (str,),
+                    'creative_update_model202207':
+                        (CreativeUpdateModel202207,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'creative_id': 'creative-id',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_id': 'path',
+                    'creative_update_model202207': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__put_api202210_external_account_by_account_id_creativescreative_id
+        )
+
         def __put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(
             self,
             line_item_id,
@@ -3437,6 +4817,134 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id
+        )
+
+        def __put_api202301_external_line_item_bid_multipliers_by_line_item_id(
+            self,
+            line_item_id,
+            **kwargs
+        ):
+            """put_api202301_external_line_item_bid_multipliers_by_line_item_id  # noqa: E501
+
+            Replace bid multipliers on a line item  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.put_api202301_external_line_item_bid_multipliers_by_line_item_id(line_item_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                line_item_id (str): Long external id of the associated line item
+
+            Keyword Args:
+                line_item_bid_multipliers_request (LineItemBidMultipliersRequest): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                LineItemBidMultipliersResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['line_item_id'] = \
+                line_item_id
+            return self.call_with_http_info(**kwargs)
+
+        self.put_api202301_external_line_item_bid_multipliers_by_line_item_id = _Endpoint(
+            settings={
+                'response_type': (LineItemBidMultipliersResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/bid-multipliers',
+                'operation_id': 'put_api202301_external_line_item_bid_multipliers_by_line_item_id',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'line_item_bid_multipliers_request',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'line_item_bid_multipliers_request':
+                        (LineItemBidMultipliersRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'line_item_bid_multipliers_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__put_api202301_external_line_item_bid_multipliers_by_line_item_id
         )
 
         def __put_api_v1_external_balance_campaigns_by_balance_id(
@@ -3941,4 +5449,253 @@ class CampaignApi(object):
             },
             api_client=api_client,
             callable=__put_api_v1_external_line_item_products_by_line_item_id
+        )
+
+        def __set_keyword_bids(
+            self,
+            id,
+            **kwargs
+        ):
+            """set_keyword_bids  # noqa: E501
+
+            Set bid overrides for associated keywords to the given line item in bulk  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.set_keyword_bids(id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                id (str): Long external id of the associated line item
+
+            Keyword Args:
+                retail_media_externalv1_set_bids_model_request (RetailMediaExternalv1SetBidsModelRequest): Object containing a list of bid overrides for associated keywords. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaExternalv1ResourceOutcome
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['id'] = \
+                id
+            return self.call_with_http_info(**kwargs)
+
+        self.set_keyword_bids = _Endpoint(
+            settings={
+                'response_type': (RetailMediaExternalv1ResourceOutcome,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{id}/keywords/set-bid',
+                'operation_id': 'set_keyword_bids',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                    'retail_media_externalv1_set_bids_model_request',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                    'retail_media_externalv1_set_bids_model_request':
+                        (RetailMediaExternalv1SetBidsModelRequest,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                },
+                'location_map': {
+                    'id': 'path',
+                    'retail_media_externalv1_set_bids_model_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__set_keyword_bids
+        )
+
+        def __submit_proposal(
+            self,
+            id,
+            **kwargs
+        ):
+            """submit_proposal  # noqa: E501
+
+            Submit a proposal to modify a Preferred Deal Line Item for review.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.submit_proposal(id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                id (str): The external id of a line item.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaExternalv1ProposalStatusModelResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['id'] = \
+                id
+            return self.call_with_http_info(**kwargs)
+
+        self.submit_proposal = _Endpoint(
+            settings={
+                'response_type': (RetailMediaExternalv1ProposalStatusModelResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/preferred-deal-line-items/{id}/proposal/submit',
+                'operation_id': 'submit_proposal',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'id',
+                ],
+                'required': [
+                    'id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'id': 'id',
+                },
+                'location_map': {
+                    'id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__submit_proposal
         )

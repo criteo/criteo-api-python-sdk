@@ -79,6 +79,7 @@ class StatisticsReportQueryMessage(ModelNormal):
             'MARKETINGOBJECTIVE': "MarketingObjective",
             'CHANNELID': "ChannelId",
             'CHANNEL': "Channel",
+            'GOAL': "Goal",
         },
     }
 

@@ -1,6 +1,6 @@
 # AudienceSegmentSizeEstimationEntityV1Resource
 
-A class that represents a ValueType in a guild compliant way
+A top-level object that encapsulates a Criteo API response for a single value
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 # ProductsCustomBatchRequestEntry
 
-A batch entry encoding a single non-batch products request.
+A product event for a batch request.
 
 ## Properties
 Name | Type | Description | Notes

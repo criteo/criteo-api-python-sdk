@@ -59,10 +59,6 @@ class LocationSizeEstimationV1(ModelNormal):
     """
 
     allowed_values = {
-        ('registry_type',): {
-            'STORE': "Store",
-            'POINTOFINTEREST': "PointOfInterest",
-        },
     }
 
     validations = {
@@ -93,7 +89,6 @@ class LocationSizeEstimationV1(ModelNormal):
         """
         lazy_import()
         return {
-            'registry_type': (str,),  # noqa: E501
             'points_of_interest': ([PointOfInterestV1],),  # noqa: E501
             'radius_in_km': (int,),  # noqa: E501
         }
@@ -104,7 +99,6 @@ class LocationSizeEstimationV1(ModelNormal):
 
 
     attribute_map = {
-        'registry_type': 'registryType',  # noqa: E501
         'points_of_interest': 'pointsOfInterest',  # noqa: E501
         'radius_in_km': 'radiusInKm',  # noqa: E501
     }
@@ -150,7 +144,6 @@ class LocationSizeEstimationV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            registry_type (str): [optional]  # noqa: E501
             points_of_interest ([PointOfInterestV1]): [optional]  # noqa: E501
             radius_in_km (int): [optional]  # noqa: E501
         """
@@ -234,7 +227,6 @@ class LocationSizeEstimationV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            registry_type (str): [optional]  # noqa: E501
             points_of_interest ([PointOfInterestV1]): [optional]  # noqa: E501
             radius_in_km (int): [optional]  # noqa: E501
         """

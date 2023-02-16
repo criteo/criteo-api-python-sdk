@@ -5,7 +5,6 @@ Settings to define your audience based on their location.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**registry_type** | **str** |  | [optional] 
 **points_of_interest** | [**[PointOfInterestV1]**](PointOfInterestV1.md) |  | [optional] 
 **radius_in_km** | **int** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

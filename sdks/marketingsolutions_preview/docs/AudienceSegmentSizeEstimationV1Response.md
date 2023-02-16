@@ -1,6 +1,6 @@
 # AudienceSegmentSizeEstimationV1Response
 
-Represents an API response message containing the usual outcome fields (warnings+errors), and a valueResource data,  i.e. data is not an entity (no id). This can be used for association objects.
+A top-level object that encapsulates a Criteo API response for a single value
 
 ## Properties
 Name | Type | Description | Notes

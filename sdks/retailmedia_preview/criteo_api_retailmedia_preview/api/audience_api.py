@@ -21,9 +21,13 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_retailmedia_preview.model.common_status_code_response import CommonStatusCodeResponse
 from criteo_api_retailmedia_preview.model.create_retail_media_audience_request import CreateRetailMediaAudienceRequest
 from criteo_api_retailmedia_preview.model.create_retail_media_audience_response import CreateRetailMediaAudienceResponse
+from criteo_api_retailmedia_preview.model.create_retail_media_audience_v2_request import CreateRetailMediaAudienceV2Request
 from criteo_api_retailmedia_preview.model.get_page_of_audiences_by_account_id_response import GetPageOfAudiencesByAccountIdResponse
+from criteo_api_retailmedia_preview.model.retail_media_audience_v2_list_response import RetailMediaAudienceV2ListResponse
+from criteo_api_retailmedia_preview.model.retail_media_audience_v2_response import RetailMediaAudienceV2Response
 
 
 class AudienceApi(object):
@@ -168,6 +172,136 @@ class AudienceApi(object):
             callable=__create_audience
         )
 
+        def __create_retail_media_audience_v2(
+            self,
+            account_id,
+            create_retail_media_audience_v2_request,
+            **kwargs
+        ):
+            """create_retail_media_audience_v2  # noqa: E501
+
+            Create an audience for a given account ID  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.create_retail_media_audience_v2(account_id, create_retail_media_audience_v2_request, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): ID of the account to which this audience belongs.
+                create_retail_media_audience_v2_request (CreateRetailMediaAudienceV2Request):
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaAudienceV2Response
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            kwargs['create_retail_media_audience_v2_request'] = \
+                create_retail_media_audience_v2_request
+            return self.call_with_http_info(**kwargs)
+
+        self.create_retail_media_audience_v2 = _Endpoint(
+            settings={
+                'response_type': (RetailMediaAudienceV2Response,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/v2/accounts/{accountId}/audiences',
+                'operation_id': 'create_retail_media_audience_v2',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'create_retail_media_audience_v2_request',
+                ],
+                'required': [
+                    'account_id',
+                    'create_retail_media_audience_v2_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'create_retail_media_audience_v2_request':
+                        (CreateRetailMediaAudienceV2Request,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'create_retail_media_audience_v2_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client,
+            callable=__create_retail_media_audience_v2
+        )
+
         def __get_audiences_by_account_id(
             self,
             account_id,
@@ -304,4 +438,142 @@ class AudienceApi(object):
             },
             api_client=api_client,
             callable=__get_audiences_by_account_id
+        )
+
+        def __get_retail_media_audience_v2_list_by_account_id(
+            self,
+            account_id,
+            **kwargs
+        ):
+            """get_retail_media_audience_v2_list_by_account_id  # noqa: E501
+
+            Get a page of audiences for a given account ID  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_retail_media_audience_v2_list_by_account_id(account_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                account_id (str): External account ID which owns audience.
+
+            Keyword Args:
+                limit_to_id ([int]): Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2. [optional]
+                page_size (int): Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. [optional]
+                page_index (int): Returns the specified page of results given a pageSize; pages are 0-indexed. [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                RetailMediaAudienceV2ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['account_id'] = \
+                account_id
+            return self.call_with_http_info(**kwargs)
+
+        self.get_retail_media_audience_v2_list_by_account_id = _Endpoint(
+            settings={
+                'response_type': (RetailMediaAudienceV2ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/v2/accounts/{accountId}/audiences',
+                'operation_id': 'get_retail_media_audience_v2_list_by_account_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'limit_to_id',
+                    'page_size',
+                    'page_index',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'limit_to_id':
+                        ([int],),
+                    'page_size':
+                        (int,),
+                    'page_index':
+                        (int,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                    'limit_to_id': 'limitToId',
+                    'page_size': 'pageSize',
+                    'page_index': 'pageIndex',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'limit_to_id': 'query',
+                    'page_size': 'query',
+                    'page_index': 'query',
+                },
+                'collection_format_map': {
+                    'limit_to_id': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_retail_media_audience_v2_list_by_account_id
         )

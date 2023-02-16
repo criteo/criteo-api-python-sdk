@@ -5234,10 +5234,10 @@ class CampaignApi(object):
             >>> result = thread.get()
 
             Args:
-                ad_set_id (str): Ad set id
+                ad_set_id (str): The ad set ID.
 
             Keyword Args:
-                ad_set_audience_link_input_entity_v1 (AdSetAudienceLinkInputEntityV1): Audience and ad set to link. [optional]
+                ad_set_audience_link_input_entity_v1 (AdSetAudienceLinkInputEntityV1): Ad set-Audience update request.. [optional]
                 _return_http_data_only (bool): response data without head status
                     code and headers. Default is True.
                 _preload_content (bool): if False, the urllib3.HTTPResponse object

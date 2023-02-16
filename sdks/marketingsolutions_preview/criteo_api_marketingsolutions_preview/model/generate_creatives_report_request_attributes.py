@@ -62,7 +62,6 @@ class GenerateCreativesReportRequestAttributes(ModelNormal):
         },
         ('dimensions',): {
             'ADFORMAT': "AdFormat",
-            'ADTYPE': "AdType",
             'COUPON': "Coupon",
             'COUPONID': "CouponId",
             'DISPLAYSIZE': "DisplaySize",
@@ -80,8 +79,6 @@ class GenerateCreativesReportRequestAttributes(ModelNormal):
         ('metrics',): {
         },
         ('dimensions',): {
-        },
-        ('ad_types',): {
         },
         ('ad_formats',): {
         },
@@ -130,7 +127,6 @@ class GenerateCreativesReportRequestAttributes(ModelNormal):
             'metrics': ([str],),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'timezone': (str,),  # noqa: E501
-            'ad_types': ([str],),  # noqa: E501
             'ad_formats': ([str],),  # noqa: E501
             'display_sizes': ([str],),  # noqa: E501
             'coupon_names': ([str],),  # noqa: E501
@@ -154,7 +150,6 @@ class GenerateCreativesReportRequestAttributes(ModelNormal):
         'metrics': 'metrics',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
-        'ad_types': 'adTypes',  # noqa: E501
         'ad_formats': 'adFormats',  # noqa: E501
         'display_sizes': 'displaySizes',  # noqa: E501
         'coupon_names': 'couponNames',  # noqa: E501
@@ -215,7 +210,6 @@ class GenerateCreativesReportRequestAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             timezone (str): The timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
-            ad_types ([str]): The list of adTypes.. [optional]  # noqa: E501
             ad_formats ([str]): The list of adFormats.. [optional]  # noqa: E501
             display_sizes ([str]): The list of displaySizes.. [optional]  # noqa: E501
             coupon_names ([str]): The list of coupon names.. [optional]  # noqa: E501
@@ -319,7 +313,6 @@ class GenerateCreativesReportRequestAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             timezone (str): The timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
-            ad_types ([str]): The list of adTypes.. [optional]  # noqa: E501
             ad_formats ([str]): The list of adFormats.. [optional]  # noqa: E501
             display_sizes ([str]): The list of displaySizes.. [optional]  # noqa: E501
             coupon_names ([str]): The list of coupon names.. [optional]  # noqa: E501

@@ -5,6 +5,10 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /preview/statistics/report | 
+[**get_async_adset_report**](AnalyticsApi.md#get_async_adset_report) | **POST** /preview/reports/async-statistics | 
+[**get_async_audience_report**](AnalyticsApi.md#get_async_audience_report) | **POST** /preview/reports/async-audience-performance | 
+[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/reports/{report-id}/output | 
+[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/reports/{report-id}/status | 
 [**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | 
 [**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | 
 [**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | 
@@ -112,6 +116,361 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_async_adset_report**
+> MarketingSolutionsReportStatusResponse get_async_adset_report()
+
+
+
+This Statistics endpoint provides an export Id that let you retrieve data.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
+from criteo_api_marketingsolutions_preview.model.generate_statistics_report_request import GenerateStatisticsReportRequest
+from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    generate_statistics_report_request = GenerateStatisticsReportRequest(
+        data=GenerateStatisticsReportRequestData(
+            type="type_example",
+            attributes=GenerateStatisticsReportRequestAttributes(
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                timezone="timezone_example",
+                dimensions=[
+                    "AdvertiserId",
+                ],
+                metrics=[
+                    "Clicks",
+                ],
+                currency="currency_example",
+                ad_set_ids=[
+                    "ad_set_ids_example",
+                ],
+                ad_set_names=[
+                    "ad_set_names_example",
+                ],
+                ad_set_status=[
+                    "ad_set_status_example",
+                ],
+            ),
+        ),
+    ) # GenerateStatisticsReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_async_adset_report(generate_statistics_report_request=generate_statistics_report_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_async_adset_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_statistics_report_request** | [**GenerateStatisticsReportRequest**](GenerateStatisticsReportRequest.md)|  | [optional]
+
+### Return type
+
+[**MarketingSolutionsReportStatusResponse**](MarketingSolutionsReportStatusResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_async_audience_report**
+> MarketingSolutionsReportStatusResponse get_async_audience_report()
+
+
+
+This Statistics endpoint provides an export Id that lets you retrieve data.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.generate_audience_performance_report_request import GenerateAudiencePerformanceReportRequest
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
+from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    generate_audience_performance_report_request = GenerateAudiencePerformanceReportRequest(
+        data=GenerateAudiencePerformanceReportRequestData(
+            type="type_example",
+            attributes=GenerateAudiencePerformanceReportRequestAttributes(
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                advertiser_id="advertiser_id_example",
+                timezone="timezone_example",
+                dimension="AdvertiserId",
+                metrics=[
+                    "Clicks",
+                ],
+                currency="currency_example",
+                ad_set_ids=[
+                    "ad_set_ids_example",
+                ],
+                audience_ids=[
+                    "audience_ids_example",
+                ],
+                segments_ids=[
+                    "segments_ids_example",
+                ],
+            ),
+        ),
+    ) # GenerateAudiencePerformanceReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_async_audience_report(generate_audience_performance_report_request=generate_audience_performance_report_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_async_audience_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_audience_performance_report_request** | [**GenerateAudiencePerformanceReportRequest**](GenerateAudiencePerformanceReportRequest.md)|  | [optional]
+
+### Return type
+
+[**MarketingSolutionsReportStatusResponse**](MarketingSolutionsReportStatusResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_async_export_output**
+> ExportResult get_async_export_output(report_id)
+
+
+
+This endpoint gives you the output of the report.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.export_result import ExportResult
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "report-id_example" # str | Id of the report
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_async_export_output(report_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_async_export_output: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| Id of the report |
+
+### Return type
+
+[**ExportResult**](ExportResult.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_async_export_status**
+> MarketingSolutionsReportStatusResponse get_async_export_status(report_id)
+
+
+
+This endpoint gives you the status of the report.
+
+### Example
+
+* OAuth Authentication (oauth):
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# Configure OAuth2, two options:
+# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
+configuration.username = 'YOUR_CLIENT_ID'
+configuration.password = 'YOUR_CLIENT_SECRET'
+
+# Set your access token manually, refresh token mechanism IS NOT handled by the client
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "report-id_example" # str | Id of the report
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_async_export_status(report_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_async_export_status: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| Id of the report |
+
+### Return type
+
+[**MarketingSolutionsReportStatusResponse**](MarketingSolutionsReportStatusResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**303** | Redirect |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_categories_report**
 > str get_categories_report()
 
@@ -127,7 +486,7 @@ import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
-from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -222,8 +581,8 @@ import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.generate_creatives_report_request import GenerateCreativesReportRequest
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
-from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -260,9 +619,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     "AdFormat",
                 ],
                 timezone="timezone_example",
-                ad_types=[
-                    "ad_types_example",
-                ],
                 ad_formats=[
                     "ad_formats_example",
                 ],
@@ -449,8 +805,8 @@ With the topProducts endpoint, you can analyse the performances for each publish
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
-from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
 from criteo_api_marketingsolutions_preview.model.generate_top_products_report_request import GenerateTopProductsReportRequest
 from pprint import pprint
 

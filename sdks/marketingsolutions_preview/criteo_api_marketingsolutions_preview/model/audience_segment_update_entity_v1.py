@@ -30,12 +30,14 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.commerce_update_v1 import CommerceUpdateV1
+    from criteo_api_marketingsolutions_preview.model.in_market_update_v1 import InMarketUpdateV1
     from criteo_api_marketingsolutions_preview.model.location_update_v1 import LocationUpdateV1
+    from criteo_api_marketingsolutions_preview.model.lookalike_update_v1 import LookalikeUpdateV1
     from criteo_api_marketingsolutions_preview.model.nillable_string import NillableString
     from criteo_api_marketingsolutions_preview.model.retargeting_update_v1 import RetargetingUpdateV1
-    globals()['CommerceUpdateV1'] = CommerceUpdateV1
+    globals()['InMarketUpdateV1'] = InMarketUpdateV1
     globals()['LocationUpdateV1'] = LocationUpdateV1
+    globals()['LookalikeUpdateV1'] = LookalikeUpdateV1
     globals()['NillableString'] = NillableString
     globals()['RetargetingUpdateV1'] = RetargetingUpdateV1
 
@@ -95,10 +97,10 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'description': (NillableString,),  # noqa: E501
-            'commerce': (CommerceUpdateV1,),  # noqa: E501
-            'contact_list': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'in_market': (InMarketUpdateV1,),  # noqa: E501
             'location': (LocationUpdateV1,),  # noqa: E501
             'retargeting': (RetargetingUpdateV1,),  # noqa: E501
+            'lookalike': (LookalikeUpdateV1,),  # noqa: E501
         }
 
     @cached_property
@@ -109,10 +111,10 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
-        'commerce': 'commerce',  # noqa: E501
-        'contact_list': 'contactList',  # noqa: E501
+        'in_market': 'inMarket',  # noqa: E501
         'location': 'location',  # noqa: E501
         'retargeting': 'retargeting',  # noqa: E501
+        'lookalike': 'lookalike',  # noqa: E501
     }
 
     read_only_vars = {
@@ -158,10 +160,10 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
-            commerce (CommerceUpdateV1): [optional]  # noqa: E501
-            contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
+            in_market (InMarketUpdateV1): [optional]  # noqa: E501
             location (LocationUpdateV1): [optional]  # noqa: E501
             retargeting (RetargetingUpdateV1): [optional]  # noqa: E501
+            lookalike (LookalikeUpdateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,10 +247,10 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
-            commerce (CommerceUpdateV1): [optional]  # noqa: E501
-            contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
+            in_market (InMarketUpdateV1): [optional]  # noqa: E501
             location (LocationUpdateV1): [optional]  # noqa: E501
             retargeting (RetargetingUpdateV1): [optional]  # noqa: E501
+            lookalike (LookalikeUpdateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

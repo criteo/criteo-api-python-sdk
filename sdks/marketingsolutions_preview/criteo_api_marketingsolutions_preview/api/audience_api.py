@@ -43,14 +43,16 @@ from criteo_api_marketingsolutions_preview.model.audience_segment_size_entity_v1
 from criteo_api_marketingsolutions_preview.model.audience_segment_size_estimation_v1_response import AudienceSegmentSizeEstimationV1Response
 from criteo_api_marketingsolutions_preview.model.audience_size_entity_v1_list_response import AudienceSizeEntityV1ListResponse
 from criteo_api_marketingsolutions_preview.model.audience_size_estimation_v1_response import AudienceSizeEstimationV1Response
-from criteo_api_marketingsolutions_preview.model.commerce_audience_segment_brand_entity_v1_list_response import CommerceAudienceSegmentBrandEntityV1ListResponse
-from criteo_api_marketingsolutions_preview.model.commerce_audience_segment_interest_entity_v1_list_response import CommerceAudienceSegmentInterestEntityV1ListResponse
 from criteo_api_marketingsolutions_preview.model.contact_list_statistics_entity_v1_response import ContactListStatisticsEntityV1Response
 from criteo_api_marketingsolutions_preview.model.contactlist_amendment_request import ContactlistAmendmentRequest
 from criteo_api_marketingsolutions_preview.model.contactlist_with_attributes_amendment_request import ContactlistWithAttributesAmendmentRequest
 from criteo_api_marketingsolutions_preview.model.delete_audience_contact_list_response import DeleteAudienceContactListResponse
+from criteo_api_marketingsolutions_preview.model.delete_user_profile_model_list_request import DeleteUserProfileModelListRequest
 from criteo_api_marketingsolutions_preview.model.error_code_response import ErrorCodeResponse
+from criteo_api_marketingsolutions_preview.model.in_market_audience_segment_brand_entity_v1_list_response import InMarketAudienceSegmentBrandEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.in_market_audience_segment_interest_entity_v1_list_response import InMarketAudienceSegmentInterestEntityV1ListResponse
 from criteo_api_marketingsolutions_preview.model.modify_audience_response import ModifyAudienceResponse
+from criteo_api_marketingsolutions_preview.model.set_user_profile_model_list_request import SetUserProfileModelListRequest
 
 
 class AudienceApi(object):
@@ -1136,13 +1138,142 @@ class AudienceApi(object):
             callable=__delete_contact_list_identifiers
         )
 
+        def __delete_user_profiles(
+            self,
+            advertiser_id,
+            **kwargs
+        ):
+            """delete_user_profiles  # noqa: E501
+
+            This endpoint will Delete User Profiles for a given Advertiser.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.delete_user_profiles(advertiser_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                advertiser_id (int): Criteo Advertiser ID of user profiles' owner
+
+            Keyword Args:
+                delete_user_profile_model_list_request (DeleteUserProfileModelListRequest): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['advertiser_id'] = \
+                advertiser_id
+            return self.call_with_http_info(**kwargs)
+
+        self.delete_user_profiles = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/delete',
+                'operation_id': 'delete_user_profiles',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'delete_user_profile_model_list_request',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'delete_user_profile_model_list_request':
+                        (DeleteUserProfileModelListRequest,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                    'delete_user_profile_model_list_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__delete_user_profiles
+        )
+
         def __estimate_audience_segment_size(
             self,
             **kwargs
         ):
             """estimate_audience_segment_size  # noqa: E501
 
-            Gets the size estimation of a non existent segment . An error is returned when size calculation is not supported.  # noqa: E501
+            Gets the size estimation of a non existent segment. An error is returned when size calculation is not supported.  # noqa: E501
             This method makes a synchronous HTTP request by default. To make an
             asynchronous HTTP request, please pass async_req=True
 
@@ -1374,268 +1505,6 @@ class AudienceApi(object):
             callable=__estimate_audience_size
         )
 
-        def __get_commerce_brands(
-            self,
-            advertiser_id,
-            country,
-            **kwargs
-        ):
-            """get_commerce_brands  # noqa: E501
-
-            Returns a list with all available commerce brands that can be used to define a commerce segment.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_commerce_brands(advertiser_id, country, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                advertiser_id (str): The advertiser ID.
-                country (str): The ISO 3166-1 alpha-2 country code.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (int/float/tuple): timeout setting for this request. If
-                    one number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                CommerceAudienceSegmentBrandEntityV1ListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['advertiser_id'] = \
-                advertiser_id
-            kwargs['country'] = \
-                country
-            return self.call_with_http_info(**kwargs)
-
-        self.get_commerce_brands = _Endpoint(
-            settings={
-                'response_type': (CommerceAudienceSegmentBrandEntityV1ListResponse,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/audience-segments/commerce-brands',
-                'operation_id': 'get_commerce_brands',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'country',
-                ],
-                'required': [
-                    'advertiser_id',
-                    'country',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (str,),
-                    'country':
-                        (str,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiser-id',
-                    'country': 'country',
-                },
-                'location_map': {
-                    'advertiser_id': 'query',
-                    'country': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__get_commerce_brands
-        )
-
-        def __get_commerce_interests(
-            self,
-            advertiser_id,
-            country,
-            **kwargs
-        ):
-            """get_commerce_interests  # noqa: E501
-
-            Returns a list with all available commerce interests that can be used to define a commerce segment. These commerce interests correspond to the Google product taxonomy.  # noqa: E501
-            This method makes a synchronous HTTP request by default. To make an
-            asynchronous HTTP request, please pass async_req=True
-
-            >>> thread = api.get_commerce_interests(advertiser_id, country, async_req=True)
-            >>> result = thread.get()
-
-            Args:
-                advertiser_id (str): The advertiser ID.
-                country (str): The ISO 3166-1 alpha-2 country code.
-
-            Keyword Args:
-                _return_http_data_only (bool): response data without head status
-                    code and headers. Default is True.
-                _preload_content (bool): if False, the urllib3.HTTPResponse object
-                    will be returned without reading/decoding response data.
-                    Default is True.
-                _request_timeout (int/float/tuple): timeout setting for this request. If
-                    one number provided, it will be total request timeout. It can also
-                    be a pair (tuple) of (connection, read) timeouts.
-                    Default is None.
-                _check_input_type (bool): specifies if type checking
-                    should be done one the data sent to the server.
-                    Default is True.
-                _check_return_type (bool): specifies if type checking
-                    should be done one the data received from the server.
-                    Default is True.
-                _host_index (int/None): specifies the index of the server
-                    that we want to use.
-                    Default is read from the configuration.
-                async_req (bool): execute request asynchronously
-
-            Returns:
-                CommerceAudienceSegmentInterestEntityV1ListResponse
-                    If the method is called asynchronously, returns the request
-                    thread.
-            """
-            kwargs['async_req'] = kwargs.get(
-                'async_req', False
-            )
-            kwargs['_return_http_data_only'] = kwargs.get(
-                '_return_http_data_only', True
-            )
-            kwargs['_preload_content'] = kwargs.get(
-                '_preload_content', True
-            )
-            kwargs['_request_timeout'] = kwargs.get(
-                '_request_timeout', None
-            )
-            kwargs['_check_input_type'] = kwargs.get(
-                '_check_input_type', True
-            )
-            kwargs['_check_return_type'] = kwargs.get(
-                '_check_return_type', True
-            )
-            kwargs['_host_index'] = kwargs.get('_host_index')
-            kwargs['advertiser_id'] = \
-                advertiser_id
-            kwargs['country'] = \
-                country
-            return self.call_with_http_info(**kwargs)
-
-        self.get_commerce_interests = _Endpoint(
-            settings={
-                'response_type': (CommerceAudienceSegmentInterestEntityV1ListResponse,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/audience-segments/commerce-interests',
-                'operation_id': 'get_commerce_interests',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'country',
-                ],
-                'required': [
-                    'advertiser_id',
-                    'country',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (str,),
-                    'country':
-                        (str,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiser-id',
-                    'country': 'country',
-                },
-                'location_map': {
-                    'advertiser_id': 'query',
-                    'country': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client,
-            callable=__get_commerce_interests
-        )
-
         def __get_contact_list_statistics(
             self,
             audience_segment_id,
@@ -1755,6 +1624,268 @@ class AudienceApi(object):
             },
             api_client=api_client,
             callable=__get_contact_list_statistics
+        )
+
+        def __get_in_market_brands(
+            self,
+            advertiser_id,
+            country,
+            **kwargs
+        ):
+            """get_in_market_brands  # noqa: E501
+
+            Returns a list with all available in-market brands that can be used to define an in-market segment.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_in_market_brands(advertiser_id, country, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                advertiser_id (str): The advertiser ID.
+                country (str): The ISO 3166-1 alpha-2 country code.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                InMarketAudienceSegmentBrandEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['advertiser_id'] = \
+                advertiser_id
+            kwargs['country'] = \
+                country
+            return self.call_with_http_info(**kwargs)
+
+        self.get_in_market_brands = _Endpoint(
+            settings={
+                'response_type': (InMarketAudienceSegmentBrandEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/in-market-brands',
+                'operation_id': 'get_in_market_brands',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'required': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (str,),
+                    'country':
+                        (str,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiser-id',
+                    'country': 'country',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'country': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_in_market_brands
+        )
+
+        def __get_in_market_interests(
+            self,
+            advertiser_id,
+            country,
+            **kwargs
+        ):
+            """get_in_market_interests  # noqa: E501
+
+            Returns a list with all available in-market interests that can be used to define an in-market segment. These in-market interests correspond to the Google product taxonomy.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.get_in_market_interests(advertiser_id, country, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                advertiser_id (str): The advertiser ID.
+                country (str): The ISO 3166-1 alpha-2 country code.
+
+            Keyword Args:
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                InMarketAudienceSegmentInterestEntityV1ListResponse
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['advertiser_id'] = \
+                advertiser_id
+            kwargs['country'] = \
+                country
+            return self.call_with_http_info(**kwargs)
+
+        self.get_in_market_interests = _Endpoint(
+            settings={
+                'response_type': (InMarketAudienceSegmentInterestEntityV1ListResponse,),
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/in-market-interests',
+                'operation_id': 'get_in_market_interests',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'required': [
+                    'advertiser_id',
+                    'country',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (str,),
+                    'country':
+                        (str,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiser-id',
+                    'country': 'country',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'country': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client,
+            callable=__get_in_market_interests
         )
 
         def __modify_audience_users_with_attributes(
@@ -2147,6 +2278,135 @@ class AudienceApi(object):
             },
             api_client=api_client,
             callable=__search_audiences
+        )
+
+        def __set_user_profiles(
+            self,
+            advertiser_id,
+            **kwargs
+        ):
+            """set_user_profiles  # noqa: E501
+
+            This endpoint will Set User Profiles for a given Advertiser. If a User Profile does not exist, a new one will be created. If a User Profile exists, it will be replaced.  # noqa: E501
+            This method makes a synchronous HTTP request by default. To make an
+            asynchronous HTTP request, please pass async_req=True
+
+            >>> thread = api.set_user_profiles(advertiser_id, async_req=True)
+            >>> result = thread.get()
+
+            Args:
+                advertiser_id (int): Criteo Advertiser ID of user profiles' owner
+
+            Keyword Args:
+                set_user_profile_model_list_request (SetUserProfileModelListRequest): [optional]
+                _return_http_data_only (bool): response data without head status
+                    code and headers. Default is True.
+                _preload_content (bool): if False, the urllib3.HTTPResponse object
+                    will be returned without reading/decoding response data.
+                    Default is True.
+                _request_timeout (int/float/tuple): timeout setting for this request. If
+                    one number provided, it will be total request timeout. It can also
+                    be a pair (tuple) of (connection, read) timeouts.
+                    Default is None.
+                _check_input_type (bool): specifies if type checking
+                    should be done one the data sent to the server.
+                    Default is True.
+                _check_return_type (bool): specifies if type checking
+                    should be done one the data received from the server.
+                    Default is True.
+                _host_index (int/None): specifies the index of the server
+                    that we want to use.
+                    Default is read from the configuration.
+                async_req (bool): execute request asynchronously
+
+            Returns:
+                None
+                    If the method is called asynchronously, returns the request
+                    thread.
+            """
+            kwargs['async_req'] = kwargs.get(
+                'async_req', False
+            )
+            kwargs['_return_http_data_only'] = kwargs.get(
+                '_return_http_data_only', True
+            )
+            kwargs['_preload_content'] = kwargs.get(
+                '_preload_content', True
+            )
+            kwargs['_request_timeout'] = kwargs.get(
+                '_request_timeout', None
+            )
+            kwargs['_check_input_type'] = kwargs.get(
+                '_check_input_type', True
+            )
+            kwargs['_check_return_type'] = kwargs.get(
+                '_check_return_type', True
+            )
+            kwargs['_host_index'] = kwargs.get('_host_index')
+            kwargs['advertiser_id'] = \
+                advertiser_id
+            return self.call_with_http_info(**kwargs)
+
+        self.set_user_profiles = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/set',
+                'operation_id': 'set_user_profiles',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'set_user_profile_model_list_request',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'set_user_profile_model_list_request':
+                        (SetUserProfileModelListRequest,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                    'set_user_profile_model_list_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client,
+            callable=__set_user_profiles
         )
 
         def __update_contact_list_identifiers(

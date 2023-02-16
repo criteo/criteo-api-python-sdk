@@ -30,11 +30,13 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.commerce_create_v1 import CommerceCreateV1
+    from criteo_api_marketingsolutions_preview.model.in_market_create_v1 import InMarketCreateV1
     from criteo_api_marketingsolutions_preview.model.location_create_v1 import LocationCreateV1
+    from criteo_api_marketingsolutions_preview.model.lookalike_create_v1 import LookalikeCreateV1
     from criteo_api_marketingsolutions_preview.model.retargeting_create_v1 import RetargetingCreateV1
-    globals()['CommerceCreateV1'] = CommerceCreateV1
+    globals()['InMarketCreateV1'] = InMarketCreateV1
     globals()['LocationCreateV1'] = LocationCreateV1
+    globals()['LookalikeCreateV1'] = LookalikeCreateV1
     globals()['RetargetingCreateV1'] = RetargetingCreateV1
 
 
@@ -94,11 +96,12 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
-            'commerce': (CommerceCreateV1,),  # noqa: E501
-            'similar': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'in_market': (InMarketCreateV1,),  # noqa: E501
+            'prospecting': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'contact_list': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'location': (LocationCreateV1,),  # noqa: E501
             'retargeting': (RetargetingCreateV1,),  # noqa: E501
+            'lookalike': (LookalikeCreateV1,),  # noqa: E501
         }
 
     @cached_property
@@ -110,11 +113,12 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'commerce': 'commerce',  # noqa: E501
-        'similar': 'similar',  # noqa: E501
+        'in_market': 'inMarket',  # noqa: E501
+        'prospecting': 'prospecting',  # noqa: E501
         'contact_list': 'contactList',  # noqa: E501
         'location': 'location',  # noqa: E501
         'retargeting': 'retargeting',  # noqa: E501
+        'lookalike': 'lookalike',  # noqa: E501
     }
 
     read_only_vars = {
@@ -161,11 +165,12 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
             name (str): Name of the segment. [optional]  # noqa: E501
             description (str): Description of the segment. [optional]  # noqa: E501
             advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
-            commerce (CommerceCreateV1): [optional]  # noqa: E501
-            similar ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target similar users to website visitors.. [optional]  # noqa: E501
+            in_market (InMarketCreateV1): [optional]  # noqa: E501
+            prospecting ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target prospecting users to website visitors.. [optional]  # noqa: E501
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
             location (LocationCreateV1): [optional]  # noqa: E501
             retargeting (RetargetingCreateV1): [optional]  # noqa: E501
+            lookalike (LookalikeCreateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,11 +255,12 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
             name (str): Name of the segment. [optional]  # noqa: E501
             description (str): Description of the segment. [optional]  # noqa: E501
             advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
-            commerce (CommerceCreateV1): [optional]  # noqa: E501
-            similar ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target similar users to website visitors.. [optional]  # noqa: E501
+            in_market (InMarketCreateV1): [optional]  # noqa: E501
+            prospecting ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target prospecting users to website visitors.. [optional]  # noqa: E501
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
             location (LocationCreateV1): [optional]  # noqa: E501
             retargeting (RetargetingCreateV1): [optional]  # noqa: E501
+            lookalike (LookalikeCreateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

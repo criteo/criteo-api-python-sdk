@@ -5,7 +5,8 @@ Common problem object. Can be specialized as needed.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**trace_identifier** | **str** | The request correlation ID this problem comes from. | [optional] 
+**trace_id** | **str** | The request correlation ID this problem comes from. | [optional] 
+**trace_identifier** | **str** | The request correlation ID this problem comes from. (deprecated, use traceId instead) | [optional] 
 **type** | **str** | The problem&#39;s category. | [optional] 
 **code** | **str** | A machine-readable  error code, expressed as a string value. | [optional] 
 **instance** | **str** | A URI that identifies the specific occurrence of the problem. | [optional] 

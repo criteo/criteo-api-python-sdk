@@ -3829,7 +3829,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    ad_set_id = "ad-set-id_example" # str | Ad set id
+    ad_set_id = "ad-set-id_example" # str | The ad set ID.
     ad_set_audience_link_input_entity_v1 = AdSetAudienceLinkInputEntityV1(
         data=AdSetAudienceLinkEntityV1Resource(
             attributes=AdSetAudienceLinkEntityV1(
@@ -3838,7 +3838,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # AdSetAudienceLinkInputEntityV1 | Audience and ad set to link (optional)
+    ) # AdSetAudienceLinkInputEntityV1 | Ad set-Audience update request. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -3861,8 +3861,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_set_id** | **str**| Ad set id |
- **ad_set_audience_link_input_entity_v1** | [**AdSetAudienceLinkInputEntityV1**](AdSetAudienceLinkInputEntityV1.md)| Audience and ad set to link | [optional]
+ **ad_set_id** | **str**| The ad set ID. |
+ **ad_set_audience_link_input_entity_v1** | [**AdSetAudienceLinkInputEntityV1**](AdSetAudienceLinkInputEntityV1.md)| Ad set-Audience update request. | [optional]
 
 ### Return type
 

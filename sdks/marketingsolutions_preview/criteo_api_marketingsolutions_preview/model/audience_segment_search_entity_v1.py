@@ -57,12 +57,13 @@ class AudienceSegmentSearchEntityV1(ModelNormal):
     allowed_values = {
         ('audience_segment_types',): {
             'UNKNOWN': "Unknown",
-            'COMMERCE': "Commerce",
-            'SIMILAR': "Similar",
+            'INMARKET': "InMarket",
+            'PROSPECTING': "Prospecting",
             'CONTACTLIST': "ContactList",
             'LOCATION': "Location",
-            'PREBUILT': "Prebuilt",
+            'BEHAVIORAL': "Behavioral",
             'RETARGETING': "Retargeting",
+            'LOOKALIKE': "Lookalike",
         },
     }
 

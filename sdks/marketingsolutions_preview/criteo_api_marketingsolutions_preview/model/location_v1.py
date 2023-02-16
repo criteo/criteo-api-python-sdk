@@ -61,10 +61,7 @@ class LocationV1(ModelNormal):
     allowed_values = {
         ('registry_type',): {
             'UNKNOWN': "Unknown",
-            'CATALOG': "Catalog",
-            'STORE': "Store",
             'POINTOFINTEREST': "PointOfInterest",
-            'GEODIVISION': "GeoDivision",
         },
     }
 

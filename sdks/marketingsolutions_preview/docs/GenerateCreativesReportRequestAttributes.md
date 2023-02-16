@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **metrics** | **[str]** | The list of metrics to report. | 
 **dimensions** | **[str]** | The list of dimensions to report. | 
 **timezone** | **str** | The timezone used for the report. Timezone Database format (Tz). | [optional] 
-**ad_types** | **[str]** | The list of adTypes. | [optional] 
 **ad_formats** | **[str]** | The list of adFormats. | [optional] 
 **display_sizes** | **[str]** | The list of displaySizes. | [optional] 
 **coupon_names** | **[str]** | The list of coupon names. | [optional] 

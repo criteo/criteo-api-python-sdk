@@ -30,9 +30,7 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.geo_division_v1 import GeoDivisionV1
     from criteo_api_marketingsolutions_preview.model.point_of_interest_v1 import PointOfInterestV1
-    globals()['GeoDivisionV1'] = GeoDivisionV1
     globals()['PointOfInterestV1'] = PointOfInterestV1
 
 
@@ -62,17 +60,12 @@ class LocationUpdateV1(ModelNormal):
 
     allowed_values = {
         ('registry_type',): {
-            'CATALOG': "Catalog",
-            'STORE': "Store",
             'POINTOFINTEREST': "PointOfInterest",
-            'GEODIVISION': "GeoDivision",
         },
     }
 
     validations = {
         ('points_of_interest',): {
-        },
-        ('geo_divisions',): {
         },
     }
 
@@ -100,7 +93,6 @@ class LocationUpdateV1(ModelNormal):
         lazy_import()
         return {
             'points_of_interest': ([PointOfInterestV1],),  # noqa: E501
-            'geo_divisions': ([GeoDivisionV1],),  # noqa: E501
             'radius_in_km': (int,),  # noqa: E501
             'registry_type': (str,),  # noqa: E501
         }
@@ -112,7 +104,6 @@ class LocationUpdateV1(ModelNormal):
 
     attribute_map = {
         'points_of_interest': 'pointsOfInterest',  # noqa: E501
-        'geo_divisions': 'geoDivisions',  # noqa: E501
         'radius_in_km': 'radiusInKm',  # noqa: E501
         'registry_type': 'registryType',  # noqa: E501
     }
@@ -159,9 +150,8 @@ class LocationUpdateV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             points_of_interest ([PointOfInterestV1]): [optional]  # noqa: E501
-            geo_divisions ([GeoDivisionV1]): [optional]  # noqa: E501
             radius_in_km (int): Radius in kilometers. [optional]  # noqa: E501
-            registry_type (str): [optional]  # noqa: E501
+            registry_type (str): [optional] if omitted the server will use the default value of "PointOfInterest"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,9 +234,8 @@ class LocationUpdateV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             points_of_interest ([PointOfInterestV1]): [optional]  # noqa: E501
-            geo_divisions ([GeoDivisionV1]): [optional]  # noqa: E501
             radius_in_km (int): Radius in kilometers. [optional]  # noqa: E501
-            registry_type (str): [optional]  # noqa: E501
+            registry_type (str): [optional] if omitted the server will use the default value of "PointOfInterest"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
