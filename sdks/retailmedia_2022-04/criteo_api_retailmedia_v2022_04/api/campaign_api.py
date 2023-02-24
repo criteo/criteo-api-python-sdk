@@ -90,7 +90,7 @@ class CampaignApi(object):
             >>> result = thread.get()
 
             Args:
-                asset_file (file): The asset binary content
+                asset_file (file_type): The asset binary content
 
             Keyword Args:
                 _return_http_data_only (bool): response data without head status
@@ -173,7 +173,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'asset_file':
-                        (file,),
+                        (file_type,),
                 },
                 'attribute_map': {
                     'asset_file': 'AssetFile',

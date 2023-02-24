@@ -90,7 +90,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    asset_file =  # file | The asset binary content
+    asset_file = open('/path/to/file', 'rb') # file_type | The asset binary content
 
     # example passing only required values which don't have defaults set
     try:
@@ -105,7 +105,7 @@ with criteo_api_retailmedia_v2022_04.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **asset_file** | **file**| The asset binary content |
+ **asset_file** | **file_type**| The asset binary content |
 
 ### Return type
 
