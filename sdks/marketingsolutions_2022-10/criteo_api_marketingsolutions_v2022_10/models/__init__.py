@@ -4,7 +4,7 @@
 # if you have many models here with many references from one model to another this may
 # raise a RecursionError
 # to avoid this, import only the models that you directly need like:
-# from from criteo_api_marketingsolutions_v2022_10.model.pet import Pet
+# from criteo_api_marketingsolutions_v2022_10.model.pet import Pet
 # or import this package, but before doing it, use:
 # import sys
 # sys.setrecursionlimit(n)
@@ -59,6 +59,7 @@ from criteo_api_marketingsolutions_v2022_10.model.new_audience_attributes import
 from criteo_api_marketingsolutions_v2022_10.model.new_audience_request import NewAudienceRequest
 from criteo_api_marketingsolutions_v2022_10.model.new_audience_response import NewAudienceResponse
 from criteo_api_marketingsolutions_v2022_10.model.nillable_ad_set_targeting_rule import NillableAdSetTargetingRule
+from criteo_api_marketingsolutions_v2022_10.model.nillable_ad_set_targeting_rule_value import NillableAdSetTargetingRuleValue
 from criteo_api_marketingsolutions_v2022_10.model.nillable_date_time import NillableDateTime
 from criteo_api_marketingsolutions_v2022_10.model.nillable_decimal import NillableDecimal
 from criteo_api_marketingsolutions_v2022_10.model.o_auth_error_model import OAuthErrorModel

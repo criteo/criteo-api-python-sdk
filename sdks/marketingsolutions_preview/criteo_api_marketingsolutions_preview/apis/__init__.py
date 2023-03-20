@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.advertiser_api import AdvertiserApi
+#   from criteo_api_marketingsolutions_preview.api.advertiser_api import AdvertiserApi
 #
 # or import this package, but before doing it, use:
 #

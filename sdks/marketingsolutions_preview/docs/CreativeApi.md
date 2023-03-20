@@ -33,6 +33,7 @@ Create an Ad
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -40,19 +41,21 @@ from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.ad_response import AdResponse
 from criteo_api_marketingsolutions_preview.model.ad_write_request import AdWriteRequest
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -115,6 +118,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The created Ad is returned. |  -  |
@@ -134,6 +138,7 @@ Create a Coupon
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -141,19 +146,21 @@ from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.create_coupon_request import CreateCouponRequest
 from criteo_api_marketingsolutions_preview.model.coupon_response import CouponResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -228,6 +235,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The created Coupon is returned. |  -  |
@@ -246,6 +254,7 @@ Create a Creative
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -253,19 +262,21 @@ from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.creative_response import CreativeResponse
 from criteo_api_marketingsolutions_preview.model.creative_write_request import CreativeWriteRequest
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -387,6 +398,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The created creative is returned. |  -  |
@@ -406,24 +418,27 @@ Delete an Ad
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -461,6 +476,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | The ad was deleted. |  -  |
@@ -480,24 +496,27 @@ Delete a Coupon
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -537,6 +556,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | The Coupon was deleted. |  -  |
@@ -555,24 +575,27 @@ Delete a Creative if there are no ads binded to it
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -610,6 +633,7 @@ void (empty response body)
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | The creative was deleted. |  -  |
@@ -629,6 +653,7 @@ Edit a specific Coupon
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -636,19 +661,21 @@ from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.update_coupon_request import UpdateCouponRequest
 from criteo_api_marketingsolutions_preview.model.coupon_response import CouponResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -708,6 +735,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The edited Coupon is returned. |  -  |
@@ -726,6 +754,7 @@ Edit a specific Creative
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
@@ -733,19 +762,21 @@ from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.creative_response import CreativeResponse
 from criteo_api_marketingsolutions_preview.model.creative_write_request import CreativeWriteRequest
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -867,6 +898,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The edited creative is returned. |  -  |
@@ -886,25 +918,28 @@ Get an Ad with its id
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.ad_response import AdResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -943,6 +978,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The found ad is returned. |  -  |
@@ -962,25 +998,28 @@ Get the list of self-services Ads for a given advertiser
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.ad_list_response import AdListResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1031,6 +1070,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The list of self-services Ads is returned. |  -  |
@@ -1050,25 +1090,28 @@ Get a Coupon with its id
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.coupon_response import CouponResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1109,6 +1152,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The found Coupon is returned. |  -  |
@@ -1127,24 +1171,27 @@ Get the preview of a specific Coupon
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1197,6 +1244,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The preview HTML of a specific Coupon is returned. |  -  |
@@ -1215,25 +1263,28 @@ Get the list of Coupon supported sizes
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.coupon_supported_sizes_response import CouponSupportedSizesResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1282,6 +1333,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The list of Coupon supported sizes is returned. |  -  |
@@ -1300,25 +1352,28 @@ Get the list of self-services Coupons for a given advertiser
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.coupon_list_response import CouponListResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1369,6 +1424,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The list of self-services Coupons is returned. |  -  |
@@ -1387,25 +1443,28 @@ Get a Creative with its id
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.creative_response import CreativeResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1444,6 +1503,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The found creative is returned. |  -  |
@@ -1463,24 +1523,27 @@ Get the preview of a specific Creative
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1531,6 +1594,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The preview HTML of a specific Creative is returned. |  -  |
@@ -1549,25 +1613,28 @@ Get the list of self-services Creatives for a given advertiser
 ### Example
 
 * OAuth Authentication (oauth):
+
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
 from criteo_api_marketingsolutions_preview.model.creative_list_response import CreativeListResponse
 from pprint import pprint
-
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = criteo_api_marketingsolutions_preview.Configuration(
     host = "https://api.criteo.com"
 )
 
-# Configure OAuth2, two options:
-# 1. Set your credentials within the ApiClient, refresh token mechanism IS handled for you 💚
-configuration.username = 'YOUR_CLIENT_ID'
-configuration.password = 'YOUR_CLIENT_SECRET'
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# Set your access token manually, refresh token mechanism IS NOT handled by the client
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Enter a context with an instance of the API client
@@ -1618,6 +1685,7 @@ Name | Type | Description  | Notes
 
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The list of self-services Creatives is returned. |  -  |

@@ -73,7 +73,7 @@ class Configuration(object):
     :param server_operation_variables: Mapping from operation ID to a mapping with
       string values to replace variables in templated server configuration.
       The validation of enums is performed for variables with defined enum values before.
-    :param ssl_ca_cert: str - the path to a file of concatenated CA certificates 
+    :param ssl_ca_cert: str - the path to a file of concatenated CA certificates
       in PEM format
 
     :Example:
@@ -179,6 +179,9 @@ class Configuration(object):
 
         self.proxy = None
         """Proxy URL
+        """
+        self.no_proxy = None
+        """bypass proxy for host in the no_proxy list.
         """
         self.proxy_headers = None
         """Proxy headers
@@ -385,7 +388,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2022-04\n"\
-               "SDK Package Version: 2022.04.0.230224".\
+               "SDK Package Version: 2022.04.0.230320".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

@@ -6,7 +6,7 @@
 # raise a `RecursionError`.
 # In order to avoid this, import only the API that you directly need like:
 #
-#   from .api.analytics_api import AnalyticsApi
+#   from criteo_api_retailmedia_v2023_01.api.analytics_api import AnalyticsApi
 #
 # or import this package, but before doing it, use:
 #

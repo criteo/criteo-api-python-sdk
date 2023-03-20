@@ -66,6 +66,7 @@ criteo_api_marketingsolutions_v2022_10/model/new_audience_attributes.py
 criteo_api_marketingsolutions_v2022_10/model/new_audience_request.py
 criteo_api_marketingsolutions_v2022_10/model/new_audience_response.py
 criteo_api_marketingsolutions_v2022_10/model/nillable_ad_set_targeting_rule.py
+criteo_api_marketingsolutions_v2022_10/model/nillable_ad_set_targeting_rule_value.py
 criteo_api_marketingsolutions_v2022_10/model/nillable_date_time.py
 criteo_api_marketingsolutions_v2022_10/model/nillable_decimal.py
 criteo_api_marketingsolutions_v2022_10/model/o_auth_error_model.py
@@ -179,6 +180,7 @@ docs/NewAudienceAttributes.md
 docs/NewAudienceRequest.md
 docs/NewAudienceResponse.md
 docs/NillableAdSetTargetingRule.md
+docs/NillableAdSetTargetingRuleValue.md
 docs/NillableDateTime.md
 docs/NillableDecimal.md
 docs/OAuthApi.md

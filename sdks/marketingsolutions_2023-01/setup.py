@@ -1,10 +1,9 @@
 # coding: utf-8
 
 from setuptools import setup, find_packages  # noqa: H301
-import os
 
 NAME = "criteo-api-marketingsolutions-sdk"
-VERSION = "2023.01.0.230224"
+VERSION = "2023.01.0.230320"
 # To install the library, run the following
 #
 # python setup.py install
@@ -12,7 +11,7 @@ VERSION = "2023.01.0.230224"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
-REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+REQUIRES = ["urllib3 >= 1.25.3", "python-dateutil"]
 
 AUTHOR='Criteo'
 README_CONTENT_TYPE='text/markdown'
@@ -21,18 +20,14 @@ PACKAGE_LONG_DESCRIPTION = """# Criteo API SDK for Python
 
 IMPORTANT: This Python package links to Criteo production environment. Any test applied here will thus impact real data.
 
-## Requirements.
-
-Python 2.7 and 3.5+
-
 ## Installation & Usage
 ### pip install
 
 
 ```sh
-pip install criteo-api-marketingsolutions-sdk==2023.01.0.230224
+pip install criteo-api-marketingsolutions-sdk==2023.01.0.230320
 ```
-(you may need to run `pip` with root permission: `sudo pip install criteo-api-marketingsolutions-sdk==2023.01.0.230224`)
+(you may need to run `pip` with root permission: `sudo pip install criteo-api-marketingsolutions-sdk==2023.01.0.230320`)
 
 Then import the package:
 ```python
@@ -69,10 +64,6 @@ setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
     ],
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4',
+    python_requires=">=3.6",
 )
