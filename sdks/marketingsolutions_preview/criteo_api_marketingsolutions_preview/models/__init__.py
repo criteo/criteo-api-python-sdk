@@ -9,7 +9,6 @@
 # import sys
 # sys.setrecursionlimit(n)
 
-from criteo_api_marketingsolutions_preview.model.access_token_model import AccessTokenModel
 from criteo_api_marketingsolutions_preview.model.ad import Ad
 from criteo_api_marketingsolutions_preview.model.ad_list_response import AdListResponse
 from criteo_api_marketingsolutions_preview.model.ad_resource import AdResource
@@ -258,7 +257,6 @@ from criteo_api_marketingsolutions_preview.model.nillable_date_time import Nilla
 from criteo_api_marketingsolutions_preview.model.nillable_decimal import NillableDecimal
 from criteo_api_marketingsolutions_preview.model.nillable_gender_v1 import NillableGenderV1
 from criteo_api_marketingsolutions_preview.model.nillable_string import NillableString
-from criteo_api_marketingsolutions_preview.model.o_auth_error_model import OAuthErrorModel
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response_data import OciBrandSafetyResponseData
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_rule import OciBrandSafetyRule

@@ -19,4 +19,3 @@ from criteo_api_marketingsolutions_v2022_07.api.analytics_api import AnalyticsAp
 from criteo_api_marketingsolutions_v2022_07.api.audience_api import AudienceApi
 from criteo_api_marketingsolutions_v2022_07.api.campaign_api import CampaignApi
 from criteo_api_marketingsolutions_v2022_07.api.gateway_api import GatewayApi
-from criteo_api_marketingsolutions_v2022_07.api.o_auth_api import OAuthApi

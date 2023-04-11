@@ -21,6 +21,5 @@ from criteo_api_marketingsolutions_preview.api.campaign_api import CampaignApi
 from criteo_api_marketingsolutions_preview.api.catalog_api import CatalogApi
 from criteo_api_marketingsolutions_preview.api.creative_api import CreativeApi
 from criteo_api_marketingsolutions_preview.api.gateway_api import GatewayApi
-from criteo_api_marketingsolutions_preview.api.o_auth_api import OAuthApi
 from criteo_api_marketingsolutions_preview.api.on_site_recommendation_api import OnSiteRecommendationApi
 from criteo_api_marketingsolutions_preview.api.reco_api import RecoApi

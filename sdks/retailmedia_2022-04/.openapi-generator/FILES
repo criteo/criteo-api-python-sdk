@@ -9,13 +9,11 @@ criteo_api_retailmedia_v2022_04/api/analytics_api.py
 criteo_api_retailmedia_v2022_04/api/audience_api.py
 criteo_api_retailmedia_v2022_04/api/campaign_api.py
 criteo_api_retailmedia_v2022_04/api/gateway_api.py
-criteo_api_retailmedia_v2022_04/api/o_auth_api.py
 criteo_api_retailmedia_v2022_04/api_client.py
 criteo_api_retailmedia_v2022_04/apis/__init__.py
 criteo_api_retailmedia_v2022_04/configuration.py
 criteo_api_retailmedia_v2022_04/exceptions.py
 criteo_api_retailmedia_v2022_04/model/__init__.py
-criteo_api_retailmedia_v2022_04/model/access_token_model.py
 criteo_api_retailmedia_v2022_04/model/add_to_basket_ids_update_model202110_request.py
 criteo_api_retailmedia_v2022_04/model/add_to_basket_target202110_request.py
 criteo_api_retailmedia_v2022_04/model/add_to_basket_target202110_response.py
@@ -105,7 +103,6 @@ criteo_api_retailmedia_v2022_04/model/json_api_single_response_of_catalog_status
 criteo_api_retailmedia_v2022_04/model/keyword_target202110_request.py
 criteo_api_retailmedia_v2022_04/model/keyword_target202110_response.py
 criteo_api_retailmedia_v2022_04/model/map_string.py
-criteo_api_retailmedia_v2022_04/model/o_auth_error_model.py
 criteo_api_retailmedia_v2022_04/model/page_metadata.py
 criteo_api_retailmedia_v2022_04/model/preferred_line_item202110_paged_list_response.py
 criteo_api_retailmedia_v2022_04/model/preferred_line_item202110_response.py
@@ -144,7 +141,6 @@ criteo_api_retailmedia_v2022_04/model/value_type_resource_of_store_target202110.
 criteo_api_retailmedia_v2022_04/model_utils.py
 criteo_api_retailmedia_v2022_04/models/__init__.py
 criteo_api_retailmedia_v2022_04/rest.py
-docs/AccessTokenModel.md
 docs/AddToBasketIdsUpdateModel202110Request.md
 docs/AddToBasketTarget202110Request.md
 docs/AddToBasketTarget202110Response.md
@@ -238,8 +234,6 @@ docs/JsonApiSingleResponseOfCatalogStatus.md
 docs/KeywordTarget202110Request.md
 docs/KeywordTarget202110Response.md
 docs/MapString.md
-docs/OAuthApi.md
-docs/OAuthErrorModel.md
 docs/PageMetadata.md
 docs/PreferredLineItem202110PagedListResponse.md
 docs/PreferredLineItem202110Response.md
@@ -284,5 +278,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/test_gateway_api.py
-test/test_oauth_api.py
 tox.ini

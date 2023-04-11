@@ -12,7 +12,6 @@ criteo_api_marketingsolutions_preview/api/campaign_api.py
 criteo_api_marketingsolutions_preview/api/catalog_api.py
 criteo_api_marketingsolutions_preview/api/creative_api.py
 criteo_api_marketingsolutions_preview/api/gateway_api.py
-criteo_api_marketingsolutions_preview/api/o_auth_api.py
 criteo_api_marketingsolutions_preview/api/on_site_recommendation_api.py
 criteo_api_marketingsolutions_preview/api/reco_api.py
 criteo_api_marketingsolutions_preview/api_client.py
@@ -20,7 +19,6 @@ criteo_api_marketingsolutions_preview/apis/__init__.py
 criteo_api_marketingsolutions_preview/configuration.py
 criteo_api_marketingsolutions_preview/exceptions.py
 criteo_api_marketingsolutions_preview/model/__init__.py
-criteo_api_marketingsolutions_preview/model/access_token_model.py
 criteo_api_marketingsolutions_preview/model/ad.py
 criteo_api_marketingsolutions_preview/model/ad_list_response.py
 criteo_api_marketingsolutions_preview/model/ad_resource.py
@@ -269,7 +267,6 @@ criteo_api_marketingsolutions_preview/model/nillable_date_time.py
 criteo_api_marketingsolutions_preview/model/nillable_decimal.py
 criteo_api_marketingsolutions_preview/model/nillable_gender_v1.py
 criteo_api_marketingsolutions_preview/model/nillable_string.py
-criteo_api_marketingsolutions_preview/model/o_auth_error_model.py
 criteo_api_marketingsolutions_preview/model/oci_brand_safety_response.py
 criteo_api_marketingsolutions_preview/model/oci_brand_safety_response_data.py
 criteo_api_marketingsolutions_preview/model/oci_brand_safety_rule.py
@@ -399,7 +396,6 @@ criteo_api_marketingsolutions_preview/model/write_model_patch_ad_set.py
 criteo_api_marketingsolutions_preview/model_utils.py
 criteo_api_marketingsolutions_preview/models/__init__.py
 criteo_api_marketingsolutions_preview/rest.py
-docs/AccessTokenModel.md
 docs/Ad.md
 docs/AdListResponse.md
 docs/AdResource.md
@@ -655,8 +651,6 @@ docs/NillableDateTime.md
 docs/NillableDecimal.md
 docs/NillableGenderV1.md
 docs/NillableString.md
-docs/OAuthApi.md
-docs/OAuthErrorModel.md
 docs/OciBrandSafetyResponse.md
 docs/OciBrandSafetyResponseData.md
 docs/OciBrandSafetyRule.md
@@ -794,5 +788,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/test_gateway_api.py
-test/test_oauth_api.py
 tox.ini

@@ -10,13 +10,11 @@ criteo_api_marketingsolutions_v2022_04/api/analytics_api.py
 criteo_api_marketingsolutions_v2022_04/api/audience_api.py
 criteo_api_marketingsolutions_v2022_04/api/campaign_api.py
 criteo_api_marketingsolutions_v2022_04/api/gateway_api.py
-criteo_api_marketingsolutions_v2022_04/api/o_auth_api.py
 criteo_api_marketingsolutions_v2022_04/api_client.py
 criteo_api_marketingsolutions_v2022_04/apis/__init__.py
 criteo_api_marketingsolutions_v2022_04/configuration.py
 criteo_api_marketingsolutions_v2022_04/exceptions.py
 criteo_api_marketingsolutions_v2022_04/model/__init__.py
-criteo_api_marketingsolutions_v2022_04/model/access_token_model.py
 criteo_api_marketingsolutions_v2022_04/model/ad_set_category_bid.py
 criteo_api_marketingsolutions_v2022_04/model/ad_set_category_bid_list_response.py
 criteo_api_marketingsolutions_v2022_04/model/ad_set_category_bid_resource.py
@@ -69,7 +67,6 @@ criteo_api_marketingsolutions_v2022_04/model/nillable_ad_set_targeting_rule.py
 criteo_api_marketingsolutions_v2022_04/model/nillable_ad_set_targeting_rule_value.py
 criteo_api_marketingsolutions_v2022_04/model/nillable_date_time.py
 criteo_api_marketingsolutions_v2022_04/model/nillable_decimal.py
-criteo_api_marketingsolutions_v2022_04/model/o_auth_error_model.py
 criteo_api_marketingsolutions_v2022_04/model/patch_ad_set.py
 criteo_api_marketingsolutions_v2022_04/model/patch_ad_set_bidding.py
 criteo_api_marketingsolutions_v2022_04/model/patch_ad_set_budget.py
@@ -125,7 +122,6 @@ criteo_api_marketingsolutions_v2022_04/model/write_model_patch_ad_set.py
 criteo_api_marketingsolutions_v2022_04/model_utils.py
 criteo_api_marketingsolutions_v2022_04/models/__init__.py
 criteo_api_marketingsolutions_v2022_04/rest.py
-docs/AccessTokenModel.md
 docs/AdSetCategoryBid.md
 docs/AdSetCategoryBidListResponse.md
 docs/AdSetCategoryBidResource.md
@@ -183,8 +179,6 @@ docs/NillableAdSetTargetingRule.md
 docs/NillableAdSetTargetingRuleValue.md
 docs/NillableDateTime.md
 docs/NillableDecimal.md
-docs/OAuthApi.md
-docs/OAuthErrorModel.md
 docs/PatchAdSet.md
 docs/PatchAdSetBidding.md
 docs/PatchAdSetBudget.md
@@ -246,5 +240,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/test_gateway_api.py
-test/test_oauth_api.py
 tox.ini

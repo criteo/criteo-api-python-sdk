@@ -9,13 +9,11 @@ criteo_api_retailmedia_preview/api/analytics_api.py
 criteo_api_retailmedia_preview/api/audience_api.py
 criteo_api_retailmedia_preview/api/campaign_api.py
 criteo_api_retailmedia_preview/api/gateway_api.py
-criteo_api_retailmedia_preview/api/o_auth_api.py
 criteo_api_retailmedia_preview/api_client.py
 criteo_api_retailmedia_preview/apis/__init__.py
 criteo_api_retailmedia_preview/configuration.py
 criteo_api_retailmedia_preview/exceptions.py
 criteo_api_retailmedia_preview/model/__init__.py
-criteo_api_retailmedia_preview/model/access_token_model.py
 criteo_api_retailmedia_preview/model/application_summary_model.py
 criteo_api_retailmedia_preview/model/application_summary_model_resource.py
 criteo_api_retailmedia_preview/model/application_summary_model_response.py
@@ -107,7 +105,6 @@ criteo_api_retailmedia_preview/model/line_item_bid_multipliers.py
 criteo_api_retailmedia_preview/model/line_item_bid_multipliers_request.py
 criteo_api_retailmedia_preview/model/line_item_bid_multipliers_response.py
 criteo_api_retailmedia_preview/model/map_string.py
-criteo_api_retailmedia_preview/model/o_auth_error_model.py
 criteo_api_retailmedia_preview/model/page_metadata.py
 criteo_api_retailmedia_preview/model/page_of_balance_campaign.py
 criteo_api_retailmedia_preview/model/page_type_environment.py
@@ -172,7 +169,6 @@ criteo_api_retailmedia_preview/model/user_behavior_details_v2.py
 criteo_api_retailmedia_preview/model_utils.py
 criteo_api_retailmedia_preview/models/__init__.py
 criteo_api_retailmedia_preview/rest.py
-docs/AccessTokenModel.md
 docs/AnalyticsApi.md
 docs/ApplicationSummaryModel.md
 docs/ApplicationSummaryModelResource.md
@@ -268,8 +264,6 @@ docs/LineItemBidMultipliers.md
 docs/LineItemBidMultipliersRequest.md
 docs/LineItemBidMultipliersResponse.md
 docs/MapString.md
-docs/OAuthApi.md
-docs/OAuthErrorModel.md
 docs/PageMetadata.md
 docs/PageOfBalanceCampaign.md
 docs/PageTypeEnvironment.md
@@ -340,5 +334,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/test_gateway_api.py
-test/test_oauth_api.py
 tox.ini
