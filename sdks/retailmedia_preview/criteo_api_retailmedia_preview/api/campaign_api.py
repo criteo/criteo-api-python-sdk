@@ -22,33 +22,19 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_preview.model.brand_preview_list_response import BrandPreviewListResponse
-from criteo_api_retailmedia_preview.model.category_cpc_rate_card_preview_list_response import CategoryCpcRateCardPreviewListResponse
+from criteo_api_retailmedia_preview.model.cpc_rate_card_preview_response import CpcRateCardPreviewResponse
 from criteo_api_retailmedia_preview.model.creative202210_list_response import Creative202210ListResponse
 from criteo_api_retailmedia_preview.model.creative202210_response import Creative202210Response
 from criteo_api_retailmedia_preview.model.creative_create_model202207 import CreativeCreateModel202207
 from criteo_api_retailmedia_preview.model.creative_update_model202207 import CreativeUpdateModel202207
-from criteo_api_retailmedia_preview.model.external_post_campaign import ExternalPostCampaign
-from criteo_api_retailmedia_preview.model.external_post_line_item import ExternalPostLineItem
-from criteo_api_retailmedia_preview.model.external_put_campaign import ExternalPutCampaign
-from criteo_api_retailmedia_preview.model.external_put_line_item import ExternalPutLineItem
-from criteo_api_retailmedia_preview.model.json_api_data_request_of_delete_balance_campaign import JsonApiDataRequestOfDeleteBalanceCampaign
-from criteo_api_retailmedia_preview.model.json_api_data_request_of_put_balance_campaign import JsonApiDataRequestOfPutBalanceCampaign
-from criteo_api_retailmedia_preview.model.json_api_data_request_with_id_of_string_and_promoted_product import JsonApiDataRequestWithIdOfStringAndPromotedProduct
 from criteo_api_retailmedia_preview.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
-from criteo_api_retailmedia_preview.model.json_api_page_response_of_balance import JsonApiPageResponseOfBalance
 from criteo_api_retailmedia_preview.model.json_api_page_response_of_brand import JsonApiPageResponseOfBrand
-from criteo_api_retailmedia_preview.model.json_api_page_response_of_campaign import JsonApiPageResponseOfCampaign
-from criteo_api_retailmedia_preview.model.json_api_page_response_of_line_item import JsonApiPageResponseOfLineItem
 from criteo_api_retailmedia_preview.model.json_api_page_response_of_retailer import JsonApiPageResponseOfRetailer
-from criteo_api_retailmedia_preview.model.json_api_page_response_of_string_and_promoted_product import JsonApiPageResponseOfStringAndPromotedProduct
 from criteo_api_retailmedia_preview.model.json_api_request_of_catalog_request_preview import JsonApiRequestOfCatalogRequestPreview
-from criteo_api_retailmedia_preview.model.json_api_single_response_of_campaign import JsonApiSingleResponseOfCampaign
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
-from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item import JsonApiSingleResponseOfLineItem
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item_bid_multipliers import JsonApiSingleResponseOfLineItemBidMultipliers
 from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_request import LineItemBidMultipliersRequest
 from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_response import LineItemBidMultipliersResponse
-from criteo_api_retailmedia_preview.model.page_of_balance_campaign import PageOfBalanceCampaign
 from criteo_api_retailmedia_preview.model.placement_preview_list_response import PlacementPreviewListResponse
 from criteo_api_retailmedia_preview.model.product_button_list_request import ProductButtonListRequest
 from criteo_api_retailmedia_preview.model.product_button_list_response import ProductButtonListResponse
@@ -59,10 +45,15 @@ from criteo_api_retailmedia_preview.model.retail_media_externalv1_keywords_model
 from criteo_api_retailmedia_preview.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
 from criteo_api_retailmedia_preview.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
 from criteo_api_retailmedia_preview.model.retail_media_externalv1_set_bids_model_request import RetailMediaExternalv1SetBidsModelRequest
-from criteo_api_retailmedia_preview.model.retailer_cpc_rate_card_preview_response import RetailerCpcRateCardPreviewResponse
 from criteo_api_retailmedia_preview.model.seller_preview_response import SellerPreviewResponse
 from criteo_api_retailmedia_preview.model.sku_data_preview_list_response import SkuDataPreviewListResponse
 from criteo_api_retailmedia_preview.model.sku_search_request_preview_request import SkuSearchRequestPreviewRequest
+from criteo_api_retailmedia_preview.model.sku_search_request_slim_preview_request import SkuSearchRequestSlimPreviewRequest
+from criteo_api_retailmedia_preview.model.sku_search_request_slim_v2_preview_request import SkuSearchRequestSlimV2PreviewRequest
+from criteo_api_retailmedia_preview.model.sku_slim_data_preview_list_response import SkuSlimDataPreviewListResponse
+from criteo_api_retailmedia_preview.model.sku_slim_data_v2_list_response import SkuSlimDataV2ListResponse
+from criteo_api_retailmedia_preview.model.template_list_response import TemplateListResponse
+from criteo_api_retailmedia_preview.model.template_response import TemplateResponse
 
 
 class CampaignApi(object):
@@ -80,6 +71,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (RetailMediaExternalv1ResourceOutcome,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{id}/keywords/add-remove',
@@ -139,6 +131,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
@@ -190,124 +183,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.delete_api_v1_external_balance_campaigns_by_balance_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PageOfBalanceCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/balances/{balanceId}/campaigns',
-                'operation_id': 'delete_api_v1_external_balance_campaigns_by_balance_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'balance_id',
-                    'json_api_data_request_of_delete_balance_campaign',
-                ],
-                'required': [
-                    'balance_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'balance_id':
-                        (str,),
-                    'json_api_data_request_of_delete_balance_campaign':
-                        (JsonApiDataRequestOfDeleteBalanceCampaign,),
-                },
-                'attribute_map': {
-                    'balance_id': 'balanceId',
-                },
-                'location_map': {
-                    'balance_id': 'path',
-                    'json_api_data_request_of_delete_balance_campaign': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.delete_api_v1_external_line_item_products_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfStringAndPromotedProduct,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products',
-                'operation_id': 'delete_api_v1_external_line_item_products_by_line_item_id',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'json_api_data_request_with_id_of_string_and_promoted_product',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'json_api_data_request_with_id_of_string_and_promoted_product':
-                        (JsonApiDataRequestWithIdOfStringAndPromotedProduct,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'lineItemId',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'json_api_data_request_with_id_of_string_and_promoted_product': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.fetch_keywords_endpoint = _Endpoint(
             settings={
                 'response_type': (RetailMediaExternalv1KeywordsModelResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{id}/keywords',
@@ -361,6 +241,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (RetailMediaExternalv1ProposalStatusModelResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/preferred-deal-line-items/{id}/proposal',
@@ -410,14 +291,73 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id_endpoint = _Endpoint(
+        self.get_api202207_external_retailer_by_retailer_id_templatestemplate_id_endpoint = _Endpoint(
             settings={
-                'response_type': (RetailerCpcRateCardPreviewResponse,),
+                'response_type': (TemplateResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/retailer-cpc-rates',
-                'operation_id': 'get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id',
+                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/templates/{template-id}',
+                'operation_id': 'get_api202207_external_retailer_by_retailer_id_templatestemplate_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'template_id',
+                ],
+                'required': [
+                    'retailer_id',
+                    'template_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'template_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailer-id',
+                    'template_id': 'template-id',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'template_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_api202207_external_retailer_templates_by_retailer_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (TemplateListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/templates',
+                'operation_id': 'get_api202207_external_retailer_templates_by_retailer_id',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -442,7 +382,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (str,),
+                        (int,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailer-id',
@@ -465,6 +405,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202210Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
@@ -522,6 +463,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ProductButtonListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons',
@@ -573,6 +515,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ProductButtonResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
@@ -630,6 +573,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfLineItemBidMultipliers,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/bid-multipliers',
@@ -683,6 +627,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/catalogs/{catalogId}/output',
@@ -735,6 +680,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCatalogStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/catalogs/{catalogId}/status',
@@ -782,77 +728,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_api_v1_external_account_balances_by_account_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfBalance,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{accountId}/balances',
-                'operation_id': 'get_api_v1_external_account_balances_by_account_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_api_v1_external_account_brands_by_account_id_endpoint = _Endpoint(
             settings={
                 'response_type': (JsonApiPageResponseOfBrand,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{accountId}/brands',
@@ -916,77 +796,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_api_v1_external_account_campaigns_by_account_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{accountId}/campaigns',
-                'operation_id': 'get_api_v1_external_account_campaigns_by_account_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_api_v1_external_account_retailers_by_account_id_endpoint = _Endpoint(
             settings={
                 'response_type': (JsonApiPageResponseOfRetailer,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{accountId}/retailers',
@@ -1054,6 +868,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiPageResponseOfAccount,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts',
@@ -1110,313 +925,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_api_v1_external_balance_campaigns_by_balance_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PageOfBalanceCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/balances/{balanceId}/campaigns',
-                'operation_id': 'get_api_v1_external_balance_campaigns_by_balance_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'balance_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'balance_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'balance_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'balance_id': 'balanceId',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'balance_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_campaign_by_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiSingleResponseOfCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/campaigns/{campaignId}',
-                'operation_id': 'get_api_v1_external_campaign_by_campaign_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaignId',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_campaign_line_items_by_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfLineItem,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/campaigns/{campaignId}/line-items',
-                'operation_id': 'get_api_v1_external_campaign_line_items_by_campaign_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaignId',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_line_item_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiSingleResponseOfLineItem,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}',
-                'operation_id': 'get_api_v1_external_line_item_by_line_item_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'lineItemId',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_line_item_products_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfStringAndPromotedProduct,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products',
-                'operation_id': 'get_api_v1_external_line_item_products_by_line_item_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'lineItemId',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_api_v1_external_retailer_brands_by_retailer_id_endpoint = _Endpoint(
             settings={
                 'response_type': (BrandPreviewListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/retailers/{retailerId}/brands',
@@ -1428,6 +941,7 @@ class CampaignApi(object):
                 'all': [
                     'retailer_id',
                     'sku_stock_type_filter',
+                    'brand_type',
                 ],
                 'required': [
                     'retailer_id',
@@ -1436,6 +950,7 @@ class CampaignApi(object):
                 ],
                 'enum': [
                     'sku_stock_type_filter',
+                    'brand_type',
                 ],
                 'validation': [
                 ]
@@ -1450,20 +965,30 @@ class CampaignApi(object):
                         "THIRD-PARTY": "third-party",
                         "FIRST-AND-THIRD-PARTY": "first-and-third-party"
                     },
+                    ('brand_type',): {
+
+                        "ALL": "all",
+                        "UC": "uc",
+                        "RETAILER": "retailer"
+                    },
                 },
                 'openapi_types': {
                     'retailer_id':
                         (int,),
                     'sku_stock_type_filter':
                         (str,),
+                    'brand_type':
+                        (str,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailerId',
                     'sku_stock_type_filter': 'sku-stock-type-filter',
+                    'brand_type': 'brand-type',
                 },
                 'location_map': {
                     'retailer_id': 'path',
                     'sku_stock_type_filter': 'query',
+                    'brand_type': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1480,6 +1005,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (SellerPreviewResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/retailers/{retailerId}/sellers/{seller}',
@@ -1535,11 +1061,12 @@ class CampaignApi(object):
         )
         self.get_api_v1_external_retailer_category_cpc_rates_by_retailer_id_endpoint = _Endpoint(
             settings={
-                'response_type': (CategoryCpcRateCardPreviewListResponse,),
+                'response_type': (CpcRateCardPreviewResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/category-cpc-rates',
+                'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/cpc-rates',
                 'operation_id': 'get_api_v1_external_retailer_category_cpc_rates_by_retailer_id',
                 'http_method': 'GET',
                 'servers': None,
@@ -1547,6 +1074,7 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'retailer_id',
+                    'fields',
                 ],
                 'required': [
                     'retailer_id',
@@ -1566,14 +1094,19 @@ class CampaignApi(object):
                 'openapi_types': {
                     'retailer_id':
                         (str,),
+                    'fields':
+                        ([str],),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailer-id',
+                    'fields': 'fields',
                 },
                 'location_map': {
                     'retailer_id': 'path',
+                    'fields': 'query',
                 },
                 'collection_format_map': {
+                    'fields': 'multi',
                 }
             },
             headers_map={
@@ -1588,6 +1121,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PlacementPreviewListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/retailers/{retailer-id}/placements',
@@ -1639,6 +1173,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202210Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives',
@@ -1696,6 +1231,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202210ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/search',
@@ -1753,6 +1289,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ProductButtonListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/create',
@@ -1810,6 +1347,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCatalogStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{accountId}/catalogs',
@@ -1863,124 +1401,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.post_api_v1_external_account_campaigns_by_account_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiSingleResponseOfCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{accountId}/campaigns',
-                'operation_id': 'post_api_v1_external_account_campaigns_by_account_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'external_post_campaign',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'external_post_campaign':
-                        (ExternalPostCampaign,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'external_post_campaign': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.post_api_v1_external_campaign_line_items_by_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiSingleResponseOfLineItem,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/campaigns/{campaignId}/line-items',
-                'operation_id': 'post_api_v1_external_campaign_line_items_by_campaign_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                    'external_post_line_item',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                    'external_post_line_item':
-                        (ExternalPostLineItem,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaignId',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                    'external_post_line_item': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.post_api_v1_external_catalogs_sku_retrieval_endpoint = _Endpoint(
             settings={
                 'response_type': (SkuDataPreviewListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/catalogs/sku-retrieval',
@@ -2057,6 +1482,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (SkuDataPreviewListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/catalogs/sku-search',
@@ -2125,10 +1551,170 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (SkuSlimDataPreviewListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/catalogs/sku-search/accounts/{account-id}/retailers/{retailer-id}',
+                'operation_id': 'post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'retailer_id',
+                    'offset',
+                    'limit',
+                    'sku_search_request_slim_preview_request',
+                ],
+                'required': [
+                    'account_id',
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 1500,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'retailer_id':
+                        (str,),
+                    'offset':
+                        (int,),
+                    'limit':
+                        (int,),
+                    'sku_search_request_slim_preview_request':
+                        (SkuSearchRequestSlimPreviewRequest,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'retailer_id': 'retailer-id',
+                    'offset': 'offset',
+                    'limit': 'limit',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'retailer_id': 'path',
+                    'offset': 'query',
+                    'limit': 'query',
+                    'sku_search_request_slim_preview_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.post_api_v1_external_catalogs_sku_search_retailer_by_retailer_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (SkuSlimDataV2ListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/catalogs/sku/search/retailers/{retailer-id}',
+                'operation_id': 'post_api_v1_external_catalogs_sku_search_retailer_by_retailer_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'x_origin_account',
+                    'offset',
+                    'limit',
+                    'sku_search_request_slim_v2_preview_request',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 1500,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (str,),
+                    'x_origin_account':
+                        (str,),
+                    'offset':
+                        (int,),
+                    'limit':
+                        (int,),
+                    'sku_search_request_slim_v2_preview_request':
+                        (SkuSearchRequestSlimV2PreviewRequest,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailer-id',
+                    'x_origin_account': 'X-Origin-Account',
+                    'offset': 'offset',
+                    'limit': 'limit',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'x_origin_account': 'header',
+                    'offset': 'query',
+                    'limit': 'query',
+                    'sku_search_request_slim_v2_preview_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.put_api202210_external_account_by_account_id_creativescreative_id_endpoint = _Endpoint(
             settings={
                 'response_type': (Creative202210Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
@@ -2192,6 +1778,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ProductButtonResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
@@ -2255,6 +1842,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (LineItemBidMultipliersResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/bid-multipliers',
@@ -2310,238 +1898,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.put_api_v1_external_balance_campaigns_by_balance_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PageOfBalanceCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/balances/{balanceId}/campaigns',
-                'operation_id': 'put_api_v1_external_balance_campaigns_by_balance_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'balance_id',
-                    'json_api_data_request_of_put_balance_campaign',
-                ],
-                'required': [
-                    'balance_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'balance_id':
-                        (str,),
-                    'json_api_data_request_of_put_balance_campaign':
-                        (JsonApiDataRequestOfPutBalanceCampaign,),
-                },
-                'attribute_map': {
-                    'balance_id': 'balanceId',
-                },
-                'location_map': {
-                    'balance_id': 'path',
-                    'json_api_data_request_of_put_balance_campaign': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.put_api_v1_external_campaign_by_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiSingleResponseOfCampaign,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/campaigns/{campaignId}',
-                'operation_id': 'put_api_v1_external_campaign_by_campaign_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                    'external_put_campaign',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                    'external_put_campaign':
-                        (ExternalPutCampaign,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaignId',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                    'external_put_campaign': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.put_api_v1_external_line_item_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiSingleResponseOfLineItem,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}',
-                'operation_id': 'put_api_v1_external_line_item_by_line_item_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'external_put_line_item',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'external_put_line_item':
-                        (ExternalPutLineItem,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'lineItemId',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'external_put_line_item': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.put_api_v1_external_line_item_products_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfStringAndPromotedProduct,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products',
-                'operation_id': 'put_api_v1_external_line_item_products_by_line_item_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'json_api_data_request_with_id_of_string_and_promoted_product',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'json_api_data_request_with_id_of_string_and_promoted_product':
-                        (JsonApiDataRequestWithIdOfStringAndPromotedProduct,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'lineItemId',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'json_api_data_request_with_id_of_string_and_promoted_product': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.set_keyword_bids_endpoint = _Endpoint(
             settings={
                 'response_type': (RetailMediaExternalv1ResourceOutcome,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{id}/keywords/set-bid',
@@ -2601,6 +1962,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (RetailMediaExternalv1ProposalStatusModelResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/preferred-deal-line-items/{id}/proposal/submit',
@@ -2822,174 +2184,6 @@ class CampaignApi(object):
             product_button_id
         return self.delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id_endpoint.call_with_http_info(**kwargs)
 
-    def delete_api_v1_external_balance_campaigns_by_balance_id(
-        self,
-        balance_id,
-        **kwargs
-    ):
-        """delete_api_v1_external_balance_campaigns_by_balance_id  # noqa: E501
-
-        Removes one or more campaigns on the specified balance  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.delete_api_v1_external_balance_campaigns_by_balance_id(balance_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            balance_id (str): The balance to remove campaigns from
-
-        Keyword Args:
-            json_api_data_request_of_delete_balance_campaign (JsonApiDataRequestOfDeleteBalanceCampaign): The campaigns to append. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PageOfBalanceCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['balance_id'] = \
-            balance_id
-        return self.delete_api_v1_external_balance_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
-
-    def delete_api_v1_external_line_item_products_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """delete_api_v1_external_line_item_products_by_line_item_id  # noqa: E501
-
-        This endpoint removes one or more products from promotion on the specified line item.  The resulting state of the line item is returned.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.delete_api_v1_external_line_item_products_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The line item to interact with
-
-        Keyword Args:
-            json_api_data_request_with_id_of_string_and_promoted_product (JsonApiDataRequestWithIdOfStringAndPromotedProduct): . [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfStringAndPromotedProduct
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.delete_api_v1_external_line_item_products_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
     def fetch_keywords(
         self,
         id,
@@ -3156,22 +2350,24 @@ class CampaignApi(object):
             id
         return self.fetch_proposal_endpoint.call_with_http_info(**kwargs)
 
-    def get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id(
+    def get_api202207_external_retailer_by_retailer_id_templatestemplate_id(
         self,
         retailer_id,
+        template_id,
         **kwargs
     ):
-        """get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id  # noqa: E501
+        """get_api202207_external_retailer_by_retailer_id_templatestemplate_id  # noqa: E501
 
-        Gets the minimum cpc bid for a retailer  # noqa: E501
+        Gets the template for the specified retailer id and template id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id(retailer_id, async_req=True)
+        >>> thread = api.get_api202207_external_retailer_by_retailer_id_templatestemplate_id(retailer_id, template_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            retailer_id (str): The retailer id
+            retailer_id (int): Retailer Id
+            template_id (int): Template Id
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3206,7 +2402,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            RetailerCpcRateCardPreviewResponse
+            TemplateResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3237,7 +2433,92 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['retailer_id'] = \
             retailer_id
-        return self.get_aip_v1_external_retailer_retailer_cpc_rates_by_retailer_id_endpoint.call_with_http_info(**kwargs)
+        kwargs['template_id'] = \
+            template_id
+        return self.get_api202207_external_retailer_by_retailer_id_templatestemplate_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_api202207_external_retailer_templates_by_retailer_id(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """get_api202207_external_retailer_templates_by_retailer_id  # noqa: E501
+
+        Get retailer creative templates  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_api202207_external_retailer_templates_by_retailer_id(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (int): External retailer id to retrieve creative templates for
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TemplateListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.get_api202207_external_retailer_templates_by_retailer_id_endpoint.call_with_http_info(**kwargs)
 
     def get_api202210_external_account_by_account_id_creativescreative_id(
         self,
@@ -3745,92 +3026,6 @@ class CampaignApi(object):
             catalog_id
         return self.get_api_v0_external_catalog_status_by_catalog_id_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_v1_external_account_balances_by_account_id(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """get_api_v1_external_account_balances_by_account_id  # noqa: E501
-
-        Gets page of balance objects for the given account id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_account_balances_by_account_id(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): The account to get balances for
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfBalance
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.get_api_v1_external_account_balances_by_account_id_endpoint.call_with_http_info(**kwargs)
-
     def get_api_v1_external_account_brands_by_account_id(
         self,
         account_id,
@@ -3916,92 +3111,6 @@ class CampaignApi(object):
         kwargs['account_id'] = \
             account_id
         return self.get_api_v1_external_account_brands_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_account_campaigns_by_account_id(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """get_api_v1_external_account_campaigns_by_account_id  # noqa: E501
-
-        Gets page of campaign objects for the given account id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_account_campaigns_by_account_id(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): The given account id
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.get_api_v1_external_account_campaigns_by_account_id_endpoint.call_with_http_info(**kwargs)
 
     def get_api_v1_external_account_retailers_by_account_id(
         self,
@@ -4170,430 +3279,6 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.get_api_v1_external_accounts_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_v1_external_balance_campaigns_by_balance_id(
-        self,
-        balance_id,
-        **kwargs
-    ):
-        """get_api_v1_external_balance_campaigns_by_balance_id  # noqa: E501
-
-        Gets page of campaigns for the given balanceId  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_balance_campaigns_by_balance_id(balance_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            balance_id (str): The balance to get campaigns from
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PageOfBalanceCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['balance_id'] = \
-            balance_id
-        return self.get_api_v1_external_balance_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_campaign_by_campaign_id(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """get_api_v1_external_campaign_by_campaign_id  # noqa: E501
-
-        Gets the campaign for the given campaign id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_campaign_by_campaign_id(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): The given campaign id
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiSingleResponseOfCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.get_api_v1_external_campaign_by_campaign_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_campaign_line_items_by_campaign_id(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """get_api_v1_external_campaign_line_items_by_campaign_id  # noqa: E501
-
-        Gets page of line item objects for the given campaign id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_campaign_line_items_by_campaign_id(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): The given campaign id
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfLineItem
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.get_api_v1_external_campaign_line_items_by_campaign_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_line_item_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """get_api_v1_external_line_item_by_line_item_id  # noqa: E501
-
-        Gets the line item for the given line item id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_line_item_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The given line item id
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiSingleResponseOfLineItem
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.get_api_v1_external_line_item_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_line_item_products_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """get_api_v1_external_line_item_products_by_line_item_id  # noqa: E501
-
-        This endpoint gets the promoted products on the specified line item.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_line_item_products_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The line item to interact with
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfStringAndPromotedProduct
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.get_api_v1_external_line_item_products_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
     def get_api_v1_external_retailer_brands_by_retailer_id(
         self,
         retailer_id,
@@ -4613,6 +3298,7 @@ class CampaignApi(object):
 
         Keyword Args:
             sku_stock_type_filter (str): Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party. [optional]
+            brand_type (str):  Filter to narrow down brands [all|uc|retailer]. Defaults to uc. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4772,7 +3458,7 @@ class CampaignApi(object):
     ):
         """get_api_v1_external_retailer_category_cpc_rates_by_retailer_id  # noqa: E501
 
-        Gets the minimum cpc bid for all categories for a retailer  # noqa: E501
+        Gets the minimum cpc bid for the retailer, and optionally the categories under the retailer  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4783,6 +3469,7 @@ class CampaignApi(object):
             retailer_id (str): The retailer id
 
         Keyword Args:
+            fields ([str]): The fields in the response that is to be included. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4815,7 +3502,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CategoryCpcRateCardPreviewListResponse
+            CpcRateCardPreviewResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5267,174 +3954,6 @@ class CampaignApi(object):
             account_id
         return self.post_api_v0_external_account_catalogs_by_account_id_endpoint.call_with_http_info(**kwargs)
 
-    def post_api_v1_external_account_campaigns_by_account_id(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """post_api_v1_external_account_campaigns_by_account_id  # noqa: E501
-
-        Creates a new campaign with the specified settings  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.post_api_v1_external_account_campaigns_by_account_id(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): The given account id
-
-        Keyword Args:
-            external_post_campaign (ExternalPostCampaign): The campaign settings to create a campaign with. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiSingleResponseOfCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.post_api_v1_external_account_campaigns_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def post_api_v1_external_campaign_line_items_by_campaign_id(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """post_api_v1_external_campaign_line_items_by_campaign_id  # noqa: E501
-
-        Creates a new line item with the specified settings  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.post_api_v1_external_campaign_line_items_by_campaign_id(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): The given campaign id
-
-        Keyword Args:
-            external_post_line_item (ExternalPostLineItem): The line item settings to create a line item with. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiSingleResponseOfLineItem
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.post_api_v1_external_campaign_line_items_by_campaign_id_endpoint.call_with_http_info(**kwargs)
-
     def post_api_v1_external_catalogs_sku_retrieval(
         self,
         **kwargs
@@ -5596,6 +4115,183 @@ class CampaignApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.post_api_v1_external_catalogs_sku_search_endpoint.call_with_http_info(**kwargs)
+
+    def post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id(
+        self,
+        account_id,
+        retailer_id,
+        **kwargs
+    ):
+        """post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id  # noqa: E501
+
+        Endpoint to search skus by text, account and retailer with an option to filter by brands id's.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id(account_id, retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The account for which skus should be searched for.
+            retailer_id (str): The client id/retailer id for which skus should be searched for.
+
+        Keyword Args:
+            offset (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
+            limit (int): The maximum number of results to return with each call. Must be greater than zero.. [optional] if omitted the server will use the default value of 100
+            sku_search_request_slim_preview_request (SkuSearchRequestSlimPreviewRequest): . [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SkuSlimDataPreviewListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id_endpoint.call_with_http_info(**kwargs)
+
+    def post_api_v1_external_catalogs_sku_search_retailer_by_retailer_id(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """post_api_v1_external_catalogs_sku_search_retailer_by_retailer_id  # noqa: E501
+
+        Endpoint to search skus by text for a retailer with an option to filter by brands id's.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.post_api_v1_external_catalogs_sku_search_retailer_by_retailer_id(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (str): The client id/retailer id for which skus should be searched for.
+
+        Keyword Args:
+            x_origin_account (str): The account id of the initiator of the call.. [optional]
+            offset (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
+            limit (int): The maximum number of results to return with each call. Must be greater than zero and less than 1500. 10,000 records deep is the max limit.. [optional] if omitted the server will use the default value of 100
+            sku_search_request_slim_v2_preview_request (SkuSearchRequestSlimV2PreviewRequest): . [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SkuSlimDataV2ListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.post_api_v1_external_catalogs_sku_search_retailer_by_retailer_id_endpoint.call_with_http_info(**kwargs)
 
     def put_api202210_external_account_by_account_id_creativescreative_id(
         self,
@@ -5856,342 +4552,6 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.put_api202301_external_line_item_bid_multipliers_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
-    def put_api_v1_external_balance_campaigns_by_balance_id(
-        self,
-        balance_id,
-        **kwargs
-    ):
-        """put_api_v1_external_balance_campaigns_by_balance_id  # noqa: E501
-
-        appends one or more campaigns to the specified balance  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_v1_external_balance_campaigns_by_balance_id(balance_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            balance_id (str): The balance to add campaigns from
-
-        Keyword Args:
-            json_api_data_request_of_put_balance_campaign (JsonApiDataRequestOfPutBalanceCampaign): The campaigns to append. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PageOfBalanceCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['balance_id'] = \
-            balance_id
-        return self.put_api_v1_external_balance_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
-
-    def put_api_v1_external_campaign_by_campaign_id(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """put_api_v1_external_campaign_by_campaign_id  # noqa: E501
-
-        Updates the campaign for the given campaign id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_v1_external_campaign_by_campaign_id(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): The given campaign id
-
-        Keyword Args:
-            external_put_campaign (ExternalPutCampaign): The campaign settings to update that campaign with. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiSingleResponseOfCampaign
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.put_api_v1_external_campaign_by_campaign_id_endpoint.call_with_http_info(**kwargs)
-
-    def put_api_v1_external_line_item_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """put_api_v1_external_line_item_by_line_item_id  # noqa: E501
-
-        Updates the line item for the given line item id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_v1_external_line_item_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The given line item id
-
-        Keyword Args:
-            external_put_line_item (ExternalPutLineItem): The line item settings to create a line item with. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiSingleResponseOfLineItem
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.put_api_v1_external_line_item_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
-    def put_api_v1_external_line_item_products_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """put_api_v1_external_line_item_products_by_line_item_id  # noqa: E501
-
-        This endpoint appends one or more products to promote on the specified line item.  The resulting state of the line item is returned.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_v1_external_line_item_products_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The line item to interact with
-
-        Keyword Args:
-            json_api_data_request_with_id_of_string_and_promoted_product (JsonApiDataRequestWithIdOfStringAndPromotedProduct): the products to append to this line item. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfStringAndPromotedProduct
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.put_api_v1_external_line_item_products_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def set_keyword_bids(
         self,

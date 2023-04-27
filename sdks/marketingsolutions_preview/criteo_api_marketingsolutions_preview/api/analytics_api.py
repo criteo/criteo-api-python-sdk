@@ -21,7 +21,6 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from criteo_api_marketingsolutions_preview.model.export_result import ExportResult
 from criteo_api_marketingsolutions_preview.model.generate_audience_performance_report_request import GenerateAudiencePerformanceReportRequest
 from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
@@ -53,6 +52,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/statistics/report',
@@ -93,7 +93,10 @@ class AnalyticsApi(object):
                 'accept': [
                     'text/plain',
                     'application/json',
-                    'text/json'
+                    'text/json',
+                    'text/csv',
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -108,6 +111,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (MarketingSolutionsReportStatusResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/reports/async-statistics',
@@ -163,6 +167,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (MarketingSolutionsReportStatusResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/reports/async-audience-performance',
@@ -218,6 +223,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (ExportResult,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/reports/{report-id}/output',
@@ -271,6 +277,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (MarketingSolutionsReportStatusResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/reports/{report-id}/status',
@@ -324,6 +331,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/categories/report',
@@ -364,7 +372,10 @@ class AnalyticsApi(object):
                 'accept': [
                     'text/plain',
                     'application/json',
-                    'text/json'
+                    'text/json',
+                    'text/csv',
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -379,6 +390,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (ReportDataMessage,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/reports/creatives',
@@ -434,6 +446,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/placements/report',
@@ -489,6 +502,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (ReportDataMessage,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/reports/top-products',
@@ -544,6 +558,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/transactions/report',
@@ -584,7 +599,10 @@ class AnalyticsApi(object):
                 'accept': [
                     'text/plain',
                     'application/json',
-                    'text/json'
+                    'text/json',
+                    'text/csv',
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -599,6 +617,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (TransparencyReportDataMessage,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/log-level/advertisers/{advertiser-id}/report',

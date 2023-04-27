@@ -94,7 +94,6 @@ class CreateCampaign(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
-            'objective': (str,),  # noqa: E501
             'goal': (str,),  # noqa: E501
             'spend_limit': (CreateCampaignSpendLimit,),  # noqa: E501
         }
@@ -107,7 +106,6 @@ class CreateCampaign(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'objective': 'objective',  # noqa: E501
         'goal': 'goal',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
     }
@@ -155,7 +153,6 @@ class CreateCampaign(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): Name of the campaign. [optional]  # noqa: E501
             advertiser_id (str): Advertiser id this campaign belongs to. [optional]  # noqa: E501
-            objective (str): Campaign's marketing objective. [optional]  # noqa: E501
             goal (str): Goal for the marketing campaign. [optional]  # noqa: E501
             spend_limit (CreateCampaignSpendLimit): [optional]  # noqa: E501
         """
@@ -245,7 +242,6 @@ class CreateCampaign(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): Name of the campaign. [optional]  # noqa: E501
             advertiser_id (str): Advertiser id this campaign belongs to. [optional]  # noqa: E501
-            objective (str): Campaign's marketing objective. [optional]  # noqa: E501
             goal (str): Goal for the marketing campaign. [optional]  # noqa: E501
             spend_limit (CreateCampaignSpendLimit): [optional]  # noqa: E501
         """

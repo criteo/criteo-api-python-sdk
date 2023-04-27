@@ -70,6 +70,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSegmentEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/create',
@@ -125,6 +126,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences/create',
@@ -180,6 +182,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSegmentIdEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/delete',
@@ -235,6 +238,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceIdEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences/delete',
@@ -290,6 +294,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSegmentEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments',
@@ -345,6 +350,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences',
@@ -400,6 +406,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSegmentSizeEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/compute-sizes',
@@ -455,6 +462,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSizeEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences/compute-sizes',
@@ -510,6 +518,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (DeleteAudienceContactListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
@@ -561,6 +570,7 @@ class AudienceApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/delete',
@@ -621,6 +631,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSegmentSizeEstimationV1Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/estimate-size',
@@ -676,6 +687,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSizeEstimationV1Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences/estimate-size',
@@ -731,6 +743,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (ContactListStatisticsEntityV1Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
@@ -784,6 +797,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (InMarketAudienceSegmentBrandEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/in-market-brands',
@@ -843,6 +857,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (InMarketAudienceSegmentInterestEntityV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/in-market-interests',
@@ -902,6 +917,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (ModifyAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/audiences/{audience-id}/contactlist-attributes',
@@ -960,6 +976,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/search',
@@ -1025,6 +1042,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (AudienceEntityV1AudienceSearchMetadataV1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences/search',
@@ -1090,6 +1108,7 @@ class AudienceApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/set',
@@ -1150,6 +1169,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (ModifyAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',

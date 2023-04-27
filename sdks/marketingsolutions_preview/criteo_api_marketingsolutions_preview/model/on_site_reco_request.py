@@ -91,6 +91,7 @@ class OnSiteRecoRequest(ModelNormal):
             'partner_id': (int,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
             'user_events': ([UserEvent],),  # noqa: E501
+            'ad_set_id': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -103,6 +104,7 @@ class OnSiteRecoRequest(ModelNormal):
         'partner_id': 'partnerId',  # noqa: E501
         'user_id': 'userId',  # noqa: E501
         'user_events': 'userEvents',  # noqa: E501
+        'ad_set_id': 'adSetId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,6 +154,7 @@ class OnSiteRecoRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             user_id (str): Used to retrieve user events from Criteo trackers. Optional if UserEvents are passed.. [optional]  # noqa: E501
             user_events ([UserEvent]): Used to perform a recommendation without relying on events stored for a UserId. Optional if UserId is passed.. [optional]  # noqa: E501
+            ad_set_id (int): Id of the AdSet. This field is optional and is resolved automatically for adsets previously configured.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,6 +248,7 @@ class OnSiteRecoRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             user_id (str): Used to retrieve user events from Criteo trackers. Optional if UserEvents are passed.. [optional]  # noqa: E501
             user_events ([UserEvent]): Used to perform a recommendation without relying on events stored for a UserId. Optional if UserId is passed.. [optional]  # noqa: E501
+            ad_set_id (int): Id of the AdSet. This field is optional and is resolved automatically for adsets previously configured.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -60,6 +60,14 @@ class SkuSearchRequestPreview(ModelNormal):
             'SELLER': "seller",
             'ALL': "all",
         },
+        ('product_id_type',): {
+            'SKUKEY': "skuKey",
+            'GTIN': "gtin",
+            'MPN': "mpn",
+            'MODEL': "model",
+            'SKUID': "skuId",
+            'PARENTID': "parentId",
+        },
     }
 
     validations = {
@@ -91,6 +99,8 @@ class SkuSearchRequestPreview(ModelNormal):
             'sellers': ([str],),  # noqa: E501
             'brand_ids': ([str],),  # noqa: E501
             'sku_type': (str,),  # noqa: E501
+            'product_id_type': (str,),  # noqa: E501
+            'product_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -104,6 +114,8 @@ class SkuSearchRequestPreview(ModelNormal):
         'sellers': 'sellers',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
         'sku_type': 'skuType',  # noqa: E501
+        'product_id_type': 'productIdType',  # noqa: E501
+        'product_ids': 'productIds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -154,6 +166,8 @@ class SkuSearchRequestPreview(ModelNormal):
             sellers ([str]): A list of seller names and/or seller Id's. [optional]  # noqa: E501
             brand_ids ([str]): A list of brand Id's. [optional]  # noqa: E501
             sku_type (str): Enum to set isSellerSku field. [optional] if omitted the server will use the default value of "brand"  # noqa: E501
+            product_id_type (str): Type of product Ids to search for(SkuKey, SkuId, Gtin, Mpn, Model, ParentId). [optional] if omitted the server will use the default value of "skuKey"  # noqa: E501
+            product_ids ([str]): A list of product Id's, if not passed ignore and search by QueryString. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -248,6 +262,8 @@ class SkuSearchRequestPreview(ModelNormal):
             sellers ([str]): A list of seller names and/or seller Id's. [optional]  # noqa: E501
             brand_ids ([str]): A list of brand Id's. [optional]  # noqa: E501
             sku_type (str): Enum to set isSellerSku field. [optional] if omitted the server will use the default value of "brand"  # noqa: E501
+            product_id_type (str): Type of product Ids to search for(SkuKey, SkuId, Gtin, Mpn, Model, ParentId). [optional] if omitted the server will use the default value of "skuKey"  # noqa: E501
+            product_ids ([str]): A list of product Id's, if not passed ignore and search by QueryString. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

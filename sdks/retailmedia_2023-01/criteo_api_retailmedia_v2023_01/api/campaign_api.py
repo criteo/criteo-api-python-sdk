@@ -86,6 +86,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AssetResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/assets',
@@ -141,6 +142,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Balance202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/balances',
@@ -208,6 +210,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202110ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/creatives',
@@ -259,6 +262,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (KeywordTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/auction-line-items/{line-item-id}/targeting/keywords',
@@ -310,6 +314,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (BalanceCampaign202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/balances/{balance-id}/campaigns',
@@ -377,6 +382,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PreferredLineItem202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/campaigns/{campaign-id}/preferred-line-items',
@@ -444,6 +450,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PromotedProduct202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/products',
@@ -511,6 +518,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PreferredLineItem202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}',
@@ -562,6 +570,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AddToBasketTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket',
@@ -613,6 +622,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AudienceTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/audiences',
@@ -664,6 +674,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (StoreTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores',
@@ -715,6 +726,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ExternalRetailerPages202110,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/retailers/{retailerId}/pages',
@@ -766,6 +778,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Category202204,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/categories/{categoryId}',
@@ -817,6 +830,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Category202204ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/categories',
@@ -893,6 +907,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202207Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/creatives/{creative-id}',
@@ -950,6 +965,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (TemplateResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/retailers/{retailer-id}/templates/{template-id}',
@@ -1007,6 +1023,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (TemplateListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/retailers/{retailer-id}/templates',
@@ -1058,6 +1075,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiPageResponseOfCampaignV202301,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/campaigns',
@@ -1125,6 +1143,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCampaignV202301,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/campaigns/{campaignId}',
@@ -1176,6 +1195,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfLineItemBidMultipliers,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/bid-multipliers',
@@ -1229,6 +1249,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiPageResponseOfBrand,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/brands',
@@ -1296,6 +1317,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiPageResponseOfRetailer,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/retailers',
@@ -1363,6 +1385,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiPageResponseOfAccount,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts',
@@ -1423,6 +1446,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/catalogs/{catalogId}/output',
@@ -1475,6 +1499,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCatalogStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/catalogs/{catalogId}/status',
@@ -1526,6 +1551,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (CommonLineItemPagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/line-items',
@@ -1611,6 +1637,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AuctionLineItemResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/auction-line-items/{line-item-id}',
@@ -1662,6 +1689,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AuctionLineItemPagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/campaigns/{campaign-id}/auction-line-items',
@@ -1729,6 +1757,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (CommonLineItemResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}',
@@ -1780,6 +1809,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (KeywordTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/auction-line-items/{line-item-id}/targeting/keywords/append',
@@ -1837,6 +1867,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (KeywordTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/auction-line-items/{line-item-id}/targeting/keywords/delete',
@@ -1894,6 +1925,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (BalanceCampaign202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/balances/{balance-id}/campaigns/append',
@@ -1951,6 +1983,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (BalanceCampaign202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/balances/{balance-id}/campaigns/delete',
@@ -2008,6 +2041,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PreferredLineItem202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/campaigns/{campaign-id}/preferred-line-items',
@@ -2065,6 +2099,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PromotedProduct202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/products/append',
@@ -2122,6 +2157,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PromotedProduct202110PagedListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/products/delete',
@@ -2179,6 +2215,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/products/pause',
@@ -2234,6 +2271,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/products/unpause',
@@ -2289,6 +2327,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AddToBasketTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append',
@@ -2346,6 +2385,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AddToBasketTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete',
@@ -2403,6 +2443,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AudienceTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append',
@@ -2460,6 +2501,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AudienceTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete',
@@ -2517,6 +2559,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (StoreTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append',
@@ -2574,6 +2617,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (StoreTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete',
@@ -2631,6 +2675,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202207Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/creatives',
@@ -2688,6 +2733,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCampaignV202301,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/campaigns',
@@ -2745,6 +2791,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCatalogStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/catalogs',
@@ -2802,6 +2849,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AuctionLineItemResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/campaigns/{campaign-id}/auction-line-items',
@@ -2859,6 +2907,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PreferredLineItem202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}',
@@ -2916,6 +2965,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AddToBasketTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket',
@@ -2973,6 +3023,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AudienceTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/audiences',
@@ -3030,6 +3081,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (StoreTarget202110Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores',
@@ -3087,6 +3139,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (Creative202207Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/creatives/{creative-id}',
@@ -3150,6 +3203,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (JsonApiSingleResponseOfCampaignV202301,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/campaigns/{campaignId}',
@@ -3207,6 +3261,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (LineItemBidMultipliersResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/line-items/{line-item-id}/bid-multipliers',
@@ -3266,6 +3321,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AuctionLineItemResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/retail-media/auction-line-items/{line-item-id}',

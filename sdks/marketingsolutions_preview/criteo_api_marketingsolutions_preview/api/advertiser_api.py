@@ -44,6 +44,7 @@ class AdvertiserApi(object):
             settings={
                 'response_type': (GetPortfolioResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/me',
@@ -90,6 +91,7 @@ class AdvertiserApi(object):
             settings={
                 'response_type': (AdvertiserCreationResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers',
@@ -147,6 +149,7 @@ class AdvertiserApi(object):
             settings={
                 'response_type': (AdvertiserDatasetListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/datasets',
@@ -200,6 +203,7 @@ class AdvertiserApi(object):
             settings={
                 'response_type': (ListAvailableIndustriesResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/industries',

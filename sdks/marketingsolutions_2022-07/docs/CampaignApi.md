@@ -28,6 +28,7 @@ Get the data for the specified ad set
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -45,6 +46,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -79,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -107,6 +114,7 @@ Get the data for the specified campaign
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -124,6 +132,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -158,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -186,6 +200,7 @@ Get the Category Bids for all valid Categories associated to an Ad Set
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -203,6 +218,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -237,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -266,6 +287,7 @@ Get the Display Multipliers for all valid Categories associated to an Ad Set
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -283,6 +305,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -317,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -346,6 +374,7 @@ Patch a list of AdSets.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -364,6 +393,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -459,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -487,6 +522,7 @@ Patch a list of Campaigns.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -505,6 +541,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -556,7 +598,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -584,6 +626,7 @@ Patch Category Bids for one or more Categories in a single request. Partial succ
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -602,6 +645,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -656,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -685,6 +734,7 @@ Patch Display Multipliers for one or more Categories in a single request. Partia
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -703,6 +753,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -757,7 +813,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -786,6 +842,7 @@ Search for ad sets
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -804,6 +861,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -851,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -880,6 +943,7 @@ Search for campaigns
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -898,6 +962,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -942,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -971,6 +1041,7 @@ Start the specified list of ad sets
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -989,6 +1060,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -1031,7 +1108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1059,6 +1136,7 @@ Stop the specified list of ad sets
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1077,6 +1155,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -1119,7 +1203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

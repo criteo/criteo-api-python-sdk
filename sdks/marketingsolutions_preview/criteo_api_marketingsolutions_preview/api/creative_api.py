@@ -49,6 +49,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (AdResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/ads',
@@ -111,6 +112,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CouponResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons',
@@ -173,6 +175,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CreativeResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/creatives',
@@ -235,6 +238,7 @@ class CreativeApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/ads/{id}',
@@ -284,6 +288,7 @@ class CreativeApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons/{id}',
@@ -339,6 +344,7 @@ class CreativeApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/creatives/{id}',
@@ -388,6 +394,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CouponResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons/{id}',
@@ -456,6 +463,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CreativeResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/creatives/{id}',
@@ -518,6 +526,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (AdResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/ads/{id}',
@@ -571,6 +580,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (AdListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/ads',
@@ -634,6 +644,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CouponResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons/{id}',
@@ -693,6 +704,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons/{id}/preview',
@@ -762,6 +774,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CouponSupportedSizesResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons-supported-sizes',
@@ -820,6 +833,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CouponListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/coupons',
@@ -883,6 +897,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CreativeResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/creatives/{id}',
@@ -936,6 +951,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/creatives/{id}/preview',
@@ -999,6 +1015,7 @@ class CreativeApi(object):
             settings={
                 'response_type': (CreativeListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/creatives',

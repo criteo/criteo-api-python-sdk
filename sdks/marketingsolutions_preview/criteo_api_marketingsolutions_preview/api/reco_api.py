@@ -45,6 +45,7 @@ class RecoApi(object):
             settings={
                 'response_type': (ResourceOutcomeOfProductSet,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/product-sets',
@@ -100,6 +101,7 @@ class RecoApi(object):
             settings={
                 'response_type': (ResourceOutcomeOfProductSet,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/product-sets/{product-set-id}',
@@ -153,6 +155,7 @@ class RecoApi(object):
             settings={
                 'response_type': (ResourceCollectionOutcomeOfProductSet,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/product-sets/dataset/{dataset-id}',
@@ -206,6 +209,7 @@ class RecoApi(object):
             settings={
                 'response_type': (OkResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/product-sets/preview',
@@ -258,6 +262,7 @@ class RecoApi(object):
             settings={
                 'response_type': (Outcome,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/product-sets/{product-set-id}',

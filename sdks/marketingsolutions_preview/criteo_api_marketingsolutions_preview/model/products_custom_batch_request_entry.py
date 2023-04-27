@@ -95,6 +95,7 @@ class ProductsCustomBatchRequestEntry(ModelNormal):
             'method': (str,),  # noqa: E501
             'batch_id': (int,),  # noqa: E501
             'product_id': (str,),  # noqa: E501
+            'item_group_id': (str,),  # noqa: E501
             'product': (Product,),  # noqa: E501
             'feed_id': (str,),  # noqa: E501
         }
@@ -109,6 +110,7 @@ class ProductsCustomBatchRequestEntry(ModelNormal):
         'method': 'method',  # noqa: E501
         'batch_id': 'batchId',  # noqa: E501
         'product_id': 'productId',  # noqa: E501
+        'item_group_id': 'itemGroupId',  # noqa: E501
         'product': 'product',  # noqa: E501
         'feed_id': 'feedId',  # noqa: E501
     }
@@ -160,6 +162,7 @@ class ProductsCustomBatchRequestEntry(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             batch_id (int): An entry ID, unique within the batch request.. [optional]  # noqa: E501
             product_id (str): The Product ID to delete. Only defined if the method is delete.. [optional]  # noqa: E501
+            item_group_id (str): The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.. [optional]  # noqa: E501
             product (Product): [optional]  # noqa: E501
             feed_id (str): Not used by Criteo.. [optional]  # noqa: E501
         """
@@ -255,6 +258,7 @@ class ProductsCustomBatchRequestEntry(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             batch_id (int): An entry ID, unique within the batch request.. [optional]  # noqa: E501
             product_id (str): The Product ID to delete. Only defined if the method is delete.. [optional]  # noqa: E501
+            item_group_id (str): The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.. [optional]  # noqa: E501
             product (Product): [optional]  # noqa: E501
             feed_id (str): Not used by Criteo.. [optional]  # noqa: E501
         """

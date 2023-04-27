@@ -59,6 +59,11 @@ class Campaign(ModelNormal):
     """
 
     allowed_values = {
+        ('goal',): {
+            'UNSPECIFIED': "Unspecified",
+            'ACQUISITION': "Acquisition",
+            'RETENTION': "Retention",
+        },
     }
 
     validations = {
@@ -91,6 +96,7 @@ class Campaign(ModelNormal):
             'advertiser_id': (str,),  # noqa: E501
             'objective': (str,),  # noqa: E501
             'spend_limit': (CampaignSpendLimit,),  # noqa: E501
+            'goal': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -103,6 +109,7 @@ class Campaign(ModelNormal):
         'advertiser_id': 'advertiserId',  # noqa: E501
         'objective': 'objective',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
+        'goal': 'goal',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,6 +157,7 @@ class Campaign(ModelNormal):
             advertiser_id (str): Advertiser id of the campaign. [optional]  # noqa: E501
             objective (str): Campaign's marketing objective. [optional]  # noqa: E501
             spend_limit (CampaignSpendLimit): [optional]  # noqa: E501
+            goal (str): Goal of the campaign. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,6 +247,7 @@ class Campaign(ModelNormal):
             advertiser_id (str): Advertiser id of the campaign. [optional]  # noqa: E501
             objective (str): Campaign's marketing objective. [optional]  # noqa: E501
             spend_limit (CampaignSpendLimit): [optional]  # noqa: E501
+            goal (str): Goal of the campaign. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

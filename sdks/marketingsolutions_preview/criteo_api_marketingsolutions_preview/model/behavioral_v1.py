@@ -55,6 +55,13 @@ class BehavioralV1(ModelNormal):
     """
 
     allowed_values = {
+        ('category',): {
+            'UNKNOWN': "Unknown",
+            'LIFESTYLES': "Lifestyles",
+            'LIFEEVENTS': "LifeEvents",
+            'SEASONAL': "Seasonal",
+            'BUYINGPATTERNS': "BuyingPatterns",
+        },
     }
 
     validations = {
@@ -81,7 +88,10 @@ class BehavioralV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'category': (str,),  # noqa: E501
             'country': (str,),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
+            'end_date': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -90,7 +100,10 @@ class BehavioralV1(ModelNormal):
 
 
     attribute_map = {
+        'category': 'category',  # noqa: E501
         'country': 'country',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -100,8 +113,11 @@ class BehavioralV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, category, *args, **kwargs):  # noqa: E501
         """BehavioralV1 - a model defined in OpenAPI
+
+        Args:
+            category (str): The type of behavioral
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -135,6 +151,8 @@ class BehavioralV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             country (str): The users' country. [optional]  # noqa: E501
+            start_date (datetime): Desired date when the behavioral will start. [optional]  # noqa: E501
+            end_date (datetime): Desired date when the behavioral will end. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -166,6 +184,7 @@ class BehavioralV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.category = category
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -186,8 +205,11 @@ class BehavioralV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, category, *args, **kwargs):  # noqa: E501
         """BehavioralV1 - a model defined in OpenAPI
+
+        Args:
+            category (str): The type of behavioral
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -221,6 +243,8 @@ class BehavioralV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             country (str): The users' country. [optional]  # noqa: E501
+            start_date (datetime): Desired date when the behavioral will start. [optional]  # noqa: E501
+            end_date (datetime): Desired date when the behavioral will end. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,6 +274,7 @@ class BehavioralV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.category = category
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

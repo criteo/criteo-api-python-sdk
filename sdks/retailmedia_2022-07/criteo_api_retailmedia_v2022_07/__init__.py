@@ -1,5 +1,3 @@
-# flake8: noqa
-
 """
     Criteo API
 
@@ -10,10 +8,12 @@
 """
 
 
-__version__ = "2022.07.0.230411"
+__version__ = "2022.07.0.230427"
 
 # import ApiClient
 from criteo_api_retailmedia_v2022_07.api_client import ApiClient
+from criteo_api_retailmedia_v2022_07.criteo_api_client import CriteoApiClient
+from criteo_api_retailmedia_v2022_07.api_client_builder import ApiClientBuilder
 
 # import Configuration
 from criteo_api_retailmedia_v2022_07.configuration import Configuration
@@ -25,3 +25,6 @@ from criteo_api_retailmedia_v2022_07.exceptions import ApiTypeError
 from criteo_api_retailmedia_v2022_07.exceptions import ApiValueError
 from criteo_api_retailmedia_v2022_07.exceptions import ApiKeyError
 from criteo_api_retailmedia_v2022_07.exceptions import ApiException
+
+
+

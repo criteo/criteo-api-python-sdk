@@ -115,6 +115,8 @@ class SkuDataPreview(ModelNormal):
             'seller_name': (str,),  # noqa: E501
             'gtin': (str,),  # noqa: E501
             'mpn': (str,),  # noqa: E501
+            'model_number': (str,),  # noqa: E501
+            'parent_id': (str,),  # noqa: E501
             'image_url': (str,),  # noqa: E501
             'product_page': (str,),  # noqa: E501
         }
@@ -143,6 +145,8 @@ class SkuDataPreview(ModelNormal):
         'seller_name': 'sellerName',  # noqa: E501
         'gtin': 'gtin',  # noqa: E501
         'mpn': 'mpn',  # noqa: E501
+        'model_number': 'modelNumber',  # noqa: E501
+        'parent_id': 'parentId',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
         'product_page': 'productPage',  # noqa: E501
     }
@@ -208,6 +212,8 @@ class SkuDataPreview(ModelNormal):
             seller_name (str): The name of the seller.. [optional]  # noqa: E501
             gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
             mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            model_number (str): The Model Number for the product if available.. [optional]  # noqa: E501
+            parent_id (str): The ParentId for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
             product_page (str): An The product page URL. [optional]  # noqa: E501
         """
@@ -323,6 +329,8 @@ class SkuDataPreview(ModelNormal):
             seller_name (str): The name of the seller.. [optional]  # noqa: E501
             gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
             mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            model_number (str): The Model Number for the product if available.. [optional]  # noqa: E501
+            parent_id (str): The ParentId for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
             product_page (str): An The product page URL. [optional]  # noqa: E501
         """

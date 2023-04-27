@@ -45,6 +45,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (CreateRetailMediaAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{accountId}/audiences',
@@ -103,6 +104,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (RetailMediaAudienceV2Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/v2/accounts/{accountId}/audiences',
@@ -161,6 +163,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (GetPageOfAudiencesByAccountIdResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/accounts/{accountId}/audiences',
@@ -228,6 +231,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (RetailMediaAudienceV2ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/v2/accounts/{accountId}/audiences',

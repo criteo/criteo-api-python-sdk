@@ -1,10 +1,10 @@
 import pytest
 import os
 
-from criteo_api_retailmedia_v2022_07.configuration import Configuration
 from criteo_api_retailmedia_v2022_07.api.gateway_api import GatewayApi
-from criteo_api_retailmedia_v2022_07.api_client import ApiClient
+from criteo_api_retailmedia_v2022_07.api_client_builder import ApiClientBuilder
 from criteo_api_retailmedia_v2022_07.rest import ApiException
+from example_application import ExampleApplication
 
 class TestGatewayApi:
   @pytest.fixture(autouse=True)
@@ -12,13 +12,18 @@ class TestGatewayApi:
     self.client_id = os.environ.get("TEST_CLIENT_ID")
     self.client_secret = os.environ.get("TEST_CLIENT_SECRET")
     self.application_id = int(os.environ.get("TEST_APPLICATION_ID"))
-  
-    self.client = ApiClient(Configuration(username=self.client_id, password=self.client_secret))
+
+    self.client = ApiClientBuilder.WithClientCredentials(clientId=self.client_id, clientSecret=self.client_secret)
 
   def test_environment_variables(self):
     assert len(self.client_id) > 0, "Environment variable \"TEST_CLIENT_ID\" not found."
     assert len(self.client_secret) > 0, "Environment variable \"TEST_CLIENT_SECRET\" not found."
     assert self.application_id > 0, "Environment variable \"TEST_APPLICATION_ID\" not found."
+
+  def test_example_works(self):
+    # Arrange
+    exampleApplication = ExampleApplication()
+    exampleApplication.call_then_application_endpoint(self.client_id, self.client_secret)
 
   def test_get_current_application_should_succeed_with_valid_token(self):
     # Arrange
@@ -46,7 +51,7 @@ class TestGatewayApi:
 
   def test_get_current_application_should_fail_without_token(self):
     # Arrange
-    api = GatewayApi(ApiClient())
+    api = GatewayApi(ApiClientBuilder.WithNoAuthorization())
 
     # Act
     try:

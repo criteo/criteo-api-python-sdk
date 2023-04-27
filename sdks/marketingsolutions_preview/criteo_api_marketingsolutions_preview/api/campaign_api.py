@@ -25,6 +25,7 @@ from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_entity_v1_
 from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_input_entity_v1 import AdSetAudienceLinkInputEntityV1
 from criteo_api_marketingsolutions_preview.model.ad_set_category_bid_list_response import AdSetCategoryBidListResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_display_multiplier_list_response import AdSetDisplayMultiplierListResponse
+from criteo_api_marketingsolutions_preview.model.ad_set_search_request_v23_q1 import AdSetSearchRequestV23Q1
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_disable_result_response import AdSetTargetingDealIdsDisableResultResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_response import AdSetTargetingDealIdsResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_set_result_response import AdSetTargetingDealIdsSetResultResponse
@@ -34,9 +35,9 @@ from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_position
 from criteo_api_marketingsolutions_preview.model.api_error_response import ApiErrorResponse
 from criteo_api_marketingsolutions_preview.model.api_request_of_targeting_entity import ApiRequestOfTargetingEntity
 from criteo_api_marketingsolutions_preview.model.api_response_of_targeting_entity import ApiResponseOfTargetingEntity
-from criteo_api_marketingsolutions_preview.model.campaign_list_response import CampaignListResponse
-from criteo_api_marketingsolutions_preview.model.campaign_response import CampaignResponse
-from criteo_api_marketingsolutions_preview.model.campaign_search_request import CampaignSearchRequest
+from criteo_api_marketingsolutions_preview.model.campaign_search_request_v23_q1 import CampaignSearchRequestV23Q1
+from criteo_api_marketingsolutions_preview.model.campaign_v23_q1_list_response import CampaignV23Q1ListResponse
+from criteo_api_marketingsolutions_preview.model.campaign_v23_q1_response import CampaignV23Q1Response
 from criteo_api_marketingsolutions_preview.model.create_ad_set_request import CreateAdSetRequest
 from criteo_api_marketingsolutions_preview.model.create_campaign_request import CreateCampaignRequest
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
@@ -49,13 +50,13 @@ from criteo_api_marketingsolutions_preview.model.patch_ad_set_display_multiplier
 from criteo_api_marketingsolutions_preview.model.patch_ad_set_display_multiplier_result_list_response import PatchAdSetDisplayMultiplierResultListResponse
 from criteo_api_marketingsolutions_preview.model.patch_campaign_list_request import PatchCampaignListRequest
 from criteo_api_marketingsolutions_preview.model.patch_result_campaign_list_response import PatchResultCampaignListResponse
-from criteo_api_marketingsolutions_preview.model.request_ad_set_search import RequestAdSetSearch
 from criteo_api_marketingsolutions_preview.model.requests_ad_set_id import RequestsAdSetId
 from criteo_api_marketingsolutions_preview.model.requests_patch_ad_set import RequestsPatchAdSet
 from criteo_api_marketingsolutions_preview.model.response_ad_set_id import ResponseAdSetId
 from criteo_api_marketingsolutions_preview.model.response_read_ad_set import ResponseReadAdSet
+from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v23_q1 import ResponseReadAdSetV23Q1
 from criteo_api_marketingsolutions_preview.model.responses_ad_set_id import ResponsesAdSetId
-from criteo_api_marketingsolutions_preview.model.responses_read_ad_set import ResponsesReadAdSet
+from criteo_api_marketingsolutions_preview.model.responses_read_ad_set_v23_q1 import ResponsesReadAdSetV23Q1
 from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_deal_ids_request import SetAdSetTargetingDealIdsRequest
 from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_video_positioning_request import SetAdSetTargetingVideoPositioningRequest
 from criteo_api_marketingsolutions_preview.model.supply_vendor_list_response import SupplyVendorListResponse
@@ -77,6 +78,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponseReadAdSet,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets',
@@ -130,8 +132,9 @@ class CampaignApi(object):
         )
         self.create_campaign_endpoint = _Endpoint(
             settings={
-                'response_type': (CampaignResponse,),
+                'response_type': (CampaignV23Q1Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/campaigns',
@@ -187,6 +190,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/bundle-rules',
@@ -249,6 +253,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/domain-rules',
@@ -311,6 +316,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/bundle-rules',
@@ -373,6 +379,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/domain-rules',
@@ -435,6 +442,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/brand-safety/oci',
@@ -497,6 +505,7 @@ class CampaignApi(object):
             settings={
                 'response_type': None,
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/targeting/oci',
@@ -559,6 +568,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetTargetingDealIdsDisableResultResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable',
@@ -612,6 +622,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetTargetingVideoPositioningDisableResultResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable',
@@ -661,63 +672,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_ad_set_endpoint = _Endpoint(
-            settings={
-                'response_type': (ResponseReadAdSet,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/ad-sets/{adSetId}',
-                'operation_id': 'get_ad_set',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'ad_set_id',
-                ],
-                'required': [
-                    'ad_set_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'ad_set_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'ad_set_id': 'adSetId',
-                },
-                'location_map': {
-                    'ad_set_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_ad_set_targeting_deal_ids_endpoint = _Endpoint(
             settings={
                 'response_type': (AdSetTargetingDealIdsResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids',
@@ -771,6 +730,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetTargetingVideoPositioningResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning',
@@ -820,10 +780,65 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.get_ad_set_v23_q1_endpoint = _Endpoint(
+            settings={
+                'response_type': (ResponseReadAdSetV23Q1,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}',
+                'operation_id': 'get_ad_set_v23_q1',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_set_id',
+                ],
+                'required': [
+                    'ad_set_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_set_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'ad_set_id': 'ad-set-id',
+                },
+                'location_map': {
+                    'ad_set_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.get_advertiser_bundle_rules_endpoint = _Endpoint(
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/bundle-rules',
@@ -877,6 +892,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/domain-rules',
@@ -926,63 +942,11 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_campaign_endpoint = _Endpoint(
-            settings={
-                'response_type': (CampaignResponse,),
-                'auth': [
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/campaigns/{campaign-id}',
-                'operation_id': 'get_campaign',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaign-id',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_campaign_bundle_rules_endpoint = _Endpoint(
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/bundle-rules',
@@ -1036,6 +1000,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/domain-rules',
@@ -1085,10 +1050,65 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.get_campaign_v23_q1_endpoint = _Endpoint(
+            settings={
+                'response_type': (CampaignV23Q1Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/campaigns/{campaign-id}',
+                'operation_id': 'get_campaign_v23_q1',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'campaign_id',
+                ],
+                'required': [
+                    'campaign_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'campaign_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'campaign_id': 'campaign-id',
+                },
+                'location_map': {
+                    'campaign_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.get_category_bid_list_endpoint = _Endpoint(
             settings={
                 'response_type': (AdSetCategoryBidListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids',
@@ -1142,6 +1162,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetDisplayMultiplierListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers',
@@ -1195,6 +1216,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (OciBrandSafetyResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/brand-safety/oci',
@@ -1257,6 +1279,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (OciTargetingResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/targeting/oci',
@@ -1319,6 +1342,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (SupplyVendorListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/targeting/supply-vendors',
@@ -1365,6 +1389,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponseAdSetId,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets',
@@ -1420,6 +1445,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PatchResultCampaignListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/campaigns',
@@ -1475,6 +1501,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PatchAdSetCategoryBidResultListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids',
@@ -1537,6 +1564,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PatchAdSetDisplayMultiplierResultListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers',
@@ -1599,6 +1627,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/bundle-rules',
@@ -1661,6 +1690,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/domain-rules',
@@ -1723,6 +1753,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/bundle-rules',
@@ -1785,6 +1816,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/domain-rules',
@@ -1847,6 +1879,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/bundle-rules',
@@ -1909,6 +1942,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiserId}/targeting/domain-rules',
@@ -1971,6 +2005,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/bundle-rules',
@@ -2033,6 +2068,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ApiResponseOfTargetingEntity,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/campaigns/{campaignId}/targeting/domain-rules',
@@ -2091,20 +2127,21 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.search_ad_sets_endpoint = _Endpoint(
+        self.search_ad_sets_v23_q1_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponsesReadAdSet,),
+                'response_type': (ResponsesReadAdSetV23Q1,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/search',
-                'operation_id': 'search_ad_sets',
+                'operation_id': 'search_ad_sets_v23_q1',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'request_ad_set_search',
+                    'ad_set_search_request_v23_q1',
                 ],
                 'required': [],
                 'nullable': [
@@ -2120,13 +2157,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'request_ad_set_search':
-                        (RequestAdSetSearch,),
+                    'ad_set_search_request_v23_q1':
+                        (AdSetSearchRequestV23Q1,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'request_ad_set_search': 'body',
+                    'ad_set_search_request_v23_q1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2146,20 +2183,21 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.search_campaigns_endpoint = _Endpoint(
+        self.search_campaigns_v23_q1_endpoint = _Endpoint(
             settings={
-                'response_type': (CampaignListResponse,),
+                'response_type': (CampaignV23Q1ListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/campaigns/search',
-                'operation_id': 'search_campaigns',
+                'operation_id': 'search_campaigns_v23_q1',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'campaign_search_request',
+                    'campaign_search_request_v23_q1',
                 ],
                 'required': [],
                 'nullable': [
@@ -2175,13 +2213,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'campaign_search_request':
-                        (CampaignSearchRequest,),
+                    'campaign_search_request_v23_q1':
+                        (CampaignSearchRequestV23Q1,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'campaign_search_request': 'body',
+                    'campaign_search_request_v23_q1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2205,6 +2243,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetTargetingDealIdsSetResultResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids',
@@ -2267,6 +2306,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetTargetingVideoPositioningSetResultResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning',
@@ -2329,6 +2369,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponsesAdSetId,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/start',
@@ -2384,6 +2425,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponsesAdSetId,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/stop',
@@ -2439,6 +2481,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetAudienceLinkEntityV1Response,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}/audience',
@@ -2501,6 +2544,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (OciBrandSafetyResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/brand-safety/oci',
@@ -2553,6 +2597,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (OciTargetingResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/targeting/oci',
@@ -2729,7 +2774,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CampaignResponse
+            CampaignV23Q1Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3436,89 +3481,6 @@ class CampaignApi(object):
             ad_set_id
         return self.disable_ad_set_targeting_video_positioning_endpoint.call_with_http_info(**kwargs)
 
-    def get_ad_set(
-        self,
-        ad_set_id,
-        **kwargs
-    ):
-        """get_ad_set  # noqa: E501
-
-        Get the data for the specified ad set  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_ad_set(ad_set_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            ad_set_id (str): Id of the ad set
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ResponseReadAdSet
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['ad_set_id'] = \
-            ad_set_id
-        return self.get_ad_set_endpoint.call_with_http_info(**kwargs)
-
     def get_ad_set_targeting_deal_ids(
         self,
         ad_set_id,
@@ -3684,6 +3646,89 @@ class CampaignApi(object):
         kwargs['ad_set_id'] = \
             ad_set_id
         return self.get_ad_set_targeting_video_positioning_endpoint.call_with_http_info(**kwargs)
+
+    def get_ad_set_v23_q1(
+        self,
+        ad_set_id,
+        **kwargs
+    ):
+        """get_ad_set_v23_q1  # noqa: E501
+
+        Get the data for the specified ad set  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_ad_set_v23_q1(ad_set_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            ad_set_id (str): Id of the ad set
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ResponseReadAdSetV23Q1
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['ad_set_id'] = \
+            ad_set_id
+        return self.get_ad_set_v23_q1_endpoint.call_with_http_info(**kwargs)
 
     def get_advertiser_bundle_rules(
         self,
@@ -3851,89 +3896,6 @@ class CampaignApi(object):
             advertiser_id
         return self.get_advertiser_domain_rules_endpoint.call_with_http_info(**kwargs)
 
-    def get_campaign(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """get_campaign  # noqa: E501
-
-        Get the data for the specified campaign  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_campaign(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): Id of the campaign
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            CampaignResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.get_campaign_endpoint.call_with_http_info(**kwargs)
-
     def get_campaign_bundle_rules(
         self,
         campaign_id,
@@ -4099,6 +4061,89 @@ class CampaignApi(object):
         kwargs['campaign_id'] = \
             campaign_id
         return self.get_campaign_domain_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_campaign_v23_q1(
+        self,
+        campaign_id,
+        **kwargs
+    ):
+        """get_campaign_v23_q1  # noqa: E501
+
+        Get the data for the specified campaign  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_campaign_v23_q1(campaign_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            campaign_id (str): Id of the campaign
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CampaignV23Q1Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['campaign_id'] = \
+            campaign_id
+        return self.get_campaign_v23_q1_endpoint.call_with_http_info(**kwargs)
 
     def get_category_bid_list(
         self,
@@ -5516,22 +5561,22 @@ class CampaignApi(object):
             campaign_id
         return self.put_campaign_domain_rules_endpoint.call_with_http_info(**kwargs)
 
-    def search_ad_sets(
+    def search_ad_sets_v23_q1(
         self,
         **kwargs
     ):
-        """search_ad_sets  # noqa: E501
+        """search_ad_sets_v23_q1  # noqa: E501
 
         Search for ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_ad_sets(async_req=True)
+        >>> thread = api.search_ad_sets_v23_q1(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            request_ad_set_search (RequestAdSetSearch): [optional]
+            ad_set_search_request_v23_q1 (AdSetSearchRequestV23Q1): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5564,7 +5609,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponsesReadAdSet
+            ResponsesReadAdSetV23Q1
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5593,24 +5638,24 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.search_ad_sets_endpoint.call_with_http_info(**kwargs)
+        return self.search_ad_sets_v23_q1_endpoint.call_with_http_info(**kwargs)
 
-    def search_campaigns(
+    def search_campaigns_v23_q1(
         self,
         **kwargs
     ):
-        """search_campaigns  # noqa: E501
+        """search_campaigns_v23_q1  # noqa: E501
 
         Search for campaigns  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_campaigns(async_req=True)
+        >>> thread = api.search_campaigns_v23_q1(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            campaign_search_request (CampaignSearchRequest): filters on campaigns. [optional]
+            campaign_search_request_v23_q1 (CampaignSearchRequestV23Q1): filters on campaigns. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5643,7 +5688,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CampaignListResponse
+            CampaignV23Q1ListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5672,7 +5717,7 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.search_campaigns_endpoint.call_with_http_info(**kwargs)
+        return self.search_campaigns_v23_q1_endpoint.call_with_http_info(**kwargs)
 
     def set_ad_set_targeting_deal_ids(
         self,

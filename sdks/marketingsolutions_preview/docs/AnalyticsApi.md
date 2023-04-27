@@ -27,13 +27,14 @@ This Statistics endpoint provides adset related data. It is an upgrade of our pr
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.statistics_report_query_message import StatisticsReportQueryMessage
-from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -45,6 +46,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -102,12 +109,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -130,6 +137,7 @@ This Statistics endpoint provides an export Id that let you retrieve data.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -149,6 +157,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -212,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -240,6 +254,7 @@ This Statistics endpoint provides an export Id that lets you retrieve data.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -259,6 +274,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -318,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -346,6 +367,7 @@ This endpoint gives you the output of the report.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -363,6 +385,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -397,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -423,6 +451,7 @@ This endpoint gives you the status of the report.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -440,6 +469,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -474,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -501,6 +536,7 @@ With this endpoint you can analyse what are the categories of the placements' do
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -519,6 +555,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -572,12 +614,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -600,6 +642,7 @@ With Creatives endpoint, you can analyse the daily performances of your creative
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -619,6 +662,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -699,7 +748,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -727,12 +776,13 @@ Your ads are placed in different domains (publishers) and environments (websites
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_preview.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -745,6 +795,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -805,7 +861,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -833,6 +889,7 @@ With the topProducts endpoint, you can analyse the performances for each publish
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -852,6 +909,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -921,7 +984,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -949,13 +1012,14 @@ This Transactions endpoint provides transactions id related data.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_preview.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
-from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -967,6 +1031,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -1017,12 +1087,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -1045,13 +1115,14 @@ This Statistics endpoint provides publisher data.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_preview.model.transparency_report_data_message import TransparencyReportDataMessage
-from criteo_api_marketingsolutions_preview.model.error_message import ErrorMessage
 from criteo_api_marketingsolutions_preview.model.transparency_query_message import TransparencyQueryMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -1064,6 +1135,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -1112,7 +1189,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

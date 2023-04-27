@@ -4,11 +4,237 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_campaign_reports**](AnalyticsApi.md#get_campaign_reports) | **POST** /preview/retail-media/reports/sync/campaigns | 
+[**get_line_items_reports**](AnalyticsApi.md#get_line_items_reports) | **POST** /preview/retail-media/reports/sync/line-items | 
 [**get_report_output**](AnalyticsApi.md#get_report_output) | **GET** /preview/retail-media/reports/{reportId}/output | 
 [**get_report_status**](AnalyticsApi.md#get_report_status) | **GET** /preview/retail-media/reports/{reportId}/status | 
 [**request_campaign_report**](AnalyticsApi.md#request_campaign_report) | **POST** /preview/retail-media/reports/campaigns | 
 [**request_line_item_report**](AnalyticsApi.md#request_line_item_report) | **POST** /preview/retail-media/reports/line-items | 
 
+
+# **get_campaign_reports**
+> ReportResponse get_campaign_reports()
+
+
+
+Return a Campaign Report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.report_response import ReportResponse
+from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
+from criteo_api_retailmedia_preview.model.campaign_report_request import CampaignReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    campaign_report_request = CampaignReportRequest(
+        data=CampaignReportResource(
+            type="type_example",
+            attributes=CampaignReport(
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                metrics=[
+                    "impressions",
+                ],
+                dimensions=[
+                    "date",
+                ],
+                account_id="account_id_example",
+                report_type="summary",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+                click_attribution_window="7D",
+                view_attribution_window="none",
+                campaign_type="sponsoredProducts",
+            ),
+        ),
+    ) # CampaignReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_campaign_reports(campaign_report_request=campaign_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_campaign_reports: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_report_request** | [**CampaignReportRequest**](CampaignReportRequest.md)|  | [optional]
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_line_items_reports**
+> ReportResponse get_line_items_reports()
+
+
+
+Return a Line Item Report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.line_item_report_request import LineItemReportRequest
+from criteo_api_retailmedia_preview.model.report_response import ReportResponse
+from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    line_item_report_request = LineItemReportRequest(
+        data=LineItemReportResource(
+            type="type_example",
+            attributes=LineItemReport(
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+                metrics=[
+                    "impressions",
+                ],
+                dimensions=[
+                    "date",
+                ],
+                account_id="account_id_example",
+                report_type="summary",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+                click_attribution_window="7D",
+                view_attribution_window="none",
+                campaign_type="sponsoredProducts",
+            ),
+        ),
+    ) # LineItemReportRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_line_items_reports(line_item_report_request=line_item_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_line_items_reports: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_report_request** | [**LineItemReportRequest**](LineItemReportRequest.md)|  | [optional]
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report_output**
 > int get_report_output(report_id)
@@ -19,6 +245,7 @@ Request the report output
 
 ### Example
 
+* OAuth Authentication (oauth):
 * OAuth Authentication (oauth):
 
 ```python
@@ -36,6 +263,12 @@ configuration = criteo_api_retailmedia_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_preview.Configuration(
@@ -70,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -99,6 +332,7 @@ Get the status of the report
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -116,6 +350,12 @@ configuration = criteo_api_retailmedia_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_preview.Configuration(
@@ -150,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -179,6 +419,7 @@ Request a campaign report
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -198,6 +439,12 @@ configuration = criteo_api_retailmedia_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_preview.Configuration(
@@ -249,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -278,6 +525,7 @@ Request a line item report
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -297,6 +545,12 @@ configuration = criteo_api_retailmedia_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_preview.Configuration(
@@ -348,7 +602,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

@@ -41,6 +41,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (CreateRetailMediaAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/retail-media/accounts/{accountId}/audiences',
@@ -99,6 +100,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (GetPageOfAudiencesByAccountIdResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/retail-media/accounts/{accountId}/audiences',

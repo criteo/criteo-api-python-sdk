@@ -61,6 +61,7 @@ class ExternalAccount(ModelNormal):
             'DEMAND': "demand",
         },
         ('subtype',): {
+            'None': None,
             'UNKNOWN': "unknown",
             'BRAND': "brand",
             'SELLER': "seller",

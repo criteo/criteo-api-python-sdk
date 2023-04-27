@@ -72,6 +72,7 @@ Creates an asset
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -89,6 +90,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -123,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -149,6 +156,7 @@ Gets page of balance objects for the given account id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -166,6 +174,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -216,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -242,6 +256,7 @@ Get account creatives
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -259,6 +274,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -293,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -319,6 +340,7 @@ This endpoint gets the keyword target on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -336,6 +358,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -370,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -397,6 +425,7 @@ Gets page of campaigns for the given balanceId
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -414,6 +443,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -464,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -490,6 +525,7 @@ Gets page of preferred line item objects for the given campaign id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -507,6 +543,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -557,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -584,6 +626,7 @@ This endpoint gets the promoted products on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -601,6 +644,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -651,7 +700,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -677,6 +726,7 @@ Gets the preferred line item for the given line item id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -694,6 +744,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -728,7 +784,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -755,6 +811,7 @@ This endpoint gets the add to basket target on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -772,6 +829,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -806,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -833,6 +896,7 @@ This endpoint gets the audience target on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -850,6 +914,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -884,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -911,6 +981,7 @@ This endpoint gets the store target on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -928,6 +999,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -962,7 +1039,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -989,6 +1066,7 @@ Get the page types available for the given retailer
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1006,6 +1084,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1040,7 +1124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1066,6 +1150,7 @@ Endpoint to search for a specific category by categoryId.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1083,6 +1168,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1117,7 +1208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1145,6 +1236,7 @@ Endpoint to search categories by text and retailer.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1162,6 +1254,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1203,7 +1301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1229,6 +1327,7 @@ Get the specified creative
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1246,6 +1345,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1282,7 +1387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1308,6 +1413,7 @@ Gets the template for the specified retailer id and template id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1325,6 +1431,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1361,7 +1473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1387,6 +1499,7 @@ Get retailer creative templates
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1404,6 +1517,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1438,7 +1557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1464,6 +1583,7 @@ Get all the editable and creatable campaign attributes including all types of bu
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1481,6 +1601,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1531,7 +1657,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1557,6 +1683,7 @@ Get all the editable and creatable campaign attributes including all types of bu
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1574,6 +1701,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1608,7 +1741,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1634,6 +1767,7 @@ Get bid multipliers by line item
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1651,6 +1785,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1685,7 +1825,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1711,6 +1851,7 @@ Gets page of retailer objects that are associated with the given account
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1728,6 +1869,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1778,7 +1925,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1804,6 +1951,7 @@ Gets page of retailer objects that are associated with the given account
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1821,6 +1969,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1871,7 +2025,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1897,6 +2051,7 @@ Gets page of account objects that the current user can access
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1914,6 +2069,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -1955,7 +2116,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -1981,6 +2142,7 @@ Output the indicated catalog. Catalogs are only available for retrieval when the
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -1997,6 +2159,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2030,7 +2198,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2057,6 +2225,7 @@ Check the status of a catalog request.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2074,6 +2243,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2108,7 +2283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2134,6 +2309,7 @@ Gets page of line item objects for the given account id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2151,6 +2327,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2207,7 +2389,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2233,6 +2415,7 @@ Gets the auction line item for the given line item id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2250,6 +2433,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2284,7 +2473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2311,6 +2500,7 @@ Gets page of auction line item objects for the given campaign id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2328,6 +2518,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2378,7 +2574,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2405,6 +2601,7 @@ Gets the line item for the given line item id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2422,6 +2619,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2456,7 +2659,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2482,6 +2685,7 @@ This endpoint appends one or more keywords to targeting on the specified line it
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2500,6 +2704,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2553,7 +2763,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2580,6 +2790,7 @@ This endpoint removes one or more keywords from targeting on the specified line 
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2598,6 +2809,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2651,7 +2868,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2678,6 +2895,7 @@ appends one or more campaigns to the specified balance
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2696,6 +2914,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2748,7 +2972,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2774,6 +2998,7 @@ Removes one or more campaigns on the specified balance
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2792,6 +3017,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2844,7 +3075,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2870,6 +3101,7 @@ Creates a new preferred line item with the specified settings
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -2888,6 +3120,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -2962,7 +3200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -2989,6 +3227,7 @@ This endpoint appends one or more products to promote on the specified line item
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3007,6 +3246,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3061,7 +3306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3087,6 +3332,7 @@ This endpoint removes one or more products from promotion on the specified line 
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3105,6 +3351,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3159,7 +3411,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3185,6 +3437,7 @@ This endpoint pauses one or more promoted products on a specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3202,6 +3455,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3254,7 +3513,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3280,6 +3539,7 @@ This endpoint unpauses one or more promoted products on a specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3297,6 +3557,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3349,7 +3615,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3375,6 +3641,7 @@ This endpoint appends one or more add to basket ids to targeting on the specifie
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3393,6 +3660,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3449,7 +3722,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3476,6 +3749,7 @@ This endpoint removes one or more add to basket ids from targeting on the specif
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3494,6 +3768,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3550,7 +3830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3577,6 +3857,7 @@ This endpoint appends one or more audiences ids to targeting on the specified li
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3595,6 +3876,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3648,7 +3935,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3675,6 +3962,7 @@ This endpoint removes one or more audiences ids from targeting on the specified 
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3693,6 +3981,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3746,7 +4040,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3773,6 +4067,7 @@ This endpoint appends one or more store ids to targeting on the specified line i
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3791,6 +4086,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3844,7 +4145,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3871,6 +4172,7 @@ This endpoint removes one or more store ids from targeting on the specified line
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3889,6 +4191,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -3942,7 +4250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -3969,6 +4277,7 @@ Create a creative for an account
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -3987,6 +4296,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4060,7 +4375,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4086,6 +4401,7 @@ Create a campaign and assign budgets for the given account id with creatable cam
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4104,6 +4420,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4169,7 +4491,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4195,6 +4517,7 @@ Create a request for a Catalog available to the indicated account.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4213,6 +4536,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4267,7 +4596,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4293,6 +4622,7 @@ Creates new auction line item with the specified settings
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4311,6 +4641,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4373,7 +4709,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4400,6 +4736,7 @@ Updates the preferred line item for the given line item id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4418,6 +4755,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4492,7 +4835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4519,6 +4862,7 @@ This endpoint sets the scope of the add to basket target on the specified line i
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4537,6 +4881,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4594,7 +4944,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4621,6 +4971,7 @@ This endpoint sets the scope of the audience target on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4639,6 +4990,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4693,7 +5050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4720,6 +5077,7 @@ This endpoint sets the scope of the store target on the specified line item.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4738,6 +5096,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4792,7 +5156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4819,6 +5183,7 @@ Update a creative
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4837,6 +5202,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -4912,7 +5283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -4939,6 +5310,7 @@ Edit a campaign for the given campaign id with a given editable attributes. This
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -4957,6 +5329,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -5019,7 +5397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -5045,6 +5423,7 @@ Replace bid multipliers on a line item
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -5063,6 +5442,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -5122,7 +5507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -5148,6 +5533,7 @@ Updates the auction line item for the given line item id
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -5166,6 +5552,12 @@ configuration = criteo_api_retailmedia_v2023_01.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2023_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_retailmedia_v2023_01.Configuration(
@@ -5228,7 +5620,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

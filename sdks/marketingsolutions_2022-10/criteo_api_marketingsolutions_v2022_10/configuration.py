@@ -377,6 +377,13 @@ class Configuration(object):
                 'key': 'Authorization',
                 'value': 'Bearer ' + self.access_token
             }
+        if self.access_token is not None:
+            auth['oauth'] = {
+                'type': 'oauth2',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': 'Bearer ' + self.access_token
+            }
         return auth
 
     def to_debug_report(self):
@@ -388,7 +395,7 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2022-10\n"\
-               "SDK Package Version: 2022.10.0.230411".\
+               "SDK Package Version: 2022.10.0.230427".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

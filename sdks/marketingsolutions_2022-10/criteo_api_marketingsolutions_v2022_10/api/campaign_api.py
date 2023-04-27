@@ -56,6 +56,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponseReadAdSet,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/{adSetId}',
@@ -109,6 +110,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (CampaignResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/campaigns/{campaign-id}',
@@ -162,6 +164,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetCategoryBidListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/{ad-set-id}/category-bids',
@@ -215,6 +218,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (AdSetDisplayMultiplierListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers',
@@ -268,6 +272,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponseAdSetId,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets',
@@ -323,6 +328,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PatchResultCampaignListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/campaigns',
@@ -378,6 +384,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PatchAdSetCategoryBidResultListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/{ad-set-id}/category-bids',
@@ -440,6 +447,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (PatchAdSetDisplayMultiplierResultListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers',
@@ -502,6 +510,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponsesReadAdSet,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/search',
@@ -557,6 +566,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (CampaignListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/campaigns/search',
@@ -612,6 +622,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponsesAdSetId,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/start',
@@ -667,6 +678,7 @@ class CampaignApi(object):
             settings={
                 'response_type': (ResponsesAdSetId,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-10/marketing-solutions/ad-sets/stop',

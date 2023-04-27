@@ -21,8 +21,8 @@ from criteo_api_marketingsolutions_v2023_01.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_marketingsolutions_v2023_01.model.error_message import ErrorMessage
 from criteo_api_marketingsolutions_v2023_01.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
+from criteo_api_marketingsolutions_v2023_01.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_v2023_01.model.statistics_report_query_message import StatisticsReportQueryMessage
 from criteo_api_marketingsolutions_v2023_01.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
 from criteo_api_marketingsolutions_v2023_01.model.transparency_query_message import TransparencyQueryMessage
@@ -44,6 +44,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/statistics/report',
@@ -84,7 +85,10 @@ class AnalyticsApi(object):
                 'accept': [
                     'text/plain',
                     'application/json',
-                    'text/json'
+                    'text/json',
+                    'text/csv',
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -99,6 +103,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/placements/report',
@@ -154,6 +159,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (str,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/transactions/report',
@@ -194,7 +200,10 @@ class AnalyticsApi(object):
                 'accept': [
                     'text/plain',
                     'application/json',
-                    'text/json'
+                    'text/json',
+                    'text/csv',
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -209,6 +218,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (TransparencyReportDataMessage,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/log-level/advertisers/{advertiser-id}/report',

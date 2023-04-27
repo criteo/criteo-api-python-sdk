@@ -20,6 +20,7 @@ Fetch the portfolio of Advertisers for this account
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -37,6 +38,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -67,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -94,6 +101,7 @@ Create a new advertiser based on provided parameters. This could take up to 30 s
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -113,6 +121,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -156,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -185,6 +199,7 @@ Retrieves corresponding Datasets for a given Advertiser. Only those Datasets are
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -202,6 +217,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -236,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -264,6 +285,7 @@ Returns the list of available industries for new advertisers.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -281,6 +303,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_preview.Configuration(
@@ -311,7 +339,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

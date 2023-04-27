@@ -137,7 +137,7 @@ class AdSetCategoryBid(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             category_name (str): The name of the Category to which the Category Bid has been applied.. [optional]  # noqa: E501
-            bid_amount (float): The Bid amount applied to the given Category associated to an Ad Set.. [optional]  # noqa: E501
+            bid_amount (float): The Bid amount applied to the given Category associated to an Ad Set. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,7 +224,7 @@ class AdSetCategoryBid(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             category_name (str): The name of the Category to which the Category Bid has been applied.. [optional]  # noqa: E501
-            bid_amount (float): The Bid amount applied to the given Category associated to an Ad Set.. [optional]  # noqa: E501
+            bid_amount (float): The Bid amount applied to the given Category associated to an Ad Set. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

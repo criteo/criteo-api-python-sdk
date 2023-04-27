@@ -70,12 +70,14 @@ class ExternalEditableCampaignAttributes(ModelNormal):
             'UNKNOWN': "unknown",
         },
         ('click_attribution_scope',): {
+            'None': None,
             'UNKNOWN': "unknown",
             'SAMESKU': "sameSku",
             'SAMESKUCATEGORY': "sameSkuCategory",
             'SAMESKUCATEGORYBRAND': "sameSkuCategoryBrand",
         },
         ('view_attribution_scope',): {
+            'None': None,
             'UNKNOWN': "unknown",
             'SAMESKU': "sameSku",
             'SAMESKUCATEGORY': "sameSkuCategory",

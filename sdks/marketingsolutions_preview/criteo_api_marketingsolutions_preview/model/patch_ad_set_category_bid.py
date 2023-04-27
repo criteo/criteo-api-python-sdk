@@ -134,7 +134,7 @@ class PatchAdSetCategoryBid(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_amount (float): positive decimal value match bid constraints. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            bid_amount (float): The Bid amount applied to the given Category associated to an Ad Set. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class PatchAdSetCategoryBid(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_amount (float): positive decimal value match bid constraints. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            bid_amount (float): The Bid amount applied to the given Category associated to an Ad Set. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

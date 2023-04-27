@@ -48,6 +48,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (NewAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/audiences',
@@ -100,6 +101,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (DeleteAudienceContactListResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/audiences/{audience-id}/contactlist',
@@ -151,6 +153,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (GetAudiencesResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/audiences',
@@ -200,6 +203,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (ReplaceAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/audiences/{audience-id}',
@@ -258,6 +262,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (ModifyAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/audiences/{audience-id}/contactlist',
@@ -316,6 +321,7 @@ class AudienceApi(object):
             settings={
                 'response_type': (DeleteAudienceResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/audiences/{audience-id}',

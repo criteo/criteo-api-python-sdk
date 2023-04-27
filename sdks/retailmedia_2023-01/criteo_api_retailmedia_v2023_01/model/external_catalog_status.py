@@ -56,11 +56,11 @@ class ExternalCatalogStatus(ModelNormal):
 
     allowed_values = {
         ('status',): {
-            'UNKNOWN': "Unknown",
-            'PENDING': "Pending",
-            'SUCCESS': "Success",
-            'FAILURE': "Failure",
-            'EXPIRED': "Expired",
+            'UNKNOWN': "unknown",
+            'PENDING': "pending",
+            'SUCCESS': "success",
+            'FAILURE': "failure",
+            'EXPIRED': "expired",
         },
     }
 
@@ -92,9 +92,9 @@ class ExternalCatalogStatus(ModelNormal):
             'currency': (str,),  # noqa: E501
             'row_count': (int, none_type,),  # noqa: E501
             'file_size_bytes': (int, none_type,),  # noqa: E501
-            'md5_checksum': (str,),  # noqa: E501
+            'md5_checksum': (str, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
-            'message': (str,),  # noqa: E501
+            'message': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -127,9 +127,9 @@ class ExternalCatalogStatus(ModelNormal):
             currency (str): An ISO4217 representation of the currency products are listed under in this catalog.
             row_count (int, none_type): An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status.
             file_size_bytes (int, none_type): The size of this catalog in bytes. Available when this catalog reaches a success status.
-            md5_checksum (str): An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status.
+            md5_checksum (str, none_type): An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status.
             created_at (datetime): The time this catalog was created. Represented as a UTC ISO8601 string.
-            message (str): An optional information message intended for developer consumption.
+            message (str, none_type): An optional information message intended for developer consumption.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -228,9 +228,9 @@ class ExternalCatalogStatus(ModelNormal):
             currency (str): An ISO4217 representation of the currency products are listed under in this catalog.
             row_count (int, none_type): An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status.
             file_size_bytes (int, none_type): The size of this catalog in bytes. Available when this catalog reaches a success status.
-            md5_checksum (str): An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status.
+            md5_checksum (str, none_type): An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status.
             created_at (datetime): The time this catalog was created. Represented as a UTC ISO8601 string.
-            message (str): An optional information message intended for developer consumption.
+            message (str, none_type): An optional information message intended for developer consumption.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

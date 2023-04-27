@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **seller_name** | **str** | The name of the seller. | [optional] 
 **gtin** | **str** | A GTIN identifier for the product if available. Covers variations such as EANs and UPCs. | [optional] 
 **mpn** | **str** | The MPN for the product if available. | [optional] 
+**model_number** | **str** | The Model Number for the product if available. | [optional] 
+**parent_id** | **str** | The ParentId for the product if available. | [optional] 
 **image_url** | **str** | An http image resource provided by the retailer. | [optional] 
 **product_page** | **str** | An The product page URL | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

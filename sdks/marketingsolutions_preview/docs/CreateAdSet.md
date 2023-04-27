@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the ad set | [optional] 
 **dataset_id** | **str** | Dataset id of this ad set | [optional] 
 **campaign_id** | **str** | Campaign id this ad set belongs to | [optional] 
+**objective** | **str** | Objective of the ad set | [optional] 
 **schedule** | [**CreateAdSetSchedule**](CreateAdSetSchedule.md) |  | [optional] 
 **bidding** | [**CreateAdSetBidding**](CreateAdSetBidding.md) |  | [optional] 
 **targeting** | [**CreateAdSetTargeting**](CreateAdSetTargeting.md) |  | [optional] 

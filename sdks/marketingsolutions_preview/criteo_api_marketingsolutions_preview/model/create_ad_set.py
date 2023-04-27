@@ -65,6 +65,19 @@ class CreateAdSet(ModelNormal):
     """
 
     allowed_values = {
+        ('objective',): {
+            'CUSTOMACTION': "customAction",
+            'CLICKS': "clicks",
+            'CONVERSIONS': "conversions",
+            'DISPLAYS': "displays",
+            'APPPROMOTION': "appPromotion",
+            'REVENUE': "revenue",
+            'STORECONVERSIONS': "storeConversions",
+            'VALUE': "value",
+            'REACH': "reach",
+            'VISITS': "visits",
+            'VIDEOVIEWS': "videoViews",
+        },
         ('media_type',): {
             'DISPLAY': "display",
             'VIDEO': "video",
@@ -100,6 +113,7 @@ class CreateAdSet(ModelNormal):
             'name': (str,),  # noqa: E501
             'dataset_id': (str,),  # noqa: E501
             'campaign_id': (str,),  # noqa: E501
+            'objective': (str,),  # noqa: E501
             'schedule': (CreateAdSetSchedule,),  # noqa: E501
             'bidding': (CreateAdSetBidding,),  # noqa: E501
             'targeting': (CreateAdSetTargeting,),  # noqa: E501
@@ -117,6 +131,7 @@ class CreateAdSet(ModelNormal):
         'name': 'name',  # noqa: E501
         'dataset_id': 'datasetId',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
+        'objective': 'objective',  # noqa: E501
         'schedule': 'schedule',  # noqa: E501
         'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
@@ -169,6 +184,7 @@ class CreateAdSet(ModelNormal):
             name (str): Name of the ad set. [optional]  # noqa: E501
             dataset_id (str): Dataset id of this ad set. [optional]  # noqa: E501
             campaign_id (str): Campaign id this ad set belongs to. [optional]  # noqa: E501
+            objective (str): Objective of the ad set. [optional]  # noqa: E501
             schedule (CreateAdSetSchedule): [optional]  # noqa: E501
             bidding (CreateAdSetBidding): [optional]  # noqa: E501
             targeting (CreateAdSetTargeting): [optional]  # noqa: E501
@@ -263,6 +279,7 @@ class CreateAdSet(ModelNormal):
             name (str): Name of the ad set. [optional]  # noqa: E501
             dataset_id (str): Dataset id of this ad set. [optional]  # noqa: E501
             campaign_id (str): Campaign id this ad set belongs to. [optional]  # noqa: E501
+            objective (str): Objective of the ad set. [optional]  # noqa: E501
             schedule (CreateAdSetSchedule): [optional]  # noqa: E501
             bidding (CreateAdSetBidding): [optional]  # noqa: E501
             targeting (CreateAdSetTargeting): [optional]  # noqa: E501

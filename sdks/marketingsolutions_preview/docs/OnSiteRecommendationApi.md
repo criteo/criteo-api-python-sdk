@@ -17,6 +17,7 @@ Retrieves a list of products recommended for the given user. This end point can 
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
@@ -42,6 +43,12 @@ configuration = criteo_api_marketingsolutions_preview.Configuration(
 )
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # Enter a context with an instance of the API client
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
@@ -56,6 +63,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
             ),
         ],
+        ad_set_id=1,
         partner_id=1,
     ) # OnSiteRecoRequest |  (optional)
 
@@ -81,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

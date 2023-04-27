@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
     Criteo API
 
@@ -10,23 +8,18 @@
 """
 
 
-from __future__ import absolute_import
-
 import io
 import json
 import logging
 import re
 import ssl
-from datetime import datetime, timedelta
+from urllib.parse import urlencode
+from urllib.parse import urlparse
+from urllib.request import proxy_bypass_environment
+import urllib3
+import ipaddress
 
-# python 2 and python 3 compatibility library
-import six
-from six.moves.urllib.parse import urlencode
-
-try:
-    import urllib3
-except ImportError:
-    raise ImportError('OpenAPI Python client requires urllib3.')
+from criteo_api_retailmedia_v2022_07.exceptions import ApiException, UnauthorizedException, ForbiddenException, NotFoundException, ServiceException, ApiValueError
 
 
 logger = logging.getLogger(__name__)
@@ -58,13 +51,6 @@ class RESTClientObject(object):
         # maxsize is the number of requests to host that are allowed in parallel  # noqa: E501
         # Custom SSL certificates and client certificates: http://urllib3.readthedocs.io/en/latest/advanced-usage.html  # noqa: E501
 
-        self.token = None
-        self.client_id = configuration.username
-        self.client_secret = configuration.password
-        self.grant_type = 'client_credentials'
-        self.access_token = configuration.access_token
-        self.host = configuration.host
-
         # cert_reqs
         if configuration.verify_ssl:
             cert_reqs = ssl.CERT_REQUIRED
@@ -75,6 +61,12 @@ class RESTClientObject(object):
         if configuration.assert_hostname is not None:
             addition_pool_args['assert_hostname'] = configuration.assert_hostname  # noqa: E501
 
+        if configuration.retries is not None:
+            addition_pool_args['retries'] = configuration.retries
+
+        if configuration.socket_options is not None:
+            addition_pool_args['socket_options'] = configuration.socket_options
+
         if maxsize is None:
             if configuration.connection_pool_maxsize is not None:
                 maxsize = configuration.connection_pool_maxsize
@@ -82,7 +74,8 @@ class RESTClientObject(object):
                 maxsize = 4
 
         # https pool manager
-        if configuration.proxy:
+        if configuration.proxy and not should_bypass_proxies(
+                configuration.host, no_proxy=configuration.no_proxy or ''):
             self.pool_manager = urllib3.ProxyManager(
                 num_pools=pools_size,
                 maxsize=maxsize,
@@ -91,6 +84,7 @@ class RESTClientObject(object):
                 cert_file=configuration.cert_file,
                 key_file=configuration.key_file,
                 proxy_url=configuration.proxy,
+                proxy_headers=configuration.proxy_headers,
                 **addition_pool_args
             )
         else:
@@ -105,7 +99,7 @@ class RESTClientObject(object):
             )
 
     def request(self, method, url, query_params=None, headers=None,
-                body=None, post_params=None, no_auth=False, _preload_content=True,
+                body=None, post_params=None, _preload_content=True,
                 _request_timeout=None):
         """Perform requests.
 
@@ -117,8 +111,6 @@ class RESTClientObject(object):
         :param post_params: request post parameters,
                             `application/x-www-form-urlencoded`
                             and `multipart/form-data`
-        :param no_auth: if True, token is not refreshed
-                                 and authorization header is not set
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -132,35 +124,32 @@ class RESTClientObject(object):
                           'PATCH', 'OPTIONS']
 
         if post_params and body:
-            raise ValueError(
+            raise ApiValueError(
                 "body parameter cannot be used with post_params parameter."
             )
 
         post_params = post_params or {}
         headers = headers or {}
 
-        if not no_auth:
-            access_token = self.refresh_token(headers)
-            headers['Authorization'] = 'Bearer ' + (access_token or '')
-
         timeout = None
         if _request_timeout:
-            if isinstance(_request_timeout, (int, ) if six.PY3 else (int, long)):  # noqa: E501,F821
+            if isinstance(_request_timeout, (int, float)):  # noqa: E501,F821
                 timeout = urllib3.Timeout(total=_request_timeout)
             elif (isinstance(_request_timeout, tuple) and
                   len(_request_timeout) == 2):
                 timeout = urllib3.Timeout(
                     connect=_request_timeout[0], read=_request_timeout[1])
 
-        if 'Content-Type' not in headers:
-            headers['Content-Type'] = 'application/json'
-
         try:
             # For `POST`, `PUT`, `PATCH`, `OPTIONS`, `DELETE`
             if method in ['POST', 'PUT', 'PATCH', 'OPTIONS', 'DELETE']:
+                # Only set a default Content-Type for POST, PUT, PATCH and OPTIONS requests
+                if (method != 'DELETE') and ('Content-Type' not in headers):
+                    headers['Content-Type'] = 'application/json'
                 if query_params:
                     url += '?' + urlencode(query_params)
-                if re.search('json', headers['Content-Type'], re.IGNORECASE):
+                if ('Content-Type' not in headers) or (re.search('json',
+                                                                 headers['Content-Type'], re.IGNORECASE)):
                     request_body = None
                     if body is not None:
                         request_body = json.dumps(body)
@@ -193,7 +182,7 @@ class RESTClientObject(object):
                 # Pass a `string` parameter directly in the body to support
                 # other content types than Json when `body` argument is
                 # provided in serialized form
-                elif isinstance(body, str):
+                elif isinstance(body, str) or isinstance(body, bytes):
                     request_body = body
                     r = self.pool_manager.request(
                         method, url,
@@ -225,6 +214,18 @@ class RESTClientObject(object):
             logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
+            if r.status == 401:
+                raise UnauthorizedException(http_resp=r)
+
+            if r.status == 403:
+                raise ForbiddenException(http_resp=r)
+
+            if r.status == 404:
+                raise NotFoundException(http_resp=r)
+
+            if 500 <= r.status <= 599:
+                raise ServiceException(http_resp=r)
+
             raise ApiException(http_resp=r)
 
         return r
@@ -294,92 +295,58 @@ class RESTClientObject(object):
                             _request_timeout=_request_timeout,
                             body=body)
 
-    def refresh_token(self, headers) -> str:
-        missing_credentials = self.client_id is None or self.client_id == '' \
-                              or self.client_secret is None or self.client_secret == ''
-
-        if self.token and not self.token.is_valid_enough():
-            self.token = None
-
-        if self.token is None:
-            if missing_credentials:
-                return self.access_token
-
-            self.token = self.call_auth_endpoint(headers)
-
-        return self.token.access_token
-
-    def call_auth_endpoint(self, headers):
-        oauth_url = self.host + '/oauth2/token'
-        new_headers = {'Accept': 'application/json',
-                       'Content-Type': 'application/x-www-form-urlencoded',
-                       'User-Agent': headers['User-Agent']}
-        post_params = [('client_id', self.client_id),
-                       ('client_secret', self.client_secret),
-                       ('grant_type', self.grant_type)]
-        try:
-            params = []
-            response = self.request("POST", oauth_url,
-                                    headers=new_headers,
-                                    query_params=params,
-                                    post_params=post_params,
-                                    no_auth=True,
-                                    _preload_content=True,
-                                    _request_timeout=None,
-                                    body=None)
-            data = json.loads(response.data)
-            return Token(data['access_token'], data['expires_in'])
-        except ApiException as e:
-            raise self._enrich_exception_message(e, oauth_url)
-
-    @staticmethod
-    def _enrich_exception_message(e, url):
-        try:
-            data = json.loads(e.body or {})
-        except ValueError:
-            data = {}
-        data["token_error"] = "Cannot refresh token by calling '" + url + "'"
-        e.body = data
-        return e
+# end of class RESTClientObject
 
 
-class ApiException(Exception):
-
-    def __init__(self, status=None, reason=None, http_resp=None):
-        if http_resp:
-            self.status = http_resp.status
-            self.reason = http_resp.reason
-            self.body = http_resp.data
-            self.headers = http_resp.getheaders()
-        else:
-            self.status = status
-            self.reason = reason
-            self.body = None
-            self.headers = None
-
-    def __str__(self):
-        """Custom error messages for exception"""
-        error_message = "({0})\n"\
-                        "Reason: {1}\n".format(self.status, self.reason)
-        if self.headers:
-            error_message += "HTTP response headers: {0}\n".format(
-                self.headers)
-
-        if self.body:
-            error_message += "HTTP response body: {0}\n".format(self.body)
-
-        return error_message
+def is_ipv4(target):
+    """ Test if IPv4 address or not
+    """
+    try:
+        chk = ipaddress.IPv4Address(target)
+        return True
+    except ipaddress.AddressValueError:
+        return False
 
 
-class Token(object):
+def in_ipv4net(target, net):
+    """ Test if target belongs to given IPv4 network
+    """
+    try:
+        nw = ipaddress.IPv4Network(net)
+        ip = ipaddress.IPv4Address(target)
+        if ip in nw:
+            return True
+        return False
+    except ipaddress.AddressValueError:
+        return False
+    except ipaddress.NetmaskValueError:
+        return False
 
-    def __init__(self, access_token, expires_in):
-        self.access_token = access_token
-        self.expires_on = self.calc_expires_on(expires_in)
 
-    def is_valid_enough(self):
-        return self.expires_on > (datetime.now() + timedelta(seconds=15))
+def should_bypass_proxies(url, no_proxy=None):
+    """ Yet another requests.should_bypass_proxies
+    Test if proxies should not be used for a particular url.
+    """
 
-    @staticmethod
-    def calc_expires_on(expires_in):
-        return datetime.now() + timedelta(seconds=int(expires_in))
+    parsed = urlparse(url)
+
+    # special cases
+    if parsed.hostname in [None, '']:
+        return True
+
+    # special cases
+    if no_proxy in [None, '']:
+        return False
+    if no_proxy == '*':
+        return True
+
+    no_proxy = no_proxy.lower().replace(' ', '');
+    entries = (
+        host for host in no_proxy.split(',') if host
+    )
+
+    if is_ipv4(parsed.hostname):
+        for item in entries:
+            if in_ipv4net(parsed.hostname, item):
+                return True
+    return proxy_bypass_environment(parsed.hostname, {'no': no_proxy})

@@ -39,9 +39,10 @@ class GatewayApi(object):
             settings={
                 'response_type': (ApplicationSummaryModelResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/me',
+                'endpoint_path': '/2022-10/retail-media/me',
                 'operation_id': 'get_current_application',
                 'http_method': 'GET',
                 'servers': None,

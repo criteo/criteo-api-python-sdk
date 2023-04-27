@@ -39,6 +39,7 @@ class AdvertiserApi(object):
             settings={
                 'response_type': (GetPortfolioResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2023-01/advertisers/me',

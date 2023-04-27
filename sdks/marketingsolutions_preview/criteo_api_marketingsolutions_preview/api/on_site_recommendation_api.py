@@ -40,6 +40,7 @@ class OnSiteRecommendationApi(object):
             settings={
                 'response_type': (OnSiteRecoResponse,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/recommendation/search',

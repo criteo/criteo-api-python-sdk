@@ -55,19 +55,6 @@ class CreateAdSetBidding(ModelNormal):
     """
 
     allowed_values = {
-        ('bid_strategy',): {
-            'ACTIONS': "actions",
-            'CLICKS': "clicks",
-            'CONVERSIONS': "conversions",
-            'DISPLAYS': "displays",
-            'INSTALLS': "installs",
-            'REVENUE': "revenue",
-            'STORECONVERSIONS': "storeConversions",
-            'VALUE': "value",
-            'VIEWEDIMPRESSIONS': "viewedImpressions",
-            'VISITS': "Visits",
-            'COMPLETEDVIDEOVIEWS': "completedVideoViews",
-        },
         ('cost_controller',): {
             'COS': "COS",
             'CPC': "CPC",
@@ -105,7 +92,6 @@ class CreateAdSetBidding(ModelNormal):
         """
         return {
             'bid_amount': (float,),  # noqa: E501
-            'bid_strategy': (str,),  # noqa: E501
             'cost_controller': (str,),  # noqa: E501
         }
 
@@ -116,7 +102,6 @@ class CreateAdSetBidding(ModelNormal):
 
     attribute_map = {
         'bid_amount': 'bidAmount',  # noqa: E501
-        'bid_strategy': 'bidStrategy',  # noqa: E501
         'cost_controller': 'costController',  # noqa: E501
     }
 
@@ -162,8 +147,7 @@ class CreateAdSetBidding(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bid_amount (float): Decimal value target relating to the `bidStrategy` specified. May be `null` for strategies that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
-            bid_strategy (str): [optional]  # noqa: E501
-            cost_controller (str): [optional]  # noqa: E501
+            cost_controller (str): How spend is controlled. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,8 +234,7 @@ class CreateAdSetBidding(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bid_amount (float): Decimal value target relating to the `bidStrategy` specified. May be `null` for strategies that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
-            bid_strategy (str): [optional]  # noqa: E501
-            cost_controller (str): [optional]  # noqa: E501
+            cost_controller (str): How spend is controlled. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -4,7 +4,7 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /me | 
+[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /2022-07/marketing-solutions/me | 
 
 
 # **get_current_application**
@@ -16,6 +16,7 @@ Get information about the currently logged application
 
 ### Example
 
+* OAuth Authentication (oauth):
 * OAuth Authentication (oauth):
 
 ```python
@@ -34,6 +35,12 @@ configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_07.Configuration(
@@ -64,7 +71,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

@@ -41,6 +41,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (int,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-07/retail-media/reports/{reportId}/output',
@@ -92,6 +93,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (EnvelopeReportStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-07/retail-media/reports/{reportId}/status',
@@ -143,6 +145,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (EnvelopeReportStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-07/retail-media/reports/campaigns',
@@ -195,6 +198,7 @@ class AnalyticsApi(object):
             settings={
                 'response_type': (EnvelopeReportStatus,),
                 'auth': [
+                    'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/2022-07/retail-media/reports/line-items',

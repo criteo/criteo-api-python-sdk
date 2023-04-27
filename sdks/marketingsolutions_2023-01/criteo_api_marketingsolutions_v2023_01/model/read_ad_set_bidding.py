@@ -169,7 +169,7 @@ class ReadAdSetBidding(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bid_amount (NillableDecimal): [optional]  # noqa: E501
             bid_strategy (str): The intended optimization for the Ad Set. [optional]  # noqa: E501
-            cost_controller (str): How is spend controlled. [optional]  # noqa: E501
+            cost_controller (str): How spend is controlled. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -257,7 +257,7 @@ class ReadAdSetBidding(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bid_amount (NillableDecimal): [optional]  # noqa: E501
             bid_strategy (str): The intended optimization for the Ad Set. [optional]  # noqa: E501
-            cost_controller (str): How is spend controlled. [optional]  # noqa: E501
+            cost_controller (str): How spend is controlled. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

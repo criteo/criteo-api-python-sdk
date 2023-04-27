@@ -101,13 +101,13 @@ class Template(ModelNormal):
         return {
             'creative_format': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'retailer_id': (int,),  # noqa: E501
             'sku_collection_min': (int,),  # noqa: E501
             'sku_per_collection_min': (int,),  # noqa: E501
             'all_collections_mandatory': (bool,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'sections': ([Section],),  # noqa: E501
+            'retailer_id': (int,),  # noqa: E501
             'sku_collection_max': (int, none_type,),  # noqa: E501
             'sku_per_collection_max': (int, none_type,),  # noqa: E501
             'displayable_skus_max': (int, none_type,),  # noqa: E501
@@ -121,13 +121,13 @@ class Template(ModelNormal):
     attribute_map = {
         'creative_format': 'creativeFormat',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'retailer_id': 'retailerId',  # noqa: E501
         'sku_collection_min': 'skuCollectionMin',  # noqa: E501
         'sku_per_collection_min': 'skuPerCollectionMin',  # noqa: E501
         'all_collections_mandatory': 'allCollectionsMandatory',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'sections': 'sections',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
         'sku_collection_max': 'skuCollectionMax',  # noqa: E501
         'sku_per_collection_max': 'skuPerCollectionMax',  # noqa: E501
         'displayable_skus_max': 'displayableSkusMax',  # noqa: E501
@@ -140,13 +140,12 @@ class Template(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, creative_format, name, retailer_id, sku_collection_min, sku_per_collection_min, all_collections_mandatory, created_at, updated_at, sections, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, creative_format, name, sku_collection_min, sku_per_collection_min, all_collections_mandatory, created_at, updated_at, sections, *args, **kwargs):  # noqa: E501
         """Template - a model defined in OpenAPI
 
         Args:
             creative_format (str): The kind of creative this template can be used to build.
             name (str): The name of the template
-            retailer_id (int): The retailer associated to the template
             sku_collection_min (int): TODO: what is it ?
             sku_per_collection_min (int): TODO: what is it ?
             all_collections_mandatory (bool): TODO: what is it ?
@@ -185,6 +184,7 @@ class Template(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            retailer_id (int): The retailer associated to the template. [optional]  # noqa: E501
             sku_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
             sku_per_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
             displayable_skus_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
@@ -221,7 +221,6 @@ class Template(ModelNormal):
 
         self.creative_format = creative_format
         self.name = name
-        self.retailer_id = retailer_id
         self.sku_collection_min = sku_collection_min
         self.sku_per_collection_min = sku_per_collection_min
         self.all_collections_mandatory = all_collections_mandatory
@@ -248,13 +247,12 @@ class Template(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, creative_format, name, retailer_id, sku_collection_min, sku_per_collection_min, all_collections_mandatory, created_at, updated_at, sections, *args, **kwargs):  # noqa: E501
+    def __init__(self, creative_format, name, sku_collection_min, sku_per_collection_min, all_collections_mandatory, created_at, updated_at, sections, *args, **kwargs):  # noqa: E501
         """Template - a model defined in OpenAPI
 
         Args:
             creative_format (str): The kind of creative this template can be used to build.
             name (str): The name of the template
-            retailer_id (int): The retailer associated to the template
             sku_collection_min (int): TODO: what is it ?
             sku_per_collection_min (int): TODO: what is it ?
             all_collections_mandatory (bool): TODO: what is it ?
@@ -293,6 +291,7 @@ class Template(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            retailer_id (int): The retailer associated to the template. [optional]  # noqa: E501
             sku_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
             sku_per_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
             displayable_skus_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
@@ -327,7 +326,6 @@ class Template(ModelNormal):
 
         self.creative_format = creative_format
         self.name = name
-        self.retailer_id = retailer_id
         self.sku_collection_min = sku_collection_min
         self.sku_per_collection_min = sku_per_collection_min
         self.all_collections_mandatory = all_collections_mandatory

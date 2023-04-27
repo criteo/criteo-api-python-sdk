@@ -20,13 +20,14 @@ This Statistics endpoint provides adset related data. It is an upgrade of our pr
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_v2022_10
 from criteo_api_marketingsolutions_v2022_10.api import analytics_api
+from criteo_api_marketingsolutions_v2022_10.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_v2022_10.model.statistics_report_query_message import StatisticsReportQueryMessage
-from criteo_api_marketingsolutions_v2022_10.model.error_message import ErrorMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -38,6 +39,12 @@ configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
@@ -95,12 +102,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -123,12 +130,13 @@ Your ads are placed in different domains (publishers) and environments (websites
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_v2022_10
 from criteo_api_marketingsolutions_v2022_10.api import analytics_api
-from criteo_api_marketingsolutions_v2022_10.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_v2022_10.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_v2022_10.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -141,6 +149,12 @@ configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
@@ -201,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
@@ -229,12 +243,13 @@ This Transactions endpoint provides transactions id related data.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_v2022_10
 from criteo_api_marketingsolutions_v2022_10.api import analytics_api
-from criteo_api_marketingsolutions_v2022_10.model.error_message import ErrorMessage
+from criteo_api_marketingsolutions_v2022_10.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_v2022_10.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -247,6 +262,12 @@ configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
@@ -297,12 +318,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -325,14 +346,15 @@ This Statistics endpoint provides publisher data.
 ### Example
 
 * OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
 
 ```python
 import time
 import criteo_api_marketingsolutions_v2022_10
 from criteo_api_marketingsolutions_v2022_10.api import analytics_api
 from criteo_api_marketingsolutions_v2022_10.model.transparency_report_data_message import TransparencyReportDataMessage
+from criteo_api_marketingsolutions_v2022_10.model.problems_details import ProblemsDetails
 from criteo_api_marketingsolutions_v2022_10.model.transparency_query_message import TransparencyQueryMessage
-from criteo_api_marketingsolutions_v2022_10.model.error_message import ErrorMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -344,6 +366,12 @@ configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # Configure OAuth2 access token for authorization: oauth
 configuration = criteo_api_marketingsolutions_v2022_10.Configuration(
@@ -392,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth](../README.md#oauth)
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
 
 ### HTTP request headers
 

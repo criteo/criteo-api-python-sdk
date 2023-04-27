@@ -10,8 +10,12 @@ criteo_api_retailmedia_v2022_10/api/audience_api.py
 criteo_api_retailmedia_v2022_10/api/campaign_api.py
 criteo_api_retailmedia_v2022_10/api/gateway_api.py
 criteo_api_retailmedia_v2022_10/api_client.py
+criteo_api_retailmedia_v2022_10/api_client_builder.py
 criteo_api_retailmedia_v2022_10/apis/__init__.py
 criteo_api_retailmedia_v2022_10/configuration.py
+criteo_api_retailmedia_v2022_10/criteo_api_client.py
+criteo_api_retailmedia_v2022_10/criteo_auth.py
+criteo_api_retailmedia_v2022_10/criteo_rest.py
 criteo_api_retailmedia_v2022_10/exceptions.py
 criteo_api_retailmedia_v2022_10/model/__init__.py
 criteo_api_retailmedia_v2022_10/model/add_to_basket_ids_update_model202110_request.py
@@ -311,13 +315,11 @@ docs/ValueTypeResourceOfAudienceTarget202110.md
 docs/ValueTypeResourceOfKeywordTarget202110.md
 docs/ValueTypeResourceOfStoreIdsUpdateModel202110.md
 docs/ValueTypeResourceOfStoreTarget202110.md
-examples/__init__.py
-examples/portfolio.py
-examples/statistics.py
 git_push.sh
 requirements.txt
 setup.cfg
 setup.py
 test-requirements.txt
+test/example_application.py
 test/test_gateway_api.py
 tox.ini
