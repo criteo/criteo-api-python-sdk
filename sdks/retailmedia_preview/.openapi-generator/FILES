@@ -17,6 +17,7 @@ criteo_api_retailmedia_preview/criteo_api_client.py
 criteo_api_retailmedia_preview/criteo_auth.py
 criteo_api_retailmedia_preview/criteo_rest.py
 criteo_api_retailmedia_preview/exceptions.py
+criteo_api_retailmedia_preview/flow_constants.py
 criteo_api_retailmedia_preview/model/__init__.py
 criteo_api_retailmedia_preview/model/application_summary_model.py
 criteo_api_retailmedia_preview/model/application_summary_model_resource.py
@@ -336,6 +337,8 @@ requirements.txt
 setup.cfg
 setup.py
 test-requirements.txt
-test/example_application.py
+test/example_application_with_auth_code.py
+test/example_application_with_client_credentials.py
+test/example_application_with_refresh_token.py
 test/test_gateway_api.py
 tox.ini

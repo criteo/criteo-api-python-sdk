@@ -1,14 +1,11 @@
-import logging
-import sys
-
 from criteo_api_marketingsolutions_preview.api.gateway_api import GatewayApi
 from criteo_api_marketingsolutions_preview import ApiClientBuilder
 
 class ExampleApplication:
 
-    def call_then_application_endpoint(self, clientId, clientSecret):
-        # Create a client using your choosen OAuth flow. The client will handle the token generation/renewal for you
-        client = ApiClientBuilder.WithClientCredentials(clientId=clientId, clientSecret=clientSecret)
+    def call_then_application_endpoint(self, clientId, clientSecret, refresh_token):
+        # Create a client using your choosen OAuth flow, Refresh Token in this case. The client will handle the token generation/renewal for you
+        client = ApiClientBuilder.WithRefreshToken(clientId, clientSecret, refresh_token)
 
         # The Gateway API regroups common technical endpoints that exists for all versions
         # You can find the other endpoints in the other *Api
@@ -23,3 +20,8 @@ class ExampleApplication:
         # The Data fields contains an Id (if applicable), a Type, and an Attributes field that contains the business object
         myApplication = response.data.attributes
         print(f'Hello, I\'m using Criteo API and I\'m connected as {myApplication.name}')
+
+        # You will need to save the new refresh_token to use it again in the future
+        # You can fetch the refresh token like this:
+        refreshToken = client.get_refresh_token()
+        print('The refresh token to be saved is ', refreshToken)

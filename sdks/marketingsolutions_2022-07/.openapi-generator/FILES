@@ -18,6 +18,7 @@ criteo_api_marketingsolutions_v2022_07/criteo_api_client.py
 criteo_api_marketingsolutions_v2022_07/criteo_auth.py
 criteo_api_marketingsolutions_v2022_07/criteo_rest.py
 criteo_api_marketingsolutions_v2022_07/exceptions.py
+criteo_api_marketingsolutions_v2022_07/flow_constants.py
 criteo_api_marketingsolutions_v2022_07/model/__init__.py
 criteo_api_marketingsolutions_v2022_07/model/ad_set_category_bid.py
 criteo_api_marketingsolutions_v2022_07/model/ad_set_category_bid_list_response.py
@@ -240,6 +241,8 @@ requirements.txt
 setup.cfg
 setup.py
 test-requirements.txt
-test/example_application.py
+test/example_application_with_auth_code.py
+test/example_application_with_client_credentials.py
+test/example_application_with_refresh_token.py
 test/test_gateway_api.py
 tox.ini

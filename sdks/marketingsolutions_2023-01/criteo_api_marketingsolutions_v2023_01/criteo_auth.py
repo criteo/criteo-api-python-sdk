@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timedelta
 from criteo_api_marketingsolutions_v2023_01.exceptions import ApiException
 from criteo_api_marketingsolutions_v2023_01.api_client import ApiClient
+from criteo_api_marketingsolutions_v2023_01 import flow_constants
 
 class Token(object):
 
@@ -29,10 +30,13 @@ class RetryingOAuth(object):
         self.client_id = client_id
         self.client_secret = client_secret
         self.token = None
+        self.refreshToken = None
 
     def get_token(self, client : ApiClient, headers) -> str:    
         if self.token and not self.token.has_expired():
             self.token = None
+            if self.grant_type == flow_constants.AUTHORIZATION_CODE_FLOW:
+                self.grant_type = flow_constants.REFRESH_TOKEN_FLOW
 
         if self.token is None:
             self.refresh_token(client, headers)
@@ -50,6 +54,9 @@ class RetryingOAuth(object):
             'grant_type' : self.grant_type 
             })
         try:
+            if self.grant_type == flow_constants.REFRESH_TOKEN_FLOW:
+                params['refresh_token'] = self.refreshToken
+
             response = client.request('POST', oauth_url,
                                     headers=new_headers,
                                     query_params=[],
@@ -61,10 +68,14 @@ class RetryingOAuth(object):
             data = json.loads(response.data)
             self.token = Token('Bearer '+ (data['access_token'] or ''),
                RetryingOAuth.compute_expiration_date(data['expires_in']))
-
+            self.refreshToken = data['refresh_token']
+            
             return self.token
         except ApiException as e:
             raise self._enrich_exception_message(e, oauth_url)
+
+    def get_refresh_token(self):
+        return self.refreshToken
 
     def _enrich_exception_message(self, e, url):
         try:
@@ -82,18 +93,29 @@ class RetryingOAuth(object):
 class RetryingClientCredentials(RetryingOAuth):
     
     def __init__(self, client_id, client_secret):
-        super().__init__('client_credentials', client_id, client_secret)
+        super().__init__(flow_constants.CLIENT_CREDENTIALS_FLOW, client_id, client_secret)
 
 class RetryingAuthorizationCode(RetryingOAuth):
-   
     def __init__(self, client_id, client_secret, code, redirect_uri):
-        super().__init__('authorization_code', client_id, client_secret)
+        super().__init__(flow_constants.AUTHORIZATION_CODE_FLOW, client_id, client_secret)
         self.authorization_code = code
         self.redirect_uri = redirect_uri
 
     def refresh_token(self, client : ApiClient, headers, parameters_dict= {}):  
         params = dict(parameters_dict, **{
-            'authorization_code' : self.authorization_code,
+            'code' : self.authorization_code,
             'redirect_uri' : self.redirect_uri
         })
         return super().refresh_token(client, headers, params)
+    
+class RetryingRefreshToken(RetryingOAuth):
+
+    def __init__(self, client_id, client_secret, refresh_token):
+        super().__init__(flow_constants.REFRESH_TOKEN_FLOW, client_id, client_secret)
+        self.refreshToken = refresh_token
+
+    def refresh_token(self, client: ApiClient, headers, parameters_dict = {}):
+        params = dict(parameters_dict, **{
+            'refresh_token' : self.refreshToken
+        })
+        return super().refresh_token(client, headers,params)

@@ -4,7 +4,7 @@ import os
 from criteo_api_marketingsolutions_v2023_01.api.gateway_api import GatewayApi
 from criteo_api_marketingsolutions_v2023_01.api_client_builder import ApiClientBuilder
 from criteo_api_marketingsolutions_v2023_01.rest import ApiException
-from example_application import ExampleApplication
+from example_application_with_client_credentials import ExampleApplication
 
 class TestGatewayApi:
   @pytest.fixture(autouse=True)

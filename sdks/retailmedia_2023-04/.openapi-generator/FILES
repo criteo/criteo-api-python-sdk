@@ -17,6 +17,7 @@ criteo_api_retailmedia_v2023_04/criteo_api_client.py
 criteo_api_retailmedia_v2023_04/criteo_auth.py
 criteo_api_retailmedia_v2023_04/criteo_rest.py
 criteo_api_retailmedia_v2023_04/exceptions.py
+criteo_api_retailmedia_v2023_04/flow_constants.py
 criteo_api_retailmedia_v2023_04/model/__init__.py
 criteo_api_retailmedia_v2023_04/model/add_to_basket_ids_update_model202110_request.py
 criteo_api_retailmedia_v2023_04/model/add_to_basket_target202110_request.py
@@ -394,6 +395,8 @@ requirements.txt
 setup.cfg
 setup.py
 test-requirements.txt
-test/example_application.py
+test/example_application_with_auth_code.py
+test/example_application_with_client_credentials.py
+test/example_application_with_refresh_token.py
 test/test_gateway_api.py
 tox.ini

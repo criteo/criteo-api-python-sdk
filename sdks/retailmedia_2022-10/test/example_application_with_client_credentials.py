@@ -1,13 +1,10 @@
-import logging
-import sys
-
-from criteo_api_marketingsolutions_v2023_01.api.gateway_api import GatewayApi
-from criteo_api_marketingsolutions_v2023_01 import ApiClientBuilder
+from criteo_api_retailmedia_v2022_10.api.gateway_api import GatewayApi
+from criteo_api_retailmedia_v2022_10 import ApiClientBuilder
 
 class ExampleApplication:
 
     def call_then_application_endpoint(self, clientId, clientSecret):
-        # Create a client using your choosen OAuth flow. The client will handle the token generation/renewal for you
+        # Create a client using your choosen OAuth flow, Client Credentials in this case. The client will handle the token generation/renewal for you
         client = ApiClientBuilder.WithClientCredentials(clientId=clientId, clientSecret=clientSecret)
 
         # The Gateway API regroups common technical endpoints that exists for all versions

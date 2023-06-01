@@ -1,5 +1,6 @@
 from criteo_api_retailmedia_v2022_07.rest import RESTClientObject
 from criteo_api_retailmedia_v2022_07.criteo_auth import *
+from criteo_api_retailmedia_v2022_07 import flow_constants
 
 
 class CriteoRESTClientObject(RESTClientObject):
@@ -12,13 +13,19 @@ class CriteoRESTClientObject(RESTClientObject):
         client_secret = configuration.password
 
         grant_type = additional_parameters.get('flow', 'client_credentials')
-        if grant_type == 'authorization_code' :
+        if grant_type == flow_constants.AUTHORIZATION_CODE_FLOW :
             self.authorization = RetryingAuthorizationCode(
                 client_id,
                 client_secret, 
-                additional_parameters.get('autorization_code',''),
+                additional_parameters.get('authorization_code',''),
                 additional_parameters.get('redirect_uri','')
             )
+        elif grant_type == flow_constants.REFRESH_TOKEN_FLOW :
+             self.authorization = RetryingRefreshToken(
+                  client_id,
+                  client_secret,
+                  additional_parameters.get('refresh_token', '')
+             )
         else:
             self.authorization = RetryingClientCredentials(
                 client_id,
@@ -64,3 +71,5 @@ class CriteoRESTClientObject(RESTClientObject):
 
         return super().request(method, url, query_params, headers, body, post_params, _preload_content, _request_timeout)
 
+    def get_refresh_token(self):
+         return self.authorization.get_refresh_token()

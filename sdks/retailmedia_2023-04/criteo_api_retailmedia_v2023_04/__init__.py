@@ -8,12 +8,13 @@
 """
 
 
-__version__ = "2023.04.0.230427"
+__version__ = "2023.04.0.230601"
 
 # import ApiClient
 from criteo_api_retailmedia_v2023_04.api_client import ApiClient
 from criteo_api_retailmedia_v2023_04.criteo_api_client import CriteoApiClient
 from criteo_api_retailmedia_v2023_04.api_client_builder import ApiClientBuilder
+from criteo_api_retailmedia_v2023_04 import flow_constants
 
 # import Configuration
 from criteo_api_retailmedia_v2023_04.configuration import Configuration
