@@ -436,7 +436,6 @@ with criteo_api_marketingsolutions_v2023_04.ApiClient(configuration) as api_clie
                     "identifiers_example",
                 ],
                 gum_caller_id=1,
-                internal_identifiers=True,
             ),
         ),
     ) # ContactlistAmendmentRequest | 

@@ -198,7 +198,6 @@ criteo_api_marketingsolutions_preview/model/creative_write.py
 criteo_api_marketingsolutions_preview/model/creative_write_request.py
 criteo_api_marketingsolutions_preview/model/creative_write_resource.py
 criteo_api_marketingsolutions_preview/model/criteo_api_error.py
-criteo_api_marketingsolutions_preview/model/criteo_api_error_v2.py
 criteo_api_marketingsolutions_preview/model/criteo_api_warning.py
 criteo_api_marketingsolutions_preview/model/criteo_api_warning_v2.py
 criteo_api_marketingsolutions_preview/model/custom_attribute.py
@@ -277,6 +276,7 @@ criteo_api_marketingsolutions_preview/model/nillable_ad_set_targeting_rule_value
 criteo_api_marketingsolutions_preview/model/nillable_date_time.py
 criteo_api_marketingsolutions_preview/model/nillable_decimal.py
 criteo_api_marketingsolutions_preview/model/nillable_gender_v1.py
+criteo_api_marketingsolutions_preview/model/nillable_int32.py
 criteo_api_marketingsolutions_preview/model/nillable_string.py
 criteo_api_marketingsolutions_preview/model/oci_brand_safety_response.py
 criteo_api_marketingsolutions_preview/model/oci_brand_safety_response_data.py
@@ -337,6 +337,9 @@ criteo_api_marketingsolutions_preview/model/product_unit_pricing_base_measure.py
 criteo_api_marketingsolutions_preview/model/product_unit_pricing_measure.py
 criteo_api_marketingsolutions_preview/model/products_custom_batch_request.py
 criteo_api_marketingsolutions_preview/model/products_custom_batch_request_entry.py
+criteo_api_marketingsolutions_preview/model/prospecting_create_v1.py
+criteo_api_marketingsolutions_preview/model/prospecting_update_v1.py
+criteo_api_marketingsolutions_preview/model/prospecting_v1.py
 criteo_api_marketingsolutions_preview/model/read_ad_set.py
 criteo_api_marketingsolutions_preview/model/read_ad_set_bidding.py
 criteo_api_marketingsolutions_preview/model/read_ad_set_bidding_v23_q1.py
@@ -408,6 +411,7 @@ criteo_api_marketingsolutions_preview/model/user_event.py
 criteo_api_marketingsolutions_preview/model/user_profile_attribute_model.py
 criteo_api_marketingsolutions_preview/model/user_profile_identifier_model.py
 criteo_api_marketingsolutions_preview/model/value_resource_input_of_create_product_set_request.py
+criteo_api_marketingsolutions_preview/model/value_resource_of_advertiser_creation_input.py
 criteo_api_marketingsolutions_preview/model/value_resource_of_create_product_set_request.py
 criteo_api_marketingsolutions_preview/model/video_detail.py
 criteo_api_marketingsolutions_preview/model/write_model_ad_set_id.py
@@ -595,7 +599,6 @@ docs/CreativeWrite.md
 docs/CreativeWriteRequest.md
 docs/CreativeWriteResource.md
 docs/CriteoApiError.md
-docs/CriteoApiErrorV2.md
 docs/CriteoApiWarning.md
 docs/CriteoApiWarningV2.md
 docs/CustomAttribute.md
@@ -675,6 +678,7 @@ docs/NillableAdSetTargetingRuleValue.md
 docs/NillableDateTime.md
 docs/NillableDecimal.md
 docs/NillableGenderV1.md
+docs/NillableInt32.md
 docs/NillableString.md
 docs/OciBrandSafetyResponse.md
 docs/OciBrandSafetyResponseData.md
@@ -736,6 +740,9 @@ docs/ProductUnitPricingBaseMeasure.md
 docs/ProductUnitPricingMeasure.md
 docs/ProductsCustomBatchRequest.md
 docs/ProductsCustomBatchRequestEntry.md
+docs/ProspectingCreateV1.md
+docs/ProspectingUpdateV1.md
+docs/ProspectingV1.md
 docs/ReadAdSet.md
 docs/ReadAdSetBidding.md
 docs/ReadAdSetBiddingV23Q1.md
@@ -808,6 +815,7 @@ docs/UserEvent.md
 docs/UserProfileAttributeModel.md
 docs/UserProfileIdentifierModel.md
 docs/ValueResourceInputOfCreateProductSetRequest.md
+docs/ValueResourceOfAdvertiserCreationInput.md
 docs/ValueResourceOfCreateProductSetRequest.md
 docs/VideoDetail.md
 docs/WriteModelAdSetId.md

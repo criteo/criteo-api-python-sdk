@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_report_output**
-> int get_report_output(report_id)
+> str get_report_output(report_id)
 
 
 
@@ -54,7 +54,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    report_id = "ee439121-13e3-4734-9f67-c504dd921a41" # str | report id
+    report_id = "reportId_example" # str | report id
 
     # example passing only required values which don't have defaults set
     try:
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**int**
+**str**
 
 ### Authorization
 
@@ -141,7 +141,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    report_id = "ee439121-13e3-4734-9f67-c504dd921a41" # str | report id
+    report_id = "reportId_example" # str | report id
 
     # example passing only required values which don't have defaults set
     try:
@@ -241,13 +241,14 @@ with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
                     "ids_example",
                 ],
                 report_type="summary",
+                revenue_type="revenue_type_example",
                 start_date=dateutil_parser('1970-01-01').date(),
                 time_zone="time_zone_example",
                 view_attribution_window="none",
             ),
             type="type_example",
         ),
-    ) # EnvelopeReportRequest | // Body of the request {   \"data\": {     \"type\": \"RetailMediaReportRequest\",     \"attributes\": {       \"reportType\": string, // the name of the report being requested       //only one of \"id\" or \"ids\" can be provided for a request       \"id\": string, // the campaign id to select       \"ids\": Array[string], //the campaign ids to select       \"startDate\": string, // YYYY-MM-DD format       \"endDate\": string, // YYYY-MM-DD format       \"timeZone\": string, // examples: 'Europe/London', 'Asia/Tokyo', 'America/New_York'       // both attribution windows must be specified when one is specified       \"clickAttributionWindow\": \"7D\", \"14D\", or \"30D\"  // optional. defaults to campaign's click attribution window       \"viewAttributionWindow\": \"none\", \"1D\", \"7D\", \"14D\", \"30D\" // optional. defaults to campaign's view attribution window       \"format\": One of \"json\" (default),\"json-compact\",\"json-newline\" or \"csv\" // output format, defaults to json-compact     }   } }
+    ) # EnvelopeReportRequest | Envelope of the request
 
     # example passing only required values which don't have defaults set
     try:
@@ -262,7 +263,7 @@ with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **envelope_report_request** | [**EnvelopeReportRequest**](EnvelopeReportRequest.md)| // Body of the request {   \&quot;data\&quot;: {     \&quot;type\&quot;: \&quot;RetailMediaReportRequest\&quot;,     \&quot;attributes\&quot;: {       \&quot;reportType\&quot;: string, // the name of the report being requested       //only one of \&quot;id\&quot; or \&quot;ids\&quot; can be provided for a request       \&quot;id\&quot;: string, // the campaign id to select       \&quot;ids\&quot;: Array[string], //the campaign ids to select       \&quot;startDate\&quot;: string, // YYYY-MM-DD format       \&quot;endDate\&quot;: string, // YYYY-MM-DD format       \&quot;timeZone\&quot;: string, // examples: &#39;Europe/London&#39;, &#39;Asia/Tokyo&#39;, &#39;America/New_York&#39;       // both attribution windows must be specified when one is specified       \&quot;clickAttributionWindow\&quot;: \&quot;7D\&quot;, \&quot;14D\&quot;, or \&quot;30D\&quot;  // optional. defaults to campaign&#39;s click attribution window       \&quot;viewAttributionWindow\&quot;: \&quot;none\&quot;, \&quot;1D\&quot;, \&quot;7D\&quot;, \&quot;14D\&quot;, \&quot;30D\&quot; // optional. defaults to campaign&#39;s view attribution window       \&quot;format\&quot;: One of \&quot;json\&quot; (default),\&quot;json-compact\&quot;,\&quot;json-newline\&quot; or \&quot;csv\&quot; // output format, defaults to json-compact     }   } } |
+ **envelope_report_request** | [**EnvelopeReportRequest**](EnvelopeReportRequest.md)| Envelope of the request |
 
 ### Return type
 
@@ -347,13 +348,14 @@ with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
                     "ids_example",
                 ],
                 report_type="summary",
+                revenue_type="revenue_type_example",
                 start_date=dateutil_parser('1970-01-01').date(),
                 time_zone="time_zone_example",
                 view_attribution_window="none",
             ),
             type="type_example",
         ),
-    ) # EnvelopeReportRequest | // Body of the request {   \"data\": {     \"type\": \"RetailMediaReportRequest\",     \"attributes\": {       \"reportType\": string, // the name of the report being requested       //only one of \"id\" or \"ids\" can be provided for a request       \"id\": string, // the line item id to select       \"ids: Array[string] // the line item ids to select       \"startDate\": string, // YYYY-MM-DD format       \"endDate\": string, // YYYY-MM-DD format       \"timeZone\": string, // examples: 'Europe/London', 'Asia/Tokyo', 'America/New_York'       // both attribution windows must be specified when one is specified       \"clickAttributionWindow\": \"7D\", \"14D\", or \"30D\"  // optional. defaults to campaign's click attribution window       \"viewAttributionWindow\": \"none\", \"1D\", \"7D\", \"14D\", \"30D\" // optional. defaults to campaign's view attribution window       \"format\": One of \"json\" (default),\"json-compact\",\"json-newline\" or \"csv\" // output format, defaults to json-compact     }   } }
+    ) # EnvelopeReportRequest | Envelope of the request
 
     # example passing only required values which don't have defaults set
     try:
@@ -368,7 +370,7 @@ with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **envelope_report_request** | [**EnvelopeReportRequest**](EnvelopeReportRequest.md)| // Body of the request {   \&quot;data\&quot;: {     \&quot;type\&quot;: \&quot;RetailMediaReportRequest\&quot;,     \&quot;attributes\&quot;: {       \&quot;reportType\&quot;: string, // the name of the report being requested       //only one of \&quot;id\&quot; or \&quot;ids\&quot; can be provided for a request       \&quot;id\&quot;: string, // the line item id to select       \&quot;ids: Array[string] // the line item ids to select       \&quot;startDate\&quot;: string, // YYYY-MM-DD format       \&quot;endDate\&quot;: string, // YYYY-MM-DD format       \&quot;timeZone\&quot;: string, // examples: &#39;Europe/London&#39;, &#39;Asia/Tokyo&#39;, &#39;America/New_York&#39;       // both attribution windows must be specified when one is specified       \&quot;clickAttributionWindow\&quot;: \&quot;7D\&quot;, \&quot;14D\&quot;, or \&quot;30D\&quot;  // optional. defaults to campaign&#39;s click attribution window       \&quot;viewAttributionWindow\&quot;: \&quot;none\&quot;, \&quot;1D\&quot;, \&quot;7D\&quot;, \&quot;14D\&quot;, \&quot;30D\&quot; // optional. defaults to campaign&#39;s view attribution window       \&quot;format\&quot;: One of \&quot;json\&quot; (default),\&quot;json-compact\&quot;,\&quot;json-newline\&quot; or \&quot;csv\&quot; // output format, defaults to json-compact     }   } } |
+ **envelope_report_request** | [**EnvelopeReportRequest**](EnvelopeReportRequest.md)| Envelope of the request |
 
 ### Return type
 

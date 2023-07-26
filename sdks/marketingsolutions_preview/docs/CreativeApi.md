@@ -4,27 +4,27 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ad**](CreativeApi.md#create_ad) | **POST** /preview/advertisers/{advertiser-id}/ads | 
-[**create_coupon**](CreativeApi.md#create_coupon) | **POST** /preview/advertisers/{advertiser-id}/coupons | 
-[**create_creative**](CreativeApi.md#create_creative) | **POST** /preview/advertisers/{advertiser-id}/creatives | 
+[**create_advertiser_ad**](CreativeApi.md#create_advertiser_ad) | **POST** /preview/advertisers/{advertiser-id}/ads | 
+[**create_advertiser_coupon**](CreativeApi.md#create_advertiser_coupon) | **POST** /preview/advertisers/{advertiser-id}/coupons | 
+[**create_advertiser_creative**](CreativeApi.md#create_advertiser_creative) | **POST** /preview/advertisers/{advertiser-id}/creatives | 
 [**delete_ad**](CreativeApi.md#delete_ad) | **DELETE** /preview/ads/{id} | 
-[**delete_coupon**](CreativeApi.md#delete_coupon) | **DELETE** /preview/advertisers/{advertiser-id}/coupons/{id} | 
+[**delete_advertiser_coupon**](CreativeApi.md#delete_advertiser_coupon) | **DELETE** /preview/advertisers/{advertiser-id}/coupons/{id} | 
 [**delete_creative**](CreativeApi.md#delete_creative) | **DELETE** /preview/creatives/{id} | 
-[**edit_coupon**](CreativeApi.md#edit_coupon) | **PUT** /preview/advertisers/{advertiser-id}/coupons/{id} | 
+[**edit_advertiser_coupon**](CreativeApi.md#edit_advertiser_coupon) | **PUT** /preview/advertisers/{advertiser-id}/coupons/{id} | 
 [**edit_creative**](CreativeApi.md#edit_creative) | **PUT** /preview/creatives/{id} | 
+[**generate_creative_preview**](CreativeApi.md#generate_creative_preview) | **POST** /preview/creatives/{id}/preview | 
 [**get_ad**](CreativeApi.md#get_ad) | **GET** /preview/ads/{id} | 
-[**get_ads**](CreativeApi.md#get_ads) | **GET** /preview/advertisers/{advertiser-id}/ads | 
-[**get_coupon**](CreativeApi.md#get_coupon) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id} | 
-[**get_coupon_preview**](CreativeApi.md#get_coupon_preview) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id}/preview | 
-[**get_coupon_supported_sizes**](CreativeApi.md#get_coupon_supported_sizes) | **GET** /preview/advertisers/{advertiser-id}/coupons-supported-sizes | 
-[**get_coupons**](CreativeApi.md#get_coupons) | **GET** /preview/advertisers/{advertiser-id}/coupons | 
+[**get_advertiser_ads**](CreativeApi.md#get_advertiser_ads) | **GET** /preview/advertisers/{advertiser-id}/ads | 
+[**get_advertiser_coupon**](CreativeApi.md#get_advertiser_coupon) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id} | 
+[**get_advertiser_coupon_preview**](CreativeApi.md#get_advertiser_coupon_preview) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id}/preview | 
+[**get_advertiser_coupon_supported_sizes**](CreativeApi.md#get_advertiser_coupon_supported_sizes) | **GET** /preview/advertisers/{advertiser-id}/coupons-supported-sizes | 
+[**get_advertiser_coupons**](CreativeApi.md#get_advertiser_coupons) | **GET** /preview/advertisers/{advertiser-id}/coupons | 
+[**get_advertiser_creatives**](CreativeApi.md#get_advertiser_creatives) | **GET** /preview/advertisers/{advertiser-id}/creatives | 
 [**get_creative**](CreativeApi.md#get_creative) | **GET** /preview/creatives/{id} | 
-[**get_creative_preview_post**](CreativeApi.md#get_creative_preview_post) | **POST** /preview/creatives/{id}/preview | 
-[**get_creatives**](CreativeApi.md#get_creatives) | **GET** /preview/advertisers/{advertiser-id}/creatives | 
 
 
-# **create_ad**
-> AdResponse create_ad(advertiser_id)
+# **create_advertiser_ad**
+> AdResponse create_advertiser_ad(advertiser_id, ad_write_request)
 
 
 
@@ -77,29 +77,21 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 description="description_example",
                 creative_id="creative_id_example",
                 ad_set_id="ad_set_id_example",
-                inventory_type="inventory_type_example",
+                inventory_type="Display",
                 start_date="start_date_example",
                 end_date="end_date_example",
             ),
             id="id_example",
             type="type_example",
         ),
-    ) # AdWriteRequest |  (optional)
+    ) # AdWriteRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_ad(advertiser_id)
+        api_response = api_instance.create_advertiser_ad(advertiser_id, ad_write_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->create_ad: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_ad(advertiser_id, ad_write_request=ad_write_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->create_ad: %s\n" % e)
+        print("Exception when calling CreativeApi->create_advertiser_ad: %s\n" % e)
 ```
 
 
@@ -108,7 +100,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **ad_write_request** | [**AdWriteRequest**](AdWriteRequest.md)|  | [optional]
+ **ad_write_request** | [**AdWriteRequest**](AdWriteRequest.md)|  |
 
 ### Return type
 
@@ -135,8 +127,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_coupon**
-> CouponResponse create_coupon(advertiser_id)
+# **create_advertiser_coupon**
+> CouponResponse create_advertiser_coupon(advertiser_id, create_coupon_request)
 
 
 
@@ -191,7 +183,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 landing_page_url="landing_page_url_example",
                 start_date="start_date_example",
                 end_date="end_date_example",
-                format="format_example",
+                format="FullFrame",
                 images=[
                     CreateImageSlide(
                         width=1,
@@ -208,22 +200,14 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # CreateCouponRequest |  (optional)
+    ) # CreateCouponRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_coupon(advertiser_id)
+        api_response = api_instance.create_advertiser_coupon(advertiser_id, create_coupon_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->create_coupon: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_coupon(advertiser_id, create_coupon_request=create_coupon_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->create_coupon: %s\n" % e)
+        print("Exception when calling CreativeApi->create_advertiser_coupon: %s\n" % e)
 ```
 
 
@@ -232,7 +216,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **create_coupon_request** | [**CreateCouponRequest**](CreateCouponRequest.md)|  | [optional]
+ **create_coupon_request** | [**CreateCouponRequest**](CreateCouponRequest.md)|  |
 
 ### Return type
 
@@ -258,8 +242,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_creative**
-> CreativeResponse create_creative(advertiser_id)
+# **create_advertiser_creative**
+> CreativeResponse create_advertiser_creative(advertiser_id, creative_write_request)
 
 
 
@@ -310,7 +294,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             attributes=CreativeWrite(
                 name="name_example",
                 description="description_example",
-                format="format_example",
+                format="Image",
                 dataset_id="dataset_id_example",
                 image_write_attributes=ImageWriteAttributes(
                     base64_strings=[
@@ -338,11 +322,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     calls_to_action=[
                         "calls_to_action_example",
                     ],
-                    product_image_display="product_image_display_example",
+                    product_image_display="ShowFullImage",
                 ),
                 adaptive_write_attributes=AdaptiveWriteAttributes(
                     layouts=[
-                        "layouts_example",
+                        "Editorial",
                     ],
                     logo_base64_string="logo_base64_string_example",
                     headline_text="headline_text_example",
@@ -368,7 +352,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             headline_text="headline_text_example",
                         ),
                     ],
-                    image_display="image_display_example",
+                    image_display="ShowFullImage",
                     video_base64_strings=[
                         "video_base64_strings_example",
                     ],
@@ -378,22 +362,14 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # CreativeWriteRequest |  (optional)
+    ) # CreativeWriteRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_creative(advertiser_id)
+        api_response = api_instance.create_advertiser_creative(advertiser_id, creative_write_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->create_creative: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_creative(advertiser_id, creative_write_request=creative_write_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->create_creative: %s\n" % e)
+        print("Exception when calling CreativeApi->create_advertiser_creative: %s\n" % e)
 ```
 
 
@@ -402,7 +378,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **creative_write_request** | [**CreativeWriteRequest**](CreativeWriteRequest.md)|  | [optional]
+ **creative_write_request** | [**CreativeWriteRequest**](CreativeWriteRequest.md)|  |
 
 ### Return type
 
@@ -514,8 +490,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_coupon**
-> delete_coupon(advertiser_id, id)
+# **delete_advertiser_coupon**
+> delete_advertiser_coupon(advertiser_id, id)
 
 
 
@@ -563,9 +539,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.delete_coupon(advertiser_id, id)
+        api_instance.delete_advertiser_coupon(advertiser_id, id)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->delete_coupon: %s\n" % e)
+        print("Exception when calling CreativeApi->delete_advertiser_coupon: %s\n" % e)
 ```
 
 
@@ -685,8 +661,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **edit_coupon**
-> CouponResponse edit_coupon(advertiser_id, id)
+# **edit_advertiser_coupon**
+> CouponResponse edit_advertiser_coupon(advertiser_id, id, update_coupon_request)
 
 
 
@@ -742,22 +718,14 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # UpdateCouponRequest |  (optional)
+    ) # UpdateCouponRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.edit_coupon(advertiser_id, id)
+        api_response = api_instance.edit_advertiser_coupon(advertiser_id, id, update_coupon_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->edit_coupon: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.edit_coupon(advertiser_id, id, update_coupon_request=update_coupon_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->edit_coupon: %s\n" % e)
+        print("Exception when calling CreativeApi->edit_advertiser_coupon: %s\n" % e)
 ```
 
 
@@ -767,7 +735,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
  **id** | **str**| The Coupon identifier to edit. |
- **update_coupon_request** | [**UpdateCouponRequest**](UpdateCouponRequest.md)|  | [optional]
+ **update_coupon_request** | [**UpdateCouponRequest**](UpdateCouponRequest.md)|  |
 
 ### Return type
 
@@ -789,12 +757,11 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | The edited Coupon is returned. |  -  |
 **400** | The request contained invalid parameters. |  -  |
-**403** | The request was not properly authorized. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_creative**
-> CreativeResponse edit_creative(id)
+> CreativeResponse edit_creative(id, creative_write_request)
 
 
 
@@ -845,7 +812,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             attributes=CreativeWrite(
                 name="name_example",
                 description="description_example",
-                format="format_example",
+                format="Image",
                 dataset_id="dataset_id_example",
                 image_write_attributes=ImageWriteAttributes(
                     base64_strings=[
@@ -873,11 +840,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     calls_to_action=[
                         "calls_to_action_example",
                     ],
-                    product_image_display="product_image_display_example",
+                    product_image_display="ShowFullImage",
                 ),
                 adaptive_write_attributes=AdaptiveWriteAttributes(
                     layouts=[
-                        "layouts_example",
+                        "Editorial",
                     ],
                     logo_base64_string="logo_base64_string_example",
                     headline_text="headline_text_example",
@@ -903,7 +870,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             headline_text="headline_text_example",
                         ),
                     ],
-                    image_display="image_display_example",
+                    image_display="ShowFullImage",
                     video_base64_strings=[
                         "video_base64_strings_example",
                     ],
@@ -913,19 +880,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # CreativeWriteRequest |  (optional)
+    ) # CreativeWriteRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.edit_creative(id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->edit_creative: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.edit_creative(id, creative_write_request=creative_write_request)
+        api_response = api_instance.edit_creative(id, creative_write_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CreativeApi->edit_creative: %s\n" % e)
@@ -937,7 +896,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The creative identifier to edit. |
- **creative_write_request** | [**CreativeWriteRequest**](CreativeWriteRequest.md)|  | [optional]
+ **creative_write_request** | [**CreativeWriteRequest**](CreativeWriteRequest.md)|  |
 
 ### Return type
 
@@ -964,12 +923,109 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **generate_creative_preview**
+> str generate_creative_preview(id)
+
+
+
+Generate a preview of a specific Creative
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import creative_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = creative_api.CreativeApi(api_client)
+    id = "id_example" # str | The Creative identifier to preview.
+    width = 1 # int | The width of the Creative to preview. (optional)
+    height = 1 # int | The height of the Creative to preview. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.generate_creative_preview(id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->generate_creative_preview: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.generate_creative_preview(id, width=width, height=height)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->generate_creative_preview: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| The Creative identifier to preview. |
+ **width** | **int**| The width of the Creative to preview. | [optional]
+ **height** | **int**| The height of the Creative to preview. | [optional]
+
+### Return type
+
+**str**
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/html, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The preview HTML of a specific Creative is returned. |  -  |
+**400** | The request contained invalid parameters. |  -  |
+**403** | The request was not properly authorized. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_ad**
 > AdResponse get_ad(id)
 
 
 
-Get an Ad with its id
+Get an Ad from its id
 
 ### Example
 
@@ -1051,8 +1107,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ads**
-> AdListResponse get_ads(advertiser_id)
+# **get_advertiser_ads**
+> AdListResponse get_advertiser_ads(advertiser_id)
 
 
 
@@ -1102,18 +1158,18 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_ads(advertiser_id)
+        api_response = api_instance.get_advertiser_ads(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_ads: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_ads: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_ads(advertiser_id, limit=limit, offset=offset)
+        api_response = api_instance.get_advertiser_ads(advertiser_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_ads: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_ads: %s\n" % e)
 ```
 
 
@@ -1150,12 +1206,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_coupon**
-> CouponResponse get_coupon(advertiser_id, id)
+# **get_advertiser_coupon**
+> CouponResponse get_advertiser_coupon(advertiser_id, id)
 
 
 
-Get a Coupon with its id
+Get a Coupon from its id
 
 ### Example
 
@@ -1200,10 +1256,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_coupon(advertiser_id, id)
+        api_response = api_instance.get_advertiser_coupon(advertiser_id, id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupon: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupon: %s\n" % e)
 ```
 
 
@@ -1238,8 +1294,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_coupon_preview**
-> str get_coupon_preview(advertiser_id, id)
+# **get_advertiser_coupon_preview**
+> str get_advertiser_coupon_preview(advertiser_id, id)
 
 
 
@@ -1289,18 +1345,18 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_coupon_preview(advertiser_id, id)
+        api_response = api_instance.get_advertiser_coupon_preview(advertiser_id, id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupon_preview: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupon_preview: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_coupon_preview(advertiser_id, id, width=width, height=height)
+        api_response = api_instance.get_advertiser_coupon_preview(advertiser_id, id, width=width, height=height)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupon_preview: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupon_preview: %s\n" % e)
 ```
 
 
@@ -1337,8 +1393,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_coupon_supported_sizes**
-> CouponSupportedSizesResponse get_coupon_supported_sizes(advertiser_id)
+# **get_advertiser_coupon_supported_sizes**
+> CouponSupportedSizesResponse get_advertiser_coupon_supported_sizes(advertiser_id)
 
 
 
@@ -1387,18 +1443,18 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_coupon_supported_sizes(advertiser_id)
+        api_response = api_instance.get_advertiser_coupon_supported_sizes(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupon_supported_sizes: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupon_supported_sizes: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_coupon_supported_sizes(advertiser_id, ad_set_id=ad_set_id)
+        api_response = api_instance.get_advertiser_coupon_supported_sizes(advertiser_id, ad_set_id=ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupon_supported_sizes: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupon_supported_sizes: %s\n" % e)
 ```
 
 
@@ -1433,8 +1489,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_coupons**
-> CouponListResponse get_coupons(advertiser_id)
+# **get_advertiser_coupons**
+> CouponListResponse get_advertiser_coupons(advertiser_id)
 
 
 
@@ -1484,18 +1540,18 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_coupons(advertiser_id)
+        api_response = api_instance.get_advertiser_coupons(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupons: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupons: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_coupons(advertiser_id, limit=limit, offset=offset)
+        api_response = api_instance.get_advertiser_coupons(advertiser_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_coupons: %s\n" % e)
+        print("Exception when calling CreativeApi->get_advertiser_coupons: %s\n" % e)
 ```
 
 
@@ -1531,12 +1587,111 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_advertiser_creatives**
+> CreativeListResponse get_advertiser_creatives(advertiser_id)
+
+
+
+Get the list of self-services Creatives for a given advertiser
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import creative_api
+from criteo_api_marketingsolutions_preview.model.creative_list_response import CreativeListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = creative_api.CreativeApi(api_client)
+    advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
+    limit = 1 # int | The number of creatives to be returned. The default is 50. (optional)
+    offset = 1 # int | The (zero-based) offset into the collection of creatives. The default is 0. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_advertiser_creatives(advertiser_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->get_advertiser_creatives: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_advertiser_creatives(advertiser_id, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->get_advertiser_creatives: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**| The advertiser identifier. |
+ **limit** | **int**| The number of creatives to be returned. The default is 50. | [optional]
+ **offset** | **int**| The (zero-based) offset into the collection of creatives. The default is 0. | [optional]
+
+### Return type
+
+[**CreativeListResponse**](CreativeListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The list of self-services Creatives is returned. |  -  |
+**400** | The request contained invalid parameters. |  -  |
+**401** | The request was not properly authorized. |  -  |
+**500** | A non-request based error occurred on the server. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_creative**
 > CreativeResponse get_creative(id)
 
 
 
-Get a Creative with its id
+Get a Creative from its id
 
 ### Example
 
@@ -1612,202 +1767,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The found creative is returned. |  -  |
-**400** | The request contained invalid parameters. |  -  |
-**401** | The request was not properly authorized. |  -  |
-**500** | A non-request based error occurred on the server. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_creative_preview_post**
-> str get_creative_preview_post(id)
-
-
-
-Get the preview of a specific Creative
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import creative_api
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = creative_api.CreativeApi(api_client)
-    id = "id_example" # str | The Creative identifier to preview.
-    width = 1 # int | The width of the Creative to preview. (optional)
-    height = 1 # int | The height of the Creative to preview. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_creative_preview_post(id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_creative_preview_post: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_creative_preview_post(id, width=width, height=height)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_creative_preview_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| The Creative identifier to preview. |
- **width** | **int**| The width of the Creative to preview. | [optional]
- **height** | **int**| The height of the Creative to preview. | [optional]
-
-### Return type
-
-**str**
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/html, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The preview HTML of a specific Creative is returned. |  -  |
-**400** | The request contained invalid parameters. |  -  |
-**403** | The request was not properly authorized. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_creatives**
-> CreativeListResponse get_creatives(advertiser_id)
-
-
-
-Get the list of self-services Creatives for a given advertiser
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import creative_api
-from criteo_api_marketingsolutions_preview.model.creative_list_response import CreativeListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = creative_api.CreativeApi(api_client)
-    advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    limit = 1 # int | The number of creatives to be returned. The default is 50. (optional)
-    offset = 1 # int | The (zero-based) offset into the collection of creatives. The default is 0. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_creatives(advertiser_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_creatives: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_creatives(advertiser_id, limit=limit, offset=offset)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CreativeApi->get_creatives: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **advertiser_id** | **str**| The advertiser identifier. |
- **limit** | **int**| The number of creatives to be returned. The default is 50. | [optional]
- **offset** | **int**| The (zero-based) offset into the collection of creatives. The default is 0. | [optional]
-
-### Return type
-
-[**CreativeListResponse**](CreativeListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The list of self-services Creatives is returned. |  -  |
 **400** | The request contained invalid parameters. |  -  |
 **401** | The request was not properly authorized. |  -  |
 **500** | A non-request based error occurred on the server. |  -  |

@@ -68,7 +68,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 rules=[
                     ProductSetRule(
                         operator="IsIn",
-                        field="Category1",
+                        field="OBSOLETE_Extradata",
                         values=[
                             "values_example",
                         ],

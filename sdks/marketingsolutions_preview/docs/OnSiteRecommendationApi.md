@@ -56,6 +56,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     on_site_reco_request = OnSiteRecoRequest(
         nb_requested_products=1,
         user_id="user_id_example",
+        identity_type="CtoBundle",
         user_events=[
             UserEvent(
                 product_external_id="product_external_id_example",

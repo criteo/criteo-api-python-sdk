@@ -51,7 +51,7 @@ Method | HTTP request | Description
 
 
 # **create_ad_set**
-> ResponseReadAdSet create_ad_set()
+> ResponseReadAdSet create_ad_set(create_ad_set_request)
 
 
 
@@ -160,12 +160,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="AdSet",
         ),
-    ) # CreateAdSetRequest | the ad sets to create (optional)
+    ) # CreateAdSetRequest | the ad sets to create
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.create_ad_set(create_ad_set_request=create_ad_set_request)
+        api_response = api_instance.create_ad_set(create_ad_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->create_ad_set: %s\n" % e)
@@ -176,7 +175,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_ad_set_request** | [**CreateAdSetRequest**](CreateAdSetRequest.md)| the ad sets to create | [optional]
+ **create_ad_set_request** | [**CreateAdSetRequest**](CreateAdSetRequest.md)| the ad sets to create |
 
 ### Return type
 
@@ -203,7 +202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_campaign**
-> CampaignV23Q1Response create_campaign()
+> CampaignV23Q1Response create_campaign(create_campaign_request)
 
 
 
@@ -262,12 +261,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="Campaign",
         ),
-    ) # CreateCampaignRequest | the campaigns to create (optional)
+    ) # CreateCampaignRequest | the campaigns to create
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.create_campaign(create_campaign_request=create_campaign_request)
+        api_response = api_instance.create_campaign(create_campaign_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->create_campaign: %s\n" % e)
@@ -278,7 +276,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_campaign_request** | [**CreateCampaignRequest**](CreateCampaignRequest.md)| the campaigns to create | [optional]
+ **create_campaign_request** | [**CreateCampaignRequest**](CreateCampaignRequest.md)| the campaigns to create |
 
 ### Return type
 
@@ -356,8 +354,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -470,8 +468,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -584,8 +582,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -698,8 +696,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -2768,8 +2766,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -2881,8 +2879,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -2992,8 +2990,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -3106,8 +3104,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -3220,8 +3218,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -3334,8 +3332,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -3448,8 +3446,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -3562,8 +3560,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=EntityWrapperOfTargetingEntity(
             type="type_example",
             attributes=TargetingEntity(
-                type="type_example",
-                mode="mode_example",
+                type="DOMAIN",
+                mode="BLOCKLIST",
                 data=[
                     EntityFilter(
                         value="value_example",
@@ -4244,7 +4242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_ad_set_audience**
-> AdSetAudienceLinkEntityV1Response update_ad_set_audience(ad_set_id)
+> AdSetAudienceLinkEntityV1Response update_ad_set_audience(ad_set_id, ad_set_audience_link_input_entity_v1)
 
 
 
@@ -4298,19 +4296,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # AdSetAudienceLinkInputEntityV1 | Ad set-Audience update request. (optional)
+    ) # AdSetAudienceLinkInputEntityV1 | Ad set-Audience update request.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_ad_set_audience(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->update_ad_set_audience: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_ad_set_audience(ad_set_id, ad_set_audience_link_input_entity_v1=ad_set_audience_link_input_entity_v1)
+        api_response = api_instance.update_ad_set_audience(ad_set_id, ad_set_audience_link_input_entity_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->update_ad_set_audience: %s\n" % e)
@@ -4322,7 +4312,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| The ad set ID. |
- **ad_set_audience_link_input_entity_v1** | [**AdSetAudienceLinkInputEntityV1**](AdSetAudienceLinkInputEntityV1.md)| Ad set-Audience update request. | [optional]
+ **ad_set_audience_link_input_entity_v1** | [**AdSetAudienceLinkInputEntityV1**](AdSetAudienceLinkInputEntityV1.md)| Ad set-Audience update request. |
 
 ### Return type
 

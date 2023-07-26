@@ -1,10 +1,11 @@
 # AdvertiserCreationInput
 
-Infomation for creating an advertiser
+Information for creating an advertiser
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**agency_id** | **str** | ID of the agency requesting the advertiser creation | 
 **account_name** | **str** | The Account Name; This will not be in fact the Advertiser name | 
 **website_url** | **str** | Website url | 
 **country_iso_code** | **str** | Country ISO code | 

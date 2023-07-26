@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **format** | **str** | One of \&quot;json\&quot; (default),\&quot;json-compact\&quot;,\&quot;json-newline\&quot; or \&quot;csv\&quot; | [optional]  if omitted the server will use the default value of "json"
 **id** | **str** | The id of the campaign or line item.  Either &#39;id&#39; or &#39;ids&#39; must be specified, but not both | [optional] 
 **ids** | **[str]** | The ids of the campaigns or line items.  Either &#39;id&#39; or &#39;ids&#39; must be specified, but not both | [optional] 
+**revenue_type** | **str** |  | [optional] 
 **time_zone** | **str** |  | [optional] 
 **view_attribution_window** | **str** | Defaults to value from campaign or one of \&quot;none\&quot;, \&quot;1D\&quot;, \&quot;7D\&quot;, \&quot;14D\&quot;, or \&quot;30D\&quot;. If specified, must be less than clickAttributionWindow, which must also be specified. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

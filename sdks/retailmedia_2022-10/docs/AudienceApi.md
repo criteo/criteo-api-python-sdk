@@ -54,7 +54,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2022_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    account_id = "68004146450571264" # str | ID of the account to which this audience belongs.
+    account_id = 68004146450571264 # int | ID of the account to which this audience belongs.
     create_retail_media_audience_request = CreateRetailMediaAudienceRequest(
         data=CreateRetailMediaAudienceBody(
             type="RetailMediaAudience",
@@ -62,12 +62,12 @@ with criteo_api_retailmedia_v2022_10.ApiClient(configuration) as api_client:
                 user_type="viewer",
                 lookback_window="P7D",
                 brand_ids=[
-                    "brand_ids_example",
+                    1,
                 ],
                 category_ids=[
-                    "category_ids_example",
+                    1,
                 ],
-                retailer_id="68004146450571264",
+                retailer_id=6841,
                 name="Test audience",
             ),
         ),
@@ -86,7 +86,7 @@ with criteo_api_retailmedia_v2022_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| ID of the account to which this audience belongs. |
+ **account_id** | **int**| ID of the account to which this audience belongs. |
  **create_retail_media_audience_request** | [**CreateRetailMediaAudienceRequest**](CreateRetailMediaAudienceRequest.md)|  |
 
 ### Return type

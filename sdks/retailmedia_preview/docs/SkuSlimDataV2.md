@@ -5,15 +5,13 @@ Slim  version of Sku Data model
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**price** | **float** | The price of the product on the retailer site. | 
+**price** | **float, none_type** | The price of the product on the retailer site. Can be omitted in certain circumstances | 
 **is_in_stock** | **bool** | An indication of if the retailer currently has the product in stock. | 
 **updated_at** | **datetime** | The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string. | 
 **name** | **str** | A short product name. | [optional] 
 **description** | **str** | A short description of the product. | [optional] 
-**retailer_category** | [**RetailerCategory**](RetailerCategory.md) |  | [optional] 
-**global_category_id** | **str** | The global category Id. | [optional] 
-**global_brand** | [**GlobalBrand**](GlobalBrand.md) |  | [optional] 
-**retailer_brand** | [**RetailerBrand**](RetailerBrand.md) |  | [optional] 
+**category** | [**Category**](Category.md) |  | [optional] 
+**brand** | [**Brand**](Brand.md) |  | [optional] 
 **gtin** | **str** | A GTIN identifier for the product if available. Covers variations such as EANs and UPCs. | [optional] 
 **mpn** | **str** | The MPN for the product if available. | [optional] 
 **image_url** | **str** | An http image resource provided by the retailer. | [optional] 

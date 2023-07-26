@@ -6,7 +6,7 @@ the contactlist operation attributes
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **operation** | **str** | The action recorded | 
-**contact_list_id** | **str** | the affected user list id | [optional] 
+**contact_list_id** | **int** | the affected user list id | [optional] 
 **request_date** | **datetime** | When the action was recorded | [optional] 
 **identifier_type** | **str** | The schema specified for of the identifiers | [optional] 
 **nb_valid_identifiers** | **int** | How many identifiers were valid for the specified schema | [optional] 

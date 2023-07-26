@@ -139,13 +139,16 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # Create an instance of the API class
     api_instance = advertiser_api.AdvertiserApi(api_client)
     advertiser_creation_request = AdvertiserCreationRequest(
-        type="campaign",
-        data=AdvertiserCreationInput(
-            account_name="account_name_example",
-            website_url="website_url_example",
-            country_iso_code="country_iso_code_example",
-            currency_iso_code="currency_iso_code_example",
-            industry_id="industry_id_example",
+        data=ValueResourceOfAdvertiserCreationInput(
+            type="type_example",
+            attributes=AdvertiserCreationInput(
+                agency_id="agency_id_example",
+                account_name="account_name_example",
+                website_url="website_url_example",
+                country_iso_code="country_iso_code_example",
+                currency_iso_code="currency_iso_code_example",
+                industry_id="industry_id_example",
+            ),
         ),
     ) # AdvertiserCreationRequest | 
 

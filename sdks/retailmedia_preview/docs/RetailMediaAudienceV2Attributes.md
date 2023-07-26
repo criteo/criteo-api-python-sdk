@@ -5,7 +5,7 @@ Properties of the returned Audience
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**retailer_id** | **str** | ID of the retailer associated with this audience | 
+**retailer_id** | **int** | ID of the retailer associated with this audience | 
 **name** | **str** | Name of the audience. | 
 **user_behavior_details** | [**UserBehaviorDetailsV2**](UserBehaviorDetailsV2.md) |  | [optional] 
 **customer_list_details** | [**CustomerListDetails**](CustomerListDetails.md) |  | [optional] 

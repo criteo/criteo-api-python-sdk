@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **start_date** | **datetime** | Start date of streaming products collection | 
 **end_date** | **datetime** | End date of streaming products collection | 
 **total** | **int** | The number of total products at endDate moment | 
-**displayable** | **int** | The number of displayable products at endDate moment | 
-**non_displayable** | **int** | The number of non displayable products at endDate moment | 
+**variant** | **int** | The number of total variant products at endDate moment | 
+**displayable** | **int** | The number of total displayable products at endDate moment | 
+**non_displayable** | **int** | The number of total non-displayable products at endDate moment | 
 **added** | **int** | The number of inserted products during the period between startDate and endDate | 
 **deleted** | **int** | The number of deleted products during the period between startDate and endDate | 
 **updated** | **int** | The number of updated products during the period between startDate and endDate | 

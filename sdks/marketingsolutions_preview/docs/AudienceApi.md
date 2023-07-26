@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/create | 
 [**bulk_create_audiences**](AudienceApi.md#bulk_create_audiences) | **POST** /preview/marketing-solutions/audiences/create | 
-[**bulk_delete_audience_segment**](AudienceApi.md#bulk_delete_audience_segment) | **POST** /preview/marketing-solutions/audience-segments/delete | 
+[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/delete | 
 [**bulk_delete_audiences**](AudienceApi.md#bulk_delete_audiences) | **POST** /preview/marketing-solutions/audiences/delete | 
 [**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /preview/marketing-solutions/audience-segments | 
 [**bulk_update_audiences**](AudienceApi.md#bulk_update_audiences) | **PATCH** /preview/marketing-solutions/audiences | 
@@ -16,9 +16,9 @@ Method | HTTP request | Description
 [**delete_user_profiles**](AudienceApi.md#delete_user_profiles) | **POST** /preview/marketing-solutions/advertisers/{advertiserId}/user-profiles/delete | 
 [**estimate_audience_segment_size**](AudienceApi.md#estimate_audience_segment_size) | **POST** /preview/marketing-solutions/audience-segments/estimate-size | 
 [**estimate_audience_size**](AudienceApi.md#estimate_audience_size) | **POST** /preview/marketing-solutions/audiences/estimate-size | 
-[**get_contact_list_statistics**](AudienceApi.md#get_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
-[**get_in_market_brands**](AudienceApi.md#get_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | 
-[**get_in_market_interests**](AudienceApi.md#get_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | 
+[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
+[**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | 
+[**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | 
 [**modify_audience_users_with_attributes**](AudienceApi.md#modify_audience_users_with_attributes) | **PATCH** /preview/audiences/{audience-id}/contactlist-attributes | 
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/search | 
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/marketing-solutions/audiences/search | 
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **bulk_create_audience_segments**
-> AudienceSegmentEntityV1ListResponse bulk_create_audience_segments()
+> AudienceSegmentEntityV1ListResponse bulk_create_audience_segments(audience_segment_bulk_create_input_v1)
 
 
 
@@ -96,7 +96,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             "Low",
                         ],
                     ),
-                    prospecting={},
+                    prospecting=ProspectingCreateV1(
+                        days_since_last_visit_min=1,
+                        days_since_last_visit_max=1,
+                        users_type="Prospects",
+                    ),
                     contact_list={},
                     location=LocationCreateV1(
                         points_of_interest=[
@@ -120,12 +124,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ],
-    ) # AudienceSegmentBulkCreateInputV1 | Segment creation parameter (optional)
+    ) # AudienceSegmentBulkCreateInputV1 | Segment creation parameter
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.bulk_create_audience_segments(audience_segment_bulk_create_input_v1=audience_segment_bulk_create_input_v1)
+        api_response = api_instance.bulk_create_audience_segments(audience_segment_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->bulk_create_audience_segments: %s\n" % e)
@@ -136,7 +139,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_bulk_create_input_v1** | [**AudienceSegmentBulkCreateInputV1**](AudienceSegmentBulkCreateInputV1.md)| Segment creation parameter | [optional]
+ **audience_segment_bulk_create_input_v1** | [**AudienceSegmentBulkCreateInputV1**](AudienceSegmentBulkCreateInputV1.md)| Segment creation parameter |
 
 ### Return type
 
@@ -164,7 +167,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_create_audiences**
-> AudienceEntityV1ListResponse bulk_create_audiences()
+> AudienceEntityV1ListResponse bulk_create_audiences(audience_bulk_create_input_v1)
 
 
 
@@ -230,12 +233,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ],
-    ) # AudienceBulkCreateInputV1 |  (optional)
+    ) # AudienceBulkCreateInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.bulk_create_audiences(audience_bulk_create_input_v1=audience_bulk_create_input_v1)
+        api_response = api_instance.bulk_create_audiences(audience_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->bulk_create_audiences: %s\n" % e)
@@ -246,7 +248,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_bulk_create_input_v1** | [**AudienceBulkCreateInputV1**](AudienceBulkCreateInputV1.md)|  | [optional]
+ **audience_bulk_create_input_v1** | [**AudienceBulkCreateInputV1**](AudienceBulkCreateInputV1.md)|  |
 
 ### Return type
 
@@ -273,8 +275,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bulk_delete_audience_segment**
-> AudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segment()
+# **bulk_delete_audience_segments**
+> AudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segments(audience_segment_bulk_delete_input_v1)
 
 
 
@@ -327,15 +329,14 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="type_example",
             ),
         ],
-    ) # AudienceSegmentBulkDeleteInputV1 | Segment delete request. (optional)
+    ) # AudienceSegmentBulkDeleteInputV1 | Segment delete request.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.bulk_delete_audience_segment(audience_segment_bulk_delete_input_v1=audience_segment_bulk_delete_input_v1)
+        api_response = api_instance.bulk_delete_audience_segments(audience_segment_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_delete_audience_segment: %s\n" % e)
+        print("Exception when calling AudienceApi->bulk_delete_audience_segments: %s\n" % e)
 ```
 
 
@@ -343,7 +344,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_bulk_delete_input_v1** | [**AudienceSegmentBulkDeleteInputV1**](AudienceSegmentBulkDeleteInputV1.md)| Segment delete request. | [optional]
+ **audience_segment_bulk_delete_input_v1** | [**AudienceSegmentBulkDeleteInputV1**](AudienceSegmentBulkDeleteInputV1.md)| Segment delete request. |
 
 ### Return type
 
@@ -371,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_delete_audiences**
-> AudienceIdEntityV1ListResponse bulk_delete_audiences()
+> AudienceIdEntityV1ListResponse bulk_delete_audiences(audience_bulk_delete_input_v1)
 
 
 
@@ -424,12 +425,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="type_example",
             ),
         ],
-    ) # AudienceBulkDeleteInputV1 |  (optional)
+    ) # AudienceBulkDeleteInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.bulk_delete_audiences(audience_bulk_delete_input_v1=audience_bulk_delete_input_v1)
+        api_response = api_instance.bulk_delete_audiences(audience_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->bulk_delete_audiences: %s\n" % e)
@@ -440,7 +440,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_bulk_delete_input_v1** | [**AudienceBulkDeleteInputV1**](AudienceBulkDeleteInputV1.md)|  | [optional]
+ **audience_bulk_delete_input_v1** | [**AudienceBulkDeleteInputV1**](AudienceBulkDeleteInputV1.md)|  |
 
 ### Return type
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_update_audience_segments**
-> AudienceSegmentEntityV1ListResponse bulk_update_audience_segments()
+> AudienceSegmentEntityV1ListResponse bulk_update_audience_segments(audience_segment_bulk_update_input_v1)
 
 
 
@@ -559,17 +559,25 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     lookalike=LookalikeUpdateV1(
                         target_size=1,
                     ),
+                    prospecting=ProspectingUpdateV1(
+                        days_since_last_visit_min=NillableInt32(
+                            value=1,
+                        ),
+                        days_since_last_visit_max=NillableInt32(
+                            value=1,
+                        ),
+                        users_type="Prospects",
+                    ),
                 ),
                 id="id_example",
                 type="type_example",
             ),
         ],
-    ) # AudienceSegmentBulkUpdateInputV1 | Segment Update request (optional)
+    ) # AudienceSegmentBulkUpdateInputV1 | Segment Update request
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.bulk_update_audience_segments(audience_segment_bulk_update_input_v1=audience_segment_bulk_update_input_v1)
+        api_response = api_instance.bulk_update_audience_segments(audience_segment_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->bulk_update_audience_segments: %s\n" % e)
@@ -580,7 +588,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_bulk_update_input_v1** | [**AudienceSegmentBulkUpdateInputV1**](AudienceSegmentBulkUpdateInputV1.md)| Segment Update request | [optional]
+ **audience_segment_bulk_update_input_v1** | [**AudienceSegmentBulkUpdateInputV1**](AudienceSegmentBulkUpdateInputV1.md)| Segment Update request |
 
 ### Return type
 
@@ -608,7 +616,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_update_audiences**
-> AudienceEntityV1ListResponse bulk_update_audiences()
+> AudienceEntityV1ListResponse bulk_update_audiences(audience_bulk_update_input_v1)
 
 
 
@@ -676,12 +684,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="type_example",
             ),
         ],
-    ) # AudienceBulkUpdateInputV1 |  (optional)
+    ) # AudienceBulkUpdateInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.bulk_update_audiences(audience_bulk_update_input_v1=audience_bulk_update_input_v1)
+        api_response = api_instance.bulk_update_audiences(audience_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->bulk_update_audiences: %s\n" % e)
@@ -692,7 +699,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_bulk_update_input_v1** | [**AudienceBulkUpdateInputV1**](AudienceBulkUpdateInputV1.md)|  | [optional]
+ **audience_bulk_update_input_v1** | [**AudienceBulkUpdateInputV1**](AudienceBulkUpdateInputV1.md)|  |
 
 ### Return type
 
@@ -720,7 +727,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compute_audience_segments_sizes**
-> AudienceSegmentSizeEntityV1ListResponse compute_audience_segments_sizes()
+> AudienceSegmentSizeEntityV1ListResponse compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1)
 
 
 
@@ -773,12 +780,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="type_example",
             ),
         ],
-    ) # AudienceSegmentComputeSizesInputV1 |  (optional)
+    ) # AudienceSegmentComputeSizesInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1=audience_segment_compute_sizes_input_v1)
+        api_response = api_instance.compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->compute_audience_segments_sizes: %s\n" % e)
@@ -789,7 +795,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_compute_sizes_input_v1** | [**AudienceSegmentComputeSizesInputV1**](AudienceSegmentComputeSizesInputV1.md)|  | [optional]
+ **audience_segment_compute_sizes_input_v1** | [**AudienceSegmentComputeSizesInputV1**](AudienceSegmentComputeSizesInputV1.md)|  |
 
 ### Return type
 
@@ -817,7 +823,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compute_audiences_sizes**
-> AudienceSizeEntityV1ListResponse compute_audiences_sizes()
+> AudienceSizeEntityV1ListResponse compute_audiences_sizes(audience_compute_sizes_input_v1)
 
 
 
@@ -870,12 +876,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="type_example",
             ),
         ],
-    ) # AudienceComputeSizesInputV1 |  (optional)
+    ) # AudienceComputeSizesInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.compute_audiences_sizes(audience_compute_sizes_input_v1=audience_compute_sizes_input_v1)
+        api_response = api_instance.compute_audiences_sizes(audience_compute_sizes_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->compute_audiences_sizes: %s\n" % e)
@@ -886,7 +891,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_compute_sizes_input_v1** | [**AudienceComputeSizesInputV1**](AudienceComputeSizesInputV1.md)|  | [optional]
+ **audience_compute_sizes_input_v1** | [**AudienceComputeSizesInputV1**](AudienceComputeSizesInputV1.md)|  |
 
 ### Return type
 
@@ -1103,7 +1108,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **estimate_audience_segment_size**
-> AudienceSegmentSizeEstimationV1Response estimate_audience_segment_size()
+> AudienceSegmentSizeEstimationV1Response estimate_audience_segment_size(audience_segment_estimate_size_input_v1)
 
 
 
@@ -1181,12 +1186,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ),
-    ) # AudienceSegmentEstimateSizeInputV1 |  (optional)
+    ) # AudienceSegmentEstimateSizeInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.estimate_audience_segment_size(audience_segment_estimate_size_input_v1=audience_segment_estimate_size_input_v1)
+        api_response = api_instance.estimate_audience_segment_size(audience_segment_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->estimate_audience_segment_size: %s\n" % e)
@@ -1197,7 +1201,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_estimate_size_input_v1** | [**AudienceSegmentEstimateSizeInputV1**](AudienceSegmentEstimateSizeInputV1.md)|  | [optional]
+ **audience_segment_estimate_size_input_v1** | [**AudienceSegmentEstimateSizeInputV1**](AudienceSegmentEstimateSizeInputV1.md)|  |
 
 ### Return type
 
@@ -1225,7 +1229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **estimate_audience_size**
-> AudienceSizeEstimationV1Response estimate_audience_size()
+> AudienceSizeEstimationV1Response estimate_audience_size(audience_estimate_size_input_v1)
 
 
 
@@ -1287,12 +1291,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ),
-    ) # AudienceEstimateSizeInputV1 |  (optional)
+    ) # AudienceEstimateSizeInputV1 | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.estimate_audience_size(audience_estimate_size_input_v1=audience_estimate_size_input_v1)
+        api_response = api_instance.estimate_audience_size(audience_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->estimate_audience_size: %s\n" % e)
@@ -1303,7 +1306,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_estimate_size_input_v1** | [**AudienceEstimateSizeInputV1**](AudienceEstimateSizeInputV1.md)|  | [optional]
+ **audience_estimate_size_input_v1** | [**AudienceEstimateSizeInputV1**](AudienceEstimateSizeInputV1.md)|  |
 
 ### Return type
 
@@ -1330,8 +1333,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_contact_list_statistics**
-> ContactListStatisticsEntityV1Response get_contact_list_statistics(audience_segment_id)
+# **get_audience_segment_contact_list_statistics**
+> ContactListStatisticsEntityV1Response get_audience_segment_contact_list_statistics(audience_segment_id)
 
 
 
@@ -1379,10 +1382,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_contact_list_statistics(audience_segment_id)
+        api_response = api_instance.get_audience_segment_contact_list_statistics(audience_segment_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->get_contact_list_statistics: %s\n" % e)
+        print("Exception when calling AudienceApi->get_audience_segment_contact_list_statistics: %s\n" % e)
 ```
 
 
@@ -1416,8 +1419,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_in_market_brands**
-> InMarketAudienceSegmentBrandEntityV1ListResponse get_in_market_brands(advertiser_id, country)
+# **get_audience_segments_in_market_brands**
+> InMarketAudienceSegmentBrandEntityV1ListResponse get_audience_segments_in_market_brands(advertiser_id, country)
 
 
 
@@ -1466,10 +1469,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_in_market_brands(advertiser_id, country)
+        api_response = api_instance.get_audience_segments_in_market_brands(advertiser_id, country)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->get_in_market_brands: %s\n" % e)
+        print("Exception when calling AudienceApi->get_audience_segments_in_market_brands: %s\n" % e)
 ```
 
 
@@ -1504,8 +1507,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_in_market_interests**
-> InMarketAudienceSegmentInterestEntityV1ListResponse get_in_market_interests(advertiser_id, country)
+# **get_audience_segments_in_market_interests**
+> InMarketAudienceSegmentInterestEntityV1ListResponse get_audience_segments_in_market_interests(advertiser_id, country)
 
 
 
@@ -1554,10 +1557,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_in_market_interests(advertiser_id, country)
+        api_response = api_instance.get_audience_segments_in_market_interests(advertiser_id, country)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->get_in_market_interests: %s\n" % e)
+        print("Exception when calling AudienceApi->get_audience_segments_in_market_interests: %s\n" % e)
 ```
 
 
@@ -1638,7 +1641,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_id = 1 # int | The id of the audience to amend
+    audience_id = "audience-id_example" # str | The id of the audience to amend
     contactlist_with_attributes_amendment_request = ContactlistWithAttributesAmendmentRequest(
         data=ContactlistWithAttributesAmendment(
             type="ContactlistWithUserAttributesAmendment",
@@ -1673,7 +1676,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_id** | **int**| The id of the audience to amend |
+ **audience_id** | **str**| The id of the audience to amend |
  **contactlist_with_attributes_amendment_request** | [**ContactlistWithAttributesAmendmentRequest**](ContactlistWithAttributesAmendmentRequest.md)|  |
 
 ### Return type
@@ -1700,7 +1703,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_audience_segments**
-> AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse search_audience_segments()
+> AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse search_audience_segments(audience_segment_search_input_v1)
 
 
 
@@ -1745,8 +1748,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    limit = 1 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional)
-    offset = 1 # int | The (zero-based) offset into the collection. The default is 0. (optional)
     audience_segment_search_input_v1 = AudienceSegmentSearchInputV1(
         data=AudienceSegmentSearchEntityV1Resource(
             type="type_example",
@@ -1762,12 +1763,21 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ],
             ),
         ),
-    ) # AudienceSegmentSearchInputV1 | Segment search filters. (optional)
+    ) # AudienceSegmentSearchInputV1 | Segment search filters.
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.search_audience_segments(audience_segment_search_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->search_audience_segments: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_audience_segments(limit=limit, offset=offset, audience_segment_search_input_v1=audience_segment_search_input_v1)
+        api_response = api_instance.search_audience_segments(audience_segment_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->search_audience_segments: %s\n" % e)
@@ -1778,9 +1788,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional]
- **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional]
- **audience_segment_search_input_v1** | [**AudienceSegmentSearchInputV1**](AudienceSegmentSearchInputV1.md)| Segment search filters. | [optional]
+ **audience_segment_search_input_v1** | [**AudienceSegmentSearchInputV1**](AudienceSegmentSearchInputV1.md)| Segment search filters. |
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
@@ -1808,7 +1818,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_audiences**
-> AudienceEntityV1AudienceSearchMetadataV1ListResponse search_audiences()
+> AudienceEntityV1AudienceSearchMetadataV1ListResponse search_audiences(audience_search_input_v1)
 
 
 
@@ -1853,8 +1863,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    limit = 1 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional)
-    offset = 1 # int | The (zero-based) offset into the collection. The default is 0. (optional)
     audience_search_input_v1 = AudienceSearchInputV1(
         data=AudienceSearchEntityV1Resource(
             type="type_example",
@@ -1873,12 +1881,21 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ],
             ),
         ),
-    ) # AudienceSearchInputV1 | Audience search filters. (optional)
+    ) # AudienceSearchInputV1 | Audience search filters.
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.search_audiences(audience_search_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->search_audiences: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_audiences(limit=limit, offset=offset, audience_search_input_v1=audience_search_input_v1)
+        api_response = api_instance.search_audiences(audience_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AudienceApi->search_audiences: %s\n" % e)
@@ -1889,9 +1906,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional]
- **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional]
- **audience_search_input_v1** | [**AudienceSearchInputV1**](AudienceSearchInputV1.md)| Audience search filters. | [optional]
+ **audience_search_input_v1** | [**AudienceSearchInputV1**](AudienceSearchInputV1.md)| Audience search filters. |
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
@@ -2091,7 +2108,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     "identifiers_example",
                 ],
                 gum_caller_id=1,
-                internal_identifiers=True,
             ),
         ),
     ) # ContactlistAmendmentRequest | 

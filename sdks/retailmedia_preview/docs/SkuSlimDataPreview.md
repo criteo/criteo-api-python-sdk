@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **global_brand_id** | **str** | The global brand id associated to the product. | 
 **global_brand_name** | **str** | The name of the global brand. | 
-**price** | **float** | The price of the product on the retailer site. | 
+**price** | **float, none_type** | The price of the product on the retailer site. Can be omitted in certain circumstances | 
 **is_in_stock** | **bool** | An indication of if the retailer currently has the product in stock. | 
 **updated_at** | **datetime** | The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string. | 
 **name** | **str** | A short product name. | [optional] 
