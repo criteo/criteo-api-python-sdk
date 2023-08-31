@@ -60,6 +60,7 @@ class DynamicAttributes(ModelNormal):
 
     allowed_values = {
         ('product_image_display',): {
+            'None': None,
             'SHOWFULLIMAGE': "ShowFullImage",
             'ZOOMONIMAGE': "ZoomOnImage",
         },
@@ -95,13 +96,13 @@ class DynamicAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            'logos': ([ImageShape],),  # noqa: E501
-            'creative_background_color': (str,),  # noqa: E501
-            'body_text_color': (str,),  # noqa: E501
-            'prices_color': (str,),  # noqa: E501
-            'primary_font': (str,),  # noqa: E501
-            'calls_to_action': ([str],),  # noqa: E501
-            'product_image_display': (str,),  # noqa: E501
+            'logos': ([ImageShape], none_type,),  # noqa: E501
+            'creative_background_color': (str, none_type,),  # noqa: E501
+            'body_text_color': (str, none_type,),  # noqa: E501
+            'prices_color': (str, none_type,),  # noqa: E501
+            'primary_font': (str, none_type,),  # noqa: E501
+            'calls_to_action': ([str], none_type,),  # noqa: E501
+            'product_image_display': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -160,13 +161,13 @@ class DynamicAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logos ([ImageShape]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
-            creative_background_color (str): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
-            body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
-            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
-            primary_font (str): Font of the primary font  Valid supported font like \"Arial\". [optional]  # noqa: E501
-            calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.. [optional]  # noqa: E501
-            product_image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
+            logos ([ImageShape], none_type): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
+            creative_background_color (str, none_type): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            body_text_color (str, none_type): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            prices_color (str, none_type): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            primary_font (str, none_type): Font of the primary font  Valid supported font like \"Arial\". [optional]  # noqa: E501
+            calls_to_action ([str], none_type): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.. [optional]  # noqa: E501
+            product_image_display (str, none_type): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -252,13 +253,13 @@ class DynamicAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logos ([ImageShape]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
-            creative_background_color (str): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
-            body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
-            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
-            primary_font (str): Font of the primary font  Valid supported font like \"Arial\". [optional]  # noqa: E501
-            calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.. [optional]  # noqa: E501
-            product_image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
+            logos ([ImageShape], none_type): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
+            creative_background_color (str, none_type): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            body_text_color (str, none_type): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            prices_color (str, none_type): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            primary_font (str, none_type): Font of the primary font  Valid supported font like \"Arial\". [optional]  # noqa: E501
+            calls_to_action ([str], none_type): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.. [optional]  # noqa: E501
+            product_image_display (str, none_type): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

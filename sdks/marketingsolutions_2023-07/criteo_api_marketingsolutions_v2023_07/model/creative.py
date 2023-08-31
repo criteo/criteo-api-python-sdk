@@ -97,9 +97,9 @@ class Creative(ModelNormal):
             'author': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'format': (str,),  # noqa: E501
-            'dataset_id': (str,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'format': (str, none_type,),  # noqa: E501
+            'dataset_id': (str, none_type,),  # noqa: E501
             'image_attributes': (ImageAttributes,),  # noqa: E501
             'html_tag_attributes': (HtmlTagAttributes,),  # noqa: E501
             'dynamic_attributes': (DynamicAttributes,),  # noqa: E501
@@ -172,9 +172,9 @@ class Creative(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): The description of the creative. [optional]  # noqa: E501
-            format (str): The format of the creative. [optional]  # noqa: E501
-            dataset_id (str): Data set id linked to the Creative. [optional]  # noqa: E501
+            description (str, none_type): The description of the creative. [optional]  # noqa: E501
+            format (str, none_type): The format of the creative. [optional]  # noqa: E501
+            dataset_id (str, none_type): Data set id linked to the Creative. [optional]  # noqa: E501
             image_attributes (ImageAttributes): [optional]  # noqa: E501
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
@@ -274,9 +274,9 @@ class Creative(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): The description of the creative. [optional]  # noqa: E501
-            format (str): The format of the creative. [optional]  # noqa: E501
-            dataset_id (str): Data set id linked to the Creative. [optional]  # noqa: E501
+            description (str, none_type): The description of the creative. [optional]  # noqa: E501
+            format (str, none_type): The format of the creative. [optional]  # noqa: E501
+            dataset_id (str, none_type): Data set id linked to the Creative. [optional]  # noqa: E501
             image_attributes (ImageAttributes): [optional]  # noqa: E501
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501

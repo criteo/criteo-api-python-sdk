@@ -81,7 +81,7 @@ class AudienceSegmentSizeEstimationV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'size': (int,),  # noqa: E501
+            'size': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,7 +134,7 @@ class AudienceSegmentSizeEstimationV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            size (int): [optional]  # noqa: E501
+            size (int, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class AudienceSegmentSizeEstimationV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            size (int): [optional]  # noqa: E501
+            size (int, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

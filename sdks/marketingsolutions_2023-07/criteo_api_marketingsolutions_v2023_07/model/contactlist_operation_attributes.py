@@ -82,12 +82,12 @@ class ContactlistOperationAttributes(ModelNormal):
         """
         return {
             'operation': (str,),  # noqa: E501
-            'contact_list_id': (int,),  # noqa: E501
-            'request_date': (datetime,),  # noqa: E501
-            'identifier_type': (str,),  # noqa: E501
-            'nb_valid_identifiers': (int,),  # noqa: E501
-            'nb_invalid_identifiers': (int,),  # noqa: E501
-            'sample_invalid_identifiers': ([str],),  # noqa: E501
+            'contact_list_id': (int, none_type,),  # noqa: E501
+            'request_date': (datetime, none_type,),  # noqa: E501
+            'identifier_type': (str, none_type,),  # noqa: E501
+            'nb_valid_identifiers': (int, none_type,),  # noqa: E501
+            'nb_invalid_identifiers': (int, none_type,),  # noqa: E501
+            'sample_invalid_identifiers': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,12 +149,12 @@ class ContactlistOperationAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            contact_list_id (int): the affected user list id. [optional]  # noqa: E501
-            request_date (datetime): When the action was recorded. [optional]  # noqa: E501
-            identifier_type (str): The schema specified for of the identifiers. [optional]  # noqa: E501
-            nb_valid_identifiers (int): How many identifiers were valid for the specified schema. [optional]  # noqa: E501
-            nb_invalid_identifiers (int): How many identifiers were invalid for the specified schema. [optional]  # noqa: E501
-            sample_invalid_identifiers ([str]): A sample of invalid identifiers if there is some. [optional]  # noqa: E501
+            contact_list_id (int, none_type): the affected user list id. [optional]  # noqa: E501
+            request_date (datetime, none_type): When the action was recorded. [optional]  # noqa: E501
+            identifier_type (str, none_type): The schema specified for of the identifiers. [optional]  # noqa: E501
+            nb_valid_identifiers (int, none_type): How many identifiers were valid for the specified schema. [optional]  # noqa: E501
+            nb_invalid_identifiers (int, none_type): How many identifiers were invalid for the specified schema. [optional]  # noqa: E501
+            sample_invalid_identifiers ([str], none_type): A sample of invalid identifiers if there is some. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,12 +244,12 @@ class ContactlistOperationAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            contact_list_id (int): the affected user list id. [optional]  # noqa: E501
-            request_date (datetime): When the action was recorded. [optional]  # noqa: E501
-            identifier_type (str): The schema specified for of the identifiers. [optional]  # noqa: E501
-            nb_valid_identifiers (int): How many identifiers were valid for the specified schema. [optional]  # noqa: E501
-            nb_invalid_identifiers (int): How many identifiers were invalid for the specified schema. [optional]  # noqa: E501
-            sample_invalid_identifiers ([str]): A sample of invalid identifiers if there is some. [optional]  # noqa: E501
+            contact_list_id (int, none_type): the affected user list id. [optional]  # noqa: E501
+            request_date (datetime, none_type): When the action was recorded. [optional]  # noqa: E501
+            identifier_type (str, none_type): The schema specified for of the identifiers. [optional]  # noqa: E501
+            nb_valid_identifiers (int, none_type): How many identifiers were valid for the specified schema. [optional]  # noqa: E501
+            nb_invalid_identifiers (int, none_type): How many identifiers were invalid for the specified schema. [optional]  # noqa: E501
+            sample_invalid_identifiers ([str], none_type): A sample of invalid identifiers if there is some. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -95,9 +95,9 @@ class PatchAdSetCategoryBidResultListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([PatchAdSetCategoryBidResultResource],),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
-            'errors': ([ProblemDetails],),  # noqa: E501
+            'data': ([PatchAdSetCategoryBidResultResource], none_type,),  # noqa: E501
+            'warnings': ([ProblemDetails], none_type,),  # noqa: E501
+            'errors': ([ProblemDetails], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -154,9 +154,9 @@ class PatchAdSetCategoryBidResultListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([PatchAdSetCategoryBidResultResource]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
+            data ([PatchAdSetCategoryBidResultResource], none_type): [optional]  # noqa: E501
+            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
+            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,9 +242,9 @@ class PatchAdSetCategoryBidResultListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([PatchAdSetCategoryBidResultResource]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
+            data ([PatchAdSetCategoryBidResultResource], none_type): [optional]  # noqa: E501
+            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
+            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

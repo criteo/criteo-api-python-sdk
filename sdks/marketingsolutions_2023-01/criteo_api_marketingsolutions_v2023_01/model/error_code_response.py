@@ -90,7 +90,7 @@ class ErrorCodeResponse(ModelNormal):
         lazy_import()
         return {
             'errors': ([AudienceError],),  # noqa: E501
-            'warnings': ([AudienceWarning],),  # noqa: E501
+            'warnings': ([AudienceWarning], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -147,7 +147,7 @@ class ErrorCodeResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            warnings ([AudienceWarning]): [optional]  # noqa: E501
+            warnings ([AudienceWarning], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,7 +237,7 @@ class ErrorCodeResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            warnings ([AudienceWarning]): [optional]  # noqa: E501
+            warnings ([AudienceWarning], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

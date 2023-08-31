@@ -88,12 +88,12 @@ class ReportStatusAttributes(ModelNormal):
         """
         return {
             'status': (str,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
-            'expires_at': (datetime,),  # noqa: E501
-            'file_size_bytes': (int,),  # noqa: E501
-            'md5_checksum': (str,),  # noqa: E501
-            'message': (str,),  # noqa: E501
-            'row_count': (int,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
+            'expires_at': (datetime, none_type,),  # noqa: E501
+            'file_size_bytes': (int, none_type,),  # noqa: E501
+            'md5_checksum': (str, none_type,),  # noqa: E501
+            'message': (str, none_type,),  # noqa: E501
+            'row_count': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -155,12 +155,12 @@ class ReportStatusAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (datetime): Timestamp when the report started to execute. [optional]  # noqa: E501
-            expires_at (datetime): Timestamp when the cached report will expire. [optional]  # noqa: E501
-            file_size_bytes (int): Total size of file, only populated on success. [optional]  # noqa: E501
-            md5_checksum (str): The MD5 checksum of the content, only populated on success. [optional]  # noqa: E501
-            message (str): Failure message, only populated on failure. [optional]  # noqa: E501
-            row_count (int): Rows of data in report, only populated on success. [optional]  # noqa: E501
+            created_at (datetime, none_type): Timestamp when the report started to execute. [optional]  # noqa: E501
+            expires_at (datetime, none_type): Timestamp when the cached report will expire. [optional]  # noqa: E501
+            file_size_bytes (int, none_type): Total size of file, only populated on success. [optional]  # noqa: E501
+            md5_checksum (str, none_type): The MD5 checksum of the content, only populated on success. [optional]  # noqa: E501
+            message (str, none_type): Failure message, only populated on failure. [optional]  # noqa: E501
+            row_count (int, none_type): Rows of data in report, only populated on success. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,12 +250,12 @@ class ReportStatusAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (datetime): Timestamp when the report started to execute. [optional]  # noqa: E501
-            expires_at (datetime): Timestamp when the cached report will expire. [optional]  # noqa: E501
-            file_size_bytes (int): Total size of file, only populated on success. [optional]  # noqa: E501
-            md5_checksum (str): The MD5 checksum of the content, only populated on success. [optional]  # noqa: E501
-            message (str): Failure message, only populated on failure. [optional]  # noqa: E501
-            row_count (int): Rows of data in report, only populated on success. [optional]  # noqa: E501
+            created_at (datetime, none_type): Timestamp when the report started to execute. [optional]  # noqa: E501
+            expires_at (datetime, none_type): Timestamp when the cached report will expire. [optional]  # noqa: E501
+            file_size_bytes (int, none_type): Total size of file, only populated on success. [optional]  # noqa: E501
+            md5_checksum (str, none_type): The MD5 checksum of the content, only populated on success. [optional]  # noqa: E501
+            message (str, none_type): Failure message, only populated on failure. [optional]  # noqa: E501
+            row_count (int, none_type): Rows of data in report, only populated on success. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

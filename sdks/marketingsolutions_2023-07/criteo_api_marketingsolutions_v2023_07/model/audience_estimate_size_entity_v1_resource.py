@@ -87,7 +87,7 @@ class AudienceEstimateSizeEntityV1Resource(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
             'attributes': (AudienceEstimateSizeEntityV1,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class AudienceEstimateSizeEntityV1Resource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
+            type (str, none_type): [optional]  # noqa: E501
             attributes (AudienceEstimateSizeEntityV1): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class AudienceEstimateSizeEntityV1Resource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
+            type (str, none_type): [optional]  # noqa: E501
             attributes (AudienceEstimateSizeEntityV1): [optional]  # noqa: E501
         """
 

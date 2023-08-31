@@ -60,6 +60,7 @@ class ProspectingUpdateV1(ModelNormal):
 
     allowed_values = {
         ('users_type',): {
+            'None': None,
             'PROSPECTS': "Prospects",
             'PROSPECTSORNONBUYERS': "ProspectsOrNonBuyers",
         },
@@ -93,7 +94,7 @@ class ProspectingUpdateV1(ModelNormal):
         return {
             'days_since_last_visit_min': (NillableInt32,),  # noqa: E501
             'days_since_last_visit_max': (NillableInt32,),  # noqa: E501
-            'users_type': (str,),  # noqa: E501
+            'users_type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -150,7 +151,7 @@ class ProspectingUpdateV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             days_since_last_visit_min (NillableInt32): [optional]  # noqa: E501
             days_since_last_visit_max (NillableInt32): [optional]  # noqa: E501
-            users_type (str): Type of users to target. [optional]  # noqa: E501
+            users_type (str, none_type): Type of users to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,7 +239,7 @@ class ProspectingUpdateV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             days_since_last_visit_min (NillableInt32): [optional]  # noqa: E501
             days_since_last_visit_max (NillableInt32): [optional]  # noqa: E501
-            users_type (str): Type of users to target. [optional]  # noqa: E501
+            users_type (str, none_type): Type of users to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

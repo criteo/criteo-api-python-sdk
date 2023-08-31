@@ -85,10 +85,10 @@ class AudienceAttributes(ModelNormal):
             'description': (str,),  # noqa: E501
             'created': (datetime,),  # noqa: E501
             'updated': (datetime,),  # noqa: E501
-            'advertiser_id': (str,),  # noqa: E501
-            'nb_lines': (int,),  # noqa: E501
-            'nb_lines_email': (int,),  # noqa: E501
-            'nb_matches_email': (int,),  # noqa: E501
+            'advertiser_id': (str, none_type,),  # noqa: E501
+            'nb_lines': (int, none_type,),  # noqa: E501
+            'nb_lines_email': (int, none_type,),  # noqa: E501
+            'nb_matches_email': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -154,10 +154,10 @@ class AudienceAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str): The advertiser id that owns this Audience. [optional]  # noqa: E501
-            nb_lines (int): The number of line in the audience available once processed. [optional]  # noqa: E501
-            nb_lines_email (int): The number of email line in the audience available once processed. [optional]  # noqa: E501
-            nb_matches_email (int): The number of email matches in the audience available once processed. [optional]  # noqa: E501
+            advertiser_id (str, none_type): The advertiser id that owns this Audience. [optional]  # noqa: E501
+            nb_lines (int, none_type): The number of line in the audience available once processed. [optional]  # noqa: E501
+            nb_lines_email (int, none_type): The number of email line in the audience available once processed. [optional]  # noqa: E501
+            nb_matches_email (int, none_type): The number of email matches in the audience available once processed. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,10 +253,10 @@ class AudienceAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str): The advertiser id that owns this Audience. [optional]  # noqa: E501
-            nb_lines (int): The number of line in the audience available once processed. [optional]  # noqa: E501
-            nb_lines_email (int): The number of email line in the audience available once processed. [optional]  # noqa: E501
-            nb_matches_email (int): The number of email matches in the audience available once processed. [optional]  # noqa: E501
+            advertiser_id (str, none_type): The advertiser id that owns this Audience. [optional]  # noqa: E501
+            nb_lines (int, none_type): The number of line in the audience available once processed. [optional]  # noqa: E501
+            nb_lines_email (int, none_type): The number of email line in the audience available once processed. [optional]  # noqa: E501
+            nb_matches_email (int, none_type): The number of email matches in the audience available once processed. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

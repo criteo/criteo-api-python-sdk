@@ -89,7 +89,7 @@ class HtmlTagAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            'tags': ([Tag],),  # noqa: E501
+            'tags': ([Tag], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,7 +142,7 @@ class HtmlTagAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            tags ([Tag]): An array containing the html tags. [optional]  # noqa: E501
+            tags ([Tag], none_type): An array containing the html tags. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,7 +228,7 @@ class HtmlTagAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            tags ([Tag]): An array containing the html tags. [optional]  # noqa: E501
+            tags ([Tag], none_type): An array containing the html tags. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

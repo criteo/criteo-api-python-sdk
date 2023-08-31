@@ -100,8 +100,8 @@ class CreateRetailMediaAudienceAttributes(ModelNormal):
             'lookback_window': (str,),  # noqa: E501
             'retailer_id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'brand_ids': ([int],),  # noqa: E501
-            'category_ids': ([int],),  # noqa: E501
+            'brand_ids': ([int], none_type,),  # noqa: E501
+            'category_ids': ([int], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -165,8 +165,8 @@ class CreateRetailMediaAudienceAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([int]): The brands to target. [optional]  # noqa: E501
-            category_ids ([int]): The categories to target. [optional]  # noqa: E501
+            brand_ids ([int], none_type): The brands to target. [optional]  # noqa: E501
+            category_ids ([int], none_type): The categories to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -262,8 +262,8 @@ class CreateRetailMediaAudienceAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([int]): The brands to target. [optional]  # noqa: E501
-            category_ids ([int]): The categories to target. [optional]  # noqa: E501
+            brand_ids ([int], none_type): The brands to target. [optional]  # noqa: E501
+            category_ids ([int], none_type): The categories to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

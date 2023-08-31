@@ -89,9 +89,9 @@ class InMarketAudienceSegmentInterestEntityV1ListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([InMarketAudienceSegmentInterestEntityV1Resource],),  # noqa: E501
-            'warnings': ([CommonProblem],),  # noqa: E501
-            'errors': ([CommonProblem],),  # noqa: E501
+            'data': ([InMarketAudienceSegmentInterestEntityV1Resource], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -148,9 +148,9 @@ class InMarketAudienceSegmentInterestEntityV1ListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([InMarketAudienceSegmentInterestEntityV1Resource]): [optional]  # noqa: E501
-            warnings ([CommonProblem]): [optional]  # noqa: E501
-            errors ([CommonProblem]): [optional]  # noqa: E501
+            data ([InMarketAudienceSegmentInterestEntityV1Resource], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,9 +236,9 @@ class InMarketAudienceSegmentInterestEntityV1ListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([InMarketAudienceSegmentInterestEntityV1Resource]): [optional]  # noqa: E501
-            warnings ([CommonProblem]): [optional]  # noqa: E501
-            errors ([CommonProblem]): [optional]  # noqa: E501
+            data ([InMarketAudienceSegmentInterestEntityV1Resource], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -91,8 +91,8 @@ class RetailMediaExternalv1ResourceOutcome(ModelNormal):
         """
         lazy_import()
         return {
-            'errors': ([RetailMediaExternalv1ProblemDetails],),  # noqa: E501
-            'warnings': ([RetailMediaExternalv1ProblemDetails],),  # noqa: E501
+            'errors': ([RetailMediaExternalv1ProblemDetails], none_type,),  # noqa: E501
+            'warnings': ([RetailMediaExternalv1ProblemDetails], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -148,8 +148,8 @@ class RetailMediaExternalv1ResourceOutcome(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
-            warnings ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
+            errors ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,8 +235,8 @@ class RetailMediaExternalv1ResourceOutcome(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
-            warnings ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
+            errors ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -102,12 +102,12 @@ class PlacementsReportQueryMessage(ModelNormal):
             'format': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'campaign_ids': (str,),  # noqa: E501
-            'adset_ids': (str,),  # noqa: E501
-            'environment': (str,),  # noqa: E501
-            'placement': (str,),  # noqa: E501
-            'disclosed': (bool,),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
+            'campaign_ids': (str, none_type,),  # noqa: E501
+            'adset_ids': (str, none_type,),  # noqa: E501
+            'environment': (str, none_type,),  # noqa: E501
+            'placement': (str, none_type,),  # noqa: E501
+            'disclosed': (bool, none_type,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -181,12 +181,12 @@ class PlacementsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_ids (str): The comma-separated list of campaign ids.. [optional]  # noqa: E501
-            adset_ids (str): The comma-separated list of adSet ids.. [optional]  # noqa: E501
-            environment (str): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
-            placement (str): Filter the value of the placement. [optional]  # noqa: E501
-            disclosed (bool): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            timezone (str): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            campaign_ids (str, none_type): The comma-separated list of campaign ids.. [optional]  # noqa: E501
+            adset_ids (str, none_type): The comma-separated list of adSet ids.. [optional]  # noqa: E501
+            environment (str, none_type): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
+            placement (str, none_type): Filter the value of the placement. [optional]  # noqa: E501
+            disclosed (bool, none_type): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -288,12 +288,12 @@ class PlacementsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_ids (str): The comma-separated list of campaign ids.. [optional]  # noqa: E501
-            adset_ids (str): The comma-separated list of adSet ids.. [optional]  # noqa: E501
-            environment (str): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
-            placement (str): Filter the value of the placement. [optional]  # noqa: E501
-            disclosed (bool): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            timezone (str): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            campaign_ids (str, none_type): The comma-separated list of campaign ids.. [optional]  # noqa: E501
+            adset_ids (str, none_type): The comma-separated list of adSet ids.. [optional]  # noqa: E501
+            environment (str, none_type): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
+            placement (str, none_type): Filter the value of the placement. [optional]  # noqa: E501
+            disclosed (bool, none_type): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

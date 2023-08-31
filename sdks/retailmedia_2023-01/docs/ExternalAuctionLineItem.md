@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **budget_remaining** | **float, none_type** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
-**end_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
+**end_date** | **date, none_type** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
 **max_bid** | **float, none_type** |  | [optional] 
 **budget** | **float, none_type** |  | [optional] 
 **monthly_pacing** | **float, none_type** |  | [optional] 

@@ -83,7 +83,7 @@ class TransparencyQueryMessage(ModelNormal):
         return {
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'should_display_product_ids': (bool,),  # noqa: E501
+            'should_display_product_ids': (bool, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,7 +142,7 @@ class TransparencyQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            should_display_product_ids (bool): Specify if the product ids are displayed in the report.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            should_display_product_ids (bool, none_type): Specify if the product ids are displayed in the report.. [optional] if omitted the server will use the default value of False  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,7 +234,7 @@ class TransparencyQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            should_display_product_ids (bool): Specify if the product ids are displayed in the report.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            should_display_product_ids (bool, none_type): Specify if the product ids are displayed in the report.. [optional] if omitted the server will use the default value of False  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

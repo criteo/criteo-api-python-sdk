@@ -89,7 +89,7 @@ class RequestsAdSetId(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([WriteModelAdSetId],),  # noqa: E501
+            'data': ([WriteModelAdSetId], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,7 +142,7 @@ class RequestsAdSetId(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([WriteModelAdSetId]): [optional]  # noqa: E501
+            data ([WriteModelAdSetId], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,7 +228,7 @@ class RequestsAdSetId(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([WriteModelAdSetId]): [optional]  # noqa: E501
+            data ([WriteModelAdSetId], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

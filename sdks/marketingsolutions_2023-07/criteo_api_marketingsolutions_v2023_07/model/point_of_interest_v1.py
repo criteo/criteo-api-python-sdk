@@ -81,9 +81,9 @@ class PointOfInterestV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
-            'latitude': (float,),  # noqa: E501
-            'longitude': (float,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'latitude': (float, none_type,),  # noqa: E501
+            'longitude': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,9 +138,9 @@ class PointOfInterestV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the point of interest. [optional]  # noqa: E501
-            latitude (float): ISO-6709 latitude (rounded at 5 decimals). [optional]  # noqa: E501
-            longitude (float): ISO-6709 longitude (rounded at 5 decimals). [optional]  # noqa: E501
+            name (str, none_type): Name of the point of interest. [optional]  # noqa: E501
+            latitude (float, none_type): ISO-6709 latitude (rounded at 5 decimals). [optional]  # noqa: E501
+            longitude (float, none_type): ISO-6709 longitude (rounded at 5 decimals). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,9 +226,9 @@ class PointOfInterestV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the point of interest. [optional]  # noqa: E501
-            latitude (float): ISO-6709 latitude (rounded at 5 decimals). [optional]  # noqa: E501
-            longitude (float): ISO-6709 longitude (rounded at 5 decimals). [optional]  # noqa: E501
+            name (str, none_type): Name of the point of interest. [optional]  # noqa: E501
+            latitude (float, none_type): ISO-6709 latitude (rounded at 5 decimals). [optional]  # noqa: E501
+            longitude (float, none_type): ISO-6709 longitude (rounded at 5 decimals). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

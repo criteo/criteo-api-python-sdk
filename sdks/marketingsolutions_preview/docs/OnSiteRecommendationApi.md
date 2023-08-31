@@ -65,6 +65,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
         ],
         ad_set_id=1,
+        ad_id=1,
         partner_id=1,
     ) # OnSiteRecoRequest |  (optional)
 

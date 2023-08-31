@@ -60,10 +60,12 @@ class PatchCampaignSpendLimit(ModelNormal):
 
     allowed_values = {
         ('spend_limit_type',): {
+            'None': None,
             'CAPPED': "capped",
             'UNCAPPED': "uncapped",
         },
         ('spend_limit_renewal',): {
+            'None': None,
             'UNDEFINED': "undefined",
             'DAILY': "daily",
             'MONTHLY': "monthly",
@@ -97,8 +99,8 @@ class PatchCampaignSpendLimit(ModelNormal):
         """
         lazy_import()
         return {
-            'spend_limit_type': (str,),  # noqa: E501
-            'spend_limit_renewal': (str,),  # noqa: E501
+            'spend_limit_type': (str, none_type,),  # noqa: E501
+            'spend_limit_renewal': (str, none_type,),  # noqa: E501
             'spend_limit_amount': (NillableDecimal,),  # noqa: E501
         }
 
@@ -154,8 +156,8 @@ class PatchCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_type (str): Whether your spend limit is capped or not. [optional]  # noqa: E501
-            spend_limit_renewal (str): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_type (str, none_type): Whether your spend limit is capped or not. [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): The pace of the spend limit renewal. [optional]  # noqa: E501
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
         """
 
@@ -242,8 +244,8 @@ class PatchCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_type (str): Whether your spend limit is capped or not. [optional]  # noqa: E501
-            spend_limit_renewal (str): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_type (str, none_type): Whether your spend limit is capped or not. [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): The pace of the spend limit renewal. [optional]  # noqa: E501
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
         """
 

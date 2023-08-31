@@ -28,6 +28,12 @@ criteo_api_retailmedia_v2023_07/model/application_summary_model_response.py
 criteo_api_retailmedia_v2023_07/model/asset.py
 criteo_api_retailmedia_v2023_07/model/asset_resource.py
 criteo_api_retailmedia_v2023_07/model/asset_response.py
+criteo_api_retailmedia_v2023_07/model/async_campaign_report.py
+criteo_api_retailmedia_v2023_07/model/async_campaign_report_request.py
+criteo_api_retailmedia_v2023_07/model/async_campaign_report_resource.py
+criteo_api_retailmedia_v2023_07/model/async_line_item_report.py
+criteo_api_retailmedia_v2023_07/model/async_line_item_report_request.py
+criteo_api_retailmedia_v2023_07/model/async_line_item_report_resource.py
 criteo_api_retailmedia_v2023_07/model/async_report_response.py
 criteo_api_retailmedia_v2023_07/model/auction_line_item_create_model_request.py
 criteo_api_retailmedia_v2023_07/model/auction_line_item_paged_list_response.py
@@ -40,9 +46,6 @@ criteo_api_retailmedia_v2023_07/model/balance202110_paged_list_response.py
 criteo_api_retailmedia_v2023_07/model/balance_campaign202110_list_request.py
 criteo_api_retailmedia_v2023_07/model/balance_campaign202110_paged_list_response.py
 criteo_api_retailmedia_v2023_07/model/campaign_attributes_v202301.py
-criteo_api_retailmedia_v2023_07/model/campaign_report.py
-criteo_api_retailmedia_v2023_07/model/campaign_report_request.py
-criteo_api_retailmedia_v2023_07/model/campaign_report_resource.py
 criteo_api_retailmedia_v2023_07/model/campaign_v202301.py
 criteo_api_retailmedia_v2023_07/model/category202204.py
 criteo_api_retailmedia_v2023_07/model/category202204_list_response.py
@@ -75,8 +78,6 @@ criteo_api_retailmedia_v2023_07/model/creative_create_model202207.py
 criteo_api_retailmedia_v2023_07/model/creative_update_model202207.py
 criteo_api_retailmedia_v2023_07/model/customer_list_details.py
 criteo_api_retailmedia_v2023_07/model/editable_campaign_attributes_v202301.py
-criteo_api_retailmedia_v2023_07/model/export_report_column.py
-criteo_api_retailmedia_v2023_07/model/export_report_meta_data.py
 criteo_api_retailmedia_v2023_07/model/external_account.py
 criteo_api_retailmedia_v2023_07/model/external_add_to_basket_ids_update_model202110.py
 criteo_api_retailmedia_v2023_07/model/external_add_to_basket_target202110.py
@@ -130,9 +131,6 @@ criteo_api_retailmedia_v2023_07/model/keyword_target202110_response.py
 criteo_api_retailmedia_v2023_07/model/line_item_bid_multipliers.py
 criteo_api_retailmedia_v2023_07/model/line_item_bid_multipliers_request.py
 criteo_api_retailmedia_v2023_07/model/line_item_bid_multipliers_response.py
-criteo_api_retailmedia_v2023_07/model/line_item_report.py
-criteo_api_retailmedia_v2023_07/model/line_item_report_request.py
-criteo_api_retailmedia_v2023_07/model/line_item_report_resource.py
 criteo_api_retailmedia_v2023_07/model/page_metadata.py
 criteo_api_retailmedia_v2023_07/model/page_type_environment.py
 criteo_api_retailmedia_v2023_07/model/post_campaign_v202301.py
@@ -144,9 +142,7 @@ criteo_api_retailmedia_v2023_07/model/problem_details.py
 criteo_api_retailmedia_v2023_07/model/promoted_product202110_list_request.py
 criteo_api_retailmedia_v2023_07/model/promoted_product202110_paged_list_response.py
 criteo_api_retailmedia_v2023_07/model/put_campaign_v202301.py
-criteo_api_retailmedia_v2023_07/model/report_data_response_resource.py
 criteo_api_retailmedia_v2023_07/model/report_outcome.py
-criteo_api_retailmedia_v2023_07/model/report_response.py
 criteo_api_retailmedia_v2023_07/model/resource_of_auction_line_item.py
 criteo_api_retailmedia_v2023_07/model/resource_of_auction_line_item_update_model.py
 criteo_api_retailmedia_v2023_07/model/resource_of_balance202110.py
@@ -219,6 +215,12 @@ docs/ApplicationSummaryModelResponse.md
 docs/Asset.md
 docs/AssetResource.md
 docs/AssetResponse.md
+docs/AsyncCampaignReport.md
+docs/AsyncCampaignReportRequest.md
+docs/AsyncCampaignReportResource.md
+docs/AsyncLineItemReport.md
+docs/AsyncLineItemReportRequest.md
+docs/AsyncLineItemReportResource.md
 docs/AsyncReportResponse.md
 docs/AuctionLineItemCreateModelRequest.md
 docs/AuctionLineItemPagedListResponse.md
@@ -233,9 +235,6 @@ docs/BalanceCampaign202110ListRequest.md
 docs/BalanceCampaign202110PagedListResponse.md
 docs/CampaignApi.md
 docs/CampaignAttributesV202301.md
-docs/CampaignReport.md
-docs/CampaignReportRequest.md
-docs/CampaignReportResource.md
 docs/CampaignV202301.md
 docs/Category202204.md
 docs/Category202204ListResponse.md
@@ -268,8 +267,6 @@ docs/CreativeCreateModel202207.md
 docs/CreativeUpdateModel202207.md
 docs/CustomerListDetails.md
 docs/EditableCampaignAttributesV202301.md
-docs/ExportReportColumn.md
-docs/ExportReportMetaData.md
 docs/ExternalAccount.md
 docs/ExternalAddToBasketIdsUpdateModel202110.md
 docs/ExternalAddToBasketTarget202110.md
@@ -324,9 +321,6 @@ docs/KeywordTarget202110Response.md
 docs/LineItemBidMultipliers.md
 docs/LineItemBidMultipliersRequest.md
 docs/LineItemBidMultipliersResponse.md
-docs/LineItemReport.md
-docs/LineItemReportRequest.md
-docs/LineItemReportResource.md
 docs/PageMetadata.md
 docs/PageTypeEnvironment.md
 docs/PostCampaignV202301.md
@@ -338,9 +332,7 @@ docs/ProblemDetails.md
 docs/PromotedProduct202110ListRequest.md
 docs/PromotedProduct202110PagedListResponse.md
 docs/PutCampaignV202301.md
-docs/ReportDataResponseResource.md
 docs/ReportOutcome.md
-docs/ReportResponse.md
 docs/ResourceOfAuctionLineItem.md
 docs/ResourceOfAuctionLineItemUpdateModel.md
 docs/ResourceOfBalance202110.md

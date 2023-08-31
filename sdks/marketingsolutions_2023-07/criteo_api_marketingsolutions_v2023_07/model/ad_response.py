@@ -94,8 +94,8 @@ class AdResponse(ModelNormal):
         lazy_import()
         return {
             'data': (AdResource,),  # noqa: E501
-            'warnings': ([CommonProblem],),  # noqa: E501
-            'errors': ([CommonProblem],),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -153,8 +153,8 @@ class AdResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (AdResource): [optional]  # noqa: E501
-            warnings ([CommonProblem]): [optional]  # noqa: E501
-            errors ([CommonProblem]): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,8 +241,8 @@ class AdResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (AdResource): [optional]  # noqa: E501
-            warnings ([CommonProblem]): [optional]  # noqa: E501
-            errors ([CommonProblem]): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -81,9 +81,9 @@ class ContactListStatisticsEntityV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'number_of_identifiers': (int,),  # noqa: E501
-            'number_of_matches': (int,),  # noqa: E501
-            'match_rate': (float,),  # noqa: E501
+            'number_of_identifiers': (int, none_type,),  # noqa: E501
+            'number_of_matches': (int, none_type,),  # noqa: E501
+            'match_rate': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,9 +138,9 @@ class ContactListStatisticsEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            number_of_identifiers (int): Number of identifiers in the contact list.. [optional]  # noqa: E501
-            number_of_matches (int): Number of matched identifiers in the contact list.. [optional]  # noqa: E501
-            match_rate (float): Percentage of matched identifiers in the contact list.  Can differ from matches/identifiers depending on the contact list type.. [optional]  # noqa: E501
+            number_of_identifiers (int, none_type): Number of identifiers in the contact list.. [optional]  # noqa: E501
+            number_of_matches (int, none_type): Number of matched identifiers in the contact list.. [optional]  # noqa: E501
+            match_rate (float, none_type): Percentage of matched identifiers in the contact list.  Can differ from matches/identifiers depending on the contact list type.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,9 +226,9 @@ class ContactListStatisticsEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            number_of_identifiers (int): Number of identifiers in the contact list.. [optional]  # noqa: E501
-            number_of_matches (int): Number of matched identifiers in the contact list.. [optional]  # noqa: E501
-            match_rate (float): Percentage of matched identifiers in the contact list.  Can differ from matches/identifiers depending on the contact list type.. [optional]  # noqa: E501
+            number_of_identifiers (int, none_type): Number of identifiers in the contact list.. [optional]  # noqa: E501
+            number_of_matches (int, none_type): Number of matched identifiers in the contact list.. [optional]  # noqa: E501
+            match_rate (float, none_type): Percentage of matched identifiers in the contact list.  Can differ from matches/identifiers depending on the contact list type.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generate_campaign_reports**](AnalyticsApi.md#generate_campaign_reports) | **POST** /2023-07/retail-media/reports/campaigns | 
-[**generate_line_items_reports**](AnalyticsApi.md#generate_line_items_reports) | **POST** /2023-07/retail-media/reports/line-items | 
+[**generate_async_campaign_report**](AnalyticsApi.md#generate_async_campaign_report) | **POST** /2023-07/retail-media/reports/campaigns | 
+[**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /2023-07/retail-media/reports/line-items | 
 [**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /2023-07/retail-media/reports/{reportId}/output | 
 [**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /2023-07/retail-media/reports/{reportId}/status | 
 
 
-# **generate_campaign_reports**
-> ReportResponse generate_campaign_reports(campaign_report_request)
+# **generate_async_campaign_report**
+> AsyncReportResponse generate_async_campaign_report(async_campaign_report_request)
 
 
 
-Return a Campaign Report
+Return an async Campaign Report
 
 ### Example
 
@@ -26,9 +26,9 @@ Return a Campaign Report
 import time
 import criteo_api_retailmedia_v2023_07
 from criteo_api_retailmedia_v2023_07.api import analytics_api
+from criteo_api_retailmedia_v2023_07.model.async_report_response import AsyncReportResponse
 from criteo_api_retailmedia_v2023_07.model.report_outcome import ReportOutcome
-from criteo_api_retailmedia_v2023_07.model.report_response import ReportResponse
-from criteo_api_retailmedia_v2023_07.model.campaign_report_request import CampaignReportRequest
+from criteo_api_retailmedia_v2023_07.model.async_campaign_report_request import AsyncCampaignReportRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -57,38 +57,39 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    campaign_report_request = CampaignReportRequest(
-        data=CampaignReportResource(
+    async_campaign_report_request = AsyncCampaignReportRequest(
+        data=AsyncCampaignReportResource(
             type="type_example",
-            attributes=CampaignReport(
-                report_type="summary",
-                campaign_ids=[
-                    "campaign_ids_example",
-                ],
+            attributes=AsyncCampaignReport(
                 metrics=[
                     "impressions",
                 ],
                 dimensions=[
                     "date",
                 ],
-                account_id="account_id_example",
+                click_attribution_window="7D",
+                view_attribution_window="1D",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                timezone="UTC",
-                click_attribution_window="7D",
-                view_attribution_window="none",
+                timezone="timezone_example",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
+                format="json",
+                report_type="summary",
+                ids=[
+                    "ids_example",
+                ],
+                id="id_example",
             ),
         ),
-    ) # CampaignReportRequest | 
+    ) # AsyncCampaignReportRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.generate_campaign_reports(campaign_report_request)
+        api_response = api_instance.generate_async_campaign_report(async_campaign_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_campaign_reports: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_campaign_report: %s\n" % e)
 ```
 
 
@@ -96,11 +97,11 @@ with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_report_request** | [**CampaignReportRequest**](CampaignReportRequest.md)|  |
+ **async_campaign_report_request** | [**AsyncCampaignReportRequest**](AsyncCampaignReportRequest.md)|  |
 
 ### Return type
 
-[**ReportResponse**](ReportResponse.md)
+[**AsyncReportResponse**](AsyncReportResponse.md)
 
 ### Authorization
 
@@ -108,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 
@@ -122,12 +123,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_line_items_reports**
-> ReportResponse generate_line_items_reports(line_item_report_request)
+# **generate_async_line_items_report**
+> AsyncReportResponse generate_async_line_items_report(async_line_item_report_request)
 
 
 
-Return a Line Item Report
+Return an async Line Item Report
 
 ### Example
 
@@ -138,9 +139,9 @@ Return a Line Item Report
 import time
 import criteo_api_retailmedia_v2023_07
 from criteo_api_retailmedia_v2023_07.api import analytics_api
+from criteo_api_retailmedia_v2023_07.model.async_report_response import AsyncReportResponse
 from criteo_api_retailmedia_v2023_07.model.report_outcome import ReportOutcome
-from criteo_api_retailmedia_v2023_07.model.line_item_report_request import LineItemReportRequest
-from criteo_api_retailmedia_v2023_07.model.report_response import ReportResponse
+from criteo_api_retailmedia_v2023_07.model.async_line_item_report_request import AsyncLineItemReportRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -169,41 +170,39 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    line_item_report_request = LineItemReportRequest(
-        data=LineItemReportResource(
+    async_line_item_report_request = AsyncLineItemReportRequest(
+        data=AsyncLineItemReportResource(
             type="type_example",
-            attributes=LineItemReport(
-                report_type="summary",
-                line_item_ids=[
-                    "line_item_ids_example",
-                ],
-                campaign_ids=[
-                    "campaign_ids_example",
-                ],
+            attributes=AsyncLineItemReport(
                 metrics=[
                     "impressions",
                 ],
                 dimensions=[
                     "date",
                 ],
-                account_id="account_id_example",
+                click_attribution_window="7D",
+                view_attribution_window="1D",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="timezone_example",
-                click_attribution_window="7D",
-                view_attribution_window="1D",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
+                format="json",
+                report_type="summary",
+                ids=[
+                    "ids_example",
+                ],
+                id="id_example",
             ),
         ),
-    ) # LineItemReportRequest | 
+    ) # AsyncLineItemReportRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.generate_line_items_reports(line_item_report_request)
+        api_response = api_instance.generate_async_line_items_report(async_line_item_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_line_items_reports: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_line_items_report: %s\n" % e)
 ```
 
 
@@ -211,11 +210,11 @@ with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_report_request** | [**LineItemReportRequest**](LineItemReportRequest.md)|  |
+ **async_line_item_report_request** | [**AsyncLineItemReportRequest**](AsyncLineItemReportRequest.md)|  |
 
 ### Return type
 
-[**ReportResponse**](ReportResponse.md)
+[**AsyncReportResponse**](AsyncReportResponse.md)
 
 ### Authorization
 
@@ -223,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 

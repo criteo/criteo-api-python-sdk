@@ -64,17 +64,20 @@ class ReportRequestAttributes(ModelNormal):
             'ATTRIBUTEDTRANSACTIONS': "attributedTransactions",
         },
         ('click_attribution_window',): {
+            'None': None,
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
         },
         ('format',): {
+            'None': None,
             'CSV': "csv",
             'JSON': "json",
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
         },
         ('view_attribution_window',): {
+            'None': None,
             'NONE': "none",
             '1D': "1D",
             '7D': "7D",
@@ -110,13 +113,13 @@ class ReportRequestAttributes(ModelNormal):
             'end_date': (date,),  # noqa: E501
             'report_type': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
-            'click_attribution_window': (str,),  # noqa: E501
-            'format': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
-            'ids': ([str],),  # noqa: E501
-            'revenue_type': (str,),  # noqa: E501
-            'time_zone': (str,),  # noqa: E501
-            'view_attribution_window': (str,),  # noqa: E501
+            'click_attribution_window': (str, none_type,),  # noqa: E501
+            'format': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'ids': ([str], none_type,),  # noqa: E501
+            'revenue_type': (str, none_type,),  # noqa: E501
+            'time_zone': (str, none_type,),  # noqa: E501
+            'view_attribution_window': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -183,13 +186,13 @@ class ReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            click_attribution_window (str): Defaults to value from campaign or one of \"7D\", \"14D\", or \"30D\". If specified, viewAttributionWindow must also be specified. [optional]  # noqa: E501
-            format (str): One of \"json\" (default),\"json-compact\",\"json-newline\" or \"csv\". [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            id (str): The id of the campaign or line item.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
-            ids ([str]): The ids of the campaigns or line items.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
-            revenue_type (str): [optional]  # noqa: E501
-            time_zone (str): [optional]  # noqa: E501
-            view_attribution_window (str): Defaults to value from campaign or one of \"none\", \"1D\", \"7D\", \"14D\", or \"30D\". If specified, must be less than clickAttributionWindow, which must also be specified.. [optional]  # noqa: E501
+            click_attribution_window (str, none_type): Defaults to value from campaign or one of \"7D\", \"14D\", or \"30D\". If specified, viewAttributionWindow must also be specified. [optional]  # noqa: E501
+            format (str, none_type): One of \"json\" (default),\"json-compact\",\"json-newline\" or \"csv\". [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            id (str, none_type): The id of the campaign or line item.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
+            ids ([str], none_type): The ids of the campaigns or line items.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
+            revenue_type (str, none_type): [optional]  # noqa: E501
+            time_zone (str, none_type): [optional]  # noqa: E501
+            view_attribution_window (str, none_type): Defaults to value from campaign or one of \"none\", \"1D\", \"7D\", \"14D\", or \"30D\". If specified, must be less than clickAttributionWindow, which must also be specified.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -283,13 +286,13 @@ class ReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            click_attribution_window (str): Defaults to value from campaign or one of \"7D\", \"14D\", or \"30D\". If specified, viewAttributionWindow must also be specified. [optional]  # noqa: E501
-            format (str): One of \"json\" (default),\"json-compact\",\"json-newline\" or \"csv\". [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            id (str): The id of the campaign or line item.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
-            ids ([str]): The ids of the campaigns or line items.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
-            revenue_type (str): [optional]  # noqa: E501
-            time_zone (str): [optional]  # noqa: E501
-            view_attribution_window (str): Defaults to value from campaign or one of \"none\", \"1D\", \"7D\", \"14D\", or \"30D\". If specified, must be less than clickAttributionWindow, which must also be specified.. [optional]  # noqa: E501
+            click_attribution_window (str, none_type): Defaults to value from campaign or one of \"7D\", \"14D\", or \"30D\". If specified, viewAttributionWindow must also be specified. [optional]  # noqa: E501
+            format (str, none_type): One of \"json\" (default),\"json-compact\",\"json-newline\" or \"csv\". [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            id (str, none_type): The id of the campaign or line item.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
+            ids ([str], none_type): The ids of the campaigns or line items.  Either 'id' or 'ids' must be specified, but not both. [optional]  # noqa: E501
+            revenue_type (str, none_type): [optional]  # noqa: E501
+            time_zone (str, none_type): [optional]  # noqa: E501
+            view_attribution_window (str, none_type): Defaults to value from campaign or one of \"none\", \"1D\", \"7D\", \"14D\", or \"30D\". If specified, must be less than clickAttributionWindow, which must also be specified.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -88,7 +88,7 @@ class RetailMediaExternalv1KeywordsModelResource(ModelNormal):
         lazy_import()
         return {
             'type': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'attributes': (RetailMediaExternalv1KeywordsModel,),  # noqa: E501
         }
 
@@ -147,7 +147,7 @@ class RetailMediaExternalv1KeywordsModelResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             attributes (RetailMediaExternalv1KeywordsModel): [optional]  # noqa: E501
         """
 
@@ -238,7 +238,7 @@ class RetailMediaExternalv1KeywordsModelResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             attributes (RetailMediaExternalv1KeywordsModel): [optional]  # noqa: E501
         """
 

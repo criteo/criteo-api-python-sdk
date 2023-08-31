@@ -94,8 +94,8 @@ class ResponseAdSetId(ModelNormal):
         lazy_import()
         return {
             'data': (ReadModelAdSetId,),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
-            'errors': ([ProblemDetails],),  # noqa: E501
+            'warnings': ([ProblemDetails], none_type,),  # noqa: E501
+            'errors': ([ProblemDetails], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -153,8 +153,8 @@ class ResponseAdSetId(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ReadModelAdSetId): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
+            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
+            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,8 +241,8 @@ class ResponseAdSetId(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ReadModelAdSetId): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
+            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
+            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

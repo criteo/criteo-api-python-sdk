@@ -85,8 +85,8 @@ class CouponSupportedSizes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'logo_zone': ([str],),  # noqa: E501
-            'full_frame': ([str],),  # noqa: E501
+            'logo_zone': ([str], none_type,),  # noqa: E501
+            'full_frame': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,8 +140,8 @@ class CouponSupportedSizes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logo_zone ([str]): Array of LogoZone sizes as string in width x height format. [optional]  # noqa: E501
-            full_frame ([str]): Array of FullFrame sizes as string in width x height format. [optional]  # noqa: E501
+            logo_zone ([str], none_type): Array of LogoZone sizes as string in width x height format. [optional]  # noqa: E501
+            full_frame ([str], none_type): Array of FullFrame sizes as string in width x height format. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,8 +227,8 @@ class CouponSupportedSizes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            logo_zone ([str]): Array of LogoZone sizes as string in width x height format. [optional]  # noqa: E501
-            full_frame ([str]): Array of FullFrame sizes as string in width x height format. [optional]  # noqa: E501
+            logo_zone ([str], none_type): Array of LogoZone sizes as string in width x height format. [optional]  # noqa: E501
+            full_frame ([str], none_type): Array of FullFrame sizes as string in width x height format. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

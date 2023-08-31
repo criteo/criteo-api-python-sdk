@@ -90,8 +90,8 @@ class ContactListStatisticsEntityV1Response(ModelNormal):
         lazy_import()
         return {
             'data': (ContactListStatisticsEntityV1Resource,),  # noqa: E501
-            'warnings': ([CommonProblem],),  # noqa: E501
-            'errors': ([CommonProblem],),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +149,8 @@ class ContactListStatisticsEntityV1Response(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ContactListStatisticsEntityV1Resource): [optional]  # noqa: E501
-            warnings ([CommonProblem]): [optional]  # noqa: E501
-            errors ([CommonProblem]): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +237,8 @@ class ContactListStatisticsEntityV1Response(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ContactListStatisticsEntityV1Resource): [optional]  # noqa: E501
-            warnings ([CommonProblem]): [optional]  # noqa: E501
-            errors ([CommonProblem]): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -82,8 +82,8 @@ class Asset(ModelNormal):
         """
         return {
             'file_extension': (str,),  # noqa: E501
-            'file_location': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
+            'file_location': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -141,8 +141,8 @@ class Asset(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            file_location (str): A url pointing towards the static file the asset represents.. [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
+            file_location (str, none_type): A url pointing towards the static file the asset represents.. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,8 +232,8 @@ class Asset(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            file_location (str): A url pointing towards the static file the asset represents.. [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
+            file_location (str, none_type): A url pointing towards the static file the asset represents.. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

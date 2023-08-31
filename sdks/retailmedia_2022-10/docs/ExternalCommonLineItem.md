@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **budget_remaining** | **float, none_type** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
-**end_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
+**end_date** | **date, none_type** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
 **status** | **str** |  | [optional] 
 **budget** | **float, none_type** |  | [optional] 
 **budget_spent** | **float** |  | [optional] 

@@ -94,8 +94,8 @@ class RetailMediaExternalv1KeywordsModelResponse(ModelNormal):
         lazy_import()
         return {
             'data': (RetailMediaExternalv1KeywordsModelResource,),  # noqa: E501
-            'errors': ([RetailMediaExternalv1ProblemDetails],),  # noqa: E501
-            'warnings': ([RetailMediaExternalv1ProblemDetails],),  # noqa: E501
+            'errors': ([RetailMediaExternalv1ProblemDetails], none_type,),  # noqa: E501
+            'warnings': ([RetailMediaExternalv1ProblemDetails], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -153,8 +153,8 @@ class RetailMediaExternalv1KeywordsModelResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (RetailMediaExternalv1KeywordsModelResource): [optional]  # noqa: E501
-            errors ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
-            warnings ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
+            errors ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,8 +241,8 @@ class RetailMediaExternalv1KeywordsModelResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (RetailMediaExternalv1KeywordsModelResource): [optional]  # noqa: E501
-            errors ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
-            warnings ([RetailMediaExternalv1ProblemDetails]): [optional]  # noqa: E501
+            errors ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([RetailMediaExternalv1ProblemDetails], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -60,6 +60,7 @@ class RetailMediaExternalv1KeywordDataModel(ModelNormal):
 
     allowed_values = {
         ('review_state',): {
+            'None': None,
             'INREVIEW': "InReview",
             'RECOMMENDED': "Recommended",
             'APPROVED': "Approved",
@@ -68,6 +69,7 @@ class RetailMediaExternalv1KeywordDataModel(ModelNormal):
             'AUTOREJECTED': "AutoRejected",
         },
         ('match_type',): {
+            'None': None,
             'POSITIVEEXACTMATCH': "PositiveExactMatch",
             'NEGATIVEEXACTMATCH': "NegativeExactMatch",
             'NEGATIVEBROADMATCH': "NegativeBroadMatch",
@@ -100,12 +102,12 @@ class RetailMediaExternalv1KeywordDataModel(ModelNormal):
         """
         lazy_import()
         return {
-            'review_state': (str,),  # noqa: E501
-            'match_type': (str,),  # noqa: E501
-            'bid': (float,),  # noqa: E501
+            'review_state': (str, none_type,),  # noqa: E501
+            'match_type': (str, none_type,),  # noqa: E501
+            'bid': (float, none_type,),  # noqa: E501
             'input_keywords': (RetailMediaExternalv1InputKeywordsModel,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -163,12 +165,12 @@ class RetailMediaExternalv1KeywordDataModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (str): [optional]  # noqa: E501
-            match_type (str): [optional]  # noqa: E501
-            bid (float): [optional]  # noqa: E501
+            review_state (str, none_type): [optional]  # noqa: E501
+            match_type (str, none_type): [optional]  # noqa: E501
+            bid (float, none_type): [optional]  # noqa: E501
             input_keywords (RetailMediaExternalv1InputKeywordsModel): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            created_at (datetime, none_type): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,12 +256,12 @@ class RetailMediaExternalv1KeywordDataModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (str): [optional]  # noqa: E501
-            match_type (str): [optional]  # noqa: E501
-            bid (float): [optional]  # noqa: E501
+            review_state (str, none_type): [optional]  # noqa: E501
+            match_type (str, none_type): [optional]  # noqa: E501
+            bid (float, none_type): [optional]  # noqa: E501
             input_keywords (RetailMediaExternalv1InputKeywordsModel): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            created_at (datetime, none_type): [optional]  # noqa: E501
+            updated_at (datetime, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

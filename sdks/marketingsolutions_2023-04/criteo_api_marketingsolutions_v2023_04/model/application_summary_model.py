@@ -81,11 +81,11 @@ class ApplicationSummaryModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'application_id': (int,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'organization_id': (int,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'criteo_service': (str,),  # noqa: E501
+            'application_id': (int, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'organization_id': (int, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'criteo_service': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,11 +142,11 @@ class ApplicationSummaryModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            application_id (int): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            organization_id (int): [optional]  # noqa: E501
-            description (str): [optional]  # noqa: E501
-            criteo_service (str): [optional]  # noqa: E501
+            application_id (int, none_type): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            organization_id (int, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
+            criteo_service (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,11 +232,11 @@ class ApplicationSummaryModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            application_id (int): [optional]  # noqa: E501
-            name (str): [optional]  # noqa: E501
-            organization_id (int): [optional]  # noqa: E501
-            description (str): [optional]  # noqa: E501
-            criteo_service (str): [optional]  # noqa: E501
+            application_id (int, none_type): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            organization_id (int, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
+            criteo_service (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

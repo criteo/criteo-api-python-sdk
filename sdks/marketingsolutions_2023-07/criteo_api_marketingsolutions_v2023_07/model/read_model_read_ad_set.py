@@ -87,8 +87,8 @@ class ReadModelReadAdSet(ModelNormal):
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
             'attributes': (ReadAdSet,),  # noqa: E501
         }
 
@@ -146,8 +146,8 @@ class ReadModelReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): Id of the entity. [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            type (str, none_type): [optional]  # noqa: E501
             attributes (ReadAdSet): [optional]  # noqa: E501
         """
 
@@ -234,8 +234,8 @@ class ReadModelReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): Id of the entity. [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            type (str, none_type): [optional]  # noqa: E501
             attributes (ReadAdSet): [optional]  # noqa: E501
         """
 

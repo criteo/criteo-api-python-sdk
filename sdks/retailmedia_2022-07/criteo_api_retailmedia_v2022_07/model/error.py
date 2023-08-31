@@ -100,10 +100,10 @@ class Error(ModelNormal):
             'instance': (str,),  # noqa: E501
             'trace_id': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'detail': (str,),  # noqa: E501
+            'detail': (str, none_type,),  # noqa: E501
             'source': (MapString,),  # noqa: E501
-            'stack_trace': ([str],),  # noqa: E501
-            'title': (str,),  # noqa: E501
+            'stack_trace': ([str], none_type,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -169,10 +169,10 @@ class Error(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            detail (str): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
             source (MapString): [optional]  # noqa: E501
-            stack_trace ([str]): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology e.g. .Net, Scala, etc. [optional]  # noqa: E501
-            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
+            stack_trace ([str], none_type): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology e.g. .Net, Scala, etc. [optional]  # noqa: E501
+            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -268,10 +268,10 @@ class Error(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            detail (str): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
             source (MapString): [optional]  # noqa: E501
-            stack_trace ([str]): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology e.g. .Net, Scala, etc. [optional]  # noqa: E501
-            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
+            stack_trace ([str], none_type): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology e.g. .Net, Scala, etc. [optional]  # noqa: E501
+            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

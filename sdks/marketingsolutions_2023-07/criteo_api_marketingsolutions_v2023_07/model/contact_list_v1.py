@@ -81,7 +81,7 @@ class ContactListV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'is_read_only': (bool,),  # noqa: E501
+            'is_read_only': (bool, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,7 +134,7 @@ class ContactListV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_read_only (bool): Is the segment read-only. [optional]  # noqa: E501
+            is_read_only (bool, none_type): Is the segment read-only. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class ContactListV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_read_only (bool): Is the segment read-only. [optional]  # noqa: E501
+            is_read_only (bool, none_type): Is the segment read-only. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

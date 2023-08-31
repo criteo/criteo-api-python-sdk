@@ -6,7 +6,7 @@ Resource wrapper of associated keywords with a line item
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** |  | 
-**id** | **str** |  | [optional] 
+**id** | **str, none_type** |  | [optional] 
 **attributes** | [**RetailMediaExternalv1KeywordsModel**](RetailMediaExternalv1KeywordsModel.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

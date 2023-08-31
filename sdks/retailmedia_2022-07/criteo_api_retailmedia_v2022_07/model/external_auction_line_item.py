@@ -109,7 +109,7 @@ class ExternalAuctionLineItem(ModelNormal):
             'budget_remaining': (float, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
@@ -196,7 +196,7 @@ class ExternalAuctionLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
@@ -307,7 +307,7 @@ class ExternalAuctionLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501

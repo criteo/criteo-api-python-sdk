@@ -81,8 +81,8 @@ class PatchAdSetDisplayMultiplierResultResource(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'id': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -136,8 +136,8 @@ class PatchAdSetDisplayMultiplierResultResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): Id of the entity. [optional]  # noqa: E501
-            type (str): Canonical type name of the entity. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class PatchAdSetDisplayMultiplierResultResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): Id of the entity. [optional]  # noqa: E501
-            type (str): Canonical type name of the entity. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

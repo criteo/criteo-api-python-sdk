@@ -71,6 +71,7 @@ class AdaptiveAttributes(ModelNormal):
             'INBANNERVIDEO': "InBannerVideo",
         },
         ('image_display',): {
+            'None': None,
             'SHOWFULLIMAGE': "ShowFullImage",
             'ZOOMONIMAGE': "ZoomOnImage",
         },
@@ -121,9 +122,9 @@ class AdaptiveAttributes(ModelNormal):
             'calls_to_action': ([str],),  # noqa: E501
             'colors': (AdaptiveColors,),  # noqa: E501
             'landing_page_url': (str,),  # noqa: E501
-            'image_sets': ([ImageSet],),  # noqa: E501
-            'image_display': (str,),  # noqa: E501
-            'videos': ([VideoDetail],),  # noqa: E501
+            'image_sets': ([ImageSet], none_type,),  # noqa: E501
+            'image_display': (str, none_type,),  # noqa: E501
+            'videos': ([VideoDetail], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -198,9 +199,9 @@ class AdaptiveAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            image_sets ([ImageSet]): Multiple image sets, each image set consists of multiple images and a headline text.. [optional]  # noqa: E501
-            image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your image set should fit inside the allocated  space (\"ShowFullImage\") or whether it should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
-            videos ([VideoDetail]): Multiple videos potentially in different shapes.. [optional]  # noqa: E501
+            image_sets ([ImageSet], none_type): Multiple image sets, each image set consists of multiple images and a headline text.. [optional]  # noqa: E501
+            image_display (str, none_type): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your image set should fit inside the allocated  space (\"ShowFullImage\") or whether it should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
+            videos ([VideoDetail], none_type): Multiple videos potentially in different shapes.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -306,9 +307,9 @@ class AdaptiveAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            image_sets ([ImageSet]): Multiple image sets, each image set consists of multiple images and a headline text.. [optional]  # noqa: E501
-            image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your image set should fit inside the allocated  space (\"ShowFullImage\") or whether it should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
-            videos ([VideoDetail]): Multiple videos potentially in different shapes.. [optional]  # noqa: E501
+            image_sets ([ImageSet], none_type): Multiple image sets, each image set consists of multiple images and a headline text.. [optional]  # noqa: E501
+            image_display (str, none_type): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your image set should fit inside the allocated  space (\"ShowFullImage\") or whether it should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
+            videos ([VideoDetail], none_type): Multiple videos potentially in different shapes.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

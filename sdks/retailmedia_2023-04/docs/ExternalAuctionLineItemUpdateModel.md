@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **target_bid** | **float, none_type** |  | 
 **is_auto_daily_pacing** | **bool** |  | 
-**end_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
+**end_date** | **date, none_type** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
 **budget** | **float, none_type** |  | [optional] 
 **max_bid** | **float, none_type** |  | [optional] 
 **monthly_pacing** | **float, none_type** |  | [optional] 

@@ -56,6 +56,7 @@ class RetargetingV1(ModelNormal):
 
     allowed_values = {
         ('visitors_type',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'ALL': "All",
             'BUYERS': "Buyers",
@@ -87,9 +88,9 @@ class RetargetingV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'visitors_type': (str,),  # noqa: E501
-            'days_since_last_visit_min': (int,),  # noqa: E501
-            'days_since_last_visit_max': (int,),  # noqa: E501
+            'visitors_type': (str, none_type,),  # noqa: E501
+            'days_since_last_visit_min': (int, none_type,),  # noqa: E501
+            'days_since_last_visit_max': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -144,9 +145,9 @@ class RetargetingV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            visitors_type (str): Types of visitors.. [optional]  # noqa: E501
-            days_since_last_visit_min (int): Minimum number of days since last visit to partner.. [optional]  # noqa: E501
-            days_since_last_visit_max (int): Maximum number of days since last visit to partner.. [optional]  # noqa: E501
+            visitors_type (str, none_type): Types of visitors.. [optional]  # noqa: E501
+            days_since_last_visit_min (int, none_type): Minimum number of days since last visit to partner.. [optional]  # noqa: E501
+            days_since_last_visit_max (int, none_type): Maximum number of days since last visit to partner.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,9 +233,9 @@ class RetargetingV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            visitors_type (str): Types of visitors.. [optional]  # noqa: E501
-            days_since_last_visit_min (int): Minimum number of days since last visit to partner.. [optional]  # noqa: E501
-            days_since_last_visit_max (int): Maximum number of days since last visit to partner.. [optional]  # noqa: E501
+            visitors_type (str, none_type): Types of visitors.. [optional]  # noqa: E501
+            days_since_last_visit_min (int, none_type): Minimum number of days since last visit to partner.. [optional]  # noqa: E501
+            days_since_last_visit_max (int, none_type): Maximum number of days since last visit to partner.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

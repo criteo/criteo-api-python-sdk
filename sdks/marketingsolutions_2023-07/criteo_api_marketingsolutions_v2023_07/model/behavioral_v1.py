@@ -89,9 +89,9 @@ class BehavioralV1(ModelNormal):
         """
         return {
             'category': (str,),  # noqa: E501
-            'country': (str,),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
-            'end_date': (datetime,),  # noqa: E501
+            'country': (str, none_type,),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
+            'end_date': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -150,9 +150,9 @@ class BehavioralV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            country (str): The users' country. [optional]  # noqa: E501
-            start_date (datetime): Desired date when the behavioral will start. [optional]  # noqa: E501
-            end_date (datetime): Desired date when the behavioral will end. [optional]  # noqa: E501
+            country (str, none_type): The users' country. [optional]  # noqa: E501
+            start_date (datetime, none_type): Desired date when the behavioral will start. [optional]  # noqa: E501
+            end_date (datetime, none_type): Desired date when the behavioral will end. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,9 +242,9 @@ class BehavioralV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            country (str): The users' country. [optional]  # noqa: E501
-            start_date (datetime): Desired date when the behavioral will start. [optional]  # noqa: E501
-            end_date (datetime): Desired date when the behavioral will end. [optional]  # noqa: E501
+            country (str, none_type): The users' country. [optional]  # noqa: E501
+            start_date (datetime, none_type): Desired date when the behavioral will start. [optional]  # noqa: E501
+            end_date (datetime, none_type): Desired date when the behavioral will end. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -56,6 +56,7 @@ class AdWrite(ModelNormal):
 
     allowed_values = {
         ('inventory_type',): {
+            'None': None,
             'DISPLAY': "Display",
             'NATIVE': "Native",
         },
@@ -89,9 +90,9 @@ class AdWrite(ModelNormal):
             'creative_id': (str,),  # noqa: E501
             'ad_set_id': (str,),  # noqa: E501
             'start_date': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'inventory_type': (str,),  # noqa: E501
-            'end_date': (str,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'inventory_type': (str, none_type,),  # noqa: E501
+            'end_date': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -156,9 +157,9 @@ class AdWrite(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): The description of the ad. [optional]  # noqa: E501
-            inventory_type (str): The inventory the Ad to be created or updated belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
-            end_date (str): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            description (str, none_type): The description of the ad. [optional]  # noqa: E501
+            inventory_type (str, none_type): The inventory the Ad to be created or updated belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
+            end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,9 +255,9 @@ class AdWrite(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): The description of the ad. [optional]  # noqa: E501
-            inventory_type (str): The inventory the Ad to be created or updated belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
-            end_date (str): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            description (str, none_type): The description of the ad. [optional]  # noqa: E501
+            inventory_type (str, none_type): The inventory the Ad to be created or updated belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
+            end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

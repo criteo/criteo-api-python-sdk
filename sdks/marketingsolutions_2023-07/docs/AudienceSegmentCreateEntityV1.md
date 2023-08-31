@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Name of the segment | 
 **advertiser_id** | **str** | Advertiser associated to the segment | 
-**description** | **str** | Description of the segment | [optional] 
+**description** | **str, none_type** | Description of the segment | [optional] 
 **in_market** | [**InMarketCreateV1**](InMarketCreateV1.md) |  | [optional] 
 **prospecting** | [**ProspectingCreateV1**](ProspectingCreateV1.md) |  | [optional] 
 **contact_list** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Settings to target users with your contact lists. | [optional] 

@@ -56,6 +56,7 @@ class ProspectingV1(ModelNormal):
 
     allowed_values = {
         ('users_type',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'PROSPECTS': "Prospects",
             'PROSPECTSORNONBUYERS': "ProspectsOrNonBuyers",
@@ -86,9 +87,9 @@ class ProspectingV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'days_since_last_visit_min': (int,),  # noqa: E501
-            'days_since_last_visit_max': (int,),  # noqa: E501
-            'users_type': (str,),  # noqa: E501
+            'days_since_last_visit_min': (int, none_type,),  # noqa: E501
+            'days_since_last_visit_max': (int, none_type,),  # noqa: E501
+            'users_type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -143,9 +144,9 @@ class ProspectingV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            days_since_last_visit_min (int): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
-            days_since_last_visit_max (int): When non buyers are included, include users who visited your website after this number of days. [optional]  # noqa: E501
-            users_type (str): Type of users to target. [optional]  # noqa: E501
+            days_since_last_visit_min (int, none_type): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
+            days_since_last_visit_max (int, none_type): When non buyers are included, include users who visited your website after this number of days. [optional]  # noqa: E501
+            users_type (str, none_type): Type of users to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,9 +232,9 @@ class ProspectingV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            days_since_last_visit_min (int): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
-            days_since_last_visit_max (int): When non buyers are included, include users who visited your website after this number of days. [optional]  # noqa: E501
-            users_type (str): Type of users to target. [optional]  # noqa: E501
+            days_since_last_visit_min (int, none_type): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
+            days_since_last_visit_max (int, none_type): When non buyers are included, include users who visited your website after this number of days. [optional]  # noqa: E501
+            users_type (str, none_type): Type of users to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

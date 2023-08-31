@@ -56,16 +56,19 @@ class InMarketSizeEstimationV1(ModelNormal):
 
     allowed_values = {
         ('buying_power',): {
+            'None': None,
             'LOW': "Low",
             'MEDIUM': "Medium",
             'HIGH': "High",
             'VERYHIGH': "VeryHigh",
         },
         ('gender',): {
+            'None': None,
             'MALE': "Male",
             'FEMALE': "Female",
         },
         ('price_range',): {
+            'None': None,
             'LOW': "Low",
             'MEDIUM': "Medium",
             'HIGH': "High",
@@ -105,11 +108,11 @@ class InMarketSizeEstimationV1(ModelNormal):
         """
         return {
             'country': (str,),  # noqa: E501
-            'buying_power': ([str],),  # noqa: E501
-            'gender': (str,),  # noqa: E501
-            'interest_ids': ([str],),  # noqa: E501
-            'brand_ids': ([str],),  # noqa: E501
-            'price_range': ([str],),  # noqa: E501
+            'buying_power': ([str], none_type,),  # noqa: E501
+            'gender': (str, none_type,),  # noqa: E501
+            'interest_ids': ([str], none_type,),  # noqa: E501
+            'brand_ids': ([str], none_type,),  # noqa: E501
+            'price_range': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -170,11 +173,11 @@ class InMarketSizeEstimationV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            buying_power ([str]): [optional]  # noqa: E501
-            gender (str): [optional]  # noqa: E501
-            interest_ids ([str]): [optional]  # noqa: E501
-            brand_ids ([str]): [optional]  # noqa: E501
-            price_range ([str]): [optional]  # noqa: E501
+            buying_power ([str], none_type): [optional]  # noqa: E501
+            gender (str, none_type): [optional]  # noqa: E501
+            interest_ids ([str], none_type): [optional]  # noqa: E501
+            brand_ids ([str], none_type): [optional]  # noqa: E501
+            price_range ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -264,11 +267,11 @@ class InMarketSizeEstimationV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            buying_power ([str]): [optional]  # noqa: E501
-            gender (str): [optional]  # noqa: E501
-            interest_ids ([str]): [optional]  # noqa: E501
-            brand_ids ([str]): [optional]  # noqa: E501
-            price_range ([str]): [optional]  # noqa: E501
+            buying_power ([str], none_type): [optional]  # noqa: E501
+            gender (str, none_type): [optional]  # noqa: E501
+            interest_ids ([str], none_type): [optional]  # noqa: E501
+            brand_ids ([str], none_type): [optional]  # noqa: E501
+            price_range ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

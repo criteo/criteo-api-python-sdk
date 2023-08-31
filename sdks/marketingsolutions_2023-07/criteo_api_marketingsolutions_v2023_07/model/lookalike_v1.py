@@ -81,8 +81,8 @@ class LookalikeV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'seed_segment_id': (str,),  # noqa: E501
-            'target_size': (int,),  # noqa: E501
+            'seed_segment_id': (str, none_type,),  # noqa: E501
+            'target_size': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -136,8 +136,8 @@ class LookalikeV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seed_segment_id (str): Segment from which the Lookalike segment will be generated. [optional]  # noqa: E501
-            target_size (int): Desired size of the generated Lookalike segment. [optional]  # noqa: E501
+            seed_segment_id (str, none_type): Segment from which the Lookalike segment will be generated. [optional]  # noqa: E501
+            target_size (int, none_type): Desired size of the generated Lookalike segment. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class LookalikeV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seed_segment_id (str): Segment from which the Lookalike segment will be generated. [optional]  # noqa: E501
-            target_size (int): Desired size of the generated Lookalike segment. [optional]  # noqa: E501
+            seed_segment_id (str, none_type): Segment from which the Lookalike segment will be generated. [optional]  # noqa: E501
+            target_size (int, none_type): Desired size of the generated Lookalike segment. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

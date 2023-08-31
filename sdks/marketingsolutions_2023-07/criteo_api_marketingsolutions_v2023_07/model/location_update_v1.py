@@ -60,6 +60,7 @@ class LocationUpdateV1(ModelNormal):
 
     allowed_values = {
         ('registry_type',): {
+            'None': None,
             'POINTOFINTEREST': "PointOfInterest",
         },
     }
@@ -90,9 +91,9 @@ class LocationUpdateV1(ModelNormal):
         """
         lazy_import()
         return {
-            'points_of_interest': ([PointOfInterestV1],),  # noqa: E501
-            'radius_in_km': (int,),  # noqa: E501
-            'registry_type': (str,),  # noqa: E501
+            'points_of_interest': ([PointOfInterestV1], none_type,),  # noqa: E501
+            'radius_in_km': (int, none_type,),  # noqa: E501
+            'registry_type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -147,9 +148,9 @@ class LocationUpdateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            points_of_interest ([PointOfInterestV1]): Reach users which have been historically located in the given coordinates. [optional]  # noqa: E501
-            radius_in_km (int): Radius in kilometers. [optional]  # noqa: E501
-            registry_type (str): The kind of Location audience. [optional] if omitted the server will use the default value of "PointOfInterest"  # noqa: E501
+            points_of_interest ([PointOfInterestV1], none_type): Reach users which have been historically located in the given coordinates. [optional]  # noqa: E501
+            radius_in_km (int, none_type): Radius in kilometers. [optional]  # noqa: E501
+            registry_type (str, none_type): The kind of Location audience. [optional] if omitted the server will use the default value of "PointOfInterest"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,9 +236,9 @@ class LocationUpdateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            points_of_interest ([PointOfInterestV1]): Reach users which have been historically located in the given coordinates. [optional]  # noqa: E501
-            radius_in_km (int): Radius in kilometers. [optional]  # noqa: E501
-            registry_type (str): The kind of Location audience. [optional] if omitted the server will use the default value of "PointOfInterest"  # noqa: E501
+            points_of_interest ([PointOfInterestV1], none_type): Reach users which have been historically located in the given coordinates. [optional]  # noqa: E501
+            radius_in_km (int, none_type): Radius in kilometers. [optional]  # noqa: E501
+            registry_type (str, none_type): The kind of Location audience. [optional] if omitted the server will use the default value of "PointOfInterest"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

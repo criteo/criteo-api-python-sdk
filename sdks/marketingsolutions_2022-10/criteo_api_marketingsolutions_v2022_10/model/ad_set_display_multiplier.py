@@ -81,8 +81,8 @@ class AdSetDisplayMultiplier(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'category_name': (str,),  # noqa: E501
-            'display_multiplier': (float,),  # noqa: E501
+            'category_name': (str, none_type,),  # noqa: E501
+            'display_multiplier': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -136,8 +136,8 @@ class AdSetDisplayMultiplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_name (str): The name of the Category to which the given for which the Display Multiplier has been applied.. [optional]  # noqa: E501
-            display_multiplier (float): The Display Multiplier applied to the given Category associated to an Ad Set.. [optional]  # noqa: E501
+            category_name (str, none_type): The name of the Category to which the given for which the Display Multiplier has been applied.. [optional]  # noqa: E501
+            display_multiplier (float, none_type): The Display Multiplier applied to the given Category associated to an Ad Set.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class AdSetDisplayMultiplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_name (str): The name of the Category to which the given for which the Display Multiplier has been applied.. [optional]  # noqa: E501
-            display_multiplier (float): The Display Multiplier applied to the given Category associated to an Ad Set.. [optional]  # noqa: E501
+            category_name (str, none_type): The name of the Category to which the given for which the Display Multiplier has been applied.. [optional]  # noqa: E501
+            display_multiplier (float, none_type): The Display Multiplier applied to the given Category associated to an Ad Set.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

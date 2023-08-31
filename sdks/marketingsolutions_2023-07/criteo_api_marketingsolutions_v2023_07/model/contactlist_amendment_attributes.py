@@ -60,6 +60,7 @@ class ContactlistAmendmentAttributes(ModelNormal):
             'REMOVE': "remove",
         },
         ('identifier_type',): {
+            'None': None,
             'EMAIL': "email",
             'MADID': "madid",
             'IDENTITYLINK': "identityLink",
@@ -94,8 +95,8 @@ class ContactlistAmendmentAttributes(ModelNormal):
         return {
             'operation': (str,),  # noqa: E501
             'identifiers': ([str],),  # noqa: E501
-            'identifier_type': (str,),  # noqa: E501
-            'gum_caller_id': (int,),  # noqa: E501
+            'identifier_type': (str, none_type,),  # noqa: E501
+            'gum_caller_id': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -155,8 +156,8 @@ class ContactlistAmendmentAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            identifier_type (str): What type of identifiers are used. [optional]  # noqa: E501
-            gum_caller_id (int): The Gum caller id of the advertiser patching identifiers of type Gum. [optional]  # noqa: E501
+            identifier_type (str, none_type): What type of identifiers are used. [optional]  # noqa: E501
+            gum_caller_id (int, none_type): The Gum caller id of the advertiser patching identifiers of type Gum. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -248,8 +249,8 @@ class ContactlistAmendmentAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            identifier_type (str): What type of identifiers are used. [optional]  # noqa: E501
-            gum_caller_id (int): The Gum caller id of the advertiser patching identifiers of type Gum. [optional]  # noqa: E501
+            identifier_type (str, none_type): What type of identifiers are used. [optional]  # noqa: E501
+            gum_caller_id (int, none_type): The Gum caller id of the advertiser patching identifiers of type Gum. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -95,8 +95,8 @@ class GetPageOfAudiencesByAccountIdResponse(ModelNormal):
         return {
             'data': ([RetailMediaAudience],),  # noqa: E501
             'metadata': (PageMetadata,),  # noqa: E501
-            'errors': ([CommonError],),  # noqa: E501
-            'warnings': ([CommonWarning],),  # noqa: E501
+            'errors': ([CommonError], none_type,),  # noqa: E501
+            'warnings': ([CommonWarning], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -159,8 +159,8 @@ class GetPageOfAudiencesByAccountIdResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonError]): errors. [optional]  # noqa: E501
-            warnings ([CommonWarning]): warnings. [optional]  # noqa: E501
+            errors ([CommonError], none_type): errors. [optional]  # noqa: E501
+            warnings ([CommonWarning], none_type): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,8 +250,8 @@ class GetPageOfAudiencesByAccountIdResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonError]): errors. [optional]  # noqa: E501
-            warnings ([CommonWarning]): warnings. [optional]  # noqa: E501
+            errors ([CommonError], none_type): errors. [optional]  # noqa: E501
+            warnings ([CommonWarning], none_type): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

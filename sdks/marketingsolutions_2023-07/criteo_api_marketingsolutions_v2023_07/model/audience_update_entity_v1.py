@@ -89,7 +89,7 @@ class AudienceUpdateEntityV1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'description': (NillableString,),  # noqa: E501
             'algebra': (AlgebraNodeV1,),  # noqa: E501
         }
@@ -146,7 +146,7 @@ class AudienceUpdateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the audience. [optional]  # noqa: E501
+            name (str, none_type): Name of the audience. [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
             algebra (AlgebraNodeV1): [optional]  # noqa: E501
         """
@@ -234,7 +234,7 @@ class AudienceUpdateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the audience. [optional]  # noqa: E501
+            name (str, none_type): Name of the audience. [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
             algebra (AlgebraNodeV1): [optional]  # noqa: E501
         """

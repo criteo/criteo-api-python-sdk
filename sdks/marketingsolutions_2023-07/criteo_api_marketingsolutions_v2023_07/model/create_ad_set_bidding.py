@@ -92,7 +92,7 @@ class CreateAdSetBidding(ModelNormal):
         """
         return {
             'cost_controller': (str,),  # noqa: E501
-            'bid_amount': (float,),  # noqa: E501
+            'bid_amount': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,7 +149,7 @@ class CreateAdSetBidding(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_amount (float): Decimal value target relating to the `bidStrategy` specified. May be `null` for strategies that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            bid_amount (float, none_type): Decimal value target relating to the `bidStrategy` specified. May be `null` for strategies that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,7 +239,7 @@ class CreateAdSetBidding(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_amount (float): Decimal value target relating to the `bidStrategy` specified. May be `null` for strategies that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            bid_amount (float, none_type): Decimal value target relating to the `bidStrategy` specified. May be `null` for strategies that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

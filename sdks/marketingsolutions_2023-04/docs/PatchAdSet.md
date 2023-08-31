@@ -5,7 +5,7 @@ ad set patch model
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | Name of the ad set | [optional] 
+**name** | **str, none_type** | Name of the ad set | [optional] 
 **scheduling** | [**PatchAdSetScheduling**](PatchAdSetScheduling.md) |  | [optional] 
 **bidding** | [**PatchAdSetBidding**](PatchAdSetBidding.md) |  | [optional] 
 **targeting** | [**AdSetTargeting**](AdSetTargeting.md) |  | [optional] 

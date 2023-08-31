@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**generate_line_items_reports**](AnalyticsApi.md#generate_line_items_reports) | **POST** /preview/retail-media/reports/sync/line-items | 
 [**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/retail-media/reports/{reportId}/output | 
 [**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/retail-media/reports/{reportId}/status | 
+[**get_sku_by_product_id**](AnalyticsApi.md#get_sku_by_product_id) | **POST** /preview/retail-media/catalogs/sku/search/accounts/{accountId}/retailers/{retailerId}/by-id | 
 
 
 # **generate_async_campaign_report**
@@ -309,6 +310,8 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 timezone="timezone_example",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
+                sold_by="directSold",
+                campaign_sub_type="auctionAndPreferred",
             ),
         ),
     ) # AsyncRevenueReportRequest | 
@@ -415,8 +418,6 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 metrics=[
                     "attributedUnits",
                 ],
-                sold_by="directSold",
-                campaign_sub_type="auctionAndPreferred",
                 account_id="account_id_example",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
@@ -863,6 +864,114 @@ Name | Type | Description  | Notes
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
 **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_sku_by_product_id**
+> ResourceCollectionOutcomeOfSkuSearchResult get_sku_by_product_id(account_id, retailer_id)
+
+
+
+Gets a list of SKUs based on a privided list of Product Ids
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.resource_collection_outcome_of_sku_search_result import ResourceCollectionOutcomeOfSkuSearchResult
+from criteo_api_retailmedia_preview.model.sku_search_request import SkuSearchRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    account_id = "accountId_example" # str | account id
+    retailer_id = 1 # int | retailer id
+    offset = 0 # int | skip a number of matches before retrning results, used with limit (optional) if omitted the server will use the default value of 0
+    limit = 100 # int | max number of results to return (optional) if omitted the server will use the default value of 100
+    sku_search_request = SkuSearchRequest(
+        data=SkuSearchRequestBody(
+            product_id_type="SkuKey",
+            query_ids=[
+                "query_ids_example",
+            ],
+        ),
+    ) # SkuSearchRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_sku_by_product_id(account_id, retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_sku_by_product_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_sku_by_product_id(account_id, retailer_id, offset=offset, limit=limit, sku_search_request=sku_search_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_sku_by_product_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| account id |
+ **retailer_id** | **int**| retailer id |
+ **offset** | **int**| skip a number of matches before retrning results, used with limit | [optional] if omitted the server will use the default value of 0
+ **limit** | **int**| max number of results to return | [optional] if omitted the server will use the default value of 100
+ **sku_search_request** | [**SkuSearchRequest**](SkuSearchRequest.md)|  | [optional]
+
+### Return type
+
+[**ResourceCollectionOutcomeOfSkuSearchResult**](ResourceCollectionOutcomeOfSkuSearchResult.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

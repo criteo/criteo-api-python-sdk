@@ -90,7 +90,7 @@ class ImageSet(ModelNormal):
         lazy_import()
         return {
             'images': ([ImageShape],),  # noqa: E501
-            'headline_text': (str,),  # noqa: E501
+            'headline_text': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -147,7 +147,7 @@ class ImageSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            headline_text (str): The headline of the image set. [optional]  # noqa: E501
+            headline_text (str, none_type): The headline of the image set. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,7 +237,7 @@ class ImageSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            headline_text (str): The headline of the image set. [optional]  # noqa: E501
+            headline_text (str, none_type): The headline of the image set. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

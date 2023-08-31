@@ -72,6 +72,7 @@ class AudienceSegmentEntityV1(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'INMARKET': "InMarket",
             'PROSPECTING': "Prospecting",
@@ -109,12 +110,12 @@ class AudienceSegmentEntityV1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'advertiser_id': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
+            'advertiser_id': (str, none_type,),  # noqa: E501
             'in_market': (InMarketV1,),  # noqa: E501
             'prospecting': (ProspectingV1,),  # noqa: E501
             'contact_list': (ContactListV1,),  # noqa: E501
@@ -186,12 +187,12 @@ class AudienceSegmentEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the segment. [optional]  # noqa: E501
-            description (str): Description of the segment. [optional]  # noqa: E501
-            type (str): Type of segment (read-only). [optional]  # noqa: E501
-            created_at (datetime): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
-            updated_at (datetime): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
-            advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
+            name (str, none_type): Name of the segment. [optional]  # noqa: E501
+            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
+            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser associated to the segment. [optional]  # noqa: E501
             in_market (InMarketV1): [optional]  # noqa: E501
             prospecting (ProspectingV1): [optional]  # noqa: E501
             contact_list (ContactListV1): [optional]  # noqa: E501
@@ -284,12 +285,12 @@ class AudienceSegmentEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the segment. [optional]  # noqa: E501
-            description (str): Description of the segment. [optional]  # noqa: E501
-            type (str): Type of segment (read-only). [optional]  # noqa: E501
-            created_at (datetime): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
-            updated_at (datetime): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
-            advertiser_id (str): Advertiser associated to the segment. [optional]  # noqa: E501
+            name (str, none_type): Name of the segment. [optional]  # noqa: E501
+            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
+            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser associated to the segment. [optional]  # noqa: E501
             in_market (InMarketV1): [optional]  # noqa: E501
             prospecting (ProspectingV1): [optional]  # noqa: E501
             contact_list (ContactListV1): [optional]  # noqa: E501

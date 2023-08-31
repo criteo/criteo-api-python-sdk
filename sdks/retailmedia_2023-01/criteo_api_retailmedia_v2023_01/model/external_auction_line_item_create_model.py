@@ -105,7 +105,7 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
             'name': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
             'target_retailer_id': (str,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
@@ -182,7 +182,7 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
@@ -284,7 +284,7 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501

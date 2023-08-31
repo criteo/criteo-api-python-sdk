@@ -87,7 +87,7 @@ class AudienceSegmentBulkUpdateInputV1(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([AudienceSegmentUpdateEntityV1Resource],),  # noqa: E501
+            'data': ([AudienceSegmentUpdateEntityV1Resource], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class AudienceSegmentBulkUpdateInputV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([AudienceSegmentUpdateEntityV1Resource]): [optional]  # noqa: E501
+            data ([AudienceSegmentUpdateEntityV1Resource], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +226,7 @@ class AudienceSegmentBulkUpdateInputV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([AudienceSegmentUpdateEntityV1Resource]): [optional]  # noqa: E501
+            data ([AudienceSegmentUpdateEntityV1Resource], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

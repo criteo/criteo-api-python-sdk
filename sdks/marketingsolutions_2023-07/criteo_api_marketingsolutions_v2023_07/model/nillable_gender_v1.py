@@ -56,6 +56,7 @@ class NillableGenderV1(ModelNormal):
 
     allowed_values = {
         ('value',): {
+            'None': None,
             'MALE': "Male",
             'FEMALE': "Female",
         },
@@ -85,7 +86,7 @@ class NillableGenderV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'value': (str,),  # noqa: E501
+            'value': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +139,7 @@ class NillableGenderV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (str): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
+            value (str, none_type): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,7 +225,7 @@ class NillableGenderV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (str): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
+            value (str, none_type): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

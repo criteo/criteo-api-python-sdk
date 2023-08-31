@@ -81,7 +81,7 @@ class PatchAdSetDisplayMultiplier(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'display_multiplier': (float,),  # noqa: E501
+            'display_multiplier': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,7 +134,7 @@ class PatchAdSetDisplayMultiplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_multiplier (float): Any positive decimal value. To remove the impact of the Display Multiplier set it to 1. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            display_multiplier (float, none_type): Any positive decimal value. To remove the impact of the Display Multiplier set it to 1. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class PatchAdSetDisplayMultiplier(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_multiplier (float): Any positive decimal value. To remove the impact of the Display Multiplier set it to 1. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            display_multiplier (float, none_type): Any positive decimal value. To remove the impact of the Display Multiplier set it to 1. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

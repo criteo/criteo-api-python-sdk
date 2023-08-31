@@ -87,9 +87,9 @@ class AdSetSearchFilter(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'ad_set_ids': ([str],),  # noqa: E501
-            'advertiser_ids': ([str],),  # noqa: E501
-            'campaign_ids': ([str],),  # noqa: E501
+            'ad_set_ids': ([str], none_type,),  # noqa: E501
+            'advertiser_ids': ([str], none_type,),  # noqa: E501
+            'campaign_ids': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -144,9 +144,9 @@ class AdSetSearchFilter(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str]): Ad set ids to filter on. [optional]  # noqa: E501
-            advertiser_ids ([str]): Advertiser ids which ad sets belongs to (indirectly via their marketing campaign). [optional]  # noqa: E501
-            campaign_ids ([str]): Campaign ids to filter on. [optional]  # noqa: E501
+            ad_set_ids ([str], none_type): Ad set ids to filter on. [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): Advertiser ids which ad sets belongs to (indirectly via their marketing campaign). [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,9 +232,9 @@ class AdSetSearchFilter(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str]): Ad set ids to filter on. [optional]  # noqa: E501
-            advertiser_ids ([str]): Advertiser ids which ad sets belongs to (indirectly via their marketing campaign). [optional]  # noqa: E501
-            campaign_ids ([str]): Campaign ids to filter on. [optional]  # noqa: E501
+            ad_set_ids ([str], none_type): Ad set ids to filter on. [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): Advertiser ids which ad sets belongs to (indirectly via their marketing campaign). [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter on. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

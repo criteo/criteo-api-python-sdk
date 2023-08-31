@@ -81,10 +81,10 @@ class AlgebraNodeV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            '_and': ([AlgebraNodeV1],),  # noqa: E501
-            '_or': ([AlgebraNodeV1],),  # noqa: E501
+            '_and': ([AlgebraNodeV1], none_type,),  # noqa: E501
+            '_or': ([AlgebraNodeV1], none_type,),  # noqa: E501
             '_not': (AlgebraNodeV1,),  # noqa: E501
-            'audience_segment_id': (str,),  # noqa: E501
+            'audience_segment_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,10 +140,10 @@ class AlgebraNodeV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            _and ([AlgebraNodeV1]): [optional]  # noqa: E501
-            _or ([AlgebraNodeV1]): [optional]  # noqa: E501
+            _and ([AlgebraNodeV1], none_type): [optional]  # noqa: E501
+            _or ([AlgebraNodeV1], none_type): [optional]  # noqa: E501
             _not (AlgebraNodeV1): [optional]  # noqa: E501
-            audience_segment_id (str): [optional]  # noqa: E501
+            audience_segment_id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,10 +229,10 @@ class AlgebraNodeV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            _and ([AlgebraNodeV1]): [optional]  # noqa: E501
-            _or ([AlgebraNodeV1]): [optional]  # noqa: E501
+            _and ([AlgebraNodeV1], none_type): [optional]  # noqa: E501
+            _or ([AlgebraNodeV1], none_type): [optional]  # noqa: E501
             _not (AlgebraNodeV1): [optional]  # noqa: E501
-            audience_segment_id (str): [optional]  # noqa: E501
+            audience_segment_id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

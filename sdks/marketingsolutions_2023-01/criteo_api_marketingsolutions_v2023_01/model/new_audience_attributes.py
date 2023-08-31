@@ -82,8 +82,8 @@ class NewAudienceAttributes(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'advertiser_id': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'advertiser_id': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -141,8 +141,8 @@ class NewAudienceAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str): The advertiser id to create the audience for. [optional]  # noqa: E501
-            description (str): The description of the audience. [optional]  # noqa: E501
+            advertiser_id (str, none_type): The advertiser id to create the audience for. [optional]  # noqa: E501
+            description (str, none_type): The description of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,8 +232,8 @@ class NewAudienceAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str): The advertiser id to create the audience for. [optional]  # noqa: E501
-            description (str): The description of the audience. [optional]  # noqa: E501
+            advertiser_id (str, none_type): The advertiser id to create the audience for. [optional]  # noqa: E501
+            description (str, none_type): The description of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

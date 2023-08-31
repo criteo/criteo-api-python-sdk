@@ -87,8 +87,8 @@ class CommonStatusCodeResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'errors': ([CommonProblem],),  # noqa: E501
-            'warnings': ([CommonProblem],),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -144,8 +144,8 @@ class CommonStatusCodeResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonProblem]): errors. [optional]  # noqa: E501
-            warnings ([CommonProblem]): warnings. [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): errors. [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,8 +231,8 @@ class CommonStatusCodeResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonProblem]): errors. [optional]  # noqa: E501
-            warnings ([CommonProblem]): warnings. [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): errors. [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

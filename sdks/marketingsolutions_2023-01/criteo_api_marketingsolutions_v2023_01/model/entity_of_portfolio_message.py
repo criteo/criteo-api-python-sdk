@@ -60,6 +60,7 @@ class EntityOfPortfolioMessage(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'CAMPAIGN': "campaign",
             'ADSET': "adset",
             'AD': "ad",
@@ -99,10 +100,10 @@ class EntityOfPortfolioMessage(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'attributes': (PortfolioMessage,),  # noqa: E501
-            'meta': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'meta': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -158,10 +159,10 @@ class EntityOfPortfolioMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): A string containing the entity type. [optional]  # noqa: E501
-            id (str): A opaque string containing the unique Id of the entity. [optional]  # noqa: E501
+            type (str, none_type): A string containing the entity type. [optional]  # noqa: E501
+            id (str, none_type): A opaque string containing the unique Id of the entity. [optional]  # noqa: E501
             attributes (PortfolioMessage): [optional]  # noqa: E501
-            meta ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): A meta object that contains application-specific metadata. [optional]  # noqa: E501
+            meta ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): A meta object that contains application-specific metadata. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -247,10 +248,10 @@ class EntityOfPortfolioMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): A string containing the entity type. [optional]  # noqa: E501
-            id (str): A opaque string containing the unique Id of the entity. [optional]  # noqa: E501
+            type (str, none_type): A string containing the entity type. [optional]  # noqa: E501
+            id (str, none_type): A opaque string containing the unique Id of the entity. [optional]  # noqa: E501
             attributes (PortfolioMessage): [optional]  # noqa: E501
-            meta ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): A meta object that contains application-specific metadata. [optional]  # noqa: E501
+            meta ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): A meta object that contains application-specific metadata. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

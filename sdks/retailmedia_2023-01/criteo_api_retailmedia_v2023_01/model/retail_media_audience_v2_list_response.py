@@ -93,8 +93,8 @@ class RetailMediaAudienceV2ListResponse(ModelNormal):
         return {
             'data': ([RetailMediaAudienceV2],),  # noqa: E501
             'metadata': (PageMetadata,),  # noqa: E501
-            'errors': ([CommonProblem],),  # noqa: E501
-            'warnings': ([CommonProblem],),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -157,8 +157,8 @@ class RetailMediaAudienceV2ListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonProblem]): errors. [optional]  # noqa: E501
-            warnings ([CommonProblem]): warnings. [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): errors. [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -248,8 +248,8 @@ class RetailMediaAudienceV2ListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            errors ([CommonProblem]): errors. [optional]  # noqa: E501
-            warnings ([CommonProblem]): warnings. [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): errors. [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): warnings. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

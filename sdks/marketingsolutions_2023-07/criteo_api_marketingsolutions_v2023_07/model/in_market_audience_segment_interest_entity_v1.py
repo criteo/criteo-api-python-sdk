@@ -81,7 +81,7 @@ class InMarketAudienceSegmentInterestEntityV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'parent_id': (str,),  # noqa: E501
+            'parent_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,7 +134,7 @@ class InMarketAudienceSegmentInterestEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_id (str): Id of the parent in-market segment interest. [optional]  # noqa: E501
+            parent_id (str, none_type): Id of the parent in-market segment interest. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class InMarketAudienceSegmentInterestEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            parent_id (str): Id of the parent in-market segment interest. [optional]  # noqa: E501
+            parent_id (str, none_type): Id of the parent in-market segment interest. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

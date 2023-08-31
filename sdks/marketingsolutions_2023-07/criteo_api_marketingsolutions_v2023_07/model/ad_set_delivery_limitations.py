@@ -56,16 +56,19 @@ class AdSetDeliveryLimitations(ModelNormal):
 
     allowed_values = {
         ('environments',): {
+            'None': None,
             'WEB': "web",
             'INAPP': "inApp",
         },
         ('devices',): {
+            'None': None,
             'OTHER': "other",
             'DESKTOP': "desktop",
             'MOBILE': "mobile",
             'TABLET': "tablet",
         },
         ('operating_systems',): {
+            'None': None,
             'ANDROID': "android",
             'IOS': "ios",
             'UNKNOWN': "unknown",
@@ -102,9 +105,9 @@ class AdSetDeliveryLimitations(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'environments': ([str],),  # noqa: E501
-            'devices': ([str],),  # noqa: E501
-            'operating_systems': ([str],),  # noqa: E501
+            'environments': ([str], none_type,),  # noqa: E501
+            'devices': ([str], none_type,),  # noqa: E501
+            'operating_systems': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -159,9 +162,9 @@ class AdSetDeliveryLimitations(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            environments ([str]): List of environments which the ad set should target. [optional]  # noqa: E501
-            devices ([str]): List of devices which the ad set should target. [optional]  # noqa: E501
-            operating_systems ([str]): List of operating systems which the ad set should target. [optional]  # noqa: E501
+            environments ([str], none_type): List of environments which the ad set should target. [optional]  # noqa: E501
+            devices ([str], none_type): List of devices which the ad set should target. [optional]  # noqa: E501
+            operating_systems ([str], none_type): List of operating systems which the ad set should target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -247,9 +250,9 @@ class AdSetDeliveryLimitations(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            environments ([str]): List of environments which the ad set should target. [optional]  # noqa: E501
-            devices ([str]): List of devices which the ad set should target. [optional]  # noqa: E501
-            operating_systems ([str]): List of operating systems which the ad set should target. [optional]  # noqa: E501
+            environments ([str], none_type): List of environments which the ad set should target. [optional]  # noqa: E501
+            devices ([str], none_type): List of devices which the ad set should target. [optional]  # noqa: E501
+            operating_systems ([str], none_type): List of operating systems which the ad set should target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

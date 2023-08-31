@@ -81,7 +81,7 @@ class NillableInt32(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'value': (int,),  # noqa: E501
+            'value': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,7 +134,7 @@ class NillableInt32(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (int): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
+            value (int, none_type): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,7 +220,7 @@ class NillableInt32(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (int): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
+            value (int, none_type): The value. If missing or null the value is set to \"null\". [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

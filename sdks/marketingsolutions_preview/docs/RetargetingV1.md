@@ -5,9 +5,9 @@ Settings to target users based on its type and days since last visit.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**visitors_type** | **str** | Types of visitors. | [optional] 
-**days_since_last_visit_min** | **int** | Minimum number of days since last visit to partner. | [optional] 
-**days_since_last_visit_max** | **int** | Maximum number of days since last visit to partner. | [optional] 
+**visitors_type** | **str, none_type** | Types of visitors. | [optional] 
+**days_since_last_visit_min** | **int, none_type** | Minimum number of days since last visit to partner. | [optional] 
+**days_since_last_visit_max** | **int, none_type** | Maximum number of days since last visit to partner. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

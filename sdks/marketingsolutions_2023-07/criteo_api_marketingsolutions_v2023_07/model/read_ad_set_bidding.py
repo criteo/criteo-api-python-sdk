@@ -60,6 +60,7 @@ class ReadAdSetBidding(ModelNormal):
 
     allowed_values = {
         ('bid_strategy',): {
+            'None': None,
             'ACTIONS': "actions",
             'CLICKS': "clicks",
             'CONVERSIONS': "conversions",
@@ -73,6 +74,7 @@ class ReadAdSetBidding(ModelNormal):
             'COMPLETEDVIDEOVIEWS': "completedVideoViews",
         },
         ('cost_controller',): {
+            'None': None,
             'COS': "COS",
             'CPC': "CPC",
             'CPI': "CPI",
@@ -111,8 +113,8 @@ class ReadAdSetBidding(ModelNormal):
         lazy_import()
         return {
             'bid_amount': (NillableDecimal,),  # noqa: E501
-            'bid_strategy': (str,),  # noqa: E501
-            'cost_controller': (str,),  # noqa: E501
+            'bid_strategy': (str, none_type,),  # noqa: E501
+            'cost_controller': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -168,8 +170,8 @@ class ReadAdSetBidding(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bid_amount (NillableDecimal): [optional]  # noqa: E501
-            bid_strategy (str): The intended optimization for the Ad Set. [optional]  # noqa: E501
-            cost_controller (str): How spend is controlled. [optional]  # noqa: E501
+            bid_strategy (str, none_type): The intended optimization for the Ad Set. [optional]  # noqa: E501
+            cost_controller (str, none_type): How spend is controlled. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -256,8 +258,8 @@ class ReadAdSetBidding(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bid_amount (NillableDecimal): [optional]  # noqa: E501
-            bid_strategy (str): The intended optimization for the Ad Set. [optional]  # noqa: E501
-            cost_controller (str): How spend is controlled. [optional]  # noqa: E501
+            bid_strategy (str, none_type): The intended optimization for the Ad Set. [optional]  # noqa: E501
+            cost_controller (str, none_type): How spend is controlled. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

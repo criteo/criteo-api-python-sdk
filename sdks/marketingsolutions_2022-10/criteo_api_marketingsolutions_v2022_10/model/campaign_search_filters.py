@@ -85,8 +85,8 @@ class CampaignSearchFilters(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'campaign_ids': ([str],),  # noqa: E501
-            'advertiser_ids': ([str],),  # noqa: E501
+            'campaign_ids': ([str], none_type,),  # noqa: E501
+            'advertiser_ids': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,8 +140,8 @@ class CampaignSearchFilters(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_ids ([str]): Campaign ids to filter on. [optional]  # noqa: E501
-            advertiser_ids ([str]): Advertiser ids to which campaigns are linked to. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter on. [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): Advertiser ids to which campaigns are linked to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,8 +227,8 @@ class CampaignSearchFilters(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_ids ([str]): Campaign ids to filter on. [optional]  # noqa: E501
-            advertiser_ids ([str]): Advertiser ids to which campaigns are linked to. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter on. [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): Advertiser ids to which campaigns are linked to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

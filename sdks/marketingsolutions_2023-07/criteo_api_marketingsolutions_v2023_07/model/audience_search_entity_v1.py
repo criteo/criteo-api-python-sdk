@@ -81,10 +81,10 @@ class AudienceSearchEntityV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'audience_ids': ([str],),  # noqa: E501
-            'advertiser_ids': ([str],),  # noqa: E501
-            'audience_segment_ids': ([str],),  # noqa: E501
-            'ad_set_ids': ([str],),  # noqa: E501
+            'audience_ids': ([str], none_type,),  # noqa: E501
+            'advertiser_ids': ([str], none_type,),  # noqa: E501
+            'audience_segment_ids': ([str], none_type,),  # noqa: E501
+            'ad_set_ids': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,10 +140,10 @@ class AudienceSearchEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            audience_ids ([str]): List of audience ids. [optional]  # noqa: E501
-            advertiser_ids ([str]): List of advertiser ids. [optional]  # noqa: E501
-            audience_segment_ids ([str]): List of segment ids (linked to the result audiences). [optional]  # noqa: E501
-            ad_set_ids ([str]): List of AdSet ids. [optional]  # noqa: E501
+            audience_ids ([str], none_type): List of audience ids. [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): List of advertiser ids. [optional]  # noqa: E501
+            audience_segment_ids ([str], none_type): List of segment ids (linked to the result audiences). [optional]  # noqa: E501
+            ad_set_ids ([str], none_type): List of AdSet ids. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,10 +229,10 @@ class AudienceSearchEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            audience_ids ([str]): List of audience ids. [optional]  # noqa: E501
-            advertiser_ids ([str]): List of advertiser ids. [optional]  # noqa: E501
-            audience_segment_ids ([str]): List of segment ids (linked to the result audiences). [optional]  # noqa: E501
-            ad_set_ids ([str]): List of AdSet ids. [optional]  # noqa: E501
+            audience_ids ([str], none_type): List of audience ids. [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): List of advertiser ids. [optional]  # noqa: E501
+            audience_segment_ids ([str], none_type): List of segment ids (linked to the result audiences). [optional]  # noqa: E501
+            ad_set_ids ([str], none_type): List of AdSet ids. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
