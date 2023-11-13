@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 
 
-delete all identifiers from an Audience
+Delete all identifiers from a contact list audience-segment.
 
 ### Example
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 
 
-Add/remove users to or from an audience
+Add/remove users to or from a contact list audience-segment.
 
 ### Example
 

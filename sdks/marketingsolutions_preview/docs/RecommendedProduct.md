@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **name** | **str, none_type** | Product name. | [optional] 
 **description** | **str, none_type** | Product description. | [optional] 
 **price** | **float, none_type** | Product price. | [optional] 
+**retailprice** | **float, none_type** | Product retail price. | [optional] 
 **google_category** | **str, none_type** | Product google category. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -87,6 +87,7 @@ class RecommendedProduct(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'price': (float, none_type,),  # noqa: E501
+            'retailprice': (float, none_type,),  # noqa: E501
             'google_category': (str, none_type,),  # noqa: E501
         }
 
@@ -102,6 +103,7 @@ class RecommendedProduct(ModelNormal):
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
         'price': 'price',  # noqa: E501
+        'retailprice': 'retailprice',  # noqa: E501
         'google_category': 'googleCategory',  # noqa: E501
     }
 
@@ -152,6 +154,7 @@ class RecommendedProduct(ModelNormal):
             name (str, none_type): Product name.. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
+            retailprice (float, none_type): Product retail price.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
         """
 
@@ -244,6 +247,7 @@ class RecommendedProduct(ModelNormal):
             name (str, none_type): Product name.. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
+            retailprice (float, none_type): Product retail price.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
         """
 

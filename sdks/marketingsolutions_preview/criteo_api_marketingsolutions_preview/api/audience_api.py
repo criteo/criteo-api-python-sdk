@@ -1932,7 +1932,7 @@ class AudienceApi(object):
     ):
         """delete_contact_list_identifiers  # noqa: E501
 
-        Delete all identifiers from a Contact List Audience Segment  # noqa: E501
+        Delete all identifiers from a contact list audience-segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1940,7 +1940,7 @@ class AudienceApi(object):
         >>> result = thread.get()
 
         Args:
-            audience_segment_id (str): The ID of the Audience Segment to amend
+            audience_segment_id (str): The id of the contact list audience-segment to amend
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2523,7 +2523,7 @@ class AudienceApi(object):
     ):
         """modify_audience_users_with_attributes  # noqa: E501
 
-        Add/remove users to or from an audience  # noqa: E501
+        Add/remove identifiers to or from a contact list.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2531,7 +2531,7 @@ class AudienceApi(object):
         >>> result = thread.get()
 
         Args:
-            audience_id (str): The id of the audience to amend
+            audience_id (str): The id of the contact list audience-segment to amend
             contactlist_with_attributes_amendment_request (ContactlistWithAttributesAmendmentRequest):
 
         Keyword Args:
@@ -2864,7 +2864,7 @@ class AudienceApi(object):
     ):
         """update_contact_list_identifiers  # noqa: E501
 
-        Add/remove identifiers to or from an Contact List Audience Segment  # noqa: E501
+        Add/remove identifiers to or from a contact list audience-segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2872,7 +2872,7 @@ class AudienceApi(object):
         >>> result = thread.get()
 
         Args:
-            audience_segment_id (str): The ID of the Audience Segment to amend
+            audience_segment_id (str): The id of the contact list audience-segment to amend
             contactlist_amendment_request (ContactlistAmendmentRequest):
 
         Keyword Args:

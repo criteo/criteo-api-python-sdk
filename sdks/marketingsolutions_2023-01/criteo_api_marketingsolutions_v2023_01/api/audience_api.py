@@ -460,7 +460,7 @@ class AudienceApi(object):
     ):
         """delete_identifiers  # noqa: E501
 
-        delete all identifiers from an Audience  # noqa: E501
+        Delete all identifiers from a contact list audience-segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -710,7 +710,7 @@ class AudienceApi(object):
     ):
         """modify_audience_users  # noqa: E501
 
-        Add/remove users to or from an audience  # noqa: E501
+        Add/remove users to or from a contact list audience-segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

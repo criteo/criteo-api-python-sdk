@@ -184,6 +184,10 @@ class Product(ModelNormal):
             'tax_category': (str, none_type,),  # noqa: E501
             'transit_time_label': (str, none_type,),  # noqa: E501
             'seller_id': (str, none_type,),  # noqa: E501
+            'external_seller_id': (str, none_type,),  # noqa: E501
+            'external_seller_name': (str, none_type,),  # noqa: E501
+            'number_of_reviews': (int, none_type,),  # noqa: E501
+            'product_rating': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -268,6 +272,10 @@ class Product(ModelNormal):
         'tax_category': 'taxCategory',  # noqa: E501
         'transit_time_label': 'transitTimeLabel',  # noqa: E501
         'seller_id': 'sellerId',  # noqa: E501
+        'external_seller_id': 'externalSellerId',  # noqa: E501
+        'external_seller_name': 'externalSellerName',  # noqa: E501
+        'number_of_reviews': 'numberOfReviews',  # noqa: E501
+        'product_rating': 'productRating',  # noqa: E501
     }
 
     read_only_vars = {
@@ -388,7 +396,11 @@ class Product(ModelNormal):
             max_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
             tax_category (str, none_type): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
             transit_time_label (str, none_type): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str, none_type): The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            seller_id (str, none_type): Deprecated field. It should be replaced by externalSellerId. The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_id (str, none_type): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_name (str, none_type): The external name of the seller (case sensitive and 750 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            number_of_reviews (int, none_type): The number of reviews for the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            product_rating (str, none_type): The rating of the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")
@@ -557,7 +569,11 @@ class Product(ModelNormal):
             max_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
             tax_category (str, none_type): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
             transit_time_label (str, none_type): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str, none_type): The ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            seller_id (str, none_type): Deprecated field. It should be replaced by externalSellerId. The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_id (str, none_type): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_name (str, none_type): The external name of the seller (case sensitive and 750 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            number_of_reviews (int, none_type): The number of reviews for the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            product_rating (str, none_type): The rating of the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")

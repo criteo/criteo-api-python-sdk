@@ -923,7 +923,7 @@ Name | Type | Description  | Notes
 
 
 
-Delete all identifiers from a Contact List Audience Segment
+Delete all identifiers from a contact list audience-segment.
 
 ### Example
 
@@ -964,7 +964,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = "audience-segment-id_example" # str | The ID of the Audience Segment to amend
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
 
     # example passing only required values which don't have defaults set
     try:
@@ -979,7 +979,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **str**| The ID of the Audience Segment to amend |
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
 
 ### Return type
 
@@ -1600,7 +1600,7 @@ Name | Type | Description  | Notes
 
 
 
-Add/remove users to or from an audience
+Add/remove identifiers to or from a contact list.
 
 ### Example
 
@@ -1641,7 +1641,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_id = "audience-id_example" # str | The id of the audience to amend
+    audience_id = "audience-id_example" # str | The id of the contact list audience-segment to amend
     contactlist_with_attributes_amendment_request = ContactlistWithAttributesAmendmentRequest(
         data=ContactlistWithAttributesAmendment(
             type="ContactlistWithUserAttributesAmendment",
@@ -1676,7 +1676,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_id** | **str**| The id of the audience to amend |
+ **audience_id** | **str**| The id of the contact list audience-segment to amend |
  **contactlist_with_attributes_amendment_request** | [**ContactlistWithAttributesAmendmentRequest**](ContactlistWithAttributesAmendmentRequest.md)|  |
 
 ### Return type
@@ -2055,7 +2055,7 @@ void (empty response body)
 
 
 
-Add/remove identifiers to or from an Contact List Audience Segment
+Add/remove identifiers to or from a contact list audience-segment.
 
 ### Example
 
@@ -2097,7 +2097,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = "audience-segment-id_example" # str | The ID of the Audience Segment to amend
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
     contactlist_amendment_request = ContactlistAmendmentRequest(
         data=ContactlistAmendment(
             type="ContactlistAmendment",
@@ -2125,7 +2125,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **str**| The ID of the Audience Segment to amend |
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
  **contactlist_amendment_request** | [**ContactlistAmendmentRequest**](ContactlistAmendmentRequest.md)|  |
 
 ### Return type

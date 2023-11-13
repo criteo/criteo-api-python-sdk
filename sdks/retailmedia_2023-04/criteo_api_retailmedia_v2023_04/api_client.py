@@ -76,7 +76,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/2023.04.0.230831/python'
+        self.user_agent = 'OpenAPI-Generator/2023.04.0.231113/python'
 
     def __enter__(self):
         return self
@@ -804,10 +804,10 @@ class Endpoint(object):
         Example:
 
         api_instance = AnalyticsApi()
-        api_instance.get_report_output  # this is an instance of the class Endpoint
-        api_instance.get_report_output()  # this invokes api_instance.get_report_output.__call__()
+        api_instance.generate_async_campaigns_report  # this is an instance of the class Endpoint
+        api_instance.generate_async_campaigns_report()  # this invokes api_instance.generate_async_campaigns_report.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.get_report_output.callable or self.callable in this class
+        api_instance.generate_async_campaigns_report.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

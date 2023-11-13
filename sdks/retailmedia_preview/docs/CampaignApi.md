@@ -16,9 +16,7 @@ Method | HTTP request | Description
 [**get_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#get_api202301_external_line_item_bid_multipliers_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**get_api_v0_external_catalog_output_by_catalog_id**](CampaignApi.md#get_api_v0_external_catalog_output_by_catalog_id) | **GET** /preview/retail-media/catalogs/{catalogId}/output | 
 [**get_api_v0_external_catalog_status_by_catalog_id**](CampaignApi.md#get_api_v0_external_catalog_status_by_catalog_id) | **GET** /preview/retail-media/catalogs/{catalogId}/status | 
-[**get_api_v1_external_account_balances_by_account_id**](CampaignApi.md#get_api_v1_external_account_balances_by_account_id) | **GET** /preview/retail-media/accounts/{accountId}/balances | 
 [**get_api_v1_external_account_brands_by_account_id**](CampaignApi.md#get_api_v1_external_account_brands_by_account_id) | **GET** /preview/retail-media/accounts/{accountId}/brands | 
-[**get_api_v1_external_account_by_account_id_and_balance_id**](CampaignApi.md#get_api_v1_external_account_by_account_id_and_balance_id) | **GET** /preview/retail-media/accounts/{accountId}/balances/{balanceId} | 
 [**get_api_v1_external_account_retailers_by_account_id**](CampaignApi.md#get_api_v1_external_account_retailers_by_account_id) | **GET** /preview/retail-media/accounts/{accountId}/retailers | 
 [**get_api_v1_external_accounts**](CampaignApi.md#get_api_v1_external_accounts) | **GET** /preview/retail-media/accounts | 
 [**get_api_v1_external_retailer_brands_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_brands_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailerId}/brands | 
@@ -26,15 +24,13 @@ Method | HTTP request | Description
 [**get_api_v1_external_retailer_category_cpc_rates_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_category_cpc_rates_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/cpc-rates | 
 [**get_api_v1_external_retailer_placements_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_placements_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/placements | 
 [**get_campaign_budget_overrides**](CampaignApi.md#get_campaign_budget_overrides) | **GET** /preview/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
-[**get_suggested_keywords**](CampaignApi.md#get_suggested_keywords) | **GET** /preview/retail-media/line-items/{externalLineItemId}/keywords/recommended | 
-[**patch_api_v1_external_account_by_account_id_and_balance_id**](CampaignApi.md#patch_api_v1_external_account_by_account_id_and_balance_id) | **PATCH** /preview/retail-media/accounts/{accountId}/balances/{balanceId} | 
+[**get_line_item_budget_overrides**](CampaignApi.md#get_line_item_budget_overrides) | **GET** /preview/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
+[**get_recommended_keywords**](CampaignApi.md#get_recommended_keywords) | **GET** /preview/retail-media/line-items/{externalLineItemId}/keywords/recommended | 
+[**get_sku_by_product_id**](CampaignApi.md#get_sku_by_product_id) | **POST** /preview/retail-media/catalogs/sku/search/accounts/{accountId}/retailers/{retailerId}/by-id | 
 [**post_api202210_external_account_creatives_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
 [**post_api202210_external_account_creatives_search_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_search_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives/search | 
 [**post_api202210_external_line_item_product_buttons_create_by_line_item_id**](CampaignApi.md#post_api202210_external_line_item_product_buttons_create_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**post_api_v0_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v0_external_account_catalogs_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/catalogs | 
-[**post_api_v1_external_account_add_funds_by_account_id_and_balance_id**](CampaignApi.md#post_api_v1_external_account_add_funds_by_account_id_and_balance_id) | **POST** /preview/retail-media/accounts/{accountId}/balances/{balanceId}/add-funds | 
-[**post_api_v1_external_account_balances_by_account_id**](CampaignApi.md#post_api_v1_external_account_balances_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/balances | 
-[**post_api_v1_external_account_change_dates_by_account_id_and_balance_id**](CampaignApi.md#post_api_v1_external_account_change_dates_by_account_id_and_balance_id) | **POST** /preview/retail-media/accounts/{accountId}/balances/{balanceId}/change-dates | 
 [**post_api_v1_external_catalogs_sku_retrieval**](CampaignApi.md#post_api_v1_external_catalogs_sku_retrieval) | **POST** /preview/retail-media/catalogs/sku-retrieval | 
 [**post_api_v1_external_catalogs_sku_search**](CampaignApi.md#post_api_v1_external_catalogs_sku_search) | **POST** /preview/retail-media/catalogs/sku-search | 
 [**post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id**](CampaignApi.md#post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id) | **POST** /preview/retail-media/catalogs/sku-search/accounts/{account-id}/retailers/{retailer-id} | 
@@ -44,6 +40,8 @@ Method | HTTP request | Description
 [**put_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#put_api202301_external_line_item_bid_multipliers_by_line_item_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
 [**submit_proposal**](CampaignApi.md#submit_proposal) | **POST** /preview/retail-media/preferred-deal-line-items/{id}/proposal/submit | 
+[**update_campaign_budget_overrides**](CampaignApi.md#update_campaign_budget_overrides) | **PUT** /preview/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
+[**update_line_item_budget_overrides**](CampaignApi.md#update_line_item_budget_overrides) | **PUT** /preview/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
 
 
 # **add_remove_keywords**
@@ -753,7 +751,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**
-> ProductButtonResponse get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id)
+> ProductButtonListResponse get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id)
 
 
 
@@ -768,7 +766,7 @@ Get a single product button
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_button_response import ProductButtonResponse
+from criteo_api_retailmedia_preview.model.product_button_list_response import ProductButtonListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -818,7 +816,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductButtonResponse**](ProductButtonResponse.md)
+[**ProductButtonListResponse**](ProductButtonListResponse.md)
 
 ### Authorization
 
@@ -1089,106 +1087,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api_v1_external_account_balances_by_account_id**
-> BalanceResponsePagedListResponse get_api_v1_external_account_balances_by_account_id(account_id)
-
-
-
-Get page of balances for the given accountId.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.balance_response_paged_list_response import BalanceResponsePagedListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to get page of balances for
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
-    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_v1_external_account_balances_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_account_balances_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api_v1_external_account_balances_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_account_balances_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account to get page of balances for |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
-
-### Return type
-
-[**BalanceResponsePagedListResponse**](BalanceResponsePagedListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_api_v1_external_account_brands_by_account_id**
 > JsonApiPageResponseOfBrand get_api_v1_external_account_brands_by_account_id(account_id)
 
@@ -1270,92 +1168,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JsonApiPageResponseOfBrand**](JsonApiPageResponseOfBrand.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_v1_external_account_by_account_id_and_balance_id**
-> BalanceResponse get_api_v1_external_account_by_account_id_and_balance_id(account_id, balance_id)
-
-
-
-Get a balance for the given account id and balance id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.balance_response import BalanceResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
-    balance_id = "balanceId_example" # str | The balance id
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_v1_external_account_by_account_id_and_balance_id(account_id, balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_account_by_account_id_and_balance_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account of the balance |
- **balance_id** | **str**| The balance id |
-
-### Return type
-
-[**BalanceResponse**](BalanceResponse.md)
 
 ### Authorization
 
@@ -2014,8 +1826,92 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_suggested_keywords**
-> ValueResourceOutcomeOfSuggestedKeywordsResult get_suggested_keywords(external_line_item_id)
+# **get_line_item_budget_overrides**
+> ValueResourceOutcomeOfLineItemBudgetOverrides get_line_item_budget_overrides(line_item_id)
+
+
+
+Gets a collection of monthly and daily budget overrides for the provided line item.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_outcome_of_line_item_budget_overrides import ValueResourceOutcomeOfLineItemBudgetOverrides
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "lineItemId_example" # str | The line item id to get budget overrides for.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_line_item_budget_overrides(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_line_item_budget_overrides: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item id to get budget overrides for. |
+
+### Return type
+
+[**ValueResourceOutcomeOfLineItemBudgetOverrides**](ValueResourceOutcomeOfLineItemBudgetOverrides.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_recommended_keywords**
+> ValueResourceOutcomeOfRecommendedKeywordsResult get_recommended_keywords(external_line_item_id)
 
 
 
@@ -2030,7 +1926,7 @@ Retrieves a collection of recommended keywords for a line item
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.value_resource_outcome_of_suggested_keywords_result import ValueResourceOutcomeOfSuggestedKeywordsResult
+from criteo_api_retailmedia_preview.model.value_resource_outcome_of_recommended_keywords_result import ValueResourceOutcomeOfRecommendedKeywordsResult
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2063,10 +1959,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_suggested_keywords(external_line_item_id)
+        api_response = api_instance.get_recommended_keywords(external_line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_suggested_keywords: %s\n" % e)
+        print("Exception when calling CampaignApi->get_recommended_keywords: %s\n" % e)
 ```
 
 
@@ -2078,7 +1974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ValueResourceOutcomeOfSuggestedKeywordsResult**](ValueResourceOutcomeOfSuggestedKeywordsResult.md)
+[**ValueResourceOutcomeOfRecommendedKeywordsResult**](ValueResourceOutcomeOfRecommendedKeywordsResult.md)
 
 ### Authorization
 
@@ -2098,12 +1994,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_api_v1_external_account_by_account_id_and_balance_id**
-> BalanceResponse patch_api_v1_external_account_by_account_id_and_balance_id(account_id, balance_id)
+# **get_sku_by_product_id**
+> ResourceCollectionOutcomeOfSkuSearchResult get_sku_by_product_id(account_id, retailer_id)
 
 
 
-Modify a balance for the given account id
+Gets a list of SKUs based on a privided list of Product Ids
 
 ### Example
 
@@ -2114,8 +2010,8 @@ Modify a balance for the given account id
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.balance_response import BalanceResponse
-from criteo_api_retailmedia_preview.model.update_balance_model_request import UpdateBalanceModelRequest
+from criteo_api_retailmedia_preview.model.resource_collection_outcome_of_sku_search_result import ResourceCollectionOutcomeOfSkuSearchResult
+from criteo_api_retailmedia_preview.model.sku_search_request import SkuSearchRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2144,37 +2040,33 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
-    balance_id = "balanceId_example" # str | The balance to change the dates
-    update_balance_model_request = UpdateBalanceModelRequest(
-        data=ResourceOfUpdateBalanceModel(
-            attributes=ExternalUpdateBalanceModel(
-                name="name_example",
-                po_number="po_number_example",
-                sales_force_id="sales_force_id_example",
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                memo="memo_example",
-            ),
-            id="id_example",
-            type="type_example",
+    account_id = "4" # str | account id
+    retailer_id = 1 # int | retailer id
+    offset = 0 # int | skip a number of matches before retrning results, used with limit (optional) if omitted the server will use the default value of 0
+    limit = 100 # int | max number of results to return (optional) if omitted the server will use the default value of 100
+    sku_search_request = SkuSearchRequest(
+        data=SkuSearchRequestBody(
+            product_id_type="SkuKey",
+            query_ids=[
+                "query_ids_example",
+            ],
         ),
-    ) # UpdateBalanceModelRequest |  (optional)
+    ) # SkuSearchRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_api_v1_external_account_by_account_id_and_balance_id(account_id, balance_id)
+        api_response = api_instance.get_sku_by_product_id(account_id, retailer_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->patch_api_v1_external_account_by_account_id_and_balance_id: %s\n" % e)
+        print("Exception when calling CampaignApi->get_sku_by_product_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.patch_api_v1_external_account_by_account_id_and_balance_id(account_id, balance_id, update_balance_model_request=update_balance_model_request)
+        api_response = api_instance.get_sku_by_product_id(account_id, retailer_id, offset=offset, limit=limit, sku_search_request=sku_search_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->patch_api_v1_external_account_by_account_id_and_balance_id: %s\n" % e)
+        print("Exception when calling CampaignApi->get_sku_by_product_id: %s\n" % e)
 ```
 
 
@@ -2182,13 +2074,15 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account of the balance |
- **balance_id** | **str**| The balance to change the dates |
- **update_balance_model_request** | [**UpdateBalanceModelRequest**](UpdateBalanceModelRequest.md)|  | [optional]
+ **account_id** | **str**| account id |
+ **retailer_id** | **int**| retailer id |
+ **offset** | **int**| skip a number of matches before retrning results, used with limit | [optional] if omitted the server will use the default value of 0
+ **limit** | **int**| max number of results to return | [optional] if omitted the server will use the default value of 100
+ **sku_search_request** | [**SkuSearchRequest**](SkuSearchRequest.md)|  | [optional]
 
 ### Return type
 
-[**BalanceResponse**](BalanceResponse.md)
+[**ResourceCollectionOutcomeOfSkuSearchResult**](ResourceCollectionOutcomeOfSkuSearchResult.md)
 
 ### Authorization
 
@@ -2196,7 +2090,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
  - **Accept**: application/json
 
 
@@ -2637,330 +2531,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Catalog request successfully created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_v1_external_account_add_funds_by_account_id_and_balance_id**
-> BalanceResponse post_api_v1_external_account_add_funds_by_account_id_and_balance_id(account_id, balance_id)
-
-
-
-Add funds to a balance for the given account id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.add_funds_to_balance_request import AddFundsToBalanceRequest
-from criteo_api_retailmedia_preview.model.balance_response import BalanceResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
-    balance_id = "balanceId_example" # str | The balance to add funds to
-    add_funds_to_balance_request = AddFundsToBalanceRequest(
-        data=ResourceOfAddFundsToBalance(
-            attributes=ExternalAddFundsToBalance(
-                delta_amount=3.14,
-                po_number="po_number_example",
-                memo="memo_example",
-            ),
-            id="id_example",
-            type="type_example",
-        ),
-    ) # AddFundsToBalanceRequest |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v1_external_account_add_funds_by_account_id_and_balance_id(account_id, balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_add_funds_by_account_id_and_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v1_external_account_add_funds_by_account_id_and_balance_id(account_id, balance_id, add_funds_to_balance_request=add_funds_to_balance_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_add_funds_by_account_id_and_balance_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account of the balance |
- **balance_id** | **str**| The balance to add funds to |
- **add_funds_to_balance_request** | [**AddFundsToBalanceRequest**](AddFundsToBalanceRequest.md)|  | [optional]
-
-### Return type
-
-[**BalanceResponse**](BalanceResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_v1_external_account_balances_by_account_id**
-> BalanceResponse post_api_v1_external_account_balances_by_account_id(account_id)
-
-
-
-Create balance for the given account id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.balance_response import BalanceResponse
-from criteo_api_retailmedia_preview.model.create_balance_request import CreateBalanceRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to create balances for
-    create_balance_request = CreateBalanceRequest(
-        data=ResourceOfCreateBalance(
-            attributes=ExternalCreateBalance(
-                name="name_example",
-                po_number="po_number_example",
-                deposited=3.14,
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                spend_type="Onsite",
-                memo="memo_example",
-                sales_force_id="sales_force_id_example",
-            ),
-            id="id_example",
-            type="type_example",
-        ),
-    ) # CreateBalanceRequest |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v1_external_account_balances_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_balances_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v1_external_account_balances_by_account_id(account_id, create_balance_request=create_balance_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_balances_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account to create balances for |
- **create_balance_request** | [**CreateBalanceRequest**](CreateBalanceRequest.md)|  | [optional]
-
-### Return type
-
-[**BalanceResponse**](BalanceResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_v1_external_account_change_dates_by_account_id_and_balance_id**
-> BalanceResponse post_api_v1_external_account_change_dates_by_account_id_and_balance_id(account_id, balance_id)
-
-
-
-Change dates of a balance for the given account id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.balance_response import BalanceResponse
-from criteo_api_retailmedia_preview.model.change_dates_of_balance_request import ChangeDatesOfBalanceRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
-    balance_id = "balanceId_example" # str | The balance to change the dates
-    change_dates_of_balance_request = ChangeDatesOfBalanceRequest(
-        data=ResourceOfChangeDatesOfBalance(
-            attributes=ExternalChangeDatesOfBalance(
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                memo="memo_example",
-            ),
-            id="id_example",
-            type="type_example",
-        ),
-    ) # ChangeDatesOfBalanceRequest |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v1_external_account_change_dates_by_account_id_and_balance_id(account_id, balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_change_dates_by_account_id_and_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v1_external_account_change_dates_by_account_id_and_balance_id(account_id, balance_id, change_dates_of_balance_request=change_dates_of_balance_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_change_dates_by_account_id_and_balance_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account of the balance |
- **balance_id** | **str**| The balance to change the dates |
- **change_dates_of_balance_request** | [**ChangeDatesOfBalanceRequest**](ChangeDatesOfBalanceRequest.md)|  | [optional]
-
-### Return type
-
-[**BalanceResponse**](BalanceResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3517,7 +3087,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**
-> ProductButtonResponse put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id)
+> ProductButtonListResponse put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id(line_item_id, product_button_id)
 
 
 
@@ -3533,7 +3103,7 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
 from criteo_api_retailmedia_preview.model.product_button_request import ProductButtonRequest
-from criteo_api_retailmedia_preview.model.product_button_response import ProductButtonResponse
+from criteo_api_retailmedia_preview.model.product_button_list_response import ProductButtonListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3606,7 +3176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductButtonResponse**](ProductButtonResponse.md)
+[**ProductButtonListResponse**](ProductButtonListResponse.md)
 
 ### Authorization
 
@@ -3929,6 +3499,240 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
 **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_campaign_budget_overrides**
+> ValueResourceOutcomeOfCampaignBudgetOverrides update_campaign_budget_overrides(campaign_id)
+
+
+
+Update campaign budget overrides by given external campaign id and new campaign budget overrides settings.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_input_of_campaign_budget_overrides import ValueResourceInputOfCampaignBudgetOverrides
+from criteo_api_retailmedia_preview.model.value_resource_outcome_of_campaign_budget_overrides import ValueResourceOutcomeOfCampaignBudgetOverrides
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    campaign_id = 1 # int | External campaign id.
+    value_resource_input_of_campaign_budget_overrides = ValueResourceInputOfCampaignBudgetOverrides(
+        data=ValueResourceOfCampaignBudgetOverrides(
+            type="type_example",
+            attributes=CampaignBudgetOverrides(
+                monthly_budget_overrides=[
+                    CampaignMonthlyBudgetOverride(
+                        start_month=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        duration="duration_example",
+                        max_monthly_spend=3.14,
+                        status="Expired",
+                    ),
+                ],
+                daily_budget_overrides=[
+                    CampaignDailyBudgetOverride(
+                        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        duration="duration_example",
+                        max_daily_spend=3.14,
+                        status="Expired",
+                    ),
+                ],
+            ),
+        ),
+    ) # ValueResourceInputOfCampaignBudgetOverrides | New campaign budget overrides settings value resource input. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_campaign_budget_overrides(campaign_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_campaign_budget_overrides: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_campaign_budget_overrides(campaign_id, value_resource_input_of_campaign_budget_overrides=value_resource_input_of_campaign_budget_overrides)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_campaign_budget_overrides: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **int**| External campaign id. |
+ **value_resource_input_of_campaign_budget_overrides** | [**ValueResourceInputOfCampaignBudgetOverrides**](ValueResourceInputOfCampaignBudgetOverrides.md)| New campaign budget overrides settings value resource input. | [optional]
+
+### Return type
+
+[**ValueResourceOutcomeOfCampaignBudgetOverrides**](ValueResourceOutcomeOfCampaignBudgetOverrides.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_line_item_budget_overrides**
+> ValueResourceOutcomeOfLineItemBudgetOverrides update_line_item_budget_overrides(line_item_id)
+
+
+
+Update line item budget overrides by given external line item id and new line item budget overrides settings.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_input_of_line_item_budget_overrides import ValueResourceInputOfLineItemBudgetOverrides
+from criteo_api_retailmedia_preview.model.value_resource_outcome_of_line_item_budget_overrides import ValueResourceOutcomeOfLineItemBudgetOverrides
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "lineItemId_example" # str | Line item external id.
+    value_resource_input_of_line_item_budget_overrides = ValueResourceInputOfLineItemBudgetOverrides(
+        data=ValueResourceOfLineItemBudgetOverrides(
+            type="type_example",
+            attributes=LineItemBudgetOverrides(
+                monthly_line_item_budget_overrides=[
+                    MonthlyLineItemBudegetOverride(
+                        start_month=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        duration="duration_example",
+                        max_monthly_spend=3.14,
+                        status="Expired",
+                    ),
+                ],
+                daily_line_item_budget_overrides=[
+                    DailyLineItemBudgetOverride(
+                        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        duration="duration_example",
+                        max_daily_spend=3.14,
+                        status="Expired",
+                    ),
+                ],
+            ),
+        ),
+    ) # ValueResourceInputOfLineItemBudgetOverrides | New line item budget overrides settings value resource input. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_line_item_budget_overrides(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_line_item_budget_overrides: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_line_item_budget_overrides(line_item_id, value_resource_input_of_line_item_budget_overrides=value_resource_input_of_line_item_budget_overrides)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_line_item_budget_overrides: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| Line item external id. |
+ **value_resource_input_of_line_item_budget_overrides** | [**ValueResourceInputOfLineItemBudgetOverrides**](ValueResourceInputOfLineItemBudgetOverrides.md)| New line item budget overrides settings value resource input. | [optional]
+
+### Return type
+
+[**ValueResourceOutcomeOfLineItemBudgetOverrides**](ValueResourceOutcomeOfLineItemBudgetOverrides.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

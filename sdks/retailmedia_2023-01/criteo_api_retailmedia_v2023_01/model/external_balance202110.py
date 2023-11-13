@@ -94,10 +94,10 @@ class ExternalBalance202110(ModelNormal):
             'spent': (float, none_type,),  # noqa: E501
             'remaining': (float, none_type,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -113,10 +113,10 @@ class ExternalBalance202110(ModelNormal):
         'spent': 'spent',  # noqa: E501
         'remaining': 'remaining',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
         'status': 'status',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -126,7 +126,7 @@ class ExternalBalance202110(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, status, created_at, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalBalance202110 - a model defined in OpenAPI
 
         Args:
@@ -137,7 +137,6 @@ class ExternalBalance202110(ModelNormal):
             spent (float, none_type):
             remaining (float, none_type):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             status (str):
             created_at (datetime):
             updated_at (datetime):
@@ -173,6 +172,7 @@ class ExternalBalance202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -211,7 +211,6 @@ class ExternalBalance202110(ModelNormal):
         self.spent = spent
         self.remaining = remaining
         self.start_date = start_date
-        self.end_date = end_date
         self.status = status
         self.created_at = created_at
         self.updated_at = updated_at
@@ -235,7 +234,7 @@ class ExternalBalance202110(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, status, created_at, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalBalance202110 - a model defined in OpenAPI
 
         Args:
@@ -246,7 +245,6 @@ class ExternalBalance202110(ModelNormal):
             spent (float, none_type):
             remaining (float, none_type):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             status (str):
             created_at (datetime):
             updated_at (datetime):
@@ -282,6 +280,7 @@ class ExternalBalance202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -318,7 +317,6 @@ class ExternalBalance202110(ModelNormal):
         self.spent = spent
         self.remaining = remaining
         self.start_date = start_date
-        self.end_date = end_date
         self.status = status
         self.created_at = created_at
         self.updated_at = updated_at

@@ -286,7 +286,6 @@ criteo_api_marketingsolutions_preview/model/oci_targeting_node.py
 criteo_api_marketingsolutions_preview/model/oci_targeting_response.py
 criteo_api_marketingsolutions_preview/model/oci_targeting_response_data.py
 criteo_api_marketingsolutions_preview/model/oci_targeting_rule.py
-criteo_api_marketingsolutions_preview/model/ok_response.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_request.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_response.py
 criteo_api_marketingsolutions_preview/model/outcome.py
@@ -315,9 +314,6 @@ criteo_api_marketingsolutions_preview/model/placements_report_query_entity_messa
 criteo_api_marketingsolutions_preview/model/placements_report_query_message.py
 criteo_api_marketingsolutions_preview/model/point_of_interest_v1.py
 criteo_api_marketingsolutions_preview/model/portfolio_message.py
-criteo_api_marketingsolutions_preview/model/preview_error.py
-criteo_api_marketingsolutions_preview/model/preview_fail_response.py
-criteo_api_marketingsolutions_preview/model/preview_warning.py
 criteo_api_marketingsolutions_preview/model/price.py
 criteo_api_marketingsolutions_preview/model/problem_details.py
 criteo_api_marketingsolutions_preview/model/problems_details.py
@@ -325,10 +321,7 @@ criteo_api_marketingsolutions_preview/model/product.py
 criteo_api_marketingsolutions_preview/model/product_importer_error.py
 criteo_api_marketingsolutions_preview/model/product_importer_warning.py
 criteo_api_marketingsolutions_preview/model/product_set.py
-criteo_api_marketingsolutions_preview/model/product_set_preview.py
 criteo_api_marketingsolutions_preview/model/product_set_rule.py
-criteo_api_marketingsolutions_preview/model/product_set_statistics.py
-criteo_api_marketingsolutions_preview/model/product_set_statistics_query.py
 criteo_api_marketingsolutions_preview/model/product_shipping.py
 criteo_api_marketingsolutions_preview/model/product_shipping_dimension.py
 criteo_api_marketingsolutions_preview/model/product_shipping_weight.py
@@ -370,7 +363,6 @@ criteo_api_marketingsolutions_preview/model/responses_read_ad_set_v23_q1.py
 criteo_api_marketingsolutions_preview/model/retargeting_create_v1.py
 criteo_api_marketingsolutions_preview/model/retargeting_update_v1.py
 criteo_api_marketingsolutions_preview/model/retargeting_v1.py
-criteo_api_marketingsolutions_preview/model/rules.py
 criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_deal_ids.py
 criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_deal_ids_request.py
 criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_deal_ids_resource.py
@@ -407,7 +399,6 @@ criteo_api_marketingsolutions_preview/model/update_coupon.py
 criteo_api_marketingsolutions_preview/model/update_coupon_request.py
 criteo_api_marketingsolutions_preview/model/update_coupon_resource.py
 criteo_api_marketingsolutions_preview/model/user_def.py
-criteo_api_marketingsolutions_preview/model/user_event.py
 criteo_api_marketingsolutions_preview/model/user_profile_attribute_model.py
 criteo_api_marketingsolutions_preview/model/user_profile_identifier_model.py
 criteo_api_marketingsolutions_preview/model/value_resource_input_of_create_product_set_request.py
@@ -688,7 +679,6 @@ docs/OciTargetingNode.md
 docs/OciTargetingResponse.md
 docs/OciTargetingResponseData.md
 docs/OciTargetingRule.md
-docs/OkResponse.md
 docs/OnSiteRecoRequest.md
 docs/OnSiteRecoResponse.md
 docs/OnSiteRecommendationApi.md
@@ -718,9 +708,6 @@ docs/PlacementsReportQueryEntityMessage.md
 docs/PlacementsReportQueryMessage.md
 docs/PointOfInterestV1.md
 docs/PortfolioMessage.md
-docs/PreviewError.md
-docs/PreviewFailResponse.md
-docs/PreviewWarning.md
 docs/Price.md
 docs/ProblemDetails.md
 docs/ProblemsDetails.md
@@ -728,10 +715,7 @@ docs/Product.md
 docs/ProductImporterError.md
 docs/ProductImporterWarning.md
 docs/ProductSet.md
-docs/ProductSetPreview.md
 docs/ProductSetRule.md
-docs/ProductSetStatistics.md
-docs/ProductSetStatisticsQuery.md
 docs/ProductShipping.md
 docs/ProductShippingDimension.md
 docs/ProductShippingWeight.md
@@ -774,7 +758,6 @@ docs/ResponsesReadAdSetV23Q1.md
 docs/RetargetingCreateV1.md
 docs/RetargetingUpdateV1.md
 docs/RetargetingV1.md
-docs/Rules.md
 docs/SetAdSetTargetingDealIds.md
 docs/SetAdSetTargetingDealIdsRequest.md
 docs/SetAdSetTargetingDealIdsResource.md
@@ -811,7 +794,6 @@ docs/UpdateCoupon.md
 docs/UpdateCouponRequest.md
 docs/UpdateCouponResource.md
 docs/UserDef.md
-docs/UserEvent.md
 docs/UserProfileAttributeModel.md
 docs/UserProfileIdentifierModel.md
 docs/ValueResourceInputOfCreateProductSetRequest.md

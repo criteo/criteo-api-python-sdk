@@ -57,13 +57,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         nb_requested_products=1,
         user_id="user_id_example",
         identity_type="CtoBundle",
-        user_events=[
-            UserEvent(
-                product_external_id="product_external_id_example",
-                type=0,
-                date_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-            ),
-        ],
         ad_set_id=1,
         ad_id=1,
         partner_id=1,

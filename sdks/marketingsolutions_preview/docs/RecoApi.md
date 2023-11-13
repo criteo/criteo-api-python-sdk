@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**create_product_set**](RecoApi.md#create_product_set) | **POST** /preview/product-sets | 
 [**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /preview/product-sets/{product-set-id} | 
 [**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /preview/product-sets/dataset/{dataset-id} | 
-[**preview_product_sets_preview_post**](RecoApi.md#preview_product_sets_preview_post) | **POST** /preview/product-sets/preview | 
 [**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /preview/product-sets/{product-set-id} | 
 
 
@@ -292,108 +291,6 @@ Name | Type | Description  | Notes
 **200** | Products sets fetched successfully |  -  |
 **400** | Unable to parse the request parameters |  -  |
 **403** | Operation forbidden |  -  |
-**500** | Internal Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **preview_product_sets_preview_post**
-> OkResponse preview_product_sets_preview_post(product_set_statistics_query)
-
-
-
-Display a preview of product set rules
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.preview_fail_response import PreviewFailResponse
-from criteo_api_marketingsolutions_preview.model.ok_response import OkResponse
-from criteo_api_marketingsolutions_preview.model.product_set_statistics_query import ProductSetStatisticsQuery
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = reco_api.RecoApi(api_client)
-    product_set_statistics_query = ProductSetStatisticsQuery(
-        product_set=ProductSetPreview(
-            partner_id=123,
-            rules=[
-                Rules(
-                    field="Brand",
-                    operator="IsIn",
-                    values=[
-                        "values_example",
-                    ],
-                ),
-            ],
-        ),
-        product_sample_count=5,
-    ) # ProductSetStatisticsQuery | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.preview_product_sets_preview_post(product_set_statistics_query)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling RecoApi->preview_product_sets_preview_post: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_set_statistics_query** | [**ProductSetStatisticsQuery**](ProductSetStatisticsQuery.md)|  |
-
-### Return type
-
-[**OkResponse**](OkResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**403** | Authorization Error |  -  |
 **500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

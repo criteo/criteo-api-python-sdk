@@ -21,8 +21,8 @@ from criteo_api_retailmedia_v2023_07.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_v2023_07.model.async_campaign_report_request import AsyncCampaignReportRequest
-from criteo_api_retailmedia_v2023_07.model.async_line_item_report_request import AsyncLineItemReportRequest
+from criteo_api_retailmedia_v2023_07.model.async_campaigns_report_request import AsyncCampaignsReportRequest
+from criteo_api_retailmedia_v2023_07.model.async_line_items_report_request import AsyncLineItemsReportRequest
 from criteo_api_retailmedia_v2023_07.model.async_report_response import AsyncReportResponse
 from criteo_api_retailmedia_v2023_07.model.report_outcome import ReportOutcome
 
@@ -38,7 +38,7 @@ class AnalyticsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.generate_async_campaign_report_endpoint = _Endpoint(
+        self.generate_async_campaigns_report_endpoint = _Endpoint(
             settings={
                 'response_type': (AsyncReportResponse,),
                 'auth': [
@@ -46,16 +46,16 @@ class AnalyticsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2023-07/retail-media/reports/campaigns',
-                'operation_id': 'generate_async_campaign_report',
+                'operation_id': 'generate_async_campaigns_report',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'async_campaign_report_request',
+                    'async_campaigns_report_request',
                 ],
                 'required': [
-                    'async_campaign_report_request',
+                    'async_campaigns_report_request',
                 ],
                 'nullable': [
                 ],
@@ -70,13 +70,13 @@ class AnalyticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'async_campaign_report_request':
-                        (AsyncCampaignReportRequest,),
+                    'async_campaigns_report_request':
+                        (AsyncCampaignsReportRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'async_campaign_report_request': 'body',
+                    'async_campaigns_report_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -110,10 +110,10 @@ class AnalyticsApi(object):
             },
             params_map={
                 'all': [
-                    'async_line_item_report_request',
+                    'async_line_items_report_request',
                 ],
                 'required': [
-                    'async_line_item_report_request',
+                    'async_line_items_report_request',
                 ],
                 'nullable': [
                 ],
@@ -128,13 +128,13 @@ class AnalyticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'async_line_item_report_request':
-                        (AsyncLineItemReportRequest,),
+                    'async_line_items_report_request':
+                        (AsyncLineItemsReportRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'async_line_item_report_request': 'body',
+                    'async_line_items_report_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -263,22 +263,22 @@ class AnalyticsApi(object):
             api_client=api_client
         )
 
-    def generate_async_campaign_report(
+    def generate_async_campaigns_report(
         self,
-        async_campaign_report_request,
+        async_campaigns_report_request,
         **kwargs
     ):
-        """generate_async_campaign_report  # noqa: E501
+        """generate_async_campaigns_report  # noqa: E501
 
-        Return an async Campaign Report  # noqa: E501
+        Return an asynchronous Campaigns Report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_campaign_report(async_campaign_report_request, async_req=True)
+        >>> thread = api.generate_async_campaigns_report(async_campaigns_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            async_campaign_report_request (AsyncCampaignReportRequest):
+            async_campaigns_report_request (AsyncCampaignsReportRequest):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -342,26 +342,26 @@ class AnalyticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['async_campaign_report_request'] = \
-            async_campaign_report_request
-        return self.generate_async_campaign_report_endpoint.call_with_http_info(**kwargs)
+        kwargs['async_campaigns_report_request'] = \
+            async_campaigns_report_request
+        return self.generate_async_campaigns_report_endpoint.call_with_http_info(**kwargs)
 
     def generate_async_line_items_report(
         self,
-        async_line_item_report_request,
+        async_line_items_report_request,
         **kwargs
     ):
         """generate_async_line_items_report  # noqa: E501
 
-        Return an async Line Item Report  # noqa: E501
+        Returns an asynchronous Line Items Report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_line_items_report(async_line_item_report_request, async_req=True)
+        >>> thread = api.generate_async_line_items_report(async_line_items_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            async_line_item_report_request (AsyncLineItemReportRequest):
+            async_line_items_report_request (AsyncLineItemsReportRequest):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -425,8 +425,8 @@ class AnalyticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['async_line_item_report_request'] = \
-            async_line_item_report_request
+        kwargs['async_line_items_report_request'] = \
+            async_line_items_report_request
         return self.generate_async_line_items_report_endpoint.call_with_http_info(**kwargs)
 
     def get_async_export_output(
@@ -436,7 +436,7 @@ class AnalyticsApi(object):
     ):
         """get_async_export_output  # noqa: E501
 
-        Return the output of an async report  # noqa: E501
+        Returns the output of an async report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -519,7 +519,7 @@ class AnalyticsApi(object):
     ):
         """get_async_export_status  # noqa: E501
 
-        Return the status of an async report  # noqa: E501
+        Returns the status of an async report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
