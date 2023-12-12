@@ -213,7 +213,7 @@ class RESTClientObject(object):
             # log response body
             logger.debug("response body: %s", r.data)
 
-        if not 200 <= r.status <= 299:
+        if not 100 <= r.status <= 399:
             if r.status == 401:
                 raise UnauthorizedException(http_resp=r)
 
