@@ -526,8 +526,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of Category Bids for all valid Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+**400** | Bad Request |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -613,14 +613,14 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of Display Multipliers for all valid Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+**400** | Bad Request |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_sets**
-> ResponseAdSetId patch_ad_sets()
+> ResponsesAdSetId patch_ad_sets()
 
 
 
@@ -635,8 +635,8 @@ Patch a list of AdSets.
 import time
 import criteo_api_marketingsolutions_v2023_07
 from criteo_api_marketingsolutions_v2023_07.api import campaign_api
-from criteo_api_marketingsolutions_v2023_07.model.response_ad_set_id import ResponseAdSetId
 from criteo_api_marketingsolutions_v2023_07.model.requests_patch_ad_set import RequestsPatchAdSet
+from criteo_api_marketingsolutions_v2023_07.model.responses_ad_set_id import ResponsesAdSetId
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -699,13 +699,13 @@ with criteo_api_marketingsolutions_v2023_07.ApiClient(configuration) as api_clie
                         ),
                         geo_location=AdSetGeoLocation(
                             countries=NillableAdSetTargetingRule(
-                                value=NillableAdSetTargetingRuleValue(None),
+                                value=NillableAdSetTargetingRuleValue(),
                             ),
                             subdivisions=NillableAdSetTargetingRule(
-                                value=NillableAdSetTargetingRuleValue(None),
+                                value=NillableAdSetTargetingRuleValue(),
                             ),
                             zip_codes=NillableAdSetTargetingRule(
-                                value=NillableAdSetTargetingRuleValue(None),
+                                value=NillableAdSetTargetingRuleValue(),
                             ),
                         ),
                         frequency_capping=AdSetFrequencyCapping(
@@ -745,7 +745,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseAdSetId**](ResponseAdSetId.md)
+[**ResponsesAdSetId**](ResponsesAdSetId.md)
 
 ### Authorization
 
@@ -973,8 +973,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of updated Category Bids for given Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+**400** | Bad Request |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1081,8 +1081,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of updated Display Multipliers for given Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+**400** | Bad Request |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1183,8 +1183,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | data for the ad sets |  -  |
 **400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 **403** | Forbidden |  -  |
+**401** | The API client is not properly authenticated. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1281,8 +1281,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | data for the campaigns |  -  |
 **400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 **403** | Forbidden |  -  |
+**401** | The API client is not properly authenticated. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -46,7 +46,6 @@ criteo_api_retailmedia_v2023_10/model/auction_line_item_update_model_request.py
 criteo_api_retailmedia_v2023_10/model/audience_ids_update_model202110_request.py
 criteo_api_retailmedia_v2023_10/model/audience_target202110_request.py
 criteo_api_retailmedia_v2023_10/model/audience_target202110_response.py
-criteo_api_retailmedia_v2023_10/model/balance202110_paged_list_response.py
 criteo_api_retailmedia_v2023_10/model/balance_campaign202110_list_request.py
 criteo_api_retailmedia_v2023_10/model/balance_campaign202110_paged_list_response.py
 criteo_api_retailmedia_v2023_10/model/balance_response.py
@@ -95,7 +94,6 @@ criteo_api_retailmedia_v2023_10/model/external_auction_line_item_create_model.py
 criteo_api_retailmedia_v2023_10/model/external_auction_line_item_update_model.py
 criteo_api_retailmedia_v2023_10/model/external_audience_ids_update_model202110.py
 criteo_api_retailmedia_v2023_10/model/external_audience_target202110.py
-criteo_api_retailmedia_v2023_10/model/external_balance202110.py
 criteo_api_retailmedia_v2023_10/model/external_balance_response.py
 criteo_api_retailmedia_v2023_10/model/external_brand.py
 criteo_api_retailmedia_v2023_10/model/external_catalog_request.py
@@ -159,7 +157,6 @@ criteo_api_retailmedia_v2023_10/model/report_outcome.py
 criteo_api_retailmedia_v2023_10/model/resource_of_add_funds_to_balance.py
 criteo_api_retailmedia_v2023_10/model/resource_of_auction_line_item.py
 criteo_api_retailmedia_v2023_10/model/resource_of_auction_line_item_update_model.py
-criteo_api_retailmedia_v2023_10/model/resource_of_balance202110.py
 criteo_api_retailmedia_v2023_10/model/resource_of_balance_campaign202110.py
 criteo_api_retailmedia_v2023_10/model/resource_of_balance_response.py
 criteo_api_retailmedia_v2023_10/model/resource_of_category202204.py
@@ -253,7 +250,6 @@ docs/AudienceApi.md
 docs/AudienceIdsUpdateModel202110Request.md
 docs/AudienceTarget202110Request.md
 docs/AudienceTarget202110Response.md
-docs/Balance202110PagedListResponse.md
 docs/BalanceCampaign202110ListRequest.md
 docs/BalanceCampaign202110PagedListResponse.md
 docs/BalanceResponse.md
@@ -303,7 +299,6 @@ docs/ExternalAuctionLineItemCreateModel.md
 docs/ExternalAuctionLineItemUpdateModel.md
 docs/ExternalAudienceIdsUpdateModel202110.md
 docs/ExternalAudienceTarget202110.md
-docs/ExternalBalance202110.md
 docs/ExternalBalanceResponse.md
 docs/ExternalBrand.md
 docs/ExternalCatalogRequest.md
@@ -368,7 +363,6 @@ docs/ReportOutcome.md
 docs/ResourceOfAddFundsToBalance.md
 docs/ResourceOfAuctionLineItem.md
 docs/ResourceOfAuctionLineItemUpdateModel.md
-docs/ResourceOfBalance202110.md
 docs/ResourceOfBalanceCampaign202110.md
 docs/ResourceOfBalanceResponse.md
 docs/ResourceOfCategory202204.md

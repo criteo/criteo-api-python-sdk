@@ -166,8 +166,8 @@ class ReadAdSetSchedule(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             start_date (NillableDateTime): [optional]  # noqa: E501
             end_date (NillableDateTime): [optional]  # noqa: E501
-            activation_status (str, none_type): Activation status of the ad set, i.e. whether the consumer wants it to deliver. [optional]  # noqa: E501
-            delivery_status (str, none_type): Delivery status of the delivery of the ad set, i.e. whether the ad set is delivering. [optional]  # noqa: E501
+            activation_status (str, none_type): [optional]  # noqa: E501
+            delivery_status (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,8 +255,8 @@ class ReadAdSetSchedule(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             start_date (NillableDateTime): [optional]  # noqa: E501
             end_date (NillableDateTime): [optional]  # noqa: E501
-            activation_status (str, none_type): Activation status of the ad set, i.e. whether the consumer wants it to deliver. [optional]  # noqa: E501
-            delivery_status (str, none_type): Delivery status of the delivery of the ad set, i.e. whether the ad set is delivering. [optional]  # noqa: E501
+            activation_status (str, none_type): [optional]  # noqa: E501
+            delivery_status (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

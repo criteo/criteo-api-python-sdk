@@ -40,7 +40,6 @@ from criteo_api_marketingsolutions_v2023_10.model.patch_result_campaign_list_res
 from criteo_api_marketingsolutions_v2023_10.model.request_ad_set_search import RequestAdSetSearch
 from criteo_api_marketingsolutions_v2023_10.model.requests_ad_set_id import RequestsAdSetId
 from criteo_api_marketingsolutions_v2023_10.model.requests_patch_ad_set import RequestsPatchAdSet
-from criteo_api_marketingsolutions_v2023_10.model.response_ad_set_id import ResponseAdSetId
 from criteo_api_marketingsolutions_v2023_10.model.response_read_ad_set import ResponseReadAdSet
 from criteo_api_marketingsolutions_v2023_10.model.responses_ad_set_id import ResponsesAdSetId
 from criteo_api_marketingsolutions_v2023_10.model.responses_read_ad_set import ResponsesReadAdSet
@@ -391,7 +390,7 @@ class CampaignApi(object):
         )
         self.patch_ad_sets_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponseAdSetId,),
+                'response_type': (ResponsesAdSetId,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1462,7 +1461,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponseAdSetId
+            ResponsesAdSetId
                 If the method is called asynchronously, returns the request
                 thread.
         """

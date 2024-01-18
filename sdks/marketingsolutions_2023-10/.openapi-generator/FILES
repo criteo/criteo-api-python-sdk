@@ -245,7 +245,6 @@ criteo_api_marketingsolutions_v2023_10/model/read_model_read_ad_set.py
 criteo_api_marketingsolutions_v2023_10/model/request_ad_set_search.py
 criteo_api_marketingsolutions_v2023_10/model/requests_ad_set_id.py
 criteo_api_marketingsolutions_v2023_10/model/requests_patch_ad_set.py
-criteo_api_marketingsolutions_v2023_10/model/response_ad_set_id.py
 criteo_api_marketingsolutions_v2023_10/model/response_read_ad_set.py
 criteo_api_marketingsolutions_v2023_10/model/responses_ad_set_id.py
 criteo_api_marketingsolutions_v2023_10/model/responses_read_ad_set.py
@@ -502,7 +501,6 @@ docs/ReadModelReadAdSet.md
 docs/RequestAdSetSearch.md
 docs/RequestsAdSetId.md
 docs/RequestsPatchAdSet.md
-docs/ResponseAdSetId.md
 docs/ResponseReadAdSet.md
 docs/ResponsesAdSetId.md
 docs/ResponsesReadAdSet.md

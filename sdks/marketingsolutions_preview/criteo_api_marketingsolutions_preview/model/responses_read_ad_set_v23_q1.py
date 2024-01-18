@@ -30,9 +30,9 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
+    from criteo_api_marketingsolutions_preview.model.common_problem import CommonProblem
     from criteo_api_marketingsolutions_preview.model.read_model_read_ad_set_v23_q1 import ReadModelReadAdSetV23Q1
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
     globals()['ReadModelReadAdSetV23Q1'] = ReadModelReadAdSetV23Q1
 
 
@@ -64,12 +64,6 @@ class ResponsesReadAdSetV23Q1(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
-        ('warnings',): {
-        },
-        ('errors',): {
-        },
     }
 
     @cached_property
@@ -96,8 +90,8 @@ class ResponsesReadAdSetV23Q1(ModelNormal):
         lazy_import()
         return {
             'data': ([ReadModelReadAdSetV23Q1], none_type,),  # noqa: E501
-            'warnings': ([ProblemDetails], none_type,),  # noqa: E501
-            'errors': ([ProblemDetails], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -156,8 +150,8 @@ class ResponsesReadAdSetV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ReadModelReadAdSetV23Q1], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,8 +238,8 @@ class ResponsesReadAdSetV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ReadModelReadAdSetV23Q1], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

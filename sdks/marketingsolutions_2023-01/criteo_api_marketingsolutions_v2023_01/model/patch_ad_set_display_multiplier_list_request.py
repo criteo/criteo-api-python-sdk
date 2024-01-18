@@ -62,8 +62,6 @@ class PatchAdSetDisplayMultiplierListRequest(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
     }
 
     @cached_property

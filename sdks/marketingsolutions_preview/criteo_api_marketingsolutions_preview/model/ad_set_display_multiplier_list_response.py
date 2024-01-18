@@ -31,9 +31,9 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_preview.model.ad_set_display_multiplier_resource import AdSetDisplayMultiplierResource
-    from criteo_api_marketingsolutions_preview.model.problem_details import ProblemDetails
+    from criteo_api_marketingsolutions_preview.model.common_problem import CommonProblem
     globals()['AdSetDisplayMultiplierResource'] = AdSetDisplayMultiplierResource
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
 
 
 class AdSetDisplayMultiplierListResponse(ModelNormal):
@@ -64,12 +64,6 @@ class AdSetDisplayMultiplierListResponse(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
-        ('warnings',): {
-        },
-        ('errors',): {
-        },
     }
 
     @cached_property
@@ -96,8 +90,8 @@ class AdSetDisplayMultiplierListResponse(ModelNormal):
         lazy_import()
         return {
             'data': ([AdSetDisplayMultiplierResource], none_type,),  # noqa: E501
-            'warnings': ([ProblemDetails], none_type,),  # noqa: E501
-            'errors': ([ProblemDetails], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -155,8 +149,8 @@ class AdSetDisplayMultiplierListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([AdSetDisplayMultiplierResource], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,8 +237,8 @@ class AdSetDisplayMultiplierListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([AdSetDisplayMultiplierResource], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

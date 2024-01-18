@@ -154,11 +154,11 @@ class Campaign(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the campaign. [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser id of the campaign. [optional]  # noqa: E501
-            objective (str, none_type): Campaign's marketing objective. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            advertiser_id (str, none_type): [optional]  # noqa: E501
+            objective (str, none_type): [optional]  # noqa: E501
             spend_limit (CampaignSpendLimit): [optional]  # noqa: E501
-            goal (str, none_type): Goal of the campaign. [optional]  # noqa: E501
+            goal (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,11 +244,11 @@ class Campaign(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the campaign. [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser id of the campaign. [optional]  # noqa: E501
-            objective (str, none_type): Campaign's marketing objective. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            advertiser_id (str, none_type): [optional]  # noqa: E501
+            objective (str, none_type): [optional]  # noqa: E501
             spend_limit (CampaignSpendLimit): [optional]  # noqa: E501
-            goal (str, none_type): Goal of the campaign. [optional]  # noqa: E501
+            goal (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

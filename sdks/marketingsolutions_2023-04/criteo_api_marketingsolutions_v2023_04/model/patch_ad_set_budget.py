@@ -176,10 +176,10 @@ class PatchAdSetBudget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_strategy (str, none_type): Whether your budget is capped or not. [optional]  # noqa: E501
-            budget_renewal (str, none_type): The pace of the budget renewal. [optional]  # noqa: E501
-            budget_delivery_smoothing (str, none_type): The pace at which the budget can be spent. [optional]  # noqa: E501
-            budget_delivery_week (str, none_type): The delivery week for the budget. [optional]  # noqa: E501
+            budget_strategy (str, none_type): [optional]  # noqa: E501
+            budget_renewal (str, none_type): [optional]  # noqa: E501
+            budget_delivery_smoothing (str, none_type): [optional]  # noqa: E501
+            budget_delivery_week (str, none_type): [optional]  # noqa: E501
             budget_amount (NillableDecimal): [optional]  # noqa: E501
         """
 
@@ -266,10 +266,10 @@ class PatchAdSetBudget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_strategy (str, none_type): Whether your budget is capped or not. [optional]  # noqa: E501
-            budget_renewal (str, none_type): The pace of the budget renewal. [optional]  # noqa: E501
-            budget_delivery_smoothing (str, none_type): The pace at which the budget can be spent. [optional]  # noqa: E501
-            budget_delivery_week (str, none_type): The delivery week for the budget. [optional]  # noqa: E501
+            budget_strategy (str, none_type): [optional]  # noqa: E501
+            budget_renewal (str, none_type): [optional]  # noqa: E501
+            budget_delivery_smoothing (str, none_type): [optional]  # noqa: E501
+            budget_delivery_week (str, none_type): [optional]  # noqa: E501
             budget_amount (NillableDecimal): [optional]  # noqa: E501
         """
 

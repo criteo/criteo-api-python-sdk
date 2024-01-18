@@ -62,8 +62,6 @@ class PatchAdSetCategoryBidListRequest(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
     }
 
     @cached_property

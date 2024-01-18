@@ -1,13 +1,13 @@
-# ResourceOfBalance202110
+# RmLegacyAudienceGetEntityV1ListResponse
 
-A class that represents an entity in a guild compliant way
+Audience definition of people of interest for a marketer.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str, none_type** | Id of the entity | [optional] 
-**type** | **str, none_type** | Canonical type name of the entity | [optional] 
-**attributes** | [**ExternalBalance202110**](ExternalBalance202110.md) |  | [optional] 
+**data** | [**[RmLegacyAudienceGetEntityV1Resource], none_type**](RmLegacyAudienceGetEntityV1Resource.md) |  | [optional] 
+**warnings** | [**[CommonProblem], none_type**](CommonProblem.md) |  | [optional] [readonly] 
+**errors** | [**[CommonProblem], none_type**](CommonProblem.md) |  | [optional] [readonly] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

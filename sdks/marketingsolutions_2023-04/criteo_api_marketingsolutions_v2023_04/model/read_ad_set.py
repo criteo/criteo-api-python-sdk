@@ -175,16 +175,16 @@ class ReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the ad set. [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser id of the campaign this ad set belongs to. [optional]  # noqa: E501
-            dataset_id (str, none_type): Dataset id of this ad set. [optional]  # noqa: E501
-            campaign_id (str, none_type): Campaign id this ad set belongs to. [optional]  # noqa: E501
-            destination_environment (str, none_type): The environment that an ad click will lead a user to. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            advertiser_id (str, none_type): [optional]  # noqa: E501
+            dataset_id (str, none_type): [optional]  # noqa: E501
+            campaign_id (str, none_type): [optional]  # noqa: E501
+            destination_environment (str, none_type): [optional]  # noqa: E501
             schedule (ReadAdSetSchedule): [optional]  # noqa: E501
             bidding (ReadAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
             budget (ReadAdSetBudget): [optional]  # noqa: E501
-            media_type (str, none_type): Media type for the ad set. [optional]  # noqa: E501
+            media_type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -270,16 +270,16 @@ class ReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the ad set. [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser id of the campaign this ad set belongs to. [optional]  # noqa: E501
-            dataset_id (str, none_type): Dataset id of this ad set. [optional]  # noqa: E501
-            campaign_id (str, none_type): Campaign id this ad set belongs to. [optional]  # noqa: E501
-            destination_environment (str, none_type): The environment that an ad click will lead a user to. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            advertiser_id (str, none_type): [optional]  # noqa: E501
+            dataset_id (str, none_type): [optional]  # noqa: E501
+            campaign_id (str, none_type): [optional]  # noqa: E501
+            destination_environment (str, none_type): [optional]  # noqa: E501
             schedule (ReadAdSetSchedule): [optional]  # noqa: E501
             bidding (ReadAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
             budget (ReadAdSetBudget): [optional]  # noqa: E501
-            media_type (str, none_type): Media type for the ad set. [optional]  # noqa: E501
+            media_type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

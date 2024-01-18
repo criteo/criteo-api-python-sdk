@@ -156,8 +156,8 @@ class CampaignSpendLimitV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_type (str, none_type): Whether your spend limit is capped or not. [optional]  # noqa: E501
-            spend_limit_renewal (str, none_type): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_type (str, none_type): [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
         """
 
@@ -244,8 +244,8 @@ class CampaignSpendLimitV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_type (str, none_type): Whether your spend limit is capped or not. [optional]  # noqa: E501
-            spend_limit_renewal (str, none_type): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_type (str, none_type): [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
         """
 

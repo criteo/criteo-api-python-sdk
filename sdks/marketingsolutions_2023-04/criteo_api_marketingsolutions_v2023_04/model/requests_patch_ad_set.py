@@ -62,8 +62,6 @@ class RequestsPatchAdSet(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
     }
 
     @cached_property

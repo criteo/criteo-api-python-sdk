@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**create_asset**](CampaignApi.md#create_asset) | **POST** /2023-10/retail-media/assets | 
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /2023-10/retail-media/line-items/{id}/keywords | 
 [**fetch_proposal**](CampaignApi.md#fetch_proposal) | **GET** /2023-10/retail-media/preferred-deal-line-items/{id}/proposal | 
-[**get_api202110_external_account_balances_by_account_id**](CampaignApi.md#get_api202110_external_account_balances_by_account_id) | **GET** /2023-10/retail-media/accounts/{account-id}/balances | 
 [**get_api202110_external_account_creatives_by_account_id**](CampaignApi.md#get_api202110_external_account_creatives_by_account_id) | **GET** /2023-10/retail-media/accounts/{account-id}/creatives | 
 [**get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id**](CampaignApi.md#get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id) | **GET** /2023-10/retail-media/auction-line-items/{line-item-id}/targeting/keywords | 
 [**get_api202110_external_balance_campaigns_by_balance_id**](CampaignApi.md#get_api202110_external_balance_campaigns_by_balance_id) | **GET** /2023-10/retail-media/balances/{balance-id}/campaigns | 
@@ -24,12 +23,12 @@ Method | HTTP request | Description
 [**get_api202207_external_retailer_by_retailer_id_templatestemplate_id**](CampaignApi.md#get_api202207_external_retailer_by_retailer_id_templatestemplate_id) | **GET** /2023-10/retail-media/retailers/{retailer-id}/templates/{template-id} | 
 [**get_api202207_external_retailer_templates_by_retailer_id**](CampaignApi.md#get_api202207_external_retailer_templates_by_retailer_id) | **GET** /2023-10/retail-media/retailers/{retailer-id}/templates | 
 [**get_api202210_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api202210_external_account_by_account_id_creativescreative_id) | **GET** /2023-10/retail-media/accounts/{account-id}/creatives/{creative-id} | 
-[**get_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#get_api202301_external_account_campaigns_by_account_id) | **GET** /2023-10/retail-media/accounts/{accountId}/campaigns | 
+[**get_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#get_api202301_external_account_campaigns_by_account_id) | **GET** /2023-10/retail-media/accounts/{account-id}/campaigns | 
 [**get_api202301_external_campaign_by_campaign_id**](CampaignApi.md#get_api202301_external_campaign_by_campaign_id) | **GET** /2023-10/retail-media/campaigns/{campaignId} | 
 [**get_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#get_api202301_external_line_item_bid_multipliers_by_line_item_id) | **GET** /2023-10/retail-media/line-items/{line-item-id}/bid-multipliers | 
-[**get_api_v1_external_account_balances_by_account_id**](CampaignApi.md#get_api_v1_external_account_balances_by_account_id) | **GET** /2023-10/retail-media/accounts/{accountId}/balances | 
+[**get_api_v1_external_account_balances_by_account_id**](CampaignApi.md#get_api_v1_external_account_balances_by_account_id) | **GET** /2023-10/retail-media/accounts/{account-id}/balances | 
 [**get_api_v1_external_account_brands_by_account_id**](CampaignApi.md#get_api_v1_external_account_brands_by_account_id) | **GET** /2023-10/retail-media/accounts/{accountId}/brands | 
-[**get_api_v1_external_account_by_account_id_and_balance_id**](CampaignApi.md#get_api_v1_external_account_by_account_id_and_balance_id) | **GET** /2023-10/retail-media/accounts/{accountId}/balances/{balanceId} | 
+[**get_api_v1_external_account_by_account_id_and_balance_id**](CampaignApi.md#get_api_v1_external_account_by_account_id_and_balance_id) | **GET** /2023-10/retail-media/accounts/{account-id}/balances/{balanceId} | 
 [**get_api_v1_external_account_retailers_by_account_id**](CampaignApi.md#get_api_v1_external_account_retailers_by_account_id) | **GET** /2023-10/retail-media/accounts/{accountId}/retailers | 
 [**get_api_v1_external_accounts**](CampaignApi.md#get_api_v1_external_accounts) | **GET** /2023-10/retail-media/accounts | 
 [**get_api_v1_external_catalog_output_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_output_by_catalog_id) | **GET** /2023-10/retail-media/catalogs/{catalogId}/output | 
@@ -38,7 +37,7 @@ Method | HTTP request | Description
 [**get_api_v2_external_auction_line_item_by_line_item_id**](CampaignApi.md#get_api_v2_external_auction_line_item_by_line_item_id) | **GET** /2023-10/retail-media/auction-line-items/{line-item-id} | 
 [**get_api_v2_external_campaign_auction_line_items_by_campaign_id**](CampaignApi.md#get_api_v2_external_campaign_auction_line_items_by_campaign_id) | **GET** /2023-10/retail-media/campaigns/{campaign-id}/auction-line-items | 
 [**get_api_v2_external_line_item_by_line_item_id**](CampaignApi.md#get_api_v2_external_line_item_by_line_item_id) | **GET** /2023-10/retail-media/line-items/{line-item-id} | 
-[**patch_api_v1_external_account_by_account_id_and_balance_id**](CampaignApi.md#patch_api_v1_external_account_by_account_id_and_balance_id) | **PATCH** /2023-10/retail-media/accounts/{accountId}/balances/{balanceId} | 
+[**patch_api_v1_external_account_by_account_id_and_balance_id**](CampaignApi.md#patch_api_v1_external_account_by_account_id_and_balance_id) | **PATCH** /2023-10/retail-media/accounts/{account-id}/balances/{balanceId} | 
 [**post_api202110_external_auction_line_item_targeting_keywords_append_by_line_item_id**](CampaignApi.md#post_api202110_external_auction_line_item_targeting_keywords_append_by_line_item_id) | **POST** /2023-10/retail-media/auction-line-items/{line-item-id}/targeting/keywords/append | 
 [**post_api202110_external_auction_line_item_targeting_keywords_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_auction_line_item_targeting_keywords_delete_by_line_item_id) | **POST** /2023-10/retail-media/auction-line-items/{line-item-id}/targeting/keywords/delete | 
 [**post_api202110_external_balance_campaigns_append_by_balance_id**](CampaignApi.md#post_api202110_external_balance_campaigns_append_by_balance_id) | **POST** /2023-10/retail-media/balances/{balance-id}/campaigns/append | 
@@ -56,11 +55,11 @@ Method | HTTP request | Description
 [**post_api202110_external_preferred_line_item_targeting_stores_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_stores_delete_by_line_item_id) | **POST** /2023-10/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete | 
 [**post_api202210_external_account_creatives_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_by_account_id) | **POST** /2023-10/retail-media/accounts/{account-id}/creatives | 
 [**post_api202210_external_account_creatives_search_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_search_by_account_id) | **POST** /2023-10/retail-media/accounts/{account-id}/creatives/search | 
-[**post_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#post_api202301_external_account_campaigns_by_account_id) | **POST** /2023-10/retail-media/accounts/{accountId}/campaigns | 
-[**post_api_v1_external_account_add_funds_by_account_id_and_balance_id**](CampaignApi.md#post_api_v1_external_account_add_funds_by_account_id_and_balance_id) | **POST** /2023-10/retail-media/accounts/{accountId}/balances/{balanceId}/add-funds | 
-[**post_api_v1_external_account_balances_by_account_id**](CampaignApi.md#post_api_v1_external_account_balances_by_account_id) | **POST** /2023-10/retail-media/accounts/{accountId}/balances | 
+[**post_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#post_api202301_external_account_campaigns_by_account_id) | **POST** /2023-10/retail-media/accounts/{account-id}/campaigns | 
+[**post_api_v1_external_account_add_funds_by_account_id_and_balance_id**](CampaignApi.md#post_api_v1_external_account_add_funds_by_account_id_and_balance_id) | **POST** /2023-10/retail-media/accounts/{account-id}/balances/{balanceId}/add-funds | 
+[**post_api_v1_external_account_balances_by_account_id**](CampaignApi.md#post_api_v1_external_account_balances_by_account_id) | **POST** /2023-10/retail-media/accounts/{account-id}/balances | 
 [**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2023-10/retail-media/accounts/{accountId}/catalogs | 
-[**post_api_v1_external_account_change_dates_by_account_id_and_balance_id**](CampaignApi.md#post_api_v1_external_account_change_dates_by_account_id_and_balance_id) | **POST** /2023-10/retail-media/accounts/{accountId}/balances/{balanceId}/change-dates | 
+[**post_api_v1_external_account_change_dates_by_account_id_and_balance_id**](CampaignApi.md#post_api_v1_external_account_change_dates_by_account_id_and_balance_id) | **POST** /2023-10/retail-media/accounts/{account-id}/balances/{balanceId}/change-dates | 
 [**post_api_v2_external_campaign_auction_line_items_by_campaign_id**](CampaignApi.md#post_api_v2_external_campaign_auction_line_items_by_campaign_id) | **POST** /2023-10/retail-media/campaigns/{campaign-id}/auction-line-items | 
 [**put_api202110_external_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_by_line_item_id) | **PUT** /2023-10/retail-media/preferred-line-items/{line-item-id} | 
 [**put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id) | **PUT** /2023-10/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
@@ -437,106 +436,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **500** | Server Error |  -  |
 **403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api202110_external_account_balances_by_account_id**
-> Balance202110PagedListResponse get_api202110_external_account_balances_by_account_id(account_id)
-
-
-
-Gets page of balance objects for the given account id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_10
-from criteo_api_retailmedia_v2023_10.api import campaign_api
-from criteo_api_retailmedia_v2023_10.model.balance202110_paged_list_response import Balance202110PagedListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_10.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_10.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_10.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | The account to get balances for
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
-    page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api202110_external_account_balances_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_10.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202110_external_account_balances_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api202110_external_account_balances_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_10.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202110_external_account_balances_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account to get balances for |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
-
-### Return type
-
-[**Balance202110PagedListResponse**](Balance202110PagedListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1912,7 +1811,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to request the campaign for.
+    account_id = "account-id_example" # str | The account to request the campaign for.
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
@@ -2180,7 +2079,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to get page of balances for
+    account_id = "account-id_example" # str | The account to get page of balances for
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
@@ -2380,7 +2279,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
+    account_id = "account-id_example" # str | The account of the balance
     balance_id = "balanceId_example" # str | The balance id
 
     # example passing only required values which don't have defaults set
@@ -3201,7 +3100,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
+    account_id = "account-id_example" # str | The account of the balance
     balance_id = "balanceId_example" # str | The balance to change the dates
     update_balance_model_request = UpdateBalanceModelRequest(
         data=ResourceOfUpdateBalanceModel(
@@ -5123,7 +5022,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to request the campaign for.
+    account_id = "account-id_example" # str | The account to request the campaign for.
     post_campaign_v202301 = PostCampaignV202301(
         data=JsonApiBodyWithoutIdOfCampaignAttributesV202301AndCampaignV202301(
             type="type_example",
@@ -5239,7 +5138,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
+    account_id = "account-id_example" # str | The account of the balance
     balance_id = "balanceId_example" # str | The balance to add funds to
     add_funds_to_balance_request = AddFundsToBalanceRequest(
         data=ResourceOfAddFundsToBalance(
@@ -5346,7 +5245,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to create balances for
+    account_id = "account-id_example" # str | The account to create balances for
     create_balance_request = CreateBalanceRequest(
         data=ResourceOfCreateBalance(
             attributes=ExternalCreateBalance(
@@ -5561,7 +5460,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account of the balance
+    account_id = "account-id_example" # str | The account of the balance
     balance_id = "balanceId_example" # str | The balance to change the dates
     change_dates_of_balance_request = ChangeDatesOfBalanceRequest(
         data=ResourceOfChangeDatesOfBalance(

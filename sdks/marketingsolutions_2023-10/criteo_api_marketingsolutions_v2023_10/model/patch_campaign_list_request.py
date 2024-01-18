@@ -62,8 +62,6 @@ class PatchCampaignListRequest(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
     }
 
     @cached_property

@@ -76,7 +76,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.0.231113/python'
+        self.user_agent = 'OpenAPI-Generator/0.0.240118/python'
 
     def __enter__(self):
         return self
@@ -803,11 +803,11 @@ class Endpoint(object):
         """ This method is invoked when endpoints are called
         Example:
 
-        api_instance = AnalyticsApi()
-        api_instance.generate_async_campaigns_report  # this is an instance of the class Endpoint
-        api_instance.generate_async_campaigns_report()  # this invokes api_instance.generate_async_campaigns_report.__call__()
+        api_instance = AccountsApi()
+        api_instance.create_private_market_demand_brand_account  # this is an instance of the class Endpoint
+        api_instance.create_private_market_demand_brand_account()  # this invokes api_instance.create_private_market_demand_brand_account.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.generate_async_campaigns_report.callable or self.callable in this class
+        api_instance.create_private_market_demand_brand_account.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

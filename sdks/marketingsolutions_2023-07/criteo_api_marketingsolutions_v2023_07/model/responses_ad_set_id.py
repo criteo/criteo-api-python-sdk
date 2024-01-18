@@ -30,9 +30,9 @@ from criteo_api_marketingsolutions_v2023_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_v2023_07.model.problem_details import ProblemDetails
+    from criteo_api_marketingsolutions_v2023_07.model.common_problem import CommonProblem
     from criteo_api_marketingsolutions_v2023_07.model.read_model_ad_set_id import ReadModelAdSetId
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
     globals()['ReadModelAdSetId'] = ReadModelAdSetId
 
 
@@ -64,12 +64,6 @@ class ResponsesAdSetId(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
-        ('warnings',): {
-        },
-        ('errors',): {
-        },
     }
 
     @cached_property
@@ -96,8 +90,8 @@ class ResponsesAdSetId(ModelNormal):
         lazy_import()
         return {
             'data': ([ReadModelAdSetId], none_type,),  # noqa: E501
-            'warnings': ([ProblemDetails], none_type,),  # noqa: E501
-            'errors': ([ProblemDetails], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -156,8 +150,8 @@ class ResponsesAdSetId(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ReadModelAdSetId], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,8 +238,8 @@ class ResponsesAdSetId(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ReadModelAdSetId], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -1078,7 +1078,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/campaigns',
+                'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/campaigns',
                 'operation_id': 'get_api202301_external_account_campaigns_by_account_id',
                 'http_method': 'GET',
                 'servers': None,
@@ -1116,7 +1116,7 @@ class CampaignApi(object):
                         (int,),
                 },
                 'attribute_map': {
-                    'account_id': 'accountId',
+                    'account_id': 'account-id',
                     'limit_to_id': 'limitToId',
                     'page_index': 'pageIndex',
                     'page_size': 'pageSize',
@@ -2736,7 +2736,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2023-01/retail-media/accounts/{accountId}/campaigns',
+                'endpoint_path': '/2023-01/retail-media/accounts/{account-id}/campaigns',
                 'operation_id': 'post_api202301_external_account_campaigns_by_account_id',
                 'http_method': 'POST',
                 'servers': None,
@@ -2768,7 +2768,7 @@ class CampaignApi(object):
                         (PostCampaignV202301,),
                 },
                 'attribute_map': {
-                    'account_id': 'accountId',
+                    'account_id': 'account-id',
                 },
                 'location_map': {
                     'account_id': 'path',

@@ -92,8 +92,8 @@ class CreateCampaign(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'advertiser_id': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'advertiser_id': (str, none_type,),  # noqa: E501
             'goal': (str,),  # noqa: E501
             'spend_limit': (CreateCampaignSpendLimit,),  # noqa: E501
         }
@@ -121,8 +121,8 @@ class CreateCampaign(ModelNormal):
         """CreateCampaign - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the campaign
-            advertiser_id (str): Advertiser id this campaign belongs to
+            name (str, none_type): Name of the campaign
+            advertiser_id (str, none_type): Advertiser id this campaign belongs to
             goal (str): Goal for the marketing campaign
             spend_limit (CreateCampaignSpendLimit):
 
@@ -216,8 +216,8 @@ class CreateCampaign(ModelNormal):
         """CreateCampaign - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the campaign
-            advertiser_id (str): Advertiser id this campaign belongs to
+            name (str, none_type): Name of the campaign
+            advertiser_id (str, none_type): Advertiser id this campaign belongs to
             goal (str): Goal for the marketing campaign
             spend_limit (CreateCampaignSpendLimit):
 

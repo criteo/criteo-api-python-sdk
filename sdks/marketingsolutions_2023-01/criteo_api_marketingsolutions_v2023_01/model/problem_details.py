@@ -163,12 +163,12 @@ class ProblemDetails(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             trace_id (str, none_type): The request correlation ID this problem comes from.. [optional]  # noqa: E501
             trace_identifier (str, none_type): The request correlation ID this problem comes from. (deprecated, use traceId instead). [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
-            code (str, none_type): [optional]  # noqa: E501
-            instance (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
-            detail (str, none_type): [optional]  # noqa: E501
-            source ({str: (str,)}, none_type): [optional]  # noqa: E501
+            type (str, none_type): The problem's category.. [optional]  # noqa: E501
+            code (str, none_type): A machine-readable error code, expressed as a string value.. [optional]  # noqa: E501
+            instance (str, none_type): A URI that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
+            title (str, none_type): A short human-readable description of the problem type. [optional]  # noqa: E501
+            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem. [optional]  # noqa: E501
+            source ({str: (str,)}, none_type): A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
             stack_trace (str, none_type): [optional]  # noqa: E501
         """
 
@@ -257,12 +257,12 @@ class ProblemDetails(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             trace_id (str, none_type): The request correlation ID this problem comes from.. [optional]  # noqa: E501
             trace_identifier (str, none_type): The request correlation ID this problem comes from. (deprecated, use traceId instead). [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
-            code (str, none_type): [optional]  # noqa: E501
-            instance (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
-            detail (str, none_type): [optional]  # noqa: E501
-            source ({str: (str,)}, none_type): [optional]  # noqa: E501
+            type (str, none_type): The problem's category.. [optional]  # noqa: E501
+            code (str, none_type): A machine-readable error code, expressed as a string value.. [optional]  # noqa: E501
+            instance (str, none_type): A URI that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
+            title (str, none_type): A short human-readable description of the problem type. [optional]  # noqa: E501
+            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem. [optional]  # noqa: E501
+            source ({str: (str,)}, none_type): A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
             stack_trace (str, none_type): [optional]  # noqa: E501
         """
 

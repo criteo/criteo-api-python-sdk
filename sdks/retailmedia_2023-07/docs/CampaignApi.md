@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**get_api202207_external_retailer_by_retailer_id_templatestemplate_id**](CampaignApi.md#get_api202207_external_retailer_by_retailer_id_templatestemplate_id) | **GET** /2023-07/retail-media/retailers/{retailer-id}/templates/{template-id} | 
 [**get_api202207_external_retailer_templates_by_retailer_id**](CampaignApi.md#get_api202207_external_retailer_templates_by_retailer_id) | **GET** /2023-07/retail-media/retailers/{retailer-id}/templates | 
 [**get_api202210_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api202210_external_account_by_account_id_creativescreative_id) | **GET** /2023-07/retail-media/accounts/{account-id}/creatives/{creative-id} | 
-[**get_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#get_api202301_external_account_campaigns_by_account_id) | **GET** /2023-07/retail-media/accounts/{accountId}/campaigns | 
+[**get_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#get_api202301_external_account_campaigns_by_account_id) | **GET** /2023-07/retail-media/accounts/{account-id}/campaigns | 
 [**get_api202301_external_campaign_by_campaign_id**](CampaignApi.md#get_api202301_external_campaign_by_campaign_id) | **GET** /2023-07/retail-media/campaigns/{campaignId} | 
 [**get_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#get_api202301_external_line_item_bid_multipliers_by_line_item_id) | **GET** /2023-07/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**get_api_v1_external_account_brands_by_account_id**](CampaignApi.md#get_api_v1_external_account_brands_by_account_id) | **GET** /2023-07/retail-media/accounts/{accountId}/brands | 
@@ -53,7 +53,7 @@ Method | HTTP request | Description
 [**post_api202110_external_preferred_line_item_targeting_stores_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_stores_delete_by_line_item_id) | **POST** /2023-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete | 
 [**post_api202210_external_account_creatives_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_by_account_id) | **POST** /2023-07/retail-media/accounts/{account-id}/creatives | 
 [**post_api202210_external_account_creatives_search_by_account_id**](CampaignApi.md#post_api202210_external_account_creatives_search_by_account_id) | **POST** /2023-07/retail-media/accounts/{account-id}/creatives/search | 
-[**post_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#post_api202301_external_account_campaigns_by_account_id) | **POST** /2023-07/retail-media/accounts/{accountId}/campaigns | 
+[**post_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#post_api202301_external_account_campaigns_by_account_id) | **POST** /2023-07/retail-media/accounts/{account-id}/campaigns | 
 [**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2023-07/retail-media/accounts/{accountId}/catalogs | 
 [**post_api_v2_external_campaign_auction_line_items_by_campaign_id**](CampaignApi.md#post_api_v2_external_campaign_auction_line_items_by_campaign_id) | **POST** /2023-07/retail-media/campaigns/{campaign-id}/auction-line-items | 
 [**put_api202110_external_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_by_line_item_id) | **PUT** /2023-07/retail-media/preferred-line-items/{line-item-id} | 
@@ -1906,7 +1906,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to request the campaign for.
+    account_id = "account-id_example" # str | The account to request the campaign for.
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
@@ -4821,7 +4821,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to request the campaign for.
+    account_id = "account-id_example" # str | The account to request the campaign for.
     post_campaign_v202301 = PostCampaignV202301(
         data=JsonApiBodyWithoutIdOfCampaignAttributesV202301AndCampaignV202301(
             type="type_example",

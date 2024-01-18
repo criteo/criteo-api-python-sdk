@@ -110,15 +110,15 @@ class CreateAdSet(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'dataset_id': (str,),  # noqa: E501
-            'campaign_id': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'dataset_id': (str, none_type,),  # noqa: E501
+            'campaign_id': (str, none_type,),  # noqa: E501
             'objective': (str,),  # noqa: E501
             'schedule': (CreateAdSetSchedule,),  # noqa: E501
             'bidding': (CreateAdSetBidding,),  # noqa: E501
             'targeting': (CreateAdSetTargeting,),  # noqa: E501
             'budget': (CreateAdSetBudget,),  # noqa: E501
-            'tracking_code': (str,),  # noqa: E501
+            'tracking_code': (str, none_type,),  # noqa: E501
             'media_type': (str,),  # noqa: E501
         }
 
@@ -151,15 +151,15 @@ class CreateAdSet(ModelNormal):
         """CreateAdSet - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the ad set
-            dataset_id (str): Dataset id of this ad set
-            campaign_id (str): Campaign id this ad set belongs to
+            name (str, none_type): Name of the ad set
+            dataset_id (str, none_type): Dataset id of this ad set
+            campaign_id (str, none_type): Campaign id this ad set belongs to
             objective (str): Objective of the ad set
             schedule (CreateAdSetSchedule):
             bidding (CreateAdSetBidding):
             targeting (CreateAdSetTargeting):
             budget (CreateAdSetBudget):
-            tracking_code (str): The click tracking code associated to this Ad Set.
+            tracking_code (str, none_type): The click tracking code associated to this Ad Set.
             media_type (str): Media type for the ad set
 
         Keyword Args:
@@ -258,15 +258,15 @@ class CreateAdSet(ModelNormal):
         """CreateAdSet - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the ad set
-            dataset_id (str): Dataset id of this ad set
-            campaign_id (str): Campaign id this ad set belongs to
+            name (str, none_type): Name of the ad set
+            dataset_id (str, none_type): Dataset id of this ad set
+            campaign_id (str, none_type): Campaign id this ad set belongs to
             objective (str): Objective of the ad set
             schedule (CreateAdSetSchedule):
             bidding (CreateAdSetBidding):
             targeting (CreateAdSetTargeting):
             budget (CreateAdSetBudget):
-            tracking_code (str): The click tracking code associated to this Ad Set.
+            tracking_code (str, none_type): The click tracking code associated to this Ad Set.
             media_type (str): Media type for the ad set
 
         Keyword Args:

@@ -30,8 +30,8 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_preview.model.ad_set_targeting_rule_v23_q1 import AdSetTargetingRuleV23Q1
-    globals()['AdSetTargetingRuleV23Q1'] = AdSetTargetingRuleV23Q1
+    from criteo_api_marketingsolutions_preview.model.nillable_ad_set_targeting_rule_v23_q1_value import NillableAdSetTargetingRuleV23Q1Value
+    globals()['NillableAdSetTargetingRuleV23Q1Value'] = NillableAdSetTargetingRuleV23Q1Value
 
 
 class NillableAdSetTargetingRuleV23Q1(ModelNormal):
@@ -87,7 +87,7 @@ class NillableAdSetTargetingRuleV23Q1(ModelNormal):
         """
         lazy_import()
         return {
-            'value': (AdSetTargetingRuleV23Q1,),  # noqa: E501
+            'value': (NillableAdSetTargetingRuleV23Q1Value,),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class NillableAdSetTargetingRuleV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (AdSetTargetingRuleV23Q1): [optional]  # noqa: E501
+            value (NillableAdSetTargetingRuleV23Q1Value): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +226,7 @@ class NillableAdSetTargetingRuleV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            value (AdSetTargetingRuleV23Q1): [optional]  # noqa: E501
+            value (NillableAdSetTargetingRuleV23Q1Value): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

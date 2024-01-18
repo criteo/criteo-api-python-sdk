@@ -68,8 +68,6 @@ class NillableAdSetTargetingRuleValue(ModelComposed):
     }
 
     validations = {
-        ('values',): {
-        },
     }
 
     @cached_property
@@ -148,8 +146,8 @@ class NillableAdSetTargetingRuleValue(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            operand (str, none_type): Operand which states how the values should be applied. [optional]  # noqa: E501
-            values ([str], none_type): List of values to apply. [optional]  # noqa: E501
+            operand (str, none_type): [optional]  # noqa: E501
+            values ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,8 +251,8 @@ class NillableAdSetTargetingRuleValue(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            operand (str, none_type): Operand which states how the values should be applied. [optional]  # noqa: E501
-            values ([str], none_type): List of values to apply. [optional]  # noqa: E501
+            operand (str, none_type): [optional]  # noqa: E501
+            values ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

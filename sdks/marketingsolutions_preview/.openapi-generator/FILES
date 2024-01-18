@@ -272,6 +272,7 @@ criteo_api_marketingsolutions_preview/model/marketing_solutions_report_status_re
 criteo_api_marketingsolutions_preview/model/modify_audience_response.py
 criteo_api_marketingsolutions_preview/model/nillable_ad_set_targeting_rule.py
 criteo_api_marketingsolutions_preview/model/nillable_ad_set_targeting_rule_v23_q1.py
+criteo_api_marketingsolutions_preview/model/nillable_ad_set_targeting_rule_v23_q1_value.py
 criteo_api_marketingsolutions_preview/model/nillable_ad_set_targeting_rule_value.py
 criteo_api_marketingsolutions_preview/model/nillable_date_time.py
 criteo_api_marketingsolutions_preview/model/nillable_decimal.py
@@ -355,7 +356,6 @@ criteo_api_marketingsolutions_preview/model/requests_patch_ad_set.py
 criteo_api_marketingsolutions_preview/model/resource_collection_outcome_of_product_set.py
 criteo_api_marketingsolutions_preview/model/resource_of_product_set.py
 criteo_api_marketingsolutions_preview/model/resource_outcome_of_product_set.py
-criteo_api_marketingsolutions_preview/model/response_ad_set_id.py
 criteo_api_marketingsolutions_preview/model/response_read_ad_set.py
 criteo_api_marketingsolutions_preview/model/response_read_ad_set_v23_q1.py
 criteo_api_marketingsolutions_preview/model/responses_ad_set_id.py
@@ -665,6 +665,7 @@ docs/MarketingSolutionsReportStatusResponse.md
 docs/ModifyAudienceResponse.md
 docs/NillableAdSetTargetingRule.md
 docs/NillableAdSetTargetingRuleV23Q1.md
+docs/NillableAdSetTargetingRuleV23Q1Value.md
 docs/NillableAdSetTargetingRuleValue.md
 docs/NillableDateTime.md
 docs/NillableDecimal.md
@@ -750,7 +751,6 @@ docs/RequestsPatchAdSet.md
 docs/ResourceCollectionOutcomeOfProductSet.md
 docs/ResourceOfProductSet.md
 docs/ResourceOutcomeOfProductSet.md
-docs/ResponseAdSetId.md
 docs/ResponseReadAdSet.md
 docs/ResponseReadAdSetV23Q1.md
 docs/ResponsesAdSetId.md

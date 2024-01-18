@@ -154,7 +154,7 @@ class PatchAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the ad set. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
             scheduling (PatchAdSetScheduling): [optional]  # noqa: E501
             bidding (PatchAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
@@ -244,7 +244,7 @@ class PatchAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the ad set. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
             scheduling (PatchAdSetScheduling): [optional]  # noqa: E501
             bidding (PatchAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501

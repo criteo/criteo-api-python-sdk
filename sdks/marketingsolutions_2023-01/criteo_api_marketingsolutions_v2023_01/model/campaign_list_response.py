@@ -31,9 +31,9 @@ from criteo_api_marketingsolutions_v2023_01.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_v2023_01.model.campaign_read_resource import CampaignReadResource
-    from criteo_api_marketingsolutions_v2023_01.model.problem_details import ProblemDetails
+    from criteo_api_marketingsolutions_v2023_01.model.common_problem import CommonProblem
     globals()['CampaignReadResource'] = CampaignReadResource
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
 
 
 class CampaignListResponse(ModelNormal):
@@ -64,12 +64,6 @@ class CampaignListResponse(ModelNormal):
     }
 
     validations = {
-        ('data',): {
-        },
-        ('warnings',): {
-        },
-        ('errors',): {
-        },
     }
 
     @cached_property
@@ -96,8 +90,8 @@ class CampaignListResponse(ModelNormal):
         lazy_import()
         return {
             'data': ([CampaignReadResource], none_type,),  # noqa: E501
-            'warnings': ([ProblemDetails], none_type,),  # noqa: E501
-            'errors': ([ProblemDetails], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -156,8 +150,8 @@ class CampaignListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([CampaignReadResource], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,8 +238,8 @@ class CampaignListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([CampaignReadResource], none_type): [optional]  # noqa: E501
-            warnings ([ProblemDetails], none_type): [optional]  # noqa: E501
-            errors ([ProblemDetails], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

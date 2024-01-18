@@ -109,7 +109,6 @@ criteo_api_marketingsolutions_v2023_01/model/replace_audience_response.py
 criteo_api_marketingsolutions_v2023_01/model/request_ad_set_search.py
 criteo_api_marketingsolutions_v2023_01/model/requests_ad_set_id.py
 criteo_api_marketingsolutions_v2023_01/model/requests_patch_ad_set.py
-criteo_api_marketingsolutions_v2023_01/model/response_ad_set_id.py
 criteo_api_marketingsolutions_v2023_01/model/response_read_ad_set.py
 criteo_api_marketingsolutions_v2023_01/model/responses_ad_set_id.py
 criteo_api_marketingsolutions_v2023_01/model/responses_read_ad_set.py
@@ -221,7 +220,6 @@ docs/ReplaceAudienceResponse.md
 docs/RequestAdSetSearch.md
 docs/RequestsAdSetId.md
 docs/RequestsPatchAdSet.md
-docs/ResponseAdSetId.md
 docs/ResponseReadAdSet.md
 docs/ResponsesAdSetId.md
 docs/ResponsesReadAdSet.md
