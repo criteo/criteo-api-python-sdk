@@ -89,7 +89,7 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
         """
         lazy_import()
         return {
-            'retailer_id': (int,),  # noqa: E501
+            'retailer_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'user_behavior_details': (RmLegacyAudienceUserBehaviorDetailsV2,),  # noqa: E501
             'customer_list_details': (RmLegacySegmentCustomerList,),  # noqa: E501
@@ -118,7 +118,7 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
         """RmLegacyAudienceGetEntityV2 - a model defined in OpenAPI
 
         Args:
-            retailer_id (int): ID of the retailer associated with this audience
+            retailer_id (str): ID of the retailer associated with this audience
             name (str): Name of the audience
 
         Keyword Args:
@@ -211,7 +211,7 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
         """RmLegacyAudienceGetEntityV2 - a model defined in OpenAPI
 
         Args:
-            retailer_id (int): ID of the retailer associated with this audience
+            retailer_id (str): ID of the retailer associated with this audience
             name (str): Name of the audience
 
         Keyword Args:

@@ -5042,6 +5042,7 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
+                company_name="company_name_example",
             ),
         ),
     ) # PostCampaignV202301 | Creatable campaign attributes (optional)
@@ -6272,6 +6273,7 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
                 view_attribution_window="None",
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
+                company_name="company_name_example",
             ),
         ),
     ) # PutCampaignV202301 | Editable campaign attributes (optional)

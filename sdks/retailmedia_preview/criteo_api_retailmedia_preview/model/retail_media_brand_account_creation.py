@@ -76,6 +76,7 @@ class RetailMediaBrandAccountCreation(ModelNormal):
         """
         return {
             'name': (str, none_type,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
             'brands': ([int], none_type,),  # noqa: E501
         }
 
@@ -86,6 +87,7 @@ class RetailMediaBrandAccountCreation(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
+        'company_name': 'companyName',  # noqa: E501
         'brands': 'brands',  # noqa: E501
     }
 
@@ -131,6 +133,7 @@ class RetailMediaBrandAccountCreation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str, none_type): the name of the account, must be unique across all accounts. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
             brands ([int], none_type): list of brands to link to the new account. [optional]  # noqa: E501
         """
 
@@ -218,6 +221,7 @@ class RetailMediaBrandAccountCreation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str, none_type): the name of the account, must be unique across all accounts. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
             brands ([int], none_type): list of brands to link to the new account. [optional]  # noqa: E501
         """
 

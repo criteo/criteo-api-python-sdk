@@ -107,6 +107,7 @@ class ExternalAccount(ModelNormal):
             'parent_account_label': (str,),  # noqa: E501
             'time_zone': (str,),  # noqa: E501
             'subtype': (str, none_type,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -122,6 +123,7 @@ class ExternalAccount(ModelNormal):
         'parent_account_label': 'parentAccountLabel',  # noqa: E501
         'time_zone': 'timeZone',  # noqa: E501
         'subtype': 'subtype',  # noqa: E501
+        'company_name': 'companyName',  # noqa: E501
     }
 
     read_only_vars = {
@@ -174,6 +176,7 @@ class ExternalAccount(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             subtype (str, none_type): [optional]  # noqa: E501
+            company_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -274,6 +277,7 @@ class ExternalAccount(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             subtype (str, none_type): [optional]  # noqa: E501
+            company_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

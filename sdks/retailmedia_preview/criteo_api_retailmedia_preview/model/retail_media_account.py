@@ -88,6 +88,7 @@ class RetailMediaAccount(ModelNormal):
         """
         return {
             'name': (str, none_type,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
             'sub_type': (str, none_type,),  # noqa: E501
             'country_ids': ([int], none_type,),  # noqa: E501
@@ -103,6 +104,7 @@ class RetailMediaAccount(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
+        'company_name': 'companyName',  # noqa: E501
         'type': 'type',  # noqa: E501
         'sub_type': 'subType',  # noqa: E501
         'country_ids': 'countryIds',  # noqa: E501
@@ -153,6 +155,7 @@ class RetailMediaAccount(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str, none_type): account name. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
             type (str, none_type): Type for the account. [optional]  # noqa: E501
             sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
             country_ids ([int], none_type): list of countries associated with the account. [optional]  # noqa: E501
@@ -245,6 +248,7 @@ class RetailMediaAccount(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str, none_type): account name. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
             type (str, none_type): Type for the account. [optional]  # noqa: E501
             sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
             country_ids ([int], none_type): list of countries associated with the account. [optional]  # noqa: E501

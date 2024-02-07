@@ -6,6 +6,7 @@ The details for a newly created account
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str, none_type** | account name | [optional] 
+**company_name** | **str, none_type** | Display name for reporting the owning entity of ads for the Digital Services Act in the European Union | [optional] 
 **type** | **str, none_type** | Type for the account | [optional] 
 **sub_type** | **str, none_type** | subtype for the account | [optional] 
 **country_ids** | **[int], none_type** | list of countries associated with the account | [optional] 

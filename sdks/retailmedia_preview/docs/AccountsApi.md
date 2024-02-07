@@ -60,6 +60,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | Account Id for the parent private market account
     retail_media_brand_account_creation = RetailMediaBrandAccountCreation(
         name="name_example",
+        company_name="company_name_example",
         brands=[
             1,
         ],
@@ -160,6 +161,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | Account Id for the parent private market account
     retail_media_seller_account_creation = RetailMediaSellerAccountCreation(
         name="name_example",
+        company_name="company_name_example",
         sellers=[
             RetailMediaSeller(
                 seller_id="seller_id_example",

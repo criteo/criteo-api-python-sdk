@@ -50,7 +50,7 @@ class AnalyticsApi(object):
         self.api_client = api_client
         self.get_adset_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -329,7 +329,7 @@ class AnalyticsApi(object):
         )
         self.get_categories_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -444,7 +444,7 @@ class AnalyticsApi(object):
         )
         self.get_placements_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -487,7 +487,10 @@ class AnalyticsApi(object):
                 'accept': [
                     'text/plain',
                     'application/json',
-                    'text/json'
+                    'text/json',
+                    'text/csv',
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -556,7 +559,7 @@ class AnalyticsApi(object):
         )
         self.get_transactions_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -725,7 +728,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1128,7 +1131,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1286,7 +1289,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1444,7 +1447,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """

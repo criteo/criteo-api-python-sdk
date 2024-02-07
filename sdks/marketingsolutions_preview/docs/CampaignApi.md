@@ -4,7 +4,7 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ad_set**](CampaignApi.md#create_ad_set) | **POST** /preview/marketing-solutions/ad-sets | 
+[**create_ad_set_v24_q1**](CampaignApi.md#create_ad_set_v24_q1) | **POST** /preview/marketing-solutions/ad-sets | 
 [**create_campaign**](CampaignApi.md#create_campaign) | **POST** /preview/marketing-solutions/campaigns | 
 [**delete_advertiser_bundle_rules**](CampaignApi.md#delete_advertiser_bundle_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
 [**delete_advertiser_domain_rules**](CampaignApi.md#delete_advertiser_domain_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | 
 [**get_ad_set_targeting_deal_ids**](CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
 [**get_ad_set_targeting_video_positioning**](CampaignApi.md#get_ad_set_targeting_video_positioning) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | 
-[**get_ad_set_v23_q1**](CampaignApi.md#get_ad_set_v23_q1) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id} | 
+[**get_ad_set_v24_q1**](CampaignApi.md#get_ad_set_v24_q1) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id} | 
 [**get_advertiser_bundle_rules**](CampaignApi.md#get_advertiser_bundle_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
 [**get_advertiser_domain_rules**](CampaignApi.md#get_advertiser_domain_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
 [**get_campaign_bundle_rules**](CampaignApi.md#get_campaign_bundle_rules) | **GET** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
@@ -27,7 +27,7 @@ Method | HTTP request | Description
 [**get_oc_ibrand_safety_rule**](CampaignApi.md#get_oc_ibrand_safety_rule) | **GET** /preview/brand-safety/oci | 
 [**get_oc_itargeting_rule**](CampaignApi.md#get_oc_itargeting_rule) | **GET** /preview/targeting/oci | 
 [**get_supply_vendor_list**](CampaignApi.md#get_supply_vendor_list) | **GET** /preview/marketing-solutions/ad-sets/targeting/supply-vendors | 
-[**patch_ad_sets**](CampaignApi.md#patch_ad_sets) | **PATCH** /preview/marketing-solutions/ad-sets | 
+[**patch_ad_sets_v24_q1**](CampaignApi.md#patch_ad_sets_v24_q1) | **PATCH** /preview/marketing-solutions/ad-sets | 
 [**patch_campaigns**](CampaignApi.md#patch_campaigns) | **PATCH** /preview/marketing-solutions/campaigns | 
 [**patch_category_bid_list**](CampaignApi.md#patch_category_bid_list) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
 [**patch_display_multipliers**](CampaignApi.md#patch_display_multipliers) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
@@ -39,7 +39,7 @@ Method | HTTP request | Description
 [**put_advertiser_domain_rules**](CampaignApi.md#put_advertiser_domain_rules) | **PUT** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
 [**put_campaign_bundle_rules**](CampaignApi.md#put_campaign_bundle_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
 [**put_campaign_domain_rules**](CampaignApi.md#put_campaign_domain_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/domain-rules | 
-[**search_ad_sets_v23_q1**](CampaignApi.md#search_ad_sets_v23_q1) | **POST** /preview/marketing-solutions/ad-sets/search | 
+[**search_ad_sets_v24_q1**](CampaignApi.md#search_ad_sets_v24_q1) | **POST** /preview/marketing-solutions/ad-sets/search | 
 [**search_campaigns_v23_q1**](CampaignApi.md#search_campaigns_v23_q1) | **POST** /preview/marketing-solutions/campaigns/search | 
 [**set_ad_set_targeting_deal_ids**](CampaignApi.md#set_ad_set_targeting_deal_ids) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
 [**set_ad_set_targeting_video_positioning**](CampaignApi.md#set_ad_set_targeting_video_positioning) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | 
@@ -50,8 +50,8 @@ Method | HTTP request | Description
 [**upsert_oc_itargeting_rule**](CampaignApi.md#upsert_oc_itargeting_rule) | **POST** /preview/targeting/oci | 
 
 
-# **create_ad_set**
-> ResponseReadAdSet create_ad_set(create_ad_set_request)
+# **create_ad_set_v24_q1**
+> ResponseReadAdSetV24Q1 create_ad_set_v24_q1(create_ad_set_v24_q1_request)
 
 
 
@@ -66,8 +66,8 @@ Create the specified ad set
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.response_read_ad_set import ResponseReadAdSet
-from criteo_api_marketingsolutions_preview.model.create_ad_set_request import CreateAdSetRequest
+from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v24_q1 import ResponseReadAdSetV24Q1
+from criteo_api_marketingsolutions_preview.model.create_ad_set_v24_q1_request import CreateAdSetV24Q1Request
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -96,23 +96,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    create_ad_set_request = CreateAdSetRequest(
-        data=CreateAdSetResource(
-            attributes=CreateAdSet(
+    create_ad_set_v24_q1_request = CreateAdSetV24Q1Request(
+        data=CreateAdSetV24Q1Resource(
+            attributes=CreateAdSetV24Q1(
                 name="name_example",
                 dataset_id="dataset_id_example",
                 campaign_id="campaign_id_example",
                 objective="customAction",
-                schedule=CreateAdSetSchedule(
+                schedule=CreateAdSetScheduleV24Q1(
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 ),
-                bidding=CreateAdSetBidding(
+                bidding=CreateAdSetBiddingV24Q1(
                     bid_amount=3.14,
                     cost_controller="COS",
                 ),
-                targeting=CreateAdSetTargeting(
-                    delivery_limitations=AdSetDeliveryLimitations(
+                targeting=CreateAdSetTargetingV24Q1(
+                    delivery_limitations=AdSetDeliveryLimitationsV24Q1(
                         environments=[
                             "web",
                         ],
@@ -123,32 +123,32 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             "android",
                         ],
                     ),
-                    geo_location=CreateAdSetGeoLocation(
-                        countries=AdSetTargetingRule(
+                    geo_location=CreateAdSetGeoLocationV24Q1(
+                        countries=AdSetTargetingRuleV24Q1(
                             operand="undefined",
                             values=[
                                 "values_example",
                             ],
                         ),
-                        subdivisions=AdSetTargetingRule(
+                        subdivisions=AdSetTargetingRuleV24Q1(
                             operand="undefined",
                             values=[
                                 "values_example",
                             ],
                         ),
-                        zip_codes=AdSetTargetingRule(
+                        zip_codes=AdSetTargetingRuleV24Q1(
                             operand="undefined",
                             values=[
                                 "values_example",
                             ],
                         ),
                     ),
-                    frequency_capping=AdSetFrequencyCapping(
+                    frequency_capping=AdSetFrequencyCappingV24Q1(
                         frequency="hourly",
                         maximum_impressions=1,
                     ),
                 ),
-                budget=CreateAdSetBudget(
+                budget=CreateAdSetBudgetV24Q1(
                     budget_strategy="capped",
                     budget_renewal="undefined",
                     budget_delivery_smoothing="accelerated",
@@ -160,14 +160,14 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="AdSet",
         ),
-    ) # CreateAdSetRequest | the ad sets to create
+    ) # CreateAdSetV24Q1Request | the ad sets to create
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_ad_set(create_ad_set_request)
+        api_response = api_instance.create_ad_set_v24_q1(create_ad_set_v24_q1_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->create_ad_set: %s\n" % e)
+        print("Exception when calling CampaignApi->create_ad_set_v24_q1: %s\n" % e)
 ```
 
 
@@ -175,11 +175,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_ad_set_request** | [**CreateAdSetRequest**](CreateAdSetRequest.md)| the ad sets to create |
+ **create_ad_set_v24_q1_request** | [**CreateAdSetV24Q1Request**](CreateAdSetV24Q1Request.md)| the ad sets to create |
 
 ### Return type
 
-[**ResponseReadAdSet**](ResponseReadAdSet.md)
+[**ResponseReadAdSetV24Q1**](ResponseReadAdSetV24Q1.md)
 
 ### Authorization
 
@@ -1284,8 +1284,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ad_set_v23_q1**
-> ResponseReadAdSetV23Q1 get_ad_set_v23_q1(ad_set_id)
+# **get_ad_set_v24_q1**
+> ResponseReadAdSetV24Q1 get_ad_set_v24_q1(ad_set_id)
 
 
 
@@ -1300,7 +1300,7 @@ Get the data for the specified ad set
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v23_q1 import ResponseReadAdSetV23Q1
+from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v24_q1 import ResponseReadAdSetV24Q1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1333,10 +1333,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_ad_set_v23_q1(ad_set_id)
+        api_response = api_instance.get_ad_set_v24_q1(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_ad_set_v23_q1: %s\n" % e)
+        print("Exception when calling CampaignApi->get_ad_set_v24_q1: %s\n" % e)
 ```
 
 
@@ -1348,7 +1348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseReadAdSetV23Q1**](ResponseReadAdSetV23Q1.md)
+[**ResponseReadAdSetV24Q1**](ResponseReadAdSetV24Q1.md)
 
 ### Authorization
 
@@ -2246,8 +2246,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_ad_sets**
-> ResponsesAdSetId patch_ad_sets()
+# **patch_ad_sets_v24_q1**
+> ResponsesAdSetIdV24Q1 patch_ad_sets_v24_q1()
 
 
 
@@ -2262,8 +2262,8 @@ Patch a list of AdSets.
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.responses_ad_set_id import ResponsesAdSetId
-from criteo_api_marketingsolutions_preview.model.requests_patch_ad_set import RequestsPatchAdSet
+from criteo_api_marketingsolutions_preview.model.responses_ad_set_id_v24_q1 import ResponsesAdSetIdV24Q1
+from criteo_api_marketingsolutions_preview.model.requests_patch_ad_set_v24_q1 import RequestsPatchAdSetV24Q1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2292,14 +2292,14 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    requests_patch_ad_set = RequestsPatchAdSet(
+    requests_patch_ad_set_v24_q1 = RequestsPatchAdSetV24Q1(
         data=[
-            WriteModelPatchAdSet(
+            WriteModelPatchAdSetV24Q1(
                 id="id_example",
-                type="PatchAdSet",
-                attributes=PatchAdSet(
+                type="PatchAdSetV24Q1",
+                attributes=PatchAdSetV24Q1(
                     name="name_example",
-                    scheduling=PatchAdSetScheduling(
+                    scheduling=PatchAdSetSchedulingV24Q1(
                         start_date=NillableDateTime(
                             value=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         ),
@@ -2307,13 +2307,13 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             value=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         ),
                     ),
-                    bidding=PatchAdSetBidding(
+                    bidding=PatchAdSetBiddingV24Q1(
                         bid_amount=NillableDecimal(
                             value=3.14,
                         ),
                     ),
-                    targeting=AdSetTargeting(
-                        delivery_limitations=AdSetDeliveryLimitations(
+                    targeting=AdSetTargetingV24Q1(
+                        delivery_limitations=AdSetDeliveryLimitationsV24Q1(
                             environments=[
                                 "web",
                             ],
@@ -2324,23 +2324,23 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                                 "android",
                             ],
                         ),
-                        geo_location=AdSetGeoLocation(
-                            countries=NillableAdSetTargetingRule(
-                                value=NillableAdSetTargetingRuleValue(),
+                        geo_location=AdSetGeoLocationV24Q1(
+                            countries=NillableAdSetTargetingRuleV24Q1(
+                                value=NillableAdSetTargetingRuleV24Q1Value(),
                             ),
-                            subdivisions=NillableAdSetTargetingRule(
-                                value=NillableAdSetTargetingRuleValue(),
+                            subdivisions=NillableAdSetTargetingRuleV24Q1(
+                                value=NillableAdSetTargetingRuleV24Q1Value(),
                             ),
-                            zip_codes=NillableAdSetTargetingRule(
-                                value=NillableAdSetTargetingRuleValue(),
+                            zip_codes=NillableAdSetTargetingRuleV24Q1(
+                                value=NillableAdSetTargetingRuleV24Q1Value(),
                             ),
                         ),
-                        frequency_capping=AdSetFrequencyCapping(
+                        frequency_capping=AdSetFrequencyCappingV24Q1(
                             frequency="hourly",
                             maximum_impressions=1,
                         ),
                     ),
-                    budget=PatchAdSetBudget(
+                    budget=PatchAdSetBudgetV24Q1(
                         budget_strategy="capped",
                         budget_renewal="undefined",
                         budget_delivery_smoothing="accelerated",
@@ -2352,15 +2352,15 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ],
-    ) # RequestsPatchAdSet | List of adsets to patch. (optional)
+    ) # RequestsPatchAdSetV24Q1 | List of adsets to patch. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.patch_ad_sets(requests_patch_ad_set=requests_patch_ad_set)
+        api_response = api_instance.patch_ad_sets_v24_q1(requests_patch_ad_set_v24_q1=requests_patch_ad_set_v24_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->patch_ad_sets: %s\n" % e)
+        print("Exception when calling CampaignApi->patch_ad_sets_v24_q1: %s\n" % e)
 ```
 
 
@@ -2368,11 +2368,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requests_patch_ad_set** | [**RequestsPatchAdSet**](RequestsPatchAdSet.md)| List of adsets to patch. | [optional]
+ **requests_patch_ad_set_v24_q1** | [**RequestsPatchAdSetV24Q1**](RequestsPatchAdSetV24Q1.md)| List of adsets to patch. | [optional]
 
 ### Return type
 
-[**ResponsesAdSetId**](ResponsesAdSetId.md)
+[**ResponsesAdSetIdV24Q1**](ResponsesAdSetIdV24Q1.md)
 
 ### Authorization
 
@@ -3622,8 +3622,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_ad_sets_v23_q1**
-> ResponsesReadAdSetV23Q1 search_ad_sets_v23_q1()
+# **search_ad_sets_v24_q1**
+> ResponsesReadAdSetV24Q1 search_ad_sets_v24_q1()
 
 
 
@@ -3638,8 +3638,8 @@ Search for ad sets
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.responses_read_ad_set_v23_q1 import ResponsesReadAdSetV23Q1
-from criteo_api_marketingsolutions_preview.model.ad_set_search_request_v23_q1 import AdSetSearchRequestV23Q1
+from criteo_api_marketingsolutions_preview.model.ad_set_search_request_v24_q1 import AdSetSearchRequestV24Q1
+from criteo_api_marketingsolutions_preview.model.responses_read_ad_set_v24_q1 import ResponsesReadAdSetV24Q1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3668,8 +3668,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    ad_set_search_request_v23_q1 = AdSetSearchRequestV23Q1(
-        filters=AdSetSearchFilterV23Q1(
+    ad_set_search_request_v24_q1 = AdSetSearchRequestV24Q1(
+        filters=AdSetSearchFilterV24Q1(
             ad_set_ids=[
                 "ad_set_ids_example",
             ],
@@ -3680,15 +3680,15 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 "campaign_ids_example",
             ],
         ),
-    ) # AdSetSearchRequestV23Q1 |  (optional)
+    ) # AdSetSearchRequestV24Q1 |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_ad_sets_v23_q1(ad_set_search_request_v23_q1=ad_set_search_request_v23_q1)
+        api_response = api_instance.search_ad_sets_v24_q1(ad_set_search_request_v24_q1=ad_set_search_request_v24_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->search_ad_sets_v23_q1: %s\n" % e)
+        print("Exception when calling CampaignApi->search_ad_sets_v24_q1: %s\n" % e)
 ```
 
 
@@ -3696,11 +3696,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_set_search_request_v23_q1** | [**AdSetSearchRequestV23Q1**](AdSetSearchRequestV23Q1.md)|  | [optional]
+ **ad_set_search_request_v24_q1** | [**AdSetSearchRequestV24Q1**](AdSetSearchRequestV24Q1.md)|  | [optional]
 
 ### Return type
 
-[**ResponsesReadAdSetV23Q1**](ResponsesReadAdSetV23Q1.md)
+[**ResponsesReadAdSetV24Q1**](ResponsesReadAdSetV24Q1.md)
 
 ### Authorization
 

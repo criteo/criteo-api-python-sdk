@@ -18,7 +18,6 @@ Method | HTTP request | Description
 [**get_api202110_external_retailer_pages_by_retailer_id**](CampaignApi.md#get_api202110_external_retailer_pages_by_retailer_id) | **GET** /2023-01/retail-media/retailers/{retailerId}/pages | 
 [**get_api202204_external_categorie_by_category_id**](CampaignApi.md#get_api202204_external_categorie_by_category_id) | **GET** /2023-01/retail-media/categories/{categoryId} | 
 [**get_api202204_external_categories**](CampaignApi.md#get_api202204_external_categories) | **GET** /2023-01/retail-media/categories | 
-[**get_api202207_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api202207_external_account_by_account_id_creativescreative_id) | **GET** /2023-01/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_api202207_external_retailer_by_retailer_id_templatestemplate_id**](CampaignApi.md#get_api202207_external_retailer_by_retailer_id_templatestemplate_id) | **GET** /2023-01/retail-media/retailers/{retailer-id}/templates/{template-id} | 
 [**get_api202207_external_retailer_templates_by_retailer_id**](CampaignApi.md#get_api202207_external_retailer_templates_by_retailer_id) | **GET** /2023-01/retail-media/retailers/{retailer-id}/templates | 
 [**get_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#get_api202301_external_account_campaigns_by_account_id) | **GET** /2023-01/retail-media/accounts/{account-id}/campaigns | 
@@ -48,7 +47,6 @@ Method | HTTP request | Description
 [**post_api202110_external_preferred_line_item_targeting_audiences_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_audiences_delete_by_line_item_id) | **POST** /2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete | 
 [**post_api202110_external_preferred_line_item_targeting_stores_append_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_stores_append_by_line_item_id) | **POST** /2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append | 
 [**post_api202110_external_preferred_line_item_targeting_stores_delete_by_line_item_id**](CampaignApi.md#post_api202110_external_preferred_line_item_targeting_stores_delete_by_line_item_id) | **POST** /2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete | 
-[**post_api202207_external_account_creatives_by_account_id**](CampaignApi.md#post_api202207_external_account_creatives_by_account_id) | **POST** /2023-01/retail-media/accounts/{account-id}/creatives | 
 [**post_api202301_external_account_campaigns_by_account_id**](CampaignApi.md#post_api202301_external_account_campaigns_by_account_id) | **POST** /2023-01/retail-media/accounts/{account-id}/campaigns | 
 [**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2023-01/retail-media/accounts/{accountId}/catalogs | 
 [**post_api_v2_external_campaign_auction_line_items_by_campaign_id**](CampaignApi.md#post_api_v2_external_campaign_auction_line_items_by_campaign_id) | **POST** /2023-01/retail-media/campaigns/{campaign-id}/auction-line-items | 
@@ -56,7 +54,6 @@ Method | HTTP request | Description
 [**put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_add_to_basket_by_line_item_id) | **PUT** /2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
 [**put_api202110_external_preferred_line_item_targeting_audiences_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_audiences_by_line_item_id) | **PUT** /2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
 [**put_api202110_external_preferred_line_item_targeting_stores_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_targeting_stores_by_line_item_id) | **PUT** /2023-01/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
-[**put_api202207_external_account_by_account_id_creativescreative_id**](CampaignApi.md#put_api202207_external_account_by_account_id_creativescreative_id) | **PUT** /2023-01/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**put_api202301_external_campaign_by_campaign_id**](CampaignApi.md#put_api202301_external_campaign_by_campaign_id) | **PUT** /2023-01/retail-media/campaigns/{campaignId} | 
 [**put_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#put_api202301_external_line_item_bid_multipliers_by_line_item_id) | **PUT** /2023-01/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**put_api_v2_external_auction_line_item_by_line_item_id**](CampaignApi.md#put_api_v2_external_auction_line_item_by_line_item_id) | **PUT** /2023-01/retail-media/auction-line-items/{line-item-id} | 
@@ -1314,92 +1311,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Categories found. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api202207_external_account_by_account_id_creativescreative_id**
-> Creative202207Response get_api202207_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-
-
-
-Get the specified creative
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_01
-from criteo_api_retailmedia_v2023_01.api import campaign_api
-from criteo_api_retailmedia_v2023_01.model.creative202207_response import Creative202207Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id to retrieve creatives for
-    creative_id = "creative-id_example" # str | Creative to get
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api202207_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_01.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202207_external_account_by_account_id_creativescreative_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id to retrieve creatives for |
- **creative_id** | **str**| Creative to get |
-
-### Return type
-
-[**Creative202207Response**](Creative202207Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Creatives found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4267,130 +4178,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_api202207_external_account_creatives_by_account_id**
-> Creative202207Response post_api202207_external_account_creatives_by_account_id(account_id)
-
-
-
-Create a creative for an account
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_01
-from criteo_api_retailmedia_v2023_01.api import campaign_api
-from criteo_api_retailmedia_v2023_01.model.creative202207_response import Creative202207Response
-from criteo_api_retailmedia_v2023_01.model.creative_create_model202207 import CreativeCreateModel202207
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id to create a creative for
-    creative_create_model202207 = CreativeCreateModel202207(
-        name="name_example",
-        brand_id=1,
-        retailer_id=1,
-        template_id=1,
-        template_variable_values=[
-            TemplateVariableValue(
-                id="id_example",
-                text_variable_value=TextVariableValue(
-                    text="text_example",
-                ),
-                choice_variable_value=ChoiceVariableValue(
-                    chosen_options=[
-                        "chosen_options_example",
-                    ],
-                ),
-                color_variable_value=ColorVariableValue(
-                    color="#2EC",
-                ),
-                files_variable_value=FilesVariableValue(
-                    asset_ids=[
-                        "asset_ids_example",
-                    ],
-                ),
-                hyperlink_variable_value=HyperlinkVariableValue(
-                    url="url_example",
-                ),
-            ),
-        ],
-    ) # CreativeCreateModel202207 | The creative to create (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api202207_external_account_creatives_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_01.ApiException as e:
-        print("Exception when calling CampaignApi->post_api202207_external_account_creatives_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api202207_external_account_creatives_by_account_id(account_id, creative_create_model202207=creative_create_model202207)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_01.ApiException as e:
-        print("Exception when calling CampaignApi->post_api202207_external_account_creatives_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id to create a creative for |
- **creative_create_model202207** | [**CreativeCreateModel202207**](CreativeCreateModel202207.md)| The creative to create | [optional]
-
-### Return type
-
-[**Creative202207Response**](Creative202207Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Creatives created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **post_api202301_external_account_campaigns_by_account_id**
 > JsonApiSingleResponseOfCampaignV202301 post_api202301_external_account_campaigns_by_account_id(account_id)
 
@@ -4457,6 +4244,7 @@ with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
+                company_name="company_name_example",
             ),
         ),
     ) # PostCampaignV202301 | Creatable campaign attributes (optional)
@@ -5173,133 +4961,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **put_api202207_external_account_by_account_id_creativescreative_id**
-> Creative202207Response put_api202207_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-
-
-
-Update a creative
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_01
-from criteo_api_retailmedia_v2023_01.api import campaign_api
-from criteo_api_retailmedia_v2023_01.model.creative202207_response import Creative202207Response
-from criteo_api_retailmedia_v2023_01.model.creative_update_model202207 import CreativeUpdateModel202207
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id containing the creative
-    creative_id = "creative-id_example" # str | Creative to update
-    creative_update_model202207 = CreativeUpdateModel202207(
-        name="name_example",
-        brand_id=1,
-        retailer_id=1,
-        template_id=1,
-        template_variable_values=[
-            TemplateVariableValue(
-                id="id_example",
-                text_variable_value=TextVariableValue(
-                    text="text_example",
-                ),
-                choice_variable_value=ChoiceVariableValue(
-                    chosen_options=[
-                        "chosen_options_example",
-                    ],
-                ),
-                color_variable_value=ColorVariableValue(
-                    color="#2EC",
-                ),
-                files_variable_value=FilesVariableValue(
-                    asset_ids=[
-                        "asset_ids_example",
-                    ],
-                ),
-                hyperlink_variable_value=HyperlinkVariableValue(
-                    url="url_example",
-                ),
-            ),
-        ],
-    ) # CreativeUpdateModel202207 | The creative to create (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.put_api202207_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_01.ApiException as e:
-        print("Exception when calling CampaignApi->put_api202207_external_account_by_account_id_creativescreative_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_api202207_external_account_by_account_id_creativescreative_id(account_id, creative_id, creative_update_model202207=creative_update_model202207)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_01.ApiException as e:
-        print("Exception when calling CampaignApi->put_api202207_external_account_by_account_id_creativescreative_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id containing the creative |
- **creative_id** | **str**| Creative to update |
- **creative_update_model202207** | [**CreativeUpdateModel202207**](CreativeUpdateModel202207.md)| The creative to create | [optional]
-
-### Return type
-
-[**Creative202207Response**](Creative202207Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**204** | Creative updated |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **put_api202301_external_campaign_by_campaign_id**
 > JsonApiSingleResponseOfCampaignV202301 put_api202301_external_campaign_by_campaign_id(campaign_id)
 
@@ -5363,6 +5024,7 @@ with criteo_api_retailmedia_v2023_01.ApiClient(configuration) as api_client:
                 view_attribution_window="None",
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
+                company_name="company_name_example",
             ),
         ),
     ) # PutCampaignV202301 | Editable campaign attributes (optional)
