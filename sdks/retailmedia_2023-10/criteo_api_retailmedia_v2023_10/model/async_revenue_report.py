@@ -68,38 +68,6 @@ class AsyncRevenueReport(ModelNormal):
             'AUCTION': "auction",
             'PREFERRED': "preferred",
         },
-        ('metrics',): {
-            'None': None,
-            'CLICKS': "clicks",
-            'SPEND': "spend",
-            'ATTRIBUTEDORDERS': "attributedOrders",
-            'ATTRIBUTEDSALES': "attributedSales",
-            'ATTRIBUTEDUNITS': "attributedUnits",
-            'CPC': "cpc",
-            'CPO': "cpo",
-            'ROAS': "roas",
-            'OPENAUCTIONREVENUE': "openAuctionRevenue",
-            'PREFERREDDEALSREVENUE': "preferredDealsRevenue",
-            'AVGCPC': "avgCpc",
-            'AVGCPM': "avgCpm",
-        },
-        ('dimensions',): {
-            'None': None,
-            'DATE': "date",
-            'CAMPAIGNID': "campaignId",
-            'CAMPAIGNNAME': "campaignName",
-            'ACCOUNTID': "accountId",
-            'ACCOUNTNAME': "accountName",
-            'ENVIRONMENT': "environment",
-            'ADVPRODUCTCATEGORY': "advProductCategory",
-            'BRANDID': "brandId",
-            'BRANDNAME': "brandName",
-            'PAGETYPENAME': "pageTypeName",
-            'ADVPRODUCTNAME': "advProductName",
-            'ADVPRODUCTGTIN': "advProductGtin",
-            'ADVPRODUCTMPN': "advProductMpn",
-            'ADVPRODUCTID': "advProductId",
-        },
         ('format',): {
             'None': None,
             'JSON': "json",
@@ -143,6 +111,37 @@ class AsyncRevenueReport(ModelNormal):
             'OFFLINE': "offline",
             'ONLINE': "online",
         },
+        ('dimensions',): {
+            'None': None,
+            'DATE': "date",
+            'CAMPAIGNID': "campaignId",
+            'CAMPAIGNNAME': "campaignName",
+            'ACCOUNTID': "accountId",
+            'ACCOUNTNAME': "accountName",
+            'ENVIRONMENT': "environment",
+            'ADVPRODUCTCATEGORY': "advProductCategory",
+            'BRANDID': "brandId",
+            'BRANDNAME': "brandName",
+            'PAGETYPENAME': "pageTypeName",
+            'ADVPRODUCTNAME': "advProductName",
+            'ADVPRODUCTGTIN': "advProductGtin",
+            'ADVPRODUCTMPN': "advProductMpn",
+            'ADVPRODUCTID': "advProductId",
+        },
+        ('metrics',): {
+            'None': None,
+            'IMPRESSIONS': "impressions",
+            'CLICKS': "clicks",
+            'SPEND': "spend",
+            'SALES': "sales",
+            'UNITS': "units",
+            'CPO': "cpo",
+            'ROAS': "roas",
+            'OPENAUCTIONREVENUE': "openAuctionRevenue",
+            'PREFERREDDEALSREVENUE': "preferredDealsRevenue",
+            'AVGCPC': "avgCpc",
+            'AVGCPM': "avgCpm",
+        },
     }
 
     validations = {
@@ -171,12 +170,10 @@ class AsyncRevenueReport(ModelNormal):
         return {
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'report_type': (str, none_type,),  # noqa: E501
-            'revenue_type': (str, none_type,),  # noqa: E501
             'ids': ([str], none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
-            'metrics': ([str], none_type,),  # noqa: E501
-            'dimensions': ([str], none_type,),  # noqa: E501
+            'report_type': (str, none_type,),  # noqa: E501
+            'revenue_type': (str, none_type,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
             'sold_by': (str, none_type,),  # noqa: E501
             'campaign_sub_type': (str, none_type,),  # noqa: E501
@@ -184,6 +181,8 @@ class AsyncRevenueReport(ModelNormal):
             'view_attribution_window': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
+            'dimensions': ([str], none_type,),  # noqa: E501
+            'metrics': ([str], none_type,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
 
@@ -195,12 +194,10 @@ class AsyncRevenueReport(ModelNormal):
     attribute_map = {
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'report_type': 'reportType',  # noqa: E501
-        'revenue_type': 'revenueType',  # noqa: E501
         'ids': 'ids',  # noqa: E501
         'id': 'id',  # noqa: E501
-        'metrics': 'metrics',  # noqa: E501
-        'dimensions': 'dimensions',  # noqa: E501
+        'report_type': 'reportType',  # noqa: E501
+        'revenue_type': 'revenueType',  # noqa: E501
         'format': 'format',  # noqa: E501
         'sold_by': 'soldBy',  # noqa: E501
         'campaign_sub_type': 'campaignSubType',  # noqa: E501
@@ -208,6 +205,8 @@ class AsyncRevenueReport(ModelNormal):
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
+        'dimensions': 'dimensions',  # noqa: E501
+        'metrics': 'metrics',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
 
@@ -256,12 +255,10 @@ class AsyncRevenueReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ids ([str], none_type): Campaign ids to report on. [optional]  # noqa: E501
+            id (str, none_type): Campaign id to report on. [optional]  # noqa: E501
             report_type (str, none_type): Type of report. [optional]  # noqa: E501
             revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
-            ids ([str], none_type): List of campaign Ids to filter. [optional]  # noqa: E501
-            id (str, none_type): List of campaign Id to filter. [optional]  # noqa: E501
-            metrics ([str], none_type): List of Metrics to report on. [optional]  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
             format (str, none_type): Format of the output. [optional]  # noqa: E501
             sold_by (str, none_type): Filter on the seller: indirect, direct or private market. [optional]  # noqa: E501
             campaign_sub_type (str, none_type): Filter on campaign subType : Auction and Preferred Deals or Lockout campaign. [optional]  # noqa: E501
@@ -269,6 +266,8 @@ class AsyncRevenueReport(ModelNormal):
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -361,12 +360,10 @@ class AsyncRevenueReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ids ([str], none_type): Campaign ids to report on. [optional]  # noqa: E501
+            id (str, none_type): Campaign id to report on. [optional]  # noqa: E501
             report_type (str, none_type): Type of report. [optional]  # noqa: E501
             revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
-            ids ([str], none_type): List of campaign Ids to filter. [optional]  # noqa: E501
-            id (str, none_type): List of campaign Id to filter. [optional]  # noqa: E501
-            metrics ([str], none_type): List of Metrics to report on. [optional]  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
             format (str, none_type): Format of the output. [optional]  # noqa: E501
             sold_by (str, none_type): Filter on the seller: indirect, direct or private market. [optional]  # noqa: E501
             campaign_sub_type (str, none_type): Filter on campaign subType : Auction and Preferred Deals or Lockout campaign. [optional]  # noqa: E501
@@ -374,6 +371,8 @@ class AsyncRevenueReport(ModelNormal):
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 

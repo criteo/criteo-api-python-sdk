@@ -138,7 +138,7 @@ class ExportReportColumn(ModelNormal):
         Args:
             name (str): Name of the exported column
             type (str): Type of the column
-            role (str): Role of the colummn
+            role (str): Role of the column
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -237,7 +237,7 @@ class ExportReportColumn(ModelNormal):
         Args:
             name (str): Name of the exported column
             type (str): Type of the column
-            role (str): Role of the colummn
+            role (str): Role of the column
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

@@ -55,6 +55,31 @@ class SyncAttributedTransactionsReport(ModelNormal):
     """
 
     allowed_values = {
+        ('click_attribution_window',): {
+            'None': None,
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
+            'NONE': "none",
+        },
+        ('view_attribution_window',): {
+            'None': None,
+            '1D': "1D",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
+            'NONE': "none",
+        },
+        ('campaign_type',): {
+            'None': None,
+            'SPONSOREDPRODUCTS': "sponsoredProducts",
+            'ONSITEDISPLAYS': "onSiteDisplays",
+        },
+        ('sales_channel',): {
+            'None': None,
+            'OFFLINE': "offline",
+            'ONLINE': "online",
+        },
         ('dimensions',): {
             'None': None,
             'CAMPAIGNNAME': "campaignName",
@@ -89,31 +114,6 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'ATTRIBUTEDUNITS': "attributedUnits",
             'ATTRIBUTEDSALES': "attributedSales",
         },
-        ('click_attribution_window',): {
-            'None': None,
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-            'NONE': "none",
-        },
-        ('view_attribution_window',): {
-            'None': None,
-            '1D': "1D",
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-            'NONE': "none",
-        },
-        ('campaign_type',): {
-            'None': None,
-            'SPONSOREDPRODUCTS': "sponsoredProducts",
-            'ONSITEDISPLAYS': "onSiteDisplays",
-        },
-        ('sales_channel',): {
-            'None': None,
-            'OFFLINE': "offline",
-            'ONLINE': "online",
-        },
     }
 
     validations = {
@@ -145,12 +145,12 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'campaign_ids': ([str], none_type,),  # noqa: E501
             'line_item_ids': ([str], none_type,),  # noqa: E501
-            'dimensions': ([str], none_type,),  # noqa: E501
-            'metrics': ([str], none_type,),  # noqa: E501
             'click_attribution_window': (str, none_type,),  # noqa: E501
             'view_attribution_window': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
+            'dimensions': ([str], none_type,),  # noqa: E501
+            'metrics': ([str], none_type,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
 
@@ -165,12 +165,12 @@ class SyncAttributedTransactionsReport(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
         'line_item_ids': 'lineItemIds',  # noqa: E501
-        'dimensions': 'dimensions',  # noqa: E501
-        'metrics': 'metrics',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
+        'dimensions': 'dimensions',  # noqa: E501
+        'metrics': 'metrics',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
 
@@ -220,14 +220,14 @@ class SyncAttributedTransactionsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_ids ([str], none_type): Campaign ids to report on. [optional]  # noqa: E501
-            line_item_ids ([str], none_type): Line item ids to report on. [optional]  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
-            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter. [optional]  # noqa: E501
+            line_item_ids ([str], none_type): Line item ids to filter. [optional]  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -322,14 +322,14 @@ class SyncAttributedTransactionsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_ids ([str], none_type): Campaign ids to report on. [optional]  # noqa: E501
-            line_item_ids ([str], none_type): Line item ids to report on. [optional]  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
-            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter. [optional]  # noqa: E501
+            line_item_ids ([str], none_type): Line item ids to filter. [optional]  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 

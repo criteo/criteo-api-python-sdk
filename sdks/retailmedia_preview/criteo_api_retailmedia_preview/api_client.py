@@ -76,7 +76,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/0.0.240207/python'
+        self.user_agent = 'OpenAPI-Generator/0.0.240404/python'
 
     def __enter__(self):
         return self
@@ -804,10 +804,10 @@ class Endpoint(object):
         Example:
 
         api_instance = AccountsApi()
-        api_instance.create_private_market_demand_brand_account  # this is an instance of the class Endpoint
-        api_instance.create_private_market_demand_brand_account()  # this invokes api_instance.create_private_market_demand_brand_account.__call__()
+        api_instance.add_brands  # this is an instance of the class Endpoint
+        api_instance.add_brands()  # this invokes api_instance.add_brands.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.create_private_market_demand_brand_account.callable or self.callable in this class
+        api_instance.add_brands.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

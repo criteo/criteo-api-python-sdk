@@ -172,6 +172,7 @@ class Product(ModelNormal):
             'ads_labels': ([str], none_type,),  # noqa: E501
             'ads_redirect': (str, none_type,),  # noqa: E501
             'product_types': ([str], none_type,),  # noqa: E501
+            'product_type_keys': ([str], none_type,),  # noqa: E501
             'age_group': (str, none_type,),  # noqa: E501
             'availability': (str, none_type,),  # noqa: E501
             'condition': (str, none_type,),  # noqa: E501
@@ -260,6 +261,7 @@ class Product(ModelNormal):
         'ads_labels': 'adsLabels',  # noqa: E501
         'ads_redirect': 'adsRedirect',  # noqa: E501
         'product_types': 'productTypes',  # noqa: E501
+        'product_type_keys': 'productTypeKeys',  # noqa: E501
         'age_group': 'ageGroup',  # noqa: E501
         'availability': 'availability',  # noqa: E501
         'condition': 'condition',  # noqa: E501
@@ -289,7 +291,7 @@ class Product(ModelNormal):
         """Product - a model defined in OpenAPI
 
         Args:
-            id (str): A unique identifier for the item. Aka Product ID.
+            id (str): A unique identifier for the item. Aka Product ID. Don’t use casing to make IDs unique.
             title (str): Title of the item. (500 UTF8 characters max).
             link (str): URL directly linking to your item's page on your website. (1000 UTF8 characters max).
             image_link (str): URL of an image of the item. Supported formats: PNG, JPEG, GIF. (2000 UTF8 characters max). 
@@ -338,7 +340,7 @@ class Product(ModelNormal):
             color (str, none_type): Color of the item.. [optional]  # noqa: E501
             google_product_category (str, none_type): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
             gtin (str, none_type): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
-            item_group_id (str, none_type): Shared identifier for all variants of the same product. RECOMMENDED.. [optional]  # noqa: E501
+            item_group_id (str, none_type): Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max). [optional]  # noqa: E501
             material (str, none_type): The material of which the item is made.. [optional]  # noqa: E501
             mpn (str, none_type): Manufacturer Part Number (MPN) of the item. RECOMMENDED.. [optional]  # noqa: E501
             pattern (str, none_type): The item's pattern (e.g. polka dots).. [optional]  # noqa: E501
@@ -385,6 +387,7 @@ class Product(ModelNormal):
             ads_labels ([str], none_type): Similar to adsGrouping, but only works on CPC.. [optional]  # noqa: E501
             ads_redirect (str, none_type): Allows advertisers to override the item URL when the product is shown within the context of Product Ads.. [optional]  # noqa: E501
             product_types ([str], none_type): Categories of the item (formatted as in products data specification).. [optional]  # noqa: E501
+            product_type_keys ([str], none_type): Category keys of the item (formatted as in productTypes).. [optional]  # noqa: E501
             age_group (str, none_type): Target age group of the item.. [optional]  # noqa: E501
             availability (str, none_type): Availability status of the item. RECOMMENDED.. [optional]  # noqa: E501
             condition (str, none_type): Condition or state of the item.. [optional]  # noqa: E501
@@ -396,11 +399,11 @@ class Product(ModelNormal):
             max_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
             tax_category (str, none_type): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
             transit_time_label (str, none_type): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str, none_type): Deprecated field. It should be replaced by externalSellerId. The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            seller_id (str, none_type): (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
             external_seller_id (str, none_type): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            external_seller_name (str, none_type): The external name of the seller (case sensitive and 750 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            number_of_reviews (int, none_type): The number of reviews for the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            product_rating (str, none_type): The rating of the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_name (str, none_type): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            number_of_reviews (int, none_type): The number of customer reviews for the product. [optional]  # noqa: E501
+            product_rating (str, none_type): The product rating for the product. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")
@@ -462,7 +465,7 @@ class Product(ModelNormal):
         """Product - a model defined in OpenAPI
 
         Args:
-            id (str): A unique identifier for the item. Aka Product ID.
+            id (str): A unique identifier for the item. Aka Product ID. Don’t use casing to make IDs unique.
             title (str): Title of the item. (500 UTF8 characters max).
             link (str): URL directly linking to your item's page on your website. (1000 UTF8 characters max).
             image_link (str): URL of an image of the item. Supported formats: PNG, JPEG, GIF. (2000 UTF8 characters max). 
@@ -511,7 +514,7 @@ class Product(ModelNormal):
             color (str, none_type): Color of the item.. [optional]  # noqa: E501
             google_product_category (str, none_type): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
             gtin (str, none_type): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
-            item_group_id (str, none_type): Shared identifier for all variants of the same product. RECOMMENDED.. [optional]  # noqa: E501
+            item_group_id (str, none_type): Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max). [optional]  # noqa: E501
             material (str, none_type): The material of which the item is made.. [optional]  # noqa: E501
             mpn (str, none_type): Manufacturer Part Number (MPN) of the item. RECOMMENDED.. [optional]  # noqa: E501
             pattern (str, none_type): The item's pattern (e.g. polka dots).. [optional]  # noqa: E501
@@ -558,6 +561,7 @@ class Product(ModelNormal):
             ads_labels ([str], none_type): Similar to adsGrouping, but only works on CPC.. [optional]  # noqa: E501
             ads_redirect (str, none_type): Allows advertisers to override the item URL when the product is shown within the context of Product Ads.. [optional]  # noqa: E501
             product_types ([str], none_type): Categories of the item (formatted as in products data specification).. [optional]  # noqa: E501
+            product_type_keys ([str], none_type): Category keys of the item (formatted as in productTypes).. [optional]  # noqa: E501
             age_group (str, none_type): Target age group of the item.. [optional]  # noqa: E501
             availability (str, none_type): Availability status of the item. RECOMMENDED.. [optional]  # noqa: E501
             condition (str, none_type): Condition or state of the item.. [optional]  # noqa: E501
@@ -569,11 +573,11 @@ class Product(ModelNormal):
             max_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
             tax_category (str, none_type): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
             transit_time_label (str, none_type): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str, none_type): Deprecated field. It should be replaced by externalSellerId. The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            seller_id (str, none_type): (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
             external_seller_id (str, none_type): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            external_seller_name (str, none_type): The external name of the seller (case sensitive and 750 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            number_of_reviews (int, none_type): The number of reviews for the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            product_rating (str, none_type): The rating of the product. This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_name (str, none_type): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            number_of_reviews (int, none_type): The number of customer reviews for the product. [optional]  # noqa: E501
+            product_rating (str, none_type): The product rating for the product. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")

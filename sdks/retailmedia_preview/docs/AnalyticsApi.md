@@ -4,6 +4,7 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /preview/retail-media/reports/accounts | 
 [**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /preview/retail-media/reports/campaigns | 
 [**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /preview/retail-media/reports/line-items | 
 [**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /preview/retail-media/reports/sync/attributed-transactions | 
@@ -12,6 +13,119 @@ Method | HTTP request | Description
 [**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/retail-media/reports/{reportId}/output | 
 [**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/retail-media/reports/{reportId}/status | 
 
+
+# **generate_async_accounts_report**
+> AsyncReportResponse generate_async_accounts_report(async_accounts_report_request)
+
+
+
+Returns an asynchronous Accounts Report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
+from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
+from criteo_api_retailmedia_preview.model.async_accounts_report_request import AsyncAccountsReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_accounts_report_request = AsyncAccountsReportRequest(
+        data=AsyncAccountsReportResource(
+            type="type_example",
+            attributes=AsyncAccountsReport(
+                account_ids=[
+                    "account_ids_example",
+                ],
+                report_type="summary",
+                aggregation_level="campaign",
+                campaign_type="sponsoredProducts",
+                sales_channel="offline",
+                format="json-compact",
+                click_attribution_window="none",
+                view_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                metrics=[
+                    "impressions",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+            ),
+        ),
+    ) # AsyncAccountsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.generate_async_accounts_report(async_accounts_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_accounts_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_accounts_report_request** | [**AsyncAccountsReportRequest**](AsyncAccountsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_async_campaigns_report**
 > AsyncReportResponse generate_async_campaigns_report(async_campaigns_report_request)
@@ -64,22 +178,22 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
         data=AsyncCampaignsReportResource(
             type="type_example",
             attributes=AsyncCampaignsReport(
-                metrics=[
-                    "impressions",
+                ids=[
+                    "ids_example",
                 ],
-                dimensions=[
-                    "date",
-                ],
+                id="id_example",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
                 format="json-compact",
                 report_type="summary",
                 click_attribution_window="none",
                 view_attribution_window="none",
-                ids=[
-                    "ids_example",
+                dimensions=[
+                    "date",
                 ],
-                id="id_example",
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
@@ -177,22 +291,22 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
         data=AsyncLineItemsReportResource(
             type="type_example",
             attributes=AsyncLineItemsReport(
-                metrics=[
-                    "impressions",
+                ids=[
+                    "ids_example",
                 ],
-                dimensions=[
-                    "date",
-                ],
+                id="id_example",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
                 format="json-compact",
                 report_type="summary",
                 click_attribution_window="none",
                 view_attribution_window="none",
-                ids=[
-                    "ids_example",
+                dimensions=[
+                    "date",
                 ],
-                id="id_example",
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
@@ -296,17 +410,17 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 line_item_ids=[
                     "line_item_ids_example",
                 ],
+                account_id="account_id_example",
+                click_attribution_window="none",
+                view_attribution_window="none",
+                campaign_type="sponsoredProducts",
+                sales_channel="offline",
                 dimensions=[
                     "campaignName",
                 ],
                 metrics=[
                     "attributedUnits",
                 ],
-                account_id="account_id_example",
-                click_attribution_window="none",
-                view_attribution_window="none",
-                campaign_type="sponsoredProducts",
-                sales_channel="offline",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
@@ -408,17 +522,17 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 campaign_ids=[
                     "campaign_ids_example",
                 ],
-                metrics=[
-                    "impressions",
-                ],
-                dimensions=[
-                    "date",
-                ],
                 account_id="account_id_example",
                 click_attribution_window="none",
                 view_attribution_window="none",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
+                dimensions=[
+                    "date",
+                ],
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
@@ -523,17 +637,17 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 campaign_ids=[
                     "campaign_ids_example",
                 ],
-                metrics=[
-                    "impressions",
-                ],
-                dimensions=[
-                    "date",
-                ],
                 account_id="account_id_example",
                 click_attribution_window="none",
                 view_attribution_window="none",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
+                dimensions=[
+                    "date",
+                ],
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",

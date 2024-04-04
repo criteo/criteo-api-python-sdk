@@ -62,22 +62,22 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
         data=AsyncCampaignsReportResource(
             type="type_example",
             attributes=AsyncCampaignsReport(
-                metrics=[
-                    "impressions",
+                ids=[
+                    "ids_example",
                 ],
-                dimensions=[
-                    "date",
-                ],
+                id="id_example",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
                 format="json-compact",
                 report_type="summary",
                 click_attribution_window="none",
                 view_attribution_window="none",
-                ids=[
-                    "ids_example",
+                dimensions=[
+                    "date",
                 ],
-                id="id_example",
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
@@ -175,22 +175,22 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
         data=AsyncLineItemsReportResource(
             type="type_example",
             attributes=AsyncLineItemsReport(
-                metrics=[
-                    "impressions",
+                ids=[
+                    "ids_example",
                 ],
-                dimensions=[
-                    "date",
-                ],
+                id="id_example",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
                 format="json-compact",
                 report_type="summary",
                 click_attribution_window="none",
                 view_attribution_window="none",
-                ids=[
-                    "ids_example",
+                dimensions=[
+                    "date",
                 ],
-                id="id_example",
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
@@ -288,18 +288,12 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
         data=AsyncRevenueReportResource(
             type="type_example",
             attributes=AsyncRevenueReport(
-                report_type="advertiser",
-                revenue_type="auction",
                 ids=[
                     "ids_example",
                 ],
                 id="id_example",
-                metrics=[
-                    "clicks",
-                ],
-                dimensions=[
-                    "date",
-                ],
+                report_type="advertiser",
+                revenue_type="auction",
                 format="json",
                 sold_by="directSold",
                 campaign_sub_type="auctionAndPreferred",
@@ -307,6 +301,12 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
                 view_attribution_window="none",
                 campaign_type="sponsoredProducts",
                 sales_channel="offline",
+                dimensions=[
+                    "date",
+                ],
+                metrics=[
+                    "impressions",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",

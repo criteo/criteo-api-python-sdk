@@ -83,6 +83,7 @@ class RecommendedProduct(ModelNormal):
         return {
             'product_external_id': (str, none_type,),  # noqa: E501
             'click_url': (str, none_type,),  # noqa: E501
+            'alternative_click_url': (str, none_type,),  # noqa: E501
             'image_url': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
@@ -99,6 +100,7 @@ class RecommendedProduct(ModelNormal):
     attribute_map = {
         'product_external_id': 'productExternalId',  # noqa: E501
         'click_url': 'clickUrl',  # noqa: E501
+        'alternative_click_url': 'alternativeClickUrl',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
@@ -149,7 +151,8 @@ class RecommendedProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             product_external_id (str, none_type): Product external id. Same id than what is used in user events.. [optional]  # noqa: E501
-            click_url (str, none_type): Url leading to product details page and also used to track user click.. [optional]  # noqa: E501
+            click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on the default product URL field in the catalog.. [optional]  # noqa: E501
+            alternative_click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.. [optional]  # noqa: E501
             image_url (str, none_type): Product image.. [optional]  # noqa: E501
             name (str, none_type): Product name.. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
@@ -242,7 +245,8 @@ class RecommendedProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             product_external_id (str, none_type): Product external id. Same id than what is used in user events.. [optional]  # noqa: E501
-            click_url (str, none_type): Url leading to product details page and also used to track user click.. [optional]  # noqa: E501
+            click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on the default product URL field in the catalog.. [optional]  # noqa: E501
+            alternative_click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.. [optional]  # noqa: E501
             image_url (str, none_type): Product image.. [optional]  # noqa: E501
             name (str, none_type): Product name.. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501

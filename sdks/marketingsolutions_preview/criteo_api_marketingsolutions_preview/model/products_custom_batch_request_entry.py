@@ -162,7 +162,7 @@ class ProductsCustomBatchRequestEntry(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             batch_id (int, none_type): An entry ID, unique within the batch request.. [optional]  # noqa: E501
             product_id (str, none_type): The Product ID to delete. Only defined if the method is delete.. [optional]  # noqa: E501
-            item_group_id (str, none_type): The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.. [optional]  # noqa: E501
+            item_group_id (str, none_type): Deprecated (providing this information is no more needed, this field will be removed in next release). The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.. [optional]  # noqa: E501
             product (Product): [optional]  # noqa: E501
             feed_id (str, none_type): Not used by Criteo.. [optional]  # noqa: E501
         """
@@ -258,7 +258,7 @@ class ProductsCustomBatchRequestEntry(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             batch_id (int, none_type): An entry ID, unique within the batch request.. [optional]  # noqa: E501
             product_id (str, none_type): The Product ID to delete. Only defined if the method is delete.. [optional]  # noqa: E501
-            item_group_id (str, none_type): The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.. [optional]  # noqa: E501
+            item_group_id (str, none_type): Deprecated (providing this information is no more needed, this field will be removed in next release). The itemGroupId of the product to delete. To be defined when the method is delete and the product is a variant.. [optional]  # noqa: E501
             product (Product): [optional]  # noqa: E501
             feed_id (str, none_type): Not used by Criteo.. [optional]  # noqa: E501
         """

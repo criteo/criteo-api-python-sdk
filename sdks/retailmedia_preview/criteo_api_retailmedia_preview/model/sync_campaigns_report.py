@@ -65,43 +65,6 @@ class SyncCampaignsReport(ModelNormal):
             'ENVIRONMENT': "environment",
             'SERVEDCATEGORY': "servedCategory",
         },
-        ('metrics',): {
-            'None': None,
-            'IMPRESSIONS': "impressions",
-            'CLICKS': "clicks",
-            'SPEND': "spend",
-            'ATTRIBUTEDSALES': "attributedSales",
-            'ATTRIBUTEDUNITS': "attributedUnits",
-            'ATTRIBUTEDORDERS': "attributedOrders",
-            'CTR': "ctr",
-            'CPC': "cpc",
-            'CPO': "cpo",
-            'CPM': "cpm",
-            'ROAS': "roas",
-            'UNIQUEVISITORS': "uniqueVisitors",
-            'FREQUENCY': "frequency",
-            'ASSISTEDUNITS': "assistedUnits",
-            'ASSISTEDSALES': "assistedSales",
-        },
-        ('dimensions',): {
-            'None': None,
-            'DATE': "date",
-            'HOUR': "hour",
-            'CAMPAIGNID': "campaignId",
-            'CAMPAIGNNAME': "campaignName",
-            'CAMPAIGNTYPENAME': "campaignTypeName",
-            'ADVPRODUCTCATEGORY': "advProductCategory",
-            'ADVPRODUCTID': "advProductId",
-            'ADVPRODUCTNAME': "advProductName",
-            'BRANDID': "brandId",
-            'BRANDNAME': "brandName",
-            'PAGETYPENAME': "pageTypeName",
-            'ENVIRONMENT': "environment",
-            'KEYWORD': "keyword",
-            'SALESCHANNEL': "salesChannel",
-            'RETAILERID': "retailerId",
-            'RETAILERNAME': "retailerName",
-        },
         ('click_attribution_window',): {
             'None': None,
             '7D': "7D",
@@ -126,6 +89,47 @@ class SyncCampaignsReport(ModelNormal):
             'None': None,
             'OFFLINE': "offline",
             'ONLINE': "online",
+        },
+        ('dimensions',): {
+            'None': None,
+            'DATE': "date",
+            'HOUR': "hour",
+            'ACCOUNTID': "accountId",
+            'ACCOUNTNAME': "accountName",
+            'CAMPAIGNID': "campaignId",
+            'CAMPAIGNNAME': "campaignName",
+            'CAMPAIGNTYPENAME': "campaignTypeName",
+            'ADVPRODUCTCATEGORY': "advProductCategory",
+            'ADVPRODUCTID': "advProductId",
+            'ADVPRODUCTNAME': "advProductName",
+            'BRANDID': "brandId",
+            'BRANDNAME': "brandName",
+            'LINEITEMID': "lineItemId",
+            'LINEITEMNAME': "lineItemName",
+            'RETAILERID': "retailerId",
+            'RETAILERNAME': "retailerName",
+            'KEYWORD': "keyword",
+            'PAGETYPENAME': "pageTypeName",
+            'SALESCHANNEL': "salesChannel",
+            'ENVIRONMENT': "environment",
+        },
+        ('metrics',): {
+            'None': None,
+            'IMPRESSIONS': "impressions",
+            'CLICKS': "clicks",
+            'SPEND': "spend",
+            'ATTRIBUTEDSALES': "attributedSales",
+            'ATTRIBUTEDUNITS': "attributedUnits",
+            'ATTRIBUTEDORDERS': "attributedOrders",
+            'ASSISTEDSALES': "assistedSales",
+            'ASSISTEDUNITS': "assistedUnits",
+            'CTR': "ctr",
+            'CPC': "cpc",
+            'CPO': "cpo",
+            'CPM': "cpm",
+            'ROAS': "roas",
+            'UNIQUEVISITORS': "uniqueVisitors",
+            'FREQUENCY': "frequency",
         },
     }
 
@@ -158,12 +162,12 @@ class SyncCampaignsReport(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'report_type': (str, none_type,),  # noqa: E501
             'campaign_ids': ([str], none_type,),  # noqa: E501
-            'metrics': ([str], none_type,),  # noqa: E501
-            'dimensions': ([str], none_type,),  # noqa: E501
             'click_attribution_window': (str, none_type,),  # noqa: E501
             'view_attribution_window': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
+            'dimensions': ([str], none_type,),  # noqa: E501
+            'metrics': ([str], none_type,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
 
@@ -178,12 +182,12 @@ class SyncCampaignsReport(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'report_type': 'reportType',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
-        'metrics': 'metrics',  # noqa: E501
-        'dimensions': 'dimensions',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
+        'dimensions': 'dimensions',  # noqa: E501
+        'metrics': 'metrics',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
 
@@ -234,13 +238,13 @@ class SyncCampaignsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
-            campaign_ids ([str], none_type): List of campaign Ids to filter. [optional]  # noqa: E501
-            metrics ([str], none_type): List of Metrics to report on. [optional]  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter. [optional]  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -336,13 +340,13 @@ class SyncCampaignsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
-            campaign_ids ([str], none_type): List of campaign Ids to filter. [optional]  # noqa: E501
-            metrics ([str], none_type): List of Metrics to report on. [optional]  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign ids to filter. [optional]  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 

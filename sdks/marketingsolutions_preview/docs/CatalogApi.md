@@ -209,6 +209,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     product_types=[
                         "product_types_example",
                     ],
+                    product_type_keys=[
+                        "product_type_keys_example",
+                    ],
                     age_group="age_group_example",
                     availability="availability_example",
                     condition="condition_example",
