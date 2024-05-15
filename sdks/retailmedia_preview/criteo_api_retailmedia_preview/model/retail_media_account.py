@@ -91,8 +91,8 @@ class RetailMediaAccount(ModelNormal):
             'company_name': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
             'sub_type': (str, none_type,),  # noqa: E501
-            'country_ids': ([int], none_type,),  # noqa: E501
-            'currency_id': (int, none_type,),  # noqa: E501
+            'country_ids': ([str], none_type,),  # noqa: E501
+            'currency_id': (str, none_type,),  # noqa: E501
             'parent_account_label': (str, none_type,),  # noqa: E501
             'time_zone': (str, none_type,),  # noqa: E501
         }
@@ -158,8 +158,8 @@ class RetailMediaAccount(ModelNormal):
             company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
             type (str, none_type): Type for the account. [optional]  # noqa: E501
             sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
-            country_ids ([int], none_type): list of countries associated with the account. [optional]  # noqa: E501
-            currency_id (int, none_type): the currency for the account. [optional]  # noqa: E501
+            country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
+            currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
             parent_account_label (str, none_type): parent account label for the account. [optional]  # noqa: E501
             time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
         """
@@ -251,8 +251,8 @@ class RetailMediaAccount(ModelNormal):
             company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
             type (str, none_type): Type for the account. [optional]  # noqa: E501
             sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
-            country_ids ([int], none_type): list of countries associated with the account. [optional]  # noqa: E501
-            currency_id (int, none_type): the currency for the account. [optional]  # noqa: E501
+            country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
+            currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
             parent_account_label (str, none_type): parent account label for the account. [optional]  # noqa: E501
             time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
         """

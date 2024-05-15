@@ -1,6 +1,6 @@
 # RmLegacyAudienceGetEntityV1Resource
 
-Legacy resource
+A class that represents a domain entity exposed by an API
 
 ## Properties
 Name | Type | Description | Notes

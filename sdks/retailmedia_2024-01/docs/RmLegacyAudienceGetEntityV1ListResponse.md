@@ -1,6 +1,6 @@
 # RmLegacyAudienceGetEntityV1ListResponse
 
-List of responses
+A top-level object that encapsulates a Criteo API response for several entities and metadata
 
 ## Properties
 Name | Type | Description | Notes

@@ -74,11 +74,11 @@ Method | HTTP request | Description
 
 
 # **add_remove_keywords**
-> RetailMediaExternalv1ResourceOutcome add_remove_keywords(id)
+> ResourceOutcome add_remove_keywords(id)
 
 
 
-Add or Remove keywords from the associated line item in bulk
+Add or Remove keywords from the line item in bulk
 
 ### Example
 
@@ -89,8 +89,8 @@ Add or Remove keywords from the associated line item in bulk
 import time
 import criteo_api_retailmedia_v2023_10
 from criteo_api_retailmedia_v2023_10.api import campaign_api
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_add_remove_keywords_model_request import RetailMediaExternalv1AddRemoveKeywordsModelRequest
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.resource_outcome import ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.add_remove_keywords_model_request import AddRemoveKeywordsModelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -119,22 +119,22 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | Long external id of the associated line item
-    retail_media_externalv1_add_remove_keywords_model_request = RetailMediaExternalv1AddRemoveKeywordsModelRequest(
-        data=RetailMediaExternalv1AddRemoveKeywordsModelResource(
+    id = "id_example" # str | ID of the line item
+    add_remove_keywords_model_request = AddRemoveKeywordsModelRequest(
+        data=AddRemoveKeywordsModelResource(
             id="id_example",
             type="type_example",
-            attributes=RetailMediaExternalv1AddRemoveKeywordsModel(
+            attributes=AddRemoveKeywordsModel(
                 keywords=[
-                    RetailMediaExternalv1AddRemoveKeywordModel(
+                    AddRemoveKeywordModel(
                         phrase="phrase_example",
-                        match_type="PositiveExactMatch",
+                        match_type=MatchTypeModel("PositiveExactMatch"),
                         is_deleted=True,
                     ),
                 ],
             ),
         ),
-    ) # RetailMediaExternalv1AddRemoveKeywordsModelRequest | Object containing keywords to be added or removed (optional)
+    ) # AddRemoveKeywordsModelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -146,7 +146,7 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.add_remove_keywords(id, retail_media_externalv1_add_remove_keywords_model_request=retail_media_externalv1_add_remove_keywords_model_request)
+        api_response = api_instance.add_remove_keywords(id, add_remove_keywords_model_request=add_remove_keywords_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2023_10.ApiException as e:
         print("Exception when calling CampaignApi->add_remove_keywords: %s\n" % e)
@@ -157,12 +157,12 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Long external id of the associated line item |
- **retail_media_externalv1_add_remove_keywords_model_request** | [**RetailMediaExternalv1AddRemoveKeywordsModelRequest**](RetailMediaExternalv1AddRemoveKeywordsModelRequest.md)| Object containing keywords to be added or removed | [optional]
+ **id** | **str**| ID of the line item |
+ **add_remove_keywords_model_request** | [**AddRemoveKeywordsModelRequest**](AddRemoveKeywordsModelRequest.md)|  | [optional]
 
 ### Return type
 
-[**RetailMediaExternalv1ResourceOutcome**](RetailMediaExternalv1ResourceOutcome.md)
+[**ResourceOutcome**](ResourceOutcome.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_keywords**
-> RetailMediaExternalv1KeywordsModelResponse fetch_keywords(id)
+> KeywordsModelResponse fetch_keywords(id)
 
 
 
@@ -283,7 +283,8 @@ Fetch keywords associated with the specified line item
 import time
 import criteo_api_retailmedia_v2023_10
 from criteo_api_retailmedia_v2023_10.api import campaign_api
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_keywords_model_response import RetailMediaExternalv1KeywordsModelResponse
+from criteo_api_retailmedia_v2023_10.model.resource_outcome import ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.keywords_model_response import KeywordsModelResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -312,7 +313,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | Long external id of the associated line item
+    id = "id_example" # str | ID of the line item
 
     # example passing only required values which don't have defaults set
     try:
@@ -327,11 +328,11 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Long external id of the associated line item |
+ **id** | **str**| ID of the line item |
 
 ### Return type
 
-[**RetailMediaExternalv1KeywordsModelResponse**](RetailMediaExternalv1KeywordsModelResponse.md)
+[**KeywordsModelResponse**](KeywordsModelResponse.md)
 
 ### Authorization
 
@@ -340,7 +341,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -353,11 +354,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_proposal**
-> RetailMediaExternalv1ProposalStatusModelResponse fetch_proposal(id)
+> ProposalStatusModelResponse fetch_proposal(id)
 
 
 
-Fetch the status of a proposal to modify a Preferred Deal Line Item.
+Includes the state of the proposal, the status of the booking and approval, as well as any comments explaining why it might have been rejected.
 
 ### Example
 
@@ -368,7 +369,8 @@ Fetch the status of a proposal to modify a Preferred Deal Line Item.
 import time
 import criteo_api_retailmedia_v2023_10
 from criteo_api_retailmedia_v2023_10.api import campaign_api
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
+from criteo_api_retailmedia_v2023_10.model.resource_outcome import ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.proposal_status_model_response import ProposalStatusModelResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -397,7 +399,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | The external id of a line item.
+    id = "id_example" # str | ID of the line item
 
     # example passing only required values which don't have defaults set
     try:
@@ -412,11 +414,11 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The external id of a line item. |
+ **id** | **str**| ID of the line item |
 
 ### Return type
 
-[**RetailMediaExternalv1ProposalStatusModelResponse**](RetailMediaExternalv1ProposalStatusModelResponse.md)
+[**ProposalStatusModelResponse**](ProposalStatusModelResponse.md)
 
 ### Authorization
 
@@ -425,7 +427,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -434,7 +436,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
-**500** | Server Error |  -  |
 **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -6549,7 +6550,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_keyword_bids**
-> RetailMediaExternalv1ResourceOutcome set_keyword_bids(id)
+> ResourceOutcome set_keyword_bids(id)
 
 
 
@@ -6564,8 +6565,8 @@ Set bid overrides for associated keywords to the given line item in bulk
 import time
 import criteo_api_retailmedia_v2023_10
 from criteo_api_retailmedia_v2023_10.api import campaign_api
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_set_bids_model_request import RetailMediaExternalv1SetBidsModelRequest
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.resource_outcome import ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.set_bids_model_request import SetBidsModelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -6594,21 +6595,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | Long external id of the associated line item
-    retail_media_externalv1_set_bids_model_request = RetailMediaExternalv1SetBidsModelRequest(
-        data=RetailMediaExternalv1SetBidsModelResource(
+    id = "id_example" # str | ID of the line item
+    set_bids_model_request = SetBidsModelRequest(
+        data=SetBidsModelResource(
             id="id_example",
             type="type_example",
-            attributes=RetailMediaExternalv1SetBidsModel(
+            attributes=SetBidsModel(
                 keywords=[
-                    RetailMediaExternalv1SetBidModel(
+                    SetBidModel(
                         phrase="phrase_example",
                         bid=3.14,
                     ),
                 ],
             ),
         ),
-    ) # RetailMediaExternalv1SetBidsModelRequest | Object containing a list of bid overrides for associated keywords (optional)
+    ) # SetBidsModelRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -6620,7 +6621,7 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.set_keyword_bids(id, retail_media_externalv1_set_bids_model_request=retail_media_externalv1_set_bids_model_request)
+        api_response = api_instance.set_keyword_bids(id, set_bids_model_request=set_bids_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2023_10.ApiException as e:
         print("Exception when calling CampaignApi->set_keyword_bids: %s\n" % e)
@@ -6631,12 +6632,12 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Long external id of the associated line item |
- **retail_media_externalv1_set_bids_model_request** | [**RetailMediaExternalv1SetBidsModelRequest**](RetailMediaExternalv1SetBidsModelRequest.md)| Object containing a list of bid overrides for associated keywords | [optional]
+ **id** | **str**| ID of the line item |
+ **set_bids_model_request** | [**SetBidsModelRequest**](SetBidsModelRequest.md)|  | [optional]
 
 ### Return type
 
-[**RetailMediaExternalv1ResourceOutcome**](RetailMediaExternalv1ResourceOutcome.md)
+[**ResourceOutcome**](ResourceOutcome.md)
 
 ### Authorization
 
@@ -6645,7 +6646,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -6658,11 +6659,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **submit_proposal**
-> RetailMediaExternalv1ProposalStatusModelResponse submit_proposal(id)
+> ProposalStatusModelResponse submit_proposal(id)
 
 
 
-Submit a proposal to modify a Preferred Deal Line Item for review.
+Only the components of the Line Item that are in a valid state will be reviewed.
 
 ### Example
 
@@ -6673,7 +6674,8 @@ Submit a proposal to modify a Preferred Deal Line Item for review.
 import time
 import criteo_api_retailmedia_v2023_10
 from criteo_api_retailmedia_v2023_10.api import campaign_api
-from criteo_api_retailmedia_v2023_10.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
+from criteo_api_retailmedia_v2023_10.model.resource_outcome import ResourceOutcome
+from criteo_api_retailmedia_v2023_10.model.proposal_status_model_response import ProposalStatusModelResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -6702,7 +6704,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | The external id of a line item.
+    id = "id_example" # str | ID of the line item
 
     # example passing only required values which don't have defaults set
     try:
@@ -6717,11 +6719,11 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| The external id of a line item. |
+ **id** | **str**| ID of the line item |
 
 ### Return type
 
-[**RetailMediaExternalv1ProposalStatusModelResponse**](RetailMediaExternalv1ProposalStatusModelResponse.md)
+[**ProposalStatusModelResponse**](ProposalStatusModelResponse.md)
 
 ### Authorization
 
@@ -6730,7 +6732,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -6739,7 +6741,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
-**500** | Server Error |  -  |
 **403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

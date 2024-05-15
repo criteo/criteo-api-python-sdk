@@ -21,6 +21,9 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_retailmedia_preview.model.error_code_response import ErrorCodeResponse
+from criteo_api_retailmedia_preview.model.retail_media_contactlist_amendment_request import RetailMediaContactlistAmendmentRequest
+from criteo_api_retailmedia_preview.model.retail_media_contactlist_operation import RetailMediaContactlistOperation
 from criteo_api_retailmedia_preview.model.rm_legacy_audience_get_entity_v1_list_response import RmLegacyAudienceGetEntityV1ListResponse
 from criteo_api_retailmedia_preview.model.rm_legacy_audience_get_entity_v2_list_response import RmLegacyAudienceGetEntityV2ListResponse
 
@@ -36,6 +39,58 @@ class AudienceApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.delete_contact_list_identifiers_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear',
+                'operation_id': 'delete_contact_list_identifiers',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_id',
+                ],
+                'required': [
+                    'audience_segment_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'audience_segment_id': 'audience-segment-id',
+                },
+                'location_map': {
+                    'audience_segment_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.legacy_get_audience_v1_endpoint = _Endpoint(
             settings={
                 'response_type': (RmLegacyAudienceGetEntityV1ListResponse,),
@@ -176,6 +231,148 @@ class AudienceApi(object):
             },
             api_client=api_client
         )
+        self.update_contact_list_identifiers_endpoint = _Endpoint(
+            settings={
+                'response_type': (RetailMediaContactlistOperation,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove',
+                'operation_id': 'update_contact_list_identifiers',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_id',
+                    'retail_media_contactlist_amendment_request',
+                ],
+                'required': [
+                    'audience_segment_id',
+                    'retail_media_contactlist_amendment_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_id':
+                        (int,),
+                    'retail_media_contactlist_amendment_request':
+                        (RetailMediaContactlistAmendmentRequest,),
+                },
+                'attribute_map': {
+                    'audience_segment_id': 'audience-segment-id',
+                },
+                'location_map': {
+                    'audience_segment_id': 'path',
+                    'retail_media_contactlist_amendment_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+
+    def delete_contact_list_identifiers(
+        self,
+        audience_segment_id,
+        **kwargs
+    ):
+        """delete_contact_list_identifiers  # noqa: E501
+
+        Delete all identifiers from a retail-media contact list audience-segment, with external audience segment id.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_contact_list_identifiers(audience_segment_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            audience_segment_id (int): The id of the contact list audience-segment to amend, we only accept external Id here
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['audience_segment_id'] = \
+            audience_segment_id
+        return self.delete_contact_list_identifiers_endpoint.call_with_http_info(**kwargs)
 
     def legacy_get_audience_v1(
         self,
@@ -348,4 +545,91 @@ class AudienceApi(object):
         kwargs['account_id'] = \
             account_id
         return self.legacy_get_audience_v2_endpoint.call_with_http_info(**kwargs)
+
+    def update_contact_list_identifiers(
+        self,
+        audience_segment_id,
+        retail_media_contactlist_amendment_request,
+        **kwargs
+    ):
+        """update_contact_list_identifiers  # noqa: E501
+
+        Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_contact_list_identifiers(audience_segment_id, retail_media_contactlist_amendment_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            audience_segment_id (int): The id of the contact list audience-segment to amend, we only accept external Id here
+            retail_media_contactlist_amendment_request (RetailMediaContactlistAmendmentRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RetailMediaContactlistOperation
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['audience_segment_id'] = \
+            audience_segment_id
+        kwargs['retail_media_contactlist_amendment_request'] = \
+            retail_media_contactlist_amendment_request
+        return self.update_contact_list_identifiers_endpoint.call_with_http_info(**kwargs)
 

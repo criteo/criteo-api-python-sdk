@@ -57,39 +57,41 @@ class SyncAttributedTransactionsReport(ModelNormal):
     allowed_values = {
         ('click_attribution_window',): {
             'None': None,
+            'NONE': "none",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
-            'NONE': "none",
         },
         ('view_attribution_window',): {
             'None': None,
+            'NONE': "none",
             '1D': "1D",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
-            'NONE': "none",
         },
         ('campaign_type',): {
             'None': None,
+            'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('sales_channel',): {
             'None': None,
+            'ALL': "all",
             'OFFLINE': "offline",
             'ONLINE': "online",
         },
         ('dimensions',): {
             'None': None,
-            'CAMPAIGNNAME': "campaignName",
-            'CAMPAIGNID': "campaignId",
-            'LINEITEMID': "lineItemId",
             'PURCHASEDDATE': "purchasedDate",
             'PURCHASEDHOUR': "purchasedHour",
             'ADVDATE': "advDate",
             'ADVHOUR': "advHour",
             'DAYSDIFFERENCE': "daysDifference",
+            'CAMPAIGNID': "campaignId",
+            'CAMPAIGNNAME': "campaignName",
+            'LINEITEMID': "lineItemId",
             'LINEITEMNAME': "lineItemName",
             'ADVPRODUCTID': "advProductId",
             'ADVPRODUCTGTIN': "advProductGtin",
@@ -104,8 +106,8 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'ADVENGAGEMENT': "advEngagement",
             'ADVTOPURCHASEDPRODUCTRELATIONSHIP': "advToPurchasedProductRelationship",
             'SALESCHANNEL': "salesChannel",
-            'PAGETYPENAME': "pageTypeName",
             'RETAILERNAME': "retailerName",
+            'PAGETYPENAME': "pageTypeName",
             'KEYWORD': "keyword",
             'ATTRIBUTIONWINDOW': "attributionWindow",
         },
@@ -224,8 +226,8 @@ class SyncAttributedTransactionsReport(ModelNormal):
             line_item_ids ([str], none_type): Line item ids to filter. [optional]  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
             metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
@@ -326,8 +328,8 @@ class SyncAttributedTransactionsReport(ModelNormal):
             line_item_ids ([str], none_type): Line item ids to filter. [optional]  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
             metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501

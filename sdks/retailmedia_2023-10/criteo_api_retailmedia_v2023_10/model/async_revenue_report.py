@@ -68,6 +68,26 @@ class AsyncRevenueReport(ModelNormal):
             'AUCTION': "auction",
             'PREFERRED': "preferred",
         },
+        ('sold_by',): {
+            'None': None,
+            'DIRECTSOLD': "directSold",
+            'INDIRECTSOLD': "indirectSold",
+            'PRIVATEMARKET': "privateMarket",
+        },
+        ('buy_type',): {
+            'None': None,
+            'AUCTION': "auction",
+            'PREFERREDDEALS': "preferredDeals",
+            'SPONSORSHIP': "sponsorship",
+        },
+        ('sku_relations',): {
+            'None': None,
+            'SAMESKU': "sameSku",
+            'SAMEPARENTSKU': "sameParentSku",
+            'SAMECATEGORY': "sameCategory",
+            'SAMEBRAND': "sameBrand",
+            'SAMESELLER': "sameSeller",
+        },
         ('format',): {
             'None': None,
             'JSON': "json",
@@ -75,72 +95,123 @@ class AsyncRevenueReport(ModelNormal):
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
         },
-        ('sold_by',): {
-            'None': None,
-            'DIRECTSOLD': "directSold",
-            'INDIRECTSOLD': "indirectSold",
-            'PRIVATEMARKET': "privateMarket",
-        },
-        ('campaign_sub_type',): {
-            'None': None,
-            'AUCTIONANDPREFERRED': "auctionAndPreferred",
-            'LOCKOUT': "lockout",
-        },
-        ('click_attribution_window',): {
-            'None': None,
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-            'NONE': "none",
-        },
-        ('view_attribution_window',): {
-            'None': None,
-            '1D': "1D",
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-            'NONE': "none",
-        },
         ('campaign_type',): {
             'None': None,
+            'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('sales_channel',): {
             'None': None,
+            'ALL': "all",
             'OFFLINE': "offline",
             'ONLINE': "online",
+        },
+        ('click_attribution_window',): {
+            'None': None,
+            'NONE': "none",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
+        },
+        ('view_attribution_window',): {
+            'None': None,
+            'NONE': "none",
+            '1D': "1D",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
         },
         ('dimensions',): {
             'None': None,
             'DATE': "date",
-            'CAMPAIGNID': "campaignId",
-            'CAMPAIGNNAME': "campaignName",
+            'HOUR': "hour",
+            'PARENTACCOUNT': "parentAccount",
             'ACCOUNTID': "accountId",
             'ACCOUNTNAME': "accountName",
-            'ENVIRONMENT': "environment",
-            'ADVPRODUCTCATEGORY': "advProductCategory",
+            'ACCOUNTTYPENAME': "accountTypeName",
+            'CAMPAIGNID': "campaignId",
+            'CAMPAIGNNAME': "campaignName",
+            'CAMPAIGNTYPENAME': "campaignTypeName",
+            'CAMPAIGNSTARTDATE': "campaignStartDate",
+            'CAMPAIGNENDDATE': "campaignEndDate",
+            'LINEITEMID': "lineItemId",
+            'LINEITEMNAME': "lineItemName",
+            'LINEITEMSTARTDATE': "lineItemStartDate",
+            'LINEITEMENDDATE': "lineItemEndDate",
+            'LINEITEMSTATUS': "lineItemStatus",
+            'RETAILERID': "retailerId",
+            'RETAILERNAME': "retailerName",
             'BRANDID': "brandId",
             'BRANDNAME': "brandName",
+            'PLACEMENTID': "placementId",
+            'PLACEMENTNAME': "placementName",
             'PAGETYPENAME': "pageTypeName",
+            'ENVIRONMENT': "environment",
+            'PAGECATEGORY': "pageCategory",
+            'ADVPRODUCTID': "advProductId",
             'ADVPRODUCTNAME': "advProductName",
             'ADVPRODUCTGTIN': "advProductGtin",
             'ADVPRODUCTMPN': "advProductMpn",
-            'ADVPRODUCTID': "advProductId",
+            'SOLDBY': "soldBy",
+            'SALECHANNEL': "saleChannel",
+            'ATTRIBUTIONSETTINGS': "attributionSettings",
+            'ACTIVITYTYPE': "activityType",
+            'KEYWORD': "keyword",
+            'SKURELATION': "skuRelation",
+            'RETAILERCATEGORYID': "retailerCategoryId",
+            'RETAILERCATEGORYNAME': "retailerCategoryName",
+            'TAXONOMYBREADCRUMB': "taxonomyBreadcrumb",
+            'TAXONOMY1ID': "taxonomy1Id",
+            'TAXONOMY1NAME': "taxonomy1Name",
+            'TAXONOMY2ID': "taxonomy2Id",
+            'TAXONOMY2NAME': "taxonomy2Name",
+            'TAXONOMY3ID': "taxonomy3Id",
+            'TAXONOMY3NAME': "taxonomy3Name",
+            'TAXONOMY4ID': "taxonomy4Id",
+            'TAXONOMY4NAME': "taxonomy4Name",
+            'TAXONOMY5ID': "taxonomy5Id",
+            'TAXONOMY5NAME': "taxonomy5Name",
+            'TAXONOMY6ID': "taxonomy6Id",
+            'TAXONOMY6NAME': "taxonomy6Name",
+            'TAXONOMY7ID': "taxonomy7Id",
+            'TAXONOMY7NAME': "taxonomy7Name",
         },
         ('metrics',): {
             'None': None,
+            'NUMBEROFCAMPAIGNS': "numberOfCampaigns",
+            'NUMBEROFLINEITEMS': "numberOfLineItems",
+            'NUMBEROFSKUS': "numberOfSkus",
+            'SKUPRICE': "skuPrice",
+            'PAGEVIEWS': "pageViews",
             'IMPRESSIONS': "impressions",
+            'PRODUCTCLICKS': "productClicks",
+            'PLACEMENTCLICKS': "placementClicks",
             'CLICKS': "clicks",
-            'SPEND': "spend",
             'SALES': "sales",
             'UNITS': "units",
-            'CPO': "cpo",
-            'ROAS': "roas",
+            'TRANSACTIONS': "transactions",
+            'ASSISTEDSALES': "assistedSales",
+            'ASSISTEDUNITS': "assistedUnits",
             'OPENAUCTIONREVENUE': "openAuctionRevenue",
             'PREFERREDDEALSREVENUE': "preferredDealsRevenue",
-            'AVGCPC': "avgCpc",
-            'AVGCPM': "avgCpm",
+            'CTR': "ctr",
+            'CR': "cr",
+            'CPC': "cpc",
+            'CPM': "cpm",
+            'ROAS': "roas",
+            'WORKINGMEDIA': "workingMedia",
+            'NETREVENUE': "netRevenue",
+            'VIDEOVIEWS': "videoViews",
+            'VIDEOSSTARTED': "videosStarted",
+            'VIDEOSPLAYEDTO25': "videosPlayedTo25",
+            'VIDEOSPLAYEDTO50': "videosPlayedTo50",
+            'VIDEOSPLAYEDTO75': "videosPlayedTo75",
+            'VIDEOSPLAYEDTO100': "videosPlayedTo100",
+            'VIDEOPLAYINGRATE': "videoPlayingRate",
+            'VIDEOCOMPLETIONRATE': "videoCompletionRate",
+            'UNIQUEVISITORS': "uniqueVisitors",
+            'FREQUENCY': "frequency",
         },
     }
 
@@ -174,13 +245,14 @@ class AsyncRevenueReport(ModelNormal):
             'id': (str, none_type,),  # noqa: E501
             'report_type': (str, none_type,),  # noqa: E501
             'revenue_type': (str, none_type,),  # noqa: E501
-            'format': (str, none_type,),  # noqa: E501
             'sold_by': (str, none_type,),  # noqa: E501
-            'campaign_sub_type': (str, none_type,),  # noqa: E501
-            'click_attribution_window': (str, none_type,),  # noqa: E501
-            'view_attribution_window': (str, none_type,),  # noqa: E501
+            'buy_type': (str, none_type,),  # noqa: E501
+            'sku_relations': ([str], none_type,),  # noqa: E501
+            'format': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
+            'click_attribution_window': (str, none_type,),  # noqa: E501
+            'view_attribution_window': (str, none_type,),  # noqa: E501
             'dimensions': ([str], none_type,),  # noqa: E501
             'metrics': ([str], none_type,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
@@ -198,13 +270,14 @@ class AsyncRevenueReport(ModelNormal):
         'id': 'id',  # noqa: E501
         'report_type': 'reportType',  # noqa: E501
         'revenue_type': 'revenueType',  # noqa: E501
-        'format': 'format',  # noqa: E501
         'sold_by': 'soldBy',  # noqa: E501
-        'campaign_sub_type': 'campaignSubType',  # noqa: E501
-        'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
-        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
+        'buy_type': 'buyType',  # noqa: E501
+        'sku_relations': 'skuRelations',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
+        'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
+        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
@@ -259,13 +332,14 @@ class AsyncRevenueReport(ModelNormal):
             id (str, none_type): Campaign id to report on. [optional]  # noqa: E501
             report_type (str, none_type): Type of report. [optional]  # noqa: E501
             revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
+            sold_by (str, none_type): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            sku_relations ([str], none_type): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
             format (str, none_type): Format of the output. [optional]  # noqa: E501
-            sold_by (str, none_type): Filter on the seller: indirect, direct or private market. [optional]  # noqa: E501
-            campaign_sub_type (str, none_type): Filter on campaign subType : Auction and Preferred Deals or Lockout campaign. [optional]  # noqa: E501
+            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
             dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
             metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
@@ -364,13 +438,14 @@ class AsyncRevenueReport(ModelNormal):
             id (str, none_type): Campaign id to report on. [optional]  # noqa: E501
             report_type (str, none_type): Type of report. [optional]  # noqa: E501
             revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
+            sold_by (str, none_type): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            sku_relations ([str], none_type): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
             format (str, none_type): Format of the output. [optional]  # noqa: E501
-            sold_by (str, none_type): Filter on the seller: indirect, direct or private market. [optional]  # noqa: E501
-            campaign_sub_type (str, none_type): Filter on campaign subType : Auction and Preferred Deals or Lockout campaign. [optional]  # noqa: E501
+            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
             dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
             metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
             timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501

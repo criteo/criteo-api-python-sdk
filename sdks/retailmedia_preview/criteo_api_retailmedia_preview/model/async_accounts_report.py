@@ -55,16 +55,6 @@ class AsyncAccountsReport(ModelNormal):
     """
 
     allowed_values = {
-        ('report_type',): {
-            'None': None,
-            'SUMMARY': "summary",
-            'PAGETYPE': "pageType",
-            'KEYWORD': "keyword",
-            'PRODUCTCATEGORY': "productCategory",
-            'PRODUCT': "product",
-            'ENVIRONMENT': "environment",
-            'SERVEDCATEGORY': "servedCategory",
-        },
         ('aggregation_level',): {
             'None': None,
             'CAMPAIGN': "campaign",
@@ -72,11 +62,13 @@ class AsyncAccountsReport(ModelNormal):
         },
         ('campaign_type',): {
             'None': None,
+            'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('sales_channel',): {
             'None': None,
+            'ALL': "all",
             'OFFLINE': "offline",
             'ONLINE': "online",
         },
@@ -87,20 +79,31 @@ class AsyncAccountsReport(ModelNormal):
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
         },
+        ('report_type',): {
+            'None': None,
+            'SUMMARY': "summary",
+            'PAGETYPE': "pageType",
+            'KEYWORD': "keyword",
+            'PRODUCTCATEGORY': "productCategory",
+            'PRODUCT': "product",
+            'ATTRIBUTEDTRANSACTIONS': "attributedTransactions",
+            'ENVIRONMENT': "environment",
+            'SERVEDCATEGORY': "servedCategory",
+        },
         ('click_attribution_window',): {
             'None': None,
+            'NONE': "none",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
-            'NONE': "none",
         },
         ('view_attribution_window',): {
             'None': None,
+            'NONE': "none",
             '1D': "1D",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
-            'NONE': "none",
         },
         ('dimensions',): {
             'None': None,
@@ -111,19 +114,20 @@ class AsyncAccountsReport(ModelNormal):
             'CAMPAIGNID': "campaignId",
             'CAMPAIGNNAME': "campaignName",
             'CAMPAIGNTYPENAME': "campaignTypeName",
-            'ADVPRODUCTCATEGORY': "advProductCategory",
-            'ADVPRODUCTID': "advProductId",
-            'ADVPRODUCTNAME': "advProductName",
-            'BRANDID': "brandId",
-            'BRANDNAME': "brandName",
             'LINEITEMID': "lineItemId",
             'LINEITEMNAME': "lineItemName",
             'RETAILERID': "retailerId",
             'RETAILERNAME': "retailerName",
-            'KEYWORD': "keyword",
-            'PAGETYPENAME': "pageTypeName",
+            'BRANDID': "brandId",
+            'BRANDNAME': "brandName",
+            'ADVPRODUCTCATEGORY': "advProductCategory",
+            'ADVPRODUCTID': "advProductId",
+            'ADVPRODUCTNAME': "advProductName",
             'SALESCHANNEL': "salesChannel",
             'ENVIRONMENT': "environment",
+            'PAGETYPENAME': "pageTypeName",
+            'KEYWORD': "keyword",
+            'SEARCHTERM': "searchTerm",
         },
         ('metrics',): {
             'None': None,
@@ -140,6 +144,14 @@ class AsyncAccountsReport(ModelNormal):
             'CPO': "cpo",
             'CPM': "cpm",
             'ROAS': "roas",
+            'VIDEOVIEWS': "videoViews",
+            'VIDEOSSTARTED': "videosStarted",
+            'VIDEOSPLAYEDTO25': "videosPlayedTo25",
+            'VIDEOSPLAYEDTO50': "videosPlayedTo50",
+            'VIDEOSPLAYEDTO75': "videosPlayedTo75",
+            'VIDEOSPLAYEDTO100': "videosPlayedTo100",
+            'VIDEOPLAYINGRATE': "videoPlayingRate",
+            'VIDEOCOMPLETIONRATE': "videoCompletionRate",
             'UNIQUEVISITORS': "uniqueVisitors",
             'FREQUENCY': "frequency",
         },
@@ -172,11 +184,11 @@ class AsyncAccountsReport(ModelNormal):
             'account_ids': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'report_type': (str, none_type,),  # noqa: E501
             'aggregation_level': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
+            'report_type': (str, none_type,),  # noqa: E501
             'click_attribution_window': (str, none_type,),  # noqa: E501
             'view_attribution_window': (str, none_type,),  # noqa: E501
             'dimensions': ([str], none_type,),  # noqa: E501
@@ -193,11 +205,11 @@ class AsyncAccountsReport(ModelNormal):
         'account_ids': 'accountIds',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'report_type': 'reportType',  # noqa: E501
         'aggregation_level': 'aggregationLevel',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
         'format': 'format',  # noqa: E501
+        'report_type': 'reportType',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
@@ -251,11 +263,11 @@ class AsyncAccountsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             aggregation_level (str, none_type): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
@@ -354,11 +366,11 @@ class AsyncAccountsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             aggregation_level (str, none_type): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional]  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional]  # noqa: E501
+            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501

@@ -22,6 +22,7 @@ from criteo_api_retailmedia_v2024_01.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_v2024_01.model.add_funds_to_balance_request import AddFundsToBalanceRequest
+from criteo_api_retailmedia_v2024_01.model.add_remove_keywords_model_request import AddRemoveKeywordsModelRequest
 from criteo_api_retailmedia_v2024_01.model.add_to_basket_ids_update_model202110_request import AddToBasketIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2024_01.model.add_to_basket_target202110_request import AddToBasketTarget202110Request
 from criteo_api_retailmedia_v2024_01.model.add_to_basket_target202110_response import AddToBasketTarget202110Response
@@ -59,6 +60,7 @@ from criteo_api_retailmedia_v2024_01.model.json_api_single_response_of_catalog_s
 from criteo_api_retailmedia_v2024_01.model.json_api_single_response_of_line_item_bid_multipliers import JsonApiSingleResponseOfLineItemBidMultipliers
 from criteo_api_retailmedia_v2024_01.model.keyword_target202110_request import KeywordTarget202110Request
 from criteo_api_retailmedia_v2024_01.model.keyword_target202110_response import KeywordTarget202110Response
+from criteo_api_retailmedia_v2024_01.model.keywords_model_response import KeywordsModelResponse
 from criteo_api_retailmedia_v2024_01.model.line_item_bid_multipliers_request import LineItemBidMultipliersRequest
 from criteo_api_retailmedia_v2024_01.model.line_item_bid_multipliers_response import LineItemBidMultipliersResponse
 from criteo_api_retailmedia_v2024_01.model.post_campaign_v202301 import PostCampaignV202301
@@ -68,12 +70,10 @@ from criteo_api_retailmedia_v2024_01.model.preferred_line_item_create_model20211
 from criteo_api_retailmedia_v2024_01.model.preferred_line_item_update_model202110_request import PreferredLineItemUpdateModel202110Request
 from criteo_api_retailmedia_v2024_01.model.promoted_product202110_list_request import PromotedProduct202110ListRequest
 from criteo_api_retailmedia_v2024_01.model.promoted_product202110_paged_list_response import PromotedProduct202110PagedListResponse
+from criteo_api_retailmedia_v2024_01.model.proposal_status_model_response import ProposalStatusModelResponse
 from criteo_api_retailmedia_v2024_01.model.put_campaign_v202301 import PutCampaignV202301
-from criteo_api_retailmedia_v2024_01.model.retail_media_externalv1_add_remove_keywords_model_request import RetailMediaExternalv1AddRemoveKeywordsModelRequest
-from criteo_api_retailmedia_v2024_01.model.retail_media_externalv1_keywords_model_response import RetailMediaExternalv1KeywordsModelResponse
-from criteo_api_retailmedia_v2024_01.model.retail_media_externalv1_proposal_status_model_response import RetailMediaExternalv1ProposalStatusModelResponse
-from criteo_api_retailmedia_v2024_01.model.retail_media_externalv1_resource_outcome import RetailMediaExternalv1ResourceOutcome
-from criteo_api_retailmedia_v2024_01.model.retail_media_externalv1_set_bids_model_request import RetailMediaExternalv1SetBidsModelRequest
+from criteo_api_retailmedia_v2024_01.model.resource_outcome import ResourceOutcome
+from criteo_api_retailmedia_v2024_01.model.set_bids_model_request import SetBidsModelRequest
 from criteo_api_retailmedia_v2024_01.model.store_ids_update_model202110_request import StoreIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2024_01.model.store_target202110_request import StoreTarget202110Request
 from criteo_api_retailmedia_v2024_01.model.store_target202110_response import StoreTarget202110Response
@@ -99,7 +99,7 @@ class CampaignApi(object):
         self.api_client = api_client
         self.add_remove_keywords_endpoint = _Endpoint(
             settings={
-                'response_type': (RetailMediaExternalv1ResourceOutcome,),
+                'response_type': (ResourceOutcome,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -112,7 +112,7 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'id',
-                    'retail_media_externalv1_add_remove_keywords_model_request',
+                    'add_remove_keywords_model_request',
                 ],
                 'required': [
                     'id',
@@ -132,24 +132,22 @@ class CampaignApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'retail_media_externalv1_add_remove_keywords_model_request':
-                        (RetailMediaExternalv1AddRemoveKeywordsModelRequest,),
+                    'add_remove_keywords_model_request':
+                        (AddRemoveKeywordsModelRequest,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'retail_media_externalv1_add_remove_keywords_model_request': 'body',
+                    'add_remove_keywords_model_request': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -215,7 +213,7 @@ class CampaignApi(object):
         )
         self.fetch_keywords_endpoint = _Endpoint(
             settings={
-                'response_type': (RetailMediaExternalv1KeywordsModelResponse,),
+                'response_type': (KeywordsModelResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -259,9 +257,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -269,7 +265,7 @@ class CampaignApi(object):
         )
         self.fetch_proposal_endpoint = _Endpoint(
             settings={
-                'response_type': (RetailMediaExternalv1ProposalStatusModelResponse,),
+                'response_type': (ProposalStatusModelResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -313,9 +309,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -4030,7 +4024,7 @@ class CampaignApi(object):
         )
         self.set_keyword_bids_endpoint = _Endpoint(
             settings={
-                'response_type': (RetailMediaExternalv1ResourceOutcome,),
+                'response_type': (ResourceOutcome,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -4043,7 +4037,7 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'id',
-                    'retail_media_externalv1_set_bids_model_request',
+                    'set_bids_model_request',
                 ],
                 'required': [
                     'id',
@@ -4063,24 +4057,22 @@ class CampaignApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'retail_media_externalv1_set_bids_model_request':
-                        (RetailMediaExternalv1SetBidsModelRequest,),
+                    'set_bids_model_request':
+                        (SetBidsModelRequest,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'retail_media_externalv1_set_bids_model_request': 'body',
+                    'set_bids_model_request': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -4090,7 +4082,7 @@ class CampaignApi(object):
         )
         self.submit_proposal_endpoint = _Endpoint(
             settings={
-                'response_type': (RetailMediaExternalv1ProposalStatusModelResponse,),
+                'response_type': (ProposalStatusModelResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -4134,9 +4126,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -4272,7 +4262,7 @@ class CampaignApi(object):
     ):
         """add_remove_keywords  # noqa: E501
 
-        Add or Remove keywords from the associated line item in bulk  # noqa: E501
+        Add or Remove keywords from the line item in bulk  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4280,10 +4270,10 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            id (str): Long external id of the associated line item
+            id (str): ID of the line item
 
         Keyword Args:
-            retail_media_externalv1_add_remove_keywords_model_request (RetailMediaExternalv1AddRemoveKeywordsModelRequest): Object containing keywords to be added or removed. [optional]
+            add_remove_keywords_model_request (AddRemoveKeywordsModelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4316,7 +4306,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            RetailMediaExternalv1ResourceOutcome
+            ResourceOutcome
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4447,7 +4437,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            id (str): Long external id of the associated line item
+            id (str): ID of the line item
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4482,7 +4472,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            RetailMediaExternalv1KeywordsModelResponse
+            KeywordsModelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4522,7 +4512,7 @@ class CampaignApi(object):
     ):
         """fetch_proposal  # noqa: E501
 
-        Fetch the status of a proposal to modify a Preferred Deal Line Item.  # noqa: E501
+        Includes the state of the proposal, the status of the booking and approval, as well as any comments explaining why it might have been rejected.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4530,7 +4520,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            id (str): The external id of a line item.
+            id (str): ID of the line item
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4565,7 +4555,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            RetailMediaExternalv1ProposalStatusModelResponse
+            ProposalStatusModelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -9928,10 +9918,10 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            id (str): Long external id of the associated line item
+            id (str): ID of the line item
 
         Keyword Args:
-            retail_media_externalv1_set_bids_model_request (RetailMediaExternalv1SetBidsModelRequest): Object containing a list of bid overrides for associated keywords. [optional]
+            set_bids_model_request (SetBidsModelRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -9964,7 +9954,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            RetailMediaExternalv1ResourceOutcome
+            ResourceOutcome
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -10004,7 +9994,7 @@ class CampaignApi(object):
     ):
         """submit_proposal  # noqa: E501
 
-        Submit a proposal to modify a Preferred Deal Line Item for review.  # noqa: E501
+        Only the components of the Line Item that are in a valid state will be reviewed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -10012,7 +10002,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            id (str): The external id of a line item.
+            id (str): ID of the line item
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -10047,7 +10037,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            RetailMediaExternalv1ProposalStatusModelResponse
+            ProposalStatusModelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
