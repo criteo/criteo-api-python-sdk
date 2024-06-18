@@ -2517,7 +2517,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_api_v1_external_catalog_output_by_catalog_id**
-> get_api_v1_external_catalog_output_by_catalog_id(catalog_id)
+> file_type get_api_v1_external_catalog_output_by_catalog_id(catalog_id)
 
 
 
@@ -2564,7 +2564,8 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.get_api_v1_external_catalog_output_by_catalog_id(catalog_id)
+        api_response = api_instance.get_api_v1_external_catalog_output_by_catalog_id(catalog_id)
+        pprint(api_response)
     except criteo_api_retailmedia_v2024_01.ApiException as e:
         print("Exception when calling CampaignApi->get_api_v1_external_catalog_output_by_catalog_id: %s\n" % e)
 ```
@@ -2578,7 +2579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**file_type**
 
 ### Authorization
 
