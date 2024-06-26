@@ -1680,7 +1680,7 @@ class CampaignApi(object):
         )
         self.get_api_v1_external_catalog_output_by_catalog_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -6657,7 +6657,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
