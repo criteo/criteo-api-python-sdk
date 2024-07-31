@@ -296,6 +296,9 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
                 revenue_type="auction",
                 sold_by="directSold",
                 buy_type="auction",
+                advertiser_types=[
+                    "retailer",
+                ],
                 sku_relations=[
                     "sameSku",
                 ],

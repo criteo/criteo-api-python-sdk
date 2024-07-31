@@ -33,7 +33,6 @@ from criteo_api_retailmedia_v2023_07.model.auction_line_item_update_model_reques
 from criteo_api_retailmedia_v2023_07.model.audience_ids_update_model202110_request import AudienceIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2023_07.model.audience_target202110_request import AudienceTarget202110Request
 from criteo_api_retailmedia_v2023_07.model.audience_target202110_response import AudienceTarget202110Response
-from criteo_api_retailmedia_v2023_07.model.balance202110_paged_list_response import Balance202110PagedListResponse
 from criteo_api_retailmedia_v2023_07.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
 from criteo_api_retailmedia_v2023_07.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
 from criteo_api_retailmedia_v2023_07.model.category202204 import Category202204
@@ -46,7 +45,6 @@ from criteo_api_retailmedia_v2023_07.model.creative202210_response import Creati
 from criteo_api_retailmedia_v2023_07.model.creative_create_model202207 import CreativeCreateModel202207
 from criteo_api_retailmedia_v2023_07.model.creative_update_model202207 import CreativeUpdateModel202207
 from criteo_api_retailmedia_v2023_07.model.external_retailer_pages202110 import ExternalRetailerPages202110
-from criteo_api_retailmedia_v2023_07.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
 from criteo_api_retailmedia_v2023_07.model.json_api_page_response_of_brand import JsonApiPageResponseOfBrand
 from criteo_api_retailmedia_v2023_07.model.json_api_page_response_of_campaign_v202301 import JsonApiPageResponseOfCampaignV202301
 from criteo_api_retailmedia_v2023_07.model.json_api_page_response_of_retailer import JsonApiPageResponseOfRetailer
@@ -306,74 +304,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_api202110_external_account_balances_by_account_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (Balance202110PagedListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2023-07/retail-media/accounts/{account-id}/balances',
-                'operation_id': 'get_api202110_external_account_balances_by_account_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_api202110_external_account_creatives_by_account_id_endpoint = _Endpoint(
             settings={
                 'response_type': (Creative202110ListResponse,),
@@ -468,74 +398,6 @@ class CampaignApi(object):
                     'line_item_id': 'path',
                 },
                 'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api202110_external_balance_campaigns_by_balance_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (BalanceCampaign202110PagedListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2023-07/retail-media/balances/{balance-id}/campaigns',
-                'operation_id': 'get_api202110_external_balance_campaigns_by_balance_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'balance_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'balance_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'balance_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'balance_id': 'balance-id',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'balance_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
                 }
             },
             headers_map={
@@ -1475,7 +1337,9 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'text/plain',
+                    'application/json',
+                    'text/json'
                 ],
                 'content_type': [],
             },
@@ -1543,68 +1407,9 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_accounts_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfAccount,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2023-07/retail-media/accounts',
-                'operation_id': 'get_api_v1_external_accounts',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
+                    'text/plain',
+                    'application/json',
+                    'text/json'
                 ],
                 'content_type': [],
             },
@@ -4045,92 +3850,6 @@ class CampaignApi(object):
             id
         return self.fetch_proposal_endpoint.call_with_http_info(**kwargs)
 
-    def get_api202110_external_account_balances_by_account_id(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """get_api202110_external_account_balances_by_account_id  # noqa: E501
-
-        Gets page of balance objects for the given account id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api202110_external_account_balances_by_account_id(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): The account to get balances for
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            Balance202110PagedListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.get_api202110_external_account_balances_by_account_id_endpoint.call_with_http_info(**kwargs)
-
     def get_api202110_external_account_creatives_by_account_id(
         self,
         account_id,
@@ -4296,92 +4015,6 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api202110_external_balance_campaigns_by_balance_id(
-        self,
-        balance_id,
-        **kwargs
-    ):
-        """get_api202110_external_balance_campaigns_by_balance_id  # noqa: E501
-
-        Gets page of campaigns for the given balanceId  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api202110_external_balance_campaigns_by_balance_id(balance_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            balance_id (str): The balance to get campaigns from
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            BalanceCampaign202110PagedListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['balance_id'] = \
-            balance_id
-        return self.get_api202110_external_balance_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
 
     def get_api202110_external_campaign_preferred_line_items_by_campaign_id(
         self,
@@ -5663,8 +5296,8 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5749,8 +5382,8 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5815,87 +5448,6 @@ class CampaignApi(object):
         kwargs['account_id'] = \
             account_id
         return self.get_api_v1_external_account_retailers_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_accounts(
-        self,
-        **kwargs
-    ):
-        """get_api_v1_external_accounts  # noqa: E501
-
-        Gets page of account objects that the current user can access  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_accounts(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfAccount
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_api_v1_external_accounts_endpoint.call_with_http_info(**kwargs)
 
     def get_api_v1_external_catalog_output_by_catalog_id(
         self,

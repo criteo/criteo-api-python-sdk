@@ -98,6 +98,7 @@ class SkuDataPreview(ModelNormal):
         """
         return {
             'sku_key': (str,),  # noqa: E501
+            'category_id': (str,),  # noqa: E501
             'brand_id': (str,),  # noqa: E501
             'brand_name': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
@@ -107,7 +108,6 @@ class SkuDataPreview(ModelNormal):
             'updated_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
-            'category_id': (str,),  # noqa: E501
             'category': (str,),  # noqa: E501
             'is_seller_sku': (bool,),  # noqa: E501
             'is_buybox': (bool,),  # noqa: E501
@@ -128,6 +128,7 @@ class SkuDataPreview(ModelNormal):
 
     attribute_map = {
         'sku_key': 'skuKey',  # noqa: E501
+        'category_id': 'categoryId',  # noqa: E501
         'brand_id': 'brandId',  # noqa: E501
         'brand_name': 'brandName',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
@@ -137,7 +138,6 @@ class SkuDataPreview(ModelNormal):
         'updated_at': 'updatedAt',  # noqa: E501
         'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
-        'category_id': 'categoryId',  # noqa: E501
         'category': 'category',  # noqa: E501
         'is_seller_sku': 'isSellerSku',  # noqa: E501
         'is_buybox': 'isBuybox',  # noqa: E501
@@ -158,11 +158,12 @@ class SkuDataPreview(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, sku_key, brand_id, brand_name, retailer_id, retailer_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, sku_key, category_id, brand_id, brand_name, retailer_id, retailer_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
         """SkuDataPreview - a model defined in OpenAPI
 
         Args:
             sku_key (str): The product SKU Key.
+            category_id (str): The category Id.
             brand_id (str): The global brand id associated to the product.
             brand_name (str): The name of the global brand.
             retailer_id (str): The identifier for the retailer the product is listed by.
@@ -204,7 +205,6 @@ class SkuDataPreview(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
             description (str): A product description.. [optional]  # noqa: E501
-            category_id (str): The category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
             is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
@@ -248,6 +248,7 @@ class SkuDataPreview(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.sku_key = sku_key
+        self.category_id = category_id
         self.brand_id = brand_id
         self.brand_name = brand_name
         self.retailer_id = retailer_id
@@ -275,11 +276,12 @@ class SkuDataPreview(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, sku_key, brand_id, brand_name, retailer_id, retailer_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, sku_key, category_id, brand_id, brand_name, retailer_id, retailer_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
         """SkuDataPreview - a model defined in OpenAPI
 
         Args:
             sku_key (str): The product SKU Key.
+            category_id (str): The category Id.
             brand_id (str): The global brand id associated to the product.
             brand_name (str): The name of the global brand.
             retailer_id (str): The identifier for the retailer the product is listed by.
@@ -321,7 +323,6 @@ class SkuDataPreview(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
             description (str): A product description.. [optional]  # noqa: E501
-            category_id (str): The category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
             is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
@@ -363,6 +364,7 @@ class SkuDataPreview(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.sku_key = sku_key
+        self.category_id = category_id
         self.brand_id = brand_id
         self.brand_name = brand_name
         self.retailer_id = retailer_id

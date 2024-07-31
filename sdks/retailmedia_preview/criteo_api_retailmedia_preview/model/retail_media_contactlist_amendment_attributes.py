@@ -61,12 +61,12 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
         },
         ('identifier_type',): {
             'None': None,
-            'EMAIL': "email",
-            'MADID': "madid",
-            'IDENTITYLINK': "identityLink",
-            'GUM': "gum",
-            'CUSTOMERID': "customerid",
-            'PHONENUMBER': "phoneNumber",
+            'EMAIL': "Email",
+            'USERIDENTIFIER': "UserIdentifier",
+            'IDENTITYLINK': "IdentityLink",
+            'GUM': "Gum",
+            'CUSTOMERID': "CustomerId",
+            'PHONENUMBER': "PhoneNumber",
         },
     }
 

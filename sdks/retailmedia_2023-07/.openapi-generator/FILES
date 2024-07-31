@@ -5,8 +5,10 @@
 README.md
 criteo_api_retailmedia_v2023_07/__init__.py
 criteo_api_retailmedia_v2023_07/api/__init__.py
+criteo_api_retailmedia_v2023_07/api/accounts_api.py
 criteo_api_retailmedia_v2023_07/api/analytics_api.py
 criteo_api_retailmedia_v2023_07/api/audience_api.py
+criteo_api_retailmedia_v2023_07/api/balance_api.py
 criteo_api_retailmedia_v2023_07/api/campaign_api.py
 criteo_api_retailmedia_v2023_07/api/gateway_api.py
 criteo_api_retailmedia_v2023_07/api_client.py
@@ -208,6 +210,7 @@ criteo_api_retailmedia_v2023_07/model/value_type_resource_of_store_target202110.
 criteo_api_retailmedia_v2023_07/model_utils.py
 criteo_api_retailmedia_v2023_07/models/__init__.py
 criteo_api_retailmedia_v2023_07/rest.py
+docs/AccountsApi.md
 docs/AddRemoveKeywordModel.md
 docs/AddRemoveKeywordsModel.md
 docs/AddRemoveKeywordsModelRequest.md
@@ -239,6 +242,7 @@ docs/AudienceIdsUpdateModel202110Request.md
 docs/AudienceTarget202110Request.md
 docs/AudienceTarget202110Response.md
 docs/Balance202110PagedListResponse.md
+docs/BalanceApi.md
 docs/BalanceCampaign202110ListRequest.md
 docs/BalanceCampaign202110PagedListResponse.md
 docs/CampaignApi.md

@@ -6,6 +6,7 @@ Metadata and usage info of a sku search
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sku_key** | **str** | The product SKU Key. | 
+**category_id** | **str** | The category Id. | 
 **brand_id** | **str** | The global brand id associated to the product. | 
 **brand_name** | **str** | The name of the global brand. | 
 **retailer_id** | **str** | The identifier for the retailer the product is listed by. | 
@@ -15,7 +16,6 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** | The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string. | 
 **name** | **str** | A short product name. | [optional] 
 **description** | **str** | A product description. | [optional] 
-**category_id** | **str** | The category Id. | [optional] 
 **category** | **str** | The full category breadcrumb in the retailers catalog. | [optional] 
 **is_seller_sku** | **bool** | An indication of if the sku is seller sku. | [optional] 
 **is_buybox** | **bool** | Whether the Sku is a Buybox Winner. | [optional] 

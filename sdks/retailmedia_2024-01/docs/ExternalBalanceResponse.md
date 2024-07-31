@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **balance_type** | **str** | Type of the balance | 
 **sales_force_id** | **str** | SalesForceId the balance is linked to. | 
 **spend_type** | **str** | Spend Type of the balance. | 
+**private_market_billing_type** | **str** | Billing type for Private Market. | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

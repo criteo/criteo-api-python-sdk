@@ -71,6 +71,12 @@ class ExternalBalanceResponse(ModelNormal):
             'OFFSITE': "Offsite",
             'OFFSITEAWARENESS': "OffsiteAwareness",
         },
+        ('private_market_billing_type',): {
+            'NOTAPPLICABLE': "NotApplicable",
+            'BILLBYRETAILER': "BillByRetailer",
+            'BILLBYCRITEO': "BillByCriteo",
+            'UNKNOWN': "Unknown",
+        },
     }
 
     validations = {
@@ -111,6 +117,7 @@ class ExternalBalanceResponse(ModelNormal):
             'balance_type': (str,),  # noqa: E501
             'sales_force_id': (str,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
+            'private_market_billing_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -133,6 +140,7 @@ class ExternalBalanceResponse(ModelNormal):
         'balance_type': 'balanceType',  # noqa: E501
         'sales_force_id': 'salesForceId',  # noqa: E501
         'spend_type': 'spendType',  # noqa: E501
+        'private_market_billing_type': 'privateMarketBillingType',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,7 +150,7 @@ class ExternalBalanceResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, balance_type, sales_force_id, spend_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, balance_type, sales_force_id, spend_type, private_market_billing_type, *args, **kwargs):  # noqa: E501
         """ExternalBalanceResponse - a model defined in OpenAPI
 
         Args:
@@ -160,6 +168,7 @@ class ExternalBalanceResponse(ModelNormal):
             balance_type (str): Type of the balance
             sales_force_id (str): SalesForceId the balance is linked to.
             spend_type (str): Spend Type of the balance.
+            private_market_billing_type (str): Billing type for Private Market.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -237,6 +246,7 @@ class ExternalBalanceResponse(ModelNormal):
         self.balance_type = balance_type
         self.sales_force_id = sales_force_id
         self.spend_type = spend_type
+        self.private_market_billing_type = private_market_billing_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -257,7 +267,7 @@ class ExternalBalanceResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, balance_type, sales_force_id, spend_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, balance_type, sales_force_id, spend_type, private_market_billing_type, *args, **kwargs):  # noqa: E501
         """ExternalBalanceResponse - a model defined in OpenAPI
 
         Args:
@@ -275,6 +285,7 @@ class ExternalBalanceResponse(ModelNormal):
             balance_type (str): Type of the balance
             sales_force_id (str): SalesForceId the balance is linked to.
             spend_type (str): Spend Type of the balance.
+            private_market_billing_type (str): Billing type for Private Market.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -350,6 +361,7 @@ class ExternalBalanceResponse(ModelNormal):
         self.balance_type = balance_type
         self.sales_force_id = sales_force_id
         self.spend_type = spend_type
+        self.private_market_billing_type = private_market_billing_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

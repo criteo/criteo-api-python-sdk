@@ -64,10 +64,6 @@ class ApplicationSummaryModelResponse(ModelNormal):
     }
 
     validations = {
-        ('warnings',): {
-        },
-        ('errors',): {
-        },
     }
 
     @cached_property

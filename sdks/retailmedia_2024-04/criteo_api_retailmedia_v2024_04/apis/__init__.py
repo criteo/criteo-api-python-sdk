@@ -17,5 +17,6 @@
 from criteo_api_retailmedia_v2024_04.api.accounts_api import AccountsApi
 from criteo_api_retailmedia_v2024_04.api.analytics_api import AnalyticsApi
 from criteo_api_retailmedia_v2024_04.api.audience_api import AudienceApi
+from criteo_api_retailmedia_v2024_04.api.balance_api import BalanceApi
 from criteo_api_retailmedia_v2024_04.api.campaign_api import CampaignApi
 from criteo_api_retailmedia_v2024_04.api.gateway_api import GatewayApi

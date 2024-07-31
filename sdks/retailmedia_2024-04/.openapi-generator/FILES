@@ -8,6 +8,7 @@ criteo_api_retailmedia_v2024_04/api/__init__.py
 criteo_api_retailmedia_v2024_04/api/accounts_api.py
 criteo_api_retailmedia_v2024_04/api/analytics_api.py
 criteo_api_retailmedia_v2024_04/api/audience_api.py
+criteo_api_retailmedia_v2024_04/api/balance_api.py
 criteo_api_retailmedia_v2024_04/api/campaign_api.py
 criteo_api_retailmedia_v2024_04/api/gateway_api.py
 criteo_api_retailmedia_v2024_04/api_client.py
@@ -285,6 +286,7 @@ docs/AudienceApi.md
 docs/AudienceIdsUpdateModel202110Request.md
 docs/AudienceTarget202110Request.md
 docs/AudienceTarget202110Response.md
+docs/BalanceApi.md
 docs/BalanceCampaign202110ListRequest.md
 docs/BalanceCampaign202110PagedListResponse.md
 docs/BalanceResponse.md

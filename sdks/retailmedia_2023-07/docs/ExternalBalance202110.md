@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
+**private_market_billing_type** | **str** | Billing type for Private Market. | 
 **end_date** | **date, none_type** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

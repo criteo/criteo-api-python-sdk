@@ -80,6 +80,12 @@ class AsyncRevenueReport(ModelNormal):
             'PREFERREDDEALS': "preferredDeals",
             'SPONSORSHIP': "sponsorship",
         },
+        ('advertiser_types',): {
+            'None': None,
+            'RETAILER': "retailer",
+            'BRAND': "brand",
+            'SELLER': "seller",
+        },
         ('sku_relations',): {
             'None': None,
             'SAMESKU': "sameSku",
@@ -130,6 +136,7 @@ class AsyncRevenueReport(ModelNormal):
             'ACCOUNTID': "accountId",
             'ACCOUNTNAME': "accountName",
             'ACCOUNTTYPENAME': "accountTypeName",
+            'ADVERTISERTYPE': "advertiserType",
             'CAMPAIGNID': "campaignId",
             'CAMPAIGNNAME': "campaignName",
             'CAMPAIGNTYPENAME': "campaignTypeName",
@@ -153,6 +160,7 @@ class AsyncRevenueReport(ModelNormal):
             'ADVPRODUCTNAME': "advProductName",
             'ADVPRODUCTGTIN': "advProductGtin",
             'ADVPRODUCTMPN': "advProductMpn",
+            'BUYTYPE': "buyType",
             'SOLDBY': "soldBy",
             'SALECHANNEL': "saleChannel",
             'ATTRIBUTIONSETTINGS': "attributionSettings",
@@ -193,6 +201,7 @@ class AsyncRevenueReport(ModelNormal):
             'TRANSACTIONS': "transactions",
             'ASSISTEDSALES': "assistedSales",
             'ASSISTEDUNITS': "assistedUnits",
+            'REVENUE': "revenue",
             'OPENAUCTIONREVENUE': "openAuctionRevenue",
             'PREFERREDDEALSREVENUE': "preferredDealsRevenue",
             'CTR': "ctr",
@@ -247,6 +256,7 @@ class AsyncRevenueReport(ModelNormal):
             'revenue_type': (str, none_type,),  # noqa: E501
             'sold_by': (str, none_type,),  # noqa: E501
             'buy_type': (str, none_type,),  # noqa: E501
+            'advertiser_types': ([str], none_type,),  # noqa: E501
             'sku_relations': ([str], none_type,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
@@ -272,6 +282,7 @@ class AsyncRevenueReport(ModelNormal):
         'revenue_type': 'revenueType',  # noqa: E501
         'sold_by': 'soldBy',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
+        'advertiser_types': 'advertiserTypes',  # noqa: E501
         'sku_relations': 'skuRelations',  # noqa: E501
         'format': 'format',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
@@ -328,12 +339,13 @@ class AsyncRevenueReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ids ([str], none_type): Campaign ids to report on. [optional]  # noqa: E501
-            id (str, none_type): Campaign id to report on. [optional]  # noqa: E501
+            ids ([str], none_type): Supply account ids to report on. [optional]  # noqa: E501
+            id (str, none_type): Supply account id to report on. [optional]  # noqa: E501
             report_type (str, none_type): Type of report. [optional]  # noqa: E501
             revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
             sold_by (str, none_type): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
             buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            advertiser_types ([str], none_type): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
             sku_relations ([str], none_type): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
             format (str, none_type): Format of the output. [optional]  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
@@ -434,12 +446,13 @@ class AsyncRevenueReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ids ([str], none_type): Campaign ids to report on. [optional]  # noqa: E501
-            id (str, none_type): Campaign id to report on. [optional]  # noqa: E501
+            ids ([str], none_type): Supply account ids to report on. [optional]  # noqa: E501
+            id (str, none_type): Supply account id to report on. [optional]  # noqa: E501
             report_type (str, none_type): Type of report. [optional]  # noqa: E501
             revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
             sold_by (str, none_type): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
             buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            advertiser_types ([str], none_type): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
             sku_relations ([str], none_type): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
             format (str, none_type): Format of the output. [optional]  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501

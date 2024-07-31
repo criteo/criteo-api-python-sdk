@@ -5,13 +5,13 @@ Slim  version of Sku Data model
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category_id** | **str** | The category Id. | 
 **global_brand_id** | **str** | The global brand id associated to the product. | 
 **global_brand_name** | **str** | The name of the global brand. | 
 **price** | **float, none_type** | The price of the product on the retailer site. Can be omitted in certain circumstances | 
 **is_in_stock** | **bool** | An indication of if the retailer currently has the product in stock. | 
 **updated_at** | **datetime** | The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string. | 
 **name** | **str** | A short product name. | [optional] 
-**category_id** | **str** | The category Id. | [optional] 
 **global_category_id** | **str** | The global category Id. | [optional] 
 **category** | **str** | The full category breadcrumb in the retailers catalog. | [optional] 
 **retailer_brand_id** | **str** | The retailer brand id associated to the product. | [optional] 

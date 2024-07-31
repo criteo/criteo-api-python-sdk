@@ -93,10 +93,10 @@ class JsonApiPageResponseOfBrand(ModelNormal):
         """
         lazy_import()
         return {
+            'metadata': (PageMetadata,),  # noqa: E501
             'data': ([JsonApiBodyWithIdOfInt64AndBrandAndBrand],),  # noqa: E501
             'errors': ([CommonError],),  # noqa: E501
             'warnings': ([CommonWarning],),  # noqa: E501
-            'metadata': (PageMetadata,),  # noqa: E501
         }
 
     @cached_property
@@ -105,10 +105,10 @@ class JsonApiPageResponseOfBrand(ModelNormal):
 
 
     attribute_map = {
+        'metadata': 'metadata',  # noqa: E501
         'data': 'data',  # noqa: E501
         'errors': 'errors',  # noqa: E501
         'warnings': 'warnings',  # noqa: E501
-        'metadata': 'metadata',  # noqa: E501
     }
 
     read_only_vars = {
@@ -118,10 +118,11 @@ class JsonApiPageResponseOfBrand(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, data, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, metadata, data, *args, **kwargs):  # noqa: E501
         """JsonApiPageResponseOfBrand - a model defined in OpenAPI
 
         Args:
+            metadata (PageMetadata):
             data ([JsonApiBodyWithIdOfInt64AndBrandAndBrand]):
 
         Keyword Args:
@@ -157,7 +158,6 @@ class JsonApiPageResponseOfBrand(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             errors ([CommonError]): [optional]  # noqa: E501
             warnings ([CommonWarning]): [optional]  # noqa: E501
-            metadata (PageMetadata): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -189,6 +189,7 @@ class JsonApiPageResponseOfBrand(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.metadata = metadata
         self.data = data
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -210,10 +211,11 @@ class JsonApiPageResponseOfBrand(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, data, *args, **kwargs):  # noqa: E501
+    def __init__(self, metadata, data, *args, **kwargs):  # noqa: E501
         """JsonApiPageResponseOfBrand - a model defined in OpenAPI
 
         Args:
+            metadata (PageMetadata):
             data ([JsonApiBodyWithIdOfInt64AndBrandAndBrand]):
 
         Keyword Args:
@@ -249,7 +251,6 @@ class JsonApiPageResponseOfBrand(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             errors ([CommonError]): [optional]  # noqa: E501
             warnings ([CommonWarning]): [optional]  # noqa: E501
-            metadata (PageMetadata): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,6 +280,7 @@ class JsonApiPageResponseOfBrand(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.metadata = metadata
         self.data = data
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

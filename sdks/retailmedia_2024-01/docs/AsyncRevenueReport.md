@@ -7,12 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **start_date** | **datetime** | Start date | 
 **end_date** | **datetime** | End date | 
-**ids** | **[str], none_type** | Campaign ids to report on | [optional] 
-**id** | **str, none_type** | Campaign id to report on | [optional] 
+**ids** | **[str], none_type** | Supply account ids to report on | [optional] 
+**id** | **str, none_type** | Supply account id to report on | [optional] 
 **report_type** | **str, none_type** | Type of report | [optional] 
 **revenue_type** | **str, none_type** | Type of revenue | [optional] 
 **sold_by** | **str, none_type** | Filter on the seller: Indirect Sold, Direct Sold or Private Market | [optional] 
 **buy_type** | **str, none_type** | Filter on buy type: Auction, Preferred Deals or Sponsorship | [optional] 
+**advertiser_types** | **[str], none_type** | Filter on the type of advertiser: retailer, brand, seller | [optional] 
 **sku_relations** | **[str], none_type** | Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller | [optional] 
 **format** | **str, none_type** | Format of the output | [optional] 
 **campaign_type** | **str, none_type** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"

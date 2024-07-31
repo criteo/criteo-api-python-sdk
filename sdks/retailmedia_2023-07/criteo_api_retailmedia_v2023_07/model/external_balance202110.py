@@ -61,6 +61,12 @@ class ExternalBalance202110(ModelNormal):
             'ACTIVE': "active",
             'ENDED': "ended",
         },
+        ('private_market_billing_type',): {
+            'NOTAPPLICABLE': "NotApplicable",
+            'BILLBYRETAILER': "BillByRetailer",
+            'BILLBYCRITEO': "BillByCriteo",
+            'UNKNOWN': "Unknown",
+        },
     }
 
     validations = {
@@ -97,6 +103,7 @@ class ExternalBalance202110(ModelNormal):
             'status': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
+            'private_market_billing_type': (str,),  # noqa: E501
             'end_date': (date, none_type,),  # noqa: E501
         }
 
@@ -116,6 +123,7 @@ class ExternalBalance202110(ModelNormal):
         'status': 'status',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'private_market_billing_type': 'privateMarketBillingType',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
     }
 
@@ -126,7 +134,7 @@ class ExternalBalance202110(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, status, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, status, created_at, updated_at, private_market_billing_type, *args, **kwargs):  # noqa: E501
         """ExternalBalance202110 - a model defined in OpenAPI
 
         Args:
@@ -140,6 +148,7 @@ class ExternalBalance202110(ModelNormal):
             status (str):
             created_at (datetime):
             updated_at (datetime):
+            private_market_billing_type (str): Billing type for Private Market.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -214,6 +223,7 @@ class ExternalBalance202110(ModelNormal):
         self.status = status
         self.created_at = created_at
         self.updated_at = updated_at
+        self.private_market_billing_type = private_market_billing_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -234,7 +244,7 @@ class ExternalBalance202110(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, status, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, status, created_at, updated_at, private_market_billing_type, *args, **kwargs):  # noqa: E501
         """ExternalBalance202110 - a model defined in OpenAPI
 
         Args:
@@ -248,6 +258,7 @@ class ExternalBalance202110(ModelNormal):
             status (str):
             created_at (datetime):
             updated_at (datetime):
+            private_market_billing_type (str): Billing type for Private Market.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -320,6 +331,7 @@ class ExternalBalance202110(ModelNormal):
         self.status = status
         self.created_at = created_at
         self.updated_at = updated_at
+        self.private_market_billing_type = private_market_billing_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

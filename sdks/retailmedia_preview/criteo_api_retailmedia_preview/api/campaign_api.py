@@ -28,14 +28,15 @@ from criteo_api_retailmedia_preview.model.creative_v2_list_response import Creat
 from criteo_api_retailmedia_preview.model.creative_v2_response import CreativeV2Response
 from criteo_api_retailmedia_preview.model.external_creative_create_model_v2 import ExternalCreativeCreateModelV2
 from criteo_api_retailmedia_preview.model.external_creative_update_model_v2 import ExternalCreativeUpdateModelV2
-from criteo_api_retailmedia_preview.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
 from criteo_api_retailmedia_preview.model.json_api_page_response_of_brand import JsonApiPageResponseOfBrand
 from criteo_api_retailmedia_preview.model.json_api_page_response_of_retailer import JsonApiPageResponseOfRetailer
+from criteo_api_retailmedia_preview.model.json_api_request_of_seller_catalog_request import JsonApiRequestOfSellerCatalogRequest
+from criteo_api_retailmedia_preview.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item_bid_multipliers_v2 import JsonApiSingleResponseOfLineItemBidMultipliersV2
 from criteo_api_retailmedia_preview.model.keywords_model_response import KeywordsModelResponse
 from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_v2_request import LineItemBidMultipliersV2Request
 from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_v2_response import LineItemBidMultipliersV2Response
-from criteo_api_retailmedia_preview.model.page_of_insertion_order_history_change_data_capture import PageOfInsertionOrderHistoryChangeDataCapture
+from criteo_api_retailmedia_preview.model.page_of_insertion_order_history_change_data_capture_v2 import PageOfInsertionOrderHistoryChangeDataCaptureV2
 from criteo_api_retailmedia_preview.model.placement_preview_list_response import PlacementPreviewListResponse
 from criteo_api_retailmedia_preview.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
 from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
@@ -650,7 +651,9 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'text/plain',
+                    'application/json',
+                    'text/json'
                 ],
                 'content_type': [],
             },
@@ -718,68 +721,9 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_accounts_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfAccount,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts',
-                'operation_id': 'get_api_v1_external_accounts',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
+                    'text/plain',
+                    'application/json',
+                    'text/json'
                 ],
                 'content_type': [],
             },
@@ -1315,15 +1259,15 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_insertion_order_history_change_data_capture_endpoint = _Endpoint(
+        self.get_insertion_order_history_change_data_capture_v2_endpoint = _Endpoint(
             settings={
-                'response_type': (PageOfInsertionOrderHistoryChangeDataCapture,),
+                'response_type': (PageOfInsertionOrderHistoryChangeDataCaptureV2,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/insertion-order-history/{insertionOrderId}/change-data-capture',
-                'operation_id': 'get_insertion_order_history_change_data_capture',
+                'operation_id': 'get_insertion_order_history_change_data_capture_v2',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1768,6 +1712,66 @@ class CampaignApi(object):
             headers_map={
                 'accept': [
                     'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.post_api_v1_external_account_catalogs_sellers_by_account_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (JsonApiSingleResponseOfCatalogStatus,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{accountId}/catalogs/sellers',
+                'operation_id': 'post_api_v1_external_account_catalogs_sellers_by_account_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'json_api_request_of_seller_catalog_request',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'json_api_request_of_seller_catalog_request':
+                        (JsonApiRequestOfSellerCatalogRequest,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'json_api_request_of_seller_catalog_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -3524,8 +3528,8 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3610,8 +3614,8 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3676,87 +3680,6 @@ class CampaignApi(object):
         kwargs['account_id'] = \
             account_id
         return self.get_api_v1_external_account_retailers_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_accounts(
-        self,
-        **kwargs
-    ):
-        """get_api_v1_external_accounts  # noqa: E501
-
-        Gets page of account objects that the current user can access  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_accounts(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
-            page_size (int): The maximum number of items you would like to receive in this request. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfAccount
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_api_v1_external_accounts_endpoint.call_with_http_info(**kwargs)
 
     def get_api_v1_external_retailer_brands_by_retailer_id(
         self,
@@ -4519,18 +4442,18 @@ class CampaignApi(object):
             campaign_id
         return self.get_campaign_budget_overrides_endpoint.call_with_http_info(**kwargs)
 
-    def get_insertion_order_history_change_data_capture(
+    def get_insertion_order_history_change_data_capture_v2(
         self,
         insertion_order_id,
         **kwargs
     ):
-        """get_insertion_order_history_change_data_capture  # noqa: E501
+        """get_insertion_order_history_change_data_capture_v2  # noqa: E501
 
         Gets the balance's historical data change capture.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_insertion_order_history_change_data_capture(insertion_order_id, async_req=True)
+        >>> thread = api.get_insertion_order_history_change_data_capture_v2(insertion_order_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4572,7 +4495,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PageOfInsertionOrderHistoryChangeDataCapture
+            PageOfInsertionOrderHistoryChangeDataCaptureV2
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4603,7 +4526,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['insertion_order_id'] = \
             insertion_order_id
-        return self.get_insertion_order_history_change_data_capture_endpoint.call_with_http_info(**kwargs)
+        return self.get_insertion_order_history_change_data_capture_v2_endpoint.call_with_http_info(**kwargs)
 
     def get_line_item_budget_overrides(
         self,
@@ -5115,6 +5038,90 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.post_api202210_external_line_item_product_buttons_create_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
+    def post_api_v1_external_account_catalogs_sellers_by_account_id(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """post_api_v1_external_account_catalogs_sellers_by_account_id  # noqa: E501
+
+        Create a request for a Catalog available to the indicated account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.post_api_v1_external_account_catalogs_sellers_by_account_id(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The account to request the catalog for.
+
+        Keyword Args:
+            json_api_request_of_seller_catalog_request (JsonApiRequestOfSellerCatalogRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            JsonApiSingleResponseOfCatalogStatus
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.post_api_v1_external_account_catalogs_sellers_by_account_id_endpoint.call_with_http_info(**kwargs)
 
     def post_api_v1_external_catalogs_sku_retrieval(
         self,

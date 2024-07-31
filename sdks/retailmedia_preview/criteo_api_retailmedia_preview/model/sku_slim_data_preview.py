@@ -97,13 +97,13 @@ class SkuSlimDataPreview(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'category_id': (str,),  # noqa: E501
             'global_brand_id': (str,),  # noqa: E501
             'global_brand_name': (str,),  # noqa: E501
             'price': (float, none_type,),  # noqa: E501
             'is_in_stock': (bool,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'category_id': (str,),  # noqa: E501
             'global_category_id': (str,),  # noqa: E501
             'category': (str,),  # noqa: E501
             'retailer_brand_id': (str,),  # noqa: E501
@@ -119,13 +119,13 @@ class SkuSlimDataPreview(ModelNormal):
 
 
     attribute_map = {
+        'category_id': 'categoryId',  # noqa: E501
         'global_brand_id': 'globalBrandId',  # noqa: E501
         'global_brand_name': 'globalBrandName',  # noqa: E501
         'price': 'price',  # noqa: E501
         'is_in_stock': 'isInStock',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'category_id': 'categoryId',  # noqa: E501
         'global_category_id': 'globalCategoryId',  # noqa: E501
         'category': 'category',  # noqa: E501
         'retailer_brand_id': 'retailerBrandId',  # noqa: E501
@@ -142,10 +142,11 @@ class SkuSlimDataPreview(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, global_brand_id, global_brand_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, category_id, global_brand_id, global_brand_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
         """SkuSlimDataPreview - a model defined in OpenAPI
 
         Args:
+            category_id (str): The category Id.
             global_brand_id (str): The global brand id associated to the product.
             global_brand_name (str): The name of the global brand.
             price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
@@ -184,7 +185,6 @@ class SkuSlimDataPreview(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
-            category_id (str): The category Id.. [optional]  # noqa: E501
             global_category_id (str): The global category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             retailer_brand_id (str): The retailer brand id associated to the product.. [optional]  # noqa: E501
@@ -223,6 +223,7 @@ class SkuSlimDataPreview(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.category_id = category_id
         self.global_brand_id = global_brand_id
         self.global_brand_name = global_brand_name
         self.price = price
@@ -248,10 +249,11 @@ class SkuSlimDataPreview(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, global_brand_id, global_brand_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, category_id, global_brand_id, global_brand_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
         """SkuSlimDataPreview - a model defined in OpenAPI
 
         Args:
+            category_id (str): The category Id.
             global_brand_id (str): The global brand id associated to the product.
             global_brand_name (str): The name of the global brand.
             price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
@@ -290,7 +292,6 @@ class SkuSlimDataPreview(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
-            category_id (str): The category Id.. [optional]  # noqa: E501
             global_category_id (str): The global category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             retailer_brand_id (str): The retailer brand id associated to the product.. [optional]  # noqa: E501
@@ -327,6 +328,7 @@ class SkuSlimDataPreview(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.category_id = category_id
         self.global_brand_id = global_brand_id
         self.global_brand_name = global_brand_name
         self.price = price

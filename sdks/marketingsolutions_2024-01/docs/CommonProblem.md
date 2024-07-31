@@ -1,6 +1,6 @@
 # CommonProblem
 
-Common problem object. Can be specialized as needed.
+Common problem object.
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **trace_id** | **str, none_type** | The request correlation ID this problem comes from. | [optional] 
 **trace_identifier** | **str, none_type** | The request correlation ID this problem comes from. (deprecated, use traceId instead) | [optional] 
 **type** | **str, none_type** | The problem&#39;s category. | [optional] 
-**code** | **str, none_type** | A machine-readable  error code, expressed as a string value. | [optional] 
+**code** | **str, none_type** | A machine-readable error code, expressed as a string value. | [optional] 
 **instance** | **str, none_type** | A URI that identifies the specific occurrence of the problem. | [optional] 
 **title** | **str, none_type** | A short human-readable description of the problem type | [optional] 
 **detail** | **str, none_type** | A human-readable explanation specific to this occurrence of the problem | [optional] 

@@ -126,6 +126,8 @@ class AsyncAccountsReport(ModelNormal):
             'SALESCHANNEL': "salesChannel",
             'ENVIRONMENT': "environment",
             'PAGETYPENAME': "pageTypeName",
+            'PAGECATEGORY': "pageCategory",
+            'TAXONOMYBREADCRUMB': "taxonomyBreadcrumb",
             'KEYWORD': "keyword",
             'SEARCHTERM': "searchTerm",
         },

@@ -8,10 +8,8 @@ Method | HTTP request | Description
 [**create_asset**](CampaignApi.md#create_asset) | **POST** /2023-07/retail-media/assets | 
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /2023-07/retail-media/line-items/{id}/keywords | 
 [**fetch_proposal**](CampaignApi.md#fetch_proposal) | **GET** /2023-07/retail-media/preferred-deal-line-items/{id}/proposal | 
-[**get_api202110_external_account_balances_by_account_id**](CampaignApi.md#get_api202110_external_account_balances_by_account_id) | **GET** /2023-07/retail-media/accounts/{account-id}/balances | 
 [**get_api202110_external_account_creatives_by_account_id**](CampaignApi.md#get_api202110_external_account_creatives_by_account_id) | **GET** /2023-07/retail-media/accounts/{account-id}/creatives | 
 [**get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id**](CampaignApi.md#get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id) | **GET** /2023-07/retail-media/auction-line-items/{line-item-id}/targeting/keywords | 
-[**get_api202110_external_balance_campaigns_by_balance_id**](CampaignApi.md#get_api202110_external_balance_campaigns_by_balance_id) | **GET** /2023-07/retail-media/balances/{balance-id}/campaigns | 
 [**get_api202110_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#get_api202110_external_campaign_preferred_line_items_by_campaign_id) | **GET** /2023-07/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**get_api202110_external_line_item_products_by_line_item_id**](CampaignApi.md#get_api202110_external_line_item_products_by_line_item_id) | **GET** /2023-07/retail-media/line-items/{line-item-id}/products | 
 [**get_api202110_external_preferred_line_item_by_line_item_id**](CampaignApi.md#get_api202110_external_preferred_line_item_by_line_item_id) | **GET** /2023-07/retail-media/preferred-line-items/{line-item-id} | 
@@ -29,7 +27,6 @@ Method | HTTP request | Description
 [**get_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#get_api202301_external_line_item_bid_multipliers_by_line_item_id) | **GET** /2023-07/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**get_api_v1_external_account_brands_by_account_id**](CampaignApi.md#get_api_v1_external_account_brands_by_account_id) | **GET** /2023-07/retail-media/accounts/{accountId}/brands | 
 [**get_api_v1_external_account_retailers_by_account_id**](CampaignApi.md#get_api_v1_external_account_retailers_by_account_id) | **GET** /2023-07/retail-media/accounts/{accountId}/retailers | 
-[**get_api_v1_external_accounts**](CampaignApi.md#get_api_v1_external_accounts) | **GET** /2023-07/retail-media/accounts | 
 [**get_api_v1_external_catalog_output_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_output_by_catalog_id) | **GET** /2023-07/retail-media/catalogs/{catalogId}/output | 
 [**get_api_v1_external_catalog_status_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_status_by_catalog_id) | **GET** /2023-07/retail-media/catalogs/{catalogId}/status | 
 [**get_api_v2_external_account_line_items_by_account_id**](CampaignApi.md#get_api_v2_external_account_line_items_by_account_id) | **GET** /2023-07/retail-media/accounts/{account-id}/line-items | 
@@ -435,106 +432,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api202110_external_account_balances_by_account_id**
-> Balance202110PagedListResponse get_api202110_external_account_balances_by_account_id(account_id)
-
-
-
-Gets page of balance objects for the given account id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_07
-from criteo_api_retailmedia_v2023_07.api import campaign_api
-from criteo_api_retailmedia_v2023_07.model.balance202110_paged_list_response import Balance202110PagedListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | The account to get balances for
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
-    page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api202110_external_account_balances_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202110_external_account_balances_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api202110_external_account_balances_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202110_external_account_balances_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account to get balances for |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
-
-### Return type
-
-[**Balance202110PagedListResponse**](Balance202110PagedListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_api202110_external_account_creatives_by_account_id**
 > Creative202110ListResponse get_api202110_external_account_creatives_by_account_id(account_id)
 
@@ -701,106 +598,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api202110_external_balance_campaigns_by_balance_id**
-> BalanceCampaign202110PagedListResponse get_api202110_external_balance_campaigns_by_balance_id(balance_id)
-
-
-
-Gets page of campaigns for the given balanceId
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_07
-from criteo_api_retailmedia_v2023_07.api import campaign_api
-from criteo_api_retailmedia_v2023_07.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    balance_id = "balance-id_example" # str | The balance to get campaigns from
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
-    page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api202110_external_balance_campaigns_by_balance_id(balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202110_external_balance_campaigns_by_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api202110_external_balance_campaigns_by_balance_id(balance_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202110_external_balance_campaigns_by_balance_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **balance_id** | **str**| The balance to get campaigns from |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
-
-### Return type
-
-[**BalanceCampaign202110PagedListResponse**](BalanceCampaign202110PagedListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2179,8 +1976,8 @@ with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
-    page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
+    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
+    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     try:
@@ -2205,8 +2002,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
  **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
+ **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
+ **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -2219,7 +2016,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -2279,8 +2076,8 @@ with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
-    page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
+    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
+    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     try:
@@ -2305,8 +2102,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
  **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
+ **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
+ **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -2319,98 +2116,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_v1_external_accounts**
-> JsonApiPageResponseOfAccount get_api_v1_external_accounts()
-
-
-
-Gets page of account objects that the current user can access
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2023_07
-from criteo_api_retailmedia_v2023_07.api import campaign_api
-from criteo_api_retailmedia_v2023_07.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2023_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2023_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
-    page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api_v1_external_accounts(limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2023_07.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_accounts: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
-
-### Return type
-
-[**JsonApiPageResponseOfAccount**](JsonApiPageResponseOfAccount.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
