@@ -31,7 +31,9 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_preview.model.rm_contact_list_v1 import RmContactListV1
+    from criteo_api_retailmedia_preview.model.rm_user_behavior_v1 import RmUserBehaviorV1
     globals()['RmContactListV1'] = RmContactListV1
+    globals()['RmUserBehaviorV1'] = RmUserBehaviorV1
 
 
 class RmAudienceSegmentEntityV1(ModelNormal):
@@ -63,6 +65,7 @@ class RmAudienceSegmentEntityV1(ModelNormal):
             'None': None,
             'UNKNOWN': "Unknown",
             'CONTACTLIST': "ContactList",
+            'USERBEHAVIOR': "UserBehavior",
         },
         ('channels',): {
             'None': None,
@@ -105,7 +108,9 @@ class RmAudienceSegmentEntityV1(ModelNormal):
             'type': (str, none_type,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_by_id': (str, none_type,),  # noqa: E501
             'contact_list': (RmContactListV1,),  # noqa: E501
+            'user_behavior': (RmUserBehaviorV1,),  # noqa: E501
             'channels': ([str], none_type,),  # noqa: E501
         }
 
@@ -122,7 +127,9 @@ class RmAudienceSegmentEntityV1(ModelNormal):
         'type': 'type',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
+        'created_by_id': 'createdById',  # noqa: E501
         'contact_list': 'contactList',  # noqa: E501
+        'user_behavior': 'userBehavior',  # noqa: E501
         'channels': 'channels',  # noqa: E501
     }
 
@@ -174,7 +181,9 @@ class RmAudienceSegmentEntityV1(ModelNormal):
             type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
             created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
+            created_by_id (str, none_type): User that created the segment. [optional]  # noqa: E501
             contact_list (RmContactListV1): [optional]  # noqa: E501
+            user_behavior (RmUserBehaviorV1): [optional]  # noqa: E501
             channels ([str], none_type): Channels associated to the segment (read-only). [optional]  # noqa: E501
         """
 
@@ -268,7 +277,9 @@ class RmAudienceSegmentEntityV1(ModelNormal):
             type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
             created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
+            created_by_id (str, none_type): User that created the segment. [optional]  # noqa: E501
             contact_list (RmContactListV1): [optional]  # noqa: E501
+            user_behavior (RmUserBehaviorV1): [optional]  # noqa: E501
             channels ([str], none_type): Channels associated to the segment (read-only). [optional]  # noqa: E501
         """
 

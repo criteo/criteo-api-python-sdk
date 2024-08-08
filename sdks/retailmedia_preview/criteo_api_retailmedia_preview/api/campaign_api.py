@@ -143,7 +143,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products/append',
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/products/append',
                 'operation_id': 'append_promoted_products',
                 'http_method': 'POST',
                 'servers': None,
@@ -175,7 +175,7 @@ class CampaignApi(object):
                         (PromotedProductResourceCollectionInput,),
                 },
                 'attribute_map': {
-                    'line_item_id': 'lineItemId',
+                    'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
@@ -257,7 +257,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products/delete',
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/products/delete',
                 'operation_id': 'delete_promoted_products',
                 'http_method': 'POST',
                 'servers': None,
@@ -289,7 +289,7 @@ class CampaignApi(object):
                         (PromotedProductResourceCollectionInput,),
                 },
                 'attribute_map': {
-                    'line_item_id': 'lineItemId',
+                    'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
@@ -367,7 +367,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products',
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/products',
                 'operation_id': 'fetch_promoted_products',
                 'http_method': 'GET',
                 'servers': None,
@@ -405,7 +405,7 @@ class CampaignApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'line_item_id': 'lineItemId',
+                    'line_item_id': 'line-item-id',
                     'offset': 'offset',
                     'limit': 'limit',
                     'fields': 'fields',
@@ -1551,7 +1551,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products/pause',
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/products/pause',
                 'operation_id': 'pause_promoted_products',
                 'http_method': 'POST',
                 'servers': None,
@@ -1583,7 +1583,7 @@ class CampaignApi(object):
                         (PromotedProductResourceCollectionInput,),
                 },
                 'attribute_map': {
-                    'line_item_id': 'lineItemId',
+                    'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
@@ -2574,7 +2574,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/line-items/{lineItemId}/products/unpause',
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/products/unpause',
                 'operation_id': 'unpause_promoted_products',
                 'http_method': 'POST',
                 'servers': None,
@@ -2606,7 +2606,7 @@ class CampaignApi(object):
                         (PromotedProductResourceCollectionInput,),
                 },
                 'attribute_map': {
-                    'line_item_id': 'lineItemId',
+                    'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',

@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **campaign_ids** | **[str], none_type** | The list of campaign ids (marketing campaign ids). | [optional] 
 **ad_set_ids** | **[str], none_type** | The list of adSet ids (campaign ids). | [optional] 
 **ad_set_status** | **[str], none_type** | The list of adSet status (ex: &#39;Active&#39;,&#39;NotRunning&#39;). | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

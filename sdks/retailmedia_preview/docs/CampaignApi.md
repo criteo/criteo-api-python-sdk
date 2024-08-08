@@ -5,11 +5,11 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /preview/retail-media/line-items/{id}/keywords/add-remove | 
-[**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{lineItemId}/products/append | 
+[**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/append | 
 [**delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
-[**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /preview/retail-media/line-items/{lineItemId}/products/delete | 
+[**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/delete | 
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /preview/retail-media/line-items/{id}/keywords | 
-[**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /preview/retail-media/line-items/{lineItemId}/products | 
+[**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /preview/retail-media/line-items/{line-item-id}/products | 
 [**fetch_proposal**](CampaignApi.md#fetch_proposal) | **GET** /preview/retail-media/preferred-deal-line-items/{id}/proposal | 
 [**get_api202210_external_line_item_product_buttons_by_line_item_id**](CampaignApi.md#get_api202210_external_line_item_product_buttons_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons | 
 [**get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 [**get_line_item_budget_overrides**](CampaignApi.md#get_line_item_budget_overrides) | **GET** /preview/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
 [**get_recommended_keywords**](CampaignApi.md#get_recommended_keywords) | **GET** /preview/retail-media/line-items/{externalLineItemId}/keywords/recommended | 
 [**get_sku_by_product_id**](CampaignApi.md#get_sku_by_product_id) | **POST** /preview/retail-media/catalogs/sku/search/accounts/{accountId}/retailers/{retailerId}/by-id | 
-[**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{lineItemId}/products/pause | 
+[**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/pause | 
 [**post_api202110_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#post_api202110_external_campaign_preferred_line_items_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**post_api202210_external_line_item_product_buttons_create_by_line_item_id**](CampaignApi.md#post_api202210_external_line_item_product_buttons_create_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**post_api_v1_external_account_catalogs_sellers_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_sellers_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/catalogs/sellers | 
@@ -44,7 +44,7 @@ Method | HTTP request | Description
 [**put_api_v2_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#put_api_v2_external_line_item_bid_multipliers_by_line_item_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
 [**submit_proposal**](CampaignApi.md#submit_proposal) | **POST** /preview/retail-media/preferred-deal-line-items/{id}/proposal/submit | 
-[**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{lineItemId}/products/unpause | 
+[**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/unpause | 
 [**update_campaign_budget_overrides**](CampaignApi.md#update_campaign_budget_overrides) | **PUT** /preview/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
 [**update_line_item_budget_overrides**](CampaignApi.md#update_line_item_budget_overrides) | **PUT** /preview/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
 
@@ -205,7 +205,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | ID of the line item
+    line_item_id = "line-item-id_example" # str | ID of the line item
     promoted_product_resource_collection_input = PromotedProductResourceCollectionInput(
         data=[
             PromotedProductResource(
@@ -396,7 +396,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | ID of the line item
+    line_item_id = "line-item-id_example" # str | ID of the line item
     promoted_product_resource_collection_input = PromotedProductResourceCollectionInput(
         data=[
             PromotedProductResource(
@@ -589,7 +589,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | ID of the line item.
+    line_item_id = "line-item-id_example" # str | ID of the line item.
     offset = 1 # int | Offset of the first item to fetch. Defaults to zero. (optional)
     limit = 1 # int | Maximum page size to fetch. Defaults to 500. (optional)
     fields = "fields_example" # str | A comma separated list of attribute names from the response model to compute and return.              Valid values are `status` and `bidOverride` in any order. Defaults to `status`. (optional)
@@ -2324,7 +2324,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | ID of the line item
+    line_item_id = "line-item-id_example" # str | ID of the line item
     promoted_product_resource_collection_input = PromotedProductResourceCollectionInput(
         data=[
             PromotedProductResource(
@@ -4088,7 +4088,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | ID of the line item
+    line_item_id = "line-item-id_example" # str | ID of the line item
     promoted_product_resource_collection_input = PromotedProductResourceCollectionInput(
         data=[
             PromotedProductResource(

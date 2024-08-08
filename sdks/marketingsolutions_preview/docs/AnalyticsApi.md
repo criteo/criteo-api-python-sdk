@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **get_adset_report**
-> file_type get_adset_report()
+> str get_adset_report()
 
 
 
@@ -33,8 +33,8 @@ This Statistics endpoint provides adset related data. It is an upgrade of our pr
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.statistics_report_query_message import StatisticsReportQueryMessage
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**file_type**
+**str**
 
 ### Authorization
 
@@ -143,7 +143,7 @@ This Statistics endpoint provides an export Id that let you retrieve data.
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.generate_statistics_report_request import GenerateStatisticsReportRequest
 from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
 from pprint import pprint
@@ -175,9 +175,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_statistics_report_request = GenerateStatisticsReportRequest(
-        data=GenerateStatisticsReportRequestData(
+        data=GenerateStatisticsReportResource(
             type="type_example",
-            attributes=GenerateStatisticsReportRequestAttributes(
+            attributes=GenerateStatisticsReport(
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 advertiser_ids=[
@@ -230,8 +230,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json, application/xml, text/xml, application/*+xml
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -261,7 +261,7 @@ import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
 from criteo_api_marketingsolutions_preview.model.generate_audience_performance_report_request import GenerateAudiencePerformanceReportRequest
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -292,14 +292,14 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_audience_performance_report_request = GenerateAudiencePerformanceReportRequest(
-        data=GenerateAudiencePerformanceReportRequestData(
+        data=GenerateAudiencePerformanceReportResource(
             type="type_example",
-            attributes=GenerateAudiencePerformanceReportRequestAttributes(
+            attributes=GenerateAudiencePerformanceReport(
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 advertiser_id="advertiser_id_example",
                 timezone="timezone_example",
-                dimension="AdvertiserId",
+                dimension="Top30BrandsByDisplays",
                 metrics=[
                     "Clicks",
                 ],
@@ -343,8 +343,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json, application/xml, text/xml, application/*+xml
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -457,6 +457,7 @@ This endpoint gives you the status of the report.
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -514,7 +515,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -522,11 +523,13 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_categories_report**
-> file_type get_categories_report()
+> str get_categories_report()
 
 
 
@@ -541,8 +544,8 @@ With this endpoint you can analyse what are the categories of the placements' do
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.generate_categories_report_request import GenerateCategoriesReportRequest
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
+from criteo_api_marketingsolutions_preview.model.generate_categories_report_request_attributes_request import GenerateCategoriesReportRequestAttributesRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -571,8 +574,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    generate_categories_report_request = GenerateCategoriesReportRequest(
-        data=GenerateCategoriesReportRequestData(
+    generate_categories_report_request_attributes_request = GenerateCategoriesReportRequestAttributesRequest(
+        data=GenerateCategoriesReportRequestAttributesResource(
             type="type_example",
             attributes=GenerateCategoriesReportRequestAttributes(
                 advertiser_ids=[
@@ -589,12 +592,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
             ),
         ),
-    ) # GenerateCategoriesReportRequest |  (optional)
+    ) # GenerateCategoriesReportRequestAttributesRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_categories_report(generate_categories_report_request=generate_categories_report_request)
+        api_response = api_instance.get_categories_report(generate_categories_report_request_attributes_request=generate_categories_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_categories_report: %s\n" % e)
@@ -605,11 +608,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_categories_report_request** | [**GenerateCategoriesReportRequest**](GenerateCategoriesReportRequest.md)|  | [optional]
+ **generate_categories_report_request_attributes_request** | [**GenerateCategoriesReportRequestAttributesRequest**](GenerateCategoriesReportRequestAttributesRequest.md)|  | [optional]
 
 ### Return type
 
-**file_type**
+**str**
 
 ### Authorization
 
@@ -617,8 +620,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json, application/xml, text/xml, application/*+xml
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -632,7 +635,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_creatives_report**
-> ReportDataMessage get_creatives_report()
+> JsonReportRowsListResponse get_creatives_report()
 
 
 
@@ -647,9 +650,9 @@ With Creatives endpoint, you can analyse the daily performances of your creative
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.generate_creatives_report_request import GenerateCreativesReportRequest
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
-from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
+from criteo_api_marketingsolutions_preview.model.json_report_rows_list_response import JsonReportRowsListResponse
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
+from criteo_api_marketingsolutions_preview.model.generate_creatives_report_request_attributes_request import GenerateCreativesReportRequestAttributesRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -678,8 +681,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    generate_creatives_report_request = GenerateCreativesReportRequest(
-        data=GenerateCreativesReportRequestData(
+    generate_creatives_report_request_attributes_request = GenerateCreativesReportRequestAttributesRequest(
+        data=GenerateCreativesReportRequestAttributesResource(
             type="type_example",
             attributes=GenerateCreativesReportRequestAttributes(
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
@@ -723,12 +726,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ],
             ),
         ),
-    ) # GenerateCreativesReportRequest |  (optional)
+    ) # GenerateCreativesReportRequestAttributesRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_creatives_report(generate_creatives_report_request=generate_creatives_report_request)
+        api_response = api_instance.get_creatives_report(generate_creatives_report_request_attributes_request=generate_creatives_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_creatives_report: %s\n" % e)
@@ -739,11 +742,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_creatives_report_request** | [**GenerateCreativesReportRequest**](GenerateCreativesReportRequest.md)|  | [optional]
+ **generate_creatives_report_request_attributes_request** | [**GenerateCreativesReportRequestAttributesRequest**](GenerateCreativesReportRequestAttributesRequest.md)|  | [optional]
 
 ### Return type
 
-[**ReportDataMessage**](ReportDataMessage.md)
+[**JsonReportRowsListResponse**](JsonReportRowsListResponse.md)
 
 ### Authorization
 
@@ -751,8 +754,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json, application/xml, text/xml, application/*+xml
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -766,7 +769,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_placements_report**
-> file_type get_placements_report()
+> str get_placements_report()
 
 
 
@@ -781,8 +784,8 @@ Your ads are placed in different domains (publishers) and environments (websites
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
-from criteo_api_marketingsolutions_preview.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
+from criteo_api_marketingsolutions_preview.model.placements_report_query_message_list_request import PlacementsReportQueryMessageListRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -811,9 +814,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    placements_report_query_data_message = PlacementsReportQueryDataMessage(
+    placements_report_query_message_list_request = PlacementsReportQueryMessageListRequest(
         data=[
-            PlacementsReportQueryEntityMessage(
+            PlacementsReportQueryMessageResource(
                 type="type_example",
                 attributes=PlacementsReportQueryMessage(
                     advertiser_ids="advertiser_ids_example",
@@ -836,12 +839,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ],
-    ) # PlacementsReportQueryDataMessage |  (optional)
+    ) # PlacementsReportQueryMessageListRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_placements_report(placements_report_query_data_message=placements_report_query_data_message)
+        api_response = api_instance.get_placements_report(placements_report_query_message_list_request=placements_report_query_message_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_placements_report: %s\n" % e)
@@ -852,11 +855,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **placements_report_query_data_message** | [**PlacementsReportQueryDataMessage**](PlacementsReportQueryDataMessage.md)|  | [optional]
+ **placements_report_query_message_list_request** | [**PlacementsReportQueryMessageListRequest**](PlacementsReportQueryMessageListRequest.md)|  | [optional]
 
 ### Return type
 
-**file_type**
+**str**
 
 ### Authorization
 
@@ -865,7 +868,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -879,7 +882,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_top_products_report**
-> ReportDataMessage get_top_products_report()
+> JsonReportRowsListResponse get_top_products_report()
 
 
 
@@ -894,9 +897,9 @@ With the topProducts endpoint, you can analyse the performances for each publish
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
-from criteo_api_marketingsolutions_preview.model.report_data_message import ReportDataMessage
-from criteo_api_marketingsolutions_preview.model.generate_top_products_report_request import GenerateTopProductsReportRequest
+from criteo_api_marketingsolutions_preview.model.generate_top_products_report_request_attributes_request import GenerateTopProductsReportRequestAttributesRequest
+from criteo_api_marketingsolutions_preview.model.json_report_rows_list_response import JsonReportRowsListResponse
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -925,8 +928,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    generate_top_products_report_request = GenerateTopProductsReportRequest(
-        data=GenerateTopProductsReportRequestData(
+    generate_top_products_report_request_attributes_request = GenerateTopProductsReportRequestAttributesRequest(
+        data=GenerateTopProductsReportRequestAttributesResource(
             type="type_example",
             attributes=GenerateTopProductsReportRequestAttributes(
                 timezone="UTC",
@@ -959,12 +962,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ],
             ),
         ),
-    ) # GenerateTopProductsReportRequest |  (optional)
+    ) # GenerateTopProductsReportRequestAttributesRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_top_products_report(generate_top_products_report_request=generate_top_products_report_request)
+        api_response = api_instance.get_top_products_report(generate_top_products_report_request_attributes_request=generate_top_products_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_top_products_report: %s\n" % e)
@@ -975,11 +978,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_top_products_report_request** | [**GenerateTopProductsReportRequest**](GenerateTopProductsReportRequest.md)|  | [optional]
+ **generate_top_products_report_request_attributes_request** | [**GenerateTopProductsReportRequestAttributesRequest**](GenerateTopProductsReportRequestAttributesRequest.md)|  | [optional]
 
 ### Return type
 
-[**ReportDataMessage**](ReportDataMessage.md)
+[**JsonReportRowsListResponse**](JsonReportRowsListResponse.md)
 
 ### Authorization
 
@@ -987,8 +990,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json, application/xml, text/xml, application/*+xml
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -1002,7 +1005,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transactions_report**
-> file_type get_transactions_report()
+> str get_transactions_report()
 
 
 
@@ -1017,8 +1020,8 @@ This Transactions endpoint provides transactions id related data.
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
-from criteo_api_marketingsolutions_preview.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
+from criteo_api_marketingsolutions_preview.model.transactions_report_query_message_list_request import TransactionsReportQueryMessageListRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1047,9 +1050,9 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    transactions_report_query_data_message = TransactionsReportQueryDataMessage(
+    transactions_report_query_message_list_request = TransactionsReportQueryMessageListRequest(
         data=[
-            TransactionsReportQueryEntityMessage(
+            TransactionsReportQueryMessageResource(
                 type="type_example",
                 attributes=TransactionsReportQueryMessage(
                     advertiser_ids="advertiser_ids_example",
@@ -1062,12 +1065,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
             ),
         ],
-    ) # TransactionsReportQueryDataMessage |  (optional)
+    ) # TransactionsReportQueryMessageListRequest |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_transactions_report(transactions_report_query_data_message=transactions_report_query_data_message)
+        api_response = api_instance.get_transactions_report(transactions_report_query_message_list_request=transactions_report_query_message_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_transactions_report: %s\n" % e)
@@ -1078,11 +1081,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactions_report_query_data_message** | [**TransactionsReportQueryDataMessage**](TransactionsReportQueryDataMessage.md)|  | [optional]
+ **transactions_report_query_message_list_request** | [**TransactionsReportQueryMessageListRequest**](TransactionsReportQueryMessageListRequest.md)|  | [optional]
 
 ### Return type
 
-**file_type**
+**str**
 
 ### Authorization
 
@@ -1105,7 +1108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transparency_report**
-> TransparencyReportDataMessage get_transparency_report(advertiser_id)
+> TransparencyReportListResponse get_transparency_report(advertiser_id)
 
 
 
@@ -1120,8 +1123,8 @@ This Statistics endpoint provides publisher data.
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.problems_details import ProblemsDetails
-from criteo_api_marketingsolutions_preview.model.transparency_report_data_message import TransparencyReportDataMessage
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
+from criteo_api_marketingsolutions_preview.model.transparency_report_list_response import TransparencyReportListResponse
 from criteo_api_marketingsolutions_preview.model.transparency_query_message import TransparencyQueryMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -1156,7 +1159,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         should_display_product_ids=False,
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-    ) # TransparencyQueryMessage |  (optional)
+    ) # TransparencyQueryMessage | The query message. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1180,11 +1183,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **int**| The advertiser id to fetch the transparency data. |
- **transparency_query_message** | [**TransparencyQueryMessage**](TransparencyQueryMessage.md)|  | [optional]
+ **transparency_query_message** | [**TransparencyQueryMessage**](TransparencyQueryMessage.md)| The query message. | [optional]
 
 ### Return type
 
-[**TransparencyReportDataMessage**](TransparencyReportDataMessage.md)
+[**TransparencyReportListResponse**](TransparencyReportListResponse.md)
 
 ### Authorization
 
@@ -1193,7 +1196,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: application/json, text/plain, text/json
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details

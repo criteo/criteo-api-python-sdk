@@ -87,11 +87,11 @@ class CreateBalanceV2(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
             'po_number': (str, none_type,),  # noqa: E501
             'deposited': (float, none_type,),  # noqa: E501
-            'end_date': (str, none_type,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
         }
 
@@ -122,7 +122,7 @@ class CreateBalanceV2(ModelNormal):
 
         Args:
             name (str): Name of the balance.
-            start_date (str): Start date of the balance in the format YYYY-MM-DD.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             spend_type (str): Type of the balance spend.
 
         Keyword Args:
@@ -158,7 +158,7 @@ class CreateBalanceV2(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
-            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
         """
 
@@ -219,7 +219,7 @@ class CreateBalanceV2(ModelNormal):
 
         Args:
             name (str): Name of the balance.
-            start_date (str): Start date of the balance in the format YYYY-MM-DD.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             spend_type (str): Type of the balance spend.
 
         Keyword Args:
@@ -255,7 +255,7 @@ class CreateBalanceV2(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
-            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
         """
 

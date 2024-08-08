@@ -63,6 +63,13 @@ class RmContactListV1(ModelNormal):
             'IDENTITYLINK': "IdentityLink",
             'CUSTOMERID': "CustomerId",
         },
+        ('sharing_status',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'NOTSHARED': "NotShared",
+            'SHAREDWITHALL': "SharedWithAll",
+            'SHAREDWITHDEMANDACCOUNTS': "SharedWithDemandAccounts",
+        },
     }
 
     validations = {
@@ -91,6 +98,7 @@ class RmContactListV1(ModelNormal):
         return {
             'is_read_only': (bool, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
+            'sharing_status': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,6 +109,7 @@ class RmContactListV1(ModelNormal):
     attribute_map = {
         'is_read_only': 'isReadOnly',  # noqa: E501
         'type': 'type',  # noqa: E501
+        'sharing_status': 'sharingStatus',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,6 +155,7 @@ class RmContactListV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             is_read_only (bool, none_type): Is the segment read-only. [optional]  # noqa: E501
             type (str, none_type): Indicates contact list type. [optional]  # noqa: E501
+            sharing_status (str, none_type): Indicates if the contact list is shared with other accounts. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,6 +243,7 @@ class RmContactListV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             is_read_only (bool, none_type): Is the segment read-only. [optional]  # noqa: E501
             type (str, none_type): Indicates contact list type. [optional]  # noqa: E501
+            sharing_status (str, none_type): Indicates if the contact list is shared with other accounts. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

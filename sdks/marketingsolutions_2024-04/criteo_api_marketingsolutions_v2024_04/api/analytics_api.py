@@ -21,12 +21,12 @@ from criteo_api_marketingsolutions_v2024_04.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_marketingsolutions_v2024_04.model.placements_report_query_data_message import PlacementsReportQueryDataMessage
-from criteo_api_marketingsolutions_v2024_04.model.problems_details import ProblemsDetails
+from criteo_api_marketingsolutions_v2024_04.model.outcome import Outcome
+from criteo_api_marketingsolutions_v2024_04.model.placements_report_query_message_list_request import PlacementsReportQueryMessageListRequest
 from criteo_api_marketingsolutions_v2024_04.model.statistics_report_query_message import StatisticsReportQueryMessage
-from criteo_api_marketingsolutions_v2024_04.model.transactions_report_query_data_message import TransactionsReportQueryDataMessage
+from criteo_api_marketingsolutions_v2024_04.model.transactions_report_query_message_list_request import TransactionsReportQueryMessageListRequest
 from criteo_api_marketingsolutions_v2024_04.model.transparency_query_message import TransparencyQueryMessage
-from criteo_api_marketingsolutions_v2024_04.model.transparency_report_data_message import TransparencyReportDataMessage
+from criteo_api_marketingsolutions_v2024_04.model.transparency_report_list_response import TransparencyReportListResponse
 
 
 class AnalyticsApi(object):
@@ -42,7 +42,7 @@ class AnalyticsApi(object):
         self.api_client = api_client
         self.get_adset_report_endpoint = _Endpoint(
             settings={
-                'response_type': (file_type,),
+                'response_type': (str,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -101,7 +101,7 @@ class AnalyticsApi(object):
         )
         self.get_placements_report_endpoint = _Endpoint(
             settings={
-                'response_type': (file_type,),
+                'response_type': (str,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -113,7 +113,7 @@ class AnalyticsApi(object):
             },
             params_map={
                 'all': [
-                    'placements_report_query_data_message',
+                    'placements_report_query_message_list_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -129,13 +129,13 @@ class AnalyticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'placements_report_query_data_message':
-                        (PlacementsReportQueryDataMessage,),
+                    'placements_report_query_message_list_request':
+                        (PlacementsReportQueryMessageListRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'placements_report_query_data_message': 'body',
+                    'placements_report_query_message_list_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -145,9 +145,8 @@ class AnalyticsApi(object):
                     'text/plain',
                     'application/json',
                     'text/json',
-                    'text/csv',
-                    'text/xml',
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                    'application/xml',
+                    'text/xml'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -160,7 +159,7 @@ class AnalyticsApi(object):
         )
         self.get_transactions_report_endpoint = _Endpoint(
             settings={
-                'response_type': (file_type,),
+                'response_type': (str,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -172,7 +171,7 @@ class AnalyticsApi(object):
             },
             params_map={
                 'all': [
-                    'transactions_report_query_data_message',
+                    'transactions_report_query_message_list_request',
                 ],
                 'required': [],
                 'nullable': [
@@ -188,13 +187,13 @@ class AnalyticsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'transactions_report_query_data_message':
-                        (TransactionsReportQueryDataMessage,),
+                    'transactions_report_query_message_list_request':
+                        (TransactionsReportQueryMessageListRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'transactions_report_query_data_message': 'body',
+                    'transactions_report_query_message_list_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -219,7 +218,7 @@ class AnalyticsApi(object):
         )
         self.get_transparency_report_endpoint = _Endpoint(
             settings={
-                'response_type': (TransparencyReportDataMessage,),
+                'response_type': (TransparencyReportListResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -267,9 +266,11 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
                     'text/plain',
-                    'text/json'
+                    'application/json',
+                    'text/json',
+                    'application/xml',
+                    'text/xml'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -329,7 +330,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            file_type
+            str
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -375,7 +376,7 @@ class AnalyticsApi(object):
 
 
         Keyword Args:
-            placements_report_query_data_message (PlacementsReportQueryDataMessage): [optional]
+            placements_report_query_message_list_request (PlacementsReportQueryMessageListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -408,7 +409,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            file_type
+            str
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -454,7 +455,7 @@ class AnalyticsApi(object):
 
 
         Keyword Args:
-            transactions_report_query_data_message (TransactionsReportQueryDataMessage): [optional]
+            transactions_report_query_message_list_request (TransactionsReportQueryMessageListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -487,7 +488,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            file_type
+            str
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -536,7 +537,7 @@ class AnalyticsApi(object):
             advertiser_id (int): The advertiser id to fetch the transparency data.
 
         Keyword Args:
-            transparency_query_message (TransparencyQueryMessage): [optional]
+            transparency_query_message (TransparencyQueryMessage): The query message.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -569,7 +570,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            TransparencyReportDataMessage
+            TransparencyReportListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

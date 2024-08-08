@@ -1242,7 +1242,7 @@ class AudienceApi(object):
     ):
         """search_v1  # noqa: E501
 
-        Search segments based on the provided filters.( by ids or retailer ids)  # noqa: E501
+        Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1251,7 +1251,7 @@ class AudienceApi(object):
 
         Args:
             account_id (str): Account Id
-            rm_audience_segment_search_input_v1 (RmAudienceSegmentSearchInputV1): Segment creation parameter
+            rm_audience_segment_search_input_v1 (RmAudienceSegmentSearchInputV1): Segment search filters.
 
         Keyword Args:
             limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional] if omitted the server will use the default value of 50

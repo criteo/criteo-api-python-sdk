@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **get_api_v2_external_account_balances_by_account_id**
-> PagedResourceCollectionOutcomeOfBalanceResponseV2 get_api_v2_external_account_balances_by_account_id(account_id, limit_to_id, )
+> PagedResourceCollectionOutcomeOfBalanceResponseV2 get_api_v2_external_account_balances_by_account_id(account_id)
 
 
 
@@ -61,11 +61,21 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     account_id = "account-id_example" # str | The account to get balances for
     limit_to_id = [
         "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to
+    ] # [str] | The ids that you would like to limit your result set to (optional)
+    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
+    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_api_v2_external_account_balances_by_account_id(account_id, limit_to_id, )
+        api_response = api_instance.get_api_v2_external_account_balances_by_account_id(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling BalanceApi->get_api_v2_external_account_balances_by_account_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_api_v2_external_account_balances_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling BalanceApi->get_api_v2_external_account_balances_by_account_id: %s\n" % e)
@@ -77,9 +87,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account to get balances for |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to |
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | defaults to 0
- **page_size** | **int**| The maximum number of items you would like to receive in this request | defaults to 25
+ **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
+ **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
+ **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
 
 ### Return type
 
@@ -540,8 +550,8 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 name="name_example",
                 po_number="po_number_example",
                 deposited=3.14,
-                start_date="start_date_example",
-                end_date="end_date_example",
+                start_date=dateutil_parser('1970-01-01').date(),
+                end_date=dateutil_parser('1970-01-01').date(),
                 spend_type="Onsite",
                 memo="memo_example",
             ),

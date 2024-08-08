@@ -66,10 +66,10 @@ class BalanceResponseV2(ModelNormal):
             'OFFSITEAWARENESS': "OffsiteAwareness",
         },
         ('private_market_billing_type',): {
-            'NOTAPPLICABLE': "notApplicable",
-            'BILLBYRETAILER': "billByRetailer",
-            'BILLBYCRITEO': "billByCriteo",
-            'UNKNOWN': "unknown",
+            'NOTAPPLICABLE': "NotApplicable",
+            'BILLBYRETAILER': "BillByRetailer",
+            'BILLBYCRITEO': "BillByCriteo",
+            'UNKNOWN': "Unknown",
         },
         ('status',): {
             'UNKNOWN': "unknown",
@@ -104,7 +104,7 @@ class BalanceResponseV2(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'balance_type': (str,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
             'private_market_billing_type': (str,),  # noqa: E501
@@ -113,7 +113,7 @@ class BalanceResponseV2(ModelNormal):
             'deposited': (float, none_type,),  # noqa: E501
             'spent': (float, none_type,),  # noqa: E501
             'remaining': (float, none_type,),  # noqa: E501
-            'end_date': (str, none_type,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
@@ -153,7 +153,7 @@ class BalanceResponseV2(ModelNormal):
 
         Args:
             name (str): Name of the balance.
-            start_date (str): Start date of the balance in the format YYYY-MM-DD.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             balance_type (str): Type of the balance.
             spend_type (str): Spend Type of the balance.
             private_market_billing_type (str): Billing type for Private Market of the balance.
@@ -194,7 +194,7 @@ class BalanceResponseV2(ModelNormal):
             deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
             spent (float, none_type): Amount of spent funds of the balance.. [optional]  # noqa: E501
             remaining (float, none_type): Amount of remaining funds of the balance.. [optional]  # noqa: E501
-            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             status (str): Status of the balance.. [optional]  # noqa: E501
             created_at (datetime): Creation time of the balance.. [optional]  # noqa: E501
             updated_at (datetime): Update time of the balance.. [optional]  # noqa: E501
@@ -259,7 +259,7 @@ class BalanceResponseV2(ModelNormal):
 
         Args:
             name (str): Name of the balance.
-            start_date (str): Start date of the balance in the format YYYY-MM-DD.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             balance_type (str): Type of the balance.
             spend_type (str): Spend Type of the balance.
             private_market_billing_type (str): Billing type for Private Market of the balance.
@@ -300,7 +300,7 @@ class BalanceResponseV2(ModelNormal):
             deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
             spent (float, none_type): Amount of spent funds of the balance.. [optional]  # noqa: E501
             remaining (float, none_type): Amount of remaining funds of the balance.. [optional]  # noqa: E501
-            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             status (str): Status of the balance.. [optional]  # noqa: E501
             created_at (datetime): Creation time of the balance.. [optional]  # noqa: E501
             updated_at (datetime): Update time of the balance.. [optional]  # noqa: E501

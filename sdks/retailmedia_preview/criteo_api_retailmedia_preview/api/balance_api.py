@@ -62,9 +62,6 @@ class BalanceApi(object):
                 ],
                 'required': [
                     'account_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
                 ],
                 'nullable': [
                 ],
@@ -519,9 +516,6 @@ class BalanceApi(object):
     def get_api_v2_external_account_balances_by_account_id(
         self,
         account_id,
-        limit_to_id,
-        page_index=0,
-        page_size=25,
         **kwargs
     ):
         """get_api_v2_external_account_balances_by_account_id  # noqa: E501
@@ -530,16 +524,16 @@ class BalanceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_api_v2_external_account_balances_by_account_id(account_id, limit_to_id, page_index=0, page_size=25, async_req=True)
+        >>> thread = api.get_api_v2_external_account_balances_by_account_id(account_id, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The account to get balances for
-            limit_to_id ([str]): The ids that you would like to limit your result set to
-            page_index (int): The 0 indexed page index you would like to receive given the page size. defaults to 0, must be one of [0]
-            page_size (int): The maximum number of items you would like to receive in this request. defaults to 25, must be one of [25]
 
         Keyword Args:
+            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -603,12 +597,6 @@ class BalanceApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
-        kwargs['limit_to_id'] = \
-            limit_to_id
-        kwargs['page_index'] = \
-            page_index
-        kwargs['page_size'] = \
-            page_size
         return self.get_api_v2_external_account_balances_by_account_id_endpoint.call_with_http_info(**kwargs)
 
     def get_api_v2_external_account_by_account_id_balancesbalance_id(

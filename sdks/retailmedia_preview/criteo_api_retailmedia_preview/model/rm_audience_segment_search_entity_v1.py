@@ -55,6 +55,12 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
     """
 
     allowed_values = {
+        ('audience_segment_types',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'CONTACTLIST': "ContactList",
+            'USERBEHAVIOR': "UserBehavior",
+        },
     }
 
     validations = {
@@ -83,6 +89,7 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
         return {
             'audience_segment_ids': ([str], none_type,),  # noqa: E501
             'retailer_ids': ([str], none_type,),  # noqa: E501
+            'audience_segment_types': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,6 +100,7 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
     attribute_map = {
         'audience_segment_ids': 'audienceSegmentIds',  # noqa: E501
         'retailer_ids': 'retailerIds',  # noqa: E501
+        'audience_segment_types': 'audienceSegmentTypes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,6 +146,7 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             audience_segment_ids ([str], none_type): List of segment ids. [optional]  # noqa: E501
             retailer_ids ([str], none_type): List of retailer ids. [optional]  # noqa: E501
+            audience_segment_types ([str], none_type): List of segment types. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,6 +234,7 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             audience_segment_ids ([str], none_type): List of segment ids. [optional]  # noqa: E501
             retailer_ids ([str], none_type): List of retailer ids. [optional]  # noqa: E501
+            audience_segment_types ([str], none_type): List of segment types. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

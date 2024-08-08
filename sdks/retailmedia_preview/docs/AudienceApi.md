@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 
 
-Search segments based on the provided filters.( by ids or retailer ids)
+Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.
 
 ### Example
 
@@ -757,9 +757,12 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 retailer_ids=[
                     "retailer_ids_example",
                 ],
+                audience_segment_types=[
+                    "Unknown",
+                ],
             ),
         ),
-    ) # RmAudienceSegmentSearchInputV1 | Segment creation parameter
+    ) # RmAudienceSegmentSearchInputV1 | Segment search filters.
     limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
     offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
 
@@ -785,7 +788,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| Account Id |
- **rm_audience_segment_search_input_v1** | [**RmAudienceSegmentSearchInputV1**](RmAudienceSegmentSearchInputV1.md)| Segment creation parameter |
+ **rm_audience_segment_search_input_v1** | [**RmAudienceSegmentSearchInputV1**](RmAudienceSegmentSearchInputV1.md)| Segment search filters. |
  **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
  **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 

@@ -12,7 +12,9 @@ Name | Type | Description | Notes
 **type** | **str, none_type** | Type of segment (read-only) | [optional] 
 **created_at** | **datetime, none_type** | ISO-8601 timestamp in UTC of segment creation (read-only) | [optional] 
 **updated_at** | **datetime, none_type** | ISO-8601 timestamp in UTC of segment update (read-only) | [optional] 
+**created_by_id** | **str, none_type** | User that created the segment | [optional] 
 **contact_list** | [**RmContactListV1**](RmContactListV1.md) |  | [optional] 
+**user_behavior** | [**RmUserBehaviorV1**](RmUserBehaviorV1.md) |  | [optional] 
 **channels** | **[str], none_type** | Channels associated to the segment (read-only) | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
