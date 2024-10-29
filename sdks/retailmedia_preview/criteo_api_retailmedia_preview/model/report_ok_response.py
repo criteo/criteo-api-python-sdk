@@ -31,7 +31,9 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_preview.model.report_detail_errors import ReportDetailErrors
+    from criteo_api_retailmedia_preview.model.report_detail_warnings import ReportDetailWarnings
     globals()['ReportDetailErrors'] = ReportDetailErrors
+    globals()['ReportDetailWarnings'] = ReportDetailWarnings
 
 
 class ReportOkResponse(ModelNormal):
@@ -101,6 +103,8 @@ class ReportOkResponse(ModelNormal):
             'number_of_products_deleted': (int,),  # noqa: E501
             'number_of_products_with_errors': (int,),  # noqa: E501
             'error_details': ([ReportDetailErrors],),  # noqa: E501
+            'number_of_products_with_warnings': (int,),  # noqa: E501
+            'warning_details': ([ReportDetailWarnings],),  # noqa: E501
         }
 
     @cached_property
@@ -116,6 +120,8 @@ class ReportOkResponse(ModelNormal):
         'number_of_products_deleted': 'numberOfProductsDeleted',  # noqa: E501
         'number_of_products_with_errors': 'numberOfProductsWithErrors',  # noqa: E501
         'error_details': 'errorDetails',  # noqa: E501
+        'number_of_products_with_warnings': 'numberOfProductsWithWarnings',  # noqa: E501
+        'warning_details': 'warningDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -125,7 +131,7 @@ class ReportOkResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, status, import_request_timestamp, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_deleted, number_of_products_with_errors, error_details, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, status, import_request_timestamp, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_deleted, number_of_products_with_errors, error_details, number_of_products_with_warnings, warning_details, *args, **kwargs):  # noqa: E501
         """ReportOkResponse - a model defined in OpenAPI
 
         Args:
@@ -136,6 +142,8 @@ class ReportOkResponse(ModelNormal):
             number_of_products_deleted (int): The number of products deleted.
             number_of_products_with_errors (int): The number of products with errors.
             error_details ([ReportDetailErrors]): The list of errors with details.
+            number_of_products_with_warnings (int): The number of products with Warnings.
+            warning_details ([ReportDetailWarnings]): The list of Warnings with details.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -206,6 +214,8 @@ class ReportOkResponse(ModelNormal):
         self.number_of_products_deleted = number_of_products_deleted
         self.number_of_products_with_errors = number_of_products_with_errors
         self.error_details = error_details
+        self.number_of_products_with_warnings = number_of_products_with_warnings
+        self.warning_details = warning_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -226,7 +236,7 @@ class ReportOkResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, status, import_request_timestamp, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_deleted, number_of_products_with_errors, error_details, *args, **kwargs):  # noqa: E501
+    def __init__(self, status, import_request_timestamp, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_deleted, number_of_products_with_errors, error_details, number_of_products_with_warnings, warning_details, *args, **kwargs):  # noqa: E501
         """ReportOkResponse - a model defined in OpenAPI
 
         Args:
@@ -237,6 +247,8 @@ class ReportOkResponse(ModelNormal):
             number_of_products_deleted (int): The number of products deleted.
             number_of_products_with_errors (int): The number of products with errors.
             error_details ([ReportDetailErrors]): The list of errors with details.
+            number_of_products_with_warnings (int): The number of products with Warnings.
+            warning_details ([ReportDetailWarnings]): The list of Warnings with details.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -305,6 +317,8 @@ class ReportOkResponse(ModelNormal):
         self.number_of_products_deleted = number_of_products_deleted
         self.number_of_products_with_errors = number_of_products_with_errors
         self.error_details = error_details
+        self.number_of_products_with_warnings = number_of_products_with_warnings
+        self.warning_details = warning_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

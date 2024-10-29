@@ -87,8 +87,8 @@ class Section(ModelNormal):
         """
         lazy_import()
         return {
-            'title': (str,),  # noqa: E501
             'template_variables': ([TemplateVariable],),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class Section(ModelNormal):
 
 
     attribute_map = {
-        'title': 'title',  # noqa: E501
         'template_variables': 'templateVariables',  # noqa: E501
+        'title': 'title',  # noqa: E501
     }
 
     read_only_vars = {
@@ -108,11 +108,10 @@ class Section(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, title, template_variables, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, template_variables, *args, **kwargs):  # noqa: E501
         """Section - a model defined in OpenAPI
 
         Args:
-            title (str):
             template_variables ([TemplateVariable]):
 
         Keyword Args:
@@ -146,6 +145,7 @@ class Section(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            title (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -177,7 +177,6 @@ class Section(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.title = title
         self.template_variables = template_variables
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -199,11 +198,10 @@ class Section(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, title, template_variables, *args, **kwargs):  # noqa: E501
+    def __init__(self, template_variables, *args, **kwargs):  # noqa: E501
         """Section - a model defined in OpenAPI
 
         Args:
-            title (str):
             template_variables ([TemplateVariable]):
 
         Keyword Args:
@@ -237,6 +235,7 @@ class Section(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            title (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -266,7 +265,6 @@ class Section(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.title = title
         self.template_variables = template_variables
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

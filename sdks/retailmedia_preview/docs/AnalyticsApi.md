@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 
-Returns an asynchronous Accounts Report
+Returns an asynchronous Accounts Report This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 
 
-Return an asynchronous Campaigns Report
+Return an asynchronous Campaigns Report This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an asynchronous Line Items Report
+Returns an asynchronous Line Items Report This endpoint is subject to specific rate limits.
 
 ### Example
 

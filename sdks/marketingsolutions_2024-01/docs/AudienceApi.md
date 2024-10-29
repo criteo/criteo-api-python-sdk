@@ -10,9 +10,12 @@ Method | HTTP request | Description
 [**bulk_delete_audiences**](AudienceApi.md#bulk_delete_audiences) | **POST** /2024-01/marketing-solutions/audiences/delete | 
 [**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /2024-01/marketing-solutions/audience-segments | 
 [**bulk_update_audiences**](AudienceApi.md#bulk_update_audiences) | **PATCH** /2024-01/marketing-solutions/audiences | 
+[**call_01_audiences_audience_segment_id_contactlist_delete**](AudienceApi.md#call_01_audiences_audience_segment_id_contactlist_delete) | **DELETE** /2024-01/audiences/{audience-segment-id}/contactlist | 
+[**call_01_audiences_audience_segment_id_contactlist_patch**](AudienceApi.md#call_01_audiences_audience_segment_id_contactlist_patch) | **PATCH** /2024-01/audiences/{audience-segment-id}/contactlist | 
+[**call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete**](AudienceApi.md#call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete) | **DELETE** /2024-01/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
+[**call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch**](AudienceApi.md#call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch) | **PATCH** /2024-01/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
 [**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /2024-01/marketing-solutions/audience-segments/compute-sizes | 
 [**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /2024-01/marketing-solutions/audiences/compute-sizes | 
-[**delete_contact_list_identifiers**](AudienceApi.md#delete_contact_list_identifiers) | **DELETE** /2024-01/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
 [**estimate_audience_segment_size**](AudienceApi.md#estimate_audience_segment_size) | **POST** /2024-01/marketing-solutions/audience-segments/estimate-size | 
 [**estimate_audience_size**](AudienceApi.md#estimate_audience_size) | **POST** /2024-01/marketing-solutions/audiences/estimate-size | 
 [**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /2024-01/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics | 
@@ -20,7 +23,6 @@ Method | HTTP request | Description
 [**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /2024-01/marketing-solutions/audience-segments/in-market-interests | 
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /2024-01/marketing-solutions/audience-segments/search | 
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /2024-01/marketing-solutions/audiences/search | 
-[**update_contact_list_identifiers**](AudienceApi.md#update_contact_list_identifiers) | **PATCH** /2024-01/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
 
 
 # **bulk_create_audience_segments**
@@ -723,6 +725,382 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **call_01_audiences_audience_segment_id_contactlist_delete**
+> DeleteAudienceContactListResponse call_01_audiences_audience_segment_id_contactlist_delete(audience_segment_id)
+
+
+
+Delete all identifiers from a contact list audience-segment.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_v2024_01
+from criteo_api_marketingsolutions_v2024_01.api import audience_api
+from criteo_api_marketingsolutions_v2024_01.model.delete_audience_contact_list_response import DeleteAudienceContactListResponse
+from criteo_api_marketingsolutions_v2024_01.model.error_code_response import ErrorCodeResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.call_01_audiences_audience_segment_id_contactlist_delete(audience_segment_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2024_01.ApiException as e:
+        print("Exception when calling AudienceApi->call_01_audiences_audience_segment_id_contactlist_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
+
+### Return type
+
+[**DeleteAudienceContactListResponse**](DeleteAudienceContactListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The Contact List was emptied |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_01_audiences_audience_segment_id_contactlist_patch**
+> ModifyAudienceResponse call_01_audiences_audience_segment_id_contactlist_patch(audience_segment_id, contactlist_amendment_request)
+
+
+
+Add/remove identifiers to or from a contact list audience-segment.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_v2024_01
+from criteo_api_marketingsolutions_v2024_01.api import audience_api
+from criteo_api_marketingsolutions_v2024_01.model.modify_audience_response import ModifyAudienceResponse
+from criteo_api_marketingsolutions_v2024_01.model.error_code_response import ErrorCodeResponse
+from criteo_api_marketingsolutions_v2024_01.model.contactlist_amendment_request import ContactlistAmendmentRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
+    contactlist_amendment_request = ContactlistAmendmentRequest(
+        data=ContactlistAmendment(
+            type="ContactlistAmendment",
+            attributes=ContactlistAmendmentAttributes(
+                operation="add",
+                identifier_type="email",
+                identifiers=[
+                    "identifiers_example",
+                ],
+                gum_caller_id=1,
+            ),
+        ),
+    ) # ContactlistAmendmentRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.call_01_audiences_audience_segment_id_contactlist_patch(audience_segment_id, contactlist_amendment_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2024_01.ApiException as e:
+        print("Exception when calling AudienceApi->call_01_audiences_audience_segment_id_contactlist_patch: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
+ **contactlist_amendment_request** | [**ContactlistAmendmentRequest**](ContactlistAmendmentRequest.md)|  |
+
+### Return type
+
+[**ModifyAudienceResponse**](ModifyAudienceResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Summary of created request |  -  |
+**403** | Forbidden |  -  |
+**404** | Audience 123 not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete**
+> DeleteAudienceContactListResponse call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete(audience_segment_id)
+
+
+
+Delete all identifiers from a contact list audience-segment.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_v2024_01
+from criteo_api_marketingsolutions_v2024_01.api import audience_api
+from criteo_api_marketingsolutions_v2024_01.model.delete_audience_contact_list_response import DeleteAudienceContactListResponse
+from criteo_api_marketingsolutions_v2024_01.model.error_code_response import ErrorCodeResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete(audience_segment_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2024_01.ApiException as e:
+        print("Exception when calling AudienceApi->call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
+
+### Return type
+
+[**DeleteAudienceContactListResponse**](DeleteAudienceContactListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The Contact List was emptied |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch**
+> ModifyAudienceResponse call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch(audience_segment_id, contactlist_amendment_request)
+
+
+
+Add/remove identifiers to or from a contact list audience-segment.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_v2024_01
+from criteo_api_marketingsolutions_v2024_01.api import audience_api
+from criteo_api_marketingsolutions_v2024_01.model.modify_audience_response import ModifyAudienceResponse
+from criteo_api_marketingsolutions_v2024_01.model.error_code_response import ErrorCodeResponse
+from criteo_api_marketingsolutions_v2024_01.model.contactlist_amendment_request import ContactlistAmendmentRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
+    contactlist_amendment_request = ContactlistAmendmentRequest(
+        data=ContactlistAmendment(
+            type="ContactlistAmendment",
+            attributes=ContactlistAmendmentAttributes(
+                operation="add",
+                identifier_type="email",
+                identifiers=[
+                    "identifiers_example",
+                ],
+                gum_caller_id=1,
+            ),
+        ),
+    ) # ContactlistAmendmentRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch(audience_segment_id, contactlist_amendment_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2024_01.ApiException as e:
+        print("Exception when calling AudienceApi->call_01_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
+ **contactlist_amendment_request** | [**ContactlistAmendmentRequest**](ContactlistAmendmentRequest.md)|  |
+
+### Return type
+
+[**ModifyAudienceResponse**](ModifyAudienceResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Summary of created request |  -  |
+**403** | Forbidden |  -  |
+**404** | Audience 123 not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **compute_audience_segments_sizes**
 > AudienceSegmentSizeEntityV1ListResponse compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1)
 
@@ -912,92 +1290,6 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_contact_list_identifiers**
-> DeleteAudienceContactListResponse delete_contact_list_identifiers(audience_segment_id)
-
-
-
-Delete all identifiers from a contact list audience-segment.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_v2024_01
-from criteo_api_marketingsolutions_v2024_01.api import audience_api
-from criteo_api_marketingsolutions_v2024_01.model.delete_audience_contact_list_response import DeleteAudienceContactListResponse
-from criteo_api_marketingsolutions_v2024_01.model.error_code_response import ErrorCodeResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.delete_contact_list_identifiers(audience_segment_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2024_01.ApiException as e:
-        print("Exception when calling AudienceApi->delete_contact_list_identifiers: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
-
-### Return type
-
-[**DeleteAudienceContactListResponse**](DeleteAudienceContactListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The Contact List was emptied |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1719,108 +2011,6 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_contact_list_identifiers**
-> ModifyAudienceResponse update_contact_list_identifiers(audience_segment_id, contactlist_amendment_request)
-
-
-
-Add/remove identifiers to or from a contact list audience-segment.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_v2024_01
-from criteo_api_marketingsolutions_v2024_01.api import audience_api
-from criteo_api_marketingsolutions_v2024_01.model.modify_audience_response import ModifyAudienceResponse
-from criteo_api_marketingsolutions_v2024_01.model.error_code_response import ErrorCodeResponse
-from criteo_api_marketingsolutions_v2024_01.model.contactlist_amendment_request import ContactlistAmendmentRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2024_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
-    contactlist_amendment_request = ContactlistAmendmentRequest(
-        data=ContactlistAmendment(
-            type="ContactlistAmendment",
-            attributes=ContactlistAmendmentAttributes(
-                operation="add",
-                identifier_type="email",
-                identifiers=[
-                    "identifiers_example",
-                ],
-                gum_caller_id=1,
-            ),
-        ),
-    ) # ContactlistAmendmentRequest | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.update_contact_list_identifiers(audience_segment_id, contactlist_amendment_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2024_01.ApiException as e:
-        print("Exception when calling AudienceApi->update_contact_list_identifiers: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
- **contactlist_amendment_request** | [**ContactlistAmendmentRequest**](ContactlistAmendmentRequest.md)|  |
-
-### Return type
-
-[**ModifyAudienceResponse**](ModifyAudienceResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Summary of created request |  -  |
-**403** | Forbidden |  -  |
-**404** | Audience 123 not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

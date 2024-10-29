@@ -125,6 +125,7 @@ class EditableCampaignAttributesV202301(ModelNormal):
             'click_attribution_scope': (str, none_type,),  # noqa: E501
             'view_attribution_scope': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
+            'on_behalf_company_name': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -145,6 +146,7 @@ class EditableCampaignAttributesV202301(ModelNormal):
         'click_attribution_scope': 'clickAttributionScope',  # noqa: E501
         'view_attribution_scope': 'viewAttributionScope',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
+        'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
     }
 
     read_only_vars = {
@@ -202,6 +204,7 @@ class EditableCampaignAttributesV202301(ModelNormal):
             click_attribution_scope (str, none_type): [optional]  # noqa: E501
             view_attribution_scope (str, none_type): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -307,6 +310,7 @@ class EditableCampaignAttributesV202301(ModelNormal):
             click_attribution_scope (str, none_type): [optional]  # noqa: E501
             view_attribution_scope (str, none_type): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

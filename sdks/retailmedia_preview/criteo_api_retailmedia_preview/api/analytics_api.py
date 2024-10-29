@@ -507,7 +507,7 @@ class AnalyticsApi(object):
     ):
         """generate_async_accounts_report  # noqa: E501
 
-        Returns an asynchronous Accounts Report  # noqa: E501
+        Returns an asynchronous Accounts Report This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -590,7 +590,7 @@ class AnalyticsApi(object):
     ):
         """generate_async_campaigns_report  # noqa: E501
 
-        Return an asynchronous Campaigns Report  # noqa: E501
+        Return an asynchronous Campaigns Report This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -673,7 +673,7 @@ class AnalyticsApi(object):
     ):
         """generate_async_line_items_report  # noqa: E501
 
-        Returns an asynchronous Line Items Report  # noqa: E501
+        Returns an asynchronous Line Items Report This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

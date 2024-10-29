@@ -25,7 +25,7 @@ from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_entity_v1_
 from criteo_api_marketingsolutions_preview.model.ad_set_audience_link_input_entity_v1 import AdSetAudienceLinkInputEntityV1
 from criteo_api_marketingsolutions_preview.model.ad_set_category_bid_list_response import AdSetCategoryBidListResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_display_multiplier_list_response import AdSetDisplayMultiplierListResponse
-from criteo_api_marketingsolutions_preview.model.ad_set_search_request_v24_q1 import AdSetSearchRequestV24Q1
+from criteo_api_marketingsolutions_preview.model.ad_set_search_request_v24_q3 import AdSetSearchRequestV24Q3
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_disable_result_response import AdSetTargetingDealIdsDisableResultResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_response import AdSetTargetingDealIdsResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_set_result_response import AdSetTargetingDealIdsSetResultResponse
@@ -38,7 +38,7 @@ from criteo_api_marketingsolutions_preview.model.api_response_of_targeting_entit
 from criteo_api_marketingsolutions_preview.model.campaign_search_request_v23_q1 import CampaignSearchRequestV23Q1
 from criteo_api_marketingsolutions_preview.model.campaign_v23_q1_list_response import CampaignV23Q1ListResponse
 from criteo_api_marketingsolutions_preview.model.campaign_v23_q1_response import CampaignV23Q1Response
-from criteo_api_marketingsolutions_preview.model.create_ad_set_v24_q1_request import CreateAdSetV24Q1Request
+from criteo_api_marketingsolutions_preview.model.create_ad_set_v24_q3_request import CreateAdSetV24Q3Request
 from criteo_api_marketingsolutions_preview.model.create_campaign_request import CreateCampaignRequest
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
 from criteo_api_marketingsolutions_preview.model.oci_brand_safety_rule import OciBrandSafetyRule
@@ -51,11 +51,11 @@ from criteo_api_marketingsolutions_preview.model.patch_ad_set_display_multiplier
 from criteo_api_marketingsolutions_preview.model.patch_campaign_list_request import PatchCampaignListRequest
 from criteo_api_marketingsolutions_preview.model.patch_result_campaign_list_response import PatchResultCampaignListResponse
 from criteo_api_marketingsolutions_preview.model.requests_ad_set_id import RequestsAdSetId
-from criteo_api_marketingsolutions_preview.model.requests_patch_ad_set_v24_q1 import RequestsPatchAdSetV24Q1
-from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v24_q1 import ResponseReadAdSetV24Q1
+from criteo_api_marketingsolutions_preview.model.requests_patch_ad_set_v24_q3 import RequestsPatchAdSetV24Q3
+from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v24_q3 import ResponseReadAdSetV24Q3
 from criteo_api_marketingsolutions_preview.model.responses_ad_set_id import ResponsesAdSetId
-from criteo_api_marketingsolutions_preview.model.responses_ad_set_id_v24_q1 import ResponsesAdSetIdV24Q1
-from criteo_api_marketingsolutions_preview.model.responses_read_ad_set_v24_q1 import ResponsesReadAdSetV24Q1
+from criteo_api_marketingsolutions_preview.model.responses_ad_set_id_v24_q3 import ResponsesAdSetIdV24Q3
+from criteo_api_marketingsolutions_preview.model.responses_read_ad_set_v24_q3 import ResponsesReadAdSetV24Q3
 from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_deal_ids_request import SetAdSetTargetingDealIdsRequest
 from criteo_api_marketingsolutions_preview.model.set_ad_set_targeting_video_positioning_request import SetAdSetTargetingVideoPositioningRequest
 from criteo_api_marketingsolutions_preview.model.supply_vendor_list_response import SupplyVendorListResponse
@@ -73,24 +73,24 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_ad_set_v24_q1_endpoint = _Endpoint(
+        self.create_ad_set_v24_q3_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponseReadAdSetV24Q1,),
+                'response_type': (ResponseReadAdSetV24Q3,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets',
-                'operation_id': 'create_ad_set_v24_q1',
+                'operation_id': 'create_ad_set_v24_q3',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'create_ad_set_v24_q1_request',
+                    'create_ad_set_v24_q3_request',
                 ],
                 'required': [
-                    'create_ad_set_v24_q1_request',
+                    'create_ad_set_v24_q3_request',
                 ],
                 'nullable': [
                 ],
@@ -105,13 +105,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'create_ad_set_v24_q1_request':
-                        (CreateAdSetV24Q1Request,),
+                    'create_ad_set_v24_q3_request':
+                        (CreateAdSetV24Q3Request,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'create_ad_set_v24_q1_request': 'body',
+                    'create_ad_set_v24_q3_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -783,15 +783,15 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_ad_set_v24_q1_endpoint = _Endpoint(
+        self.get_ad_set_v24_q3_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponseReadAdSetV24Q1,),
+                'response_type': (ResponseReadAdSetV24Q3,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/{ad-set-id}',
-                'operation_id': 'get_ad_set_v24_q1',
+                'operation_id': 'get_ad_set_v24_q3',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1388,21 +1388,21 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.patch_ad_sets_v24_q1_endpoint = _Endpoint(
+        self.patch_ad_sets_v24_q3_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponsesAdSetIdV24Q1,),
+                'response_type': (ResponsesAdSetIdV24Q3,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets',
-                'operation_id': 'patch_ad_sets_v24_q1',
+                'operation_id': 'patch_ad_sets_v24_q3',
                 'http_method': 'PATCH',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'requests_patch_ad_set_v24_q1',
+                    'requests_patch_ad_set_v24_q3',
                 ],
                 'required': [],
                 'nullable': [
@@ -1418,13 +1418,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'requests_patch_ad_set_v24_q1':
-                        (RequestsPatchAdSetV24Q1,),
+                    'requests_patch_ad_set_v24_q3':
+                        (RequestsPatchAdSetV24Q3,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'requests_patch_ad_set_v24_q1': 'body',
+                    'requests_patch_ad_set_v24_q3': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2130,21 +2130,21 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.search_ad_sets_v24_q1_endpoint = _Endpoint(
+        self.search_ad_sets_v24_q3_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponsesReadAdSetV24Q1,),
+                'response_type': (ResponsesReadAdSetV24Q3,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/ad-sets/search',
-                'operation_id': 'search_ad_sets_v24_q1',
+                'operation_id': 'search_ad_sets_v24_q3',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'ad_set_search_request_v24_q1',
+                    'ad_set_search_request_v24_q3',
                 ],
                 'required': [],
                 'nullable': [
@@ -2160,13 +2160,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'ad_set_search_request_v24_q1':
-                        (AdSetSearchRequestV24Q1,),
+                    'ad_set_search_request_v24_q3':
+                        (AdSetSearchRequestV24Q3,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'ad_set_search_request_v24_q1': 'body',
+                    'ad_set_search_request_v24_q3': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2651,22 +2651,22 @@ class CampaignApi(object):
             api_client=api_client
         )
 
-    def create_ad_set_v24_q1(
+    def create_ad_set_v24_q3(
         self,
-        create_ad_set_v24_q1_request,
+        create_ad_set_v24_q3_request,
         **kwargs
     ):
-        """create_ad_set_v24_q1  # noqa: E501
+        """create_ad_set_v24_q3  # noqa: E501
 
         Create the specified ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_ad_set_v24_q1(create_ad_set_v24_q1_request, async_req=True)
+        >>> thread = api.create_ad_set_v24_q3(create_ad_set_v24_q3_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            create_ad_set_v24_q1_request (CreateAdSetV24Q1Request): the ad sets to create
+            create_ad_set_v24_q3_request (CreateAdSetV24Q3Request): the ad sets to create
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2701,7 +2701,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponseReadAdSetV24Q1
+            ResponseReadAdSetV24Q3
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2730,9 +2730,9 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['create_ad_set_v24_q1_request'] = \
-            create_ad_set_v24_q1_request
-        return self.create_ad_set_v24_q1_endpoint.call_with_http_info(**kwargs)
+        kwargs['create_ad_set_v24_q3_request'] = \
+            create_ad_set_v24_q3_request
+        return self.create_ad_set_v24_q3_endpoint.call_with_http_info(**kwargs)
 
     def create_campaign(
         self,
@@ -3659,18 +3659,18 @@ class CampaignApi(object):
             ad_set_id
         return self.get_ad_set_targeting_video_positioning_endpoint.call_with_http_info(**kwargs)
 
-    def get_ad_set_v24_q1(
+    def get_ad_set_v24_q3(
         self,
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set_v24_q1  # noqa: E501
+        """get_ad_set_v24_q3  # noqa: E501
 
         Get the data for the specified ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_ad_set_v24_q1(ad_set_id, async_req=True)
+        >>> thread = api.get_ad_set_v24_q3(ad_set_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -3709,7 +3709,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponseReadAdSetV24Q1
+            ResponseReadAdSetV24Q3
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3740,7 +3740,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
-        return self.get_ad_set_v24_q1_endpoint.call_with_http_info(**kwargs)
+        return self.get_ad_set_v24_q3_endpoint.call_with_http_info(**kwargs)
 
     def get_advertiser_bundle_rules(
         self,
@@ -4575,22 +4575,22 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.get_supply_vendor_list_endpoint.call_with_http_info(**kwargs)
 
-    def patch_ad_sets_v24_q1(
+    def patch_ad_sets_v24_q3(
         self,
         **kwargs
     ):
-        """patch_ad_sets_v24_q1  # noqa: E501
+        """patch_ad_sets_v24_q3  # noqa: E501
 
         Patch a list of AdSets.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_sets_v24_q1(async_req=True)
+        >>> thread = api.patch_ad_sets_v24_q3(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            requests_patch_ad_set_v24_q1 (RequestsPatchAdSetV24Q1): List of adsets to patch.. [optional]
+            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4623,7 +4623,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponsesAdSetIdV24Q1
+            ResponsesAdSetIdV24Q3
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4652,7 +4652,7 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.patch_ad_sets_v24_q1_endpoint.call_with_http_info(**kwargs)
+        return self.patch_ad_sets_v24_q3_endpoint.call_with_http_info(**kwargs)
 
     def patch_campaigns(
         self,
@@ -5573,22 +5573,22 @@ class CampaignApi(object):
             campaign_id
         return self.put_campaign_domain_rules_endpoint.call_with_http_info(**kwargs)
 
-    def search_ad_sets_v24_q1(
+    def search_ad_sets_v24_q3(
         self,
         **kwargs
     ):
-        """search_ad_sets_v24_q1  # noqa: E501
+        """search_ad_sets_v24_q3  # noqa: E501
 
         Search for ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_ad_sets_v24_q1(async_req=True)
+        >>> thread = api.search_ad_sets_v24_q3(async_req=True)
         >>> result = thread.get()
 
 
         Keyword Args:
-            ad_set_search_request_v24_q1 (AdSetSearchRequestV24Q1): [optional]
+            ad_set_search_request_v24_q3 (AdSetSearchRequestV24Q3): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5621,7 +5621,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponsesReadAdSetV24Q1
+            ResponsesReadAdSetV24Q3
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5650,7 +5650,7 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.search_ad_sets_v24_q1_endpoint.call_with_http_info(**kwargs)
+        return self.search_ad_sets_v24_q3_endpoint.call_with_http_info(**kwargs)
 
     def search_campaigns_v23_q1(
         self,

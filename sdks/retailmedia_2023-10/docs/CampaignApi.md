@@ -4550,6 +4550,7 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
                 company_name="company_name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
             ),
         ),
     ) # PostCampaignV202301 | Creatable campaign attributes (optional)
@@ -5457,6 +5458,7 @@ with criteo_api_retailmedia_v2023_10.ApiClient(configuration) as api_client:
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
                 company_name="company_name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
             ),
         ),
     ) # PutCampaignV202301 | Editable campaign attributes (optional)

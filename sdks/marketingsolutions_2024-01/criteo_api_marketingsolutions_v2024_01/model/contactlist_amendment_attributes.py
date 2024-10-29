@@ -65,7 +65,6 @@ class ContactlistAmendmentAttributes(ModelNormal):
             'MADID': "madid",
             'IDENTITYLINK': "identityLink",
             'GUM': "gum",
-            'CUSTOMERID': "customerid",
             'PHONENUMBER': "phoneNumber",
         },
     }
@@ -124,7 +123,7 @@ class ContactlistAmendmentAttributes(ModelNormal):
 
         Args:
             operation (str): Operation to add or remove users
-            identifiers ([str]): The users tos add or remove, each in the schema specified
+            identifiers ([str]): The users to add or remove, each in the schema specified
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -217,7 +216,7 @@ class ContactlistAmendmentAttributes(ModelNormal):
 
         Args:
             operation (str): Operation to add or remove users
-            identifiers ([str]): The users tos add or remove, each in the schema specified
+            identifiers ([str]): The users to add or remove, each in the schema specified
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

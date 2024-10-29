@@ -55,7 +55,7 @@ class RmContactListV1(ModelNormal):
     """
 
     allowed_values = {
-        ('type',): {
+        ('identifier_type',): {
             'None': None,
             'UNKNOWN': "Unknown",
             'EMAIL': "Email",
@@ -97,7 +97,7 @@ class RmContactListV1(ModelNormal):
         """
         return {
             'is_read_only': (bool, none_type,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
+            'identifier_type': (str, none_type,),  # noqa: E501
             'sharing_status': (str, none_type,),  # noqa: E501
         }
 
@@ -108,7 +108,7 @@ class RmContactListV1(ModelNormal):
 
     attribute_map = {
         'is_read_only': 'isReadOnly',  # noqa: E501
-        'type': 'type',  # noqa: E501
+        'identifier_type': 'identifierType',  # noqa: E501
         'sharing_status': 'sharingStatus',  # noqa: E501
     }
 
@@ -154,7 +154,7 @@ class RmContactListV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_read_only (bool, none_type): Is the segment read-only. [optional]  # noqa: E501
-            type (str, none_type): Indicates contact list type. [optional]  # noqa: E501
+            identifier_type (str, none_type): Indicates contact list identifier's type. [optional]  # noqa: E501
             sharing_status (str, none_type): Indicates if the contact list is shared with other accounts. [optional]  # noqa: E501
         """
 
@@ -242,7 +242,7 @@ class RmContactListV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_read_only (bool, none_type): Is the segment read-only. [optional]  # noqa: E501
-            type (str, none_type): Indicates contact list type. [optional]  # noqa: E501
+            identifier_type (str, none_type): Indicates contact list identifier's type. [optional]  # noqa: E501
             sharing_status (str, none_type): Indicates if the contact list is shared with other accounts. [optional]  # noqa: E501
         """
 

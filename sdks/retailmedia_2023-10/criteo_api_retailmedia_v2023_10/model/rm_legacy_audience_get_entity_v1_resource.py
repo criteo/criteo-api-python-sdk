@@ -152,8 +152,8 @@ class RmLegacyAudienceGetEntityV1Resource(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (RmLegacyAudienceGetEntityV1): [optional]  # noqa: E501
-            id (str, none_type): [optional]  # noqa: E501
-            audience_type (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier of this resource.. [optional]  # noqa: E501
+            audience_type (str, none_type): Type of the audience.. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
         """
 
@@ -241,8 +241,8 @@ class RmLegacyAudienceGetEntityV1Resource(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (RmLegacyAudienceGetEntityV1): [optional]  # noqa: E501
-            id (str, none_type): [optional]  # noqa: E501
-            audience_type (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier of this resource.. [optional]  # noqa: E501
+            audience_type (str, none_type): Type of the audience.. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
         """
 

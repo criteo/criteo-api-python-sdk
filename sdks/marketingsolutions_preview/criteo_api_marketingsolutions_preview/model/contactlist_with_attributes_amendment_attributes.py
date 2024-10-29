@@ -68,7 +68,6 @@ class ContactlistWithAttributesAmendmentAttributes(ModelNormal):
             'MADID': "madid",
             'IDENTITYLINK': "identityLink",
             'GUM': "gum",
-            'CUSTOMERID': "customerid",
             'PHONENUMBER': "phoneNumber",
         },
     }

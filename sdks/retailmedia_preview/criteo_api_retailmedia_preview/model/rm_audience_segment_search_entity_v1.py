@@ -59,7 +59,7 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
             'None': None,
             'UNKNOWN': "Unknown",
             'CONTACTLIST': "ContactList",
-            'USERBEHAVIOR': "UserBehavior",
+            'EVENTS': "Events",
         },
     }
 

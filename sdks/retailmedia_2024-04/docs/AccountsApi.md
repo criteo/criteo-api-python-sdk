@@ -167,6 +167,7 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
             attributes=RetailMediaBrandAccountCreation(
                 name="name_example",
                 company_name="company_name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
                 brands=[
                     1,
                 ],

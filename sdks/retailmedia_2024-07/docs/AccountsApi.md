@@ -169,6 +169,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
             attributes=RetailMediaBrandAccountCreation(
                 name="name_example",
                 company_name="company_name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
                 brands=[
                     1,
                 ],
@@ -275,6 +276,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
             attributes=RetailMediaSellerAccountCreation(
                 name="name_example",
                 company_name="company_name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
                 sellers=[
                     RetailMediaSeller(
                         seller_id="seller_id_example",

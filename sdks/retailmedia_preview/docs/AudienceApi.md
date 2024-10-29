@@ -4,19 +4,18 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bulk_create_v1**](AudienceApi.md#bulk_create_v1) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/create | 
-[**bulk_delete_v1**](AudienceApi.md#bulk_delete_v1) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/delete | 
-[**bulk_update_v1**](AudienceApi.md#bulk_update_v1) | **PATCH** /preview/retail-media/accounts/{account-id}/audience-segments | 
+[**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/create | 
+[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/delete | 
+[**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /preview/retail-media/accounts/{account-id}/audience-segments | 
 [**delete_contact_list_identifiers**](AudienceApi.md#delete_contact_list_identifiers) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
-[**get_contact_list_statistics_v1**](AudienceApi.md#get_contact_list_statistics_v1) | **GET** /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | 
-[**legacy_get_audience_v1**](AudienceApi.md#legacy_get_audience_v1) | **GET** /preview/retail-media/accounts/{accountId}/audiences | 
-[**legacy_get_audience_v2**](AudienceApi.md#legacy_get_audience_v2) | **GET** /preview/retail-media/v2/accounts/{accountId}/audiences | 
-[**search_v1**](AudienceApi.md#search_v1) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/search | 
+[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | 
+[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/search | 
+[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/retail-media/accounts/{account-id}/audiences/search | 
 [**update_contact_list_identifiers**](AudienceApi.md#update_contact_list_identifiers) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
 
 
-# **bulk_create_v1**
-> RmAudienceSegmentEntityV1ListResponse bulk_create_v1(account_id, rm_audience_segment_bulk_create_input_v1)
+# **bulk_create_audience_segments**
+> RmAudienceSegmentEntityV1ListResponse bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
 
 
 
@@ -80,10 +79,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.bulk_create_v1(account_id, rm_audience_segment_bulk_create_input_v1)
+        api_response = api_instance.bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_create_v1: %s\n" % e)
+        print("Exception when calling AudienceApi->bulk_create_audience_segments: %s\n" % e)
 ```
 
 
@@ -119,8 +118,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bulk_delete_v1**
-> RmAudienceSegmentIdEntityV1ListResponse bulk_delete_v1(account_id, rm_audience_segment_bulk_delete_input_v1)
+# **bulk_delete_audience_segments**
+> RmAudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segments(account_id, rm_audience_segment_bulk_delete_input_v1)
 
 
 
@@ -178,10 +177,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.bulk_delete_v1(account_id, rm_audience_segment_bulk_delete_input_v1)
+        api_response = api_instance.bulk_delete_audience_segments(account_id, rm_audience_segment_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_delete_v1: %s\n" % e)
+        print("Exception when calling AudienceApi->bulk_delete_audience_segments: %s\n" % e)
 ```
 
 
@@ -217,8 +216,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bulk_update_v1**
-> RmAudienceSegmentEntityV1ListResponse bulk_update_v1(account_id, rm_audience_segment_bulk_update_input_v1)
+# **bulk_update_audience_segments**
+> RmAudienceSegmentEntityV1ListResponse bulk_update_audience_segments(account_id, rm_audience_segment_bulk_update_input_v1)
 
 
 
@@ -282,10 +281,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.bulk_update_v1(account_id, rm_audience_segment_bulk_update_input_v1)
+        api_response = api_instance.bulk_update_audience_segments(account_id, rm_audience_segment_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_update_v1: %s\n" % e)
+        print("Exception when calling AudienceApi->bulk_update_audience_segments: %s\n" % e)
 ```
 
 
@@ -405,8 +404,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_contact_list_statistics_v1**
-> RmContactListStatisticsEntityV1Response get_contact_list_statistics_v1(account_id, audience_segment_id)
+# **get_audience_segment_contact_list_statistics**
+> RmContactListStatisticsEntityV1Response get_audience_segment_contact_list_statistics(account_id, audience_segment_id)
 
 
 
@@ -455,10 +454,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_contact_list_statistics_v1(account_id, audience_segment_id)
+        api_response = api_instance.get_audience_segment_contact_list_statistics(account_id, audience_segment_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->get_contact_list_statistics_v1: %s\n" % e)
+        print("Exception when calling AudienceApi->get_audience_segment_contact_list_statistics: %s\n" % e)
 ```
 
 
@@ -494,214 +493,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **legacy_get_audience_v1**
-> RmLegacyAudienceGetEntityV1ListResponse legacy_get_audience_v1(account_id)
-
-
-
-Get a page of Audiences. (deprecated Public API)
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import audience_api
-from criteo_api_retailmedia_preview.model.rm_legacy_audience_get_entity_v1_list_response import RmLegacyAudienceGetEntityV1ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    account_id = 1 # int | ID of the account to which this audience belongs.
-    limit_to_id = [
-        1,
-    ] # [int] | Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2 (optional)
-    page_size = 1 # int | Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. (optional)
-    page_index = 1 # int | Returns the specified page of results given a pageSize; pages are 0-indexed. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.legacy_get_audience_v1(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->legacy_get_audience_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.legacy_get_audience_v1(account_id, limit_to_id=limit_to_id, page_size=page_size, page_index=page_index)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->legacy_get_audience_v1: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **int**| ID of the account to which this audience belongs. |
- **limit_to_id** | **[int]**| Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId&#x3D;1&amp;limitToId&#x3D;2 | [optional]
- **page_size** | **int**| Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. | [optional]
- **page_index** | **int**| Returns the specified page of results given a pageSize; pages are 0-indexed. | [optional]
-
-### Return type
-
-[**RmLegacyAudienceGetEntityV1ListResponse**](RmLegacyAudienceGetEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A page of audiences for the supplied account or shared by related retailers. |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **legacy_get_audience_v2**
-> RmLegacyAudienceGetEntityV2ListResponse legacy_get_audience_v2(account_id)
-
-
-
-Get a page of Audiences. (deprecated Public API)
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import audience_api
-from criteo_api_retailmedia_preview.model.rm_legacy_audience_get_entity_v2_list_response import RmLegacyAudienceGetEntityV2ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    account_id = 1 # int | ID of the account to which this audience belongs.
-    limit_to_id = [
-        1,
-    ] # [int] | Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2 (optional)
-    page_size = 1 # int | Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. (optional)
-    page_index = 1 # int | Returns the specified page of results given a pageSize; pages are 0-indexed. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.legacy_get_audience_v2(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->legacy_get_audience_v2: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.legacy_get_audience_v2(account_id, limit_to_id=limit_to_id, page_size=page_size, page_index=page_index)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->legacy_get_audience_v2: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **int**| ID of the account to which this audience belongs. |
- **limit_to_id** | **[int]**| Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId&#x3D;1&amp;limitToId&#x3D;2 | [optional]
- **page_size** | **int**| Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. | [optional]
- **page_index** | **int**| Returns the specified page of results given a pageSize; pages are 0-indexed. | [optional]
-
-### Return type
-
-[**RmLegacyAudienceGetEntityV2ListResponse**](RmLegacyAudienceGetEntityV2ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | A page of audiences for the supplied account or shared by related retailers. |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_v1**
-> RmAudienceSegmentEntityV1RmAudienceSegmentSearchMetadataV1ListResponse search_v1(account_id, rm_audience_segment_search_input_v1)
+# **search_audience_segments**
+> RmAudienceSegmentEntityV1RmAudienceSegmentSearchMetadataV1ListResponse search_audience_segments(account_id, rm_audience_segment_search_input_v1)
 
 
 
@@ -768,18 +561,18 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.search_v1(account_id, rm_audience_segment_search_input_v1)
+        api_response = api_instance.search_audience_segments(account_id, rm_audience_segment_search_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->search_v1: %s\n" % e)
+        print("Exception when calling AudienceApi->search_audience_segments: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_v1(account_id, rm_audience_segment_search_input_v1, limit=limit, offset=offset)
+        api_response = api_instance.search_audience_segments(account_id, rm_audience_segment_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->search_v1: %s\n" % e)
+        print("Exception when calling AudienceApi->search_audience_segments: %s\n" % e)
 ```
 
 
@@ -795,6 +588,123 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**RmAudienceSegmentEntityV1RmAudienceSegmentSearchMetadataV1ListResponse**](RmAudienceSegmentEntityV1RmAudienceSegmentSearchMetadataV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success or partial success |  -  |
+**400** | Bad request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_audiences**
+> RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse search_audiences(account_id, rm_audience_search_input_v1)
+
+
+
+Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import audience_api
+from criteo_api_retailmedia_preview.model.rm_audience_search_input_v1 import RmAudienceSearchInputV1
+from criteo_api_retailmedia_preview.model.rm_audience_entity_v1_rm_audience_search_metadata_v1_list_response import RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    account_id = "account-id_example" # str | Account Id
+    rm_audience_search_input_v1 = RmAudienceSearchInputV1(
+        data=RmAudienceSearchEntityV1Resource(
+            type="type_example",
+            attributes=RmAudienceSearchEntityV1(
+                audience_ids=[
+                    "audience_ids_example",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                audience_segment_ids=[
+                    "audience_segment_ids_example",
+                ],
+            ),
+        ),
+    ) # RmAudienceSearchInputV1 | Audience search filters.
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.search_audiences(account_id, rm_audience_search_input_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AudienceApi->search_audiences: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.search_audiences(account_id, rm_audience_search_input_v1, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AudienceApi->search_audiences: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| Account Id |
+ **rm_audience_search_input_v1** | [**RmAudienceSearchInputV1**](RmAudienceSearchInputV1.md)| Audience search filters. |
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse**](RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse.md)
 
 ### Authorization
 

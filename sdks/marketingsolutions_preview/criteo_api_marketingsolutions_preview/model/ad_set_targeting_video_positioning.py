@@ -63,6 +63,13 @@ class AdSetTargetingVideoPositioning(ModelNormal):
             'INTERSTITIAL': "Interstitial",
             'INSTREAM': "InStream",
         },
+        ('video_plcmt',): {
+            'None': None,
+            'INSTREAM': "InStream",
+            'ACCOMPANYINGCONTENT': "AccompanyingContent",
+            'INTERSTITIAL': "Interstitial",
+            'NOCONTENTSTANDALONE': "NoContentStandalone",
+        },
         ('playback_method',): {
             'None': None,
             'AUTOSOUNDON': "AutoSoundOn",
@@ -101,6 +108,8 @@ class AdSetTargetingVideoPositioning(ModelNormal):
     validations = {
         ('video_placement',): {
         },
+        ('video_plcmt',): {
+        },
         ('playback_method',): {
         },
         ('video_in_stream_position',): {
@@ -133,6 +142,7 @@ class AdSetTargetingVideoPositioning(ModelNormal):
         """
         return {
             'video_placement': ([str], none_type,),  # noqa: E501
+            'video_plcmt': ([str], none_type,),  # noqa: E501
             'playback_method': ([str], none_type,),  # noqa: E501
             'skippable': (str, none_type,),  # noqa: E501
             'video_in_stream_position': ([str], none_type,),  # noqa: E501
@@ -147,6 +157,7 @@ class AdSetTargetingVideoPositioning(ModelNormal):
 
     attribute_map = {
         'video_placement': 'videoPlacement',  # noqa: E501
+        'video_plcmt': 'videoPlcmt',  # noqa: E501
         'playback_method': 'playbackMethod',  # noqa: E501
         'skippable': 'skippable',  # noqa: E501
         'video_in_stream_position': 'videoInStreamPosition',  # noqa: E501
@@ -196,6 +207,7 @@ class AdSetTargetingVideoPositioning(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             video_placement ([str], none_type): [optional]  # noqa: E501
+            video_plcmt ([str], none_type): [optional]  # noqa: E501
             playback_method ([str], none_type): [optional]  # noqa: E501
             skippable (str, none_type): [optional]  # noqa: E501
             video_in_stream_position ([str], none_type): [optional]  # noqa: E501
@@ -287,6 +299,7 @@ class AdSetTargetingVideoPositioning(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             video_placement ([str], none_type): [optional]  # noqa: E501
+            video_plcmt ([str], none_type): [optional]  # noqa: E501
             playback_method ([str], none_type): [optional]  # noqa: E501
             skippable (str, none_type): [optional]  # noqa: E501
             video_in_stream_position ([str], none_type): [optional]  # noqa: E501

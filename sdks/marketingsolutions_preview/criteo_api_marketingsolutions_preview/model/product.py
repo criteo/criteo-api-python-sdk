@@ -189,6 +189,7 @@ class Product(ModelNormal):
             'external_seller_name': (str, none_type,),  # noqa: E501
             'number_of_reviews': (int, none_type,),  # noqa: E501
             'product_rating': (str, none_type,),  # noqa: E501
+            'badge': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -278,6 +279,7 @@ class Product(ModelNormal):
         'external_seller_name': 'externalSellerName',  # noqa: E501
         'number_of_reviews': 'numberOfReviews',  # noqa: E501
         'product_rating': 'productRating',  # noqa: E501
+        'badge': 'badge',  # noqa: E501
     }
 
     read_only_vars = {
@@ -404,6 +406,7 @@ class Product(ModelNormal):
             external_seller_name (str, none_type): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
             number_of_reviews (int, none_type): The number of customer reviews for the product. [optional]  # noqa: E501
             product_rating (str, none_type): The product rating for the product. [optional]  # noqa: E501
+            badge (str, none_type): URL of a badge image to display on the product.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")
@@ -578,6 +581,7 @@ class Product(ModelNormal):
             external_seller_name (str, none_type): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
             number_of_reviews (int, none_type): The number of customer reviews for the product. [optional]  # noqa: E501
             product_rating (str, none_type): The product rating for the product. [optional]  # noqa: E501
+            badge (str, none_type): URL of a badge image to display on the product.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")

@@ -6,6 +6,7 @@ Video positioning targeting writing model
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **video_placement** | **[str], none_type** |  | [optional] 
+**video_plcmt** | **[str], none_type** |  | [optional] 
 **playback_method** | **[str], none_type** |  | [optional] 
 **skippable** | **str, none_type** |  | [optional] 
 **video_in_stream_position** | **[str], none_type** |  | [optional] 

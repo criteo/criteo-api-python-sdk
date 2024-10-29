@@ -228,6 +228,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     external_seller_name="external_seller_name_example",
                     number_of_reviews=1,
                     product_rating="product_rating_example",
+                    badge="badge_example",
                 ),
                 feed_id="feed_id_example",
             ),

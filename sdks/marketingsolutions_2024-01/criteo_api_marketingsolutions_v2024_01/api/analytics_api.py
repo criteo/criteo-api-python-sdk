@@ -42,7 +42,7 @@ class AnalyticsApi(object):
         self.api_client = api_client
         self.get_adset_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -101,7 +101,7 @@ class AnalyticsApi(object):
         )
         self.get_placements_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -145,7 +145,9 @@ class AnalyticsApi(object):
                     'text/plain',
                     'application/json',
                     'text/json',
+                    'text/csv',
                     'application/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                     'text/xml'
                 ],
                 'content_type': [
@@ -159,7 +161,7 @@ class AnalyticsApi(object):
         )
         self.get_transactions_report_endpoint = _Endpoint(
             settings={
-                'response_type': (str,),
+                'response_type': (file_type,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -330,7 +332,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -409,7 +411,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -488,7 +490,7 @@ class AnalyticsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            str
+            file_type
                 If the method is called asynchronously, returns the request
                 thread.
         """
