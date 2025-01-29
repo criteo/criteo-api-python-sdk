@@ -6,7 +6,6 @@ A value of a template choice variable (among different accepted options)
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **chosen_options** | **[str]** | The chosen options | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /2024-07/retail-media/line-items/{line-item-id}/products/delete | 
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /2024-07/retail-media/line-items/{id}/keywords | 
 [**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /2024-07/retail-media/line-items/{line-item-id}/products | 
-[**fetch_proposal**](CampaignApi.md#fetch_proposal) | **GET** /2024-07/retail-media/preferred-deal-line-items/{id}/proposal | 
 [**get_api202110_external_account_creatives_by_account_id**](CampaignApi.md#get_api202110_external_account_creatives_by_account_id) | **GET** /2024-07/retail-media/accounts/{account-id}/creatives | 
 [**get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id**](CampaignApi.md#get_api202110_external_auction_line_item_targeting_keywords_by_line_item_id) | **GET** /2024-07/retail-media/auction-line-items/{line-item-id}/targeting/keywords | 
 [**get_api202110_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#get_api202110_external_campaign_preferred_line_items_by_campaign_id) | **GET** /2024-07/retail-media/campaigns/{campaign-id}/preferred-line-items | 
@@ -63,7 +62,6 @@ Method | HTTP request | Description
 [**put_api202301_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#put_api202301_external_line_item_bid_multipliers_by_line_item_id) | **PUT** /2024-07/retail-media/line-items/{line-item-id}/bid-multipliers | 
 [**put_api_v2_external_auction_line_item_by_line_item_id**](CampaignApi.md#put_api_v2_external_auction_line_item_by_line_item_id) | **PUT** /2024-07/retail-media/auction-line-items/{line-item-id} | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /2024-07/retail-media/line-items/{id}/keywords/set-bid | 
-[**submit_proposal**](CampaignApi.md#submit_proposal) | **POST** /2024-07/retail-media/preferred-deal-line-items/{id}/proposal/submit | 
 [**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /2024-07/retail-media/line-items/{line-item-id}/products/unpause | 
 [**update_campaign_budget_overrides**](CampaignApi.md#update_campaign_budget_overrides) | **PUT** /2024-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
 [**update_line_item_budget_overrides**](CampaignApi.md#update_line_item_budget_overrides) | **PUT** /2024-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
@@ -663,93 +661,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **fetch_proposal**
-> ProposalStatusModelResponse fetch_proposal(id)
-
-
-
-Includes the state of the proposal, the status of the booking and approval, as well as any comments explaining why it might have been rejected.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2024_07
-from criteo_api_retailmedia_v2024_07.api import campaign_api
-from criteo_api_retailmedia_v2024_07.model.proposal_status_model_response import ProposalStatusModelResponse
-from criteo_api_retailmedia_v2024_07.model.resource_outcome import ResourceOutcome
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2024_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2024_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2024_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | ID of the line item
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.fetch_proposal(id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2024_07.ApiException as e:
-        print("Exception when calling CampaignApi->fetch_proposal: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of the line item |
-
-### Return type
-
-[**ProposalStatusModelResponse**](ProposalStatusModelResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_api202110_external_account_creatives_by_account_id**
 > Creative202110ListResponse get_api202110_external_account_creatives_by_account_id(account_id)
 
@@ -823,7 +734,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -1696,7 +1607,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -1780,7 +1691,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -1866,7 +1777,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -4416,6 +4327,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                 hyperlink_variable_value=HyperlinkVariableValue(
                     url="url_example",
                 ),
+                video_variable_value=VideoVariableValue(
+                    url="url_example",
+                    width=1,
+                    height=1,
+                    duration="duration_example",
+                ),
             ),
         ],
     ) # CreativeCreateModel202207 | The creative to create (optional)
@@ -4455,7 +4372,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -4551,7 +4468,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
@@ -5421,6 +5338,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                 hyperlink_variable_value=HyperlinkVariableValue(
                     url="url_example",
                 ),
+                video_variable_value=VideoVariableValue(
+                    url="url_example",
+                    width=1,
+                    height=1,
+                    duration="duration_example",
+                ),
             ),
         ],
     ) # CreativeUpdateModel202207 | The creative to create (optional)
@@ -5461,15 +5384,14 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Success |  -  |
-**204** | Creative updated |  -  |
+**201** | Creative updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -5918,93 +5840,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **400** | Bad Request |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **submit_proposal**
-> ProposalStatusModelResponse submit_proposal(id)
-
-
-
-Only the components of the Line Item that are in a valid state will be reviewed.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2024_07
-from criteo_api_retailmedia_v2024_07.api import campaign_api
-from criteo_api_retailmedia_v2024_07.model.proposal_status_model_response import ProposalStatusModelResponse
-from criteo_api_retailmedia_v2024_07.model.resource_outcome import ResourceOutcome
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2024_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2024_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2024_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    id = "id_example" # str | ID of the line item
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.submit_proposal(id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2024_07.ApiException as e:
-        print("Exception when calling CampaignApi->submit_proposal: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of the line item |
-
-### Return type
-
-[**ProposalStatusModelResponse**](ProposalStatusModelResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

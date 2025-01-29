@@ -64,16 +64,9 @@ class Section(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -89,6 +82,7 @@ class Section(ModelNormal):
         return {
             'template_variables': ([TemplateVariable],),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -99,6 +93,7 @@ class Section(ModelNormal):
     attribute_map = {
         'template_variables': 'templateVariables',  # noqa: E501
         'title': 'title',  # noqa: E501
+        'description': 'description',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,6 +141,7 @@ class Section(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             title (str, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,6 +232,7 @@ class Section(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             title (str, none_type): [optional]  # noqa: E501
+            description (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

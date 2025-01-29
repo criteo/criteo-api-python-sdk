@@ -58,8 +58,6 @@ class ImageAttributes(ModelNormal):
     }
 
     validations = {
-        ('urls',): {
-        },
     }
 
     @cached_property

@@ -32,7 +32,6 @@ criteo_api_retailmedia_v2024_01/model/add_to_basket_target202110_response.py
 criteo_api_retailmedia_v2024_01/model/application_summary_model.py
 criteo_api_retailmedia_v2024_01/model/application_summary_model_resource.py
 criteo_api_retailmedia_v2024_01/model/application_summary_model_response.py
-criteo_api_retailmedia_v2024_01/model/approval_status_model.py
 criteo_api_retailmedia_v2024_01/model/asset.py
 criteo_api_retailmedia_v2024_01/model/asset_resource.py
 criteo_api_retailmedia_v2024_01/model/asset_response.py
@@ -148,9 +147,8 @@ criteo_api_retailmedia_v2024_01/model/line_item_bid_multipliers_response.py
 criteo_api_retailmedia_v2024_01/model/line_item_budget_overrides.py
 criteo_api_retailmedia_v2024_01/model/match_type_model.py
 criteo_api_retailmedia_v2024_01/model/monthly_line_item_budeget_override.py
-criteo_api_retailmedia_v2024_01/model/negotiation_state_model.py
 criteo_api_retailmedia_v2024_01/model/page_metadata.py
-criteo_api_retailmedia_v2024_01/model/page_type_environment.py
+criteo_api_retailmedia_v2024_01/model/page_type_environment202210.py
 criteo_api_retailmedia_v2024_01/model/post_campaign_v202301.py
 criteo_api_retailmedia_v2024_01/model/preferred_line_item202110_paged_list_response.py
 criteo_api_retailmedia_v2024_01/model/preferred_line_item202110_response.py
@@ -159,9 +157,6 @@ criteo_api_retailmedia_v2024_01/model/preferred_line_item_update_model202110_req
 criteo_api_retailmedia_v2024_01/model/problem_details.py
 criteo_api_retailmedia_v2024_01/model/promoted_product202110_list_request.py
 criteo_api_retailmedia_v2024_01/model/promoted_product202110_paged_list_response.py
-criteo_api_retailmedia_v2024_01/model/proposal_status_model.py
-criteo_api_retailmedia_v2024_01/model/proposal_status_model_resource.py
-criteo_api_retailmedia_v2024_01/model/proposal_status_model_response.py
 criteo_api_retailmedia_v2024_01/model/put_campaign_v202301.py
 criteo_api_retailmedia_v2024_01/model/report_outcome.py
 criteo_api_retailmedia_v2024_01/model/resource_of_add_funds_to_balance.py
@@ -235,6 +230,7 @@ criteo_api_retailmedia_v2024_01/model/value_type_resource_of_audience_target2021
 criteo_api_retailmedia_v2024_01/model/value_type_resource_of_keyword_target202110.py
 criteo_api_retailmedia_v2024_01/model/value_type_resource_of_store_ids_update_model202110.py
 criteo_api_retailmedia_v2024_01/model/value_type_resource_of_store_target202110.py
+criteo_api_retailmedia_v2024_01/model/video_variable_value.py
 criteo_api_retailmedia_v2024_01/model_utils.py
 criteo_api_retailmedia_v2024_01/models/__init__.py
 criteo_api_retailmedia_v2024_01/rest.py
@@ -251,7 +247,6 @@ docs/AnalyticsApi.md
 docs/ApplicationSummaryModel.md
 docs/ApplicationSummaryModelResource.md
 docs/ApplicationSummaryModelResponse.md
-docs/ApprovalStatusModel.md
 docs/Asset.md
 docs/AssetResource.md
 docs/AssetResponse.md
@@ -371,9 +366,8 @@ docs/LineItemBidMultipliersResponse.md
 docs/LineItemBudgetOverrides.md
 docs/MatchTypeModel.md
 docs/MonthlyLineItemBudegetOverride.md
-docs/NegotiationStateModel.md
 docs/PageMetadata.md
-docs/PageTypeEnvironment.md
+docs/PageTypeEnvironment202210.md
 docs/PostCampaignV202301.md
 docs/PreferredLineItem202110PagedListResponse.md
 docs/PreferredLineItem202110Response.md
@@ -382,9 +376,6 @@ docs/PreferredLineItemUpdateModel202110Request.md
 docs/ProblemDetails.md
 docs/PromotedProduct202110ListRequest.md
 docs/PromotedProduct202110PagedListResponse.md
-docs/ProposalStatusModel.md
-docs/ProposalStatusModelResource.md
-docs/ProposalStatusModelResponse.md
 docs/PutCampaignV202301.md
 docs/ReportOutcome.md
 docs/ResourceOfAddFundsToBalance.md
@@ -458,6 +449,7 @@ docs/ValueTypeResourceOfAudienceTarget202110.md
 docs/ValueTypeResourceOfKeywordTarget202110.md
 docs/ValueTypeResourceOfStoreIdsUpdateModel202110.md
 docs/ValueTypeResourceOfStoreTarget202110.md
+docs/VideoVariableValue.md
 git_push.sh
 requirements.txt
 setup.cfg

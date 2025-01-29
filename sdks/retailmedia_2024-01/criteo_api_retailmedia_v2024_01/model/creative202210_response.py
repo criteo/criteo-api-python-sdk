@@ -30,9 +30,9 @@ from criteo_api_retailmedia_v2024_01.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_01.model.problem_details import ProblemDetails
+    from criteo_api_retailmedia_v2024_01.model.common_problem import CommonProblem
     from criteo_api_retailmedia_v2024_01.model.resource_of_creative202210 import ResourceOfCreative202210
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
     globals()['ResourceOfCreative202210'] = ResourceOfCreative202210
 
 
@@ -66,16 +66,9 @@ class Creative202210Response(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -90,8 +83,8 @@ class Creative202210Response(ModelNormal):
         lazy_import()
         return {
             'data': (ResourceOfCreative202210,),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
-            'errors': ([ProblemDetails],),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +142,8 @@ class Creative202210Response(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ResourceOfCreative202210): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +230,8 @@ class Creative202210Response(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ResourceOfCreative202210): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

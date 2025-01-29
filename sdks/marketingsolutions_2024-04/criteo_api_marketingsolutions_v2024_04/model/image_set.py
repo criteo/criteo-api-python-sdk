@@ -62,8 +62,6 @@ class ImageSet(ModelNormal):
     }
 
     validations = {
-        ('images',): {
-        },
     }
 
     @cached_property

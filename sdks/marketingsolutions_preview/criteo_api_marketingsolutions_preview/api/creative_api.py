@@ -21,17 +21,17 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_marketingsolutions_preview.model.ad_list_response import AdListResponse
-from criteo_api_marketingsolutions_preview.model.ad_response import AdResponse
-from criteo_api_marketingsolutions_preview.model.ad_write_request import AdWriteRequest
-from criteo_api_marketingsolutions_preview.model.coupon_list_response import CouponListResponse
-from criteo_api_marketingsolutions_preview.model.coupon_response import CouponResponse
-from criteo_api_marketingsolutions_preview.model.coupon_supported_sizes_response import CouponSupportedSizesResponse
-from criteo_api_marketingsolutions_preview.model.create_coupon_request import CreateCouponRequest
-from criteo_api_marketingsolutions_preview.model.creative_list_response import CreativeListResponse
-from criteo_api_marketingsolutions_preview.model.creative_response import CreativeResponse
-from criteo_api_marketingsolutions_preview.model.creative_write_request import CreativeWriteRequest
-from criteo_api_marketingsolutions_preview.model.update_coupon_request import UpdateCouponRequest
+from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_ad import ResourceCollectionOutcomeOfAd
+from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_coupon import ResourceCollectionOutcomeOfCoupon
+from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_creative import ResourceCollectionOutcomeOfCreative
+from criteo_api_marketingsolutions_preview.model.resource_input_of_ad_write import ResourceInputOfAdWrite
+from criteo_api_marketingsolutions_preview.model.resource_input_of_create_coupon import ResourceInputOfCreateCoupon
+from criteo_api_marketingsolutions_preview.model.resource_input_of_creative_write import ResourceInputOfCreativeWrite
+from criteo_api_marketingsolutions_preview.model.resource_input_of_update_coupon import ResourceInputOfUpdateCoupon
+from criteo_api_marketingsolutions_preview.model.resource_outcome_of_ad import ResourceOutcomeOfAd
+from criteo_api_marketingsolutions_preview.model.resource_outcome_of_coupon import ResourceOutcomeOfCoupon
+from criteo_api_marketingsolutions_preview.model.resource_outcome_of_coupon_supported_sizes import ResourceOutcomeOfCouponSupportedSizes
+from criteo_api_marketingsolutions_preview.model.resource_outcome_of_creative import ResourceOutcomeOfCreative
 
 
 class CreativeApi(object):
@@ -47,7 +47,7 @@ class CreativeApi(object):
         self.api_client = api_client
         self.create_advertiser_ad_endpoint = _Endpoint(
             settings={
-                'response_type': (AdResponse,),
+                'response_type': (ResourceOutcomeOfAd,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -60,11 +60,11 @@ class CreativeApi(object):
             params_map={
                 'all': [
                     'advertiser_id',
-                    'ad_write_request',
+                    'resource_input_of_ad_write',
                 ],
                 'required': [
                     'advertiser_id',
-                    'ad_write_request',
+                    'resource_input_of_ad_write',
                 ],
                 'nullable': [
                 ],
@@ -81,15 +81,15 @@ class CreativeApi(object):
                 'openapi_types': {
                     'advertiser_id':
                         (str,),
-                    'ad_write_request':
-                        (AdWriteRequest,),
+                    'resource_input_of_ad_write':
+                        (ResourceInputOfAdWrite,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
                 },
                 'location_map': {
                     'advertiser_id': 'path',
-                    'ad_write_request': 'body',
+                    'resource_input_of_ad_write': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -111,7 +111,7 @@ class CreativeApi(object):
         )
         self.create_advertiser_coupon_endpoint = _Endpoint(
             settings={
-                'response_type': (CouponResponse,),
+                'response_type': (ResourceOutcomeOfCoupon,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -124,11 +124,11 @@ class CreativeApi(object):
             params_map={
                 'all': [
                     'advertiser_id',
-                    'create_coupon_request',
+                    'resource_input_of_create_coupon',
                 ],
                 'required': [
                     'advertiser_id',
-                    'create_coupon_request',
+                    'resource_input_of_create_coupon',
                 ],
                 'nullable': [
                 ],
@@ -145,15 +145,15 @@ class CreativeApi(object):
                 'openapi_types': {
                     'advertiser_id':
                         (str,),
-                    'create_coupon_request':
-                        (CreateCouponRequest,),
+                    'resource_input_of_create_coupon':
+                        (ResourceInputOfCreateCoupon,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
                 },
                 'location_map': {
                     'advertiser_id': 'path',
-                    'create_coupon_request': 'body',
+                    'resource_input_of_create_coupon': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -175,7 +175,7 @@ class CreativeApi(object):
         )
         self.create_advertiser_creative_endpoint = _Endpoint(
             settings={
-                'response_type': (CreativeResponse,),
+                'response_type': (ResourceOutcomeOfCreative,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -188,11 +188,11 @@ class CreativeApi(object):
             params_map={
                 'all': [
                     'advertiser_id',
-                    'creative_write_request',
+                    'resource_input_of_creative_write',
                 ],
                 'required': [
                     'advertiser_id',
-                    'creative_write_request',
+                    'resource_input_of_creative_write',
                 ],
                 'nullable': [
                 ],
@@ -209,15 +209,15 @@ class CreativeApi(object):
                 'openapi_types': {
                     'advertiser_id':
                         (str,),
-                    'creative_write_request':
-                        (CreativeWriteRequest,),
+                    'resource_input_of_creative_write':
+                        (ResourceInputOfCreativeWrite,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
                 },
                 'location_map': {
                     'advertiser_id': 'path',
-                    'creative_write_request': 'body',
+                    'resource_input_of_creative_write': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -395,7 +395,7 @@ class CreativeApi(object):
         )
         self.edit_advertiser_coupon_endpoint = _Endpoint(
             settings={
-                'response_type': (CouponResponse,),
+                'response_type': (ResourceOutcomeOfCoupon,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -409,12 +409,12 @@ class CreativeApi(object):
                 'all': [
                     'advertiser_id',
                     'id',
-                    'update_coupon_request',
+                    'resource_input_of_update_coupon',
                 ],
                 'required': [
                     'advertiser_id',
                     'id',
-                    'update_coupon_request',
+                    'resource_input_of_update_coupon',
                 ],
                 'nullable': [
                 ],
@@ -433,8 +433,8 @@ class CreativeApi(object):
                         (str,),
                     'id':
                         (str,),
-                    'update_coupon_request':
-                        (UpdateCouponRequest,),
+                    'resource_input_of_update_coupon':
+                        (ResourceInputOfUpdateCoupon,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
@@ -443,7 +443,7 @@ class CreativeApi(object):
                 'location_map': {
                     'advertiser_id': 'path',
                     'id': 'path',
-                    'update_coupon_request': 'body',
+                    'resource_input_of_update_coupon': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -465,7 +465,7 @@ class CreativeApi(object):
         )
         self.edit_creative_endpoint = _Endpoint(
             settings={
-                'response_type': (CreativeResponse,),
+                'response_type': (ResourceOutcomeOfCreative,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -478,11 +478,11 @@ class CreativeApi(object):
             params_map={
                 'all': [
                     'id',
-                    'creative_write_request',
+                    'resource_input_of_creative_write',
                 ],
                 'required': [
                     'id',
-                    'creative_write_request',
+                    'resource_input_of_creative_write',
                 ],
                 'nullable': [
                 ],
@@ -499,15 +499,15 @@ class CreativeApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'creative_write_request':
-                        (CreativeWriteRequest,),
+                    'resource_input_of_creative_write':
+                        (ResourceInputOfCreativeWrite,),
                 },
                 'attribute_map': {
                     'id': 'id',
                 },
                 'location_map': {
                     'id': 'path',
-                    'creative_write_request': 'body',
+                    'resource_input_of_creative_write': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -593,7 +593,7 @@ class CreativeApi(object):
         )
         self.get_ad_endpoint = _Endpoint(
             settings={
-                'response_type': (AdResponse,),
+                'response_type': (ResourceOutcomeOfAd,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -647,7 +647,7 @@ class CreativeApi(object):
         )
         self.get_advertiser_ads_endpoint = _Endpoint(
             settings={
-                'response_type': (AdListResponse,),
+                'response_type': (ResourceCollectionOutcomeOfAd,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -711,7 +711,7 @@ class CreativeApi(object):
         )
         self.get_advertiser_coupon_endpoint = _Endpoint(
             settings={
-                'response_type': (CouponResponse,),
+                'response_type': (ResourceOutcomeOfCoupon,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -841,7 +841,7 @@ class CreativeApi(object):
         )
         self.get_advertiser_coupon_supported_sizes_endpoint = _Endpoint(
             settings={
-                'response_type': (CouponSupportedSizesResponse,),
+                'response_type': (ResourceOutcomeOfCouponSupportedSizes,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -900,7 +900,7 @@ class CreativeApi(object):
         )
         self.get_advertiser_coupons_endpoint = _Endpoint(
             settings={
-                'response_type': (CouponListResponse,),
+                'response_type': (ResourceCollectionOutcomeOfCoupon,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -964,7 +964,7 @@ class CreativeApi(object):
         )
         self.get_advertiser_creatives_endpoint = _Endpoint(
             settings={
-                'response_type': (CreativeListResponse,),
+                'response_type': (ResourceCollectionOutcomeOfCreative,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1028,7 +1028,7 @@ class CreativeApi(object):
         )
         self.get_creative_endpoint = _Endpoint(
             settings={
-                'response_type': (CreativeResponse,),
+                'response_type': (ResourceOutcomeOfCreative,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1084,7 +1084,7 @@ class CreativeApi(object):
     def create_advertiser_ad(
         self,
         advertiser_id,
-        ad_write_request,
+        resource_input_of_ad_write,
         **kwargs
     ):
         """create_advertiser_ad  # noqa: E501
@@ -1093,12 +1093,12 @@ class CreativeApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_advertiser_ad(advertiser_id, ad_write_request, async_req=True)
+        >>> thread = api.create_advertiser_ad(advertiser_id, resource_input_of_ad_write, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (str): The advertiser identifier.
-            ad_write_request (AdWriteRequest):
+            resource_input_of_ad_write (ResourceInputOfAdWrite):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1133,7 +1133,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            AdResponse
+            ResourceOutcomeOfAd
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1164,14 +1164,14 @@ class CreativeApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
-        kwargs['ad_write_request'] = \
-            ad_write_request
+        kwargs['resource_input_of_ad_write'] = \
+            resource_input_of_ad_write
         return self.create_advertiser_ad_endpoint.call_with_http_info(**kwargs)
 
     def create_advertiser_coupon(
         self,
         advertiser_id,
-        create_coupon_request,
+        resource_input_of_create_coupon,
         **kwargs
     ):
         """create_advertiser_coupon  # noqa: E501
@@ -1180,12 +1180,12 @@ class CreativeApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_advertiser_coupon(advertiser_id, create_coupon_request, async_req=True)
+        >>> thread = api.create_advertiser_coupon(advertiser_id, resource_input_of_create_coupon, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (str): The advertiser identifier.
-            create_coupon_request (CreateCouponRequest):
+            resource_input_of_create_coupon (ResourceInputOfCreateCoupon):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1220,7 +1220,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CouponResponse
+            ResourceOutcomeOfCoupon
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1251,14 +1251,14 @@ class CreativeApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
-        kwargs['create_coupon_request'] = \
-            create_coupon_request
+        kwargs['resource_input_of_create_coupon'] = \
+            resource_input_of_create_coupon
         return self.create_advertiser_coupon_endpoint.call_with_http_info(**kwargs)
 
     def create_advertiser_creative(
         self,
         advertiser_id,
-        creative_write_request,
+        resource_input_of_creative_write,
         **kwargs
     ):
         """create_advertiser_creative  # noqa: E501
@@ -1267,12 +1267,12 @@ class CreativeApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_advertiser_creative(advertiser_id, creative_write_request, async_req=True)
+        >>> thread = api.create_advertiser_creative(advertiser_id, resource_input_of_creative_write, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (str): The advertiser identifier.
-            creative_write_request (CreativeWriteRequest):
+            resource_input_of_creative_write (ResourceInputOfCreativeWrite):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1307,7 +1307,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CreativeResponse
+            ResourceOutcomeOfCreative
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1338,8 +1338,8 @@ class CreativeApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
-        kwargs['creative_write_request'] = \
-            creative_write_request
+        kwargs['resource_input_of_creative_write'] = \
+            resource_input_of_creative_write
         return self.create_advertiser_creative_endpoint.call_with_http_info(**kwargs)
 
     def delete_ad(
@@ -1599,7 +1599,7 @@ class CreativeApi(object):
         self,
         advertiser_id,
         id,
-        update_coupon_request,
+        resource_input_of_update_coupon,
         **kwargs
     ):
         """edit_advertiser_coupon  # noqa: E501
@@ -1608,13 +1608,13 @@ class CreativeApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.edit_advertiser_coupon(advertiser_id, id, update_coupon_request, async_req=True)
+        >>> thread = api.edit_advertiser_coupon(advertiser_id, id, resource_input_of_update_coupon, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (str): The advertiser identifier.
             id (str): The Coupon identifier to edit.
-            update_coupon_request (UpdateCouponRequest):
+            resource_input_of_update_coupon (ResourceInputOfUpdateCoupon):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1649,7 +1649,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CouponResponse
+            ResourceOutcomeOfCoupon
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1682,14 +1682,14 @@ class CreativeApi(object):
             advertiser_id
         kwargs['id'] = \
             id
-        kwargs['update_coupon_request'] = \
-            update_coupon_request
+        kwargs['resource_input_of_update_coupon'] = \
+            resource_input_of_update_coupon
         return self.edit_advertiser_coupon_endpoint.call_with_http_info(**kwargs)
 
     def edit_creative(
         self,
         id,
-        creative_write_request,
+        resource_input_of_creative_write,
         **kwargs
     ):
         """edit_creative  # noqa: E501
@@ -1698,12 +1698,12 @@ class CreativeApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.edit_creative(id, creative_write_request, async_req=True)
+        >>> thread = api.edit_creative(id, resource_input_of_creative_write, async_req=True)
         >>> result = thread.get()
 
         Args:
             id (str): The creative identifier to edit.
-            creative_write_request (CreativeWriteRequest):
+            resource_input_of_creative_write (ResourceInputOfCreativeWrite):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1738,7 +1738,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CreativeResponse
+            ResourceOutcomeOfCreative
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1769,8 +1769,8 @@ class CreativeApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['id'] = \
             id
-        kwargs['creative_write_request'] = \
-            creative_write_request
+        kwargs['resource_input_of_creative_write'] = \
+            resource_input_of_creative_write
         return self.edit_creative_endpoint.call_with_http_info(**kwargs)
 
     def generate_creative_preview(
@@ -1780,7 +1780,7 @@ class CreativeApi(object):
     ):
         """generate_creative_preview  # noqa: E501
 
-        Generate a preview of a specific Creative  # noqa: E501
+        Get the preview of a specific Creative  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1865,7 +1865,7 @@ class CreativeApi(object):
     ):
         """get_ad  # noqa: E501
 
-        Get an Ad from its id  # noqa: E501
+        Get an Ad with its id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1908,7 +1908,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            AdResponse
+            ResourceOutcomeOfAd
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -1993,7 +1993,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            AdListResponse
+            ResourceCollectionOutcomeOfAd
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2034,7 +2034,7 @@ class CreativeApi(object):
     ):
         """get_advertiser_coupon  # noqa: E501
 
-        Get a Coupon from its id  # noqa: E501
+        Get a Coupon with its id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2078,7 +2078,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CouponResponse
+            ResourceOutcomeOfCoupon
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2253,7 +2253,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CouponSupportedSizesResponse
+            ResourceOutcomeOfCouponSupportedSizes
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2338,7 +2338,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CouponListResponse
+            ResourceCollectionOutcomeOfCoupon
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2423,7 +2423,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CreativeListResponse
+            ResourceCollectionOutcomeOfCreative
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2463,7 +2463,7 @@ class CreativeApi(object):
     ):
         """get_creative  # noqa: E501
 
-        Get a Creative from its id  # noqa: E501
+        Get a Creative with its id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2506,7 +2506,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CreativeResponse
+            ResourceOutcomeOfCreative
                 If the method is called asynchronously, returns the request
                 thread.
         """

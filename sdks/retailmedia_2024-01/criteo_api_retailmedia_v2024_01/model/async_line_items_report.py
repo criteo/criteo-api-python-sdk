@@ -55,6 +55,18 @@ class AsyncLineItemsReport(ModelNormal):
     """
 
     allowed_values = {
+        ('search_term_types',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'SEARCHED': "searched",
+            'ENTERED': "entered",
+        },
+        ('search_term_targetings',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'AUTOMATIC': "automatic",
+            'MANUAL': "manual",
+        },
         ('campaign_type',): {
             'None': None,
             'ALL': "all",
@@ -84,6 +96,7 @@ class AsyncLineItemsReport(ModelNormal):
             'ATTRIBUTEDTRANSACTIONS': "attributedTransactions",
             'ENVIRONMENT': "environment",
             'SERVEDCATEGORY': "servedCategory",
+            'CAPOUT': "capout",
         },
         ('click_attribution_window',): {
             'None': None,
@@ -122,9 +135,18 @@ class AsyncLineItemsReport(ModelNormal):
             'ENVIRONMENT': "environment",
             'PAGETYPENAME': "pageTypeName",
             'PAGECATEGORY': "pageCategory",
+            'SERVEDCATEGORY': "servedCategory",
             'TAXONOMYBREADCRUMB': "taxonomyBreadcrumb",
             'KEYWORD': "keyword",
             'SEARCHTERM': "searchTerm",
+            'SEARCHTERMTYPE': "searchTermType",
+            'SEARCHTERMTARGETING': "searchTermTargeting",
+            'CREATIVEID': "creativeId",
+            'CREATIVENAME': "creativeName",
+            'CREATIVETYPEID': "creativeTypeId",
+            'CREATIVETYPENAME': "creativeTypeName",
+            'CREATIVETEMPLATEID': "creativeTemplateId",
+            'CREATIVETEMPLATENAME': "creativeTemplateName",
         },
         ('metrics',): {
             'None': None,
@@ -149,6 +171,16 @@ class AsyncLineItemsReport(ModelNormal):
             'VIDEOSPLAYEDTO100': "videosPlayedTo100",
             'VIDEOPLAYINGRATE': "videoPlayingRate",
             'VIDEOCOMPLETIONRATE': "videoCompletionRate",
+            'VIDEOIMPRESSIONS': "videoImpressions",
+            'VIDEOMUTED': "videoMuted",
+            'VIDEOUNMUTED': "videoUnmuted",
+            'VIDEOPAUSED': "videoPaused",
+            'VIDEORESUMED': "videoResumed",
+            'VIDEOAVGINTERACTIONRATE': "videoAvgInteractionRate",
+            'VIDEOVIEWABILITY': "videoViewability",
+            'VIDEOSTARTINGRATE': "videoStartingRate",
+            'VIDEOCPC': "videoCPC",
+            'VIDEOCPCV': "videoCPCV",
             'UNIQUEVISITORS': "uniqueVisitors",
             'FREQUENCY': "frequency",
         },
@@ -182,6 +214,8 @@ class AsyncLineItemsReport(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'ids': ([str], none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'search_term_types': ([str], none_type,),  # noqa: E501
+            'search_term_targetings': ([str], none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
@@ -203,6 +237,8 @@ class AsyncLineItemsReport(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'ids': 'ids',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'search_term_types': 'searchTermTypes',  # noqa: E501
+        'search_term_targetings': 'searchTermTargetings',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
         'format': 'format',  # noqa: E501
@@ -261,6 +297,8 @@ class AsyncLineItemsReport(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             ids ([str], none_type): Line Item ids to report on. [optional]  # noqa: E501
             id (str, none_type): Line Item id to report on. [optional]  # noqa: E501
+            search_term_types ([str], none_type): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            search_term_targetings ([str], none_type): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
@@ -363,6 +401,8 @@ class AsyncLineItemsReport(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             ids ([str], none_type): Line Item ids to report on. [optional]  # noqa: E501
             id (str, none_type): Line Item id to report on. [optional]  # noqa: E501
+            search_term_types ([str], none_type): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            search_term_targetings ([str], none_type): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501

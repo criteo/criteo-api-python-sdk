@@ -107,18 +107,18 @@ class SkuDataPreview(ModelNormal):
             'is_in_stock': (bool,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
-            'category': (str,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'category': (str, none_type,),  # noqa: E501
             'is_seller_sku': (bool,),  # noqa: E501
             'is_buybox': (bool,),  # noqa: E501
-            'seller_id': (str,),  # noqa: E501
-            'seller_name': (str,),  # noqa: E501
-            'gtin': (str,),  # noqa: E501
-            'mpn': (str,),  # noqa: E501
-            'model_number': (str,),  # noqa: E501
-            'parent_id': (str,),  # noqa: E501
+            'seller_id': (str, none_type,),  # noqa: E501
+            'seller_name': (str, none_type,),  # noqa: E501
+            'gtin': (str, none_type,),  # noqa: E501
+            'mpn': (str, none_type,),  # noqa: E501
+            'model_number': (str, none_type,),  # noqa: E501
+            'parent_id': (str, none_type,),  # noqa: E501
             'image_url': (str,),  # noqa: E501
-            'product_page': (str,),  # noqa: E501
+            'product_page': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -204,18 +204,18 @@ class SkuDataPreview(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
-            description (str): A product description.. [optional]  # noqa: E501
-            category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            description (str, none_type): A product description.. [optional]  # noqa: E501
+            category (str, none_type): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
             is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
-            seller_id (str): The id of the seller.. [optional]  # noqa: E501
-            seller_name (str): The name of the seller.. [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
-            model_number (str): The Model Number for the product if available.. [optional]  # noqa: E501
-            parent_id (str): The ParentId for the product if available.. [optional]  # noqa: E501
+            seller_id (str, none_type): The id of the seller.. [optional]  # noqa: E501
+            seller_name (str, none_type): The name of the seller.. [optional]  # noqa: E501
+            gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
+            model_number (str, none_type): The Model Number for the product if available.. [optional]  # noqa: E501
+            parent_id (str, none_type): The ParentId for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
-            product_page (str): An The product page URL. [optional]  # noqa: E501
+            product_page (str, none_type): The product page URL. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -322,18 +322,18 @@ class SkuDataPreview(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
-            description (str): A product description.. [optional]  # noqa: E501
-            category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            description (str, none_type): A product description.. [optional]  # noqa: E501
+            category (str, none_type): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
             is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
-            seller_id (str): The id of the seller.. [optional]  # noqa: E501
-            seller_name (str): The name of the seller.. [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
-            model_number (str): The Model Number for the product if available.. [optional]  # noqa: E501
-            parent_id (str): The ParentId for the product if available.. [optional]  # noqa: E501
+            seller_id (str, none_type): The id of the seller.. [optional]  # noqa: E501
+            seller_name (str, none_type): The name of the seller.. [optional]  # noqa: E501
+            gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
+            model_number (str, none_type): The Model Number for the product if available.. [optional]  # noqa: E501
+            parent_id (str, none_type): The ParentId for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
-            product_page (str): An The product page URL. [optional]  # noqa: E501
+            product_page (str, none_type): The product page URL. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

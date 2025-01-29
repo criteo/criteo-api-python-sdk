@@ -21,11 +21,11 @@ from criteo_api_retailmedia_v2024_04.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_retailmedia_v2024_04.model.entity_resource_outcome_of_retail_media_account import EntityResourceOutcomeOfRetailMediaAccount
 from criteo_api_retailmedia_v2024_04.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
-from criteo_api_retailmedia_v2024_04.model.resource_outcome_of_retail_media_account import ResourceOutcomeOfRetailMediaAccount
 from criteo_api_retailmedia_v2024_04.model.value_resource_input_of_retail_media_brand_account_creation import ValueResourceInputOfRetailMediaBrandAccountCreation
 from criteo_api_retailmedia_v2024_04.model.value_resource_input_of_retail_media_brands import ValueResourceInputOfRetailMediaBrands
-from criteo_api_retailmedia_v2024_04.model.value_resource_of_retail_media_brands import ValueResourceOfRetailMediaBrands
+from criteo_api_retailmedia_v2024_04.model.value_resource_outcome_of_retail_media_brands import ValueResourceOutcomeOfRetailMediaBrands
 
 
 class AccountsApi(object):
@@ -41,7 +41,7 @@ class AccountsApi(object):
         self.api_client = api_client
         self.add_brands_endpoint = _Endpoint(
             settings={
-                'response_type': (ValueResourceOfRetailMediaBrands,),
+                'response_type': (ValueResourceOutcomeOfRetailMediaBrands,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -60,6 +60,7 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
+                    'value_resource_input_of_retail_media_brands',
                 ],
                 'enum': [
                 ],
@@ -92,17 +93,14 @@ class AccountsApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
         )
         self.create_private_market_demand_brand_account_endpoint = _Endpoint(
             settings={
-                'response_type': (ResourceOutcomeOfRetailMediaAccount,),
+                'response_type': (EntityResourceOutcomeOfRetailMediaAccount,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -153,10 +151,7 @@ class AccountsApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -226,7 +221,7 @@ class AccountsApi(object):
         )
         self.remove_brands_endpoint = _Endpoint(
             settings={
-                'response_type': (ValueResourceOfRetailMediaBrands,),
+                'response_type': (ValueResourceOutcomeOfRetailMediaBrands,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -245,6 +240,7 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
+                    'value_resource_input_of_retail_media_brands',
                 ],
                 'enum': [
                 ],
@@ -277,10 +273,7 @@ class AccountsApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -304,7 +297,7 @@ class AccountsApi(object):
             account_id (str): the account id to update
 
         Keyword Args:
-            value_resource_input_of_retail_media_brands (ValueResourceInputOfRetailMediaBrands): brands to associate to account. [optional]
+            value_resource_input_of_retail_media_brands (ValueResourceInputOfRetailMediaBrands): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -337,7 +330,7 @@ class AccountsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ValueResourceOfRetailMediaBrands
+            ValueResourceOutcomeOfRetailMediaBrands
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -385,10 +378,10 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         Args:
-            account_id (str): Account Id for the parent private market account
+            account_id (str): The given account id
 
         Keyword Args:
-            value_resource_input_of_retail_media_brand_account_creation (ValueResourceInputOfRetailMediaBrandAccountCreation): Initial creation and configuration options for the new account. [optional]
+            value_resource_input_of_retail_media_brand_account_creation (ValueResourceInputOfRetailMediaBrandAccountCreation): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -421,7 +414,7 @@ class AccountsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResourceOutcomeOfRetailMediaAccount
+            EntityResourceOutcomeOfRetailMediaAccount
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -542,7 +535,7 @@ class AccountsApi(object):
     ):
         """remove_brands  # noqa: E501
 
-        Remove a brand from an account  # noqa: E501
+        Remove brands from an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -550,10 +543,10 @@ class AccountsApi(object):
         >>> result = thread.get()
 
         Args:
-            account_id (str): The account id to update
+            account_id (str): the account id to update
 
         Keyword Args:
-            value_resource_input_of_retail_media_brands (ValueResourceInputOfRetailMediaBrands): Brands to remove from account. [optional]
+            value_resource_input_of_retail_media_brands (ValueResourceInputOfRetailMediaBrands): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -586,7 +579,7 @@ class AccountsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ValueResourceOfRetailMediaBrands
+            ValueResourceOutcomeOfRetailMediaBrands
                 If the method is called asynchronously, returns the request
                 thread.
         """

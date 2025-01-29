@@ -58,8 +58,6 @@ class ImageSlide(ModelNormal):
     }
 
     validations = {
-        ('slide_urls',): {
-        },
     }
 
     @cached_property

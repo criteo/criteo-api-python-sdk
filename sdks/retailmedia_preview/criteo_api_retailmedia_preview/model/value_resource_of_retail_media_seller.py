@@ -135,7 +135,7 @@ class ValueResourceOfRetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str, none_type): [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
             attributes (RetailMediaSeller): [optional]  # noqa: E501
         """
 
@@ -222,7 +222,7 @@ class ValueResourceOfRetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str, none_type): [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
             attributes (RetailMediaSeller): [optional]  # noqa: E501
         """
 

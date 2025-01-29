@@ -67,13 +67,7 @@ class FilesVariablesSpecification(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -89,8 +83,8 @@ class FilesVariablesSpecification(ModelNormal):
         """
         return {
             'extensions': ([str],),  # noqa: E501
-            'min_files': (int, none_type,),  # noqa: E501
             'max_bytes': (int, none_type,),  # noqa: E501
+            'min_files': (int, none_type,),  # noqa: E501
             'max_file': (int, none_type,),  # noqa: E501
         }
 
@@ -101,8 +95,8 @@ class FilesVariablesSpecification(ModelNormal):
 
     attribute_map = {
         'extensions': 'extensions',  # noqa: E501
-        'min_files': 'minFiles',  # noqa: E501
         'max_bytes': 'maxBytes',  # noqa: E501
+        'min_files': 'minFiles',  # noqa: E501
         'max_file': 'maxFile',  # noqa: E501
     }
 
@@ -113,12 +107,11 @@ class FilesVariablesSpecification(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, extensions, min_files, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, extensions, *args, **kwargs):  # noqa: E501
         """FilesVariablesSpecification - a model defined in OpenAPI
 
         Args:
             extensions ([str]): The accepted file extensions
-            min_files (int, none_type): The minimum amount of files requires
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -152,6 +145,7 @@ class FilesVariablesSpecification(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             max_bytes (int, none_type): The maximum amount of bytes per file. [optional]  # noqa: E501
+            min_files (int, none_type): The minimum amount of files requires. [optional]  # noqa: E501
             max_file (int, none_type): The maximum amount of files required. [optional]  # noqa: E501
         """
 
@@ -185,7 +179,6 @@ class FilesVariablesSpecification(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.extensions = extensions
-        self.min_files = min_files
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -206,12 +199,11 @@ class FilesVariablesSpecification(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, extensions, min_files, *args, **kwargs):  # noqa: E501
+    def __init__(self, extensions, *args, **kwargs):  # noqa: E501
         """FilesVariablesSpecification - a model defined in OpenAPI
 
         Args:
             extensions ([str]): The accepted file extensions
-            min_files (int, none_type): The minimum amount of files requires
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -245,6 +237,7 @@ class FilesVariablesSpecification(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             max_bytes (int, none_type): The maximum amount of bytes per file. [optional]  # noqa: E501
+            min_files (int, none_type): The minimum amount of files requires. [optional]  # noqa: E501
             max_file (int, none_type): The maximum amount of files required. [optional]  # noqa: E501
         """
 
@@ -276,7 +269,6 @@ class FilesVariablesSpecification(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.extensions = extensions
-        self.min_files = min_files
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

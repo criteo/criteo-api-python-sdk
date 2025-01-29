@@ -58,10 +58,6 @@ class CouponSupportedSizes(ModelNormal):
     }
 
     validations = {
-        ('logo_zone',): {
-        },
-        ('full_frame',): {
-        },
     }
 
     @cached_property

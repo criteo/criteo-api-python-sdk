@@ -110,6 +110,10 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'PAGETYPENAME': "pageTypeName",
             'KEYWORD': "keyword",
             'ATTRIBUTIONWINDOW': "attributionWindow",
+            'SALESELLERID': "saleSellerId",
+            'SALESELLERNAME': "saleSellerName",
+            'ACTIVITYSELLERID': "activitySellerId",
+            'ACTIVITYSELLERNAME': "activitySellerName",
         },
         ('metrics',): {
             'None': None,

@@ -31,10 +31,12 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_preview.model.ad_set_targeting_v24_q3 import AdSetTargetingV24Q3
+    from criteo_api_marketingsolutions_preview.model.patch_ad_set_attribution_configuration_v24_q3 import PatchAdSetAttributionConfigurationV24Q3
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_bidding_v24_q3 import PatchAdSetBiddingV24Q3
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_budget_v24_q3 import PatchAdSetBudgetV24Q3
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_scheduling_v24_q3 import PatchAdSetSchedulingV24Q3
     globals()['AdSetTargetingV24Q3'] = AdSetTargetingV24Q3
+    globals()['PatchAdSetAttributionConfigurationV24Q3'] = PatchAdSetAttributionConfigurationV24Q3
     globals()['PatchAdSetBiddingV24Q3'] = PatchAdSetBiddingV24Q3
     globals()['PatchAdSetBudgetV24Q3'] = PatchAdSetBudgetV24Q3
     globals()['PatchAdSetSchedulingV24Q3'] = PatchAdSetSchedulingV24Q3
@@ -98,6 +100,7 @@ class PatchAdSetV24Q3(ModelNormal):
             'bidding': (PatchAdSetBiddingV24Q3,),  # noqa: E501
             'targeting': (AdSetTargetingV24Q3,),  # noqa: E501
             'budget': (PatchAdSetBudgetV24Q3,),  # noqa: E501
+            'attribution_configuration': (PatchAdSetAttributionConfigurationV24Q3,),  # noqa: E501
         }
 
     @cached_property
@@ -111,6 +114,7 @@ class PatchAdSetV24Q3(ModelNormal):
         'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
         'budget': 'budget',  # noqa: E501
+        'attribution_configuration': 'attributionConfiguration',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +163,7 @@ class PatchAdSetV24Q3(ModelNormal):
             bidding (PatchAdSetBiddingV24Q3): [optional]  # noqa: E501
             targeting (AdSetTargetingV24Q3): [optional]  # noqa: E501
             budget (PatchAdSetBudgetV24Q3): [optional]  # noqa: E501
+            attribution_configuration (PatchAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -249,6 +254,7 @@ class PatchAdSetV24Q3(ModelNormal):
             bidding (PatchAdSetBiddingV24Q3): [optional]  # noqa: E501
             targeting (AdSetTargetingV24Q3): [optional]  # noqa: E501
             budget (PatchAdSetBudgetV24Q3): [optional]  # noqa: E501
+            attribution_configuration (PatchAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

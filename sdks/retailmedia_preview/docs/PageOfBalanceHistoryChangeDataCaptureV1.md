@@ -1,6 +1,6 @@
 # PageOfBalanceHistoryChangeDataCaptureV1
 
-A wrapper class to return a single page of items with metadata.
+A wrapper class to return a single page of items with metadata for offset and limit based paging.
 
 ## Properties
 Name | Type | Description | Notes

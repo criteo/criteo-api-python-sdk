@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **end_date** | **datetime** | End date | 
 **ids** | **[str], none_type** | Line Item ids to report on | [optional] 
 **id** | **str, none_type** | Line Item id to report on | [optional] 
+**search_term_types** | **[str], none_type** | Filter on the type of search term type: unknown, searched, entered | [optional] 
+**search_term_targetings** | **[str], none_type** | Filter on the type of search term targeting: unknown, automatic, manual | [optional] 
 **campaign_type** | **str, none_type** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
 **sales_channel** | **str, none_type** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **format** | **str, none_type** | Format of the output | [optional]  if omitted the server will use the default value of "json-compact"

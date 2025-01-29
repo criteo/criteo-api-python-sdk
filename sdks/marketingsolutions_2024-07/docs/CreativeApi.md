@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **create_advertiser_ad**
-> AdResponse create_advertiser_ad(advertiser_id, ad_write_request)
+> ResourceOutcomeOfAd create_advertiser_ad(advertiser_id, resource_input_of_ad_write)
 
 
 
@@ -39,8 +39,8 @@ Create an Ad
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.ad_write_request import AdWriteRequest
-from criteo_api_marketingsolutions_v2024_07.model.ad_response import AdResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_input_of_ad_write import ResourceInputOfAdWrite
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_ad import ResourceOutcomeOfAd
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -70,8 +70,8 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    ad_write_request = AdWriteRequest(
-        data=AdWriteResource(
+    resource_input_of_ad_write = ResourceInputOfAdWrite(
+        data=ResourceOfAdWrite(
             attributes=AdWrite(
                 name="name_example",
                 description="description_example",
@@ -84,11 +84,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
             id="id_example",
             type="type_example",
         ),
-    ) # AdWriteRequest | 
+    ) # ResourceInputOfAdWrite | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_advertiser_ad(advertiser_id, ad_write_request)
+        api_response = api_instance.create_advertiser_ad(advertiser_id, resource_input_of_ad_write)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_07.ApiException as e:
         print("Exception when calling CreativeApi->create_advertiser_ad: %s\n" % e)
@@ -100,11 +100,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **ad_write_request** | [**AdWriteRequest**](AdWriteRequest.md)|  |
+ **resource_input_of_ad_write** | [**ResourceInputOfAdWrite**](ResourceInputOfAdWrite.md)|  |
 
 ### Return type
 
-[**AdResponse**](AdResponse.md)
+[**ResourceOutcomeOfAd**](ResourceOutcomeOfAd.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_advertiser_coupon**
-> CouponResponse create_advertiser_coupon(advertiser_id, create_coupon_request)
+> ResourceOutcomeOfCoupon create_advertiser_coupon(advertiser_id, resource_input_of_create_coupon)
 
 
 
@@ -143,8 +143,8 @@ Create a Coupon
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.create_coupon_request import CreateCouponRequest
-from criteo_api_marketingsolutions_v2024_07.model.coupon_response import CouponResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_coupon import ResourceOutcomeOfCoupon
+from criteo_api_marketingsolutions_v2024_07.model.resource_input_of_create_coupon import ResourceInputOfCreateCoupon
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -174,8 +174,8 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    create_coupon_request = CreateCouponRequest(
-        data=CreateCouponResource(
+    resource_input_of_create_coupon = ResourceInputOfCreateCoupon(
+        data=ResourceOfCreateCoupon(
             attributes=CreateCoupon(
                 name="name_example",
                 description="description_example",
@@ -200,11 +200,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
             id="id_example",
             type="type_example",
         ),
-    ) # CreateCouponRequest | 
+    ) # ResourceInputOfCreateCoupon | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_advertiser_coupon(advertiser_id, create_coupon_request)
+        api_response = api_instance.create_advertiser_coupon(advertiser_id, resource_input_of_create_coupon)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_07.ApiException as e:
         print("Exception when calling CreativeApi->create_advertiser_coupon: %s\n" % e)
@@ -216,11 +216,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **create_coupon_request** | [**CreateCouponRequest**](CreateCouponRequest.md)|  |
+ **resource_input_of_create_coupon** | [**ResourceInputOfCreateCoupon**](ResourceInputOfCreateCoupon.md)|  |
 
 ### Return type
 
-[**CouponResponse**](CouponResponse.md)
+[**ResourceOutcomeOfCoupon**](ResourceOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_advertiser_creative**
-> CreativeResponse create_advertiser_creative(advertiser_id, creative_write_request)
+> ResourceOutcomeOfCreative create_advertiser_creative(advertiser_id, resource_input_of_creative_write)
 
 
 
@@ -258,8 +258,8 @@ Create a Creative
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.creative_response import CreativeResponse
-from criteo_api_marketingsolutions_v2024_07.model.creative_write_request import CreativeWriteRequest
+from criteo_api_marketingsolutions_v2024_07.model.resource_input_of_creative_write import ResourceInputOfCreativeWrite
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_creative import ResourceOutcomeOfCreative
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -289,8 +289,8 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    creative_write_request = CreativeWriteRequest(
-        data=CreativeWriteResource(
+    resource_input_of_creative_write = ResourceInputOfCreativeWrite(
+        data=ResourceOfCreativeWrite(
             attributes=CreativeWrite(
                 name="name_example",
                 description="description_example",
@@ -362,11 +362,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
             id="id_example",
             type="type_example",
         ),
-    ) # CreativeWriteRequest | 
+    ) # ResourceInputOfCreativeWrite | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_advertiser_creative(advertiser_id, creative_write_request)
+        api_response = api_instance.create_advertiser_creative(advertiser_id, resource_input_of_creative_write)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_07.ApiException as e:
         print("Exception when calling CreativeApi->create_advertiser_creative: %s\n" % e)
@@ -378,11 +378,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **creative_write_request** | [**CreativeWriteRequest**](CreativeWriteRequest.md)|  |
+ **resource_input_of_creative_write** | [**ResourceInputOfCreativeWrite**](ResourceInputOfCreativeWrite.md)|  |
 
 ### Return type
 
-[**CreativeResponse**](CreativeResponse.md)
+[**ResourceOutcomeOfCreative**](ResourceOutcomeOfCreative.md)
 
 ### Authorization
 
@@ -662,7 +662,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_advertiser_coupon**
-> CouponResponse edit_advertiser_coupon(advertiser_id, id, update_coupon_request)
+> ResourceOutcomeOfCoupon edit_advertiser_coupon(advertiser_id, id, resource_input_of_update_coupon)
 
 
 
@@ -677,8 +677,8 @@ Edit a specific Coupon
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.coupon_response import CouponResponse
-from criteo_api_marketingsolutions_v2024_07.model.update_coupon_request import UpdateCouponRequest
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_coupon import ResourceOutcomeOfCoupon
+from criteo_api_marketingsolutions_v2024_07.model.resource_input_of_update_coupon import ResourceInputOfUpdateCoupon
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -709,8 +709,8 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
     id = "id_example" # str | The Coupon identifier to edit.
-    update_coupon_request = UpdateCouponRequest(
-        data=UpdateCouponResource(
+    resource_input_of_update_coupon = ResourceInputOfUpdateCoupon(
+        data=ResourceOfUpdateCoupon(
             attributes=UpdateCoupon(
                 start_date="start_date_example",
                 end_date="end_date_example",
@@ -718,11 +718,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
             id="id_example",
             type="type_example",
         ),
-    ) # UpdateCouponRequest | 
+    ) # ResourceInputOfUpdateCoupon | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.edit_advertiser_coupon(advertiser_id, id, update_coupon_request)
+        api_response = api_instance.edit_advertiser_coupon(advertiser_id, id, resource_input_of_update_coupon)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_07.ApiException as e:
         print("Exception when calling CreativeApi->edit_advertiser_coupon: %s\n" % e)
@@ -735,11 +735,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
  **id** | **str**| The Coupon identifier to edit. |
- **update_coupon_request** | [**UpdateCouponRequest**](UpdateCouponRequest.md)|  |
+ **resource_input_of_update_coupon** | [**ResourceInputOfUpdateCoupon**](ResourceInputOfUpdateCoupon.md)|  |
 
 ### Return type
 
-[**CouponResponse**](CouponResponse.md)
+[**ResourceOutcomeOfCoupon**](ResourceOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -757,11 +757,12 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | The edited Coupon is returned. |  -  |
 **400** | The request contained invalid parameters. |  -  |
+**403** | The request was not properly authorized. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **edit_creative**
-> CreativeResponse edit_creative(id, creative_write_request)
+> ResourceOutcomeOfCreative edit_creative(id, resource_input_of_creative_write)
 
 
 
@@ -776,8 +777,8 @@ Edit a specific Creative
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.creative_response import CreativeResponse
-from criteo_api_marketingsolutions_v2024_07.model.creative_write_request import CreativeWriteRequest
+from criteo_api_marketingsolutions_v2024_07.model.resource_input_of_creative_write import ResourceInputOfCreativeWrite
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_creative import ResourceOutcomeOfCreative
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -807,8 +808,8 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     id = "id_example" # str | The creative identifier to edit.
-    creative_write_request = CreativeWriteRequest(
-        data=CreativeWriteResource(
+    resource_input_of_creative_write = ResourceInputOfCreativeWrite(
+        data=ResourceOfCreativeWrite(
             attributes=CreativeWrite(
                 name="name_example",
                 description="description_example",
@@ -880,11 +881,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
             id="id_example",
             type="type_example",
         ),
-    ) # CreativeWriteRequest | 
+    ) # ResourceInputOfCreativeWrite | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.edit_creative(id, creative_write_request)
+        api_response = api_instance.edit_creative(id, resource_input_of_creative_write)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_07.ApiException as e:
         print("Exception when calling CreativeApi->edit_creative: %s\n" % e)
@@ -896,11 +897,11 @@ with criteo_api_marketingsolutions_v2024_07.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The creative identifier to edit. |
- **creative_write_request** | [**CreativeWriteRequest**](CreativeWriteRequest.md)|  |
+ **resource_input_of_creative_write** | [**ResourceInputOfCreativeWrite**](ResourceInputOfCreativeWrite.md)|  |
 
 ### Return type
 
-[**CreativeResponse**](CreativeResponse.md)
+[**ResourceOutcomeOfCreative**](ResourceOutcomeOfCreative.md)
 
 ### Authorization
 
@@ -928,7 +929,7 @@ Name | Type | Description  | Notes
 
 
 
-Generate a preview of a specific Creative
+Get the preview of a specific Creative
 
 ### Example
 
@@ -1021,11 +1022,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_ad**
-> AdResponse get_ad(id)
+> ResourceOutcomeOfAd get_ad(id)
 
 
 
-Get an Ad from its id
+Get an Ad with its id
 
 ### Example
 
@@ -1036,7 +1037,7 @@ Get an Ad from its id
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.ad_response import AdResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_ad import ResourceOutcomeOfAd
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1084,7 +1085,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdResponse**](AdResponse.md)
+[**ResourceOutcomeOfAd**](ResourceOutcomeOfAd.md)
 
 ### Authorization
 
@@ -1108,7 +1109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advertiser_ads**
-> AdListResponse get_advertiser_ads(advertiser_id)
+> ResourceCollectionOutcomeOfAd get_advertiser_ads(advertiser_id)
 
 
 
@@ -1123,7 +1124,7 @@ Get the list of self-services Ads for a given advertiser
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.ad_list_response import AdListResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_collection_outcome_of_ad import ResourceCollectionOutcomeOfAd
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1183,7 +1184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdListResponse**](AdListResponse.md)
+[**ResourceCollectionOutcomeOfAd**](ResourceCollectionOutcomeOfAd.md)
 
 ### Authorization
 
@@ -1207,11 +1208,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advertiser_coupon**
-> CouponResponse get_advertiser_coupon(advertiser_id, id)
+> ResourceOutcomeOfCoupon get_advertiser_coupon(advertiser_id, id)
 
 
 
-Get a Coupon from its id
+Get a Coupon with its id
 
 ### Example
 
@@ -1222,7 +1223,7 @@ Get a Coupon from its id
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.coupon_response import CouponResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_coupon import ResourceOutcomeOfCoupon
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1272,7 +1273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CouponResponse**](CouponResponse.md)
+[**ResourceOutcomeOfCoupon**](ResourceOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -1394,7 +1395,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advertiser_coupon_supported_sizes**
-> CouponSupportedSizesResponse get_advertiser_coupon_supported_sizes(advertiser_id)
+> ResourceOutcomeOfCouponSupportedSizes get_advertiser_coupon_supported_sizes(advertiser_id)
 
 
 
@@ -1409,7 +1410,7 @@ Get the list of Coupon supported sizes
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.coupon_supported_sizes_response import CouponSupportedSizesResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_coupon_supported_sizes import ResourceOutcomeOfCouponSupportedSizes
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1467,7 +1468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CouponSupportedSizesResponse**](CouponSupportedSizesResponse.md)
+[**ResourceOutcomeOfCouponSupportedSizes**](ResourceOutcomeOfCouponSupportedSizes.md)
 
 ### Authorization
 
@@ -1490,7 +1491,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advertiser_coupons**
-> CouponListResponse get_advertiser_coupons(advertiser_id)
+> ResourceCollectionOutcomeOfCoupon get_advertiser_coupons(advertiser_id)
 
 
 
@@ -1505,7 +1506,7 @@ Get the list of self-services Coupons for a given advertiser
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.coupon_list_response import CouponListResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_collection_outcome_of_coupon import ResourceCollectionOutcomeOfCoupon
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1565,7 +1566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CouponListResponse**](CouponListResponse.md)
+[**ResourceCollectionOutcomeOfCoupon**](ResourceCollectionOutcomeOfCoupon.md)
 
 ### Authorization
 
@@ -1588,7 +1589,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advertiser_creatives**
-> CreativeListResponse get_advertiser_creatives(advertiser_id)
+> ResourceCollectionOutcomeOfCreative get_advertiser_creatives(advertiser_id)
 
 
 
@@ -1603,7 +1604,7 @@ Get the list of self-services Creatives for a given advertiser
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.creative_list_response import CreativeListResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_collection_outcome_of_creative import ResourceCollectionOutcomeOfCreative
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1663,7 +1664,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreativeListResponse**](CreativeListResponse.md)
+[**ResourceCollectionOutcomeOfCreative**](ResourceCollectionOutcomeOfCreative.md)
 
 ### Authorization
 
@@ -1687,11 +1688,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_creative**
-> CreativeResponse get_creative(id)
+> ResourceOutcomeOfCreative get_creative(id)
 
 
 
-Get a Creative from its id
+Get a Creative with its id
 
 ### Example
 
@@ -1702,7 +1703,7 @@ Get a Creative from its id
 import time
 import criteo_api_marketingsolutions_v2024_07
 from criteo_api_marketingsolutions_v2024_07.api import creative_api
-from criteo_api_marketingsolutions_v2024_07.model.creative_response import CreativeResponse
+from criteo_api_marketingsolutions_v2024_07.model.resource_outcome_of_creative import ResourceOutcomeOfCreative
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1750,7 +1751,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreativeResponse**](CreativeResponse.md)
+[**ResourceOutcomeOfCreative**](ResourceOutcomeOfCreative.md)
 
 ### Authorization
 

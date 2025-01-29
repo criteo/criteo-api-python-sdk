@@ -21,13 +21,11 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_account import EntityResourceCollectionOutcomeOfRetailMediaAccount
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account import EntityResourceCollectionOutcomeOfRetailMediaChildAccount
 from criteo_api_retailmedia_preview.model.grant_consent_input import GrantConsentInput
-from criteo_api_retailmedia_preview.model.json_api_page_response_of_account import JsonApiPageResponseOfAccount
-from criteo_api_retailmedia_preview.model.resource_outcome_of_retail_media_account import ResourceOutcomeOfRetailMediaAccount
-from criteo_api_retailmedia_preview.model.value_resource_collection_input_of_retail_media_seller import ValueResourceCollectionInputOfRetailMediaSeller
+from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_of_retail_media_seller import ValueResourceCollectionOutcomeOfRetailMediaSeller
-from criteo_api_retailmedia_preview.model.value_resource_input_of_retail_media_seller_account_creation import ValueResourceInputOfRetailMediaSellerAccountCreation
+from criteo_api_retailmedia_preview.model.value_resource_input_of_seller_search import ValueResourceInputOfSellerSearch
 
 
 class AccountsApi(object):
@@ -41,70 +39,9 @@ class AccountsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.create_private_market_demand_seller_account_endpoint = _Endpoint(
-            settings={
-                'response_type': (ResourceOutcomeOfRetailMediaAccount,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/account-management/accounts/{accountId}/create-seller-account',
-                'operation_id': 'create_private_market_demand_seller_account',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'value_resource_input_of_retail_media_seller_account_creation',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'value_resource_input_of_retail_media_seller_account_creation':
-                        (ValueResourceInputOfRetailMediaSellerAccountCreation,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'value_resource_input_of_retail_media_seller_account_creation': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
-                ]
-            },
-            api_client=api_client
-        )
         self.get_api_external_v1_account_private_market_child_accounts_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceCollectionOutcomeOfRetailMediaAccount,),
+                'response_type': (EntityResourceCollectionOutcomeOfRetailMediaChildAccount,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -159,69 +96,6 @@ class AccountsApi(object):
             headers_map={
                 'accept': [
                     'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_v1_external_accounts_endpoint = _Endpoint(
-            settings={
-                'response_type': (JsonApiPageResponseOfAccount,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts',
-                'operation_id': 'get_api_v1_external_accounts',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
                 ],
                 'content_type': [],
             },
@@ -286,26 +160,23 @@ class AccountsApi(object):
             },
             api_client=api_client
         )
-        self.update_sellers_endpoint = _Endpoint(
+        self.search_sellers_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceCollectionOutcomeOfRetailMediaSeller,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/account-management/accounts/{accountId}/sellers',
-                'operation_id': 'update_sellers',
-                'http_method': 'PUT',
+                'endpoint_path': '/preview/retail-media/accounts/sellers/search',
+                'operation_id': 'search_sellers',
+                'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'account_id',
-                    'value_resource_collection_input_of_retail_media_seller',
+                    'value_resource_input_of_seller_search',
                 ],
-                'required': [
-                    'account_id',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -319,24 +190,22 @@ class AccountsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'value_resource_collection_input_of_retail_media_seller':
-                        (ValueResourceCollectionInputOfRetailMediaSeller,),
+                    'value_resource_input_of_seller_search':
+                        (ValueResourceInputOfSellerSearch,),
                 },
                 'attribute_map': {
-                    'account_id': 'accountId',
                 },
                 'location_map': {
-                    'account_id': 'path',
-                    'value_resource_collection_input_of_retail_media_seller': 'body',
+                    'value_resource_input_of_seller_search': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'text/plain',
+                    'application/json',
+                    'text/json'
                 ],
                 'content_type': [
                     'application/json-patch+json',
@@ -347,90 +216,6 @@ class AccountsApi(object):
             },
             api_client=api_client
         )
-
-    def create_private_market_demand_seller_account(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """create_private_market_demand_seller_account  # noqa: E501
-
-        Creates a new child Demand Seller Account for the provided parent private market account  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.create_private_market_demand_seller_account(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): Account Id for the parent private market account
-
-        Keyword Args:
-            value_resource_input_of_retail_media_seller_account_creation (ValueResourceInputOfRetailMediaSellerAccountCreation): Initial creation and configuration options for the new account. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ResourceOutcomeOfRetailMediaAccount
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.create_private_market_demand_seller_account_endpoint.call_with_http_info(**kwargs)
 
     def get_api_external_v1_account_private_market_child_accounts_by_account_id(
         self,
@@ -484,7 +269,7 @@ class AccountsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceCollectionOutcomeOfRetailMediaAccount
+            EntityResourceCollectionOutcomeOfRetailMediaChildAccount
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -516,87 +301,6 @@ class AccountsApi(object):
         kwargs['account_id'] = \
             account_id
         return self.get_api_external_v1_account_private_market_child_accounts_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_v1_external_accounts(
-        self,
-        **kwargs
-    ):
-        """get_api_v1_external_accounts  # noqa: E501
-
-        Gets page of account objects that the current user can access  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v1_external_accounts(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
-            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            JsonApiPageResponseOfAccount
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_api_v1_external_accounts_endpoint.call_with_http_info(**kwargs)
 
     def grant_consent(
         self,
@@ -682,25 +386,22 @@ class AccountsApi(object):
             account_id
         return self.grant_consent_endpoint.call_with_http_info(**kwargs)
 
-    def update_sellers(
+    def search_sellers(
         self,
-        account_id,
         **kwargs
     ):
-        """update_sellers  # noqa: E501
+        """search_sellers  # noqa: E501
 
-        replace the sellers assoiated with an account  # noqa: E501
+        Get the sellers mapped to provided accounts  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_sellers(account_id, async_req=True)
+        >>> thread = api.search_sellers(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            account_id (str): the account id to update
 
         Keyword Args:
-            value_resource_collection_input_of_retail_media_seller (ValueResourceCollectionInputOfRetailMediaSeller): sellers to associate. [optional]
+            value_resource_input_of_seller_search (ValueResourceInputOfSellerSearch): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -762,7 +463,5 @@ class AccountsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.update_sellers_endpoint.call_with_http_info(**kwargs)
+        return self.search_sellers_endpoint.call_with_http_info(**kwargs)
 

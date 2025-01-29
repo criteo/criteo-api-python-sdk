@@ -35,11 +35,13 @@ def lazy_import():
     from criteo_api_retailmedia_v2024_01.model.files_variable_value import FilesVariableValue
     from criteo_api_retailmedia_v2024_01.model.hyperlink_variable_value import HyperlinkVariableValue
     from criteo_api_retailmedia_v2024_01.model.text_variable_value import TextVariableValue
+    from criteo_api_retailmedia_v2024_01.model.video_variable_value import VideoVariableValue
     globals()['ChoiceVariableValue'] = ChoiceVariableValue
     globals()['ColorVariableValue'] = ColorVariableValue
     globals()['FilesVariableValue'] = FilesVariableValue
     globals()['HyperlinkVariableValue'] = HyperlinkVariableValue
     globals()['TextVariableValue'] = TextVariableValue
+    globals()['VideoVariableValue'] = VideoVariableValue
 
 
 class TemplateVariableValue(ModelNormal):
@@ -72,14 +74,7 @@ class TemplateVariableValue(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -101,6 +96,7 @@ class TemplateVariableValue(ModelNormal):
             'color_variable_value': (ColorVariableValue,),  # noqa: E501
             'files_variable_value': (FilesVariableValue,),  # noqa: E501
             'hyperlink_variable_value': (HyperlinkVariableValue,),  # noqa: E501
+            'video_variable_value': (VideoVariableValue,),  # noqa: E501
         }
 
     @cached_property
@@ -115,6 +111,7 @@ class TemplateVariableValue(ModelNormal):
         'color_variable_value': 'colorVariableValue',  # noqa: E501
         'files_variable_value': 'filesVariableValue',  # noqa: E501
         'hyperlink_variable_value': 'hyperlinkVariableValue',  # noqa: E501
+        'video_variable_value': 'videoVariableValue',  # noqa: E501
     }
 
     read_only_vars = {
@@ -166,6 +163,7 @@ class TemplateVariableValue(ModelNormal):
             color_variable_value (ColorVariableValue): [optional]  # noqa: E501
             files_variable_value (FilesVariableValue): [optional]  # noqa: E501
             hyperlink_variable_value (HyperlinkVariableValue): [optional]  # noqa: E501
+            video_variable_value (VideoVariableValue): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -260,6 +258,7 @@ class TemplateVariableValue(ModelNormal):
             color_variable_value (ColorVariableValue): [optional]  # noqa: E501
             files_variable_value (FilesVariableValue): [optional]  # noqa: E501
             hyperlink_variable_value (HyperlinkVariableValue): [optional]  # noqa: E501
+            video_variable_value (VideoVariableValue): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -58,8 +58,6 @@ class CreateImageSlide(ModelNormal):
     }
 
     validations = {
-        ('slide_base64_strings',): {
-        },
     }
 
     @cached_property

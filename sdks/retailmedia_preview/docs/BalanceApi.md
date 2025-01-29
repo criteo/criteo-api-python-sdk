@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**get_api_v2_external_account_by_account_id_balancesbalance_id**](BalanceApi.md#get_api_v2_external_account_by_account_id_balancesbalance_id) | **GET** /preview/retail-media/accounts/{account-id}/balances/{balance-id} | 
 [**get_balance_history**](BalanceApi.md#get_balance_history) | **GET** /preview/retail-media/balances/{balanceId}/history | 
 [**patch_api_v2_external_account_by_account_id_balancesbalance_id**](BalanceApi.md#patch_api_v2_external_account_by_account_id_balancesbalance_id) | **PATCH** /preview/retail-media/accounts/{account-id}/balances/{balance-id} | 
-[**post_api_v2_external_account_add_funds_by_account_id_balancesbalance_id**](BalanceApi.md#post_api_v2_external_account_add_funds_by_account_id_balancesbalance_id) | **POST** /preview/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds | 
 [**post_api_v2_external_account_balances_by_account_id**](BalanceApi.md#post_api_v2_external_account_balances_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/balances | 
 [**post_api_v2_external_account_change_dates_by_account_id_balancesbalance_id**](BalanceApi.md#post_api_v2_external_account_change_dates_by_account_id_balancesbalance_id) | **POST** /preview/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates | 
 
@@ -375,105 +374,6 @@ Name | Type | Description  | Notes
  **account_id** | **str**| The account of the balance |
  **balance_id** | **str**| The balance to change the dates |
  **update_balance_model_v2_request** | [**UpdateBalanceModelV2Request**](UpdateBalanceModelV2Request.md)| An object that represents the available options to modify a balance. |
-
-### Return type
-
-[**BalanceResponseV2Response**](BalanceResponseV2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_v2_external_account_add_funds_by_account_id_balancesbalance_id**
-> BalanceResponseV2Response post_api_v2_external_account_add_funds_by_account_id_balancesbalance_id(account_id, balance_id, add_funds_to_balance_v2_request)
-
-
-
-Add funds to a balance for the given account id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import balance_api
-from criteo_api_retailmedia_preview.model.add_funds_to_balance_v2_request import AddFundsToBalanceV2Request
-from criteo_api_retailmedia_preview.model.balance_response_v2_response import BalanceResponseV2Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = balance_api.BalanceApi(api_client)
-    account_id = "account-id_example" # str | The account of the balance
-    balance_id = "balance-id_example" # str | The balance to add funds to
-    add_funds_to_balance_v2_request = AddFundsToBalanceV2Request(
-        data=ResourceOfAddFundsToBalanceV2(
-            attributes=AddFundsToBalanceV2(
-                delta_amount=3.14,
-                po_number="po_number_example",
-                memo="memo_example",
-            ),
-            id="id_example",
-            type="type_example",
-        ),
-    ) # AddFundsToBalanceV2Request | An object that represents the available options of adding funds to a balance.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v2_external_account_add_funds_by_account_id_balancesbalance_id(account_id, balance_id, add_funds_to_balance_v2_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling BalanceApi->post_api_v2_external_account_add_funds_by_account_id_balancesbalance_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account of the balance |
- **balance_id** | **str**| The balance to add funds to |
- **add_funds_to_balance_v2_request** | [**AddFundsToBalanceV2Request**](AddFundsToBalanceV2Request.md)| An object that represents the available options of adding funds to a balance. |
 
 ### Return type
 

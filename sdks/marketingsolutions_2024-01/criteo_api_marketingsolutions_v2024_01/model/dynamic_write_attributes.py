@@ -124,8 +124,8 @@ class DynamicWriteAttributes(ModelNormal):
 
         Args:
             logo_base64_string (str): Logo image as a base-64 encoded string
-            body_text_color (str): Color of the creative's body text  Valid hexadecimal RGB color (e.g. \"AB00FF\")
-            prices_color (str): Color of the creative's prices  Valid hexadecimal RGB color (e.g. \"AB00FF\")
+            body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\")
+            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
             product_image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.
 
@@ -160,7 +160,7 @@ class DynamicWriteAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            creative_background_color (str, none_type): Color of the creative's background  Valid hexadecimal RGB color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            creative_background_color (str, none_type): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
             primary_font (str, none_type): Font of the primary font  Valid supported font like \"Arial\". [optional]  # noqa: E501
         """
 
@@ -223,8 +223,8 @@ class DynamicWriteAttributes(ModelNormal):
 
         Args:
             logo_base64_string (str): Logo image as a base-64 encoded string
-            body_text_color (str): Color of the creative's body text  Valid hexadecimal RGB color (e.g. \"AB00FF\")
-            prices_color (str): Color of the creative's prices  Valid hexadecimal RGB color (e.g. \"AB00FF\")
+            body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\")
+            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
             product_image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.
 
@@ -259,7 +259,7 @@ class DynamicWriteAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            creative_background_color (str, none_type): Color of the creative's background  Valid hexadecimal RGB color (e.g. \"AB00FF\"). [optional]  # noqa: E501
+            creative_background_color (str, none_type): Color of the creative's background  Valid hexadecimal color (e.g. \"AB00FF\"). [optional]  # noqa: E501
             primary_font (str, none_type): Font of the primary font  Valid supported font like \"Arial\". [optional]  # noqa: E501
         """
 

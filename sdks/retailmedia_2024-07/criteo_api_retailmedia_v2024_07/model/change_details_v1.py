@@ -98,13 +98,8 @@ class ChangeDetailsV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, previous_value, current_value, change_value, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """ChangeDetailsV1 - a model defined in OpenAPI
-
-        Args:
-            previous_value (str, none_type): Previous value of a property of the insertion order.
-            current_value (str, none_type): Current value of a property of the insertion order.
-            change_value (str, none_type): Change detail of a property of the insertion order.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -137,6 +132,9 @@ class ChangeDetailsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
+            current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
+            change_value (str, none_type): Change detail of a property of the insertion order.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -168,9 +166,6 @@ class ChangeDetailsV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.previous_value = previous_value
-        self.current_value = current_value
-        self.change_value = change_value
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -191,13 +186,8 @@ class ChangeDetailsV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, previous_value, current_value, change_value, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """ChangeDetailsV1 - a model defined in OpenAPI
-
-        Args:
-            previous_value (str, none_type): Previous value of a property of the insertion order.
-            current_value (str, none_type): Current value of a property of the insertion order.
-            change_value (str, none_type): Change detail of a property of the insertion order.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -230,6 +220,9 @@ class ChangeDetailsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
+            current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
+            change_value (str, none_type): Change detail of a property of the insertion order.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,9 +252,6 @@ class ChangeDetailsV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.previous_value = previous_value
-        self.current_value = current_value
-        self.change_value = change_value
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

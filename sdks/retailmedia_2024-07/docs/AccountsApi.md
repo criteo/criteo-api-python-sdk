@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **add_brands**
-> ValueResourceOfRetailMediaBrands add_brands(account_id)
+> ValueResourceOutcomeOfRetailMediaBrands add_brands(account_id)
 
 
 
@@ -28,7 +28,7 @@ Add brands to an account
 import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import accounts_api
-from criteo_api_retailmedia_v2024_07.model.value_resource_of_retail_media_brands import ValueResourceOfRetailMediaBrands
+from criteo_api_retailmedia_v2024_07.model.value_resource_outcome_of_retail_media_brands import ValueResourceOutcomeOfRetailMediaBrands
 from criteo_api_retailmedia_v2024_07.model.value_resource_input_of_retail_media_brands import ValueResourceInputOfRetailMediaBrands
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -62,13 +62,13 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
         data=ValueResourceOfRetailMediaBrands(
             type="type_example",
-            attributes=RetailMediaBrands(
+            attributes=ExternalRetailMediaBrands(
                 brand_ids=[
                     1,
                 ],
             ),
         ),
-    ) # ValueResourceInputOfRetailMediaBrands | brands to associate to account (optional)
+    ) # ValueResourceInputOfRetailMediaBrands |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -92,11 +92,11 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| the account id to update |
- **value_resource_input_of_retail_media_brands** | [**ValueResourceInputOfRetailMediaBrands**](ValueResourceInputOfRetailMediaBrands.md)| brands to associate to account | [optional]
+ **value_resource_input_of_retail_media_brands** | [**ValueResourceInputOfRetailMediaBrands**](ValueResourceInputOfRetailMediaBrands.md)|  | [optional]
 
 ### Return type
 
-[**ValueResourceOfRetailMediaBrands**](ValueResourceOfRetailMediaBrands.md)
+[**ValueResourceOutcomeOfRetailMediaBrands**](ValueResourceOutcomeOfRetailMediaBrands.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_private_market_demand_brand_account**
-> ResourceOutcomeOfRetailMediaAccount create_private_market_demand_brand_account(account_id)
+> EntityResourceOutcomeOfRetailMediaAccount create_private_market_demand_brand_account(account_id)
 
 
 
@@ -133,7 +133,7 @@ import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import accounts_api
 from criteo_api_retailmedia_v2024_07.model.value_resource_input_of_retail_media_brand_account_creation import ValueResourceInputOfRetailMediaBrandAccountCreation
-from criteo_api_retailmedia_v2024_07.model.resource_outcome_of_retail_media_account import ResourceOutcomeOfRetailMediaAccount
+from criteo_api_retailmedia_v2024_07.model.entity_resource_outcome_of_retail_media_account import EntityResourceOutcomeOfRetailMediaAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -162,11 +162,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    account_id = "accountId_example" # str | Account Id for the parent private market account
+    account_id = "accountId_example" # str | The given account id
     value_resource_input_of_retail_media_brand_account_creation = ValueResourceInputOfRetailMediaBrandAccountCreation(
         data=ValueResourceOfRetailMediaBrandAccountCreation(
             type="type_example",
-            attributes=RetailMediaBrandAccountCreation(
+            attributes=ExternalRetailMediaBrandAccountCreation(
                 name="name_example",
                 company_name="company_name_example",
                 on_behalf_company_name="on_behalf_company_name_example",
@@ -175,7 +175,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                 ],
             ),
         ),
-    ) # ValueResourceInputOfRetailMediaBrandAccountCreation | Initial creation and configuration options for the new account (optional)
+    ) # ValueResourceInputOfRetailMediaBrandAccountCreation |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -198,12 +198,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| Account Id for the parent private market account |
- **value_resource_input_of_retail_media_brand_account_creation** | [**ValueResourceInputOfRetailMediaBrandAccountCreation**](ValueResourceInputOfRetailMediaBrandAccountCreation.md)| Initial creation and configuration options for the new account | [optional]
+ **account_id** | **str**| The given account id |
+ **value_resource_input_of_retail_media_brand_account_creation** | [**ValueResourceInputOfRetailMediaBrandAccountCreation**](ValueResourceInputOfRetailMediaBrandAccountCreation.md)|  | [optional]
 
 ### Return type
 
-[**ResourceOutcomeOfRetailMediaAccount**](ResourceOutcomeOfRetailMediaAccount.md)
+[**EntityResourceOutcomeOfRetailMediaAccount**](EntityResourceOutcomeOfRetailMediaAccount.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_private_market_demand_seller_account**
-> ResourceOutcomeOfRetailMediaAccount create_private_market_demand_seller_account(account_id)
+> EntityResourceOutcomeOfRetailMediaAccount create_private_market_demand_seller_account(account_id)
 
 
 
@@ -239,8 +239,8 @@ Creates a new child Demand Seller Account for the provided parent private market
 import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import accounts_api
+from criteo_api_retailmedia_v2024_07.model.entity_resource_outcome_of_retail_media_account import EntityResourceOutcomeOfRetailMediaAccount
 from criteo_api_retailmedia_v2024_07.model.value_resource_input_of_retail_media_seller_account_creation import ValueResourceInputOfRetailMediaSellerAccountCreation
-from criteo_api_retailmedia_v2024_07.model.resource_outcome_of_retail_media_account import ResourceOutcomeOfRetailMediaAccount
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -269,23 +269,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    account_id = "accountId_example" # str | Account Id for the parent private market account
+    account_id = "accountId_example" # str | The given account id
     value_resource_input_of_retail_media_seller_account_creation = ValueResourceInputOfRetailMediaSellerAccountCreation(
         data=ValueResourceOfRetailMediaSellerAccountCreation(
             type="type_example",
-            attributes=RetailMediaSellerAccountCreation(
+            attributes=ExternalRetailMediaSellerAccountCreation(
                 name="name_example",
                 company_name="company_name_example",
                 on_behalf_company_name="on_behalf_company_name_example",
                 sellers=[
-                    RetailMediaSeller(
+                    ExternalRetailMediaSeller(
                         seller_id="seller_id_example",
                         retailer_id=1,
                     ),
                 ],
             ),
         ),
-    ) # ValueResourceInputOfRetailMediaSellerAccountCreation | Initial creation and configuration options for the new account (optional)
+    ) # ValueResourceInputOfRetailMediaSellerAccountCreation |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -308,12 +308,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| Account Id for the parent private market account |
- **value_resource_input_of_retail_media_seller_account_creation** | [**ValueResourceInputOfRetailMediaSellerAccountCreation**](ValueResourceInputOfRetailMediaSellerAccountCreation.md)| Initial creation and configuration options for the new account | [optional]
+ **account_id** | **str**| The given account id |
+ **value_resource_input_of_retail_media_seller_account_creation** | [**ValueResourceInputOfRetailMediaSellerAccountCreation**](ValueResourceInputOfRetailMediaSellerAccountCreation.md)|  | [optional]
 
 ### Return type
 
-[**ResourceOutcomeOfRetailMediaAccount**](ResourceOutcomeOfRetailMediaAccount.md)
+[**EntityResourceOutcomeOfRetailMediaAccount**](EntityResourceOutcomeOfRetailMediaAccount.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -425,11 +425,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **remove_brands**
-> ValueResourceOfRetailMediaBrands remove_brands(account_id)
+> ValueResourceOutcomeOfRetailMediaBrands remove_brands(account_id)
 
 
 
-Remove a brand from an account
+Remove brands from an account
 
 ### Example
 
@@ -440,7 +440,7 @@ Remove a brand from an account
 import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import accounts_api
-from criteo_api_retailmedia_v2024_07.model.value_resource_of_retail_media_brands import ValueResourceOfRetailMediaBrands
+from criteo_api_retailmedia_v2024_07.model.value_resource_outcome_of_retail_media_brands import ValueResourceOutcomeOfRetailMediaBrands
 from criteo_api_retailmedia_v2024_07.model.value_resource_input_of_retail_media_brands import ValueResourceInputOfRetailMediaBrands
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -470,17 +470,17 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    account_id = "accountId_example" # str | The account id to update
+    account_id = "accountId_example" # str | the account id to update
     value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
         data=ValueResourceOfRetailMediaBrands(
             type="type_example",
-            attributes=RetailMediaBrands(
+            attributes=ExternalRetailMediaBrands(
                 brand_ids=[
                     1,
                 ],
             ),
         ),
-    ) # ValueResourceInputOfRetailMediaBrands | Brands to remove from account (optional)
+    ) # ValueResourceInputOfRetailMediaBrands |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -503,12 +503,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account id to update |
- **value_resource_input_of_retail_media_brands** | [**ValueResourceInputOfRetailMediaBrands**](ValueResourceInputOfRetailMediaBrands.md)| Brands to remove from account | [optional]
+ **account_id** | **str**| the account id to update |
+ **value_resource_input_of_retail_media_brands** | [**ValueResourceInputOfRetailMediaBrands**](ValueResourceInputOfRetailMediaBrands.md)|  | [optional]
 
 ### Return type
 
-[**ValueResourceOfRetailMediaBrands**](ValueResourceOfRetailMediaBrands.md)
+[**ValueResourceOutcomeOfRetailMediaBrands**](ValueResourceOutcomeOfRetailMediaBrands.md)
 
 ### Authorization
 
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 
 
 
-replace the sellers assoiated with an account
+replace the sellers associated with an account
 
 ### Example
 
@@ -574,18 +574,18 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    account_id = "accountId_example" # str | the account id to update
+    account_id = "accountId_example" # str | The given account id
     value_resource_collection_input_of_retail_media_seller = ValueResourceCollectionInputOfRetailMediaSeller(
         data=[
             ValueResourceOfRetailMediaSeller(
                 type="type_example",
-                attributes=RetailMediaSeller(
+                attributes=ExternalRetailMediaSeller(
                     seller_id="seller_id_example",
                     retailer_id=1,
                 ),
             ),
         ],
-    ) # ValueResourceCollectionInputOfRetailMediaSeller | sellers to associate (optional)
+    ) # ValueResourceCollectionInputOfRetailMediaSeller |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -608,8 +608,8 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| the account id to update |
- **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)| sellers to associate | [optional]
+ **account_id** | **str**| The given account id |
+ **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  | [optional]
 
 ### Return type
 
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

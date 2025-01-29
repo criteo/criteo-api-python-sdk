@@ -31,10 +31,12 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_preview.model.ad_set_targeting_v24_q3 import AdSetTargetingV24Q3
+    from criteo_api_marketingsolutions_preview.model.read_ad_set_attribution_configuration_v24_q3 import ReadAdSetAttributionConfigurationV24Q3
     from criteo_api_marketingsolutions_preview.model.read_ad_set_bidding_v24_q3 import ReadAdSetBiddingV24Q3
     from criteo_api_marketingsolutions_preview.model.read_ad_set_budget_v24_q3 import ReadAdSetBudgetV24Q3
     from criteo_api_marketingsolutions_preview.model.read_ad_set_schedule_v24_q3 import ReadAdSetScheduleV24Q3
     globals()['AdSetTargetingV24Q3'] = AdSetTargetingV24Q3
+    globals()['ReadAdSetAttributionConfigurationV24Q3'] = ReadAdSetAttributionConfigurationV24Q3
     globals()['ReadAdSetBiddingV24Q3'] = ReadAdSetBiddingV24Q3
     globals()['ReadAdSetBudgetV24Q3'] = ReadAdSetBudgetV24Q3
     globals()['ReadAdSetScheduleV24Q3'] = ReadAdSetScheduleV24Q3
@@ -135,6 +137,7 @@ class ReadAdSetV24Q3(ModelNormal):
             'budget': (ReadAdSetBudgetV24Q3,),  # noqa: E501
             'media_type': (str, none_type,),  # noqa: E501
             'video_channel': (str, none_type,),  # noqa: E501
+            'attribution_configuration': (ReadAdSetAttributionConfigurationV24Q3,),  # noqa: E501
         }
 
     @cached_property
@@ -155,6 +158,7 @@ class ReadAdSetV24Q3(ModelNormal):
         'budget': 'budget',  # noqa: E501
         'media_type': 'mediaType',  # noqa: E501
         'video_channel': 'videoChannel',  # noqa: E501
+        'attribution_configuration': 'attributionConfiguration',  # noqa: E501
     }
 
     read_only_vars = {
@@ -210,6 +214,7 @@ class ReadAdSetV24Q3(ModelNormal):
             budget (ReadAdSetBudgetV24Q3): [optional]  # noqa: E501
             media_type (str, none_type): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
+            attribution_configuration (ReadAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -307,6 +312,7 @@ class ReadAdSetV24Q3(ModelNormal):
             budget (ReadAdSetBudgetV24Q3): [optional]  # noqa: E501
             media_type (str, none_type): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
+            attribution_configuration (ReadAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

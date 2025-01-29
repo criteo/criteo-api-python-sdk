@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2024_10.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_10.model.retail_media_seller_account_creation import RetailMediaSellerAccountCreation
-    globals()['RetailMediaSellerAccountCreation'] = RetailMediaSellerAccountCreation
+    from criteo_api_retailmedia_v2024_10.model.external_retail_media_seller_account_creation import ExternalRetailMediaSellerAccountCreation
+    globals()['ExternalRetailMediaSellerAccountCreation'] = ExternalRetailMediaSellerAccountCreation
 
 
 class ValueResourceOfRetailMediaSellerAccountCreation(ModelNormal):
@@ -64,9 +64,16 @@ class ValueResourceOfRetailMediaSellerAccountCreation(ModelNormal):
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -81,7 +88,7 @@ class ValueResourceOfRetailMediaSellerAccountCreation(ModelNormal):
         lazy_import()
         return {
             'type': (str, none_type,),  # noqa: E501
-            'attributes': (RetailMediaSellerAccountCreation,),  # noqa: E501
+            'attributes': (ExternalRetailMediaSellerAccountCreation,),  # noqa: E501
         }
 
     @cached_property
@@ -136,7 +143,7 @@ class ValueResourceOfRetailMediaSellerAccountCreation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str, none_type): [optional]  # noqa: E501
-            attributes (RetailMediaSellerAccountCreation): [optional]  # noqa: E501
+            attributes (ExternalRetailMediaSellerAccountCreation): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,7 +230,7 @@ class ValueResourceOfRetailMediaSellerAccountCreation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str, none_type): [optional]  # noqa: E501
-            attributes (RetailMediaSellerAccountCreation): [optional]  # noqa: E501
+            attributes (ExternalRetailMediaSellerAccountCreation): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

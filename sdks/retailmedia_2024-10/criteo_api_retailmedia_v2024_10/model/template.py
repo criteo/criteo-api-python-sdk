@@ -76,14 +76,7 @@ class Template(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -107,7 +100,6 @@ class Template(ModelNormal):
             'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'sections': ([Section],),  # noqa: E501
-            'retailer_id': (int,),  # noqa: E501
             'sku_collection_max': (int, none_type,),  # noqa: E501
             'sku_per_collection_max': (int, none_type,),  # noqa: E501
             'displayable_skus_max': (int, none_type,),  # noqa: E501
@@ -127,7 +119,6 @@ class Template(ModelNormal):
         'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'sections': 'sections',  # noqa: E501
-        'retailer_id': 'retailerId',  # noqa: E501
         'sku_collection_max': 'skuCollectionMax',  # noqa: E501
         'sku_per_collection_max': 'skuPerCollectionMax',  # noqa: E501
         'displayable_skus_max': 'displayableSkusMax',  # noqa: E501
@@ -146,9 +137,9 @@ class Template(ModelNormal):
         Args:
             creative_format (str): The kind of creative this template can be used to build.
             name (str): The name of the template
-            sku_collection_min (int): TODO: what is it ?
-            sku_per_collection_min (int): TODO: what is it ?
-            all_collections_mandatory (bool): TODO: what is it ?
+            sku_collection_min (int): Minimum number of skus in the collection
+            sku_per_collection_min (int): Minimum number of skus per collection
+            all_collections_mandatory (bool): Marks whether or not all collections are mandatory
             created_at (datetime): The time at which the template was created
             updated_at (datetime): The time at which the template was updated
             sections ([Section]): The sections holding various template variables
@@ -184,10 +175,9 @@ class Template(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            retailer_id (int): The retailer associated to the template. [optional]  # noqa: E501
-            sku_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
-            sku_per_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
-            displayable_skus_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
+            sku_collection_max (int, none_type): Maximum number of skus in the collection. [optional]  # noqa: E501
+            sku_per_collection_max (int, none_type): Maximum number of skus per collection. [optional]  # noqa: E501
+            displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,9 +243,9 @@ class Template(ModelNormal):
         Args:
             creative_format (str): The kind of creative this template can be used to build.
             name (str): The name of the template
-            sku_collection_min (int): TODO: what is it ?
-            sku_per_collection_min (int): TODO: what is it ?
-            all_collections_mandatory (bool): TODO: what is it ?
+            sku_collection_min (int): Minimum number of skus in the collection
+            sku_per_collection_min (int): Minimum number of skus per collection
+            all_collections_mandatory (bool): Marks whether or not all collections are mandatory
             created_at (datetime): The time at which the template was created
             updated_at (datetime): The time at which the template was updated
             sections ([Section]): The sections holding various template variables
@@ -291,10 +281,9 @@ class Template(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            retailer_id (int): The retailer associated to the template. [optional]  # noqa: E501
-            sku_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
-            sku_per_collection_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
-            displayable_skus_max (int, none_type): TODO: what is it ?. [optional]  # noqa: E501
+            sku_collection_max (int, none_type): Maximum number of skus in the collection. [optional]  # noqa: E501
+            sku_per_collection_max (int, none_type): Maximum number of skus per collection. [optional]  # noqa: E501
+            displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

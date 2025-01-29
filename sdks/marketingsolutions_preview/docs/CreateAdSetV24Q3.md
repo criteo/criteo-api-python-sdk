@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **budget** | [**CreateAdSetBudgetV24Q3**](CreateAdSetBudgetV24Q3.md) |  | 
 **tracking_code** | **str, none_type** | The click tracking code associated to this Ad Set. | 
 **media_type** | **str** | Media type for the ad set | 
+**attribution_configuration** | [**CreateAdSetAttributionConfigurationV24Q3**](CreateAdSetAttributionConfigurationV24Q3.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

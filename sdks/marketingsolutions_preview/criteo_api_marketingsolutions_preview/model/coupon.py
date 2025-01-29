@@ -62,8 +62,6 @@ class Coupon(ModelNormal):
     }
 
     validations = {
-        ('images',): {
-        },
     }
 
     @cached_property

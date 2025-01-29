@@ -68,10 +68,6 @@ class SkuSlimDataV2(ModelNormal):
             'max_length': 1000,
             'min_length': 0,
         },
-        ('description',): {
-            'max_length': 1000,
-            'min_length': 0,
-        },
     }
 
     @cached_property
@@ -101,11 +97,11 @@ class SkuSlimDataV2(ModelNormal):
             'is_in_stock': (bool,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'category': (Category,),  # noqa: E501
             'brand': (Brand,),  # noqa: E501
-            'gtin': (str,),  # noqa: E501
-            'mpn': (str,),  # noqa: E501
+            'gtin': (str, none_type,),  # noqa: E501
+            'mpn': (str, none_type,),  # noqa: E501
             'image_url': (str,),  # noqa: E501
         }
 
@@ -174,11 +170,11 @@ class SkuSlimDataV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
-            description (str): A short description of the product.. [optional]  # noqa: E501
+            description (str, none_type): A short description of the product.. [optional]  # noqa: E501
             category (Category): [optional]  # noqa: E501
             brand (Brand): [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
         """
 
@@ -274,11 +270,11 @@ class SkuSlimDataV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str): A short product name.. [optional]  # noqa: E501
-            description (str): A short description of the product.. [optional]  # noqa: E501
+            description (str, none_type): A short description of the product.. [optional]  # noqa: E501
             category (Category): [optional]  # noqa: E501
             brand (Brand): [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
         """
 

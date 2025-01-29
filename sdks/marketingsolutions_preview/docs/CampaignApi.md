@@ -10,8 +10,6 @@ Method | HTTP request | Description
 [**delete_advertiser_domain_rules**](CampaignApi.md#delete_advertiser_domain_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
 [**delete_campaign_bundle_rules**](CampaignApi.md#delete_campaign_bundle_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
 [**delete_campaign_domain_rules**](CampaignApi.md#delete_campaign_domain_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/domain-rules | 
-[**delete_oc_ibrand_safety_rule**](CampaignApi.md#delete_oc_ibrand_safety_rule) | **DELETE** /preview/brand-safety/oci | 
-[**delete_oc_itargeting_rule**](CampaignApi.md#delete_oc_itargeting_rule) | **DELETE** /preview/targeting/oci | 
 [**disable_ad_set_targeting_deal_ids**](CampaignApi.md#disable_ad_set_targeting_deal_ids) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable | 
 [**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | 
 [**get_ad_set_targeting_deal_ids**](CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
@@ -24,8 +22,6 @@ Method | HTTP request | Description
 [**get_campaign_v23_q1**](CampaignApi.md#get_campaign_v23_q1) | **GET** /preview/marketing-solutions/campaigns/{campaign-id} | 
 [**get_category_bid_list**](CampaignApi.md#get_category_bid_list) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
 [**get_display_multipliers**](CampaignApi.md#get_display_multipliers) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
-[**get_oc_ibrand_safety_rule**](CampaignApi.md#get_oc_ibrand_safety_rule) | **GET** /preview/brand-safety/oci | 
-[**get_oc_itargeting_rule**](CampaignApi.md#get_oc_itargeting_rule) | **GET** /preview/targeting/oci | 
 [**get_supply_vendor_list**](CampaignApi.md#get_supply_vendor_list) | **GET** /preview/marketing-solutions/ad-sets/targeting/supply-vendors | 
 [**patch_ad_sets_v24_q3**](CampaignApi.md#patch_ad_sets_v24_q3) | **PATCH** /preview/marketing-solutions/ad-sets | 
 [**patch_campaigns**](CampaignApi.md#patch_campaigns) | **PATCH** /preview/marketing-solutions/campaigns | 
@@ -46,8 +42,6 @@ Method | HTTP request | Description
 [**start_ad_sets**](CampaignApi.md#start_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/start | 
 [**stop_ad_sets**](CampaignApi.md#stop_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/stop | 
 [**update_ad_set_audience**](CampaignApi.md#update_ad_set_audience) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/audience | 
-[**upsert_oc_ibrand_safety_rule**](CampaignApi.md#upsert_oc_ibrand_safety_rule) | **POST** /preview/brand-safety/oci | 
-[**upsert_oc_itargeting_rule**](CampaignApi.md#upsert_oc_itargeting_rule) | **POST** /preview/targeting/oci | 
 
 
 # **create_ad_set_v24_q3**
@@ -157,6 +151,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
                 tracking_code="tracking_code_example",
                 media_type="display",
+                attribution_configuration=CreateAdSetAttributionConfigurationV24Q3(
+                    attribution_method="unknown",
+                    lookback_window="unknown",
+                ),
             ),
             type="AdSet",
         ),
@@ -755,186 +753,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_oc_ibrand_safety_rule**
-> delete_oc_ibrand_safety_rule(target_type, target_id)
-
-
-
-Delete OCI brand-safety rule.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.target_type import TargetType
-from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    target_type = TargetType("Campaign") # TargetType | Defines a target for a rule.
-    target_id = 1 # int | Unique target identifier.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_instance.delete_oc_ibrand_safety_rule(target_type, target_id)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->delete_oc_ibrand_safety_rule: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **target_type** | **TargetType**| Defines a target for a rule. |
- **target_id** | **int**| Unique target identifier. |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Rule deleted |  -  |
-**400** | Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**500** | Internal service error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_oc_itargeting_rule**
-> delete_oc_itargeting_rule(target_type, target_id)
-
-
-
-Delete OCI targeting rule.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.target_type import TargetType
-from criteo_api_marketingsolutions_preview.model.oci_targeting_response import OciTargetingResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    target_type = TargetType("Campaign") # TargetType | Defines a target for a rule.
-    target_id = 1 # int | Unique target identifier.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_instance.delete_oc_itargeting_rule(target_type, target_id)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->delete_oc_itargeting_rule: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **target_type** | **TargetType**| Defines a target for a rule. |
- **target_id** | **int**| Unique target identifier. |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Rule deleted |  -  |
-**400** | Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**500** | Internal service error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1982,188 +1800,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_oc_ibrand_safety_rule**
-> OciBrandSafetyResponse get_oc_ibrand_safety_rule(target_type, target_id)
-
-
-
-Get OCI brand-safety rule for the specified target
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.target_type import TargetType
-from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    target_type = TargetType("Campaign") # TargetType | Defines a target for a rule.
-    target_id = 1 # int | Unique target identifier.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_oc_ibrand_safety_rule(target_type, target_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_oc_ibrand_safety_rule: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **target_type** | **TargetType**| Defines a target for a rule. |
- **target_id** | **int**| Unique target identifier. |
-
-### Return type
-
-[**OciBrandSafetyResponse**](OciBrandSafetyResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Rule found |  -  |
-**400** | Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**500** | Internal service error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_oc_itargeting_rule**
-> OciTargetingResponse get_oc_itargeting_rule(target_type, target_id)
-
-
-
-Get OCI targeting rule for specified target.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.target_type import TargetType
-from criteo_api_marketingsolutions_preview.model.oci_targeting_response import OciTargetingResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    target_type = TargetType("Campaign") # TargetType | Defines a target for a rule.
-    target_id = 1 # int | Unique target identifier.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_oc_itargeting_rule(target_type, target_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_oc_itargeting_rule: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **target_type** | **TargetType**| Defines a target for a rule. |
- **target_id** | **int**| Unique target identifier. |
-
-### Return type
-
-[**OciTargetingResponse**](OciTargetingResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Rule found |  -  |
-**400** | Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**500** | Internal service error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_supply_vendor_list**
 > SupplyVendorListResponse get_supply_vendor_list()
 
@@ -2347,6 +1983,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                         budget_delivery_week="undefined",
                         budget_amount=NillableDecimal(
                             value=3.14,
+                        ),
+                    ),
+                    attribution_configuration=PatchAdSetAttributionConfigurationV24Q3(
+                        attribution_method="unknown",
+                        lookback_window=NillableLookbackWindowV24Q3(
+                            value="unknown",
                         ),
                     ),
                 ),
@@ -4339,204 +3981,6 @@ Name | Type | Description  | Notes
 **400** | Bad request |  -  |
 **401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **upsert_oc_ibrand_safety_rule**
-> OciBrandSafetyResponse upsert_oc_ibrand_safety_rule(oci_brand_safety_rule)
-
-
-
-Create or update a new or replace existing OCI brand-safety rule.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.oci_brand_safety_rule import OciBrandSafetyRule
-from criteo_api_marketingsolutions_preview.model.oci_brand_safety_response import OciBrandSafetyResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    oci_brand_safety_rule = OciBrandSafetyRule(
-        target=Target(
-            type=TargetType("Campaign"),
-            id=1,
-        ),
-        blacklisted=[
-            OciBrandSafetySegment("gv_adult"),
-        ],
-    ) # OciBrandSafetyRule | OCI brand-safety rule input
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.upsert_oc_ibrand_safety_rule(oci_brand_safety_rule)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->upsert_oc_ibrand_safety_rule: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oci_brand_safety_rule** | [**OciBrandSafetyRule**](OciBrandSafetyRule.md)| OCI brand-safety rule input |
-
-### Return type
-
-[**OciBrandSafetyResponse**](OciBrandSafetyResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Rule created |  -  |
-**400** | Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**500** | Internal service error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **upsert_oc_itargeting_rule**
-> OciTargetingResponse upsert_oc_itargeting_rule(oci_targeting_rule)
-
-
-
-Create or update new or update existing OCI targeting rule.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.oci_targeting_rule import OciTargetingRule
-from criteo_api_marketingsolutions_preview.model.oci_targeting_response import OciTargetingResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    oci_targeting_rule = OciTargetingRule(
-        target=Target(
-            type=TargetType("Campaign"),
-            id=1,
-        ),
-        rule=OciTargetingNode(
-            operator=TargetingOperator("Or"),
-            value="value_example",
-            children=[
-                OciTargetingNode(),
-            ],
-        ),
-    ) # OciTargetingRule | OCI targeting rule input
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.upsert_oc_itargeting_rule(oci_targeting_rule)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->upsert_oc_itargeting_rule: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oci_targeting_rule** | [**OciTargetingRule**](OciTargetingRule.md)| OCI targeting rule input |
-
-### Return type
-
-[**OciTargetingResponse**](OciTargetingResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Rule created |  -  |
-**400** | Invalid input |  -  |
-**401** | Unauthorized |  -  |
-**403** | Forbidden |  -  |
-**500** | Internal service error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

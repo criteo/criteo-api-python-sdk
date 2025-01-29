@@ -30,9 +30,9 @@ from criteo_api_retailmedia_v2024_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_07.model.page_type_environment import PageTypeEnvironment
+    from criteo_api_retailmedia_v2024_07.model.page_type_environment202210 import PageTypeEnvironment202210
     from criteo_api_retailmedia_v2024_07.model.template_variable_value import TemplateVariableValue
-    globals()['PageTypeEnvironment'] = PageTypeEnvironment
+    globals()['PageTypeEnvironment202210'] = PageTypeEnvironment202210
     globals()['TemplateVariableValue'] = TemplateVariableValue
 
 
@@ -84,14 +84,7 @@ class Creative202210(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -114,11 +107,11 @@ class Creative202210(ModelNormal):
             'template_name': (str,),  # noqa: E501
             'format_id': (int,),  # noqa: E501
             'creative_format_type': (str,),  # noqa: E501
-            'environments': ([PageTypeEnvironment],),  # noqa: E501
+            'environments': ([PageTypeEnvironment202210],),  # noqa: E501
             'template_variable_values': ([TemplateVariableValue],),  # noqa: E501
             'brand_id': (int, none_type,),  # noqa: E501
-            'associated_line_item_ids': ([str],),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'associated_line_item_ids': ([str], none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -159,7 +152,7 @@ class Creative202210(ModelNormal):
             template_name (str): Template Name
             format_id (int): Format Id
             creative_format_type (str): Creative format type
-            environments ([PageTypeEnvironment]): Environment type (e.g. mobile, web, app)
+            environments ([PageTypeEnvironment202210]): Environment type (e.g. mobile, web, app)
             template_variable_values ([TemplateVariableValue]): The template chosen values
 
         Keyword Args:
@@ -194,8 +187,8 @@ class Creative202210(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
-            associated_line_item_ids ([str]): Associated Line Item Ids. [optional]  # noqa: E501
-            updated_at (datetime): Updated at time. [optional]  # noqa: E501
+            associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
+            updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -267,7 +260,7 @@ class Creative202210(ModelNormal):
             template_name (str): Template Name
             format_id (int): Format Id
             creative_format_type (str): Creative format type
-            environments ([PageTypeEnvironment]): Environment type (e.g. mobile, web, app)
+            environments ([PageTypeEnvironment202210]): Environment type (e.g. mobile, web, app)
             template_variable_values ([TemplateVariableValue]): The template chosen values
 
         Keyword Args:
@@ -302,8 +295,8 @@ class Creative202210(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
-            associated_line_item_ids ([str]): Associated Line Item Ids. [optional]  # noqa: E501
-            updated_at (datetime): Updated at time. [optional]  # noqa: E501
+            associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
+            updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

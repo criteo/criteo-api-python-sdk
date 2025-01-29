@@ -30,10 +30,12 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_preview.model.create_ad_set_attribution_configuration_v24_q3 import CreateAdSetAttributionConfigurationV24Q3
     from criteo_api_marketingsolutions_preview.model.create_ad_set_bidding_v24_q3 import CreateAdSetBiddingV24Q3
     from criteo_api_marketingsolutions_preview.model.create_ad_set_budget_v24_q3 import CreateAdSetBudgetV24Q3
     from criteo_api_marketingsolutions_preview.model.create_ad_set_schedule_v24_q3 import CreateAdSetScheduleV24Q3
     from criteo_api_marketingsolutions_preview.model.create_ad_set_targeting_v24_q3 import CreateAdSetTargetingV24Q3
+    globals()['CreateAdSetAttributionConfigurationV24Q3'] = CreateAdSetAttributionConfigurationV24Q3
     globals()['CreateAdSetBiddingV24Q3'] = CreateAdSetBiddingV24Q3
     globals()['CreateAdSetBudgetV24Q3'] = CreateAdSetBudgetV24Q3
     globals()['CreateAdSetScheduleV24Q3'] = CreateAdSetScheduleV24Q3
@@ -120,6 +122,7 @@ class CreateAdSetV24Q3(ModelNormal):
             'budget': (CreateAdSetBudgetV24Q3,),  # noqa: E501
             'tracking_code': (str, none_type,),  # noqa: E501
             'media_type': (str,),  # noqa: E501
+            'attribution_configuration': (CreateAdSetAttributionConfigurationV24Q3,),  # noqa: E501
         }
 
     @cached_property
@@ -138,6 +141,7 @@ class CreateAdSetV24Q3(ModelNormal):
         'budget': 'budget',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
         'media_type': 'mediaType',  # noqa: E501
+        'attribution_configuration': 'attributionConfiguration',  # noqa: E501
     }
 
     read_only_vars = {
@@ -193,6 +197,7 @@ class CreateAdSetV24Q3(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attribution_configuration (CreateAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -300,6 +305,7 @@ class CreateAdSetV24Q3(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attribution_configuration (CreateAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

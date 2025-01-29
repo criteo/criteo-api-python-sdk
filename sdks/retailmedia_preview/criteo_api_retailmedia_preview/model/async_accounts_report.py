@@ -60,6 +60,18 @@ class AsyncAccountsReport(ModelNormal):
             'CAMPAIGN': "campaign",
             'LINEITEM': "lineItem",
         },
+        ('search_term_types',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'SEARCHED': "searched",
+            'ENTERED': "entered",
+        },
+        ('search_term_targetings',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'AUTOMATIC': "automatic",
+            'MANUAL': "manual",
+        },
         ('campaign_type',): {
             'None': None,
             'ALL': "all",
@@ -89,6 +101,7 @@ class AsyncAccountsReport(ModelNormal):
             'ATTRIBUTEDTRANSACTIONS': "attributedTransactions",
             'ENVIRONMENT': "environment",
             'SERVEDCATEGORY': "servedCategory",
+            'CAPOUT': "capout",
         },
         ('click_attribution_window',): {
             'None': None,
@@ -127,9 +140,18 @@ class AsyncAccountsReport(ModelNormal):
             'ENVIRONMENT': "environment",
             'PAGETYPENAME': "pageTypeName",
             'PAGECATEGORY': "pageCategory",
+            'SERVEDCATEGORY': "servedCategory",
             'TAXONOMYBREADCRUMB': "taxonomyBreadcrumb",
             'KEYWORD': "keyword",
             'SEARCHTERM': "searchTerm",
+            'SEARCHTERMTYPE': "searchTermType",
+            'SEARCHTERMTARGETING': "searchTermTargeting",
+            'CREATIVEID': "creativeId",
+            'CREATIVENAME': "creativeName",
+            'CREATIVETYPEID': "creativeTypeId",
+            'CREATIVETYPENAME': "creativeTypeName",
+            'CREATIVETEMPLATEID': "creativeTemplateId",
+            'CREATIVETEMPLATENAME': "creativeTemplateName",
         },
         ('metrics',): {
             'None': None,
@@ -154,6 +176,16 @@ class AsyncAccountsReport(ModelNormal):
             'VIDEOSPLAYEDTO100': "videosPlayedTo100",
             'VIDEOPLAYINGRATE': "videoPlayingRate",
             'VIDEOCOMPLETIONRATE': "videoCompletionRate",
+            'VIDEOIMPRESSIONS': "videoImpressions",
+            'VIDEOMUTED': "videoMuted",
+            'VIDEOUNMUTED': "videoUnmuted",
+            'VIDEOPAUSED': "videoPaused",
+            'VIDEORESUMED': "videoResumed",
+            'VIDEOAVGINTERACTIONRATE': "videoAvgInteractionRate",
+            'VIDEOVIEWABILITY': "videoViewability",
+            'VIDEOSTARTINGRATE': "videoStartingRate",
+            'VIDEOCPC': "videoCPC",
+            'VIDEOCPCV': "videoCPCV",
             'UNIQUEVISITORS': "uniqueVisitors",
             'FREQUENCY': "frequency",
         },
@@ -187,6 +219,8 @@ class AsyncAccountsReport(ModelNormal):
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
             'aggregation_level': (str, none_type,),  # noqa: E501
+            'search_term_types': ([str], none_type,),  # noqa: E501
+            'search_term_targetings': ([str], none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str, none_type,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
@@ -208,6 +242,8 @@ class AsyncAccountsReport(ModelNormal):
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'aggregation_level': 'aggregationLevel',  # noqa: E501
+        'search_term_types': 'searchTermTypes',  # noqa: E501
+        'search_term_targetings': 'searchTermTargetings',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
         'format': 'format',  # noqa: E501
@@ -266,6 +302,8 @@ class AsyncAccountsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregation_level (str, none_type): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            search_term_types ([str], none_type): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            search_term_targetings ([str], none_type): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
@@ -369,6 +407,8 @@ class AsyncAccountsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregation_level (str, none_type): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            search_term_types ([str], none_type): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            search_term_targetings ([str], none_type): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501

@@ -66,8 +66,6 @@ class CreateCoupon(ModelNormal):
     }
 
     validations = {
-        ('images',): {
-        },
         ('show_every',): {
             'inclusive_maximum': 10,
             'inclusive_minimum': 1,

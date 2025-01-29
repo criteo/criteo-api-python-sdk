@@ -66,6 +66,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                     "ids_example",
                 ],
                 id="id_example",
+                search_term_types=[
+                    "unknown",
+                ],
+                search_term_targetings=[
+                    "unknown",
+                ],
                 campaign_type="all",
                 sales_channel="all",
                 format="json-compact",
@@ -179,6 +185,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                     "ids_example",
                 ],
                 id="id_example",
+                search_term_types=[
+                    "unknown",
+                ],
+                search_term_targetings=[
+                    "unknown",
+                ],
                 campaign_type="all",
                 sales_channel="all",
                 format="json-compact",
@@ -292,6 +304,18 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                     "ids_example",
                 ],
                 id="id_example",
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                account_ids=[
+                    "account_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
                 report_type="advertiser",
                 revenue_type="auction",
                 sold_by="directSold",

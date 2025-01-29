@@ -60,15 +60,9 @@ class TextVariableValue(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -81,7 +75,7 @@ class TextVariableValue(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'text': (str,),  # noqa: E501
+            'text': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -100,11 +94,8 @@ class TextVariableValue(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, text, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """TextVariableValue - a model defined in OpenAPI
-
-        Args:
-            text (str): The displayed text
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -137,6 +128,7 @@ class TextVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            text (str, none_type): The displayed text. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -168,7 +160,6 @@ class TextVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.text = text
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -189,11 +180,8 @@ class TextVariableValue(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, text, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """TextVariableValue - a model defined in OpenAPI
-
-        Args:
-            text (str): The displayed text
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -226,6 +214,7 @@ class TextVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            text (str, none_type): The displayed text. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,7 +244,6 @@ class TextVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.text = text
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

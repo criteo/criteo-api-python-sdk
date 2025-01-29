@@ -85,7 +85,7 @@ class Category(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'text': (str,),  # noqa: E501
+            'text': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class Category(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            text (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            text (str, none_type): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,7 +224,7 @@ class Category(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            text (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            text (str, none_type): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

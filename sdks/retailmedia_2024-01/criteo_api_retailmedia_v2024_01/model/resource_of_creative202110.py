@@ -64,16 +64,9 @@ class ResourceOfCreative202110(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -87,9 +80,9 @@ class ResourceOfCreative202110(ModelNormal):
         """
         lazy_import()
         return {
+            'attributes': (Creative202110,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'attributes': (Creative202110,),  # noqa: E501
         }
 
     @cached_property
@@ -98,9 +91,9 @@ class ResourceOfCreative202110(ModelNormal):
 
 
     attribute_map = {
+        'attributes': 'attributes',  # noqa: E501
         'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,9 +137,9 @@ class ResourceOfCreative202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (Creative202110): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
-            attributes (Creative202110): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,9 +225,9 @@ class ResourceOfCreative202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (Creative202110): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
-            attributes (Creative202110): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

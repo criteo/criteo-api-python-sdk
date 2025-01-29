@@ -64,9 +64,16 @@ class ValueResourceCollectionInputOfRetailMediaSeller(ModelNormal):
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -80,7 +87,7 @@ class ValueResourceCollectionInputOfRetailMediaSeller(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([ValueResourceOfRetailMediaSeller], none_type,),  # noqa: E501
+            'data': ([ValueResourceOfRetailMediaSeller],),  # noqa: E501
         }
 
     @cached_property
@@ -133,7 +140,7 @@ class ValueResourceCollectionInputOfRetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([ValueResourceOfRetailMediaSeller], none_type): [optional]  # noqa: E501
+            data ([ValueResourceOfRetailMediaSeller]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -219,7 +226,7 @@ class ValueResourceCollectionInputOfRetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([ValueResourceOfRetailMediaSeller], none_type): [optional]  # noqa: E501
+            data ([ValueResourceOfRetailMediaSeller]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

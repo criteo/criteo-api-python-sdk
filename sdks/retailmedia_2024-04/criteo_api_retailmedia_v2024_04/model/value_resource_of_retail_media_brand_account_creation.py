@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2024_04.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_04.model.retail_media_brand_account_creation import RetailMediaBrandAccountCreation
-    globals()['RetailMediaBrandAccountCreation'] = RetailMediaBrandAccountCreation
+    from criteo_api_retailmedia_v2024_04.model.external_retail_media_brand_account_creation import ExternalRetailMediaBrandAccountCreation
+    globals()['ExternalRetailMediaBrandAccountCreation'] = ExternalRetailMediaBrandAccountCreation
 
 
 class ValueResourceOfRetailMediaBrandAccountCreation(ModelNormal):
@@ -64,7 +64,14 @@ class ValueResourceOfRetailMediaBrandAccountCreation(ModelNormal):
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -81,7 +88,7 @@ class ValueResourceOfRetailMediaBrandAccountCreation(ModelNormal):
         lazy_import()
         return {
             'type': (str, none_type,),  # noqa: E501
-            'attributes': (RetailMediaBrandAccountCreation,),  # noqa: E501
+            'attributes': (ExternalRetailMediaBrandAccountCreation,),  # noqa: E501
         }
 
     @cached_property
@@ -136,7 +143,7 @@ class ValueResourceOfRetailMediaBrandAccountCreation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str, none_type): [optional]  # noqa: E501
-            attributes (RetailMediaBrandAccountCreation): [optional]  # noqa: E501
+            attributes (ExternalRetailMediaBrandAccountCreation): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,7 +230,7 @@ class ValueResourceOfRetailMediaBrandAccountCreation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             type (str, none_type): [optional]  # noqa: E501
-            attributes (RetailMediaBrandAccountCreation): [optional]  # noqa: E501
+            attributes (ExternalRetailMediaBrandAccountCreation): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

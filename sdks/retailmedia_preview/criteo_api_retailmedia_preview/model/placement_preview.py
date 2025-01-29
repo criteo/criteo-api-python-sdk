@@ -72,6 +72,10 @@ class PlacementPreview(ModelNormal):
             'WEB': "Web",
             'MOBILE': "Mobile",
             'APP': "App",
+            'LOCKOUT': "Lockout",
+            'MIXED': "Mixed",
+            'IOS': "iOS",
+            'ANDROID': "Android",
         },
     }
 

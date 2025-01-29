@@ -62,8 +62,6 @@ class HtmlTagWriteAttributes(ModelNormal):
     }
 
     validations = {
-        ('tags',): {
-        },
     }
 
     @cached_property

@@ -9,13 +9,17 @@ Name | Type | Description | Notes
 **end_date** | **datetime** | End date | 
 **ids** | **[str], none_type** | Supply account ids to report on | [optional] 
 **id** | **str, none_type** | Supply account id to report on | [optional] 
+**retailer_ids** | **[str], none_type** | Retailer ids to filter | [optional] 
+**account_ids** | **[str], none_type** | Account ids to filter | [optional] 
+**campaign_ids** | **[str], none_type** | Campaign ids to filter | [optional] 
+**line_item_ids** | **[str], none_type** | Line item ids to filter | [optional] 
 **report_type** | **str, none_type** | Type of report | [optional] 
 **revenue_type** | **str, none_type** | Type of revenue | [optional] 
 **sold_by** | **str, none_type** | Filter on the seller: Indirect Sold, Direct Sold or Private Market | [optional] 
 **buy_type** | **str, none_type** | Filter on buy type: Auction, Preferred Deals or Sponsorship | [optional] 
 **advertiser_types** | **[str], none_type** | Filter on the type of advertiser: retailer, brand, seller | [optional] 
 **sku_relations** | **[str], none_type** | Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller | [optional] 
-**format** | **str, none_type** | Format of the output | [optional] 
+**format** | **str, none_type** | Format of the output | [optional]  if omitted the server will use the default value of "json"
 **campaign_type** | **str, none_type** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
 **sales_channel** | **str, none_type** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **click_attribution_window** | **str, none_type** | Click attribution window | [optional]  if omitted the server will use the default value of "none"

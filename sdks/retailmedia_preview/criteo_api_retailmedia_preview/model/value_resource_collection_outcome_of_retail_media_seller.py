@@ -30,9 +30,9 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.common_problem import CommonProblem
+    from criteo_api_retailmedia_preview.model.sdk_api_rest_common_problem import SdkApiRestCommonProblem
     from criteo_api_retailmedia_preview.model.value_resource_of_retail_media_seller import ValueResourceOfRetailMediaSeller
-    globals()['CommonProblem'] = CommonProblem
+    globals()['SdkApiRestCommonProblem'] = SdkApiRestCommonProblem
     globals()['ValueResourceOfRetailMediaSeller'] = ValueResourceOfRetailMediaSeller
 
 
@@ -83,8 +83,8 @@ class ValueResourceCollectionOutcomeOfRetailMediaSeller(ModelNormal):
         lazy_import()
         return {
             'data': ([ValueResourceOfRetailMediaSeller], none_type,),  # noqa: E501
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
-            'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
+            'errors': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,8 +142,8 @@ class ValueResourceCollectionOutcomeOfRetailMediaSeller(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ValueResourceOfRetailMediaSeller], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
-            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
+            errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,8 +230,8 @@ class ValueResourceCollectionOutcomeOfRetailMediaSeller(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ValueResourceOfRetailMediaSeller], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
-            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
+            errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

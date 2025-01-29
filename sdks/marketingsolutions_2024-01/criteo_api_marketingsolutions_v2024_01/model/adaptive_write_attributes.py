@@ -80,10 +80,6 @@ class AdaptiveWriteAttributes(ModelNormal):
         ('calls_to_action',): {
             'min_items': 1,
         },
-        ('image_sets_base64',): {
-        },
-        ('video_base64_strings',): {
-        },
     }
 
     @cached_property

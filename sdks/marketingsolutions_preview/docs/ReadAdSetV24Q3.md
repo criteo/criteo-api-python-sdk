@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **budget** | [**ReadAdSetBudgetV24Q3**](ReadAdSetBudgetV24Q3.md) |  | [optional] 
 **media_type** | **str, none_type** |  | [optional] 
 **video_channel** | **str, none_type** |  | [optional] 
+**attribution_configuration** | [**ReadAdSetAttributionConfigurationV24Q3**](ReadAdSetAttributionConfigurationV24Q3.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

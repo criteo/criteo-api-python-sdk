@@ -67,10 +67,6 @@ class DynamicAttributes(ModelNormal):
     }
 
     validations = {
-        ('logos',): {
-        },
-        ('calls_to_action',): {
-        },
     }
 
     @cached_property

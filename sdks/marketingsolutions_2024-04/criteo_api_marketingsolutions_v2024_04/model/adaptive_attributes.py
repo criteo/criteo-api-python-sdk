@@ -78,16 +78,6 @@ class AdaptiveAttributes(ModelNormal):
     }
 
     validations = {
-        ('layouts',): {
-        },
-        ('logos',): {
-        },
-        ('calls_to_action',): {
-        },
-        ('image_sets',): {
-        },
-        ('videos',): {
-        },
     }
 
     @cached_property
