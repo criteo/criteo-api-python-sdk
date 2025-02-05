@@ -1447,6 +1447,7 @@ class CampaignApi(object):
                     'account_id',
                 ],
                 'nullable': [
+                    'limit_to_type',
                 ],
                 'enum': [
                     'limit_to_type',
@@ -1459,7 +1460,7 @@ class CampaignApi(object):
                 },
                 'allowed_values': {
                     ('limit_to_type',): {
-
+                        'None': None,
                         "UNKNOWN": "Unknown",
                         "AUCTION": "Auction",
                         "PREFERRED": "Preferred"
@@ -1471,7 +1472,7 @@ class CampaignApi(object):
                     'limit_to_campaign_id':
                         ([str],),
                     'limit_to_type':
-                        (str,),
+                        (str, none_type,),
                     'limit_to_id':
                         ([str],),
                     'page_index':
@@ -5614,7 +5615,7 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_campaign_id ([str]): The campaign ids that you would like to limit your result set to. [optional]
-            limit_to_type (str): The campaign types that you would like to limit your result set to. [optional]
+            limit_to_type (str, none_type): The campaign types that you would like to limit your result set to. [optional]
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
             page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
             page_size (int): The maximum number of items you would like to receive in this request. [optional]

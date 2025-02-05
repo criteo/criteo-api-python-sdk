@@ -26,7 +26,6 @@ Method | HTTP request | Description
 [**get_api_v1_external_account_retailers_by_account_id**](CampaignApi.md#get_api_v1_external_account_retailers_by_account_id) | **GET** /2025-01/retail-media/accounts/{accountId}/retailers | 
 [**get_api_v1_external_catalog_output_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_output_by_catalog_id) | **GET** /2025-01/retail-media/catalogs/{catalogId}/output | 
 [**get_api_v1_external_catalog_status_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_status_by_catalog_id) | **GET** /2025-01/retail-media/catalogs/{catalogId}/status | 
-[**get_api_v1_external_retailer_brands_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_brands_by_retailer_id) | **GET** /2025-01/retail-media/retailers/{retailerId}/brands | 
 [**get_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api_v2_external_account_by_account_id_creativescreative_id) | **GET** /2025-01/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_api_v2_external_account_line_items_by_account_id**](CampaignApi.md#get_api_v2_external_account_line_items_by_account_id) | **GET** /2025-01/retail-media/accounts/{account-id}/line-items | 
 [**get_api_v2_external_auction_line_item_by_line_item_id**](CampaignApi.md#get_api_v2_external_auction_line_item_by_line_item_id) | **GET** /2025-01/retail-media/auction-line-items/{line-item-id} | 
@@ -2071,102 +2070,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api_v1_external_retailer_brands_by_retailer_id**
-> BrandPreviewListResponse get_api_v1_external_retailer_brands_by_retailer_id(retailer_id)
-
-
-
-Gets the brands for the given retailer
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_01
-from criteo_api_retailmedia_v2025_01.api import campaign_api
-from criteo_api_retailmedia_v2025_01.model.brand_preview_list_response import BrandPreviewListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_01.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_01.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | The retailer id for which brands should be fetched.
-    sku_stock_type_filter = "first-party" # str | Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party (optional)
-    brand_type = "all" # str |  Filter to narrow down brands [all|uc|retailer]. Defaults to uc (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_v1_external_retailer_brands_by_retailer_id(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_retailer_brands_by_retailer_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api_v1_external_retailer_brands_by_retailer_id(retailer_id, sku_stock_type_filter=sku_stock_type_filter, brand_type=brand_type)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_retailer_brands_by_retailer_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer id for which brands should be fetched. |
- **sku_stock_type_filter** | **str**| Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party | [optional]
- **brand_type** | **str**|  Filter to narrow down brands [all|uc|retailer]. Defaults to uc | [optional]
-
-### Return type
-
-[**BrandPreviewListResponse**](BrandPreviewListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Brands found. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_api_v2_external_account_by_account_id_creativescreative_id**
 > Creative2Response get_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id)
 
@@ -2302,7 +2205,7 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
     limit_to_campaign_id = [
         "limitToCampaignId_example",
     ] # [str] | The campaign ids that you would like to limit your result set to (optional)
-    limit_to_type = "Unknown" # str | The campaign types that you would like to limit your result set to (optional)
+    limit_to_type = "Unknown" # str, none_type | The campaign types that you would like to limit your result set to (optional)
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
@@ -2332,7 +2235,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
  **limit_to_campaign_id** | **[str]**| The campaign ids that you would like to limit your result set to | [optional]
- **limit_to_type** | **str**| The campaign types that you would like to limit your result set to | [optional]
+ **limit_to_type** | **str, none_type**| The campaign types that you would like to limit your result set to | [optional]
  **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
  **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
  **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]

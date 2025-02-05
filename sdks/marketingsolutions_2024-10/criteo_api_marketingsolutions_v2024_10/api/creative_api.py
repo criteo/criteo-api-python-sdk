@@ -667,6 +667,8 @@ class CreativeApi(object):
                     'advertiser_id',
                 ],
                 'nullable': [
+                    'limit',
+                    'offset',
                 ],
                 'enum': [
                 ],
@@ -682,9 +684,9 @@ class CreativeApi(object):
                     'advertiser_id':
                         (str,),
                     'limit':
-                        (int,),
+                        (int, none_type,),
                     'offset':
-                        (int,),
+                        (int, none_type,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
@@ -920,6 +922,8 @@ class CreativeApi(object):
                     'advertiser_id',
                 ],
                 'nullable': [
+                    'limit',
+                    'offset',
                 ],
                 'enum': [
                 ],
@@ -935,9 +939,9 @@ class CreativeApi(object):
                     'advertiser_id':
                         (str,),
                     'limit':
-                        (int,),
+                        (int, none_type,),
                     'offset':
-                        (int,),
+                        (int, none_type,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
@@ -984,6 +988,8 @@ class CreativeApi(object):
                     'advertiser_id',
                 ],
                 'nullable': [
+                    'limit',
+                    'offset',
                 ],
                 'enum': [
                 ],
@@ -999,9 +1005,9 @@ class CreativeApi(object):
                     'advertiser_id':
                         (str,),
                     'limit':
-                        (int,),
+                        (int, none_type,),
                     'offset':
-                        (int,),
+                        (int, none_type,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
@@ -1959,8 +1965,8 @@ class CreativeApi(object):
             advertiser_id (str): The advertiser identifier.
 
         Keyword Args:
-            limit (int): The number of ads to be returned. The default is 50.. [optional]
-            offset (int): The (zero-based) offset into the collection of ads. The default is 0.. [optional]
+            limit (int, none_type): The number of ads to be returned. The default is 50.. [optional]
+            offset (int, none_type): The (zero-based) offset into the collection of ads. The default is 0.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2304,8 +2310,8 @@ class CreativeApi(object):
             advertiser_id (str): The advertiser identifier.
 
         Keyword Args:
-            limit (int): The number of coupons to be returned. The default is 50.. [optional]
-            offset (int): The (zero-based) offset into the collection of coupons. The default is 0.. [optional]
+            limit (int, none_type): The number of coupons to be returned. The default is 50.. [optional]
+            offset (int, none_type): The (zero-based) offset into the collection of coupons. The default is 0.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2389,8 +2395,8 @@ class CreativeApi(object):
             advertiser_id (str): The advertiser identifier.
 
         Keyword Args:
-            limit (int): The number of creatives to be returned. The default is 50.. [optional]
-            offset (int): The (zero-based) offset into the collection of creatives. The default is 0.. [optional]
+            limit (int, none_type): The number of creatives to be returned. The default is 50.. [optional]
+            offset (int, none_type): The (zero-based) offset into the collection of creatives. The default is 0.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

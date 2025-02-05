@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **show_every** | **int, none_type** | Show the Coupon every N seconds (between 1 and 10) | [optional] 
 **show_duration** | **int, none_type** | Show Coupon for a duration of N seconds (between 1 and 5) | [optional] 
 **rotations_number** | **int, none_type** | Number of rotations for the Coupons (from 1 to 10 times) | [optional] 
+**id** | **str, none_type** | Unique identifier (duplicate of the parent id). | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

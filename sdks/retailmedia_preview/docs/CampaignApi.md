@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**put_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#put_api_v2_external_account_by_account_id_creativescreative_id) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**put_api_v2_external_line_item_bid_multipliers_by_line_item_id**](CampaignApi.md#put_api_v2_external_line_item_bid_multipliers_by_line_item_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/bid-multipliers | 
+[**search_brands_by_name_async_v1**](CampaignApi.md#search_brands_by_name_async_v1) | **POST** /preview/retail-media/brands/search | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
 [**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/unpause | 
 
@@ -3277,6 +3278,107 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | BidMultipliers Updated |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_brands_by_name_async_v1**
+> EntityResourceCollectionOutcomeBrandIdSearchResult search_brands_by_name_async_v1()
+
+
+
+Search for brands given a retailer ID and search term.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result import EntityResourceCollectionOutcomeBrandIdSearchResult
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    offset = 0 # int | offset of paginated results (optional) if omitted the server will use the default value of 0
+    limit = 25 # int | the number of brands to return (optional) if omitted the server will use the default value of 25
+    value_resource_input_brand_id_search_request = ValueResourceInputBrandIdSearchRequest(
+        data=ValueResourceBrandIdSearchRequest(
+            type="type_example",
+            attributes=BrandIdSearchRequest(
+                retailer_ids=[
+                    1,
+                ],
+                name="name_example",
+                brand_type="uc",
+            ),
+        ),
+    ) # ValueResourceInputBrandIdSearchRequest | BrandIdSearchRequest which contains the request parameters (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.search_brands_by_name_async_v1(offset=offset, limit=limit, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_brands_by_name_async_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **offset** | **int**| offset of paginated results | [optional] if omitted the server will use the default value of 0
+ **limit** | **int**| the number of brands to return | [optional] if omitted the server will use the default value of 25
+ **value_resource_input_brand_id_search_request** | [**ValueResourceInputBrandIdSearchRequest**](ValueResourceInputBrandIdSearchRequest.md)| BrandIdSearchRequest which contains the request parameters | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeBrandIdSearchResult**](EntityResourceCollectionOutcomeBrandIdSearchResult.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

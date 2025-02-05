@@ -94,6 +94,7 @@ class Ad(ModelNormal):
             'inventory_type': (str, none_type,),  # noqa: E501
             'start_date': (str, none_type,),  # noqa: E501
             'end_date': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -109,6 +110,7 @@ class Ad(ModelNormal):
         'inventory_type': 'inventoryType',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +161,7 @@ class Ad(ModelNormal):
             inventory_type (str, none_type): The inventory the Ad belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
             start_date (str, none_type): The date when the ad will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,6 +254,7 @@ class Ad(ModelNormal):
             inventory_type (str, none_type): The inventory the Ad belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
             start_date (str, none_type): The date when the ad will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

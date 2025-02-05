@@ -60,8 +60,6 @@ criteo_api_retailmedia_v2025_01/model/balance_campaign202110_paged_list_response
 criteo_api_retailmedia_v2025_01/model/balance_history_change_data_capture_v1.py
 criteo_api_retailmedia_v2025_01/model/balance_response_v2.py
 criteo_api_retailmedia_v2025_01/model/balance_response_v2_response.py
-criteo_api_retailmedia_v2025_01/model/brand_preview.py
-criteo_api_retailmedia_v2025_01/model/brand_preview_list_response.py
 criteo_api_retailmedia_v2025_01/model/campaign_attributes_v202301.py
 criteo_api_retailmedia_v2025_01/model/campaign_budget_overrides.py
 criteo_api_retailmedia_v2025_01/model/campaign_daily_budget_override.py
@@ -195,7 +193,6 @@ criteo_api_retailmedia_v2025_01/model/resource_of_auction_line_item.py
 criteo_api_retailmedia_v2025_01/model/resource_of_auction_line_item_update_model.py
 criteo_api_retailmedia_v2025_01/model/resource_of_balance_campaign202110.py
 criteo_api_retailmedia_v2025_01/model/resource_of_balance_response_v2.py
-criteo_api_retailmedia_v2025_01/model/resource_of_brand_preview.py
 criteo_api_retailmedia_v2025_01/model/resource_of_category202204.py
 criteo_api_retailmedia_v2025_01/model/resource_of_change_dates_of_balance_v2.py
 criteo_api_retailmedia_v2025_01/model/resource_of_common_line_item.py
@@ -210,7 +207,6 @@ criteo_api_retailmedia_v2025_01/model/resource_of_template.py
 criteo_api_retailmedia_v2025_01/model/resource_of_update_balance_model_v2.py
 criteo_api_retailmedia_v2025_01/model/resource_outcome.py
 criteo_api_retailmedia_v2025_01/model/retail_media_contactlist_amendment.py
-criteo_api_retailmedia_v2025_01/model/retail_media_contactlist_amendment_attributes.py
 criteo_api_retailmedia_v2025_01/model/retail_media_contactlist_amendment_request.py
 criteo_api_retailmedia_v2025_01/model/retail_media_contactlist_operation.py
 criteo_api_retailmedia_v2025_01/model/retail_media_contactlist_operation_response_attributes.py
@@ -342,8 +338,6 @@ docs/BalanceCampaign202110PagedListResponse.md
 docs/BalanceHistoryChangeDataCaptureV1.md
 docs/BalanceResponseV2.md
 docs/BalanceResponseV2Response.md
-docs/BrandPreview.md
-docs/BrandPreviewListResponse.md
 docs/CampaignApi.md
 docs/CampaignAttributesV202301.md
 docs/CampaignBudgetOverrides.md
@@ -479,7 +473,6 @@ docs/ResourceOfAuctionLineItem.md
 docs/ResourceOfAuctionLineItemUpdateModel.md
 docs/ResourceOfBalanceCampaign202110.md
 docs/ResourceOfBalanceResponseV2.md
-docs/ResourceOfBrandPreview.md
 docs/ResourceOfCategory202204.md
 docs/ResourceOfChangeDatesOfBalanceV2.md
 docs/ResourceOfCommonLineItem.md
@@ -494,7 +487,6 @@ docs/ResourceOfTemplate.md
 docs/ResourceOfUpdateBalanceModelV2.md
 docs/ResourceOutcome.md
 docs/RetailMediaContactlistAmendment.md
-docs/RetailMediaContactlistAmendmentAttributes.md
 docs/RetailMediaContactlistAmendmentRequest.md
 docs/RetailMediaContactlistOperation.md
 docs/RetailMediaContactlistOperationResponseAttributes.md

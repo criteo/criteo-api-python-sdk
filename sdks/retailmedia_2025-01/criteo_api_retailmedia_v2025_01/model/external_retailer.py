@@ -59,6 +59,8 @@ class ExternalRetailer(ModelNormal):
             'UNKNOWN': "unknown",
             'AUCTION': "auction",
             'PREFERRED': "preferred",
+            'OFFSITE': "offsite",
+            'OFFSITECPC': "offsiteCpc",
         },
     }
 

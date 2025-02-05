@@ -104,6 +104,7 @@ class Creative(ModelNormal):
             'html_tag_attributes': (HtmlTagAttributes,),  # noqa: E501
             'dynamic_attributes': (DynamicAttributes,),  # noqa: E501
             'adaptive_attributes': (AdaptiveAttributes,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -123,6 +124,7 @@ class Creative(ModelNormal):
         'html_tag_attributes': 'htmlTagAttributes',  # noqa: E501
         'dynamic_attributes': 'dynamicAttributes',  # noqa: E501
         'adaptive_attributes': 'adaptiveAttributes',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -179,6 +181,7 @@ class Creative(ModelNormal):
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             adaptive_attributes (AdaptiveAttributes): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -281,6 +284,7 @@ class Creative(ModelNormal):
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             adaptive_attributes (AdaptiveAttributes): [optional]  # noqa: E501
+            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

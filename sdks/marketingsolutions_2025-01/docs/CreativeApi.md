@@ -1154,8 +1154,8 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    limit = 1 # int | The number of ads to be returned. The default is 50. (optional)
-    offset = 1 # int | The (zero-based) offset into the collection of ads. The default is 0. (optional)
+    limit = 1 # int, none_type | The number of ads to be returned. The default is 50. (optional)
+    offset = 1 # int, none_type | The (zero-based) offset into the collection of ads. The default is 0. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1179,8 +1179,8 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **limit** | **int**| The number of ads to be returned. The default is 50. | [optional]
- **offset** | **int**| The (zero-based) offset into the collection of ads. The default is 0. | [optional]
+ **limit** | **int, none_type**| The number of ads to be returned. The default is 50. | [optional]
+ **offset** | **int, none_type**| The (zero-based) offset into the collection of ads. The default is 0. | [optional]
 
 ### Return type
 
@@ -1536,8 +1536,8 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    limit = 1 # int | The number of coupons to be returned. The default is 50. (optional)
-    offset = 1 # int | The (zero-based) offset into the collection of coupons. The default is 0. (optional)
+    limit = 1 # int, none_type | The number of coupons to be returned. The default is 50. (optional)
+    offset = 1 # int, none_type | The (zero-based) offset into the collection of coupons. The default is 0. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1561,8 +1561,8 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **limit** | **int**| The number of coupons to be returned. The default is 50. | [optional]
- **offset** | **int**| The (zero-based) offset into the collection of coupons. The default is 0. | [optional]
+ **limit** | **int, none_type**| The number of coupons to be returned. The default is 50. | [optional]
+ **offset** | **int, none_type**| The (zero-based) offset into the collection of coupons. The default is 0. | [optional]
 
 ### Return type
 
@@ -1634,8 +1634,8 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
-    limit = 1 # int | The number of creatives to be returned. The default is 50. (optional)
-    offset = 1 # int | The (zero-based) offset into the collection of creatives. The default is 0. (optional)
+    limit = 1 # int, none_type | The number of creatives to be returned. The default is 50. (optional)
+    offset = 1 # int, none_type | The (zero-based) offset into the collection of creatives. The default is 0. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1659,8 +1659,8 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **limit** | **int**| The number of creatives to be returned. The default is 50. | [optional]
- **offset** | **int**| The (zero-based) offset into the collection of creatives. The default is 0. | [optional]
+ **limit** | **int, none_type**| The number of creatives to be returned. The default is 50. | [optional]
+ **offset** | **int, none_type**| The (zero-based) offset into the collection of creatives. The default is 0. | [optional]
 
 ### Return type
 

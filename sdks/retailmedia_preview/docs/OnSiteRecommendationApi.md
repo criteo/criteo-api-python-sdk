@@ -25,7 +25,6 @@ import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import on_site_recommendation_api
 from criteo_api_retailmedia_preview.model.message_body_model import MessageBodyModel
 from criteo_api_retailmedia_preview.model.inbot_discussion_body_model import InbotDiscussionBodyModel
-from criteo_api_retailmedia_preview.model.http_validation_error import HttpValidationError
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -62,7 +61,22 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 messages=[
                     Message(
                         user_message="user_message_example",
-                        bot_message=Botmessage(None),
+                        bot_message=BotMessage(
+                            opening="opening_example",
+                            product_recos=[
+                                ProductRecommendation(
+                                    rationale="rationale_example",
+                                    name="name_example",
+                                    description="description_example",
+                                    image_url="image_url_example",
+                                    url="url_example",
+                                    brand="brand_example",
+                                    price=3.14,
+                                    currency="currency_example",
+                                ),
+                            ],
+                            closing="closing_example",
+                        ),
                     ),
                 ],
             ),
@@ -107,7 +121,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |
-**422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

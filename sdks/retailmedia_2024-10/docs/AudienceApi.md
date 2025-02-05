@@ -777,14 +777,11 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
     audience_segment_id = 1 # int | The id of the contact list audience-segment to amend, we only accept external Id here
     retail_media_contactlist_amendment_request = RetailMediaContactlistAmendmentRequest(
         data=RetailMediaContactlistAmendment(
-            type="AddRemoveContactlist",
-            attributes=RetailMediaContactlistAmendmentAttributes(
-                operation="add",
-                identifier_type="Email",
-                identifiers=[
-                    "identifiers_example",
-                ],
-            ),
+            operation="add",
+            identifier_type="Email",
+            identifiers=[
+                "identifiers_example",
+            ],
         ),
     ) # RetailMediaContactlistAmendmentRequest | 
 

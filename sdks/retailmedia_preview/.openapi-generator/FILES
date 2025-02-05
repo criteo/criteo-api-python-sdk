@@ -36,6 +36,9 @@ criteo_api_retailmedia_preview/model/async_accounts_report_resource.py
 criteo_api_retailmedia_preview/model/async_campaigns_report.py
 criteo_api_retailmedia_preview/model/async_campaigns_report_request.py
 criteo_api_retailmedia_preview/model/async_campaigns_report_resource.py
+criteo_api_retailmedia_preview/model/async_fill_rate_report.py
+criteo_api_retailmedia_preview/model/async_fill_rate_report_request.py
+criteo_api_retailmedia_preview/model/async_fill_rate_report_resource.py
 criteo_api_retailmedia_preview/model/async_line_items_report.py
 criteo_api_retailmedia_preview/model/async_line_items_report_request.py
 criteo_api_retailmedia_preview/model/async_line_items_report_resource.py
@@ -47,7 +50,6 @@ criteo_api_retailmedia_preview/model/balance_response_v2.py
 criteo_api_retailmedia_preview/model/balance_response_v2_response.py
 criteo_api_retailmedia_preview/model/batch_accepted_response.py
 criteo_api_retailmedia_preview/model/bot_message.py
-criteo_api_retailmedia_preview/model/botmessage.py
 criteo_api_retailmedia_preview/model/brand.py
 criteo_api_retailmedia_preview/model/brand_id_search_request.py
 criteo_api_retailmedia_preview/model/brand_id_search_result.py
@@ -98,7 +100,6 @@ criteo_api_retailmedia_preview/model/files_variable_value.py
 criteo_api_retailmedia_preview/model/grant_consent_input.py
 criteo_api_retailmedia_preview/model/grant_consent_model.py
 criteo_api_retailmedia_preview/model/grant_consent_model_value_resource.py
-criteo_api_retailmedia_preview/model/http_validation_error.py
 criteo_api_retailmedia_preview/model/hyperlink_variable_value.py
 criteo_api_retailmedia_preview/model/inbot_discussion.py
 criteo_api_retailmedia_preview/model/inbot_discussion_body_model.py
@@ -121,7 +122,6 @@ criteo_api_retailmedia_preview/model/keywords_model_response.py
 criteo_api_retailmedia_preview/model/line_item_bid_multipliers_v2_request.py
 criteo_api_retailmedia_preview/model/line_item_bid_multipliers_v2_response.py
 criteo_api_retailmedia_preview/model/line_item_product_status.py
-criteo_api_retailmedia_preview/model/location_inner.py
 criteo_api_retailmedia_preview/model/loyalty_points.py
 criteo_api_retailmedia_preview/model/match_type_model.py
 criteo_api_retailmedia_preview/model/message.py
@@ -196,7 +196,6 @@ criteo_api_retailmedia_preview/model/resource_of_sku_slim_data_v2.py
 criteo_api_retailmedia_preview/model/resource_of_update_balance_model_v2.py
 criteo_api_retailmedia_preview/model/resource_outcome.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_amendment.py
-criteo_api_retailmedia_preview/model/retail_media_contactlist_amendment_attributes.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_amendment_request.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_operation.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_operation_response_attributes.py
@@ -274,7 +273,6 @@ criteo_api_retailmedia_preview/model/template_variable_value.py
 criteo_api_retailmedia_preview/model/text_variable_value.py
 criteo_api_retailmedia_preview/model/update_balance_model_v2.py
 criteo_api_retailmedia_preview/model/update_balance_model_v2_request.py
-criteo_api_retailmedia_preview/model/validation_error.py
 criteo_api_retailmedia_preview/model/value_resource_brand_id_search_request.py
 criteo_api_retailmedia_preview/model/value_resource_collection_outcome_of_retail_media_seller.py
 criteo_api_retailmedia_preview/model/value_resource_cpc_min_bids_request.py
@@ -306,6 +304,9 @@ docs/AsyncAccountsReportResource.md
 docs/AsyncCampaignsReport.md
 docs/AsyncCampaignsReportRequest.md
 docs/AsyncCampaignsReportResource.md
+docs/AsyncFillRateReport.md
+docs/AsyncFillRateReportRequest.md
+docs/AsyncFillRateReportResource.md
 docs/AsyncLineItemsReport.md
 docs/AsyncLineItemsReportRequest.md
 docs/AsyncLineItemsReportResource.md
@@ -319,7 +320,6 @@ docs/BalanceResponseV2.md
 docs/BalanceResponseV2Response.md
 docs/BatchAcceptedResponse.md
 docs/BotMessage.md
-docs/Botmessage.md
 docs/Brand.md
 docs/BrandIdSearchRequest.md
 docs/BrandIdSearchResult.md
@@ -373,7 +373,6 @@ docs/GatewayApi.md
 docs/GrantConsentInput.md
 docs/GrantConsentModel.md
 docs/GrantConsentModelValueResource.md
-docs/HttpValidationError.md
 docs/HyperlinkVariableValue.md
 docs/InbotDiscussion.md
 docs/InbotDiscussionBodyModel.md
@@ -396,7 +395,6 @@ docs/KeywordsModelResponse.md
 docs/LineItemBidMultipliersV2Request.md
 docs/LineItemBidMultipliersV2Response.md
 docs/LineItemProductStatus.md
-docs/LocationInner.md
 docs/LoyaltyPoints.md
 docs/MatchTypeModel.md
 docs/Message.md
@@ -472,7 +470,6 @@ docs/ResourceOfSkuSlimDataV2.md
 docs/ResourceOfUpdateBalanceModelV2.md
 docs/ResourceOutcome.md
 docs/RetailMediaContactlistAmendment.md
-docs/RetailMediaContactlistAmendmentAttributes.md
 docs/RetailMediaContactlistAmendmentRequest.md
 docs/RetailMediaContactlistOperation.md
 docs/RetailMediaContactlistOperationResponseAttributes.md
@@ -550,7 +547,6 @@ docs/TemplateVariableValue.md
 docs/TextVariableValue.md
 docs/UpdateBalanceModelV2.md
 docs/UpdateBalanceModelV2Request.md
-docs/ValidationError.md
 docs/ValueResourceBrandIdSearchRequest.md
 docs/ValueResourceCollectionOutcomeOfRetailMediaSeller.md
 docs/ValueResourceCpcMinBidsRequest.md

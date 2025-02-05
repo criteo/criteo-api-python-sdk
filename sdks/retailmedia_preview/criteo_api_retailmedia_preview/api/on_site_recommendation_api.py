@@ -21,7 +21,6 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_preview.model.http_validation_error import HttpValidationError
 from criteo_api_retailmedia_preview.model.inbot_discussion_body_model import InbotDiscussionBodyModel
 from criteo_api_retailmedia_preview.model.message_body_model import MessageBodyModel
 

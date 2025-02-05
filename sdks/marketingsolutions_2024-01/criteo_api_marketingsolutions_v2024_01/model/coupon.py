@@ -101,6 +101,7 @@ class Coupon(ModelNormal):
             'show_every': (int, none_type,),  # noqa: E501
             'show_duration': (int, none_type,),  # noqa: E501
             'rotations_number': (int, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -123,6 +124,7 @@ class Coupon(ModelNormal):
         'show_every': 'showEvery',  # noqa: E501
         'show_duration': 'showDuration',  # noqa: E501
         'rotations_number': 'rotationsNumber',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -180,6 +182,7 @@ class Coupon(ModelNormal):
             show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
             show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
             rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
+            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,6 +282,7 @@ class Coupon(ModelNormal):
             show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
             show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
             rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
+            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

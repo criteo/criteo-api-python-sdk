@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /preview/retail-media/reports/accounts | 
 [**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /preview/retail-media/reports/campaigns | 
+[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /preview/retail-media/reports/fillrate | 
 [**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /preview/retail-media/reports/line-items | 
 [**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /preview/retail-media/reports/sync/attributed-transactions | 
 [**generate_sync_campaigns_report**](AnalyticsApi.md#generate_sync_campaigns_report) | **POST** /preview/retail-media/reports/sync/campaigns | 
@@ -227,6 +228,113 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **async_campaigns_report_request** | [**AsyncCampaignsReportRequest**](AsyncCampaignsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_fill_rate_report**
+> AsyncReportResponse generate_async_fill_rate_report(async_fill_rate_report_request)
+
+
+
+Returns an asynchronous Fill Rate Report This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
+from criteo_api_retailmedia_preview.model.async_fill_rate_report_request import AsyncFillRateReportRequest
+from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_fill_rate_report_request = AsyncFillRateReportRequest(
+        data=AsyncFillRateReportResource(
+            type="type_example",
+            attributes=AsyncFillRateReport(
+                supply_account_ids=[
+                    "supply_account_ids_example",
+                ],
+                dimensions=[
+                    "date",
+                ],
+                metrics=[
+                    "pageViews",
+                ],
+                format="json",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+            ),
+        ),
+    ) # AsyncFillRateReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.generate_async_fill_rate_report(async_fill_rate_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_fill_rate_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_fill_rate_report_request** | [**AsyncFillRateReportRequest**](AsyncFillRateReportRequest.md)|  |
 
 ### Return type
 

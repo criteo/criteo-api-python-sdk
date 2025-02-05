@@ -2259,7 +2259,7 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     limit_to_campaign_id = [
         "limitToCampaignId_example",
     ] # [str] | The campaign ids that you would like to limit your result set to (optional)
-    limit_to_type = "Unknown" # str | The campaign types that you would like to limit your result set to (optional)
+    limit_to_type = "Unknown" # str, none_type | The campaign types that you would like to limit your result set to (optional)
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
@@ -2289,7 +2289,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
  **limit_to_campaign_id** | **[str]**| The campaign ids that you would like to limit your result set to | [optional]
- **limit_to_type** | **str**| The campaign types that you would like to limit your result set to | [optional]
+ **limit_to_type** | **str, none_type**| The campaign types that you would like to limit your result set to | [optional]
  **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
  **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
  **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]

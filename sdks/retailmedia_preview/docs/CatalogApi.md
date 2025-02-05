@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**preview_retail_media_catalog_products_batch_post**](CatalogApi.md#preview_retail_media_catalog_products_batch_post) | **POST** /preview/retail-media/catalog/products/batch | 
 [**preview_retail_media_catalog_products_batch_report_operation_token_get**](CatalogApi.md#preview_retail_media_catalog_products_batch_report_operation_token_get) | **GET** /preview/retail-media/catalog/products/batch/report/{operation-token} | 
-[**search_brands_by_name_async_v1**](CatalogApi.md#search_brands_by_name_async_v1) | **POST** /preview/retail-media/brands/search | 
 
 
 # **preview_retail_media_catalog_products_batch_post**
@@ -368,107 +367,6 @@ Name | Type | Description  | Notes
 **429** | Too Many Requests |  -  |
 **500** | Internal Server Error. Allowed error types and errors: [(type&#x3D;\&quot;availability\&quot;, code&#x3D;\&quot;internal-error\&quot;)] |  -  |
 **503** | Service Unavailable. Allowed error types and errors: [(type&#x3D;\&quot;availability\&quot;, code&#x3D;\&quot;service-unavailable\&quot;)] |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_brands_by_name_async_v1**
-> EntityResourceCollectionOutcomeBrandIdSearchResult search_brands_by_name_async_v1()
-
-
-
-Search for brands given a retailer ID and search term.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import catalog_api
-from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result import EntityResourceCollectionOutcomeBrandIdSearchResult
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = catalog_api.CatalogApi(api_client)
-    offset = 0 # int | offset of paginated results (optional) if omitted the server will use the default value of 0
-    limit = 25 # int | the number of brands to return (optional) if omitted the server will use the default value of 25
-    value_resource_input_brand_id_search_request = ValueResourceInputBrandIdSearchRequest(
-        data=ValueResourceBrandIdSearchRequest(
-            type="type_example",
-            attributes=BrandIdSearchRequest(
-                retailer_ids=[
-                    1,
-                ],
-                name="name_example",
-                brand_type="uc",
-            ),
-        ),
-    ) # ValueResourceInputBrandIdSearchRequest | BrandIdSearchRequest which contains the request parameters (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.search_brands_by_name_async_v1(offset=offset, limit=limit, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CatalogApi->search_brands_by_name_async_v1: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **offset** | **int**| offset of paginated results | [optional] if omitted the server will use the default value of 0
- **limit** | **int**| the number of brands to return | [optional] if omitted the server will use the default value of 25
- **value_resource_input_brand_id_search_request** | [**ValueResourceInputBrandIdSearchRequest**](ValueResourceInputBrandIdSearchRequest.md)| BrandIdSearchRequest which contains the request parameters | [optional]
-
-### Return type
-
-[**EntityResourceCollectionOutcomeBrandIdSearchResult**](EntityResourceCollectionOutcomeBrandIdSearchResult.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
