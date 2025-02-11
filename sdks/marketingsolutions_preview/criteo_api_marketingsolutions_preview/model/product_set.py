@@ -60,7 +60,6 @@ class ProductSet(ModelNormal):
 
     allowed_values = {
         ('status',): {
-            'None': None,
             'UNKNOWN': "Unknown",
             'DRAFT': "Draft",
             'PENDING': "Pending",
@@ -68,11 +67,14 @@ class ProductSet(ModelNormal):
             'INVALID': "Invalid",
             'DELETED': "Deleted",
         },
+        ('client_type',): {
+            'UNKNOWN': "Unknown",
+            'CGROWTH': "CGrowth",
+            'CMAX': "CMax",
+        },
     }
 
     validations = {
-        ('rules',): {
-        },
     }
 
     @cached_property
@@ -98,13 +100,15 @@ class ProductSet(ModelNormal):
         """
         lazy_import()
         return {
-            'dataset_id': (str, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
-            'status': (str, none_type,),  # noqa: E501
-            'is_enabled': (bool, none_type,),  # noqa: E501
+            'dataset_id': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'minimum_number_of_products': (int,),  # noqa: E501
+            'status': (str,),  # noqa: E501
             'number_of_products': (int, none_type,),  # noqa: E501
-            'creation_date': (str, none_type,),  # noqa: E501
-            'rules': ([ProductSetRule], none_type,),  # noqa: E501
+            'creation_date': (str,),  # noqa: E501
+            'rules': ([ProductSetRule],),  # noqa: E501
+            'client_type': (str,),  # noqa: E501
+            'keep_variant_products': (bool,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
         }
 
@@ -116,11 +120,13 @@ class ProductSet(ModelNormal):
     attribute_map = {
         'dataset_id': 'datasetId',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'minimum_number_of_products': 'minimumNumberOfProducts',  # noqa: E501
         'status': 'status',  # noqa: E501
-        'is_enabled': 'isEnabled',  # noqa: E501
         'number_of_products': 'numberOfProducts',  # noqa: E501
         'creation_date': 'creationDate',  # noqa: E501
         'rules': 'rules',  # noqa: E501
+        'client_type': 'clientType',  # noqa: E501
+        'keep_variant_products': 'keepVariantProducts',  # noqa: E501
         'id': 'id',  # noqa: E501
     }
 
@@ -131,8 +137,19 @@ class ProductSet(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, dataset_id, name, minimum_number_of_products, status, number_of_products, creation_date, rules, client_type, keep_variant_products, *args, **kwargs):  # noqa: E501
         """ProductSet - a model defined in OpenAPI
+
+        Args:
+            dataset_id (str): The dataset to which the product set belong
+            name (str): The name of the product set
+            minimum_number_of_products (int): Minimum amount of products that should match the product set to consider it valid.  Greater or equal than one.
+            status (str): The status of the product set
+            number_of_products (int, none_type): The number of product matching the product set.  Can be null for newly created product set.
+            creation_date (str): The creation date of the product set (UTC time in ISO8601 format). Example: \"02/25/2022 14:51:26\".  Can be null if the value isn't available.
+            rules ([ProductSetRule]): The rules identifying the product belonging to the set
+            client_type (str): The client type of the product set
+            keep_variant_products (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -165,13 +182,6 @@ class ProductSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dataset_id (str, none_type): The dataset to which the product set belong. [optional]  # noqa: E501
-            name (str, none_type): The name of the product set. [optional]  # noqa: E501
-            status (str, none_type): The status of the product set. [optional]  # noqa: E501
-            is_enabled (bool, none_type): True if the product set is active. [optional]  # noqa: E501
-            number_of_products (int, none_type): The number of product matching the product set. [optional]  # noqa: E501
-            creation_date (str, none_type): Optional: The creation date of the product set (UTC time in ISO8601 format). Example: \"02/25/2022 14:51:26\"  Can be null if the value doesn't exist.. [optional]  # noqa: E501
-            rules ([ProductSetRule], none_type): The rules identifying the product belonging to the set. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
         """
 
@@ -204,6 +214,15 @@ class ProductSet(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.dataset_id = dataset_id
+        self.name = name
+        self.minimum_number_of_products = minimum_number_of_products
+        self.status = status
+        self.number_of_products = number_of_products
+        self.creation_date = creation_date
+        self.rules = rules
+        self.client_type = client_type
+        self.keep_variant_products = keep_variant_products
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -224,8 +243,19 @@ class ProductSet(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, dataset_id, name, minimum_number_of_products, status, number_of_products, creation_date, rules, client_type, keep_variant_products, *args, **kwargs):  # noqa: E501
         """ProductSet - a model defined in OpenAPI
+
+        Args:
+            dataset_id (str): The dataset to which the product set belong
+            name (str): The name of the product set
+            minimum_number_of_products (int): Minimum amount of products that should match the product set to consider it valid.  Greater or equal than one.
+            status (str): The status of the product set
+            number_of_products (int, none_type): The number of product matching the product set.  Can be null for newly created product set.
+            creation_date (str): The creation date of the product set (UTC time in ISO8601 format). Example: \"02/25/2022 14:51:26\".  Can be null if the value isn't available.
+            rules ([ProductSetRule]): The rules identifying the product belonging to the set
+            client_type (str): The client type of the product set
+            keep_variant_products (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -258,13 +288,6 @@ class ProductSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dataset_id (str, none_type): The dataset to which the product set belong. [optional]  # noqa: E501
-            name (str, none_type): The name of the product set. [optional]  # noqa: E501
-            status (str, none_type): The status of the product set. [optional]  # noqa: E501
-            is_enabled (bool, none_type): True if the product set is active. [optional]  # noqa: E501
-            number_of_products (int, none_type): The number of product matching the product set. [optional]  # noqa: E501
-            creation_date (str, none_type): Optional: The creation date of the product set (UTC time in ISO8601 format). Example: \"02/25/2022 14:51:26\"  Can be null if the value doesn't exist.. [optional]  # noqa: E501
-            rules ([ProductSetRule], none_type): The rules identifying the product belonging to the set. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
         """
 
@@ -295,6 +318,15 @@ class ProductSet(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.dataset_id = dataset_id
+        self.name = name
+        self.minimum_number_of_products = minimum_number_of_products
+        self.status = status
+        self.number_of_products = number_of_products
+        self.creation_date = creation_date
+        self.rules = rules
+        self.client_type = client_type
+        self.keep_variant_products = keep_variant_products
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

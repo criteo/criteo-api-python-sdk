@@ -62,12 +62,12 @@ class EditableCampaignAttributesV202301(ModelNormal):
             'UNKNOWN': "unknown",
         },
         ('view_attribution_window',): {
-            'NONE': "None",
-            'UNKNOWN': "Unknown",
-            'ONEDAY': "OneDay",
-            'SEVENDAYS': "SevenDays",
-            'FOURTEENDAYS': "FourteenDays",
-            'THIRTYDAYS': "ThirtyDays",
+            'NONE': "none",
+            'UNKNOWN': "unknown",
+            '1D': "1D",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
         },
         ('click_attribution_scope',): {
             'None': None,

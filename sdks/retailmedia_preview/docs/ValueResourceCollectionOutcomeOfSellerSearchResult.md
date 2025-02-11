@@ -1,11 +1,11 @@
-# ValueResourceCollectionOutcomeOfRetailMediaSeller
+# ValueResourceCollectionOutcomeOfSellerSearchResult
 
 A top-level object that encapsulates a Criteo API response for several value objects.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ValueResourceOfRetailMediaSeller], none_type**](ValueResourceOfRetailMediaSeller.md) |  | [optional] 
+**data** | [**[ValueResourceOfSellerSearchResult], none_type**](ValueResourceOfSellerSearchResult.md) |  | [optional] 
 **warnings** | [**[SdkApiRestCommonProblem], none_type**](SdkApiRestCommonProblem.md) | Warnings that occured during this call. | [optional] [readonly] 
 **errors** | [**[SdkApiRestCommonProblem], none_type**](SdkApiRestCommonProblem.md) | Errors that occured during this call. | [optional] [readonly] 
 

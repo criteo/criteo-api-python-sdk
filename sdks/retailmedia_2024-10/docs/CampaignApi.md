@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **append_promoted_products**
-> append_promoted_products(line_item_id)
+> ProductResourceOutcome append_promoted_products(line_item_id)
 
 
 
@@ -232,7 +232,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],
@@ -240,14 +240,16 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.append_promoted_products(line_item_id)
+        api_response = api_instance.append_promoted_products(line_item_id)
+        pprint(api_response)
     except criteo_api_retailmedia_v2024_10.ApiException as e:
         print("Exception when calling CampaignApi->append_promoted_products: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_instance.append_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
+        api_response = api_instance.append_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
+        pprint(api_response)
     except criteo_api_retailmedia_v2024_10.ApiException as e:
         print("Exception when calling CampaignApi->append_promoted_products: %s\n" % e)
 ```
@@ -262,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ProductResourceOutcome**](ProductResourceOutcome.md)
 
 ### Authorization
 
@@ -279,6 +281,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Promoted products appended to the line item |  -  |
+**200** | Promoted products appended to the line item with warnings |  -  |
 **400** | Invalid request body |  -  |
 **403** | Invalid external line item ID |  -  |
 
@@ -423,7 +426,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],
@@ -3023,7 +3026,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],
@@ -4431,7 +4434,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                     "drawable_balance_ids_example",
                 ],
                 click_attribution_window="30D",
-                view_attribution_window="None",
+                view_attribution_window="none",
                 name="name_example",
                 budget=3.14,
                 monthly_pacing=3.14,
@@ -5439,7 +5442,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 click_attribution_window="7D",
-                view_attribution_window="None",
+                view_attribution_window="none",
                 click_attribution_scope="unknown",
                 view_attribution_scope="unknown",
                 company_name="company_name_example",
@@ -5885,7 +5888,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],

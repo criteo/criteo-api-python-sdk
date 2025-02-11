@@ -24,7 +24,7 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account import EntityResourceCollectionOutcomeOfRetailMediaChildAccount
 from criteo_api_retailmedia_preview.model.grant_consent_input import GrantConsentInput
 from criteo_api_retailmedia_preview.model.outcome import Outcome
-from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_of_retail_media_seller import ValueResourceCollectionOutcomeOfRetailMediaSeller
+from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_of_seller_search_result import ValueResourceCollectionOutcomeOfSellerSearchResult
 from criteo_api_retailmedia_preview.model.value_resource_input_of_seller_search import ValueResourceInputOfSellerSearch
 
 
@@ -162,7 +162,7 @@ class AccountsApi(object):
         )
         self.search_sellers_endpoint = _Endpoint(
             settings={
-                'response_type': (ValueResourceCollectionOutcomeOfRetailMediaSeller,),
+                'response_type': (ValueResourceCollectionOutcomeOfSellerSearchResult,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -434,7 +434,7 @@ class AccountsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ValueResourceCollectionOutcomeOfRetailMediaSeller
+            ValueResourceCollectionOutcomeOfSellerSearchResult
                 If the method is called asynchronously, returns the request
                 thread.
         """

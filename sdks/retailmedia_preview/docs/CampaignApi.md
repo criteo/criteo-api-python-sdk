@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **append_promoted_products**
-> append_promoted_products(line_item_id)
+> ProductResourceOutcome append_promoted_products(line_item_id)
 
 
 
@@ -206,7 +206,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],
@@ -214,14 +214,16 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.append_promoted_products(line_item_id)
+        api_response = api_instance.append_promoted_products(line_item_id)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->append_promoted_products: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_instance.append_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
+        api_response = api_instance.append_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->append_promoted_products: %s\n" % e)
 ```
@@ -236,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ProductResourceOutcome**](ProductResourceOutcome.md)
 
 ### Authorization
 
@@ -253,6 +255,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Promoted products appended to the line item |  -  |
+**200** | Promoted products appended to the line item with warnings |  -  |
 **400** | Invalid request body |  -  |
 **403** | Invalid external line item ID |  -  |
 
@@ -397,7 +400,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],
@@ -1768,7 +1771,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],
@@ -3546,7 +3549,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 attributes=PromotedProduct(
                     id="id_example",
                     bid_override=3.14,
-                    status=LineItemProductStatus("Unknown"),
+                    status=LineItemProductStatus("unknown"),
                 ),
             ),
         ],

@@ -94,6 +94,7 @@ class RetailMediaContactlistOperation(ModelNormal):
             'data': (RetailMediaContactlistOperationResponseAttributes,),  # noqa: E501
             'errors': ([AudienceError],),  # noqa: E501
             'warnings': ([AudienceWarning],),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -105,6 +106,7 @@ class RetailMediaContactlistOperation(ModelNormal):
         'data': 'data',  # noqa: E501
         'errors': 'errors',  # noqa: E501
         'warnings': 'warnings',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -153,6 +155,7 @@ class RetailMediaContactlistOperation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            type (str, none_type): the name of the entity type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,6 +249,7 @@ class RetailMediaContactlistOperation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            type (str, none_type): the name of the entity type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

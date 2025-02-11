@@ -66,10 +66,10 @@ class BalanceResponseV2(ModelNormal):
             'OFFSITEAWARENESS': "OffsiteAwareness",
         },
         ('private_market_billing_type',): {
-            'NOTAPPLICABLE': "NotApplicable",
-            'BILLBYRETAILER': "BillByRetailer",
-            'BILLBYCRITEO': "BillByCriteo",
-            'UNKNOWN': "Unknown",
+            'NOTAPPLICABLE': "notApplicable",
+            'BILLBYRETAILER': "billByRetailer",
+            'BILLBYCRITEO': "billByCriteo",
+            'UNKNOWN': "unknown",
         },
         ('status',): {
             'UNKNOWN': "unknown",

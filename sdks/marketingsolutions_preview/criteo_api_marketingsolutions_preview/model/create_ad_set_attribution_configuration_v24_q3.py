@@ -67,10 +67,10 @@ class CreateAdSetAttributionConfigurationV24Q3(ModelNormal):
         ('lookback_window',): {
             'None': None,
             'UNKNOWN': "unknown",
-            'SAMESESSION': "sameSession",
-            'TWENTYFOURHOURS': "twentyFourHours",
-            'SEVENDAYS': "sevenDays",
-            'THIRTYDAYS': "thirtyDays",
+            '30M': "30M",
+            '24H': "24H",
+            '7D': "7D",
+            '30D': "30D",
         },
     }
 

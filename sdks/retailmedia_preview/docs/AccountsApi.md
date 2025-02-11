@@ -209,7 +209,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_sellers**
-> ValueResourceCollectionOutcomeOfRetailMediaSeller search_sellers()
+> ValueResourceCollectionOutcomeOfSellerSearchResult search_sellers()
 
 
 
@@ -225,8 +225,8 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import accounts_api
 from criteo_api_retailmedia_preview.model.value_resource_input_of_seller_search import ValueResourceInputOfSellerSearch
+from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_of_seller_search_result import ValueResourceCollectionOutcomeOfSellerSearchResult
 from criteo_api_retailmedia_preview.model.outcome import Outcome
-from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_of_retail_media_seller import ValueResourceCollectionOutcomeOfRetailMediaSeller
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ValueResourceCollectionOutcomeOfRetailMediaSeller**](ValueResourceCollectionOutcomeOfRetailMediaSeller.md)
+[**ValueResourceCollectionOutcomeOfSellerSearchResult**](ValueResourceCollectionOutcomeOfSellerSearchResult.md)
 
 ### Authorization
 

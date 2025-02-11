@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional]  if omitted the server will use the default value of "auction"
 **drawable_balance_ids** | **[str]** |  | [optional] 
 **click_attribution_window** | **str** |  | [optional]  if omitted the server will use the default value of "30D"
-**view_attribution_window** | **str** |  | [optional]  if omitted the server will use the default value of "None"
+**view_attribution_window** | **str** |  | [optional]  if omitted the server will use the default value of "none"
 **budget** | **float, none_type** |  | [optional] 
 **monthly_pacing** | **float, none_type** |  | [optional] 
 **daily_pacing** | **float, none_type** |  | [optional] 

@@ -67,12 +67,12 @@ class CampaignAttributesV202301(ModelNormal):
             'UNKNOWN': "unknown",
         },
         ('view_attribution_window',): {
-            'NONE': "None",
-            'UNKNOWN': "Unknown",
-            'ONEDAY': "OneDay",
-            'SEVENDAYS': "SevenDays",
-            'FOURTEENDAYS': "FourteenDays",
-            'THIRTYDAYS': "ThirtyDays",
+            'NONE': "none",
+            'UNKNOWN': "unknown",
+            '1D': "1D",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
         },
         ('click_attribution_scope',): {
             'None': None,
@@ -208,7 +208,7 @@ class CampaignAttributesV202301(ModelNormal):
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
             drawable_balance_ids ([str]): [optional]  # noqa: E501
             click_attribution_window (str): [optional] if omitted the server will use the default value of "30D"  # noqa: E501
-            view_attribution_window (str): [optional] if omitted the server will use the default value of "None"  # noqa: E501
+            view_attribution_window (str): [optional] if omitted the server will use the default value of "none"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
@@ -314,7 +314,7 @@ class CampaignAttributesV202301(ModelNormal):
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
             drawable_balance_ids ([str]): [optional]  # noqa: E501
             click_attribution_window (str): [optional] if omitted the server will use the default value of "30D"  # noqa: E501
-            view_attribution_window (str): [optional] if omitted the server will use the default value of "None"  # noqa: E501
+            view_attribution_window (str): [optional] if omitted the server will use the default value of "none"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501

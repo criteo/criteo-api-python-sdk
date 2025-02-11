@@ -1,4 +1,4 @@
-# ValueResourceOfRetailMediaSeller
+# ValueResourceOfSellerSearchResult
 
 A value resource exposed by the API.
 
@@ -6,7 +6,7 @@ A value resource exposed by the API.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str, none_type** | Type of the resource. | [optional] 
-**attributes** | [**RetailMediaSeller**](RetailMediaSeller.md) |  | [optional] 
+**attributes** | [**SellerSearchResult**](SellerSearchResult.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

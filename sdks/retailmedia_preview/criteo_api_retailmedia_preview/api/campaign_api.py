@@ -132,7 +132,7 @@ class CampaignApi(object):
         )
         self.append_promoted_products_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (ProductResourceOutcome,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2369,7 +2369,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            ProductResourceOutcome
                 If the method is called asynchronously, returns the request
                 thread.
         """
