@@ -28,7 +28,7 @@ from criteo_api_retailmedia_preview.model.creative2_list_response import Creativ
 from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
 from criteo_api_retailmedia_preview.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result import EntityResourceCollectionOutcomeBrandIdSearchResult
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
 from criteo_api_retailmedia_preview.model.json_api_request_of_seller_catalog_request import JsonApiRequestOfSellerCatalogRequest
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item_bid_multipliers_v2 import JsonApiSingleResponseOfLineItemBidMultipliersV2
@@ -2041,7 +2041,7 @@ class CampaignApi(object):
         )
         self.search_brands_by_name_async_v1_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceCollectionOutcomeBrandIdSearchResult,),
+                'response_type': (EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -5000,7 +5000,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceCollectionOutcomeBrandIdSearchResult
+            EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
                 If the method is called asynchronously, returns the request
                 thread.
         """

@@ -86,7 +86,7 @@ class PromotedProductResourceCollectionOutcome(ModelNormal):
         return {
             'errors': ([RmcaCommonProblem], none_type,),  # noqa: E501
             'warnings': ([RmcaCommonProblem], none_type,),  # noqa: E501
-            'metadata': (ProductMetadata,),  # noqa: E501
+            'meta': (ProductMetadata,),  # noqa: E501
             'data': ([PromotedProductResource], none_type,),  # noqa: E501
         }
 
@@ -98,7 +98,7 @@ class PromotedProductResourceCollectionOutcome(ModelNormal):
     attribute_map = {
         'errors': 'errors',  # noqa: E501
         'warnings': 'warnings',  # noqa: E501
-        'metadata': 'metadata',  # noqa: E501
+        'meta': 'meta',  # noqa: E501
         'data': 'data',  # noqa: E501
     }
 
@@ -147,7 +147,7 @@ class PromotedProductResourceCollectionOutcome(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             errors ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
             warnings ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
-            metadata (ProductMetadata): [optional]  # noqa: E501
+            meta (ProductMetadata): [optional]  # noqa: E501
             data ([PromotedProductResource], none_type): [optional]  # noqa: E501
         """
 
@@ -236,7 +236,7 @@ class PromotedProductResourceCollectionOutcome(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             errors ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
             warnings ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
-            metadata (ProductMetadata): [optional]  # noqa: E501
+            meta (ProductMetadata): [optional]  # noqa: E501
             data ([PromotedProductResource], none_type): [optional]  # noqa: E501
         """
 

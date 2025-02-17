@@ -64,6 +64,9 @@ class BrandIdSearchRequest(ModelNormal):
     }
 
     validations = {
+        ('retailer_ids',): {
+            'min_items': 1,
+        },
     }
 
     additional_properties_type = None
@@ -81,7 +84,7 @@ class BrandIdSearchRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'retailer_ids': ([int], none_type,),  # noqa: E501
+            'retailer_ids': ([int],),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'brand_type': (str, none_type,),  # noqa: E501
         }
@@ -104,8 +107,11 @@ class BrandIdSearchRequest(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, retailer_ids, *args, **kwargs):  # noqa: E501
         """BrandIdSearchRequest - a model defined in OpenAPI
+
+        Args:
+            retailer_ids ([int]): IDs of the retailers we want to limit the search to
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -138,7 +144,6 @@ class BrandIdSearchRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            retailer_ids ([int], none_type): IDs of the retailers we want to limit the search to. [optional]  # noqa: E501
             name (str, none_type): The name of the brand(s) to be searched. [optional]  # noqa: E501
             brand_type (str, none_type): The type of brand, primarily where this brand belongs: UC, Retailer or All (both). [optional]  # noqa: E501
         """
@@ -172,6 +177,7 @@ class BrandIdSearchRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.retailer_ids = retailer_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -192,8 +198,11 @@ class BrandIdSearchRequest(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, retailer_ids, *args, **kwargs):  # noqa: E501
         """BrandIdSearchRequest - a model defined in OpenAPI
+
+        Args:
+            retailer_ids ([int]): IDs of the retailers we want to limit the search to
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -226,7 +235,6 @@ class BrandIdSearchRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            retailer_ids ([int], none_type): IDs of the retailers we want to limit the search to. [optional]  # noqa: E501
             name (str, none_type): The name of the brand(s) to be searched. [optional]  # noqa: E501
             brand_type (str, none_type): The type of brand, primarily where this brand belongs: UC, Retailer or All (both). [optional]  # noqa: E501
         """
@@ -258,6 +266,7 @@ class BrandIdSearchRequest(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.retailer_ids = retailer_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

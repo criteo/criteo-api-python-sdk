@@ -3285,7 +3285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_brands_by_name_async_v1**
-> EntityResourceCollectionOutcomeBrandIdSearchResult search_brands_by_name_async_v1()
+> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands_by_name_async_v1()
 
 
 
@@ -3301,7 +3301,7 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
 from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result import EntityResourceCollectionOutcomeBrandIdSearchResult
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3365,7 +3365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntityResourceCollectionOutcomeBrandIdSearchResult**](EntityResourceCollectionOutcomeBrandIdSearchResult.md)
+[**EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata**](EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata.md)
 
 ### Authorization
 

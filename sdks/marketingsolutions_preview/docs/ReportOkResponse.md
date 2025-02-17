@@ -6,13 +6,13 @@ The report on a given operationToken is ready. The report is available for 4 day
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **str** | The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED) | 
-**import_request_timestamp** | **int, none_type** | The date when the original batch request was sent. | 
-**number_of_products_in_the_batch** | **int, none_type** | The number of products present in the batch. | 
-**number_of_products_upserted** | **int, none_type** | The number of products upserted. | 
-**number_of_products_deleted** | **int, none_type** | The number of products deleted. | 
-**number_of_products_with_errors** | **int, none_type** | The number of products with errors. | 
+**import_request_timestamp** | **str, none_type** | The date when the original batch request was sent. | 
+**number_of_products_in_the_batch** | **str, none_type** | The number of products present in the batch. | 
+**number_of_products_upserted** | **str, none_type** | The number of products upserted. | 
+**number_of_products_deleted** | **str, none_type** | The number of products deleted. | 
+**number_of_products_with_errors** | **str, none_type** | The number of products with errors. | 
 **error_details** | [**[ReportDetailErrors]**](ReportDetailErrors.md) | The list of errors with details. | 
-**number_of_products_with_warnings** | **int, none_type** | The number of products with Warnings. | 
+**number_of_products_with_warnings** | **str, none_type** | The number of products with Warnings. | 
 **warning_details** | [**[ReportDetailWarnings]**](ReportDetailWarnings.md) | The list of Warnings with details. | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
