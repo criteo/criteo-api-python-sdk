@@ -30,7 +30,9 @@ from criteo_api_marketingsolutions_v2024_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_v2024_07.model.campaign_budget_automation_v23_q1 import CampaignBudgetAutomationV23Q1
     from criteo_api_marketingsolutions_v2024_07.model.campaign_spend_limit_v23_q1 import CampaignSpendLimitV23Q1
+    globals()['CampaignBudgetAutomationV23Q1'] = CampaignBudgetAutomationV23Q1
     globals()['CampaignSpendLimitV23Q1'] = CampaignSpendLimitV23Q1
 
 
@@ -97,6 +99,7 @@ class CampaignV23Q1(ModelNormal):
             'advertiser_id': (str, none_type,),  # noqa: E501
             'spend_limit': (CampaignSpendLimitV23Q1,),  # noqa: E501
             'goal': (str, none_type,),  # noqa: E501
+            'budget_automation': (CampaignBudgetAutomationV23Q1,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
         }
 
@@ -110,6 +113,7 @@ class CampaignV23Q1(ModelNormal):
         'advertiser_id': 'advertiserId',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
         'goal': 'goal',  # noqa: E501
+        'budget_automation': 'budgetAutomation',  # noqa: E501
         'id': 'id',  # noqa: E501
     }
 
@@ -158,6 +162,7 @@ class CampaignV23Q1(ModelNormal):
             advertiser_id (str, none_type): [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
             goal (str, none_type): [optional]  # noqa: E501
+            budget_automation (CampaignBudgetAutomationV23Q1): [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
         """
 
@@ -248,6 +253,7 @@ class CampaignV23Q1(ModelNormal):
             advertiser_id (str, none_type): [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
             goal (str, none_type): [optional]  # noqa: E501
+            budget_automation (CampaignBudgetAutomationV23Q1): [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
         """
 

@@ -119,9 +119,9 @@ class CreateAdSetV24Q3(ModelNormal):
             'schedule': (CreateAdSetScheduleV24Q3,),  # noqa: E501
             'bidding': (CreateAdSetBiddingV24Q3,),  # noqa: E501
             'targeting': (CreateAdSetTargetingV24Q3,),  # noqa: E501
-            'budget': (CreateAdSetBudgetV24Q3,),  # noqa: E501
             'tracking_code': (str, none_type,),  # noqa: E501
             'media_type': (str,),  # noqa: E501
+            'budget': (CreateAdSetBudgetV24Q3,),  # noqa: E501
             'attribution_configuration': (CreateAdSetAttributionConfigurationV24Q3,),  # noqa: E501
         }
 
@@ -138,9 +138,9 @@ class CreateAdSetV24Q3(ModelNormal):
         'schedule': 'schedule',  # noqa: E501
         'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
         'media_type': 'mediaType',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
         'attribution_configuration': 'attributionConfiguration',  # noqa: E501
     }
 
@@ -151,7 +151,7 @@ class CreateAdSetV24Q3(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, budget, tracking_code, media_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, tracking_code, media_type, *args, **kwargs):  # noqa: E501
         """CreateAdSetV24Q3 - a model defined in OpenAPI
 
         Args:
@@ -162,7 +162,6 @@ class CreateAdSetV24Q3(ModelNormal):
             schedule (CreateAdSetScheduleV24Q3):
             bidding (CreateAdSetBiddingV24Q3):
             targeting (CreateAdSetTargetingV24Q3):
-            budget (CreateAdSetBudgetV24Q3):
             tracking_code (str, none_type): The click tracking code associated to this Ad Set.
             media_type (str): Media type for the ad set
 
@@ -197,6 +196,7 @@ class CreateAdSetV24Q3(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget (CreateAdSetBudgetV24Q3): [optional]  # noqa: E501
             attribution_configuration (CreateAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
@@ -236,7 +236,6 @@ class CreateAdSetV24Q3(ModelNormal):
         self.schedule = schedule
         self.bidding = bidding
         self.targeting = targeting
-        self.budget = budget
         self.tracking_code = tracking_code
         self.media_type = media_type
         for var_name, var_value in kwargs.items():
@@ -259,7 +258,7 @@ class CreateAdSetV24Q3(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, budget, tracking_code, media_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, tracking_code, media_type, *args, **kwargs):  # noqa: E501
         """CreateAdSetV24Q3 - a model defined in OpenAPI
 
         Args:
@@ -270,7 +269,6 @@ class CreateAdSetV24Q3(ModelNormal):
             schedule (CreateAdSetScheduleV24Q3):
             bidding (CreateAdSetBiddingV24Q3):
             targeting (CreateAdSetTargetingV24Q3):
-            budget (CreateAdSetBudgetV24Q3):
             tracking_code (str, none_type): The click tracking code associated to this Ad Set.
             media_type (str): Media type for the ad set
 
@@ -305,6 +303,7 @@ class CreateAdSetV24Q3(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget (CreateAdSetBudgetV24Q3): [optional]  # noqa: E501
             attribution_configuration (CreateAdSetAttributionConfigurationV24Q3): [optional]  # noqa: E501
         """
 
@@ -342,7 +341,6 @@ class CreateAdSetV24Q3(ModelNormal):
         self.schedule = schedule
         self.bidding = bidding
         self.targeting = targeting
-        self.budget = budget
         self.tracking_code = tracking_code
         self.media_type = media_type
         for var_name, var_value in kwargs.items():

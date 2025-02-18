@@ -117,9 +117,9 @@ class CreateAdSet(ModelNormal):
             'schedule': (CreateAdSetSchedule,),  # noqa: E501
             'bidding': (CreateAdSetBidding,),  # noqa: E501
             'targeting': (CreateAdSetTargeting,),  # noqa: E501
-            'budget': (CreateAdSetBudget,),  # noqa: E501
             'tracking_code': (str, none_type,),  # noqa: E501
             'media_type': (str,),  # noqa: E501
+            'budget': (CreateAdSetBudget,),  # noqa: E501
         }
 
     @cached_property
@@ -135,9 +135,9 @@ class CreateAdSet(ModelNormal):
         'schedule': 'schedule',  # noqa: E501
         'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
         'media_type': 'mediaType',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
     }
 
     read_only_vars = {
@@ -147,7 +147,7 @@ class CreateAdSet(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, budget, tracking_code, media_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, tracking_code, media_type, *args, **kwargs):  # noqa: E501
         """CreateAdSet - a model defined in OpenAPI
 
         Args:
@@ -158,7 +158,6 @@ class CreateAdSet(ModelNormal):
             schedule (CreateAdSetSchedule):
             bidding (CreateAdSetBidding):
             targeting (CreateAdSetTargeting):
-            budget (CreateAdSetBudget):
             tracking_code (str, none_type): The click tracking code associated to this Ad Set.
             media_type (str): Media type for the ad set
 
@@ -193,6 +192,7 @@ class CreateAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget (CreateAdSetBudget): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,7 +231,6 @@ class CreateAdSet(ModelNormal):
         self.schedule = schedule
         self.bidding = bidding
         self.targeting = targeting
-        self.budget = budget
         self.tracking_code = tracking_code
         self.media_type = media_type
         for var_name, var_value in kwargs.items():
@@ -254,7 +253,7 @@ class CreateAdSet(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, budget, tracking_code, media_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, tracking_code, media_type, *args, **kwargs):  # noqa: E501
         """CreateAdSet - a model defined in OpenAPI
 
         Args:
@@ -265,7 +264,6 @@ class CreateAdSet(ModelNormal):
             schedule (CreateAdSetSchedule):
             bidding (CreateAdSetBidding):
             targeting (CreateAdSetTargeting):
-            budget (CreateAdSetBudget):
             tracking_code (str, none_type): The click tracking code associated to this Ad Set.
             media_type (str): Media type for the ad set
 
@@ -300,6 +298,7 @@ class CreateAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget (CreateAdSetBudget): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -336,7 +335,6 @@ class CreateAdSet(ModelNormal):
         self.schedule = schedule
         self.bidding = bidding
         self.targeting = targeting
-        self.budget = budget
         self.tracking_code = tracking_code
         self.media_type = media_type
         for var_name, var_value in kwargs.items():
