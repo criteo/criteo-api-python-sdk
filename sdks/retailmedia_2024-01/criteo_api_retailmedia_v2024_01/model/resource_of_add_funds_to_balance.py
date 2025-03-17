@@ -88,8 +88,8 @@ class ResourceOfAddFundsToBalance(ModelNormal):
         lazy_import()
         return {
             'attributes': (ExternalAddFundsToBalance,),  # noqa: E501
-            'id': (str, none_type,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
+            'id': (str,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -145,8 +145,8 @@ class ResourceOfAddFundsToBalance(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (ExternalAddFundsToBalance): [optional]  # noqa: E501
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
-            type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
+            id (str): Id of the entity. [optional]  # noqa: E501
+            type (str): Canonical type name of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -233,8 +233,8 @@ class ResourceOfAddFundsToBalance(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (ExternalAddFundsToBalance): [optional]  # noqa: E501
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
-            type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
+            id (str): Id of the entity. [optional]  # noqa: E501
+            type (str): Canonical type name of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

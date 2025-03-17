@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **match_type** | [**MatchTypeModel**](MatchTypeModel.md) |  | [optional] 
 **bid** | **float, none_type** |  | [optional] 
 **input_keywords** | [**InputKeywordsModel**](InputKeywordsModel.md) |  | [optional] 
-**created_at** | **datetime, none_type** |  | [optional] 
-**updated_at** | **datetime, none_type** |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -60,15 +60,9 @@ class ExternalRetailMediaBrands(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -100,8 +94,11 @@ class ExternalRetailMediaBrands(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, brand_ids, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaBrands - a model defined in OpenAPI
+
+        Args:
+            brand_ids ([int]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -134,7 +131,6 @@ class ExternalRetailMediaBrands(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([int]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -166,6 +162,7 @@ class ExternalRetailMediaBrands(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.brand_ids = brand_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -186,8 +183,11 @@ class ExternalRetailMediaBrands(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, brand_ids, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaBrands - a model defined in OpenAPI
+
+        Args:
+            brand_ids ([int]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -220,7 +220,6 @@ class ExternalRetailMediaBrands(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([int]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -250,6 +249,7 @@ class ExternalRetailMediaBrands(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.brand_ids = brand_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

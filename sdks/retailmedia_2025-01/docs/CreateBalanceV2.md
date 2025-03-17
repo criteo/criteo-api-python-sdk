@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **start_date** | **date** | Start date of the balance in the format YYYY-MM-DD. | 
 **spend_type** | **str** | Type of the balance spend. | 
 **po_number** | **str, none_type** | Purchase Order number. | [optional] 
-**deposited** | **float, none_type** | Amount of billable funds allotted to the balance. | [optional] 
+**deposited** | **float** | Amount of billable funds allotted to the balance. | [optional] 
 **end_date** | **date, none_type** | End date of the balance in the format YYYY-MM-DD. | [optional] 
 **memo** | **str, none_type** | Memo | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

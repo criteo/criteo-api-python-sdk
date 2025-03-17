@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **retailer_id** | **int** | The retailer associated to the creative | 
 **template_id** | **int** | The creative template used for this creative | 
 **template_variable_values** | [**[TemplateVariableValue]**](TemplateVariableValue.md) | The template chosen values | 
-**brand_id** | **int, none_type** | The brand associated to the creative | [optional] 
+**brand_id** | **int** | The brand associated to the creative | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **start_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | 
 **target_retailer_id** | **str** |  | 
-**end_date** | **date, none_type** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
+**end_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
 **status** | **str** |  | [optional] 
 **budget** | **float, none_type** |  | [optional] 
 **target_bid** | **float, none_type** |  | [optional] 

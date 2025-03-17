@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **get_api_external_v1_account_private_market_child_accounts_by_account_id**
-> EntityResourceCollectionOutcomeOfRetailMediaChildAccount get_api_external_v1_account_private_market_child_accounts_by_account_id(account_id)
+> EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata get_api_external_v1_account_private_market_child_accounts_by_account_id(account_id)
 
 
 
@@ -25,7 +25,7 @@ Gets page of private market child accounts that are associated with the given ac
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import accounts_api
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account import EntityResourceCollectionOutcomeOfRetailMediaChildAccount
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account_and_metadata import EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EntityResourceCollectionOutcomeOfRetailMediaChildAccount**](EntityResourceCollectionOutcomeOfRetailMediaChildAccount.md)
+[**EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata**](EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata.md)
 
 ### Authorization
 

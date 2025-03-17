@@ -229,6 +229,12 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
                     spend_limit_renewal="undefined",
                     spend_limit_amount=3.14,
                 ),
+                budget_automation=BudgetAutomation(
+                    enabled=True,
+                    automated_budget_configuration=AutomatedBudgetConfiguration(
+                        objective="customAction",
+                    ),
+                ),
             ),
             type="Campaign",
         ),
@@ -824,6 +830,12 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
                         spend_limit_renewal="undefined",
                         spend_limit_amount=NillableDecimal(
                             value=3.14,
+                        ),
+                    ),
+                    budget_automation=PatchMarketingCampaignBudgetAutomation(
+                        enable=True,
+                        budget_configuration=BudgetAutomationConfiguration(
+                            ad_set_objectives="customAction",
                         ),
                     ),
                 ),

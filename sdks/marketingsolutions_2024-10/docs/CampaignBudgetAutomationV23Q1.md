@@ -6,7 +6,7 @@ The campaign budget automation model
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enabled** | **bool, none_type** |  | [optional] 
-**automated_budget_configuration** | [**CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration**](CampaignBudgetAutomationV23Q1AutomatedBudgetConfiguration.md) |  | [optional] 
+**automated_budget_configuration** | [**AutomatedBudgetConfigurationV23Q1**](AutomatedBudgetConfigurationV23Q1.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

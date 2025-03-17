@@ -56,7 +56,6 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
 
     allowed_values = {
         ('audience_segment_types',): {
-            'None': None,
             'UNKNOWN': "Unknown",
             'CONTACTLIST': "ContactList",
             'EVENTS': "Events",
@@ -87,9 +86,9 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'audience_segment_ids': ([str], none_type,),  # noqa: E501
-            'retailer_ids': ([str], none_type,),  # noqa: E501
-            'audience_segment_types': ([str], none_type,),  # noqa: E501
+            'audience_segment_ids': ([str],),  # noqa: E501
+            'retailer_ids': ([str],),  # noqa: E501
+            'audience_segment_types': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -144,9 +143,9 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            audience_segment_ids ([str], none_type): List of segment ids. [optional]  # noqa: E501
-            retailer_ids ([str], none_type): List of retailer ids. [optional]  # noqa: E501
-            audience_segment_types ([str], none_type): List of segment types. [optional]  # noqa: E501
+            audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
+            retailer_ids ([str]): List of retailer ids. [optional]  # noqa: E501
+            audience_segment_types ([str]): List of segment types. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,9 +231,9 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            audience_segment_ids ([str], none_type): List of segment ids. [optional]  # noqa: E501
-            retailer_ids ([str], none_type): List of retailer ids. [optional]  # noqa: E501
-            audience_segment_types ([str], none_type): List of segment types. [optional]  # noqa: E501
+            audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
+            retailer_ids ([str]): List of retailer ids. [optional]  # noqa: E501
+            audience_segment_types ([str]): List of segment types. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

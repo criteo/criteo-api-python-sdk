@@ -97,7 +97,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
+            'description': (str,),  # noqa: E501
             'in_market': (InMarketCreateV1,),  # noqa: E501
             'prospecting': (ProspectingCreateV1,),  # noqa: E501
             'contact_list': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
@@ -168,7 +168,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            description (str): Description of the segment. [optional]  # noqa: E501
             in_market (InMarketCreateV1): [optional]  # noqa: E501
             prospecting (ProspectingCreateV1): [optional]  # noqa: E501
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
@@ -266,7 +266,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            description (str): Description of the segment. [optional]  # noqa: E501
             in_market (InMarketCreateV1): [optional]  # noqa: E501
             prospecting (ProspectingCreateV1): [optional]  # noqa: E501
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501

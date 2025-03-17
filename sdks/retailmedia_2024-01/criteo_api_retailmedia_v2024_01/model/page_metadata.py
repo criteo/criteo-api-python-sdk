@@ -60,13 +60,7 @@ class PageMetadata(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -85,8 +79,8 @@ class PageMetadata(ModelNormal):
             'current_page_index': (int,),  # noqa: E501
             'total_items_across_all_pages': (int, none_type,),  # noqa: E501
             'total_pages': (int, none_type,),  # noqa: E501
-            'next_page': (str,),  # noqa: E501
-            'previous_page': (str,),  # noqa: E501
+            'next_page': (str, none_type,),  # noqa: E501
+            'previous_page': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -150,8 +144,8 @@ class PageMetadata(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             total_items_across_all_pages (int, none_type): [optional]  # noqa: E501
             total_pages (int, none_type): [optional]  # noqa: E501
-            next_page (str): [optional]  # noqa: E501
-            previous_page (str): [optional]  # noqa: E501
+            next_page (str, none_type): [optional]  # noqa: E501
+            previous_page (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,8 +239,8 @@ class PageMetadata(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             total_items_across_all_pages (int, none_type): [optional]  # noqa: E501
             total_pages (int, none_type): [optional]  # noqa: E501
-            next_page (str): [optional]  # noqa: E501
-            previous_page (str): [optional]  # noqa: E501
+            next_page (str, none_type): [optional]  # noqa: E501
+            previous_page (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

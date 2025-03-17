@@ -56,43 +56,36 @@ class AsyncAccountsReport(ModelNormal):
 
     allowed_values = {
         ('aggregation_level',): {
-            'None': None,
             'CAMPAIGN': "campaign",
             'LINEITEM': "lineItem",
         },
         ('search_term_types',): {
-            'None': None,
             'UNKNOWN': "unknown",
             'SEARCHED': "searched",
             'ENTERED': "entered",
         },
         ('search_term_targetings',): {
-            'None': None,
             'UNKNOWN': "unknown",
             'AUTOMATIC': "automatic",
             'MANUAL': "manual",
         },
         ('campaign_type',): {
-            'None': None,
             'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('sales_channel',): {
-            'None': None,
             'ALL': "all",
             'OFFLINE': "offline",
             'ONLINE': "online",
         },
         ('format',): {
-            'None': None,
             'JSON': "json",
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
         },
         ('report_type',): {
-            'None': None,
             'SUMMARY': "summary",
             'PAGETYPE': "pageType",
             'KEYWORD': "keyword",
@@ -104,14 +97,12 @@ class AsyncAccountsReport(ModelNormal):
             'CAPOUT': "capout",
         },
         ('click_attribution_window',): {
-            'None': None,
             'NONE': "none",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
         },
         ('view_attribution_window',): {
-            'None': None,
             'NONE': "none",
             '1D': "1D",
             '7D': "7D",
@@ -119,7 +110,6 @@ class AsyncAccountsReport(ModelNormal):
             '30D': "30D",
         },
         ('dimensions',): {
-            'None': None,
             'DATE': "date",
             'HOUR': "hour",
             'ACCOUNTID': "accountId",
@@ -154,7 +144,6 @@ class AsyncAccountsReport(ModelNormal):
             'CREATIVETEMPLATENAME': "creativeTemplateName",
         },
         ('metrics',): {
-            'None': None,
             'IMPRESSIONS': "impressions",
             'CLICKS': "clicks",
             'SPEND': "spend",
@@ -222,18 +211,18 @@ class AsyncAccountsReport(ModelNormal):
             'account_ids': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'aggregation_level': (str, none_type,),  # noqa: E501
-            'search_term_types': ([str], none_type,),  # noqa: E501
-            'search_term_targetings': ([str], none_type,),  # noqa: E501
-            'campaign_type': (str, none_type,),  # noqa: E501
-            'sales_channel': (str, none_type,),  # noqa: E501
-            'format': (str, none_type,),  # noqa: E501
-            'report_type': (str, none_type,),  # noqa: E501
-            'click_attribution_window': (str, none_type,),  # noqa: E501
-            'view_attribution_window': (str, none_type,),  # noqa: E501
-            'dimensions': ([str], none_type,),  # noqa: E501
-            'metrics': ([str], none_type,),  # noqa: E501
-            'timezone': (str, none_type,),  # noqa: E501
+            'aggregation_level': (str,),  # noqa: E501
+            'search_term_types': ([str],),  # noqa: E501
+            'search_term_targetings': ([str],),  # noqa: E501
+            'campaign_type': (str,),  # noqa: E501
+            'sales_channel': (str,),  # noqa: E501
+            'format': (str,),  # noqa: E501
+            'report_type': (str,),  # noqa: E501
+            'click_attribution_window': (str,),  # noqa: E501
+            'view_attribution_window': (str,),  # noqa: E501
+            'dimensions': ([str],),  # noqa: E501
+            'metrics': ([str],),  # noqa: E501
+            'timezone': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -305,18 +294,18 @@ class AsyncAccountsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregation_level (str, none_type): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
-            search_term_types ([str], none_type): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
-            search_term_targetings ([str], none_type): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
-            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
-            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
-            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            aggregation_level (str): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
+            campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -410,18 +399,18 @@ class AsyncAccountsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            aggregation_level (str, none_type): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
-            search_term_types ([str], none_type): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
-            search_term_targetings ([str], none_type): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            report_type (str, none_type): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
-            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
-            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
-            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            aggregation_level (str): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
+            campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

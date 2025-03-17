@@ -79,7 +79,7 @@ class SellerSearch(ModelNormal):
         """
         return {
             'account_ids': ([str],),  # noqa: E501
-            'include_details': (bool, none_type,),  # noqa: E501
+            'include_details': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -136,7 +136,7 @@ class SellerSearch(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_details (bool, none_type): whether to include additional fields beyond the sellerId and retailerId in the response.  May improve performance when set to false.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            include_details (bool): whether to include additional fields beyond the sellerId and retailerId in the response.  May improve performance when set to false.. [optional] if omitted the server will use the default value of False  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +226,7 @@ class SellerSearch(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_details (bool, none_type): whether to include additional fields beyond the sellerId and retailerId in the response.  May improve performance when set to false.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            include_details (bool): whether to include additional fields beyond the sellerId and retailerId in the response.  May improve performance when set to false.. [optional] if omitted the server will use the default value of False  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

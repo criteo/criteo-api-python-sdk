@@ -56,7 +56,6 @@ class RmContactListCreateV1(ModelNormal):
 
     allowed_values = {
         ('identifier_type',): {
-            'None': None,
             'EMAIL': "Email",
             'USERIDENTIFIER': "UserIdentifier",
             'IDENTITYLINK': "IdentityLink",
@@ -88,7 +87,7 @@ class RmContactListCreateV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'identifier_type': (str, none_type,),  # noqa: E501
+            'identifier_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -141,7 +140,7 @@ class RmContactListCreateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            identifier_type (str, none_type): Indicates contact list type. [optional]  # noqa: E501
+            identifier_type (str): Indicates contact list type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,7 +226,7 @@ class RmContactListCreateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            identifier_type (str, none_type): Indicates contact list type. [optional]  # noqa: E501
+            identifier_type (str): Indicates contact list type. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

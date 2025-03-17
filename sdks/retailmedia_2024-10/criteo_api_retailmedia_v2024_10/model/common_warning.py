@@ -56,6 +56,7 @@ class CommonWarning(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'UNKNOWN': "unknown",
             'ACCESS-CONTROL': "access-control",
             'AUTHENTICATION': "authentication",
@@ -70,13 +71,7 @@ class CommonWarning(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -91,14 +86,14 @@ class CommonWarning(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'trace_id': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
-            'code': (str,),  # noqa: E501
-            'instance': (str,),  # noqa: E501
-            'title': (str,),  # noqa: E501
-            'detail': (str,),  # noqa: E501
-            'source': ({str: (str,)},),  # noqa: E501
-            'stack_trace': (str,),  # noqa: E501
+            'trace_id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'code': (str, none_type,),  # noqa: E501
+            'instance': (str, none_type,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
+            'detail': (str, none_type,),  # noqa: E501
+            'source': ({str: (str,)}, none_type,),  # noqa: E501
+            'stack_trace': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -158,14 +153,14 @@ class CommonWarning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
-            type (str): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
-            code (str): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
-            instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
-            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
-            detail (str): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
-            source ({str: (str,)}): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
-            stack_trace (str): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
+            trace_id (str, none_type): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
+            type (str, none_type): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
+            code (str, none_type): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
+            instance (str, none_type): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
+            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
+            detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            source ({str: (str,)}, none_type): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
+            stack_trace (str, none_type): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,14 +246,14 @@ class CommonWarning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
-            type (str): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
-            code (str): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
-            instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
-            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
-            detail (str): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
-            source ({str: (str,)}): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
-            stack_trace (str): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
+            trace_id (str, none_type): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
+            type (str, none_type): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
+            code (str, none_type): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
+            instance (str, none_type): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
+            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
+            detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            source ({str: (str,)}, none_type): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
+            stack_trace (str, none_type): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

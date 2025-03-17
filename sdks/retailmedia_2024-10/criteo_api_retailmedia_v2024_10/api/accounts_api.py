@@ -63,7 +63,6 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
-                    'value_resource_input_of_retail_media_brands',
                 ],
                 'enum': [
                 ],
@@ -180,7 +179,6 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
-                    'value_resource_input_of_retail_media_seller_account_creation',
                 ],
                 'enum': [
                 ],
@@ -302,7 +300,6 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
-                    'value_resource_input_of_retail_media_brands',
                 ],
                 'enum': [
                 ],
@@ -361,7 +358,6 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
-                    'value_resource_collection_input_of_retail_media_seller',
                 ],
                 'enum': [
                 ],
@@ -824,7 +820,7 @@ class AccountsApi(object):
     ):
         """update_sellers  # noqa: E501
 
-        replace the sellers associated with an account  # noqa: E501
+        Replace the sellers associated with an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

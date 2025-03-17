@@ -1,14 +1,13 @@
 # EntityResourceOutcomeOfRetailMediaAccount
 
-A top-level object that encapsulates a Criteo API response for a single value.
+A top-level object that encapsulates a Criteo API response for a single entity.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**EntityResourceOfRetailMediaAccount**](EntityResourceOfRetailMediaAccount.md) |  | [optional] 
-**warnings** | [**[CommonProblem], none_type**](CommonProblem.md) |  | [optional] [readonly] 
-**errors** | [**[CommonProblem], none_type**](CommonProblem.md) |  | [optional] [readonly] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**warnings** | [**[SdkApiRestCommonProblem], none_type**](SdkApiRestCommonProblem.md) | Warnings that occured during this call. | [optional] [readonly] 
+**errors** | [**[SdkApiRestCommonProblem], none_type**](SdkApiRestCommonProblem.md) | Errors that occured during this call. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

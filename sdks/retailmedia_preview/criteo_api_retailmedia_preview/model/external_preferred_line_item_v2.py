@@ -125,6 +125,7 @@ class ExternalPreferredLineItemV2(ModelNormal):
             'budget_spent': (float, none_type,),  # noqa: E501
             'budget_remaining': (float, none_type,),  # noqa: E501
             'creative_id': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -148,6 +149,7 @@ class ExternalPreferredLineItemV2(ModelNormal):
         'budget_spent': 'budgetSpent',  # noqa: E501
         'budget_remaining': 'budgetRemaining',  # noqa: E501
         'creative_id': 'creativeId',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -208,6 +210,7 @@ class ExternalPreferredLineItemV2(ModelNormal):
             budget_spent (float, none_type): [optional]  # noqa: E501
             budget_remaining (float, none_type): [optional]  # noqa: E501
             creative_id (str, none_type): External creative Id. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -318,6 +321,7 @@ class ExternalPreferredLineItemV2(ModelNormal):
             budget_spent (float, none_type): [optional]  # noqa: E501
             budget_remaining (float, none_type): [optional]  # noqa: E501
             creative_id (str, none_type): External creative Id. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

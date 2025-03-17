@@ -31,7 +31,9 @@ from criteo_api_marketingsolutions_v2024_10.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_v2024_10.model.patch_campaign_spend_limit import PatchCampaignSpendLimit
+    from criteo_api_marketingsolutions_v2024_10.model.patch_marketing_campaign_budget_automation import PatchMarketingCampaignBudgetAutomation
     globals()['PatchCampaignSpendLimit'] = PatchCampaignSpendLimit
+    globals()['PatchMarketingCampaignBudgetAutomation'] = PatchMarketingCampaignBudgetAutomation
 
 
 class PatchCampaign(ModelNormal):
@@ -88,6 +90,7 @@ class PatchCampaign(ModelNormal):
         lazy_import()
         return {
             'spend_limit': (PatchCampaignSpendLimit,),  # noqa: E501
+            'budget_automation': (PatchMarketingCampaignBudgetAutomation,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +100,7 @@ class PatchCampaign(ModelNormal):
 
     attribute_map = {
         'spend_limit': 'spendLimit',  # noqa: E501
+        'budget_automation': 'budgetAutomation',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,6 +145,7 @@ class PatchCampaign(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
+            budget_automation (PatchMarketingCampaignBudgetAutomation): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,6 +232,7 @@ class PatchCampaign(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
+            budget_automation (PatchMarketingCampaignBudgetAutomation): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

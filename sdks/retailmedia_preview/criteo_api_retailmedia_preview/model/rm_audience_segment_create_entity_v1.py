@@ -89,7 +89,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
+            'description': (str,),  # noqa: E501
             'contact_list': (RmContactListCreateV1,),  # noqa: E501
         }
 
@@ -150,7 +150,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            description (str): Description of the segment. [optional]  # noqa: E501
             contact_list (RmContactListCreateV1): [optional]  # noqa: E501
         """
 
@@ -243,7 +243,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            description (str): Description of the segment. [optional]  # noqa: E501
             contact_list (RmContactListCreateV1): [optional]  # noqa: E501
         """
 

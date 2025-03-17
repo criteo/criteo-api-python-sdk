@@ -3232,6 +3232,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 favorites=3.14,
                 search_bar=3.14,
                 category_menu=3.14,
+                id="id_example",
             ),
             id="id_example",
             type="type_example",

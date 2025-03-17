@@ -60,7 +60,6 @@ class Keywords(ModelNormal):
 
     allowed_values = {
         ('review_state',): {
-            'None': None,
             'INREVIEW': "InReview",
             'RECOMMENDED': "Recommended",
             'APPROVED': "Approved",
@@ -70,7 +69,6 @@ class Keywords(ModelNormal):
             'UNKOWN': "Unkown",
         },
         ('match_type',): {
-            'None': None,
             'POSITIVEEXACTMATCH': "PositiveExactMatch",
             'NEGATIVEEXACTMATCH': "NegativeExactMatch",
             'NEGATIVEBROADMATCH': "NegativeBroadMatch",
@@ -97,12 +95,12 @@ class Keywords(ModelNormal):
         """
         lazy_import()
         return {
-            'review_state': (str, none_type,),  # noqa: E501
-            'match_type': (str, none_type,),  # noqa: E501
+            'review_state': (str,),  # noqa: E501
+            'match_type': (str,),  # noqa: E501
             'bid': (float, none_type,),  # noqa: E501
             'input_keywords': (InputKeywords,),  # noqa: E501
-            'created_at': (datetime, none_type,),  # noqa: E501
-            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -160,12 +158,12 @@ class Keywords(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (str, none_type): Review status of the keyword. [optional]  # noqa: E501
-            match_type (str, none_type): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
+            review_state (str): Review status of the keyword. [optional]  # noqa: E501
+            match_type (str): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
             bid (float, none_type): The bid to use when a positive keyword matches the shopper search phrase. [optional]  # noqa: E501
             input_keywords (InputKeywords): [optional]  # noqa: E501
-            created_at (datetime, none_type): The time at which this keyword was created in UTC. [optional]  # noqa: E501
-            updated_at (datetime, none_type): The time at which the keyword was last modified in UTC. [optional]  # noqa: E501
+            created_at (datetime): The time at which this keyword was created in UTC. [optional]  # noqa: E501
+            updated_at (datetime): The time at which the keyword was last modified in UTC. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,12 +249,12 @@ class Keywords(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (str, none_type): Review status of the keyword. [optional]  # noqa: E501
-            match_type (str, none_type): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
+            review_state (str): Review status of the keyword. [optional]  # noqa: E501
+            match_type (str): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
             bid (float, none_type): The bid to use when a positive keyword matches the shopper search phrase. [optional]  # noqa: E501
             input_keywords (InputKeywords): [optional]  # noqa: E501
-            created_at (datetime, none_type): The time at which this keyword was created in UTC. [optional]  # noqa: E501
-            updated_at (datetime, none_type): The time at which the keyword was last modified in UTC. [optional]  # noqa: E501
+            created_at (datetime): The time at which this keyword was created in UTC. [optional]  # noqa: E501
+            updated_at (datetime): The time at which the keyword was last modified in UTC. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

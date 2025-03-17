@@ -237,6 +237,7 @@ criteo_api_retailmedia_v2024_10/model/rm_contact_list_statistics_entity_v1_respo
 criteo_api_retailmedia_v2024_10/model/rm_contact_list_v1.py
 criteo_api_retailmedia_v2024_10/model/rm_events_v1.py
 criteo_api_retailmedia_v2024_10/model/rmca_common_problem.py
+criteo_api_retailmedia_v2024_10/model/sdk_api_rest_common_problem.py
 criteo_api_retailmedia_v2024_10/model/section.py
 criteo_api_retailmedia_v2024_10/model/set_bid_model.py
 criteo_api_retailmedia_v2024_10/model/set_bids_model.py
@@ -505,6 +506,7 @@ docs/RmContactListStatisticsEntityV1Response.md
 docs/RmContactListV1.md
 docs/RmEventsV1.md
 docs/RmcaCommonProblem.md
+docs/SdkApiRestCommonProblem.md
 docs/Section.md
 docs/SetBidModel.md
 docs/SetBidsModel.md

@@ -56,19 +56,16 @@ class InMarketCreateV1(ModelNormal):
 
     allowed_values = {
         ('buying_power',): {
-            'None': None,
             'LOW': "Low",
             'MEDIUM': "Medium",
             'HIGH': "High",
             'VERYHIGH': "VeryHigh",
         },
         ('gender',): {
-            'None': None,
             'MALE': "Male",
             'FEMALE': "Female",
         },
         ('price_range',): {
-            'None': None,
             'LOW': "Low",
             'MEDIUM': "Medium",
             'HIGH': "High",
@@ -108,11 +105,11 @@ class InMarketCreateV1(ModelNormal):
         """
         return {
             'country': (str,),  # noqa: E501
-            'buying_power': ([str], none_type,),  # noqa: E501
-            'gender': (str, none_type,),  # noqa: E501
-            'interest_ids': ([str], none_type,),  # noqa: E501
-            'brand_ids': ([str], none_type,),  # noqa: E501
-            'price_range': ([str], none_type,),  # noqa: E501
+            'buying_power': ([str],),  # noqa: E501
+            'gender': (str,),  # noqa: E501
+            'interest_ids': ([str],),  # noqa: E501
+            'brand_ids': ([str],),  # noqa: E501
+            'price_range': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -173,11 +170,11 @@ class InMarketCreateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            buying_power ([str], none_type): Reach people who frequently purchase high price range items to lower price range items. [optional]  # noqa: E501
-            gender (str, none_type): Reach people who’ve shown interest in products made for a specific gender. [optional]  # noqa: E501
-            interest_ids ([str], none_type): Reach new people based on their interests. [optional]  # noqa: E501
-            brand_ids ([str], none_type): Choose the brands your segment might be interested in. [optional]  # noqa: E501
-            price_range ([str], none_type): Reach people who’ve shown interest in products within a specific price range. [optional]  # noqa: E501
+            buying_power ([str]): Reach people who frequently purchase high price range items to lower price range items. [optional]  # noqa: E501
+            gender (str): Reach people who’ve shown interest in products made for a specific gender. [optional]  # noqa: E501
+            interest_ids ([str]): Reach new people based on their interests. [optional]  # noqa: E501
+            brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
+            price_range ([str]): Reach people who’ve shown interest in products within a specific price range. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -267,11 +264,11 @@ class InMarketCreateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            buying_power ([str], none_type): Reach people who frequently purchase high price range items to lower price range items. [optional]  # noqa: E501
-            gender (str, none_type): Reach people who’ve shown interest in products made for a specific gender. [optional]  # noqa: E501
-            interest_ids ([str], none_type): Reach new people based on their interests. [optional]  # noqa: E501
-            brand_ids ([str], none_type): Choose the brands your segment might be interested in. [optional]  # noqa: E501
-            price_range ([str], none_type): Reach people who’ve shown interest in products within a specific price range. [optional]  # noqa: E501
+            buying_power ([str]): Reach people who frequently purchase high price range items to lower price range items. [optional]  # noqa: E501
+            gender (str): Reach people who’ve shown interest in products made for a specific gender. [optional]  # noqa: E501
+            interest_ids ([str]): Reach new people based on their interests. [optional]  # noqa: E501
+            brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
+            price_range ([str]): Reach people who’ve shown interest in products within a specific price range. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

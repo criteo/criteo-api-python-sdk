@@ -80,7 +80,7 @@ class PromotedProductResourceCollectionInput(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([PromotedProductResource], none_type,),  # noqa: E501
+            'data': ([PromotedProductResource],),  # noqa: E501
         }
 
     @cached_property
@@ -133,7 +133,7 @@ class PromotedProductResourceCollectionInput(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([PromotedProductResource], none_type): [optional]  # noqa: E501
+            data ([PromotedProductResource]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -219,7 +219,7 @@ class PromotedProductResourceCollectionInput(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([PromotedProductResource], none_type): [optional]  # noqa: E501
+            data ([PromotedProductResource]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

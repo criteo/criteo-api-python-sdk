@@ -21,7 +21,7 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account import EntityResourceCollectionOutcomeOfRetailMediaChildAccount
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account_and_metadata import EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
 from criteo_api_retailmedia_preview.model.grant_consent_input import GrantConsentInput
 from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_of_seller_search_result import ValueResourceCollectionOutcomeOfSellerSearchResult
@@ -41,7 +41,7 @@ class AccountsApi(object):
         self.api_client = api_client
         self.get_api_external_v1_account_private_market_child_accounts_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceCollectionOutcomeOfRetailMediaChildAccount,),
+                'response_type': (EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -269,7 +269,7 @@ class AccountsApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceCollectionOutcomeOfRetailMediaChildAccount
+            EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
                 If the method is called asynchronously, returns the request
                 thread.
         """

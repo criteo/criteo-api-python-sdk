@@ -8,16 +8,16 @@ Name | Type | Description | Notes
 **account_id** | **str** | Account id to report on | 
 **start_date** | **datetime** | Start date | 
 **end_date** | **datetime** | End date | 
-**report_type** | **str, none_type** | Type of report, if no dimensions/metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
-**line_item_ids** | **[str], none_type** | Line Item ids to filter | [optional] 
-**campaign_ids** | **[str], none_type** | Campaign ids to filter | [optional] 
-**click_attribution_window** | **str, none_type** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
-**view_attribution_window** | **str, none_type** | View attribution window | [optional]  if omitted the server will use the default value of "none"
-**campaign_type** | **str, none_type** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
-**sales_channel** | **str, none_type** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
-**dimensions** | **[str], none_type** | List of dimensions to report on | [optional] 
-**metrics** | **[str], none_type** | List of metrics to report on | [optional] 
-**timezone** | **str, none_type** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
+**report_type** | **str** | Type of report, if no dimensions/metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
+**line_item_ids** | **[str]** | Line Item ids to filter | [optional] 
+**campaign_ids** | **[str]** | Campaign ids to filter | [optional] 
+**click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
+**view_attribution_window** | **str** | View attribution window | [optional]  if omitted the server will use the default value of "none"
+**campaign_type** | **str** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
+**sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
+**dimensions** | **[str]** | List of dimensions to report on | [optional] 
+**metrics** | **[str]** | List of metrics to report on | [optional] 
+**timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

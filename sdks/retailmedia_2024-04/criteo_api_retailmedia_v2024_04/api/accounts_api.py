@@ -60,7 +60,6 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
-                    'value_resource_input_of_retail_media_brands',
                 ],
                 'enum': [
                 ],
@@ -240,7 +239,6 @@ class AccountsApi(object):
                     'account_id',
                 ],
                 'nullable': [
-                    'value_resource_input_of_retail_media_brands',
                 ],
                 'enum': [
                 ],

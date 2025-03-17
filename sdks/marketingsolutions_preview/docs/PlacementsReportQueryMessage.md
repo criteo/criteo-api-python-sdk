@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **adset_ids** | **str, none_type** | The comma-separated list of adSet ids. | [optional] 
 **environment** | **str, none_type** | Type of environment: Web, Android or iOS. | [optional] 
 **placement** | **str, none_type** | Filter the value of the placement | [optional] 
-**disclosed** | **bool, none_type** | Returns disclosed or undisclosed placements. | [optional]  if omitted the server will use the default value of True
+**disclosed** | **bool** | Returns disclosed or undisclosed placements. | [optional]  if omitted the server will use the default value of True
 **timezone** | **str, none_type** | The timezone used for the report. Timezone Database format (Tz). | [optional]  if omitted the server will use the default value of "UTC"
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

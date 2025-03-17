@@ -119,6 +119,7 @@ class ExternalAuctionLineItem(ModelNormal):
             'target_bid': (float, none_type,),  # noqa: E501
             'is_auto_daily_pacing': (bool,),  # noqa: E501
             'budget_spent': (float,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -144,6 +145,7 @@ class ExternalAuctionLineItem(ModelNormal):
         'target_bid': 'targetBid',  # noqa: E501
         'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
         'budget_spent': 'budgetSpent',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -206,6 +208,7 @@ class ExternalAuctionLineItem(ModelNormal):
             target_bid (float, none_type): [optional]  # noqa: E501
             is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
             budget_spent (float): [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -317,6 +320,7 @@ class ExternalAuctionLineItem(ModelNormal):
             target_bid (float, none_type): [optional]  # noqa: E501
             is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
             budget_spent (float): [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

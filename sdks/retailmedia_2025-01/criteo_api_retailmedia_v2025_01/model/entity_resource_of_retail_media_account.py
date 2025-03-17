@@ -64,14 +64,7 @@ class EntityResourceOfRetailMediaAccount(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = True
 
@@ -144,8 +137,8 @@ class EntityResourceOfRetailMediaAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): Unique id of the entity.. [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
             attributes (ExternalRetailMediaAccount): [optional]  # noqa: E501
         """
 
@@ -232,8 +225,8 @@ class EntityResourceOfRetailMediaAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
+            id (str, none_type): Unique id of the entity.. [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
             attributes (ExternalRetailMediaAccount): [optional]  # noqa: E501
         """
 

@@ -81,7 +81,7 @@ class AudienceSegmentIdEntityV1Resource(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'attributes': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'attributes': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
         }
@@ -138,7 +138,7 @@ class AudienceSegmentIdEntityV1Resource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Audience Segment entity only with its ID. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): Audience Segment entity only with its ID. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
         """
@@ -226,7 +226,7 @@ class AudienceSegmentIdEntityV1Resource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Audience Segment entity only with its ID. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): Audience Segment entity only with its ID. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
         """

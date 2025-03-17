@@ -83,7 +83,7 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
         return {
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'attributes': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'attributes': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,7 +142,7 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): ad set id model. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): ad set id model. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,7 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): ad set id model. [optional]  # noqa: E501
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): ad set id model. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

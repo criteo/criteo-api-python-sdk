@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Name of the segment | 
 **retailer_id** | **str** | Retailer  associated to the segment | 
-**description** | **str, none_type** | Description of the segment | [optional] 
+**description** | **str** | Description of the segment | [optional] 
 **contact_list** | [**RmContactListCreateV1**](RmContactListCreateV1.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

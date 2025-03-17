@@ -1985,6 +1985,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Catalog download initiated. |  -  |
+**204** | Catalog has expired. |  -  |
 **400** | The indicated catalog is not available for retrieval, wait for a success status. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -5866,6 +5867,7 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
                 favorites=3.14,
                 search_bar=3.14,
                 category_menu=3.14,
+                id="id_example",
             ),
             id="id_example",
             type="type_example",

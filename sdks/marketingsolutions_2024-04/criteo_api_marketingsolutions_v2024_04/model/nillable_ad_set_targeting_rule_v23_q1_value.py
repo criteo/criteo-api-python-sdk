@@ -60,7 +60,6 @@ class NillableAdSetTargetingRuleV23Q1Value(ModelComposed):
 
     allowed_values = {
         ('operand',): {
-            'None': None,
             'UNDEFINED': "undefined",
             'IN': "in",
             'NOTIN': "notIn",
@@ -93,7 +92,7 @@ class NillableAdSetTargetingRuleV23Q1Value(ModelComposed):
         """
         lazy_import()
         return {
-            'operand': (str, none_type,),  # noqa: E501
+            'operand': (str,),  # noqa: E501
             'values': ([str], none_type,),  # noqa: E501
         }
 
@@ -146,7 +145,7 @@ class NillableAdSetTargetingRuleV23Q1Value(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            operand (str, none_type): [optional]  # noqa: E501
+            operand (str): [optional]  # noqa: E501
             values ([str], none_type): [optional]  # noqa: E501
         """
 
@@ -251,7 +250,7 @@ class NillableAdSetTargetingRuleV23Q1Value(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            operand (str, none_type): [optional]  # noqa: E501
+            operand (str): [optional]  # noqa: E501
             values ([str], none_type): [optional]  # noqa: E501
         """
 

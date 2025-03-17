@@ -256,6 +256,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     spend_limit_renewal="undefined",
                     spend_limit_amount=3.14,
                 ),
+                budget_automation=BudgetAutomation(
+                    enabled=True,
+                    automated_budget_configuration=AutomatedBudgetConfiguration(
+                        objective="customAction",
+                    ),
+                ),
             ),
             type="Campaign",
         ),
@@ -1971,9 +1977,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                                 value=NillableAdSetTargetingRuleV24Q3Value(),
                             ),
                         ),
-                        frequency_capping=AdSetFrequencyCappingV24Q3(
-                            frequency="hourly",
-                            maximum_impressions=1,
+                        frequency_capping=AdSetTargetingV24Q3FrequencyCapping(
+                            value=AdSetFrequencyCappingV24Q3(
+                                frequency="hourly",
+                                maximum_impressions=1,
+                            ),
                         ),
                     ),
                     budget=PatchAdSetBudgetV24Q3(
@@ -1987,9 +1995,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     ),
                     attribution_configuration=PatchAdSetAttributionConfigurationV24Q3(
                         attribution_method="unknown",
-                        lookback_window=NillableLookbackWindowV24Q3(
-                            value="unknown",
-                        ),
+                        lookback_window="unknown",
                     ),
                 ),
             ),
@@ -2093,6 +2099,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                         spend_limit_renewal="undefined",
                         spend_limit_amount=NillableDecimal(
                             value=3.14,
+                        ),
+                    ),
+                    budget_automation=PatchMarketingCampaignBudgetAutomation(
+                        enable=True,
+                        budget_configuration=BudgetAutomationConfiguration(
+                            ad_set_objectives="customAction",
                         ),
                     ),
                 ),

@@ -60,13 +60,7 @@ class ExternalRetailMediaBrandAccountCreation(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -140,10 +134,10 @@ class ExternalRetailMediaBrandAccountCreation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            brands ([int], none_type): [optional]  # noqa: E501
+            name (str, none_type): the name of the account, must be unique across all accounts. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            brands ([int], none_type): list of brands to link to the new account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,10 +223,10 @@ class ExternalRetailMediaBrandAccountCreation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            brands ([int], none_type): [optional]  # noqa: E501
+            name (str, none_type): the name of the account, must be unique across all accounts. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            brands ([int], none_type): list of brands to link to the new account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

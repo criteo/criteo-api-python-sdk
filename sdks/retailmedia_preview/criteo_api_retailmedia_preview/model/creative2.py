@@ -86,7 +86,7 @@ class Creative2(ModelNormal):
 
     additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -112,6 +112,7 @@ class Creative2(ModelNormal):
             'creative_format_v2_type': (str,),  # noqa: E501
             'environments': ([PageTypeEnvironment2],),  # noqa: E501
             'template_variable_values': ([TemplateVariableValue],),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -132,6 +133,7 @@ class Creative2(ModelNormal):
         'creative_format_v2_type': 'creativeFormatV2Type',  # noqa: E501
         'environments': 'environments',  # noqa: E501
         'template_variable_values': 'templateVariableValues',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -189,6 +191,7 @@ class Creative2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -300,6 +303,7 @@ class Creative2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

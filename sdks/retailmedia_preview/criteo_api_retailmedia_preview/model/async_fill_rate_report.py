@@ -84,14 +84,13 @@ class AsyncFillRateReport(ModelNormal):
             'CPC': "cpc",
             'PLACEMENTIMPRESSIONSREVENUE': "placementImpressionsRevenue",
             'PRODUCTCLICKSREVENUE': "productClicksRevenue",
-            'TOTALREVENUE': "totalRevenue",
+            'REVENUE': "revenue",
             'WORKINGMEDIA': "workingMedia",
             'NETREVENUE': "netRevenue",
             'UNIQUEVISITORS': "uniqueVisitors",
             'FREQUENCY': "frequency",
         },
         ('format',): {
-            'None': None,
             'JSON': "json",
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
@@ -100,6 +99,12 @@ class AsyncFillRateReport(ModelNormal):
     }
 
     validations = {
+        ('dimensions',): {
+            'min_items': 1,
+        },
+        ('metrics',): {
+            'min_items': 1,
+        },
     }
 
     @cached_property
@@ -123,13 +128,13 @@ class AsyncFillRateReport(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'supply_account_ids': ([str],),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'supply_account_ids': ([str], none_type,),  # noqa: E501
-            'format': (str, none_type,),  # noqa: E501
-            'timezone': (str, none_type,),  # noqa: E501
+            'format': (str,),  # noqa: E501
+            'timezone': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -138,11 +143,11 @@ class AsyncFillRateReport(ModelNormal):
 
 
     attribute_map = {
+        'supply_account_ids': 'supplyAccountIds',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'supply_account_ids': 'supplyAccountIds',  # noqa: E501
         'format': 'format',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
@@ -154,10 +159,11 @@ class AsyncFillRateReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, dimensions, metrics, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, supply_account_ids, dimensions, metrics, start_date, end_date, *args, **kwargs):  # noqa: E501
         """AsyncFillRateReport - a model defined in OpenAPI
 
         Args:
+            supply_account_ids ([str]): Supply account ids to report on
             dimensions ([str]): List of dimensions to report on
             metrics ([str]): List of metrics to report on
             start_date (datetime): Start date
@@ -194,9 +200,8 @@ class AsyncFillRateReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            supply_account_ids ([str], none_type): Supply account ids to report on. [optional]  # noqa: E501
-            format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,6 +233,7 @@ class AsyncFillRateReport(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.supply_account_ids = supply_account_ids
         self.dimensions = dimensions
         self.metrics = metrics
         self.start_date = start_date
@@ -252,10 +258,11 @@ class AsyncFillRateReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, dimensions, metrics, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, supply_account_ids, dimensions, metrics, start_date, end_date, *args, **kwargs):  # noqa: E501
         """AsyncFillRateReport - a model defined in OpenAPI
 
         Args:
+            supply_account_ids ([str]): Supply account ids to report on
             dimensions ([str]): List of dimensions to report on
             metrics ([str]): List of metrics to report on
             start_date (datetime): Start date
@@ -292,9 +299,8 @@ class AsyncFillRateReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            supply_account_ids ([str], none_type): Supply account ids to report on. [optional]  # noqa: E501
-            format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -324,6 +330,7 @@ class AsyncFillRateReport(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.supply_account_ids = supply_account_ids
         self.dimensions = dimensions
         self.metrics = metrics
         self.start_date = start_date

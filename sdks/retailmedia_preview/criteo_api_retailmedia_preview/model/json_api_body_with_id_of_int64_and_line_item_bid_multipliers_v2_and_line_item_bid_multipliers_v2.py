@@ -87,7 +87,6 @@ class JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultiplie
         """
         lazy_import()
         return {
-            'id': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'attributes': (ExternalLineItemBidMultipliersV2,),  # noqa: E501
         }
@@ -98,7 +97,6 @@ class JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultiplie
 
 
     attribute_map = {
-        'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
         'attributes': 'attributes',  # noqa: E501
     }
@@ -110,11 +108,10 @@ class JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultiplie
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
         """JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2 - a model defined in OpenAPI
 
         Args:
-            id (str):
             type (str):
 
         Keyword Args:
@@ -180,7 +177,6 @@ class JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultiplie
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -202,11 +198,10 @@ class JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultiplie
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):  # noqa: E501
         """JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2 - a model defined in OpenAPI
 
         Args:
-            id (str):
             type (str):
 
         Keyword Args:
@@ -270,7 +265,6 @@ class JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultiplie
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.id = id
         self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

@@ -56,7 +56,6 @@ class AsyncRevenueReport(ModelNormal):
 
     allowed_values = {
         ('report_type',): {
-            'None': None,
             'ADVERTISER': "advertiser",
             'ENVIRONMENT': "environment",
             'PAGETYPE': "pageType",
@@ -64,30 +63,25 @@ class AsyncRevenueReport(ModelNormal):
             'BRAND': "brand",
         },
         ('revenue_type',): {
-            'None': None,
             'AUCTION': "auction",
             'PREFERRED': "preferred",
         },
         ('sold_by',): {
-            'None': None,
             'DIRECTSOLD': "directSold",
             'INDIRECTSOLD': "indirectSold",
             'PRIVATEMARKET': "privateMarket",
         },
         ('buy_type',): {
-            'None': None,
             'AUCTION': "auction",
             'PREFERREDDEALS': "preferredDeals",
             'SPONSORSHIP': "sponsorship",
         },
         ('advertiser_types',): {
-            'None': None,
             'RETAILER': "retailer",
             'BRAND': "brand",
             'SELLER': "seller",
         },
         ('sku_relations',): {
-            'None': None,
             'SAMESKU': "sameSku",
             'SAMEPARENTSKU': "sameParentSku",
             'SAMECATEGORY': "sameCategory",
@@ -95,33 +89,28 @@ class AsyncRevenueReport(ModelNormal):
             'SAMESELLER': "sameSeller",
         },
         ('format',): {
-            'None': None,
             'JSON': "json",
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
         },
         ('campaign_type',): {
-            'None': None,
             'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('sales_channel',): {
-            'None': None,
             'ALL': "all",
             'OFFLINE': "offline",
             'ONLINE': "online",
         },
         ('click_attribution_window',): {
-            'None': None,
             'NONE': "none",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
         },
         ('view_attribution_window',): {
-            'None': None,
             'NONE': "none",
             '1D': "1D",
             '7D': "7D",
@@ -129,7 +118,6 @@ class AsyncRevenueReport(ModelNormal):
             '30D': "30D",
         },
         ('dimensions',): {
-            'None': None,
             'DATE': "date",
             'HOUR': "hour",
             'PARENTACCOUNT': "parentAccount",
@@ -187,7 +175,6 @@ class AsyncRevenueReport(ModelNormal):
             'TAXONOMY7NAME': "taxonomy7Name",
         },
         ('metrics',): {
-            'None': None,
             'NUMBEROFCAMPAIGNS': "numberOfCampaigns",
             'NUMBEROFLINEITEMS': "numberOfLineItems",
             'NUMBEROFSKUS': "numberOfSkus",
@@ -261,26 +248,26 @@ class AsyncRevenueReport(ModelNormal):
         return {
             'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'ids': ([str], none_type,),  # noqa: E501
-            'id': (str, none_type,),  # noqa: E501
-            'retailer_ids': ([str], none_type,),  # noqa: E501
-            'account_ids': ([str], none_type,),  # noqa: E501
-            'campaign_ids': ([str], none_type,),  # noqa: E501
-            'line_item_ids': ([str], none_type,),  # noqa: E501
-            'report_type': (str, none_type,),  # noqa: E501
-            'revenue_type': (str, none_type,),  # noqa: E501
-            'sold_by': (str, none_type,),  # noqa: E501
-            'buy_type': (str, none_type,),  # noqa: E501
-            'advertiser_types': ([str], none_type,),  # noqa: E501
-            'sku_relations': ([str], none_type,),  # noqa: E501
-            'format': (str, none_type,),  # noqa: E501
-            'campaign_type': (str, none_type,),  # noqa: E501
-            'sales_channel': (str, none_type,),  # noqa: E501
-            'click_attribution_window': (str, none_type,),  # noqa: E501
-            'view_attribution_window': (str, none_type,),  # noqa: E501
-            'dimensions': ([str], none_type,),  # noqa: E501
-            'metrics': ([str], none_type,),  # noqa: E501
-            'timezone': (str, none_type,),  # noqa: E501
+            'ids': ([str],),  # noqa: E501
+            'id': (str,),  # noqa: E501
+            'retailer_ids': ([str],),  # noqa: E501
+            'account_ids': ([str],),  # noqa: E501
+            'campaign_ids': ([str],),  # noqa: E501
+            'line_item_ids': ([str],),  # noqa: E501
+            'report_type': (str,),  # noqa: E501
+            'revenue_type': (str,),  # noqa: E501
+            'sold_by': (str,),  # noqa: E501
+            'buy_type': (str,),  # noqa: E501
+            'advertiser_types': ([str],),  # noqa: E501
+            'sku_relations': ([str],),  # noqa: E501
+            'format': (str,),  # noqa: E501
+            'campaign_type': (str,),  # noqa: E501
+            'sales_channel': (str,),  # noqa: E501
+            'click_attribution_window': (str,),  # noqa: E501
+            'view_attribution_window': (str,),  # noqa: E501
+            'dimensions': ([str],),  # noqa: E501
+            'metrics': ([str],),  # noqa: E501
+            'timezone': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -358,26 +345,26 @@ class AsyncRevenueReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ids ([str], none_type): Supply account ids to report on. [optional]  # noqa: E501
-            id (str, none_type): Supply account id to report on. [optional]  # noqa: E501
-            retailer_ids ([str], none_type): Retailer ids to filter. [optional]  # noqa: E501
-            account_ids ([str], none_type): Account ids to filter. [optional]  # noqa: E501
-            campaign_ids ([str], none_type): Campaign ids to filter. [optional]  # noqa: E501
-            line_item_ids ([str], none_type): Line item ids to filter. [optional]  # noqa: E501
-            report_type (str, none_type): Type of report. [optional]  # noqa: E501
-            revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
-            sold_by (str, none_type): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
-            buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
-            advertiser_types ([str], none_type): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
-            sku_relations ([str], none_type): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
-            format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
-            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
-            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            ids ([str]): Supply account ids to report on. [optional]  # noqa: E501
+            id (str): Supply account id to report on. [optional]  # noqa: E501
+            retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
+            account_ids ([str]): Account ids to filter. [optional]  # noqa: E501
+            campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
+            line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
+            report_type (str): Type of report. [optional]  # noqa: E501
+            revenue_type (str): Type of revenue. [optional]  # noqa: E501
+            sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            buy_type (str): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            advertiser_types ([str]): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
+            sku_relations ([str]): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -469,26 +456,26 @@ class AsyncRevenueReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ids ([str], none_type): Supply account ids to report on. [optional]  # noqa: E501
-            id (str, none_type): Supply account id to report on. [optional]  # noqa: E501
-            retailer_ids ([str], none_type): Retailer ids to filter. [optional]  # noqa: E501
-            account_ids ([str], none_type): Account ids to filter. [optional]  # noqa: E501
-            campaign_ids ([str], none_type): Campaign ids to filter. [optional]  # noqa: E501
-            line_item_ids ([str], none_type): Line item ids to filter. [optional]  # noqa: E501
-            report_type (str, none_type): Type of report. [optional]  # noqa: E501
-            revenue_type (str, none_type): Type of revenue. [optional]  # noqa: E501
-            sold_by (str, none_type): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
-            buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
-            advertiser_types ([str], none_type): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
-            sku_relations ([str], none_type): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
-            format (str, none_type): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            campaign_type (str, none_type): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str, none_type): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            dimensions ([str], none_type): List of dimensions to report on. [optional]  # noqa: E501
-            metrics ([str], none_type): List of metrics to report on. [optional]  # noqa: E501
-            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            ids ([str]): Supply account ids to report on. [optional]  # noqa: E501
+            id (str): Supply account id to report on. [optional]  # noqa: E501
+            retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
+            account_ids ([str]): Account ids to filter. [optional]  # noqa: E501
+            campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
+            line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
+            report_type (str): Type of report. [optional]  # noqa: E501
+            revenue_type (str): Type of revenue. [optional]  # noqa: E501
+            sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            buy_type (str): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            advertiser_types ([str]): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
+            sku_relations ([str]): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

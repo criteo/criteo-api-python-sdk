@@ -72,13 +72,7 @@ class ExternalRetailMediaAccount(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = True
 
@@ -162,15 +156,15 @@ class ExternalRetailMediaAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
-            sub_type (str, none_type): [optional]  # noqa: E501
-            country_ids ([str], none_type): [optional]  # noqa: E501
-            currency_id (str, none_type): [optional]  # noqa: E501
-            parent_account_label (str, none_type): [optional]  # noqa: E501
-            time_zone (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): account name. [optional]  # noqa: E501
+            company_name (str, none_type): Paying entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            type (str, none_type): Type for the account. [optional]  # noqa: E501
+            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
+            country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
+            currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
+            parent_account_label (str, none_type): parent account label for the account. [optional]  # noqa: E501
+            time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -256,15 +250,15 @@ class ExternalRetailMediaAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            type (str, none_type): [optional]  # noqa: E501
-            sub_type (str, none_type): [optional]  # noqa: E501
-            country_ids ([str], none_type): [optional]  # noqa: E501
-            currency_id (str, none_type): [optional]  # noqa: E501
-            parent_account_label (str, none_type): [optional]  # noqa: E501
-            time_zone (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): account name. [optional]  # noqa: E501
+            company_name (str, none_type): Paying entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            type (str, none_type): Type for the account. [optional]  # noqa: E501
+            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
+            country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
+            currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
+            parent_account_label (str, none_type): parent account label for the account. [optional]  # noqa: E501
+            time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

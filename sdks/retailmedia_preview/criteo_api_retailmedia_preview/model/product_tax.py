@@ -81,12 +81,12 @@ class ProductTax(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'rate': (float, none_type,),  # noqa: E501
-            'country': (str, none_type,),  # noqa: E501
-            'region': (str, none_type,),  # noqa: E501
-            'tax_ship': (bool, none_type,),  # noqa: E501
-            'location_id': (int, none_type,),  # noqa: E501
-            'postal_code': (str, none_type,),  # noqa: E501
+            'rate': (float,),  # noqa: E501
+            'country': (str,),  # noqa: E501
+            'region': (str,),  # noqa: E501
+            'tax_ship': (bool,),  # noqa: E501
+            'location_id': (int,),  # noqa: E501
+            'postal_code': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -144,12 +144,12 @@ class ProductTax(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            rate (float, none_type): The percentage of tax rate that applies to the item price.. [optional]  # noqa: E501
-            country (str, none_type): The country within which the item is taxed, specified as a CLDR territory code.. [optional]  # noqa: E501
-            region (str, none_type): The geographic region to which the tax rate applies.. [optional]  # noqa: E501
-            tax_ship (bool, none_type): Set to true if tax is charged on shipping.. [optional]  # noqa: E501
-            location_id (int, none_type): The numeric ID of a location that the tax rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
-            postal_code (str, none_type): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*.. [optional]  # noqa: E501
+            rate (float): The percentage of tax rate that applies to the item price.. [optional]  # noqa: E501
+            country (str): The country within which the item is taxed, specified as a CLDR territory code.. [optional]  # noqa: E501
+            region (str): The geographic region to which the tax rate applies.. [optional]  # noqa: E501
+            tax_ship (bool): Set to true if tax is charged on shipping.. [optional]  # noqa: E501
+            location_id (int): The numeric ID of a location that the tax rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
+            postal_code (str): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,12 +235,12 @@ class ProductTax(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            rate (float, none_type): The percentage of tax rate that applies to the item price.. [optional]  # noqa: E501
-            country (str, none_type): The country within which the item is taxed, specified as a CLDR territory code.. [optional]  # noqa: E501
-            region (str, none_type): The geographic region to which the tax rate applies.. [optional]  # noqa: E501
-            tax_ship (bool, none_type): Set to true if tax is charged on shipping.. [optional]  # noqa: E501
-            location_id (int, none_type): The numeric ID of a location that the tax rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
-            postal_code (str, none_type): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*.. [optional]  # noqa: E501
+            rate (float): The percentage of tax rate that applies to the item price.. [optional]  # noqa: E501
+            country (str): The country within which the item is taxed, specified as a CLDR territory code.. [optional]  # noqa: E501
+            region (str): The geographic region to which the tax rate applies.. [optional]  # noqa: E501
+            tax_ship (bool): Set to true if tax is charged on shipping.. [optional]  # noqa: E501
+            location_id (int): The numeric ID of a location that the tax rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
+            postal_code (str): The postal code range that the tax rate applies to, represented by a ZIP code, a ZIP code prefix using * wildcard, a range between two ZIP codes or two ZIP code prefixes of equal length. Examples: 94114, 94*, 94002-95460, 94*-95*.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

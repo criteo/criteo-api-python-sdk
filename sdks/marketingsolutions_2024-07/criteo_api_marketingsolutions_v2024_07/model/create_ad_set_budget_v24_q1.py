@@ -60,7 +60,6 @@ class CreateAdSetBudgetV24Q1(ModelNormal):
             'UNCAPPED': "uncapped",
         },
         ('budget_renewal',): {
-            'None': None,
             'UNDEFINED': "undefined",
             'DAILY': "daily",
             'MONTHLY': "monthly",
@@ -68,12 +67,10 @@ class CreateAdSetBudgetV24Q1(ModelNormal):
             'WEEKLY': "weekly",
         },
         ('budget_delivery_smoothing',): {
-            'None': None,
             'ACCELERATED': "accelerated",
             'STANDARD': "standard",
         },
         ('budget_delivery_week',): {
-            'None': None,
             'UNDEFINED': "undefined",
             'MONDAYTOSUNDAY': "mondayToSunday",
             'TUESDAYTOMONDAY': "tuesdayToMonday",
@@ -110,9 +107,9 @@ class CreateAdSetBudgetV24Q1(ModelNormal):
         """
         return {
             'budget_strategy': (str,),  # noqa: E501
-            'budget_renewal': (str, none_type,),  # noqa: E501
-            'budget_delivery_smoothing': (str, none_type,),  # noqa: E501
-            'budget_delivery_week': (str, none_type,),  # noqa: E501
+            'budget_renewal': (str,),  # noqa: E501
+            'budget_delivery_smoothing': (str,),  # noqa: E501
+            'budget_delivery_week': (str,),  # noqa: E501
             'budget_amount': (float, none_type,),  # noqa: E501
         }
 
@@ -173,9 +170,9 @@ class CreateAdSetBudgetV24Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_renewal (str, none_type): [optional]  # noqa: E501
-            budget_delivery_smoothing (str, none_type): [optional]  # noqa: E501
-            budget_delivery_week (str, none_type): [optional]  # noqa: E501
+            budget_renewal (str): [optional]  # noqa: E501
+            budget_delivery_smoothing (str): [optional]  # noqa: E501
+            budget_delivery_week (str): [optional]  # noqa: E501
             budget_amount (float, none_type): [optional]  # noqa: E501
         """
 
@@ -266,9 +263,9 @@ class CreateAdSetBudgetV24Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_renewal (str, none_type): [optional]  # noqa: E501
-            budget_delivery_smoothing (str, none_type): [optional]  # noqa: E501
-            budget_delivery_week (str, none_type): [optional]  # noqa: E501
+            budget_renewal (str): [optional]  # noqa: E501
+            budget_delivery_smoothing (str): [optional]  # noqa: E501
+            budget_delivery_week (str): [optional]  # noqa: E501
             budget_amount (float, none_type): [optional]  # noqa: E501
         """
 

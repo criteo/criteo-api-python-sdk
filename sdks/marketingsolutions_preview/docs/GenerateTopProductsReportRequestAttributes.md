@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **advertiser_id** | **str** | The client id. | 
 **rank_products_by** | **str** | The metric used to filter the top products. | 
 **timezone** | **str, none_type** | The timezone used for the report. Timezone Database format (Tz). | [optional]  if omitted the server will use the default value of "UTC"
-**limit** | **int, none_type** | The maximum number of top products returned. | [optional] 
+**limit** | **int** | The maximum number of top products returned. | [optional] 
 **dimensions** | **[str], none_type** | The dimensions for the report. | [optional] 
 **metrics** | **[str], none_type** | The list of metrics to report. | [optional] 
 **currency** | **str, none_type** | The currency used for the report. ISO 4217 code (three-letter capitals). | [optional]  if omitted the server will use the default value of "EUR"

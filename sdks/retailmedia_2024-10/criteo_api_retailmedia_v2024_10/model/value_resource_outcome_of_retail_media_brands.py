@@ -30,9 +30,9 @@ from criteo_api_retailmedia_v2024_10.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_10.model.common_problem import CommonProblem
+    from criteo_api_retailmedia_v2024_10.model.sdk_api_rest_common_problem import SdkApiRestCommonProblem
     from criteo_api_retailmedia_v2024_10.model.value_resource_of_retail_media_brands import ValueResourceOfRetailMediaBrands
-    globals()['CommonProblem'] = CommonProblem
+    globals()['SdkApiRestCommonProblem'] = SdkApiRestCommonProblem
     globals()['ValueResourceOfRetailMediaBrands'] = ValueResourceOfRetailMediaBrands
 
 
@@ -66,16 +66,9 @@ class ValueResourceOutcomeOfRetailMediaBrands(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -90,8 +83,8 @@ class ValueResourceOutcomeOfRetailMediaBrands(ModelNormal):
         lazy_import()
         return {
             'data': (ValueResourceOfRetailMediaBrands,),  # noqa: E501
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
-            'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
+            'errors': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +142,8 @@ class ValueResourceOutcomeOfRetailMediaBrands(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ValueResourceOfRetailMediaBrands): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
-            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
+            errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +230,8 @@ class ValueResourceOutcomeOfRetailMediaBrands(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ValueResourceOfRetailMediaBrands): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
-            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
+            errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

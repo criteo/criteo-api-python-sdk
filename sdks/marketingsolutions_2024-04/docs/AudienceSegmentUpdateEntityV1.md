@@ -5,7 +5,7 @@ Set of rules that defines specific people to target.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str, none_type** | Name of the segment | [optional] 
+**name** | **str** | Name of the segment | [optional] 
 **description** | [**NillableString**](NillableString.md) |  | [optional] 
 **in_market** | [**InMarketUpdateV1**](InMarketUpdateV1.md) |  | [optional] 
 **location** | [**LocationUpdateV1**](LocationUpdateV1.md) |  | [optional] 

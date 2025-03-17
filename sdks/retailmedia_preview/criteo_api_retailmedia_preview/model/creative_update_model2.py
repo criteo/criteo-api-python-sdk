@@ -84,7 +84,7 @@ class CreativeUpdateModel2(ModelNormal):
             'retailer_id': (int,),  # noqa: E501
             'template_id': (int,),  # noqa: E501
             'template_variable_values': ([TemplateVariableValue],),  # noqa: E501
-            'brand_id': (int, none_type,),  # noqa: E501
+            'brand_id': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -147,7 +147,7 @@ class CreativeUpdateModel2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id (int, none_type): The brand associated to the creative. [optional]  # noqa: E501
+            brand_id (int): The brand associated to the creative. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,7 +243,7 @@ class CreativeUpdateModel2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id (int, none_type): The brand associated to the creative. [optional]  # noqa: E501
+            brand_id (int): The brand associated to the creative. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

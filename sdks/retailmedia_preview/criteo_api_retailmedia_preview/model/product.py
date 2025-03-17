@@ -113,83 +113,83 @@ class Product(ModelNormal):
             'link': (str,),  # noqa: E501
             'image_link': (str,),  # noqa: E501
             'channel': (str,),  # noqa: E501
-            'offer_id': (str, none_type,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'additional_image_links': ([str], none_type,),  # noqa: E501
-            'content_language': (str, none_type,),  # noqa: E501
-            'target_country': (str, none_type,),  # noqa: E501
-            'expiration_date': (str, none_type,),  # noqa: E501
-            'adult': (bool, none_type,),  # noqa: E501
-            'kind': (str, none_type,),  # noqa: E501
-            'brand': (str, none_type,),  # noqa: E501
-            'color': (str, none_type,),  # noqa: E501
-            'google_product_category': (str, none_type,),  # noqa: E501
-            'gtin': (str, none_type,),  # noqa: E501
-            'item_group_id': (str, none_type,),  # noqa: E501
-            'material': (str, none_type,),  # noqa: E501
-            'mpn': (str, none_type,),  # noqa: E501
-            'pattern': (str, none_type,),  # noqa: E501
+            'offer_id': (str,),  # noqa: E501
+            'description': (str,),  # noqa: E501
+            'additional_image_links': ([str],),  # noqa: E501
+            'content_language': (str,),  # noqa: E501
+            'target_country': (str,),  # noqa: E501
+            'expiration_date': (str,),  # noqa: E501
+            'adult': (bool,),  # noqa: E501
+            'kind': (str,),  # noqa: E501
+            'brand': (str,),  # noqa: E501
+            'color': (str,),  # noqa: E501
+            'google_product_category': (str,),  # noqa: E501
+            'gtin': (str,),  # noqa: E501
+            'item_group_id': (str,),  # noqa: E501
+            'material': (str,),  # noqa: E501
+            'mpn': (str,),  # noqa: E501
+            'pattern': (str,),  # noqa: E501
             'price': (Price,),  # noqa: E501
             'sale_price': (Price,),  # noqa: E501
-            'sale_price_effective_date': (str, none_type,),  # noqa: E501
-            'shipping': ([ProductShipping], none_type,),  # noqa: E501
+            'sale_price_effective_date': (str,),  # noqa: E501
+            'shipping': ([ProductShipping],),  # noqa: E501
             'shipping_weight': (ProductShippingWeight,),  # noqa: E501
-            'sizes': ([str], none_type,),  # noqa: E501
-            'taxes': ([ProductTax], none_type,),  # noqa: E501
-            'custom_attributes': ([CustomAttribute], none_type,),  # noqa: E501
-            'identifier_exists': (bool, none_type,),  # noqa: E501
+            'sizes': ([str],),  # noqa: E501
+            'taxes': ([ProductTax],),  # noqa: E501
+            'custom_attributes': ([CustomAttribute],),  # noqa: E501
+            'identifier_exists': (bool,),  # noqa: E501
             'installment': (Installment,),  # noqa: E501
             'loyalty_points': (LoyaltyPoints,),  # noqa: E501
-            'multipack': (int, none_type,),  # noqa: E501
-            'custom_label0': (str, none_type,),  # noqa: E501
-            'custom_label1': (str, none_type,),  # noqa: E501
-            'custom_label2': (str, none_type,),  # noqa: E501
-            'custom_label3': (str, none_type,),  # noqa: E501
-            'custom_label4': (str, none_type,),  # noqa: E501
-            'is_bundle': (bool, none_type,),  # noqa: E501
-            'mobile_link': (str, none_type,),  # noqa: E501
-            'availability_date': (str, none_type,),  # noqa: E501
-            'shipping_label': (str, none_type,),  # noqa: E501
+            'multipack': (int,),  # noqa: E501
+            'custom_label0': (str,),  # noqa: E501
+            'custom_label1': (str,),  # noqa: E501
+            'custom_label2': (str,),  # noqa: E501
+            'custom_label3': (str,),  # noqa: E501
+            'custom_label4': (str,),  # noqa: E501
+            'is_bundle': (bool,),  # noqa: E501
+            'mobile_link': (str,),  # noqa: E501
+            'availability_date': (str,),  # noqa: E501
+            'shipping_label': (str,),  # noqa: E501
             'unit_pricing_measure': (ProductUnitPricingMeasure,),  # noqa: E501
             'unit_pricing_base_measure': (ProductUnitPricingBaseMeasure,),  # noqa: E501
             'shipping_length': (ProductShippingDimension,),  # noqa: E501
             'shipping_width': (ProductShippingDimension,),  # noqa: E501
             'shipping_height': (ProductShippingDimension,),  # noqa: E501
-            'display_ads_id': (str, none_type,),  # noqa: E501
-            'display_ads_similar_ids': ([str], none_type,),  # noqa: E501
-            'display_ads_title': (str, none_type,),  # noqa: E501
-            'display_ads_link': (str, none_type,),  # noqa: E501
-            'display_ads_value': (float, none_type,),  # noqa: E501
-            'sell_on_google_quantity': (int, none_type,),  # noqa: E501
-            'promotion_ids': ([str], none_type,),  # noqa: E501
-            'max_handling_time': (int, none_type,),  # noqa: E501
-            'min_handling_time': (int, none_type,),  # noqa: E501
+            'display_ads_id': (str,),  # noqa: E501
+            'display_ads_similar_ids': ([str],),  # noqa: E501
+            'display_ads_title': (str,),  # noqa: E501
+            'display_ads_link': (str,),  # noqa: E501
+            'display_ads_value': (float,),  # noqa: E501
+            'sell_on_google_quantity': (int,),  # noqa: E501
+            'promotion_ids': ([str],),  # noqa: E501
+            'max_handling_time': (int,),  # noqa: E501
+            'min_handling_time': (int,),  # noqa: E501
             'cost_of_goods_sold': (Price,),  # noqa: E501
-            'source': (str, none_type,),  # noqa: E501
-            'included_destinations': ([str], none_type,),  # noqa: E501
-            'excluded_destinations': ([str], none_type,),  # noqa: E501
-            'ads_grouping': (str, none_type,),  # noqa: E501
-            'ads_labels': ([str], none_type,),  # noqa: E501
-            'ads_redirect': (str, none_type,),  # noqa: E501
-            'product_types': ([str], none_type,),  # noqa: E501
-            'product_type_keys': ([str], none_type,),  # noqa: E501
-            'age_group': (str, none_type,),  # noqa: E501
-            'availability': (str, none_type,),  # noqa: E501
-            'condition': (str, none_type,),  # noqa: E501
-            'gender': (str, none_type,),  # noqa: E501
-            'size_system': (str, none_type,),  # noqa: E501
-            'size_type': (str, none_type,),  # noqa: E501
-            'energy_efficiency_class': (str, none_type,),  # noqa: E501
-            'min_energy_efficiency_class': (str, none_type,),  # noqa: E501
-            'max_energy_efficiency_class': (str, none_type,),  # noqa: E501
-            'tax_category': (str, none_type,),  # noqa: E501
-            'transit_time_label': (str, none_type,),  # noqa: E501
-            'seller_id': (str, none_type,),  # noqa: E501
-            'external_seller_id': (str, none_type,),  # noqa: E501
-            'external_seller_name': (str, none_type,),  # noqa: E501
-            'number_of_reviews': (int, none_type,),  # noqa: E501
-            'product_rating': (str, none_type,),  # noqa: E501
-            'badge': (str, none_type,),  # noqa: E501
+            'source': (str,),  # noqa: E501
+            'included_destinations': ([str],),  # noqa: E501
+            'excluded_destinations': ([str],),  # noqa: E501
+            'ads_grouping': (str,),  # noqa: E501
+            'ads_labels': ([str],),  # noqa: E501
+            'ads_redirect': (str,),  # noqa: E501
+            'product_types': ([str],),  # noqa: E501
+            'product_type_keys': ([str],),  # noqa: E501
+            'age_group': (str,),  # noqa: E501
+            'availability': (str,),  # noqa: E501
+            'condition': (str,),  # noqa: E501
+            'gender': (str,),  # noqa: E501
+            'size_system': (str,),  # noqa: E501
+            'size_type': (str,),  # noqa: E501
+            'energy_efficiency_class': (str,),  # noqa: E501
+            'min_energy_efficiency_class': (str,),  # noqa: E501
+            'max_energy_efficiency_class': (str,),  # noqa: E501
+            'tax_category': (str,),  # noqa: E501
+            'transit_time_label': (str,),  # noqa: E501
+            'seller_id': (str,),  # noqa: E501
+            'external_seller_id': (str,),  # noqa: E501
+            'external_seller_name': (str,),  # noqa: E501
+            'number_of_reviews': (int,),  # noqa: E501
+            'product_rating': (str,),  # noqa: E501
+            'badge': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -330,83 +330,83 @@ class Product(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            offer_id (str, none_type): Not used by Criteo.. [optional]  # noqa: E501
-            description (str, none_type): Description of the item. RECOMMENDED. (5000 UTF8 characters max).. [optional]  # noqa: E501
-            additional_image_links ([str], none_type): Additional URLs of images of the item.. [optional]  # noqa: E501
-            content_language (str, none_type): The two-letter ISO 639-1 language code for the item.. [optional]  # noqa: E501
-            target_country (str, none_type): The CLDR territory code for the item.. [optional]  # noqa: E501
-            expiration_date (str, none_type): Date on which the item should expire, as specified upon insertion, in ISO 8601 format.. [optional]  # noqa: E501
-            adult (bool, none_type): Set to true if the item is targeted towards adults. RECOMMENDED.. [optional]  # noqa: E501
-            kind (str, none_type): Identifies what kind of resource this is.. [optional]  # noqa: E501
-            brand (str, none_type): Brand of the item. RECOMMENDED.. [optional]  # noqa: E501
-            color (str, none_type): Color of the item.. [optional]  # noqa: E501
-            google_product_category (str, none_type): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
-            gtin (str, none_type): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
-            item_group_id (str, none_type): Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max). [optional]  # noqa: E501
-            material (str, none_type): The material of which the item is made.. [optional]  # noqa: E501
-            mpn (str, none_type): Manufacturer Part Number (MPN) of the item. RECOMMENDED.. [optional]  # noqa: E501
-            pattern (str, none_type): The item's pattern (e.g. polka dots).. [optional]  # noqa: E501
+            offer_id (str): Not used by Criteo.. [optional]  # noqa: E501
+            description (str): Description of the item. RECOMMENDED. (5000 UTF8 characters max).. [optional]  # noqa: E501
+            additional_image_links ([str]): Additional URLs of images of the item.. [optional]  # noqa: E501
+            content_language (str): The two-letter ISO 639-1 language code for the item.. [optional]  # noqa: E501
+            target_country (str): The CLDR territory code for the item.. [optional]  # noqa: E501
+            expiration_date (str): Date on which the item should expire, as specified upon insertion, in ISO 8601 format.. [optional]  # noqa: E501
+            adult (bool): Set to true if the item is targeted towards adults. RECOMMENDED.. [optional]  # noqa: E501
+            kind (str): Identifies what kind of resource this is.. [optional]  # noqa: E501
+            brand (str): Brand of the item. RECOMMENDED.. [optional]  # noqa: E501
+            color (str): Color of the item.. [optional]  # noqa: E501
+            google_product_category (str): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
+            gtin (str): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
+            item_group_id (str): Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max). [optional]  # noqa: E501
+            material (str): The material of which the item is made.. [optional]  # noqa: E501
+            mpn (str): Manufacturer Part Number (MPN) of the item. RECOMMENDED.. [optional]  # noqa: E501
+            pattern (str): The item's pattern (e.g. polka dots).. [optional]  # noqa: E501
             price (Price): [optional]  # noqa: E501
             sale_price (Price): [optional]  # noqa: E501
-            sale_price_effective_date (str, none_type): Date range during which the item is on sale.. [optional]  # noqa: E501
-            shipping ([ProductShipping], none_type): Shipping rules.. [optional]  # noqa: E501
+            sale_price_effective_date (str): Date range during which the item is on sale.. [optional]  # noqa: E501
+            shipping ([ProductShipping]): Shipping rules.. [optional]  # noqa: E501
             shipping_weight (ProductShippingWeight): [optional]  # noqa: E501
-            sizes ([str], none_type): Size of the item. RECOMMENDED. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value.. [optional]  # noqa: E501
-            taxes ([ProductTax], none_type): Tax information.. [optional]  # noqa: E501
-            custom_attributes ([CustomAttribute], none_type): A list of custom (merchant-provided) attributes. This is useful for submitting attributes not explicitly exposed by the API. Declaring attributes explicitly exposed by the API using is forbidden. [optional]  # noqa: E501
-            identifier_exists (bool, none_type): False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.. [optional]  # noqa: E501
+            sizes ([str]): Size of the item. RECOMMENDED. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value.. [optional]  # noqa: E501
+            taxes ([ProductTax]): Tax information.. [optional]  # noqa: E501
+            custom_attributes ([CustomAttribute]): A list of custom (merchant-provided) attributes. This is useful for submitting attributes not explicitly exposed by the API. Declaring attributes explicitly exposed by the API using is forbidden. [optional]  # noqa: E501
+            identifier_exists (bool): False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.. [optional]  # noqa: E501
             installment (Installment): [optional]  # noqa: E501
             loyalty_points (LoyaltyPoints): [optional]  # noqa: E501
-            multipack (int, none_type): The number of identical products in a merchant-defined multipack. To avoid any overflow issue, pass it as a string.. [optional]  # noqa: E501
-            custom_label0 (str, none_type): Custom label 0 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label1 (str, none_type): Custom label 1 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label2 (str, none_type): Custom label 2 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label3 (str, none_type): Custom label 3 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label4 (str, none_type): Custom label 4 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            is_bundle (bool, none_type): Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.. [optional]  # noqa: E501
-            mobile_link (str, none_type): accounts.link to a mobile-optimized version of the landing page.. [optional]  # noqa: E501
-            availability_date (str, none_type): The day a pre-ordered product becomes available for delivery, in ISO 8601 format.. [optional]  # noqa: E501
-            shipping_label (str, none_type): The shipping label of the product, used to group product in account-level shipping rules.. [optional]  # noqa: E501
+            multipack (int): The number of identical products in a merchant-defined multipack. To avoid any overflow issue, pass it as a string.. [optional]  # noqa: E501
+            custom_label0 (str): Custom label 0 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label1 (str): Custom label 1 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label2 (str): Custom label 2 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label3 (str): Custom label 3 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label4 (str): Custom label 4 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            is_bundle (bool): Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.. [optional]  # noqa: E501
+            mobile_link (str): accounts.link to a mobile-optimized version of the landing page.. [optional]  # noqa: E501
+            availability_date (str): The day a pre-ordered product becomes available for delivery, in ISO 8601 format.. [optional]  # noqa: E501
+            shipping_label (str): The shipping label of the product, used to group product in account-level shipping rules.. [optional]  # noqa: E501
             unit_pricing_measure (ProductUnitPricingMeasure): [optional]  # noqa: E501
             unit_pricing_base_measure (ProductUnitPricingBaseMeasure): [optional]  # noqa: E501
             shipping_length (ProductShippingDimension): [optional]  # noqa: E501
             shipping_width (ProductShippingDimension): [optional]  # noqa: E501
             shipping_height (ProductShippingDimension): [optional]  # noqa: E501
-            display_ads_id (str, none_type): An identifier for an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            display_ads_similar_ids ([str], none_type): Advertiser-specified recommendations.. [optional]  # noqa: E501
-            display_ads_title (str, none_type): Title of an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            display_ads_link (str, none_type): URL directly to your item's landing page for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            display_ads_value (float, none_type): Offer margin for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            sell_on_google_quantity (int, none_type): The quantity of the product that is available for selling on Google. Supported only for online products.. [optional]  # noqa: E501
-            promotion_ids ([str], none_type): The unique ID of a promotion.. [optional]  # noqa: E501
-            max_handling_time (int, none_type): Maximal product handling time (in business days).. [optional]  # noqa: E501
-            min_handling_time (int, none_type): Minimal product handling time (in business days).. [optional]  # noqa: E501
+            display_ads_id (str): An identifier for an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            display_ads_similar_ids ([str]): Advertiser-specified recommendations.. [optional]  # noqa: E501
+            display_ads_title (str): Title of an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            display_ads_link (str): URL directly to your item's landing page for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            display_ads_value (float): Offer margin for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            sell_on_google_quantity (int): The quantity of the product that is available for selling on Google. Supported only for online products.. [optional]  # noqa: E501
+            promotion_ids ([str]): The unique ID of a promotion.. [optional]  # noqa: E501
+            max_handling_time (int): Maximal product handling time (in business days).. [optional]  # noqa: E501
+            min_handling_time (int): Minimal product handling time (in business days).. [optional]  # noqa: E501
             cost_of_goods_sold (Price): [optional]  # noqa: E501
-            source (str, none_type): The source of the offer, i.e., how the offer was created.. [optional]  # noqa: E501
-            included_destinations ([str], none_type): The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in excludedDestinations.. [optional]  # noqa: E501
-            excluded_destinations ([str], none_type): The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).. [optional]  # noqa: E501
-            ads_grouping (str, none_type): Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.. [optional]  # noqa: E501
-            ads_labels ([str], none_type): Similar to adsGrouping, but only works on CPC.. [optional]  # noqa: E501
-            ads_redirect (str, none_type): Allows advertisers to override the item URL when the product is shown within the context of Product Ads.. [optional]  # noqa: E501
-            product_types ([str], none_type): Categories of the item (formatted as in products data specification).. [optional]  # noqa: E501
-            product_type_keys ([str], none_type): Category keys of the item (formatted as in productTypes).. [optional]  # noqa: E501
-            age_group (str, none_type): Target age group of the item.. [optional]  # noqa: E501
-            availability (str, none_type): Availability status of the item. RECOMMENDED.. [optional]  # noqa: E501
-            condition (str, none_type): Condition or state of the item.. [optional]  # noqa: E501
-            gender (str, none_type): Target gender of the item.. [optional]  # noqa: E501
-            size_system (str, none_type): System in which the size is specified. Recommended for apparel items.. [optional]  # noqa: E501
-            size_type (str, none_type): The cut of the item. Recommended for apparel items.. [optional]  # noqa: E501
-            energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
-            min_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
-            max_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
-            tax_category (str, none_type): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
-            transit_time_label (str, none_type): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str, none_type): (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            external_seller_id (str, none_type): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            external_seller_name (str, none_type): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            number_of_reviews (int, none_type): The number of customer reviews for the product. [optional]  # noqa: E501
-            product_rating (str, none_type): The product rating for the product. [optional]  # noqa: E501
-            badge (str, none_type): URL of a badge image to display on the product.. [optional]  # noqa: E501
+            source (str): The source of the offer, i.e., how the offer was created.. [optional]  # noqa: E501
+            included_destinations ([str]): The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in excludedDestinations.. [optional]  # noqa: E501
+            excluded_destinations ([str]): The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).. [optional]  # noqa: E501
+            ads_grouping (str): Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.. [optional]  # noqa: E501
+            ads_labels ([str]): Similar to adsGrouping, but only works on CPC.. [optional]  # noqa: E501
+            ads_redirect (str): Allows advertisers to override the item URL when the product is shown within the context of Product Ads.. [optional]  # noqa: E501
+            product_types ([str]): Categories of the item (formatted as in products data specification).. [optional]  # noqa: E501
+            product_type_keys ([str]): Category keys of the item (formatted as in productTypes).. [optional]  # noqa: E501
+            age_group (str): Target age group of the item.. [optional]  # noqa: E501
+            availability (str): Availability status of the item. RECOMMENDED.. [optional]  # noqa: E501
+            condition (str): Condition or state of the item.. [optional]  # noqa: E501
+            gender (str): Target gender of the item.. [optional]  # noqa: E501
+            size_system (str): System in which the size is specified. Recommended for apparel items.. [optional]  # noqa: E501
+            size_type (str): The cut of the item. Recommended for apparel items.. [optional]  # noqa: E501
+            energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
+            min_energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
+            max_energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
+            tax_category (str): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
+            transit_time_label (str): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
+            seller_id (str): (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_id (str): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_name (str): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            number_of_reviews (int): The number of customer reviews for the product. [optional]  # noqa: E501
+            product_rating (str): The product rating for the product. [optional]  # noqa: E501
+            badge (str): URL of a badge image to display on the product.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")
@@ -505,83 +505,83 @@ class Product(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            offer_id (str, none_type): Not used by Criteo.. [optional]  # noqa: E501
-            description (str, none_type): Description of the item. RECOMMENDED. (5000 UTF8 characters max).. [optional]  # noqa: E501
-            additional_image_links ([str], none_type): Additional URLs of images of the item.. [optional]  # noqa: E501
-            content_language (str, none_type): The two-letter ISO 639-1 language code for the item.. [optional]  # noqa: E501
-            target_country (str, none_type): The CLDR territory code for the item.. [optional]  # noqa: E501
-            expiration_date (str, none_type): Date on which the item should expire, as specified upon insertion, in ISO 8601 format.. [optional]  # noqa: E501
-            adult (bool, none_type): Set to true if the item is targeted towards adults. RECOMMENDED.. [optional]  # noqa: E501
-            kind (str, none_type): Identifies what kind of resource this is.. [optional]  # noqa: E501
-            brand (str, none_type): Brand of the item. RECOMMENDED.. [optional]  # noqa: E501
-            color (str, none_type): Color of the item.. [optional]  # noqa: E501
-            google_product_category (str, none_type): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
-            gtin (str, none_type): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
-            item_group_id (str, none_type): Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max). [optional]  # noqa: E501
-            material (str, none_type): The material of which the item is made.. [optional]  # noqa: E501
-            mpn (str, none_type): Manufacturer Part Number (MPN) of the item. RECOMMENDED.. [optional]  # noqa: E501
-            pattern (str, none_type): The item's pattern (e.g. polka dots).. [optional]  # noqa: E501
+            offer_id (str): Not used by Criteo.. [optional]  # noqa: E501
+            description (str): Description of the item. RECOMMENDED. (5000 UTF8 characters max).. [optional]  # noqa: E501
+            additional_image_links ([str]): Additional URLs of images of the item.. [optional]  # noqa: E501
+            content_language (str): The two-letter ISO 639-1 language code for the item.. [optional]  # noqa: E501
+            target_country (str): The CLDR territory code for the item.. [optional]  # noqa: E501
+            expiration_date (str): Date on which the item should expire, as specified upon insertion, in ISO 8601 format.. [optional]  # noqa: E501
+            adult (bool): Set to true if the item is targeted towards adults. RECOMMENDED.. [optional]  # noqa: E501
+            kind (str): Identifies what kind of resource this is.. [optional]  # noqa: E501
+            brand (str): Brand of the item. RECOMMENDED.. [optional]  # noqa: E501
+            color (str): Color of the item.. [optional]  # noqa: E501
+            google_product_category (str): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
+            gtin (str): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
+            item_group_id (str): Shared identifier for all variants of the same product. RECOMMENDED. Don’t use casing to make IDs unique. (50 characters max). [optional]  # noqa: E501
+            material (str): The material of which the item is made.. [optional]  # noqa: E501
+            mpn (str): Manufacturer Part Number (MPN) of the item. RECOMMENDED.. [optional]  # noqa: E501
+            pattern (str): The item's pattern (e.g. polka dots).. [optional]  # noqa: E501
             price (Price): [optional]  # noqa: E501
             sale_price (Price): [optional]  # noqa: E501
-            sale_price_effective_date (str, none_type): Date range during which the item is on sale.. [optional]  # noqa: E501
-            shipping ([ProductShipping], none_type): Shipping rules.. [optional]  # noqa: E501
+            sale_price_effective_date (str): Date range during which the item is on sale.. [optional]  # noqa: E501
+            shipping ([ProductShipping]): Shipping rules.. [optional]  # noqa: E501
             shipping_weight (ProductShippingWeight): [optional]  # noqa: E501
-            sizes ([str], none_type): Size of the item. RECOMMENDED. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value.. [optional]  # noqa: E501
-            taxes ([ProductTax], none_type): Tax information.. [optional]  # noqa: E501
-            custom_attributes ([CustomAttribute], none_type): A list of custom (merchant-provided) attributes. This is useful for submitting attributes not explicitly exposed by the API. Declaring attributes explicitly exposed by the API using is forbidden. [optional]  # noqa: E501
-            identifier_exists (bool, none_type): False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.. [optional]  # noqa: E501
+            sizes ([str]): Size of the item. RECOMMENDED. Only one value is allowed. For variants with different sizes, insert a separate product for each size with the same itemGroupId value.. [optional]  # noqa: E501
+            taxes ([ProductTax]): Tax information.. [optional]  # noqa: E501
+            custom_attributes ([CustomAttribute]): A list of custom (merchant-provided) attributes. This is useful for submitting attributes not explicitly exposed by the API. Declaring attributes explicitly exposed by the API using is forbidden. [optional]  # noqa: E501
+            identifier_exists (bool): False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.. [optional]  # noqa: E501
             installment (Installment): [optional]  # noqa: E501
             loyalty_points (LoyaltyPoints): [optional]  # noqa: E501
-            multipack (int, none_type): The number of identical products in a merchant-defined multipack. To avoid any overflow issue, pass it as a string.. [optional]  # noqa: E501
-            custom_label0 (str, none_type): Custom label 0 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label1 (str, none_type): Custom label 1 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label2 (str, none_type): Custom label 2 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label3 (str, none_type): Custom label 3 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            custom_label4 (str, none_type): Custom label 4 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
-            is_bundle (bool, none_type): Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.. [optional]  # noqa: E501
-            mobile_link (str, none_type): accounts.link to a mobile-optimized version of the landing page.. [optional]  # noqa: E501
-            availability_date (str, none_type): The day a pre-ordered product becomes available for delivery, in ISO 8601 format.. [optional]  # noqa: E501
-            shipping_label (str, none_type): The shipping label of the product, used to group product in account-level shipping rules.. [optional]  # noqa: E501
+            multipack (int): The number of identical products in a merchant-defined multipack. To avoid any overflow issue, pass it as a string.. [optional]  # noqa: E501
+            custom_label0 (str): Custom label 0 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label1 (str): Custom label 1 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label2 (str): Custom label 2 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label3 (str): Custom label 3 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            custom_label4 (str): Custom label 4 for custom grouping of items in a Shopping campaign.. [optional]  # noqa: E501
+            is_bundle (bool): Whether the item is a merchant-defined bundle. A bundle is a custom grouping of different products sold by a merchant for a single price.. [optional]  # noqa: E501
+            mobile_link (str): accounts.link to a mobile-optimized version of the landing page.. [optional]  # noqa: E501
+            availability_date (str): The day a pre-ordered product becomes available for delivery, in ISO 8601 format.. [optional]  # noqa: E501
+            shipping_label (str): The shipping label of the product, used to group product in account-level shipping rules.. [optional]  # noqa: E501
             unit_pricing_measure (ProductUnitPricingMeasure): [optional]  # noqa: E501
             unit_pricing_base_measure (ProductUnitPricingBaseMeasure): [optional]  # noqa: E501
             shipping_length (ProductShippingDimension): [optional]  # noqa: E501
             shipping_width (ProductShippingDimension): [optional]  # noqa: E501
             shipping_height (ProductShippingDimension): [optional]  # noqa: E501
-            display_ads_id (str, none_type): An identifier for an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            display_ads_similar_ids ([str], none_type): Advertiser-specified recommendations.. [optional]  # noqa: E501
-            display_ads_title (str, none_type): Title of an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            display_ads_link (str, none_type): URL directly to your item's landing page for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            display_ads_value (float, none_type): Offer margin for dynamic remarketing campaigns.. [optional]  # noqa: E501
-            sell_on_google_quantity (int, none_type): The quantity of the product that is available for selling on Google. Supported only for online products.. [optional]  # noqa: E501
-            promotion_ids ([str], none_type): The unique ID of a promotion.. [optional]  # noqa: E501
-            max_handling_time (int, none_type): Maximal product handling time (in business days).. [optional]  # noqa: E501
-            min_handling_time (int, none_type): Minimal product handling time (in business days).. [optional]  # noqa: E501
+            display_ads_id (str): An identifier for an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            display_ads_similar_ids ([str]): Advertiser-specified recommendations.. [optional]  # noqa: E501
+            display_ads_title (str): Title of an item for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            display_ads_link (str): URL directly to your item's landing page for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            display_ads_value (float): Offer margin for dynamic remarketing campaigns.. [optional]  # noqa: E501
+            sell_on_google_quantity (int): The quantity of the product that is available for selling on Google. Supported only for online products.. [optional]  # noqa: E501
+            promotion_ids ([str]): The unique ID of a promotion.. [optional]  # noqa: E501
+            max_handling_time (int): Maximal product handling time (in business days).. [optional]  # noqa: E501
+            min_handling_time (int): Minimal product handling time (in business days).. [optional]  # noqa: E501
             cost_of_goods_sold (Price): [optional]  # noqa: E501
-            source (str, none_type): The source of the offer, i.e., how the offer was created.. [optional]  # noqa: E501
-            included_destinations ([str], none_type): The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in excludedDestinations.. [optional]  # noqa: E501
-            excluded_destinations ([str], none_type): The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).. [optional]  # noqa: E501
-            ads_grouping (str, none_type): Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.. [optional]  # noqa: E501
-            ads_labels ([str], none_type): Similar to adsGrouping, but only works on CPC.. [optional]  # noqa: E501
-            ads_redirect (str, none_type): Allows advertisers to override the item URL when the product is shown within the context of Product Ads.. [optional]  # noqa: E501
-            product_types ([str], none_type): Categories of the item (formatted as in products data specification).. [optional]  # noqa: E501
-            product_type_keys ([str], none_type): Category keys of the item (formatted as in productTypes).. [optional]  # noqa: E501
-            age_group (str, none_type): Target age group of the item.. [optional]  # noqa: E501
-            availability (str, none_type): Availability status of the item. RECOMMENDED.. [optional]  # noqa: E501
-            condition (str, none_type): Condition or state of the item.. [optional]  # noqa: E501
-            gender (str, none_type): Target gender of the item.. [optional]  # noqa: E501
-            size_system (str, none_type): System in which the size is specified. Recommended for apparel items.. [optional]  # noqa: E501
-            size_type (str, none_type): The cut of the item. Recommended for apparel items.. [optional]  # noqa: E501
-            energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
-            min_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
-            max_energy_efficiency_class (str, none_type): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
-            tax_category (str, none_type): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
-            transit_time_label (str, none_type): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
-            seller_id (str, none_type): (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            external_seller_id (str, none_type): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            external_seller_name (str, none_type): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
-            number_of_reviews (int, none_type): The number of customer reviews for the product. [optional]  # noqa: E501
-            product_rating (str, none_type): The product rating for the product. [optional]  # noqa: E501
-            badge (str, none_type): URL of a badge image to display on the product.. [optional]  # noqa: E501
+            source (str): The source of the offer, i.e., how the offer was created.. [optional]  # noqa: E501
+            included_destinations ([str]): The list of destinations to include for this target (corresponds to checked check boxes in Merchant Center). Default destinations are always included unless provided in excludedDestinations.. [optional]  # noqa: E501
+            excluded_destinations ([str]): The list of destinations to exclude for this target (corresponds to unchecked check boxes in Merchant Center).. [optional]  # noqa: E501
+            ads_grouping (str): Used to group items in an arbitrary way. Only for CPA%, discouraged otherwise.. [optional]  # noqa: E501
+            ads_labels ([str]): Similar to adsGrouping, but only works on CPC.. [optional]  # noqa: E501
+            ads_redirect (str): Allows advertisers to override the item URL when the product is shown within the context of Product Ads.. [optional]  # noqa: E501
+            product_types ([str]): Categories of the item (formatted as in products data specification).. [optional]  # noqa: E501
+            product_type_keys ([str]): Category keys of the item (formatted as in productTypes).. [optional]  # noqa: E501
+            age_group (str): Target age group of the item.. [optional]  # noqa: E501
+            availability (str): Availability status of the item. RECOMMENDED.. [optional]  # noqa: E501
+            condition (str): Condition or state of the item.. [optional]  # noqa: E501
+            gender (str): Target gender of the item.. [optional]  # noqa: E501
+            size_system (str): System in which the size is specified. Recommended for apparel items.. [optional]  # noqa: E501
+            size_type (str): The cut of the item. Recommended for apparel items.. [optional]  # noqa: E501
+            energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
+            min_energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
+            max_energy_efficiency_class (str): The energy efficiency class as defined in EU directive 2010/30/EU.. [optional]  # noqa: E501
+            tax_category (str): The tax category of the product, used to configure detailed tax nexus in account-level tax settings.. [optional]  # noqa: E501
+            transit_time_label (str): The transit time label of the product, used to group product in account-level transit time tables.. [optional]  # noqa: E501
+            seller_id (str): (Deprecated Field) The external ID of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_id (str): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            external_seller_name (str): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            number_of_reviews (int): The number of customer reviews for the product. [optional]  # noqa: E501
+            product_rating (str): The product rating for the product. [optional]  # noqa: E501
+            badge (str): URL of a badge image to display on the product.. [optional]  # noqa: E501
         """
 
         channel = kwargs.get('channel', "online")

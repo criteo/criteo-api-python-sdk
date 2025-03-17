@@ -88,7 +88,7 @@ class CreateAdSetV24Q1Resource(ModelNormal):
         lazy_import()
         return {
             'attributes': (CreateAdSetV24Q1,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -143,7 +143,7 @@ class CreateAdSetV24Q1Resource(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (CreateAdSetV24Q1): [optional]  # noqa: E501
-            type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
+            type (str): Canonical type name of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,7 @@ class CreateAdSetV24Q1Resource(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (CreateAdSetV24Q1): [optional]  # noqa: E501
-            type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
+            type (str): Canonical type name of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

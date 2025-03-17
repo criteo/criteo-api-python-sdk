@@ -88,7 +88,7 @@ class RetailMediaContactlistAmendment(ModelNormal):
         lazy_import()
         return {
             'attributes': (RetailMediaContactlistAmendmentAttributes,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +145,7 @@ class RetailMediaContactlistAmendment(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str, none_type): User List. [optional]  # noqa: E501
+            type (str): User List. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,7 +235,7 @@ class RetailMediaContactlistAmendment(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str, none_type): User List. [optional]  # noqa: E501
+            type (str): User List. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

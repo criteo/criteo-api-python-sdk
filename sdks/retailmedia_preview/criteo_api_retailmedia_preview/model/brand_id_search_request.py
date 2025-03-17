@@ -56,7 +56,6 @@ class BrandIdSearchRequest(ModelNormal):
 
     allowed_values = {
         ('brand_type',): {
-            'None': None,
             'UC': "uc",
             'RETAILER': "retailer",
             'ALL': "all",
@@ -86,7 +85,7 @@ class BrandIdSearchRequest(ModelNormal):
         return {
             'retailer_ids': ([int],),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
-            'brand_type': (str, none_type,),  # noqa: E501
+            'brand_type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -145,7 +144,7 @@ class BrandIdSearchRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str, none_type): The name of the brand(s) to be searched. [optional]  # noqa: E501
-            brand_type (str, none_type): The type of brand, primarily where this brand belongs: UC, Retailer or All (both). [optional]  # noqa: E501
+            brand_type (str): The type of brand, primarily where this brand belongs: UC, Retailer or All (both). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,7 +235,7 @@ class BrandIdSearchRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             name (str, none_type): The name of the brand(s) to be searched. [optional]  # noqa: E501
-            brand_type (str, none_type): The type of brand, primarily where this brand belongs: UC, Retailer or All (both). [optional]  # noqa: E501
+            brand_type (str): The type of brand, primarily where this brand belongs: UC, Retailer or All (both). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

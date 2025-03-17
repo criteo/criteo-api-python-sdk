@@ -90,7 +90,7 @@ class InbotDiscussion(ModelNormal):
         """
         lazy_import()
         return {
-            'messages': ([Message], none_type,),  # noqa: E501
+            'messages': ([Message],),  # noqa: E501
         }
 
     @cached_property
@@ -143,7 +143,7 @@ class InbotDiscussion(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            messages ([Message], none_type): ordered list of previous messages, alternating between user prompts and bot answers. [optional]  # noqa: E501
+            messages ([Message]): ordered list of previous messages, alternating between user prompts and bot answers. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,7 +229,7 @@ class InbotDiscussion(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            messages ([Message], none_type): ordered list of previous messages, alternating between user prompts and bot answers. [optional]  # noqa: E501
+            messages ([Message]): ordered list of previous messages, alternating between user prompts and bot answers. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

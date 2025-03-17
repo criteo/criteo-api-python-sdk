@@ -60,13 +60,7 @@ class ExternalRetailMediaSeller(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = True
 
@@ -102,8 +96,12 @@ class ExternalRetailMediaSeller(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, seller_id, retailer_id, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaSeller - a model defined in OpenAPI
+
+        Args:
+            seller_id (str): the seller id
+            retailer_id (int): the retailer id
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -136,8 +134,6 @@ class ExternalRetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seller_id (str): [optional]  # noqa: E501
-            retailer_id (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -169,6 +165,8 @@ class ExternalRetailMediaSeller(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.seller_id = seller_id
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -189,8 +187,12 @@ class ExternalRetailMediaSeller(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, seller_id, retailer_id, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaSeller - a model defined in OpenAPI
+
+        Args:
+            seller_id (str): the seller id
+            retailer_id (int): the retailer id
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -223,8 +225,6 @@ class ExternalRetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seller_id (str): [optional]  # noqa: E501
-            retailer_id (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,6 +254,8 @@ class ExternalRetailMediaSeller(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.seller_id = seller_id
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

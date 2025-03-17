@@ -90,7 +90,7 @@ class CreateBalanceV2(ModelNormal):
             'start_date': (date,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
             'po_number': (str, none_type,),  # noqa: E501
-            'deposited': (float, none_type,),  # noqa: E501
+            'deposited': (float,),  # noqa: E501
             'end_date': (date, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
         }
@@ -157,7 +157,7 @@ class CreateBalanceV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
-            deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
+            deposited (float): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
             end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
         """
@@ -254,7 +254,7 @@ class CreateBalanceV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
-            deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
+            deposited (float): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
             end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
         """

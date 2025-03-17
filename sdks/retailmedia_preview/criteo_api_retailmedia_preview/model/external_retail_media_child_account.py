@@ -56,11 +56,13 @@ class ExternalRetailMediaChildAccount(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'SUPPLY': "Supply",
             'DEMAND': "Demand",
         },
         ('sub_type',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'BRAND': "Brand",
             'SELLER': "Seller",
@@ -70,13 +72,7 @@ class ExternalRetailMediaChildAccount(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = True
 
@@ -91,11 +87,11 @@ class ExternalRetailMediaChildAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'type': (str,),  # noqa: E501
-            'sub_type': (str,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'sub_type': (str, none_type,),  # noqa: E501
             'country_ids': ([str], none_type,),  # noqa: E501
             'currency_id': (str, none_type,),  # noqa: E501
             'time_zone': (str, none_type,),  # noqa: E501
@@ -107,11 +103,11 @@ class ExternalRetailMediaChildAccount(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
-        'sub_type': 'subType',  # noqa: E501
         'name': 'name',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'type': 'type',  # noqa: E501
+        'sub_type': 'subType',  # noqa: E501
         'country_ids': 'countryIds',  # noqa: E501
         'currency_id': 'currencyId',  # noqa: E501
         'time_zone': 'timeZone',  # noqa: E501
@@ -124,12 +120,8 @@ class ExternalRetailMediaChildAccount(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, sub_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaChildAccount - a model defined in OpenAPI
-
-        Args:
-            type (str):
-            sub_type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -162,12 +154,14 @@ class ExternalRetailMediaChildAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            country_ids ([str], none_type): [optional]  # noqa: E501
-            currency_id (str, none_type): [optional]  # noqa: E501
-            time_zone (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): account name. [optional]  # noqa: E501
+            company_name (str, none_type): Paying entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            type (str, none_type): Type for the account. [optional]  # noqa: E501
+            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
+            country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
+            currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
+            time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -199,8 +193,6 @@ class ExternalRetailMediaChildAccount(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
-        self.sub_type = sub_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -221,12 +213,8 @@ class ExternalRetailMediaChildAccount(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, sub_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaChildAccount - a model defined in OpenAPI
-
-        Args:
-            type (str):
-            sub_type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -259,12 +247,14 @@ class ExternalRetailMediaChildAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            country_ids ([str], none_type): [optional]  # noqa: E501
-            currency_id (str, none_type): [optional]  # noqa: E501
-            time_zone (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): account name. [optional]  # noqa: E501
+            company_name (str, none_type): Paying entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            type (str, none_type): Type for the account. [optional]  # noqa: E501
+            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
+            country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
+            currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
+            time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -294,8 +284,6 @@ class ExternalRetailMediaChildAccount(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
-        self.sub_type = sub_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

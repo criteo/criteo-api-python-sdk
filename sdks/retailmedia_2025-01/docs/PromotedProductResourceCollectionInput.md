@@ -5,7 +5,7 @@ Request object containing promoted products to be appended, deleted, paused or u
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[PromotedProductResource], none_type**](PromotedProductResource.md) |  | [optional] 
+**data** | [**[PromotedProductResource]**](PromotedProductResource.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

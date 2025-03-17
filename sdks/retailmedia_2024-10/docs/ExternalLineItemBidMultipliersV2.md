@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **favorites** | **float, none_type** | Favorites Page Type Bid Multiplier | [optional] 
 **search_bar** | **float, none_type** | SearchBar Page Type Bid Multiplier | [optional] 
 **category_menu** | **float, none_type** | CategoryMenu Page Type Bid Multiplier | [optional] 
+**id** | **str, none_type** | Id of the entity | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

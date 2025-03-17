@@ -90,7 +90,7 @@ class AudienceCreateEntityV1(ModelNormal):
             'name': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
             'algebra': (AlgebraNodeV1,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
+            'description': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -151,7 +151,7 @@ class AudienceCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): Description of the audience. [optional]  # noqa: E501
+            description (str): Description of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,7 +245,7 @@ class AudienceCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): Description of the audience. [optional]  # noqa: E501
+            description (str): Description of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -1,13 +1,12 @@
 # ExternalRetailMediaSeller
 
-A seller-retailer mapping
+used to define the exact seller linked with an account
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**seller_id** | **str** |  | [optional] 
-**retailer_id** | **int** |  | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
+**seller_id** | **str** | the seller id | 
+**retailer_id** | **int** | the retailer id | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

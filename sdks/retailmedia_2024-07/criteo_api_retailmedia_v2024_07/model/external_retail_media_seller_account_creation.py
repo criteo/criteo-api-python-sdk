@@ -64,16 +64,9 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -87,10 +80,10 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
         """
         lazy_import()
         return {
+            'sellers': ([ExternalRetailMediaSeller],),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
-            'sellers': ([ExternalRetailMediaSeller],),  # noqa: E501
         }
 
     @cached_property
@@ -99,10 +92,10 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
 
 
     attribute_map = {
+        'sellers': 'sellers',  # noqa: E501
         'name': 'name',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
-        'sellers': 'sellers',  # noqa: E501
     }
 
     read_only_vars = {
@@ -112,8 +105,11 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, sellers, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaSellerAccountCreation - a model defined in OpenAPI
+
+        Args:
+            sellers ([ExternalRetailMediaSeller]): list of sellers to associate to the new account
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -146,10 +142,9 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            sellers ([ExternalRetailMediaSeller]): [optional]  # noqa: E501
+            name (str, none_type): the name of the account, must be unique across all accounts. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -181,6 +176,7 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.sellers = sellers
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,8 +197,11 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, sellers, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaSellerAccountCreation - a model defined in OpenAPI
+
+        Args:
+            sellers ([ExternalRetailMediaSeller]): list of sellers to associate to the new account
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -235,10 +234,9 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            sellers ([ExternalRetailMediaSeller]): [optional]  # noqa: E501
+            name (str, none_type): the name of the account, must be unique across all accounts. [optional]  # noqa: E501
+            company_name (str, none_type): Display name for reporting the owning entity of ads for the Digital Services Act in the European Union. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -268,6 +266,7 @@ class ExternalRetailMediaSellerAccountCreation(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.sellers = sellers
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

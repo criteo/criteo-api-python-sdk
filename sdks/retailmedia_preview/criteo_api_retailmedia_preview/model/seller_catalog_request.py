@@ -87,7 +87,7 @@ class SellerCatalogRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'sellers': ([SellerIdentifier], none_type,),  # noqa: E501
+            'sellers': ([SellerIdentifier],),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class SellerCatalogRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            sellers ([SellerIdentifier], none_type): A list of sellers to restict the catalog to.. [optional]  # noqa: E501
+            sellers ([SellerIdentifier]): A list of sellers to restict the catalog to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +226,7 @@ class SellerCatalogRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            sellers ([SellerIdentifier], none_type): A list of sellers to restict the catalog to.. [optional]  # noqa: E501
+            sellers ([SellerIdentifier]): A list of sellers to restict the catalog to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

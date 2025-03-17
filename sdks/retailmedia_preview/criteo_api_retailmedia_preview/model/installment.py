@@ -87,7 +87,7 @@ class Installment(ModelNormal):
         """
         lazy_import()
         return {
-            'months': (int, none_type,),  # noqa: E501
+            'months': (int,),  # noqa: E501
             'amount': (Price,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class Installment(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            months (int, none_type): The number of installments the buyer has to pay.. [optional]  # noqa: E501
+            months (int): The number of installments the buyer has to pay.. [optional]  # noqa: E501
             amount (Price): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class Installment(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            months (int, none_type): The number of installments the buyer has to pay.. [optional]  # noqa: E501
+            months (int): The number of installments the buyer has to pay.. [optional]  # noqa: E501
             amount (Price): [optional]  # noqa: E501
         """
 

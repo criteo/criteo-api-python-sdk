@@ -56,6 +56,7 @@ class ExternalRetailer(ModelNormal):
 
     allowed_values = {
         ('campaign_eligibilities',): {
+            'None': None,
             'UNKNOWN': "unknown",
             'AUCTION': "auction",
             'PREFERRED': "preferred",
@@ -70,15 +71,9 @@ class ExternalRetailer(ModelNormal):
         },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -92,7 +87,7 @@ class ExternalRetailer(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'campaign_eligibilities': ([str],),  # noqa: E501
+            'campaign_eligibilities': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,7 +144,7 @@ class ExternalRetailer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_eligibilities ([str]): [optional]  # noqa: E501
+            campaign_eligibilities ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,7 +234,7 @@ class ExternalRetailer(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_eligibilities ([str]): [optional]  # noqa: E501
+            campaign_eligibilities ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

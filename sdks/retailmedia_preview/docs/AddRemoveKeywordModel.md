@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phrase** | **str, none_type** |  | [optional] 
 **match_type** | [**MatchTypeModel**](MatchTypeModel.md) |  | [optional] 
-**is_deleted** | **bool, none_type** |  | [optional] 
+**is_deleted** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

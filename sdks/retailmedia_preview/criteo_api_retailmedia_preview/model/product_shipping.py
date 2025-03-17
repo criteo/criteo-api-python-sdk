@@ -88,12 +88,12 @@ class ProductShipping(ModelNormal):
         lazy_import()
         return {
             'price': (Price,),  # noqa: E501
-            'country': (str, none_type,),  # noqa: E501
-            'region': (str, none_type,),  # noqa: E501
-            'service': (str, none_type,),  # noqa: E501
-            'location_id': (int, none_type,),  # noqa: E501
-            'location_group_name': (str, none_type,),  # noqa: E501
-            'postal_code': (str, none_type,),  # noqa: E501
+            'country': (str,),  # noqa: E501
+            'region': (str,),  # noqa: E501
+            'service': (str,),  # noqa: E501
+            'location_id': (int,),  # noqa: E501
+            'location_group_name': (str,),  # noqa: E501
+            'postal_code': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -153,12 +153,12 @@ class ProductShipping(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             price (Price): [optional]  # noqa: E501
-            country (str, none_type): The CLDR territory code of the country to which an item will ship.. [optional]  # noqa: E501
-            region (str, none_type): The geographic region to which a shipping rate applies.. [optional]  # noqa: E501
-            service (str, none_type): A free-form description of the service class or delivery speed.. [optional]  # noqa: E501
-            location_id (int, none_type): The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
-            location_group_name (str, none_type): The location where the shipping is applicable, represented by a location group name.. [optional]  # noqa: E501
-            postal_code (str, none_type): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length.. [optional]  # noqa: E501
+            country (str): The CLDR territory code of the country to which an item will ship.. [optional]  # noqa: E501
+            region (str): The geographic region to which a shipping rate applies.. [optional]  # noqa: E501
+            service (str): A free-form description of the service class or delivery speed.. [optional]  # noqa: E501
+            location_id (int): The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
+            location_group_name (str): The location where the shipping is applicable, represented by a location group name.. [optional]  # noqa: E501
+            postal_code (str): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,12 +245,12 @@ class ProductShipping(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             price (Price): [optional]  # noqa: E501
-            country (str, none_type): The CLDR territory code of the country to which an item will ship.. [optional]  # noqa: E501
-            region (str, none_type): The geographic region to which a shipping rate applies.. [optional]  # noqa: E501
-            service (str, none_type): A free-form description of the service class or delivery speed.. [optional]  # noqa: E501
-            location_id (int, none_type): The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
-            location_group_name (str, none_type): The location where the shipping is applicable, represented by a location group name.. [optional]  # noqa: E501
-            postal_code (str, none_type): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length.. [optional]  # noqa: E501
+            country (str): The CLDR territory code of the country to which an item will ship.. [optional]  # noqa: E501
+            region (str): The geographic region to which a shipping rate applies.. [optional]  # noqa: E501
+            service (str): A free-form description of the service class or delivery speed.. [optional]  # noqa: E501
+            location_id (int): The numeric ID of a location that the shipping rate applies to as defined in the AdWords API.. [optional]  # noqa: E501
+            location_group_name (str): The location where the shipping is applicable, represented by a location group name.. [optional]  # noqa: E501
+            postal_code (str): The postal code range that the shipping rate applies to, represented by a postal code, a postal code prefix followed by a * wildcard, a range between two postal codes or two postal code prefixes of equal length.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -88,8 +88,8 @@ class KeywordDataModel(ModelNormal):
             'match_type': (MatchTypeModel,),  # noqa: E501
             'bid': (float, none_type,),  # noqa: E501
             'input_keywords': (InputKeywordsModel,),  # noqa: E501
-            'created_at': (datetime, none_type,),  # noqa: E501
-            'updated_at': (datetime, none_type,),  # noqa: E501
+            'created_at': (datetime,),  # noqa: E501
+            'updated_at': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -151,8 +151,8 @@ class KeywordDataModel(ModelNormal):
             match_type (MatchTypeModel): [optional]  # noqa: E501
             bid (float, none_type): [optional]  # noqa: E501
             input_keywords (InputKeywordsModel): [optional]  # noqa: E501
-            created_at (datetime, none_type): [optional]  # noqa: E501
-            updated_at (datetime, none_type): [optional]  # noqa: E501
+            created_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,8 +242,8 @@ class KeywordDataModel(ModelNormal):
             match_type (MatchTypeModel): [optional]  # noqa: E501
             bid (float, none_type): [optional]  # noqa: E501
             input_keywords (InputKeywordsModel): [optional]  # noqa: E501
-            created_at (datetime, none_type): [optional]  # noqa: E501
-            updated_at (datetime, none_type): [optional]  # noqa: E501
+            created_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

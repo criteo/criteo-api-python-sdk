@@ -92,6 +92,7 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
             'favorites': (float, none_type,),  # noqa: E501
             'search_bar': (float, none_type,),  # noqa: E501
             'category_menu': (float, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -111,6 +112,7 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
         'favorites': 'favorites',  # noqa: E501
         'search_bar': 'searchBar',  # noqa: E501
         'category_menu': 'categoryMenu',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -165,6 +167,7 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
             favorites (float, none_type): Favorites Page Type Bid Multiplier. [optional]  # noqa: E501
             search_bar (float, none_type): SearchBar Page Type Bid Multiplier. [optional]  # noqa: E501
             category_menu (float, none_type): CategoryMenu Page Type Bid Multiplier. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -261,6 +264,7 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
             favorites (float, none_type): Favorites Page Type Bid Multiplier. [optional]  # noqa: E501
             search_bar (float, none_type): SearchBar Page Type Bid Multiplier. [optional]  # noqa: E501
             category_menu (float, none_type): CategoryMenu Page Type Bid Multiplier. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

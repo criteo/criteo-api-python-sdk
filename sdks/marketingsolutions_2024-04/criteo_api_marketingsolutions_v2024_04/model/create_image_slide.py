@@ -81,8 +81,8 @@ class CreateImageSlide(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'width': (int, none_type,),  # noqa: E501
-            'height': (int, none_type,),  # noqa: E501
+            'width': (int,),  # noqa: E501
+            'height': (int,),  # noqa: E501
             'slide_base64_strings': ([str], none_type,),  # noqa: E501
         }
 
@@ -138,8 +138,8 @@ class CreateImageSlide(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            width (int, none_type): Width of the Coupon slide. [optional]  # noqa: E501
-            height (int, none_type): Height of the Coupon slide. [optional]  # noqa: E501
+            width (int): Width of the Coupon slide. [optional]  # noqa: E501
+            height (int): Height of the Coupon slide. [optional]  # noqa: E501
             slide_base64_strings ([str], none_type): Array of images of the same size as a base-64 encoded string. [optional]  # noqa: E501
         """
 
@@ -226,8 +226,8 @@ class CreateImageSlide(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            width (int, none_type): Width of the Coupon slide. [optional]  # noqa: E501
-            height (int, none_type): Height of the Coupon slide. [optional]  # noqa: E501
+            width (int): Width of the Coupon slide. [optional]  # noqa: E501
+            height (int): Height of the Coupon slide. [optional]  # noqa: E501
             slide_base64_strings ([str], none_type): Array of images of the same size as a base-64 encoded string. [optional]  # noqa: E501
         """
 

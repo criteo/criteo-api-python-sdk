@@ -60,7 +60,6 @@ class CreateCampaignSpendLimit(ModelNormal):
             'UNCAPPED': "uncapped",
         },
         ('spend_limit_renewal',): {
-            'None': None,
             'UNDEFINED': "undefined",
             'DAILY': "daily",
             'MONTHLY': "monthly",
@@ -93,7 +92,7 @@ class CreateCampaignSpendLimit(ModelNormal):
         """
         return {
             'spend_limit_type': (str,),  # noqa: E501
-            'spend_limit_renewal': (str, none_type,),  # noqa: E501
+            'spend_limit_renewal': (str,),  # noqa: E501
             'spend_limit_amount': (float, none_type,),  # noqa: E501
         }
 
@@ -152,7 +151,7 @@ class CreateCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_renewal (str, none_type): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_renewal (str): The pace of the spend limit renewal. [optional]  # noqa: E501
             spend_limit_amount (float, none_type): The amount of the spend limit. null if spendLimitType is uncapped.. [optional]  # noqa: E501
         """
 
@@ -243,7 +242,7 @@ class CreateCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_renewal (str, none_type): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_renewal (str): The pace of the spend limit renewal. [optional]  # noqa: E501
             spend_limit_amount (float, none_type): The amount of the spend limit. null if spendLimitType is uncapped.. [optional]  # noqa: E501
         """
 
