@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /preview/retail-media/line-items/{line-item-id}/products | 
 [**get_api202210_external_line_item_product_buttons_by_line_item_id**](CampaignApi.md#get_api202210_external_line_item_product_buttons_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons | 
 [**get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#get_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
+[**get_api_external_v2_catalog_status_by_catalog_id**](CampaignApi.md#get_api_external_v2_catalog_status_by_catalog_id) | **GET** /preview/retail-media/catalogs/{catalogId}/status | 
 [**get_api_v1_external_retailer_brands_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_brands_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailerId}/brands | 
 [**get_api_v1_external_retailer_by_retailer_id_seller_by_seller**](CampaignApi.md#get_api_v1_external_retailer_by_retailer_id_seller_by_seller) | **GET** /preview/retail-media/retailers/{retailerId}/sellers/{seller} | 
 [**get_api_v1_external_retailer_category_cpc_rates_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_category_cpc_rates_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/cpc-rates | 
@@ -25,7 +26,8 @@ Method | HTTP request | Description
 [**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/pause | 
 [**post_api202110_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#post_api202110_external_campaign_preferred_line_items_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**post_api202210_external_line_item_product_buttons_create_by_line_item_id**](CampaignApi.md#post_api202210_external_line_item_product_buttons_create_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
-[**post_api_v1_external_account_catalogs_sellers_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_sellers_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/catalogs/sellers | 
+[**post_api_external_v2_account_brand_catalog_export_by_account_id**](CampaignApi.md#post_api_external_v2_account_brand_catalog_export_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/brand-catalog-export | 
+[**post_api_external_v2_account_seller_catalog_export_by_account_id**](CampaignApi.md#post_api_external_v2_account_seller_catalog_export_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/seller-catalog-export | 
 [**post_api_v1_external_catalogs_sku_retrieval**](CampaignApi.md#post_api_v1_external_catalogs_sku_retrieval) | **POST** /preview/retail-media/catalogs/sku-retrieval | 
 [**post_api_v1_external_catalogs_sku_search**](CampaignApi.md#post_api_v1_external_catalogs_sku_search) | **POST** /preview/retail-media/catalogs/sku-search | 
 [**post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id**](CampaignApi.md#post_api_v1_external_catalogs_sku_search_account_id_and_retailer_id) | **POST** /preview/retail-media/catalogs/sku-search/accounts/{account-id}/retailers/{retailer-id} | 
@@ -805,6 +807,90 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_api_external_v2_catalog_status_by_catalog_id**
+> CatalogStatusV2Response get_api_external_v2_catalog_status_by_catalog_id(catalog_id)
+
+
+
+Check the status of a catalog request.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.catalog_status_v2_response import CatalogStatusV2Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    catalog_id = "catalogId_example" # str | A catalog ID returned from an account catalog request.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_api_external_v2_catalog_status_by_catalog_id(catalog_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_api_external_v2_catalog_status_by_catalog_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **catalog_id** | **str**| A catalog ID returned from an account catalog request. |
+
+### Return type
+
+[**CatalogStatusV2Response**](CatalogStatusV2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Catalog request found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2051,8 +2137,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_api_v1_external_account_catalogs_sellers_by_account_id**
-> JsonApiSingleResponseOfCatalogStatus post_api_v1_external_account_catalogs_sellers_by_account_id(account_id)
+# **post_api_external_v2_account_brand_catalog_export_by_account_id**
+> CatalogStatusV2Response post_api_external_v2_account_brand_catalog_export_by_account_id(account_id)
 
 
 
@@ -2067,8 +2153,8 @@ Create a request for a Catalog available to the indicated account.
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
-from criteo_api_retailmedia_preview.model.json_api_request_of_seller_catalog_request import JsonApiRequestOfSellerCatalogRequest
+from criteo_api_retailmedia_preview.model.json_api_request_of_brand_catalog_request_v2 import JsonApiRequestOfBrandCatalogRequestV2
+from criteo_api_retailmedia_preview.model.catalog_status_v2_response import CatalogStatusV2Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2098,34 +2184,38 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     account_id = "accountId_example" # str | The account to request the catalog for.
-    json_api_request_of_seller_catalog_request = JsonApiRequestOfSellerCatalogRequest(
-        data=JsonApiBodyWithoutIdOfSellerCatalogRequestAndSellerCatalogRequest(
+    json_api_request_of_brand_catalog_request_v2 = JsonApiRequestOfBrandCatalogRequestV2(
+        data=JsonApiBodyWithoutIdOfBrandCatalogRequestV2AndBrandCatalogRequestV2(
             type="type_example",
-            attributes=SellerCatalogRequest(
-                sellers=[
-                    SellerIdentifier(
-                        retailer_id="retailer_id_example",
-                        seller_id="seller_id_example",
-                    ),
+            attributes=BrandCatalogRequestV2(
+                brand_id_filter=[
+                    "brand_id_filter_example",
+                ],
+                retailer_id_filter=[
+                    1,
+                ],
+                modified_after=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                include_fields=[
+                    "Unknown",
                 ],
             ),
         ),
-    ) # JsonApiRequestOfSellerCatalogRequest |  (optional)
+    ) # JsonApiRequestOfBrandCatalogRequestV2 |  (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.post_api_v1_external_account_catalogs_sellers_by_account_id(account_id)
+        api_response = api_instance.post_api_external_v2_account_brand_catalog_export_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_sellers_by_account_id: %s\n" % e)
+        print("Exception when calling CampaignApi->post_api_external_v2_account_brand_catalog_export_by_account_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.post_api_v1_external_account_catalogs_sellers_by_account_id(account_id, json_api_request_of_seller_catalog_request=json_api_request_of_seller_catalog_request)
+        api_response = api_instance.post_api_external_v2_account_brand_catalog_export_by_account_id(account_id, json_api_request_of_brand_catalog_request_v2=json_api_request_of_brand_catalog_request_v2)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_sellers_by_account_id: %s\n" % e)
+        print("Exception when calling CampaignApi->post_api_external_v2_account_brand_catalog_export_by_account_id: %s\n" % e)
 ```
 
 
@@ -2134,11 +2224,122 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account to request the catalog for. |
- **json_api_request_of_seller_catalog_request** | [**JsonApiRequestOfSellerCatalogRequest**](JsonApiRequestOfSellerCatalogRequest.md)|  | [optional]
+ **json_api_request_of_brand_catalog_request_v2** | [**JsonApiRequestOfBrandCatalogRequestV2**](JsonApiRequestOfBrandCatalogRequestV2.md)|  | [optional]
 
 ### Return type
 
-[**JsonApiSingleResponseOfCatalogStatus**](JsonApiSingleResponseOfCatalogStatus.md)
+[**CatalogStatusV2Response**](CatalogStatusV2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Catalog request successfully created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_api_external_v2_account_seller_catalog_export_by_account_id**
+> CatalogStatusV2Response post_api_external_v2_account_seller_catalog_export_by_account_id(account_id)
+
+
+
+Create a request for a Catalog available to the indicated account.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.json_api_request_of_seller_catalog_request_v2 import JsonApiRequestOfSellerCatalogRequestV2
+from criteo_api_retailmedia_preview.model.catalog_status_v2_response import CatalogStatusV2Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "accountId_example" # str | The account to request the catalog for.
+    json_api_request_of_seller_catalog_request_v2 = JsonApiRequestOfSellerCatalogRequestV2(
+        data=JsonApiBodyWithoutIdOfSellerCatalogRequestV2AndSellerCatalogRequestV2(
+            type="type_example",
+            attributes=SellerCatalogRequestV2(
+                sellers=[
+                    SellerIdentifierV2(
+                        retailer_id="retailer_id_example",
+                        seller_id="seller_id_example",
+                    ),
+                ],
+                modified_after=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                include_fields=[
+                    "Unknown",
+                ],
+            ),
+        ),
+    ) # JsonApiRequestOfSellerCatalogRequestV2 |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.post_api_external_v2_account_seller_catalog_export_by_account_id(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->post_api_external_v2_account_seller_catalog_export_by_account_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.post_api_external_v2_account_seller_catalog_export_by_account_id(account_id, json_api_request_of_seller_catalog_request_v2=json_api_request_of_seller_catalog_request_v2)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->post_api_external_v2_account_seller_catalog_export_by_account_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The account to request the catalog for. |
+ **json_api_request_of_seller_catalog_request_v2** | [**JsonApiRequestOfSellerCatalogRequestV2**](JsonApiRequestOfSellerCatalogRequestV2.md)|  | [optional]
+
+### Return type
+
+[**CatalogStatusV2Response**](CatalogStatusV2Response.md)
 
 ### Authorization
 
