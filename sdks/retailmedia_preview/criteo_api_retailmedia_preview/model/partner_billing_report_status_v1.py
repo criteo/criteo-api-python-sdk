@@ -56,10 +56,10 @@ class PartnerBillingReportStatusV1(ModelNormal):
 
     allowed_values = {
         ('status',): {
-            'PENDING': "Pending",
-            'SUCCESS': "Success",
-            'FAILED': "Failed",
-            'EXPIRED': "Expired",
+            'PENDING': "pending",
+            'SUCCESS': "success",
+            'FAILED': "failed",
+            'EXPIRED': "expired",
         },
     }
 
