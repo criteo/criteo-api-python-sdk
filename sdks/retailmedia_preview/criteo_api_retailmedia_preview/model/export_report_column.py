@@ -55,6 +55,12 @@ class ExportReportColumn(ModelNormal):
     """
 
     allowed_values = {
+        ('role',): {
+            'DIMENSION': "Dimension",
+            'PROPERTY': "Property",
+            'INTERVAL': "Interval",
+            'METRIC': "Metric",
+        },
         ('type',): {
             'BOOLEAN': "Boolean",
             'NUMBER': "Number",
@@ -64,12 +70,6 @@ class ExportReportColumn(ModelNormal):
             'DATETIME': "DateTime",
             'INTERVAL': "Interval",
             'DURATION': "Duration",
-        },
-        ('role',): {
-            'DIMENSION': "Dimension",
-            'PROPERTY': "Property",
-            'INTERVAL': "Interval",
-            'METRIC': "Metric",
         },
     }
 
@@ -98,14 +98,14 @@ class ExportReportColumn(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
             'role': (str,),  # noqa: E501
-            'title': (str, none_type,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'timezone': (str, none_type,),  # noqa: E501
-            'duration': (str, none_type,),  # noqa: E501
+            'type': (str,),  # noqa: E501
             'currency': (str, none_type,),  # noqa: E501
             'deprecated': (bool, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'duration': (str, none_type,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -115,14 +115,14 @@ class ExportReportColumn(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'type': 'type',  # noqa: E501
         'role': 'role',  # noqa: E501
-        'title': 'title',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'timezone': 'timezone',  # noqa: E501
-        'duration': 'duration',  # noqa: E501
+        'type': 'type',  # noqa: E501
         'currency': 'currency',  # noqa: E501
         'deprecated': 'deprecated',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'duration': 'duration',  # noqa: E501
+        'timezone': 'timezone',  # noqa: E501
+        'title': 'title',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,13 +132,13 @@ class ExportReportColumn(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, type, role, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, role, type, *args, **kwargs):  # noqa: E501
         """ExportReportColumn - a model defined in OpenAPI
 
         Args:
             name (str): Name of the exported column
-            type (str): Type of the column
             role (str): Role of the column
+            type (str): Type of the column
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,12 +171,12 @@ class ExportReportColumn(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            title (str, none_type): Title of the exported column. [optional]  # noqa: E501
-            description (str, none_type): Description of the exported column. [optional]  # noqa: E501
-            timezone (str, none_type): Timezone of the column. [optional]  # noqa: E501
-            duration (str, none_type): Duration of the column. [optional]  # noqa: E501
             currency (str, none_type): Currency of the column. [optional]  # noqa: E501
             deprecated (bool, none_type): Flag for deprecated column. [optional]  # noqa: E501
+            description (str, none_type): Description of the exported column. [optional]  # noqa: E501
+            duration (str, none_type): Duration of the column. [optional]  # noqa: E501
+            timezone (str, none_type): Timezone of the column. [optional]  # noqa: E501
+            title (str, none_type): Title of the exported column. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -209,8 +209,8 @@ class ExportReportColumn(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.type = type
         self.role = role
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -231,13 +231,13 @@ class ExportReportColumn(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, type, role, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, role, type, *args, **kwargs):  # noqa: E501
         """ExportReportColumn - a model defined in OpenAPI
 
         Args:
             name (str): Name of the exported column
-            type (str): Type of the column
             role (str): Role of the column
+            type (str): Type of the column
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -270,12 +270,12 @@ class ExportReportColumn(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            title (str, none_type): Title of the exported column. [optional]  # noqa: E501
-            description (str, none_type): Description of the exported column. [optional]  # noqa: E501
-            timezone (str, none_type): Timezone of the column. [optional]  # noqa: E501
-            duration (str, none_type): Duration of the column. [optional]  # noqa: E501
             currency (str, none_type): Currency of the column. [optional]  # noqa: E501
             deprecated (bool, none_type): Flag for deprecated column. [optional]  # noqa: E501
+            description (str, none_type): Description of the exported column. [optional]  # noqa: E501
+            duration (str, none_type): Duration of the column. [optional]  # noqa: E501
+            timezone (str, none_type): Timezone of the column. [optional]  # noqa: E501
+            title (str, none_type): Title of the exported column. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -306,8 +306,8 @@ class ExportReportColumn(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.type = type
         self.role = role
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

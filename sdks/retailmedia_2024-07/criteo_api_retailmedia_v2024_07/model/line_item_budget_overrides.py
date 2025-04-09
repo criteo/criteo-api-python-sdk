@@ -82,8 +82,8 @@ class LineItemBudgetOverrides(ModelNormal):
         """
         lazy_import()
         return {
-            'monthly_line_item_budget_overrides': ([MonthlyLineItemBudegetOverride],),  # noqa: E501
             'daily_line_item_budget_overrides': ([DailyLineItemBudgetOverride],),  # noqa: E501
+            'monthly_line_item_budget_overrides': ([MonthlyLineItemBudegetOverride],),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class LineItemBudgetOverrides(ModelNormal):
 
 
     attribute_map = {
-        'monthly_line_item_budget_overrides': 'monthlyLineItemBudgetOverrides',  # noqa: E501
         'daily_line_item_budget_overrides': 'dailyLineItemBudgetOverrides',  # noqa: E501
+        'monthly_line_item_budget_overrides': 'monthlyLineItemBudgetOverrides',  # noqa: E501
     }
 
     read_only_vars = {
@@ -103,12 +103,12 @@ class LineItemBudgetOverrides(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, monthly_line_item_budget_overrides, daily_line_item_budget_overrides, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, daily_line_item_budget_overrides, monthly_line_item_budget_overrides, *args, **kwargs):  # noqa: E501
         """LineItemBudgetOverrides - a model defined in OpenAPI
 
         Args:
-            monthly_line_item_budget_overrides ([MonthlyLineItemBudegetOverride]): Line item budget override monthly part, chronological order restricted.
             daily_line_item_budget_overrides ([DailyLineItemBudgetOverride]): Line item budget override daily part, chronological order restricted.
+            monthly_line_item_budget_overrides ([MonthlyLineItemBudegetOverride]): Line item budget override monthly part, chronological order restricted.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -172,8 +172,8 @@ class LineItemBudgetOverrides(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.monthly_line_item_budget_overrides = monthly_line_item_budget_overrides
         self.daily_line_item_budget_overrides = daily_line_item_budget_overrides
+        self.monthly_line_item_budget_overrides = monthly_line_item_budget_overrides
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,12 +194,12 @@ class LineItemBudgetOverrides(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, monthly_line_item_budget_overrides, daily_line_item_budget_overrides, *args, **kwargs):  # noqa: E501
+    def __init__(self, daily_line_item_budget_overrides, monthly_line_item_budget_overrides, *args, **kwargs):  # noqa: E501
         """LineItemBudgetOverrides - a model defined in OpenAPI
 
         Args:
-            monthly_line_item_budget_overrides ([MonthlyLineItemBudegetOverride]): Line item budget override monthly part, chronological order restricted.
             daily_line_item_budget_overrides ([DailyLineItemBudgetOverride]): Line item budget override daily part, chronological order restricted.
+            monthly_line_item_budget_overrides ([MonthlyLineItemBudegetOverride]): Line item budget override monthly part, chronological order restricted.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -261,8 +261,8 @@ class LineItemBudgetOverrides(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.monthly_line_item_budget_overrides = monthly_line_item_budget_overrides
         self.daily_line_item_budget_overrides = daily_line_item_budget_overrides
+        self.monthly_line_item_budget_overrides = monthly_line_item_budget_overrides
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

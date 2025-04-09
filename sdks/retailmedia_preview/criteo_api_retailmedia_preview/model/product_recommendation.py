@@ -90,13 +90,13 @@ class ProductRecommendation(ModelNormal):
         """
         return {
             'rationale': (str,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
+            'brand': (str, none_type,),  # noqa: E501
+            'currency': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'image_url': (str, none_type,),  # noqa: E501
-            'url': (str, none_type,),  # noqa: E501
-            'brand': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'price': (float, none_type,),  # noqa: E501
-            'currency': (str, none_type,),  # noqa: E501
+            'url': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -106,13 +106,13 @@ class ProductRecommendation(ModelNormal):
 
     attribute_map = {
         'rationale': 'rationale',  # noqa: E501
-        'name': 'name',  # noqa: E501
+        'brand': 'brand',  # noqa: E501
+        'currency': 'currency',  # noqa: E501
         'description': 'description',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
-        'url': 'url',  # noqa: E501
-        'brand': 'brand',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'price': 'price',  # noqa: E501
-        'currency': 'currency',  # noqa: E501
+        'url': 'url',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,13 +159,13 @@ class ProductRecommendation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): name of the product. [optional]  # noqa: E501
+            brand (str, none_type): brand of the product. [optional]  # noqa: E501
+            currency (str, none_type): currency of the price of the product. [optional]  # noqa: E501
             description (str, none_type): description of the product. [optional]  # noqa: E501
             image_url (str, none_type): url of the product image. [optional]  # noqa: E501
-            url (str, none_type): url of the product on the retailer website. [optional]  # noqa: E501
-            brand (str, none_type): brand of the product. [optional]  # noqa: E501
+            name (str, none_type): name of the product. [optional]  # noqa: E501
             price (float, none_type): numerical value of the price of the product. [optional]  # noqa: E501
-            currency (str, none_type): currency of the price of the product. [optional]  # noqa: E501
+            url (str, none_type): url of the product on the retailer website. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,13 +255,13 @@ class ProductRecommendation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): name of the product. [optional]  # noqa: E501
+            brand (str, none_type): brand of the product. [optional]  # noqa: E501
+            currency (str, none_type): currency of the price of the product. [optional]  # noqa: E501
             description (str, none_type): description of the product. [optional]  # noqa: E501
             image_url (str, none_type): url of the product image. [optional]  # noqa: E501
-            url (str, none_type): url of the product on the retailer website. [optional]  # noqa: E501
-            brand (str, none_type): brand of the product. [optional]  # noqa: E501
+            name (str, none_type): name of the product. [optional]  # noqa: E501
             price (float, none_type): numerical value of the price of the product. [optional]  # noqa: E501
-            currency (str, none_type): currency of the price of the product. [optional]  # noqa: E501
+            url (str, none_type): url of the product on the retailer website. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

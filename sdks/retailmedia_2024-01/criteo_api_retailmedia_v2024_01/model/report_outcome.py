@@ -87,8 +87,8 @@ class ReportOutcome(ModelNormal):
         """
         lazy_import()
         return {
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
             'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -97,13 +97,13 @@ class ReportOutcome(ModelNormal):
 
 
     attribute_map = {
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -144,8 +144,8 @@ class ReportOutcome(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,8 +231,8 @@ class ReportOutcome(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

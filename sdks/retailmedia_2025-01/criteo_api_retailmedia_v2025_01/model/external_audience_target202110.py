@@ -86,8 +86,8 @@ class ExternalAudienceTarget202110(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'scope': (str,),  # noqa: E501
             'audience_ids': ([str],),  # noqa: E501
+            'scope': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -96,8 +96,8 @@ class ExternalAudienceTarget202110(ModelNormal):
 
 
     attribute_map = {
-        'scope': 'scope',  # noqa: E501
         'audience_ids': 'audienceIds',  # noqa: E501
+        'scope': 'scope',  # noqa: E501
     }
 
     read_only_vars = {
@@ -107,12 +107,12 @@ class ExternalAudienceTarget202110(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, scope, audience_ids, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, audience_ids, scope, *args, **kwargs):  # noqa: E501
         """ExternalAudienceTarget202110 - a model defined in OpenAPI
 
         Args:
-            scope (str): Scope of the audience target
             audience_ids ([str]): Audience ids that should be targeted
+            scope (str): Scope of the audience target
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,8 +176,8 @@ class ExternalAudienceTarget202110(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.scope = scope
         self.audience_ids = audience_ids
+        self.scope = scope
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -198,12 +198,12 @@ class ExternalAudienceTarget202110(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, scope, audience_ids, *args, **kwargs):  # noqa: E501
+    def __init__(self, audience_ids, scope, *args, **kwargs):  # noqa: E501
         """ExternalAudienceTarget202110 - a model defined in OpenAPI
 
         Args:
-            scope (str): Scope of the audience target
             audience_ids ([str]): Audience ids that should be targeted
+            scope (str): Scope of the audience target
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -265,8 +265,8 @@ class ExternalAudienceTarget202110(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.scope = scope
         self.audience_ids = audience_ids
+        self.scope = scope
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

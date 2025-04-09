@@ -93,8 +93,8 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'operation': (str,),  # noqa: E501
             'identifiers': ([str],),  # noqa: E501
+            'operation': (str,),  # noqa: E501
             'identifier_type': (str,),  # noqa: E501
         }
 
@@ -104,8 +104,8 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
 
 
     attribute_map = {
-        'operation': 'operation',  # noqa: E501
         'identifiers': 'identifiers',  # noqa: E501
+        'operation': 'operation',  # noqa: E501
         'identifier_type': 'identifierType',  # noqa: E501
     }
 
@@ -116,12 +116,12 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, operation, identifiers, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, identifiers, operation, *args, **kwargs):  # noqa: E501
         """RetailMediaContactlistAmendmentAttributes - a model defined in OpenAPI
 
         Args:
-            operation (str): Whether to add or remove users
             identifiers ([str]): The users to add or remove, each in the schema specified
+            operation (str): Whether to add or remove users
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -186,8 +186,8 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.operation = operation
         self.identifiers = identifiers
+        self.operation = operation
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -208,12 +208,12 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, operation, identifiers, *args, **kwargs):  # noqa: E501
+    def __init__(self, identifiers, operation, *args, **kwargs):  # noqa: E501
         """RetailMediaContactlistAmendmentAttributes - a model defined in OpenAPI
 
         Args:
-            operation (str): Whether to add or remove users
             identifiers ([str]): The users to add or remove, each in the schema specified
+            operation (str): Whether to add or remove users
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -276,8 +276,8 @@ class RetailMediaContactlistAmendmentAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.operation = operation
         self.identifiers = identifiers
+        self.operation = operation
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

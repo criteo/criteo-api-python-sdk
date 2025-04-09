@@ -59,18 +59,6 @@ class PatchAdSetBudget(ModelNormal):
     """
 
     allowed_values = {
-        ('budget_strategy',): {
-            'None': None,
-            'CAPPED': "capped",
-            'UNCAPPED': "uncapped",
-        },
-        ('budget_renewal',): {
-            'None': None,
-            'UNDEFINED': "undefined",
-            'DAILY': "daily",
-            'MONTHLY': "monthly",
-            'LIFETIME': "lifetime",
-        },
         ('budget_delivery_smoothing',): {
             'None': None,
             'ACCELERATED': "accelerated",
@@ -86,6 +74,18 @@ class PatchAdSetBudget(ModelNormal):
             'FRIDAYTOTHURSDAY': "fridayToThursday",
             'SATURDAYTOFRIDAY': "saturdayToFriday",
             'SUNDAYTOSATURDAY': "sundayToSaturday",
+        },
+        ('budget_renewal',): {
+            'None': None,
+            'UNDEFINED': "undefined",
+            'DAILY': "daily",
+            'MONTHLY': "monthly",
+            'LIFETIME': "lifetime",
+        },
+        ('budget_strategy',): {
+            'None': None,
+            'CAPPED': "capped",
+            'UNCAPPED': "uncapped",
         },
     }
 
@@ -115,11 +115,11 @@ class PatchAdSetBudget(ModelNormal):
         """
         lazy_import()
         return {
-            'budget_strategy': (str, none_type,),  # noqa: E501
-            'budget_renewal': (str, none_type,),  # noqa: E501
+            'budget_amount': (NillableDecimal,),  # noqa: E501
             'budget_delivery_smoothing': (str, none_type,),  # noqa: E501
             'budget_delivery_week': (str, none_type,),  # noqa: E501
-            'budget_amount': (NillableDecimal,),  # noqa: E501
+            'budget_renewal': (str, none_type,),  # noqa: E501
+            'budget_strategy': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -128,11 +128,11 @@ class PatchAdSetBudget(ModelNormal):
 
 
     attribute_map = {
-        'budget_strategy': 'budgetStrategy',  # noqa: E501
-        'budget_renewal': 'budgetRenewal',  # noqa: E501
+        'budget_amount': 'budgetAmount',  # noqa: E501
         'budget_delivery_smoothing': 'budgetDeliverySmoothing',  # noqa: E501
         'budget_delivery_week': 'budgetDeliveryWeek',  # noqa: E501
-        'budget_amount': 'budgetAmount',  # noqa: E501
+        'budget_renewal': 'budgetRenewal',  # noqa: E501
+        'budget_strategy': 'budgetStrategy',  # noqa: E501
     }
 
     read_only_vars = {
@@ -176,11 +176,11 @@ class PatchAdSetBudget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_strategy (str, none_type): [optional]  # noqa: E501
-            budget_renewal (str, none_type): [optional]  # noqa: E501
+            budget_amount (NillableDecimal): [optional]  # noqa: E501
             budget_delivery_smoothing (str, none_type): [optional]  # noqa: E501
             budget_delivery_week (str, none_type): [optional]  # noqa: E501
-            budget_amount (NillableDecimal): [optional]  # noqa: E501
+            budget_renewal (str, none_type): [optional]  # noqa: E501
+            budget_strategy (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -266,11 +266,11 @@ class PatchAdSetBudget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_strategy (str, none_type): [optional]  # noqa: E501
-            budget_renewal (str, none_type): [optional]  # noqa: E501
+            budget_amount (NillableDecimal): [optional]  # noqa: E501
             budget_delivery_smoothing (str, none_type): [optional]  # noqa: E501
             budget_delivery_week (str, none_type): [optional]  # noqa: E501
-            budget_amount (NillableDecimal): [optional]  # noqa: E501
+            budget_renewal (str, none_type): [optional]  # noqa: E501
+            budget_strategy (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

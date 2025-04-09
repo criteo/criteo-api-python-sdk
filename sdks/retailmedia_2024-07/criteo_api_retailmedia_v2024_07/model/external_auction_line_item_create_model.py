@@ -55,6 +55,12 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
     """
 
     allowed_values = {
+        ('bid_strategy',): {
+            'UNKNOWN': "unknown",
+            'CONVERSION': "conversion",
+            'CLICKS': "clicks",
+            'REVENUE': "revenue",
+        },
         ('status',): {
             'UNKNOWN': "unknown",
             'ACTIVE': "active",
@@ -65,12 +71,6 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
             'ENDED': "ended",
             'ARCHIVED': "archived",
             'NOFUNDS': "noFunds",
-        },
-        ('bid_strategy',): {
-            'UNKNOWN': "unknown",
-            'CONVERSION': "conversion",
-            'CLICKS': "clicks",
-            'REVENUE': "revenue",
         },
     }
 
@@ -105,15 +105,15 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
             'name': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
             'target_retailer_id': (str,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
-            'status': (str,),  # noqa: E501
+            'bid_strategy': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
-            'target_bid': (float, none_type,),  # noqa: E501
+            'daily_pacing': (float, none_type,),  # noqa: E501
+            'end_date': (date,),  # noqa: E501
+            'is_auto_daily_pacing': (bool,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
-            'daily_pacing': (float, none_type,),  # noqa: E501
-            'is_auto_daily_pacing': (bool,),  # noqa: E501
-            'bid_strategy': (str,),  # noqa: E501
+            'status': (str,),  # noqa: E501
+            'target_bid': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -125,15 +125,15 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
         'name': 'name',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'target_retailer_id': 'targetRetailerId',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'status': 'status',  # noqa: E501
+        'bid_strategy': 'bidStrategy',  # noqa: E501
         'budget': 'budget',  # noqa: E501
-        'target_bid': 'targetBid',  # noqa: E501
+        'daily_pacing': 'dailyPacing',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'daily_pacing': 'dailyPacing',  # noqa: E501
-        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
-        'bid_strategy': 'bidStrategy',  # noqa: E501
+        'status': 'status',  # noqa: E501
+        'target_bid': 'targetBid',  # noqa: E501
     }
 
     read_only_vars = {
@@ -182,15 +182,15 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            status (str): [optional]  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
-            target_bid (float, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            status (str): [optional]  # noqa: E501
+            target_bid (float, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -284,15 +284,15 @@ class ExternalAuctionLineItemCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            status (str): [optional]  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
-            target_bid (float, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            status (str): [optional]  # noqa: E501
+            target_bid (float, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

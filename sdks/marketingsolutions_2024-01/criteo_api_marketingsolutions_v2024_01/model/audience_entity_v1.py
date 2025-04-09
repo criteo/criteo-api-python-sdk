@@ -89,13 +89,13 @@ class AudienceEntityV1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'created_at': (datetime, none_type,),  # noqa: E501
-            'updated_at': (datetime, none_type,),  # noqa: E501
-            'advertiser_id': (str, none_type,),  # noqa: E501
             'ad_set_ids': ([str], none_type,),  # noqa: E501
+            'advertiser_id': (str, none_type,),  # noqa: E501
             'algebra': (AlgebraNodeV1,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -104,13 +104,13 @@ class AudienceEntityV1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'created_at': 'createdAt',  # noqa: E501
-        'updated_at': 'updatedAt',  # noqa: E501
-        'advertiser_id': 'advertiserId',  # noqa: E501
         'ad_set_ids': 'adSetIds',  # noqa: E501
+        'advertiser_id': 'advertiserId',  # noqa: E501
         'algebra': 'algebra',  # noqa: E501
+        'created_at': 'createdAt',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'updated_at': 'updatedAt',  # noqa: E501
     }
 
     read_only_vars = {
@@ -154,13 +154,13 @@ class AudienceEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the audience. [optional]  # noqa: E501
-            description (str, none_type): Description of the audience. [optional]  # noqa: E501
-            created_at (datetime, none_type): ISO-8601 timestamp in UTC of audience creation (read-only). [optional]  # noqa: E501
-            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of audience update (read-only). [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser associated to the audience. [optional]  # noqa: E501
             ad_set_ids ([str], none_type): Ad sets associated to the audience. [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser associated to the audience. [optional]  # noqa: E501
             algebra (AlgebraNodeV1): [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of audience creation (read-only). [optional]  # noqa: E501
+            description (str, none_type): Description of the audience. [optional]  # noqa: E501
+            name (str, none_type): Name of the audience. [optional]  # noqa: E501
+            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of audience update (read-only). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,13 +246,13 @@ class AudienceEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the audience. [optional]  # noqa: E501
-            description (str, none_type): Description of the audience. [optional]  # noqa: E501
-            created_at (datetime, none_type): ISO-8601 timestamp in UTC of audience creation (read-only). [optional]  # noqa: E501
-            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of audience update (read-only). [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser associated to the audience. [optional]  # noqa: E501
             ad_set_ids ([str], none_type): Ad sets associated to the audience. [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser associated to the audience. [optional]  # noqa: E501
             algebra (AlgebraNodeV1): [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of audience creation (read-only). [optional]  # noqa: E501
+            description (str, none_type): Description of the audience. [optional]  # noqa: E501
+            name (str, none_type): Name of the audience. [optional]  # noqa: E501
+            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of audience update (read-only). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

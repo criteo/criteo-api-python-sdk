@@ -97,13 +97,13 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
             'description': (NillableString,),  # noqa: E501
             'in_market': (InMarketUpdateV1,),  # noqa: E501
             'location': (LocationUpdateV1,),  # noqa: E501
-            'retargeting': (RetargetingUpdateV1,),  # noqa: E501
             'lookalike': (LookalikeUpdateV1,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'prospecting': (ProspectingUpdateV1,),  # noqa: E501
+            'retargeting': (RetargetingUpdateV1,),  # noqa: E501
         }
 
     @cached_property
@@ -112,13 +112,13 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
         'in_market': 'inMarket',  # noqa: E501
         'location': 'location',  # noqa: E501
-        'retargeting': 'retargeting',  # noqa: E501
         'lookalike': 'lookalike',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'prospecting': 'prospecting',  # noqa: E501
+        'retargeting': 'retargeting',  # noqa: E501
     }
 
     read_only_vars = {
@@ -162,13 +162,13 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the segment. [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
             in_market (InMarketUpdateV1): [optional]  # noqa: E501
             location (LocationUpdateV1): [optional]  # noqa: E501
-            retargeting (RetargetingUpdateV1): [optional]  # noqa: E501
             lookalike (LookalikeUpdateV1): [optional]  # noqa: E501
+            name (str): Name of the segment. [optional]  # noqa: E501
             prospecting (ProspectingUpdateV1): [optional]  # noqa: E501
+            retargeting (RetargetingUpdateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -254,13 +254,13 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the segment. [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
             in_market (InMarketUpdateV1): [optional]  # noqa: E501
             location (LocationUpdateV1): [optional]  # noqa: E501
-            retargeting (RetargetingUpdateV1): [optional]  # noqa: E501
             lookalike (LookalikeUpdateV1): [optional]  # noqa: E501
+            name (str): Name of the segment. [optional]  # noqa: E501
             prospecting (ProspectingUpdateV1): [optional]  # noqa: E501
+            retargeting (RetargetingUpdateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

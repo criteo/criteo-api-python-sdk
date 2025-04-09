@@ -55,6 +55,19 @@ class CampaignV202301(ModelNormal):
     """
 
     allowed_values = {
+        ('click_attribution_scope',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'SAMESKU': "sameSku",
+            'SAMESKUCATEGORY': "sameSkuCategory",
+            'SAMESKUCATEGORYBRAND': "sameSkuCategoryBrand",
+        },
+        ('click_attribution_window',): {
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
+            'UNKNOWN': "unknown",
+        },
         ('status',): {
             'UNKNOWN': "unknown",
             'ACTIVE': "active",
@@ -67,11 +80,12 @@ class CampaignV202301(ModelNormal):
             'AUCTION': "auction",
             'PREFERRED': "preferred",
         },
-        ('click_attribution_window',): {
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
+        ('view_attribution_scope',): {
+            'None': None,
             'UNKNOWN': "unknown",
+            'SAMESKU': "sameSku",
+            'SAMESKUCATEGORY': "sameSkuCategory",
+            'SAMESKUCATEGORYBRAND': "sameSkuCategoryBrand",
         },
         ('view_attribution_window',): {
             'NONE': "none",
@@ -80,20 +94,6 @@ class CampaignV202301(ModelNormal):
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
-        },
-        ('click_attribution_scope',): {
-            'None': None,
-            'UNKNOWN': "unknown",
-            'SAMESKU': "sameSku",
-            'SAMESKUCATEGORY': "sameSkuCategory",
-            'SAMESKUCATEGORYBRAND': "sameSkuCategoryBrand",
-        },
-        ('view_attribution_scope',): {
-            'None': None,
-            'UNKNOWN': "unknown",
-            'SAMESKU': "sameSku",
-            'SAMESKUCATEGORY': "sameSkuCategory",
-            'SAMESKUCATEGORYBRAND': "sameSkuCategoryBrand",
         },
     }
 
@@ -126,27 +126,27 @@ class CampaignV202301(ModelNormal):
         """
         return {
             'account_id': (str,),  # noqa: E501
-            'promoted_brand_ids': ([str],),  # noqa: E501
-            'budget_spent': (float, none_type,),  # noqa: E501
             'budget_remaining': (float, none_type,),  # noqa: E501
+            'budget_spent': (float, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'is_auto_daily_pacing': (bool,),  # noqa: E501
-            'start_date': (datetime, none_type,),  # noqa: E501
             'end_date': (datetime, none_type,),  # noqa: E501
+            'is_auto_daily_pacing': (bool,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'promoted_brand_ids': ([str],),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
+            'updated_at': (datetime,),  # noqa: E501
+            'budget': (float, none_type,),  # noqa: E501
+            'click_attribution_scope': (str, none_type,),  # noqa: E501
+            'click_attribution_window': (str,),  # noqa: E501
+            'company_name': (str, none_type,),  # noqa: E501
+            'daily_pacing': (float, none_type,),  # noqa: E501
+            'drawable_balance_ids': ([str],),  # noqa: E501
+            'monthly_pacing': (float, none_type,),  # noqa: E501
+            'on_behalf_company_name': (str, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'drawable_balance_ids': ([str],),  # noqa: E501
-            'click_attribution_window': (str,),  # noqa: E501
-            'view_attribution_window': (str,),  # noqa: E501
-            'budget': (float, none_type,),  # noqa: E501
-            'monthly_pacing': (float, none_type,),  # noqa: E501
-            'daily_pacing': (float, none_type,),  # noqa: E501
-            'click_attribution_scope': (str, none_type,),  # noqa: E501
             'view_attribution_scope': (str, none_type,),  # noqa: E501
-            'company_name': (str, none_type,),  # noqa: E501
-            'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'view_attribution_window': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -156,27 +156,27 @@ class CampaignV202301(ModelNormal):
 
     attribute_map = {
         'account_id': 'accountId',  # noqa: E501
-        'promoted_brand_ids': 'promotedBrandIds',  # noqa: E501
-        'budget_spent': 'budgetSpent',  # noqa: E501
         'budget_remaining': 'budgetRemaining',  # noqa: E501
+        'budget_spent': 'budgetSpent',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
-        'updated_at': 'updatedAt',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'promoted_brand_ids': 'promotedBrandIds',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
+        'updated_at': 'updatedAt',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
+        'click_attribution_scope': 'clickAttributionScope',  # noqa: E501
+        'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
+        'company_name': 'companyName',  # noqa: E501
+        'daily_pacing': 'dailyPacing',  # noqa: E501
+        'drawable_balance_ids': 'drawableBalanceIds',  # noqa: E501
+        'monthly_pacing': 'monthlyPacing',  # noqa: E501
+        'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
         'status': 'status',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'drawable_balance_ids': 'drawableBalanceIds',  # noqa: E501
-        'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
-        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
-        'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'daily_pacing': 'dailyPacing',  # noqa: E501
-        'click_attribution_scope': 'clickAttributionScope',  # noqa: E501
         'view_attribution_scope': 'viewAttributionScope',  # noqa: E501
-        'company_name': 'companyName',  # noqa: E501
-        'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
     }
 
     read_only_vars = {
@@ -186,20 +186,20 @@ class CampaignV202301(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, account_id, promoted_brand_ids, budget_spent, budget_remaining, created_at, updated_at, name, is_auto_daily_pacing, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_id, budget_remaining, budget_spent, created_at, end_date, is_auto_daily_pacing, name, promoted_brand_ids, start_date, updated_at, *args, **kwargs):  # noqa: E501
         """CampaignV202301 - a model defined in OpenAPI
 
         Args:
             account_id (str):
-            promoted_brand_ids ([str]):
-            budget_spent (float, none_type):
             budget_remaining (float, none_type):
+            budget_spent (float, none_type):
             created_at (datetime):
-            updated_at (datetime):
-            name (str):
-            is_auto_daily_pacing (bool):
-            start_date (datetime, none_type):
             end_date (datetime, none_type):
+            is_auto_daily_pacing (bool):
+            name (str):
+            promoted_brand_ids ([str]):
+            start_date (datetime, none_type):
+            updated_at (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -232,18 +232,18 @@ class CampaignV202301(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget (float, none_type): [optional]  # noqa: E501
+            click_attribution_scope (str, none_type): [optional]  # noqa: E501
+            click_attribution_window (str): [optional] if omitted the server will use the default value of "30D"  # noqa: E501
+            company_name (str, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            drawable_balance_ids ([str]): [optional]  # noqa: E501
+            monthly_pacing (float, none_type): [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
-            drawable_balance_ids ([str]): [optional]  # noqa: E501
-            click_attribution_window (str): [optional] if omitted the server will use the default value of "30D"  # noqa: E501
-            view_attribution_window (str): [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            click_attribution_scope (str, none_type): [optional]  # noqa: E501
             view_attribution_scope (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            view_attribution_window (str): [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -276,15 +276,15 @@ class CampaignV202301(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.account_id = account_id
-        self.promoted_brand_ids = promoted_brand_ids
-        self.budget_spent = budget_spent
         self.budget_remaining = budget_remaining
+        self.budget_spent = budget_spent
         self.created_at = created_at
-        self.updated_at = updated_at
-        self.name = name
-        self.is_auto_daily_pacing = is_auto_daily_pacing
-        self.start_date = start_date
         self.end_date = end_date
+        self.is_auto_daily_pacing = is_auto_daily_pacing
+        self.name = name
+        self.promoted_brand_ids = promoted_brand_ids
+        self.start_date = start_date
+        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -305,20 +305,20 @@ class CampaignV202301(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, account_id, promoted_brand_ids, budget_spent, budget_remaining, created_at, updated_at, name, is_auto_daily_pacing, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_id, budget_remaining, budget_spent, created_at, end_date, is_auto_daily_pacing, name, promoted_brand_ids, start_date, updated_at, *args, **kwargs):  # noqa: E501
         """CampaignV202301 - a model defined in OpenAPI
 
         Args:
             account_id (str):
-            promoted_brand_ids ([str]):
-            budget_spent (float, none_type):
             budget_remaining (float, none_type):
+            budget_spent (float, none_type):
             created_at (datetime):
-            updated_at (datetime):
-            name (str):
-            is_auto_daily_pacing (bool):
-            start_date (datetime, none_type):
             end_date (datetime, none_type):
+            is_auto_daily_pacing (bool):
+            name (str):
+            promoted_brand_ids ([str]):
+            start_date (datetime, none_type):
+            updated_at (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -351,18 +351,18 @@ class CampaignV202301(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget (float, none_type): [optional]  # noqa: E501
+            click_attribution_scope (str, none_type): [optional]  # noqa: E501
+            click_attribution_window (str): [optional] if omitted the server will use the default value of "30D"  # noqa: E501
+            company_name (str, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            drawable_balance_ids ([str]): [optional]  # noqa: E501
+            monthly_pacing (float, none_type): [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
-            drawable_balance_ids ([str]): [optional]  # noqa: E501
-            click_attribution_window (str): [optional] if omitted the server will use the default value of "30D"  # noqa: E501
-            view_attribution_window (str): [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            click_attribution_scope (str, none_type): [optional]  # noqa: E501
             view_attribution_scope (str, none_type): [optional]  # noqa: E501
-            company_name (str, none_type): [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            view_attribution_window (str): [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -393,15 +393,15 @@ class CampaignV202301(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.account_id = account_id
-        self.promoted_brand_ids = promoted_brand_ids
-        self.budget_spent = budget_spent
         self.budget_remaining = budget_remaining
+        self.budget_spent = budget_spent
         self.created_at = created_at
-        self.updated_at = updated_at
-        self.name = name
-        self.is_auto_daily_pacing = is_auto_daily_pacing
-        self.start_date = start_date
         self.end_date = end_date
+        self.is_auto_daily_pacing = is_auto_daily_pacing
+        self.name = name
+        self.promoted_brand_ids = promoted_brand_ids
+        self.start_date = start_date
+        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -93,16 +93,16 @@ class SkuSlimDataV2(ModelNormal):
         """
         lazy_import()
         return {
-            'price': (float, none_type,),  # noqa: E501
             'is_in_stock': (bool,),  # noqa: E501
+            'price': (float, none_type,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'category': (Category,),  # noqa: E501
             'brand': (Brand,),  # noqa: E501
+            'category': (Category,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'gtin': (str, none_type,),  # noqa: E501
-            'mpn': (str, none_type,),  # noqa: E501
             'image_url': (str,),  # noqa: E501
+            'mpn': (str, none_type,),  # noqa: E501
+            'name': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -111,16 +111,16 @@ class SkuSlimDataV2(ModelNormal):
 
 
     attribute_map = {
-        'price': 'price',  # noqa: E501
         'is_in_stock': 'isInStock',  # noqa: E501
+        'price': 'price',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'category': 'category',  # noqa: E501
         'brand': 'brand',  # noqa: E501
+        'category': 'category',  # noqa: E501
+        'description': 'description',  # noqa: E501
         'gtin': 'gtin',  # noqa: E501
-        'mpn': 'mpn',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
+        'mpn': 'mpn',  # noqa: E501
+        'name': 'name',  # noqa: E501
     }
 
     read_only_vars = {
@@ -130,12 +130,12 @@ class SkuSlimDataV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, is_in_stock, price, updated_at, *args, **kwargs):  # noqa: E501
         """SkuSlimDataV2 - a model defined in OpenAPI
 
         Args:
-            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             is_in_stock (bool): An indication of if the retailer currently has the product in stock.
+            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             updated_at (datetime): The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string.
 
         Keyword Args:
@@ -169,13 +169,13 @@ class SkuSlimDataV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): A short product name.. [optional]  # noqa: E501
-            description (str, none_type): A short description of the product.. [optional]  # noqa: E501
-            category (Category): [optional]  # noqa: E501
             brand (Brand): [optional]  # noqa: E501
+            category (Category): [optional]  # noqa: E501
+            description (str, none_type): A short description of the product.. [optional]  # noqa: E501
             gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
+            name (str): A short product name.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -207,8 +207,8 @@ class SkuSlimDataV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.price = price
         self.is_in_stock = is_in_stock
+        self.price = price
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -230,12 +230,12 @@ class SkuSlimDataV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, is_in_stock, price, updated_at, *args, **kwargs):  # noqa: E501
         """SkuSlimDataV2 - a model defined in OpenAPI
 
         Args:
-            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             is_in_stock (bool): An indication of if the retailer currently has the product in stock.
+            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             updated_at (datetime): The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string.
 
         Keyword Args:
@@ -269,13 +269,13 @@ class SkuSlimDataV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): A short product name.. [optional]  # noqa: E501
-            description (str, none_type): A short description of the product.. [optional]  # noqa: E501
-            category (Category): [optional]  # noqa: E501
             brand (Brand): [optional]  # noqa: E501
+            category (Category): [optional]  # noqa: E501
+            description (str, none_type): A short description of the product.. [optional]  # noqa: E501
             gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
+            name (str): A short product name.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -305,8 +305,8 @@ class SkuSlimDataV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.price = price
         self.is_in_stock = is_in_stock
+        self.price = price
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

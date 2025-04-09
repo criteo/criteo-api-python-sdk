@@ -81,10 +81,10 @@ class ExternalProductButtonResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
             'background_image': (str,),  # noqa: E501
-            'rank': (int,),  # noqa: E501
             'is_mandatory': (int,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'rank': (int,),  # noqa: E501
             'skus': ([str],),  # noqa: E501
         }
 
@@ -94,10 +94,10 @@ class ExternalProductButtonResponse(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'background_image': 'backgroundImage',  # noqa: E501
-        'rank': 'rank',  # noqa: E501
         'is_mandatory': 'isMandatory',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'rank': 'rank',  # noqa: E501
         'skus': 'skus',  # noqa: E501
     }
 
@@ -108,14 +108,14 @@ class ExternalProductButtonResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, background_image, rank, is_mandatory, skus, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, background_image, is_mandatory, name, rank, skus, *args, **kwargs):  # noqa: E501
         """ExternalProductButtonResponse - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the Product Button
             background_image (str): URL of the background image
-            rank (int): Rank of the Product Button
             is_mandatory (int): If the Product Button is Mandatory
+            name (str): Name of the Product Button
+            rank (int): Rank of the Product Button
             skus ([str]): List of skus on the Product Button
 
         Keyword Args:
@@ -180,10 +180,10 @@ class ExternalProductButtonResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.background_image = background_image
-        self.rank = rank
         self.is_mandatory = is_mandatory
+        self.name = name
+        self.rank = rank
         self.skus = skus
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -205,14 +205,14 @@ class ExternalProductButtonResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, background_image, rank, is_mandatory, skus, *args, **kwargs):  # noqa: E501
+    def __init__(self, background_image, is_mandatory, name, rank, skus, *args, **kwargs):  # noqa: E501
         """ExternalProductButtonResponse - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the Product Button
             background_image (str): URL of the background image
-            rank (int): Rank of the Product Button
             is_mandatory (int): If the Product Button is Mandatory
+            name (str): Name of the Product Button
+            rank (int): Rank of the Product Button
             skus ([str]): List of skus on the Product Button
 
         Keyword Args:
@@ -275,10 +275,10 @@ class ExternalProductButtonResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.background_image = background_image
-        self.rank = rank
         self.is_mandatory = is_mandatory
+        self.name = name
+        self.rank = rank
         self.skus = skus
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

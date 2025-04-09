@@ -105,10 +105,10 @@ class ReadAdSetScheduleV24Q1(ModelNormal):
         """
         lazy_import()
         return {
-            'start_date': (NillableDateTime,),  # noqa: E501
-            'end_date': (NillableDateTime,),  # noqa: E501
             'activation_status': (str, none_type,),  # noqa: E501
             'delivery_status': (str, none_type,),  # noqa: E501
+            'end_date': (NillableDateTime,),  # noqa: E501
+            'start_date': (NillableDateTime,),  # noqa: E501
         }
 
     @cached_property
@@ -117,10 +117,10 @@ class ReadAdSetScheduleV24Q1(ModelNormal):
 
 
     attribute_map = {
-        'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
         'activation_status': 'activationStatus',  # noqa: E501
         'delivery_status': 'deliveryStatus',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -164,10 +164,10 @@ class ReadAdSetScheduleV24Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (NillableDateTime): [optional]  # noqa: E501
-            end_date (NillableDateTime): [optional]  # noqa: E501
             activation_status (str, none_type): [optional]  # noqa: E501
             delivery_status (str, none_type): [optional]  # noqa: E501
+            end_date (NillableDateTime): [optional]  # noqa: E501
+            start_date (NillableDateTime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,10 +253,10 @@ class ReadAdSetScheduleV24Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (NillableDateTime): [optional]  # noqa: E501
-            end_date (NillableDateTime): [optional]  # noqa: E501
             activation_status (str, none_type): [optional]  # noqa: E501
             delivery_status (str, none_type): [optional]  # noqa: E501
+            end_date (NillableDateTime): [optional]  # noqa: E501
+            start_date (NillableDateTime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

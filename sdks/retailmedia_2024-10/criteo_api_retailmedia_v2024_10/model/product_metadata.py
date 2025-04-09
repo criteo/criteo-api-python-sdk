@@ -75,9 +75,9 @@ class ProductMetadata(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'offset': (int, none_type,),  # noqa: E501
-            'limit': (int, none_type,),  # noqa: E501
             'count': (int, none_type,),  # noqa: E501
+            'limit': (int, none_type,),  # noqa: E501
+            'offset': (int, none_type,),  # noqa: E501
             'response_count': (int, none_type,),  # noqa: E501
         }
 
@@ -87,9 +87,9 @@ class ProductMetadata(ModelNormal):
 
 
     attribute_map = {
-        'offset': 'offset',  # noqa: E501
-        'limit': 'limit',  # noqa: E501
         'count': 'count',  # noqa: E501
+        'limit': 'limit',  # noqa: E501
+        'offset': 'offset',  # noqa: E501
         'response_count': 'responseCount',  # noqa: E501
     }
 
@@ -134,9 +134,9 @@ class ProductMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            offset (int, none_type): Zero based offset of the first item in the response.. [optional]  # noqa: E501
-            limit (int, none_type): Maximum number of items in the response.. [optional]  # noqa: E501
             count (int, none_type): Total number of items available.. [optional]  # noqa: E501
+            limit (int, none_type): Maximum number of items in the response.. [optional]  # noqa: E501
+            offset (int, none_type): Zero based offset of the first item in the response.. [optional]  # noqa: E501
             response_count (int, none_type): Number of items in the response.. [optional]  # noqa: E501
         """
 
@@ -223,9 +223,9 @@ class ProductMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            offset (int, none_type): Zero based offset of the first item in the response.. [optional]  # noqa: E501
-            limit (int, none_type): Maximum number of items in the response.. [optional]  # noqa: E501
             count (int, none_type): Total number of items available.. [optional]  # noqa: E501
+            limit (int, none_type): Maximum number of items in the response.. [optional]  # noqa: E501
+            offset (int, none_type): Zero based offset of the first item in the response.. [optional]  # noqa: E501
             response_count (int, none_type): Number of items in the response.. [optional]  # noqa: E501
         """
 

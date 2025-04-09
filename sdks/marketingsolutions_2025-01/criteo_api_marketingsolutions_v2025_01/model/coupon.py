@@ -87,21 +87,21 @@ class Coupon(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'author': (str, none_type,),  # noqa: E501
-            'advertiser_id': (str, none_type,),  # noqa: E501
             'ad_set_id': (str, none_type,),  # noqa: E501
-            'landing_page_url': (str, none_type,),  # noqa: E501
-            'start_date': (str, none_type,),  # noqa: E501
+            'advertiser_id': (str, none_type,),  # noqa: E501
+            'author': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
             'end_date': (str, none_type,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
-            'status': (str, none_type,),  # noqa: E501
-            'images': ([ImageSlide], none_type,),  # noqa: E501
-            'show_every': (int, none_type,),  # noqa: E501
-            'show_duration': (int, none_type,),  # noqa: E501
-            'rotations_number': (int, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'images': ([ImageSlide], none_type,),  # noqa: E501
+            'landing_page_url': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'rotations_number': (int, none_type,),  # noqa: E501
+            'show_duration': (int, none_type,),  # noqa: E501
+            'show_every': (int, none_type,),  # noqa: E501
+            'start_date': (str, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -110,21 +110,21 @@ class Coupon(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'author': 'author',  # noqa: E501
-        'advertiser_id': 'advertiserId',  # noqa: E501
         'ad_set_id': 'adSetId',  # noqa: E501
-        'landing_page_url': 'landingPageUrl',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
+        'advertiser_id': 'advertiserId',  # noqa: E501
+        'author': 'author',  # noqa: E501
+        'description': 'description',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'format': 'format',  # noqa: E501
-        'status': 'status',  # noqa: E501
-        'images': 'images',  # noqa: E501
-        'show_every': 'showEvery',  # noqa: E501
-        'show_duration': 'showDuration',  # noqa: E501
-        'rotations_number': 'rotationsNumber',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'images': 'images',  # noqa: E501
+        'landing_page_url': 'landingPageUrl',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'rotations_number': 'rotationsNumber',  # noqa: E501
+        'show_duration': 'showDuration',  # noqa: E501
+        'show_every': 'showEvery',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
+        'status': 'status',  # noqa: E501
     }
 
     read_only_vars = {
@@ -168,21 +168,21 @@ class Coupon(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): The name of the Coupon. [optional]  # noqa: E501
-            description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
-            author (str, none_type): The login of the person who created this Coupon. [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser linked to the Coupon. [optional]  # noqa: E501
             ad_set_id (str, none_type): The id of the Ad Set on which the Coupon is applied to. [optional]  # noqa: E501
-            landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
-            start_date (str, none_type): The date when the Coupon will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser linked to the Coupon. [optional]  # noqa: E501
+            author (str, none_type): The login of the person who created this Coupon. [optional]  # noqa: E501
+            description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
             format (str, none_type): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\". [optional]  # noqa: E501
-            status (str, none_type): The status of the Coupon. [optional]  # noqa: E501
-            images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
-            show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
-            show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
-            rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
             id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
+            landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
+            name (str, none_type): The name of the Coupon. [optional]  # noqa: E501
+            rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
+            show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
+            show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
+            start_date (str, none_type): The date when the Coupon will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            status (str, none_type): The status of the Coupon. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -268,21 +268,21 @@ class Coupon(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): The name of the Coupon. [optional]  # noqa: E501
-            description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
-            author (str, none_type): The login of the person who created this Coupon. [optional]  # noqa: E501
-            advertiser_id (str, none_type): Advertiser linked to the Coupon. [optional]  # noqa: E501
             ad_set_id (str, none_type): The id of the Ad Set on which the Coupon is applied to. [optional]  # noqa: E501
-            landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
-            start_date (str, none_type): The date when the Coupon will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser linked to the Coupon. [optional]  # noqa: E501
+            author (str, none_type): The login of the person who created this Coupon. [optional]  # noqa: E501
+            description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
             format (str, none_type): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\". [optional]  # noqa: E501
-            status (str, none_type): The status of the Coupon. [optional]  # noqa: E501
-            images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
-            show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
-            show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
-            rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
             id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
+            landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
+            name (str, none_type): The name of the Coupon. [optional]  # noqa: E501
+            rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
+            show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
+            show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
+            start_date (str, none_type): The date when the Coupon will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            status (str, none_type): The status of the Coupon. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

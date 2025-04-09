@@ -91,11 +91,11 @@ class TemplateVariableValue(ModelNormal):
         lazy_import()
         return {
             'id': (str,),  # noqa: E501
-            'text_variable_value': (TextVariableValue,),  # noqa: E501
             'choice_variable_value': (ChoiceVariableValue,),  # noqa: E501
             'color_variable_value': (ColorVariableValue,),  # noqa: E501
             'files_variable_value': (FilesVariableValue,),  # noqa: E501
             'hyperlink_variable_value': (HyperlinkVariableValue,),  # noqa: E501
+            'text_variable_value': (TextVariableValue,),  # noqa: E501
             'video_variable_value': (VideoVariableValue,),  # noqa: E501
         }
 
@@ -106,11 +106,11 @@ class TemplateVariableValue(ModelNormal):
 
     attribute_map = {
         'id': 'id',  # noqa: E501
-        'text_variable_value': 'textVariableValue',  # noqa: E501
         'choice_variable_value': 'choiceVariableValue',  # noqa: E501
         'color_variable_value': 'colorVariableValue',  # noqa: E501
         'files_variable_value': 'filesVariableValue',  # noqa: E501
         'hyperlink_variable_value': 'hyperlinkVariableValue',  # noqa: E501
+        'text_variable_value': 'textVariableValue',  # noqa: E501
         'video_variable_value': 'videoVariableValue',  # noqa: E501
     }
 
@@ -158,11 +158,11 @@ class TemplateVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            text_variable_value (TextVariableValue): [optional]  # noqa: E501
             choice_variable_value (ChoiceVariableValue): [optional]  # noqa: E501
             color_variable_value (ColorVariableValue): [optional]  # noqa: E501
             files_variable_value (FilesVariableValue): [optional]  # noqa: E501
             hyperlink_variable_value (HyperlinkVariableValue): [optional]  # noqa: E501
+            text_variable_value (TextVariableValue): [optional]  # noqa: E501
             video_variable_value (VideoVariableValue): [optional]  # noqa: E501
         """
 
@@ -253,11 +253,11 @@ class TemplateVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            text_variable_value (TextVariableValue): [optional]  # noqa: E501
             choice_variable_value (ChoiceVariableValue): [optional]  # noqa: E501
             color_variable_value (ColorVariableValue): [optional]  # noqa: E501
             files_variable_value (FilesVariableValue): [optional]  # noqa: E501
             hyperlink_variable_value (HyperlinkVariableValue): [optional]  # noqa: E501
+            text_variable_value (TextVariableValue): [optional]  # noqa: E501
             video_variable_value (VideoVariableValue): [optional]  # noqa: E501
         """
 

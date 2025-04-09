@@ -81,9 +81,9 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'attributes': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'attributes': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -92,9 +92,9 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
 
 
     attribute_map = {
+        'attributes': 'attributes',  # noqa: E501
         'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,9 +140,9 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): ad set id model. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): ad set id model. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -228,9 +228,9 @@ class ReadModelAdSetIdV24Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): ad set id model. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): ad set id model. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

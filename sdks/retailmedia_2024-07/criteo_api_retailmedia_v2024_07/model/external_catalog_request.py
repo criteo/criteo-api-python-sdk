@@ -84,8 +84,8 @@ class ExternalCatalogRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'format': (str,),  # noqa: E501
             'brand_id_filter': ([str],),  # noqa: E501
+            'format': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -94,8 +94,8 @@ class ExternalCatalogRequest(ModelNormal):
 
 
     attribute_map = {
-        'format': 'format',  # noqa: E501
         'brand_id_filter': 'brandIdFilter',  # noqa: E501
+        'format': 'format',  # noqa: E501
     }
 
     read_only_vars = {
@@ -139,8 +139,8 @@ class ExternalCatalogRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            format (str): [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
             brand_id_filter ([str]): [optional]  # noqa: E501
+            format (str): [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,8 +226,8 @@ class ExternalCatalogRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            format (str): [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
             brand_id_filter ([str]): [optional]  # noqa: E501
+            format (str): [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

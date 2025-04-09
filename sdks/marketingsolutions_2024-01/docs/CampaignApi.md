@@ -70,29 +70,41 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
     create_ad_set_request = CreateAdSetRequest(
         data=CreateAdSetResource(
             attributes=CreateAdSet(
-                name="name_example",
-                dataset_id="dataset_id_example",
-                campaign_id="campaign_id_example",
-                objective="customAction",
-                schedule=CreateAdSetSchedule(
-                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                ),
                 bidding=CreateAdSetBidding(
                     bid_amount=3.14,
                     cost_controller="COS",
                 ),
+                budget=CreateAdSetBudget(
+                    budget_amount=3.14,
+                    budget_delivery_smoothing="accelerated",
+                    budget_delivery_week="undefined",
+                    budget_renewal="undefined",
+                    budget_strategy="capped",
+                ),
+                campaign_id="campaign_id_example",
+                dataset_id="dataset_id_example",
+                media_type="display",
+                name="name_example",
+                objective="customAction",
+                schedule=CreateAdSetSchedule(
+                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                ),
                 targeting=CreateAdSetTargeting(
                     delivery_limitations=AdSetDeliveryLimitations(
-                        environments=[
-                            "web",
-                        ],
                         devices=[
                             "other",
+                        ],
+                        environments=[
+                            "web",
                         ],
                         operating_systems=[
                             "android",
                         ],
+                    ),
+                    frequency_capping=AdSetFrequencyCapping(
+                        frequency="hourly",
+                        maximum_impressions=1,
                     ),
                     geo_location=CreateAdSetGeoLocation(
                         countries=AdSetTargetingRule(
@@ -114,20 +126,8 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
                             ],
                         ),
                     ),
-                    frequency_capping=AdSetFrequencyCapping(
-                        frequency="hourly",
-                        maximum_impressions=1,
-                    ),
-                ),
-                budget=CreateAdSetBudget(
-                    budget_strategy="capped",
-                    budget_renewal="undefined",
-                    budget_delivery_smoothing="accelerated",
-                    budget_delivery_week="undefined",
-                    budget_amount=3.14,
                 ),
                 tracking_code="tracking_code_example",
-                media_type="display",
             ),
             type="AdSet",
         ),
@@ -221,19 +221,19 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
     create_campaign_request = CreateCampaignRequest(
         data=CreateCampaignResource(
             attributes=CreateCampaign(
-                name="name_example",
                 advertiser_id="advertiser_id_example",
-                goal="Unspecified",
-                spend_limit=CreateCampaignSpendLimit(
-                    spend_limit_type="capped",
-                    spend_limit_renewal="undefined",
-                    spend_limit_amount=3.14,
-                ),
                 budget_automation=BudgetAutomation(
-                    enabled=True,
                     automated_budget_configuration=AutomatedBudgetConfiguration(
                         objective="customAction",
                     ),
+                    enabled=True,
+                ),
+                goal="Unspecified",
+                name="name_example",
+                spend_limit=CreateCampaignSpendLimit(
+                    spend_limit_amount=3.14,
+                    spend_limit_renewal="undefined",
+                    spend_limit_type="capped",
                 ),
             ),
             type="Campaign",
@@ -532,8 +532,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of Category Bids for all valid Categories associated to an Ad Set. |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 **400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -619,8 +619,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of Display Multipliers for all valid Categories associated to an Ad Set. |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 **400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -674,34 +674,45 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
     requests_patch_ad_set = RequestsPatchAdSet(
         data=[
             WriteModelPatchAdSet(
-                id="id_example",
-                type="PatchAdSet",
                 attributes=PatchAdSet(
-                    name="name_example",
-                    scheduling=PatchAdSetScheduling(
-                        start_date=NillableDateTime(
-                            value=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                        ),
-                        end_date=NillableDateTime(
-                            value=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                        ),
-                    ),
                     bidding=PatchAdSetBidding(
                         bid_amount=NillableDecimal(
                             value=3.14,
                         ),
                     ),
+                    budget=PatchAdSetBudget(
+                        budget_amount=NillableDecimal(
+                            value=3.14,
+                        ),
+                        budget_delivery_smoothing="accelerated",
+                        budget_delivery_week="undefined",
+                        budget_renewal="undefined",
+                        budget_strategy="capped",
+                    ),
+                    name="name_example",
+                    scheduling=PatchAdSetScheduling(
+                        end_date=NillableDateTime(
+                            value=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        ),
+                        start_date=NillableDateTime(
+                            value=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        ),
+                    ),
                     targeting=AdSetTargeting(
                         delivery_limitations=AdSetDeliveryLimitations(
-                            environments=[
-                                "web",
-                            ],
                             devices=[
                                 "other",
+                            ],
+                            environments=[
+                                "web",
                             ],
                             operating_systems=[
                                 "android",
                             ],
+                        ),
+                        frequency_capping=AdSetFrequencyCapping(
+                            frequency="hourly",
+                            maximum_impressions=1,
                         ),
                         geo_location=AdSetGeoLocation(
                             countries=NillableAdSetTargetingRule(
@@ -714,21 +725,10 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
                                 value=NillableAdSetTargetingRuleValue(),
                             ),
                         ),
-                        frequency_capping=AdSetFrequencyCapping(
-                            frequency="hourly",
-                            maximum_impressions=1,
-                        ),
-                    ),
-                    budget=PatchAdSetBudget(
-                        budget_strategy="capped",
-                        budget_renewal="undefined",
-                        budget_delivery_smoothing="accelerated",
-                        budget_delivery_week="undefined",
-                        budget_amount=NillableDecimal(
-                            value=3.14,
-                        ),
                     ),
                 ),
+                id="id_example",
+                type="PatchAdSet",
             ),
         ],
     ) # RequestsPatchAdSet | List of adsets to patch. (optional)
@@ -822,23 +822,23 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
     patch_campaign_list_request = PatchCampaignListRequest(
         data=[
             PatchCampaignWriteResource(
-                id="id_example",
-                type="Campaign",
                 attributes=PatchCampaign(
-                    spend_limit=PatchCampaignSpendLimit(
-                        spend_limit_type="capped",
-                        spend_limit_renewal="undefined",
-                        spend_limit_amount=NillableDecimal(
-                            value=3.14,
-                        ),
-                    ),
                     budget_automation=PatchMarketingCampaignBudgetAutomation(
-                        enable=True,
                         budget_configuration=BudgetAutomationConfiguration(
                             ad_set_objectives="customAction",
                         ),
+                        enable=True,
+                    ),
+                    spend_limit=PatchCampaignSpendLimit(
+                        spend_limit_amount=NillableDecimal(
+                            value=3.14,
+                        ),
+                        spend_limit_renewal="undefined",
+                        spend_limit_type="capped",
                     ),
                 ),
+                id="id_example",
+                type="Campaign",
             ),
         ],
     ) # PatchCampaignListRequest | List of campaigns to patch. (optional)
@@ -985,8 +985,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of updated Category Bids for given Categories associated to an Ad Set. |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 **400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1093,8 +1093,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of updated Display Multipliers for given Categories associated to an Ad Set. |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 **400** | Bad Request |  -  |
+**401** | The API client is not properly authenticated. |  -  |
 **403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1195,8 +1195,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | data for the ad sets |  -  |
 **400** | Bad Request |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1248,11 +1248,11 @@ with criteo_api_marketingsolutions_v2024_01.ApiClient(configuration) as api_clie
     api_instance = campaign_api.CampaignApi(api_client)
     campaign_search_request_v23_q1 = CampaignSearchRequestV23Q1(
         filters=CampaignSearchFiltersV23Q1(
-            campaign_ids=[
-                "campaign_ids_example",
-            ],
             advertiser_ids=[
                 "advertiser_ids_example",
+            ],
+            campaign_ids=[
+                "campaign_ids_example",
             ],
         ),
     ) # CampaignSearchRequestV23Q1 | filters on campaigns (optional)
@@ -1293,8 +1293,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | data for the campaigns |  -  |
 **400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 **401** | The API client is not properly authenticated. |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

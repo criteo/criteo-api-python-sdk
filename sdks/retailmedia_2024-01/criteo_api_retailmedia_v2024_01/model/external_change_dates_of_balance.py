@@ -81,9 +81,9 @@ class ExternalChangeDatesOfBalance(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'start_date': (date,),  # noqa: E501
             'end_date': (date,),  # noqa: E501
             'memo': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
         }
 
     @cached_property
@@ -92,9 +92,9 @@ class ExternalChangeDatesOfBalance(ModelNormal):
 
 
     attribute_map = {
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'memo': 'memo',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -104,13 +104,13 @@ class ExternalChangeDatesOfBalance(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, start_date, end_date, memo, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, end_date, memo, start_date, *args, **kwargs):  # noqa: E501
         """ExternalChangeDatesOfBalance - a model defined in OpenAPI
 
         Args:
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             memo (str): Memo
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -174,9 +174,9 @@ class ExternalChangeDatesOfBalance(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.start_date = start_date
         self.end_date = end_date
         self.memo = memo
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -197,13 +197,13 @@ class ExternalChangeDatesOfBalance(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, start_date, end_date, memo, *args, **kwargs):  # noqa: E501
+    def __init__(self, end_date, memo, start_date, *args, **kwargs):  # noqa: E501
         """ExternalChangeDatesOfBalance - a model defined in OpenAPI
 
         Args:
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             memo (str): Memo
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -265,9 +265,9 @@ class ExternalChangeDatesOfBalance(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.start_date = start_date
         self.end_date = end_date
         self.memo = memo
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

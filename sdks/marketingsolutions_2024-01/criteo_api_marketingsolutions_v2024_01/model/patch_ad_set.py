@@ -93,11 +93,11 @@ class PatchAdSet(ModelNormal):
         """
         lazy_import()
         return {
+            'bidding': (PatchAdSetBidding,),  # noqa: E501
+            'budget': (PatchAdSetBudget,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'scheduling': (PatchAdSetScheduling,),  # noqa: E501
-            'bidding': (PatchAdSetBidding,),  # noqa: E501
             'targeting': (AdSetTargeting,),  # noqa: E501
-            'budget': (PatchAdSetBudget,),  # noqa: E501
         }
 
     @cached_property
@@ -106,11 +106,11 @@ class PatchAdSet(ModelNormal):
 
 
     attribute_map = {
+        'bidding': 'bidding',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
         'name': 'name',  # noqa: E501
         'scheduling': 'scheduling',  # noqa: E501
-        'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
     }
 
     read_only_vars = {
@@ -154,11 +154,11 @@ class PatchAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            bidding (PatchAdSetBidding): [optional]  # noqa: E501
+            budget (PatchAdSetBudget): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             scheduling (PatchAdSetScheduling): [optional]  # noqa: E501
-            bidding (PatchAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
-            budget (PatchAdSetBudget): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,11 +244,11 @@ class PatchAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            bidding (PatchAdSetBidding): [optional]  # noqa: E501
+            budget (PatchAdSetBudget): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             scheduling (PatchAdSetScheduling): [optional]  # noqa: E501
-            bidding (PatchAdSetBidding): [optional]  # noqa: E501
             targeting (AdSetTargeting): [optional]  # noqa: E501
-            budget (PatchAdSetBudget): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

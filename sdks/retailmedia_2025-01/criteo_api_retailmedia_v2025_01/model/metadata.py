@@ -75,8 +75,8 @@ class Metadata(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'offset': (int,),  # noqa: E501
             'limit': (int,),  # noqa: E501
+            'offset': (int,),  # noqa: E501
             'count': (int, none_type,),  # noqa: E501
         }
 
@@ -86,8 +86,8 @@ class Metadata(ModelNormal):
 
 
     attribute_map = {
-        'offset': 'offset',  # noqa: E501
         'limit': 'limit',  # noqa: E501
+        'offset': 'offset',  # noqa: E501
         'count': 'count',  # noqa: E501
     }
 
@@ -98,12 +98,12 @@ class Metadata(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, offset, limit, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, limit, offset, *args, **kwargs):  # noqa: E501
         """Metadata - a model defined in OpenAPI
 
         Args:
-            offset (int): The (zero-based) starting offset in the collection.
             limit (int): The number of elements to be returned.
+            offset (int): The (zero-based) starting offset in the collection.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,8 +168,8 @@ class Metadata(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.offset = offset
         self.limit = limit
+        self.offset = offset
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -190,12 +190,12 @@ class Metadata(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, offset, limit, *args, **kwargs):  # noqa: E501
+    def __init__(self, limit, offset, *args, **kwargs):  # noqa: E501
         """Metadata - a model defined in OpenAPI
 
         Args:
-            offset (int): The (zero-based) starting offset in the collection.
             limit (int): The number of elements to be returned.
+            offset (int): The (zero-based) starting offset in the collection.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -258,8 +258,8 @@ class Metadata(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.offset = offset
         self.limit = limit
+        self.offset = offset
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

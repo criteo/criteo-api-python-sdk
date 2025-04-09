@@ -104,16 +104,16 @@ class ReadAdSet(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
             'advertiser_id': (str, none_type,),  # noqa: E501
-            'dataset_id': (str, none_type,),  # noqa: E501
-            'campaign_id': (str, none_type,),  # noqa: E501
-            'destination_environment': (str, none_type,),  # noqa: E501
-            'schedule': (ReadAdSetSchedule,),  # noqa: E501
             'bidding': (ReadAdSetBidding,),  # noqa: E501
-            'targeting': (AdSetTargeting,),  # noqa: E501
             'budget': (ReadAdSetBudget,),  # noqa: E501
+            'campaign_id': (str, none_type,),  # noqa: E501
+            'dataset_id': (str, none_type,),  # noqa: E501
+            'destination_environment': (str, none_type,),  # noqa: E501
             'media_type': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'schedule': (ReadAdSetSchedule,),  # noqa: E501
+            'targeting': (AdSetTargeting,),  # noqa: E501
         }
 
     @cached_property
@@ -122,16 +122,16 @@ class ReadAdSet(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'dataset_id': 'datasetId',  # noqa: E501
-        'campaign_id': 'campaignId',  # noqa: E501
-        'destination_environment': 'destinationEnvironment',  # noqa: E501
-        'schedule': 'schedule',  # noqa: E501
         'bidding': 'bidding',  # noqa: E501
-        'targeting': 'targeting',  # noqa: E501
         'budget': 'budget',  # noqa: E501
+        'campaign_id': 'campaignId',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
+        'destination_environment': 'destinationEnvironment',  # noqa: E501
         'media_type': 'mediaType',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'schedule': 'schedule',  # noqa: E501
+        'targeting': 'targeting',  # noqa: E501
     }
 
     read_only_vars = {
@@ -175,16 +175,16 @@ class ReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
             advertiser_id (str, none_type): [optional]  # noqa: E501
-            dataset_id (str, none_type): [optional]  # noqa: E501
-            campaign_id (str, none_type): [optional]  # noqa: E501
-            destination_environment (str, none_type): [optional]  # noqa: E501
-            schedule (ReadAdSetSchedule): [optional]  # noqa: E501
             bidding (ReadAdSetBidding): [optional]  # noqa: E501
-            targeting (AdSetTargeting): [optional]  # noqa: E501
             budget (ReadAdSetBudget): [optional]  # noqa: E501
+            campaign_id (str, none_type): [optional]  # noqa: E501
+            dataset_id (str, none_type): [optional]  # noqa: E501
+            destination_environment (str, none_type): [optional]  # noqa: E501
             media_type (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            schedule (ReadAdSetSchedule): [optional]  # noqa: E501
+            targeting (AdSetTargeting): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -270,16 +270,16 @@ class ReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
             advertiser_id (str, none_type): [optional]  # noqa: E501
-            dataset_id (str, none_type): [optional]  # noqa: E501
-            campaign_id (str, none_type): [optional]  # noqa: E501
-            destination_environment (str, none_type): [optional]  # noqa: E501
-            schedule (ReadAdSetSchedule): [optional]  # noqa: E501
             bidding (ReadAdSetBidding): [optional]  # noqa: E501
-            targeting (AdSetTargeting): [optional]  # noqa: E501
             budget (ReadAdSetBudget): [optional]  # noqa: E501
+            campaign_id (str, none_type): [optional]  # noqa: E501
+            dataset_id (str, none_type): [optional]  # noqa: E501
+            destination_environment (str, none_type): [optional]  # noqa: E501
             media_type (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            schedule (ReadAdSetSchedule): [optional]  # noqa: E501
+            targeting (AdSetTargeting): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

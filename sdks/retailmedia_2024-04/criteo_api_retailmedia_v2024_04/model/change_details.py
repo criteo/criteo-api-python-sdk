@@ -75,9 +75,9 @@ class ChangeDetails(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'previous_value': (str, none_type,),  # noqa: E501
-            'current_value': (str, none_type,),  # noqa: E501
             'change_value': (str, none_type,),  # noqa: E501
+            'current_value': (str, none_type,),  # noqa: E501
+            'previous_value': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -86,9 +86,9 @@ class ChangeDetails(ModelNormal):
 
 
     attribute_map = {
-        'previous_value': 'previousValue',  # noqa: E501
-        'current_value': 'currentValue',  # noqa: E501
         'change_value': 'changeValue',  # noqa: E501
+        'current_value': 'currentValue',  # noqa: E501
+        'previous_value': 'previousValue',  # noqa: E501
     }
 
     read_only_vars = {
@@ -98,13 +98,13 @@ class ChangeDetails(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, previous_value, current_value, change_value, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, change_value, current_value, previous_value, *args, **kwargs):  # noqa: E501
         """ChangeDetails - a model defined in OpenAPI
 
         Args:
-            previous_value (str, none_type): Previous value of a property of the insertion order.
-            current_value (str, none_type): Current value of a property of the insertion order.
             change_value (str, none_type): Change detail of a property of the insertion order.
+            current_value (str, none_type): Current value of a property of the insertion order.
+            previous_value (str, none_type): Previous value of a property of the insertion order.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,9 +168,9 @@ class ChangeDetails(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.previous_value = previous_value
-        self.current_value = current_value
         self.change_value = change_value
+        self.current_value = current_value
+        self.previous_value = previous_value
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -191,13 +191,13 @@ class ChangeDetails(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, previous_value, current_value, change_value, *args, **kwargs):  # noqa: E501
+    def __init__(self, change_value, current_value, previous_value, *args, **kwargs):  # noqa: E501
         """ChangeDetails - a model defined in OpenAPI
 
         Args:
-            previous_value (str, none_type): Previous value of a property of the insertion order.
-            current_value (str, none_type): Current value of a property of the insertion order.
             change_value (str, none_type): Change detail of a property of the insertion order.
+            current_value (str, none_type): Current value of a property of the insertion order.
+            previous_value (str, none_type): Previous value of a property of the insertion order.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -259,9 +259,9 @@ class ChangeDetails(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.previous_value = previous_value
-        self.current_value = current_value
         self.change_value = change_value
+        self.current_value = current_value
+        self.previous_value = previous_value
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

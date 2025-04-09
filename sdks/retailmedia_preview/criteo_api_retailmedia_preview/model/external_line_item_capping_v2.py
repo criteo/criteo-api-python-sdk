@@ -73,7 +73,7 @@ class ExternalLineItemCappingV2(ModelNormal):
         """
         return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -86,8 +86,8 @@ class ExternalLineItemCappingV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'type': (str,),  # noqa: E501
             'count': (int,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -96,8 +96,8 @@ class ExternalLineItemCappingV2(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
         'count': 'count',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -107,12 +107,12 @@ class ExternalLineItemCappingV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, count, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, count, type, *args, **kwargs):  # noqa: E501
         """ExternalLineItemCappingV2 - a model defined in OpenAPI
 
         Args:
-            type (str): Line Item Capping Type Enum
             count (int):
+            type (str): Line Item Capping Type Enum
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,8 +176,8 @@ class ExternalLineItemCappingV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
         self.count = count
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -198,12 +198,12 @@ class ExternalLineItemCappingV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, count, *args, **kwargs):  # noqa: E501
+    def __init__(self, count, type, *args, **kwargs):  # noqa: E501
         """ExternalLineItemCappingV2 - a model defined in OpenAPI
 
         Args:
-            type (str): Line Item Capping Type Enum
             count (int):
+            type (str): Line Item Capping Type Enum
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -265,8 +265,8 @@ class ExternalLineItemCappingV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
         self.count = count
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

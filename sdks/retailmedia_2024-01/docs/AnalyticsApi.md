@@ -60,34 +60,34 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     api_instance = analytics_api.AnalyticsApi(api_client)
     async_campaigns_report_request = AsyncCampaignsReportRequest(
         data=AsyncCampaignsReportResource(
-            type="type_example",
             attributes=AsyncCampaignsReport(
-                ids=[
-                    "ids_example",
-                ],
-                id="id_example",
-                search_term_types=[
-                    "unknown",
-                ],
-                search_term_targetings=[
-                    "unknown",
-                ],
                 campaign_type="all",
-                sales_channel="all",
-                format="json-compact",
-                report_type="summary",
                 click_attribution_window="none",
-                view_attribution_window="none",
                 dimensions=[
                     "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                id="id_example",
+                ids=[
+                    "ids_example",
                 ],
                 metrics=[
                     "impressions",
                 ],
+                report_type="summary",
+                sales_channel="all",
+                search_term_targetings=[
+                    "unknown",
+                ],
+                search_term_types=[
+                    "unknown",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
+                view_attribution_window="none",
             ),
+            type="type_example",
         ),
     ) # AsyncCampaignsReportRequest | 
 
@@ -179,34 +179,34 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     api_instance = analytics_api.AnalyticsApi(api_client)
     async_line_items_report_request = AsyncLineItemsReportRequest(
         data=AsyncLineItemsReportResource(
-            type="type_example",
             attributes=AsyncLineItemsReport(
-                ids=[
-                    "ids_example",
-                ],
-                id="id_example",
-                search_term_types=[
-                    "unknown",
-                ],
-                search_term_targetings=[
-                    "unknown",
-                ],
                 campaign_type="all",
-                sales_channel="all",
-                format="json-compact",
-                report_type="summary",
                 click_attribution_window="none",
-                view_attribution_window="none",
                 dimensions=[
                     "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                id="id_example",
+                ids=[
+                    "ids_example",
                 ],
                 metrics=[
                     "impressions",
                 ],
+                report_type="summary",
+                sales_channel="all",
+                search_term_targetings=[
+                    "unknown",
+                ],
+                search_term_types=[
+                    "unknown",
+                ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
+                view_attribution_window="none",
             ),
+            type="type_example",
         ),
     ) # AsyncLineItemsReportRequest | 
 
@@ -298,49 +298,49 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     api_instance = analytics_api.AnalyticsApi(api_client)
     async_revenue_report_request = AsyncRevenueReportRequest(
         data=AsyncRevenueReportResource(
-            type="type_example",
             attributes=AsyncRevenueReport(
-                ids=[
-                    "ids_example",
-                ],
-                id="id_example",
-                retailer_ids=[
-                    "retailer_ids_example",
-                ],
                 account_ids=[
                     "account_ids_example",
                 ],
+                advertiser_types=[
+                    "retailer",
+                ],
+                buy_type="auction",
                 campaign_ids=[
                     "campaign_ids_example",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json",
+                id="id_example",
+                ids=[
+                    "ids_example",
                 ],
                 line_item_ids=[
                     "line_item_ids_example",
                 ],
-                report_type="advertiser",
-                revenue_type="auction",
-                sold_by="directSold",
-                buy_type="auction",
-                advertiser_types=[
-                    "retailer",
-                ],
-                sku_relations=[
-                    "sameSku",
-                ],
-                format="json",
-                campaign_type="all",
-                sales_channel="all",
-                click_attribution_window="none",
-                view_attribution_window="none",
-                dimensions=[
-                    "date",
-                ],
                 metrics=[
                     "numberOfCampaigns",
                 ],
+                report_type="advertiser",
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                revenue_type="auction",
+                sales_channel="all",
+                sku_relations=[
+                    "sameSku",
+                ],
+                sold_by="directSold",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
+                view_attribution_window="none",
             ),
+            type="type_example",
         ),
     ) # AsyncRevenueReportRequest | 
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_async_export_output**
-> str get_async_export_output(report_id)
+> file_type get_async_export_output(report_id)
 
 
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+**file_type**
 
 ### Authorization
 

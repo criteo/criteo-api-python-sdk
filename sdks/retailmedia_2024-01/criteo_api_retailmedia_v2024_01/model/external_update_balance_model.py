@@ -81,12 +81,12 @@ class ExternalUpdateBalanceModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'end_date': (date,),  # noqa: E501
+            'memo': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'po_number': (str,),  # noqa: E501
             'sales_force_id': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
-            'memo': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -95,12 +95,12 @@ class ExternalUpdateBalanceModel(ModelNormal):
 
 
     attribute_map = {
+        'end_date': 'endDate',  # noqa: E501
+        'memo': 'memo',  # noqa: E501
         'name': 'name',  # noqa: E501
         'po_number': 'poNumber',  # noqa: E501
         'sales_force_id': 'salesForceId',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'memo': 'memo',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,12 +144,12 @@ class ExternalUpdateBalanceModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            memo (str): Memo. [optional]  # noqa: E501
             name (str): Name of the balance.. [optional]  # noqa: E501
             po_number (str): Purchase Order number.. [optional]  # noqa: E501
             sales_force_id (str): SalesForceId the balance is linked to.. [optional]  # noqa: E501
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            memo (str): Memo. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,12 +235,12 @@ class ExternalUpdateBalanceModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            memo (str): Memo. [optional]  # noqa: E501
             name (str): Name of the balance.. [optional]  # noqa: E501
             po_number (str): Purchase Order number.. [optional]  # noqa: E501
             sales_force_id (str): SalesForceId the balance is linked to.. [optional]  # noqa: E501
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            memo (str): Memo. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

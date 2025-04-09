@@ -5,8 +5,8 @@ Generic Criteo API successful data model
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** | A string containing the entity type | 
 **id** | **str** | A opaque string containing the unique Id of the entity | 
+**type** | **str** | A string containing the entity type | 
 **attributes** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | Generic Criteo API successful data model  While others may be computed e.g. lastChangedDate.  Computed attributes are only part of the read model and not part of the write model. | [optional] 
 **meta** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | A meta object that contains application-specific metadata | [optional] 
 **relationships** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type** | Relationships with this entity | [optional] 

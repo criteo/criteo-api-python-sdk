@@ -6,8 +6,8 @@ Entity to create a product set
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dataset_id** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
 **is_draft** | **bool** |  | [optional] 
+**name** | **str** |  | [optional] 
 **rules** | [**[ProductSetRule]**](ProductSetRule.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -87,8 +87,8 @@ class BudgetAutomation(ModelNormal):
         """
         lazy_import()
         return {
-            'enabled': (bool,),  # noqa: E501
             'automated_budget_configuration': (AutomatedBudgetConfiguration,),  # noqa: E501
+            'enabled': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class BudgetAutomation(ModelNormal):
 
 
     attribute_map = {
-        'enabled': 'enabled',  # noqa: E501
         'automated_budget_configuration': 'automatedBudgetConfiguration',  # noqa: E501
+        'enabled': 'enabled',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,8 +142,8 @@ class BudgetAutomation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            enabled (bool): [optional]  # noqa: E501
             automated_budget_configuration (AutomatedBudgetConfiguration): [optional]  # noqa: E501
+            enabled (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,8 +229,8 @@ class BudgetAutomation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            enabled (bool): [optional]  # noqa: E501
             automated_budget_configuration (AutomatedBudgetConfiguration): [optional]  # noqa: E501
+            enabled (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

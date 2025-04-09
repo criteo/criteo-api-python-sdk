@@ -542,8 +542,8 @@ class CreativeApi(object):
             params_map={
                 'all': [
                     'id',
-                    'width',
                     'height',
+                    'width',
                 ],
                 'required': [
                     'id',
@@ -563,20 +563,20 @@ class CreativeApi(object):
                 'openapi_types': {
                     'id':
                         (str,),
-                    'width':
-                        (int,),
                     'height':
+                        (int,),
+                    'width':
                         (int,),
                 },
                 'attribute_map': {
                     'id': 'id',
-                    'width': 'width',
                     'height': 'height',
+                    'width': 'width',
                 },
                 'location_map': {
                     'id': 'path',
-                    'width': 'query',
                     'height': 'query',
+                    'width': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -787,8 +787,8 @@ class CreativeApi(object):
                 'all': [
                     'advertiser_id',
                     'id',
-                    'width',
                     'height',
+                    'width',
                 ],
                 'required': [
                     'advertiser_id',
@@ -811,22 +811,22 @@ class CreativeApi(object):
                         (str,),
                     'id':
                         (str,),
-                    'width':
-                        (int,),
                     'height':
+                        (int,),
+                    'width':
                         (int,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiser-id',
                     'id': 'id',
-                    'width': 'width',
                     'height': 'height',
+                    'width': 'width',
                 },
                 'location_map': {
                     'advertiser_id': 'path',
                     'id': 'path',
-                    'width': 'query',
                     'height': 'query',
+                    'width': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1797,8 +1797,8 @@ class CreativeApi(object):
             id (str): The Creative identifier to preview.
 
         Keyword Args:
-            width (int): The width of the Creative to preview.. [optional]
             height (int): The height of the Creative to preview.. [optional]
+            width (int): The width of the Creative to preview.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2139,8 +2139,8 @@ class CreativeApi(object):
             id (str): The Coupon identifier to preview.
 
         Keyword Args:
-            width (int): The width of the coupon to preview.. [optional]
             height (int): The height of the coupon to preview.. [optional]
+            width (int): The width of the coupon to preview.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

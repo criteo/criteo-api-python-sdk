@@ -91,8 +91,8 @@ class ProspectingUpdateV1(ModelNormal):
         """
         lazy_import()
         return {
-            'days_since_last_visit_min': (NillableInt32,),  # noqa: E501
             'days_since_last_visit_max': (NillableInt32,),  # noqa: E501
+            'days_since_last_visit_min': (NillableInt32,),  # noqa: E501
             'users_type': (str,),  # noqa: E501
         }
 
@@ -102,8 +102,8 @@ class ProspectingUpdateV1(ModelNormal):
 
 
     attribute_map = {
-        'days_since_last_visit_min': 'daysSinceLastVisitMin',  # noqa: E501
         'days_since_last_visit_max': 'daysSinceLastVisitMax',  # noqa: E501
+        'days_since_last_visit_min': 'daysSinceLastVisitMin',  # noqa: E501
         'users_type': 'usersType',  # noqa: E501
     }
 
@@ -148,8 +148,8 @@ class ProspectingUpdateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            days_since_last_visit_min (NillableInt32): [optional]  # noqa: E501
             days_since_last_visit_max (NillableInt32): [optional]  # noqa: E501
+            days_since_last_visit_min (NillableInt32): [optional]  # noqa: E501
             users_type (str): Type of users to target. [optional]  # noqa: E501
         """
 
@@ -236,8 +236,8 @@ class ProspectingUpdateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            days_since_last_visit_min (NillableInt32): [optional]  # noqa: E501
             days_since_last_visit_max (NillableInt32): [optional]  # noqa: E501
+            days_since_last_visit_min (NillableInt32): [optional]  # noqa: E501
             users_type (str): Type of users to target. [optional]  # noqa: E501
         """
 

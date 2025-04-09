@@ -81,8 +81,8 @@ class ImageAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'urls': ([str], none_type,),  # noqa: E501
             'landing_page_url': (str, none_type,),  # noqa: E501
+            'urls': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -91,8 +91,8 @@ class ImageAttributes(ModelNormal):
 
 
     attribute_map = {
-        'urls': 'urls',  # noqa: E501
         'landing_page_url': 'landingPageUrl',  # noqa: E501
+        'urls': 'urls',  # noqa: E501
     }
 
     read_only_vars = {
@@ -136,8 +136,8 @@ class ImageAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            urls ([str], none_type): Array of images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
             landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
+            urls ([str], none_type): Array of images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class ImageAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            urls ([str], none_type): Array of images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
             landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
+            urls ([str], none_type): Array of images uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

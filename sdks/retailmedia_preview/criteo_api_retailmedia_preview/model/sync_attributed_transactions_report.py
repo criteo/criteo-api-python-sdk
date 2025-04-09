@@ -55,28 +55,16 @@ class SyncAttributedTransactionsReport(ModelNormal):
     """
 
     allowed_values = {
-        ('click_attribution_window',): {
-            'NONE': "none",
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-        },
-        ('view_attribution_window',): {
-            'NONE': "none",
-            '1D': "1D",
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-        },
         ('campaign_type',): {
             'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
-        ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
-            'ONLINE': "online",
+        ('click_attribution_window',): {
+            'NONE': "none",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
         },
         ('dimensions',): {
             'PURCHASEDDATE': "purchasedDate",
@@ -114,6 +102,18 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'ATTRIBUTEDUNITS': "attributedUnits",
             'ATTRIBUTEDSALES': "attributedSales",
         },
+        ('sales_channel',): {
+            'ALL': "all",
+            'OFFLINE': "offline",
+            'ONLINE': "online",
+        },
+        ('view_attribution_window',): {
+            'NONE': "none",
+            '1D': "1D",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
+        },
     }
 
     validations = {
@@ -141,17 +141,17 @@ class SyncAttributedTransactionsReport(ModelNormal):
         """
         return {
             'account_id': (str,),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
             'campaign_ids': ([str],),  # noqa: E501
-            'line_item_ids': ([str],),  # noqa: E501
-            'click_attribution_window': (str,),  # noqa: E501
-            'view_attribution_window': (str,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
-            'sales_channel': (str,),  # noqa: E501
+            'click_attribution_window': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
+            'line_item_ids': ([str],),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
+            'sales_channel': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
+            'view_attribution_window': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -161,17 +161,17 @@ class SyncAttributedTransactionsReport(ModelNormal):
 
     attribute_map = {
         'account_id': 'accountId',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
-        'line_item_ids': 'lineItemIds',  # noqa: E501
-        'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
-        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
-        'sales_channel': 'salesChannel',  # noqa: E501
+        'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
+        'line_item_ids': 'lineItemIds',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
+        'sales_channel': 'salesChannel',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
+        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
     }
 
     read_only_vars = {
@@ -181,13 +181,13 @@ class SyncAttributedTransactionsReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, account_id, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_id, end_date, start_date, *args, **kwargs):  # noqa: E501
         """SyncAttributedTransactionsReport - a model defined in OpenAPI
 
         Args:
             account_id (str): Account id to report on
-            start_date (datetime): Start date
             end_date (datetime): End date
+            start_date (datetime): Start date
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -221,14 +221,14 @@ class SyncAttributedTransactionsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
-            line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
-            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -261,8 +261,8 @@ class SyncAttributedTransactionsReport(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.account_id = account_id
-        self.start_date = start_date
         self.end_date = end_date
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -283,13 +283,13 @@ class SyncAttributedTransactionsReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, account_id, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_id, end_date, start_date, *args, **kwargs):  # noqa: E501
         """SyncAttributedTransactionsReport - a model defined in OpenAPI
 
         Args:
             account_id (str): Account id to report on
-            start_date (datetime): Start date
             end_date (datetime): End date
+            start_date (datetime): Start date
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -323,14 +323,14 @@ class SyncAttributedTransactionsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
-            line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
-            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -361,8 +361,8 @@ class SyncAttributedTransactionsReport(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.account_id = account_id
-        self.start_date = start_date
         self.end_date = end_date
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

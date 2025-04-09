@@ -90,8 +90,8 @@ class CampaignV23Q1ListResponse(ModelNormal):
         lazy_import()
         return {
             'data': ([CampaignV23Q1Resource], none_type,),  # noqa: E501
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
             'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,13 +101,13 @@ class CampaignV23Q1ListResponse(ModelNormal):
 
     attribute_map = {
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -149,8 +149,8 @@ class CampaignV23Q1ListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([CampaignV23Q1Resource], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +237,8 @@ class CampaignV23Q1ListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([CampaignV23Q1Resource], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

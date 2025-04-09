@@ -85,10 +85,10 @@ class PartnerBillingReportRequestV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'start_date': (date,),  # noqa: E501
             'end_date': (date,),  # noqa: E501
-            'format': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'account_ids': ([str], none_type,),  # noqa: E501
+            'format': (str,),  # noqa: E501
             'retailer_ids': ([int], none_type,),  # noqa: E501
         }
 
@@ -98,10 +98,10 @@ class PartnerBillingReportRequestV1(ModelNormal):
 
 
     attribute_map = {
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'format': 'format',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'account_ids': 'accountIds',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'retailer_ids': 'retailerIds',  # noqa: E501
     }
 
@@ -112,13 +112,12 @@ class PartnerBillingReportRequestV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, start_date, end_date, format, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, end_date, start_date, *args, **kwargs):  # noqa: E501
         """PartnerBillingReportRequestV1 - a model defined in OpenAPI
 
         Args:
-            start_date (date): Start date of the report (ISO 8601 format, e.g. YYYY-MM-DD).
             end_date (date): End date of the report (ISO 8601 format, e.g. YYYY-MM-DD).
-            format (str): Format type of the report.
+            start_date (date): Start date of the report (ISO 8601 format, e.g. YYYY-MM-DD).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -152,6 +151,7 @@ class PartnerBillingReportRequestV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_ids ([str], none_type): On which accounts the report is created.. [optional]  # noqa: E501
+            format (str): Format type of the report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             retailer_ids ([int], none_type): On which retailers the report is created.. [optional]  # noqa: E501
         """
 
@@ -184,9 +184,8 @@ class PartnerBillingReportRequestV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.start_date = start_date
         self.end_date = end_date
-        self.format = format
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -207,13 +206,12 @@ class PartnerBillingReportRequestV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, start_date, end_date, format, *args, **kwargs):  # noqa: E501
+    def __init__(self, end_date, start_date, *args, **kwargs):  # noqa: E501
         """PartnerBillingReportRequestV1 - a model defined in OpenAPI
 
         Args:
-            start_date (date): Start date of the report (ISO 8601 format, e.g. YYYY-MM-DD).
             end_date (date): End date of the report (ISO 8601 format, e.g. YYYY-MM-DD).
-            format (str): Format type of the report.
+            start_date (date): Start date of the report (ISO 8601 format, e.g. YYYY-MM-DD).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -247,6 +245,7 @@ class PartnerBillingReportRequestV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_ids ([str], none_type): On which accounts the report is created.. [optional]  # noqa: E501
+            format (str): Format type of the report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             retailer_ids ([int], none_type): On which retailers the report is created.. [optional]  # noqa: E501
         """
 
@@ -277,9 +276,8 @@ class PartnerBillingReportRequestV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.start_date = start_date
         self.end_date = end_date
-        self.format = format
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

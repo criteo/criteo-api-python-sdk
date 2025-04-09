@@ -81,9 +81,9 @@ class ChangeDatesOfBalanceV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'start_date': (str, none_type,),  # noqa: E501
             'end_date': (str, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
+            'start_date': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -92,9 +92,9 @@ class ChangeDatesOfBalanceV2(ModelNormal):
 
 
     attribute_map = {
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'memo': 'memo',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,9 +138,9 @@ class ChangeDatesOfBalanceV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo.. [optional]  # noqa: E501
+            start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,9 +226,9 @@ class ChangeDatesOfBalanceV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo.. [optional]  # noqa: E501
+            start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

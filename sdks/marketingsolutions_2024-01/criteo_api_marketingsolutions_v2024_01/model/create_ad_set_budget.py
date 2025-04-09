@@ -59,12 +59,6 @@ class CreateAdSetBudget(ModelNormal):
             'CAPPED': "capped",
             'UNCAPPED': "uncapped",
         },
-        ('budget_renewal',): {
-            'UNDEFINED': "undefined",
-            'DAILY': "daily",
-            'MONTHLY': "monthly",
-            'LIFETIME': "lifetime",
-        },
         ('budget_delivery_smoothing',): {
             'ACCELERATED': "accelerated",
             'STANDARD': "standard",
@@ -78,6 +72,12 @@ class CreateAdSetBudget(ModelNormal):
             'FRIDAYTOTHURSDAY': "fridayToThursday",
             'SATURDAYTOFRIDAY': "saturdayToFriday",
             'SUNDAYTOSATURDAY': "sundayToSaturday",
+        },
+        ('budget_renewal',): {
+            'UNDEFINED': "undefined",
+            'DAILY': "daily",
+            'MONTHLY': "monthly",
+            'LIFETIME': "lifetime",
         },
     }
 
@@ -106,10 +106,10 @@ class CreateAdSetBudget(ModelNormal):
         """
         return {
             'budget_strategy': (str,),  # noqa: E501
-            'budget_renewal': (str,),  # noqa: E501
+            'budget_amount': (float, none_type,),  # noqa: E501
             'budget_delivery_smoothing': (str,),  # noqa: E501
             'budget_delivery_week': (str,),  # noqa: E501
-            'budget_amount': (float, none_type,),  # noqa: E501
+            'budget_renewal': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -119,10 +119,10 @@ class CreateAdSetBudget(ModelNormal):
 
     attribute_map = {
         'budget_strategy': 'budgetStrategy',  # noqa: E501
-        'budget_renewal': 'budgetRenewal',  # noqa: E501
+        'budget_amount': 'budgetAmount',  # noqa: E501
         'budget_delivery_smoothing': 'budgetDeliverySmoothing',  # noqa: E501
         'budget_delivery_week': 'budgetDeliveryWeek',  # noqa: E501
-        'budget_amount': 'budgetAmount',  # noqa: E501
+        'budget_renewal': 'budgetRenewal',  # noqa: E501
     }
 
     read_only_vars = {
@@ -169,10 +169,10 @@ class CreateAdSetBudget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_renewal (str): [optional]  # noqa: E501
+            budget_amount (float, none_type): [optional]  # noqa: E501
             budget_delivery_smoothing (str): [optional]  # noqa: E501
             budget_delivery_week (str): [optional]  # noqa: E501
-            budget_amount (float, none_type): [optional]  # noqa: E501
+            budget_renewal (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -262,10 +262,10 @@ class CreateAdSetBudget(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget_renewal (str): [optional]  # noqa: E501
+            budget_amount (float, none_type): [optional]  # noqa: E501
             budget_delivery_smoothing (str): [optional]  # noqa: E501
             budget_delivery_week (str): [optional]  # noqa: E501
-            budget_amount (float, none_type): [optional]  # noqa: E501
+            budget_renewal (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

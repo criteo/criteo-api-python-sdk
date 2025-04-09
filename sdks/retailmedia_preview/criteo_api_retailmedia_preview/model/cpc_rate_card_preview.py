@@ -88,8 +88,8 @@ class CpcRateCardPreview(ModelNormal):
         lazy_import()
         return {
             'retailer_minimum_cpc_bid': (float,),  # noqa: E501
-            'category_minimum_cpc_bids': ({str: (float,)}, none_type,),  # noqa: E501
             'categories': ({str: (Category202204,)}, none_type,),  # noqa: E501
+            'category_minimum_cpc_bids': ({str: (float,)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -99,8 +99,8 @@ class CpcRateCardPreview(ModelNormal):
 
     attribute_map = {
         'retailer_minimum_cpc_bid': 'retailerMinimumCpcBid',  # noqa: E501
-        'category_minimum_cpc_bids': 'categoryMinimumCpcBids',  # noqa: E501
         'categories': 'categories',  # noqa: E501
+        'category_minimum_cpc_bids': 'categoryMinimumCpcBids',  # noqa: E501
     }
 
     read_only_vars = {
@@ -147,8 +147,8 @@ class CpcRateCardPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_minimum_cpc_bids ({str: (float,)}, none_type): map of category id to minimum cpc bids. [optional]  # noqa: E501
             categories ({str: (Category202204,)}, none_type): map of category id to category values. [optional]  # noqa: E501
+            category_minimum_cpc_bids ({str: (float,)}, none_type): map of category id to minimum cpc bids. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,8 +238,8 @@ class CpcRateCardPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_minimum_cpc_bids ({str: (float,)}, none_type): map of category id to minimum cpc bids. [optional]  # noqa: E501
             categories ({str: (Category202204,)}, none_type): map of category id to category values. [optional]  # noqa: E501
+            category_minimum_cpc_bids ({str: (float,)}, none_type): map of category id to minimum cpc bids. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

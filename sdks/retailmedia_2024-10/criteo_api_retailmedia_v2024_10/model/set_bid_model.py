@@ -79,8 +79,8 @@ class SetBidModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'phrase': (str, none_type,),  # noqa: E501
             'bid': (float, none_type,),  # noqa: E501
+            'phrase': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -89,8 +89,8 @@ class SetBidModel(ModelNormal):
 
 
     attribute_map = {
-        'phrase': 'phrase',  # noqa: E501
         'bid': 'bid',  # noqa: E501
+        'phrase': 'phrase',  # noqa: E501
     }
 
     read_only_vars = {
@@ -134,8 +134,8 @@ class SetBidModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            phrase (str, none_type): [optional]  # noqa: E501
             bid (float, none_type): [optional]  # noqa: E501
+            phrase (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -221,8 +221,8 @@ class SetBidModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            phrase (str, none_type): [optional]  # noqa: E501
             bid (float, none_type): [optional]  # noqa: E501
+            phrase (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

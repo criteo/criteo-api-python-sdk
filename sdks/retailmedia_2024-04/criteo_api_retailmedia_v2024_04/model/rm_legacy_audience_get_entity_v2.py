@@ -89,10 +89,10 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
         """
         lazy_import()
         return {
-            'retailer_id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'user_behavior_details': (RmLegacyAudienceUserBehaviorDetailsV2,),  # noqa: E501
+            'retailer_id': (str,),  # noqa: E501
             'customer_list_details': (RmLegacySegmentCustomerList,),  # noqa: E501
+            'user_behavior_details': (RmLegacyAudienceUserBehaviorDetailsV2,),  # noqa: E501
         }
 
     @cached_property
@@ -101,10 +101,10 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
 
 
     attribute_map = {
-        'retailer_id': 'retailerId',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'user_behavior_details': 'userBehaviorDetails',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
         'customer_list_details': 'customerListDetails',  # noqa: E501
+        'user_behavior_details': 'userBehaviorDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -114,12 +114,12 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, retailer_id, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, retailer_id, *args, **kwargs):  # noqa: E501
         """RmLegacyAudienceGetEntityV2 - a model defined in OpenAPI
 
         Args:
-            retailer_id (str): ID of the retailer associated with this audience
             name (str): Name of the audience
+            retailer_id (str): ID of the retailer associated with this audience
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -152,8 +152,8 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_behavior_details (RmLegacyAudienceUserBehaviorDetailsV2): [optional]  # noqa: E501
             customer_list_details (RmLegacySegmentCustomerList): [optional]  # noqa: E501
+            user_behavior_details (RmLegacyAudienceUserBehaviorDetailsV2): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -185,8 +185,8 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.retailer_id = retailer_id
         self.name = name
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -207,12 +207,12 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, retailer_id, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, retailer_id, *args, **kwargs):  # noqa: E501
         """RmLegacyAudienceGetEntityV2 - a model defined in OpenAPI
 
         Args:
-            retailer_id (str): ID of the retailer associated with this audience
             name (str): Name of the audience
+            retailer_id (str): ID of the retailer associated with this audience
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -245,8 +245,8 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_behavior_details (RmLegacyAudienceUserBehaviorDetailsV2): [optional]  # noqa: E501
             customer_list_details (RmLegacySegmentCustomerList): [optional]  # noqa: E501
+            user_behavior_details (RmLegacyAudienceUserBehaviorDetailsV2): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -276,8 +276,8 @@ class RmLegacyAudienceGetEntityV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.retailer_id = retailer_id
         self.name = name
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

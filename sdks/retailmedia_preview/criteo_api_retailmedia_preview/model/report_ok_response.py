@@ -96,14 +96,14 @@ class ReportOkResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'status': (str,),  # noqa: E501
+            'error_details': ([ReportDetailErrors],),  # noqa: E501
             'import_request_timestamp': (str, none_type,),  # noqa: E501
+            'number_of_products_deleted': (str, none_type,),  # noqa: E501
             'number_of_products_in_the_batch': (str, none_type,),  # noqa: E501
             'number_of_products_upserted': (str, none_type,),  # noqa: E501
-            'number_of_products_deleted': (str, none_type,),  # noqa: E501
             'number_of_products_with_errors': (str, none_type,),  # noqa: E501
-            'error_details': ([ReportDetailErrors],),  # noqa: E501
             'number_of_products_with_warnings': (str, none_type,),  # noqa: E501
+            'status': (str,),  # noqa: E501
             'warning_details': ([ReportDetailWarnings],),  # noqa: E501
         }
 
@@ -113,14 +113,14 @@ class ReportOkResponse(ModelNormal):
 
 
     attribute_map = {
-        'status': 'status',  # noqa: E501
+        'error_details': 'errorDetails',  # noqa: E501
         'import_request_timestamp': 'importRequestTimestamp',  # noqa: E501
+        'number_of_products_deleted': 'numberOfProductsDeleted',  # noqa: E501
         'number_of_products_in_the_batch': 'numberOfProductsInTheBatch',  # noqa: E501
         'number_of_products_upserted': 'numberOfProductsUpserted',  # noqa: E501
-        'number_of_products_deleted': 'numberOfProductsDeleted',  # noqa: E501
         'number_of_products_with_errors': 'numberOfProductsWithErrors',  # noqa: E501
-        'error_details': 'errorDetails',  # noqa: E501
         'number_of_products_with_warnings': 'numberOfProductsWithWarnings',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'warning_details': 'warningDetails',  # noqa: E501
     }
 
@@ -131,18 +131,18 @@ class ReportOkResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, status, import_request_timestamp, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_deleted, number_of_products_with_errors, error_details, number_of_products_with_warnings, warning_details, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, error_details, import_request_timestamp, number_of_products_deleted, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_with_errors, number_of_products_with_warnings, status, warning_details, *args, **kwargs):  # noqa: E501
         """ReportOkResponse - a model defined in OpenAPI
 
         Args:
-            status (str): The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED)
+            error_details ([ReportDetailErrors]): The list of errors with details.
             import_request_timestamp (str, none_type): The date when the original batch request was sent.
+            number_of_products_deleted (str, none_type): The number of products deleted.
             number_of_products_in_the_batch (str, none_type): The number of products present in the batch.
             number_of_products_upserted (str, none_type): The number of products upserted.
-            number_of_products_deleted (str, none_type): The number of products deleted.
             number_of_products_with_errors (str, none_type): The number of products with errors.
-            error_details ([ReportDetailErrors]): The list of errors with details.
             number_of_products_with_warnings (str, none_type): The number of products with Warnings.
+            status (str): The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED)
             warning_details ([ReportDetailWarnings]): The list of Warnings with details.
 
         Keyword Args:
@@ -207,14 +207,14 @@ class ReportOkResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.status = status
+        self.error_details = error_details
         self.import_request_timestamp = import_request_timestamp
+        self.number_of_products_deleted = number_of_products_deleted
         self.number_of_products_in_the_batch = number_of_products_in_the_batch
         self.number_of_products_upserted = number_of_products_upserted
-        self.number_of_products_deleted = number_of_products_deleted
         self.number_of_products_with_errors = number_of_products_with_errors
-        self.error_details = error_details
         self.number_of_products_with_warnings = number_of_products_with_warnings
+        self.status = status
         self.warning_details = warning_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -236,18 +236,18 @@ class ReportOkResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, status, import_request_timestamp, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_deleted, number_of_products_with_errors, error_details, number_of_products_with_warnings, warning_details, *args, **kwargs):  # noqa: E501
+    def __init__(self, error_details, import_request_timestamp, number_of_products_deleted, number_of_products_in_the_batch, number_of_products_upserted, number_of_products_with_errors, number_of_products_with_warnings, status, warning_details, *args, **kwargs):  # noqa: E501
         """ReportOkResponse - a model defined in OpenAPI
 
         Args:
-            status (str): The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED)
+            error_details ([ReportDetailErrors]): The list of errors with details.
             import_request_timestamp (str, none_type): The date when the original batch request was sent.
+            number_of_products_deleted (str, none_type): The number of products deleted.
             number_of_products_in_the_batch (str, none_type): The number of products present in the batch.
             number_of_products_upserted (str, none_type): The number of products upserted.
-            number_of_products_deleted (str, none_type): The number of products deleted.
             number_of_products_with_errors (str, none_type): The number of products with errors.
-            error_details ([ReportDetailErrors]): The list of errors with details.
             number_of_products_with_warnings (str, none_type): The number of products with Warnings.
+            status (str): The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED)
             warning_details ([ReportDetailWarnings]): The list of Warnings with details.
 
         Keyword Args:
@@ -310,14 +310,14 @@ class ReportOkResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.status = status
+        self.error_details = error_details
         self.import_request_timestamp = import_request_timestamp
+        self.number_of_products_deleted = number_of_products_deleted
         self.number_of_products_in_the_batch = number_of_products_in_the_batch
         self.number_of_products_upserted = number_of_products_upserted
-        self.number_of_products_deleted = number_of_products_deleted
         self.number_of_products_with_errors = number_of_products_with_errors
-        self.error_details = error_details
         self.number_of_products_with_warnings = number_of_products_with_warnings
+        self.status = status
         self.warning_details = warning_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

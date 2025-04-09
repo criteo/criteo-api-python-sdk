@@ -62,11 +62,11 @@ class SkuSlimDataPreview(ModelNormal):
             'max_length': 120,
             'min_length': 0,
         },
-        ('name',): {
+        ('category',): {
             'max_length': 1000,
             'min_length': 0,
         },
-        ('category',): {
+        ('name',): {
             'max_length': 1000,
             'min_length': 0,
         },
@@ -100,17 +100,17 @@ class SkuSlimDataPreview(ModelNormal):
             'category_id': (str,),  # noqa: E501
             'global_brand_id': (str,),  # noqa: E501
             'global_brand_name': (str,),  # noqa: E501
-            'price': (float, none_type,),  # noqa: E501
             'is_in_stock': (bool,),  # noqa: E501
+            'price': (float, none_type,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'global_category_id': (str,),  # noqa: E501
             'category': (str,),  # noqa: E501
+            'global_category_id': (str,),  # noqa: E501
+            'gtin': (str,),  # noqa: E501
+            'image_url': (str,),  # noqa: E501
+            'mpn': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'retailer_brand_id': (str,),  # noqa: E501
             'retailer_brand_name': (str,),  # noqa: E501
-            'gtin': (str,),  # noqa: E501
-            'mpn': (str,),  # noqa: E501
-            'image_url': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -122,17 +122,17 @@ class SkuSlimDataPreview(ModelNormal):
         'category_id': 'categoryId',  # noqa: E501
         'global_brand_id': 'globalBrandId',  # noqa: E501
         'global_brand_name': 'globalBrandName',  # noqa: E501
-        'price': 'price',  # noqa: E501
         'is_in_stock': 'isInStock',  # noqa: E501
+        'price': 'price',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'global_category_id': 'globalCategoryId',  # noqa: E501
         'category': 'category',  # noqa: E501
+        'global_category_id': 'globalCategoryId',  # noqa: E501
+        'gtin': 'gtin',  # noqa: E501
+        'image_url': 'imageUrl',  # noqa: E501
+        'mpn': 'mpn',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'retailer_brand_id': 'retailerBrandId',  # noqa: E501
         'retailer_brand_name': 'retailerBrandName',  # noqa: E501
-        'gtin': 'gtin',  # noqa: E501
-        'mpn': 'mpn',  # noqa: E501
-        'image_url': 'imageUrl',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,15 +142,15 @@ class SkuSlimDataPreview(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, category_id, global_brand_id, global_brand_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, category_id, global_brand_id, global_brand_name, is_in_stock, price, updated_at, *args, **kwargs):  # noqa: E501
         """SkuSlimDataPreview - a model defined in OpenAPI
 
         Args:
             category_id (str): The category Id.
             global_brand_id (str): The global brand id associated to the product.
             global_brand_name (str): The name of the global brand.
-            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             is_in_stock (bool): An indication of if the retailer currently has the product in stock.
+            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             updated_at (datetime): The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string.
 
         Keyword Args:
@@ -184,14 +184,14 @@ class SkuSlimDataPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): A short product name.. [optional]  # noqa: E501
-            global_category_id (str): The global category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            global_category_id (str): The global category Id.. [optional]  # noqa: E501
+            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
+            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            name (str): A short product name.. [optional]  # noqa: E501
             retailer_brand_id (str): The retailer brand id associated to the product.. [optional]  # noqa: E501
             retailer_brand_name (str): The name of the retailer brand.. [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
-            image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,8 +226,8 @@ class SkuSlimDataPreview(ModelNormal):
         self.category_id = category_id
         self.global_brand_id = global_brand_id
         self.global_brand_name = global_brand_name
-        self.price = price
         self.is_in_stock = is_in_stock
+        self.price = price
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -249,15 +249,15 @@ class SkuSlimDataPreview(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, category_id, global_brand_id, global_brand_name, price, is_in_stock, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, category_id, global_brand_id, global_brand_name, is_in_stock, price, updated_at, *args, **kwargs):  # noqa: E501
         """SkuSlimDataPreview - a model defined in OpenAPI
 
         Args:
             category_id (str): The category Id.
             global_brand_id (str): The global brand id associated to the product.
             global_brand_name (str): The name of the global brand.
-            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             is_in_stock (bool): An indication of if the retailer currently has the product in stock.
+            price (float, none_type): The price of the product on the retailer site. Can be omitted in certain circumstances
             updated_at (datetime): The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string.
 
         Keyword Args:
@@ -291,14 +291,14 @@ class SkuSlimDataPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): A short product name.. [optional]  # noqa: E501
-            global_category_id (str): The global category Id.. [optional]  # noqa: E501
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            global_category_id (str): The global category Id.. [optional]  # noqa: E501
+            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
+            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            name (str): A short product name.. [optional]  # noqa: E501
             retailer_brand_id (str): The retailer brand id associated to the product.. [optional]  # noqa: E501
             retailer_brand_name (str): The name of the retailer brand.. [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
-            image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -331,8 +331,8 @@ class SkuSlimDataPreview(ModelNormal):
         self.category_id = category_id
         self.global_brand_id = global_brand_id
         self.global_brand_name = global_brand_name
-        self.price = price
         self.is_in_stock = is_in_stock
+        self.price = price
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

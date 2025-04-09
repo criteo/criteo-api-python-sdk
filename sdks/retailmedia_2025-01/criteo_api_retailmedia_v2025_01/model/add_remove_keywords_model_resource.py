@@ -80,9 +80,9 @@ class AddRemoveKeywordsModelResource(ModelNormal):
         """
         lazy_import()
         return {
+            'attributes': (AddRemoveKeywordsModel,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'attributes': (AddRemoveKeywordsModel,),  # noqa: E501
         }
 
     @cached_property
@@ -91,9 +91,9 @@ class AddRemoveKeywordsModelResource(ModelNormal):
 
 
     attribute_map = {
+        'attributes': 'attributes',  # noqa: E501
         'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -137,9 +137,9 @@ class AddRemoveKeywordsModelResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (AddRemoveKeywordsModel): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes (AddRemoveKeywordsModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,9 +225,9 @@ class AddRemoveKeywordsModelResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (AddRemoveKeywordsModel): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes (AddRemoveKeywordsModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

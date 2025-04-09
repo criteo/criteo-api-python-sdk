@@ -74,53 +74,53 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     audience_segment_bulk_create_input_v1 = AudienceSegmentBulkCreateInputV1(
         data=[
             AudienceSegmentCreateEntityV1Resource(
-                type="type_example",
                 attributes=AudienceSegmentCreateEntityV1(
-                    name="name_example",
-                    description="description_example",
                     advertiser_id="advertiser_id_example",
+                    contact_list={},
+                    description="description_example",
                     in_market=InMarketCreateV1(
-                        country="country_example",
+                        brand_ids=[
+                            "brand_ids_example",
+                        ],
                         buying_power=[
                             "Low",
                         ],
+                        country="country_example",
                         gender="Male",
                         interest_ids=[
                             "interest_ids_example",
-                        ],
-                        brand_ids=[
-                            "brand_ids_example",
                         ],
                         price_range=[
                             "Low",
                         ],
                     ),
-                    prospecting=ProspectingCreateV1(
-                        days_since_last_visit_min=1,
-                        days_since_last_visit_max=1,
-                        users_type="Prospects",
-                    ),
-                    contact_list={},
                     location=LocationCreateV1(
                         points_of_interest=[
                             PointOfInterestV1(
-                                name="name_example",
                                 latitude=3.14,
                                 longitude=3.14,
+                                name="name_example",
                             ),
                         ],
                         radius_in_km=1,
-                    ),
-                    retargeting=RetargetingCreateV1(
-                        visitors_type="All",
-                        days_since_last_visit_min=1,
-                        days_since_last_visit_max=1,
                     ),
                     lookalike=LookalikeCreateV1(
                         seed_segment_id="seed_segment_id_example",
                         target_size=1,
                     ),
+                    name="name_example",
+                    prospecting=ProspectingCreateV1(
+                        days_since_last_visit_max=1,
+                        days_since_last_visit_min=1,
+                        users_type="Prospects",
+                    ),
+                    retargeting=RetargetingCreateV1(
+                        days_since_last_visit_max=1,
+                        days_since_last_visit_min=1,
+                        visitors_type="All",
+                    ),
                 ),
+                type="type_example",
             ),
         ],
     ) # AudienceSegmentBulkCreateInputV1 | Segment creation parameter
@@ -214,22 +214,22 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     audience_bulk_create_input_v1 = AudienceBulkCreateInputV1(
         data=[
             AudienceCreateEntityV1Resource(
-                type="type_example",
                 attributes=AudienceCreateEntityV1(
-                    name="name_example",
-                    description="description_example",
                     advertiser_id="advertiser_id_example",
                     algebra=AlgebraNodeV1(
                         _and=[
                             AlgebraNodeV1(),
                         ],
+                        audience_segment_id="audience_segment_id_example",
+                        _not=AlgebraNodeV1(),
                         _or=[
                             AlgebraNodeV1(),
                         ],
-                        _not=AlgebraNodeV1(),
-                        audience_segment_id="audience_segment_id_example",
                     ),
+                    description="description_example",
+                    name="name_example",
                 ),
+                type="type_example",
             ),
         ],
     ) # AudienceBulkCreateInputV1 | 
@@ -517,23 +517,22 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
         data=[
             AudienceSegmentUpdateEntityV1Resource(
                 attributes=AudienceSegmentUpdateEntityV1(
-                    name="name_example",
                     description=NillableString(
                         value="value_example",
                     ),
                     in_market=InMarketUpdateV1(
-                        country="country_example",
+                        brand_ids=[
+                            "brand_ids_example",
+                        ],
                         buying_power=[
                             "Low",
                         ],
+                        country="country_example",
                         gender=NillableGenderV1(
                             value="Male",
                         ),
                         interest_ids=[
                             "interest_ids_example",
-                        ],
-                        brand_ids=[
-                            "brand_ids_example",
                         ],
                         price_range=[
                             "Low",
@@ -542,30 +541,31 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
                     location=LocationUpdateV1(
                         points_of_interest=[
                             PointOfInterestV1(
-                                name="name_example",
                                 latitude=3.14,
                                 longitude=3.14,
+                                name="name_example",
                             ),
                         ],
                         radius_in_km=1,
                         registry_type="PointOfInterest",
                     ),
-                    retargeting=RetargetingUpdateV1(
-                        visitors_type="All",
-                        days_since_last_visit_min=1,
-                        days_since_last_visit_max=1,
-                    ),
                     lookalike=LookalikeUpdateV1(
                         target_size=1,
                     ),
+                    name="name_example",
                     prospecting=ProspectingUpdateV1(
-                        days_since_last_visit_min=NillableInt32(
-                            value=1,
-                        ),
                         days_since_last_visit_max=NillableInt32(
                             value=1,
                         ),
+                        days_since_last_visit_min=NillableInt32(
+                            value=1,
+                        ),
                         users_type="Prospects",
+                    ),
+                    retargeting=RetargetingUpdateV1(
+                        days_since_last_visit_max=1,
+                        days_since_last_visit_min=1,
+                        visitors_type="All",
                     ),
                 ),
                 id="id_example",
@@ -664,20 +664,20 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
         data=[
             AudienceUpdateEntityV1Resource(
                 attributes=AudienceUpdateEntityV1(
-                    name="name_example",
-                    description=NillableString(
-                        value="value_example",
-                    ),
                     algebra=AlgebraNodeV1(
                         _and=[
                             AlgebraNodeV1(),
                         ],
+                        audience_segment_id="audience_segment_id_example",
+                        _not=AlgebraNodeV1(),
                         _or=[
                             AlgebraNodeV1(),
                         ],
-                        _not=AlgebraNodeV1(),
-                        audience_segment_id="audience_segment_id_example",
                     ),
+                    description=NillableString(
+                        value="value_example",
+                    ),
+                    name="name_example",
                 ),
                 id="id_example",
                 type="type_example",
@@ -861,15 +861,15 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
     contactlist_amendment_request = ContactlistAmendmentRequest(
         data=ContactlistAmendment(
-            type="ContactlistAmendment",
             attributes=ContactlistAmendmentAttributes(
-                operation="add",
-                identifier_type="email",
+                gum_caller_id=1,
                 identifiers=[
                     "identifiers_example",
                 ],
-                gum_caller_id=1,
+                identifier_type="email",
+                operation="add",
             ),
+            type="ContactlistAmendment",
         ),
     ) # ContactlistAmendmentRequest | 
 
@@ -1049,15 +1049,15 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend
     contactlist_amendment_request = ContactlistAmendmentRequest(
         data=ContactlistAmendment(
-            type="ContactlistAmendment",
             attributes=ContactlistAmendmentAttributes(
-                operation="add",
-                identifier_type="email",
+                gum_caller_id=1,
                 identifiers=[
                     "identifiers_example",
                 ],
-                gum_caller_id=1,
+                identifier_type="email",
+                operation="add",
             ),
+            type="ContactlistAmendment",
         ),
     ) # ContactlistAmendmentRequest | 
 
@@ -1341,20 +1341,19 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     api_instance = audience_api.AudienceApi(api_client)
     audience_segment_estimate_size_input_v1 = AudienceSegmentEstimateSizeInputV1(
         data=AudienceSegmentSizeEstimationEntityV1Resource(
-            type="type_example",
             attributes=AudienceSegmentSizeEstimationEntityV1(
                 advertiser_id="advertiser_id_example",
                 in_market=InMarketSizeEstimationV1(
-                    country="country_example",
+                    brand_ids=[
+                        "brand_ids_example",
+                    ],
                     buying_power=[
                         "Low",
                     ],
+                    country="country_example",
                     gender="Male",
                     interest_ids=[
                         "interest_ids_example",
-                    ],
-                    brand_ids=[
-                        "brand_ids_example",
                     ],
                     price_range=[
                         "Low",
@@ -1363,14 +1362,15 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
                 location=LocationSizeEstimationV1(
                     points_of_interest=[
                         PointOfInterestV1(
-                            name="name_example",
                             latitude=3.14,
                             longitude=3.14,
+                            name="name_example",
                         ),
                     ],
                     radius_in_km=1,
                 ),
             ),
+            type="type_example",
         ),
     ) # AudienceSegmentEstimateSizeInputV1 | 
 
@@ -1462,20 +1462,20 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     api_instance = audience_api.AudienceApi(api_client)
     audience_estimate_size_input_v1 = AudienceEstimateSizeInputV1(
         data=AudienceEstimateSizeEntityV1Resource(
-            type="type_example",
             attributes=AudienceEstimateSizeEntityV1(
                 advertiser_id="advertiser_id_example",
                 algebra=AlgebraNodeV1(
                     _and=[
                         AlgebraNodeV1(),
                     ],
+                    audience_segment_id="audience_segment_id_example",
+                    _not=AlgebraNodeV1(),
                     _or=[
                         AlgebraNodeV1(),
                     ],
-                    _not=AlgebraNodeV1(),
-                    audience_segment_id="audience_segment_id_example",
                 ),
             ),
+            type="type_example",
         ),
     ) # AudienceEstimateSizeInputV1 | 
 
@@ -1829,18 +1829,18 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     api_instance = audience_api.AudienceApi(api_client)
     audience_segment_search_input_v1 = AudienceSegmentSearchInputV1(
         data=AudienceSegmentSearchEntityV1Resource(
-            type="type_example",
             attributes=AudienceSegmentSearchEntityV1(
-                audience_segment_ids=[
-                    "audience_segment_ids_example",
-                ],
                 advertiser_ids=[
                     "advertiser_ids_example",
+                ],
+                audience_segment_ids=[
+                    "audience_segment_ids_example",
                 ],
                 audience_segment_types=[
                     "Unknown",
                 ],
             ),
+            type="type_example",
         ),
     ) # AudienceSegmentSearchInputV1 | Segment search filters.
     limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
@@ -1944,21 +1944,21 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     api_instance = audience_api.AudienceApi(api_client)
     audience_search_input_v1 = AudienceSearchInputV1(
         data=AudienceSearchEntityV1Resource(
-            type="type_example",
             attributes=AudienceSearchEntityV1(
-                audience_ids=[
-                    "audience_ids_example",
+                ad_set_ids=[
+                    "ad_set_ids_example",
                 ],
                 advertiser_ids=[
                     "advertiser_ids_example",
                 ],
+                audience_ids=[
+                    "audience_ids_example",
+                ],
                 audience_segment_ids=[
                     "audience_segment_ids_example",
                 ],
-                ad_set_ids=[
-                    "ad_set_ids_example",
-                ],
             ),
+            type="type_example",
         ),
     ) # AudienceSearchInputV1 | Audience search filters.
     limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50

@@ -55,16 +55,6 @@ class CriteoApiWarning(ModelNormal):
     """
 
     allowed_values = {
-        ('type',): {
-            'None': None,
-            'ACCESS_CONTROL': "access_control",
-            'AUTHENTICATION': "authentication",
-            'AUTHORIZATION': "authorization",
-            'AVAILABILITY': "availability",
-            'DEPRECATION': "deprecation",
-            'QUOTA': "quota",
-            'VALIDATION': "validation",
-        },
         ('code',): {
             'None': None,
             'INTERNAL-ERROR': "internal-error",
@@ -75,6 +65,16 @@ class CriteoApiWarning(ModelNormal):
             'INVALID': "invalid",
             'INVALID-RANGED': "invalid-ranged",
             'INVALID-TIMESPAN': "invalid-timespan",
+        },
+        ('type',): {
+            'None': None,
+            'ACCESS_CONTROL': "access_control",
+            'AUTHENTICATION': "authentication",
+            'AUTHORIZATION': "authorization",
+            'AVAILABILITY': "availability",
+            'DEPRECATION': "deprecation",
+            'QUOTA': "quota",
+            'VALIDATION': "validation",
         },
     }
 
@@ -102,12 +102,12 @@ class CriteoApiWarning(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'trace_id': (str, none_type,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
             'code': (str, none_type,),  # noqa: E501
+            'detail': (str, none_type,),  # noqa: E501
             'instance': (str, none_type,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
-            'detail': (str, none_type,),  # noqa: E501
+            'trace_id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -116,12 +116,12 @@ class CriteoApiWarning(ModelNormal):
 
 
     attribute_map = {
-        'trace_id': 'traceId',  # noqa: E501
-        'type': 'type',  # noqa: E501
         'code': 'code',  # noqa: E501
+        'detail': 'detail',  # noqa: E501
         'instance': 'instance',  # noqa: E501
         'title': 'title',  # noqa: E501
-        'detail': 'detail',  # noqa: E501
+        'trace_id': 'traceId',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -165,12 +165,12 @@ class CriteoApiWarning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str, none_type): The correlation ID provided by the gateway. [optional]  # noqa: E501
-            type (str, none_type): A machine-readable code specifying error category. [optional]  # noqa: E501
             code (str, none_type): A machine-readable error code string in kabab-case. Unique across Criteo. [optional]  # noqa: E501
+            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
             instance (str, none_type): A URI reference that identifies the specific occurrence of the problem. [optional]  # noqa: E501
             title (str, none_type): A short, human-readable remarks of the problem type.. [optional]  # noqa: E501
-            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            trace_id (str, none_type): The correlation ID provided by the gateway. [optional]  # noqa: E501
+            type (str, none_type): A machine-readable code specifying error category. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -256,12 +256,12 @@ class CriteoApiWarning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str, none_type): The correlation ID provided by the gateway. [optional]  # noqa: E501
-            type (str, none_type): A machine-readable code specifying error category. [optional]  # noqa: E501
             code (str, none_type): A machine-readable error code string in kabab-case. Unique across Criteo. [optional]  # noqa: E501
+            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
             instance (str, none_type): A URI reference that identifies the specific occurrence of the problem. [optional]  # noqa: E501
             title (str, none_type): A short, human-readable remarks of the problem type.. [optional]  # noqa: E501
-            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            trace_id (str, none_type): The correlation ID provided by the gateway. [optional]  # noqa: E501
+            type (str, none_type): A machine-readable code specifying error category. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

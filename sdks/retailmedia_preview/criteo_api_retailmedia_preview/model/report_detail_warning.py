@@ -85,9 +85,9 @@ class ReportDetailWarning(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'type': (str,),  # noqa: E501
-            'message': (str,),  # noqa: E501
             'is_server_related': (bool,),  # noqa: E501
+            'message': (str,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -96,9 +96,9 @@ class ReportDetailWarning(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
-        'message': 'message',  # noqa: E501
         'is_server_related': 'isServerRelated',  # noqa: E501
+        'message': 'message',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -108,13 +108,13 @@ class ReportDetailWarning(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, message, is_server_related, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, is_server_related, message, type, *args, **kwargs):  # noqa: E501
         """ReportDetailWarning - a model defined in OpenAPI
 
         Args:
-            type (str):
-            message (str):
             is_server_related (bool):
+            message (str):
+            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -178,9 +178,9 @@ class ReportDetailWarning(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
-        self.message = message
         self.is_server_related = is_server_related
+        self.message = message
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,13 +201,13 @@ class ReportDetailWarning(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, message, is_server_related, *args, **kwargs):  # noqa: E501
+    def __init__(self, is_server_related, message, type, *args, **kwargs):  # noqa: E501
         """ReportDetailWarning - a model defined in OpenAPI
 
         Args:
-            type (str):
-            message (str):
             is_server_related (bool):
+            message (str):
+            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -269,9 +269,9 @@ class ReportDetailWarning(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
-        self.message = message
         self.is_server_related = is_server_related
+        self.message = message
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

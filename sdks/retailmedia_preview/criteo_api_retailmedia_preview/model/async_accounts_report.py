@@ -59,52 +59,13 @@ class AsyncAccountsReport(ModelNormal):
             'CAMPAIGN': "campaign",
             'LINEITEM': "lineItem",
         },
-        ('search_term_types',): {
-            'UNKNOWN': "unknown",
-            'SEARCHED': "searched",
-            'ENTERED': "entered",
-        },
-        ('search_term_targetings',): {
-            'UNKNOWN': "unknown",
-            'AUTOMATIC': "automatic",
-            'MANUAL': "manual",
-        },
         ('campaign_type',): {
             'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
-        ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
-            'ONLINE': "online",
-        },
-        ('format',): {
-            'JSON': "json",
-            'JSON-COMPACT': "json-compact",
-            'JSON-NEWLINE': "json-newline",
-            'CSV': "csv",
-        },
-        ('report_type',): {
-            'SUMMARY': "summary",
-            'PAGETYPE': "pageType",
-            'KEYWORD': "keyword",
-            'PRODUCTCATEGORY': "productCategory",
-            'PRODUCT': "product",
-            'ATTRIBUTEDTRANSACTIONS': "attributedTransactions",
-            'ENVIRONMENT': "environment",
-            'SERVEDCATEGORY': "servedCategory",
-            'CAPOUT': "capout",
-        },
         ('click_attribution_window',): {
             'NONE': "none",
-            '7D': "7D",
-            '14D': "14D",
-            '30D': "30D",
-        },
-        ('view_attribution_window',): {
-            'NONE': "none",
-            '1D': "1D",
             '7D': "7D",
             '14D': "14D",
             '30D': "30D",
@@ -142,6 +103,12 @@ class AsyncAccountsReport(ModelNormal):
             'CREATIVETYPENAME': "creativeTypeName",
             'CREATIVETEMPLATEID': "creativeTemplateId",
             'CREATIVETEMPLATENAME': "creativeTemplateName",
+        },
+        ('format',): {
+            'JSON': "json",
+            'JSON-COMPACT': "json-compact",
+            'JSON-NEWLINE': "json-newline",
+            'CSV': "csv",
         },
         ('metrics',): {
             'IMPRESSIONS': "impressions",
@@ -182,6 +149,39 @@ class AsyncAccountsReport(ModelNormal):
             'UNIQUEVISITORS': "uniqueVisitors",
             'FREQUENCY': "frequency",
         },
+        ('report_type',): {
+            'SUMMARY': "summary",
+            'PAGETYPE': "pageType",
+            'KEYWORD': "keyword",
+            'PRODUCTCATEGORY': "productCategory",
+            'PRODUCT': "product",
+            'ATTRIBUTEDTRANSACTIONS': "attributedTransactions",
+            'ENVIRONMENT': "environment",
+            'SERVEDCATEGORY': "servedCategory",
+            'CAPOUT': "capout",
+        },
+        ('sales_channel',): {
+            'ALL': "all",
+            'OFFLINE': "offline",
+            'ONLINE': "online",
+        },
+        ('search_term_targetings',): {
+            'UNKNOWN': "unknown",
+            'AUTOMATIC': "automatic",
+            'MANUAL': "manual",
+        },
+        ('search_term_types',): {
+            'UNKNOWN': "unknown",
+            'SEARCHED': "searched",
+            'ENTERED': "entered",
+        },
+        ('view_attribution_window',): {
+            'NONE': "none",
+            '1D': "1D",
+            '7D': "7D",
+            '14D': "14D",
+            '30D': "30D",
+        },
     }
 
     validations = {
@@ -209,20 +209,20 @@ class AsyncAccountsReport(ModelNormal):
         """
         return {
             'account_ids': ([str],),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
             'aggregation_level': (str,),  # noqa: E501
-            'search_term_types': ([str],),  # noqa: E501
-            'search_term_targetings': ([str],),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
-            'sales_channel': (str,),  # noqa: E501
-            'format': (str,),  # noqa: E501
-            'report_type': (str,),  # noqa: E501
             'click_attribution_window': (str,),  # noqa: E501
-            'view_attribution_window': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
+            'format': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
+            'report_type': (str,),  # noqa: E501
+            'sales_channel': (str,),  # noqa: E501
+            'search_term_targetings': ([str],),  # noqa: E501
+            'search_term_types': ([str],),  # noqa: E501
             'timezone': (str,),  # noqa: E501
+            'view_attribution_window': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -232,20 +232,20 @@ class AsyncAccountsReport(ModelNormal):
 
     attribute_map = {
         'account_ids': 'accountIds',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'aggregation_level': 'aggregationLevel',  # noqa: E501
-        'search_term_types': 'searchTermTypes',  # noqa: E501
-        'search_term_targetings': 'searchTermTargetings',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
-        'sales_channel': 'salesChannel',  # noqa: E501
-        'format': 'format',  # noqa: E501
-        'report_type': 'reportType',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
-        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
+        'report_type': 'reportType',  # noqa: E501
+        'sales_channel': 'salesChannel',  # noqa: E501
+        'search_term_targetings': 'searchTermTargetings',  # noqa: E501
+        'search_term_types': 'searchTermTypes',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
+        'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
     }
 
     read_only_vars = {
@@ -255,13 +255,13 @@ class AsyncAccountsReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, account_ids, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_ids, end_date, start_date, *args, **kwargs):  # noqa: E501
         """AsyncAccountsReport - a model defined in OpenAPI
 
         Args:
             account_ids ([str]): Account Ids to report on
-            start_date (datetime): Start date
             end_date (datetime): End date
+            start_date (datetime): Start date
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -295,17 +295,17 @@ class AsyncAccountsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregation_level (str): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
-            search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
-            search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
+            search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -338,8 +338,8 @@ class AsyncAccountsReport(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.account_ids = account_ids
-        self.start_date = start_date
         self.end_date = end_date
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -360,13 +360,13 @@ class AsyncAccountsReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, account_ids, start_date, end_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_ids, end_date, start_date, *args, **kwargs):  # noqa: E501
         """AsyncAccountsReport - a model defined in OpenAPI
 
         Args:
             account_ids ([str]): Account Ids to report on
-            start_date (datetime): Start date
             end_date (datetime): End date
+            start_date (datetime): Start date
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -400,17 +400,17 @@ class AsyncAccountsReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             aggregation_level (str): Level of aggregation, if no dimensions/metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
-            search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
-            search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
+            format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
+            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
+            search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -441,8 +441,8 @@ class AsyncAccountsReport(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.account_ids = account_ids
-        self.start_date = start_date
         self.end_date = end_date
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

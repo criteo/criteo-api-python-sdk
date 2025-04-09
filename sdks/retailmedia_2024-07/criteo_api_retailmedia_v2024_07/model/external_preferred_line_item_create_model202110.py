@@ -109,16 +109,16 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
+            'budget': (float,),  # noqa: E501
             'end_date': (date,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'pacing': (str,),  # noqa: E501
             'page': (ExternalLineItemPage202110,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'target_retailer_id': (str,),  # noqa: E501
-            'budget': (float,),  # noqa: E501
-            'status': (str,),  # noqa: E501
             'capping': (ExternalLineItemCapping202110,),  # noqa: E501
             'creative_id': (str, none_type,),  # noqa: E501
+            'status': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -127,16 +127,16 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'pacing': 'pacing',  # noqa: E501
         'page': 'page',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'target_retailer_id': 'targetRetailerId',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
-        'status': 'status',  # noqa: E501
         'capping': 'capping',  # noqa: E501
         'creative_id': 'creativeId',  # noqa: E501
+        'status': 'status',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,17 +146,17 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, start_date, end_date, pacing, page, target_retailer_id, budget, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget, end_date, name, pacing, page, start_date, target_retailer_id, *args, **kwargs):  # noqa: E501
         """ExternalPreferredLineItemCreateModel202110 - a model defined in OpenAPI
 
         Args:
-            name (str):
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            budget (float):
             end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            name (str):
             pacing (str):
             page (ExternalLineItemPage202110):
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             target_retailer_id (str):
-            budget (float):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -189,9 +189,9 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (str): [optional]  # noqa: E501
             capping (ExternalLineItemCapping202110): [optional]  # noqa: E501
             creative_id (str, none_type): [optional]  # noqa: E501
+            status (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,13 +223,13 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.start_date = start_date
+        self.budget = budget
         self.end_date = end_date
+        self.name = name
         self.pacing = pacing
         self.page = page
+        self.start_date = start_date
         self.target_retailer_id = target_retailer_id
-        self.budget = budget
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -250,17 +250,17 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, start_date, end_date, pacing, page, target_retailer_id, budget, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget, end_date, name, pacing, page, start_date, target_retailer_id, *args, **kwargs):  # noqa: E501
         """ExternalPreferredLineItemCreateModel202110 - a model defined in OpenAPI
 
         Args:
-            name (str):
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            budget (float):
             end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            name (str):
             pacing (str):
             page (ExternalLineItemPage202110):
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             target_retailer_id (str):
-            budget (float):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -293,9 +293,9 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (str): [optional]  # noqa: E501
             capping (ExternalLineItemCapping202110): [optional]  # noqa: E501
             creative_id (str, none_type): [optional]  # noqa: E501
+            status (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -325,13 +325,13 @@ class ExternalPreferredLineItemCreateModel202110(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.start_date = start_date
+        self.budget = budget
         self.end_date = end_date
+        self.name = name
         self.pacing = pacing
         self.page = page
+        self.start_date = start_date
         self.target_retailer_id = target_retailer_id
-        self.budget = budget
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -54,12 +54,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # Create an instance of the API class
     api_instance = on_site_recommendation_api.OnSiteRecommendationApi(api_client)
     on_site_reco_request = OnSiteRecoRequest(
-        nb_requested_products=1,
-        user_id="user_id_example",
-        identity_type="CtoBundle",
-        ad_set_id=1,
         ad_id=1,
+        ad_set_id=1,
+        identity_type="CtoBundle",
+        nb_requested_products=1,
         partner_id=1,
+        user_id="user_id_example",
     ) # OnSiteRecoRequest |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -96,8 +96,8 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**400** | Bad Request |  -  |
 **200** | Success |  -  |
+**400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

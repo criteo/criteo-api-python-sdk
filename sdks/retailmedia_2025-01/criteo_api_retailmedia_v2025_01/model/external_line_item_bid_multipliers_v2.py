@@ -81,18 +81,18 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'search': (float, none_type,),  # noqa: E501
-            'home': (float, none_type,),  # noqa: E501
             'category': (float, none_type,),  # noqa: E501
-            'product_detail': (float, none_type,),  # noqa: E501
-            'confirmation': (float, none_type,),  # noqa: E501
-            'merchandising': (float, none_type,),  # noqa: E501
-            'deals': (float, none_type,),  # noqa: E501
-            'checkout': (float, none_type,),  # noqa: E501
-            'favorites': (float, none_type,),  # noqa: E501
-            'search_bar': (float, none_type,),  # noqa: E501
             'category_menu': (float, none_type,),  # noqa: E501
+            'checkout': (float, none_type,),  # noqa: E501
+            'confirmation': (float, none_type,),  # noqa: E501
+            'deals': (float, none_type,),  # noqa: E501
+            'favorites': (float, none_type,),  # noqa: E501
+            'home': (float, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'merchandising': (float, none_type,),  # noqa: E501
+            'product_detail': (float, none_type,),  # noqa: E501
+            'search': (float, none_type,),  # noqa: E501
+            'search_bar': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,18 +101,18 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
 
 
     attribute_map = {
-        'search': 'search',  # noqa: E501
-        'home': 'home',  # noqa: E501
         'category': 'category',  # noqa: E501
-        'product_detail': 'productDetail',  # noqa: E501
-        'confirmation': 'confirmation',  # noqa: E501
-        'merchandising': 'merchandising',  # noqa: E501
-        'deals': 'deals',  # noqa: E501
-        'checkout': 'checkout',  # noqa: E501
-        'favorites': 'favorites',  # noqa: E501
-        'search_bar': 'searchBar',  # noqa: E501
         'category_menu': 'categoryMenu',  # noqa: E501
+        'checkout': 'checkout',  # noqa: E501
+        'confirmation': 'confirmation',  # noqa: E501
+        'deals': 'deals',  # noqa: E501
+        'favorites': 'favorites',  # noqa: E501
+        'home': 'home',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'merchandising': 'merchandising',  # noqa: E501
+        'product_detail': 'productDetail',  # noqa: E501
+        'search': 'search',  # noqa: E501
+        'search_bar': 'searchBar',  # noqa: E501
     }
 
     read_only_vars = {
@@ -156,18 +156,18 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            search (float, none_type): Search Page Type Bid Multiplier. [optional]  # noqa: E501
-            home (float, none_type): Home Page Type Bid Multiplier. [optional]  # noqa: E501
             category (float, none_type): Categories Page Type Bid Multiplier. [optional]  # noqa: E501
-            product_detail (float, none_type): ProductDetail Page Type Bid Multiplier. [optional]  # noqa: E501
-            confirmation (float, none_type): Confirmation Page Type Bid Multiplier. [optional]  # noqa: E501
-            merchandising (float, none_type): Merchandising Page Type Bid Multiplier. [optional]  # noqa: E501
-            deals (float, none_type): Deals Page Type Bid Multiplier. [optional]  # noqa: E501
-            checkout (float, none_type): Checkout Page Type Bid Multiplier. [optional]  # noqa: E501
-            favorites (float, none_type): Favorites Page Type Bid Multiplier. [optional]  # noqa: E501
-            search_bar (float, none_type): SearchBar Page Type Bid Multiplier. [optional]  # noqa: E501
             category_menu (float, none_type): CategoryMenu Page Type Bid Multiplier. [optional]  # noqa: E501
+            checkout (float, none_type): Checkout Page Type Bid Multiplier. [optional]  # noqa: E501
+            confirmation (float, none_type): Confirmation Page Type Bid Multiplier. [optional]  # noqa: E501
+            deals (float, none_type): Deals Page Type Bid Multiplier. [optional]  # noqa: E501
+            favorites (float, none_type): Favorites Page Type Bid Multiplier. [optional]  # noqa: E501
+            home (float, none_type): Home Page Type Bid Multiplier. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            merchandising (float, none_type): Merchandising Page Type Bid Multiplier. [optional]  # noqa: E501
+            product_detail (float, none_type): ProductDetail Page Type Bid Multiplier. [optional]  # noqa: E501
+            search (float, none_type): Search Page Type Bid Multiplier. [optional]  # noqa: E501
+            search_bar (float, none_type): SearchBar Page Type Bid Multiplier. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,18 +253,18 @@ class ExternalLineItemBidMultipliersV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            search (float, none_type): Search Page Type Bid Multiplier. [optional]  # noqa: E501
-            home (float, none_type): Home Page Type Bid Multiplier. [optional]  # noqa: E501
             category (float, none_type): Categories Page Type Bid Multiplier. [optional]  # noqa: E501
-            product_detail (float, none_type): ProductDetail Page Type Bid Multiplier. [optional]  # noqa: E501
-            confirmation (float, none_type): Confirmation Page Type Bid Multiplier. [optional]  # noqa: E501
-            merchandising (float, none_type): Merchandising Page Type Bid Multiplier. [optional]  # noqa: E501
-            deals (float, none_type): Deals Page Type Bid Multiplier. [optional]  # noqa: E501
-            checkout (float, none_type): Checkout Page Type Bid Multiplier. [optional]  # noqa: E501
-            favorites (float, none_type): Favorites Page Type Bid Multiplier. [optional]  # noqa: E501
-            search_bar (float, none_type): SearchBar Page Type Bid Multiplier. [optional]  # noqa: E501
             category_menu (float, none_type): CategoryMenu Page Type Bid Multiplier. [optional]  # noqa: E501
+            checkout (float, none_type): Checkout Page Type Bid Multiplier. [optional]  # noqa: E501
+            confirmation (float, none_type): Confirmation Page Type Bid Multiplier. [optional]  # noqa: E501
+            deals (float, none_type): Deals Page Type Bid Multiplier. [optional]  # noqa: E501
+            favorites (float, none_type): Favorites Page Type Bid Multiplier. [optional]  # noqa: E501
+            home (float, none_type): Home Page Type Bid Multiplier. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            merchandising (float, none_type): Merchandising Page Type Bid Multiplier. [optional]  # noqa: E501
+            product_detail (float, none_type): ProductDetail Page Type Bid Multiplier. [optional]  # noqa: E501
+            search (float, none_type): Search Page Type Bid Multiplier. [optional]  # noqa: E501
+            search_bar (float, none_type): SearchBar Page Type Bid Multiplier. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

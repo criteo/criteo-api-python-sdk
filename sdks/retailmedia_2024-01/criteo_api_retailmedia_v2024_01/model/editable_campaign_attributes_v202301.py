@@ -113,19 +113,19 @@ class EditableCampaignAttributesV202301(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
-            'is_auto_daily_pacing': (bool,),  # noqa: E501
-            'start_date': (datetime, none_type,),  # noqa: E501
-            'end_date': (datetime, none_type,),  # noqa: E501
             'click_attribution_window': (str,),  # noqa: E501
+            'end_date': (datetime, none_type,),  # noqa: E501
+            'is_auto_daily_pacing': (bool,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
             'view_attribution_window': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
-            'monthly_pacing': (float, none_type,),  # noqa: E501
-            'daily_pacing': (float, none_type,),  # noqa: E501
             'click_attribution_scope': (str, none_type,),  # noqa: E501
-            'view_attribution_scope': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
+            'daily_pacing': (float, none_type,),  # noqa: E501
+            'monthly_pacing': (float, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'view_attribution_scope': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,19 +134,19 @@ class EditableCampaignAttributesV202301(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'budget': 'budget',  # noqa: E501
-        'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'daily_pacing': 'dailyPacing',  # noqa: E501
         'click_attribution_scope': 'clickAttributionScope',  # noqa: E501
-        'view_attribution_scope': 'viewAttributionScope',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
+        'daily_pacing': 'dailyPacing',  # noqa: E501
+        'monthly_pacing': 'monthlyPacing',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'view_attribution_scope': 'viewAttributionScope',  # noqa: E501
     }
 
     read_only_vars = {
@@ -156,15 +156,15 @@ class EditableCampaignAttributesV202301(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, is_auto_daily_pacing, start_date, end_date, click_attribution_window, view_attribution_window, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, click_attribution_window, end_date, is_auto_daily_pacing, name, start_date, view_attribution_window, *args, **kwargs):  # noqa: E501
         """EditableCampaignAttributesV202301 - a model defined in OpenAPI
 
         Args:
-            name (str):
-            is_auto_daily_pacing (bool):
-            start_date (datetime, none_type):
-            end_date (datetime, none_type):
             click_attribution_window (str):
+            end_date (datetime, none_type):
+            is_auto_daily_pacing (bool):
+            name (str):
+            start_date (datetime, none_type):
             view_attribution_window (str):
 
         Keyword Args:
@@ -199,12 +199,12 @@ class EditableCampaignAttributesV202301(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
             click_attribution_scope (str, none_type): [optional]  # noqa: E501
-            view_attribution_scope (str, none_type): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            monthly_pacing (float, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            view_attribution_scope (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,11 +236,11 @@ class EditableCampaignAttributesV202301(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.is_auto_daily_pacing = is_auto_daily_pacing
-        self.start_date = start_date
-        self.end_date = end_date
         self.click_attribution_window = click_attribution_window
+        self.end_date = end_date
+        self.is_auto_daily_pacing = is_auto_daily_pacing
+        self.name = name
+        self.start_date = start_date
         self.view_attribution_window = view_attribution_window
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -262,15 +262,15 @@ class EditableCampaignAttributesV202301(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, is_auto_daily_pacing, start_date, end_date, click_attribution_window, view_attribution_window, *args, **kwargs):  # noqa: E501
+    def __init__(self, click_attribution_window, end_date, is_auto_daily_pacing, name, start_date, view_attribution_window, *args, **kwargs):  # noqa: E501
         """EditableCampaignAttributesV202301 - a model defined in OpenAPI
 
         Args:
-            name (str):
-            is_auto_daily_pacing (bool):
-            start_date (datetime, none_type):
-            end_date (datetime, none_type):
             click_attribution_window (str):
+            end_date (datetime, none_type):
+            is_auto_daily_pacing (bool):
+            name (str):
+            start_date (datetime, none_type):
             view_attribution_window (str):
 
         Keyword Args:
@@ -305,12 +305,12 @@ class EditableCampaignAttributesV202301(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
             click_attribution_scope (str, none_type): [optional]  # noqa: E501
-            view_attribution_scope (str, none_type): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            monthly_pacing (float, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            view_attribution_scope (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -340,11 +340,11 @@ class EditableCampaignAttributesV202301(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.is_auto_daily_pacing = is_auto_daily_pacing
-        self.start_date = start_date
-        self.end_date = end_date
         self.click_attribution_window = click_attribution_window
+        self.end_date = end_date
+        self.is_auto_daily_pacing = is_auto_daily_pacing
+        self.name = name
+        self.start_date = start_date
         self.view_attribution_window = view_attribution_window
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

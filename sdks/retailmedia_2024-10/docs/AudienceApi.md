@@ -64,15 +64,15 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
     rm_audience_segment_bulk_create_input_v1 = RmAudienceSegmentBulkCreateInputV1(
         data=[
             RmAudienceSegmentCreateEntityV1Resource(
-                type="type_example",
                 attributes=RmAudienceSegmentCreateEntityV1(
-                    name="name_example",
-                    description="description_example",
-                    retailer_id="retailer_id_example",
                     contact_list=RmContactListCreateV1(
                         identifier_type="Email",
                     ),
+                    description="description_example",
+                    name="name_example",
+                    retailer_id="retailer_id_example",
                 ),
+                type="type_example",
             ),
         ],
     ) # RmAudienceSegmentBulkCreateInputV1 | Segment creation parameter
@@ -267,11 +267,11 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
         data=[
             RmAudienceSegmentUpdateEntityV1Resource(
                 attributes=RmAudienceSegmentUpdateEntityV1(
-                    name="name_example",
+                    contact_list={},
                     description=NillableString(
                         value="value_example",
                     ),
-                    contact_list={},
+                    name="name_example",
                 ),
                 id="id_example",
                 type="type_example",
@@ -542,18 +542,18 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
     account_id = "account-id_example" # str | Account Id
     rm_audience_segment_search_input_v1 = RmAudienceSegmentSearchInputV1(
         data=RmAudienceSegmentSearchEntityV1Resource(
-            type="type_example",
             attributes=RmAudienceSegmentSearchEntityV1(
                 audience_segment_ids=[
                     "audience_segment_ids_example",
                 ],
-                retailer_ids=[
-                    "retailer_ids_example",
-                ],
                 audience_segment_types=[
                     "Unknown",
                 ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
             ),
+            type="type_example",
         ),
     ) # RmAudienceSegmentSearchInputV1 | Segment search filters.
     limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
@@ -659,18 +659,18 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
     account_id = "account-id_example" # str | Account Id
     rm_audience_search_input_v1 = RmAudienceSearchInputV1(
         data=RmAudienceSearchEntityV1Resource(
-            type="type_example",
             attributes=RmAudienceSearchEntityV1(
                 audience_ids=[
                     "audience_ids_example",
                 ],
-                retailer_ids=[
-                    "retailer_ids_example",
-                ],
                 audience_segment_ids=[
                     "audience_segment_ids_example",
                 ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
             ),
+            type="type_example",
         ),
     ) # RmAudienceSearchInputV1 | Audience search filters.
     limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
@@ -777,14 +777,14 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
     audience_segment_id = 1 # int | The id of the contact list audience-segment to amend, we only accept external Id here
     retail_media_contactlist_amendment_request = RetailMediaContactlistAmendmentRequest(
         data=RetailMediaContactlistAmendment(
-            type="AddRemoveContactlist",
             attributes=RetailMediaContactlistAmendmentAttributes(
-                operation="add",
-                identifier_type="Email",
                 identifiers=[
                     "identifiers_example",
                 ],
+                identifier_type="Email",
+                operation="add",
             ),
+            type="AddRemoveContactlist",
         ),
     ) # RetailMediaContactlistAmendmentRequest | 
 

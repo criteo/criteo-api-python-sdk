@@ -91,10 +91,10 @@ class AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse(ModelNo
         """
         lazy_import()
         return {
-            'meta': (AudienceSegmentSearchMetadataV1,),  # noqa: E501
             'data': ([AudienceSegmentEntityV1Resource], none_type,),  # noqa: E501
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
             'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'meta': (AudienceSegmentSearchMetadataV1,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -103,15 +103,15 @@ class AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse(ModelNo
 
 
     attribute_map = {
-        'meta': 'meta',  # noqa: E501
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'meta': 'meta',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -152,10 +152,10 @@ class AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse(ModelNo
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            meta (AudienceSegmentSearchMetadataV1): [optional]  # noqa: E501
             data ([AudienceSegmentEntityV1Resource], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            meta (AudienceSegmentSearchMetadataV1): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,10 +241,10 @@ class AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse(ModelNo
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            meta (AudienceSegmentSearchMetadataV1): [optional]  # noqa: E501
             data ([AudienceSegmentEntityV1Resource], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            meta (AudienceSegmentSearchMetadataV1): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

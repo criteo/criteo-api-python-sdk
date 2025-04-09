@@ -75,8 +75,8 @@ class ExternalRetailMediaSeller(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'seller_id': (str,),  # noqa: E501
             'retailer_id': (int,),  # noqa: E501
+            'seller_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -85,8 +85,8 @@ class ExternalRetailMediaSeller(ModelNormal):
 
 
     attribute_map = {
-        'seller_id': 'sellerId',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
+        'seller_id': 'sellerId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -96,12 +96,12 @@ class ExternalRetailMediaSeller(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, seller_id, retailer_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, retailer_id, seller_id, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaSeller - a model defined in OpenAPI
 
         Args:
-            seller_id (str): the seller id
             retailer_id (int): the retailer id
+            seller_id (str): the seller id
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -165,8 +165,8 @@ class ExternalRetailMediaSeller(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.seller_id = seller_id
         self.retailer_id = retailer_id
+        self.seller_id = seller_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -187,12 +187,12 @@ class ExternalRetailMediaSeller(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, seller_id, retailer_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, retailer_id, seller_id, *args, **kwargs):  # noqa: E501
         """ExternalRetailMediaSeller - a model defined in OpenAPI
 
         Args:
-            seller_id (str): the seller id
             retailer_id (int): the retailer id
+            seller_id (str): the seller id
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -254,8 +254,8 @@ class ExternalRetailMediaSeller(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.seller_id = seller_id
         self.retailer_id = retailer_id
+        self.seller_id = seller_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -66,7 +66,7 @@ class CreateCoupon(ModelNormal):
     }
 
     validations = {
-        ('show_every',): {
+        ('rotations_number',): {
             'inclusive_maximum': 10,
             'inclusive_minimum': 1,
         },
@@ -74,7 +74,7 @@ class CreateCoupon(ModelNormal):
             'inclusive_maximum': 5,
             'inclusive_minimum': 1,
         },
-        ('rotations_number',): {
+        ('show_every',): {
             'inclusive_maximum': 10,
             'inclusive_minimum': 1,
         },
@@ -103,15 +103,15 @@ class CreateCoupon(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
             'ad_set_id': (str,),  # noqa: E501
-            'landing_page_url': (str,),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
             'images': ([CreateImageSlide],),  # noqa: E501
-            'show_every': (int,),  # noqa: E501
-            'show_duration': (int,),  # noqa: E501
+            'landing_page_url': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'rotations_number': (int,),  # noqa: E501
+            'show_duration': (int,),  # noqa: E501
+            'show_every': (int,),  # noqa: E501
+            'start_date': (str,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'end_date': (str, none_type,),  # noqa: E501
         }
@@ -122,15 +122,15 @@ class CreateCoupon(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'ad_set_id': 'adSetId',  # noqa: E501
-        'landing_page_url': 'landingPageUrl',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'format': 'format',  # noqa: E501
         'images': 'images',  # noqa: E501
-        'show_every': 'showEvery',  # noqa: E501
-        'show_duration': 'showDuration',  # noqa: E501
+        'landing_page_url': 'landingPageUrl',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'rotations_number': 'rotationsNumber',  # noqa: E501
+        'show_duration': 'showDuration',  # noqa: E501
+        'show_every': 'showEvery',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'description': 'description',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
     }
@@ -142,19 +142,19 @@ class CreateCoupon(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, ad_set_id, landing_page_url, start_date, format, images, show_every, show_duration, rotations_number, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, ad_set_id, format, images, landing_page_url, name, rotations_number, show_duration, show_every, start_date, *args, **kwargs):  # noqa: E501
         """CreateCoupon - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the Coupon
             ad_set_id (str): The id of the Ad Set on which the Coupon is applied to
-            landing_page_url (str): Web redirection of the landing page url
-            start_date (str): The date when the coupon will be launched  String must be in ISO8601 format
             format (str): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\"
             images ([CreateImageSlide]): List of slides containing the images as a base-64 encoded string
-            show_every (int): Show the Coupon every N seconds (between 1 and 10)
-            show_duration (int): Show Coupon for a duration of N seconds (between 1 and 5)
+            landing_page_url (str): Web redirection of the landing page url
+            name (str): The name of the Coupon
             rotations_number (int): Number of rotations for the Coupons (from 1 to 10 times)
+            show_duration (int): Show Coupon for a duration of N seconds (between 1 and 5)
+            show_every (int): Show the Coupon every N seconds (between 1 and 10)
+            start_date (str): The date when the coupon will be launched  String must be in ISO8601 format
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -220,15 +220,15 @@ class CreateCoupon(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.ad_set_id = ad_set_id
-        self.landing_page_url = landing_page_url
-        self.start_date = start_date
         self.format = format
         self.images = images
-        self.show_every = show_every
-        self.show_duration = show_duration
+        self.landing_page_url = landing_page_url
+        self.name = name
         self.rotations_number = rotations_number
+        self.show_duration = show_duration
+        self.show_every = show_every
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -249,19 +249,19 @@ class CreateCoupon(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, ad_set_id, landing_page_url, start_date, format, images, show_every, show_duration, rotations_number, *args, **kwargs):  # noqa: E501
+    def __init__(self, ad_set_id, format, images, landing_page_url, name, rotations_number, show_duration, show_every, start_date, *args, **kwargs):  # noqa: E501
         """CreateCoupon - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the Coupon
             ad_set_id (str): The id of the Ad Set on which the Coupon is applied to
-            landing_page_url (str): Web redirection of the landing page url
-            start_date (str): The date when the coupon will be launched  String must be in ISO8601 format
             format (str): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\"
             images ([CreateImageSlide]): List of slides containing the images as a base-64 encoded string
-            show_every (int): Show the Coupon every N seconds (between 1 and 10)
-            show_duration (int): Show Coupon for a duration of N seconds (between 1 and 5)
+            landing_page_url (str): Web redirection of the landing page url
+            name (str): The name of the Coupon
             rotations_number (int): Number of rotations for the Coupons (from 1 to 10 times)
+            show_duration (int): Show Coupon for a duration of N seconds (between 1 and 5)
+            show_every (int): Show the Coupon every N seconds (between 1 and 10)
+            start_date (str): The date when the coupon will be launched  String must be in ISO8601 format
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -325,15 +325,15 @@ class CreateCoupon(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.ad_set_id = ad_set_id
-        self.landing_page_url = landing_page_url
-        self.start_date = start_date
         self.format = format
         self.images = images
-        self.show_every = show_every
-        self.show_duration = show_duration
+        self.landing_page_url = landing_page_url
+        self.name = name
         self.rotations_number = rotations_number
+        self.show_duration = show_duration
+        self.show_every = show_every
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -120,8 +120,8 @@ class AudienceApi(object):
                 'all': [
                     'account_id',
                     'limit_to_id',
-                    'page_size',
                     'page_index',
+                    'page_size',
                 ],
                 'required': [
                     'account_id',
@@ -143,22 +143,22 @@ class AudienceApi(object):
                         (int,),
                     'limit_to_id':
                         ([int],),
-                    'page_size':
-                        (int,),
                     'page_index':
+                        (int,),
+                    'page_size':
                         (int,),
                 },
                 'attribute_map': {
                     'account_id': 'accountId',
                     'limit_to_id': 'limitToId',
-                    'page_size': 'pageSize',
                     'page_index': 'pageIndex',
+                    'page_size': 'pageSize',
                 },
                 'location_map': {
                     'account_id': 'path',
                     'limit_to_id': 'query',
-                    'page_size': 'query',
                     'page_index': 'query',
+                    'page_size': 'query',
                 },
                 'collection_format_map': {
                     'limit_to_id': 'multi',
@@ -190,8 +190,8 @@ class AudienceApi(object):
                 'all': [
                     'account_id',
                     'limit_to_id',
-                    'page_size',
                     'page_index',
+                    'page_size',
                 ],
                 'required': [
                     'account_id',
@@ -213,22 +213,22 @@ class AudienceApi(object):
                         (int,),
                     'limit_to_id':
                         ([int],),
-                    'page_size':
-                        (int,),
                     'page_index':
+                        (int,),
+                    'page_size':
                         (int,),
                 },
                 'attribute_map': {
                     'account_id': 'accountId',
                     'limit_to_id': 'limitToId',
-                    'page_size': 'pageSize',
                     'page_index': 'pageIndex',
+                    'page_size': 'pageSize',
                 },
                 'location_map': {
                     'account_id': 'path',
                     'limit_to_id': 'query',
-                    'page_size': 'query',
                     'page_index': 'query',
+                    'page_size': 'query',
                 },
                 'collection_format_map': {
                     'limit_to_id': 'multi',
@@ -415,8 +415,8 @@ class AudienceApi(object):
 
         Keyword Args:
             limit_to_id ([int]): Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2. [optional]
-            page_size (int): Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page.. [optional]
             page_index (int): Returns the specified page of results given a pageSize; pages are 0-indexed.. [optional]
+            page_size (int): Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -501,8 +501,8 @@ class AudienceApi(object):
 
         Keyword Args:
             limit_to_id ([int]): Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2. [optional]
-            page_size (int): Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page.. [optional]
             page_index (int): Returns the specified page of results given a pageSize; pages are 0-indexed.. [optional]
+            page_size (int): Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

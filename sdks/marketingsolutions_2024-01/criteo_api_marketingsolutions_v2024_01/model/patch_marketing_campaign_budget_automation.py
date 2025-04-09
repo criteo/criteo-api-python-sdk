@@ -87,8 +87,8 @@ class PatchMarketingCampaignBudgetAutomation(ModelNormal):
         """
         lazy_import()
         return {
-            'enable': (bool,),  # noqa: E501
             'budget_configuration': (BudgetAutomationConfiguration,),  # noqa: E501
+            'enable': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class PatchMarketingCampaignBudgetAutomation(ModelNormal):
 
 
     attribute_map = {
-        'enable': 'enable',  # noqa: E501
         'budget_configuration': 'budgetConfiguration',  # noqa: E501
+        'enable': 'enable',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,8 +142,8 @@ class PatchMarketingCampaignBudgetAutomation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            enable (bool): Budget automation for the marketing campaign enable. [optional]  # noqa: E501
             budget_configuration (BudgetAutomationConfiguration): [optional]  # noqa: E501
+            enable (bool): Budget automation for the marketing campaign enable. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,8 +229,8 @@ class PatchMarketingCampaignBudgetAutomation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            enable (bool): Budget automation for the marketing campaign enable. [optional]  # noqa: E501
             budget_configuration (BudgetAutomationConfiguration): [optional]  # noqa: E501
+            enable (bool): Budget automation for the marketing campaign enable. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

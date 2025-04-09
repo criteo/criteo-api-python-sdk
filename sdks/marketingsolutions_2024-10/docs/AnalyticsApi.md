@@ -57,7 +57,6 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
     statistics_report_query_message = StatisticsReportQueryMessage(
-        advertiser_ids="advertiser_ids_example",
         ad_set_ids=[
             "ad_set_ids_example",
         ],
@@ -67,17 +66,18 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
         ad_set_status=[
             "ad_set_status_example",
         ],
+        advertiser_ids="advertiser_ids_example",
+        currency="currency_example",
         dimensions=[
             "AdsetId",
         ],
+        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        format="format_example",
         metrics=[
             "metrics_example",
         ],
-        currency="currency_example",
-        format="format_example",
-        timezone="UTC",
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        timezone="UTC",
     ) # StatisticsReportQueryMessage |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -169,26 +169,26 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     placements_report_query_message_list_request = PlacementsReportQueryMessageListRequest(
         data=[
             PlacementsReportQueryMessageResource(
-                type="type_example",
                 attributes=PlacementsReportQueryMessage(
+                    adset_ids="adset_ids_example",
                     advertiser_ids="advertiser_ids_example",
                     campaign_ids="campaign_ids_example",
-                    adset_ids="adset_ids_example",
-                    environment="environment_example",
-                    placement="placement_example",
+                    currency="currency_example",
                     dimensions=[
                         "AdsetId",
                     ],
+                    disclosed=True,
+                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    environment="environment_example",
+                    format="format_example",
                     metrics=[
                         "metrics_example",
                     ],
-                    currency="currency_example",
-                    disclosed=True,
-                    format="format_example",
-                    timezone="UTC",
+                    placement="placement_example",
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    timezone="UTC",
                 ),
+                type="type_example",
             ),
         ],
     ) # PlacementsReportQueryMessageListRequest |  (optional)
@@ -282,16 +282,16 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     transactions_report_query_message_list_request = TransactionsReportQueryMessageListRequest(
         data=[
             TransactionsReportQueryMessageResource(
-                type="type_example",
                 attributes=TransactionsReportQueryMessage(
                     advertiser_ids="advertiser_ids_example",
-                    event_type="event_type_example",
                     currency="currency_example",
-                    format="format_example",
-                    timezone="UTC",
-                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    event_type="event_type_example",
+                    format="format_example",
+                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    timezone="UTC",
                 ),
+                type="type_example",
             ),
         ],
     ) # TransactionsReportQueryMessageListRequest |  (optional)
@@ -385,9 +385,9 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     api_instance = analytics_api.AnalyticsApi(api_client)
     advertiser_id = 1 # int | The advertiser id to fetch the transparency data.
     transparency_query_message = TransparencyQueryMessage(
+        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         should_display_product_ids=False,
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
     ) # TransparencyQueryMessage | The query message. (optional)
 
     # example passing only required values which don't have defaults set

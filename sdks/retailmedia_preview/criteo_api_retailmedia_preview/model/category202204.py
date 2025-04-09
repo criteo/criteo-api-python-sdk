@@ -81,9 +81,9 @@ class Category202204(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'text': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'parent_id': (str,),  # noqa: E501
+            'text': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -92,9 +92,9 @@ class Category202204(ModelNormal):
 
 
     attribute_map = {
-        'text': 'text',  # noqa: E501
         'name': 'name',  # noqa: E501
         'parent_id': 'parentId',  # noqa: E501
+        'text': 'text',  # noqa: E501
     }
 
     read_only_vars = {
@@ -104,13 +104,13 @@ class Category202204(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, text, name, parent_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, parent_id, text, *args, **kwargs):  # noqa: E501
         """Category202204 - a model defined in OpenAPI
 
         Args:
-            text (str): Category Text
             name (str): Category Name
             parent_id (str): Category ParentId
+            text (str): Category Text
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -174,9 +174,9 @@ class Category202204(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.text = text
         self.name = name
         self.parent_id = parent_id
+        self.text = text
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -197,13 +197,13 @@ class Category202204(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, text, name, parent_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, parent_id, text, *args, **kwargs):  # noqa: E501
         """Category202204 - a model defined in OpenAPI
 
         Args:
-            text (str): Category Text
             name (str): Category Name
             parent_id (str): Category ParentId
+            text (str): Category Text
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -265,9 +265,9 @@ class Category202204(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.text = text
         self.name = name
         self.parent_id = parent_id
+        self.text = text
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

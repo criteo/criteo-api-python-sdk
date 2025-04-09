@@ -83,8 +83,8 @@ class EntityResourceOutcomePartnerBillingReportStatusV1(ModelNormal):
         lazy_import()
         return {
             'data': (EntityResourcePartnerBillingReportStatusV1,),  # noqa: E501
-            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
             'errors': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
+            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -94,13 +94,13 @@ class EntityResourceOutcomePartnerBillingReportStatusV1(ModelNormal):
 
     attribute_map = {
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -142,8 +142,8 @@ class EntityResourceOutcomePartnerBillingReportStatusV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (EntityResourcePartnerBillingReportStatusV1): [optional]  # noqa: E501
-            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
             errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,8 +230,8 @@ class EntityResourceOutcomePartnerBillingReportStatusV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (EntityResourcePartnerBillingReportStatusV1): [optional]  # noqa: E501
-            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
             errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

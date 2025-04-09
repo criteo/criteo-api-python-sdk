@@ -87,9 +87,9 @@ class BotMessage(ModelNormal):
         """
         lazy_import()
         return {
+            'closing': (str, none_type,),  # noqa: E501
             'opening': (str, none_type,),  # noqa: E501
             'product_recos': ([ProductRecommendation], none_type,),  # noqa: E501
-            'closing': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -98,9 +98,9 @@ class BotMessage(ModelNormal):
 
 
     attribute_map = {
+        'closing': 'closing',  # noqa: E501
         'opening': 'opening',  # noqa: E501
         'product_recos': 'productRecos',  # noqa: E501
-        'closing': 'closing',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,9 +144,9 @@ class BotMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            closing (str, none_type): closing remark from the bot. [optional]  # noqa: E501
             opening (str, none_type): opening comment from the bot, introducing the list of recommended products if relevant.. [optional]  # noqa: E501
             product_recos ([ProductRecommendation], none_type): list of recommended products. [optional]  # noqa: E501
-            closing (str, none_type): closing remark from the bot. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,9 +232,9 @@ class BotMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            closing (str, none_type): closing remark from the bot. [optional]  # noqa: E501
             opening (str, none_type): opening comment from the bot, introducing the list of recommended products if relevant.. [optional]  # noqa: E501
             product_recos ([ProductRecommendation], none_type): list of recommended products. [optional]  # noqa: E501
-            closing (str, none_type): closing remark from the bot. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

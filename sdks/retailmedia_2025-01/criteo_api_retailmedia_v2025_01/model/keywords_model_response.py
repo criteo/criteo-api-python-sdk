@@ -82,9 +82,9 @@ class KeywordsModelResponse(ModelNormal):
         """
         lazy_import()
         return {
+            'data': (KeywordsModelResource,),  # noqa: E501
             'errors': ([RmcaCommonProblem], none_type,),  # noqa: E501
             'warnings': ([RmcaCommonProblem], none_type,),  # noqa: E501
-            'data': (KeywordsModelResource,),  # noqa: E501
         }
 
     @cached_property
@@ -93,9 +93,9 @@ class KeywordsModelResponse(ModelNormal):
 
 
     attribute_map = {
+        'data': 'data',  # noqa: E501
         'errors': 'errors',  # noqa: E501
         'warnings': 'warnings',  # noqa: E501
-        'data': 'data',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,9 +141,9 @@ class KeywordsModelResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            data (KeywordsModelResource): [optional]  # noqa: E501
             errors ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
             warnings ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
-            data (KeywordsModelResource): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,9 +229,9 @@ class KeywordsModelResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            data (KeywordsModelResource): [optional]  # noqa: E501
             errors ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
             warnings ([RmcaCommonProblem], none_type): [optional]  # noqa: E501
-            data (KeywordsModelResource): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

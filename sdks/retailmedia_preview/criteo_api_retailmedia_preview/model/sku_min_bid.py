@@ -75,8 +75,8 @@ class SkuMinBid(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'sku_id': (str,),  # noqa: E501
             'min_bid': (float,),  # noqa: E501
+            'sku_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -85,8 +85,8 @@ class SkuMinBid(ModelNormal):
 
 
     attribute_map = {
-        'sku_id': 'skuId',  # noqa: E501
         'min_bid': 'minBid',  # noqa: E501
+        'sku_id': 'skuId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -96,12 +96,12 @@ class SkuMinBid(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, sku_id, min_bid, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, min_bid, sku_id, *args, **kwargs):  # noqa: E501
         """SkuMinBid - a model defined in OpenAPI
 
         Args:
-            sku_id (str): Sku id.
             min_bid (float): Minimum bid amount value.
+            sku_id (str): Sku id.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -165,8 +165,8 @@ class SkuMinBid(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.sku_id = sku_id
         self.min_bid = min_bid
+        self.sku_id = sku_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -187,12 +187,12 @@ class SkuMinBid(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, sku_id, min_bid, *args, **kwargs):  # noqa: E501
+    def __init__(self, min_bid, sku_id, *args, **kwargs):  # noqa: E501
         """SkuMinBid - a model defined in OpenAPI
 
         Args:
-            sku_id (str): Sku id.
             min_bid (float): Minimum bid amount value.
+            sku_id (str): Sku id.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -254,8 +254,8 @@ class SkuMinBid(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.sku_id = sku_id
         self.min_bid = min_bid
+        self.sku_id = sku_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

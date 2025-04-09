@@ -81,8 +81,8 @@ class ExternalAddToBasketIdsUpdateModel202110(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'product_ids': ([str],),  # noqa: E501
             'category_ids': ([str],),  # noqa: E501
+            'product_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -91,8 +91,8 @@ class ExternalAddToBasketIdsUpdateModel202110(ModelNormal):
 
 
     attribute_map = {
-        'product_ids': 'productIds',  # noqa: E501
         'category_ids': 'categoryIds',  # noqa: E501
+        'product_ids': 'productIds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -136,8 +136,8 @@ class ExternalAddToBasketIdsUpdateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            product_ids ([str]): Product ids that add to basket should target. [optional]  # noqa: E501
             category_ids ([str]): Category ids that add to basket should target. [optional]  # noqa: E501
+            product_ids ([str]): Product ids that add to basket should target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class ExternalAddToBasketIdsUpdateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            product_ids ([str]): Product ids that add to basket should target. [optional]  # noqa: E501
             category_ids ([str]): Category ids that add to basket should target. [optional]  # noqa: E501
+            product_ids ([str]): Product ids that add to basket should target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

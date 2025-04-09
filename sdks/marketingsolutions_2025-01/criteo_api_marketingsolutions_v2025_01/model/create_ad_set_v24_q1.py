@@ -65,6 +65,10 @@ class CreateAdSetV24Q1(ModelNormal):
     """
 
     allowed_values = {
+        ('media_type',): {
+            'DISPLAY': "display",
+            'VIDEO': "video",
+        },
         ('objective',): {
             'CUSTOMACTION': "customAction",
             'CLICKS': "clicks",
@@ -77,10 +81,6 @@ class CreateAdSetV24Q1(ModelNormal):
             'REACH': "reach",
             'VISITS': "visits",
             'VIDEOVIEWS': "videoViews",
-        },
-        ('media_type',): {
-            'DISPLAY': "display",
-            'VIDEO': "video",
         },
     }
 
@@ -110,15 +110,15 @@ class CreateAdSetV24Q1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
-            'dataset_id': (str, none_type,),  # noqa: E501
+            'bidding': (CreateAdSetBiddingV24Q1,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
+            'dataset_id': (str, none_type,),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'objective': (str,),  # noqa: E501
             'schedule': (CreateAdSetScheduleV24Q1,),  # noqa: E501
-            'bidding': (CreateAdSetBiddingV24Q1,),  # noqa: E501
             'targeting': (CreateAdSetTargetingV24Q1,),  # noqa: E501
             'tracking_code': (str, none_type,),  # noqa: E501
-            'media_type': (str,),  # noqa: E501
             'budget': (CreateAdSetBudgetV24Q1,),  # noqa: E501
         }
 
@@ -128,15 +128,15 @@ class CreateAdSetV24Q1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'dataset_id': 'datasetId',  # noqa: E501
+        'bidding': 'bidding',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'objective': 'objective',  # noqa: E501
         'schedule': 'schedule',  # noqa: E501
-        'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
-        'media_type': 'mediaType',  # noqa: E501
         'budget': 'budget',  # noqa: E501
     }
 
@@ -147,19 +147,19 @@ class CreateAdSetV24Q1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, tracking_code, media_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, bidding, campaign_id, dataset_id, media_type, name, objective, schedule, targeting, tracking_code, *args, **kwargs):  # noqa: E501
         """CreateAdSetV24Q1 - a model defined in OpenAPI
 
         Args:
-            name (str, none_type): Name of the ad set
-            dataset_id (str, none_type): Dataset id of this ad set
+            bidding (CreateAdSetBiddingV24Q1):
             campaign_id (str, none_type): Campaign id this ad set belongs to
+            dataset_id (str, none_type): Dataset id of this ad set
+            media_type (str): Media type for the ad set
+            name (str, none_type): Name of the ad set
             objective (str): Objective of the ad set
             schedule (CreateAdSetScheduleV24Q1):
-            bidding (CreateAdSetBiddingV24Q1):
             targeting (CreateAdSetTargetingV24Q1):
             tracking_code (str, none_type): The click tracking code associated to this Ad Set.
-            media_type (str): Media type for the ad set
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -224,15 +224,15 @@ class CreateAdSetV24Q1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.dataset_id = dataset_id
+        self.bidding = bidding
         self.campaign_id = campaign_id
+        self.dataset_id = dataset_id
+        self.media_type = media_type
+        self.name = name
         self.objective = objective
         self.schedule = schedule
-        self.bidding = bidding
         self.targeting = targeting
         self.tracking_code = tracking_code
-        self.media_type = media_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -253,19 +253,19 @@ class CreateAdSetV24Q1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, dataset_id, campaign_id, objective, schedule, bidding, targeting, tracking_code, media_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, bidding, campaign_id, dataset_id, media_type, name, objective, schedule, targeting, tracking_code, *args, **kwargs):  # noqa: E501
         """CreateAdSetV24Q1 - a model defined in OpenAPI
 
         Args:
-            name (str, none_type): Name of the ad set
-            dataset_id (str, none_type): Dataset id of this ad set
+            bidding (CreateAdSetBiddingV24Q1):
             campaign_id (str, none_type): Campaign id this ad set belongs to
+            dataset_id (str, none_type): Dataset id of this ad set
+            media_type (str): Media type for the ad set
+            name (str, none_type): Name of the ad set
             objective (str): Objective of the ad set
             schedule (CreateAdSetScheduleV24Q1):
-            bidding (CreateAdSetBiddingV24Q1):
             targeting (CreateAdSetTargetingV24Q1):
             tracking_code (str, none_type): The click tracking code associated to this Ad Set.
-            media_type (str): Media type for the ad set
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -328,15 +328,15 @@ class CreateAdSetV24Q1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.dataset_id = dataset_id
+        self.bidding = bidding
         self.campaign_id = campaign_id
+        self.dataset_id = dataset_id
+        self.media_type = media_type
+        self.name = name
         self.objective = objective
         self.schedule = schedule
-        self.bidding = bidding
         self.targeting = targeting
         self.tracking_code = tracking_code
-        self.media_type = media_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

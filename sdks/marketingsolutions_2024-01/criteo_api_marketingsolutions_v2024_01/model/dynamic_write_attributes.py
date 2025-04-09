@@ -88,10 +88,10 @@ class DynamicWriteAttributes(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'logo_base64_string': (str,),  # noqa: E501
             'body_text_color': (str,),  # noqa: E501
-            'prices_color': (str,),  # noqa: E501
             'calls_to_action': ([str],),  # noqa: E501
+            'logo_base64_string': (str,),  # noqa: E501
+            'prices_color': (str,),  # noqa: E501
             'product_image_display': (str,),  # noqa: E501
             'creative_background_color': (str, none_type,),  # noqa: E501
             'primary_font': (str, none_type,),  # noqa: E501
@@ -103,10 +103,10 @@ class DynamicWriteAttributes(ModelNormal):
 
 
     attribute_map = {
-        'logo_base64_string': 'logoBase64String',  # noqa: E501
         'body_text_color': 'bodyTextColor',  # noqa: E501
-        'prices_color': 'pricesColor',  # noqa: E501
         'calls_to_action': 'callsToAction',  # noqa: E501
+        'logo_base64_string': 'logoBase64String',  # noqa: E501
+        'prices_color': 'pricesColor',  # noqa: E501
         'product_image_display': 'productImageDisplay',  # noqa: E501
         'creative_background_color': 'creativeBackgroundColor',  # noqa: E501
         'primary_font': 'primaryFont',  # noqa: E501
@@ -119,14 +119,14 @@ class DynamicWriteAttributes(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, logo_base64_string, body_text_color, prices_color, calls_to_action, product_image_display, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, body_text_color, calls_to_action, logo_base64_string, prices_color, product_image_display, *args, **kwargs):  # noqa: E501
         """DynamicWriteAttributes - a model defined in OpenAPI
 
         Args:
-            logo_base64_string (str): Logo image as a base-64 encoded string
             body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\")
-            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
+            logo_base64_string (str): Logo image as a base-64 encoded string
+            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
             product_image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.
 
         Keyword Args:
@@ -193,10 +193,10 @@ class DynamicWriteAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.logo_base64_string = logo_base64_string
         self.body_text_color = body_text_color
-        self.prices_color = prices_color
         self.calls_to_action = calls_to_action
+        self.logo_base64_string = logo_base64_string
+        self.prices_color = prices_color
         self.product_image_display = product_image_display
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -218,14 +218,14 @@ class DynamicWriteAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, logo_base64_string, body_text_color, prices_color, calls_to_action, product_image_display, *args, **kwargs):  # noqa: E501
+    def __init__(self, body_text_color, calls_to_action, logo_base64_string, prices_color, product_image_display, *args, **kwargs):  # noqa: E501
         """DynamicWriteAttributes - a model defined in OpenAPI
 
         Args:
-            logo_base64_string (str): Logo image as a base-64 encoded string
             body_text_color (str): Color of the creative's body text  Valid hexadecimal color (e.g. \"AB00FF\")
-            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
+            logo_base64_string (str): Logo image as a base-64 encoded string
+            prices_color (str): Color of the creative's prices  Valid hexadecimal color (e.g. \"AB00FF\")
             product_image_display (str): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your product catalog images should fit inside the allocated  space (\"ShowFullImage\") or whether they should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.
 
         Keyword Args:
@@ -290,10 +290,10 @@ class DynamicWriteAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.logo_base64_string = logo_base64_string
         self.body_text_color = body_text_color
-        self.prices_color = prices_color
         self.calls_to_action = calls_to_action
+        self.logo_base64_string = logo_base64_string
+        self.prices_color = prices_color
         self.product_image_display = product_image_display
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

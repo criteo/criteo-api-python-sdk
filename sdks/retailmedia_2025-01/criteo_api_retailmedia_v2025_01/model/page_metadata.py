@@ -75,12 +75,12 @@ class PageMetadata(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'current_page_size': (int,),  # noqa: E501
             'current_page_index': (int,),  # noqa: E501
-            'total_items_across_all_pages': (int, none_type,),  # noqa: E501
-            'total_pages': (int, none_type,),  # noqa: E501
+            'current_page_size': (int,),  # noqa: E501
             'next_page': (str, none_type,),  # noqa: E501
             'previous_page': (str, none_type,),  # noqa: E501
+            'total_items_across_all_pages': (int, none_type,),  # noqa: E501
+            'total_pages': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -89,12 +89,12 @@ class PageMetadata(ModelNormal):
 
 
     attribute_map = {
-        'current_page_size': 'currentPageSize',  # noqa: E501
         'current_page_index': 'currentPageIndex',  # noqa: E501
-        'total_items_across_all_pages': 'totalItemsAcrossAllPages',  # noqa: E501
-        'total_pages': 'totalPages',  # noqa: E501
+        'current_page_size': 'currentPageSize',  # noqa: E501
         'next_page': 'nextPage',  # noqa: E501
         'previous_page': 'previousPage',  # noqa: E501
+        'total_items_across_all_pages': 'totalItemsAcrossAllPages',  # noqa: E501
+        'total_pages': 'totalPages',  # noqa: E501
     }
 
     read_only_vars = {
@@ -104,12 +104,12 @@ class PageMetadata(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, current_page_size, current_page_index, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, current_page_index, current_page_size, *args, **kwargs):  # noqa: E501
         """PageMetadata - a model defined in OpenAPI
 
         Args:
-            current_page_size (int):
             current_page_index (int):
+            current_page_size (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -142,10 +142,10 @@ class PageMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            total_items_across_all_pages (int, none_type): [optional]  # noqa: E501
-            total_pages (int, none_type): [optional]  # noqa: E501
             next_page (str, none_type): [optional]  # noqa: E501
             previous_page (str, none_type): [optional]  # noqa: E501
+            total_items_across_all_pages (int, none_type): [optional]  # noqa: E501
+            total_pages (int, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -177,8 +177,8 @@ class PageMetadata(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.current_page_size = current_page_size
         self.current_page_index = current_page_index
+        self.current_page_size = current_page_size
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -199,12 +199,12 @@ class PageMetadata(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, current_page_size, current_page_index, *args, **kwargs):  # noqa: E501
+    def __init__(self, current_page_index, current_page_size, *args, **kwargs):  # noqa: E501
         """PageMetadata - a model defined in OpenAPI
 
         Args:
-            current_page_size (int):
             current_page_index (int):
+            current_page_size (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -237,10 +237,10 @@ class PageMetadata(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            total_items_across_all_pages (int, none_type): [optional]  # noqa: E501
-            total_pages (int, none_type): [optional]  # noqa: E501
             next_page (str, none_type): [optional]  # noqa: E501
             previous_page (str, none_type): [optional]  # noqa: E501
+            total_items_across_all_pages (int, none_type): [optional]  # noqa: E501
+            total_pages (int, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -270,8 +270,8 @@ class PageMetadata(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.current_page_size = current_page_size
         self.current_page_index = current_page_index
+        self.current_page_size = current_page_size
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

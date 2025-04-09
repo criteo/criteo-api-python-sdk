@@ -84,11 +84,11 @@ class KeywordDataModel(ModelNormal):
         """
         lazy_import()
         return {
-            'review_state': (ReviewStateModel,),  # noqa: E501
-            'match_type': (MatchTypeModel,),  # noqa: E501
             'bid': (float, none_type,),  # noqa: E501
-            'input_keywords': (InputKeywordsModel,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
+            'input_keywords': (InputKeywordsModel,),  # noqa: E501
+            'match_type': (MatchTypeModel,),  # noqa: E501
+            'review_state': (ReviewStateModel,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
         }
 
@@ -98,11 +98,11 @@ class KeywordDataModel(ModelNormal):
 
 
     attribute_map = {
-        'review_state': 'reviewState',  # noqa: E501
-        'match_type': 'matchType',  # noqa: E501
         'bid': 'bid',  # noqa: E501
-        'input_keywords': 'inputKeywords',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
+        'input_keywords': 'inputKeywords',  # noqa: E501
+        'match_type': 'matchType',  # noqa: E501
+        'review_state': 'reviewState',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
     }
 
@@ -147,11 +147,11 @@ class KeywordDataModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (ReviewStateModel): [optional]  # noqa: E501
-            match_type (MatchTypeModel): [optional]  # noqa: E501
             bid (float, none_type): [optional]  # noqa: E501
-            input_keywords (InputKeywordsModel): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
+            input_keywords (InputKeywordsModel): [optional]  # noqa: E501
+            match_type (MatchTypeModel): [optional]  # noqa: E501
+            review_state (ReviewStateModel): [optional]  # noqa: E501
             updated_at (datetime): [optional]  # noqa: E501
         """
 
@@ -238,11 +238,11 @@ class KeywordDataModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (ReviewStateModel): [optional]  # noqa: E501
-            match_type (MatchTypeModel): [optional]  # noqa: E501
             bid (float, none_type): [optional]  # noqa: E501
-            input_keywords (InputKeywordsModel): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
+            input_keywords (InputKeywordsModel): [optional]  # noqa: E501
+            match_type (MatchTypeModel): [optional]  # noqa: E501
+            review_state (ReviewStateModel): [optional]  # noqa: E501
             updated_at (datetime): [optional]  # noqa: E501
         """
 

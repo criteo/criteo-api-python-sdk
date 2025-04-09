@@ -60,16 +60,16 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     rm_legacy_audience_create_input_entity_v1 = RmLegacyAudienceCreateInputEntityV1(
         data=RmLegacyAudienceCreateEntityV1Resource(
             attributes=RmLegacyAudienceCreateEntityV1(
-                user_type="viewer",
-                lookback_window="P7D",
                 brand_ids=[
                     1,
                 ],
                 category_ids=[
                     1,
                 ],
-                retailer_id=1,
+                lookback_window="P7D",
                 name="name_example",
+                retailer_id=1,
+                user_type="viewer",
             ),
             id="id_example",
             type="type_example",
@@ -167,8 +167,8 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     limit_to_id = [
         1,
     ] # [int] | Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2 (optional)
-    page_size = 1 # int | Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. (optional)
     page_index = 1 # int | Returns the specified page of results given a pageSize; pages are 0-indexed. (optional)
+    page_size = 1 # int | Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -180,7 +180,7 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.legacy_get_audience_v1(account_id, limit_to_id=limit_to_id, page_size=page_size, page_index=page_index)
+        api_response = api_instance.legacy_get_audience_v1(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2024_01.ApiException as e:
         print("Exception when calling AudienceApi->legacy_get_audience_v1: %s\n" % e)
@@ -193,8 +193,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| ID of the account to which this audience belongs. |
  **limit_to_id** | **[int]**| Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId&#x3D;1&amp;limitToId&#x3D;2 | [optional]
- **page_size** | **int**| Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. | [optional]
  **page_index** | **int**| Returns the specified page of results given a pageSize; pages are 0-indexed. | [optional]
+ **page_size** | **int**| Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. | [optional]
 
 ### Return type
 
@@ -270,8 +270,8 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     limit_to_id = [
         1,
     ] # [int] | Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId=1&limitToId=2 (optional)
-    page_size = 1 # int | Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. (optional)
     page_index = 1 # int | Returns the specified page of results given a pageSize; pages are 0-indexed. (optional)
+    page_size = 1 # int | Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -283,7 +283,7 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.legacy_get_audience_v2(account_id, limit_to_id=limit_to_id, page_size=page_size, page_index=page_index)
+        api_response = api_instance.legacy_get_audience_v2(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2024_01.ApiException as e:
         print("Exception when calling AudienceApi->legacy_get_audience_v2: %s\n" % e)
@@ -296,8 +296,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **int**| ID of the account to which this audience belongs. |
  **limit_to_id** | **[int]**| Limits results to the entity IDs specified; parameter key is repeated, eg. limitToId&#x3D;1&amp;limitToId&#x3D;2 | [optional]
- **page_size** | **int**| Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. | [optional]
  **page_index** | **int**| Returns the specified page of results given a pageSize; pages are 0-indexed. | [optional]
+ **page_size** | **int**| Specifies the maximum number of entities returned in a single page; defaults to 25 entities per page. | [optional]
 
 ### Return type
 
@@ -374,30 +374,30 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     rm_legacy_audience_create_input_entity_v2 = RmLegacyAudienceCreateInputEntityV2(
         data=RmLegacyAudienceCreateEntityV2Resource(
             attributes=RmLegacyAudienceCreateEntityV2(
+                name="name_example",
                 retailer_id=1,
                 user_behavior_details=RmLegacyAudienceUserBehaviorCreateV2(
-                    inclusive_segment=RmLegacySegmentUserBehaviorCreateV2(
-                        user_action="buy",
-                        lookback_window="P7D",
-                        category_ids=[
-                            1,
-                        ],
-                        brand_ids=[
-                            1,
-                        ],
-                    ),
                     exclusive_segment=RmLegacySegmentUserBehaviorCreateV2(
-                        user_action="buy",
-                        lookback_window="P7D",
-                        category_ids=[
-                            1,
-                        ],
                         brand_ids=[
                             1,
                         ],
+                        category_ids=[
+                            1,
+                        ],
+                        lookback_window="P7D",
+                        user_action="buy",
+                    ),
+                    inclusive_segment=RmLegacySegmentUserBehaviorCreateV2(
+                        brand_ids=[
+                            1,
+                        ],
+                        category_ids=[
+                            1,
+                        ],
+                        lookback_window="P7D",
+                        user_action="buy",
                     ),
                 ),
-                name="name_example",
             ),
             id="id_example",
             type="type_example",

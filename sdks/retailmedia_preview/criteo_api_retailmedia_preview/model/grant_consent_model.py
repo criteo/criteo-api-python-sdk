@@ -81,8 +81,8 @@ class GrantConsentModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'client_id': (str,),  # noqa: E501
             'callback_url': (str,),  # noqa: E501
+            'client_id': (str,),  # noqa: E501
             'callback_state': (str,),  # noqa: E501
         }
 
@@ -92,8 +92,8 @@ class GrantConsentModel(ModelNormal):
 
 
     attribute_map = {
-        'client_id': 'clientId',  # noqa: E501
         'callback_url': 'callbackUrl',  # noqa: E501
+        'client_id': 'clientId',  # noqa: E501
         'callback_state': 'callbackState',  # noqa: E501
     }
 
@@ -104,12 +104,12 @@ class GrantConsentModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, client_id, callback_url, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, callback_url, client_id, *args, **kwargs):  # noqa: E501
         """GrantConsentModel - a model defined in OpenAPI
 
         Args:
-            client_id (str):
             callback_url (str):
+            client_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -174,8 +174,8 @@ class GrantConsentModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.client_id = client_id
         self.callback_url = callback_url
+        self.client_id = client_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -196,12 +196,12 @@ class GrantConsentModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, client_id, callback_url, *args, **kwargs):  # noqa: E501
+    def __init__(self, callback_url, client_id, *args, **kwargs):  # noqa: E501
         """GrantConsentModel - a model defined in OpenAPI
 
         Args:
-            client_id (str):
             callback_url (str):
+            client_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -264,8 +264,8 @@ class GrantConsentModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.client_id = client_id
         self.callback_url = callback_url
+        self.client_id = client_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

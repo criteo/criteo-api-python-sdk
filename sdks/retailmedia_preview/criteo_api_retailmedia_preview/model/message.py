@@ -87,8 +87,8 @@ class Message(ModelNormal):
         """
         lazy_import()
         return {
-            'user_message': (str, none_type,),  # noqa: E501
             'bot_message': (BotMessage,),  # noqa: E501
+            'user_message': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class Message(ModelNormal):
 
 
     attribute_map = {
-        'user_message': 'userMessage',  # noqa: E501
         'bot_message': 'botMessage',  # noqa: E501
+        'user_message': 'userMessage',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,8 +142,8 @@ class Message(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_message (str, none_type): user prompt. [optional]  # noqa: E501
             bot_message (BotMessage): [optional]  # noqa: E501
+            user_message (str, none_type): user prompt. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,8 +229,8 @@ class Message(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_message (str, none_type): user prompt. [optional]  # noqa: E501
             bot_message (BotMessage): [optional]  # noqa: E501
+            user_message (str, none_type): user prompt. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -89,8 +89,8 @@ class PatchCampaign(ModelNormal):
         """
         lazy_import()
         return {
-            'spend_limit': (PatchCampaignSpendLimit,),  # noqa: E501
             'budget_automation': (PatchMarketingCampaignBudgetAutomation,),  # noqa: E501
+            'spend_limit': (PatchCampaignSpendLimit,),  # noqa: E501
         }
 
     @cached_property
@@ -99,8 +99,8 @@ class PatchCampaign(ModelNormal):
 
 
     attribute_map = {
-        'spend_limit': 'spendLimit',  # noqa: E501
         'budget_automation': 'budgetAutomation',  # noqa: E501
+        'spend_limit': 'spendLimit',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,8 +144,8 @@ class PatchCampaign(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
             budget_automation (PatchMarketingCampaignBudgetAutomation): [optional]  # noqa: E501
+            spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,8 +231,8 @@ class PatchCampaign(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
             budget_automation (PatchMarketingCampaignBudgetAutomation): [optional]  # noqa: E501
+            spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -94,9 +94,9 @@ class CreateCampaign(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
             'advertiser_id': (str, none_type,),  # noqa: E501
             'goal': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'spend_limit': (CreateCampaignSpendLimit,),  # noqa: E501
             'budget_automation': (BudgetAutomation,),  # noqa: E501
         }
@@ -107,9 +107,9 @@ class CreateCampaign(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
         'goal': 'goal',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
         'budget_automation': 'budgetAutomation',  # noqa: E501
     }
@@ -121,13 +121,13 @@ class CreateCampaign(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, advertiser_id, goal, spend_limit, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_id, goal, name, spend_limit, *args, **kwargs):  # noqa: E501
         """CreateCampaign - a model defined in OpenAPI
 
         Args:
-            name (str, none_type): Name of the campaign
             advertiser_id (str, none_type): Advertiser id this campaign belongs to
             goal (str): Goal for the marketing campaign
+            name (str, none_type): Name of the campaign
             spend_limit (CreateCampaignSpendLimit):
 
         Keyword Args:
@@ -193,9 +193,9 @@ class CreateCampaign(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.advertiser_id = advertiser_id
         self.goal = goal
+        self.name = name
         self.spend_limit = spend_limit
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -217,13 +217,13 @@ class CreateCampaign(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, advertiser_id, goal, spend_limit, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_id, goal, name, spend_limit, *args, **kwargs):  # noqa: E501
         """CreateCampaign - a model defined in OpenAPI
 
         Args:
-            name (str, none_type): Name of the campaign
             advertiser_id (str, none_type): Advertiser id this campaign belongs to
             goal (str): Goal for the marketing campaign
+            name (str, none_type): Name of the campaign
             spend_limit (CreateCampaignSpendLimit):
 
         Keyword Args:
@@ -287,9 +287,9 @@ class CreateCampaign(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.advertiser_id = advertiser_id
         self.goal = goal
+        self.name = name
         self.spend_limit = spend_limit
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

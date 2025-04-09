@@ -73,11 +73,11 @@ class InMarketUpdateV1(ModelNormal):
     }
 
     validations = {
+        ('brand_ids',): {
+        },
         ('buying_power',): {
         },
         ('interest_ids',): {
-        },
-        ('brand_ids',): {
         },
         ('price_range',): {
         },
@@ -106,11 +106,11 @@ class InMarketUpdateV1(ModelNormal):
         """
         lazy_import()
         return {
-            'country': (str,),  # noqa: E501
+            'brand_ids': ([str],),  # noqa: E501
             'buying_power': ([str],),  # noqa: E501
+            'country': (str,),  # noqa: E501
             'gender': (NillableGenderV1,),  # noqa: E501
             'interest_ids': ([str],),  # noqa: E501
-            'brand_ids': ([str],),  # noqa: E501
             'price_range': ([str],),  # noqa: E501
         }
 
@@ -120,11 +120,11 @@ class InMarketUpdateV1(ModelNormal):
 
 
     attribute_map = {
-        'country': 'country',  # noqa: E501
+        'brand_ids': 'brandIds',  # noqa: E501
         'buying_power': 'buyingPower',  # noqa: E501
+        'country': 'country',  # noqa: E501
         'gender': 'gender',  # noqa: E501
         'interest_ids': 'interestIds',  # noqa: E501
-        'brand_ids': 'brandIds',  # noqa: E501
         'price_range': 'priceRange',  # noqa: E501
     }
 
@@ -169,11 +169,11 @@ class InMarketUpdateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            country (str): Reach people of a specific country. [optional]  # noqa: E501
+            brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
             buying_power ([str]): Reach people who frequently purchase high price range items to lower price range items. [optional]  # noqa: E501
+            country (str): Reach people of a specific country. [optional]  # noqa: E501
             gender (NillableGenderV1): [optional]  # noqa: E501
             interest_ids ([str]): Reach new people based on their interests. [optional]  # noqa: E501
-            brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
             price_range ([str]): Reach people who’ve shown interest in products within a specific price range. [optional]  # noqa: E501
         """
 
@@ -260,11 +260,11 @@ class InMarketUpdateV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            country (str): Reach people of a specific country. [optional]  # noqa: E501
+            brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
             buying_power ([str]): Reach people who frequently purchase high price range items to lower price range items. [optional]  # noqa: E501
+            country (str): Reach people of a specific country. [optional]  # noqa: E501
             gender (NillableGenderV1): [optional]  # noqa: E501
             interest_ids ([str]): Reach new people based on their interests. [optional]  # noqa: E501
-            brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
             price_range ([str]): Reach people who’ve shown interest in products within a specific price range. [optional]  # noqa: E501
         """
 

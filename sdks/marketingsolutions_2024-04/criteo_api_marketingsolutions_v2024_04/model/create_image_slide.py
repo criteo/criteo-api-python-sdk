@@ -81,9 +81,9 @@ class CreateImageSlide(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'width': (int,),  # noqa: E501
             'height': (int,),  # noqa: E501
             'slide_base64_strings': ([str], none_type,),  # noqa: E501
+            'width': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -92,9 +92,9 @@ class CreateImageSlide(ModelNormal):
 
 
     attribute_map = {
-        'width': 'width',  # noqa: E501
         'height': 'height',  # noqa: E501
         'slide_base64_strings': 'slideBase64Strings',  # noqa: E501
+        'width': 'width',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,9 +138,9 @@ class CreateImageSlide(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            width (int): Width of the Coupon slide. [optional]  # noqa: E501
             height (int): Height of the Coupon slide. [optional]  # noqa: E501
             slide_base64_strings ([str], none_type): Array of images of the same size as a base-64 encoded string. [optional]  # noqa: E501
+            width (int): Width of the Coupon slide. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,9 +226,9 @@ class CreateImageSlide(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            width (int): Width of the Coupon slide. [optional]  # noqa: E501
             height (int): Height of the Coupon slide. [optional]  # noqa: E501
             slide_base64_strings ([str], none_type): Array of images of the same size as a base-64 encoded string. [optional]  # noqa: E501
+            width (int): Width of the Coupon slide. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

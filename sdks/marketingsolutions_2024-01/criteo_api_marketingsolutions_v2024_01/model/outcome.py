@@ -80,8 +80,8 @@ class Outcome(ModelNormal):
         """
         lazy_import()
         return {
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
             'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -90,13 +90,13 @@ class Outcome(ModelNormal):
 
 
     attribute_map = {
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -137,8 +137,8 @@ class Outcome(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            warnings ([CommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
             errors ([CommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,8 +224,8 @@ class Outcome(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            warnings ([CommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
             errors ([CommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

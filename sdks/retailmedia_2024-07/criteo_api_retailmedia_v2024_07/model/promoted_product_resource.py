@@ -80,9 +80,9 @@ class PromotedProductResource(ModelNormal):
         """
         lazy_import()
         return {
+            'attributes': (PromotedProduct,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'attributes': (PromotedProduct,),  # noqa: E501
         }
 
     @cached_property
@@ -91,9 +91,9 @@ class PromotedProductResource(ModelNormal):
 
 
     attribute_map = {
+        'attributes': 'attributes',  # noqa: E501
         'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -137,9 +137,9 @@ class PromotedProductResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (PromotedProduct): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes (PromotedProduct): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,9 +225,9 @@ class PromotedProductResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (PromotedProduct): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes (PromotedProduct): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

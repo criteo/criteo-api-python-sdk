@@ -5,8 +5,8 @@ A wrapper class to return a single page of <typeparamref name=\"T\" /> with meta
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**PageMetadata**](PageMetadata.md) |  | 
 **data** | [**[JsonApiBodyWithIdOfInt64AndAccountAndAccount]**](JsonApiBodyWithIdOfInt64AndAccountAndAccount.md) |  | 
+**metadata** | [**PageMetadata**](PageMetadata.md) |  | 
 **errors** | [**[CommonError], none_type**](CommonError.md) |  | [optional] 
 **warnings** | [**[CommonWarning], none_type**](CommonWarning.md) |  | [optional] 
 

@@ -91,8 +91,8 @@ class RmLegacyAudienceGetEntityV1(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
-            'user_behavior_details': (RmLegacySegmentUserBehaviorV1,),  # noqa: E501
             'customer_list_details': (RmLegacySegmentCustomerList,),  # noqa: E501
+            'user_behavior_details': (RmLegacySegmentUserBehaviorV1,),  # noqa: E501
         }
 
     @cached_property
@@ -103,8 +103,8 @@ class RmLegacyAudienceGetEntityV1(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
-        'user_behavior_details': 'userBehaviorDetails',  # noqa: E501
         'customer_list_details': 'customerListDetails',  # noqa: E501
+        'user_behavior_details': 'userBehaviorDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,8 +152,8 @@ class RmLegacyAudienceGetEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_behavior_details (RmLegacySegmentUserBehaviorV1): [optional]  # noqa: E501
             customer_list_details (RmLegacySegmentCustomerList): [optional]  # noqa: E501
+            user_behavior_details (RmLegacySegmentUserBehaviorV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,8 +245,8 @@ class RmLegacyAudienceGetEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            user_behavior_details (RmLegacySegmentUserBehaviorV1): [optional]  # noqa: E501
             customer_list_details (RmLegacySegmentCustomerList): [optional]  # noqa: E501
+            user_behavior_details (RmLegacySegmentUserBehaviorV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

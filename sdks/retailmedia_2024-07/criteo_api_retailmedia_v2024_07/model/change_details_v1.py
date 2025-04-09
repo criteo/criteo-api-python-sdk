@@ -75,9 +75,9 @@ class ChangeDetailsV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'previous_value': (str, none_type,),  # noqa: E501
-            'current_value': (str, none_type,),  # noqa: E501
             'change_value': (str, none_type,),  # noqa: E501
+            'current_value': (str, none_type,),  # noqa: E501
+            'previous_value': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -86,9 +86,9 @@ class ChangeDetailsV1(ModelNormal):
 
 
     attribute_map = {
-        'previous_value': 'previousValue',  # noqa: E501
-        'current_value': 'currentValue',  # noqa: E501
         'change_value': 'changeValue',  # noqa: E501
+        'current_value': 'currentValue',  # noqa: E501
+        'previous_value': 'previousValue',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,9 +132,9 @@ class ChangeDetailsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
-            current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
             change_value (str, none_type): Change detail of a property of the insertion order.. [optional]  # noqa: E501
+            current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
+            previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,9 +220,9 @@ class ChangeDetailsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
-            current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
             change_value (str, none_type): Change detail of a property of the insertion order.. [optional]  # noqa: E501
+            current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
+            previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

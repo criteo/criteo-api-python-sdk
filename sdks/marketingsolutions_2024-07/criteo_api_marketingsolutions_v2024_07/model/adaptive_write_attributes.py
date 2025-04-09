@@ -74,10 +74,10 @@ class AdaptiveWriteAttributes(ModelNormal):
     }
 
     validations = {
-        ('layouts',): {
+        ('calls_to_action',): {
             'min_items': 1,
         },
-        ('calls_to_action',): {
+        ('layouts',): {
             'min_items': 1,
         },
     }
@@ -105,17 +105,17 @@ class AdaptiveWriteAttributes(ModelNormal):
         """
         lazy_import()
         return {
-            'layouts': ([str],),  # noqa: E501
-            'logo_base64_string': (str,),  # noqa: E501
-            'headline_text': (str,),  # noqa: E501
-            'headline_font': (str,),  # noqa: E501
-            'description_text': (str,),  # noqa: E501
-            'description_font': (str,),  # noqa: E501
             'calls_to_action': ([str],),  # noqa: E501
             'colors': (AdaptiveColors,),  # noqa: E501
+            'description_font': (str,),  # noqa: E501
+            'description_text': (str,),  # noqa: E501
+            'headline_font': (str,),  # noqa: E501
+            'headline_text': (str,),  # noqa: E501
             'landing_page_url': (str,),  # noqa: E501
-            'image_sets_base64': ([ImageSetBase64], none_type,),  # noqa: E501
+            'layouts': ([str],),  # noqa: E501
+            'logo_base64_string': (str,),  # noqa: E501
             'image_display': (str, none_type,),  # noqa: E501
+            'image_sets_base64': ([ImageSetBase64], none_type,),  # noqa: E501
             'video_base64_strings': ([str], none_type,),  # noqa: E501
         }
 
@@ -125,17 +125,17 @@ class AdaptiveWriteAttributes(ModelNormal):
 
 
     attribute_map = {
-        'layouts': 'layouts',  # noqa: E501
-        'logo_base64_string': 'logoBase64String',  # noqa: E501
-        'headline_text': 'headlineText',  # noqa: E501
-        'headline_font': 'headlineFont',  # noqa: E501
-        'description_text': 'descriptionText',  # noqa: E501
-        'description_font': 'descriptionFont',  # noqa: E501
         'calls_to_action': 'callsToAction',  # noqa: E501
         'colors': 'colors',  # noqa: E501
+        'description_font': 'descriptionFont',  # noqa: E501
+        'description_text': 'descriptionText',  # noqa: E501
+        'headline_font': 'headlineFont',  # noqa: E501
+        'headline_text': 'headlineText',  # noqa: E501
         'landing_page_url': 'landingPageUrl',  # noqa: E501
-        'image_sets_base64': 'imageSetsBase64',  # noqa: E501
+        'layouts': 'layouts',  # noqa: E501
+        'logo_base64_string': 'logoBase64String',  # noqa: E501
         'image_display': 'imageDisplay',  # noqa: E501
+        'image_sets_base64': 'imageSetsBase64',  # noqa: E501
         'video_base64_strings': 'videoBase64Strings',  # noqa: E501
     }
 
@@ -146,19 +146,19 @@ class AdaptiveWriteAttributes(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, layouts, logo_base64_string, headline_text, headline_font, description_text, description_font, calls_to_action, colors, landing_page_url, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, calls_to_action, colors, description_font, description_text, headline_font, headline_text, landing_page_url, layouts, logo_base64_string, *args, **kwargs):  # noqa: E501
         """AdaptiveWriteAttributes - a model defined in OpenAPI
 
         Args:
-            layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
-            logo_base64_string (str): Logo image as a base-64 encoded string
-            headline_text (str): The headline text of the banner
-            headline_font (str): Font of the headline  Valid supported font like \"Arial\"
-            description_text (str): The description text of the banner
-            description_font (str): Font of the description  Valid supported font like \"Arial\"
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
             colors (AdaptiveColors):
+            description_font (str): Font of the description  Valid supported font like \"Arial\"
+            description_text (str): The description text of the banner
+            headline_font (str): Font of the headline  Valid supported font like \"Arial\"
+            headline_text (str): The headline text of the banner
             landing_page_url (str): Web redirection of the landing page url.
+            layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
+            logo_base64_string (str): Logo image as a base-64 encoded string
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -191,8 +191,8 @@ class AdaptiveWriteAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            image_sets_base64 ([ImageSetBase64], none_type): Multiple image sets, each image set consists of multiple images as a base-64 encoded string and a headline text.. [optional]  # noqa: E501
             image_display (str, none_type): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your image set should fit inside the allocated  space (\"ShowFullImage\") or whether it should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
+            image_sets_base64 ([ImageSetBase64], none_type): Multiple image sets, each image set consists of multiple images as a base-64 encoded string and a headline text.. [optional]  # noqa: E501
             video_base64_strings ([str], none_type): Multiple videos potentially in different shapes, each video is a base-64 encoded string.. [optional]  # noqa: E501
         """
 
@@ -225,15 +225,15 @@ class AdaptiveWriteAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.layouts = layouts
-        self.logo_base64_string = logo_base64_string
-        self.headline_text = headline_text
-        self.headline_font = headline_font
-        self.description_text = description_text
-        self.description_font = description_font
         self.calls_to_action = calls_to_action
         self.colors = colors
+        self.description_font = description_font
+        self.description_text = description_text
+        self.headline_font = headline_font
+        self.headline_text = headline_text
         self.landing_page_url = landing_page_url
+        self.layouts = layouts
+        self.logo_base64_string = logo_base64_string
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -254,19 +254,19 @@ class AdaptiveWriteAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, layouts, logo_base64_string, headline_text, headline_font, description_text, description_font, calls_to_action, colors, landing_page_url, *args, **kwargs):  # noqa: E501
+    def __init__(self, calls_to_action, colors, description_font, description_text, headline_font, headline_text, landing_page_url, layouts, logo_base64_string, *args, **kwargs):  # noqa: E501
         """AdaptiveWriteAttributes - a model defined in OpenAPI
 
         Args:
-            layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
-            logo_base64_string (str): Logo image as a base-64 encoded string
-            headline_text (str): The headline text of the banner
-            headline_font (str): Font of the headline  Valid supported font like \"Arial\"
-            description_text (str): The description text of the banner
-            description_font (str): Font of the description  Valid supported font like \"Arial\"
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
             colors (AdaptiveColors):
+            description_font (str): Font of the description  Valid supported font like \"Arial\"
+            description_text (str): The description text of the banner
+            headline_font (str): Font of the headline  Valid supported font like \"Arial\"
+            headline_text (str): The headline text of the banner
             landing_page_url (str): Web redirection of the landing page url.
+            layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
+            logo_base64_string (str): Logo image as a base-64 encoded string
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -299,8 +299,8 @@ class AdaptiveWriteAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            image_sets_base64 ([ImageSetBase64], none_type): Multiple image sets, each image set consists of multiple images as a base-64 encoded string and a headline text.. [optional]  # noqa: E501
             image_display (str, none_type): Value can be \"ShowFullImage\" or \"ZoomOnImage\". Choose whether your image set should fit inside the allocated  space (\"ShowFullImage\") or whether it should fill that space (\"ZoomOnImage\"). If you choose ZoomOnImage, there may be some  image cropping.. [optional]  # noqa: E501
+            image_sets_base64 ([ImageSetBase64], none_type): Multiple image sets, each image set consists of multiple images as a base-64 encoded string and a headline text.. [optional]  # noqa: E501
             video_base64_strings ([str], none_type): Multiple videos potentially in different shapes, each video is a base-64 encoded string.. [optional]  # noqa: E501
         """
 
@@ -331,15 +331,15 @@ class AdaptiveWriteAttributes(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.layouts = layouts
-        self.logo_base64_string = logo_base64_string
-        self.headline_text = headline_text
-        self.headline_font = headline_font
-        self.description_text = description_text
-        self.description_font = description_font
         self.calls_to_action = calls_to_action
         self.colors = colors
+        self.description_font = description_font
+        self.description_text = description_text
+        self.headline_font = headline_font
+        self.headline_text = headline_text
         self.landing_page_url = landing_page_url
+        self.layouts = layouts
+        self.logo_base64_string = logo_base64_string
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

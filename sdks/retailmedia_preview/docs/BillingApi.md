@@ -58,18 +58,18 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     api_instance = billing_api.BillingApi(api_client)
     value_resource_input_partner_billing_report_request_v1 = ValueResourceInputPartnerBillingReportRequestV1(
         data=ValueResourcePartnerBillingReportRequestV1(
-            type="type_example",
             attributes=PartnerBillingReportRequestV1(
                 account_ids=[
                     "account_ids_example",
                 ],
+                end_date=dateutil_parser('1970-01-01').date(),
+                format="json",
                 retailer_ids=[
                     1,
                 ],
                 start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                format="json",
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputPartnerBillingReportRequestV1 | Partner Billing Report request object. (optional)
 

@@ -55,27 +55,27 @@ class ExternalBalanceResponse(ModelNormal):
     """
 
     allowed_values = {
-        ('status',): {
-            'UNKNOWN': "unknown",
-            'SCHEDULED': "scheduled",
-            'ACTIVE': "active",
-            'ENDED': "ended",
-        },
         ('balance_type',): {
             'UNKNOWN': "unknown",
             'CAPPED': "capped",
             'UNCAPPED': "uncapped",
-        },
-        ('spend_type',): {
-            'ONSITE': "Onsite",
-            'OFFSITE': "Offsite",
-            'OFFSITEAWARENESS': "OffsiteAwareness",
         },
         ('private_market_billing_type',): {
             'NOTAPPLICABLE': "notApplicable",
             'BILLBYRETAILER': "billByRetailer",
             'BILLBYCRITEO': "billByCriteo",
             'UNKNOWN': "unknown",
+        },
+        ('spend_type',): {
+            'ONSITE': "Onsite",
+            'OFFSITE': "Offsite",
+            'OFFSITEAWARENESS': "OffsiteAwareness",
+        },
+        ('status',): {
+            'UNKNOWN': "unknown",
+            'SCHEDULED': "scheduled",
+            'ACTIVE': "active",
+            'ENDED': "ended",
         },
     }
 
@@ -103,21 +103,21 @@ class ExternalBalanceResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'balance_type': (str,),  # noqa: E501
+            'created_at': (datetime,),  # noqa: E501
+            'deposited': (float, none_type,),  # noqa: E501
+            'end_date': (date,),  # noqa: E501
+            'memo': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'po_number': (str,),  # noqa: E501
-            'memo': (str,),  # noqa: E501
-            'deposited': (float, none_type,),  # noqa: E501
-            'spent': (float, none_type,),  # noqa: E501
+            'private_market_billing_type': (str,),  # noqa: E501
             'remaining': (float, none_type,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
-            'status': (str,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
-            'balance_type': (str,),  # noqa: E501
             'sales_force_id': (str,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
-            'private_market_billing_type': (str,),  # noqa: E501
+            'spent': (float, none_type,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
+            'status': (str,),  # noqa: E501
+            'updated_at': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -126,21 +126,21 @@ class ExternalBalanceResponse(ModelNormal):
 
 
     attribute_map = {
+        'balance_type': 'balanceType',  # noqa: E501
+        'created_at': 'createdAt',  # noqa: E501
+        'deposited': 'deposited',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'memo': 'memo',  # noqa: E501
         'name': 'name',  # noqa: E501
         'po_number': 'poNumber',  # noqa: E501
-        'memo': 'memo',  # noqa: E501
-        'deposited': 'deposited',  # noqa: E501
-        'spent': 'spent',  # noqa: E501
+        'private_market_billing_type': 'privateMarketBillingType',  # noqa: E501
         'remaining': 'remaining',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'status': 'status',  # noqa: E501
-        'created_at': 'createdAt',  # noqa: E501
-        'updated_at': 'updatedAt',  # noqa: E501
-        'balance_type': 'balanceType',  # noqa: E501
         'sales_force_id': 'salesForceId',  # noqa: E501
         'spend_type': 'spendType',  # noqa: E501
-        'private_market_billing_type': 'privateMarketBillingType',  # noqa: E501
+        'spent': 'spent',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
+        'status': 'status',  # noqa: E501
+        'updated_at': 'updatedAt',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,25 +150,25 @@ class ExternalBalanceResponse(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, balance_type, sales_force_id, spend_type, private_market_billing_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, balance_type, created_at, deposited, end_date, memo, name, po_number, private_market_billing_type, remaining, sales_force_id, spend_type, spent, start_date, status, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalBalanceResponse - a model defined in OpenAPI
 
         Args:
+            balance_type (str): Type of the balance
+            created_at (datetime):
+            deposited (float, none_type): Amount of billable funds allotted to the balance.
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            memo (str): Memo
             name (str): Name of the balance.
             po_number (str): Purchase Order number.
-            memo (str): Memo
-            deposited (float, none_type): Amount of billable funds allotted to the balance.
-            spent (float, none_type):
+            private_market_billing_type (str): Billing type for Private Market.
             remaining (float, none_type):
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            status (str):
-            created_at (datetime):
-            updated_at (datetime):
-            balance_type (str): Type of the balance
             sales_force_id (str): SalesForceId the balance is linked to.
             spend_type (str): Spend Type of the balance.
-            private_market_billing_type (str): Billing type for Private Market.
+            spent (float, none_type):
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            status (str):
+            updated_at (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -232,21 +232,21 @@ class ExternalBalanceResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.balance_type = balance_type
+        self.created_at = created_at
+        self.deposited = deposited
+        self.end_date = end_date
+        self.memo = memo
         self.name = name
         self.po_number = po_number
-        self.memo = memo
-        self.deposited = deposited
-        self.spent = spent
+        self.private_market_billing_type = private_market_billing_type
         self.remaining = remaining
-        self.start_date = start_date
-        self.end_date = end_date
-        self.status = status
-        self.created_at = created_at
-        self.updated_at = updated_at
-        self.balance_type = balance_type
         self.sales_force_id = sales_force_id
         self.spend_type = spend_type
-        self.private_market_billing_type = private_market_billing_type
+        self.spent = spent
+        self.start_date = start_date
+        self.status = status
+        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -267,25 +267,25 @@ class ExternalBalanceResponse(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, po_number, memo, deposited, spent, remaining, start_date, end_date, status, created_at, updated_at, balance_type, sales_force_id, spend_type, private_market_billing_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, balance_type, created_at, deposited, end_date, memo, name, po_number, private_market_billing_type, remaining, sales_force_id, spend_type, spent, start_date, status, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalBalanceResponse - a model defined in OpenAPI
 
         Args:
+            balance_type (str): Type of the balance
+            created_at (datetime):
+            deposited (float, none_type): Amount of billable funds allotted to the balance.
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            memo (str): Memo
             name (str): Name of the balance.
             po_number (str): Purchase Order number.
-            memo (str): Memo
-            deposited (float, none_type): Amount of billable funds allotted to the balance.
-            spent (float, none_type):
+            private_market_billing_type (str): Billing type for Private Market.
             remaining (float, none_type):
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            status (str):
-            created_at (datetime):
-            updated_at (datetime):
-            balance_type (str): Type of the balance
             sales_force_id (str): SalesForceId the balance is linked to.
             spend_type (str): Spend Type of the balance.
-            private_market_billing_type (str): Billing type for Private Market.
+            spent (float, none_type):
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            status (str):
+            updated_at (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -347,21 +347,21 @@ class ExternalBalanceResponse(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.balance_type = balance_type
+        self.created_at = created_at
+        self.deposited = deposited
+        self.end_date = end_date
+        self.memo = memo
         self.name = name
         self.po_number = po_number
-        self.memo = memo
-        self.deposited = deposited
-        self.spent = spent
+        self.private_market_billing_type = private_market_billing_type
         self.remaining = remaining
-        self.start_date = start_date
-        self.end_date = end_date
-        self.status = status
-        self.created_at = created_at
-        self.updated_at = updated_at
-        self.balance_type = balance_type
         self.sales_force_id = sales_force_id
         self.spend_type = spend_type
-        self.private_market_billing_type = private_market_billing_type
+        self.spent = spent
+        self.start_date = start_date
+        self.status = status
+        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

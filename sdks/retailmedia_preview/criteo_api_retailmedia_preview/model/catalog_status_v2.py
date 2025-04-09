@@ -88,12 +88,12 @@ class CatalogStatusV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'status': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
-            'row_count': (int, none_type,),  # noqa: E501
+            'status': (str,),  # noqa: E501
             'file_size_bytes': (int, none_type,),  # noqa: E501
             'md5_checksum': (str, none_type,),  # noqa: E501
             'message': (str, none_type,),  # noqa: E501
+            'row_count': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -102,12 +102,12 @@ class CatalogStatusV2(ModelNormal):
 
 
     attribute_map = {
-        'status': 'status',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
-        'row_count': 'rowCount',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'file_size_bytes': 'fileSizeBytes',  # noqa: E501
         'md5_checksum': 'md5Checksum',  # noqa: E501
         'message': 'message',  # noqa: E501
+        'row_count': 'rowCount',  # noqa: E501
     }
 
     read_only_vars = {
@@ -117,12 +117,12 @@ class CatalogStatusV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, status, created_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, created_at, status, *args, **kwargs):  # noqa: E501
         """CatalogStatusV2 - a model defined in OpenAPI
 
         Args:
-            status (str): An enumeration of the status of the catalog.
             created_at (datetime): The time this catalog was created. Represented as a UTC ISO8601 string.
+            status (str): An enumeration of the status of the catalog.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -155,10 +155,10 @@ class CatalogStatusV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            row_count (int, none_type): An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status.. [optional]  # noqa: E501
             file_size_bytes (int, none_type): The size of this catalog in bytes. Available when this catalog reaches a success status.. [optional]  # noqa: E501
             md5_checksum (str, none_type): An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status.. [optional]  # noqa: E501
             message (str, none_type): An optional information message intended for developer consumption.. [optional]  # noqa: E501
+            row_count (int, none_type): An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -190,8 +190,8 @@ class CatalogStatusV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.status = status
         self.created_at = created_at
+        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -212,12 +212,12 @@ class CatalogStatusV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, status, created_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, created_at, status, *args, **kwargs):  # noqa: E501
         """CatalogStatusV2 - a model defined in OpenAPI
 
         Args:
-            status (str): An enumeration of the status of the catalog.
             created_at (datetime): The time this catalog was created. Represented as a UTC ISO8601 string.
+            status (str): An enumeration of the status of the catalog.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -250,10 +250,10 @@ class CatalogStatusV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            row_count (int, none_type): An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status.. [optional]  # noqa: E501
             file_size_bytes (int, none_type): The size of this catalog in bytes. Available when this catalog reaches a success status.. [optional]  # noqa: E501
             md5_checksum (str, none_type): An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status.. [optional]  # noqa: E501
             message (str, none_type): An optional information message intended for developer consumption.. [optional]  # noqa: E501
+            row_count (int, none_type): An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -283,8 +283,8 @@ class CatalogStatusV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.status = status
         self.created_at = created_at
+        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

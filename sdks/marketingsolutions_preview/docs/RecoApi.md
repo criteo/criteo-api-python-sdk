@@ -63,21 +63,21 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = reco_api.RecoApi(api_client)
     value_resource_input_of_create_product_set_request = ValueResourceInputOfCreateProductSetRequest(
         data=ValueResourceOfCreateProductSetRequest(
-            type="type_example",
             attributes=CreateProductSetRequest(
                 dataset_id="dataset_id_example",
-                name="name_example",
                 is_draft=True,
+                name="name_example",
                 rules=[
                     ProductSetRule(
-                        operator="IsIn",
                         field="OBSOLETE_Extradata",
+                        operator="IsIn",
                         values=[
                             "values_example",
                         ],
                     ),
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfCreateProductSetRequest |  (optional)
 
@@ -117,8 +117,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Product set created successfully |  -  |
 **400** | Unable to parse the request parameters |  -  |
-**422** | Cannot process entity content |  -  |
 **403** | Operation forbidden |  -  |
+**422** | Cannot process entity content |  -  |
 **500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -262,10 +262,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     ad_id = "ad-id_example" # str | ID of the ad
     value_resource_input_of_create_product_filter_request = ValueResourceInputOfCreateProductFilterRequest(
         data=ValueResourceOfCreateProductFilterRequest(
-            type="type_example",
             attributes=CreateProductFilterRequest(
                 product_set_id="product_set_id_example",
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfCreateProductFilterRequest |  (optional)
 

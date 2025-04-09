@@ -89,8 +89,8 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
-            'description': (str,),  # noqa: E501
             'contact_list': (RmContactListCreateV1,),  # noqa: E501
+            'description': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -101,8 +101,8 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
     attribute_map = {
         'name': 'name',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
-        'description': 'description',  # noqa: E501
         'contact_list': 'contactList',  # noqa: E501
+        'description': 'description',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,8 +150,8 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): Description of the segment. [optional]  # noqa: E501
             contact_list (RmContactListCreateV1): [optional]  # noqa: E501
+            description (str): Description of the segment. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,8 +243,8 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str): Description of the segment. [optional]  # noqa: E501
             contact_list (RmContactListCreateV1): [optional]  # noqa: E501
+            description (str): Description of the segment. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

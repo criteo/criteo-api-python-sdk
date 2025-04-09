@@ -55,11 +55,6 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
     """
 
     allowed_values = {
-        ('user_type',): {
-            'VIEWER': "viewer",
-            'BUYER': "buyer",
-            'ADDTOCARTER': "addToCarter",
-        },
         ('lookback_window',): {
             'P7D': "P7D",
             'P14D': "P14D",
@@ -70,6 +65,11 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
             'P120D': "P120D",
             'P150D': "P150D",
             'P180D': "P180D",
+        },
+        ('user_type',): {
+            'VIEWER': "viewer",
+            'BUYER': "buyer",
+            'ADDTOCARTER': "addToCarter",
         },
     }
 
@@ -101,10 +101,10 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'user_type': (str,),  # noqa: E501
             'lookback_window': (str,),  # noqa: E501
-            'retailer_id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
+            'retailer_id': (int,),  # noqa: E501
+            'user_type': (str,),  # noqa: E501
             'brand_ids': ([int], none_type,),  # noqa: E501
             'category_ids': ([int], none_type,),  # noqa: E501
         }
@@ -115,10 +115,10 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
 
 
     attribute_map = {
-        'user_type': 'userType',  # noqa: E501
         'lookback_window': 'lookbackWindow',  # noqa: E501
-        'retailer_id': 'retailerId',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
+        'user_type': 'userType',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
         'category_ids': 'categoryIds',  # noqa: E501
     }
@@ -130,14 +130,14 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_type, lookback_window, retailer_id, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, lookback_window, name, retailer_id, user_type, *args, **kwargs):  # noqa: E501
         """RmLegacyAudienceCreateEntityV1 - a model defined in OpenAPI
 
         Args:
-            user_type (str): Type of the user
             lookback_window (str): Length of lookback window
-            retailer_id (int): ID of the retailer associated with this audience
             name (str): Name of the audience
+            retailer_id (int): ID of the retailer associated with this audience
+            user_type (str): Type of the user
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -203,10 +203,10 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_type = user_type
         self.lookback_window = lookback_window
-        self.retailer_id = retailer_id
         self.name = name
+        self.retailer_id = retailer_id
+        self.user_type = user_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -227,14 +227,14 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_type, lookback_window, retailer_id, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, lookback_window, name, retailer_id, user_type, *args, **kwargs):  # noqa: E501
         """RmLegacyAudienceCreateEntityV1 - a model defined in OpenAPI
 
         Args:
-            user_type (str): Type of the user
             lookback_window (str): Length of lookback window
-            retailer_id (int): ID of the retailer associated with this audience
             name (str): Name of the audience
+            retailer_id (int): ID of the retailer associated with this audience
+            user_type (str): Type of the user
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -298,10 +298,10 @@ class RmLegacyAudienceCreateEntityV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_type = user_type
         self.lookback_window = lookback_window
-        self.retailer_id = retailer_id
         self.name = name
+        self.retailer_id = retailer_id
+        self.user_type = user_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

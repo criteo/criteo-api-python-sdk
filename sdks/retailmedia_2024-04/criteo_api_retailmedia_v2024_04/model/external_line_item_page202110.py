@@ -98,7 +98,7 @@ class ExternalLineItemPage202110(ModelNormal):
         lazy_import()
         return {
             'page_type': (str,),  # noqa: E501
-            'categories': ([ExternalLineItemPageCategory202110],),  # noqa: E501
+            'categories': ([ExternalLineItemPageCategory202110], none_type,),  # noqa: E501
             'search_keywords': ([str],),  # noqa: E501
         }
 
@@ -157,7 +157,7 @@ class ExternalLineItemPage202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            categories ([ExternalLineItemPageCategory202110]): [optional]  # noqa: E501
+            categories ([ExternalLineItemPageCategory202110], none_type): [optional]  # noqa: E501
             search_keywords ([str]): [optional]  # noqa: E501
         """
 
@@ -248,7 +248,7 @@ class ExternalLineItemPage202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            categories ([ExternalLineItemPageCategory202110]): [optional]  # noqa: E501
+            categories ([ExternalLineItemPageCategory202110], none_type): [optional]  # noqa: E501
             search_keywords ([str]): [optional]  # noqa: E501
         """
 

@@ -5,8 +5,8 @@ Available filters to perform a search on audience segments. If present, the filt
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**audience_segment_ids** | **[str]** | List of segment ids | [optional] 
 **advertiser_ids** | **[str]** | List of advertiser ids | [optional] 
+**audience_segment_ids** | **[str]** | List of segment ids | [optional] 
 **audience_segment_types** | **[str]** | List of segment types | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

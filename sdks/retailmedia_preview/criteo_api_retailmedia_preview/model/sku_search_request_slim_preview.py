@@ -81,8 +81,8 @@ class SkuSearchRequestSlimPreview(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'search_string': (str,),  # noqa: E501
             'limit_results_to_skus_with_brand_ids': ([str],),  # noqa: E501
+            'search_string': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -91,8 +91,8 @@ class SkuSearchRequestSlimPreview(ModelNormal):
 
 
     attribute_map = {
-        'search_string': 'searchString',  # noqa: E501
         'limit_results_to_skus_with_brand_ids': 'limitResultsToSkusWithBrandIds',  # noqa: E501
+        'search_string': 'searchString',  # noqa: E501
     }
 
     read_only_vars = {
@@ -102,12 +102,12 @@ class SkuSearchRequestSlimPreview(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, search_string, limit_results_to_skus_with_brand_ids, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, limit_results_to_skus_with_brand_ids, search_string, *args, **kwargs):  # noqa: E501
         """SkuSearchRequestSlimPreview - a model defined in OpenAPI
 
         Args:
-            search_string (str): Query string to search for across SKU's properties (gtin, mpn, feed ID, Title, and Description)
             limit_results_to_skus_with_brand_ids ([str]): A list of brand Id's to limit the search results to
+            search_string (str): Query string to search for across SKU's properties (gtin, mpn, feed ID, Title, and Description)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,8 +171,8 @@ class SkuSearchRequestSlimPreview(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.search_string = search_string
         self.limit_results_to_skus_with_brand_ids = limit_results_to_skus_with_brand_ids
+        self.search_string = search_string
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -193,12 +193,12 @@ class SkuSearchRequestSlimPreview(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, search_string, limit_results_to_skus_with_brand_ids, *args, **kwargs):  # noqa: E501
+    def __init__(self, limit_results_to_skus_with_brand_ids, search_string, *args, **kwargs):  # noqa: E501
         """SkuSearchRequestSlimPreview - a model defined in OpenAPI
 
         Args:
-            search_string (str): Query string to search for across SKU's properties (gtin, mpn, feed ID, Title, and Description)
             limit_results_to_skus_with_brand_ids ([str]): A list of brand Id's to limit the search results to
+            search_string (str): Query string to search for across SKU's properties (gtin, mpn, feed ID, Title, and Description)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -260,8 +260,8 @@ class SkuSearchRequestSlimPreview(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.search_string = search_string
         self.limit_results_to_skus_with_brand_ids = limit_results_to_skus_with_brand_ids
+        self.search_string = search_string
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

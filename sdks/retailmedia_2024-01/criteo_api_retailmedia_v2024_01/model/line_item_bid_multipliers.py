@@ -81,14 +81,14 @@ class LineItemBidMultipliers(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'search': (float,),  # noqa: E501
-            'homepage': (float,),  # noqa: E501
             'categories': (float,),  # noqa: E501
-            'product_detail': (float,),  # noqa: E501
-            'confirmation': (float,),  # noqa: E501
-            'merchandising': (float,),  # noqa: E501
-            'deals': (float,),  # noqa: E501
             'checkout': (float,),  # noqa: E501
+            'confirmation': (float,),  # noqa: E501
+            'deals': (float,),  # noqa: E501
+            'homepage': (float,),  # noqa: E501
+            'merchandising': (float,),  # noqa: E501
+            'product_detail': (float,),  # noqa: E501
+            'search': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -97,14 +97,14 @@ class LineItemBidMultipliers(ModelNormal):
 
 
     attribute_map = {
-        'search': 'search',  # noqa: E501
-        'homepage': 'homepage',  # noqa: E501
         'categories': 'categories',  # noqa: E501
-        'product_detail': 'productDetail',  # noqa: E501
-        'confirmation': 'confirmation',  # noqa: E501
-        'merchandising': 'merchandising',  # noqa: E501
-        'deals': 'deals',  # noqa: E501
         'checkout': 'checkout',  # noqa: E501
+        'confirmation': 'confirmation',  # noqa: E501
+        'deals': 'deals',  # noqa: E501
+        'homepage': 'homepage',  # noqa: E501
+        'merchandising': 'merchandising',  # noqa: E501
+        'product_detail': 'productDetail',  # noqa: E501
+        'search': 'search',  # noqa: E501
     }
 
     read_only_vars = {
@@ -148,14 +148,14 @@ class LineItemBidMultipliers(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            search (float): [optional]  # noqa: E501
-            homepage (float): [optional]  # noqa: E501
             categories (float): [optional]  # noqa: E501
-            product_detail (float): [optional]  # noqa: E501
-            confirmation (float): [optional]  # noqa: E501
-            merchandising (float): [optional]  # noqa: E501
-            deals (float): [optional]  # noqa: E501
             checkout (float): [optional]  # noqa: E501
+            confirmation (float): [optional]  # noqa: E501
+            deals (float): [optional]  # noqa: E501
+            homepage (float): [optional]  # noqa: E501
+            merchandising (float): [optional]  # noqa: E501
+            product_detail (float): [optional]  # noqa: E501
+            search (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,14 +241,14 @@ class LineItemBidMultipliers(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            search (float): [optional]  # noqa: E501
-            homepage (float): [optional]  # noqa: E501
             categories (float): [optional]  # noqa: E501
-            product_detail (float): [optional]  # noqa: E501
-            confirmation (float): [optional]  # noqa: E501
-            merchandising (float): [optional]  # noqa: E501
-            deals (float): [optional]  # noqa: E501
             checkout (float): [optional]  # noqa: E501
+            confirmation (float): [optional]  # noqa: E501
+            deals (float): [optional]  # noqa: E501
+            homepage (float): [optional]  # noqa: E501
+            merchandising (float): [optional]  # noqa: E501
+            product_detail (float): [optional]  # noqa: E501
+            search (float): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

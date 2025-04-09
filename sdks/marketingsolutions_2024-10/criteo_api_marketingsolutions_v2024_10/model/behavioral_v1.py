@@ -90,8 +90,8 @@ class BehavioralV1(ModelNormal):
         return {
             'category': (str,),  # noqa: E501
             'country': (str, none_type,),  # noqa: E501
-            'start_date': (datetime, none_type,),  # noqa: E501
             'end_date': (datetime, none_type,),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -102,8 +102,8 @@ class BehavioralV1(ModelNormal):
     attribute_map = {
         'category': 'category',  # noqa: E501
         'country': 'country',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,8 +151,8 @@ class BehavioralV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             country (str, none_type): The users' country. [optional]  # noqa: E501
-            start_date (datetime, none_type): Desired date when the behavioral will start. [optional]  # noqa: E501
             end_date (datetime, none_type): Desired date when the behavioral will end. [optional]  # noqa: E501
+            start_date (datetime, none_type): Desired date when the behavioral will start. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,8 +243,8 @@ class BehavioralV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             country (str, none_type): The users' country. [optional]  # noqa: E501
-            start_date (datetime, none_type): Desired date when the behavioral will start. [optional]  # noqa: E501
             end_date (datetime, none_type): Desired date when the behavioral will end. [optional]  # noqa: E501
+            start_date (datetime, none_type): Desired date when the behavioral will start. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

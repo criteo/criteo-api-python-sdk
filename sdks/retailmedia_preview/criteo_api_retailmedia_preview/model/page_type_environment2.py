@@ -55,6 +55,16 @@ class PageTypeEnvironment2(ModelNormal):
     """
 
     allowed_values = {
+        ('environments',): {
+            'None': None,
+            'WEB': "Web",
+            'MOBILE': "Mobile",
+            'APP': "App",
+            'LOCKOUT': "Lockout",
+            'MIXED': "Mixed",
+            'IOS': "iOS",
+            'ANDROID': "Android",
+        },
         ('page_type',): {
             'None': None,
             'UNKNOWN': "Unknown",
@@ -70,16 +80,6 @@ class PageTypeEnvironment2(ModelNormal):
             'FAVORITES': "Favorites",
             'SEARCHBAR': "SearchBar",
             'CATEGORYMENU': "CategoryMenu",
-        },
-        ('environments',): {
-            'None': None,
-            'WEB': "Web",
-            'MOBILE': "Mobile",
-            'APP': "App",
-            'LOCKOUT': "Lockout",
-            'MIXED': "Mixed",
-            'IOS': "iOS",
-            'ANDROID': "Android",
         },
     }
 
@@ -101,8 +101,8 @@ class PageTypeEnvironment2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'page_type': (str, none_type,),  # noqa: E501
             'environments': ([str], none_type,),  # noqa: E501
+            'page_type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -111,8 +111,8 @@ class PageTypeEnvironment2(ModelNormal):
 
 
     attribute_map = {
-        'page_type': 'pageType',  # noqa: E501
         'environments': 'environments',  # noqa: E501
+        'page_type': 'pageType',  # noqa: E501
     }
 
     read_only_vars = {
@@ -156,8 +156,8 @@ class PageTypeEnvironment2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            page_type (str, none_type): Creative PageType. [optional]  # noqa: E501
             environments ([str], none_type): List of environments per PageType. [optional]  # noqa: E501
+            page_type (str, none_type): Creative PageType. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,8 +243,8 @@ class PageTypeEnvironment2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            page_type (str, none_type): Creative PageType. [optional]  # noqa: E501
             environments ([str], none_type): List of environments per PageType. [optional]  # noqa: E501
+            page_type (str, none_type): Creative PageType. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

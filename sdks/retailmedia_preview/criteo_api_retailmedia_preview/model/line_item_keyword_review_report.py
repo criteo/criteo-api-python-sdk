@@ -75,15 +75,15 @@ class LineItemKeywordReviewReport(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'account_id': (str,),  # noqa: E501
+            'account_name': (str,),  # noqa: E501
+            'campaign_id': (str,),  # noqa: E501
+            'campaign_name': (str,),  # noqa: E501
+            'count_keywords': (int,),  # noqa: E501
             'line_item_id': (str,),  # noqa: E501
             'line_item_name': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
             'retailer_name': (str,),  # noqa: E501
-            'campaign_id': (str,),  # noqa: E501
-            'campaign_name': (str,),  # noqa: E501
-            'account_id': (str,),  # noqa: E501
-            'account_name': (str,),  # noqa: E501
-            'count_keywords': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -92,15 +92,15 @@ class LineItemKeywordReviewReport(ModelNormal):
 
 
     attribute_map = {
+        'account_id': 'accountId',  # noqa: E501
+        'account_name': 'accountName',  # noqa: E501
+        'campaign_id': 'campaignId',  # noqa: E501
+        'campaign_name': 'campaignName',  # noqa: E501
+        'count_keywords': 'countKeywords',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
         'line_item_name': 'lineItemName',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'retailer_name': 'retailerName',  # noqa: E501
-        'campaign_id': 'campaignId',  # noqa: E501
-        'campaign_name': 'campaignName',  # noqa: E501
-        'account_id': 'accountId',  # noqa: E501
-        'account_name': 'accountName',  # noqa: E501
-        'count_keywords': 'countKeywords',  # noqa: E501
     }
 
     read_only_vars = {
@@ -110,19 +110,19 @@ class LineItemKeywordReviewReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, line_item_id, line_item_name, retailer_id, retailer_name, campaign_id, campaign_name, account_id, account_name, count_keywords, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_id, account_name, campaign_id, campaign_name, count_keywords, line_item_id, line_item_name, retailer_id, retailer_name, *args, **kwargs):  # noqa: E501
         """LineItemKeywordReviewReport - a model defined in OpenAPI
 
         Args:
+            account_id (str): External ID of the account containing the campaign containing the line item this report is for
+            account_name (str): Name of the account containing the campaign containing the line item this report is for
+            campaign_id (str): External ID of the campaign containing the line item this report is for
+            campaign_name (str): Name of the campaign containing the line item this report is for
+            count_keywords (int): Number of PositiveExactMatch keywords on this line item that are in either \"InReview\" or \"Pending\" state
             line_item_id (str): External ID of the line item that this report is for
             line_item_name (str): Name of the line item that this report is for
             retailer_id (str): Retailer ID connected to the line item this report is for
             retailer_name (str): Name of the retailer connected to the line item this report is for
-            campaign_id (str): External ID of the campaign containing the line item this report is for
-            campaign_name (str): Name of the campaign containing the line item this report is for
-            account_id (str): External ID of the account containing the campaign containing the line item this report is for
-            account_name (str): Name of the account containing the campaign containing the line item this report is for
-            count_keywords (int): Number of PositiveExactMatch keywords on this line item that are in either \"InReview\" or \"Pending\" state
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -186,15 +186,15 @@ class LineItemKeywordReviewReport(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.account_id = account_id
+        self.account_name = account_name
+        self.campaign_id = campaign_id
+        self.campaign_name = campaign_name
+        self.count_keywords = count_keywords
         self.line_item_id = line_item_id
         self.line_item_name = line_item_name
         self.retailer_id = retailer_id
         self.retailer_name = retailer_name
-        self.campaign_id = campaign_id
-        self.campaign_name = campaign_name
-        self.account_id = account_id
-        self.account_name = account_name
-        self.count_keywords = count_keywords
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -215,19 +215,19 @@ class LineItemKeywordReviewReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, line_item_id, line_item_name, retailer_id, retailer_name, campaign_id, campaign_name, account_id, account_name, count_keywords, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_id, account_name, campaign_id, campaign_name, count_keywords, line_item_id, line_item_name, retailer_id, retailer_name, *args, **kwargs):  # noqa: E501
         """LineItemKeywordReviewReport - a model defined in OpenAPI
 
         Args:
+            account_id (str): External ID of the account containing the campaign containing the line item this report is for
+            account_name (str): Name of the account containing the campaign containing the line item this report is for
+            campaign_id (str): External ID of the campaign containing the line item this report is for
+            campaign_name (str): Name of the campaign containing the line item this report is for
+            count_keywords (int): Number of PositiveExactMatch keywords on this line item that are in either \"InReview\" or \"Pending\" state
             line_item_id (str): External ID of the line item that this report is for
             line_item_name (str): Name of the line item that this report is for
             retailer_id (str): Retailer ID connected to the line item this report is for
             retailer_name (str): Name of the retailer connected to the line item this report is for
-            campaign_id (str): External ID of the campaign containing the line item this report is for
-            campaign_name (str): Name of the campaign containing the line item this report is for
-            account_id (str): External ID of the account containing the campaign containing the line item this report is for
-            account_name (str): Name of the account containing the campaign containing the line item this report is for
-            count_keywords (int): Number of PositiveExactMatch keywords on this line item that are in either \"InReview\" or \"Pending\" state
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -289,15 +289,15 @@ class LineItemKeywordReviewReport(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.account_id = account_id
+        self.account_name = account_name
+        self.campaign_id = campaign_id
+        self.campaign_name = campaign_name
+        self.count_keywords = count_keywords
         self.line_item_id = line_item_id
         self.line_item_name = line_item_name
         self.retailer_id = retailer_id
         self.retailer_name = retailer_name
-        self.campaign_id = campaign_id
-        self.campaign_name = campaign_name
-        self.account_id = account_id
-        self.account_name = account_name
-        self.count_keywords = count_keywords
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

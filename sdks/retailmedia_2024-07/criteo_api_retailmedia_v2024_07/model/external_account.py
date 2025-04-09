@@ -94,15 +94,15 @@ class ExternalAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
             'countries': ([str],),  # noqa: E501
             'currency': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'parent_account_label': (str,),  # noqa: E501
             'time_zone': (str,),  # noqa: E501
-            'subtype': (str, none_type,),  # noqa: E501
+            'type': (str,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'subtype': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -111,15 +111,15 @@ class ExternalAccount(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'type': 'type',  # noqa: E501
         'countries': 'countries',  # noqa: E501
         'currency': 'currency',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'parent_account_label': 'parentAccountLabel',  # noqa: E501
         'time_zone': 'timeZone',  # noqa: E501
-        'subtype': 'subtype',  # noqa: E501
+        'type': 'type',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'subtype': 'subtype',  # noqa: E501
     }
 
     read_only_vars = {
@@ -129,16 +129,16 @@ class ExternalAccount(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, type, countries, currency, parent_account_label, time_zone, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, countries, currency, name, parent_account_label, time_zone, type, *args, **kwargs):  # noqa: E501
         """ExternalAccount - a model defined in OpenAPI
 
         Args:
-            name (str):
-            type (str):
             countries ([str]):
             currency (str):
+            name (str):
             parent_account_label (str):
             time_zone (str):
+            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,9 +171,9 @@ class ExternalAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            subtype (str, none_type): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            subtype (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -205,12 +205,12 @@ class ExternalAccount(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.type = type
         self.countries = countries
         self.currency = currency
+        self.name = name
         self.parent_account_label = parent_account_label
         self.time_zone = time_zone
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -231,16 +231,16 @@ class ExternalAccount(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, type, countries, currency, parent_account_label, time_zone, *args, **kwargs):  # noqa: E501
+    def __init__(self, countries, currency, name, parent_account_label, time_zone, type, *args, **kwargs):  # noqa: E501
         """ExternalAccount - a model defined in OpenAPI
 
         Args:
-            name (str):
-            type (str):
             countries ([str]):
             currency (str):
+            name (str):
             parent_account_label (str):
             time_zone (str):
+            type (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -273,9 +273,9 @@ class ExternalAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            subtype (str, none_type): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            subtype (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -305,12 +305,12 @@ class ExternalAccount(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.type = type
         self.countries = countries
         self.currency = currency
+        self.name = name
         self.parent_account_label = parent_account_label
         self.time_zone = time_zone
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

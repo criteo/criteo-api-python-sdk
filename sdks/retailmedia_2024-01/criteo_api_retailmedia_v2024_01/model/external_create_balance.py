@@ -86,13 +86,13 @@ class ExternalCreateBalance(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
             'deposited': (float, none_type,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
             'end_date': (date,),  # noqa: E501
-            'spend_type': (str,),  # noqa: E501
             'memo': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'sales_force_id': (str,),  # noqa: E501
+            'spend_type': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'po_number': (str,),  # noqa: E501
         }
 
@@ -102,13 +102,13 @@ class ExternalCreateBalance(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'deposited': 'deposited',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'spend_type': 'spendType',  # noqa: E501
         'memo': 'memo',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'sales_force_id': 'salesForceId',  # noqa: E501
+        'spend_type': 'spendType',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'po_number': 'poNumber',  # noqa: E501
     }
 
@@ -119,17 +119,17 @@ class ExternalCreateBalance(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, deposited, start_date, end_date, spend_type, memo, sales_force_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, deposited, end_date, memo, name, sales_force_id, spend_type, start_date, *args, **kwargs):  # noqa: E501
         """ExternalCreateBalance - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the balance.
             deposited (float, none_type): Amount of billable funds allotted to the balance.
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            spend_type (str): Type of the balance spend.
             memo (str): Memo
+            name (str): Name of the balance.
             sales_force_id (str): SalesForceId the balance is linked to.
+            spend_type (str): Type of the balance spend.
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -194,13 +194,13 @@ class ExternalCreateBalance(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.deposited = deposited
-        self.start_date = start_date
         self.end_date = end_date
-        self.spend_type = spend_type
         self.memo = memo
+        self.name = name
         self.sales_force_id = sales_force_id
+        self.spend_type = spend_type
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -221,17 +221,17 @@ class ExternalCreateBalance(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, deposited, start_date, end_date, spend_type, memo, sales_force_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, deposited, end_date, memo, name, sales_force_id, spend_type, start_date, *args, **kwargs):  # noqa: E501
         """ExternalCreateBalance - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the balance.
             deposited (float, none_type): Amount of billable funds allotted to the balance.
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            spend_type (str): Type of the balance spend.
             memo (str): Memo
+            name (str): Name of the balance.
             sales_force_id (str): SalesForceId the balance is linked to.
+            spend_type (str): Type of the balance spend.
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -294,13 +294,13 @@ class ExternalCreateBalance(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
         self.deposited = deposited
-        self.start_date = start_date
         self.end_date = end_date
-        self.spend_type = spend_type
         self.memo = memo
+        self.name = name
         self.sales_force_id = sales_force_id
+        self.spend_type = spend_type
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -82,8 +82,8 @@ class DailyLineItemBudgetOverride(ModelNormal):
         """
         return {
             'duration': (str,),  # noqa: E501
-            'start_date': (datetime, none_type,),  # noqa: E501
             'max_daily_spend': (float, none_type,),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
         }
 
@@ -94,8 +94,8 @@ class DailyLineItemBudgetOverride(ModelNormal):
 
     attribute_map = {
         'duration': 'duration',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'max_daily_spend': 'maxDailySpend',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'status': 'status',  # noqa: E501
     }
 
@@ -143,8 +143,8 @@ class DailyLineItemBudgetOverride(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (datetime, none_type): Daily budget override start date, format \"yyyy-MM-dd\". If it is null, the StartDate would be the following date of the last item in the override sequence.. [optional]  # noqa: E501
             max_daily_spend (float, none_type): Daily budget override maximum daily spend amount.. [optional]  # noqa: E501
+            start_date (datetime, none_type): Daily budget override start date, format \"yyyy-MM-dd\". If it is null, the StartDate would be the following date of the last item in the override sequence.. [optional]  # noqa: E501
             status (str, none_type): Daily budget override computed status.. [optional]  # noqa: E501
         """
 
@@ -235,8 +235,8 @@ class DailyLineItemBudgetOverride(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (datetime, none_type): Daily budget override start date, format \"yyyy-MM-dd\". If it is null, the StartDate would be the following date of the last item in the override sequence.. [optional]  # noqa: E501
             max_daily_spend (float, none_type): Daily budget override maximum daily spend amount.. [optional]  # noqa: E501
+            start_date (datetime, none_type): Daily budget override start date, format \"yyyy-MM-dd\". If it is null, the StartDate would be the following date of the last item in the override sequence.. [optional]  # noqa: E501
             status (str, none_type): Daily budget override computed status.. [optional]  # noqa: E501
         """
 

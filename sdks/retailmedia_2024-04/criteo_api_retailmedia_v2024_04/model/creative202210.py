@@ -61,12 +61,6 @@ class Creative202210(ModelNormal):
     """
 
     allowed_values = {
-        ('status',): {
-            'READY': "Ready",
-            'IN_USE': "In_Use",
-            'ARCHIVED': "Archived",
-            'DELETED': "Deleted",
-        },
         ('creative_format_type',): {
             'UNKNOWN': "Unknown",
             'FLAGSHIP': "FlagShip",
@@ -78,6 +72,12 @@ class Creative202210(ModelNormal):
             'CUSTOM': "CUSTOM",
             'DISPLAYPANEL': "DisplayPanel",
             'DIGITALSHELFTALKER': "DigitalShelfTalker",
+        },
+        ('status',): {
+            'READY': "Ready",
+            'IN_USE': "In_Use",
+            'ARCHIVED': "Archived",
+            'DELETED': "Deleted",
         },
     }
 
@@ -100,17 +100,18 @@ class Creative202210(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'status': (str,),  # noqa: E501
-            'retailer_id': (int,),  # noqa: E501
-            'template_id': (int,),  # noqa: E501
-            'template_name': (str,),  # noqa: E501
-            'format_id': (int,),  # noqa: E501
             'creative_format_type': (str,),  # noqa: E501
             'environments': ([PageTypeEnvironment202210],),  # noqa: E501
+            'format_id': (int,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'retailer_id': (int,),  # noqa: E501
+            'status': (str,),  # noqa: E501
+            'template_id': (int,),  # noqa: E501
+            'template_name': (str,),  # noqa: E501
             'template_variable_values': ([TemplateVariableValue],),  # noqa: E501
-            'brand_id': (int, none_type,),  # noqa: E501
             'associated_line_item_ids': ([str], none_type,),  # noqa: E501
+            'brand_id': (int, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -120,17 +121,18 @@ class Creative202210(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'status': 'status',  # noqa: E501
-        'retailer_id': 'retailerId',  # noqa: E501
-        'template_id': 'templateId',  # noqa: E501
-        'template_name': 'templateName',  # noqa: E501
-        'format_id': 'formatId',  # noqa: E501
         'creative_format_type': 'creativeFormatType',  # noqa: E501
         'environments': 'environments',  # noqa: E501
+        'format_id': 'formatId',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
+        'status': 'status',  # noqa: E501
+        'template_id': 'templateId',  # noqa: E501
+        'template_name': 'templateName',  # noqa: E501
         'template_variable_values': 'templateVariableValues',  # noqa: E501
-        'brand_id': 'brandId',  # noqa: E501
         'associated_line_item_ids': 'associatedLineItemIds',  # noqa: E501
+        'brand_id': 'brandId',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
     }
 
@@ -141,18 +143,18 @@ class Creative202210(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, status, retailer_id, template_id, template_name, format_id, creative_format_type, environments, template_variable_values, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, creative_format_type, environments, format_id, name, retailer_id, status, template_id, template_name, template_variable_values, *args, **kwargs):  # noqa: E501
         """Creative202210 - a model defined in OpenAPI
 
         Args:
-            name (str): Name
-            status (str): Creative Status
-            retailer_id (int): Retailer Id
-            template_id (int): Template Id
-            template_name (str): Template Name
-            format_id (int): Format Id
             creative_format_type (str): Creative format type
             environments ([PageTypeEnvironment202210]): Environment type (e.g. mobile, web, app)
+            format_id (int): Format Id
+            name (str): Name
+            retailer_id (int): Retailer Id
+            status (str): Creative Status
+            template_id (int): Template Id
+            template_name (str): Template Name
             template_variable_values ([TemplateVariableValue]): The template chosen values
 
         Keyword Args:
@@ -186,8 +188,9 @@ class Creative202210(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
             associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
+            brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
             updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
@@ -220,14 +223,14 @@ class Creative202210(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.status = status
-        self.retailer_id = retailer_id
-        self.template_id = template_id
-        self.template_name = template_name
-        self.format_id = format_id
         self.creative_format_type = creative_format_type
         self.environments = environments
+        self.format_id = format_id
+        self.name = name
+        self.retailer_id = retailer_id
+        self.status = status
+        self.template_id = template_id
+        self.template_name = template_name
         self.template_variable_values = template_variable_values
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -249,18 +252,18 @@ class Creative202210(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, status, retailer_id, template_id, template_name, format_id, creative_format_type, environments, template_variable_values, *args, **kwargs):  # noqa: E501
+    def __init__(self, creative_format_type, environments, format_id, name, retailer_id, status, template_id, template_name, template_variable_values, *args, **kwargs):  # noqa: E501
         """Creative202210 - a model defined in OpenAPI
 
         Args:
-            name (str): Name
-            status (str): Creative Status
-            retailer_id (int): Retailer Id
-            template_id (int): Template Id
-            template_name (str): Template Name
-            format_id (int): Format Id
             creative_format_type (str): Creative format type
             environments ([PageTypeEnvironment202210]): Environment type (e.g. mobile, web, app)
+            format_id (int): Format Id
+            name (str): Name
+            retailer_id (int): Retailer Id
+            status (str): Creative Status
+            template_id (int): Template Id
+            template_name (str): Template Name
             template_variable_values ([TemplateVariableValue]): The template chosen values
 
         Keyword Args:
@@ -294,8 +297,9 @@ class Creative202210(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
             associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
+            brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
             updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
@@ -326,14 +330,14 @@ class Creative202210(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.status = status
-        self.retailer_id = retailer_id
-        self.template_id = template_id
-        self.template_name = template_name
-        self.format_id = format_id
         self.creative_format_type = creative_format_type
         self.environments = environments
+        self.format_id = format_id
+        self.name = name
+        self.retailer_id = retailer_id
+        self.status = status
+        self.template_id = template_id
+        self.template_name = template_name
         self.template_variable_values = template_variable_values
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

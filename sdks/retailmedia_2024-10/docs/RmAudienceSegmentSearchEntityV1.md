@@ -6,8 +6,8 @@ Available filters to perform a search on audience segments. If present, the filt
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **audience_segment_ids** | **[str]** | List of segment ids | [optional] 
-**retailer_ids** | **[str]** | List of retailer ids | [optional] 
 **audience_segment_types** | **[str]** | List of segment types | [optional] 
+**retailer_ids** | **[str]** | List of retailer ids | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

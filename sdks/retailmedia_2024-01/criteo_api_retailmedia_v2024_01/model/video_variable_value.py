@@ -58,10 +58,10 @@ class VideoVariableValue(ModelNormal):
     }
 
     validations = {
-        ('url',): {
+        ('duration',): {
             'min_length': 1,
         },
-        ('duration',): {
+        ('url',): {
             'min_length': 1,
         },
     }
@@ -81,10 +81,10 @@ class VideoVariableValue(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'duration': (str,),  # noqa: E501
+            'height': (int,),  # noqa: E501
             'url': (str,),  # noqa: E501
             'width': (int,),  # noqa: E501
-            'height': (int,),  # noqa: E501
-            'duration': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -93,10 +93,10 @@ class VideoVariableValue(ModelNormal):
 
 
     attribute_map = {
+        'duration': 'duration',  # noqa: E501
+        'height': 'height',  # noqa: E501
         'url': 'url',  # noqa: E501
         'width': 'width',  # noqa: E501
-        'height': 'height',  # noqa: E501
-        'duration': 'duration',  # noqa: E501
     }
 
     read_only_vars = {
@@ -106,14 +106,14 @@ class VideoVariableValue(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, url, width, height, duration, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, duration, height, url, width, *args, **kwargs):  # noqa: E501
         """VideoVariableValue - a model defined in OpenAPI
 
         Args:
+            duration (str): The video's duration
+            height (int): The video's height
             url (str): The vast video url
             width (int): The video's width
-            height (int): The video's height
-            duration (str): The video's duration
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,10 +177,10 @@ class VideoVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.duration = duration
+        self.height = height
         self.url = url
         self.width = width
-        self.height = height
-        self.duration = duration
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,14 +201,14 @@ class VideoVariableValue(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, url, width, height, duration, *args, **kwargs):  # noqa: E501
+    def __init__(self, duration, height, url, width, *args, **kwargs):  # noqa: E501
         """VideoVariableValue - a model defined in OpenAPI
 
         Args:
+            duration (str): The video's duration
+            height (int): The video's height
             url (str): The vast video url
             width (int): The video's width
-            height (int): The video's height
-            duration (str): The video's duration
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -270,10 +270,10 @@ class VideoVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.duration = duration
+        self.height = height
         self.url = url
         self.width = width
-        self.height = height
-        self.duration = duration
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

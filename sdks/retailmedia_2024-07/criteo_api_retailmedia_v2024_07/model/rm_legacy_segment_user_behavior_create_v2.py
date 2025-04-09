@@ -55,11 +55,6 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
     """
 
     allowed_values = {
-        ('user_action',): {
-            'BUY': "buy",
-            'VIEW': "view",
-            'ADDTOCART': "addToCart",
-        },
         ('lookback_window',): {
             'P7D': "P7D",
             'P14D': "P14D",
@@ -71,12 +66,17 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
             'P150D': "P150D",
             'P180D': "P180D",
         },
+        ('user_action',): {
+            'BUY': "buy",
+            'VIEW': "view",
+            'ADDTOCART': "addToCart",
+        },
     }
 
     validations = {
-        ('category_ids',): {
-        },
         ('brand_ids',): {
+        },
+        ('category_ids',): {
         },
     }
 
@@ -101,10 +101,10 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'user_action': (str,),  # noqa: E501
             'lookback_window': (str,),  # noqa: E501
-            'category_ids': ([int], none_type,),  # noqa: E501
+            'user_action': (str,),  # noqa: E501
             'brand_ids': ([int], none_type,),  # noqa: E501
+            'category_ids': ([int], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -113,10 +113,10 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
 
 
     attribute_map = {
-        'user_action': 'userAction',  # noqa: E501
         'lookback_window': 'lookbackWindow',  # noqa: E501
-        'category_ids': 'categoryIds',  # noqa: E501
+        'user_action': 'userAction',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
+        'category_ids': 'categoryIds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -126,12 +126,12 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, user_action, lookback_window, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, lookback_window, user_action, *args, **kwargs):  # noqa: E501
         """RmLegacySegmentUserBehaviorCreateV2 - a model defined in OpenAPI
 
         Args:
-            user_action (str): Type of shopper activity used to generate the audience.
             lookback_window (str): Length of lookback window
+            user_action (str): Type of shopper activity used to generate the audience.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -164,8 +164,8 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_ids ([int], none_type): The categories to target. [optional]  # noqa: E501
             brand_ids ([int], none_type): The brands to target. [optional]  # noqa: E501
+            category_ids ([int], none_type): The categories to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -197,8 +197,8 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_action = user_action
         self.lookback_window = lookback_window
+        self.user_action = user_action
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -219,12 +219,12 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, user_action, lookback_window, *args, **kwargs):  # noqa: E501
+    def __init__(self, lookback_window, user_action, *args, **kwargs):  # noqa: E501
         """RmLegacySegmentUserBehaviorCreateV2 - a model defined in OpenAPI
 
         Args:
-            user_action (str): Type of shopper activity used to generate the audience.
             lookback_window (str): Length of lookback window
+            user_action (str): Type of shopper activity used to generate the audience.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -257,8 +257,8 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            category_ids ([int], none_type): The categories to target. [optional]  # noqa: E501
             brand_ids ([int], none_type): The brands to target. [optional]  # noqa: E501
+            category_ids ([int], none_type): The categories to target. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -288,8 +288,8 @@ class RmLegacySegmentUserBehaviorCreateV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.user_action = user_action
         self.lookback_window = lookback_window
+        self.user_action = user_action
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

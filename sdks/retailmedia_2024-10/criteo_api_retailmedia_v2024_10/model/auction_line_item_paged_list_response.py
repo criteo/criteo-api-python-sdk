@@ -91,10 +91,10 @@ class AuctionLineItemPagedListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'metadata': (PageMetadata,),  # noqa: E501
             'data': ([ResourceOfAuctionLineItem],),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
             'errors': ([ProblemDetails],),  # noqa: E501
+            'metadata': (PageMetadata,),  # noqa: E501
+            'warnings': ([ProblemDetails],),  # noqa: E501
         }
 
     @cached_property
@@ -103,15 +103,15 @@ class AuctionLineItemPagedListResponse(ModelNormal):
 
 
     attribute_map = {
-        'metadata': 'metadata',  # noqa: E501
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'metadata': 'metadata',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -152,10 +152,10 @@ class AuctionLineItemPagedListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            metadata (PageMetadata): [optional]  # noqa: E501
             data ([ResourceOfAuctionLineItem]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
             errors ([ProblemDetails]): [optional]  # noqa: E501
+            metadata (PageMetadata): [optional]  # noqa: E501
+            warnings ([ProblemDetails]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,10 +241,10 @@ class AuctionLineItemPagedListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            metadata (PageMetadata): [optional]  # noqa: E501
             data ([ResourceOfAuctionLineItem]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
             errors ([ProblemDetails]): [optional]  # noqa: E501
+            metadata (PageMetadata): [optional]  # noqa: E501
+            warnings ([ProblemDetails]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

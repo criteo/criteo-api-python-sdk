@@ -87,8 +87,8 @@ class ProspectingV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'days_since_last_visit_min': (int, none_type,),  # noqa: E501
             'days_since_last_visit_max': (int, none_type,),  # noqa: E501
+            'days_since_last_visit_min': (int, none_type,),  # noqa: E501
             'users_type': (str, none_type,),  # noqa: E501
         }
 
@@ -98,8 +98,8 @@ class ProspectingV1(ModelNormal):
 
 
     attribute_map = {
-        'days_since_last_visit_min': 'daysSinceLastVisitMin',  # noqa: E501
         'days_since_last_visit_max': 'daysSinceLastVisitMax',  # noqa: E501
+        'days_since_last_visit_min': 'daysSinceLastVisitMin',  # noqa: E501
         'users_type': 'usersType',  # noqa: E501
     }
 
@@ -144,8 +144,8 @@ class ProspectingV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            days_since_last_visit_min (int, none_type): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
             days_since_last_visit_max (int, none_type): When non buyers are included, include users who visited your website after this number of days. [optional]  # noqa: E501
+            days_since_last_visit_min (int, none_type): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
             users_type (str, none_type): Type of users to target. [optional]  # noqa: E501
         """
 
@@ -232,8 +232,8 @@ class ProspectingV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            days_since_last_visit_min (int, none_type): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
             days_since_last_visit_max (int, none_type): When non buyers are included, include users who visited your website after this number of days. [optional]  # noqa: E501
+            days_since_last_visit_min (int, none_type): When non buyers are included, include users who visited your website before this number of days. [optional]  # noqa: E501
             users_type (str, none_type): Type of users to target. [optional]  # noqa: E501
         """
 

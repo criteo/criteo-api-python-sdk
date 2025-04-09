@@ -81,10 +81,10 @@ class MessageError(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'trace_id': (str, none_type,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
             'code': (str, none_type,),  # noqa: E501
             'instance': (str, none_type,),  # noqa: E501
+            'trace_id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,10 +93,10 @@ class MessageError(ModelNormal):
 
 
     attribute_map = {
-        'trace_id': 'traceId',  # noqa: E501
-        'type': 'type',  # noqa: E501
         'code': 'code',  # noqa: E501
         'instance': 'instance',  # noqa: E501
+        'trace_id': 'traceId',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,10 +140,10 @@ class MessageError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str, none_type): correlation ID, unique to each request. [optional]  # noqa: E501
-            type (str, none_type): error category. [optional]  # noqa: E501
             code (str, none_type): error code. [optional]  # noqa: E501
             instance (str, none_type): specific occurrence of the problem. [optional]  # noqa: E501
+            trace_id (str, none_type): correlation ID, unique to each request. [optional]  # noqa: E501
+            type (str, none_type): error category. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,10 +229,10 @@ class MessageError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str, none_type): correlation ID, unique to each request. [optional]  # noqa: E501
-            type (str, none_type): error category. [optional]  # noqa: E501
             code (str, none_type): error code. [optional]  # noqa: E501
             instance (str, none_type): specific occurrence of the problem. [optional]  # noqa: E501
+            trace_id (str, none_type): correlation ID, unique to each request. [optional]  # noqa: E501
+            type (str, none_type): error category. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

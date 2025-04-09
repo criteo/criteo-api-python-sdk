@@ -59,6 +59,12 @@ class Keywords(ModelNormal):
     """
 
     allowed_values = {
+        ('match_type',): {
+            'POSITIVEEXACTMATCH': "PositiveExactMatch",
+            'NEGATIVEEXACTMATCH': "NegativeExactMatch",
+            'NEGATIVEBROADMATCH': "NegativeBroadMatch",
+            'UNKNOWN': "Unknown",
+        },
         ('review_state',): {
             'INREVIEW': "InReview",
             'RECOMMENDED': "Recommended",
@@ -67,12 +73,6 @@ class Keywords(ModelNormal):
             'REJECTED': "Rejected",
             'AUTOREJECTED': "AutoRejected",
             'UNKOWN': "Unkown",
-        },
-        ('match_type',): {
-            'POSITIVEEXACTMATCH': "PositiveExactMatch",
-            'NEGATIVEEXACTMATCH': "NegativeExactMatch",
-            'NEGATIVEBROADMATCH': "NegativeBroadMatch",
-            'UNKNOWN': "Unknown",
         },
     }
 
@@ -95,11 +95,11 @@ class Keywords(ModelNormal):
         """
         lazy_import()
         return {
-            'review_state': (str,),  # noqa: E501
-            'match_type': (str,),  # noqa: E501
             'bid': (float, none_type,),  # noqa: E501
-            'input_keywords': (InputKeywords,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
+            'input_keywords': (InputKeywords,),  # noqa: E501
+            'match_type': (str,),  # noqa: E501
+            'review_state': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
         }
 
@@ -109,11 +109,11 @@ class Keywords(ModelNormal):
 
 
     attribute_map = {
-        'review_state': 'reviewState',  # noqa: E501
-        'match_type': 'matchType',  # noqa: E501
         'bid': 'bid',  # noqa: E501
-        'input_keywords': 'inputKeywords',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
+        'input_keywords': 'inputKeywords',  # noqa: E501
+        'match_type': 'matchType',  # noqa: E501
+        'review_state': 'reviewState',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
     }
 
@@ -158,11 +158,11 @@ class Keywords(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (str): Review status of the keyword. [optional]  # noqa: E501
-            match_type (str): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
             bid (float, none_type): The bid to use when a positive keyword matches the shopper search phrase. [optional]  # noqa: E501
-            input_keywords (InputKeywords): [optional]  # noqa: E501
             created_at (datetime): The time at which this keyword was created in UTC. [optional]  # noqa: E501
+            input_keywords (InputKeywords): [optional]  # noqa: E501
+            match_type (str): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
+            review_state (str): Review status of the keyword. [optional]  # noqa: E501
             updated_at (datetime): The time at which the keyword was last modified in UTC. [optional]  # noqa: E501
         """
 
@@ -249,11 +249,11 @@ class Keywords(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            review_state (str): Review status of the keyword. [optional]  # noqa: E501
-            match_type (str): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
             bid (float, none_type): The bid to use when a positive keyword matches the shopper search phrase. [optional]  # noqa: E501
-            input_keywords (InputKeywords): [optional]  # noqa: E501
             created_at (datetime): The time at which this keyword was created in UTC. [optional]  # noqa: E501
+            input_keywords (InputKeywords): [optional]  # noqa: E501
+            match_type (str): The matching algorthim to be use when comparing this keyword with the shopper search phrase. [optional]  # noqa: E501
+            review_state (str): Review status of the keyword. [optional]  # noqa: E501
             updated_at (datetime): The time at which the keyword was last modified in UTC. [optional]  # noqa: E501
         """
 

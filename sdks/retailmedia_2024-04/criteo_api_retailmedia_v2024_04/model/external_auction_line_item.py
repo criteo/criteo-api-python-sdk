@@ -102,24 +102,24 @@ class ExternalAuctionLineItem(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'budget_remaining': (float, none_type,),  # noqa: E501
+            'campaign_id': (str,),  # noqa: E501
+            'created_at': (datetime,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
             'target_retailer_id': (str,),  # noqa: E501
-            'campaign_id': (str,),  # noqa: E501
-            'budget_remaining': (float, none_type,),  # noqa: E501
-            'created_at': (datetime,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
-            'end_date': (date, none_type,),  # noqa: E501
-            'max_bid': (float, none_type,),  # noqa: E501
-            'budget': (float, none_type,),  # noqa: E501
-            'monthly_pacing': (float, none_type,),  # noqa: E501
-            'daily_pacing': (float, none_type,),  # noqa: E501
             'bid_strategy': (str,),  # noqa: E501
+            'budget': (float, none_type,),  # noqa: E501
+            'budget_spent': (float,),  # noqa: E501
+            'daily_pacing': (float, none_type,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'is_auto_daily_pacing': (bool,),  # noqa: E501
+            'max_bid': (float, none_type,),  # noqa: E501
+            'monthly_pacing': (float, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
-            'is_auto_daily_pacing': (bool,),  # noqa: E501
-            'budget_spent': (float,),  # noqa: E501
-            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -128,24 +128,24 @@ class ExternalAuctionLineItem(ModelNormal):
 
 
     attribute_map = {
+        'budget_remaining': 'budgetRemaining',  # noqa: E501
+        'campaign_id': 'campaignId',  # noqa: E501
+        'created_at': 'createdAt',  # noqa: E501
         'name': 'name',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'target_retailer_id': 'targetRetailerId',  # noqa: E501
-        'campaign_id': 'campaignId',  # noqa: E501
-        'budget_remaining': 'budgetRemaining',  # noqa: E501
-        'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'max_bid': 'maxBid',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
-        'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'daily_pacing': 'dailyPacing',  # noqa: E501
         'bid_strategy': 'bidStrategy',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
+        'budget_spent': 'budgetSpent',  # noqa: E501
+        'daily_pacing': 'dailyPacing',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'id': 'id',  # noqa: E501
+        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
+        'max_bid': 'maxBid',  # noqa: E501
+        'monthly_pacing': 'monthlyPacing',  # noqa: E501
         'status': 'status',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
-        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
-        'budget_spent': 'budgetSpent',  # noqa: E501
-        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -155,16 +155,16 @@ class ExternalAuctionLineItem(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, start_date, target_retailer_id, campaign_id, budget_remaining, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget_remaining, campaign_id, created_at, name, start_date, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalAuctionLineItem - a model defined in OpenAPI
 
         Args:
+            budget_remaining (float, none_type):
+            campaign_id (str):
+            created_at (datetime):
             name (str):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             target_retailer_id (str):
-            campaign_id (str):
-            budget_remaining (float, none_type):
-            created_at (datetime):
             updated_at (datetime):
 
         Keyword Args:
@@ -198,17 +198,17 @@ class ExternalAuctionLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            max_bid (float, none_type): [optional]  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
             bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            budget (float, none_type): [optional]  # noqa: E501
+            budget_spent (float): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
+            max_bid (float, none_type): [optional]  # noqa: E501
+            monthly_pacing (float, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
-            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
-            budget_spent (float): [optional]  # noqa: E501
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -240,12 +240,12 @@ class ExternalAuctionLineItem(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget_remaining = budget_remaining
+        self.campaign_id = campaign_id
+        self.created_at = created_at
         self.name = name
         self.start_date = start_date
         self.target_retailer_id = target_retailer_id
-        self.campaign_id = campaign_id
-        self.budget_remaining = budget_remaining
-        self.created_at = created_at
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -267,16 +267,16 @@ class ExternalAuctionLineItem(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, start_date, target_retailer_id, campaign_id, budget_remaining, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget_remaining, campaign_id, created_at, name, start_date, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalAuctionLineItem - a model defined in OpenAPI
 
         Args:
+            budget_remaining (float, none_type):
+            campaign_id (str):
+            created_at (datetime):
             name (str):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             target_retailer_id (str):
-            campaign_id (str):
-            budget_remaining (float, none_type):
-            created_at (datetime):
             updated_at (datetime):
 
         Keyword Args:
@@ -310,17 +310,17 @@ class ExternalAuctionLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
-            max_bid (float, none_type): [optional]  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
             bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            budget (float, none_type): [optional]  # noqa: E501
+            budget_spent (float): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
+            max_bid (float, none_type): [optional]  # noqa: E501
+            monthly_pacing (float, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
-            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
-            budget_spent (float): [optional]  # noqa: E501
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -350,12 +350,12 @@ class ExternalAuctionLineItem(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget_remaining = budget_remaining
+        self.campaign_id = campaign_id
+        self.created_at = created_at
         self.name = name
         self.start_date = start_date
         self.target_retailer_id = target_retailer_id
-        self.campaign_id = campaign_id
-        self.budget_remaining = budget_remaining
-        self.created_at = created_at
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

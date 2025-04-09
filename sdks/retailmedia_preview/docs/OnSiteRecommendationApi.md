@@ -56,30 +56,30 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     catalogid = 1 # int | the identifier of the catalog to query
     inbot_discussion_body_model = InbotDiscussionBodyModel(
         data=InbotDiscussionDataInstanceModel(
-            type="InbotDiscussion",
             attributes=InbotDiscussion(
                 messages=[
                     Message(
-                        user_message="user_message_example",
                         bot_message=BotMessage(
+                            closing="closing_example",
                             opening="opening_example",
                             product_recos=[
                                 ProductRecommendation(
-                                    rationale="rationale_example",
-                                    name="name_example",
+                                    brand="brand_example",
+                                    currency="currency_example",
                                     description="description_example",
                                     image_url="image_url_example",
-                                    url="url_example",
-                                    brand="brand_example",
+                                    name="name_example",
                                     price=3.14,
-                                    currency="currency_example",
+                                    rationale="rationale_example",
+                                    url="url_example",
                                 ),
                             ],
-                            closing="closing_example",
                         ),
+                        user_message="user_message_example",
                     ),
                 ],
             ),
+            type="InbotDiscussion",
         ),
     ) # InbotDiscussionBodyModel | 
 

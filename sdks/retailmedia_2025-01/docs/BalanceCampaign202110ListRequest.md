@@ -1,6 +1,6 @@
 # BalanceCampaign202110ListRequest
 
-A class implementing the request of the Criteo API as described in API Guild Guidelines with a collection of entities as body  https://criteo.atlassian.net/wiki/spaces/GUA/pages/1564541212/Response+Body+Guidelines
+A class implementing the request of the Criteo API with a collection of entities as body
 
 ## Properties
 Name | Type | Description | Notes

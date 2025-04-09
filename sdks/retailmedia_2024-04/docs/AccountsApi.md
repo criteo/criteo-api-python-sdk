@@ -59,12 +59,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | the account id to update
     value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
         data=ValueResourceOfRetailMediaBrands(
-            type="type_example",
             attributes=ExternalRetailMediaBrands(
                 brand_ids=[
                     1,
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaBrands |  (optional)
 
@@ -163,15 +163,15 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | The given account id
     value_resource_input_of_retail_media_brand_account_creation = ValueResourceInputOfRetailMediaBrandAccountCreation(
         data=ValueResourceOfRetailMediaBrandAccountCreation(
-            type="type_example",
             attributes=ExternalRetailMediaBrandAccountCreation(
-                name="name_example",
-                company_name="company_name_example",
-                on_behalf_company_name="on_behalf_company_name_example",
                 brands=[
                     1,
                 ],
+                company_name="company_name_example",
+                name="name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaBrandAccountCreation |  (optional)
 
@@ -361,12 +361,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | the account id to update
     value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
         data=ValueResourceOfRetailMediaBrands(
-            type="type_example",
             attributes=ExternalRetailMediaBrands(
                 brand_ids=[
                     1,
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaBrands |  (optional)
 

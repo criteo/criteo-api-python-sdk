@@ -60,16 +60,16 @@ class BalanceResponseV2(ModelNormal):
             'CAPPED': "capped",
             'UNCAPPED': "uncapped",
         },
-        ('spend_type',): {
-            'ONSITE': "Onsite",
-            'OFFSITE': "Offsite",
-            'OFFSITEAWARENESS': "OffsiteAwareness",
-        },
         ('private_market_billing_type',): {
             'NOTAPPLICABLE': "notApplicable",
             'BILLBYRETAILER': "billByRetailer",
             'BILLBYCRITEO': "billByCriteo",
             'UNKNOWN': "unknown",
+        },
+        ('spend_type',): {
+            'ONSITE': "Onsite",
+            'OFFSITE': "Offsite",
+            'OFFSITEAWARENESS': "OffsiteAwareness",
         },
         ('status',): {
             'UNKNOWN': "unknown",
@@ -103,19 +103,19 @@ class BalanceResponseV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
             'balance_type': (str,),  # noqa: E501
-            'spend_type': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'private_market_billing_type': (str,),  # noqa: E501
-            'po_number': (str, none_type,),  # noqa: E501
-            'memo': (str, none_type,),  # noqa: E501
-            'deposited': (float, none_type,),  # noqa: E501
-            'spent': (float, none_type,),  # noqa: E501
-            'remaining': (float, none_type,),  # noqa: E501
-            'end_date': (date, none_type,),  # noqa: E501
-            'status': (str,),  # noqa: E501
+            'spend_type': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
+            'deposited': (float, none_type,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
+            'memo': (str, none_type,),  # noqa: E501
+            'po_number': (str, none_type,),  # noqa: E501
+            'remaining': (float, none_type,),  # noqa: E501
+            'spent': (float, none_type,),  # noqa: E501
+            'status': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
         }
 
@@ -125,19 +125,19 @@ class BalanceResponseV2(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'balance_type': 'balanceType',  # noqa: E501
-        'spend_type': 'spendType',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'private_market_billing_type': 'privateMarketBillingType',  # noqa: E501
-        'po_number': 'poNumber',  # noqa: E501
-        'memo': 'memo',  # noqa: E501
-        'deposited': 'deposited',  # noqa: E501
-        'spent': 'spent',  # noqa: E501
-        'remaining': 'remaining',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'status': 'status',  # noqa: E501
+        'spend_type': 'spendType',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
+        'deposited': 'deposited',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'memo': 'memo',  # noqa: E501
+        'po_number': 'poNumber',  # noqa: E501
+        'remaining': 'remaining',  # noqa: E501
+        'spent': 'spent',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
     }
 
@@ -148,15 +148,15 @@ class BalanceResponseV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, start_date, balance_type, spend_type, private_market_billing_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, balance_type, name, private_market_billing_type, spend_type, start_date, *args, **kwargs):  # noqa: E501
         """BalanceResponseV2 - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the balance.
-            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             balance_type (str): Type of the balance.
-            spend_type (str): Spend Type of the balance.
+            name (str): Name of the balance.
             private_market_billing_type (str): Billing type for Private Market of the balance.
+            spend_type (str): Spend Type of the balance.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -189,14 +189,14 @@ class BalanceResponseV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
-            memo (str, none_type): Memo.. [optional]  # noqa: E501
-            deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
-            spent (float, none_type): Amount of spent funds of the balance.. [optional]  # noqa: E501
-            remaining (float, none_type): Amount of remaining funds of the balance.. [optional]  # noqa: E501
-            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
-            status (str): Status of the balance.. [optional]  # noqa: E501
             created_at (datetime): Creation time of the balance.. [optional]  # noqa: E501
+            deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
+            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            memo (str, none_type): Memo.. [optional]  # noqa: E501
+            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
+            remaining (float, none_type): Amount of remaining funds of the balance.. [optional]  # noqa: E501
+            spent (float, none_type): Amount of spent funds of the balance.. [optional]  # noqa: E501
+            status (str): Status of the balance.. [optional]  # noqa: E501
             updated_at (datetime): Update time of the balance.. [optional]  # noqa: E501
         """
 
@@ -229,11 +229,11 @@ class BalanceResponseV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.start_date = start_date
         self.balance_type = balance_type
-        self.spend_type = spend_type
+        self.name = name
         self.private_market_billing_type = private_market_billing_type
+        self.spend_type = spend_type
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -254,15 +254,15 @@ class BalanceResponseV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, start_date, balance_type, spend_type, private_market_billing_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, balance_type, name, private_market_billing_type, spend_type, start_date, *args, **kwargs):  # noqa: E501
         """BalanceResponseV2 - a model defined in OpenAPI
 
         Args:
-            name (str): Name of the balance.
-            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             balance_type (str): Type of the balance.
-            spend_type (str): Spend Type of the balance.
+            name (str): Name of the balance.
             private_market_billing_type (str): Billing type for Private Market of the balance.
+            spend_type (str): Spend Type of the balance.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -295,14 +295,14 @@ class BalanceResponseV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
-            memo (str, none_type): Memo.. [optional]  # noqa: E501
-            deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
-            spent (float, none_type): Amount of spent funds of the balance.. [optional]  # noqa: E501
-            remaining (float, none_type): Amount of remaining funds of the balance.. [optional]  # noqa: E501
-            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
-            status (str): Status of the balance.. [optional]  # noqa: E501
             created_at (datetime): Creation time of the balance.. [optional]  # noqa: E501
+            deposited (float, none_type): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
+            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            memo (str, none_type): Memo.. [optional]  # noqa: E501
+            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
+            remaining (float, none_type): Amount of remaining funds of the balance.. [optional]  # noqa: E501
+            spent (float, none_type): Amount of spent funds of the balance.. [optional]  # noqa: E501
+            status (str): Status of the balance.. [optional]  # noqa: E501
             updated_at (datetime): Update time of the balance.. [optional]  # noqa: E501
         """
 
@@ -333,11 +333,11 @@ class BalanceResponseV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.start_date = start_date
         self.balance_type = balance_type
-        self.spend_type = spend_type
+        self.name = name
         self.private_market_billing_type = private_market_billing_type
+        self.spend_type = spend_type
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

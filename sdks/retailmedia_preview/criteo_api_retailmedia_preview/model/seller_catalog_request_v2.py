@@ -96,9 +96,9 @@ class SellerCatalogRequestV2(ModelNormal):
         """
         lazy_import()
         return {
-            'sellers': ([SellerIdentifierV2],),  # noqa: E501
-            'modified_after': (datetime,),  # noqa: E501
             'include_fields': ([str],),  # noqa: E501
+            'modified_after': (datetime,),  # noqa: E501
+            'sellers': ([SellerIdentifierV2],),  # noqa: E501
         }
 
     @cached_property
@@ -107,9 +107,9 @@ class SellerCatalogRequestV2(ModelNormal):
 
 
     attribute_map = {
-        'sellers': 'sellers',  # noqa: E501
-        'modified_after': 'modifiedAfter',  # noqa: E501
         'include_fields': 'includeFields',  # noqa: E501
+        'modified_after': 'modifiedAfter',  # noqa: E501
+        'sellers': 'sellers',  # noqa: E501
     }
 
     read_only_vars = {
@@ -153,9 +153,9 @@ class SellerCatalogRequestV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            sellers ([SellerIdentifierV2]): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
             include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            sellers ([SellerIdentifierV2]): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,9 +241,9 @@ class SellerCatalogRequestV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            sellers ([SellerIdentifierV2]): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
             include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            sellers ([SellerIdentifierV2]): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

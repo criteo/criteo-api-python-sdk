@@ -89,9 +89,9 @@ class AudienceUpdateEntityV1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'description': (NillableString,),  # noqa: E501
             'algebra': (AlgebraNodeV1,),  # noqa: E501
+            'description': (NillableString,),  # noqa: E501
+            'name': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -100,9 +100,9 @@ class AudienceUpdateEntityV1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'description': 'description',  # noqa: E501
         'algebra': 'algebra',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'name': 'name',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,9 +146,9 @@ class AudienceUpdateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the audience. [optional]  # noqa: E501
-            description (NillableString): [optional]  # noqa: E501
             algebra (AlgebraNodeV1): [optional]  # noqa: E501
+            description (NillableString): [optional]  # noqa: E501
+            name (str): Name of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,9 +234,9 @@ class AudienceUpdateEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str): Name of the audience. [optional]  # noqa: E501
-            description (NillableString): [optional]  # noqa: E501
             algebra (AlgebraNodeV1): [optional]  # noqa: E501
+            description (NillableString): [optional]  # noqa: E501
+            name (str): Name of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -350,12 +350,12 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     update_balance_model_request = UpdateBalanceModelRequest(
         data=ResourceOfUpdateBalanceModel(
             attributes=ExternalUpdateBalanceModel(
+                end_date=dateutil_parser('1970-01-01').date(),
+                memo="memo_example",
                 name="name_example",
                 po_number="po_number_example",
                 sales_force_id="sales_force_id_example",
                 start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                memo="memo_example",
             ),
             id="id_example",
             type="type_example",
@@ -461,8 +461,8 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
         data=ResourceOfAddFundsToBalance(
             attributes=ExternalAddFundsToBalance(
                 delta_amount=3.14,
-                po_number="po_number_example",
                 memo="memo_example",
+                po_number="po_number_example",
             ),
             id="id_example",
             type="type_example",
@@ -566,14 +566,14 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     create_balance_request = CreateBalanceRequest(
         data=ResourceOfCreateBalance(
             attributes=ExternalCreateBalance(
+                deposited=3.14,
+                end_date=dateutil_parser('1970-01-01').date(),
+                memo="memo_example",
                 name="name_example",
                 po_number="po_number_example",
-                deposited=3.14,
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                spend_type="Onsite",
-                memo="memo_example",
                 sales_force_id="sales_force_id_example",
+                spend_type="Onsite",
+                start_date=dateutil_parser('1970-01-01').date(),
             ),
             id="id_example",
             type="type_example",
@@ -677,9 +677,9 @@ with criteo_api_retailmedia_v2024_01.ApiClient(configuration) as api_client:
     change_dates_of_balance_request = ChangeDatesOfBalanceRequest(
         data=ResourceOfChangeDatesOfBalance(
             attributes=ExternalChangeDatesOfBalance(
-                start_date=dateutil_parser('1970-01-01').date(),
                 end_date=dateutil_parser('1970-01-01').date(),
                 memo="memo_example",
+                start_date=dateutil_parser('1970-01-01').date(),
             ),
             id="id_example",
             type="type_example",

@@ -95,12 +95,12 @@ class CampaignV23Q1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
             'advertiser_id': (str, none_type,),  # noqa: E501
-            'spend_limit': (CampaignSpendLimitV23Q1,),  # noqa: E501
-            'goal': (str, none_type,),  # noqa: E501
             'budget_automation': (CampaignBudgetAutomationV23Q1,),  # noqa: E501
+            'goal': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'spend_limit': (CampaignSpendLimitV23Q1,),  # noqa: E501
         }
 
     @cached_property
@@ -109,12 +109,12 @@ class CampaignV23Q1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'spend_limit': 'spendLimit',  # noqa: E501
-        'goal': 'goal',  # noqa: E501
         'budget_automation': 'budgetAutomation',  # noqa: E501
+        'goal': 'goal',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'spend_limit': 'spendLimit',  # noqa: E501
     }
 
     read_only_vars = {
@@ -158,12 +158,12 @@ class CampaignV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
             advertiser_id (str, none_type): [optional]  # noqa: E501
-            spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
-            goal (str, none_type): [optional]  # noqa: E501
             budget_automation (CampaignBudgetAutomationV23Q1): [optional]  # noqa: E501
+            goal (str, none_type): [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -249,12 +249,12 @@ class CampaignV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
             advertiser_id (str, none_type): [optional]  # noqa: E501
-            spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
-            goal (str, none_type): [optional]  # noqa: E501
             budget_automation (CampaignBudgetAutomationV23Q1): [optional]  # noqa: E501
+            goal (str, none_type): [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
+            spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

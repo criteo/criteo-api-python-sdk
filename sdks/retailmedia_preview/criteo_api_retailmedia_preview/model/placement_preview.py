@@ -55,6 +55,16 @@ class PlacementPreview(ModelNormal):
     """
 
     allowed_values = {
+        ('page_environment_type',): {
+            'UNKNOWN': "Unknown",
+            'WEB': "Web",
+            'MOBILE': "Mobile",
+            'APP': "App",
+            'LOCKOUT': "Lockout",
+            'MIXED': "Mixed",
+            'IOS': "iOS",
+            'ANDROID': "Android",
+        },
         ('page_type',): {
             'UNKNOWN': "Unknown",
             'SEARCH': "Search",
@@ -66,16 +76,6 @@ class PlacementPreview(ModelNormal):
             'CONFIRMATION': "Confirmation",
             'MERCHANDISING': "Merchandising",
             'DEALS': "Deals",
-        },
-        ('page_environment_type',): {
-            'UNKNOWN': "Unknown",
-            'WEB': "Web",
-            'MOBILE': "Mobile",
-            'APP': "App",
-            'LOCKOUT': "Lockout",
-            'MIXED': "Mixed",
-            'IOS': "iOS",
-            'ANDROID': "Android",
         },
     }
 
@@ -104,9 +104,9 @@ class PlacementPreview(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'retailer_id': (str,),  # noqa: E501
-            'page_type': (str,),  # noqa: E501
             'page_environment_type': (str,),  # noqa: E501
+            'page_type': (str,),  # noqa: E501
+            'retailer_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -116,9 +116,9 @@ class PlacementPreview(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'retailer_id': 'retailerId',  # noqa: E501
-        'page_type': 'pageType',  # noqa: E501
         'page_environment_type': 'pageEnvironmentType',  # noqa: E501
+        'page_type': 'pageType',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -128,14 +128,14 @@ class PlacementPreview(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, retailer_id, page_type, page_environment_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, page_environment_type, page_type, retailer_id, *args, **kwargs):  # noqa: E501
         """PlacementPreview - a model defined in OpenAPI
 
         Args:
             name (str): Name of the placement
-            retailer_id (str): Retailer Id
-            page_type (str): Page Type
             page_environment_type (str): Page Environment
+            page_type (str): Page Type
+            retailer_id (str): Retailer Id
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -200,9 +200,9 @@ class PlacementPreview(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.retailer_id = retailer_id
-        self.page_type = page_type
         self.page_environment_type = page_environment_type
+        self.page_type = page_type
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -223,14 +223,14 @@ class PlacementPreview(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, retailer_id, page_type, page_environment_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, page_environment_type, page_type, retailer_id, *args, **kwargs):  # noqa: E501
         """PlacementPreview - a model defined in OpenAPI
 
         Args:
             name (str): Name of the placement
-            retailer_id (str): Retailer Id
-            page_type (str): Page Type
             page_environment_type (str): Page Environment
+            page_type (str): Page Type
+            retailer_id (str): Retailer Id
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -293,9 +293,9 @@ class PlacementPreview(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.retailer_id = retailer_id
-        self.page_type = page_type
         self.page_environment_type = page_environment_type
+        self.page_type = page_type
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

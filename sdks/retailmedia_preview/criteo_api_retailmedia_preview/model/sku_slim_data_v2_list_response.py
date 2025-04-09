@@ -90,8 +90,8 @@ class SkuSlimDataV2ListResponse(ModelNormal):
         lazy_import()
         return {
             'data': ([ResourceOfSkuSlimDataV2],),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
             'errors': ([ProblemDetails],),  # noqa: E501
+            'warnings': ([ProblemDetails],),  # noqa: E501
         }
 
     @cached_property
@@ -101,13 +101,13 @@ class SkuSlimDataV2ListResponse(ModelNormal):
 
     attribute_map = {
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -149,8 +149,8 @@ class SkuSlimDataV2ListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ResourceOfSkuSlimDataV2]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
             errors ([ProblemDetails]): [optional]  # noqa: E501
+            warnings ([ProblemDetails]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +237,8 @@ class SkuSlimDataV2ListResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ResourceOfSkuSlimDataV2]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
             errors ([ProblemDetails]): [optional]  # noqa: E501
+            warnings ([ProblemDetails]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

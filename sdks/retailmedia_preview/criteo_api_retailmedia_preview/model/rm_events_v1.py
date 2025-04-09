@@ -55,13 +55,6 @@ class RmEventsV1(ModelNormal):
     """
 
     allowed_values = {
-        ('shopper_activity',): {
-            'None': None,
-            'UNKNOWN': "Unknown",
-            'VIEW': "View",
-            'BUY': "Buy",
-            'ADDTOCART': "AddToCart",
-        },
         ('lookback_days',): {
             'None': None,
             'UNKNOWN': "Unknown",
@@ -74,6 +67,13 @@ class RmEventsV1(ModelNormal):
             'LAST120DAYS': "Last120Days",
             'LAST150DAYS': "Last150Days",
             'LAST180DAYS': "Last180Days",
+        },
+        ('shopper_activity',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'VIEW': "View",
+            'BUY': "Buy",
+            'ADDTOCART': "AddToCart",
         },
     }
 
@@ -101,12 +101,12 @@ class RmEventsV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'shopper_activity': (str, none_type,),  # noqa: E501
-            'lookback_days': (str, none_type,),  # noqa: E501
-            'category_ids': ([str], none_type,),  # noqa: E501
             'brand_ids': ([str], none_type,),  # noqa: E501
-            'min_price': (float, none_type,),  # noqa: E501
+            'category_ids': ([str], none_type,),  # noqa: E501
+            'lookback_days': (str, none_type,),  # noqa: E501
             'max_price': (float, none_type,),  # noqa: E501
+            'min_price': (float, none_type,),  # noqa: E501
+            'shopper_activity': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -115,12 +115,12 @@ class RmEventsV1(ModelNormal):
 
 
     attribute_map = {
-        'shopper_activity': 'shopperActivity',  # noqa: E501
-        'lookback_days': 'lookbackDays',  # noqa: E501
-        'category_ids': 'categoryIds',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
-        'min_price': 'minPrice',  # noqa: E501
+        'category_ids': 'categoryIds',  # noqa: E501
+        'lookback_days': 'lookbackDays',  # noqa: E501
         'max_price': 'maxPrice',  # noqa: E501
+        'min_price': 'minPrice',  # noqa: E501
+        'shopper_activity': 'shopperActivity',  # noqa: E501
     }
 
     read_only_vars = {
@@ -164,12 +164,12 @@ class RmEventsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            shopper_activity (str, none_type): Reach people who performed specific action. [optional]  # noqa: E501
-            lookback_days (str, none_type): The number of days to look back. [optional]  # noqa: E501
-            category_ids ([str], none_type): The list of category ids. [optional]  # noqa: E501
             brand_ids ([str], none_type): The list of brand ids. [optional]  # noqa: E501
-            min_price (float, none_type): Minimum price of the products. [optional]  # noqa: E501
+            category_ids ([str], none_type): The list of category ids. [optional]  # noqa: E501
+            lookback_days (str, none_type): The number of days to look back. [optional]  # noqa: E501
             max_price (float, none_type): Maximum price of the products. [optional]  # noqa: E501
+            min_price (float, none_type): Minimum price of the products. [optional]  # noqa: E501
+            shopper_activity (str, none_type): Reach people who performed specific action. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,12 +255,12 @@ class RmEventsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            shopper_activity (str, none_type): Reach people who performed specific action. [optional]  # noqa: E501
-            lookback_days (str, none_type): The number of days to look back. [optional]  # noqa: E501
-            category_ids ([str], none_type): The list of category ids. [optional]  # noqa: E501
             brand_ids ([str], none_type): The list of brand ids. [optional]  # noqa: E501
-            min_price (float, none_type): Minimum price of the products. [optional]  # noqa: E501
+            category_ids ([str], none_type): The list of category ids. [optional]  # noqa: E501
+            lookback_days (str, none_type): The number of days to look back. [optional]  # noqa: E501
             max_price (float, none_type): Maximum price of the products. [optional]  # noqa: E501
+            min_price (float, none_type): Minimum price of the products. [optional]  # noqa: E501
+            shopper_activity (str, none_type): Reach people who performed specific action. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

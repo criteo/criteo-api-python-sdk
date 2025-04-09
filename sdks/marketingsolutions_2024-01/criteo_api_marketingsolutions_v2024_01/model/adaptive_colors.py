@@ -81,12 +81,12 @@ class AdaptiveColors(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'logo_area_and_title_color': (str,),  # noqa: E501
             'background_color': (str,),  # noqa: E501
-            'text1_color': (str,),  # noqa: E501
-            'text2_color': (str,),  # noqa: E501
             'cta_background_color': (str,),  # noqa: E501
             'cta_text_color': (str,),  # noqa: E501
+            'logo_area_and_title_color': (str,),  # noqa: E501
+            'text1_color': (str,),  # noqa: E501
+            'text2_color': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -95,12 +95,12 @@ class AdaptiveColors(ModelNormal):
 
 
     attribute_map = {
-        'logo_area_and_title_color': 'logoAreaAndTitleColor',  # noqa: E501
         'background_color': 'backgroundColor',  # noqa: E501
-        'text1_color': 'text1Color',  # noqa: E501
-        'text2_color': 'text2Color',  # noqa: E501
         'cta_background_color': 'ctaBackgroundColor',  # noqa: E501
         'cta_text_color': 'ctaTextColor',  # noqa: E501
+        'logo_area_and_title_color': 'logoAreaAndTitleColor',  # noqa: E501
+        'text1_color': 'text1Color',  # noqa: E501
+        'text2_color': 'text2Color',  # noqa: E501
     }
 
     read_only_vars = {
@@ -110,16 +110,16 @@ class AdaptiveColors(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, logo_area_and_title_color, background_color, text1_color, text2_color, cta_background_color, cta_text_color, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, background_color, cta_background_color, cta_text_color, logo_area_and_title_color, text1_color, text2_color, *args, **kwargs):  # noqa: E501
         """AdaptiveColors - a model defined in OpenAPI
 
         Args:
-            logo_area_and_title_color (str): Color of the creative's logo area.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
             background_color (str): Color of the creative's background.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
-            text1_color (str): Color of the headline and the description texts.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
-            text2_color (str): Color of the image set's headline text.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
             cta_background_color (str): Color of the background of the CTA.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
             cta_text_color (str): Color of the text of the CTA.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
+            logo_area_and_title_color (str): Color of the creative's logo area.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
+            text1_color (str): Color of the headline and the description texts.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
+            text2_color (str): Color of the image set's headline text.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -183,12 +183,12 @@ class AdaptiveColors(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.logo_area_and_title_color = logo_area_and_title_color
         self.background_color = background_color
-        self.text1_color = text1_color
-        self.text2_color = text2_color
         self.cta_background_color = cta_background_color
         self.cta_text_color = cta_text_color
+        self.logo_area_and_title_color = logo_area_and_title_color
+        self.text1_color = text1_color
+        self.text2_color = text2_color
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -209,16 +209,16 @@ class AdaptiveColors(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, logo_area_and_title_color, background_color, text1_color, text2_color, cta_background_color, cta_text_color, *args, **kwargs):  # noqa: E501
+    def __init__(self, background_color, cta_background_color, cta_text_color, logo_area_and_title_color, text1_color, text2_color, *args, **kwargs):  # noqa: E501
         """AdaptiveColors - a model defined in OpenAPI
 
         Args:
-            logo_area_and_title_color (str): Color of the creative's logo area.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
             background_color (str): Color of the creative's background.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
-            text1_color (str): Color of the headline and the description texts.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
-            text2_color (str): Color of the image set's headline text.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
             cta_background_color (str): Color of the background of the CTA.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
             cta_text_color (str): Color of the text of the CTA.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
+            logo_area_and_title_color (str): Color of the creative's logo area.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\").
+            text1_color (str): Color of the headline and the description texts.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
+            text2_color (str): Color of the image set's headline text.  A valid RGB24 color in hexadecimal (e.g. \"AB00FF\")
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -280,12 +280,12 @@ class AdaptiveColors(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.logo_area_and_title_color = logo_area_and_title_color
         self.background_color = background_color
-        self.text1_color = text1_color
-        self.text2_color = text2_color
         self.cta_background_color = cta_background_color
         self.cta_text_color = cta_text_color
+        self.logo_area_and_title_color = logo_area_and_title_color
+        self.text1_color = text1_color
+        self.text2_color = text2_color
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

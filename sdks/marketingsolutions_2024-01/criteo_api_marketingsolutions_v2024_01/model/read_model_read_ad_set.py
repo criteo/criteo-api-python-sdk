@@ -87,9 +87,9 @@ class ReadModelReadAdSet(ModelNormal):
         """
         lazy_import()
         return {
+            'attributes': (ReadAdSet,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'attributes': (ReadAdSet,),  # noqa: E501
         }
 
     @cached_property
@@ -98,9 +98,9 @@ class ReadModelReadAdSet(ModelNormal):
 
 
     attribute_map = {
+        'attributes': 'attributes',  # noqa: E501
         'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,9 +146,9 @@ class ReadModelReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (ReadAdSet): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes (ReadAdSet): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,9 +234,9 @@ class ReadModelReadAdSet(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (ReadAdSet): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): [optional]  # noqa: E501
-            attributes (ReadAdSet): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

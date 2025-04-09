@@ -55,17 +55,17 @@ class ExternalRetailMediaChildAccount(ModelNormal):
     """
 
     allowed_values = {
-        ('type',): {
-            'None': None,
-            'UNKNOWN': "Unknown",
-            'SUPPLY': "Supply",
-            'DEMAND': "Demand",
-        },
         ('sub_type',): {
             'None': None,
             'UNKNOWN': "Unknown",
             'BRAND': "Brand",
             'SELLER': "Seller",
+        },
+        ('type',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'SUPPLY': "Supply",
+            'DEMAND': "Demand",
         },
     }
 
@@ -87,14 +87,14 @@ class ExternalRetailMediaChildAccount(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
-            'on_behalf_company_name': (str, none_type,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
-            'sub_type': (str, none_type,),  # noqa: E501
             'country_ids': ([str], none_type,),  # noqa: E501
             'currency_id': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'sub_type': (str, none_type,),  # noqa: E501
             'time_zone': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -103,14 +103,14 @@ class ExternalRetailMediaChildAccount(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
-        'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'sub_type': 'subType',  # noqa: E501
         'country_ids': 'countryIds',  # noqa: E501
         'currency_id': 'currencyId',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'sub_type': 'subType',  # noqa: E501
         'time_zone': 'timeZone',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -154,14 +154,14 @@ class ExternalRetailMediaChildAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): account name. [optional]  # noqa: E501
             company_name (str, none_type): Paying entity name of ads for the Digital Services Act. [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
-            type (str, none_type): Type for the account. [optional]  # noqa: E501
-            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
             country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
             currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
+            name (str, none_type): account name. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
             time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
+            type (str, none_type): Type for the account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -247,14 +247,14 @@ class ExternalRetailMediaChildAccount(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): account name. [optional]  # noqa: E501
             company_name (str, none_type): Paying entity name of ads for the Digital Services Act. [optional]  # noqa: E501
-            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
-            type (str, none_type): Type for the account. [optional]  # noqa: E501
-            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
             country_ids ([str], none_type): list of countries associated with the account. [optional]  # noqa: E501
             currency_id (str, none_type): the currency for the account. [optional]  # noqa: E501
+            name (str, none_type): account name. [optional]  # noqa: E501
+            on_behalf_company_name (str, none_type): On behalf entity name of ads for the Digital Services Act. [optional]  # noqa: E501
+            sub_type (str, none_type): subtype for the account. [optional]  # noqa: E501
             time_zone (str, none_type): the timezone for the account. [optional]  # noqa: E501
+            type (str, none_type): Type for the account. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -102,17 +102,17 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'is_auto_daily_pacing': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
-            'is_auto_daily_pacing': (bool,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
+            'bid_strategy': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
+            'daily_pacing': (float, none_type,),  # noqa: E501
+            'end_date': (date,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
-            'daily_pacing': (float, none_type,),  # noqa: E501
-            'bid_strategy': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -121,17 +121,17 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
 
 
     attribute_map = {
+        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
         'name': 'name',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'status': 'status',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
-        'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
+        'bid_strategy': 'bidStrategy',  # noqa: E501
         'budget': 'budget',  # noqa: E501
+        'daily_pacing': 'dailyPacing',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'daily_pacing': 'dailyPacing',  # noqa: E501
-        'bid_strategy': 'bidStrategy',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,15 +141,15 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, start_date, status, target_bid, is_auto_daily_pacing, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, is_auto_daily_pacing, name, start_date, status, target_bid, *args, **kwargs):  # noqa: E501
         """ExternalAuctionLineItemUpdateModel - a model defined in OpenAPI
 
         Args:
+            is_auto_daily_pacing (bool):
             name (str):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             status (str):
             target_bid (float, none_type):
-            is_auto_daily_pacing (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -182,12 +182,12 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -219,11 +219,11 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.is_auto_daily_pacing = is_auto_daily_pacing
         self.name = name
         self.start_date = start_date
         self.status = status
         self.target_bid = target_bid
-        self.is_auto_daily_pacing = is_auto_daily_pacing
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -244,15 +244,15 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, start_date, status, target_bid, is_auto_daily_pacing, *args, **kwargs):  # noqa: E501
+    def __init__(self, is_auto_daily_pacing, name, start_date, status, target_bid, *args, **kwargs):  # noqa: E501
         """ExternalAuctionLineItemUpdateModel - a model defined in OpenAPI
 
         Args:
+            is_auto_daily_pacing (bool):
             name (str):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             status (str):
             target_bid (float, none_type):
-            is_auto_daily_pacing (bool):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -285,12 +285,12 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
+            daily_pacing (float, none_type): [optional]  # noqa: E501
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -320,11 +320,11 @@ class ExternalAuctionLineItemUpdateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.is_auto_daily_pacing = is_auto_daily_pacing
         self.name = name
         self.start_date = start_date
         self.status = status
         self.target_bid = target_bid
-        self.is_auto_daily_pacing = is_auto_daily_pacing
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

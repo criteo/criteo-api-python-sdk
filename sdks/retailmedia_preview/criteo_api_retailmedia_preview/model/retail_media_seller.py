@@ -75,9 +75,9 @@ class RetailMediaSeller(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'seller_id': (str, none_type,),  # noqa: E501
-            'retailer_id': (int, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
+            'retailer_id': (int, none_type,),  # noqa: E501
+            'seller_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -86,9 +86,9 @@ class RetailMediaSeller(ModelNormal):
 
 
     attribute_map = {
-        'seller_id': 'sellerId',  # noqa: E501
-        'retailer_id': 'retailerId',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
+        'seller_id': 'sellerId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,9 +132,9 @@ class RetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seller_id (str, none_type): the seller id. [optional]  # noqa: E501
-            retailer_id (int, none_type): the retailer id. [optional]  # noqa: E501
             name (str, none_type): seller name. [optional]  # noqa: E501
+            retailer_id (int, none_type): the retailer id. [optional]  # noqa: E501
+            seller_id (str, none_type): the seller id. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,9 +220,9 @@ class RetailMediaSeller(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            seller_id (str, none_type): the seller id. [optional]  # noqa: E501
-            retailer_id (int, none_type): the retailer id. [optional]  # noqa: E501
             name (str, none_type): seller name. [optional]  # noqa: E501
+            retailer_id (int, none_type): the retailer id. [optional]  # noqa: E501
+            seller_id (str, none_type): the seller id. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

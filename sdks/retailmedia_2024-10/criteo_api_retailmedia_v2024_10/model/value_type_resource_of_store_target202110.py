@@ -87,8 +87,8 @@ class ValueTypeResourceOfStoreTarget202110(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (str,),  # noqa: E501
             'attributes': (ExternalStoreTarget202110,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class ValueTypeResourceOfStoreTarget202110(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
         'attributes': 'attributes',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,8 +142,8 @@ class ValueTypeResourceOfStoreTarget202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
             attributes (ExternalStoreTarget202110): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,8 +229,8 @@ class ValueTypeResourceOfStoreTarget202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): [optional]  # noqa: E501
             attributes (ExternalStoreTarget202110): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -75,9 +75,9 @@ class BrandIdSearchResult(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'brand_type': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
-            'brand_type': (str,),  # noqa: E501
             'retailer_ids': ([int],),  # noqa: E501
         }
 
@@ -87,9 +87,9 @@ class BrandIdSearchResult(ModelNormal):
 
 
     attribute_map = {
+        'brand_type': 'brandType',  # noqa: E501
         'id': 'id',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'brand_type': 'brandType',  # noqa: E501
         'retailer_ids': 'retailerIds',  # noqa: E501
     }
 
@@ -100,13 +100,13 @@ class BrandIdSearchResult(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, id, name, brand_type, retailer_ids, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, brand_type, id, name, retailer_ids, *args, **kwargs):  # noqa: E501
         """BrandIdSearchResult - a model defined in OpenAPI
 
         Args:
+            brand_type (str): The type of the brand
             id (str): The brand id
             name (str): The name of the brand
-            brand_type (str): The type of the brand
             retailer_ids ([int]): The retailer ids associated to the brand
 
         Keyword Args:
@@ -171,9 +171,9 @@ class BrandIdSearchResult(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.brand_type = brand_type
         self.id = id
         self.name = name
-        self.brand_type = brand_type
         self.retailer_ids = retailer_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -195,13 +195,13 @@ class BrandIdSearchResult(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, id, name, brand_type, retailer_ids, *args, **kwargs):  # noqa: E501
+    def __init__(self, brand_type, id, name, retailer_ids, *args, **kwargs):  # noqa: E501
         """BrandIdSearchResult - a model defined in OpenAPI
 
         Args:
+            brand_type (str): The type of the brand
             id (str): The brand id
             name (str): The name of the brand
-            brand_type (str): The type of the brand
             retailer_ids ([int]): The retailer ids associated to the brand
 
         Keyword Args:
@@ -264,9 +264,9 @@ class BrandIdSearchResult(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.brand_type = brand_type
         self.id = id
         self.name = name
-        self.brand_type = brand_type
         self.retailer_ids = retailer_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

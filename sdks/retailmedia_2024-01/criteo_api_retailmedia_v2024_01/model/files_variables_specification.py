@@ -84,8 +84,8 @@ class FilesVariablesSpecification(ModelNormal):
         return {
             'extensions': ([str],),  # noqa: E501
             'max_bytes': (int, none_type,),  # noqa: E501
-            'min_files': (int, none_type,),  # noqa: E501
             'max_file': (int, none_type,),  # noqa: E501
+            'min_files': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -96,8 +96,8 @@ class FilesVariablesSpecification(ModelNormal):
     attribute_map = {
         'extensions': 'extensions',  # noqa: E501
         'max_bytes': 'maxBytes',  # noqa: E501
-        'min_files': 'minFiles',  # noqa: E501
         'max_file': 'maxFile',  # noqa: E501
+        'min_files': 'minFiles',  # noqa: E501
     }
 
     read_only_vars = {
@@ -145,8 +145,8 @@ class FilesVariablesSpecification(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             max_bytes (int, none_type): The maximum amount of bytes per file. [optional]  # noqa: E501
-            min_files (int, none_type): The minimum amount of files requires. [optional]  # noqa: E501
             max_file (int, none_type): The maximum amount of files required. [optional]  # noqa: E501
+            min_files (int, none_type): The minimum amount of files requires. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +237,8 @@ class FilesVariablesSpecification(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             max_bytes (int, none_type): The maximum amount of bytes per file. [optional]  # noqa: E501
-            min_files (int, none_type): The minimum amount of files requires. [optional]  # noqa: E501
             max_file (int, none_type): The maximum amount of files required. [optional]  # noqa: E501
+            min_files (int, none_type): The minimum amount of files requires. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

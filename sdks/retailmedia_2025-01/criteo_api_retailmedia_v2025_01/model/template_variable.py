@@ -95,8 +95,8 @@ class TemplateVariable(ModelNormal):
             'required': (bool,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'choice_variable_specification': (ChoiceVariableSpecification,),  # noqa: E501
-            'text_variable_specification': (TextVariableSpecification,),  # noqa: E501
             'files_variables_specification': (FilesVariablesSpecification,),  # noqa: E501
+            'text_variable_specification': (TextVariableSpecification,),  # noqa: E501
         }
 
     @cached_property
@@ -109,8 +109,8 @@ class TemplateVariable(ModelNormal):
         'required': 'required',  # noqa: E501
         'type': 'type',  # noqa: E501
         'choice_variable_specification': 'choiceVariableSpecification',  # noqa: E501
-        'text_variable_specification': 'textVariableSpecification',  # noqa: E501
         'files_variables_specification': 'filesVariablesSpecification',  # noqa: E501
+        'text_variable_specification': 'textVariableSpecification',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,8 +160,8 @@ class TemplateVariable(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             choice_variable_specification (ChoiceVariableSpecification): [optional]  # noqa: E501
-            text_variable_specification (TextVariableSpecification): [optional]  # noqa: E501
             files_variables_specification (FilesVariablesSpecification): [optional]  # noqa: E501
+            text_variable_specification (TextVariableSpecification): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -256,8 +256,8 @@ class TemplateVariable(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             choice_variable_specification (ChoiceVariableSpecification): [optional]  # noqa: E501
-            text_variable_specification (TextVariableSpecification): [optional]  # noqa: E501
             files_variables_specification (FilesVariablesSpecification): [optional]  # noqa: E501
+            text_variable_specification (TextVariableSpecification): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

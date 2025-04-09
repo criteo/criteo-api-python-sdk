@@ -81,8 +81,8 @@ class RmLegacySegmentCustomerList(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'size': (str,),  # noqa: E501
             'is_shared': (bool,),  # noqa: E501
+            'size': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -91,8 +91,8 @@ class RmLegacySegmentCustomerList(ModelNormal):
 
 
     attribute_map = {
-        'size': 'size',  # noqa: E501
         'is_shared': 'isShared',  # noqa: E501
+        'size': 'size',  # noqa: E501
     }
 
     read_only_vars = {
@@ -102,12 +102,12 @@ class RmLegacySegmentCustomerList(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, size, is_shared, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, is_shared, size, *args, **kwargs):  # noqa: E501
         """RmLegacySegmentCustomerList - a model defined in OpenAPI
 
         Args:
-            size (str): Number of users in the customer list audience.
             is_shared (bool): Indicate if the audience is shared.
+            size (str): Number of users in the customer list audience.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,8 +171,8 @@ class RmLegacySegmentCustomerList(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.size = size
         self.is_shared = is_shared
+        self.size = size
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -193,12 +193,12 @@ class RmLegacySegmentCustomerList(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, size, is_shared, *args, **kwargs):  # noqa: E501
+    def __init__(self, is_shared, size, *args, **kwargs):  # noqa: E501
         """RmLegacySegmentCustomerList - a model defined in OpenAPI
 
         Args:
-            size (str): Number of users in the customer list audience.
             is_shared (bool): Indicate if the audience is shared.
+            size (str): Number of users in the customer list audience.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -260,8 +260,8 @@ class RmLegacySegmentCustomerList(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.size = size
         self.is_shared = is_shared
+        self.size = size
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

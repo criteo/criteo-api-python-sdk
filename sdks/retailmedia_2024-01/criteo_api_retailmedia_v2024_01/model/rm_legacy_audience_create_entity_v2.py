@@ -87,9 +87,9 @@ class RmLegacyAudienceCreateEntityV2(ModelNormal):
         """
         lazy_import()
         return {
+            'name': (str,),  # noqa: E501
             'retailer_id': (int,),  # noqa: E501
             'user_behavior_details': (RmLegacyAudienceUserBehaviorCreateV2,),  # noqa: E501
-            'name': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -98,9 +98,9 @@ class RmLegacyAudienceCreateEntityV2(ModelNormal):
 
 
     attribute_map = {
+        'name': 'name',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'user_behavior_details': 'userBehaviorDetails',  # noqa: E501
-        'name': 'name',  # noqa: E501
     }
 
     read_only_vars = {
@@ -110,13 +110,13 @@ class RmLegacyAudienceCreateEntityV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, retailer_id, user_behavior_details, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, retailer_id, user_behavior_details, *args, **kwargs):  # noqa: E501
         """RmLegacyAudienceCreateEntityV2 - a model defined in OpenAPI
 
         Args:
+            name (str): Name of the audience
             retailer_id (int): ID of the retailer associated with this audience
             user_behavior_details (RmLegacyAudienceUserBehaviorCreateV2):
-            name (str): Name of the audience
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -180,9 +180,9 @@ class RmLegacyAudienceCreateEntityV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.name = name
         self.retailer_id = retailer_id
         self.user_behavior_details = user_behavior_details
-        self.name = name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -203,13 +203,13 @@ class RmLegacyAudienceCreateEntityV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, retailer_id, user_behavior_details, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, retailer_id, user_behavior_details, *args, **kwargs):  # noqa: E501
         """RmLegacyAudienceCreateEntityV2 - a model defined in OpenAPI
 
         Args:
+            name (str): Name of the audience
             retailer_id (int): ID of the retailer associated with this audience
             user_behavior_details (RmLegacyAudienceUserBehaviorCreateV2):
-            name (str): Name of the audience
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -271,9 +271,9 @@ class RmLegacyAudienceCreateEntityV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.name = name
         self.retailer_id = retailer_id
         self.user_behavior_details = user_behavior_details
-        self.name = name
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

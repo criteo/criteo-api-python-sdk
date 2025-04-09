@@ -346,9 +346,9 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = balance_api.BalanceApi(api_client)
     balance_id = "balanceId_example" # str | Balance id.
-    offset = 0 # int | The (zero-based) starting offset in the collection. (optional) if omitted the server will use the default value of 0
     limit = 25 # int | The number of elements to be returned. (optional) if omitted the server will use the default value of 25
     limit_to_change_types = "limitToChangeTypes_example" # str | Comma separated change types string that will be queried. (optional)
+    offset = 0 # int | The (zero-based) starting offset in the collection. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     try:
@@ -360,7 +360,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_balance_history(balance_id, offset=offset, limit=limit, limit_to_change_types=limit_to_change_types)
+        api_response = api_instance.get_balance_history(balance_id, limit=limit, limit_to_change_types=limit_to_change_types, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2024_07.ApiException as e:
         print("Exception when calling BalanceApi->get_balance_history: %s\n" % e)
@@ -372,9 +372,9 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **balance_id** | **str**| Balance id. |
- **offset** | **int**| The (zero-based) starting offset in the collection. | [optional] if omitted the server will use the default value of 0
  **limit** | **int**| The number of elements to be returned. | [optional] if omitted the server will use the default value of 25
  **limit_to_change_types** | **str**| Comma separated change types string that will be queried. | [optional]
+ **offset** | **int**| The (zero-based) starting offset in the collection. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
@@ -449,11 +449,11 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     update_balance_model_v2_request = UpdateBalanceModelV2Request(
         data=ResourceOfUpdateBalanceModelV2(
             attributes=UpdateBalanceModelV2(
+                end_date="end_date_example",
+                memo="memo_example",
                 name="name_example",
                 po_number="po_number_example",
                 start_date="start_date_example",
-                end_date="end_date_example",
-                memo="memo_example",
             ),
             id="id_example",
             type="type_example",
@@ -551,8 +551,8 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
         data=ResourceOfAddFundsToBalanceV2(
             attributes=AddFundsToBalanceV2(
                 delta_amount=3.14,
-                po_number="po_number_example",
                 memo="memo_example",
+                po_number="po_number_example",
             ),
             id="id_example",
             type="type_example",
@@ -648,13 +648,13 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     create_balance_v2_request = CreateBalanceV2Request(
         data=ResourceOfCreateBalanceV2(
             attributes=CreateBalanceV2(
+                deposited=3.14,
+                end_date=dateutil_parser('1970-01-01').date(),
+                memo="memo_example",
                 name="name_example",
                 po_number="po_number_example",
-                deposited=3.14,
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
                 spend_type="Onsite",
-                memo="memo_example",
+                start_date=dateutil_parser('1970-01-01').date(),
             ),
             id="id_example",
             type="type_example",
@@ -750,9 +750,9 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     change_dates_of_balance_v2_request = ChangeDatesOfBalanceV2Request(
         data=ResourceOfChangeDatesOfBalanceV2(
             attributes=ChangeDatesOfBalanceV2(
-                start_date="start_date_example",
                 end_date="end_date_example",
                 memo="memo_example",
+                start_date="start_date_example",
             ),
             id="id_example",
             type="type_example",

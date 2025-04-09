@@ -110,22 +110,22 @@ class ExternalPreferredLineItemV2(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
-            'status': (str,),  # noqa: E501
-            'target_retailer_id': (str,),  # noqa: E501
             'campaign_id': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
+            'end_date': (date,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
+            'status': (str,),  # noqa: E501
+            'target_retailer_id': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
-            'pacing': (str, none_type,),  # noqa: E501
-            'capping': (ExternalLineItemCappingV2,),  # noqa: E501
-            'page': (ExternalLineItemPageV2,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
-            'budget_spent': (float, none_type,),  # noqa: E501
             'budget_remaining': (float, none_type,),  # noqa: E501
+            'budget_spent': (float, none_type,),  # noqa: E501
+            'capping': (ExternalLineItemCappingV2,),  # noqa: E501
             'creative_id': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'pacing': (str, none_type,),  # noqa: E501
+            'page': (ExternalLineItemPageV2,),  # noqa: E501
         }
 
     @cached_property
@@ -134,22 +134,22 @@ class ExternalPreferredLineItemV2(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'status': 'status',  # noqa: E501
-        'target_retailer_id': 'targetRetailerId',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
+        'status': 'status',  # noqa: E501
+        'target_retailer_id': 'targetRetailerId',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
-        'pacing': 'pacing',  # noqa: E501
-        'capping': 'capping',  # noqa: E501
-        'page': 'page',  # noqa: E501
         'budget': 'budget',  # noqa: E501
-        'budget_spent': 'budgetSpent',  # noqa: E501
         'budget_remaining': 'budgetRemaining',  # noqa: E501
+        'budget_spent': 'budgetSpent',  # noqa: E501
+        'capping': 'capping',  # noqa: E501
         'creative_id': 'creativeId',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'pacing': 'pacing',  # noqa: E501
+        'page': 'page',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,17 +159,17 @@ class ExternalPreferredLineItemV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, start_date, end_date, status, target_retailer_id, campaign_id, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, campaign_id, created_at, end_date, name, start_date, status, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalPreferredLineItemV2 - a model defined in OpenAPI
 
         Args:
-            name (str):
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            status (str): Line Item Status Enum
-            target_retailer_id (str):
             campaign_id (str):
             created_at (datetime):
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            name (str):
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            status (str): Line Item Status Enum
+            target_retailer_id (str):
             updated_at (datetime):
 
         Keyword Args:
@@ -203,14 +203,14 @@ class ExternalPreferredLineItemV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            pacing (str, none_type): [optional]  # noqa: E501
-            capping (ExternalLineItemCappingV2): [optional]  # noqa: E501
-            page (ExternalLineItemPageV2): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
-            budget_spent (float, none_type): [optional]  # noqa: E501
             budget_remaining (float, none_type): [optional]  # noqa: E501
+            budget_spent (float, none_type): [optional]  # noqa: E501
+            capping (ExternalLineItemCappingV2): [optional]  # noqa: E501
             creative_id (str, none_type): External creative Id. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            pacing (str, none_type): [optional]  # noqa: E501
+            page (ExternalLineItemPageV2): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,13 +242,13 @@ class ExternalPreferredLineItemV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.start_date = start_date
-        self.end_date = end_date
-        self.status = status
-        self.target_retailer_id = target_retailer_id
         self.campaign_id = campaign_id
         self.created_at = created_at
+        self.end_date = end_date
+        self.name = name
+        self.start_date = start_date
+        self.status = status
+        self.target_retailer_id = target_retailer_id
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -270,17 +270,17 @@ class ExternalPreferredLineItemV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, start_date, end_date, status, target_retailer_id, campaign_id, created_at, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, campaign_id, created_at, end_date, name, start_date, status, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
         """ExternalPreferredLineItemV2 - a model defined in OpenAPI
 
         Args:
-            name (str):
-            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
-            status (str): Line Item Status Enum
-            target_retailer_id (str):
             campaign_id (str):
             created_at (datetime):
+            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            name (str):
+            start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
+            status (str): Line Item Status Enum
+            target_retailer_id (str):
             updated_at (datetime):
 
         Keyword Args:
@@ -314,14 +314,14 @@ class ExternalPreferredLineItemV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            pacing (str, none_type): [optional]  # noqa: E501
-            capping (ExternalLineItemCappingV2): [optional]  # noqa: E501
-            page (ExternalLineItemPageV2): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
-            budget_spent (float, none_type): [optional]  # noqa: E501
             budget_remaining (float, none_type): [optional]  # noqa: E501
+            budget_spent (float, none_type): [optional]  # noqa: E501
+            capping (ExternalLineItemCappingV2): [optional]  # noqa: E501
             creative_id (str, none_type): External creative Id. [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            pacing (str, none_type): [optional]  # noqa: E501
+            page (ExternalLineItemPageV2): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -351,13 +351,13 @@ class ExternalPreferredLineItemV2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.start_date = start_date
-        self.end_date = end_date
-        self.status = status
-        self.target_retailer_id = target_retailer_id
         self.campaign_id = campaign_id
         self.created_at = created_at
+        self.end_date = end_date
+        self.name = name
+        self.start_date = start_date
+        self.status = status
+        self.target_retailer_id = target_retailer_id
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

@@ -84,9 +84,9 @@ class AddRemoveKeywordModel(ModelNormal):
         """
         lazy_import()
         return {
-            'phrase': (str, none_type,),  # noqa: E501
-            'match_type': (MatchTypeModel,),  # noqa: E501
             'is_deleted': (bool,),  # noqa: E501
+            'match_type': (MatchTypeModel,),  # noqa: E501
+            'phrase': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -95,9 +95,9 @@ class AddRemoveKeywordModel(ModelNormal):
 
 
     attribute_map = {
-        'phrase': 'phrase',  # noqa: E501
-        'match_type': 'matchType',  # noqa: E501
         'is_deleted': 'isDeleted',  # noqa: E501
+        'match_type': 'matchType',  # noqa: E501
+        'phrase': 'phrase',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,9 +141,9 @@ class AddRemoveKeywordModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            phrase (str, none_type): [optional]  # noqa: E501
-            match_type (MatchTypeModel): [optional]  # noqa: E501
             is_deleted (bool): [optional]  # noqa: E501
+            match_type (MatchTypeModel): [optional]  # noqa: E501
+            phrase (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,9 +229,9 @@ class AddRemoveKeywordModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            phrase (str, none_type): [optional]  # noqa: E501
-            match_type (MatchTypeModel): [optional]  # noqa: E501
             is_deleted (bool): [optional]  # noqa: E501
+            match_type (MatchTypeModel): [optional]  # noqa: E501
+            phrase (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -61,17 +61,17 @@ class RmAudienceSegmentEntityV1(ModelNormal):
     """
 
     allowed_values = {
-        ('type',): {
-            'None': None,
-            'UNKNOWN': "Unknown",
-            'CONTACTLIST': "ContactList",
-            'EVENTS': "Events",
-        },
         ('channels',): {
             'None': None,
             'UNKNOWN': "Unknown",
             'ONSITE': "Onsite",
             'OFFSITE': "Offsite",
+        },
+        ('type',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'CONTACTLIST': "ContactList",
+            'EVENTS': "Events",
         },
     }
 
@@ -102,16 +102,16 @@ class RmAudienceSegmentEntityV1(ModelNormal):
         lazy_import()
         return {
             'account_id': (str, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
+            'channels': ([str], none_type,),  # noqa: E501
+            'contact_list': (RmContactListV1,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
+            'created_by_id': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'events': (RmEventsV1,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'retailer_id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
-            'created_at': (datetime, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
-            'created_by_id': (str, none_type,),  # noqa: E501
-            'contact_list': (RmContactListV1,),  # noqa: E501
-            'events': (RmEventsV1,),  # noqa: E501
-            'channels': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -121,16 +121,16 @@ class RmAudienceSegmentEntityV1(ModelNormal):
 
     attribute_map = {
         'account_id': 'accountId',  # noqa: E501
-        'name': 'name',  # noqa: E501
+        'channels': 'channels',  # noqa: E501
+        'contact_list': 'contactList',  # noqa: E501
+        'created_at': 'createdAt',  # noqa: E501
+        'created_by_id': 'createdById',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'events': 'events',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'created_at': 'createdAt',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
-        'created_by_id': 'createdById',  # noqa: E501
-        'contact_list': 'contactList',  # noqa: E501
-        'events': 'events',  # noqa: E501
-        'channels': 'channels',  # noqa: E501
     }
 
     read_only_vars = {
@@ -175,16 +175,16 @@ class RmAudienceSegmentEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str, none_type): Account associated to the segment. [optional]  # noqa: E501
-            name (str, none_type): Name of the segment. [optional]  # noqa: E501
+            channels ([str], none_type): Channels associated to the segment (read-only). [optional]  # noqa: E501
+            contact_list (RmContactListV1): [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
+            created_by_id (str, none_type): User that created the segment. [optional]  # noqa: E501
             description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            events (RmEventsV1): [optional]  # noqa: E501
+            name (str, none_type): Name of the segment. [optional]  # noqa: E501
             retailer_id (str, none_type): Retailer  associated to the segment. [optional]  # noqa: E501
             type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
-            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
-            created_by_id (str, none_type): User that created the segment. [optional]  # noqa: E501
-            contact_list (RmContactListV1): [optional]  # noqa: E501
-            events (RmEventsV1): [optional]  # noqa: E501
-            channels ([str], none_type): Channels associated to the segment (read-only). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -271,16 +271,16 @@ class RmAudienceSegmentEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str, none_type): Account associated to the segment. [optional]  # noqa: E501
-            name (str, none_type): Name of the segment. [optional]  # noqa: E501
+            channels ([str], none_type): Channels associated to the segment (read-only). [optional]  # noqa: E501
+            contact_list (RmContactListV1): [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
+            created_by_id (str, none_type): User that created the segment. [optional]  # noqa: E501
             description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            events (RmEventsV1): [optional]  # noqa: E501
+            name (str, none_type): Name of the segment. [optional]  # noqa: E501
             retailer_id (str, none_type): Retailer  associated to the segment. [optional]  # noqa: E501
             type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
-            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
-            created_by_id (str, none_type): User that created the segment. [optional]  # noqa: E501
-            contact_list (RmContactListV1): [optional]  # noqa: E501
-            events (RmEventsV1): [optional]  # noqa: E501
-            channels ([str], none_type): Channels associated to the segment (read-only). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

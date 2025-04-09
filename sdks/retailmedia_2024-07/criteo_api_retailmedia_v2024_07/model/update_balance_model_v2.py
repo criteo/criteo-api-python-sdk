@@ -81,11 +81,11 @@ class UpdateBalanceModelV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'end_date': (str, none_type,),  # noqa: E501
+            'memo': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'po_number': (str, none_type,),  # noqa: E501
             'start_date': (str, none_type,),  # noqa: E501
-            'end_date': (str, none_type,),  # noqa: E501
-            'memo': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -94,11 +94,11 @@ class UpdateBalanceModelV2(ModelNormal):
 
 
     attribute_map = {
+        'end_date': 'endDate',  # noqa: E501
+        'memo': 'memo',  # noqa: E501
         'name': 'name',  # noqa: E501
         'po_number': 'poNumber',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
-        'memo': 'memo',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,11 +142,11 @@ class UpdateBalanceModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            memo (str, none_type): Memo.. [optional]  # noqa: E501
             name (str, none_type): Name of the balance.. [optional]  # noqa: E501
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
-            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
-            memo (str, none_type): Memo.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,11 +232,11 @@ class UpdateBalanceModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            memo (str, none_type): Memo.. [optional]  # noqa: E501
             name (str, none_type): Name of the balance.. [optional]  # noqa: E501
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
-            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
-            memo (str, none_type): Memo.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

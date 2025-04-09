@@ -91,8 +91,8 @@ class AudienceSegmentSearchEntityV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'audience_segment_ids': ([str],),  # noqa: E501
             'advertiser_ids': ([str],),  # noqa: E501
+            'audience_segment_ids': ([str],),  # noqa: E501
             'audience_segment_types': ([str],),  # noqa: E501
         }
 
@@ -102,8 +102,8 @@ class AudienceSegmentSearchEntityV1(ModelNormal):
 
 
     attribute_map = {
-        'audience_segment_ids': 'audienceSegmentIds',  # noqa: E501
         'advertiser_ids': 'advertiserIds',  # noqa: E501
+        'audience_segment_ids': 'audienceSegmentIds',  # noqa: E501
         'audience_segment_types': 'audienceSegmentTypes',  # noqa: E501
     }
 
@@ -148,8 +148,8 @@ class AudienceSegmentSearchEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
             advertiser_ids ([str]): List of advertiser ids. [optional]  # noqa: E501
+            audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
             audience_segment_types ([str]): List of segment types. [optional]  # noqa: E501
         """
 
@@ -236,8 +236,8 @@ class AudienceSegmentSearchEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
             advertiser_ids ([str]): List of advertiser ids. [optional]  # noqa: E501
+            audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
             audience_segment_types ([str]): List of segment types. [optional]  # noqa: E501
         """
 

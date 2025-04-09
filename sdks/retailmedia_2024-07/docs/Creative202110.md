@@ -6,10 +6,11 @@ Metadata and usage info of a preferred deals creative
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**status** | **str** |  | 
 **retailer_id** | **int** |  | 
-**brand_id** | **int, none_type** |  | [optional] 
+**status** | **str** |  | 
 **associated_line_item_ids** | **[str], none_type** |  | [optional] 
+**brand_id** | **int, none_type** |  | [optional] 
+**id** | **str, none_type** | Id of the entity | [optional] 
 **updated_at** | **datetime, none_type** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

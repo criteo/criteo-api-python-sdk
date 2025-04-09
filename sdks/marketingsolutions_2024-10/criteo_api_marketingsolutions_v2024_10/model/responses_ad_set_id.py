@@ -90,8 +90,8 @@ class ResponsesAdSetId(ModelNormal):
         lazy_import()
         return {
             'data': ([ReadModelAdSetId], none_type,),  # noqa: E501
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
             'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,14 +101,14 @@ class ResponsesAdSetId(ModelNormal):
 
     attribute_map = {
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
         'data',  # noqa: E501
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -150,8 +150,8 @@ class ResponsesAdSetId(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ReadModelAdSetId], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,8 +238,8 @@ class ResponsesAdSetId(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data ([ReadModelAdSetId], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
             errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

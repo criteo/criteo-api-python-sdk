@@ -82,8 +82,8 @@ class PageOfBalanceHistoryChangeDataCaptureV1(ModelNormal):
         """
         lazy_import()
         return {
-            'meta': (Metadata,),  # noqa: E501
             'data': ([BalanceHistoryChangeDataCaptureV1],),  # noqa: E501
+            'meta': (Metadata,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class PageOfBalanceHistoryChangeDataCaptureV1(ModelNormal):
 
 
     attribute_map = {
-        'meta': 'meta',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'meta': 'meta',  # noqa: E501
     }
 
     read_only_vars = {
@@ -103,12 +103,12 @@ class PageOfBalanceHistoryChangeDataCaptureV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, meta, data, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, data, meta, *args, **kwargs):  # noqa: E501
         """PageOfBalanceHistoryChangeDataCaptureV1 - a model defined in OpenAPI
 
         Args:
-            meta (Metadata):
             data ([BalanceHistoryChangeDataCaptureV1]):
+            meta (Metadata):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -172,8 +172,8 @@ class PageOfBalanceHistoryChangeDataCaptureV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.meta = meta
         self.data = data
+        self.meta = meta
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,12 +194,12 @@ class PageOfBalanceHistoryChangeDataCaptureV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, meta, data, *args, **kwargs):  # noqa: E501
+    def __init__(self, data, meta, *args, **kwargs):  # noqa: E501
         """PageOfBalanceHistoryChangeDataCaptureV1 - a model defined in OpenAPI
 
         Args:
-            meta (Metadata):
             data ([BalanceHistoryChangeDataCaptureV1]):
+            meta (Metadata):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -261,8 +261,8 @@ class PageOfBalanceHistoryChangeDataCaptureV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.meta = meta
         self.data = data
+        self.meta = meta
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

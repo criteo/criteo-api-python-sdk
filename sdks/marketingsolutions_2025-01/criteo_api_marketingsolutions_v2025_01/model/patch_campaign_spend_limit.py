@@ -59,17 +59,17 @@ class PatchCampaignSpendLimit(ModelNormal):
     """
 
     allowed_values = {
-        ('spend_limit_type',): {
-            'None': None,
-            'CAPPED': "capped",
-            'UNCAPPED': "uncapped",
-        },
         ('spend_limit_renewal',): {
             'None': None,
             'UNDEFINED': "undefined",
             'DAILY': "daily",
             'MONTHLY': "monthly",
             'LIFETIME': "lifetime",
+        },
+        ('spend_limit_type',): {
+            'None': None,
+            'CAPPED': "capped",
+            'UNCAPPED': "uncapped",
         },
     }
 
@@ -99,9 +99,9 @@ class PatchCampaignSpendLimit(ModelNormal):
         """
         lazy_import()
         return {
-            'spend_limit_type': (str, none_type,),  # noqa: E501
-            'spend_limit_renewal': (str, none_type,),  # noqa: E501
             'spend_limit_amount': (NillableDecimal,),  # noqa: E501
+            'spend_limit_renewal': (str, none_type,),  # noqa: E501
+            'spend_limit_type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -110,9 +110,9 @@ class PatchCampaignSpendLimit(ModelNormal):
 
 
     attribute_map = {
-        'spend_limit_type': 'spendLimitType',  # noqa: E501
-        'spend_limit_renewal': 'spendLimitRenewal',  # noqa: E501
         'spend_limit_amount': 'spendLimitAmount',  # noqa: E501
+        'spend_limit_renewal': 'spendLimitRenewal',  # noqa: E501
+        'spend_limit_type': 'spendLimitType',  # noqa: E501
     }
 
     read_only_vars = {
@@ -156,9 +156,9 @@ class PatchCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_type (str, none_type): [optional]  # noqa: E501
-            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
+            spend_limit_type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,9 +244,9 @@ class PatchCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_type (str, none_type): [optional]  # noqa: E501
-            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
+            spend_limit_type (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

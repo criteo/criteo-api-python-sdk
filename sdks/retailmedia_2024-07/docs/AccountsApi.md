@@ -61,12 +61,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | the account id to update
     value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
         data=ValueResourceOfRetailMediaBrands(
-            type="type_example",
             attributes=ExternalRetailMediaBrands(
                 brand_ids=[
                     1,
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaBrands |  (optional)
 
@@ -165,15 +165,15 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | The given account id
     value_resource_input_of_retail_media_brand_account_creation = ValueResourceInputOfRetailMediaBrandAccountCreation(
         data=ValueResourceOfRetailMediaBrandAccountCreation(
-            type="type_example",
             attributes=ExternalRetailMediaBrandAccountCreation(
-                name="name_example",
-                company_name="company_name_example",
-                on_behalf_company_name="on_behalf_company_name_example",
                 brands=[
                     1,
                 ],
+                company_name="company_name_example",
+                name="name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaBrandAccountCreation |  (optional)
 
@@ -272,18 +272,18 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | The given account id
     value_resource_input_of_retail_media_seller_account_creation = ValueResourceInputOfRetailMediaSellerAccountCreation(
         data=ValueResourceOfRetailMediaSellerAccountCreation(
-            type="type_example",
             attributes=ExternalRetailMediaSellerAccountCreation(
-                name="name_example",
                 company_name="company_name_example",
+                name="name_example",
                 on_behalf_company_name="on_behalf_company_name_example",
                 sellers=[
                     ExternalRetailMediaSeller(
-                        seller_id="seller_id_example",
                         retailer_id=1,
+                        seller_id="seller_id_example",
                     ),
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaSellerAccountCreation |  (optional)
 
@@ -473,12 +473,12 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | the account id to update
     value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
         data=ValueResourceOfRetailMediaBrands(
-            type="type_example",
             attributes=ExternalRetailMediaBrands(
                 brand_ids=[
                     1,
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfRetailMediaBrands |  (optional)
 
@@ -578,11 +578,11 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     value_resource_collection_input_of_retail_media_seller = ValueResourceCollectionInputOfRetailMediaSeller(
         data=[
             ValueResourceOfRetailMediaSeller(
-                type="type_example",
                 attributes=ExternalRetailMediaSeller(
-                    seller_id="seller_id_example",
                     retailer_id=1,
+                    seller_id="seller_id_example",
                 ),
+                type="type_example",
             ),
         ],
     ) # ValueResourceCollectionInputOfRetailMediaSeller |  (optional)

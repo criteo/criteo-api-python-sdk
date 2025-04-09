@@ -23,7 +23,6 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
 )
 from criteo_api_retailmedia_preview.model.add_remove_keywords_model_request import AddRemoveKeywordsModelRequest
 from criteo_api_retailmedia_preview.model.brand_preview_list_response import BrandPreviewListResponse
-from criteo_api_retailmedia_preview.model.catalog_status_v2_response import CatalogStatusV2Response
 from criteo_api_retailmedia_preview.model.cpc_rate_card_preview_response import CpcRateCardPreviewResponse
 from criteo_api_retailmedia_preview.model.creative2_list_response import Creative2ListResponse
 from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
@@ -31,8 +30,7 @@ from criteo_api_retailmedia_preview.model.creative_create_model2 import Creative
 from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_line_item_keyword_review_report_and_metadata import EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata
-from criteo_api_retailmedia_preview.model.json_api_request_of_brand_catalog_request_v2 import JsonApiRequestOfBrandCatalogRequestV2
-from criteo_api_retailmedia_preview.model.json_api_request_of_seller_catalog_request_v2 import JsonApiRequestOfSellerCatalogRequestV2
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_preview.model.json_api_single_response_of_line_item_bid_multipliers_v2 import JsonApiSingleResponseOfLineItemBidMultipliersV2
 from criteo_api_retailmedia_preview.model.keywords_model_response import KeywordsModelResponse
 from criteo_api_retailmedia_preview.model.line_item_bid_multipliers_v2_request import LineItemBidMultipliersV2Request
@@ -59,6 +57,8 @@ from criteo_api_retailmedia_preview.model.sku_slim_data_preview_list_response im
 from criteo_api_retailmedia_preview.model.sku_slim_data_v2_list_response import SkuSlimDataV2ListResponse
 from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_cpc_min_bids_request import ValueResourceInputCpcMinBidsRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_of_brand_catalog_request_v2 import ValueResourceInputOfBrandCatalogRequestV2
+from criteo_api_retailmedia_preview.model.value_resource_input_of_seller_catalog_request_v2 import ValueResourceInputOfSellerCatalogRequestV2
 from criteo_api_retailmedia_preview.model.value_resource_input_retail_media_keywords_review import ValueResourceInputRetailMediaKeywordsReview
 from criteo_api_retailmedia_preview.model.value_resource_outcome_cpc_min_bids_response import ValueResourceOutcomeCpcMinBidsResponse
 from criteo_api_retailmedia_preview.model.value_resource_outcome_of_recommended_keywords_result import ValueResourceOutcomeOfRecommendedKeywordsResult
@@ -373,9 +373,9 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'offset',
-                    'limit',
                     'fields',
+                    'limit',
+                    'offset',
                 ],
                 'required': [
                     'line_item_id',
@@ -395,24 +395,24 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'offset':
-                        (int,),
-                    'limit':
-                        (int,),
                     'fields':
                         (str,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
-                    'offset': 'offset',
-                    'limit': 'limit',
                     'fields': 'fields',
+                    'limit': 'limit',
+                    'offset': 'offset',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'offset': 'query',
-                    'limit': 'query',
                     'fields': 'query',
+                    'limit': 'query',
+                    'offset': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -537,7 +537,7 @@ class CampaignApi(object):
         )
         self.get_api_external_v2_catalog_status_by_catalog_id_endpoint = _Endpoint(
             settings={
-                'response_type': (CatalogStatusV2Response,),
+                'response_type': (EntityResourceOutcomeOfCatalogStatusV2,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -604,8 +604,8 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'retailer_id',
-                    'sku_stock_type_filter',
                     'brand_type',
+                    'sku_stock_type_filter',
                 ],
                 'required': [
                     'retailer_id',
@@ -613,8 +613,8 @@ class CampaignApi(object):
                 'nullable': [
                 ],
                 'enum': [
-                    'sku_stock_type_filter',
                     'brand_type',
+                    'sku_stock_type_filter',
                 ],
                 'validation': [
                 ]
@@ -623,36 +623,36 @@ class CampaignApi(object):
                 'validations': {
                 },
                 'allowed_values': {
-                    ('sku_stock_type_filter',): {
-
-                        "FIRST-PARTY": "first-party",
-                        "THIRD-PARTY": "third-party",
-                        "FIRST-AND-THIRD-PARTY": "first-and-third-party"
-                    },
                     ('brand_type',): {
 
                         "ALL": "all",
                         "UC": "uc",
                         "RETAILER": "retailer"
                     },
+                    ('sku_stock_type_filter',): {
+
+                        "FIRST-PARTY": "first-party",
+                        "THIRD-PARTY": "third-party",
+                        "FIRST-AND-THIRD-PARTY": "first-and-third-party"
+                    },
                 },
                 'openapi_types': {
                     'retailer_id':
                         (int,),
-                    'sku_stock_type_filter':
-                        (str,),
                     'brand_type':
+                        (str,),
+                    'sku_stock_type_filter':
                         (str,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailerId',
-                    'sku_stock_type_filter': 'sku-stock-type-filter',
                     'brand_type': 'brand-type',
+                    'sku_stock_type_filter': 'sku-stock-type-filter',
                 },
                 'location_map': {
                     'retailer_id': 'path',
-                    'sku_stock_type_filter': 'query',
                     'brand_type': 'query',
+                    'sku_stock_type_filter': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1197,8 +1197,8 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'offset',
                     'limit',
+                    'offset',
                 ],
                 'required': [
                     'account_id',
@@ -1208,21 +1208,21 @@ class CampaignApi(object):
                 'enum': [
                 ],
                 'validation': [
-                    'offset',
                     'limit',
+                    'offset',
                 ]
             },
             root_map={
                 'validations': {
-                    ('offset',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
                     ('limit',): {
 
                         'inclusive_maximum': 50,
                         'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
                     },
                 },
                 'allowed_values': {
@@ -1230,20 +1230,20 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (int,),
-                    'offset':
-                        (int,),
                     'limit':
+                        (int,),
+                    'offset':
                         (int,),
                 },
                 'attribute_map': {
                     'account_id': 'account-id',
-                    'offset': 'offset',
                     'limit': 'limit',
+                    'offset': 'offset',
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'offset': 'query',
                     'limit': 'query',
+                    'offset': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1435,7 +1435,7 @@ class CampaignApi(object):
         )
         self.post_api_external_v2_account_brand_catalog_export_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': (CatalogStatusV2Response,),
+                'response_type': (EntityResourceOutcomeOfCatalogStatusV2,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1448,13 +1448,13 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'json_api_request_of_brand_catalog_request_v2',
+                    'value_resource_input_of_brand_catalog_request_v2',
                 ],
                 'required': [
                     'account_id',
                 ],
                 'nullable': [
-                    'json_api_request_of_brand_catalog_request_v2',
+                    'value_resource_input_of_brand_catalog_request_v2',
                 ],
                 'enum': [
                 ],
@@ -1469,15 +1469,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'json_api_request_of_brand_catalog_request_v2':
-                        (JsonApiRequestOfBrandCatalogRequestV2,),
+                    'value_resource_input_of_brand_catalog_request_v2':
+                        (ValueResourceInputOfBrandCatalogRequestV2,),
                 },
                 'attribute_map': {
                     'account_id': 'accountId',
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'json_api_request_of_brand_catalog_request_v2': 'body',
+                    'value_resource_input_of_brand_catalog_request_v2': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1496,7 +1496,7 @@ class CampaignApi(object):
         )
         self.post_api_external_v2_account_seller_catalog_export_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': (CatalogStatusV2Response,),
+                'response_type': (EntityResourceOutcomeOfCatalogStatusV2,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1509,13 +1509,13 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'json_api_request_of_seller_catalog_request_v2',
+                    'value_resource_input_of_seller_catalog_request_v2',
                 ],
                 'required': [
                     'account_id',
                 ],
                 'nullable': [
-                    'json_api_request_of_seller_catalog_request_v2',
+                    'value_resource_input_of_seller_catalog_request_v2',
                 ],
                 'enum': [
                 ],
@@ -1530,15 +1530,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'json_api_request_of_seller_catalog_request_v2':
-                        (JsonApiRequestOfSellerCatalogRequestV2,),
+                    'value_resource_input_of_seller_catalog_request_v2':
+                        (ValueResourceInputOfSellerCatalogRequestV2,),
                 },
                 'attribute_map': {
                     'account_id': 'accountId',
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'json_api_request_of_seller_catalog_request_v2': 'body',
+                    'value_resource_input_of_seller_catalog_request_v2': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1721,8 +1721,8 @@ class CampaignApi(object):
                 'all': [
                     'account_id',
                     'retailer_id',
-                    'offset',
                     'limit',
+                    'offset',
                     'sku_search_request_slim_preview_request',
                 ],
                 'required': [
@@ -1752,9 +1752,9 @@ class CampaignApi(object):
                         (str,),
                     'retailer_id':
                         (str,),
-                    'offset':
-                        (int,),
                     'limit':
+                        (int,),
+                    'offset':
                         (int,),
                     'sku_search_request_slim_preview_request':
                         (SkuSearchRequestSlimPreviewRequest,),
@@ -1762,14 +1762,14 @@ class CampaignApi(object):
                 'attribute_map': {
                     'account_id': 'account-id',
                     'retailer_id': 'retailer-id',
-                    'offset': 'offset',
                     'limit': 'limit',
+                    'offset': 'offset',
                 },
                 'location_map': {
                     'account_id': 'path',
                     'retailer_id': 'path',
-                    'offset': 'query',
                     'limit': 'query',
+                    'offset': 'query',
                     'sku_search_request_slim_preview_request': 'body',
                 },
                 'collection_format_map': {
@@ -1800,9 +1800,9 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'retailer_id',
-                    'x_origin_account',
-                    'offset',
                     'limit',
+                    'offset',
+                    'x_origin_account',
                     'sku_search_request_slim_v2_preview_request',
                 ],
                 'required': [
@@ -1829,26 +1829,26 @@ class CampaignApi(object):
                 'openapi_types': {
                     'retailer_id':
                         (str,),
-                    'x_origin_account':
-                        (str,),
-                    'offset':
-                        (int,),
                     'limit':
                         (int,),
+                    'offset':
+                        (int,),
+                    'x_origin_account':
+                        (str,),
                     'sku_search_request_slim_v2_preview_request':
                         (SkuSearchRequestSlimV2PreviewRequest,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailer-id',
-                    'x_origin_account': 'X-Origin-Account',
-                    'offset': 'offset',
                     'limit': 'limit',
+                    'offset': 'offset',
+                    'x_origin_account': 'X-Origin-Account',
                 },
                 'location_map': {
                     'retailer_id': 'path',
-                    'x_origin_account': 'header',
-                    'offset': 'query',
                     'limit': 'query',
+                    'offset': 'query',
+                    'x_origin_account': 'header',
                     'sku_search_request_slim_v2_preview_request': 'body',
                 },
                 'collection_format_map': {
@@ -2248,8 +2248,8 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'offset',
                     'limit',
+                    'offset',
                     'value_resource_input_brand_id_search_request',
                 ],
                 'required': [],
@@ -2258,40 +2258,40 @@ class CampaignApi(object):
                 'enum': [
                 ],
                 'validation': [
-                    'offset',
                     'limit',
+                    'offset',
                 ]
             },
             root_map={
                 'validations': {
-                    ('offset',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
                     ('limit',): {
 
                         'inclusive_maximum': 100,
                         'inclusive_minimum': 1,
                     },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
                 },
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'offset':
-                        (int,),
                     'limit':
+                        (int,),
+                    'offset':
                         (int,),
                     'value_resource_input_brand_id_search_request':
                         (ValueResourceInputBrandIdSearchRequest,),
                 },
                 'attribute_map': {
-                    'offset': 'offset',
                     'limit': 'limit',
+                    'offset': 'offset',
                 },
                 'location_map': {
-                    'offset': 'query',
                     'limit': 'query',
+                    'offset': 'query',
                     'value_resource_input_brand_id_search_request': 'body',
                 },
                 'collection_format_map': {
@@ -2932,9 +2932,9 @@ class CampaignApi(object):
             line_item_id (str): ID of the line item.
 
         Keyword Args:
-            offset (int): Offset of the first item to fetch. Defaults to zero.. [optional]
-            limit (int): Maximum page size to fetch. Defaults to 500.. [optional]
             fields (str): A comma separated list of attribute names from the response model to compute and return.              Valid values are `status` and `bidOverride` in any order. Defaults to `status`.. [optional]
+            limit (int): Maximum page size to fetch. Defaults to 500.. [optional]
+            offset (int): Offset of the first item to fetch. Defaults to zero.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3220,7 +3220,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CatalogStatusV2Response
+            EntityResourceOutcomeOfCatalogStatusV2
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3271,8 +3271,8 @@ class CampaignApi(object):
             retailer_id (int): The retailer id for which brands should be fetched.
 
         Keyword Args:
-            sku_stock_type_filter (str): Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party. [optional]
             brand_type (str):  Filter to narrow down brands [all|uc|retailer]. Defaults to uc. [optional]
+            sku_stock_type_filter (str): Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4116,8 +4116,8 @@ class CampaignApi(object):
             account_id (int): The account to generate a report for
 
         Keyword Args:
-            offset (int): Offset for pagination. [optional] if omitted the server will use the default value of 0
             limit (int): Number of items per page. [optional] if omitted the server will use the default value of 25
+            offset (int): Offset for pagination. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4456,7 +4456,7 @@ class CampaignApi(object):
             account_id (str): The account to request the catalog for.
 
         Keyword Args:
-            json_api_request_of_brand_catalog_request_v2 (JsonApiRequestOfBrandCatalogRequestV2): [optional]
+            value_resource_input_of_brand_catalog_request_v2 (ValueResourceInputOfBrandCatalogRequestV2): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4489,7 +4489,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CatalogStatusV2Response
+            EntityResourceOutcomeOfCatalogStatusV2
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4540,7 +4540,7 @@ class CampaignApi(object):
             account_id (str): The account to request the catalog for.
 
         Keyword Args:
-            json_api_request_of_seller_catalog_request_v2 (JsonApiRequestOfSellerCatalogRequestV2): [optional]
+            value_resource_input_of_seller_catalog_request_v2 (ValueResourceInputOfSellerCatalogRequestV2): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4573,7 +4573,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CatalogStatusV2Response
+            EntityResourceOutcomeOfCatalogStatusV2
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4788,8 +4788,8 @@ class CampaignApi(object):
             retailer_id (str): The client id/retailer id for which skus should be searched for.
 
         Keyword Args:
-            offset (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
             limit (int): The maximum number of results to return with each call. Must be greater than zero.. [optional] if omitted the server will use the default value of 100
+            offset (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
             sku_search_request_slim_preview_request (SkuSearchRequestSlimPreviewRequest): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4876,9 +4876,9 @@ class CampaignApi(object):
             retailer_id (str): The client id/retailer id for which skus should be searched for.
 
         Keyword Args:
-            x_origin_account (str): The account id of the initiator of the call.. [optional]
-            offset (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
             limit (int): The maximum number of results to return with each call. Must be greater than zero and less than 1500. 10,000 records deep is the max limit.. [optional] if omitted the server will use the default value of 100
+            offset (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
+            x_origin_account (str): The account id of the initiator of the call.. [optional]
             sku_search_request_slim_v2_preview_request (SkuSearchRequestSlimV2PreviewRequest): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -5475,8 +5475,8 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            offset (int): offset of paginated results. [optional] if omitted the server will use the default value of 0
             limit (int): the number of brands to return. [optional] if omitted the server will use the default value of 25
+            offset (int): offset of paginated results. [optional] if omitted the server will use the default value of 0
             value_resource_input_brand_id_search_request (ValueResourceInputBrandIdSearchRequest): BrandIdSearchRequest which contains the request parameters. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

@@ -88,14 +88,14 @@ class StatusResponse(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'status': (str, none_type,),  # noqa: E501
-            'row_count': (int, none_type,),  # noqa: E501
-            'file_size_bytes': (int, none_type,),  # noqa: E501
-            'md5_check_sum': (str, none_type,),  # noqa: E501
             'created_at': (str, none_type,),  # noqa: E501
             'expires_at': (str, none_type,),  # noqa: E501
-            'message': (str, none_type,),  # noqa: E501
+            'file_size_bytes': (int, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'md5_check_sum': (str, none_type,),  # noqa: E501
+            'message': (str, none_type,),  # noqa: E501
+            'row_count': (int, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -104,14 +104,14 @@ class StatusResponse(ModelNormal):
 
 
     attribute_map = {
-        'status': 'status',  # noqa: E501
-        'row_count': 'rowCount',  # noqa: E501
-        'file_size_bytes': 'fileSizeBytes',  # noqa: E501
-        'md5_check_sum': 'md5CheckSum',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'expires_at': 'expiresAt',  # noqa: E501
-        'message': 'message',  # noqa: E501
+        'file_size_bytes': 'fileSizeBytes',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'md5_check_sum': 'md5CheckSum',  # noqa: E501
+        'message': 'message',  # noqa: E501
+        'row_count': 'rowCount',  # noqa: E501
+        'status': 'status',  # noqa: E501
     }
 
     read_only_vars = {
@@ -155,14 +155,14 @@ class StatusResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (str, none_type): [optional]  # noqa: E501
-            row_count (int, none_type): [optional]  # noqa: E501
-            file_size_bytes (int, none_type): [optional]  # noqa: E501
-            md5_check_sum (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
             expires_at (str, none_type): [optional]  # noqa: E501
-            message (str, none_type): [optional]  # noqa: E501
+            file_size_bytes (int, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
+            md5_check_sum (str, none_type): [optional]  # noqa: E501
+            message (str, none_type): [optional]  # noqa: E501
+            row_count (int, none_type): [optional]  # noqa: E501
+            status (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -248,14 +248,14 @@ class StatusResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            status (str, none_type): [optional]  # noqa: E501
-            row_count (int, none_type): [optional]  # noqa: E501
-            file_size_bytes (int, none_type): [optional]  # noqa: E501
-            md5_check_sum (str, none_type): [optional]  # noqa: E501
             created_at (str, none_type): [optional]  # noqa: E501
             expires_at (str, none_type): [optional]  # noqa: E501
-            message (str, none_type): [optional]  # noqa: E501
+            file_size_bytes (int, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
+            md5_check_sum (str, none_type): [optional]  # noqa: E501
+            message (str, none_type): [optional]  # noqa: E501
+            row_count (int, none_type): [optional]  # noqa: E501
+            status (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

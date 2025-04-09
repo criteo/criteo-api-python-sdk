@@ -87,9 +87,9 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
         """
         lazy_import()
         return {
+            'attributes': (ExternalPreferredLineItemUpdateModelV2,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'attributes': (ExternalPreferredLineItemUpdateModelV2,),  # noqa: E501
         }
 
     @cached_property
@@ -98,9 +98,9 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
 
 
     attribute_map = {
+        'attributes': 'attributes',  # noqa: E501
         'id': 'id',  # noqa: E501
         'type': 'type',  # noqa: E501
-        'attributes': 'attributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,9 +144,9 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (ExternalPreferredLineItemUpdateModelV2): [optional]  # noqa: E501
             id (str): Id of the entity. [optional]  # noqa: E501
             type (str): Canonical type name of the entity. [optional]  # noqa: E501
-            attributes (ExternalPreferredLineItemUpdateModelV2): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,9 +232,9 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            attributes (ExternalPreferredLineItemUpdateModelV2): [optional]  # noqa: E501
             id (str): Id of the entity. [optional]  # noqa: E501
             type (str): Canonical type name of the entity. [optional]  # noqa: E501
-            attributes (ExternalPreferredLineItemUpdateModelV2): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

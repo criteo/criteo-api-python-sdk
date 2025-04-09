@@ -59,7 +59,7 @@ class BrandCatalogRequestV2(ModelNormal):
             'UNKNOWN': "Unknown",
             'DESCRIPTION': "Description",
             'IMAGEURL': "ImageUrl",
-            'GLOBALCATEGORYID': "GlobalCategoryId",
+            'GOOGLECATEGORY': "GoogleCategory",
             'RETAILERNAME': "RetailerName",
             'CATEGORY': "Category",
             'BRANDNAME': "BrandName",
@@ -91,9 +91,9 @@ class BrandCatalogRequestV2(ModelNormal):
         """
         return {
             'brand_id_filter': ([str],),  # noqa: E501
-            'retailer_id_filter': ([int],),  # noqa: E501
-            'modified_after': (datetime,),  # noqa: E501
             'include_fields': ([str],),  # noqa: E501
+            'modified_after': (datetime,),  # noqa: E501
+            'retailer_id_filter': ([int],),  # noqa: E501
         }
 
     @cached_property
@@ -103,9 +103,9 @@ class BrandCatalogRequestV2(ModelNormal):
 
     attribute_map = {
         'brand_id_filter': 'brandIdFilter',  # noqa: E501
-        'retailer_id_filter': 'retailerIdFilter',  # noqa: E501
-        'modified_after': 'modifiedAfter',  # noqa: E501
         'include_fields': 'includeFields',  # noqa: E501
+        'modified_after': 'modifiedAfter',  # noqa: E501
+        'retailer_id_filter': 'retailerIdFilter',  # noqa: E501
     }
 
     read_only_vars = {
@@ -150,9 +150,9 @@ class BrandCatalogRequestV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             brand_id_filter ([str]): The brand ids to filter the catalog by.. [optional]  # noqa: E501
-            retailer_id_filter ([int]): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
             include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            retailer_id_filter ([int]): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,9 +239,9 @@ class BrandCatalogRequestV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             brand_id_filter ([str]): The brand ids to filter the catalog by.. [optional]  # noqa: E501
-            retailer_id_filter ([int]): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
             include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            retailer_id_filter ([int]): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

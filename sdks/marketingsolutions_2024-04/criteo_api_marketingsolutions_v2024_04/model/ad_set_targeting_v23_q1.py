@@ -92,8 +92,8 @@ class AdSetTargetingV23Q1(ModelNormal):
         lazy_import()
         return {
             'delivery_limitations': (AdSetDeliveryLimitationsV23Q1,),  # noqa: E501
-            'geo_location': (AdSetGeoLocationV23Q1,),  # noqa: E501
             'frequency_capping': (AdSetFrequencyCappingV23Q1,),  # noqa: E501
+            'geo_location': (AdSetGeoLocationV23Q1,),  # noqa: E501
         }
 
     @cached_property
@@ -103,8 +103,8 @@ class AdSetTargetingV23Q1(ModelNormal):
 
     attribute_map = {
         'delivery_limitations': 'deliveryLimitations',  # noqa: E501
-        'geo_location': 'geoLocation',  # noqa: E501
         'frequency_capping': 'frequencyCapping',  # noqa: E501
+        'geo_location': 'geoLocation',  # noqa: E501
     }
 
     read_only_vars = {
@@ -149,8 +149,8 @@ class AdSetTargetingV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             delivery_limitations (AdSetDeliveryLimitationsV23Q1): [optional]  # noqa: E501
-            geo_location (AdSetGeoLocationV23Q1): [optional]  # noqa: E501
             frequency_capping (AdSetFrequencyCappingV23Q1): [optional]  # noqa: E501
+            geo_location (AdSetGeoLocationV23Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +237,8 @@ class AdSetTargetingV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             delivery_limitations (AdSetDeliveryLimitationsV23Q1): [optional]  # noqa: E501
-            geo_location (AdSetGeoLocationV23Q1): [optional]  # noqa: E501
             frequency_capping (AdSetFrequencyCappingV23Q1): [optional]  # noqa: E501
+            geo_location (AdSetGeoLocationV23Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

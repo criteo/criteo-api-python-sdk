@@ -90,14 +90,14 @@ class AudienceError(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'type': (str,),  # noqa: E501
             'code': (str,),  # noqa: E501
             'instance': (str,),  # noqa: E501
-            'trace_id': (str, none_type,),  # noqa: E501
-            'title': (str, none_type,),  # noqa: E501
+            'type': (str,),  # noqa: E501
             'detail': (str, none_type,),  # noqa: E501
             'source': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type,),  # noqa: E501
             'stack_trace': ([str], none_type,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
+            'trace_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -106,14 +106,14 @@ class AudienceError(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
         'code': 'code',  # noqa: E501
         'instance': 'instance',  # noqa: E501
-        'trace_id': 'traceId',  # noqa: E501
-        'title': 'title',  # noqa: E501
+        'type': 'type',  # noqa: E501
         'detail': 'detail',  # noqa: E501
         'source': 'source',  # noqa: E501
         'stack_trace': 'stackTrace',  # noqa: E501
+        'title': 'title',  # noqa: E501
+        'trace_id': 'traceId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -123,13 +123,13 @@ class AudienceError(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, code, instance, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, code, instance, type, *args, **kwargs):  # noqa: E501
         """AudienceError - a model defined in OpenAPI
 
         Args:
-            type (str): (REQUIRED) The classification of the error
             code (str): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kebab-case.
             instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem
+            type (str): (REQUIRED) The classification of the error
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -162,11 +162,11 @@ class AudienceError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str, none_type): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
-            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type. [optional]  # noqa: E501
             detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem. [optional]  # noqa: E501
             source ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
             stack_trace ([str], none_type): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
+            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type. [optional]  # noqa: E501
+            trace_id (str, none_type): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -198,9 +198,9 @@ class AudienceError(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
         self.code = code
         self.instance = instance
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -221,13 +221,13 @@ class AudienceError(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, code, instance, *args, **kwargs):  # noqa: E501
+    def __init__(self, code, instance, type, *args, **kwargs):  # noqa: E501
         """AudienceError - a model defined in OpenAPI
 
         Args:
-            type (str): (REQUIRED) The classification of the error
             code (str): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kebab-case.
             instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem
+            type (str): (REQUIRED) The classification of the error
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -260,11 +260,11 @@ class AudienceError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str, none_type): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
-            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type. [optional]  # noqa: E501
             detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem. [optional]  # noqa: E501
             source ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
             stack_trace ([str], none_type): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
+            title (str, none_type): (RECOMMENDED) A short, human-readable summary of the problem type. [optional]  # noqa: E501
+            trace_id (str, none_type): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -294,9 +294,9 @@ class AudienceError(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
         self.code = code
         self.instance = instance
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

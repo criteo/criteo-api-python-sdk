@@ -73,13 +73,13 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     resource_input_of_ad_write = ResourceInputOfAdWrite(
         data=ResourceOfAdWrite(
             attributes=AdWrite(
-                name="name_example",
-                description="description_example",
-                creative_id="creative_id_example",
                 ad_set_id="ad_set_id_example",
-                inventory_type="Display",
-                start_date="start_date_example",
+                creative_id="creative_id_example",
+                description="description_example",
                 end_date="end_date_example",
+                inventory_type="Display",
+                name="name_example",
+                start_date="start_date_example",
             ),
             id="id_example",
             type="type_example",
@@ -177,25 +177,25 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     resource_input_of_create_coupon = ResourceInputOfCreateCoupon(
         data=ResourceOfCreateCoupon(
             attributes=CreateCoupon(
-                name="name_example",
-                description="description_example",
                 ad_set_id="ad_set_id_example",
-                landing_page_url="landing_page_url_example",
-                start_date="start_date_example",
+                description="description_example",
                 end_date="end_date_example",
                 format="FullFrame",
                 images=[
                     CreateImageSlide(
-                        width=1,
                         height=1,
                         slide_base64_strings=[
                             "slide_base64_strings_example",
                         ],
+                        width=1,
                     ),
                 ],
-                show_every=1,
-                show_duration=1,
+                landing_page_url="landing_page_url_example",
+                name="name_example",
                 rotations_number=1,
+                show_duration=1,
+                show_every=1,
+                start_date="start_date_example",
             ),
             id="id_example",
             type="type_example",
@@ -292,72 +292,72 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     resource_input_of_creative_write = ResourceInputOfCreativeWrite(
         data=ResourceOfCreativeWrite(
             attributes=CreativeWrite(
-                name="name_example",
-                description="description_example",
-                format="Image",
+                adaptive_write_attributes=AdaptiveWriteAttributes(
+                    calls_to_action=[
+                        "calls_to_action_example",
+                    ],
+                    colors=AdaptiveColors(
+                        background_color="background_color_example",
+                        cta_background_color="cta_background_color_example",
+                        cta_text_color="cta_text_color_example",
+                        logo_area_and_title_color="logo_area_and_title_color_example",
+                        text1_color="text1_color_example",
+                        text2_color="text2_color_example",
+                    ),
+                    description_font="description_font_example",
+                    description_text="description_text_example",
+                    headline_font="headline_font_example",
+                    headline_text="headline_text_example",
+                    image_display="ShowFullImage",
+                    image_sets_base64=[
+                        ImageSetBase64(
+                            headline_text="headline_text_example",
+                            image_base64_strings=[
+                                "image_base64_strings_example",
+                            ],
+                        ),
+                    ],
+                    landing_page_url="landing_page_url_example",
+                    layouts=[
+                        "Editorial",
+                    ],
+                    logo_base64_string="logo_base64_string_example",
+                    video_base64_strings=[
+                        "video_base64_strings_example",
+                    ],
+                ),
                 dataset_id="dataset_id_example",
+                description="description_example",
+                dynamic_write_attributes=DynamicWriteAttributes(
+                    body_text_color="body_text_color_example",
+                    calls_to_action=[
+                        "calls_to_action_example",
+                    ],
+                    creative_background_color="creative_background_color_example",
+                    logo_base64_string="logo_base64_string_example",
+                    prices_color="prices_color_example",
+                    primary_font="primary_font_example",
+                    product_image_display="ShowFullImage",
+                ),
+                format="Image",
+                html_tag_write_attributes=HtmlTagWriteAttributes(
+                    tags=[
+                        Tag(
+                            html_tag="html_tag_example",
+                            size=Size(
+                                height=1,
+                                width=1,
+                            ),
+                        ),
+                    ],
+                ),
                 image_write_attributes=ImageWriteAttributes(
                     base64_strings=[
                         "base64_strings_example",
                     ],
                     landing_page_url="landing_page_url_example",
                 ),
-                html_tag_write_attributes=HtmlTagWriteAttributes(
-                    tags=[
-                        Tag(
-                            html_tag="html_tag_example",
-                            size=Size(
-                                width=1,
-                                height=1,
-                            ),
-                        ),
-                    ],
-                ),
-                dynamic_write_attributes=DynamicWriteAttributes(
-                    logo_base64_string="logo_base64_string_example",
-                    creative_background_color="creative_background_color_example",
-                    body_text_color="body_text_color_example",
-                    prices_color="prices_color_example",
-                    primary_font="primary_font_example",
-                    calls_to_action=[
-                        "calls_to_action_example",
-                    ],
-                    product_image_display="ShowFullImage",
-                ),
-                adaptive_write_attributes=AdaptiveWriteAttributes(
-                    layouts=[
-                        "Editorial",
-                    ],
-                    logo_base64_string="logo_base64_string_example",
-                    headline_text="headline_text_example",
-                    headline_font="headline_font_example",
-                    description_text="description_text_example",
-                    description_font="description_font_example",
-                    calls_to_action=[
-                        "calls_to_action_example",
-                    ],
-                    colors=AdaptiveColors(
-                        logo_area_and_title_color="logo_area_and_title_color_example",
-                        background_color="background_color_example",
-                        text1_color="text1_color_example",
-                        text2_color="text2_color_example",
-                        cta_background_color="cta_background_color_example",
-                        cta_text_color="cta_text_color_example",
-                    ),
-                    image_sets_base64=[
-                        ImageSetBase64(
-                            image_base64_strings=[
-                                "image_base64_strings_example",
-                            ],
-                            headline_text="headline_text_example",
-                        ),
-                    ],
-                    image_display="ShowFullImage",
-                    video_base64_strings=[
-                        "video_base64_strings_example",
-                    ],
-                    landing_page_url="landing_page_url_example",
-                ),
+                name="name_example",
             ),
             id="id_example",
             type="type_example",
@@ -712,8 +712,8 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     resource_input_of_update_coupon = ResourceInputOfUpdateCoupon(
         data=ResourceOfUpdateCoupon(
             attributes=UpdateCoupon(
-                start_date="start_date_example",
                 end_date="end_date_example",
+                start_date="start_date_example",
             ),
             id="id_example",
             type="type_example",
@@ -811,72 +811,72 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     resource_input_of_creative_write = ResourceInputOfCreativeWrite(
         data=ResourceOfCreativeWrite(
             attributes=CreativeWrite(
-                name="name_example",
-                description="description_example",
-                format="Image",
+                adaptive_write_attributes=AdaptiveWriteAttributes(
+                    calls_to_action=[
+                        "calls_to_action_example",
+                    ],
+                    colors=AdaptiveColors(
+                        background_color="background_color_example",
+                        cta_background_color="cta_background_color_example",
+                        cta_text_color="cta_text_color_example",
+                        logo_area_and_title_color="logo_area_and_title_color_example",
+                        text1_color="text1_color_example",
+                        text2_color="text2_color_example",
+                    ),
+                    description_font="description_font_example",
+                    description_text="description_text_example",
+                    headline_font="headline_font_example",
+                    headline_text="headline_text_example",
+                    image_display="ShowFullImage",
+                    image_sets_base64=[
+                        ImageSetBase64(
+                            headline_text="headline_text_example",
+                            image_base64_strings=[
+                                "image_base64_strings_example",
+                            ],
+                        ),
+                    ],
+                    landing_page_url="landing_page_url_example",
+                    layouts=[
+                        "Editorial",
+                    ],
+                    logo_base64_string="logo_base64_string_example",
+                    video_base64_strings=[
+                        "video_base64_strings_example",
+                    ],
+                ),
                 dataset_id="dataset_id_example",
+                description="description_example",
+                dynamic_write_attributes=DynamicWriteAttributes(
+                    body_text_color="body_text_color_example",
+                    calls_to_action=[
+                        "calls_to_action_example",
+                    ],
+                    creative_background_color="creative_background_color_example",
+                    logo_base64_string="logo_base64_string_example",
+                    prices_color="prices_color_example",
+                    primary_font="primary_font_example",
+                    product_image_display="ShowFullImage",
+                ),
+                format="Image",
+                html_tag_write_attributes=HtmlTagWriteAttributes(
+                    tags=[
+                        Tag(
+                            html_tag="html_tag_example",
+                            size=Size(
+                                height=1,
+                                width=1,
+                            ),
+                        ),
+                    ],
+                ),
                 image_write_attributes=ImageWriteAttributes(
                     base64_strings=[
                         "base64_strings_example",
                     ],
                     landing_page_url="landing_page_url_example",
                 ),
-                html_tag_write_attributes=HtmlTagWriteAttributes(
-                    tags=[
-                        Tag(
-                            html_tag="html_tag_example",
-                            size=Size(
-                                width=1,
-                                height=1,
-                            ),
-                        ),
-                    ],
-                ),
-                dynamic_write_attributes=DynamicWriteAttributes(
-                    logo_base64_string="logo_base64_string_example",
-                    creative_background_color="creative_background_color_example",
-                    body_text_color="body_text_color_example",
-                    prices_color="prices_color_example",
-                    primary_font="primary_font_example",
-                    calls_to_action=[
-                        "calls_to_action_example",
-                    ],
-                    product_image_display="ShowFullImage",
-                ),
-                adaptive_write_attributes=AdaptiveWriteAttributes(
-                    layouts=[
-                        "Editorial",
-                    ],
-                    logo_base64_string="logo_base64_string_example",
-                    headline_text="headline_text_example",
-                    headline_font="headline_font_example",
-                    description_text="description_text_example",
-                    description_font="description_font_example",
-                    calls_to_action=[
-                        "calls_to_action_example",
-                    ],
-                    colors=AdaptiveColors(
-                        logo_area_and_title_color="logo_area_and_title_color_example",
-                        background_color="background_color_example",
-                        text1_color="text1_color_example",
-                        text2_color="text2_color_example",
-                        cta_background_color="cta_background_color_example",
-                        cta_text_color="cta_text_color_example",
-                    ),
-                    image_sets_base64=[
-                        ImageSetBase64(
-                            image_base64_strings=[
-                                "image_base64_strings_example",
-                            ],
-                            headline_text="headline_text_example",
-                        ),
-                    ],
-                    image_display="ShowFullImage",
-                    video_base64_strings=[
-                        "video_base64_strings_example",
-                    ],
-                    landing_page_url="landing_page_url_example",
-                ),
+                name="name_example",
             ),
             id="id_example",
             type="type_example",
@@ -969,8 +969,8 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
     id = "id_example" # str | The Creative identifier to preview.
-    width = 1 # int | The width of the Creative to preview. (optional)
     height = 1 # int | The height of the Creative to preview. (optional)
+    width = 1 # int | The width of the Creative to preview. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -982,7 +982,7 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.generate_creative_preview(id, width=width, height=height)
+        api_response = api_instance.generate_creative_preview(id, height=height, width=width)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_10.ApiException as e:
         print("Exception when calling CreativeApi->generate_creative_preview: %s\n" % e)
@@ -994,8 +994,8 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| The Creative identifier to preview. |
- **width** | **int**| The width of the Creative to preview. | [optional]
  **height** | **int**| The height of the Creative to preview. | [optional]
+ **width** | **int**| The width of the Creative to preview. | [optional]
 
 ### Return type
 
@@ -1341,8 +1341,8 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     api_instance = creative_api.CreativeApi(api_client)
     advertiser_id = "advertiser-id_example" # str | The advertiser identifier.
     id = "id_example" # str | The Coupon identifier to preview.
-    width = 1 # int | The width of the coupon to preview. (optional)
     height = 1 # int | The height of the coupon to preview. (optional)
+    width = 1 # int | The width of the coupon to preview. (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -1354,7 +1354,7 @@ with criteo_api_marketingsolutions_v2024_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_advertiser_coupon_preview(advertiser_id, id, width=width, height=height)
+        api_response = api_instance.get_advertiser_coupon_preview(advertiser_id, id, height=height, width=width)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2024_10.ApiException as e:
         print("Exception when calling CreativeApi->get_advertiser_coupon_preview: %s\n" % e)
@@ -1367,8 +1367,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
  **id** | **str**| The Coupon identifier to preview. |
- **width** | **int**| The width of the coupon to preview. | [optional]
  **height** | **int**| The height of the coupon to preview. | [optional]
+ **width** | **int**| The width of the coupon to preview. | [optional]
 
 ### Return type
 

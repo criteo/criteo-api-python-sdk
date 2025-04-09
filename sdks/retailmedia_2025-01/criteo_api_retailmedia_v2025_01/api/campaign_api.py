@@ -390,9 +390,9 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'offset',
-                    'limit',
                     'fields',
+                    'limit',
+                    'offset',
                 ],
                 'required': [
                     'line_item_id',
@@ -412,24 +412,24 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'offset':
-                        (int,),
-                    'limit':
-                        (int,),
                     'fields':
                         (str,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
-                    'offset': 'offset',
-                    'limit': 'limit',
                     'fields': 'fields',
+                    'limit': 'limit',
+                    'offset': 'offset',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'offset': 'query',
-                    'limit': 'query',
                     'fields': 'query',
+                    'limit': 'query',
+                    'offset': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -822,10 +822,10 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'retailer_id',
-                    'text_substring',
                     'page_index',
                     'page_size',
+                    'retailer_id',
+                    'text_substring',
                 ],
                 'required': [],
                 'nullable': [
@@ -853,26 +853,26 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'retailer_id':
-                        (int,),
-                    'text_substring':
-                        (str,),
                     'page_index':
                         (int,),
                     'page_size':
                         (int,),
+                    'retailer_id':
+                        (int,),
+                    'text_substring':
+                        (str,),
                 },
                 'attribute_map': {
-                    'retailer_id': 'retailerId',
-                    'text_substring': 'textSubstring',
                     'page_index': 'pageIndex',
                     'page_size': 'pageSize',
+                    'retailer_id': 'retailerId',
+                    'text_substring': 'textSubstring',
                 },
                 'location_map': {
-                    'retailer_id': 'query',
-                    'text_substring': 'query',
                     'page_index': 'query',
                     'page_size': 'query',
+                    'retailer_id': 'query',
+                    'text_substring': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1440,8 +1440,8 @@ class CampaignApi(object):
                 'all': [
                     'account_id',
                     'limit_to_campaign_id',
-                    'limit_to_type',
                     'limit_to_id',
+                    'limit_to_type',
                     'page_index',
                     'page_size',
                 ],
@@ -1473,10 +1473,10 @@ class CampaignApi(object):
                         (str,),
                     'limit_to_campaign_id':
                         ([str],),
-                    'limit_to_type':
-                        (str, none_type,),
                     'limit_to_id':
                         ([str],),
+                    'limit_to_type':
+                        (str, none_type,),
                     'page_index':
                         (int,),
                     'page_size':
@@ -1485,16 +1485,16 @@ class CampaignApi(object):
                 'attribute_map': {
                     'account_id': 'account-id',
                     'limit_to_campaign_id': 'limitToCampaignId',
-                    'limit_to_type': 'limitToType',
                     'limit_to_id': 'limitToId',
+                    'limit_to_type': 'limitToType',
                     'page_index': 'pageIndex',
                     'page_size': 'pageSize',
                 },
                 'location_map': {
                     'account_id': 'path',
                     'limit_to_campaign_id': 'query',
-                    'limit_to_type': 'query',
                     'limit_to_id': 'query',
+                    'limit_to_type': 'query',
                     'page_index': 'query',
                     'page_size': 'query',
                 },
@@ -4216,9 +4216,9 @@ class CampaignApi(object):
             line_item_id (str): ID of the line item.
 
         Keyword Args:
-            offset (int): Offset of the first item to fetch. Defaults to zero.. [optional]
-            limit (int): Maximum page size to fetch. Defaults to 500.. [optional]
             fields (str): A comma separated list of attribute names from the response model to compute and return.              Valid values are `status` and `bidOverride` in any order. Defaults to `status`.. [optional]
+            limit (int): Maximum page size to fetch. Defaults to 500.. [optional]
+            offset (int): Offset of the first item to fetch. Defaults to zero.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4880,10 +4880,10 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            retailer_id (int): The retailer id for which Categories fetched. [optional]
-            text_substring (str): Query string to search across Categories. [optional]
             page_index (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
             page_size (int): The maximum number of results to return with each call. Must be greater than zero.. [optional] if omitted the server will use the default value of 100
+            retailer_id (int): The retailer id for which Categories fetched. [optional]
+            text_substring (str): Query string to search across Categories. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5730,8 +5730,8 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_campaign_id ([str]): The campaign ids that you would like to limit your result set to. [optional]
-            limit_to_type (str, none_type): The campaign types that you would like to limit your result set to. [optional]
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
+            limit_to_type (str, none_type): The campaign types that you would like to limit your result set to. [optional]
             page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
             page_size (int): The maximum number of items you would like to receive in this request. [optional]
             _return_http_data_only (bool): response data without head status

@@ -87,8 +87,8 @@ class PatchAdSetScheduling(ModelNormal):
         """
         lazy_import()
         return {
-            'start_date': (NillableDateTime,),  # noqa: E501
             'end_date': (NillableDateTime,),  # noqa: E501
+            'start_date': (NillableDateTime,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class PatchAdSetScheduling(ModelNormal):
 
 
     attribute_map = {
-        'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -142,8 +142,8 @@ class PatchAdSetScheduling(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (NillableDateTime): [optional]  # noqa: E501
             end_date (NillableDateTime): [optional]  # noqa: E501
+            start_date (NillableDateTime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -229,8 +229,8 @@ class PatchAdSetScheduling(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            start_date (NillableDateTime): [optional]  # noqa: E501
             end_date (NillableDateTime): [optional]  # noqa: E501
+            start_date (NillableDateTime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

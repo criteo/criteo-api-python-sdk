@@ -87,8 +87,8 @@ class ContactlistAmendment(ModelNormal):
         """
         lazy_import()
         return {
-            'type': (str,),  # noqa: E501
             'attributes': (ContactlistAmendmentAttributes,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,8 +97,8 @@ class ContactlistAmendment(ModelNormal):
 
 
     attribute_map = {
-        'type': 'type',  # noqa: E501
         'attributes': 'attributes',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -108,12 +108,12 @@ class ContactlistAmendment(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, attributes, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, attributes, type, *args, **kwargs):  # noqa: E501
         """ContactlistAmendment - a model defined in OpenAPI
 
         Args:
-            type (str): User List
             attributes (ContactlistAmendmentAttributes):
+            type (str): User List
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,8 +177,8 @@ class ContactlistAmendment(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
         self.attributes = attributes
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -199,12 +199,12 @@ class ContactlistAmendment(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, attributes, *args, **kwargs):  # noqa: E501
+    def __init__(self, attributes, type, *args, **kwargs):  # noqa: E501
         """ContactlistAmendment - a model defined in OpenAPI
 
         Args:
-            type (str): User List
             attributes (ContactlistAmendmentAttributes):
+            type (str): User List
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -266,8 +266,8 @@ class ContactlistAmendment(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.type = type
         self.attributes = attributes
+        self.type = type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

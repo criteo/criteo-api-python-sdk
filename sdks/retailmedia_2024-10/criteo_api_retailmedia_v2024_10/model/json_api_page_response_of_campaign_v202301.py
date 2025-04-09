@@ -93,8 +93,8 @@ class JsonApiPageResponseOfCampaignV202301(ModelNormal):
         """
         lazy_import()
         return {
-            'metadata': (PageMetadata,),  # noqa: E501
             'data': ([JsonApiBodyWithIdOfInt64AndCampaignV202301AndCampaignV202301],),  # noqa: E501
+            'metadata': (PageMetadata,),  # noqa: E501
             'errors': ([CommonError],),  # noqa: E501
             'warnings': ([CommonWarning],),  # noqa: E501
         }
@@ -105,8 +105,8 @@ class JsonApiPageResponseOfCampaignV202301(ModelNormal):
 
 
     attribute_map = {
-        'metadata': 'metadata',  # noqa: E501
         'data': 'data',  # noqa: E501
+        'metadata': 'metadata',  # noqa: E501
         'errors': 'errors',  # noqa: E501
         'warnings': 'warnings',  # noqa: E501
     }
@@ -118,12 +118,12 @@ class JsonApiPageResponseOfCampaignV202301(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, metadata, data, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, data, metadata, *args, **kwargs):  # noqa: E501
         """JsonApiPageResponseOfCampaignV202301 - a model defined in OpenAPI
 
         Args:
-            metadata (PageMetadata):
             data ([JsonApiBodyWithIdOfInt64AndCampaignV202301AndCampaignV202301]):
+            metadata (PageMetadata):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -189,8 +189,8 @@ class JsonApiPageResponseOfCampaignV202301(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.metadata = metadata
         self.data = data
+        self.metadata = metadata
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -211,12 +211,12 @@ class JsonApiPageResponseOfCampaignV202301(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, metadata, data, *args, **kwargs):  # noqa: E501
+    def __init__(self, data, metadata, *args, **kwargs):  # noqa: E501
         """JsonApiPageResponseOfCampaignV202301 - a model defined in OpenAPI
 
         Args:
-            metadata (PageMetadata):
             data ([JsonApiBodyWithIdOfInt64AndCampaignV202301AndCampaignV202301]):
+            metadata (PageMetadata):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -280,8 +280,8 @@ class JsonApiPageResponseOfCampaignV202301(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.metadata = metadata
         self.data = data
+        self.metadata = metadata
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

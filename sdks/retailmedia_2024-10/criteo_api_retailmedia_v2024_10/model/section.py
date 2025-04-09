@@ -81,8 +81,8 @@ class Section(ModelNormal):
         lazy_import()
         return {
             'template_variables': ([TemplateVariable],),  # noqa: E501
-            'title': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'title': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class Section(ModelNormal):
 
     attribute_map = {
         'template_variables': 'templateVariables',  # noqa: E501
-        'title': 'title',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'title': 'title',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,8 +140,8 @@ class Section(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            title (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
+            title (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -231,8 +231,8 @@ class Section(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            title (str, none_type): [optional]  # noqa: E501
             description (str, none_type): [optional]  # noqa: E501
+            title (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

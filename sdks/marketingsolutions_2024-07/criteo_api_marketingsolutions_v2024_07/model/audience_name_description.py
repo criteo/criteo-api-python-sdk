@@ -81,8 +81,8 @@ class AudienceNameDescription(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'name': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -91,8 +91,8 @@ class AudienceNameDescription(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'name': 'name',  # noqa: E501
     }
 
     read_only_vars = {
@@ -136,8 +136,8 @@ class AudienceNameDescription(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): The name to designate the audience by. [optional]  # noqa: E501
             description (str, none_type): The description of the audience. [optional]  # noqa: E501
+            name (str, none_type): The name to designate the audience by. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class AudienceNameDescription(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): The name to designate the audience by. [optional]  # noqa: E501
             description (str, none_type): The description of the audience. [optional]  # noqa: E501
+            name (str, none_type): The name to designate the audience by. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

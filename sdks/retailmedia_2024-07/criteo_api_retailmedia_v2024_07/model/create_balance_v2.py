@@ -87,12 +87,12 @@ class CreateBalanceV2(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
-            'po_number': (str, none_type,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'deposited': (float,),  # noqa: E501
             'end_date': (date, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
+            'po_number': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -102,12 +102,12 @@ class CreateBalanceV2(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
         'spend_type': 'spendType',  # noqa: E501
-        'po_number': 'poNumber',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
         'deposited': 'deposited',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'memo': 'memo',  # noqa: E501
+        'po_number': 'poNumber',  # noqa: E501
     }
 
     read_only_vars = {
@@ -117,13 +117,13 @@ class CreateBalanceV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, start_date, spend_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, spend_type, start_date, *args, **kwargs):  # noqa: E501
         """CreateBalanceV2 - a model defined in OpenAPI
 
         Args:
             name (str): Name of the balance.
-            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             spend_type (str): Type of the balance spend.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -156,10 +156,10 @@ class CreateBalanceV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             deposited (float): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
             end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
+            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -192,8 +192,8 @@ class CreateBalanceV2(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.start_date = start_date
         self.spend_type = spend_type
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -214,13 +214,13 @@ class CreateBalanceV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, start_date, spend_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, spend_type, start_date, *args, **kwargs):  # noqa: E501
         """CreateBalanceV2 - a model defined in OpenAPI
 
         Args:
             name (str): Name of the balance.
-            start_date (date): Start date of the balance in the format YYYY-MM-DD.
             spend_type (str): Type of the balance spend.
+            start_date (date): Start date of the balance in the format YYYY-MM-DD.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -253,10 +253,10 @@ class CreateBalanceV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             deposited (float): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
             end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
+            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -287,8 +287,8 @@ class CreateBalanceV2(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.start_date = start_date
         self.spend_type = spend_type
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

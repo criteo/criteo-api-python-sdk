@@ -110,19 +110,19 @@ class AudienceSegmentEntityV1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'type': (str, none_type,),  # noqa: E501
-            'created_at': (datetime, none_type,),  # noqa: E501
-            'updated_at': (datetime, none_type,),  # noqa: E501
             'advertiser_id': (str, none_type,),  # noqa: E501
-            'in_market': (InMarketV1,),  # noqa: E501
-            'prospecting': (ProspectingV1,),  # noqa: E501
-            'contact_list': (ContactListV1,),  # noqa: E501
-            'location': (LocationV1,),  # noqa: E501
             'behavioral': (BehavioralV1,),  # noqa: E501
-            'retargeting': (RetargetingV1,),  # noqa: E501
+            'contact_list': (ContactListV1,),  # noqa: E501
+            'created_at': (datetime, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'in_market': (InMarketV1,),  # noqa: E501
+            'location': (LocationV1,),  # noqa: E501
             'lookalike': (LookalikeV1,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
+            'prospecting': (ProspectingV1,),  # noqa: E501
+            'retargeting': (RetargetingV1,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -131,19 +131,19 @@ class AudienceSegmentEntityV1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'type': 'type',  # noqa: E501
-        'created_at': 'createdAt',  # noqa: E501
-        'updated_at': 'updatedAt',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'in_market': 'inMarket',  # noqa: E501
-        'prospecting': 'prospecting',  # noqa: E501
-        'contact_list': 'contactList',  # noqa: E501
-        'location': 'location',  # noqa: E501
         'behavioral': 'behavioral',  # noqa: E501
-        'retargeting': 'retargeting',  # noqa: E501
+        'contact_list': 'contactList',  # noqa: E501
+        'created_at': 'createdAt',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'in_market': 'inMarket',  # noqa: E501
+        'location': 'location',  # noqa: E501
         'lookalike': 'lookalike',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'prospecting': 'prospecting',  # noqa: E501
+        'retargeting': 'retargeting',  # noqa: E501
+        'type': 'type',  # noqa: E501
+        'updated_at': 'updatedAt',  # noqa: E501
     }
 
     read_only_vars = {
@@ -187,19 +187,19 @@ class AudienceSegmentEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the segment. [optional]  # noqa: E501
-            description (str, none_type): Description of the segment. [optional]  # noqa: E501
-            type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
-            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
-            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
             advertiser_id (str, none_type): Advertiser associated to the segment. [optional]  # noqa: E501
-            in_market (InMarketV1): [optional]  # noqa: E501
-            prospecting (ProspectingV1): [optional]  # noqa: E501
-            contact_list (ContactListV1): [optional]  # noqa: E501
-            location (LocationV1): [optional]  # noqa: E501
             behavioral (BehavioralV1): [optional]  # noqa: E501
-            retargeting (RetargetingV1): [optional]  # noqa: E501
+            contact_list (ContactListV1): [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
+            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            in_market (InMarketV1): [optional]  # noqa: E501
+            location (LocationV1): [optional]  # noqa: E501
             lookalike (LookalikeV1): [optional]  # noqa: E501
+            name (str, none_type): Name of the segment. [optional]  # noqa: E501
+            prospecting (ProspectingV1): [optional]  # noqa: E501
+            retargeting (RetargetingV1): [optional]  # noqa: E501
+            type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
+            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -285,19 +285,19 @@ class AudienceSegmentEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): Name of the segment. [optional]  # noqa: E501
-            description (str, none_type): Description of the segment. [optional]  # noqa: E501
-            type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
-            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
-            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
             advertiser_id (str, none_type): Advertiser associated to the segment. [optional]  # noqa: E501
-            in_market (InMarketV1): [optional]  # noqa: E501
-            prospecting (ProspectingV1): [optional]  # noqa: E501
-            contact_list (ContactListV1): [optional]  # noqa: E501
-            location (LocationV1): [optional]  # noqa: E501
             behavioral (BehavioralV1): [optional]  # noqa: E501
-            retargeting (RetargetingV1): [optional]  # noqa: E501
+            contact_list (ContactListV1): [optional]  # noqa: E501
+            created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
+            description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            in_market (InMarketV1): [optional]  # noqa: E501
+            location (LocationV1): [optional]  # noqa: E501
             lookalike (LookalikeV1): [optional]  # noqa: E501
+            name (str, none_type): Name of the segment. [optional]  # noqa: E501
+            prospecting (ProspectingV1): [optional]  # noqa: E501
+            retargeting (RetargetingV1): [optional]  # noqa: E501
+            type (str, none_type): Type of segment (read-only). [optional]  # noqa: E501
+            updated_at (datetime, none_type): ISO-8601 timestamp in UTC of segment update (read-only). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

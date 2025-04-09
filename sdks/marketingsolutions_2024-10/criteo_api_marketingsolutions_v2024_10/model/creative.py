@@ -93,18 +93,18 @@ class Creative(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str,),  # noqa: E501
-            'author': (str,),  # noqa: E501
-            'status': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
-            'description': (str, none_type,),  # noqa: E501
-            'format': (str, none_type,),  # noqa: E501
-            'dataset_id': (str, none_type,),  # noqa: E501
-            'image_attributes': (ImageAttributes,),  # noqa: E501
-            'html_tag_attributes': (HtmlTagAttributes,),  # noqa: E501
-            'dynamic_attributes': (DynamicAttributes,),  # noqa: E501
+            'author': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'status': (str,),  # noqa: E501
             'adaptive_attributes': (AdaptiveAttributes,),  # noqa: E501
+            'dataset_id': (str, none_type,),  # noqa: E501
+            'description': (str, none_type,),  # noqa: E501
+            'dynamic_attributes': (DynamicAttributes,),  # noqa: E501
+            'format': (str, none_type,),  # noqa: E501
+            'html_tag_attributes': (HtmlTagAttributes,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'image_attributes': (ImageAttributes,),  # noqa: E501
         }
 
     @cached_property
@@ -113,18 +113,18 @@ class Creative(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
-        'author': 'author',  # noqa: E501
-        'status': 'status',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'description': 'description',  # noqa: E501
-        'format': 'format',  # noqa: E501
-        'dataset_id': 'datasetId',  # noqa: E501
-        'image_attributes': 'imageAttributes',  # noqa: E501
-        'html_tag_attributes': 'htmlTagAttributes',  # noqa: E501
-        'dynamic_attributes': 'dynamicAttributes',  # noqa: E501
+        'author': 'author',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'adaptive_attributes': 'adaptiveAttributes',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
+        'description': 'description',  # noqa: E501
+        'dynamic_attributes': 'dynamicAttributes',  # noqa: E501
+        'format': 'format',  # noqa: E501
+        'html_tag_attributes': 'htmlTagAttributes',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'image_attributes': 'imageAttributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -134,14 +134,14 @@ class Creative(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, author, status, advertiser_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_id, author, name, status, *args, **kwargs):  # noqa: E501
         """Creative - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the creative
-            author (str): The login of the person who created this creative (
-            status (str): The status of the creative
             advertiser_id (str): Advertiser linked to the Creative
+            author (str): The login of the person who created this creative (
+            name (str): The name of the creative
+            status (str): The status of the creative
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -174,14 +174,14 @@ class Creative(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): The description of the creative. [optional]  # noqa: E501
-            format (str, none_type): The format of the creative. [optional]  # noqa: E501
-            dataset_id (str, none_type): Data set id linked to the Creative. [optional]  # noqa: E501
-            image_attributes (ImageAttributes): [optional]  # noqa: E501
-            html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
-            dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             adaptive_attributes (AdaptiveAttributes): [optional]  # noqa: E501
+            dataset_id (str, none_type): Data set id linked to the Creative. [optional]  # noqa: E501
+            description (str, none_type): The description of the creative. [optional]  # noqa: E501
+            dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
+            format (str, none_type): The format of the creative. [optional]  # noqa: E501
+            html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
             id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            image_attributes (ImageAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -213,10 +213,10 @@ class Creative(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.author = author
-        self.status = status
         self.advertiser_id = advertiser_id
+        self.author = author
+        self.name = name
+        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -237,14 +237,14 @@ class Creative(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, author, status, advertiser_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_id, author, name, status, *args, **kwargs):  # noqa: E501
         """Creative - a model defined in OpenAPI
 
         Args:
-            name (str): The name of the creative
-            author (str): The login of the person who created this creative (
-            status (str): The status of the creative
             advertiser_id (str): Advertiser linked to the Creative
+            author (str): The login of the person who created this creative (
+            name (str): The name of the creative
+            status (str): The status of the creative
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -277,14 +277,14 @@ class Creative(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            description (str, none_type): The description of the creative. [optional]  # noqa: E501
-            format (str, none_type): The format of the creative. [optional]  # noqa: E501
-            dataset_id (str, none_type): Data set id linked to the Creative. [optional]  # noqa: E501
-            image_attributes (ImageAttributes): [optional]  # noqa: E501
-            html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
-            dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             adaptive_attributes (AdaptiveAttributes): [optional]  # noqa: E501
+            dataset_id (str, none_type): Data set id linked to the Creative. [optional]  # noqa: E501
+            description (str, none_type): The description of the creative. [optional]  # noqa: E501
+            dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
+            format (str, none_type): The format of the creative. [optional]  # noqa: E501
+            html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
             id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            image_attributes (ImageAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -314,10 +314,10 @@ class Creative(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.name = name
-        self.author = author
-        self.status = status
         self.advertiser_id = advertiser_id
+        self.author = author
+        self.name = name
+        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

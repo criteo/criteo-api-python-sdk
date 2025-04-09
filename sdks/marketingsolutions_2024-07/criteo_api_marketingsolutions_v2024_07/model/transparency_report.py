@@ -81,8 +81,8 @@ class TransparencyReport(ModelNormal):
         lazy_import()
         return {
             'advertiser_id': (str,),  # noqa: E501
-            'token_valid_until': (datetime,),  # noqa: E501
             'files': ([TransparencyReportFile],),  # noqa: E501
+            'token_valid_until': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -92,8 +92,8 @@ class TransparencyReport(ModelNormal):
 
     attribute_map = {
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'token_valid_until': 'tokenValidUntil',  # noqa: E501
         'files': 'files',  # noqa: E501
+        'token_valid_until': 'tokenValidUntil',  # noqa: E501
     }
 
     read_only_vars = {
@@ -103,13 +103,13 @@ class TransparencyReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, advertiser_id, token_valid_until, files, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_id, files, token_valid_until, *args, **kwargs):  # noqa: E501
         """TransparencyReport - a model defined in OpenAPI
 
         Args:
             advertiser_id (str):
-            token_valid_until (datetime):
             files ([TransparencyReportFile]):
+            token_valid_until (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -174,8 +174,8 @@ class TransparencyReport(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.advertiser_id = advertiser_id
-        self.token_valid_until = token_valid_until
         self.files = files
+        self.token_valid_until = token_valid_until
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -196,13 +196,13 @@ class TransparencyReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, advertiser_id, token_valid_until, files, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_id, files, token_valid_until, *args, **kwargs):  # noqa: E501
         """TransparencyReport - a model defined in OpenAPI
 
         Args:
             advertiser_id (str):
-            token_valid_until (datetime):
             files ([TransparencyReportFile]):
+            token_valid_until (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -265,8 +265,8 @@ class TransparencyReport(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.advertiser_id = advertiser_id
-        self.token_valid_until = token_valid_until
         self.files = files
+        self.token_valid_until = token_valid_until
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

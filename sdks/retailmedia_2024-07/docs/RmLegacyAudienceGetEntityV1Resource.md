@@ -6,8 +6,8 @@ A class that represents a domain entity exposed by an API
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**RmLegacyAudienceGetEntityV1**](RmLegacyAudienceGetEntityV1.md) |  | [optional] 
-**id** | **str, none_type** | Unique identifier of this resource. | [optional] 
 **audience_type** | **str, none_type** | Type of the audience. | [optional] 
+**id** | **str, none_type** | Unique identifier of this resource. | [optional] 
 **type** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

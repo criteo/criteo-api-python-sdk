@@ -82,10 +82,11 @@ class Creative202110(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
-            'status': (str,),  # noqa: E501
             'retailer_id': (int,),  # noqa: E501
-            'brand_id': (int, none_type,),  # noqa: E501
+            'status': (str,),  # noqa: E501
             'associated_line_item_ids': ([str], none_type,),  # noqa: E501
+            'brand_id': (int, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
@@ -96,10 +97,11 @@ class Creative202110(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
-        'status': 'status',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
-        'brand_id': 'brandId',  # noqa: E501
+        'status': 'status',  # noqa: E501
         'associated_line_item_ids': 'associatedLineItemIds',  # noqa: E501
+        'brand_id': 'brandId',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
     }
 
@@ -110,13 +112,13 @@ class Creative202110(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, name, status, retailer_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, name, retailer_id, status, *args, **kwargs):  # noqa: E501
         """Creative202110 - a model defined in OpenAPI
 
         Args:
             name (str):
-            status (str):
             retailer_id (int):
+            status (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,8 +151,9 @@ class Creative202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id (int, none_type): [optional]  # noqa: E501
             associated_line_item_ids ([str], none_type): [optional]  # noqa: E501
+            brand_id (int, none_type): [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
         """
 
@@ -184,8 +187,8 @@ class Creative202110(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.status = status
         self.retailer_id = retailer_id
+        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -206,13 +209,13 @@ class Creative202110(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, name, status, retailer_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, name, retailer_id, status, *args, **kwargs):  # noqa: E501
         """Creative202110 - a model defined in OpenAPI
 
         Args:
             name (str):
-            status (str):
             retailer_id (int):
+            status (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -245,8 +248,9 @@ class Creative202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id (int, none_type): [optional]  # noqa: E501
             associated_line_item_ids ([str], none_type): [optional]  # noqa: E501
+            brand_id (int, none_type): [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
             updated_at (datetime, none_type): [optional]  # noqa: E501
         """
 
@@ -278,8 +282,8 @@ class Creative202110(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.name = name
-        self.status = status
         self.retailer_id = retailer_id
+        self.status = status
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

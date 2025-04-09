@@ -185,9 +185,9 @@ class BalanceApi(object):
             params_map={
                 'all': [
                     'balance_id',
-                    'offset',
                     'limit',
                     'limit_to_change_types',
+                    'offset',
                 ],
                 'required': [
                     'balance_id',
@@ -197,21 +197,21 @@ class BalanceApi(object):
                 'enum': [
                 ],
                 'validation': [
-                    'offset',
                     'limit',
+                    'offset',
                 ]
             },
             root_map={
                 'validations': {
-                    ('offset',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
                     ('limit',): {
 
                         'inclusive_maximum': 100,
                         'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
                     },
                 },
                 'allowed_values': {
@@ -219,24 +219,24 @@ class BalanceApi(object):
                 'openapi_types': {
                     'balance_id':
                         (str,),
-                    'offset':
-                        (int,),
                     'limit':
                         (int,),
                     'limit_to_change_types':
                         (str,),
+                    'offset':
+                        (int,),
                 },
                 'attribute_map': {
                     'balance_id': 'balanceId',
-                    'offset': 'offset',
                     'limit': 'limit',
                     'limit_to_change_types': 'limitToChangeTypes',
+                    'offset': 'offset',
                 },
                 'location_map': {
                     'balance_id': 'path',
-                    'offset': 'query',
                     'limit': 'query',
                     'limit_to_change_types': 'query',
+                    'offset': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -636,9 +636,9 @@ class BalanceApi(object):
             balance_id (str): Balance id.
 
         Keyword Args:
-            offset (int): The (zero-based) starting offset in the collection.. [optional] if omitted the server will use the default value of 0
             limit (int): The number of elements to be returned.. [optional] if omitted the server will use the default value of 25
             limit_to_change_types (str): Comma separated change types string that will be queried.. [optional]
+            offset (int): The (zero-based) starting offset in the collection.. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

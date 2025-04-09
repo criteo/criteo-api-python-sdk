@@ -824,10 +824,10 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'retailer_id',
-                    'text_substring',
                     'page_index',
                     'page_size',
+                    'retailer_id',
+                    'text_substring',
                 ],
                 'required': [],
                 'nullable': [
@@ -855,26 +855,26 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'retailer_id':
-                        (int,),
-                    'text_substring':
-                        (str,),
                     'page_index':
                         (int,),
                     'page_size':
                         (int,),
+                    'retailer_id':
+                        (int,),
+                    'text_substring':
+                        (str,),
                 },
                 'attribute_map': {
-                    'retailer_id': 'retailerId',
-                    'text_substring': 'textSubstring',
                     'page_index': 'pageIndex',
                     'page_size': 'pageSize',
+                    'retailer_id': 'retailerId',
+                    'text_substring': 'textSubstring',
                 },
                 'location_map': {
-                    'retailer_id': 'query',
-                    'text_substring': 'query',
                     'page_index': 'query',
                     'page_size': 'query',
+                    'retailer_id': 'query',
+                    'text_substring': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1496,8 +1496,8 @@ class CampaignApi(object):
                 'all': [
                     'account_id',
                     'limit_to_campaign_id',
-                    'limit_to_type',
                     'limit_to_id',
+                    'limit_to_type',
                     'page_index',
                     'page_size',
                 ],
@@ -1529,10 +1529,10 @@ class CampaignApi(object):
                         (str,),
                     'limit_to_campaign_id':
                         ([str],),
-                    'limit_to_type':
-                        (str, none_type,),
                     'limit_to_id':
                         ([str],),
+                    'limit_to_type':
+                        (str, none_type,),
                     'page_index':
                         (int,),
                     'page_size':
@@ -1541,16 +1541,16 @@ class CampaignApi(object):
                 'attribute_map': {
                     'account_id': 'account-id',
                     'limit_to_campaign_id': 'limitToCampaignId',
-                    'limit_to_type': 'limitToType',
                     'limit_to_id': 'limitToId',
+                    'limit_to_type': 'limitToType',
                     'page_index': 'pageIndex',
                     'page_size': 'pageSize',
                 },
                 'location_map': {
                     'account_id': 'path',
                     'limit_to_campaign_id': 'query',
-                    'limit_to_type': 'query',
                     'limit_to_id': 'query',
+                    'limit_to_type': 'query',
                     'page_index': 'query',
                     'page_size': 'query',
                 },
@@ -1806,9 +1806,9 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'insertion_order_id',
-                    'offset',
                     'limit',
                     'limit_to_change_types',
+                    'offset',
                 ],
                 'required': [
                     'insertion_order_id',
@@ -1818,21 +1818,21 @@ class CampaignApi(object):
                 'enum': [
                 ],
                 'validation': [
-                    'offset',
                     'limit',
+                    'offset',
                 ]
             },
             root_map={
                 'validations': {
-                    ('offset',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
                     ('limit',): {
 
                         'inclusive_maximum': 100,
                         'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
                     },
                 },
                 'allowed_values': {
@@ -1840,24 +1840,24 @@ class CampaignApi(object):
                 'openapi_types': {
                     'insertion_order_id':
                         (str,),
-                    'offset':
-                        (int,),
                     'limit':
                         (int,),
                     'limit_to_change_types':
                         (str,),
+                    'offset':
+                        (int,),
                 },
                 'attribute_map': {
                     'insertion_order_id': 'insertionOrderId',
-                    'offset': 'offset',
                     'limit': 'limit',
                     'limit_to_change_types': 'limitToChangeTypes',
+                    'offset': 'offset',
                 },
                 'location_map': {
                     'insertion_order_id': 'path',
-                    'offset': 'query',
                     'limit': 'query',
                     'limit_to_change_types': 'query',
+                    'offset': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -4838,10 +4838,10 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            retailer_id (int): The retailer id for which Categories fetched. [optional]
-            text_substring (str): Query string to search across Categories. [optional]
             page_index (int): The start position in the overall list of matches. Must be zero or greater.. [optional] if omitted the server will use the default value of 0
             page_size (int): The maximum number of results to return with each call. Must be greater than zero.. [optional] if omitted the server will use the default value of 100
+            retailer_id (int): The retailer id for which Categories fetched. [optional]
+            text_substring (str): Query string to search across Categories. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5771,8 +5771,8 @@ class CampaignApi(object):
 
         Keyword Args:
             limit_to_campaign_id ([str]): The campaign ids that you would like to limit your result set to. [optional]
-            limit_to_type (str, none_type): The campaign types that you would like to limit your result set to. [optional]
             limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
+            limit_to_type (str, none_type): The campaign types that you would like to limit your result set to. [optional]
             page_index (int): The 0 indexed page index you would like to receive given the page size. [optional]
             page_size (int): The maximum number of items you would like to receive in this request. [optional]
             _return_http_data_only (bool): response data without head status
@@ -6193,9 +6193,9 @@ class CampaignApi(object):
             insertion_order_id (str): External insertion order id.
 
         Keyword Args:
-            offset (int): The (zero-based) starting offset in the collection.. [optional] if omitted the server will use the default value of 0
             limit (int): The number of elements to be returned.. [optional] if omitted the server will use the default value of 25
             limit_to_change_types (str): Comma separated change types string that will be queried.. [optional]
+            offset (int): The (zero-based) starting offset in the collection.. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

@@ -92,17 +92,17 @@ class Template(ModelNormal):
         """
         lazy_import()
         return {
-            'creative_format': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'sku_collection_min': (int,),  # noqa: E501
-            'sku_per_collection_min': (int,),  # noqa: E501
             'all_collections_mandatory': (bool,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'creative_format': (str,),  # noqa: E501
+            'name': (str,),  # noqa: E501
             'sections': ([Section],),  # noqa: E501
+            'sku_collection_min': (int,),  # noqa: E501
+            'sku_per_collection_min': (int,),  # noqa: E501
+            'updated_at': (datetime,),  # noqa: E501
+            'displayable_skus_max': (int, none_type,),  # noqa: E501
             'sku_collection_max': (int, none_type,),  # noqa: E501
             'sku_per_collection_max': (int, none_type,),  # noqa: E501
-            'displayable_skus_max': (int, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -111,17 +111,17 @@ class Template(ModelNormal):
 
 
     attribute_map = {
-        'creative_format': 'creativeFormat',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'sku_collection_min': 'skuCollectionMin',  # noqa: E501
-        'sku_per_collection_min': 'skuPerCollectionMin',  # noqa: E501
         'all_collections_mandatory': 'allCollectionsMandatory',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
-        'updated_at': 'updatedAt',  # noqa: E501
+        'creative_format': 'creativeFormat',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'sections': 'sections',  # noqa: E501
+        'sku_collection_min': 'skuCollectionMin',  # noqa: E501
+        'sku_per_collection_min': 'skuPerCollectionMin',  # noqa: E501
+        'updated_at': 'updatedAt',  # noqa: E501
+        'displayable_skus_max': 'displayableSkusMax',  # noqa: E501
         'sku_collection_max': 'skuCollectionMax',  # noqa: E501
         'sku_per_collection_max': 'skuPerCollectionMax',  # noqa: E501
-        'displayable_skus_max': 'displayableSkusMax',  # noqa: E501
     }
 
     read_only_vars = {
@@ -131,18 +131,18 @@ class Template(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, creative_format, name, sku_collection_min, sku_per_collection_min, all_collections_mandatory, created_at, updated_at, sections, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, all_collections_mandatory, created_at, creative_format, name, sections, sku_collection_min, sku_per_collection_min, updated_at, *args, **kwargs):  # noqa: E501
         """Template - a model defined in OpenAPI
 
         Args:
-            creative_format (str): The kind of creative this template can be used to build.
-            name (str): The name of the template
-            sku_collection_min (int): Minimum number of skus in the collection
-            sku_per_collection_min (int): Minimum number of skus per collection
             all_collections_mandatory (bool): Marks whether or not all collections are mandatory
             created_at (datetime): The time at which the template was created
-            updated_at (datetime): The time at which the template was updated
+            creative_format (str): The kind of creative this template can be used to build.
+            name (str): The name of the template
             sections ([Section]): The sections holding various template variables
+            sku_collection_min (int): Minimum number of skus in the collection
+            sku_per_collection_min (int): Minimum number of skus per collection
+            updated_at (datetime): The time at which the template was updated
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -175,9 +175,9 @@ class Template(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
             sku_collection_max (int, none_type): Maximum number of skus in the collection. [optional]  # noqa: E501
             sku_per_collection_max (int, none_type): Maximum number of skus per collection. [optional]  # noqa: E501
-            displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -209,14 +209,14 @@ class Template(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.creative_format = creative_format
-        self.name = name
-        self.sku_collection_min = sku_collection_min
-        self.sku_per_collection_min = sku_per_collection_min
         self.all_collections_mandatory = all_collections_mandatory
         self.created_at = created_at
-        self.updated_at = updated_at
+        self.creative_format = creative_format
+        self.name = name
         self.sections = sections
+        self.sku_collection_min = sku_collection_min
+        self.sku_per_collection_min = sku_per_collection_min
+        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -237,18 +237,18 @@ class Template(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, creative_format, name, sku_collection_min, sku_per_collection_min, all_collections_mandatory, created_at, updated_at, sections, *args, **kwargs):  # noqa: E501
+    def __init__(self, all_collections_mandatory, created_at, creative_format, name, sections, sku_collection_min, sku_per_collection_min, updated_at, *args, **kwargs):  # noqa: E501
         """Template - a model defined in OpenAPI
 
         Args:
-            creative_format (str): The kind of creative this template can be used to build.
-            name (str): The name of the template
-            sku_collection_min (int): Minimum number of skus in the collection
-            sku_per_collection_min (int): Minimum number of skus per collection
             all_collections_mandatory (bool): Marks whether or not all collections are mandatory
             created_at (datetime): The time at which the template was created
-            updated_at (datetime): The time at which the template was updated
+            creative_format (str): The kind of creative this template can be used to build.
+            name (str): The name of the template
             sections ([Section]): The sections holding various template variables
+            sku_collection_min (int): Minimum number of skus in the collection
+            sku_per_collection_min (int): Minimum number of skus per collection
+            updated_at (datetime): The time at which the template was updated
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -281,9 +281,9 @@ class Template(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
             sku_collection_max (int, none_type): Maximum number of skus in the collection. [optional]  # noqa: E501
             sku_per_collection_max (int, none_type): Maximum number of skus per collection. [optional]  # noqa: E501
-            displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -313,14 +313,14 @@ class Template(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.creative_format = creative_format
-        self.name = name
-        self.sku_collection_min = sku_collection_min
-        self.sku_per_collection_min = sku_per_collection_min
         self.all_collections_mandatory = all_collections_mandatory
         self.created_at = created_at
-        self.updated_at = updated_at
+        self.creative_format = creative_format
+        self.name = name
         self.sections = sections
+        self.sku_collection_min = sku_collection_min
+        self.sku_per_collection_min = sku_per_collection_min
+        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -64,7 +64,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
     statistics_report_query_message = StatisticsReportQueryMessage(
-        advertiser_ids="advertiser_ids_example",
         ad_set_ids=[
             "ad_set_ids_example",
         ],
@@ -74,17 +73,18 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         ad_set_status=[
             "ad_set_status_example",
         ],
+        advertiser_ids="advertiser_ids_example",
+        currency="currency_example",
         dimensions=[
             "AdsetId",
         ],
+        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        format="format_example",
         metrics=[
             "metrics_example",
         ],
-        currency="currency_example",
-        format="format_example",
-        timezone="UTC",
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        timezone="UTC",
     ) # StatisticsReportQueryMessage |  (optional)
 
     # example passing only required values which don't have defaults set
@@ -176,21 +176,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_statistics_report_request = GenerateStatisticsReportRequest(
         data=GenerateStatisticsReportResource(
-            type="type_example",
             attributes=GenerateStatisticsReport(
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                advertiser_ids=[
-                    "advertiser_ids_example",
-                ],
-                timezone="timezone_example",
-                dimensions=[
-                    "AdvertiserId",
-                ],
-                metrics=[
-                    "Clicks",
-                ],
-                currency="currency_example",
                 ad_set_ids=[
                     "ad_set_ids_example",
                 ],
@@ -200,7 +186,21 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ad_set_status=[
                     "ad_set_status_example",
                 ],
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                currency="currency_example",
+                dimensions=[
+                    "AdvertiserId",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                metrics=[
+                    "Clicks",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="timezone_example",
             ),
+            type="type_example",
         ),
     ) # GenerateStatisticsReportRequest |  (optional)
 
@@ -293,27 +293,27 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_audience_performance_report_request = GenerateAudiencePerformanceReportRequest(
         data=GenerateAudiencePerformanceReportResource(
-            type="type_example",
             attributes=GenerateAudiencePerformanceReport(
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                advertiser_id="advertiser_id_example",
-                timezone="timezone_example",
-                dimension="Top30BrandsByDisplays",
-                metrics=[
-                    "Clicks",
-                ],
-                currency="currency_example",
                 ad_set_ids=[
                     "ad_set_ids_example",
                 ],
+                advertiser_id="advertiser_id_example",
                 audience_ids=[
                     "audience_ids_example",
+                ],
+                currency="currency_example",
+                dimension="Top30BrandsByDisplays",
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                metrics=[
+                    "Clicks",
                 ],
                 segments_ids=[
                     "segments_ids_example",
                 ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="timezone_example",
             ),
+            type="type_example",
         ),
     ) # GenerateAudiencePerformanceReportRequest |  (optional)
 
@@ -576,21 +576,21 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_categories_report_request_attributes_request = GenerateCategoriesReportRequestAttributesRequest(
         data=GenerateCategoriesReportRequestAttributesResource(
-            type="type_example",
             attributes=GenerateCategoriesReportRequestAttributes(
+                adset_id="adset_id_example",
                 advertiser_ids=[
                     "advertiser_ids_example",
                 ],
                 campaign_id="campaign_id_example",
-                adset_id="adset_id_example",
-                domain="domain_example",
                 category="category_example",
-                should_display_domain_dimension=True,
-                format="format_example",
-                timezone="UTC",
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                domain="domain_example",
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="format_example",
+                should_display_domain_dimension=True,
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
             ),
+            type="type_example",
         ),
     ) # GenerateCategoriesReportRequestAttributesRequest |  (optional)
 
@@ -683,40 +683,15 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_creatives_report_request_attributes_request = GenerateCreativesReportRequestAttributesRequest(
         data=GenerateCreativesReportRequestAttributesResource(
-            type="type_example",
             attributes=GenerateCreativesReportRequestAttributes(
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                advertiser_ids=[
-                    "advertiser_ids_example",
-                ],
-                metrics=[
-                    "Clicks",
-                ],
-                dimensions=[
-                    "AdFormat",
-                ],
-                timezone="timezone_example",
                 ad_formats=[
                     "ad_formats_example",
-                ],
-                display_sizes=[
-                    "display_sizes_example",
-                ],
-                coupon_names=[
-                    "coupon_names_example",
-                ],
-                coupon_ids=[
-                    "coupon_ids_example",
-                ],
-                ad_names=[
-                    "ad_names_example",
                 ],
                 ad_ids=[
                     "ad_ids_example",
                 ],
-                campaign_ids=[
-                    "campaign_ids_example",
+                ad_names=[
+                    "ad_names_example",
                 ],
                 ad_set_ids=[
                     "ad_set_ids_example",
@@ -724,7 +699,32 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ad_set_status=[
                     "ad_set_status_example",
                 ],
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                coupon_ids=[
+                    "coupon_ids_example",
+                ],
+                coupon_names=[
+                    "coupon_names_example",
+                ],
+                dimensions=[
+                    "AdFormat",
+                ],
+                display_sizes=[
+                    "display_sizes_example",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                metrics=[
+                    "Clicks",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="timezone_example",
             ),
+            type="type_example",
         ),
     ) # GenerateCreativesReportRequestAttributesRequest |  (optional)
 
@@ -817,26 +817,26 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     placements_report_query_message_list_request = PlacementsReportQueryMessageListRequest(
         data=[
             PlacementsReportQueryMessageResource(
-                type="type_example",
                 attributes=PlacementsReportQueryMessage(
+                    adset_ids="adset_ids_example",
                     advertiser_ids="advertiser_ids_example",
                     campaign_ids="campaign_ids_example",
-                    adset_ids="adset_ids_example",
-                    environment="environment_example",
-                    placement="placement_example",
+                    currency="currency_example",
                     dimensions=[
                         "AdsetId",
                     ],
+                    disclosed=True,
+                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    environment="environment_example",
+                    format="format_example",
                     metrics=[
                         "metrics_example",
                     ],
-                    currency="currency_example",
-                    disclosed=True,
-                    format="format_example",
-                    timezone="UTC",
+                    placement="placement_example",
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    timezone="UTC",
                 ),
+                type="type_example",
             ),
         ],
     ) # PlacementsReportQueryMessageListRequest |  (optional)
@@ -930,37 +930,37 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     generate_top_products_report_request_attributes_request = GenerateTopProductsReportRequestAttributesRequest(
         data=GenerateTopProductsReportRequestAttributesResource(
-            type="type_example",
             attributes=GenerateTopProductsReportRequestAttributes(
-                timezone="UTC",
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                advertiser_id="advertiser_id_example",
-                limit=1,
-                rank_products_by="Clicks",
-                dimensions=[
-                    "Campaign",
-                ],
-                metrics=[
-                    "Clicks",
-                ],
-                currency="EUR",
-                brands=[
-                    "brands_example",
-                ],
-                category_ids=[
-                    "category_ids_example",
-                ],
-                campaign_ids=[
-                    "campaign_ids_example",
-                ],
                 ad_set_ids=[
                     "ad_set_ids_example",
                 ],
                 ad_set_status=[
                     "ad_set_status_example",
                 ],
+                advertiser_id="advertiser_id_example",
+                brands=[
+                    "brands_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                category_ids=[
+                    "category_ids_example",
+                ],
+                currency="EUR",
+                dimensions=[
+                    "Campaign",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                limit=1,
+                metrics=[
+                    "Clicks",
+                ],
+                rank_products_by="Clicks",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
             ),
+            type="type_example",
         ),
     ) # GenerateTopProductsReportRequestAttributesRequest |  (optional)
 
@@ -1053,16 +1053,16 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     transactions_report_query_message_list_request = TransactionsReportQueryMessageListRequest(
         data=[
             TransactionsReportQueryMessageResource(
-                type="type_example",
                 attributes=TransactionsReportQueryMessage(
                     advertiser_ids="advertiser_ids_example",
-                    event_type="event_type_example",
                     currency="currency_example",
-                    format="format_example",
-                    timezone="UTC",
-                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    event_type="event_type_example",
+                    format="format_example",
+                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    timezone="UTC",
                 ),
+                type="type_example",
             ),
         ],
     ) # TransactionsReportQueryMessageListRequest |  (optional)
@@ -1156,9 +1156,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     api_instance = analytics_api.AnalyticsApi(api_client)
     advertiser_id = 1 # int | The advertiser id to fetch the transparency data.
     transparency_query_message = TransparencyQueryMessage(
+        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         should_display_product_ids=False,
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
     ) # TransparencyQueryMessage | The query message. (optional)
 
     # example passing only required values which don't have defaults set

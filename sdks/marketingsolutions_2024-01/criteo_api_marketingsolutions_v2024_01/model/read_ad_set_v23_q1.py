@@ -71,6 +71,11 @@ class ReadAdSetV23Q1(ModelNormal):
             'WEB': "web",
             'APP': "app",
         },
+        ('media_type',): {
+            'None': None,
+            'DISPLAY': "display",
+            'VIDEO': "video",
+        },
         ('objective',): {
             'None': None,
             'CUSTOMACTION': "customAction",
@@ -84,11 +89,6 @@ class ReadAdSetV23Q1(ModelNormal):
             'REACH': "reach",
             'VISITS': "visits",
             'VIDEOVIEWS': "videoViews",
-        },
-        ('media_type',): {
-            'None': None,
-            'DISPLAY': "display",
-            'VIDEO': "video",
         },
         ('video_channel',): {
             'None': None,
@@ -123,17 +123,17 @@ class ReadAdSetV23Q1(ModelNormal):
         """
         lazy_import()
         return {
-            'name': (str, none_type,),  # noqa: E501
             'advertiser_id': (str, none_type,),  # noqa: E501
-            'dataset_id': (str, none_type,),  # noqa: E501
+            'bidding': (ReadAdSetBiddingV23Q1,),  # noqa: E501
+            'budget': (ReadAdSetBudgetV23Q1,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
+            'dataset_id': (str, none_type,),  # noqa: E501
             'destination_environment': (str, none_type,),  # noqa: E501
+            'media_type': (str, none_type,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'objective': (str, none_type,),  # noqa: E501
             'schedule': (ReadAdSetScheduleV23Q1,),  # noqa: E501
-            'bidding': (ReadAdSetBiddingV23Q1,),  # noqa: E501
             'targeting': (AdSetTargetingV23Q1,),  # noqa: E501
-            'budget': (ReadAdSetBudgetV23Q1,),  # noqa: E501
-            'media_type': (str, none_type,),  # noqa: E501
             'video_channel': (str, none_type,),  # noqa: E501
         }
 
@@ -143,17 +143,17 @@ class ReadAdSetV23Q1(ModelNormal):
 
 
     attribute_map = {
-        'name': 'name',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
-        'dataset_id': 'datasetId',  # noqa: E501
+        'bidding': 'bidding',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
+        'dataset_id': 'datasetId',  # noqa: E501
         'destination_environment': 'destinationEnvironment',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
+        'name': 'name',  # noqa: E501
         'objective': 'objective',  # noqa: E501
         'schedule': 'schedule',  # noqa: E501
-        'bidding': 'bidding',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
-        'media_type': 'mediaType',  # noqa: E501
         'video_channel': 'videoChannel',  # noqa: E501
     }
 
@@ -198,17 +198,17 @@ class ReadAdSetV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
             advertiser_id (str, none_type): [optional]  # noqa: E501
-            dataset_id (str, none_type): [optional]  # noqa: E501
+            bidding (ReadAdSetBiddingV23Q1): [optional]  # noqa: E501
+            budget (ReadAdSetBudgetV23Q1): [optional]  # noqa: E501
             campaign_id (str, none_type): [optional]  # noqa: E501
+            dataset_id (str, none_type): [optional]  # noqa: E501
             destination_environment (str, none_type): [optional]  # noqa: E501
+            media_type (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
             objective (str, none_type): [optional]  # noqa: E501
             schedule (ReadAdSetScheduleV23Q1): [optional]  # noqa: E501
-            bidding (ReadAdSetBiddingV23Q1): [optional]  # noqa: E501
             targeting (AdSetTargetingV23Q1): [optional]  # noqa: E501
-            budget (ReadAdSetBudgetV23Q1): [optional]  # noqa: E501
-            media_type (str, none_type): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
         """
 
@@ -295,17 +295,17 @@ class ReadAdSetV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            name (str, none_type): [optional]  # noqa: E501
             advertiser_id (str, none_type): [optional]  # noqa: E501
-            dataset_id (str, none_type): [optional]  # noqa: E501
+            bidding (ReadAdSetBiddingV23Q1): [optional]  # noqa: E501
+            budget (ReadAdSetBudgetV23Q1): [optional]  # noqa: E501
             campaign_id (str, none_type): [optional]  # noqa: E501
+            dataset_id (str, none_type): [optional]  # noqa: E501
             destination_environment (str, none_type): [optional]  # noqa: E501
+            media_type (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): [optional]  # noqa: E501
             objective (str, none_type): [optional]  # noqa: E501
             schedule (ReadAdSetScheduleV23Q1): [optional]  # noqa: E501
-            bidding (ReadAdSetBiddingV23Q1): [optional]  # noqa: E501
             targeting (AdSetTargetingV23Q1): [optional]  # noqa: E501
-            budget (ReadAdSetBudgetV23Q1): [optional]  # noqa: E501
-            media_type (str, none_type): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
         """
 

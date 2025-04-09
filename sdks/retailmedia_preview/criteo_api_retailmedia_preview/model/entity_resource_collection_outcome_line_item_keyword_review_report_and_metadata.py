@@ -84,10 +84,10 @@ class EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata(Mode
         """
         lazy_import()
         return {
-            'meta': (Metadata,),  # noqa: E501
             'data': ([EntityResourceLineItemKeywordReviewReport], none_type,),  # noqa: E501
-            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
             'errors': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
+            'meta': (Metadata,),  # noqa: E501
+            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -96,15 +96,15 @@ class EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata(Mode
 
 
     attribute_map = {
-        'meta': 'meta',  # noqa: E501
         'data': 'data',  # noqa: E501
-        'warnings': 'warnings',  # noqa: E501
         'errors': 'errors',  # noqa: E501
+        'meta': 'meta',  # noqa: E501
+        'warnings': 'warnings',  # noqa: E501
     }
 
     read_only_vars = {
-        'warnings',  # noqa: E501
         'errors',  # noqa: E501
+        'warnings',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -145,10 +145,10 @@ class EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata(Mode
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            meta (Metadata): [optional]  # noqa: E501
             data ([EntityResourceLineItemKeywordReviewReport], none_type): [optional]  # noqa: E501
-            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
             errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            meta (Metadata): [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,10 +234,10 @@ class EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata(Mode
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            meta (Metadata): [optional]  # noqa: E501
             data ([EntityResourceLineItemKeywordReviewReport], none_type): [optional]  # noqa: E501
-            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
             errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            meta (Metadata): [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

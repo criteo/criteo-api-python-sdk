@@ -117,17 +117,17 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     id = "id_example" # str | ID of the line item
     add_remove_keywords_model_request = AddRemoveKeywordsModelRequest(
         data=AddRemoveKeywordsModelResource(
-            id="id_example",
-            type="type_example",
             attributes=AddRemoveKeywordsModel(
                 keywords=[
                     AddRemoveKeywordModel(
-                        phrase="phrase_example",
-                        match_type=MatchTypeModel("PositiveExactMatch"),
                         is_deleted=True,
+                        match_type=MatchTypeModel("PositiveExactMatch"),
+                        phrase="phrase_example",
                     ),
                 ],
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # AddRemoveKeywordsModelRequest |  (optional)
 
@@ -1273,15 +1273,15 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | The retailer id for which Categories fetched (optional)
-    text_substring = "textSubstring_example" # str | Query string to search across Categories (optional)
     page_index = 0 # int | The start position in the overall list of matches. Must be zero or greater. (optional) if omitted the server will use the default value of 0
     page_size = 100 # int | The maximum number of results to return with each call. Must be greater than zero. (optional) if omitted the server will use the default value of 100
+    retailer_id = 1 # int | The retailer id for which Categories fetched (optional)
+    text_substring = "textSubstring_example" # str | Query string to search across Categories (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_api202204_external_categories(retailer_id=retailer_id, text_substring=text_substring, page_index=page_index, page_size=page_size)
+        api_response = api_instance.get_api202204_external_categories(page_index=page_index, page_size=page_size, retailer_id=retailer_id, text_substring=text_substring)
         pprint(api_response)
     except criteo_api_retailmedia_v2024_04.ApiException as e:
         print("Exception when calling CampaignApi->get_api202204_external_categories: %s\n" % e)
@@ -1292,10 +1292,10 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer id for which Categories fetched | [optional]
- **text_substring** | **str**| Query string to search across Categories | [optional]
  **page_index** | **int**| The start position in the overall list of matches. Must be zero or greater. | [optional] if omitted the server will use the default value of 0
  **page_size** | **int**| The maximum number of results to return with each call. Must be greater than zero. | [optional] if omitted the server will use the default value of 100
+ **retailer_id** | **int**| The retailer id for which Categories fetched | [optional]
+ **text_substring** | **str**| Query string to search across Categories | [optional]
 
 ### Return type
 
@@ -2261,10 +2261,10 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     limit_to_campaign_id = [
         "limitToCampaignId_example",
     ] # [str] | The campaign ids that you would like to limit your result set to (optional)
-    limit_to_type = "Unknown" # str, none_type | The campaign types that you would like to limit your result set to (optional)
     limit_to_id = [
         "limitToId_example",
     ] # [str] | The ids that you would like to limit your result set to (optional)
+    limit_to_type = "Unknown" # str, none_type | The campaign types that you would like to limit your result set to (optional)
     page_index = 1 # int | The 0 indexed page index you would like to receive given the page size (optional)
     page_size = 1 # int | The maximum number of items you would like to receive in this request (optional)
 
@@ -2278,7 +2278,7 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_api_v2_external_account_line_items_by_account_id(account_id, limit_to_campaign_id=limit_to_campaign_id, limit_to_type=limit_to_type, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
+        api_response = api_instance.get_api_v2_external_account_line_items_by_account_id(account_id, limit_to_campaign_id=limit_to_campaign_id, limit_to_id=limit_to_id, limit_to_type=limit_to_type, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2024_04.ApiException as e:
         print("Exception when calling CampaignApi->get_api_v2_external_account_line_items_by_account_id: %s\n" % e)
@@ -2291,8 +2291,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
  **limit_to_campaign_id** | **[str]**| The campaign ids that you would like to limit your result set to | [optional]
- **limit_to_type** | **str, none_type**| The campaign types that you would like to limit your result set to | [optional]
  **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
+ **limit_to_type** | **str, none_type**| The campaign types that you would like to limit your result set to | [optional]
  **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional]
  **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional]
 
@@ -2718,9 +2718,9 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     insertion_order_id = "insertionOrderId_example" # str | External insertion order id.
-    offset = 0 # int | The (zero-based) starting offset in the collection. (optional) if omitted the server will use the default value of 0
     limit = 25 # int | The number of elements to be returned. (optional) if omitted the server will use the default value of 25
     limit_to_change_types = "limitToChangeTypes_example" # str | Comma separated change types string that will be queried. (optional)
+    offset = 0 # int | The (zero-based) starting offset in the collection. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     try:
@@ -2732,7 +2732,7 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_insertion_order_history_change_data_capture(insertion_order_id, offset=offset, limit=limit, limit_to_change_types=limit_to_change_types)
+        api_response = api_instance.get_insertion_order_history_change_data_capture(insertion_order_id, limit=limit, limit_to_change_types=limit_to_change_types, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2024_04.ApiException as e:
         print("Exception when calling CampaignApi->get_insertion_order_history_change_data_capture: %s\n" % e)
@@ -2744,9 +2744,9 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insertion_order_id** | **str**| External insertion order id. |
- **offset** | **int**| The (zero-based) starting offset in the collection. | [optional] if omitted the server will use the default value of 0
  **limit** | **int**| The number of elements to be returned. | [optional] if omitted the server will use the default value of 25
  **limit_to_change_types** | **str**| Comma separated change types string that will be queried. | [optional]
+ **offset** | **int**| The (zero-based) starting offset in the collection. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
@@ -2903,12 +2903,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     keyword_target202110_request = KeywordTarget202110Request(
         data=ValueTypeResourceOfKeywordTarget202110(
-            type="type_example",
             attributes=ExternalKeywordTarget202110(
                 keywords={
                     "unknown": "unknown",
                 },
             ),
+            type="type_example",
         ),
     ) # KeywordTarget202110Request |  (optional)
 
@@ -3008,12 +3008,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     keyword_target202110_request = KeywordTarget202110Request(
         data=ValueTypeResourceOfKeywordTarget202110(
-            type="type_example",
             attributes=ExternalKeywordTarget202110(
                 keywords={
                     "unknown": "unknown",
                 },
             ),
+            type="type_example",
         ),
     ) # KeywordTarget202110Request |  (optional)
 
@@ -3114,9 +3114,9 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     balance_campaign202110_list_request = BalanceCampaign202110ListRequest(
         data=[
             ResourceOfBalanceCampaign202110(
+                attributes={},
                 id="id_example",
                 type="type_example",
-                attributes={},
             ),
         ],
     ) # BalanceCampaign202110ListRequest | The campaigns to append (optional)
@@ -3217,9 +3217,9 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     balance_campaign202110_list_request = BalanceCampaign202110ListRequest(
         data=[
             ResourceOfBalanceCampaign202110(
+                attributes={},
                 id="id_example",
                 type="type_example",
-                attributes={},
             ),
         ],
     ) # BalanceCampaign202110ListRequest | The campaigns to append (optional)
@@ -3319,33 +3319,33 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     campaign_id = "campaign-id_example" # str | The given campaign id
     preferred_line_item_create_model202110_request = PreferredLineItemCreateModel202110Request(
         data=InputResourceOfPreferredLineItemCreateModel202110(
-            type="type_example",
             attributes=ExternalPreferredLineItemCreateModel202110(
-                name="name_example",
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
-                pacing="unknown",
+                budget=3.14,
                 capping=ExternalLineItemCapping202110(
-                    type="unknown",
                     count=1,
+                    type="unknown",
                 ),
+                creative_id="creative_id_example",
+                end_date=dateutil_parser('1970-01-01').date(),
+                name="name_example",
+                pacing="unknown",
                 page=ExternalLineItemPage202110(
-                    page_type="search",
                     categories=[
                         ExternalLineItemPageCategory202110(
                             category_id="category_id_example",
                             include_children=True,
                         ),
                     ],
+                    page_type="search",
                     search_keywords=[
                         "search_keywords_example",
                     ],
                 ),
+                start_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
                 target_retailer_id="target_retailer_id_example",
-                budget=3.14,
-                creative_id="creative_id_example",
             ),
+            type="type_example",
         ),
     ) # PreferredLineItemCreateModel202110Request | The line item settings to create a line item with (optional)
 
@@ -3446,11 +3446,11 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     promoted_product202110_list_request = PromotedProduct202110ListRequest(
         data=[
             ResourceOfPromotedProduct202110(
-                id="id_example",
-                type="type_example",
                 attributes=ExternalPromotedProduct202110(
                     bid_override=3.14,
                 ),
+                id="id_example",
+                type="type_example",
             ),
         ],
     ) # PromotedProduct202110ListRequest | the products to append to this line item (optional)
@@ -3551,11 +3551,11 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     promoted_product202110_list_request = PromotedProduct202110ListRequest(
         data=[
             ResourceOfPromotedProduct202110(
-                id="id_example",
-                type="type_example",
                 attributes=ExternalPromotedProduct202110(
                     bid_override=3.14,
                 ),
+                id="id_example",
+                type="type_example",
             ),
         ],
     ) # PromotedProduct202110ListRequest |  (optional)
@@ -3655,11 +3655,11 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     promoted_product202110_list_request = PromotedProduct202110ListRequest(
         data=[
             ResourceOfPromotedProduct202110(
-                id="id_example",
-                type="type_example",
                 attributes=ExternalPromotedProduct202110(
                     bid_override=3.14,
                 ),
+                id="id_example",
+                type="type_example",
             ),
         ],
     ) # PromotedProduct202110ListRequest | The products from which their IDs will be used to pause. (optional)
@@ -3757,11 +3757,11 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     promoted_product202110_list_request = PromotedProduct202110ListRequest(
         data=[
             ResourceOfPromotedProduct202110(
-                id="id_example",
-                type="type_example",
                 attributes=ExternalPromotedProduct202110(
                     bid_override=3.14,
                 ),
+                id="id_example",
+                type="type_example",
             ),
         ],
     ) # PromotedProduct202110ListRequest | The products from which their IDs will be used to unpause. (optional)
@@ -3859,15 +3859,15 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     add_to_basket_ids_update_model202110_request = AddToBasketIdsUpdateModel202110Request(
         data=ValueTypeResourceOfAddToBasketIdsUpdateModel202110(
-            type="type_example",
             attributes=ExternalAddToBasketIdsUpdateModel202110(
-                product_ids=[
-                    "product_ids_example",
-                ],
                 category_ids=[
                     "category_ids_example",
                 ],
+                product_ids=[
+                    "product_ids_example",
+                ],
             ),
+            type="type_example",
         ),
     ) # AddToBasketIdsUpdateModel202110Request | Ids to append to the target (optional)
 
@@ -3967,15 +3967,15 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     add_to_basket_ids_update_model202110_request = AddToBasketIdsUpdateModel202110Request(
         data=ValueTypeResourceOfAddToBasketIdsUpdateModel202110(
-            type="type_example",
             attributes=ExternalAddToBasketIdsUpdateModel202110(
-                product_ids=[
-                    "product_ids_example",
-                ],
                 category_ids=[
                     "category_ids_example",
                 ],
+                product_ids=[
+                    "product_ids_example",
+                ],
             ),
+            type="type_example",
         ),
     ) # AddToBasketIdsUpdateModel202110Request | Ids to remove from the target (optional)
 
@@ -4075,12 +4075,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     audience_ids_update_model202110_request = AudienceIdsUpdateModel202110Request(
         data=ValueTypeResourceOfAudienceIdsUpdateModel202110(
-            type="type_example",
             attributes=ExternalAudienceIdsUpdateModel202110(
                 audience_ids=[
                     "audience_ids_example",
                 ],
             ),
+            type="type_example",
         ),
     ) # AudienceIdsUpdateModel202110Request | Audience ids to append to the target (optional)
 
@@ -4180,12 +4180,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     audience_ids_update_model202110_request = AudienceIdsUpdateModel202110Request(
         data=ValueTypeResourceOfAudienceIdsUpdateModel202110(
-            type="type_example",
             attributes=ExternalAudienceIdsUpdateModel202110(
                 audience_ids=[
                     "audience_ids_example",
                 ],
             ),
+            type="type_example",
         ),
     ) # AudienceIdsUpdateModel202110Request | Audience ids to remove from the target (optional)
 
@@ -4285,12 +4285,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     store_ids_update_model202110_request = StoreIdsUpdateModel202110Request(
         data=ValueTypeResourceOfStoreIdsUpdateModel202110(
-            type="type_example",
             attributes=ExternalStoreIdsUpdateModel202110(
                 store_ids=[
                     "store_ids_example",
                 ],
             ),
+            type="type_example",
         ),
     ) # StoreIdsUpdateModel202110Request | Store ids to append to the target (optional)
 
@@ -4390,12 +4390,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     store_ids_update_model202110_request = StoreIdsUpdateModel202110Request(
         data=ValueTypeResourceOfStoreIdsUpdateModel202110(
-            type="type_example",
             attributes=ExternalStoreIdsUpdateModel202110(
                 store_ids=[
                     "store_ids_example",
                 ],
             ),
+            type="type_example",
         ),
     ) # StoreIdsUpdateModel202110Request | Store ids to remove from the target (optional)
 
@@ -4494,16 +4494,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     api_instance = campaign_api.CampaignApi(api_client)
     account_id = "account-id_example" # str | External account id to create a creative for
     creative_create_model202207 = CreativeCreateModel202207(
-        name="name_example",
         brand_id=1,
+        name="name_example",
         retailer_id=1,
         template_id=1,
         template_variable_values=[
             TemplateVariableValue(
-                id="id_example",
-                text_variable_value=TextVariableValue(
-                    text="text_example",
-                ),
                 choice_variable_value=ChoiceVariableValue(
                     chosen_options=[
                         "chosen_options_example",
@@ -4520,11 +4516,15 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
                 hyperlink_variable_value=HyperlinkVariableValue(
                     url="url_example",
                 ),
+                id="id_example",
+                text_variable_value=TextVariableValue(
+                    text="text_example",
+                ),
                 video_variable_value=VideoVariableValue(
+                    duration="duration_example",
+                    height=1,
                     url="url_example",
                     width=1,
-                    height=1,
-                    duration="duration_example",
                 ),
             ),
         ],
@@ -4721,26 +4721,26 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     account_id = "account-id_example" # str | The account to request the campaign for.
     post_campaign_v202301 = PostCampaignV202301(
         data=JsonApiBodyWithoutIdOfCampaignAttributesV202301AndCampaignV202301(
-            type="type_example",
             attributes=CampaignAttributesV202301(
-                type="auction",
+                budget=3.14,
+                click_attribution_scope="unknown",
+                click_attribution_window="30D",
+                company_name="company_name_example",
+                daily_pacing=3.14,
                 drawable_balance_ids=[
                     "drawable_balance_ids_example",
                 ],
-                click_attribution_window="30D",
-                view_attribution_window="none",
-                name="name_example",
-                budget=3.14,
-                monthly_pacing=3.14,
-                daily_pacing=3.14,
-                is_auto_daily_pacing=True,
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                click_attribution_scope="unknown",
-                view_attribution_scope="unknown",
-                company_name="company_name_example",
+                is_auto_daily_pacing=True,
+                monthly_pacing=3.14,
+                name="name_example",
                 on_behalf_company_name="on_behalf_company_name_example",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                type="auction",
+                view_attribution_scope="unknown",
+                view_attribution_window="none",
             ),
+            type="type_example",
         ),
     ) # PostCampaignV202301 | Creatable campaign attributes (optional)
 
@@ -4839,13 +4839,13 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     account_id = "accountId_example" # str | The account to request the catalog for.
     json_api_request_of_catalog_request = JsonApiRequestOfCatalogRequest(
         data=JsonApiBodyWithoutIdOfCatalogRequestAndCatalogRequest(
-            type="type_example",
             attributes=ExternalCatalogRequest(
-                format="json-newline",
                 brand_id_filter=[
                     "brand_id_filter_example",
                 ],
+                format="json-newline",
             ),
+            type="type_example",
         ),
     ) # JsonApiRequestOfCatalogRequest |  (optional)
 
@@ -4944,21 +4944,21 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     campaign_id = "campaign-id_example" # str | The given campaign id
     auction_line_item_create_model_request = AuctionLineItemCreateModelRequest(
         data=InputResourceOfAuctionLineItemCreateModel(
-            type="type_example",
             attributes=ExternalAuctionLineItemCreateModel(
-                name="name_example",
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
-                target_retailer_id="target_retailer_id_example",
+                bid_strategy="conversion",
                 budget=3.14,
-                target_bid=3.14,
+                daily_pacing=3.14,
+                end_date=dateutil_parser('1970-01-01').date(),
+                is_auto_daily_pacing=False,
                 max_bid=3.14,
                 monthly_pacing=3.14,
-                daily_pacing=3.14,
-                is_auto_daily_pacing=False,
-                bid_strategy="conversion",
+                name="name_example",
+                start_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
+                target_bid=3.14,
+                target_retailer_id="target_retailer_id_example",
             ),
+            type="type_example",
         ),
     ) # AuctionLineItemCreateModelRequest | The line item settings to create a line item with (optional)
 
@@ -5058,33 +5058,33 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The given line item id
     preferred_line_item_update_model202110_request = PreferredLineItemUpdateModel202110Request(
         data=ResourceOfPreferredLineItemUpdateModel202110(
-            id="id_example",
-            type="type_example",
             attributes=ExternalPreferredLineItemUpdateModel202110(
-                name="name_example",
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
-                pacing="accelerated",
+                budget=3.14,
                 capping=ExternalLineItemCapping202110(
-                    type="unknown",
                     count=1,
+                    type="unknown",
                 ),
+                creative_id="creative_id_example",
+                end_date=dateutil_parser('1970-01-01').date(),
+                name="name_example",
+                pacing="accelerated",
                 page=ExternalLineItemPage202110(
-                    page_type="search",
                     categories=[
                         ExternalLineItemPageCategory202110(
                             category_id="category_id_example",
                             include_children=True,
                         ),
                     ],
+                    page_type="search",
                     search_keywords=[
                         "search_keywords_example",
                     ],
                 ),
-                budget=3.14,
-                creative_id="creative_id_example",
+                start_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # PreferredLineItemUpdateModel202110Request | The line item settings to create a line item with (optional)
 
@@ -5184,16 +5184,16 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     add_to_basket_target202110_request = AddToBasketTarget202110Request(
         data=ValueTypeResourceOfAddToBasketTarget202110(
-            type="type_example",
             attributes=ExternalAddToBasketTarget202110(
-                scope="unknown",
-                product_ids=[
-                    "product_ids_example",
-                ],
                 category_ids=[
                     "category_ids_example",
                 ],
+                product_ids=[
+                    "product_ids_example",
+                ],
+                scope="unknown",
             ),
+            type="type_example",
         ),
     ) # AddToBasketTarget202110Request | The add to basket target to set the scope for (optional)
 
@@ -5293,13 +5293,13 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     audience_target202110_request = AudienceTarget202110Request(
         data=ValueTypeResourceOfAudienceTarget202110(
-            type="type_example",
             attributes=ExternalAudienceTarget202110(
-                scope="unknown",
                 audience_ids=[
                     "audience_ids_example",
                 ],
+                scope="unknown",
             ),
+            type="type_example",
         ),
     ) # AudienceTarget202110Request | The audience target to set the scope for (optional)
 
@@ -5399,13 +5399,13 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The line item to interact with
     store_target202110_request = StoreTarget202110Request(
         data=ValueTypeResourceOfStoreTarget202110(
-            type="type_example",
             attributes=ExternalStoreTarget202110(
                 scope="unknown",
                 store_ids=[
                     "store_ids_example",
                 ],
             ),
+            type="type_example",
         ),
     ) # StoreTarget202110Request | The store target to set the scope for (optional)
 
@@ -5505,16 +5505,12 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     account_id = "account-id_example" # str | External account id containing the creative
     creative_id = "creative-id_example" # str | Creative to update
     creative_update_model202207 = CreativeUpdateModel202207(
-        name="name_example",
         brand_id=1,
+        name="name_example",
         retailer_id=1,
         template_id=1,
         template_variable_values=[
             TemplateVariableValue(
-                id="id_example",
-                text_variable_value=TextVariableValue(
-                    text="text_example",
-                ),
                 choice_variable_value=ChoiceVariableValue(
                     chosen_options=[
                         "chosen_options_example",
@@ -5531,11 +5527,15 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
                 hyperlink_variable_value=HyperlinkVariableValue(
                     url="url_example",
                 ),
+                id="id_example",
+                text_variable_value=TextVariableValue(
+                    text="text_example",
+                ),
                 video_variable_value=VideoVariableValue(
+                    duration="duration_example",
+                    height=1,
                     url="url_example",
                     width=1,
-                    height=1,
-                    duration="duration_example",
                 ),
             ),
         ],
@@ -5637,23 +5637,23 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     campaign_id = "campaignId_example" # str | Campaign Id of the updating campaign
     put_campaign_v202301 = PutCampaignV202301(
         data=JsonApiBodyWithExternalIdOfEditableCampaignAttributesV202301AndCampaignV202301(
+            attributes=EditableCampaignAttributesV202301(
+                budget=3.14,
+                click_attribution_scope="unknown",
+                click_attribution_window="7D",
+                company_name="company_name_example",
+                daily_pacing=3.14,
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                is_auto_daily_pacing=True,
+                monthly_pacing=3.14,
+                name="name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                view_attribution_scope="unknown",
+                view_attribution_window="none",
+            ),
             id="id_example",
             type="type_example",
-            attributes=EditableCampaignAttributesV202301(
-                name="name_example",
-                budget=3.14,
-                monthly_pacing=3.14,
-                daily_pacing=3.14,
-                is_auto_daily_pacing=True,
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                click_attribution_window="7D",
-                view_attribution_window="none",
-                click_attribution_scope="unknown",
-                view_attribution_scope="unknown",
-                company_name="company_name_example",
-                on_behalf_company_name="on_behalf_company_name_example",
-            ),
         ),
     ) # PutCampaignV202301 | Editable campaign attributes (optional)
 
@@ -5753,14 +5753,14 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_bid_multipliers_request = LineItemBidMultipliersRequest(
         data=ResourceOfLineItemBidMultipliers(
             attributes=LineItemBidMultipliers(
-                search=3.14,
-                homepage=3.14,
                 categories=3.14,
-                product_detail=3.14,
-                confirmation=3.14,
-                merchandising=3.14,
-                deals=3.14,
                 checkout=3.14,
+                confirmation=3.14,
+                deals=3.14,
+                homepage=3.14,
+                merchandising=3.14,
+                product_detail=3.14,
+                search=3.14,
             ),
             id="id_example",
             type="type_example",
@@ -5862,21 +5862,21 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "line-item-id_example" # str | The given line item id
     auction_line_item_update_model_request = AuctionLineItemUpdateModelRequest(
         data=ResourceOfAuctionLineItemUpdateModel(
-            id="id_example",
-            type="type_example",
             attributes=ExternalAuctionLineItemUpdateModel(
-                name="name_example",
-                start_date=dateutil_parser('1970-01-01').date(),
-                end_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
+                bid_strategy="conversion",
                 budget=3.14,
-                target_bid=3.14,
+                daily_pacing=3.14,
+                end_date=dateutil_parser('1970-01-01').date(),
+                is_auto_daily_pacing=True,
                 max_bid=3.14,
                 monthly_pacing=3.14,
-                daily_pacing=3.14,
-                is_auto_daily_pacing=True,
-                bid_strategy="conversion",
+                name="name_example",
+                start_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
+                target_bid=3.14,
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # AuctionLineItemUpdateModelRequest | The line item settings to create a line item with (optional)
 
@@ -5976,16 +5976,16 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     id = "id_example" # str | ID of the line item
     set_bids_model_request = SetBidsModelRequest(
         data=SetBidsModelResource(
-            id="id_example",
-            type="type_example",
             attributes=SetBidsModel(
                 keywords=[
                     SetBidModel(
-                        phrase="phrase_example",
                         bid=3.14,
+                        phrase="phrase_example",
                     ),
                 ],
             ),
+            id="id_example",
+            type="type_example",
         ),
     ) # SetBidsModelRequest |  (optional)
 
@@ -6085,25 +6085,25 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     campaign_id = 1 # int | External campaign id.
     value_resource_input_of_campaign_budget_overrides = ValueResourceInputOfCampaignBudgetOverrides(
         data=ValueResourceOfCampaignBudgetOverrides(
-            type="type_example",
             attributes=CampaignBudgetOverrides(
-                monthly_budget_overrides=[
-                    CampaignMonthlyBudgetOverride(
-                        start_month=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                daily_budget_overrides=[
+                    CampaignDailyBudgetOverride(
                         duration="duration_example",
-                        max_monthly_spend=3.14,
+                        max_daily_spend=3.14,
+                        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         status="Expired",
                     ),
                 ],
-                daily_budget_overrides=[
-                    CampaignDailyBudgetOverride(
-                        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                monthly_budget_overrides=[
+                    CampaignMonthlyBudgetOverride(
                         duration="duration_example",
-                        max_daily_spend=3.14,
+                        max_monthly_spend=3.14,
+                        start_month=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         status="Expired",
                     ),
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfCampaignBudgetOverrides | New campaign budget overrides settings value resource input. (optional)
 
@@ -6202,25 +6202,25 @@ with criteo_api_retailmedia_v2024_04.ApiClient(configuration) as api_client:
     line_item_id = "lineItemId_example" # str | Line item external id.
     value_resource_input_of_line_item_budget_overrides = ValueResourceInputOfLineItemBudgetOverrides(
         data=ValueResourceOfLineItemBudgetOverrides(
-            type="type_example",
             attributes=LineItemBudgetOverrides(
-                monthly_line_item_budget_overrides=[
-                    MonthlyLineItemBudegetOverride(
-                        start_month=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                daily_line_item_budget_overrides=[
+                    DailyLineItemBudgetOverride(
                         duration="duration_example",
-                        max_monthly_spend=3.14,
+                        max_daily_spend=3.14,
+                        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         status="Expired",
                     ),
                 ],
-                daily_line_item_budget_overrides=[
-                    DailyLineItemBudgetOverride(
-                        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                monthly_line_item_budget_overrides=[
+                    MonthlyLineItemBudegetOverride(
                         duration="duration_example",
-                        max_daily_spend=3.14,
+                        max_monthly_spend=3.14,
+                        start_month=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         status="Expired",
                     ),
                 ],
             ),
+            type="type_example",
         ),
     ) # ValueResourceInputOfLineItemBudgetOverrides | New line item budget overrides settings value resource input. (optional)
 

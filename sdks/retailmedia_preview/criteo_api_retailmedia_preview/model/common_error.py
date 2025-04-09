@@ -91,14 +91,14 @@ class CommonError(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'trace_id': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
             'code': (str,),  # noqa: E501
-            'instance': (str,),  # noqa: E501
-            'title': (str,),  # noqa: E501
             'detail': (str,),  # noqa: E501
+            'instance': (str,),  # noqa: E501
             'source': ({str: (str,)},),  # noqa: E501
             'stack_trace': (str,),  # noqa: E501
+            'title': (str,),  # noqa: E501
+            'trace_id': (str,),  # noqa: E501
+            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -107,14 +107,14 @@ class CommonError(ModelNormal):
 
 
     attribute_map = {
-        'trace_id': 'traceId',  # noqa: E501
-        'type': 'type',  # noqa: E501
         'code': 'code',  # noqa: E501
-        'instance': 'instance',  # noqa: E501
-        'title': 'title',  # noqa: E501
         'detail': 'detail',  # noqa: E501
+        'instance': 'instance',  # noqa: E501
         'source': 'source',  # noqa: E501
         'stack_trace': 'stackTrace',  # noqa: E501
+        'title': 'title',  # noqa: E501
+        'trace_id': 'traceId',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -158,14 +158,14 @@ class CommonError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
-            type (str): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
             code (str): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
-            instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
-            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
             detail (str): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
             source ({str: (str,)}): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
             stack_trace (str): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
+            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
+            trace_id (str): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
+            type (str): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,14 +251,14 @@ class CommonError(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            trace_id (str): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
-            type (str): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
             code (str): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
-            instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
-            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
             detail (str): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            instance (str): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
             source ({str: (str,)}): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
             stack_trace (str): (NEVER IN PRODUCTION) A human-readable stacktrace produced by the implementation technology. [optional]  # noqa: E501
+            title (str): (RECOMMENDED) A short, human-readable summary of the problem type.. [optional]  # noqa: E501
+            trace_id (str): (REQUIRED) The Correlation ID provided by the Gateway. It is also a unique identifier for this particular occurrence of the problem.. [optional]  # noqa: E501
+            type (str): (REQUIRED) The classification of the error.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

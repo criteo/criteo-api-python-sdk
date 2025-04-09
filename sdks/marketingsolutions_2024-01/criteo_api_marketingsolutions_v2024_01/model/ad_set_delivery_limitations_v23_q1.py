@@ -55,17 +55,17 @@ class AdSetDeliveryLimitationsV23Q1(ModelNormal):
     """
 
     allowed_values = {
-        ('environments',): {
-            'None': None,
-            'WEB': "web",
-            'INAPP': "inApp",
-        },
         ('devices',): {
             'None': None,
             'OTHER': "other",
             'DESKTOP': "desktop",
             'MOBILE': "mobile",
             'TABLET': "tablet",
+        },
+        ('environments',): {
+            'None': None,
+            'WEB': "web",
+            'INAPP': "inApp",
         },
         ('operating_systems',): {
             'None': None,
@@ -99,8 +99,8 @@ class AdSetDeliveryLimitationsV23Q1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'environments': ([str], none_type,),  # noqa: E501
             'devices': ([str], none_type,),  # noqa: E501
+            'environments': ([str], none_type,),  # noqa: E501
             'operating_systems': ([str], none_type,),  # noqa: E501
         }
 
@@ -110,8 +110,8 @@ class AdSetDeliveryLimitationsV23Q1(ModelNormal):
 
 
     attribute_map = {
-        'environments': 'environments',  # noqa: E501
         'devices': 'devices',  # noqa: E501
+        'environments': 'environments',  # noqa: E501
         'operating_systems': 'operatingSystems',  # noqa: E501
     }
 
@@ -156,8 +156,8 @@ class AdSetDeliveryLimitationsV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            environments ([str], none_type): [optional]  # noqa: E501
             devices ([str], none_type): [optional]  # noqa: E501
+            environments ([str], none_type): [optional]  # noqa: E501
             operating_systems ([str], none_type): [optional]  # noqa: E501
         """
 
@@ -244,8 +244,8 @@ class AdSetDeliveryLimitationsV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            environments ([str], none_type): [optional]  # noqa: E501
             devices ([str], none_type): [optional]  # noqa: E501
+            environments ([str], none_type): [optional]  # noqa: E501
             operating_systems ([str], none_type): [optional]  # noqa: E501
         """
 

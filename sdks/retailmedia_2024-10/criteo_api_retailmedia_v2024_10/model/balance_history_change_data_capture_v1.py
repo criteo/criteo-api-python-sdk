@@ -93,10 +93,10 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
         """
         lazy_import()
         return {
+            'change_details': (ChangeDetailsV1,),  # noqa: E501
+            'change_type': (str,),  # noqa: E501
             'date_of_modification': (datetime,),  # noqa: E501
             'modified_by_user': (str,),  # noqa: E501
-            'change_type': (str,),  # noqa: E501
-            'change_details': (ChangeDetailsV1,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
         }
 
@@ -106,10 +106,10 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
 
 
     attribute_map = {
+        'change_details': 'changeDetails',  # noqa: E501
+        'change_type': 'changeType',  # noqa: E501
         'date_of_modification': 'dateOfModification',  # noqa: E501
         'modified_by_user': 'modifiedByUser',  # noqa: E501
-        'change_type': 'changeType',  # noqa: E501
-        'change_details': 'changeDetails',  # noqa: E501
         'memo': 'memo',  # noqa: E501
     }
 
@@ -120,14 +120,14 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, date_of_modification, modified_by_user, change_type, change_details, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, change_details, change_type, date_of_modification, modified_by_user, *args, **kwargs):  # noqa: E501
         """BalanceHistoryChangeDataCaptureV1 - a model defined in OpenAPI
 
         Args:
+            change_details (ChangeDetailsV1):
+            change_type (str): Represent the type of change states of the history.
             date_of_modification (datetime): Date when data change has occured.
             modified_by_user (str): Username who modified the insertion order.
-            change_type (str): Represent the type of change states of the history.
-            change_details (ChangeDetailsV1):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -192,10 +192,10 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.change_details = change_details
+        self.change_type = change_type
         self.date_of_modification = date_of_modification
         self.modified_by_user = modified_by_user
-        self.change_type = change_type
-        self.change_details = change_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -216,14 +216,14 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, date_of_modification, modified_by_user, change_type, change_details, *args, **kwargs):  # noqa: E501
+    def __init__(self, change_details, change_type, date_of_modification, modified_by_user, *args, **kwargs):  # noqa: E501
         """BalanceHistoryChangeDataCaptureV1 - a model defined in OpenAPI
 
         Args:
+            change_details (ChangeDetailsV1):
+            change_type (str): Represent the type of change states of the history.
             date_of_modification (datetime): Date when data change has occured.
             modified_by_user (str): Username who modified the insertion order.
-            change_type (str): Represent the type of change states of the history.
-            change_details (ChangeDetailsV1):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -286,10 +286,10 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.change_details = change_details
+        self.change_type = change_type
         self.date_of_modification = date_of_modification
         self.modified_by_user = modified_by_user
-        self.change_type = change_type
-        self.change_details = change_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

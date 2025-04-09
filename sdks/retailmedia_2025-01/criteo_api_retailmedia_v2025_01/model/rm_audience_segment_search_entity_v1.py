@@ -87,8 +87,8 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
         """
         return {
             'audience_segment_ids': ([str],),  # noqa: E501
-            'retailer_ids': ([str],),  # noqa: E501
             'audience_segment_types': ([str],),  # noqa: E501
+            'retailer_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -98,8 +98,8 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
 
     attribute_map = {
         'audience_segment_ids': 'audienceSegmentIds',  # noqa: E501
-        'retailer_ids': 'retailerIds',  # noqa: E501
         'audience_segment_types': 'audienceSegmentTypes',  # noqa: E501
+        'retailer_ids': 'retailerIds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,8 +144,8 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
-            retailer_ids ([str]): List of retailer ids. [optional]  # noqa: E501
             audience_segment_types ([str]): List of segment types. [optional]  # noqa: E501
+            retailer_ids ([str]): List of retailer ids. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,8 +232,8 @@ class RmAudienceSegmentSearchEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             audience_segment_ids ([str]): List of segment ids. [optional]  # noqa: E501
-            retailer_ids ([str]): List of retailer ids. [optional]  # noqa: E501
             audience_segment_types ([str]): List of segment types. [optional]  # noqa: E501
+            retailer_ids ([str]): List of retailer ids. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
