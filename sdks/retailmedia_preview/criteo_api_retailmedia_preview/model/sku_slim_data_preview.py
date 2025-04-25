@@ -105,9 +105,9 @@ class SkuSlimDataPreview(ModelNormal):
             'updated_at': (datetime,),  # noqa: E501
             'category': (str,),  # noqa: E501
             'global_category_id': (str,),  # noqa: E501
-            'gtin': (str,),  # noqa: E501
+            'gtin': (str, none_type,),  # noqa: E501
             'image_url': (str,),  # noqa: E501
-            'mpn': (str,),  # noqa: E501
+            'mpn': (str, none_type,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'retailer_brand_id': (str,),  # noqa: E501
             'retailer_brand_name': (str,),  # noqa: E501
@@ -186,9 +186,9 @@ class SkuSlimDataPreview(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             global_category_id (str): The global category Id.. [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
             name (str): A short product name.. [optional]  # noqa: E501
             retailer_brand_id (str): The retailer brand id associated to the product.. [optional]  # noqa: E501
             retailer_brand_name (str): The name of the retailer brand.. [optional]  # noqa: E501
@@ -293,9 +293,9 @@ class SkuSlimDataPreview(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             category (str): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
             global_category_id (str): The global category Id.. [optional]  # noqa: E501
-            gtin (str): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
+            gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
             image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
-            mpn (str): The MPN for the product if available.. [optional]  # noqa: E501
+            mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
             name (str): A short product name.. [optional]  # noqa: E501
             retailer_brand_id (str): The retailer brand id associated to the product.. [optional]  # noqa: E501
             retailer_brand_name (str): The name of the retailer brand.. [optional]  # noqa: E501

@@ -62,6 +62,10 @@ class AccountFeesUpdateRequest(ModelNormal):
     }
 
     validations = {
+        ('account_ids',): {
+            'max_items': 25,
+            'min_items': 1,
+        },
     }
 
     additional_properties_type = None

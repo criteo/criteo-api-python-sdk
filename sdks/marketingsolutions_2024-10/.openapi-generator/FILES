@@ -108,7 +108,6 @@ criteo_api_marketingsolutions_v2024_10/model/audience_size_estimation_v1_respons
 criteo_api_marketingsolutions_v2024_10/model/audience_update_entity_v1.py
 criteo_api_marketingsolutions_v2024_10/model/audience_update_entity_v1_resource.py
 criteo_api_marketingsolutions_v2024_10/model/audience_warning.py
-criteo_api_marketingsolutions_v2024_10/model/automated_budget_configuration.py
 criteo_api_marketingsolutions_v2024_10/model/automated_budget_configuration_v23_q1.py
 criteo_api_marketingsolutions_v2024_10/model/basic_audience_definition.py
 criteo_api_marketingsolutions_v2024_10/model/behavioral_v1.py
@@ -364,7 +363,6 @@ docs/AudienceSizeEstimationV1Response.md
 docs/AudienceUpdateEntityV1.md
 docs/AudienceUpdateEntityV1Resource.md
 docs/AudienceWarning.md
-docs/AutomatedBudgetConfiguration.md
 docs/AutomatedBudgetConfigurationV23Q1.md
 docs/BasicAudienceDefinition.md
 docs/BehavioralV1.md

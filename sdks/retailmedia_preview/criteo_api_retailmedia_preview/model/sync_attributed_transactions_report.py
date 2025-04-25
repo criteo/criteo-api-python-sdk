@@ -103,9 +103,9 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'ATTRIBUTEDSALES': "attributedSales",
         },
         ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
             'ONLINE': "online",
+            'OFFLINE': "offline",
+            'ALL': "all",
         },
         ('view_attribution_window',): {
             'NONE': "none",

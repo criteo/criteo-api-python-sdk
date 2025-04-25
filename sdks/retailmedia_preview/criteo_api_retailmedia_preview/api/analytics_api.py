@@ -957,7 +957,7 @@ class AnalyticsApi(object):
     ):
         """generate_async_offsite_report  # noqa: E501
 
-        Returns an asynchronous Offsite Activity Report This endpoint is subject to specific rate limits.  # noqa: E501
+        Returns an asynchronous Offsite Report This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

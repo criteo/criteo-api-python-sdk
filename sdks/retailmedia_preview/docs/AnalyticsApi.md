@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an asynchronous Offsite Activity Report This endpoint is subject to specific rate limits.
+Returns an asynchronous Offsite Report This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -550,7 +550,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 line_item_ids=[
                     "line_item_ids_example",
                 ],
-                media_types="all",
+                media_type="all",
                 metrics=[
                     "audience",
                 ],

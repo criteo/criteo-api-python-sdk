@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **id** | **str** | Line Item id to report on | [optional] 
 **ids** | **[str]** | Line Item ids to report on | [optional] 
 **metrics** | **[str]** | List of metrics to report on | [optional] 
-**report_type** | **str** | Type of report, if no dimensions/metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
+**report_type** | **str** | Type of report, if no dimensions and metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **search_term_targetings** | **[str]** | Filter on the type of search term targeting: unknown, automatic, manual | [optional] 
 **search_term_types** | **[str]** | Filter on the type of search term type: unknown, searched, entered | [optional] 

@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** | The last time this product was updated in the Retail Media Catalog. Represented as a UTC ISO8601 string. | 
 **category** | **str** | The full category breadcrumb in the retailers catalog. | [optional] 
 **global_category_id** | **str** | The global category Id. | [optional] 
-**gtin** | **str** | A GTIN identifier for the product if available. Covers variations such as EANs and UPCs. | [optional] 
+**gtin** | **str, none_type** | A GTIN identifier for the product if available. Covers variations such as EANs and UPCs. | [optional] 
 **image_url** | **str** | An http image resource provided by the retailer. | [optional] 
-**mpn** | **str** | The MPN for the product if available. | [optional] 
+**mpn** | **str, none_type** | The MPN for the product if available. | [optional] 
 **name** | **str** | A short product name. | [optional] 
 **retailer_brand_id** | **str** | The retailer brand id associated to the product. | [optional] 
 **retailer_brand_name** | **str** | The name of the retailer brand. | [optional] 

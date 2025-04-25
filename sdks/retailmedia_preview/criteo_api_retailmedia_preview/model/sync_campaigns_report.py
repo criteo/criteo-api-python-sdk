@@ -116,9 +116,9 @@ class SyncCampaignsReport(ModelNormal):
             'SERVEDCATEGORY': "servedCategory",
         },
         ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
             'ONLINE': "online",
+            'OFFLINE': "offline",
+            'ALL': "all",
         },
         ('view_attribution_window',): {
             'NONE': "none",
@@ -238,7 +238,7 @@ class SyncCampaignsReport(ModelNormal):
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
@@ -340,7 +340,7 @@ class SyncCampaignsReport(ModelNormal):
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501

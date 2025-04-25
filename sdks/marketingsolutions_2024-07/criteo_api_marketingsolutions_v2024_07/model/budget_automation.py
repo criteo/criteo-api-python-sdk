@@ -30,8 +30,8 @@ from criteo_api_marketingsolutions_v2024_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_v2024_07.model.automated_budget_configuration import AutomatedBudgetConfiguration
-    globals()['AutomatedBudgetConfiguration'] = AutomatedBudgetConfiguration
+    from criteo_api_marketingsolutions_v2024_07.model.budget_automation_configuration import BudgetAutomationConfiguration
+    globals()['BudgetAutomationConfiguration'] = BudgetAutomationConfiguration
 
 
 class BudgetAutomation(ModelNormal):
@@ -87,7 +87,7 @@ class BudgetAutomation(ModelNormal):
         """
         lazy_import()
         return {
-            'automated_budget_configuration': (AutomatedBudgetConfiguration,),  # noqa: E501
+            'budget_configuration': (BudgetAutomationConfiguration,),  # noqa: E501
             'enabled': (bool,),  # noqa: E501
         }
 
@@ -97,7 +97,7 @@ class BudgetAutomation(ModelNormal):
 
 
     attribute_map = {
-        'automated_budget_configuration': 'automatedBudgetConfiguration',  # noqa: E501
+        'budget_configuration': 'budgetConfiguration',  # noqa: E501
         'enabled': 'enabled',  # noqa: E501
     }
 
@@ -142,7 +142,7 @@ class BudgetAutomation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            automated_budget_configuration (AutomatedBudgetConfiguration): [optional]  # noqa: E501
+            budget_configuration (BudgetAutomationConfiguration): [optional]  # noqa: E501
             enabled (bool): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class BudgetAutomation(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            automated_budget_configuration (AutomatedBudgetConfiguration): [optional]  # noqa: E501
+            budget_configuration (BudgetAutomationConfiguration): [optional]  # noqa: E501
             enabled (bool): [optional]  # noqa: E501
         """
 

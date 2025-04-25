@@ -5,7 +5,6 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_api_external_v1_account_private_market_child_accounts_by_account_id**](AccountsApi.md#get_api_external_v1_account_private_market_child_accounts_by_account_id) | **GET** /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | 
-[**grant_consent**](AccountsApi.md#grant_consent) | **POST** /preview/retail-media/accounts/{accountId}/grant-consent | 
 [**preview_retail_media_accounts_fees_search_post**](AccountsApi.md#preview_retail_media_accounts_fees_search_post) | **POST** /preview/retail-media/accounts/fees/search | 
 [**preview_retail_media_accounts_fees_update_post**](AccountsApi.md#preview_retail_media_accounts_fees_update_post) | **POST** /preview/retail-media/accounts/fees/update | 
 [**search_sellers**](AccountsApi.md#search_sellers) | **POST** /preview/retail-media/accounts/sellers/search | 
@@ -107,111 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **grant_consent**
-> grant_consent(account_id)
-
-
-
-Grant consent to a business application on behalf of a Private Market demand account
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import accounts_api
-from criteo_api_retailmedia_preview.model.grant_consent_input import GrantConsentInput
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = accounts_api.AccountsApi(api_client)
-    account_id = "accountId_example" # str | The demand account ID on which to grant consent
-    grant_consent_input = GrantConsentInput(
-        data=GrantConsentModelValueResource(
-            attributes=GrantConsentModel(
-                callback_state="callback_state_example",
-                callback_url="callback_url_example",
-                client_id="client_id_example",
-            ),
-            type="type_example",
-        ),
-    ) # GrantConsentInput |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        # 
-        api_instance.grant_consent(account_id)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AccountsApi->grant_consent: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # 
-        api_instance.grant_consent(account_id, grant_consent_input=grant_consent_input)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AccountsApi->grant_consent: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The demand account ID on which to grant consent |
- **grant_consent_input** | [**GrantConsentInput**](GrantConsentInput.md)|  | [optional]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: Not defined
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **preview_retail_media_accounts_fees_search_post**
-> ValueResourceCollectionOutcomePrivateMarketAccountFees preview_retail_media_accounts_fees_search_post()
+> ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata preview_retail_media_accounts_fees_search_post()
 
 
 
@@ -227,8 +123,8 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import accounts_api
 from criteo_api_retailmedia_preview.model.outcome import Outcome
-from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_private_market_account_fees import ValueResourceCollectionOutcomePrivateMarketAccountFees
 from criteo_api_retailmedia_preview.model.value_resource_input_account_fees_search_request import ValueResourceInputAccountFeesSearchRequest
+from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_private_market_account_fees_and_metadata import ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -290,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ValueResourceCollectionOutcomePrivateMarketAccountFees**](ValueResourceCollectionOutcomePrivateMarketAccountFees.md)
+[**ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata**](ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata.md)
 
 ### Authorization
 

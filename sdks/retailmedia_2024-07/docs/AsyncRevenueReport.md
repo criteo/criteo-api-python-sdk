@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **ids** | **[str]** | Supply account ids to report on | [optional] 
 **line_item_ids** | **[str]** | Line item ids to filter | [optional] 
 **metrics** | **[str]** | List of metrics to report on | [optional] 
-**report_type** | **str** | Type of report | [optional] 
+**report_type** | **str** | Type of report, if no dimensions and metrics are provided, falls back to advertiser reportType | [optional] 
 **retailer_ids** | **[str]** | Retailer ids to filter | [optional] 
 **revenue_type** | **str** | Type of revenue | [optional] 
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"

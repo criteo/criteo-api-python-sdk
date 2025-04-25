@@ -250,8 +250,8 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             attributes=CreateCampaign(
                 advertiser_id="advertiser_id_example",
                 budget_automation=BudgetAutomation(
-                    automated_budget_configuration=AutomatedBudgetConfiguration(
-                        objective="customAction",
+                    budget_configuration=BudgetAutomationConfiguration(
+                        ad_set_objectives="conversions",
                     ),
                     enabled=True,
                 ),
@@ -2094,9 +2094,9 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 attributes=PatchCampaign(
                     budget_automation=PatchMarketingCampaignBudgetAutomation(
                         budget_configuration=BudgetAutomationConfiguration(
-                            ad_set_objectives="customAction",
+                            ad_set_objectives="conversions",
                         ),
-                        enable=True,
+                        enabled=True,
                     ),
                     spend_limit=PatchCampaignSpendLimit(
                         spend_limit_amount=NillableDecimal(

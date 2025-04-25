@@ -157,9 +157,9 @@ class AsyncLineItemsReport(ModelNormal):
             'CAPOUT': "capout",
         },
         ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
             'ONLINE': "online",
+            'OFFLINE': "offline",
+            'ALL': "all",
         },
         ('search_term_targetings',): {
             'UNKNOWN': "unknown",
@@ -296,7 +296,7 @@ class AsyncLineItemsReport(ModelNormal):
             id (str): Line Item id to report on. [optional]  # noqa: E501
             ids ([str]): Line Item ids to report on. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
@@ -400,7 +400,7 @@ class AsyncLineItemsReport(ModelNormal):
             id (str): Line Item id to report on. [optional]  # noqa: E501
             ids ([str]): Line Item ids to report on. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report, if no dimensions/metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501

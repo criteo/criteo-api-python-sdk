@@ -56,15 +56,8 @@ class BudgetAutomationConfiguration(ModelNormal):
 
     allowed_values = {
         ('ad_set_objectives',): {
-            'CUSTOMACTION': "customAction",
-            'CLICKS': "clicks",
             'CONVERSIONS': "conversions",
-            'DISPLAYS': "displays",
-            'APPPROMOTION': "appPromotion",
             'REVENUE': "revenue",
-            'STORECONVERSIONS': "storeConversions",
-            'VALUE': "value",
-            'REACH': "reach",
             'VISITS': "visits",
             'VIDEOVIEWS': "videoViews",
         },

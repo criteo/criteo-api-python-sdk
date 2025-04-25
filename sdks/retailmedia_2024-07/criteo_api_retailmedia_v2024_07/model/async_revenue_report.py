@@ -197,9 +197,9 @@ class AsyncRevenueReport(ModelNormal):
             'PREFERRED': "preferred",
         },
         ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
             'ONLINE': "online",
+            'OFFLINE': "offline",
+            'ALL': "all",
         },
         ('sku_relations',): {
             'SAMESKU': "sameSku",
@@ -357,7 +357,7 @@ class AsyncRevenueReport(ModelNormal):
             ids ([str]): Supply account ids to report on. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report. [optional]  # noqa: E501
+            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to advertiser reportType. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
             revenue_type (str): Type of revenue. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
@@ -468,7 +468,7 @@ class AsyncRevenueReport(ModelNormal):
             ids ([str]): Supply account ids to report on. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report. [optional]  # noqa: E501
+            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to advertiser reportType. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
             revenue_type (str): Type of revenue. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501

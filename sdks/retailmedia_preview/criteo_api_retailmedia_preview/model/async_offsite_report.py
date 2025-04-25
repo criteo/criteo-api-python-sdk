@@ -67,17 +67,17 @@ class AsyncOffsiteReport(ModelNormal):
             'LINEITEMNAME': "lineItemName",
             'RETAILERID': "retailerId",
             'RETAILERNAME': "retailerName",
-            'CREATIVEID': "creativeId",
-            'CREATIVENAME': "creativeName",
             'BILLINGTYPE': "billingType",
-            'BUYTYPENAME': "buyTypeName",
             'ENVIRONMENT': "environment",
             'ADFORMATSIZE': "adFormatSize",
             'SSP': "ssp",
             'PUBLISHER': "publisher",
             'INVENTORYTYPE': "inventoryType",
             'MEDIATYPE': "mediaType",
+            'BUYTYPE': "buyType",
             'SALESCHANNEL': "salesChannel",
+            'CREATIVEID': "creativeId",
+            'CREATIVENAME': "creativeName",
         },
         ('metrics',): {
             'AUDIENCE': "audience",
@@ -101,8 +101,8 @@ class AsyncOffsiteReport(ModelNormal):
             'VIDEOSPLAYEDTO50': "videosPlayedTo50",
             'VIDEOSPLAYEDTO75': "videosPlayedTo75",
             'VIDEOSPLAYEDTO100': "videosPlayedTo100",
-            'STARTINGRATE': "startingRate",
-            'COMPLETIONRATE': "completionRate",
+            'VIDEOSTARTINGRATE': "videoStartingRate",
+            'VIDEOCOMPLETIONRATE': "videoCompletionRate",
             'VIDEOCPC': "videoCPC",
             'VIDEOCPCV': "videoCPCV",
             'VISITS': "visits",
@@ -131,15 +131,16 @@ class AsyncOffsiteReport(ModelNormal):
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
         },
-        ('media_types',): {
-            'ALL': "all",
-            'DISPLAY': "display",
+        ('media_type',): {
+            'UNKNOWN': "unknown",
             'VIDEO': "video",
+            'DISPLAY': "display",
+            'ALL': "all",
         },
         ('sales_channel',): {
-            'ALL': "all",
-            'OFFLINE': "offline",
             'ONLINE': "online",
+            'OFFLINE': "offline",
+            'ALL': "all",
         },
         ('view_attribution_window',): {
             'NONE': "none",
@@ -151,6 +152,12 @@ class AsyncOffsiteReport(ModelNormal):
     }
 
     validations = {
+        ('dimensions',): {
+            'min_items': 1,
+        },
+        ('metrics',): {
+            'min_items': 1,
+        },
     }
 
     @cached_property
@@ -186,7 +193,7 @@ class AsyncOffsiteReport(ModelNormal):
             'creative_ids': ([str],),  # noqa: E501
             'format': (str,),  # noqa: E501
             'line_item_ids': ([str],),  # noqa: E501
-            'media_types': (str,),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
             'retailer_ids': ([str],),  # noqa: E501
             'sales_channel': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
@@ -211,7 +218,7 @@ class AsyncOffsiteReport(ModelNormal):
         'creative_ids': 'creativeIds',  # noqa: E501
         'format': 'format',  # noqa: E501
         'line_item_ids': 'lineItemIds',  # noqa: E501
-        'media_types': 'mediaTypes',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
         'retailer_ids': 'retailerIds',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
@@ -270,13 +277,13 @@ class AsyncOffsiteReport(ModelNormal):
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            creative_ids ([str]): Filter creative ids. [optional]  # noqa: E501
+            creative_ids ([str]): Creative ids to filter. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
-            media_types (str): Filter by media type. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            timezone (str): Time zone : see Criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
@@ -379,13 +386,13 @@ class AsyncOffsiteReport(ModelNormal):
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            creative_ids ([str]): Filter creative ids. [optional]  # noqa: E501
+            creative_ids ([str]): Creative ids to filter. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
-            media_types (str): Filter by media type. [optional] if omitted the server will use the default value of "all"  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            timezone (str): Time zone : see Criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
 **dimensions** | **[str]** | List of dimensions to report on | [optional] 
 **metrics** | **[str]** | List of metrics to report on | [optional] 
-**report_type** | **str** | Type of report, if no dimensions/metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
+**report_type** | **str** | Type of report, if no dimensions and metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
 **view_attribution_window** | **str** | View attribution window | [optional]  if omitted the server will use the default value of "none"

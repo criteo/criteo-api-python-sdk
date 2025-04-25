@@ -57,15 +57,8 @@ class AutomatedBudgetConfigurationV23Q1(ModelNormal):
     allowed_values = {
         ('ad_set_optimization_objective',): {
             'None': None,
-            'CUSTOMACTION': "customAction",
-            'CLICKS': "clicks",
             'CONVERSIONS': "conversions",
-            'DISPLAYS': "displays",
-            'APPPROMOTION': "appPromotion",
             'REVENUE': "revenue",
-            'STORECONVERSIONS': "storeConversions",
-            'VALUE': "value",
-            'REACH': "reach",
             'VISITS': "visits",
             'VIDEOVIEWS': "videoViews",
         },
