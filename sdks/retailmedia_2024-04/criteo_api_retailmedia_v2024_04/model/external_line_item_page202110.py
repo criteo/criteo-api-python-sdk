@@ -99,7 +99,7 @@ class ExternalLineItemPage202110(ModelNormal):
         return {
             'page_type': (str,),  # noqa: E501
             'categories': ([ExternalLineItemPageCategory202110], none_type,),  # noqa: E501
-            'search_keywords': ([str],),  # noqa: E501
+            'search_keywords': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -158,7 +158,7 @@ class ExternalLineItemPage202110(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             categories ([ExternalLineItemPageCategory202110], none_type): [optional]  # noqa: E501
-            search_keywords ([str]): [optional]  # noqa: E501
+            search_keywords ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -249,7 +249,7 @@ class ExternalLineItemPage202110(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             categories ([ExternalLineItemPageCategory202110], none_type): [optional]  # noqa: E501
-            search_keywords ([str]): [optional]  # noqa: E501
+            search_keywords ([str], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

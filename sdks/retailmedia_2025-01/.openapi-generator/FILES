@@ -167,6 +167,7 @@ criteo_api_retailmedia_v2025_01/model/line_item_product_status.py
 criteo_api_retailmedia_v2025_01/model/match_type_model.py
 criteo_api_retailmedia_v2025_01/model/metadata.py
 criteo_api_retailmedia_v2025_01/model/monthly_line_item_budeget_override.py
+criteo_api_retailmedia_v2025_01/model/nillable_decimal.py
 criteo_api_retailmedia_v2025_01/model/nillable_string.py
 criteo_api_retailmedia_v2025_01/model/page_metadata.py
 criteo_api_retailmedia_v2025_01/model/page_of_balance_history_change_data_capture_v1.py
@@ -243,6 +244,8 @@ criteo_api_retailmedia_v2025_01/model/rm_contact_list_statistics_entity_v1.py
 criteo_api_retailmedia_v2025_01/model/rm_contact_list_statistics_entity_v1_resource.py
 criteo_api_retailmedia_v2025_01/model/rm_contact_list_statistics_entity_v1_response.py
 criteo_api_retailmedia_v2025_01/model/rm_contact_list_v1.py
+criteo_api_retailmedia_v2025_01/model/rm_events_create_v1.py
+criteo_api_retailmedia_v2025_01/model/rm_events_update_v1.py
 criteo_api_retailmedia_v2025_01/model/rm_events_v1.py
 criteo_api_retailmedia_v2025_01/model/rmca_common_problem.py
 criteo_api_retailmedia_v2025_01/model/sdk_api_rest_common_problem.py
@@ -448,6 +451,7 @@ docs/LineItemProductStatus.md
 docs/MatchTypeModel.md
 docs/Metadata.md
 docs/MonthlyLineItemBudegetOverride.md
+docs/NillableDecimal.md
 docs/NillableString.md
 docs/PageMetadata.md
 docs/PageOfBalanceHistoryChangeDataCaptureV1.md
@@ -524,6 +528,8 @@ docs/RmContactListStatisticsEntityV1.md
 docs/RmContactListStatisticsEntityV1Resource.md
 docs/RmContactListStatisticsEntityV1Response.md
 docs/RmContactListV1.md
+docs/RmEventsCreateV1.md
+docs/RmEventsUpdateV1.md
 docs/RmEventsV1.md
 docs/RmcaCommonProblem.md
 docs/SdkApiRestCommonProblem.md

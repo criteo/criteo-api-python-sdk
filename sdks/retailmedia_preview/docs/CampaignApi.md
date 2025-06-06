@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /preview/retail-media/line-items/{id}/keywords/add-remove | 
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/append | 
+[**categories_search_v1**](CampaignApi.md#categories_search_v1) | **POST** /preview/retail-media/retailers/{retailerId}/categories/search | 
+[**create_auction_line_item_v2**](CampaignApi.md#create_auction_line_item_v2) | **POST** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
 [**delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#delete_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/delete | 
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /preview/retail-media/line-items/{id}/keywords | 
@@ -20,7 +22,10 @@ Method | HTTP request | Description
 [**get_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api_v2_external_account_by_account_id_creativescreative_id) | **GET** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_api_v2_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#get_api_v2_external_campaign_preferred_line_items_by_campaign_id) | **GET** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**get_api_v2_external_preferred_line_item_by_line_item_id**](CampaignApi.md#get_api_v2_external_preferred_line_item_by_line_item_id) | **GET** /preview/retail-media/preferred-line-items/{line-item-id} | 
+[**get_auction_line_item_v2**](CampaignApi.md#get_auction_line_item_v2) | **GET** /preview/retail-media/auction-line-items/{lineItemId} | 
+[**get_auction_line_items_by_campaign_id_v2**](CampaignApi.md#get_auction_line_items_by_campaign_id_v2) | **GET** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
 [**get_cpc_min_bids_by_sku_ids_v1**](CampaignApi.md#get_cpc_min_bids_by_sku_ids_v1) | **POST** /preview/retail-media/retailers/{retailerId}/cpc-min-bids | 
+[**get_recommended_categories**](CampaignApi.md#get_recommended_categories) | **POST** /preview/retail-media/retailers/{retailerId}/recommend-categories | 
 [**in_review_report_v1**](CampaignApi.md#in_review_report_v1) | **GET** /preview/retail-media/accounts/{account-id}/keywords/in-review-report | 
 [**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/pause | 
 [**post_api202110_external_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#post_api202110_external_campaign_preferred_line_items_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
@@ -36,9 +41,11 @@ Method | HTTP request | Description
 [**put_api202110_external_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api202110_external_preferred_line_item_by_line_item_id) | **PUT** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id**](CampaignApi.md#put_api202210_external_line_item_product_buttons_by_line_item_id_product_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**put_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#put_api_v2_external_account_by_account_id_creativescreative_id) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
+[**recommended_keywords**](CampaignApi.md#recommended_keywords) | **POST** /preview/retail-media/retailers/{retailerId}/recommend-keywords | 
 [**search_brands_by_name_async_v1**](CampaignApi.md#search_brands_by_name_async_v1) | **POST** /preview/retail-media/brands/search | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
 [**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/unpause | 
+[**update_auction_line_item_v2**](CampaignApi.md#update_auction_line_item_v2) | **PUT** /preview/retail-media/auction-line-items/{lineItemId} | 
 [**update_keyword_reviews_v1**](CampaignApi.md#update_keyword_reviews_v1) | **POST** /preview/retail-media/line-items/{line-item-id}/keywords/review | 
 
 
@@ -259,6 +266,234 @@ Name | Type | Description  | Notes
 **204** | Promoted products appended to the line item |  -  |
 **400** | Invalid request body |  -  |
 **403** | Invalid external line item ID |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **categories_search_v1**
+> EntityResourceCollectionOutcomeCategory202204Metadata categories_search_v1(retailer_id)
+
+
+
+Search a retailer categories by given text substring and category ids.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204_metadata import EntityResourceCollectionOutcomeCategory202204Metadata
+from criteo_api_retailmedia_preview.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
+from criteo_api_retailmedia_preview.model.outcome import Outcome
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | Retailer id.
+    limit = 50 # int | Limit of the search result. (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | Offset of the search result. (optional) if omitted the server will use the default value of 0
+    value_resource_input_categories_search_request_v1 = ValueResourceInputCategoriesSearchRequestV1(
+        data=ValueResourceCategoriesSearchRequestV1(
+            attributes=CategoriesSearchRequestV1(
+                category_ids=[
+                    "category_ids_example",
+                ],
+                text_substring="text_substring_example",
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputCategoriesSearchRequestV1 | Request of categories search. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.categories_search_v1(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->categories_search_v1: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.categories_search_v1(retailer_id, limit=limit, offset=offset, value_resource_input_categories_search_request_v1=value_resource_input_categories_search_request_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->categories_search_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| Retailer id. |
+ **limit** | **int**| Limit of the search result. | [optional] if omitted the server will use the default value of 50
+ **offset** | **int**| Offset of the search result. | [optional] if omitted the server will use the default value of 0
+ **value_resource_input_categories_search_request_v1** | [**ValueResourceInputCategoriesSearchRequestV1**](ValueResourceInputCategoriesSearchRequestV1.md)| Request of categories search. | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeCategory202204Metadata**](EntityResourceCollectionOutcomeCategory202204Metadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_auction_line_item_v2**
+> EntityResourceOutcomeOfSponsoredProductsLineItem create_auction_line_item_v2(campaign_id)
+
+
+
+Creates new auction line item with the specified settings
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
+from criteo_api_retailmedia_preview.model.sponsored_products_line_item_create_request_model import SponsoredProductsLineItemCreateRequestModel
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    campaign_id = "campaignId_example" # str | The given campaign id
+    sponsored_products_line_item_create_request_model = SponsoredProductsLineItemCreateRequestModel(
+        bid_strategy="Conversion",
+        budget=3.14,
+        daily_pacing=3.14,
+        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        flight_schedule=FlightSchedule(
+            legs=[
+                FlightLeg(
+                    day_of_week="Sunday",
+                    end_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    start_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                ),
+            ],
+        ),
+        is_auto_daily_pacing=False,
+        max_bid=3.14,
+        monthly_pacing=3.14,
+        name="name_example",
+        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+        status="Active",
+        target_bid=3.14,
+        target_retailer_id=1,
+    ) # SponsoredProductsLineItemCreateRequestModel | The line item settings to create a line item with (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_auction_line_item_v2(campaign_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_auction_line_item_v2: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.create_auction_line_item_v2(campaign_id, sponsored_products_line_item_create_request_model=sponsored_products_line_item_create_request_model)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_auction_line_item_v2: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **str**| The given campaign id |
+ **sponsored_products_line_item_create_request_model** | [**SponsoredProductsLineItemCreateRequestModel**](SponsoredProductsLineItemCreateRequestModel.md)| The line item settings to create a line item with | [optional]
+
+### Return type
+
+[**EntityResourceOutcomeOfSponsoredProductsLineItem**](EntityResourceOutcomeOfSponsoredProductsLineItem.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1531,6 +1766,190 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_auction_line_item_v2**
+> EntityResourceOutcomeOfSponsoredProductsLineItem get_auction_line_item_v2(line_item_id)
+
+
+
+Gets a sponsored product line item by its id.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "lineItemId_example" # str | The id of the line item
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_auction_line_item_v2(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_auction_line_item_v2: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The id of the line item |
+
+### Return type
+
+[**EntityResourceOutcomeOfSponsoredProductsLineItem**](EntityResourceOutcomeOfSponsoredProductsLineItem.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_auction_line_items_by_campaign_id_v2**
+> PageOfSponsoredProductsLineItem get_auction_line_items_by_campaign_id_v2(campaign_id)
+
+
+
+Gets a page of sponsored product line items by campaign id.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.page_of_sponsored_products_line_item import PageOfSponsoredProductsLineItem
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    campaign_id = "campaignId_example" # str | The id of the campaign
+    limit_to_id = [
+        "limitToId_example",
+    ] # [str] | The ids that you would like to limit your result set to (optional)
+    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
+    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_auction_line_items_by_campaign_id_v2(campaign_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_auction_line_items_by_campaign_id_v2: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_auction_line_items_by_campaign_id_v2(campaign_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_auction_line_items_by_campaign_id_v2: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **str**| The id of the campaign |
+ **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
+ **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
+ **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
+
+### Return type
+
+[**PageOfSponsoredProductsLineItem**](PageOfSponsoredProductsLineItem.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_cpc_min_bids_by_sku_ids_v1**
 > ValueResourceOutcomeCpcMinBidsResponse get_cpc_min_bids_by_sku_ids_v1(retailer_id)
 
@@ -1632,6 +2051,113 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_recommended_categories**
+> EntityResourceCollectionOutcomeCategory202204 get_recommended_categories(retailer_id)
+
+
+
+Endpoint to get recommended categories by given retailer id and sku id list.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_input_recommended_categories_request_v1 import ValueResourceInputRecommendedCategoriesRequestV1
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204 import EntityResourceCollectionOutcomeCategory202204
+from criteo_api_retailmedia_preview.model.outcome import Outcome
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | Retailer id.
+    value_resource_input_recommended_categories_request_v1 = ValueResourceInputRecommendedCategoriesRequestV1(
+        data=ValueResourceRecommendedCategoriesRequestV1(
+            attributes=RecommendedCategoriesRequestV1(
+                sku_ids=[
+                    "sku_ids_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputRecommendedCategoriesRequestV1 | Request of recommended categories. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_recommended_categories(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_recommended_categories: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_recommended_categories(retailer_id, value_resource_input_recommended_categories_request_v1=value_resource_input_recommended_categories_request_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_recommended_categories: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| Retailer id. |
+ **value_resource_input_recommended_categories_request_v1** | [**ValueResourceInputRecommendedCategoriesRequestV1**](ValueResourceInputRecommendedCategoriesRequestV1.md)| Request of recommended categories. | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeCategory202204**](EntityResourceCollectionOutcomeCategory202204.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3304,6 +3830,112 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **recommended_keywords**
+> ValueResourceOutcomeRecommendedKeywordsResponseV1 recommended_keywords(retailer_id)
+
+
+
+Recommend keywords by given retailer id and sku ids.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_input_recommended_keywords_request_v1 import ValueResourceInputRecommendedKeywordsRequestV1
+from criteo_api_retailmedia_preview.model.outcome import Outcome
+from criteo_api_retailmedia_preview.model.value_resource_outcome_recommended_keywords_response_v1 import ValueResourceOutcomeRecommendedKeywordsResponseV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | Retailer id.
+    value_resource_input_recommended_keywords_request_v1 = ValueResourceInputRecommendedKeywordsRequestV1(
+        data=ValueResourceRecommendedKeywordsRequestV1(
+            attributes=RecommendedKeywordsRequestV1(
+                sku_ids=[
+                    "sku_ids_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputRecommendedKeywordsRequestV1 | Request of recommended keywords. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.recommended_keywords(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->recommended_keywords: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.recommended_keywords(retailer_id, value_resource_input_recommended_keywords_request_v1=value_resource_input_recommended_keywords_request_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->recommended_keywords: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| Retailer id. |
+ **value_resource_input_recommended_keywords_request_v1** | [**ValueResourceInputRecommendedKeywordsRequestV1**](ValueResourceInputRecommendedKeywordsRequestV1.md)| Request of recommended keywords. | [optional]
+
+### Return type
+
+[**ValueResourceOutcomeRecommendedKeywordsResponseV1**](ValueResourceOutcomeRecommendedKeywordsResponseV1.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_brands_by_name_async_v1**
 > EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands_by_name_async_v1()
 
@@ -3618,6 +4250,127 @@ void (empty response body)
 **204** | Promoted products un-paused |  -  |
 **400** | Invalid request body |  -  |
 **403** | Invalid external line item ID |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_auction_line_item_v2**
+> EntityResourceOutcomeOfSponsoredProductsLineItem update_auction_line_item_v2(line_item_id)
+
+
+
+Updates a Sponsored Products Line Item given a line item id and a request.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
+from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "lineItemId_example" # str | The line item ID of the sponsored products line item.
+    value_resource_input_of_sponsored_products_line_item_update_request_model = ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel(
+        data=ValueResourceOfSponsoredProductsLineItemUpdateRequestModel(
+            attributes=SponsoredProductsLineItemUpdateRequestModel(
+                bid_strategy="Conversion",
+                budget=3.14,
+                daily_pacing=3.14,
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                flight_schedule=FlightSchedule(
+                    legs=[
+                        FlightLeg(
+                            day_of_week="Sunday",
+                            end_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                            start_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                        ),
+                    ],
+                ),
+                is_auto_daily_pacing=True,
+                max_bid=3.14,
+                monthly_pacing=3.14,
+                name="name_example",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                status="Active",
+                target_bid=3.14,
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel | An update request containing all details of the requested update. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_auction_line_item_v2(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_auction_line_item_v2: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_auction_line_item_v2(line_item_id, value_resource_input_of_sponsored_products_line_item_update_request_model=value_resource_input_of_sponsored_products_line_item_update_request_model)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_auction_line_item_v2: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item ID of the sponsored products line item. |
+ **value_resource_input_of_sponsored_products_line_item_update_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel.md)| An update request containing all details of the requested update. | [optional]
+
+### Return type
+
+[**EntityResourceOutcomeOfSponsoredProductsLineItem**](EntityResourceOutcomeOfSponsoredProductsLineItem.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

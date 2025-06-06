@@ -31,7 +31,9 @@ from criteo_api_retailmedia_v2025_04.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_v2025_04.model.nillable_string import NillableString
+    from criteo_api_retailmedia_v2025_04.model.rm_events_update_v1 import RmEventsUpdateV1
     globals()['NillableString'] = NillableString
+    globals()['RmEventsUpdateV1'] = RmEventsUpdateV1
 
 
 class RmAudienceSegmentUpdateEntityV1(ModelNormal):
@@ -89,6 +91,7 @@ class RmAudienceSegmentUpdateEntityV1(ModelNormal):
         return {
             'contact_list': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'description': (NillableString,),  # noqa: E501
+            'events': (RmEventsUpdateV1,),  # noqa: E501
             'name': (str,),  # noqa: E501
         }
 
@@ -100,6 +103,7 @@ class RmAudienceSegmentUpdateEntityV1(ModelNormal):
     attribute_map = {
         'contact_list': 'contactList',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'events': 'events',  # noqa: E501
         'name': 'name',  # noqa: E501
     }
 
@@ -146,6 +150,7 @@ class RmAudienceSegmentUpdateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to update the contact list of the segment. [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
+            events (RmEventsUpdateV1): [optional]  # noqa: E501
             name (str): Name of the segment. [optional]  # noqa: E501
         """
 
@@ -234,6 +239,7 @@ class RmAudienceSegmentUpdateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to update the contact list of the segment. [optional]  # noqa: E501
             description (NillableString): [optional]  # noqa: E501
+            events (RmEventsUpdateV1): [optional]  # noqa: E501
             name (str): Name of the segment. [optional]  # noqa: E501
         """
 

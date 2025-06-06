@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **skippable** | **str, none_type** |  | [optional] 
 **video_aspect_ratio** | **[str], none_type** |  | [optional] 
 **video_in_stream_position** | **[str], none_type** |  | [optional] 
-**video_placement** | **[str], none_type** |  | [optional] 
 **video_player_size** | **[str], none_type** |  | [optional] 
 **video_plcmt** | **[str], none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

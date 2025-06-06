@@ -31,7 +31,9 @@ from criteo_api_retailmedia_v2025_04.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_v2025_04.model.rm_contact_list_create_v1 import RmContactListCreateV1
+    from criteo_api_retailmedia_v2025_04.model.rm_events_create_v1 import RmEventsCreateV1
     globals()['RmContactListCreateV1'] = RmContactListCreateV1
+    globals()['RmEventsCreateV1'] = RmEventsCreateV1
 
 
 class RmAudienceSegmentCreateEntityV1(ModelNormal):
@@ -91,6 +93,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
             'retailer_id': (str,),  # noqa: E501
             'contact_list': (RmContactListCreateV1,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'events': (RmEventsCreateV1,),  # noqa: E501
         }
 
     @cached_property
@@ -103,6 +106,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
         'retailer_id': 'retailerId',  # noqa: E501
         'contact_list': 'contactList',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'events': 'events',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,6 +156,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             contact_list (RmContactListCreateV1): [optional]  # noqa: E501
             description (str): Description of the segment. [optional]  # noqa: E501
+            events (RmEventsCreateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,6 +250,7 @@ class RmAudienceSegmentCreateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             contact_list (RmContactListCreateV1): [optional]  # noqa: E501
             description (str): Description of the segment. [optional]  # noqa: E501
+            events (RmEventsCreateV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

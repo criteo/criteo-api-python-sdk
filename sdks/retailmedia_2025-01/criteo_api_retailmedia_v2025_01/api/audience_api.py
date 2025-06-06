@@ -666,7 +666,7 @@ class AudienceApi(object):
     ):
         """bulk_delete_audience_segments  # noqa: E501
 
-        Delete the segments associated to the given audience IDs.  # noqa: E501
+        Delete the segments associated to the given IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

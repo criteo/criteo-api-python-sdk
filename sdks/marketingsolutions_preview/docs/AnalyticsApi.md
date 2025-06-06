@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | 
 [**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | 
 [**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | 
+[**get_realtime_statistics_report**](AnalyticsApi.md#get_realtime_statistics_report) | **POST** /preview/reports/realtime | 
 [**get_top_products_report**](AnalyticsApi.md#get_top_products_report) | **POST** /preview/reports/top-products | 
 [**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | 
 [**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /preview/log-level/advertisers/{advertiser-id}/report | 
@@ -869,6 +870,115 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json, text/csv, application/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/xml
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**400** | Bad Request |  -  |
+**403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_realtime_statistics_report**
+> JsonReportRowsListResponse get_realtime_statistics_report()
+
+
+
+With Realtime endpoint, you can analyse the realtime values of the main metrics: displays, clicks, cost.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.json_report_rows_list_response import JsonReportRowsListResponse
+from criteo_api_marketingsolutions_preview.model.outcome import Outcome
+from criteo_api_marketingsolutions_preview.model.generate_realtime_statistics_report_request_attributes_request import GenerateRealtimeStatisticsReportRequestAttributesRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    generate_realtime_statistics_report_request_attributes_request = GenerateRealtimeStatisticsReportRequestAttributesRequest(
+        data=GenerateRealtimeStatisticsReportRequestAttributesResource(
+            attributes=GenerateRealtimeStatisticsReportRequestAttributes(
+                adset_ids=[
+                    "adset_ids_example",
+                ],
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                currency="EUR",
+                dimensions=["AdvertiserId","Advertiser","CampaignId","Campaign","AdsetId","Adset","Day","Hour"],
+                lookback_window=12,
+                metrics=["Displays","Clicks","Cost"],
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # GenerateRealtimeStatisticsReportRequestAttributesRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_realtime_statistics_report(generate_realtime_statistics_report_request_attributes_request=generate_realtime_statistics_report_request_attributes_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_realtime_statistics_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generate_realtime_statistics_report_request_attributes_request** | [**GenerateRealtimeStatisticsReportRequestAttributesRequest**](GenerateRealtimeStatisticsReportRequestAttributesRequest.md)|  | [optional]
+
+### Return type
+
+[**JsonReportRowsListResponse**](JsonReportRowsListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json, application/xml, text/xml, application/*+xml
+ - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
 
 
 ### HTTP response details

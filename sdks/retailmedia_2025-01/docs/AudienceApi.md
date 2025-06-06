@@ -69,6 +69,18 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
                         identifier_type="Email",
                     ),
                     description="description_example",
+                    events=RmEventsCreateV1(
+                        brand_ids=[
+                            "brand_ids_example",
+                        ],
+                        category_ids=[
+                            "category_ids_example",
+                        ],
+                        lookback_days="Unknown",
+                        max_price=3.14,
+                        min_price=3.14,
+                        shopper_activity="Unknown",
+                    ),
                     name="name_example",
                     retailer_id="retailer_id_example",
                 ),
@@ -123,7 +135,7 @@ Name | Type | Description  | Notes
 
 
 
-Delete the segments associated to the given audience IDs.
+Delete the segments associated to the given IDs.
 
 ### Example
 
@@ -270,6 +282,22 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
                     contact_list={},
                     description=NillableString(
                         value="value_example",
+                    ),
+                    events=RmEventsUpdateV1(
+                        brand_ids=[
+                            "brand_ids_example",
+                        ],
+                        category_ids=[
+                            "category_ids_example",
+                        ],
+                        lookback_days="Unknown",
+                        max_price=NillableDecimal(
+                            value=3.14,
+                        ),
+                        min_price=NillableDecimal(
+                            value=3.14,
+                        ),
+                        shopper_activity="Unknown",
                     ),
                     name="name_example",
                 ),

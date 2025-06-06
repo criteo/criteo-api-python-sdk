@@ -112,6 +112,7 @@ class ExternalCommonLineItem(ModelNormal):
             'budget': (float, none_type,),  # noqa: E501
             'budget_spent': (float,),  # noqa: E501
             'end_date': (date, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
         }
 
@@ -132,6 +133,7 @@ class ExternalCommonLineItem(ModelNormal):
         'budget': 'budget',  # noqa: E501
         'budget_spent': 'budgetSpent',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'status': 'status',  # noqa: E501
     }
 
@@ -189,6 +191,7 @@ class ExternalCommonLineItem(ModelNormal):
             budget (float, none_type): [optional]  # noqa: E501
             budget_spent (float): [optional]  # noqa: E501
             end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
         """
 
@@ -296,6 +299,7 @@ class ExternalCommonLineItem(ModelNormal):
             budget (float, none_type): [optional]  # noqa: E501
             budget_spent (float): [optional]  # noqa: E501
             end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
+            id (str, none_type): Id of the entity. [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
         """
 

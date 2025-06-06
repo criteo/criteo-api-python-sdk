@@ -3645,9 +3645,6 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 video_in_stream_position=[
                     "PreRoll",
                 ],
-                video_placement=[
-                    "InBanner",
-                ],
                 video_player_size=[
                     "Small",
                 ],
