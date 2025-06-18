@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **start_date** | **datetime** | Start date | 
 **campaign_type** | **str** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
 **click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
+**conquesting_types** | **[str]** | Filter on conquesting type: unknown, generic, branded, conquesting | [optional] 
 **dimensions** | **[str]** | List of dimensions to report on | [optional] 
 **format** | **str** | Format of the output | [optional]  if omitted the server will use the default value of "json-compact"
 **id** | **str** | Line Item id to report on | [optional] 

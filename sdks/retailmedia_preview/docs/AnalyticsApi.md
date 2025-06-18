@@ -72,6 +72,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 aggregation_level="campaign",
                 campaign_type="all",
                 click_attribution_window="none",
+                conquesting_types=[
+                    "unknown",
+                ],
                 dimensions=[
                     "date",
                 ],
@@ -187,6 +190,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             attributes=AsyncCampaignsReport(
                 campaign_type="all",
                 click_attribution_window="none",
+                conquesting_types=[
+                    "unknown",
+                ],
                 dimensions=[
                     "date",
                 ],
@@ -413,6 +419,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             attributes=AsyncLineItemsReport(
                 campaign_type="all",
                 click_attribution_window="none",
+                conquesting_types=[
+                    "unknown",
+                ],
                 dimensions=[
                     "date",
                 ],

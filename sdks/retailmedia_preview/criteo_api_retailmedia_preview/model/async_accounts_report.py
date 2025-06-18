@@ -70,6 +70,12 @@ class AsyncAccountsReport(ModelNormal):
             '14D': "14D",
             '30D': "30D",
         },
+        ('conquesting_types',): {
+            'UNKNOWN': "unknown",
+            'GENERIC': "generic",
+            'BRANDED': "branded",
+            'CONQUESTING': "conquesting",
+        },
         ('dimensions',): {
             'DATE': "date",
             'HOUR': "hour",
@@ -103,6 +109,7 @@ class AsyncAccountsReport(ModelNormal):
             'CREATIVETYPENAME': "creativeTypeName",
             'CREATIVETEMPLATEID': "creativeTemplateId",
             'CREATIVETEMPLATENAME': "creativeTemplateName",
+            'CONQUESTINGTYPE': "conquestingType",
         },
         ('format',): {
             'JSON': "json",
@@ -214,6 +221,7 @@ class AsyncAccountsReport(ModelNormal):
             'aggregation_level': (str,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
             'click_attribution_window': (str,),  # noqa: E501
+            'conquesting_types': ([str],),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'format': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
@@ -237,6 +245,7 @@ class AsyncAccountsReport(ModelNormal):
         'aggregation_level': 'aggregationLevel',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
+        'conquesting_types': 'conquestingTypes',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'format': 'format',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
@@ -297,6 +306,7 @@ class AsyncAccountsReport(ModelNormal):
             aggregation_level (str): Level of aggregation, if no dimensions and metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            conquesting_types ([str]): Filter on conquesting type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
@@ -402,6 +412,7 @@ class AsyncAccountsReport(ModelNormal):
             aggregation_level (str): Level of aggregation, if no dimensions and metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            conquesting_types ([str]): Filter on conquesting type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501

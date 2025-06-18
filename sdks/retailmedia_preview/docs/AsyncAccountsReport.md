@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **aggregation_level** | **str** | Level of aggregation, if no dimensions and metrics are provided, falls back to campaign aggregationLevel | [optional]  if omitted the server will use the default value of "campaign"
 **campaign_type** | **str** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
 **click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
+**conquesting_types** | **[str]** | Filter on conquesting type: unknown, generic, branded, conquesting | [optional] 
 **dimensions** | **[str]** | List of dimensions to report on | [optional] 
 **format** | **str** | Format of the output | [optional]  if omitted the server will use the default value of "json-compact"
 **metrics** | **[str]** | List of metrics to report on | [optional] 
