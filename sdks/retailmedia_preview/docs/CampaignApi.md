@@ -448,7 +448,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         status="Active",
         target_bid=3.14,
-        target_retailer_id=1,
+        target_retailer_id="target_retailer_id_example",
     ) # SponsoredProductsLineItemCreateRequestModel | The line item settings to create a line item with (optional)
 
     # example passing only required values which don't have defaults set

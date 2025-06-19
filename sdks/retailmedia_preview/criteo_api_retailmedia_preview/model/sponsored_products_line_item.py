@@ -74,15 +74,15 @@ class SponsoredProductsLineItem(ModelNormal):
         },
         ('status',): {
             'None': None,
-            'UNKNOWN': "Unknown",
-            'ACTIVE': "Active",
-            'SCHEDULED': "Scheduled",
-            'DRAFT': "Draft",
-            'PAUSED': "Paused",
-            'BUDGETHIT': "BudgetHit",
-            'ENDED': "Ended",
-            'ARCHIVED': "Archived",
-            'NOFUNDS': "NoFunds",
+            'UNKNOWN': "unknown",
+            'ACTIVE': "active",
+            'SCHEDULED': "scheduled",
+            'DRAFT': "draft",
+            'PAUSED': "paused",
+            'BUDGETHIT': "budgetHit",
+            'ENDED': "ended",
+            'ARCHIVED': "archived",
+            'NOFUNDS': "noFunds",
         },
     }
 
@@ -110,12 +110,12 @@ class SponsoredProductsLineItem(ModelNormal):
         lazy_import()
         return {
             'budget_remaining': (float, none_type,),  # noqa: E501
-            'campaign_id': (int,),  # noqa: E501
+            'campaign_id': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'external_line_item_id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
-            'target_retailer_id': (int,),  # noqa: E501
+            'target_retailer_id': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'bid_strategy': (str, none_type,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
@@ -171,12 +171,12 @@ class SponsoredProductsLineItem(ModelNormal):
 
         Args:
             budget_remaining (float, none_type):
-            campaign_id (int):
+            campaign_id (str):
             created_at (datetime):
             external_line_item_id (int):
             name (str):
             start_date (datetime):
-            target_retailer_id (int):
+            target_retailer_id (str):
             updated_at (datetime):
 
         Keyword Args:
@@ -286,12 +286,12 @@ class SponsoredProductsLineItem(ModelNormal):
 
         Args:
             budget_remaining (float, none_type):
-            campaign_id (int):
+            campaign_id (str):
             created_at (datetime):
             external_line_item_id (int):
             name (str):
             start_date (datetime):
-            target_retailer_id (int):
+            target_retailer_id (str):
             updated_at (datetime):
 
         Keyword Args:

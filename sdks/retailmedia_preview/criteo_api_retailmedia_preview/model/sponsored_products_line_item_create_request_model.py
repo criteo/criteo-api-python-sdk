@@ -97,7 +97,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
-            'target_retailer_id': (int,),  # noqa: E501
+            'target_retailer_id': (str,),  # noqa: E501
             'bid_strategy': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
             'daily_pacing': (float, none_type,),  # noqa: E501
@@ -144,7 +144,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         Args:
             name (str):
             start_date (datetime):
-            target_retailer_id (int):
+            target_retailer_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -247,7 +247,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         Args:
             name (str):
             start_date (datetime):
-            target_retailer_id (int):
+            target_retailer_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

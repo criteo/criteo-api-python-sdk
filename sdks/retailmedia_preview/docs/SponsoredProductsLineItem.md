@@ -6,12 +6,12 @@ A model representing a Sponsored Products Line Item.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **budget_remaining** | **float, none_type** |  | 
-**campaign_id** | **int** |  | 
+**campaign_id** | **str** |  | 
 **created_at** | **datetime** |  | 
 **external_line_item_id** | **int** |  | 
 **name** | **str** |  | 
 **start_date** | **datetime** |  | 
-**target_retailer_id** | **int** |  | 
+**target_retailer_id** | **str** |  | 
 **updated_at** | **datetime** |  | 
 **bid_strategy** | **str, none_type** |  | [optional] 
 **budget** | **float, none_type** |  | [optional] 
