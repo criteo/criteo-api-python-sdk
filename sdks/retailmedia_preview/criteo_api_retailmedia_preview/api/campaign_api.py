@@ -234,7 +234,7 @@ class CampaignApi(object):
                 'validations': {
                     ('limit',): {
 
-                        'inclusive_maximum': 2147483647,
+                        'inclusive_maximum': 500,
                         'inclusive_minimum': 1,
                     },
                     ('offset',): {
@@ -2445,7 +2445,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_recommended_keywords_request_v1':
                         (ValueResourceInputRecommendedKeywordsRequestV1,),
                 },
@@ -5944,7 +5944,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): Retailer id.
+            retailer_id (str): Retailer id.
 
         Keyword Args:
             value_resource_input_recommended_keywords_request_v1 (ValueResourceInputRecommendedKeywordsRequestV1): Request of recommended keywords.. [optional]

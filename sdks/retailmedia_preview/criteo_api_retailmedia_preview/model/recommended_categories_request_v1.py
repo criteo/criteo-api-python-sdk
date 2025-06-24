@@ -58,7 +58,8 @@ class RecommendedCategoriesRequestV1(ModelNormal):
     }
 
     validations = {
-        ('sku_ids',): {
+        ('product_ids',): {
+            'max_items': 1000,
             'min_items': 1,
         },
     }
@@ -84,7 +85,7 @@ class RecommendedCategoriesRequestV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'sku_ids': ([str],),  # noqa: E501
+            'product_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -93,7 +94,7 @@ class RecommendedCategoriesRequestV1(ModelNormal):
 
 
     attribute_map = {
-        'sku_ids': 'skuIds',  # noqa: E501
+        'product_ids': 'productIds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -103,11 +104,11 @@ class RecommendedCategoriesRequestV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, sku_ids, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, product_ids, *args, **kwargs):  # noqa: E501
         """RecommendedCategoriesRequestV1 - a model defined in OpenAPI
 
         Args:
-            sku_ids ([str]): Sku id list.
+            product_ids ([str]): Sku id list.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -171,7 +172,7 @@ class RecommendedCategoriesRequestV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.sku_ids = sku_ids
+        self.product_ids = product_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -192,11 +193,11 @@ class RecommendedCategoriesRequestV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, sku_ids, *args, **kwargs):  # noqa: E501
+    def __init__(self, product_ids, *args, **kwargs):  # noqa: E501
         """RecommendedCategoriesRequestV1 - a model defined in OpenAPI
 
         Args:
-            sku_ids ([str]): Sku id list.
+            product_ids ([str]): Sku id list.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -258,7 +259,7 @@ class RecommendedCategoriesRequestV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.sku_ids = sku_ids
+        self.product_ids = product_ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

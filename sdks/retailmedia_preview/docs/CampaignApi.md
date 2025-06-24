@@ -2105,8 +2105,8 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     value_resource_input_recommended_categories_request_v1 = ValueResourceInputRecommendedCategoriesRequestV1(
         data=ValueResourceRecommendedCategoriesRequestV1(
             attributes=RecommendedCategoriesRequestV1(
-                sku_ids=[
-                    "sku_ids_example",
+                product_ids=[
+                    "product_ids_example",
                 ],
             ),
             type="type_example",
@@ -3877,12 +3877,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | Retailer id.
+    retailer_id = "retailerId_example" # str | Retailer id.
     value_resource_input_recommended_keywords_request_v1 = ValueResourceInputRecommendedKeywordsRequestV1(
         data=ValueResourceRecommendedKeywordsRequestV1(
             attributes=RecommendedKeywordsRequestV1(
-                sku_ids=[
-                    "sku_ids_example",
+                product_ids=[
+                    "product_ids_example",
                 ],
             ),
             type="type_example",
@@ -3910,7 +3910,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| Retailer id. |
+ **retailer_id** | **str**| Retailer id. |
  **value_resource_input_recommended_keywords_request_v1** | [**ValueResourceInputRecommendedKeywordsRequestV1**](ValueResourceInputRecommendedKeywordsRequestV1.md)| Request of recommended keywords. | [optional]
 
 ### Return type
