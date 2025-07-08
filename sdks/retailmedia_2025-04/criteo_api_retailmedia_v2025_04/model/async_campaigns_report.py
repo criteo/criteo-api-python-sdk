@@ -99,6 +99,7 @@ class AsyncCampaignsReport(ModelNormal):
             'CREATIVETYPENAME': "creativeTypeName",
             'CREATIVETEMPLATEID': "creativeTemplateId",
             'CREATIVETEMPLATENAME': "creativeTemplateName",
+            'TARGETEDKEYWORDTYPE': "targetedKeywordType",
         },
         ('format',): {
             'JSON': "json",
@@ -171,6 +172,12 @@ class AsyncCampaignsReport(ModelNormal):
             'SEARCHED': "searched",
             'ENTERED': "entered",
         },
+        ('targeted_keyword_types',): {
+            'UNKNOWN': "unknown",
+            'GENERIC': "generic",
+            'BRANDED': "branded",
+            'CONQUESTING': "conquesting",
+        },
         ('view_attribution_window',): {
             'NONE': "none",
             '1D': "1D",
@@ -217,6 +224,7 @@ class AsyncCampaignsReport(ModelNormal):
             'sales_channel': (str,),  # noqa: E501
             'search_term_targetings': ([str],),  # noqa: E501
             'search_term_types': ([str],),  # noqa: E501
+            'targeted_keyword_types': ([str],),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'view_attribution_window': (str,),  # noqa: E501
         }
@@ -240,6 +248,7 @@ class AsyncCampaignsReport(ModelNormal):
         'sales_channel': 'salesChannel',  # noqa: E501
         'search_term_targetings': 'searchTermTargetings',  # noqa: E501
         'search_term_types': 'searchTermTypes',  # noqa: E501
+        'targeted_keyword_types': 'targetedKeywordTypes',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
     }
@@ -300,6 +309,7 @@ class AsyncCampaignsReport(ModelNormal):
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
@@ -404,6 +414,7 @@ class AsyncCampaignsReport(ModelNormal):
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
+            targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **search_term_targetings** | **[str]** | Filter on the type of search term targeting: unknown, automatic, manual | [optional] 
 **search_term_types** | **[str]** | Filter on the type of search term type: unknown, searched, entered | [optional] 
+**targeted_keyword_types** | **[str]** | Filter on targeted keyword type: unknown, generic, branded, conquesting | [optional] 
 **timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
 **view_attribution_window** | **str** | View attribution window | [optional]  if omitted the server will use the default value of "none"
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

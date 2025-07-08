@@ -76,6 +76,12 @@ class AsyncRevenueReport(ModelNormal):
             '14D': "14D",
             '30D': "30D",
         },
+        ('click_match_level',): {
+            'SAMESKU': "sameSku",
+            'SAMECATEGORY': "sameCategory",
+            'SAMEBRAND': "sameBrand",
+            'CAMPAIGN': "campaign",
+        },
         ('dimensions',): {
             'DATE': "date",
             'HOUR': "hour",
@@ -220,6 +226,12 @@ class AsyncRevenueReport(ModelNormal):
             '14D': "14D",
             '30D': "30D",
         },
+        ('view_match_level',): {
+            'SAMESKU': "sameSku",
+            'SAMECATEGORY': "sameCategory",
+            'SAMEBRAND': "sameBrand",
+            'CAMPAIGN': "campaign",
+        },
     }
 
     validations = {
@@ -254,6 +266,7 @@ class AsyncRevenueReport(ModelNormal):
             'campaign_ids': ([str],),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
             'click_attribution_window': (str,),  # noqa: E501
+            'click_match_level': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'format': (str,),  # noqa: E501
             'id': (str,),  # noqa: E501
@@ -268,6 +281,7 @@ class AsyncRevenueReport(ModelNormal):
             'sold_by': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'view_attribution_window': (str,),  # noqa: E501
+            'view_match_level': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -284,6 +298,7 @@ class AsyncRevenueReport(ModelNormal):
         'campaign_ids': 'campaignIds',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
+        'click_match_level': 'clickMatchLevel',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'format': 'format',  # noqa: E501
         'id': 'id',  # noqa: E501
@@ -298,6 +313,7 @@ class AsyncRevenueReport(ModelNormal):
         'sold_by': 'soldBy',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
+        'view_match_level': 'viewMatchLevel',  # noqa: E501
     }
 
     read_only_vars = {
@@ -351,6 +367,7 @@ class AsyncRevenueReport(ModelNormal):
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_match_level (str): Click Match Level: Campaign, Same SKU, Same Category or Same Brand. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             id (str): Supply account id to report on. [optional]  # noqa: E501
@@ -365,6 +382,7 @@ class AsyncRevenueReport(ModelNormal):
             sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            view_match_level (str): View Match Level: Campaign, Same SKU, Same Category or Same Brand. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -462,6 +480,7 @@ class AsyncRevenueReport(ModelNormal):
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_match_level (str): Click Match Level: Campaign, Same SKU, Same Category or Same Brand. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             id (str): Supply account id to report on. [optional]  # noqa: E501
@@ -476,6 +495,7 @@ class AsyncRevenueReport(ModelNormal):
             sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            view_match_level (str): View Match Level: Campaign, Same SKU, Same Category or Same Brand. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **campaign_ids** | **[str]** | Campaign ids to filter | [optional] 
 **campaign_type** | **str** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
 **click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
+**click_match_level** | **str** | Click Match Level: Campaign, Same SKU, Same Category or Same Brand | [optional]  if omitted the server will use the default value of "campaign"
 **dimensions** | **[str]** | List of dimensions to report on | [optional] 
 **format** | **str** | Format of the output | [optional]  if omitted the server will use the default value of "json"
 **id** | **str** | Supply account id to report on | [optional] 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 **sold_by** | **str** | Filter on the seller: Indirect Sold, Direct Sold or Private Market | [optional] 
 **timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
 **view_attribution_window** | **str** | View attribution window | [optional]  if omitted the server will use the default value of "none"
+**view_match_level** | **str** | View Match Level: Campaign, Same SKU, Same Category or Same Brand | [optional]  if omitted the server will use the default value of "campaign"
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

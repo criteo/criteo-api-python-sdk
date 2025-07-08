@@ -84,6 +84,9 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                     "unknown",
                 ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                targeted_keyword_types=[
+                    "unknown",
+                ],
                 timezone="UTC",
                 view_attribution_window="none",
             ),
@@ -203,6 +206,9 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                     "unknown",
                 ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                targeted_keyword_types=[
+                    "unknown",
+                ],
                 timezone="UTC",
                 view_attribution_window="none",
             ),
@@ -311,6 +317,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 ],
                 campaign_type="all",
                 click_attribution_window="none",
+                click_match_level="campaign",
                 dimensions=[
                     "date",
                 ],
@@ -339,6 +346,7 @@ with criteo_api_retailmedia_v2024_10.ApiClient(configuration) as api_client:
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 timezone="UTC",
                 view_attribution_window="none",
+                view_match_level="campaign",
             ),
             type="type_example",
         ),
