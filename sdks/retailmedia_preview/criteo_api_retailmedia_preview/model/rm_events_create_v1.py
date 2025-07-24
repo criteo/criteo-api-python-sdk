@@ -103,12 +103,12 @@ class RmEventsCreateV1(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'lookback_days': (str,),  # noqa: E501
+            'shopper_activity': (str,),  # noqa: E501
             'brand_ids': ([str],),  # noqa: E501
             'category_ids': ([str],),  # noqa: E501
-            'lookback_days': (str,),  # noqa: E501
             'max_price': (float,),  # noqa: E501
             'min_price': (float,),  # noqa: E501
-            'shopper_activity': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -117,12 +117,12 @@ class RmEventsCreateV1(ModelNormal):
 
 
     attribute_map = {
+        'lookback_days': 'lookbackDays',  # noqa: E501
+        'shopper_activity': 'shopperActivity',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
         'category_ids': 'categoryIds',  # noqa: E501
-        'lookback_days': 'lookbackDays',  # noqa: E501
         'max_price': 'maxPrice',  # noqa: E501
         'min_price': 'minPrice',  # noqa: E501
-        'shopper_activity': 'shopperActivity',  # noqa: E501
     }
 
     read_only_vars = {
@@ -132,8 +132,12 @@ class RmEventsCreateV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, lookback_days, shopper_activity, *args, **kwargs):  # noqa: E501
         """RmEventsCreateV1 - a model defined in OpenAPI
+
+        Args:
+            lookback_days (str): Number of days of the lookback windows
+            shopper_activity (str): Types of shopper activity.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -168,10 +172,8 @@ class RmEventsCreateV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
             category_ids ([str]): Choose the categories your segment might be interested in. [optional]  # noqa: E501
-            lookback_days (str): Number of days of the lookback windows. [optional]  # noqa: E501
             max_price (float): Reach people who’ve shown interest in products with a maximum price. [optional]  # noqa: E501
             min_price (float): Reach people who’ve shown interest in products with a minimum price. [optional]  # noqa: E501
-            shopper_activity (str): Types of shopper activity.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -203,6 +205,8 @@ class RmEventsCreateV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.lookback_days = lookback_days
+        self.shopper_activity = shopper_activity
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -223,8 +227,12 @@ class RmEventsCreateV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, lookback_days, shopper_activity, *args, **kwargs):  # noqa: E501
         """RmEventsCreateV1 - a model defined in OpenAPI
+
+        Args:
+            lookback_days (str): Number of days of the lookback windows
+            shopper_activity (str): Types of shopper activity.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -259,10 +267,8 @@ class RmEventsCreateV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             brand_ids ([str]): Choose the brands your segment might be interested in. [optional]  # noqa: E501
             category_ids ([str]): Choose the categories your segment might be interested in. [optional]  # noqa: E501
-            lookback_days (str): Number of days of the lookback windows. [optional]  # noqa: E501
             max_price (float): Reach people who’ve shown interest in products with a maximum price. [optional]  # noqa: E501
             min_price (float): Reach people who’ve shown interest in products with a minimum price. [optional]  # noqa: E501
-            shopper_activity (str): Types of shopper activity.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -292,6 +298,8 @@ class RmEventsCreateV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.lookback_days = lookback_days
+        self.shopper_activity = shopper_activity
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

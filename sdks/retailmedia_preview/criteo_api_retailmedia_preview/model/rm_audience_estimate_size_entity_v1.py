@@ -115,8 +115,13 @@ class RmAudienceEstimateSizeEntityV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, algebra, channel, retailer_id, *args, **kwargs):  # noqa: E501
         """RmAudienceEstimateSizeEntityV1 - a model defined in OpenAPI
+
+        Args:
+            algebra (RmAlgebraNodeV1):
+            channel (str): Channel to estimate the size
+            retailer_id (str): Retailer id of the audience
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -149,9 +154,6 @@ class RmAudienceEstimateSizeEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            algebra (RmAlgebraNodeV1): [optional]  # noqa: E501
-            channel (str): Channel to estimate the size. [optional]  # noqa: E501
-            retailer_id (str): Retailer id of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -183,6 +185,9 @@ class RmAudienceEstimateSizeEntityV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.algebra = algebra
+        self.channel = channel
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -203,8 +208,13 @@ class RmAudienceEstimateSizeEntityV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, algebra, channel, retailer_id, *args, **kwargs):  # noqa: E501
         """RmAudienceEstimateSizeEntityV1 - a model defined in OpenAPI
+
+        Args:
+            algebra (RmAlgebraNodeV1):
+            channel (str): Channel to estimate the size
+            retailer_id (str): Retailer id of the audience
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -237,9 +247,6 @@ class RmAudienceEstimateSizeEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            algebra (RmAlgebraNodeV1): [optional]  # noqa: E501
-            channel (str): Channel to estimate the size. [optional]  # noqa: E501
-            retailer_id (str): Retailer id of the audience. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -269,6 +276,9 @@ class RmAudienceEstimateSizeEntityV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.algebra = algebra
+        self.channel = channel
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

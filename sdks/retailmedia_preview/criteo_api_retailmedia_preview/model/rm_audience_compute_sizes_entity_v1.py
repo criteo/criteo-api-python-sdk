@@ -107,8 +107,12 @@ class RmAudienceComputeSizesEntityV1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, channel, ids, *args, **kwargs):  # noqa: E501
         """RmAudienceComputeSizesEntityV1 - a model defined in OpenAPI
+
+        Args:
+            channel (str): Channel to compute the sizes for.
+            ids ([str]): List of ids of the segments whose size is requested.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -141,8 +145,6 @@ class RmAudienceComputeSizesEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            channel (str): Channel to compute the sizes for.. [optional]  # noqa: E501
-            ids ([str]): List of ids of the segments whose size is requested.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -174,6 +176,8 @@ class RmAudienceComputeSizesEntityV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.channel = channel
+        self.ids = ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,8 +198,12 @@ class RmAudienceComputeSizesEntityV1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, channel, ids, *args, **kwargs):  # noqa: E501
         """RmAudienceComputeSizesEntityV1 - a model defined in OpenAPI
+
+        Args:
+            channel (str): Channel to compute the sizes for.
+            ids ([str]): List of ids of the segments whose size is requested.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -228,8 +236,6 @@ class RmAudienceComputeSizesEntityV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            channel (str): Channel to compute the sizes for.. [optional]  # noqa: E501
-            ids ([str]): List of ids of the segments whose size is requested.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,6 +265,8 @@ class RmAudienceComputeSizesEntityV1(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.channel = channel
+        self.ids = ids
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
