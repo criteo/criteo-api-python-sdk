@@ -24,7 +24,6 @@ Method | HTTP request | Description
 [**get_api_v2_external_preferred_line_item_by_line_item_id**](CampaignApi.md#get_api_v2_external_preferred_line_item_by_line_item_id) | **GET** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**get_auction_line_item_v2**](CampaignApi.md#get_auction_line_item_v2) | **GET** /preview/retail-media/auction-line-items/{lineItemId} | 
 [**get_auction_line_items_by_campaign_id_v2**](CampaignApi.md#get_auction_line_items_by_campaign_id_v2) | **GET** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
-[**get_cpc_min_bids_by_sku_ids_v1**](CampaignApi.md#get_cpc_min_bids_by_sku_ids_v1) | **POST** /preview/retail-media/retailers/{retailerId}/cpc-min-bids | 
 [**get_recommended_categories**](CampaignApi.md#get_recommended_categories) | **POST** /preview/retail-media/retailers/{retailerId}/recommend-categories | 
 [**in_review_report_v1**](CampaignApi.md#in_review_report_v1) | **GET** /preview/retail-media/accounts/{account-id}/keywords/in-review-report | 
 [**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/pause | 
@@ -1940,110 +1939,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_cpc_min_bids_by_sku_ids_v1**
-> ValueResourceOutcomeCpcMinBidsResponse get_cpc_min_bids_by_sku_ids_v1(retailer_id)
-
-
-
-Get overall and individual minimum bid amount for given retailer id and sku id list.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.value_resource_input_cpc_min_bids_request import ValueResourceInputCpcMinBidsRequest
-from criteo_api_retailmedia_preview.model.value_resource_outcome_cpc_min_bids_response import ValueResourceOutcomeCpcMinBidsResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | Retailer Id.
-    value_resource_input_cpc_min_bids_request = ValueResourceInputCpcMinBidsRequest(
-        data=ValueResourceCpcMinBidsRequest(
-            attributes=CpcMinBidsRequest(
-                sku_ids=[
-                    "sku_ids_example",
-                ],
-            ),
-            type="type_example",
-        ),
-    ) # ValueResourceInputCpcMinBidsRequest | Cpc minimum bid amount request object. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_cpc_min_bids_by_sku_ids_v1(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_cpc_min_bids_by_sku_ids_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_cpc_min_bids_by_sku_ids_v1(retailer_id, value_resource_input_cpc_min_bids_request=value_resource_input_cpc_min_bids_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_cpc_min_bids_by_sku_ids_v1: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| Retailer Id. |
- **value_resource_input_cpc_min_bids_request** | [**ValueResourceInputCpcMinBidsRequest**](ValueResourceInputCpcMinBidsRequest.md)| Cpc minimum bid amount request object. | [optional]
-
-### Return type
-
-[**ValueResourceOutcomeCpcMinBidsResponse**](ValueResourceOutcomeCpcMinBidsResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
 
 
 ### HTTP response details
