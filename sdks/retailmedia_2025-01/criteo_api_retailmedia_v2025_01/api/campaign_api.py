@@ -6310,7 +6310,7 @@ class CampaignApi(object):
     ):
         """get_campaign_budget_overrides  # noqa: E501
 
-        Get current campaign budget overrides by given external campaign id.  # noqa: E501
+        Get current campaign budget overrides by given campaign id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -6318,7 +6318,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): External campaign id.
+            campaign_id (int): Campaign id.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -6484,7 +6484,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            external_line_item_id (str): The external line item identifier
+            external_line_item_id (str): The line item identifier
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -8921,7 +8921,7 @@ class CampaignApi(object):
     ):
         """update_campaign_budget_overrides  # noqa: E501
 
-        Update campaign budget overrides by given external campaign id and new campaign budget overrides settings.  # noqa: E501
+        Update campaign budget overrides by given campaign id and new campaign budget overrides settings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -8929,7 +8929,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): External campaign id.
+            campaign_id (int): Campaign id.
 
         Keyword Args:
             value_resource_input_of_campaign_budget_overrides (ValueResourceInputOfCampaignBudgetOverrides): New campaign budget overrides settings value resource input.. [optional]
@@ -9005,7 +9005,7 @@ class CampaignApi(object):
     ):
         """update_line_item_budget_overrides  # noqa: E501
 
-        Update line item budget overrides by given external line item id and new line item budget overrides settings.  # noqa: E501
+        Update line item budget overrides by given line item id and new line item budget overrides settings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -9013,7 +9013,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): Line item external id.
+            line_item_id (str): Line item id.
 
         Keyword Args:
             value_resource_input_of_line_item_budget_overrides (ValueResourceInputOfLineItemBudgetOverrides): New line item budget overrides settings value resource input.. [optional]

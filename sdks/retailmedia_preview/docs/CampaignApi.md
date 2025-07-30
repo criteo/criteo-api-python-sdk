@@ -396,7 +396,7 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
-from criteo_api_retailmedia_preview.model.sponsored_products_line_item_create_request_model import SponsoredProductsLineItemCreateRequestModel
+from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -426,29 +426,36 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     campaign_id = "campaignId_example" # str | The given campaign id
-    sponsored_products_line_item_create_request_model = SponsoredProductsLineItemCreateRequestModel(
-        bid_strategy="Conversion",
-        budget=3.14,
-        daily_pacing=3.14,
-        end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        flight_schedule=FlightSchedule(
-            legs=[
-                FlightLeg(
-                    day_of_week="Sunday",
-                    end_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    start_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+    value_resource_input_of_sponsored_products_line_item_create_request_model = ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel(
+        data=ValueResourceOfSponsoredProductsLineItemCreateRequestModel(
+            attributes=SponsoredProductsLineItemCreateRequestModel(
+                bid_strategy="Conversion",
+                budget=3.14,
+                conquesting_adstrategy_enabled=True,
+                daily_pacing=3.14,
+                defensive_adstrategy_enabled=True,
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                flight_schedule=FlightSchedule(
+                    legs=[
+                        FlightLeg(
+                            day_of_week="sunday",
+                            end_time="end_time_example",
+                            start_time="start_time_example",
+                        ),
+                    ],
                 ),
-            ],
+                is_auto_daily_pacing=False,
+                max_bid=3.14,
+                monthly_pacing=3.14,
+                name="name_example",
+                neutral_adstrategy_enabled=True,
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                target_bid=3.14,
+                target_retailer_id="target_retailer_id_example",
+            ),
+            type="type_example",
         ),
-        is_auto_daily_pacing=False,
-        max_bid=3.14,
-        monthly_pacing=3.14,
-        name="name_example",
-        start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        status="Active",
-        target_bid=3.14,
-        target_retailer_id="target_retailer_id_example",
-    ) # SponsoredProductsLineItemCreateRequestModel | The line item settings to create a line item with (optional)
+    ) # ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel | The line item settings to create a line item with (optional)
 
     # example passing only required values which don't have defaults set
     try:
@@ -460,7 +467,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.create_auction_line_item_v2(campaign_id, sponsored_products_line_item_create_request_model=sponsored_products_line_item_create_request_model)
+        api_response = api_instance.create_auction_line_item_v2(campaign_id, value_resource_input_of_sponsored_products_line_item_create_request_model=value_resource_input_of_sponsored_products_line_item_create_request_model)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->create_auction_line_item_v2: %s\n" % e)
@@ -472,7 +479,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The given campaign id |
- **sponsored_products_line_item_create_request_model** | [**SponsoredProductsLineItemCreateRequestModel**](SponsoredProductsLineItemCreateRequestModel.md)| The line item settings to create a line item with | [optional]
+ **value_resource_input_of_sponsored_products_line_item_create_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel.md)| The line item settings to create a line item with | [optional]
 
 ### Return type
 
@@ -492,7 +499,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Success |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1810,7 +1817,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | The id of the line item
+    line_item_id = 1 # int | The id of the line item
 
     # example passing only required values which don't have defaults set
     try:
@@ -1825,7 +1832,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The id of the line item |
+ **line_item_id** | **int**| The id of the line item |
 
 ### Return type
 
@@ -1850,7 +1857,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_auction_line_items_by_campaign_id_v2**
-> PageOfSponsoredProductsLineItem get_auction_line_items_by_campaign_id_v2(campaign_id)
+> EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata get_auction_line_items_by_campaign_id_v2(campaign_id)
 
 
 
@@ -1865,7 +1872,7 @@ Gets a page of sponsored product line items by campaign id.
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.page_of_sponsored_products_line_item import PageOfSponsoredProductsLineItem
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1929,7 +1936,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageOfSponsoredProductsLineItem**](PageOfSponsoredProductsLineItem.md)
+[**EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata**](EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata.md)
 
 ### Authorization
 
@@ -4205,9 +4212,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 flight_schedule=FlightSchedule(
                     legs=[
                         FlightLeg(
-                            day_of_week="Sunday",
-                            end_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                            start_time=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                            day_of_week="sunday",
+                            end_time="end_time_example",
+                            start_time="start_time_example",
                         ),
                     ],
                 ),

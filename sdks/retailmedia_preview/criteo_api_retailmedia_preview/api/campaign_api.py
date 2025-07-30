@@ -32,11 +32,11 @@ from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_bra
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204 import EntityResourceCollectionOutcomeCategory202204
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204_metadata import EntityResourceCollectionOutcomeCategory202204Metadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_line_item_keyword_review_report_and_metadata import EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_preview.model.keywords_model_response import KeywordsModelResponse
 from criteo_api_retailmedia_preview.model.outcome import Outcome
-from criteo_api_retailmedia_preview.model.page_of_sponsored_products_line_item import PageOfSponsoredProductsLineItem
 from criteo_api_retailmedia_preview.model.placement_preview_list_response import PlacementPreviewListResponse
 from criteo_api_retailmedia_preview.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
 from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
@@ -57,11 +57,11 @@ from criteo_api_retailmedia_preview.model.sku_search_request_slim_preview_reques
 from criteo_api_retailmedia_preview.model.sku_search_request_slim_v2_preview_request import SkuSearchRequestSlimV2PreviewRequest
 from criteo_api_retailmedia_preview.model.sku_slim_data_preview_list_response import SkuSlimDataPreviewListResponse
 from criteo_api_retailmedia_preview.model.sku_slim_data_v2_list_response import SkuSlimDataV2ListResponse
-from criteo_api_retailmedia_preview.model.sponsored_products_line_item_create_request_model import SponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_of_brand_catalog_request_v2 import ValueResourceInputOfBrandCatalogRequestV2
 from criteo_api_retailmedia_preview.model.value_resource_input_of_seller_catalog_request_v2 import ValueResourceInputOfSellerCatalogRequestV2
+from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_recommended_categories_request_v1 import ValueResourceInputRecommendedCategoriesRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_recommended_keywords_request_v1 import ValueResourceInputRecommendedKeywordsRequestV1
@@ -295,7 +295,7 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'campaign_id',
-                    'sponsored_products_line_item_create_request_model',
+                    'value_resource_input_of_sponsored_products_line_item_create_request_model',
                 ],
                 'required': [
                     'campaign_id',
@@ -315,15 +315,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'campaign_id':
                         (str,),
-                    'sponsored_products_line_item_create_request_model':
-                        (SponsoredProductsLineItemCreateRequestModel,),
+                    'value_resource_input_of_sponsored_products_line_item_create_request_model':
+                        (ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel,),
                 },
                 'attribute_map': {
                     'campaign_id': 'campaignId',
                 },
                 'location_map': {
                     'campaign_id': 'path',
-                    'sponsored_products_line_item_create_request_model': 'body',
+                    'value_resource_input_of_sponsored_products_line_item_create_request_model': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1195,7 +1195,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'line_item_id':
-                        (str,),
+                        (int,),
                 },
                 'attribute_map': {
                     'line_item_id': 'lineItemId',
@@ -1216,7 +1216,7 @@ class CampaignApi(object):
         )
         self.get_auction_line_items_by_campaign_id_v2_endpoint = _Endpoint(
             settings={
-                'response_type': (PageOfSponsoredProductsLineItem,),
+                'response_type': (EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2995,7 +2995,7 @@ class CampaignApi(object):
             campaign_id (str): The given campaign id
 
         Keyword Args:
-            sponsored_products_line_item_create_request_model (SponsoredProductsLineItemCreateRequestModel): The line item settings to create a line item with. [optional]
+            value_resource_input_of_sponsored_products_line_item_create_request_model (ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel): The line item settings to create a line item with. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4264,7 +4264,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): The id of the line item
+            line_item_id (int): The id of the line item
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4385,7 +4385,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PageOfSponsoredProductsLineItem
+            EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
                 If the method is called asynchronously, returns the request
                 thread.
         """

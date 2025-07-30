@@ -66,12 +66,6 @@ class SponsoredProductsLineItem(ModelNormal):
             'CLICKS': "Clicks",
             'REVENUE': "Revenue",
         },
-        ('buy_type',): {
-            'None': None,
-            'UNKNOWN': "Unknown",
-            'AUCTION': "Auction",
-            'PREFERRED': "Preferred",
-        },
         ('status',): {
             'None': None,
             'UNKNOWN': "unknown",
@@ -112,7 +106,6 @@ class SponsoredProductsLineItem(ModelNormal):
             'budget_remaining': (float, none_type,),  # noqa: E501
             'campaign_id': (str,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
-            'external_line_item_id': (int,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'target_retailer_id': (str,),  # noqa: E501
@@ -120,13 +113,15 @@ class SponsoredProductsLineItem(ModelNormal):
             'bid_strategy': (str, none_type,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
             'budget_spent': (float, none_type,),  # noqa: E501
-            'buy_type': (str, none_type,),  # noqa: E501
+            'conquesting_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'daily_pacing': (float, none_type,),  # noqa: E501
+            'defensive_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'end_date': (datetime, none_type,),  # noqa: E501
             'flight_schedule': (FlightSchedule,),  # noqa: E501
             'is_auto_daily_pacing': (bool, none_type,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
+            'neutral_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
         }
@@ -140,7 +135,6 @@ class SponsoredProductsLineItem(ModelNormal):
         'budget_remaining': 'budgetRemaining',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
-        'external_line_item_id': 'externalLineItemId',  # noqa: E501
         'name': 'name',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'target_retailer_id': 'targetRetailerId',  # noqa: E501
@@ -148,13 +142,15 @@ class SponsoredProductsLineItem(ModelNormal):
         'bid_strategy': 'bidStrategy',  # noqa: E501
         'budget': 'budget',  # noqa: E501
         'budget_spent': 'budgetSpent',  # noqa: E501
-        'buy_type': 'buyType',  # noqa: E501
+        'conquesting_adstrategy_enabled': 'conquestingAdstrategyEnabled',  # noqa: E501
         'daily_pacing': 'dailyPacing',  # noqa: E501
+        'defensive_adstrategy_enabled': 'defensiveAdstrategyEnabled',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'flight_schedule': 'flightSchedule',  # noqa: E501
         'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
+        'neutral_adstrategy_enabled': 'neutralAdstrategyEnabled',  # noqa: E501
         'status': 'status',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
     }
@@ -166,14 +162,13 @@ class SponsoredProductsLineItem(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, budget_remaining, campaign_id, created_at, external_line_item_id, name, start_date, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget_remaining, campaign_id, created_at, name, start_date, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
         """SponsoredProductsLineItem - a model defined in OpenAPI
 
         Args:
             budget_remaining (float, none_type):
             campaign_id (str):
             created_at (datetime):
-            external_line_item_id (int):
             name (str):
             start_date (datetime):
             target_retailer_id (str):
@@ -213,13 +208,15 @@ class SponsoredProductsLineItem(ModelNormal):
             bid_strategy (str, none_type): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             budget_spent (float, none_type): [optional]  # noqa: E501
-            buy_type (str, none_type): [optional]  # noqa: E501
+            conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
+            defensive_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             is_auto_daily_pacing (bool, none_type): [optional]  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
+            neutral_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             status (str, none_type): Status of a line item.. [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
         """
@@ -256,7 +253,6 @@ class SponsoredProductsLineItem(ModelNormal):
         self.budget_remaining = budget_remaining
         self.campaign_id = campaign_id
         self.created_at = created_at
-        self.external_line_item_id = external_line_item_id
         self.name = name
         self.start_date = start_date
         self.target_retailer_id = target_retailer_id
@@ -281,14 +277,13 @@ class SponsoredProductsLineItem(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, budget_remaining, campaign_id, created_at, external_line_item_id, name, start_date, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget_remaining, campaign_id, created_at, name, start_date, target_retailer_id, updated_at, *args, **kwargs):  # noqa: E501
         """SponsoredProductsLineItem - a model defined in OpenAPI
 
         Args:
             budget_remaining (float, none_type):
             campaign_id (str):
             created_at (datetime):
-            external_line_item_id (int):
             name (str):
             start_date (datetime):
             target_retailer_id (str):
@@ -328,13 +323,15 @@ class SponsoredProductsLineItem(ModelNormal):
             bid_strategy (str, none_type): [optional]  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             budget_spent (float, none_type): [optional]  # noqa: E501
-            buy_type (str, none_type): [optional]  # noqa: E501
+            conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
+            defensive_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             is_auto_daily_pacing (bool, none_type): [optional]  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
+            neutral_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             status (str, none_type): Status of a line item.. [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
         """
@@ -369,7 +366,6 @@ class SponsoredProductsLineItem(ModelNormal):
         self.budget_remaining = budget_remaining
         self.campaign_id = campaign_id
         self.created_at = created_at
-        self.external_line_item_id = external_line_item_id
         self.name = name
         self.start_date = start_date
         self.target_retailer_id = target_retailer_id

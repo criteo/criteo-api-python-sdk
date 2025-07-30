@@ -64,10 +64,6 @@ class AssetResponse(ModelNormal):
     }
 
     validations = {
-        ('errors',): {
-        },
-        ('warnings',): {
-        },
     }
 
     @cached_property

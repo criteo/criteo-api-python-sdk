@@ -65,11 +65,6 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'CLICKS': "Clicks",
             'REVENUE': "Revenue",
         },
-        ('status',): {
-            'ACTIVE': "Active",
-            'PAUSED': "Paused",
-            'DRAFT': "Draft",
-        },
     }
 
     validations = {
@@ -100,13 +95,15 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'target_retailer_id': (str,),  # noqa: E501
             'bid_strategy': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
+            'conquesting_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'daily_pacing': (float, none_type,),  # noqa: E501
+            'defensive_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'end_date': (datetime, none_type,),  # noqa: E501
             'flight_schedule': (FlightSchedule,),  # noqa: E501
             'is_auto_daily_pacing': (bool,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
-            'status': (str,),  # noqa: E501
+            'neutral_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
         }
 
@@ -121,13 +118,15 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         'target_retailer_id': 'targetRetailerId',  # noqa: E501
         'bid_strategy': 'bidStrategy',  # noqa: E501
         'budget': 'budget',  # noqa: E501
+        'conquesting_adstrategy_enabled': 'conquestingAdstrategyEnabled',  # noqa: E501
         'daily_pacing': 'dailyPacing',  # noqa: E501
+        'defensive_adstrategy_enabled': 'defensiveAdstrategyEnabled',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'flight_schedule': 'flightSchedule',  # noqa: E501
         'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'status': 'status',  # noqa: E501
+        'neutral_adstrategy_enabled': 'neutralAdstrategyEnabled',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
     }
 
@@ -179,13 +178,15 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bid_strategy (str): [optional] if omitted the server will use the default value of "Conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
+            conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
+            defensive_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
-            status (str): Status of a line item.. [optional]  # noqa: E501
+            neutral_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
         """
 
@@ -282,13 +283,15 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bid_strategy (str): [optional] if omitted the server will use the default value of "Conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
+            conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
+            defensive_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
             max_bid (float, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
-            status (str): Status of a line item.. [optional]  # noqa: E501
+            neutral_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             target_bid (float, none_type): [optional]  # noqa: E501
         """
 

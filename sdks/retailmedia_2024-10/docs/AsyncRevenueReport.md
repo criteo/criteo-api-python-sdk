@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **sku_relations** | **[str]** | Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller | [optional] 
 **sold_by** | **str** | Filter on the seller: Indirect Sold, Direct Sold or Private Market | [optional] 
+**targeted_keyword_types** | **[str]** | Filter on targeted keyword type: unknown, generic, branded, conquesting | [optional] 
 **timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
 **view_attribution_window** | **str** | View attribution window | [optional]  if omitted the server will use the default value of "none"
 **view_match_level** | **str** | View Match Level: Campaign, Same SKU, Same Category or Same Brand | [optional]  if omitted the server will use the default value of "campaign"

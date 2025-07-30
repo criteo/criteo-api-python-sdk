@@ -344,6 +344,9 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
                 ],
                 sold_by="directSold",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                targeted_keyword_types=[
+                    "unknown",
+                ],
                 timezone="UTC",
                 view_attribution_window="none",
                 view_match_level="campaign",

@@ -2809,7 +2809,7 @@ Name | Type | Description  | Notes
 
 
 
-Get current campaign budget overrides by given external campaign id.
+Get current campaign budget overrides by given campaign id.
 
 ### Example
 
@@ -2849,7 +2849,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | External campaign id.
+    campaign_id = 1 # int | Campaign id.
 
     # example passing only required values which don't have defaults set
     try:
@@ -2864,7 +2864,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| External campaign id. |
+ **campaign_id** | **int**| Campaign id. |
 
 ### Return type
 
@@ -5959,7 +5959,7 @@ void (empty response body)
 
 
 
-Update campaign budget overrides by given external campaign id and new campaign budget overrides settings.
+Update campaign budget overrides by given campaign id and new campaign budget overrides settings.
 
 ### Example
 
@@ -6000,7 +6000,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | External campaign id.
+    campaign_id = 1 # int | Campaign id.
     value_resource_input_of_campaign_budget_overrides = ValueResourceInputOfCampaignBudgetOverrides(
         data=ValueResourceOfCampaignBudgetOverrides(
             attributes=CampaignBudgetOverrides(
@@ -6046,7 +6046,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| External campaign id. |
+ **campaign_id** | **int**| Campaign id. |
  **value_resource_input_of_campaign_budget_overrides** | [**ValueResourceInputOfCampaignBudgetOverrides**](ValueResourceInputOfCampaignBudgetOverrides.md)| New campaign budget overrides settings value resource input. | [optional]
 
 ### Return type
@@ -6076,7 +6076,7 @@ Name | Type | Description  | Notes
 
 
 
-Update line item budget overrides by given external line item id and new line item budget overrides settings.
+Update line item budget overrides by given line item id and new line item budget overrides settings.
 
 ### Example
 
@@ -6117,7 +6117,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | Line item external id.
+    line_item_id = "lineItemId_example" # str | Line item id.
     value_resource_input_of_line_item_budget_overrides = ValueResourceInputOfLineItemBudgetOverrides(
         data=ValueResourceOfLineItemBudgetOverrides(
             attributes=LineItemBudgetOverrides(
@@ -6163,7 +6163,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| Line item external id. |
+ **line_item_id** | **str**| Line item id. |
  **value_resource_input_of_line_item_budget_overrides** | [**ValueResourceInputOfLineItemBudgetOverrides**](ValueResourceInputOfLineItemBudgetOverrides.md)| New line item budget overrides settings value resource input. | [optional]
 
 ### Return type

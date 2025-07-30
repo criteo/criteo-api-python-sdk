@@ -138,6 +138,7 @@ class AsyncRevenueReport(ModelNormal):
             'TAXONOMY6NAME': "taxonomy6Name",
             'TAXONOMY7ID': "taxonomy7Id",
             'TAXONOMY7NAME': "taxonomy7Name",
+            'TARGETEDKEYWORDTYPE': "targetedKeywordType",
         },
         ('format',): {
             'JSON': "json",
@@ -219,6 +220,12 @@ class AsyncRevenueReport(ModelNormal):
             'INDIRECTSOLD': "indirectSold",
             'PRIVATEMARKET': "privateMarket",
         },
+        ('targeted_keyword_types',): {
+            'UNKNOWN': "unknown",
+            'GENERIC': "generic",
+            'BRANDED': "branded",
+            'CONQUESTING': "conquesting",
+        },
         ('view_attribution_window',): {
             'NONE': "none",
             '1D': "1D",
@@ -279,6 +286,7 @@ class AsyncRevenueReport(ModelNormal):
             'sales_channel': (str,),  # noqa: E501
             'sku_relations': ([str],),  # noqa: E501
             'sold_by': (str,),  # noqa: E501
+            'targeted_keyword_types': ([str],),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'view_attribution_window': (str,),  # noqa: E501
             'view_match_level': (str,),  # noqa: E501
@@ -311,6 +319,7 @@ class AsyncRevenueReport(ModelNormal):
         'sales_channel': 'salesChannel',  # noqa: E501
         'sku_relations': 'skuRelations',  # noqa: E501
         'sold_by': 'soldBy',  # noqa: E501
+        'targeted_keyword_types': 'targetedKeywordTypes',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
         'view_match_level': 'viewMatchLevel',  # noqa: E501
@@ -380,6 +389,7 @@ class AsyncRevenueReport(ModelNormal):
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sku_relations ([str]): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
             sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_match_level (str): View Match Level: Campaign, Same SKU, Same Category or Same Brand. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
@@ -493,6 +503,7 @@ class AsyncRevenueReport(ModelNormal):
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sku_relations ([str]): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
             sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             view_match_level (str): View Match Level: Campaign, Same SKU, Same Category or Same Brand. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
