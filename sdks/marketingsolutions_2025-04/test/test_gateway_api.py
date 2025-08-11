@@ -9,16 +9,16 @@ from example_application_with_client_credentials import ExampleApplication
 class TestGatewayApi:
   @pytest.fixture(autouse=True)
   def before_each(self):
-    self.client_id = os.environ.get("TEST_CLIENT_ID")
-    self.client_secret = os.environ.get("TEST_CLIENT_SECRET")
-    self.application_id = int(os.environ.get("TEST_APPLICATION_ID"))
+    self.client_id = os.environ.get("MARKETINGSOLUTIONS_TEST_CLIENT_ID")
+    self.client_secret = os.environ.get("MARKETINGSOLUTIONS_TEST_CLIENT_SECRET")
+    self.application_id = int(os.environ.get("MARKETINGSOLUTIONS_TEST_APPLICATION_ID"))
 
     self.client = ApiClientBuilder.WithClientCredentials(clientId=self.client_id, clientSecret=self.client_secret)
 
   def test_environment_variables(self):
-    assert len(self.client_id) > 0, "Environment variable \"TEST_CLIENT_ID\" not found."
-    assert len(self.client_secret) > 0, "Environment variable \"TEST_CLIENT_SECRET\" not found."
-    assert self.application_id > 0, "Environment variable \"TEST_APPLICATION_ID\" not found."
+    assert len(self.client_id) > 0, "Environment variable \"MARKETINGSOLUTIONS_TEST_CLIENT_ID\" not found."
+    assert len(self.client_secret) > 0, "Environment variable \"MARKETINGSOLUTIONS_TEST_CLIENT_SECRET\" not found."
+    assert self.application_id > 0, "Environment variable \"MARKETINGSOLUTIONS_TEST_APPLICATION_ID\" not found."
 
   def test_example_works(self):
     # Arrange
