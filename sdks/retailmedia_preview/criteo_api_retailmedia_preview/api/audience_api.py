@@ -846,7 +846,7 @@ class AudienceApi(object):
                 'validations': {
                     ('limit',): {
 
-                        'inclusive_maximum': 100,
+                        'inclusive_maximum': 500,
                         'inclusive_minimum': 0,
                     },
                 },
@@ -926,7 +926,7 @@ class AudienceApi(object):
                 'validations': {
                     ('limit',): {
 
-                        'inclusive_maximum': 100,
+                        'inclusive_maximum': 500,
                         'inclusive_minimum': 0,
                     },
                 },
@@ -2091,7 +2091,7 @@ class AudienceApi(object):
             rm_audience_segment_search_input_v1 (RmAudienceSegmentSearchInputV1): Segment search filters.
 
         Keyword Args:
-            limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional] if omitted the server will use the default value of 50
+            limit (int): The number of elements to be returned. The default is 50 and the maximum is 500.. [optional] if omitted the server will use the default value of 50
             offset (int): The (zero-based) offset into the collection. The default is 0.. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -2180,7 +2180,7 @@ class AudienceApi(object):
             rm_audience_search_input_v1 (RmAudienceSearchInputV1): Audience search filters.
 
         Keyword Args:
-            limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional] if omitted the server will use the default value of 50
+            limit (int): The number of elements to be returned. The default is 50 and the maximum is 500.. [optional] if omitted the server will use the default value of 50
             offset (int): The (zero-based) offset into the collection. The default is 0.. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

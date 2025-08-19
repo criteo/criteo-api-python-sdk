@@ -1,20 +1,25 @@
-# ExternalPreferredLineItemCreateModelV2
+# PreferredLineItemV2
 
-Model used to create a preferred line item
+A Retail Media Preferred Line Item used to hold bid settings for one or many promoted products on a single retailer
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **budget** | **float** |  | 
+**campaign_id** | **str** |  | 
 **end_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | 
 **name** | **str** |  | 
-**pacing** | **str** | Line Item Pacing Enum | 
-**page** | [**ExternalLineItemPageV2**](ExternalLineItemPageV2.md) |  | 
 **start_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | 
+**status** | **str** | Line Item Status Enum | 
 **target_retailer_id** | **str** |  | 
-**capping** | [**ExternalLineItemCappingV2**](ExternalLineItemCappingV2.md) |  | [optional] 
-**creative_id** | **str, none_type** |  | [optional] 
-**status** | **str** | Line Item Status Enum | [optional] 
+**budget_remaining** | **float, none_type** |  | [optional] 
+**budget_spent** | **float, none_type** |  | [optional] 
+**capping** | [**LineItemCappingV2**](LineItemCappingV2.md) |  | [optional] 
+**created_at** | **datetime** |  | [optional] 
+**creative_id** | **str, none_type** | External creative Id | [optional] 
+**pacing** | **str, none_type** |  | [optional] 
+**page** | [**LineItemPageV2**](LineItemPageV2.md) |  | [optional] 
+**updated_at** | **datetime** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

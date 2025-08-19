@@ -88,8 +88,8 @@ class FlightLeg(ModelNormal):
         """
         return {
             'day_of_week': (str,),  # noqa: E501
-            'end_time': (str,),  # noqa: E501
-            'start_time': (str,),  # noqa: E501
+            'end_time': (datetime,),  # noqa: E501
+            'start_time': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -115,8 +115,8 @@ class FlightLeg(ModelNormal):
 
         Args:
             day_of_week (str): Enum for the days of the week.
-            end_time (str):
-            start_time (str):
+            end_time (datetime):
+            start_time (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -208,8 +208,8 @@ class FlightLeg(ModelNormal):
 
         Args:
             day_of_week (str): Enum for the days of the week.
-            end_time (str):
-            start_time (str):
+            end_time (datetime):
+            start_time (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

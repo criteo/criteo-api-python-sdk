@@ -30,8 +30,8 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.external_preferred_line_item_update_model_v2 import ExternalPreferredLineItemUpdateModelV2
-    globals()['ExternalPreferredLineItemUpdateModelV2'] = ExternalPreferredLineItemUpdateModelV2
+    from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2 import PreferredLineItemUpdateModelV2
+    globals()['PreferredLineItemUpdateModelV2'] = PreferredLineItemUpdateModelV2
 
 
 class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
@@ -87,7 +87,7 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalPreferredLineItemUpdateModelV2,),  # noqa: E501
+            'attributes': (PreferredLineItemUpdateModelV2,),  # noqa: E501
             'id': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
@@ -144,7 +144,7 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalPreferredLineItemUpdateModelV2): [optional]  # noqa: E501
+            attributes (PreferredLineItemUpdateModelV2): [optional]  # noqa: E501
             id (str): Id of the entity. [optional]  # noqa: E501
             type (str): Canonical type name of the entity. [optional]  # noqa: E501
         """
@@ -232,7 +232,7 @@ class ResourceOfPreferredLineItemUpdateModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalPreferredLineItemUpdateModelV2): [optional]  # noqa: E501
+            attributes (PreferredLineItemUpdateModelV2): [optional]  # noqa: E501
             id (str): Id of the entity. [optional]  # noqa: E501
             type (str): Canonical type name of the entity. [optional]  # noqa: E501
         """

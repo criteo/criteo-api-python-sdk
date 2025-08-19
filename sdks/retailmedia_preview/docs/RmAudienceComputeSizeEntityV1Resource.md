@@ -1,14 +1,12 @@
-# PagedResourceCollectionOutcomeOfBalanceResponseV2
+# RmAudienceComputeSizeEntityV1Resource
 
-Data model for a paged list of response resources
+A top-level object that encapsulates a Criteo API response for a single value
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ResourceOfBalanceResponseV2]**](ResourceOfBalanceResponseV2.md) |  | [optional] 
-**errors** | [**[CommonProblem]**](CommonProblem.md) |  | [optional] [readonly] 
-**metadata** | [**PageMetadata**](PageMetadata.md) |  | [optional] 
-**warnings** | [**[CommonProblem]**](CommonProblem.md) |  | [optional] [readonly] 
+**attributes** | [**RmAudienceComputeSizeEntityV1**](RmAudienceComputeSizeEntityV1.md) |  | [optional] 
+**type** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

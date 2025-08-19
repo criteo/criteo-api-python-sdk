@@ -1,6 +1,6 @@
 # SponsoredProductsLineItem
 
-A model representing a Sponsored Products Line Item.
+Model of a retail media auction line item.
 
 ## Properties
 Name | Type | Description | Notes

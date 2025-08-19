@@ -5,7 +5,6 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**api_portfolio_get**](AdvertiserApi.md#api_portfolio_get) | **GET** /preview/advertisers/me | 
-[**create_advertiser**](AdvertiserApi.md#create_advertiser) | **POST** /preview/advertisers | 
 [**get_dataset_list**](AdvertiserApi.md#get_dataset_list) | **GET** /preview/advertisers/{advertiser-id}/datasets | 
 [**list_industries**](AdvertiserApi.md#list_industries) | **GET** /preview/industries | 
 
@@ -88,107 +87,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Success |  -  |
 **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **create_advertiser**
-> AdvertiserCreationResponse create_advertiser(advertiser_creation_request)
-
-
-
-Create a new advertiser based on provided parameters. This could take up to 30 seconds.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import advertiser_api
-from criteo_api_marketingsolutions_preview.model.advertiser_creation_response import AdvertiserCreationResponse
-from criteo_api_marketingsolutions_preview.model.advertiser_creation_request import AdvertiserCreationRequest
-from criteo_api_marketingsolutions_preview.model.unauthorized_response_v2 import UnauthorizedResponseV2
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = advertiser_api.AdvertiserApi(api_client)
-    advertiser_creation_request = AdvertiserCreationRequest(
-        data=ValueResourceOfAdvertiserCreationInput(
-            attributes=AdvertiserCreationInput(
-                account_name="account_name_example",
-                agency_id="agency_id_example",
-                country_iso_code="country_iso_code_example",
-                currency_iso_code="currency_iso_code_example",
-                industry_id="industry_id_example",
-                website_url="website_url_example",
-            ),
-            type="type_example",
-        ),
-    ) # AdvertiserCreationRequest | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.create_advertiser(advertiser_creation_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AdvertiserApi->create_advertiser: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **advertiser_creation_request** | [**AdvertiserCreationRequest**](AdvertiserCreationRequest.md)|  |
-
-### Return type
-
-[**AdvertiserCreationResponse**](AdvertiserCreationResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: application/json, text/plain, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Success |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

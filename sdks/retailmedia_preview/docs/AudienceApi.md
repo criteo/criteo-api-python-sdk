@@ -194,10 +194,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                         category_ids=[
                             "category_ids_example",
                         ],
-                        lookback_days="Unknown",
+                        lookback_days="Last7Days",
                         max_price=3.14,
                         min_price=3.14,
-                        shopper_activity="Unknown",
+                        shopper_activity="View",
                     ),
                     name="name_example",
                     retailer_id="retailer_id_example",
@@ -620,14 +620,14 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                         category_ids=[
                             "category_ids_example",
                         ],
-                        lookback_days="Unknown",
+                        lookback_days="Last7Days",
                         max_price=NillableDecimal(
                             value=3.14,
                         ),
                         min_price=NillableDecimal(
                             value=3.14,
                         ),
-                        shopper_activity="Unknown",
+                        shopper_activity="View",
                     ),
                     name="name_example",
                 ),
@@ -728,7 +728,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     rm_audience_segment_compute_sizes_input_v1 = RmAudienceSegmentComputeSizesInputV1(
         data=RmAudienceSegmentComputeSizeEntityV1Resource(
             attributes=RmAudienceSegmentComputeSizeEntityV1(
-                channel="Unknown",
+                channel="Onsite",
                 ids=[
                     "ids_example",
                 ],
@@ -826,9 +826,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     api_instance = audience_api.AudienceApi(api_client)
     account_id = "account-id_example" # str | Account Id
     rm_audience_compute_sizes_input_v1 = RmAudienceComputeSizesInputV1(
-        data=RmAudienceComputeSizesEntityV1Resource(
-            attributes=RmAudienceComputeSizesEntityV1(
-                channel="Unknown",
+        data=RmAudienceComputeSizeEntityV1Resource(
+            attributes=RmAudienceComputeSizeEntityV1(
+                channel="Onsite",
                 ids=[
                     "ids_example",
                 ],
@@ -1012,7 +1012,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     rm_audience_segment_estimate_size_input_v1 = RmAudienceSegmentEstimateSizeInputV1(
         data=RmAudienceSegmentEstimateSizeEntityV1Resource(
             attributes=RmAudienceSegmentEstimateSizeEntityV1(
-                channel="Unknown",
+                channel="Onsite",
                 events=RmEventsEstimationV1(
                     brand_ids=[
                         "brand_ids_example",
@@ -1020,10 +1020,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                     category_ids=[
                         "category_ids_example",
                     ],
-                    lookback_days="Unknown",
+                    lookback_days="Last7Days",
                     max_price=3.14,
                     min_price=3.14,
-                    shopper_activity="Unknown",
+                    shopper_activity="View",
                 ),
                 retailer_id="retailer_id_example",
             ),
@@ -1132,7 +1132,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                         RmAlgebraNodeV1(),
                     ],
                 ),
-                channel="Unknown",
+                channel="Onsite",
                 retailer_id="retailer_id_example",
             ),
             type="type_example",
@@ -1332,7 +1332,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             type="type_example",
         ),
     ) # RmAudienceSegmentSearchInputV1 | Segment search filters.
-    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 500. (optional) if omitted the server will use the default value of 50
     offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
@@ -1358,7 +1358,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| Account Id |
  **rm_audience_segment_search_input_v1** | [**RmAudienceSegmentSearchInputV1**](RmAudienceSegmentSearchInputV1.md)| Segment search filters. |
- **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 500. | [optional] if omitted the server will use the default value of 50
  **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
@@ -1449,7 +1449,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             type="type_example",
         ),
     ) # RmAudienceSearchInputV1 | Audience search filters.
-    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 500. (optional) if omitted the server will use the default value of 50
     offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
@@ -1475,7 +1475,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| Account Id |
  **rm_audience_search_input_v1** | [**RmAudienceSearchInputV1**](RmAudienceSearchInputV1.md)| Audience search filters. |
- **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 500. | [optional] if omitted the server will use the default value of 50
  **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type

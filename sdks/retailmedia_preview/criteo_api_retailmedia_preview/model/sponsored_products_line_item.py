@@ -61,10 +61,10 @@ class SponsoredProductsLineItem(ModelNormal):
     allowed_values = {
         ('bid_strategy',): {
             'None': None,
-            'UNKNOWN': "Unknown",
-            'CONVERSION': "Conversion",
-            'CLICKS': "Clicks",
-            'REVENUE': "Revenue",
+            'UNKNOWN': "unknown",
+            'CONVERSION': "conversion",
+            'CLICKS': "clicks",
+            'REVENUE': "revenue",
         },
         ('status',): {
             'None': None,

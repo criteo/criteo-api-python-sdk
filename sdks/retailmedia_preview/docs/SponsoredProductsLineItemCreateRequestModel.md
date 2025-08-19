@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **start_date** | **datetime** |  | 
 **target_retailer_id** | **str** |  | 
-**bid_strategy** | **str** |  | [optional]  if omitted the server will use the default value of "Conversion"
+**bid_strategy** | **str** |  | [optional]  if omitted the server will use the default value of "conversion"
 **budget** | **float, none_type** |  | [optional] 
 **conquesting_adstrategy_enabled** | **bool, none_type** |  | [optional] 
 **daily_pacing** | **float, none_type** |  | [optional] 

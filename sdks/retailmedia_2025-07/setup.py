@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "criteo-api-retailmedia-sdk"
-VERSION = "2025.07.0.250811"
+VERSION = "2025.07.0.250819"
 # To install the library, run the following
 #
 # python setup.py install
@@ -24,9 +24,9 @@ IMPORTANT: This Python package links to Criteo production environment. Any test 
 
 
 ```sh
-pip install criteo-api-retailmedia-sdk==2025.07.0.250811
+pip install criteo-api-retailmedia-sdk==2025.07.0.250819
 ```
-(you may need to run `pip` with root permission: `sudo pip install criteo-api-retailmedia-sdk==2025.07.0.250811`)
+(you may need to run `pip` with root permission: `sudo pip install criteo-api-retailmedia-sdk==2025.07.0.250819`)
 
 Then import the package:
 ```python

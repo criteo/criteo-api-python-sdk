@@ -30,8 +30,8 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.rm_audience_compute_sizes_entity_v1_resource import RmAudienceComputeSizesEntityV1Resource
-    globals()['RmAudienceComputeSizesEntityV1Resource'] = RmAudienceComputeSizesEntityV1Resource
+    from criteo_api_retailmedia_preview.model.rm_audience_compute_size_entity_v1_resource import RmAudienceComputeSizeEntityV1Resource
+    globals()['RmAudienceComputeSizeEntityV1Resource'] = RmAudienceComputeSizeEntityV1Resource
 
 
 class RmAudienceComputeSizesInputV1(ModelNormal):
@@ -87,7 +87,7 @@ class RmAudienceComputeSizesInputV1(ModelNormal):
         """
         lazy_import()
         return {
-            'data': (RmAudienceComputeSizesEntityV1Resource,),  # noqa: E501
+            'data': (RmAudienceComputeSizeEntityV1Resource,),  # noqa: E501
         }
 
     @cached_property
@@ -140,7 +140,7 @@ class RmAudienceComputeSizesInputV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data (RmAudienceComputeSizesEntityV1Resource): [optional]  # noqa: E501
+            data (RmAudienceComputeSizeEntityV1Resource): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +226,7 @@ class RmAudienceComputeSizesInputV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data (RmAudienceComputeSizesEntityV1Resource): [optional]  # noqa: E501
+            data (RmAudienceComputeSizeEntityV1Resource): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

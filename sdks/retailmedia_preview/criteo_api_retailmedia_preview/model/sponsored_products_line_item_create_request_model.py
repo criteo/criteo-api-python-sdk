@@ -60,10 +60,10 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
 
     allowed_values = {
         ('bid_strategy',): {
-            'UNKNOWN': "Unknown",
-            'CONVERSION': "Conversion",
-            'CLICKS': "Clicks",
-            'REVENUE': "Revenue",
+            'UNKNOWN': "unknown",
+            'CONVERSION': "conversion",
+            'CLICKS': "clicks",
+            'REVENUE': "revenue",
         },
     }
 
@@ -176,7 +176,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "Conversion"  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
@@ -281,7 +281,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "Conversion"  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501

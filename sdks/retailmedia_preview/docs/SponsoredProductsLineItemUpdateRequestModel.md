@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **start_date** | **datetime** |  | 
 **status** | **str** | Status of a line item. | 
 **target_bid** | **float** |  | 
-**bid_strategy** | **str** |  | [optional]  if omitted the server will use the default value of "Conversion"
+**bid_strategy** | **str** |  | [optional]  if omitted the server will use the default value of "conversion"
 **budget** | **float, none_type** |  | [optional] 
 **daily_pacing** | **float, none_type** |  | [optional] 
 **end_date** | **datetime, none_type** |  | [optional] 

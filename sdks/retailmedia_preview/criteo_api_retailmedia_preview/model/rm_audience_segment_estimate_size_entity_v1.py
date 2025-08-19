@@ -60,7 +60,6 @@ class RmAudienceSegmentEstimateSizeEntityV1(ModelNormal):
 
     allowed_values = {
         ('channel',): {
-            'UNKNOWN': "Unknown",
             'ONSITE': "Onsite",
             'OFFSITE': "Offsite",
         },

@@ -1,15 +1,12 @@
-# ExternalProductButtonResponse
+# RmAudienceComputeSizeEntityV1
 
-The Product Button entity used for output
+Audience of people of interest for a marketer.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**background_image** | **str** | URL of the background image | 
-**is_mandatory** | **int** | If the Product Button is Mandatory | 
-**name** | **str** | Name of the Product Button | 
-**rank** | **int** | Rank of the Product Button | 
-**skus** | **[str]** | List of skus on the Product Button | 
+**channel** | **str** | Channel to compute the sizes for. | 
+**ids** | **[str]** | List of ids of the segments whose size is requested. | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

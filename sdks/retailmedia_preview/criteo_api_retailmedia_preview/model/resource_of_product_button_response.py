@@ -30,8 +30,8 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.external_product_button_response import ExternalProductButtonResponse
-    globals()['ExternalProductButtonResponse'] = ExternalProductButtonResponse
+    from criteo_api_retailmedia_preview.model.product_button_response import ProductButtonResponse
+    globals()['ProductButtonResponse'] = ProductButtonResponse
 
 
 class ResourceOfProductButtonResponse(ModelNormal):
@@ -73,7 +73,7 @@ class ResourceOfProductButtonResponse(ModelNormal):
         lazy_import()
         return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -87,7 +87,7 @@ class ResourceOfProductButtonResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalProductButtonResponse,),  # noqa: E501
+            'attributes': (ProductButtonResponse,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
         }
@@ -144,7 +144,7 @@ class ResourceOfProductButtonResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalProductButtonResponse): [optional]  # noqa: E501
+            attributes (ProductButtonResponse): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
@@ -232,7 +232,7 @@ class ResourceOfProductButtonResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalProductButtonResponse): [optional]  # noqa: E501
+            attributes (ProductButtonResponse): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """

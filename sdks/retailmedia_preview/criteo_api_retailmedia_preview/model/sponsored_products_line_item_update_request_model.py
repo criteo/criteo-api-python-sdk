@@ -60,15 +60,15 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
 
     allowed_values = {
         ('status',): {
-            'ACTIVE': "Active",
-            'PAUSED': "Paused",
-            'DRAFT': "Draft",
+            'ACTIVE': "active",
+            'PAUSED': "paused",
+            'DRAFT': "draft",
         },
         ('bid_strategy',): {
-            'UNKNOWN': "Unknown",
-            'CONVERSION': "Conversion",
-            'CLICKS': "Clicks",
-            'REVENUE': "Revenue",
+            'UNKNOWN': "unknown",
+            'CONVERSION': "conversion",
+            'CLICKS': "clicks",
+            'REVENUE': "revenue",
         },
     }
 
@@ -177,7 +177,7 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "Conversion"  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
@@ -281,7 +281,7 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "Conversion"  # noqa: E501
+            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
             end_date (datetime, none_type): [optional]  # noqa: E501
