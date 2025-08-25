@@ -87,8 +87,6 @@ class AsyncFillRateReport(ModelNormal):
             'REVENUE': "revenue",
             'WORKINGMEDIA': "workingMedia",
             'NETREVENUE': "netRevenue",
-            'UNIQUEVISITORS': "uniqueVisitors",
-            'FREQUENCY': "frequency",
         },
         ('format',): {
             'JSON': "json",

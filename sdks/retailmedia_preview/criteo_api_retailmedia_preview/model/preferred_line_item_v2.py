@@ -122,6 +122,7 @@ class PreferredLineItemV2(ModelNormal):
             'capping': (LineItemCappingV2,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'creative_id': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'pacing': (str, none_type,),  # noqa: E501
             'page': (LineItemPageV2,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
@@ -145,6 +146,7 @@ class PreferredLineItemV2(ModelNormal):
         'capping': 'capping',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'creative_id': 'creativeId',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'pacing': 'pacing',  # noqa: E501
         'page': 'page',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
@@ -204,7 +206,8 @@ class PreferredLineItemV2(ModelNormal):
             budget_spent (float, none_type): [optional]  # noqa: E501
             capping (LineItemCappingV2): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
-            creative_id (str, none_type): External creative Id. [optional]  # noqa: E501
+            creative_id (str, none_type): creative Id. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             pacing (str, none_type): [optional]  # noqa: E501
             page (LineItemPageV2): [optional]  # noqa: E501
             updated_at (datetime): [optional]  # noqa: E501
@@ -313,7 +316,8 @@ class PreferredLineItemV2(ModelNormal):
             budget_spent (float, none_type): [optional]  # noqa: E501
             capping (LineItemCappingV2): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
-            creative_id (str, none_type): External creative Id. [optional]  # noqa: E501
+            creative_id (str, none_type): creative Id. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             pacing (str, none_type): [optional]  # noqa: E501
             page (LineItemPageV2): [optional]  # noqa: E501
             updated_at (datetime): [optional]  # noqa: E501

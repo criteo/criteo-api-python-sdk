@@ -2946,7 +2946,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): External LineItemId for productButton delete
+            line_item_id (str): LineItemId for productButton delete
             product_button_id (str): productButtonId used for delete
 
         Keyword Args:
@@ -3286,7 +3286,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): External LineItemId for productButton retrieval
+            line_item_id (str): LineItemId for productButton retrieval
             product_button_id (str): productButtonId used for retrieval
 
         Keyword Args:
@@ -3372,7 +3372,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): External LineItemId for productButton retrieval
+            line_item_id (str): LineItemId for productButton retrieval
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4555,7 +4555,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): External LineItemId for productButton retrieval
+            line_item_id (str): LineItemId for productButton retrieval
 
         Keyword Args:
             product_button_request_list_request (ProductButtonRequestListRequest): List of Product Buttons to append. [optional]
@@ -5222,7 +5222,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): External LineItemId for productButton update
+            line_item_id (str): LineItemId for productButton update
             product_button_id (str): productButtonId used for update
 
         Keyword Args:

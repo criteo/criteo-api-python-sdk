@@ -329,7 +329,7 @@ class BalanceApi(object):
         )
         self.post_api_external_v2_account_balances_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (BalanceResponseV2Response,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -852,7 +852,7 @@ class BalanceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            BalanceResponseV2Response
                 If the method is called asynchronously, returns the request
                 thread.
         """

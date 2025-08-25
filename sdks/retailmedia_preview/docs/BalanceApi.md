@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_api_external_v2_account_balances_by_account_id**
-> post_api_external_v2_account_balances_by_account_id(account_id)
+> BalanceResponseV2Response post_api_external_v2_account_balances_by_account_id(account_id)
 
 
 
@@ -422,6 +422,7 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import balance_api
 from criteo_api_retailmedia_preview.model.create_balance_v2_request import CreateBalanceV2Request
+from criteo_api_retailmedia_preview.model.balance_response_v2_response import BalanceResponseV2Response
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -469,14 +470,16 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.post_api_external_v2_account_balances_by_account_id(account_id)
+        api_response = api_instance.post_api_external_v2_account_balances_by_account_id(account_id)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling BalanceApi->post_api_external_v2_account_balances_by_account_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_instance.post_api_external_v2_account_balances_by_account_id(account_id, create_balance_v2_request=create_balance_v2_request)
+        api_response = api_instance.post_api_external_v2_account_balances_by_account_id(account_id, create_balance_v2_request=create_balance_v2_request)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling BalanceApi->post_api_external_v2_account_balances_by_account_id: %s\n" % e)
 ```
@@ -491,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BalanceResponseV2Response**](BalanceResponseV2Response.md)
 
 ### Authorization
 

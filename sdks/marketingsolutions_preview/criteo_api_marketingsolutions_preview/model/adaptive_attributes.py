@@ -105,10 +105,10 @@ class AdaptiveAttributes(ModelNormal):
         return {
             'calls_to_action': ([str],),  # noqa: E501
             'colors': (AdaptiveColors,),  # noqa: E501
-            'description_font': (str,),  # noqa: E501
-            'description_text': (str,),  # noqa: E501
+            'description_font': (str, none_type,),  # noqa: E501
+            'description_text': (str, none_type,),  # noqa: E501
             'headline_font': (str,),  # noqa: E501
-            'headline_text': (str,),  # noqa: E501
+            'headline_text': (str, none_type,),  # noqa: E501
             'landing_page_url': (str,),  # noqa: E501
             'layouts': ([str],),  # noqa: E501
             'logos': ([ImageShape],),  # noqa: E501
@@ -150,10 +150,10 @@ class AdaptiveAttributes(ModelNormal):
         Args:
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
             colors (AdaptiveColors):
-            description_font (str): Font of the description  Valid supported font like \"Arial\"
-            description_text (str): The description text of the banner
+            description_font (str, none_type): Font of the description  Valid supported font like \"Arial\"
+            description_text (str, none_type): The description text of the banner
             headline_font (str): Font of the headline  Valid supported font like \"Arial\"
-            headline_text (str): The headline text of the banner
+            headline_text (str, none_type): The headline text of the banner
             landing_page_url (str): Web redirection of the landing page url
             layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
             logos ([ImageShape]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net
@@ -258,10 +258,10 @@ class AdaptiveAttributes(ModelNormal):
         Args:
             calls_to_action ([str]): A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”.
             colors (AdaptiveColors):
-            description_font (str): Font of the description  Valid supported font like \"Arial\"
-            description_text (str): The description text of the banner
+            description_font (str, none_type): Font of the description  Valid supported font like \"Arial\"
+            description_text (str, none_type): The description text of the banner
             headline_font (str): Font of the headline  Valid supported font like \"Arial\"
-            headline_text (str): The headline text of the banner
+            headline_text (str, none_type): The headline text of the banner
             landing_page_url (str): Web redirection of the landing page url
             layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
             logos ([ImageShape]): Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net

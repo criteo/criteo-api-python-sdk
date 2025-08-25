@@ -546,7 +546,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | External LineItemId for productButton delete
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton delete
     product_button_id = "product-button-id_example" # str | productButtonId used for delete
 
     # example passing only required values which don't have defaults set
@@ -562,7 +562,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| External LineItemId for productButton delete |
+ **line_item_id** | **str**| LineItemId for productButton delete |
  **product_button_id** | **str**| productButtonId used for delete |
 
 ### Return type
@@ -925,7 +925,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | External LineItemId for productButton retrieval
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
     product_button_id = "product-button-id_example" # str | productButtonId used for retrieval
 
     # example passing only required values which don't have defaults set
@@ -941,7 +941,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| External LineItemId for productButton retrieval |
+ **line_item_id** | **str**| LineItemId for productButton retrieval |
  **product_button_id** | **str**| productButtonId used for retrieval |
 
 ### Return type
@@ -1011,7 +1011,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | External LineItemId for productButton retrieval
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
 
     # example passing only required values which don't have defaults set
     try:
@@ -1026,7 +1026,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| External LineItemId for productButton retrieval |
+ **line_item_id** | **str**| LineItemId for productButton retrieval |
 
 ### Return type
 
@@ -2312,7 +2312,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | External LineItemId for productButton retrieval
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
     product_button_request_list_request = ProductButtonRequestListRequest(
         data=[
             ResourceOfProductButtonRequest(
@@ -2351,7 +2351,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| External LineItemId for productButton retrieval |
+ **line_item_id** | **str**| LineItemId for productButton retrieval |
  **product_button_request_list_request** | [**ProductButtonRequestListRequest**](ProductButtonRequestListRequest.md)| List of Product Buttons to append | [optional]
 
 ### Return type
@@ -3199,7 +3199,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | External LineItemId for productButton update
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton update
     product_button_id = "product-button-id_example" # str | productButtonId used for update
     product_button_request_request = ProductButtonRequestRequest(
         data=ResourceOfProductButtonRequest(
@@ -3237,7 +3237,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| External LineItemId for productButton update |
+ **line_item_id** | **str**| LineItemId for productButton update |
  **product_button_id** | **str**| productButtonId used for update |
  **product_button_request_request** | [**ProductButtonRequestRequest**](ProductButtonRequestRequest.md)| Specific Product button update info | [optional]
 
