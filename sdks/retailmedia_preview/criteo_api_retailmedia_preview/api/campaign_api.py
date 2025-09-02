@@ -329,7 +329,6 @@ class CampaignApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/json',
                     'text/json',
                     'application/*+json'
@@ -1694,7 +1693,7 @@ class CampaignApi(object):
         )
         self.post_api_external_v2_campaign_preferred_line_items_by_campaign_id_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (PreferredLineItemV2Response,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2501,7 +2500,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'line_item_id':
-                        (str,),
+                        (int,),
                     'value_resource_input_of_sponsored_products_line_item_update_request_model':
                         (ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel,),
                 },
@@ -2520,7 +2519,6 @@ class CampaignApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/json',
                     'text/json',
                     'application/*+json'
@@ -4843,7 +4841,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            PreferredLineItemV2Response
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5814,7 +5812,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): The external line item ID of the sponsored products line item.
+            line_item_id (int): The external line item ID of the sponsored products line item.
 
         Keyword Args:
             value_resource_input_of_sponsored_products_line_item_update_request_model (ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel): An update request containing all details of the requested update.. [optional]

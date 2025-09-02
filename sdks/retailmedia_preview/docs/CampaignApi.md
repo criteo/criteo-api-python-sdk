@@ -429,9 +429,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             attributes=SponsoredProductsLineItemCreateRequestModel(
                 bid_strategy="conversion",
                 budget=3.14,
-                conquesting_adstrategy_enabled=True,
                 daily_pacing=3.14,
-                defensive_adstrategy_enabled=True,
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 flight_schedule=FlightSchedule(
                     legs=[
@@ -443,10 +441,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                     ],
                 ),
                 is_auto_daily_pacing=False,
+                keyword_strategy="conquesting",
                 max_bid=3.14,
                 monthly_pacing=3.14,
                 name="name_example",
-                neutral_adstrategy_enabled=True,
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 target_bid=3.14,
                 target_retailer_id="target_retailer_id_example",
@@ -489,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: application/json
 
 
@@ -2603,7 +2601,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_api_external_v2_campaign_preferred_line_items_by_campaign_id**
-> post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
+> PreferredLineItemV2Response post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
 
 
 
@@ -2683,14 +2681,16 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
+        api_response = api_instance.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->post_api_external_v2_campaign_preferred_line_items_by_campaign_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_instance.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request=preferred_line_item_create_model_v2_request)
+        api_response = api_instance.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request=preferred_line_item_create_model_v2_request)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->post_api_external_v2_campaign_preferred_line_items_by_campaign_id: %s\n" % e)
 ```
@@ -2705,7 +2705,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
 
 ### Authorization
 
@@ -3991,7 +3991,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "lineItemId_example" # str | The external line item ID of the sponsored products line item.
+    line_item_id = 1 # int | The external line item ID of the sponsored products line item.
     value_resource_input_of_sponsored_products_line_item_update_request_model = ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel(
         data=ValueResourceOfSponsoredProductsLineItemUpdateRequestModel(
             attributes=SponsoredProductsLineItemUpdateRequestModel(
@@ -4041,7 +4041,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The external line item ID of the sponsored products line item. |
+ **line_item_id** | **int**| The external line item ID of the sponsored products line item. |
  **value_resource_input_of_sponsored_products_line_item_update_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel.md)| An update request containing all details of the requested update. | [optional]
 
 ### Return type
@@ -4054,7 +4054,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: application/json
 
 

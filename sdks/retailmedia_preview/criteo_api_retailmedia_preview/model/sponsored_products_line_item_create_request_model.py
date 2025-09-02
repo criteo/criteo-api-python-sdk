@@ -65,6 +65,12 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'CLICKS': "clicks",
             'REVENUE': "revenue",
         },
+        ('keyword_strategy',): {
+            'None': None,
+            'CONQUESTING': "conquesting",
+            'GENERICANDBRANDED': "genericAndBranded",
+            'GENERICBRANDEDANDCONQUESTING': "genericBrandedAndConquesting",
+        },
     }
 
     validations = {
@@ -95,15 +101,13 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'target_retailer_id': (str,),  # noqa: E501
             'bid_strategy': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
-            'conquesting_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'daily_pacing': (float, none_type,),  # noqa: E501
-            'defensive_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'end_date': (datetime, none_type,),  # noqa: E501
             'flight_schedule': (FlightSchedule,),  # noqa: E501
             'is_auto_daily_pacing': (bool,),  # noqa: E501
+            'keyword_strategy': (str, none_type,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
-            'neutral_adstrategy_enabled': (bool, none_type,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
         }
 
@@ -118,15 +122,13 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         'target_retailer_id': 'targetRetailerId',  # noqa: E501
         'bid_strategy': 'bidStrategy',  # noqa: E501
         'budget': 'budget',  # noqa: E501
-        'conquesting_adstrategy_enabled': 'conquestingAdstrategyEnabled',  # noqa: E501
         'daily_pacing': 'dailyPacing',  # noqa: E501
-        'defensive_adstrategy_enabled': 'defensiveAdstrategyEnabled',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'flight_schedule': 'flightSchedule',  # noqa: E501
         'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
+        'keyword_strategy': 'keywordStrategy',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'neutral_adstrategy_enabled': 'neutralAdstrategyEnabled',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
     }
 
@@ -141,9 +143,9 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         """SponsoredProductsLineItemCreateRequestModel - a model defined in OpenAPI
 
         Args:
-            name (str):
-            start_date (datetime):
-            target_retailer_id (str):
+            name (str): The name of the line item.
+            start_date (datetime): The date and time when the line item should start running.
+            target_retailer_id (str): The ID of the retailer to target for this line item.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -176,18 +178,16 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            defensive_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
+            bid_strategy (str): The bidding strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
+            daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
+            end_date (datetime, none_type): The date and time when the line item should stop running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
-            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
-            max_bid (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            neutral_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
-            target_bid (float, none_type): [optional]  # noqa: E501
+            is_auto_daily_pacing (bool): Indicates whether automatic daily pacing is enabled.  Default value is false.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
+            max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
+            monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
+            target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,9 +246,9 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         """SponsoredProductsLineItemCreateRequestModel - a model defined in OpenAPI
 
         Args:
-            name (str):
-            start_date (datetime):
-            target_retailer_id (str):
+            name (str): The name of the line item.
+            start_date (datetime): The date and time when the line item should start running.
+            target_retailer_id (str): The ID of the retailer to target for this line item.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -281,18 +281,16 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            conquesting_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            defensive_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
+            bid_strategy (str): The bidding strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
+            daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
+            end_date (datetime, none_type): The date and time when the line item should stop running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
-            is_auto_daily_pacing (bool): [optional] if omitted the server will use the default value of False  # noqa: E501
-            max_bid (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
-            neutral_adstrategy_enabled (bool, none_type): [optional]  # noqa: E501
-            target_bid (float, none_type): [optional]  # noqa: E501
+            is_auto_daily_pacing (bool): Indicates whether automatic daily pacing is enabled.  Default value is false.. [optional] if omitted the server will use the default value of False  # noqa: E501
+            keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
+            max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
+            monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
+            target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

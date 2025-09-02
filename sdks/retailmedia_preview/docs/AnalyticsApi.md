@@ -77,6 +77,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ],
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 format="json-compact",
+                media_type="all",
                 metrics=[
                     "impressions",
                 ],
@@ -199,6 +200,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ids=[
                     "ids_example",
                 ],
+                media_type="all",
                 metrics=[
                     "impressions",
                 ],
@@ -310,6 +312,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     async_fill_rate_report_request = AsyncFillRateReportRequest(
         data=AsyncFillRateReportResource(
             attributes=AsyncFillRateReport(
+                ad_server_type="all",
                 dimensions=[
                     "date",
                 ],
@@ -428,6 +431,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ids=[
                     "ids_example",
                 ],
+                media_type="all",
                 metrics=[
                     "impressions",
                 ],
@@ -677,6 +681,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 line_item_ids=[
                     "line_item_ids_example",
                 ],
+                media_type="all",
                 metrics=[
                     "attributedUnits",
                 ],

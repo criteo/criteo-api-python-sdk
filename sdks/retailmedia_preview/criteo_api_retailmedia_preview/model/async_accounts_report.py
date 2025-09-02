@@ -88,6 +88,7 @@ class AsyncAccountsReport(ModelNormal):
             'ADVPRODUCTID': "advProductId",
             'ADVPRODUCTNAME': "advProductName",
             'SALESCHANNEL': "salesChannel",
+            'MEDIATYPE': "mediaType",
             'ENVIRONMENT': "environment",
             'PAGETYPENAME': "pageTypeName",
             'PAGECATEGORY': "pageCategory",
@@ -110,6 +111,12 @@ class AsyncAccountsReport(ModelNormal):
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
+        },
+        ('media_type',): {
+            'UNKNOWN': "unknown",
+            'VIDEO': "video",
+            'DISPLAY': "display",
+            'ALL': "all",
         },
         ('metrics',): {
             'IMPRESSIONS': "impressions",
@@ -149,6 +156,9 @@ class AsyncAccountsReport(ModelNormal):
             'NEWTOBRANDATTRIBUTEDUNITSRATE': "newToBrandAttributedUnitsRate",
             'UNIQUEVISITORS': "uniqueVisitors",
             'FREQUENCY': "frequency",
+            'WINRATE': "winRate",
+            'SAMPLEDBIDSWON': "sampledBidsWon",
+            'SAMPLEDBIDSPARTICIPATED': "sampledBidsParticipated",
         },
         ('report_type',): {
             'SUMMARY': "summary",
@@ -223,6 +233,7 @@ class AsyncAccountsReport(ModelNormal):
             'click_attribution_window': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'format': (str,),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'report_type': (str,),  # noqa: E501
             'sales_channel': (str,),  # noqa: E501
@@ -247,6 +258,7 @@ class AsyncAccountsReport(ModelNormal):
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'format': 'format',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'report_type': 'reportType',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
@@ -308,6 +320,7 @@ class AsyncAccountsReport(ModelNormal):
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
             report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
@@ -414,6 +427,7 @@ class AsyncAccountsReport(ModelNormal):
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
             report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501

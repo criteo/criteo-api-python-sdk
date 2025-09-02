@@ -66,6 +66,7 @@ class AsyncFillRateReport(ModelNormal):
             'SERVEDCATEGORY': "servedCategory",
             'RETAILERCATEGORYID': "retailerCategoryId",
             'RETAILERCATEGORYNAME': "retailerCategoryName",
+            'ADSERVERTYPE': "adServerType",
         },
         ('metrics',): {
             'PAGEVIEWS': "pageViews",
@@ -87,6 +88,11 @@ class AsyncFillRateReport(ModelNormal):
             'REVENUE': "revenue",
             'WORKINGMEDIA': "workingMedia",
             'NETREVENUE': "netRevenue",
+        },
+        ('ad_server_type',): {
+            'ALL': "all",
+            'GAM': "gam",
+            'CRITEO': "criteo",
         },
         ('format',): {
             'JSON': "json",
@@ -131,6 +137,7 @@ class AsyncFillRateReport(ModelNormal):
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'supply_account_ids': ([str],),  # noqa: E501
+            'ad_server_type': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
         }
@@ -146,6 +153,7 @@ class AsyncFillRateReport(ModelNormal):
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'supply_account_ids': 'supplyAccountIds',  # noqa: E501
+        'ad_server_type': 'adServerType',  # noqa: E501
         'format': 'format',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
@@ -198,6 +206,7 @@ class AsyncFillRateReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_server_type (str): Filter on the type of the ad server: criteo, gam, all. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
@@ -297,6 +306,7 @@ class AsyncFillRateReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_server_type (str): Filter on the type of the ad server: criteo, gam, all. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """

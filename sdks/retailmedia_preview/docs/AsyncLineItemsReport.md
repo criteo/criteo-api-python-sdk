@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **format** | **str** | Format of the output | [optional]  if omitted the server will use the default value of "json-compact"
 **id** | **str** | Line Item id to report on | [optional] 
 **ids** | **[str]** | Line Item ids to report on | [optional] 
+**media_type** | **str** | Filter on the type of media: unknown, display, video | [optional]  if omitted the server will use the default value of "all"
 **metrics** | **[str]** | List of metrics to report on | [optional] 
 **report_type** | **str** | Type of report, if no dimensions and metrics are provided, falls back to summary reportType | [optional]  if omitted the server will use the default value of "summary"
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"

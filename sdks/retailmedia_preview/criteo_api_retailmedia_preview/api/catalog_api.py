@@ -25,6 +25,10 @@ from criteo_api_retailmedia_preview.model.batch_accepted_response import BatchAc
 from criteo_api_retailmedia_preview.model.fail_response import FailResponse
 from criteo_api_retailmedia_preview.model.products_custom_batch_request import ProductsCustomBatchRequest
 from criteo_api_retailmedia_preview.model.report_ok_response import ReportOkResponse
+from criteo_api_retailmedia_preview.model.value_resource_input_load_sku_offers_request import ValueResourceInputLoadSkuOffersRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_set_sku_buy_box_winners_request import ValueResourceInputSetSkuBuyBoxWinnersRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_update_offers_request import ValueResourceInputUpdateOffersRequest
+from criteo_api_retailmedia_preview.model.value_resource_outcome_async_job_response import ValueResourceOutcomeAsyncJobResponse
 
 
 class CatalogApi(object):
@@ -38,6 +42,195 @@ class CatalogApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.offer_load_v1_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeAsyncJobResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailerId}/offers/load',
+                'operation_id': 'offer_load_v1',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'value_resource_input_load_sku_offers_request',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'value_resource_input_load_sku_offers_request':
+                        (ValueResourceInputLoadSkuOffersRequest,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailerId',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'value_resource_input_load_sku_offers_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.offer_set_bbw_v1_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeAsyncJobResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailerId}/offers/set-buy-box-winners',
+                'operation_id': 'offer_set_bbw_v1',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'value_resource_input_set_sku_buy_box_winners_request',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'value_resource_input_set_sku_buy_box_winners_request':
+                        (ValueResourceInputSetSkuBuyBoxWinnersRequest,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailerId',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'value_resource_input_set_sku_buy_box_winners_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.offer_update_v1_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeAsyncJobResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailerId}/offers/update',
+                'operation_id': 'offer_update_v1',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'value_resource_input_update_offers_request',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'value_resource_input_update_offers_request':
+                        (ValueResourceInputUpdateOffersRequest,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailerId',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'value_resource_input_update_offers_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'text/plain',
+                    'application/json',
+                    'text/json'
+                ],
+                'content_type': [
+                    'application/json-patch+json',
+                    'application/json',
+                    'text/json',
+                    'application/*+json'
+                ]
+            },
+            api_client=api_client
+        )
         self.preview_retail_media_catalog_products_batch_post_endpoint = _Endpoint(
             settings={
                 'response_type': (BatchAcceptedResponse,),
@@ -143,6 +336,258 @@ class CatalogApi(object):
             },
             api_client=api_client
         )
+
+    def offer_load_v1(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """offer_load_v1  # noqa: E501
+
+        Replace the offers for one or more SKUs with a snapshot of the new offers for each respective SKU  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.offer_load_v1(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (int): The retailer for which these offers will be loaded
+
+        Keyword Args:
+            value_resource_input_load_sku_offers_request (ValueResourceInputLoadSkuOffersRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeAsyncJobResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.offer_load_v1_endpoint.call_with_http_info(**kwargs)
+
+    def offer_set_bbw_v1(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """offer_set_bbw_v1  # noqa: E501
+
+        Update the buy box winner for one or more SKUs  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.offer_set_bbw_v1(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (int): The retailer for which these buy box winners will be set
+
+        Keyword Args:
+            value_resource_input_set_sku_buy_box_winners_request (ValueResourceInputSetSkuBuyBoxWinnersRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeAsyncJobResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.offer_set_bbw_v1_endpoint.call_with_http_info(**kwargs)
+
+    def offer_update_v1(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """offer_update_v1  # noqa: E501
+
+        Update one or more offers by replacing each offer's price and availability with the given values  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.offer_update_v1(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (int): The retailer for which these offers will be updated
+
+        Keyword Args:
+            value_resource_input_update_offers_request (ValueResourceInputUpdateOffersRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeAsyncJobResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.offer_update_v1_endpoint.call_with_http_info(**kwargs)
 
     def preview_retail_media_catalog_products_batch_post(
         self,

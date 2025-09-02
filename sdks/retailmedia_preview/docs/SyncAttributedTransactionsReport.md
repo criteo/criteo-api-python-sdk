@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
 **dimensions** | **[str]** | List of dimensions to report on | [optional] 
 **line_item_ids** | **[str]** | Line item ids to filter | [optional] 
+**media_type** | **str** | Filter on the type of media: unknown, display, video | [optional]  if omitted the server will use the default value of "all"
 **metrics** | **[str]** | List of metrics to report on | [optional] 
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"

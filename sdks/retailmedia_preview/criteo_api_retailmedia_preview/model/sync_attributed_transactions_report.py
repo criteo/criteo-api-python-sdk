@@ -98,6 +98,12 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'ACTIVITYSELLERID': "activitySellerId",
             'ACTIVITYSELLERNAME': "activitySellerName",
         },
+        ('media_type',): {
+            'UNKNOWN': "unknown",
+            'VIDEO': "video",
+            'DISPLAY': "display",
+            'ALL': "all",
+        },
         ('metrics',): {
             'ATTRIBUTEDUNITS': "attributedUnits",
             'ATTRIBUTEDSALES': "attributedSales",
@@ -148,6 +154,7 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'click_attribution_window': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'line_item_ids': ([str],),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'sales_channel': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
@@ -168,6 +175,7 @@ class SyncAttributedTransactionsReport(ModelNormal):
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'line_item_ids': 'lineItemIds',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'sales_channel': 'salesChannel',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
@@ -225,6 +233,7 @@ class SyncAttributedTransactionsReport(ModelNormal):
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
@@ -327,6 +336,7 @@ class SyncAttributedTransactionsReport(ModelNormal):
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
