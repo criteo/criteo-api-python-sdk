@@ -107,7 +107,7 @@ class AdaptiveAttributes(ModelNormal):
             'colors': (AdaptiveColors,),  # noqa: E501
             'description_font': (str, none_type,),  # noqa: E501
             'description_text': (str, none_type,),  # noqa: E501
-            'headline_font': (str,),  # noqa: E501
+            'headline_font': (str, none_type,),  # noqa: E501
             'headline_text': (str, none_type,),  # noqa: E501
             'landing_page_url': (str,),  # noqa: E501
             'layouts': ([str],),  # noqa: E501
@@ -152,7 +152,7 @@ class AdaptiveAttributes(ModelNormal):
             colors (AdaptiveColors):
             description_font (str, none_type): Font of the description  Valid supported font like \"Arial\"
             description_text (str, none_type): The description text of the banner
-            headline_font (str): Font of the headline  Valid supported font like \"Arial\"
+            headline_font (str, none_type): Font of the headline  Valid supported font like \"Arial\"
             headline_text (str, none_type): The headline text of the banner
             landing_page_url (str): Web redirection of the landing page url
             layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".
@@ -260,7 +260,7 @@ class AdaptiveAttributes(ModelNormal):
             colors (AdaptiveColors):
             description_font (str, none_type): Font of the description  Valid supported font like \"Arial\"
             description_text (str, none_type): The description text of the banner
-            headline_font (str): Font of the headline  Valid supported font like \"Arial\"
+            headline_font (str, none_type): Font of the headline  Valid supported font like \"Arial\"
             headline_text (str, none_type): The headline text of the banner
             landing_page_url (str): Web redirection of the landing page url
             layouts ([str]): The Adaptive layouts that are enabled.  It can contain any of the following values: \"Editorial\", “Montage“, \"InBannerVideo\".

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **colors** | [**AdaptiveColors**](AdaptiveColors.md) |  | 
 **description_font** | **str, none_type** | Font of the description  Valid supported font like \&quot;Arial\&quot; | 
 **description_text** | **str, none_type** | The description text of the banner | 
-**headline_font** | **str** | Font of the headline  Valid supported font like \&quot;Arial\&quot; | 
+**headline_font** | **str, none_type** | Font of the headline  Valid supported font like \&quot;Arial\&quot; | 
 **headline_text** | **str, none_type** | The headline text of the banner | 
 **landing_page_url** | **str** | Web redirection of the landing page url | 
 **layouts** | **[str]** | The Adaptive layouts that are enabled.  It can contain any of the following values: \&quot;Editorial\&quot;, “Montage“, \&quot;InBannerVideo\&quot;. | 
