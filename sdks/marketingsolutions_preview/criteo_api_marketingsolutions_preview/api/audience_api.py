@@ -47,7 +47,6 @@ from criteo_api_marketingsolutions_preview.model.contact_list_statistics_entity_
 from criteo_api_marketingsolutions_preview.model.contactlist_amendment_request import ContactlistAmendmentRequest
 from criteo_api_marketingsolutions_preview.model.contactlist_with_attributes_amendment_request import ContactlistWithAttributesAmendmentRequest
 from criteo_api_marketingsolutions_preview.model.delete_audience_contact_list_response import DeleteAudienceContactListResponse
-from criteo_api_marketingsolutions_preview.model.error_code_response import ErrorCodeResponse
 from criteo_api_marketingsolutions_preview.model.in_market_audience_segment_brand_entity_v1_list_response import InMarketAudienceSegmentBrandEntityV1ListResponse
 from criteo_api_marketingsolutions_preview.model.in_market_audience_segment_interest_entity_v1_list_response import InMarketAudienceSegmentInterestEntityV1ListResponse
 from criteo_api_marketingsolutions_preview.model.modify_audience_response import ModifyAudienceResponse
@@ -109,15 +108,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -167,15 +161,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -225,15 +214,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -283,15 +267,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -341,15 +320,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -399,15 +373,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -457,15 +426,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -515,15 +479,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -573,15 +532,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -631,15 +585,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -690,9 +639,7 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -750,9 +697,7 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -810,9 +755,7 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1049,15 +992,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1123,15 +1061,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client

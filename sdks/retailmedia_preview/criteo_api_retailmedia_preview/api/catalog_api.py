@@ -22,7 +22,6 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_preview.model.batch_accepted_response import BatchAcceptedResponse
-from criteo_api_retailmedia_preview.model.fail_response import FailResponse
 from criteo_api_retailmedia_preview.model.products_custom_batch_request import ProductsCustomBatchRequest
 from criteo_api_retailmedia_preview.model.report_ok_response import ReportOkResponse
 from criteo_api_retailmedia_preview.model.value_resource_input_load_sku_offers_request import ValueResourceInputLoadSkuOffersRequest
@@ -92,15 +91,10 @@ class CatalogApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -155,15 +149,10 @@ class CatalogApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -218,15 +207,10 @@ class CatalogApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client

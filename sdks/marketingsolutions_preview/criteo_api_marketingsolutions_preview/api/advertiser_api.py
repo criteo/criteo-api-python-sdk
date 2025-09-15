@@ -76,9 +76,7 @@ class AdvertiserApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
-                    'text/plain',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -130,9 +128,7 @@ class AdvertiserApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
-                    'text/plain',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -177,9 +173,7 @@ class AdvertiserApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
-                    'text/plain',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },

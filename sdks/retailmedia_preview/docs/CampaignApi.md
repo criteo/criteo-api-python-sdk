@@ -5,18 +5,15 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /preview/retail-media/line-items/{id}/keywords/add-remove | 
+[**append_product_button_by_line_item_id**](CampaignApi.md#append_product_button_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/append | 
-[**categories_search_v1**](CampaignApi.md#categories_search_v1) | **POST** /preview/retail-media/retailers/{retailerId}/categories/search | 
 [**create_auction_line_item_v2**](CampaignApi.md#create_auction_line_item_v2) | **POST** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
-[**delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id**](CampaignApi.md#delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
+[**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
+[**delete_product_button_by_line_item_and_product_button_id**](CampaignApi.md#delete_product_button_by_line_item_and_product_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/delete | 
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /preview/retail-media/line-items/{id}/keywords | 
 [**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /preview/retail-media/line-items/{line-item-id}/products | 
-[**get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id**](CampaignApi.md#get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
-[**get_api_external_v1_line_item_product_buttons_by_line_item_id**](CampaignApi.md#get_api_external_v1_line_item_product_buttons_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons | 
-[**get_api_external_v2_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#get_api_external_v2_campaign_preferred_line_items_by_campaign_id) | **GET** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**get_api_external_v2_catalog_status_by_catalog_id**](CampaignApi.md#get_api_external_v2_catalog_status_by_catalog_id) | **GET** /preview/retail-media/catalogs/{catalogId}/status | 
-[**get_api_external_v2_preferred_line_item_by_line_item_id**](CampaignApi.md#get_api_external_v2_preferred_line_item_by_line_item_id) | **GET** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**get_api_v1_external_retailer_brands_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_brands_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailerId}/brands | 
 [**get_api_v1_external_retailer_by_retailer_id_seller_by_seller**](CampaignApi.md#get_api_v1_external_retailer_by_retailer_id_seller_by_seller) | **GET** /preview/retail-media/retailers/{retailerId}/sellers/{seller} | 
 [**get_api_v1_external_retailer_category_cpc_rates_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_category_cpc_rates_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/cpc-rates | 
@@ -24,26 +21,29 @@ Method | HTTP request | Description
 [**get_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api_v2_external_account_by_account_id_creativescreative_id) | **GET** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_auction_line_item_v2**](CampaignApi.md#get_auction_line_item_v2) | **GET** /preview/retail-media/auction-line-items/{lineItemId} | 
 [**get_auction_line_items_by_campaign_id_v2**](CampaignApi.md#get_auction_line_items_by_campaign_id_v2) | **GET** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
+[**get_preferred_line_items_by_campaign_id**](CampaignApi.md#get_preferred_line_items_by_campaign_id) | **GET** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
+[**get_preferred_line_items_by_line_item_id**](CampaignApi.md#get_preferred_line_items_by_line_item_id) | **GET** /preview/retail-media/preferred-line-items/{line-item-id} | 
+[**get_product_button_by_line_item_and_product_button_id**](CampaignApi.md#get_product_button_by_line_item_and_product_button_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
+[**get_product_buttons_by_line_item_id**](CampaignApi.md#get_product_buttons_by_line_item_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons | 
 [**get_recommended_categories**](CampaignApi.md#get_recommended_categories) | **POST** /preview/retail-media/retailers/{retailerId}/recommend-categories | 
 [**in_review_report_v1**](CampaignApi.md#in_review_report_v1) | **GET** /preview/retail-media/accounts/{account-id}/keywords/in-review-report | 
 [**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/pause | 
-[**post_api_external_v1_line_item_product_buttons_create_by_line_item_id**](CampaignApi.md#post_api_external_v1_line_item_product_buttons_create_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**post_api_external_v2_account_brand_catalog_export_by_account_id**](CampaignApi.md#post_api_external_v2_account_brand_catalog_export_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/brand-catalog-export | 
 [**post_api_external_v2_account_seller_catalog_export_by_account_id**](CampaignApi.md#post_api_external_v2_account_seller_catalog_export_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/seller-catalog-export | 
-[**post_api_external_v2_campaign_preferred_line_items_by_campaign_id**](CampaignApi.md#post_api_external_v2_campaign_preferred_line_items_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**post_api_v1_external_catalogs_sku_retrieval**](CampaignApi.md#post_api_v1_external_catalogs_sku_retrieval) | **POST** /preview/retail-media/catalogs/sku-retrieval | 
 [**post_api_v1_external_catalogs_sku_search**](CampaignApi.md#post_api_v1_external_catalogs_sku_search) | **POST** /preview/retail-media/catalogs/sku-search | 
 [**post_api_v2_external_account_creatives_by_account_id**](CampaignApi.md#post_api_v2_external_account_creatives_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
 [**post_api_v2_external_account_creatives_search_by_account_id**](CampaignApi.md#post_api_v2_external_account_creatives_search_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives/search | 
-[**put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id**](CampaignApi.md#put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
-[**put_api_external_v2_preferred_line_item_by_line_item_id**](CampaignApi.md#put_api_external_v2_preferred_line_item_by_line_item_id) | **PUT** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**put_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#put_api_v2_external_account_by_account_id_creativescreative_id) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**recommended_keywords**](CampaignApi.md#recommended_keywords) | **POST** /preview/retail-media/retailers/{retailerId}/recommend-keywords | 
-[**search_brands_by_name_async_v1**](CampaignApi.md#search_brands_by_name_async_v1) | **POST** /preview/retail-media/brands/search | 
+[**search_brands**](CampaignApi.md#search_brands) | **POST** /preview/retail-media/brands/search | 
+[**search_category**](CampaignApi.md#search_category) | **POST** /preview/retail-media/retailers/{retailerId}/categories/search | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
 [**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/unpause | 
 [**update_auction_line_item_v2**](CampaignApi.md#update_auction_line_item_v2) | **PUT** /preview/retail-media/auction-line-items/{lineItemId} | 
 [**update_keyword_reviews_v1**](CampaignApi.md#update_keyword_reviews_v1) | **POST** /preview/retail-media/line-items/{line-item-id}/keywords/review | 
+[**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /preview/retail-media/preferred-line-items/{line-item-id} | 
+[**update_product_button_by_line_item_and_product_button_id**](CampaignApi.md#update_product_button_by_line_item_and_product_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 
 
 # **add_remove_keywords**
@@ -152,7 +152,116 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **append_product_button_by_line_item_id**
+> ProductButtonResponseListResponse append_product_button_by_line_item_id(line_item_id)
+
+
+
+Add Specific Product Buttons
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.product_button_request_list_request import ProductButtonRequestListRequest
+from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
+    product_button_request_list_request = ProductButtonRequestListRequest(
+        data=[
+            ResourceOfProductButtonRequest(
+                attributes=ProductButtonRequest(
+                    background_image="background_image_example",
+                    is_mandatory=1,
+                    name="name_example",
+                    skus=[
+                        "skus_example",
+                    ],
+                ),
+                id="id_example",
+                type="type_example",
+            ),
+        ],
+    ) # ProductButtonRequestListRequest | List of Product Buttons to append (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.append_product_button_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->append_product_button_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.append_product_button_by_line_item_id(line_item_id, product_button_request_list_request=product_button_request_list_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->append_product_button_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| LineItemId for productButton retrieval |
+ **product_button_request_list_request** | [**ProductButtonRequestListRequest**](ProductButtonRequestListRequest.md)| List of Product Buttons to append | [optional]
+
+### Return type
+
+[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProductButtons added |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -261,119 +370,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Promoted products appended to the line item with warnings |  -  |
 **204** | Promoted products appended to the line item |  -  |
-**400** | Invalid request body |  -  |
-**403** | Invalid external line item ID |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **categories_search_v1**
-> EntityResourceCollectionOutcomeCategory202204Metadata categories_search_v1(retailer_id)
-
-
-
-Search a retailer categories by given text substring and category ids.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204_metadata import EntityResourceCollectionOutcomeCategory202204Metadata
-from criteo_api_retailmedia_preview.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
-from criteo_api_retailmedia_preview.model.outcome import Outcome
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | Retailer id.
-    limit = 50 # int | Limit of the search result. (optional) if omitted the server will use the default value of 50
-    offset = 0 # int | Offset of the search result. (optional) if omitted the server will use the default value of 0
-    value_resource_input_categories_search_request_v1 = ValueResourceInputCategoriesSearchRequestV1(
-        data=ValueResourceCategoriesSearchRequestV1(
-            attributes=CategoriesSearchRequestV1(
-                category_ids=[
-                    "category_ids_example",
-                ],
-                text_substring="text_substring_example",
-            ),
-            type="type_example",
-        ),
-    ) # ValueResourceInputCategoriesSearchRequestV1 | Request of categories search. (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.categories_search_v1(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->categories_search_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.categories_search_v1(retailer_id, limit=limit, offset=offset, value_resource_input_categories_search_request_v1=value_resource_input_categories_search_request_v1)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->categories_search_v1: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| Retailer id. |
- **limit** | **int**| Limit of the search result. | [optional] if omitted the server will use the default value of 50
- **offset** | **int**| Offset of the search result. | [optional] if omitted the server will use the default value of 0
- **value_resource_input_categories_search_request_v1** | [**ValueResourceInputCategoriesSearchRequestV1**](ValueResourceInputCategoriesSearchRequestV1.md)| Request of categories search. | [optional]
-
-### Return type
-
-[**EntityResourceCollectionOutcomeCategory202204Metadata**](EntityResourceCollectionOutcomeCategory202204Metadata.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -487,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -499,8 +495,133 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id**
-> ProductButtonResponseListResponse delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id)
+# **create_preferred_line_item_by_campaign_id**
+> PreferredLineItemV2Response create_preferred_line_item_by_campaign_id(campaign_id)
+
+
+
+Creates a new preferred line item with the specified settings
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
+from criteo_api_retailmedia_preview.model.preferred_line_item_v2_response import PreferredLineItemV2Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    campaign_id = "campaign-id_example" # str | The given campaign id
+    preferred_line_item_create_model_v2_request = PreferredLineItemCreateModelV2Request(
+        data=InputResourceOfPreferredLineItemCreateModelV2(
+            attributes=PreferredLineItemCreateModelV2(
+                budget=3.14,
+                capping=LineItemCappingV2(
+                    count=1,
+                    type="unknown",
+                ),
+                creative_id="creative_id_example",
+                end_date=dateutil_parser('1970-01-01').date(),
+                name="name_example",
+                pacing="unknown",
+                page=LineItemPageV2(
+                    categories=[
+                        LineItemPageCategoryV2(
+                            category_id="category_id_example",
+                            include_children=True,
+                        ),
+                    ],
+                    page_type="unknown",
+                    search_keywords=[
+                        "search_keywords_example",
+                    ],
+                ),
+                start_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
+                target_retailer_id="target_retailer_id_example",
+            ),
+            type="type_example",
+        ),
+    ) # PreferredLineItemCreateModelV2Request | The line item settings to create a line item with (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_preferred_line_item_by_campaign_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request=preferred_line_item_create_model_v2_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_preferred_line_item_by_campaign_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **str**| The given campaign id |
+ **preferred_line_item_create_model_v2_request** | [**PreferredLineItemCreateModelV2Request**](PreferredLineItemCreateModelV2Request.md)| The line item settings to create a line item with | [optional]
+
+### Return type
+
+[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_product_button_by_line_item_and_product_button_id**
+> ProductButtonResponseListResponse delete_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
 
 
 
@@ -549,10 +670,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id)
+        api_response = api_instance.delete_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id: %s\n" % e)
+        print("Exception when calling CampaignApi->delete_product_button_by_line_item_and_product_button_id: %s\n" % e)
 ```
 
 
@@ -574,7 +695,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -601,7 +722,6 @@ Remove a collection of promoted products from a line item
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_resource_outcome import ProductResourceOutcome
 from criteo_api_retailmedia_preview.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -679,7 +799,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -687,8 +807,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Promoted products removed from the line item |  -  |
-**400** | Invalid request body |  -  |
-**403** | Invalid external line item ID |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -708,7 +826,6 @@ Fetch keywords associated with the specified line item
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.resource_outcome import ResourceOutcome
 from criteo_api_retailmedia_preview.model.keywords_model_response import KeywordsModelResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -774,7 +891,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -795,7 +911,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
 from criteo_api_retailmedia_preview.model.promoted_product_resource_collection_outcome import PromotedProductResourceCollectionOutcome
-from criteo_api_retailmedia_preview.model.product_resource_outcome import ProductResourceOutcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -874,278 +989,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Promoted products associated with the line item |  -  |
-**403** | Invalid external line item ID |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id**
-> ProductButtonResponseListResponse get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id)
-
-
-
-Get Specific Product Button
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
-    product_button_id = "product-button-id_example" # str | productButtonId used for retrieval
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| LineItemId for productButton retrieval |
- **product_button_id** | **str**| productButtonId used for retrieval |
-
-### Return type
-
-[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ProductButton found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_external_v1_line_item_product_buttons_by_line_item_id**
-> ProductButtonResponseListResponse get_api_external_v1_line_item_product_buttons_by_line_item_id(line_item_id)
-
-
-
-Get LineItem Product Buttons
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_external_v1_line_item_product_buttons_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_external_v1_line_item_product_buttons_by_line_item_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| LineItemId for productButton retrieval |
-
-### Return type
-
-[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ProductButtons found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_external_v2_campaign_preferred_line_items_by_campaign_id**
-> PreferredLineItemV2PagedListResponse get_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
-
-
-
-Gets page of preferred line item objects for the given campaign id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.preferred_line_item_v2_paged_list_response import PreferredLineItemV2PagedListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = "campaign-id_example" # str | The given campaign id
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
-    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_external_v2_campaign_preferred_line_items_by_campaign_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_external_v2_campaign_preferred_line_items_by_campaign_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| The given campaign id |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
-
-### Return type
-
-[**PreferredLineItemV2PagedListResponse**](PreferredLineItemV2PagedListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1222,7 +1065,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1230,93 +1073,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Catalog request found. |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_external_v2_preferred_line_item_by_line_item_id**
-> PreferredLineItemV2Response get_api_external_v2_preferred_line_item_by_line_item_id(line_item_id)
-
-
-
-Gets the preferred line item for the given line item id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.preferred_line_item_v2_response import PreferredLineItemV2Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | The given line item id
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_external_v2_preferred_line_item_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_external_v2_preferred_line_item_by_line_item_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The given line item id |
-
-### Return type
-
-[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1595,7 +1351,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | bids found |  -  |
-**403** | forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1680,7 +1435,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | placements records. |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1759,7 +1513,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1954,6 +1708,360 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_preferred_line_items_by_campaign_id**
+> PreferredLineItemV2PagedListResponse get_preferred_line_items_by_campaign_id(campaign_id)
+
+
+
+Gets page of preferred line item objects for the given campaign id
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.preferred_line_item_v2_paged_list_response import PreferredLineItemV2PagedListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    campaign_id = "campaign-id_example" # str | The given campaign id
+    limit_to_id = [
+        "limitToId_example",
+    ] # [str] | The ids that you would like to limit your result set to (optional)
+    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
+    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_preferred_line_items_by_campaign_id(campaign_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_preferred_line_items_by_campaign_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_preferred_line_items_by_campaign_id(campaign_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_preferred_line_items_by_campaign_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **str**| The given campaign id |
+ **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
+ **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
+ **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
+
+### Return type
+
+[**PreferredLineItemV2PagedListResponse**](PreferredLineItemV2PagedListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_preferred_line_items_by_line_item_id**
+> PreferredLineItemV2Response get_preferred_line_items_by_line_item_id(line_item_id)
+
+
+
+Gets the preferred line item for the given line item id
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.preferred_line_item_v2_response import PreferredLineItemV2Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The given line item id
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_preferred_line_items_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_preferred_line_items_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The given line item id |
+
+### Return type
+
+[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_product_button_by_line_item_and_product_button_id**
+> ProductButtonResponseListResponse get_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
+
+
+
+Get Specific Product Button
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
+    product_button_id = "product-button-id_example" # str | productButtonId used for retrieval
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_product_button_by_line_item_and_product_button_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| LineItemId for productButton retrieval |
+ **product_button_id** | **str**| productButtonId used for retrieval |
+
+### Return type
+
+[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProductButton found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_product_buttons_by_line_item_id**
+> ProductButtonResponseListResponse get_product_buttons_by_line_item_id(line_item_id)
+
+
+
+Get LineItem Product Buttons
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_product_buttons_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_product_buttons_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| LineItemId for productButton retrieval |
+
+### Return type
+
+[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProductButtons found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_recommended_categories**
 > EntityResourceCollectionOutcomeCategory202204 get_recommended_categories(retailer_id)
 
@@ -1972,7 +2080,6 @@ import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
 from criteo_api_retailmedia_preview.model.value_resource_input_recommended_categories_request_v1 import ValueResourceInputRecommendedCategoriesRequestV1
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204 import EntityResourceCollectionOutcomeCategory202204
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2047,7 +2154,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -2056,8 +2163,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2146,7 +2251,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -2173,7 +2278,6 @@ Pause a collection of promoted products associated with a line item
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_resource_outcome import ProductResourceOutcome
 from criteo_api_retailmedia_preview.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -2251,7 +2355,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -2259,118 +2363,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Promoted products paused |  -  |
-**400** | Invalid request body |  -  |
-**403** | Invalid external line item ID |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_external_v1_line_item_product_buttons_create_by_line_item_id**
-> ProductButtonResponseListResponse post_api_external_v1_line_item_product_buttons_create_by_line_item_id(line_item_id)
-
-
-
-Add Specific Product Buttons
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_button_request_list_request import ProductButtonRequestListRequest
-from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | LineItemId for productButton retrieval
-    product_button_request_list_request = ProductButtonRequestListRequest(
-        data=[
-            ResourceOfProductButtonRequest(
-                attributes=ProductButtonRequest(
-                    background_image="background_image_example",
-                    is_mandatory=1,
-                    name="name_example",
-                    skus=[
-                        "skus_example",
-                    ],
-                ),
-                id="id_example",
-                type="type_example",
-            ),
-        ],
-    ) # ProductButtonRequestListRequest | List of Product Buttons to append (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_external_v1_line_item_product_buttons_create_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_external_v1_line_item_product_buttons_create_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_external_v1_line_item_product_buttons_create_by_line_item_id(line_item_id, product_button_request_list_request=product_button_request_list_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_external_v1_line_item_product_buttons_create_by_line_item_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| LineItemId for productButton retrieval |
- **product_button_request_list_request** | [**ProductButtonRequestListRequest**](ProductButtonRequestListRequest.md)| List of Product Buttons to append | [optional]
-
-### Return type
-
-[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ProductButtons added |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2474,7 +2466,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -2482,8 +2474,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Catalog request successfully created |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2587,7 +2577,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -2595,134 +2585,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Catalog request successfully created |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_external_v2_campaign_preferred_line_items_by_campaign_id**
-> PreferredLineItemV2Response post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
-
-
-
-Creates a new preferred line item with the specified settings
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
-from criteo_api_retailmedia_preview.model.preferred_line_item_v2_response import PreferredLineItemV2Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = "campaign-id_example" # str | The given campaign id
-    preferred_line_item_create_model_v2_request = PreferredLineItemCreateModelV2Request(
-        data=InputResourceOfPreferredLineItemCreateModelV2(
-            attributes=PreferredLineItemCreateModelV2(
-                budget=3.14,
-                capping=LineItemCappingV2(
-                    count=1,
-                    type="unknown",
-                ),
-                creative_id="creative_id_example",
-                end_date=dateutil_parser('1970-01-01').date(),
-                name="name_example",
-                pacing="unknown",
-                page=LineItemPageV2(
-                    categories=[
-                        LineItemPageCategoryV2(
-                            category_id="category_id_example",
-                            include_children=True,
-                        ),
-                    ],
-                    page_type="unknown",
-                    search_keywords=[
-                        "search_keywords_example",
-                    ],
-                ),
-                start_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
-                target_retailer_id="target_retailer_id_example",
-            ),
-            type="type_example",
-        ),
-    ) # PreferredLineItemCreateModelV2Request | The line item settings to create a line item with (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_external_v2_campaign_preferred_line_items_by_campaign_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request=preferred_line_item_create_model_v2_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_external_v2_campaign_preferred_line_items_by_campaign_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| The given campaign id |
- **preferred_line_item_create_model_v2_request** | [**PreferredLineItemCreateModelV2Request**](PreferredLineItemCreateModelV2Request.md)| The line item settings to create a line item with | [optional]
-
-### Return type
-
-[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3046,7 +2908,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -3142,7 +3004,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -3150,242 +3012,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Creatives found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id**
-> ProductButtonResponseListResponse put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id)
-
-
-
-Update Specific Product Button
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_button_request_request import ProductButtonRequestRequest
-from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | LineItemId for productButton update
-    product_button_id = "product-button-id_example" # str | productButtonId used for update
-    product_button_request_request = ProductButtonRequestRequest(
-        data=ResourceOfProductButtonRequest(
-            attributes=ProductButtonRequest(
-                background_image="background_image_example",
-                is_mandatory=1,
-                name="name_example",
-                skus=[
-                    "skus_example",
-                ],
-            ),
-            id="id_example",
-            type="type_example",
-        ),
-    ) # ProductButtonRequestRequest | Specific Product button update info (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id, product_button_request_request=product_button_request_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| LineItemId for productButton update |
- **product_button_id** | **str**| productButtonId used for update |
- **product_button_request_request** | [**ProductButtonRequestRequest**](ProductButtonRequestRequest.md)| Specific Product button update info | [optional]
-
-### Return type
-
-[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | ProductButton updated |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **put_api_external_v2_preferred_line_item_by_line_item_id**
-> PreferredLineItemV2Response put_api_external_v2_preferred_line_item_by_line_item_id(line_item_id)
-
-
-
-Updates the preferred line item for the given line item id
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.preferred_line_item_v2_response import PreferredLineItemV2Response
-from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | The given line item id
-    preferred_line_item_update_model_v2_request = PreferredLineItemUpdateModelV2Request(
-        data=ResourceOfPreferredLineItemUpdateModelV2(
-            attributes=PreferredLineItemUpdateModelV2(
-                budget=3.14,
-                capping=LineItemCappingV2(
-                    count=1,
-                    type="unknown",
-                ),
-                creative_id="creative_id_example",
-                end_date=dateutil_parser('1970-01-01').date(),
-                name="name_example",
-                pacing="accelerated",
-                page=LineItemPageV2(
-                    categories=[
-                        LineItemPageCategoryV2(
-                            category_id="category_id_example",
-                            include_children=True,
-                        ),
-                    ],
-                    page_type="unknown",
-                    search_keywords=[
-                        "search_keywords_example",
-                    ],
-                ),
-                start_date=dateutil_parser('1970-01-01').date(),
-                status="unknown",
-            ),
-            id="id_example",
-            type="type_example",
-        ),
-    ) # PreferredLineItemUpdateModelV2Request | The line item settings to create a line item with (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.put_api_external_v2_preferred_line_item_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_external_v2_preferred_line_item_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_api_external_v2_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request=preferred_line_item_update_model_v2_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_external_v2_preferred_line_item_by_line_item_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The given line item id |
- **preferred_line_item_update_model_v2_request** | [**PreferredLineItemUpdateModelV2Request**](PreferredLineItemUpdateModelV2Request.md)| The line item settings to create a line item with | [optional]
-
-### Return type
-
-[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3510,7 +3136,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -3539,7 +3165,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
 from criteo_api_retailmedia_preview.model.value_resource_input_recommended_keywords_request_v1 import ValueResourceInputRecommendedKeywordsRequestV1
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_outcome_recommended_keywords_response_v1 import ValueResourceOutcomeRecommendedKeywordsResponseV1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -3624,12 +3249,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_brands_by_name_async_v1**
-> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands_by_name_async_v1()
+# **search_brands**
+> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands()
 
 
 
@@ -3692,10 +3316,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_brands_by_name_async_v1(limit=limit, offset=offset, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
+        api_response = api_instance.search_brands(limit=limit, offset=offset, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->search_brands_by_name_async_v1: %s\n" % e)
+        print("Exception when calling CampaignApi->search_brands: %s\n" % e)
 ```
 
 
@@ -3717,8 +3341,117 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_category**
+> EntityResourceCollectionOutcomeCategory202204Metadata search_category(retailer_id)
+
+
+
+Search a retailer categories by given text substring and category ids.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204_metadata import EntityResourceCollectionOutcomeCategory202204Metadata
+from criteo_api_retailmedia_preview.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | Retailer id.
+    limit = 50 # int | Limit of the search result. (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | Offset of the search result. (optional) if omitted the server will use the default value of 0
+    value_resource_input_categories_search_request_v1 = ValueResourceInputCategoriesSearchRequestV1(
+        data=ValueResourceCategoriesSearchRequestV1(
+            attributes=CategoriesSearchRequestV1(
+                category_ids=[
+                    "category_ids_example",
+                ],
+                text_substring="text_substring_example",
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputCategoriesSearchRequestV1 | Request of categories search. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.search_category(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_category: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.search_category(retailer_id, limit=limit, offset=offset, value_resource_input_categories_search_request_v1=value_resource_input_categories_search_request_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_category: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| Retailer id. |
+ **limit** | **int**| Limit of the search result. | [optional] if omitted the server will use the default value of 50
+ **offset** | **int**| Offset of the search result. | [optional] if omitted the server will use the default value of 0
+ **value_resource_input_categories_search_request_v1** | [**ValueResourceInputCategoriesSearchRequestV1**](ValueResourceInputCategoriesSearchRequestV1.md)| Request of categories search. | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeCategory202204Metadata**](EntityResourceCollectionOutcomeCategory202204Metadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -3834,7 +3567,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3854,7 +3586,6 @@ Un-pause a collection of promoted products associated with a line item
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.product_resource_outcome import ProductResourceOutcome
 from criteo_api_retailmedia_preview.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -3932,7 +3663,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
@@ -3940,8 +3671,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Promoted products un-paused |  -  |
-**400** | Invalid request body |  -  |
-**403** | Invalid external line item ID |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4054,7 +3783,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -4161,8 +3890,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -4170,6 +3899,241 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_preferred_line_item_by_line_item_id**
+> PreferredLineItemV2Response update_preferred_line_item_by_line_item_id(line_item_id)
+
+
+
+Updates the preferred line item for the given line item id
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.preferred_line_item_v2_response import PreferredLineItemV2Response
+from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The given line item id
+    preferred_line_item_update_model_v2_request = PreferredLineItemUpdateModelV2Request(
+        data=ResourceOfPreferredLineItemUpdateModelV2(
+            attributes=PreferredLineItemUpdateModelV2(
+                budget=3.14,
+                capping=LineItemCappingV2(
+                    count=1,
+                    type="unknown",
+                ),
+                creative_id="creative_id_example",
+                end_date=dateutil_parser('1970-01-01').date(),
+                name="name_example",
+                pacing="accelerated",
+                page=LineItemPageV2(
+                    categories=[
+                        LineItemPageCategoryV2(
+                            category_id="category_id_example",
+                            include_children=True,
+                        ),
+                    ],
+                    page_type="unknown",
+                    search_keywords=[
+                        "search_keywords_example",
+                    ],
+                ),
+                start_date=dateutil_parser('1970-01-01').date(),
+                status="unknown",
+            ),
+            id="id_example",
+            type="type_example",
+        ),
+    ) # PreferredLineItemUpdateModelV2Request | The line item settings to create a line item with (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_preferred_line_item_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request=preferred_line_item_update_model_v2_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_preferred_line_item_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The given line item id |
+ **preferred_line_item_update_model_v2_request** | [**PreferredLineItemUpdateModelV2Request**](PreferredLineItemUpdateModelV2Request.md)| The line item settings to create a line item with | [optional]
+
+### Return type
+
+[**PreferredLineItemV2Response**](PreferredLineItemV2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_product_button_by_line_item_and_product_button_id**
+> ProductButtonResponseListResponse update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
+
+
+
+Update Specific Product Button
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.product_button_request_request import ProductButtonRequestRequest
+from criteo_api_retailmedia_preview.model.product_button_response_list_response import ProductButtonResponseListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | LineItemId for productButton update
+    product_button_id = "product-button-id_example" # str | productButtonId used for update
+    product_button_request_request = ProductButtonRequestRequest(
+        data=ResourceOfProductButtonRequest(
+            attributes=ProductButtonRequest(
+                background_image="background_image_example",
+                is_mandatory=1,
+                name="name_example",
+                skus=[
+                    "skus_example",
+                ],
+            ),
+            id="id_example",
+            type="type_example",
+        ),
+    ) # ProductButtonRequestRequest | Specific Product button update info (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_product_button_by_line_item_and_product_button_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, product_button_request_request=product_button_request_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_product_button_by_line_item_and_product_button_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| LineItemId for productButton update |
+ **product_button_id** | **str**| productButtonId used for update |
+ **product_button_request_request** | [**ProductButtonRequestRequest**](ProductButtonRequestRequest.md)| Specific Product button update info | [optional]
+
+### Return type
+
+[**ProductButtonResponseListResponse**](ProductButtonResponseListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | ProductButton updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

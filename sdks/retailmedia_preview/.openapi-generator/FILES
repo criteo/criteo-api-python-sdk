@@ -100,11 +100,9 @@ criteo_api_retailmedia_preview/model/entity_resource_outcome_of_catalog_status_v
 criteo_api_retailmedia_preview/model/entity_resource_outcome_of_sponsored_products_line_item.py
 criteo_api_retailmedia_preview/model/entity_resource_outcome_partner_billing_report_status_v1.py
 criteo_api_retailmedia_preview/model/entity_resource_partner_billing_report_status_v1.py
-criteo_api_retailmedia_preview/model/error_code_response.py
 criteo_api_retailmedia_preview/model/export_report_column.py
 criteo_api_retailmedia_preview/model/export_report_meta_data.py
 criteo_api_retailmedia_preview/model/external_retail_media_child_account.py
-criteo_api_retailmedia_preview/model/fail_response.py
 criteo_api_retailmedia_preview/model/files_variable_value.py
 criteo_api_retailmedia_preview/model/flight_leg.py
 criteo_api_retailmedia_preview/model/flight_schedule.py
@@ -137,7 +135,6 @@ criteo_api_retailmedia_preview/model/nillable_decimal.py
 criteo_api_retailmedia_preview/model/nillable_string.py
 criteo_api_retailmedia_preview/model/offer_load.py
 criteo_api_retailmedia_preview/model/offer_update.py
-criteo_api_retailmedia_preview/model/outcome.py
 criteo_api_retailmedia_preview/model/page_metadata.py
 criteo_api_retailmedia_preview/model/page_of_balance_history_change_data_capture_v1.py
 criteo_api_retailmedia_preview/model/page_type_environment2.py
@@ -163,8 +160,6 @@ criteo_api_retailmedia_preview/model/product_button_request_list_request.py
 criteo_api_retailmedia_preview/model/product_button_request_request.py
 criteo_api_retailmedia_preview/model/product_button_response.py
 criteo_api_retailmedia_preview/model/product_button_response_list_response.py
-criteo_api_retailmedia_preview/model/product_importer_error.py
-criteo_api_retailmedia_preview/model/product_importer_warning.py
 criteo_api_retailmedia_preview/model/product_metadata.py
 criteo_api_retailmedia_preview/model/product_recommendation.py
 criteo_api_retailmedia_preview/model/product_resource_outcome.py
@@ -189,7 +184,6 @@ criteo_api_retailmedia_preview/model/report_detail_errors.py
 criteo_api_retailmedia_preview/model/report_detail_warning.py
 criteo_api_retailmedia_preview/model/report_detail_warnings.py
 criteo_api_retailmedia_preview/model/report_ok_response.py
-criteo_api_retailmedia_preview/model/report_outcome.py
 criteo_api_retailmedia_preview/model/report_response.py
 criteo_api_retailmedia_preview/model/resource_of_balance_response_v2.py
 criteo_api_retailmedia_preview/model/resource_of_brand_preview.py
@@ -447,11 +441,9 @@ docs/EntityResourceOutcomeOfCatalogStatusV2.md
 docs/EntityResourceOutcomeOfSponsoredProductsLineItem.md
 docs/EntityResourceOutcomePartnerBillingReportStatusV1.md
 docs/EntityResourcePartnerBillingReportStatusV1.md
-docs/ErrorCodeResponse.md
 docs/ExportReportColumn.md
 docs/ExportReportMetaData.md
 docs/ExternalRetailMediaChildAccount.md
-docs/FailResponse.md
 docs/FilesVariableValue.md
 docs/FlightLeg.md
 docs/FlightSchedule.md
@@ -486,7 +478,6 @@ docs/NillableString.md
 docs/OfferLoad.md
 docs/OfferUpdate.md
 docs/OnSiteRecommendationApi.md
-docs/Outcome.md
 docs/PageMetadata.md
 docs/PageOfBalanceHistoryChangeDataCaptureV1.md
 docs/PageTypeEnvironment2.md
@@ -512,8 +503,6 @@ docs/ProductButtonRequestListRequest.md
 docs/ProductButtonRequestRequest.md
 docs/ProductButtonResponse.md
 docs/ProductButtonResponseListResponse.md
-docs/ProductImporterError.md
-docs/ProductImporterWarning.md
 docs/ProductMetadata.md
 docs/ProductRecommendation.md
 docs/ProductResourceOutcome.md
@@ -538,7 +527,6 @@ docs/ReportDetailErrors.md
 docs/ReportDetailWarning.md
 docs/ReportDetailWarnings.md
 docs/ReportOkResponse.md
-docs/ReportOutcome.md
 docs/ReportResponse.md
 docs/ResourceOfBalanceResponseV2.md
 docs/ResourceOfBrandPreview.md

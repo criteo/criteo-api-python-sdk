@@ -22,7 +22,6 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_marketingsolutions_preview.model.batch_accepted_response import BatchAcceptedResponse
-from criteo_api_marketingsolutions_preview.model.fail_response import FailResponse
 from criteo_api_marketingsolutions_preview.model.products_custom_batch_request import ProductsCustomBatchRequest
 from criteo_api_marketingsolutions_preview.model.report_ok_response import ReportOkResponse
 from criteo_api_marketingsolutions_preview.model.statistics_ok_response import StatisticsOkResponse

@@ -82,10 +82,7 @@ class OnSiteRecommendationApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client

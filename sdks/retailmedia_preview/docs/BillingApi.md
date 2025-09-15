@@ -27,7 +27,6 @@ import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import billing_api
 from criteo_api_retailmedia_preview.model.value_resource_input_partner_billing_report_request_v1 import ValueResourceInputPartnerBillingReportRequestV1
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_partner_billing_report_status_v1 import EntityResourceOutcomePartnerBillingReportStatusV1
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -100,7 +99,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -108,8 +107,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -129,7 +126,6 @@ Get the output of an existing Partner Billing Report.
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import billing_api
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -194,7 +190,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -215,7 +210,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import billing_api
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_partner_billing_report_status_v1 import EntityResourceOutcomePartnerBillingReportStatusV1
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -272,7 +266,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -280,7 +274,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

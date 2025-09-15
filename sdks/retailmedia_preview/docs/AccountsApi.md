@@ -121,7 +121,6 @@ Get fees for provided accounts
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import accounts_api
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_input_account_fees_search_request import ValueResourceInputAccountFeesSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_private_market_account_fees_and_metadata import ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata
 from pprint import pprint
@@ -193,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 
@@ -202,7 +201,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -223,7 +221,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import accounts_api
 from criteo_api_retailmedia_preview.model.value_resource_outcome_account_fees_update_result import ValueResourceOutcomeAccountFeesUpdateResult
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_input_account_fees_update_request import ValueResourceInputAccountFeesUpdateRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -300,8 +297,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -309,8 +306,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

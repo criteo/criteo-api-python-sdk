@@ -36,7 +36,6 @@ from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_preview.model.keywords_model_response import KeywordsModelResponse
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.placement_preview_list_response import PlacementPreviewListResponse
 from criteo_api_retailmedia_preview.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
 from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
@@ -135,6 +134,65 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.append_product_button_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductButtonResponseListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/create',
+                'operation_id': 'append_product_button_by_line_item_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_request_list_request',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                    'product_button_request_list_request',
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_request_list_request':
+                        (ProductButtonRequestListRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_request_list_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.append_promoted_products_endpoint = _Endpoint(
             settings={
                 'response_type': (ProductResourceOutcome,),
@@ -193,89 +251,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.categories_search_v1_endpoint = _Endpoint(
-            settings={
-                'response_type': (EntityResourceCollectionOutcomeCategory202204Metadata,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/retailers/{retailerId}/categories/search',
-                'operation_id': 'categories_search_v1',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'retailer_id',
-                    'limit',
-                    'offset',
-                    'value_resource_input_categories_search_request_v1',
-                ],
-                'required': [
-                    'retailer_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                    'limit',
-                    'offset',
-                ]
-            },
-            root_map={
-                'validations': {
-                    ('limit',): {
-
-                        'inclusive_maximum': 500,
-                        'inclusive_minimum': 1,
-                    },
-                    ('offset',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'retailer_id':
-                        (int,),
-                    'limit':
-                        (int,),
-                    'offset':
-                        (int,),
-                    'value_resource_input_categories_search_request_v1':
-                        (ValueResourceInputCategoriesSearchRequestV1,),
-                },
-                'attribute_map': {
-                    'retailer_id': 'retailerId',
-                    'limit': 'limit',
-                    'offset': 'offset',
-                },
-                'location_map': {
-                    'retailer_id': 'path',
-                    'limit': 'query',
-                    'offset': 'query',
-                    'value_resource_input_categories_search_request_v1': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
-                ]
-            },
-            api_client=api_client
-        )
         self.create_auction_line_item_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomeOfSponsoredProductsLineItem,),
@@ -329,14 +304,70 @@ class CampaignApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
         )
-        self.delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id_endpoint = _Endpoint(
+        self.create_preferred_line_item_by_campaign_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (PreferredLineItemV2Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/campaigns/{campaign-id}/preferred-line-items',
+                'operation_id': 'create_preferred_line_item_by_campaign_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'campaign_id',
+                    'preferred_line_item_create_model_v2_request',
+                ],
+                'required': [
+                    'campaign_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'campaign_id':
+                        (str,),
+                    'preferred_line_item_create_model_v2_request':
+                        (PreferredLineItemCreateModelV2Request,),
+                },
+                'attribute_map': {
+                    'campaign_id': 'campaign-id',
+                },
+                'location_map': {
+                    'campaign_id': 'path',
+                    'preferred_line_item_create_model_v2_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.delete_product_button_by_line_item_and_product_button_id_endpoint = _Endpoint(
             settings={
                 'response_type': (ProductButtonResponseListResponse,),
                 'auth': [
@@ -344,7 +375,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
-                'operation_id': 'delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id',
+                'operation_id': 'delete_product_button_by_line_item_and_product_button_id',
                 'http_method': 'DELETE',
                 'servers': None,
             },
@@ -388,9 +419,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -445,9 +474,7 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
+                'accept': [],
                 'content_type': [
                     'application/json'
                 ]
@@ -573,202 +600,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (ProductButtonResponseListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
-                'operation_id': 'get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'product_button_id',
-                ],
-                'required': [
-                    'line_item_id',
-                    'product_button_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'product_button_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'line-item-id',
-                    'product_button_id': 'product-button-id',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'product_button_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_external_v1_line_item_product_buttons_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (ProductButtonResponseListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons',
-                'operation_id': 'get_api_external_v1_line_item_product_buttons_by_line_item_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'line-item-id',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_external_v2_campaign_preferred_line_items_by_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PreferredLineItemV2PagedListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/campaigns/{campaign-id}/preferred-line-items',
-                'operation_id': 'get_api_external_v2_campaign_preferred_line_items_by_campaign_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                    'limit_to_id',
-                    'page_index',
-                    'page_size',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                    'page_index',
-                    'page_size',
-                ]
-            },
-            root_map={
-                'validations': {
-                    ('page_index',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
-                    ('page_size',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 1,
-                    },
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                    'limit_to_id':
-                        ([str],),
-                    'page_index':
-                        (int,),
-                    'page_size':
-                        (int,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaign-id',
-                    'limit_to_id': 'limitToId',
-                    'page_index': 'pageIndex',
-                    'page_size': 'pageSize',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                    'limit_to_id': 'query',
-                    'page_index': 'query',
-                    'page_size': 'query',
-                },
-                'collection_format_map': {
-                    'limit_to_id': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_api_external_v2_catalog_status_by_catalog_id_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomeOfCatalogStatusV2,),
@@ -815,63 +646,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_api_external_v2_preferred_line_item_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PreferredLineItemV2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/preferred-line-items/{line-item-id}',
-                'operation_id': 'get_api_external_v2_preferred_line_item_by_line_item_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'line-item-id',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1173,9 +948,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1313,6 +1086,248 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.get_preferred_line_items_by_campaign_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (PreferredLineItemV2PagedListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/campaigns/{campaign-id}/preferred-line-items',
+                'operation_id': 'get_preferred_line_items_by_campaign_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'campaign_id',
+                    'limit_to_id',
+                    'page_index',
+                    'page_size',
+                ],
+                'required': [
+                    'campaign_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'page_index',
+                    'page_size',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('page_index',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                    ('page_size',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'campaign_id':
+                        (str,),
+                    'limit_to_id':
+                        ([str],),
+                    'page_index':
+                        (int,),
+                    'page_size':
+                        (int,),
+                },
+                'attribute_map': {
+                    'campaign_id': 'campaign-id',
+                    'limit_to_id': 'limitToId',
+                    'page_index': 'pageIndex',
+                    'page_size': 'pageSize',
+                },
+                'location_map': {
+                    'campaign_id': 'path',
+                    'limit_to_id': 'query',
+                    'page_index': 'query',
+                    'page_size': 'query',
+                },
+                'collection_format_map': {
+                    'limit_to_id': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_preferred_line_items_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (PreferredLineItemV2Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/preferred-line-items/{line-item-id}',
+                'operation_id': 'get_preferred_line_items_by_line_item_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_product_button_by_line_item_and_product_button_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductButtonResponseListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
+                'operation_id': 'get_product_button_by_line_item_and_product_button_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'required': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                    'product_button_id': 'product-button-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_product_buttons_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductButtonResponseListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons',
+                'operation_id': 'get_product_buttons_by_line_item_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.get_recommended_categories_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceCollectionOutcomeCategory202204,),
@@ -1366,10 +1381,7 @@ class CampaignApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1442,9 +1454,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1499,70 +1509,7 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.post_api_external_v1_line_item_product_buttons_create_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (ProductButtonResponseListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/create',
-                'operation_id': 'post_api_external_v1_line_item_product_buttons_create_by_line_item_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'product_button_request_list_request',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                    'product_button_request_list_request',
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'product_button_request_list_request':
-                        (ProductButtonRequestListRequest,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'line-item-id',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'product_button_request_list_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
+                'accept': [],
                 'content_type': [
                     'application/json'
                 ]
@@ -1620,9 +1567,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -1681,69 +1626,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [
                     'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.post_api_external_v2_campaign_preferred_line_items_by_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PreferredLineItemV2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/campaigns/{campaign-id}/preferred-line-items',
-                'operation_id': 'post_api_external_v2_campaign_preferred_line_items_by_campaign_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'campaign_id',
-                    'preferred_line_item_create_model_v2_request',
-                ],
-                'required': [
-                    'campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'campaign_id':
-                        (str,),
-                    'preferred_line_item_create_model_v2_request':
-                        (PreferredLineItemCreateModelV2Request,),
-                },
-                'attribute_map': {
-                    'campaign_id': 'campaign-id',
-                },
-                'location_map': {
-                    'campaign_id': 'path',
-                    'preferred_line_item_create_model_v2_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -1951,9 +1834,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -2013,138 +1894,9 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (ProductButtonResponseListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
-                'operation_id': 'put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'product_button_id',
-                    'product_button_request_request',
-                ],
-                'required': [
-                    'line_item_id',
-                    'product_button_id',
-                ],
-                'nullable': [
-                    'product_button_request_request',
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'product_button_id':
-                        (str,),
-                    'product_button_request_request':
-                        (ProductButtonRequestRequest,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'line-item-id',
-                    'product_button_id': 'product-button-id',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'product_button_id': 'path',
-                    'product_button_request_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.put_api_external_v2_preferred_line_item_by_line_item_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (PreferredLineItemV2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/preferred-line-items/{line-item-id}',
-                'operation_id': 'put_api_external_v2_preferred_line_item_by_line_item_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'line_item_id',
-                    'preferred_line_item_update_model_v2_request',
-                ],
-                'required': [
-                    'line_item_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'line_item_id':
-                        (str,),
-                    'preferred_line_item_update_model_v2_request':
-                        (PreferredLineItemUpdateModelV2Request,),
-                },
-                'attribute_map': {
-                    'line_item_id': 'line-item-id',
-                },
-                'location_map': {
-                    'line_item_id': 'path',
-                    'preferred_line_item_update_model_v2_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
             },
             api_client=api_client
         )
@@ -2204,9 +1956,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -2272,7 +2022,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.search_brands_by_name_async_v1_endpoint = _Endpoint(
+        self.search_brands_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata,),
                 'auth': [
@@ -2280,7 +2030,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/brands/search',
-                'operation_id': 'search_brands_by_name_async_v1',
+                'operation_id': 'search_brands',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -2337,15 +2087,90 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.search_category_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeCategory202204Metadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailerId}/categories/search',
+                'operation_id': 'search_category',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'limit',
+                    'offset',
+                    'value_resource_input_categories_search_request_v1',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 500,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'value_resource_input_categories_search_request_v1':
+                        (ValueResourceInputCategoriesSearchRequestV1,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailerId',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'limit': 'query',
+                    'offset': 'query',
+                    'value_resource_input_categories_search_request_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2457,9 +2282,7 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
+                'accept': [],
                 'content_type': [
                     'application/json'
                 ]
@@ -2519,9 +2342,7 @@ class CampaignApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2576,15 +2397,133 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_preferred_line_item_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (PreferredLineItemV2Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/preferred-line-items/{line-item-id}',
+                'operation_id': 'update_preferred_line_item_by_line_item_id',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'preferred_line_item_update_model_v2_request',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'preferred_line_item_update_model_v2_request':
+                        (PreferredLineItemUpdateModelV2Request,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'preferred_line_item_update_model_v2_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_product_button_by_line_item_and_product_button_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (ProductButtonResponseListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}',
+                'operation_id': 'update_product_button_by_line_item_and_product_button_id',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'product_button_id',
+                    'product_button_request_request',
+                ],
+                'required': [
+                    'line_item_id',
+                    'product_button_id',
+                ],
+                'nullable': [
+                    'product_button_request_request',
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'product_button_id':
+                        (str,),
+                    'product_button_request_request':
+                        (ProductButtonRequestRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                    'product_button_id': 'product-button-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'product_button_id': 'path',
+                    'product_button_request_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2674,6 +2613,90 @@ class CampaignApi(object):
             id
         return self.add_remove_keywords_endpoint.call_with_http_info(**kwargs)
 
+    def append_product_button_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """append_product_button_by_line_item_id  # noqa: E501
+
+        Add Specific Product Buttons  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.append_product_button_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): LineItemId for productButton retrieval
+
+        Keyword Args:
+            product_button_request_list_request (ProductButtonRequestListRequest): List of Product Buttons to append. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductButtonResponseListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.append_product_button_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
     def append_promoted_products(
         self,
         line_item_id,
@@ -2757,92 +2780,6 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.append_promoted_products_endpoint.call_with_http_info(**kwargs)
-
-    def categories_search_v1(
-        self,
-        retailer_id,
-        **kwargs
-    ):
-        """categories_search_v1  # noqa: E501
-
-        Search a retailer categories by given text substring and category ids.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.categories_search_v1(retailer_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            retailer_id (int): Retailer id.
-
-        Keyword Args:
-            limit (int): Limit of the search result.. [optional] if omitted the server will use the default value of 50
-            offset (int): Offset of the search result.. [optional] if omitted the server will use the default value of 0
-            value_resource_input_categories_search_request_v1 (ValueResourceInputCategoriesSearchRequestV1): Request of categories search.. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            EntityResourceCollectionOutcomeCategory202204Metadata
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['retailer_id'] = \
-            retailer_id
-        return self.categories_search_v1_endpoint.call_with_http_info(**kwargs)
 
     def create_auction_line_item_v2(
         self,
@@ -2928,19 +2865,103 @@ class CampaignApi(object):
             campaign_id
         return self.create_auction_line_item_v2_endpoint.call_with_http_info(**kwargs)
 
-    def delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(
+    def create_preferred_line_item_by_campaign_id(
+        self,
+        campaign_id,
+        **kwargs
+    ):
+        """create_preferred_line_item_by_campaign_id  # noqa: E501
+
+        Creates a new preferred line item with the specified settings  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_preferred_line_item_by_campaign_id(campaign_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            campaign_id (str): The given campaign id
+
+        Keyword Args:
+            preferred_line_item_create_model_v2_request (PreferredLineItemCreateModelV2Request): The line item settings to create a line item with. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PreferredLineItemV2Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['campaign_id'] = \
+            campaign_id
+        return self.create_preferred_line_item_by_campaign_id_endpoint.call_with_http_info(**kwargs)
+
+    def delete_product_button_by_line_item_and_product_button_id(
         self,
         line_item_id,
         product_button_id,
         **kwargs
     ):
-        """delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id  # noqa: E501
+        """delete_product_button_by_line_item_and_product_button_id  # noqa: E501
 
         Delete Specific Product Button  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id, async_req=True)
+        >>> thread = api.delete_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -3013,7 +3034,7 @@ class CampaignApi(object):
             line_item_id
         kwargs['product_button_id'] = \
             product_button_id
-        return self.delete_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id_endpoint.call_with_http_info(**kwargs)
+        return self.delete_product_button_by_line_item_and_product_button_id_endpoint.call_with_http_info(**kwargs)
 
     def delete_promoted_products(
         self,
@@ -3268,262 +3289,6 @@ class CampaignApi(object):
             line_item_id
         return self.fetch_promoted_products_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(
-        self,
-        line_item_id,
-        product_button_id,
-        **kwargs
-    ):
-        """get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id  # noqa: E501
-
-        Get Specific Product Button  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): LineItemId for productButton retrieval
-            product_button_id (str): productButtonId used for retrieval
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ProductButtonResponseListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        kwargs['product_button_id'] = \
-            product_button_id
-        return self.get_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_external_v1_line_item_product_buttons_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """get_api_external_v1_line_item_product_buttons_by_line_item_id  # noqa: E501
-
-        Get LineItem Product Buttons  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_external_v1_line_item_product_buttons_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): LineItemId for productButton retrieval
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ProductButtonResponseListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.get_api_external_v1_line_item_product_buttons_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_external_v2_campaign_preferred_line_items_by_campaign_id(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """get_api_external_v2_campaign_preferred_line_items_by_campaign_id  # noqa: E501
-
-        Gets page of preferred line item objects for the given campaign id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): The given campaign id
-
-        Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
-            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
-            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PreferredLineItemV2PagedListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.get_api_external_v2_campaign_preferred_line_items_by_campaign_id_endpoint.call_with_http_info(**kwargs)
-
     def get_api_external_v2_catalog_status_by_catalog_id(
         self,
         catalog_id,
@@ -3606,89 +3371,6 @@ class CampaignApi(object):
         kwargs['catalog_id'] = \
             catalog_id
         return self.get_api_external_v2_catalog_status_by_catalog_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_api_external_v2_preferred_line_item_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """get_api_external_v2_preferred_line_item_by_line_item_id  # noqa: E501
-
-        Gets the preferred line item for the given line item id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_external_v2_preferred_line_item_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The given line item id
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PreferredLineItemV2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.get_api_external_v2_preferred_line_item_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def get_api_v1_external_retailer_brands_by_retailer_id(
         self,
@@ -4285,6 +3967,345 @@ class CampaignApi(object):
             campaign_id
         return self.get_auction_line_items_by_campaign_id_v2_endpoint.call_with_http_info(**kwargs)
 
+    def get_preferred_line_items_by_campaign_id(
+        self,
+        campaign_id,
+        **kwargs
+    ):
+        """get_preferred_line_items_by_campaign_id  # noqa: E501
+
+        Gets page of preferred line item objects for the given campaign id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_preferred_line_items_by_campaign_id(campaign_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            campaign_id (str): The given campaign id
+
+        Keyword Args:
+            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PreferredLineItemV2PagedListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['campaign_id'] = \
+            campaign_id
+        return self.get_preferred_line_items_by_campaign_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_preferred_line_items_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """get_preferred_line_items_by_line_item_id  # noqa: E501
+
+        Gets the preferred line item for the given line item id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_preferred_line_items_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The given line item id
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PreferredLineItemV2Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.get_preferred_line_items_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_product_button_by_line_item_and_product_button_id(
+        self,
+        line_item_id,
+        product_button_id,
+        **kwargs
+    ):
+        """get_product_button_by_line_item_and_product_button_id  # noqa: E501
+
+        Get Specific Product Button  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): LineItemId for productButton retrieval
+            product_button_id (str): productButtonId used for retrieval
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductButtonResponseListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        kwargs['product_button_id'] = \
+            product_button_id
+        return self.get_product_button_by_line_item_and_product_button_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_product_buttons_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """get_product_buttons_by_line_item_id  # noqa: E501
+
+        Get LineItem Product Buttons  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_product_buttons_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): LineItemId for productButton retrieval
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductButtonResponseListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.get_product_buttons_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
     def get_recommended_categories(
         self,
         retailer_id,
@@ -4538,90 +4559,6 @@ class CampaignApi(object):
             line_item_id
         return self.pause_promoted_products_endpoint.call_with_http_info(**kwargs)
 
-    def post_api_external_v1_line_item_product_buttons_create_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """post_api_external_v1_line_item_product_buttons_create_by_line_item_id  # noqa: E501
-
-        Add Specific Product Buttons  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.post_api_external_v1_line_item_product_buttons_create_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): LineItemId for productButton retrieval
-
-        Keyword Args:
-            product_button_request_list_request (ProductButtonRequestListRequest): List of Product Buttons to append. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ProductButtonResponseListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.post_api_external_v1_line_item_product_buttons_create_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
     def post_api_external_v2_account_brand_catalog_export_by_account_id(
         self,
         account_id,
@@ -4789,90 +4726,6 @@ class CampaignApi(object):
         kwargs['account_id'] = \
             account_id
         return self.post_api_external_v2_account_seller_catalog_export_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def post_api_external_v2_campaign_preferred_line_items_by_campaign_id(
-        self,
-        campaign_id,
-        **kwargs
-    ):
-        """post_api_external_v2_campaign_preferred_line_items_by_campaign_id  # noqa: E501
-
-        Creates a new preferred line item with the specified settings  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.post_api_external_v2_campaign_preferred_line_items_by_campaign_id(campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            campaign_id (str): The given campaign id
-
-        Keyword Args:
-            preferred_line_item_create_model_v2_request (PreferredLineItemCreateModelV2Request): The line item settings to create a line item with. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PreferredLineItemV2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['campaign_id'] = \
-            campaign_id
-        return self.post_api_external_v2_campaign_preferred_line_items_by_campaign_id_endpoint.call_with_http_info(**kwargs)
 
     def post_api_v1_external_catalogs_sku_retrieval(
         self,
@@ -5204,178 +5057,6 @@ class CampaignApi(object):
             account_id
         return self.post_api_v2_external_account_creatives_search_by_account_id_endpoint.call_with_http_info(**kwargs)
 
-    def put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(
-        self,
-        line_item_id,
-        product_button_id,
-        **kwargs
-    ):
-        """put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id  # noqa: E501
-
-        Update Specific Product Button  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id(line_item_id, product_button_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): LineItemId for productButton update
-            product_button_id (str): productButtonId used for update
-
-        Keyword Args:
-            product_button_request_request (ProductButtonRequestRequest): Specific Product button update info. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ProductButtonResponseListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        kwargs['product_button_id'] = \
-            product_button_id
-        return self.put_api_external_v1_line_item_by_line_item_id_product_buttonsproduct_button_id_endpoint.call_with_http_info(**kwargs)
-
-    def put_api_external_v2_preferred_line_item_by_line_item_id(
-        self,
-        line_item_id,
-        **kwargs
-    ):
-        """put_api_external_v2_preferred_line_item_by_line_item_id  # noqa: E501
-
-        Updates the preferred line item for the given line item id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_external_v2_preferred_line_item_by_line_item_id(line_item_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            line_item_id (str): The given line item id
-
-        Keyword Args:
-            preferred_line_item_update_model_v2_request (PreferredLineItemUpdateModelV2Request): The line item settings to create a line item with. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            PreferredLineItemV2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['line_item_id'] = \
-            line_item_id
-        return self.put_api_external_v2_preferred_line_item_by_line_item_id_endpoint.call_with_http_info(**kwargs)
-
     def put_api_v2_external_account_by_account_id_creativescreative_id(
         self,
         account_id,
@@ -5548,17 +5229,17 @@ class CampaignApi(object):
             retailer_id
         return self.recommended_keywords_endpoint.call_with_http_info(**kwargs)
 
-    def search_brands_by_name_async_v1(
+    def search_brands(
         self,
         **kwargs
     ):
-        """search_brands_by_name_async_v1  # noqa: E501
+        """search_brands  # noqa: E501
 
         Search for brands given a retailer ID and search term.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_brands_by_name_async_v1(async_req=True)
+        >>> thread = api.search_brands(async_req=True)
         >>> result = thread.get()
 
 
@@ -5627,7 +5308,93 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.search_brands_by_name_async_v1_endpoint.call_with_http_info(**kwargs)
+        return self.search_brands_endpoint.call_with_http_info(**kwargs)
+
+    def search_category(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """search_category  # noqa: E501
+
+        Search a retailer categories by given text substring and category ids.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_category(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (int): Retailer id.
+
+        Keyword Args:
+            limit (int): Limit of the search result.. [optional] if omitted the server will use the default value of 50
+            offset (int): Offset of the search result.. [optional] if omitted the server will use the default value of 0
+            value_resource_input_categories_search_request_v1 (ValueResourceInputCategoriesSearchRequestV1): Request of categories search.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeCategory202204Metadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.search_category_endpoint.call_with_http_info(**kwargs)
 
     def set_keyword_bids(
         self,
@@ -5964,4 +5731,176 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.update_keyword_reviews_v1_endpoint.call_with_http_info(**kwargs)
+
+    def update_preferred_line_item_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """update_preferred_line_item_by_line_item_id  # noqa: E501
+
+        Updates the preferred line item for the given line item id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_preferred_line_item_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The given line item id
+
+        Keyword Args:
+            preferred_line_item_update_model_v2_request (PreferredLineItemUpdateModelV2Request): The line item settings to create a line item with. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            PreferredLineItemV2Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.update_preferred_line_item_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
+    def update_product_button_by_line_item_and_product_button_id(
+        self,
+        line_item_id,
+        product_button_id,
+        **kwargs
+    ):
+        """update_product_button_by_line_item_and_product_button_id  # noqa: E501
+
+        Update Specific Product Button  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): LineItemId for productButton update
+            product_button_id (str): productButtonId used for update
+
+        Keyword Args:
+            product_button_request_request (ProductButtonRequestRequest): Specific Product button update info. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ProductButtonResponseListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        kwargs['product_button_id'] = \
+            product_button_id
+        return self.update_product_button_by_line_item_and_product_button_id_endpoint.call_with_http_info(**kwargs)
 

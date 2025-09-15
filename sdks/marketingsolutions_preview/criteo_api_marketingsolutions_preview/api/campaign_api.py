@@ -32,7 +32,6 @@ from criteo_api_marketingsolutions_preview.model.ad_set_targeting_deal_ids_set_r
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_disable_result_response import AdSetTargetingVideoPositioningDisableResultResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_response import AdSetTargetingVideoPositioningResponse
 from criteo_api_marketingsolutions_preview.model.ad_set_targeting_video_positioning_set_result_response import AdSetTargetingVideoPositioningSetResultResponse
-from criteo_api_marketingsolutions_preview.model.api_error_response import ApiErrorResponse
 from criteo_api_marketingsolutions_preview.model.api_request_of_targeting_entity import ApiRequestOfTargetingEntity
 from criteo_api_marketingsolutions_preview.model.api_response_of_targeting_entity import ApiResponseOfTargetingEntity
 from criteo_api_marketingsolutions_preview.model.campaign_search_request_v23_q1 import CampaignSearchRequestV23Q1
@@ -113,15 +112,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -171,15 +165,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -234,15 +223,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -297,15 +281,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -360,15 +339,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -423,15 +397,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -482,9 +451,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -536,9 +503,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -590,9 +555,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -644,9 +607,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -698,9 +659,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -752,9 +711,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -806,9 +763,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -860,9 +815,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -914,9 +867,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -968,9 +919,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1022,9 +971,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1076,9 +1023,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1123,9 +1068,7 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -1174,15 +1117,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1230,15 +1168,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1293,15 +1226,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1356,15 +1284,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1419,15 +1342,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1482,15 +1400,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1545,15 +1458,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1608,15 +1516,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1671,15 +1574,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1734,15 +1632,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1797,15 +1690,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1860,15 +1748,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1916,15 +1799,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1972,15 +1850,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2035,15 +1908,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2098,15 +1966,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2154,15 +2017,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2210,15 +2068,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -2274,15 +2127,10 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client

@@ -22,7 +22,6 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retail_media_child_account_and_metadata import EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_private_market_account_fees_and_metadata import ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata
 from criteo_api_retailmedia_preview.model.value_resource_input_account_fees_search_request import ValueResourceInputAccountFeesSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_account_fees_update_request import ValueResourceInputAccountFeesUpdateRequest
@@ -170,10 +169,7 @@ class AccountsApi(object):
                     'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -221,15 +217,10 @@ class AccountsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client

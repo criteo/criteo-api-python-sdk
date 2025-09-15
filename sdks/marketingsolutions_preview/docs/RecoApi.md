@@ -30,7 +30,6 @@ Create a new product set
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.resource_outcome_of_product_set import ResourceOutcomeOfProductSet
 from criteo_api_marketingsolutions_preview.model.value_resource_input_of_create_product_set_request import ValueResourceInputOfCreateProductSetRequest
 from pprint import pprint
@@ -107,8 +106,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -116,10 +115,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Product set created successfully |  -  |
-**400** | Unable to parse the request parameters |  -  |
-**403** | Operation forbidden |  -  |
-**422** | Cannot process entity content |  -  |
-**500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -139,7 +134,6 @@ Disable product filtering for a given ad
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_product_filter_config import ValueResourceOutcomeOfProductFilterConfig
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -197,7 +191,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -205,10 +199,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation |  -  |
-**400** | Operation failure |  -  |
-**403** | Operation failure |  -  |
-**404** | Operation failure |  -  |
-**409** | Operation failure |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -228,7 +218,6 @@ Enable product filtering for a given ad
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_product_filter_config import ValueResourceOutcomeOfProductFilterConfig
 from criteo_api_marketingsolutions_preview.model.value_resource_input_of_create_product_filter_request import ValueResourceInputOfCreateProductFilterRequest
 from pprint import pprint
@@ -303,8 +292,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -312,8 +301,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | successful operation |  -  |
-**400** | Operation failure |  -  |
-**403** | Operation failure |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -333,7 +320,6 @@ Fetch product filtering configuration for a given ad
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_product_filter_config import ValueResourceOutcomeOfProductFilterConfig
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -391,7 +377,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -399,8 +385,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful operation. Returns the product filtering configuration if it exists, or empty data if it doesn&#39;t. |  -  |
-**400** | Operation failure |  -  |
-**403** | Operation failure |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -420,7 +404,6 @@ Fetch product filtering usages for a given product set
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.value_resource_collection_outcome_of_product_filter_config import ValueResourceCollectionOutcomeOfProductFilterConfig
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -478,7 +461,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -486,8 +469,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | successful operation |  -  |
-**400** | Operation failure |  -  |
-**403** | Operation failure |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -507,7 +488,6 @@ Fetch an existing product set
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.resource_outcome_of_product_set import ResourceOutcomeOfProductSet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -565,7 +545,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -573,9 +553,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Product set fetched successfully |  -  |
-**400** | Unable to parse the request parameters |  -  |
-**403** | Operation forbidden |  -  |
-**500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -595,7 +572,6 @@ Fetch product sets of a given dataset
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import reco_api
-from criteo_api_marketingsolutions_preview.model.outcome import Outcome
 from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_product_set import ResourceCollectionOutcomeOfProductSet
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -653,7 +629,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -661,9 +637,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Products sets fetched successfully |  -  |
-**400** | Unable to parse the request parameters |  -  |
-**403** | Operation forbidden |  -  |
-**500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -740,7 +713,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -748,9 +721,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | ProductSet removed successfully |  -  |
-**400** | Request was not valid |  -  |
-**403** | Operation forbidden |  -  |
-**500** | Internal Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

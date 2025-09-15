@@ -22,7 +22,6 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_partner_billing_report_status_v1 import EntityResourceOutcomePartnerBillingReportStatusV1
-from criteo_api_retailmedia_preview.model.outcome import Outcome
 from criteo_api_retailmedia_preview.model.value_resource_input_partner_billing_report_request_v1 import ValueResourceInputPartnerBillingReportRequestV1
 
 
@@ -80,9 +79,7 @@ class BillingApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -189,9 +186,7 @@ class BillingApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },

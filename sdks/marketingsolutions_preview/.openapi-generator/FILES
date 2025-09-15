@@ -63,7 +63,6 @@ criteo_api_marketingsolutions_preview/model/adaptive_colors.py
 criteo_api_marketingsolutions_preview/model/adaptive_write_attributes.py
 criteo_api_marketingsolutions_preview/model/advertiser_dataset_list_response.py
 criteo_api_marketingsolutions_preview/model/algebra_node_v1.py
-criteo_api_marketingsolutions_preview/model/api_error_response.py
 criteo_api_marketingsolutions_preview/model/api_request_of_targeting_entity.py
 criteo_api_marketingsolutions_preview/model/api_response_of_targeting_entity.py
 criteo_api_marketingsolutions_preview/model/application_summary_model.py
@@ -193,13 +192,10 @@ criteo_api_marketingsolutions_preview/model/entity_of_portfolio_message.py
 criteo_api_marketingsolutions_preview/model/entity_v2_of_dataset.py
 criteo_api_marketingsolutions_preview/model/entity_v2_of_object.py
 criteo_api_marketingsolutions_preview/model/entity_wrapper_of_targeting_entity.py
-criteo_api_marketingsolutions_preview/model/error_code_response.py
-criteo_api_marketingsolutions_preview/model/error_description.py
 criteo_api_marketingsolutions_preview/model/export_column.py
 criteo_api_marketingsolutions_preview/model/export_meta_data.py
 criteo_api_marketingsolutions_preview/model/export_result.py
 criteo_api_marketingsolutions_preview/model/export_result_data.py
-criteo_api_marketingsolutions_preview/model/fail_response.py
 criteo_api_marketingsolutions_preview/model/generate_audience_performance_report.py
 criteo_api_marketingsolutions_preview/model/generate_audience_performance_report_request.py
 criteo_api_marketingsolutions_preview/model/generate_audience_performance_report_resource.py
@@ -434,7 +430,6 @@ docs/AdvertiserApi.md
 docs/AdvertiserDatasetListResponse.md
 docs/AlgebraNodeV1.md
 docs/AnalyticsApi.md
-docs/ApiErrorResponse.md
 docs/ApiRequestOfTargetingEntity.md
 docs/ApiResponseOfTargetingEntity.md
 docs/ApplicationSummaryModel.md
@@ -568,13 +563,10 @@ docs/EntityOfPortfolioMessage.md
 docs/EntityV2OfDataset.md
 docs/EntityV2OfObject.md
 docs/EntityWrapperOfTargetingEntity.md
-docs/ErrorCodeResponse.md
-docs/ErrorDescription.md
 docs/ExportColumn.md
 docs/ExportMetaData.md
 docs/ExportResult.md
 docs/ExportResultData.md
-docs/FailResponse.md
 docs/GatewayApi.md
 docs/GenerateAudiencePerformanceReport.md
 docs/GenerateAudiencePerformanceReportRequest.md

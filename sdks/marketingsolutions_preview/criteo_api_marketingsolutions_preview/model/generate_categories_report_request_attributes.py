@@ -55,6 +55,12 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
     """
 
     allowed_values = {
+        ('format',): {
+            'CSV': "csv",
+            'EXCEL': "excel",
+            'XML': "xml",
+            'JSON': "json",
+        },
     }
 
     validations = {
@@ -77,12 +83,12 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
         return {
             'advertiser_ids': ([str],),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'format': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'adset_id': (str, none_type,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
             'category': (str, none_type,),  # noqa: E501
             'domain': (str, none_type,),  # noqa: E501
+            'format': (str,),  # noqa: E501
             'should_display_domain_dimension': (bool,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
@@ -95,12 +101,12 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
     attribute_map = {
         'advertiser_ids': 'advertiserIds',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'format': 'format',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'adset_id': 'adsetId',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'category': 'category',  # noqa: E501
         'domain': 'domain',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'should_display_domain_dimension': 'shouldDisplayDomainDimension',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
@@ -112,13 +118,12 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, advertiser_ids, end_date, format, start_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_ids, end_date, start_date, *args, **kwargs):  # noqa: E501
         """GenerateCategoriesReportRequestAttributes - a model defined in OpenAPI
 
         Args:
             advertiser_ids ([str]): List of Advertiser ids.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
         Keyword Args:
@@ -156,6 +161,7 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
             campaign_id (str, none_type): Report only on the specified Campaign id.. [optional]  # noqa: E501
             category (str, none_type): Report only on the specified category.. [optional]  # noqa: E501
             domain (str, none_type): Report only on the specified domain.. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             should_display_domain_dimension (bool): Specify if the domain dimension is displayed in the report.. [optional] if omitted the server will use the default value of True  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
@@ -191,7 +197,6 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
 
         self.advertiser_ids = advertiser_ids
         self.end_date = end_date
-        self.format = format
         self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -213,13 +218,12 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, advertiser_ids, end_date, format, start_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_ids, end_date, start_date, *args, **kwargs):  # noqa: E501
         """GenerateCategoriesReportRequestAttributes - a model defined in OpenAPI
 
         Args:
             advertiser_ids ([str]): List of Advertiser ids.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
         Keyword Args:
@@ -257,6 +261,7 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
             campaign_id (str, none_type): Report only on the specified Campaign id.. [optional]  # noqa: E501
             category (str, none_type): Report only on the specified category.. [optional]  # noqa: E501
             domain (str, none_type): Report only on the specified domain.. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             should_display_domain_dimension (bool): Specify if the domain dimension is displayed in the report.. [optional] if omitted the server will use the default value of True  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
@@ -290,7 +295,6 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
 
         self.advertiser_ids = advertiser_ids
         self.end_date = end_date
-        self.format = format
         self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

@@ -32,7 +32,6 @@ Returns an asynchronous Accounts Report This endpoint is subject to specific rat
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
 from criteo_api_retailmedia_preview.model.async_accounts_report_request import AsyncAccountsReportRequest
 from pprint import pprint
@@ -125,8 +124,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -134,8 +133,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -155,7 +152,6 @@ Return an asynchronous Campaigns Report This endpoint is subject to specific rat
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.async_campaigns_report_request import AsyncCampaignsReportRequest
 from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
 from pprint import pprint
@@ -248,8 +244,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -257,8 +253,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -278,7 +272,6 @@ Returns an asynchronous Fill Rate Report This endpoint is subject to specific ra
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.async_fill_rate_report_request import AsyncFillRateReportRequest
 from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
 from pprint import pprint
@@ -356,8 +349,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -365,8 +358,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -386,7 +377,6 @@ Returns an asynchronous Line Items Report This endpoint is subject to specific r
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.async_line_items_report_request import AsyncLineItemsReportRequest
 from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
 from pprint import pprint
@@ -479,8 +469,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -488,8 +478,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -509,7 +497,6 @@ Returns an asynchronous Offsite Report This endpoint is subject to specific rate
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.async_offsite_report_request import AsyncOffsiteReportRequest
 from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
 from pprint import pprint
@@ -604,8 +591,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -613,8 +600,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -635,7 +620,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
 from criteo_api_retailmedia_preview.model.report_response import ReportResponse
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.sync_attributed_transactions_report_request import SyncAttributedTransactionsReportRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -719,8 +703,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -728,8 +712,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -750,7 +732,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
 from criteo_api_retailmedia_preview.model.report_response import ReportResponse
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.sync_campaigns_report_request import SyncCampaignsReportRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -831,8 +812,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -840,8 +821,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -862,7 +841,6 @@ import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
 from criteo_api_retailmedia_preview.model.report_response import ReportResponse
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.sync_line_items_report_request import SyncLineItemsReportRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -946,8 +924,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -955,8 +933,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -976,7 +952,6 @@ Returns the output of an async report
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1033,7 +1008,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1041,8 +1016,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1062,7 +1035,6 @@ Returns the status of an async report
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import analytics_api
-from criteo_api_retailmedia_preview.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -1120,7 +1092,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1128,8 +1100,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
