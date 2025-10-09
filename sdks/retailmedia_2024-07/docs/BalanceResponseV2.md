@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the balance. | 
 **private_market_billing_type** | **str** | Billing type for Private Market of the balance. | 
 **spend_type** | **str** | Spend Type of the balance. | 
-**start_date** | **date** | Start date of the balance in the format YYYY-MM-DD. | 
+**start_date** | **str** | Start date of the balance in the format YYYY-MM-DD. | 
 **created_at** | **datetime** | Creation time of the balance. | [optional] 
 **deposited** | **float, none_type** | Amount of billable funds allotted to the balance. | [optional] 
-**end_date** | **date, none_type** | End date of the balance in the format YYYY-MM-DD. | [optional] 
+**end_date** | **str, none_type** | End date of the balance in the format YYYY-MM-DD. | [optional] 
 **memo** | **str, none_type** | Memo. | [optional] 
 **po_number** | **str, none_type** | Purchase Order number. | [optional] 
 **remaining** | **float, none_type** | Amount of remaining funds of the balance. | [optional] 

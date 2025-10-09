@@ -88,9 +88,9 @@ class CreateBalanceV2(ModelNormal):
         return {
             'name': (str,),  # noqa: E501
             'spend_type': (str,),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
+            'start_date': (str,),  # noqa: E501
             'deposited': (float,),  # noqa: E501
-            'end_date': (date, none_type,),  # noqa: E501
+            'end_date': (str, none_type,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
             'po_number': (str, none_type,),  # noqa: E501
         }
@@ -123,7 +123,7 @@ class CreateBalanceV2(ModelNormal):
         Args:
             name (str): Name of the balance.
             spend_type (str): Type of the balance spend.
-            start_date (date): Start date of the balance in the format YYYY-MM-DD.
+            start_date (str): Start date of the balance in the format YYYY-MM-DD.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -157,7 +157,7 @@ class CreateBalanceV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             deposited (float): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
-            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
         """
@@ -220,7 +220,7 @@ class CreateBalanceV2(ModelNormal):
         Args:
             name (str): Name of the balance.
             spend_type (str): Type of the balance spend.
-            start_date (date): Start date of the balance in the format YYYY-MM-DD.
+            start_date (str): Start date of the balance in the format YYYY-MM-DD.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -254,7 +254,7 @@ class CreateBalanceV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             deposited (float): Amount of billable funds allotted to the balance.. [optional]  # noqa: E501
-            end_date (date, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
+            end_date (str, none_type): End date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
             memo (str, none_type): Memo. [optional]  # noqa: E501
             po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
         """

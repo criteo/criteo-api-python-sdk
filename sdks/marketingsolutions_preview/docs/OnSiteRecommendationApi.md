@@ -4,11 +4,11 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v1_reco_post**](OnSiteRecommendationApi.md#api_v1_reco_post) | **POST** /preview/recommendation/search | 
+[**search_recommended_products**](OnSiteRecommendationApi.md#search_recommended_products) | **POST** /preview/recommendation/search | 
 
 
-# **api_v1_reco_post**
-> OnSiteRecoResponse api_v1_reco_post()
+# **search_recommended_products**
+> OnSiteRecoResponse search_recommended_products()
 
 
 
@@ -65,10 +65,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.api_v1_reco_post(on_site_reco_request=on_site_reco_request)
+        api_response = api_instance.search_recommended_products(on_site_reco_request=on_site_reco_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling OnSiteRecommendationApi->api_v1_reco_post: %s\n" % e)
+        print("Exception when calling OnSiteRecommendationApi->search_recommended_products: %s\n" % e)
 ```
 
 

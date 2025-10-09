@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**add_brands**](AccountsApi.md#add_brands) | **POST** /2025-07/retail-media/account-management/accounts/{accountId}/brands/add | 
 [**create_private_market_demand_brand_account**](AccountsApi.md#create_private_market_demand_brand_account) | **POST** /2025-07/retail-media/account-management/accounts/{accountId}/create-brand-account | 
 [**create_private_market_demand_seller_account**](AccountsApi.md#create_private_market_demand_seller_account) | **POST** /2025-07/retail-media/account-management/accounts/{accountId}/create-seller-account | 
-[**get_api_external_v1_account_private_market_child_accounts_by_account_id**](AccountsApi.md#get_api_external_v1_account_private_market_child_accounts_by_account_id) | **GET** /2025-07/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | 
-[**get_api_v1_external_accounts**](AccountsApi.md#get_api_v1_external_accounts) | **GET** /2025-07/retail-media/accounts | 
+[**get_accounts**](AccountsApi.md#get_accounts) | **GET** /2025-07/retail-media/accounts | 
+[**get_private_market_child_accounts_by_account_id**](AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /2025-07/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | 
 [**grant_consent**](AccountsApi.md#grant_consent) | **POST** /2025-07/retail-media/accounts/{accountId}/grant-consent | 
 [**remove_brands**](AccountsApi.md#remove_brands) | **POST** /2025-07/retail-media/account-management/accounts/{accountId}/brands/remove | 
 [**search_sellers**](AccountsApi.md#search_sellers) | **POST** /2025-07/retail-media/accounts/sellers/search | 
@@ -336,104 +336,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api_external_v1_account_private_market_child_accounts_by_account_id**
-> EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata get_api_external_v1_account_private_market_child_accounts_by_account_id(account_id)
-
-
-
-Gets page of private market child accounts that are associated with the given account
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_07
-from criteo_api_retailmedia_v2025_07.api import accounts_api
-from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_of_retail_media_child_account_and_metadata import EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = accounts_api.AccountsApi(api_client)
-    account_id = "accountId_example" # str | Account Id
-    limit = 25 # int | The number of accounts to be returned. The default is 25. (optional) if omitted the server will use the default value of 25
-    offset = 0 # int | The (zero-based) offset into the collection of accounts. The default is 0. (optional) if omitted the server will use the default value of 0
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_external_v1_account_private_market_child_accounts_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling AccountsApi->get_api_external_v1_account_private_market_child_accounts_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_api_external_v1_account_private_market_child_accounts_by_account_id(account_id, limit=limit, offset=offset)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling AccountsApi->get_api_external_v1_account_private_market_child_accounts_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| Account Id |
- **limit** | **int**| The number of accounts to be returned. The default is 25. | [optional] if omitted the server will use the default value of 25
- **offset** | **int**| The (zero-based) offset into the collection of accounts. The default is 0. | [optional] if omitted the server will use the default value of 0
-
-### Return type
-
-[**EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata**](EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_v1_external_accounts**
-> JsonApiPageResponseOfAccount get_api_v1_external_accounts()
+# **get_accounts**
+> JsonApiPageResponseOfAccount get_accounts()
 
 
 
@@ -486,10 +390,10 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_api_v1_external_accounts(limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
+        api_response = api_instance.get_accounts(limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling AccountsApi->get_api_v1_external_accounts: %s\n" % e)
+        print("Exception when calling AccountsApi->get_accounts: %s\n" % e)
 ```
 
 
@@ -512,7 +416,103 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_private_market_child_accounts_by_account_id**
+> EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata get_private_market_child_accounts_by_account_id(account_id)
+
+
+
+Gets page of private market child accounts that are associated with the given account
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_v2025_07
+from criteo_api_retailmedia_v2025_07.api import accounts_api
+from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_of_retail_media_child_account_and_metadata import EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2025_07.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounts_api.AccountsApi(api_client)
+    account_id = "accountId_example" # str | Account Id
+    limit = 25 # int | The number of accounts to be returned. The default is 25. (optional) if omitted the server will use the default value of 25
+    offset = 0 # int | The (zero-based) offset into the collection of accounts. The default is 0. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_private_market_child_accounts_by_account_id(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_07.ApiException as e:
+        print("Exception when calling AccountsApi->get_private_market_child_accounts_by_account_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_private_market_child_accounts_by_account_id(account_id, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_07.ApiException as e:
+        print("Exception when calling AccountsApi->get_private_market_child_accounts_by_account_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| Account Id |
+ **limit** | **int**| The number of accounts to be returned. The default is 25. | [optional] if omitted the server will use the default value of 25
+ **offset** | **int**| The (zero-based) offset into the collection of accounts. The default is 0. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata**](EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -614,7 +614,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 
@@ -748,7 +748,6 @@ import criteo_api_retailmedia_v2025_07
 from criteo_api_retailmedia_v2025_07.api import accounts_api
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_of_seller_search import ValueResourceInputOfSellerSearch
 from criteo_api_retailmedia_v2025_07.model.value_resource_collection_outcome_of_seller_search_result import ValueResourceCollectionOutcomeOfSellerSearchResult
-from criteo_api_retailmedia_v2025_07.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -815,8 +814,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -824,8 +823,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

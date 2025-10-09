@@ -117,6 +117,7 @@ class AsyncRevenueReport(ModelNormal):
             'SOLDBY': "soldBy",
             'SALECHANNEL': "saleChannel",
             'SALESCHANNEL': "salesChannel",
+            'MEDIATYPE': "mediaType",
             'ATTRIBUTIONSETTINGS': "attributionSettings",
             'ACTIVITYTYPE': "activityType",
             'KEYWORD': "keyword",
@@ -145,6 +146,12 @@ class AsyncRevenueReport(ModelNormal):
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
+        },
+        ('media_type',): {
+            'UNKNOWN': "unknown",
+            'VIDEO': "video",
+            'DISPLAY': "display",
+            'ALL': "all",
         },
         ('metrics',): {
             'NUMBEROFCAMPAIGNS': "numberOfCampaigns",
@@ -279,6 +286,7 @@ class AsyncRevenueReport(ModelNormal):
             'id': (str,),  # noqa: E501
             'ids': ([str],),  # noqa: E501
             'line_item_ids': ([str],),  # noqa: E501
+            'media_type': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'report_type': (str,),  # noqa: E501
             'retailer_ids': ([str],),  # noqa: E501
@@ -312,6 +320,7 @@ class AsyncRevenueReport(ModelNormal):
         'id': 'id',  # noqa: E501
         'ids': 'ids',  # noqa: E501
         'line_item_ids': 'lineItemIds',  # noqa: E501
+        'media_type': 'mediaType',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'report_type': 'reportType',  # noqa: E501
         'retailer_ids': 'retailerIds',  # noqa: E501
@@ -382,6 +391,7 @@ class AsyncRevenueReport(ModelNormal):
             id (str): Supply account id to report on. [optional]  # noqa: E501
             ids ([str]): Supply account ids to report on. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
             report_type (str): Type of report, if no dimensions and metrics are provided, falls back to advertiser reportType. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
@@ -496,6 +506,7 @@ class AsyncRevenueReport(ModelNormal):
             id (str): Supply account id to report on. [optional]  # noqa: E501
             ids ([str]): Supply account ids to report on. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
+            media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
             report_type (str): Type of report, if no dimensions and metrics are provided, falls back to advertiser reportType. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501

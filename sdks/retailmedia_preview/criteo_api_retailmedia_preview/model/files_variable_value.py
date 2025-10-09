@@ -58,9 +58,6 @@ class FilesVariableValue(ModelNormal):
     }
 
     validations = {
-        ('asset_ids',): {
-            'min_items': 1,
-        },
     }
 
     additional_properties_type = None

@@ -70,6 +70,10 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
             'CLICKS': "clicks",
             'REVENUE': "revenue",
         },
+        ('optimization_strategy',): {
+            'MANUAL': "manual",
+            'AUTOMATED': "automated",
+        },
     }
 
     validations = {
@@ -99,7 +103,6 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
             'name': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'status': (str,),  # noqa: E501
-            'target_bid': (float,),  # noqa: E501
             'bid_strategy': (str,),  # noqa: E501
             'budget': (float, none_type,),  # noqa: E501
             'daily_pacing': (float, none_type,),  # noqa: E501
@@ -107,6 +110,8 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
             'flight_schedule': (FlightSchedule,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
+            'optimization_strategy': (str,),  # noqa: E501
+            'target_bid': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -119,7 +124,6 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
         'name': 'name',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'status': 'status',  # noqa: E501
-        'target_bid': 'targetBid',  # noqa: E501
         'bid_strategy': 'bidStrategy',  # noqa: E501
         'budget': 'budget',  # noqa: E501
         'daily_pacing': 'dailyPacing',  # noqa: E501
@@ -127,6 +131,8 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
         'flight_schedule': 'flightSchedule',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
+        'optimization_strategy': 'optimizationStrategy',  # noqa: E501
+        'target_bid': 'targetBid',  # noqa: E501
     }
 
     read_only_vars = {
@@ -136,15 +142,14 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, is_auto_daily_pacing, name, start_date, status, target_bid, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, is_auto_daily_pacing, name, start_date, status, *args, **kwargs):  # noqa: E501
         """SponsoredProductsLineItemUpdateRequestModel - a model defined in OpenAPI
 
         Args:
-            is_auto_daily_pacing (bool):
-            name (str):
-            start_date (datetime):
-            status (str): Status of a line item.
-            target_bid (float):
+            is_auto_daily_pacing (bool): True if daily pacing is automatic, false if manual.
+            name (str): The name of this line item.
+            start_date (datetime): The date and time when the line item starts running.
+            status (str): The current status of the line item.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -177,13 +182,15 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
+            bid_strategy (str): The bidding strategy for the line item.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
+            daily_pacing (float, none_type): The daily pacing amount for the line item.. [optional]  # noqa: E501
+            end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
-            max_bid (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
+            max_bid (float, none_type): The maximum bid amount for the line item.. [optional]  # noqa: E501
+            monthly_pacing (float, none_type): The monthly pacing amount for the line item.. [optional]  # noqa: E501
+            optimization_strategy (str): The optimization strategy for the line item.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -219,7 +226,6 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
         self.name = name
         self.start_date = start_date
         self.status = status
-        self.target_bid = target_bid
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -240,15 +246,14 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, is_auto_daily_pacing, name, start_date, status, target_bid, *args, **kwargs):  # noqa: E501
+    def __init__(self, is_auto_daily_pacing, name, start_date, status, *args, **kwargs):  # noqa: E501
         """SponsoredProductsLineItemUpdateRequestModel - a model defined in OpenAPI
 
         Args:
-            is_auto_daily_pacing (bool):
-            name (str):
-            start_date (datetime):
-            status (str): Status of a line item.
-            target_bid (float):
+            is_auto_daily_pacing (bool): True if daily pacing is automatic, false if manual.
+            name (str): The name of this line item.
+            start_date (datetime): The date and time when the line item starts running.
+            status (str): The current status of the line item.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -281,13 +286,15 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
-            budget (float, none_type): [optional]  # noqa: E501
-            daily_pacing (float, none_type): [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
+            bid_strategy (str): The bidding strategy for the line item.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
+            daily_pacing (float, none_type): The daily pacing amount for the line item.. [optional]  # noqa: E501
+            end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
-            max_bid (float, none_type): [optional]  # noqa: E501
-            monthly_pacing (float, none_type): [optional]  # noqa: E501
+            max_bid (float, none_type): The maximum bid amount for the line item.. [optional]  # noqa: E501
+            monthly_pacing (float, none_type): The monthly pacing amount for the line item.. [optional]  # noqa: E501
+            optimization_strategy (str): The optimization strategy for the line item.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -321,7 +328,6 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
         self.name = name
         self.start_date = start_date
         self.status = status
-        self.target_bid = target_bid
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

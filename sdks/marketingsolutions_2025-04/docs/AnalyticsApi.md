@@ -27,7 +27,6 @@ import time
 import criteo_api_marketingsolutions_v2025_04
 from criteo_api_marketingsolutions_v2025_04.api import analytics_api
 from criteo_api_marketingsolutions_v2025_04.model.statistics_report_query_message import StatisticsReportQueryMessage
-from criteo_api_marketingsolutions_v2025_04.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -72,9 +71,9 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
             "AdsetId",
         ],
         end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-        format="format_example",
+        format="json",
         metrics=[
-            "metrics_example",
+            "Clicks",
         ],
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         timezone="UTC",
@@ -106,8 +105,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -115,8 +114,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -137,7 +134,6 @@ import time
 import criteo_api_marketingsolutions_v2025_04
 from criteo_api_marketingsolutions_v2025_04.api import analytics_api
 from criteo_api_marketingsolutions_v2025_04.model.placements_report_query_message_list_request import PlacementsReportQueryMessageListRequest
-from criteo_api_marketingsolutions_v2025_04.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -180,7 +176,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
                     disclosed=True,
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     environment="environment_example",
-                    format="format_example",
+                    format="json",
                     metrics=[
                         "metrics_example",
                     ],
@@ -219,8 +215,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json, text/csv, application/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, text/xml
+ - **Content-Type**: application/json, application/xml, text/xml, application/*+xml
+ - **Accept**: application/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -228,8 +224,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -250,7 +244,6 @@ import time
 import criteo_api_marketingsolutions_v2025_04
 from criteo_api_marketingsolutions_v2025_04.api import analytics_api
 from criteo_api_marketingsolutions_v2025_04.model.transactions_report_query_message_list_request import TransactionsReportQueryMessageListRequest
-from criteo_api_marketingsolutions_v2025_04.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -287,7 +280,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
                     currency="currency_example",
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     event_type="event_type_example",
-                    format="format_example",
+                    format="json",
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     timezone="UTC",
                 ),
@@ -322,8 +315,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json, application/xml, text/xml, application/*+xml
+ - **Accept**: application/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
 
 
 ### HTTP response details
@@ -331,8 +324,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -353,7 +344,6 @@ import time
 import criteo_api_marketingsolutions_v2025_04
 from criteo_api_marketingsolutions_v2025_04.api import analytics_api
 from criteo_api_marketingsolutions_v2025_04.model.transparency_report_list_response import TransparencyReportListResponse
-from criteo_api_marketingsolutions_v2025_04.model.outcome import Outcome
 from criteo_api_marketingsolutions_v2025_04.model.transparency_query_message import TransparencyQueryMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -424,8 +414,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json, application/xml, text/xml
+ - **Content-Type**: application/json, application/xml, text/xml, application/*+xml
+ - **Accept**: application/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -433,8 +423,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -32,10 +32,10 @@ from criteo_api_retailmedia_v2024_10.exceptions import ApiAttributeError
 def lazy_import():
     from criteo_api_retailmedia_v2024_10.model.common_error import CommonError
     from criteo_api_retailmedia_v2024_10.model.common_warning import CommonWarning
-    from criteo_api_retailmedia_v2024_10.model.json_api_body_with_id_of_int64_and_line_item_bid_multipliers_v2_and_line_item_bid_multipliers_v2 import JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2
+    from criteo_api_retailmedia_v2024_10.model.json_api_body_with_line_item_bid_multipliers_v2 import JsonApiBodyWithLineItemBidMultipliersV2
     globals()['CommonError'] = CommonError
     globals()['CommonWarning'] = CommonWarning
-    globals()['JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2'] = JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2
+    globals()['JsonApiBodyWithLineItemBidMultipliersV2'] = JsonApiBodyWithLineItemBidMultipliersV2
 
 
 class JsonApiSingleResponseOfLineItemBidMultipliersV2(ModelNormal):
@@ -91,7 +91,7 @@ class JsonApiSingleResponseOfLineItemBidMultipliersV2(ModelNormal):
         """
         lazy_import()
         return {
-            'data': (JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2,),  # noqa: E501
+            'data': (JsonApiBodyWithLineItemBidMultipliersV2,),  # noqa: E501
             'errors': ([CommonError], none_type,),  # noqa: E501
             'warnings': ([CommonWarning], none_type,),  # noqa: E501
         }
@@ -118,7 +118,7 @@ class JsonApiSingleResponseOfLineItemBidMultipliersV2(ModelNormal):
         """JsonApiSingleResponseOfLineItemBidMultipliersV2 - a model defined in OpenAPI
 
         Args:
-            data (JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2):
+            data (JsonApiBodyWithLineItemBidMultipliersV2):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -209,7 +209,7 @@ class JsonApiSingleResponseOfLineItemBidMultipliersV2(ModelNormal):
         """JsonApiSingleResponseOfLineItemBidMultipliersV2 - a model defined in OpenAPI
 
         Args:
-            data (JsonApiBodyWithIdOfInt64AndLineItemBidMultipliersV2AndLineItemBidMultipliersV2):
+            data (JsonApiBodyWithLineItemBidMultipliersV2):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

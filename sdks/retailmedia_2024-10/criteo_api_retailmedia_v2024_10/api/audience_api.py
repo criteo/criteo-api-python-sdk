@@ -21,7 +21,6 @@ from criteo_api_retailmedia_v2024_10.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_v2024_10.model.error_code_response import ErrorCodeResponse
 from criteo_api_retailmedia_v2024_10.model.retail_media_contactlist_amendment_request import RetailMediaContactlistAmendmentRequest
 from criteo_api_retailmedia_v2024_10.model.retail_media_contactlist_operation import RetailMediaContactlistOperation
 from criteo_api_retailmedia_v2024_10.model.rm_audience_entity_v1_rm_audience_search_metadata_v1_list_response import RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse
@@ -98,15 +97,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -162,15 +156,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -226,15 +215,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -343,9 +327,7 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -386,7 +368,7 @@ class AudienceApi(object):
                 'validations': {
                     ('limit',): {
 
-                        'inclusive_maximum': 100,
+                        'inclusive_maximum': 500,
                         'inclusive_minimum': 0,
                     },
                 },
@@ -418,15 +400,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -466,7 +443,7 @@ class AudienceApi(object):
                 'validations': {
                     ('limit',): {
 
-                        'inclusive_maximum': 100,
+                        'inclusive_maximum': 500,
                         'inclusive_minimum': 0,
                     },
                 },
@@ -498,15 +475,10 @@ class AudienceApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -1022,7 +994,7 @@ class AudienceApi(object):
             rm_audience_segment_search_input_v1 (RmAudienceSegmentSearchInputV1): Segment search filters.
 
         Keyword Args:
-            limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional] if omitted the server will use the default value of 50
+            limit (int): The number of elements to be returned. The default is 50 and the maximum is 500.. [optional] if omitted the server will use the default value of 50
             offset (int): The (zero-based) offset into the collection. The default is 0.. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -1111,7 +1083,7 @@ class AudienceApi(object):
             rm_audience_search_input_v1 (RmAudienceSearchInputV1): Audience search filters.
 
         Keyword Args:
-            limit (int): The number of elements to be returned. The default is 50 and the maximum is 100.. [optional] if omitted the server will use the default value of 50
+            limit (int): The number of elements to be returned. The default is 50 and the maximum is 500.. [optional] if omitted the server will use the default value of 50
             offset (int): The (zero-based) offset into the collection. The default is 0.. [optional] if omitted the server will use the default value of 0
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

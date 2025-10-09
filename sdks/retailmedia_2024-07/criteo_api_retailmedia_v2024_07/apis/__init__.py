@@ -16,7 +16,6 @@
 # Import APIs into API package:
 from criteo_api_retailmedia_v2024_07.api.accounts_api import AccountsApi
 from criteo_api_retailmedia_v2024_07.api.analytics_api import AnalyticsApi
-from criteo_api_retailmedia_v2024_07.api.audience_api import AudienceApi
 from criteo_api_retailmedia_v2024_07.api.balance_api import BalanceApi
 from criteo_api_retailmedia_v2024_07.api.campaign_api import CampaignApi
 from criteo_api_retailmedia_v2024_07.api.gateway_api import GatewayApi

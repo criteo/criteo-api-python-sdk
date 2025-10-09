@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_01.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_01.model.external_audience_ids_update_model202110 import ExternalAudienceIdsUpdateModel202110
-    globals()['ExternalAudienceIdsUpdateModel202110'] = ExternalAudienceIdsUpdateModel202110
+    from criteo_api_retailmedia_v2025_01.model.audience_ids_update_model202110 import AudienceIdsUpdateModel202110
+    globals()['AudienceIdsUpdateModel202110'] = AudienceIdsUpdateModel202110
 
 
 class ValueTypeResourceOfAudienceIdsUpdateModel202110(ModelNormal):
@@ -87,7 +87,7 @@ class ValueTypeResourceOfAudienceIdsUpdateModel202110(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalAudienceIdsUpdateModel202110,),  # noqa: E501
+            'attributes': (AudienceIdsUpdateModel202110,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class ValueTypeResourceOfAudienceIdsUpdateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAudienceIdsUpdateModel202110): [optional]  # noqa: E501
+            attributes (AudienceIdsUpdateModel202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class ValueTypeResourceOfAudienceIdsUpdateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAudienceIdsUpdateModel202110): [optional]  # noqa: E501
+            attributes (AudienceIdsUpdateModel202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

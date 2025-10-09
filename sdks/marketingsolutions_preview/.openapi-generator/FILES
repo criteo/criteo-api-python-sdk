@@ -60,6 +60,7 @@ criteo_api_marketingsolutions_preview/model/ad_set_targeting_video_positioning_s
 criteo_api_marketingsolutions_preview/model/ad_write.py
 criteo_api_marketingsolutions_preview/model/adaptive_attributes.py
 criteo_api_marketingsolutions_preview/model/adaptive_colors.py
+criteo_api_marketingsolutions_preview/model/adaptive_read_attributes.py
 criteo_api_marketingsolutions_preview/model/adaptive_write_attributes.py
 criteo_api_marketingsolutions_preview/model/advertiser_dataset_list_response.py
 criteo_api_marketingsolutions_preview/model/algebra_node_v1.py
@@ -177,6 +178,7 @@ criteo_api_marketingsolutions_preview/model/create_image_slide.py
 criteo_api_marketingsolutions_preview/model/create_product_filter_request.py
 criteo_api_marketingsolutions_preview/model/create_product_set_request.py
 criteo_api_marketingsolutions_preview/model/creative.py
+criteo_api_marketingsolutions_preview/model/creative_read.py
 criteo_api_marketingsolutions_preview/model/creative_write.py
 criteo_api_marketingsolutions_preview/model/criteo_api_error.py
 criteo_api_marketingsolutions_preview/model/criteo_api_warning.py
@@ -323,7 +325,7 @@ criteo_api_marketingsolutions_preview/model/requests_ad_set_id.py
 criteo_api_marketingsolutions_preview/model/requests_patch_ad_set_v24_q3.py
 criteo_api_marketingsolutions_preview/model/resource_collection_outcome_of_ad.py
 criteo_api_marketingsolutions_preview/model/resource_collection_outcome_of_coupon.py
-criteo_api_marketingsolutions_preview/model/resource_collection_outcome_of_creative.py
+criteo_api_marketingsolutions_preview/model/resource_collection_outcome_of_creative_read.py
 criteo_api_marketingsolutions_preview/model/resource_collection_outcome_of_product_set.py
 criteo_api_marketingsolutions_preview/model/resource_input_of_ad_write.py
 criteo_api_marketingsolutions_preview/model/resource_input_of_create_coupon.py
@@ -335,6 +337,7 @@ criteo_api_marketingsolutions_preview/model/resource_of_coupon.py
 criteo_api_marketingsolutions_preview/model/resource_of_coupon_supported_sizes.py
 criteo_api_marketingsolutions_preview/model/resource_of_create_coupon.py
 criteo_api_marketingsolutions_preview/model/resource_of_creative.py
+criteo_api_marketingsolutions_preview/model/resource_of_creative_read.py
 criteo_api_marketingsolutions_preview/model/resource_of_creative_write.py
 criteo_api_marketingsolutions_preview/model/resource_of_product_set.py
 criteo_api_marketingsolutions_preview/model/resource_of_update_coupon.py
@@ -425,6 +428,7 @@ docs/AdSetTargetingVideoPositioningSetResultResponse.md
 docs/AdWrite.md
 docs/AdaptiveAttributes.md
 docs/AdaptiveColors.md
+docs/AdaptiveReadAttributes.md
 docs/AdaptiveWriteAttributes.md
 docs/AdvertiserApi.md
 docs/AdvertiserDatasetListResponse.md
@@ -548,6 +552,7 @@ docs/CreateProductFilterRequest.md
 docs/CreateProductSetRequest.md
 docs/Creative.md
 docs/CreativeApi.md
+docs/CreativeRead.md
 docs/CreativeWrite.md
 docs/CriteoApiError.md
 docs/CriteoApiWarning.md
@@ -697,7 +702,7 @@ docs/RequestsAdSetId.md
 docs/RequestsPatchAdSetV24Q3.md
 docs/ResourceCollectionOutcomeOfAd.md
 docs/ResourceCollectionOutcomeOfCoupon.md
-docs/ResourceCollectionOutcomeOfCreative.md
+docs/ResourceCollectionOutcomeOfCreativeRead.md
 docs/ResourceCollectionOutcomeOfProductSet.md
 docs/ResourceInputOfAdWrite.md
 docs/ResourceInputOfCreateCoupon.md
@@ -709,6 +714,7 @@ docs/ResourceOfCoupon.md
 docs/ResourceOfCouponSupportedSizes.md
 docs/ResourceOfCreateCoupon.md
 docs/ResourceOfCreative.md
+docs/ResourceOfCreativeRead.md
 docs/ResourceOfCreativeWrite.md
 docs/ResourceOfProductSet.md
 docs/ResourceOfUpdateCoupon.md

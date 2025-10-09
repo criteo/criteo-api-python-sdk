@@ -35,7 +35,7 @@ class AdvertiserApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.api_portfolio_get_endpoint = _Endpoint(
+        self.list_advertisers_endpoint = _Endpoint(
             settings={
                 'response_type': (GetPortfolioResponse,),
                 'auth': [
@@ -43,7 +43,7 @@ class AdvertiserApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/advertisers/me',
-                'operation_id': 'api_portfolio_get',
+                'operation_id': 'list_advertisers',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -74,26 +74,24 @@ class AdvertiserApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json',
-                    'text/plain',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
             api_client=api_client
         )
 
-    def api_portfolio_get(
+    def list_advertisers(
         self,
         **kwargs
     ):
-        """api_portfolio_get  # noqa: E501
+        """list_advertisers  # noqa: E501
 
         Fetch the portfolio of Advertisers for this account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.api_portfolio_get(async_req=True)
+        >>> thread = api.list_advertisers(async_req=True)
         >>> result = thread.get()
 
 
@@ -159,5 +157,5 @@ class AdvertiserApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.api_portfolio_get_endpoint.call_with_http_info(**kwargs)
+        return self.list_advertisers_endpoint.call_with_http_info(**kwargs)
 

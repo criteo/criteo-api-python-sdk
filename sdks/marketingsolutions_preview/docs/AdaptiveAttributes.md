@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **calls_to_action** | **[str]** | A Call-to-Action (CTA) is an action-driven instruction to your audience intended to provoke an immediate  response, such as “Buy now” or “Go!”. | 
 **colors** | [**AdaptiveColors**](AdaptiveColors.md) |  | 
-**description_font** | **str, none_type** | Font of the description  Valid supported font like \&quot;Arial\&quot; | 
-**description_text** | **str, none_type** | The description text of the banner | 
-**headline_font** | **str, none_type** | Font of the headline  Valid supported font like \&quot;Arial\&quot; | 
-**headline_text** | **str, none_type** | The headline text of the banner | 
+**description_font** | **str** | Font of the description  Valid supported font like \&quot;Arial\&quot; | 
+**description_text** | **str** | The description text of the banner | 
+**headline_font** | **str** | Font of the headline  Valid supported font like \&quot;Arial\&quot; | 
+**headline_text** | **str** | The headline text of the banner | 
 **landing_page_url** | **str** | Web redirection of the landing page url | 
 **layouts** | **[str]** | The Adaptive layouts that are enabled.  It can contain any of the following values: \&quot;Editorial\&quot;, “Montage“, \&quot;InBannerVideo\&quot;. | 
 **logos** | [**[ImageShape]**](ImageShape.md) | Logo images uploaded on demostatic.criteo.com when deploying and then static.criteo.net | 

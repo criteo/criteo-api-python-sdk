@@ -1552,7 +1552,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_advertiser_creatives**
-> ResourceCollectionOutcomeOfCreative get_advertiser_creatives(advertiser_id)
+> ResourceCollectionOutcomeOfCreativeRead get_advertiser_creatives(advertiser_id)
 
 
 
@@ -1567,7 +1567,7 @@ Get the list of self-services Creatives for a given advertiser
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import creative_api
-from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_creative import ResourceCollectionOutcomeOfCreative
+from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_creative_read import ResourceCollectionOutcomeOfCreativeRead
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1627,7 +1627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResourceCollectionOutcomeOfCreative**](ResourceCollectionOutcomeOfCreative.md)
+[**ResourceCollectionOutcomeOfCreativeRead**](ResourceCollectionOutcomeOfCreativeRead.md)
 
 ### Authorization
 
@@ -1643,7 +1643,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The list of self-services Creatives is returned. |  -  |
+**200** | The list of self-services Creatives is returned.This list will contain creatives in draft status as well which will have some properties as null |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

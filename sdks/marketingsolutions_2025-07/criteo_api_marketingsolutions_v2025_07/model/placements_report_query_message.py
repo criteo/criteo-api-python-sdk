@@ -69,6 +69,12 @@ class PlacementsReportQueryMessage(ModelNormal):
             'CATEGORYID': "CategoryId",
             'CATEGORYNAME': "CategoryName",
         },
+        ('format',): {
+            'CSV': "csv",
+            'EXCEL': "excel",
+            'XML': "xml",
+            'JSON': "json",
+        },
     }
 
     validations = {
@@ -93,13 +99,13 @@ class PlacementsReportQueryMessage(ModelNormal):
             'currency': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'format': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'adset_ids': (str, none_type,),  # noqa: E501
             'campaign_ids': (str, none_type,),  # noqa: E501
             'disclosed': (bool,),  # noqa: E501
             'environment': (str, none_type,),  # noqa: E501
+            'format': (str,),  # noqa: E501
             'placement': (str, none_type,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
@@ -114,13 +120,13 @@ class PlacementsReportQueryMessage(ModelNormal):
         'currency': 'currency',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'format': 'format',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'adset_ids': 'adsetIds',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
         'disclosed': 'disclosed',  # noqa: E501
         'environment': 'environment',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'placement': 'placement',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
@@ -132,7 +138,7 @@ class PlacementsReportQueryMessage(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, advertiser_ids, currency, dimensions, end_date, format, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_ids, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """PlacementsReportQueryMessage - a model defined in OpenAPI
 
         Args:
@@ -140,7 +146,6 @@ class PlacementsReportQueryMessage(ModelNormal):
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
             dimensions ([str]): The dimensions for the report.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
@@ -179,6 +184,7 @@ class PlacementsReportQueryMessage(ModelNormal):
             campaign_ids (str, none_type): The comma-separated list of campaign ids.. [optional]  # noqa: E501
             disclosed (bool): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
             environment (str, none_type): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             placement (str, none_type): Filter the value of the placement. [optional]  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
@@ -216,7 +222,6 @@ class PlacementsReportQueryMessage(ModelNormal):
         self.currency = currency
         self.dimensions = dimensions
         self.end_date = end_date
-        self.format = format
         self.metrics = metrics
         self.start_date = start_date
         for var_name, var_value in kwargs.items():
@@ -239,7 +244,7 @@ class PlacementsReportQueryMessage(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, advertiser_ids, currency, dimensions, end_date, format, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_ids, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """PlacementsReportQueryMessage - a model defined in OpenAPI
 
         Args:
@@ -247,7 +252,6 @@ class PlacementsReportQueryMessage(ModelNormal):
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
             dimensions ([str]): The dimensions for the report.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
@@ -286,6 +290,7 @@ class PlacementsReportQueryMessage(ModelNormal):
             campaign_ids (str, none_type): The comma-separated list of campaign ids.. [optional]  # noqa: E501
             disclosed (bool): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
             environment (str, none_type): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             placement (str, none_type): Filter the value of the placement. [optional]  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
@@ -321,7 +326,6 @@ class PlacementsReportQueryMessage(ModelNormal):
         self.currency = currency
         self.dimensions = dimensions
         self.end_date = end_date
-        self.format = format
         self.metrics = metrics
         self.start_date = start_date
         for var_name, var_value in kwargs.items():

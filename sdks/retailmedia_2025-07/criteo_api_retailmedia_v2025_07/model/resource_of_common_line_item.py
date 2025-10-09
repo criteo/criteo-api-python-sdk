@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_07.model.external_common_line_item import ExternalCommonLineItem
-    globals()['ExternalCommonLineItem'] = ExternalCommonLineItem
+    from criteo_api_retailmedia_v2025_07.model.common_line_item import CommonLineItem
+    globals()['CommonLineItem'] = CommonLineItem
 
 
 class ResourceOfCommonLineItem(ModelNormal):
@@ -87,7 +87,7 @@ class ResourceOfCommonLineItem(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalCommonLineItem,),  # noqa: E501
+            'attributes': (CommonLineItem,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
         }
@@ -144,7 +144,7 @@ class ResourceOfCommonLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalCommonLineItem): [optional]  # noqa: E501
+            attributes (CommonLineItem): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
@@ -232,7 +232,7 @@ class ResourceOfCommonLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalCommonLineItem): [optional]  # noqa: E501
+            attributes (CommonLineItem): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """

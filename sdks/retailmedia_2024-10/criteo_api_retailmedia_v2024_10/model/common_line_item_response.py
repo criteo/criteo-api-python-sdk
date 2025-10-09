@@ -30,9 +30,9 @@ from criteo_api_retailmedia_v2024_10.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_10.model.problem_details import ProblemDetails
+    from criteo_api_retailmedia_v2024_10.model.common_problem import CommonProblem
     from criteo_api_retailmedia_v2024_10.model.resource_of_common_line_item import ResourceOfCommonLineItem
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
     globals()['ResourceOfCommonLineItem'] = ResourceOfCommonLineItem
 
 
@@ -90,8 +90,8 @@ class CommonLineItemResponse(ModelNormal):
         lazy_import()
         return {
             'data': (ResourceOfCommonLineItem,),  # noqa: E501
-            'errors': ([ProblemDetails],),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
+            'errors': ([CommonProblem],),  # noqa: E501
+            'warnings': ([CommonProblem],),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +149,8 @@ class CommonLineItemResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ResourceOfCommonLineItem): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
+            errors ([CommonProblem]): [optional]  # noqa: E501
+            warnings ([CommonProblem]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +237,8 @@ class CommonLineItemResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ResourceOfCommonLineItem): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
+            errors ([CommonProblem]): [optional]  # noqa: E501
+            warnings ([CommonProblem]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

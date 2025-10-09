@@ -62,6 +62,7 @@ class RmContactListV1(ModelNormal):
             'USERIDENTIFIER': "UserIdentifier",
             'IDENTITYLINK': "IdentityLink",
             'CUSTOMERID': "CustomerId",
+            'PHONENUMBER': "PhoneNumber",
         },
         ('sharing_status',): {
             'None': None,

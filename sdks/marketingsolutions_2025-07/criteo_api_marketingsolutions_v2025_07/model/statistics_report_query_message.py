@@ -83,6 +83,248 @@ class StatisticsReportQueryMessage(ModelNormal):
             'ADCHANNEL': "AdChannel",
             'SOCIALPLATFORM': "SocialPlatform",
         },
+        ('metrics',): {
+            'CLICKS': "Clicks",
+            'DISPLAYS': "Displays",
+            'ADVERTISERCOST': "AdvertiserCost",
+            'SALESPC30DCLIENTATTRIBUTION': "SalesPc30dClientAttribution",
+            'SALESCLIENTATTRIBUTION': "SalesClientAttribution",
+            'SALESPC30D': "SalesPc30d",
+            'SALESALLPC30DCLIENTATTRIBUTION': "SalesAllPc30dClientAttribution",
+            'SALESALLCLIENTATTRIBUTION': "SalesAllClientAttribution",
+            'SALESALLPC30D': "SalesAllPc30d",
+            'SALESPV24H': "SalesPv24h",
+            'SALESALLPV24H': "SalesAllPv24h",
+            'SALESPC30PV24': "SalesPc30Pv24",
+            'SALESALLPC30PV24': "SalesAllPc30Pv24",
+            'SALESPC30DPV24H': "SalesPc30dPv24h",
+            'SALESALLPC30DPV24H': "SalesAllPc30dPv24h",
+            'SALESPC7DPV24': "SalesPc7dPv24",
+            'SALESALLPC7DPV24': "SalesAllPc7dPv24",
+            'SALESPC7DPV24H': "SalesPc7dPv24h",
+            'SALESALLPC7DPV24H': "SalesAllPc7dPv24h",
+            'SALESLC': "SalesLc",
+            'SALESALLLC': "SalesAllLc",
+            'SALESPC7D': "SalesPc7d",
+            'SALESALLPC7D': "SalesAllPc7d",
+            'SALESPC1D': "SalesPc1d",
+            'SALESALLPC1D': "SalesAllPc1d",
+            'SALESPIPC': "SalesPiPc",
+            'SALESPIPV': "SalesPiPv",
+            'SALESPIPCPV': "SalesPiPcPv",
+            'POSTINSTALLSALES': "PostInstallSales",
+            'SALESOFFLINEPC': "SalesOfflinePc",
+            'SALESOFFLINEPV': "SalesOfflinePv",
+            'SALESOFFLINEPC30D': "SalesOfflinePc30d",
+            'SALESOFFLINEPV24H': "SalesOfflinePv24h",
+            'REVENUEGENERATEDPC30DCLIENTATTRIBUTION': "RevenueGeneratedPc30dClientAttribution",
+            'REVENUEGENERATEDCLIENTATTRIBUTION': "RevenueGeneratedClientAttribution",
+            'REVENUEGENERATEDPC30D': "RevenueGeneratedPc30d",
+            'REVENUEGENERATEDALLPC30DCLIENTATTRIBUTION': "RevenueGeneratedAllPc30dClientAttribution",
+            'REVENUEGENERATEDALLCLIENTATTRIBUTION': "RevenueGeneratedAllClientAttribution",
+            'REVENUEGENERATEDALLPC30D': "RevenueGeneratedAllPc30d",
+            'REVENUEGENERATEDPV24H': "RevenueGeneratedPv24h",
+            'REVENUEGENERATEDALLPV24H': "RevenueGeneratedAllPv24h",
+            'REVENUEGENERATEDPC30PV24': "RevenueGeneratedPc30Pv24",
+            'REVENUEGENERATEDALLPC30PV24': "RevenueGeneratedAllPc30Pv24",
+            'REVENUEGENERATEDPC30DPV24H': "RevenueGeneratedPc30dPv24h",
+            'REVENUEGENERATEDALLPC30DPV24H': "RevenueGeneratedAllPc30dPv24h",
+            'REVENUEGENERATEDPC7DPV24H': "RevenueGeneratedPc7dPv24h",
+            'REVENUEGENERATEDALLPC7DPV24H': "RevenueGeneratedAllPc7dPv24h",
+            'REVENUEGENERATEDPC7DPV24': "RevenueGeneratedPc7dPv24",
+            'REVENUEGENERATEDALLPC7DPV24': "RevenueGeneratedAllPc7dPv24",
+            'REVENUEGENERATEDLC': "RevenueGeneratedLc",
+            'REVENUEGENERATEDALLLC': "RevenueGeneratedAllLc",
+            'REVENUEGENERATEDPC7D': "RevenueGeneratedPc7d",
+            'REVENUEGENERATEDALLPC7D': "RevenueGeneratedAllPc7d",
+            'REVENUEGENERATEDPC1D': "RevenueGeneratedPc1d",
+            'REVENUEGENERATEDALLPC1D': "RevenueGeneratedAllPc1d",
+            'REVENUEGENERATEDOFFLINEPC': "RevenueGeneratedOfflinePc",
+            'REVENUEGENERATEDOFFLINEPV': "RevenueGeneratedOfflinePv",
+            'REVENUEGENERATEDOFFLINEPC30D': "RevenueGeneratedOfflinePc30d",
+            'REVENUEGENERATEDOFFLINEPV24H': "RevenueGeneratedOfflinePv24h",
+            'CONVERSIONRATEPC30DCLIENTATTRIBUTION': "ConversionRatePc30dClientAttribution",
+            'CONVERSIONRATECLIENTATTRIBUTION': "ConversionRateClientAttribution",
+            'CONVERSIONRATEPC30D': "ConversionRatePc30d",
+            'CONVERSIONRATEALLPC30DCLIENTATTRIBUTION': "ConversionRateAllPc30dClientAttribution",
+            'CONVERSIONRATEALLCLIENTATTRIBUTION': "ConversionRateAllClientAttribution",
+            'CONVERSIONRATEALLPC30D': "ConversionRateAllPc30d",
+            'CONVERSIONRATEPV24H': "ConversionRatePv24h",
+            'CONVERSIONRATEALLPV24H': "ConversionRateAllPv24h",
+            'CONVERSIONRATEPC30PV24': "ConversionRatePc30Pv24",
+            'CONVERSIONRATEALLPC30PV24': "ConversionRateAllPc30Pv24",
+            'CONVERSIONRATEPC30DPV24H': "ConversionRatePc30dPv24h",
+            'CONVERSIONRATEALLPC30DPV24H': "ConversionRateAllPc30dPv24h",
+            'CONVERSIONRATEPC7DPV24': "ConversionRatePc7dPv24",
+            'CONVERSIONRATEALLPC7DPV24': "ConversionRateAllPc7dPv24",
+            'CONVERSIONRATEPC7DPV24H': "ConversionRatePc7dPv24h",
+            'CONVERSIONRATEALLPC7DPV24H': "ConversionRateAllPc7dPv24h",
+            'CONVERSIONRATEPC7D': "ConversionRatePc7d",
+            'CONVERSIONRATEALLPC7D': "ConversionRateAllPc7d",
+            'CONVERSIONRATEPC1D': "ConversionRatePc1d",
+            'CONVERSIONRATEALLPC1D': "ConversionRateAllPc1d",
+            'CONVERSIONRATEPIPCPV': "ConversionRatePiPcPv",
+            'POSTINSTALLCONVERSIONRATE': "PostInstallConversionRate",
+            'ECOSPC30DCLIENTATTRIBUTION': "ECosPc30dClientAttribution",
+            'ECOSCLIENTATTRIBUTION': "ECosClientAttribution",
+            'ECOSPC30D': "ECosPc30d",
+            'ECOSALLPC30DCLIENTATTRIBUTION': "ECosAllPc30dClientAttribution",
+            'ECOSALLCLIENTATTRIBUTION': "ECosAllClientAttribution",
+            'ECOSALLPC30D': "ECosAllPc30d",
+            'ECOSPV24H': "ECosPv24h",
+            'ECOSALLPV24H': "ECosAllPv24h",
+            'ECOSPC30PV24': "ECosPc30Pv24",
+            'ECOSALLPC30PV24': "ECosAllPc30Pv24",
+            'ECOSPC30DPV24H': "ECosPc30dPv24h",
+            'ECOSALLPC30DPV24H': "ECosAllPc30dPv24h",
+            'ECOSPC7DPV24H': "ECosPc7dPv24h",
+            'ECOSALLPC7DPV24H': "ECosAllPc7dPv24h",
+            'ECOSPC7DPV24': "ECosPc7dPv24",
+            'ECOSALLPC7DPV24': "ECosAllPc7dPv24",
+            'ECOSPC7D': "ECosPc7d",
+            'ECOSALLPC7D': "ECosAllPc7d",
+            'ECOSPC1D': "ECosPc1d",
+            'ECOSALLPC1D': "ECosAllPc1d",
+            'COSTPERORDERPC30DCLIENTATTRIBUTION': "CostPerOrderPc30dClientAttribution",
+            'COSTPERORDERCLIENTATTRIBUTION': "CostPerOrderClientAttribution",
+            'COSTPERORDERPC30D': "CostPerOrderPc30d",
+            'COSTPERORDERALLPC30DCLIENTATTRIBUTION': "CostPerOrderAllPc30dClientAttribution",
+            'COSTPERORDERALLCLIENTATTRIBUTION': "CostPerOrderAllClientAttribution",
+            'COSTPERORDERALLPC30D': "CostPerOrderAllPc30d",
+            'COSTPERORDERPV24H': "CostPerOrderPv24h",
+            'COSTPERORDERALLPV24H': "CostPerOrderAllPv24h",
+            'COSTPERORDERPC30PV24': "CostPerOrderPc30Pv24",
+            'COSTPERORDERALLPC30PV24': "CostPerOrderAllPc30Pv24",
+            'COSTPERORDERPC30DPV24H': "CostPerOrderPc30dPv24h",
+            'COSTPERORDERALLPC30DPV24H': "CostPerOrderAllPc30dPv24h",
+            'COSTPERORDERPC7DPV24H': "CostPerOrderPc7dPv24h",
+            'COSTPERORDERALLPC7DPV24H': "CostPerOrderAllPc7dPv24h",
+            'COSTPERORDERPC7DPV24': "CostPerOrderPc7dPv24",
+            'COSTPERORDERALLPC7DPV24': "CostPerOrderAllPc7dPv24",
+            'COSTPERORDERPC7D': "CostPerOrderPc7d",
+            'COSTPERORDERALLPC7D': "CostPerOrderAllPc7d",
+            'COSTPERORDERPC1D': "CostPerOrderPc1d",
+            'COSTPERORDERALLPC1D': "CostPerOrderAllPc1d",
+            'EXPOSEDUSERS': "ExposedUsers",
+            'AUDIENCE': "Audience",
+            'REACH': "Reach",
+            'AVERAGECARTPC30DCLIENTATTRIBUTION': "AverageCartPc30dClientAttribution",
+            'AVERAGECARTALLPC30DCLIENTATTRIBUTION': "AverageCartAllPc30dClientAttribution",
+            'AVERAGECARTCLIENTATTRIBUTION': "AverageCartClientAttribution",
+            'AVERAGECARTALLCLIENTATTRIBUTION': "AverageCartAllClientAttribution",
+            'AVERAGECARTPC30D': "AverageCartPc30d",
+            'AVERAGECARTALLPC30D': "AverageCartAllPc30d",
+            'AVERAGECARTPV24H': "AverageCartPv24h",
+            'AVERAGECARTALLPV24H': "AverageCartAllPv24h",
+            'AVERAGECARTPC1D': "AverageCartPc1d",
+            'AVERAGECARTALLPC1D': "AverageCartAllPc1d",
+            'AVERAGECARTPC7D': "AverageCartPc7d",
+            'AVERAGECARTALLPC7D': "AverageCartAllPc7d",
+            'AVERAGECARTPC30PV24': "AverageCartPc30Pv24",
+            'AVERAGECARTALLPC30PV24': "AverageCartAllPc30Pv24",
+            'AVERAGECARTPC30DPV24H': "AverageCartPc30dPv24h",
+            'AVERAGECARTALLPC30DPV24H': "AverageCartAllPc30dPv24h",
+            'AVERAGECARTPC7DPV24H': "AverageCartPc7dPv24h",
+            'AVERAGECARTALLPC7DPV24H': "AverageCartAllPc7dPv24h",
+            'AVERAGECARTPC7DPV24': "AverageCartPc7dPv24",
+            'AVERAGECARTALLPC7DPV24': "AverageCartAllPc7dPv24",
+            'CLICKTHROUGHRATE': "ClickThroughRate",
+            'ECPC': "ECpc",
+            'CPC': "Cpc",
+            'ECPM': "ECpm",
+            'RETURNONADVERTISINGSPENDINGCLIENTATTRIBUTION': "ReturnOnAdvertisingSpendingClientAttribution",
+            'RETURNONADVERTISINGSPENDINGALLCLIENTATTRIBUTION': "ReturnOnAdvertisingSpendingAllClientAttribution",
+            'ADVERTISERVALUE': "AdvertiserValue",
+            'ADVERTISERALLVALUE': "AdvertiserAllValue",
+            'COSTOFADVERTISERVALUE': "CostOfAdvertiserValue",
+            'COSTOFADVERTISERVALUEALL': "CostOfAdvertiserValueAll",
+            'APPINSTALLSPCPV': "AppInstallsPcPv",
+            'APPINSTALLS': "AppInstalls",
+            'QUALIFIEDVISITS': "QualifiedVisits",
+            'VISITS': "Visits",
+            'VISITSPV1D': "VisitsPV1D",
+            'ORDERVALUEPI': "OrderValuePi",
+            'POSTINSTALLORDERVALUE': "PostInstallOrderValue",
+            'BOUNCERATE': "BounceRate",
+            'COSTPERINSTALLPCPV': "CostPerInstallPcPv",
+            'COSTPERINSTALL': "CostPerInstall",
+            'COSTPERVISIT': "CostPerVisit",
+            'COSTPERVISITPV1D': "CostPerVisitPV1D",
+            'COSTPERQUALIFIEDVISIT': "CostPerQualifiedVisit",
+            'INSTALLRATEPCPV': "InstallRatePcPv",
+            'INSTALLRATE': "InstallRate",
+            'OMNICHANNELROASPC30D': "OmnichannelRoasPc30d",
+            'OMNICHANNELROASALLPC30D': "OmnichannelRoasAllPc30d",
+            'OMNICHANNELREVENUEPC30D': "OmnichannelRevenuePc30d",
+            'OMNICHANNELREVENUEALLPC30D': "OmnichannelRevenueAllPc30d",
+            'OMNICHANNELSALESPC30D': "OmnichannelSalesPc30d",
+            'OMNICHANNELSALESALLPC30D': "OmnichannelSalesAllPc30d",
+            'OMNICHANNELROASALLPV24H': "OmnichannelRoasAllPv24h",
+            'OMNICHANNELROASPV24H': "OmnichannelRoasPv24h",
+            'OMNICHANNELREVENUEALLPV24H': "OmnichannelRevenueAllPv24h",
+            'OMNICHANNELREVENUEPV24H': "OmnichannelRevenuePv24h",
+            'OMNICHANNELSALESALLPV24H': "OmnichannelSalesAllPv24h",
+            'OMNICHANNELSALESPV24H': "OmnichannelSalesPv24h",
+            'OMNICHANNELROASCLIENTATTRIBUTION': "OmnichannelRoasClientAttribution",
+            'OMNICHANNELREVENUECLIENTATTRIBUTION': "OmnichannelRevenueClientAttribution",
+            'OMNICHANNELSALESCLIENTATTRIBUTION': "OmnichannelSalesClientAttribution",
+            'ROASALLPC30DCLIENTATTRIBUTION': "RoasAllPc30dClientAttribution",
+            'ROASPC30DCLIENTATTRIBUTION': "RoasPc30dClientAttribution",
+            'ROASALLCLIENTATTRIBUTION': "RoasAllClientAttribution",
+            'ROASCLIENTATTRIBUTION': "RoasClientAttribution",
+            'ROASALLPC30D': "RoasAllPc30d",
+            'ROASPC30D': "RoasPc30d",
+            'ROASALLPC7D': "RoasAllPc7d",
+            'ROASPC7D': "RoasPc7d",
+            'ROASALLPC1D': "RoasAllPc1d",
+            'ROASPC1D': "RoasPc1d",
+            'ROASALLPV24H': "RoasAllPv24h",
+            'ROASPV24H': "RoasPv24h",
+            'ROASPC30PV24': "RoasPc30Pv24",
+            'ROASALLPC30PV24': "RoasAllPc30Pv24",
+            'ROASPC30DPV24H': "RoasPc30dPv24h",
+            'ROASALLPC30DPV24H': "RoasAllPc30dPv24h",
+            'ROASPC7DPV24': "RoasPc7dPv24",
+            'ROASALLPC7DPV24': "RoasAllPc7dPv24",
+            'ROASPC7DPV24H': "RoasPc7dPv24h",
+            'ROASALLPC7DPV24H': "RoasAllPc7dPv24h",
+            'COSTOFSALEPI': "CostOfSalePi",
+            'COSTPERORDERPI': "CostPerOrderPi",
+            'POSTINSTALLCOSTOFSALE': "PostInstallCostOfSale",
+            'POSTINSTALLCOSTPERORDER': "PostInstallCostPerOrder",
+            'RETURNONADVERTISERSPENDINGPI': "ReturnOnAdvertiserSpendingPi",
+            'POSTINSTALLROAS': "PostInstallRoas",
+            'RETURNONADVERTISERSPENDINGOFFLINEPC': "ReturnOnAdvertiserSpendingOfflinePc",
+            'RETURNONADVERTISERSPENDINGOFFLINEPV': "ReturnOnAdvertiserSpendingOfflinePv",
+            'ROASOFFLINEPC30D': "RoasOfflinePc30d",
+            'ROASOFFLINEPV24H': "RoasOfflinePv24h",
+            'POTENTIALDISPLAYS': "PotentialDisplays",
+            'OVERALLCOMPETITIONWIN': "OverallCompetitionWin",
+            'VIEWABLEDISPLAYS': "ViewableDisplays",
+            'NONVIEWABLEDISPLAYS': "NonViewableDisplays",
+            'UNTRACKABLEDISPLAYS': "UntrackableDisplays",
+            'FREQUENCY': "Frequency",
+            'INVALIDDISPLAYS': "InvalidDisplays",
+            'INVALIDCLICKS': "InvalidClicks",
+            'RESULTTYPE': "ResultType",
+            'VIDEOSTARTED': "VideoStarted",
+            'VIDEOFIRSTQUARTILE': "VideoFirstQuartile",
+            'VIDEOMIDPOINT': "VideoMidpoint",
+            'VIDEOTHIRDQUARTILE': "VideoThirdQuartile",
+            'VIDEOCOMPLETED': "VideoCompleted",
+            'VIDEOAVOC': "VideoAvoc",
+            'VIDEOSTARTRATE': "VideoStartRate",
+            'VIDEOCOMPLETIONRATE': "VideoCompletionRate",
+            'VIDEOAVERAGEVIEWRATE': "VideoAverageViewRate",
+            'VIDEOCPV': "VideoCpv",
+            'VIDEOCPCV': "VideoCpcv",
+        },
+        ('format',): {
+            'CSV': "csv",
+            'EXCEL': "excel",
+            'XML': "xml",
+            'JSON': "json",
+        },
     }
 
     validations = {
@@ -106,13 +348,13 @@ class StatisticsReportQueryMessage(ModelNormal):
             'currency': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'format': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'ad_set_ids': ([str], none_type,),  # noqa: E501
             'ad_set_names': ([str], none_type,),  # noqa: E501
             'ad_set_status': ([str], none_type,),  # noqa: E501
             'advertiser_ids': (str, none_type,),  # noqa: E501
+            'format': (str,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
 
@@ -125,13 +367,13 @@ class StatisticsReportQueryMessage(ModelNormal):
         'currency': 'currency',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'format': 'format',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'ad_set_ids': 'adSetIds',  # noqa: E501
         'ad_set_names': 'adSetNames',  # noqa: E501
         'ad_set_status': 'adSetStatus',  # noqa: E501
         'advertiser_ids': 'advertiserIds',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
 
@@ -142,14 +384,13 @@ class StatisticsReportQueryMessage(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, currency, dimensions, end_date, format, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """StatisticsReportQueryMessage - a model defined in OpenAPI
 
         Args:
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
             dimensions ([str]): The dimensions for the report.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
@@ -188,6 +429,7 @@ class StatisticsReportQueryMessage(ModelNormal):
             ad_set_names ([str], none_type): list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
             ad_set_status ([str], none_type): list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
             advertiser_ids (str, none_type): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -223,7 +465,6 @@ class StatisticsReportQueryMessage(ModelNormal):
         self.currency = currency
         self.dimensions = dimensions
         self.end_date = end_date
-        self.format = format
         self.metrics = metrics
         self.start_date = start_date
         for var_name, var_value in kwargs.items():
@@ -246,14 +487,13 @@ class StatisticsReportQueryMessage(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, currency, dimensions, end_date, format, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """StatisticsReportQueryMessage - a model defined in OpenAPI
 
         Args:
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
             dimensions ([str]): The dimensions for the report.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
@@ -292,6 +532,7 @@ class StatisticsReportQueryMessage(ModelNormal):
             ad_set_names ([str], none_type): list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
             ad_set_status ([str], none_type): list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
             advertiser_ids (str, none_type): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -325,7 +566,6 @@ class StatisticsReportQueryMessage(ModelNormal):
         self.currency = currency
         self.dimensions = dimensions
         self.end_date = end_date
-        self.format = format
         self.metrics = metrics
         self.start_date = start_date
         for var_name, var_value in kwargs.items():

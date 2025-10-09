@@ -82,8 +82,8 @@ class AddFundsToBalanceV2(ModelNormal):
         """
         return {
             'delta_amount': (float,),  # noqa: E501
-            'memo': (str, none_type,),  # noqa: E501
-            'po_number': (str, none_type,),  # noqa: E501
+            'memo': (str,),  # noqa: E501
+            'po_number': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -141,8 +141,8 @@ class AddFundsToBalanceV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str, none_type): Memo. [optional]  # noqa: E501
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
+            memo (str): Memo. [optional]  # noqa: E501
+            po_number (str): Purchase Order number.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,8 +232,8 @@ class AddFundsToBalanceV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            memo (str, none_type): Memo. [optional]  # noqa: E501
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
+            memo (str): Memo. [optional]  # noqa: E501
+            po_number (str): Purchase Order number.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

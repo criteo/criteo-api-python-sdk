@@ -76,10 +76,10 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
                         category_ids=[
                             "category_ids_example",
                         ],
-                        lookback_days="Unknown",
+                        lookback_days="Last7Days",
                         max_price=3.14,
                         min_price=3.14,
-                        shopper_activity="Unknown",
+                        shopper_activity="View",
                     ),
                     name="name_example",
                     retailer_id="retailer_id_example",
@@ -115,8 +115,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -124,9 +124,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -213,8 +210,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -222,9 +219,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -290,14 +284,14 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
                         category_ids=[
                             "category_ids_example",
                         ],
-                        lookback_days="Unknown",
+                        lookback_days="Last7Days",
                         max_price=NillableDecimal(
                             value=3.14,
                         ),
                         min_price=NillableDecimal(
                             value=3.14,
                         ),
-                        shopper_activity="Unknown",
+                        shopper_activity="View",
                     ),
                     name="name_example",
                 ),
@@ -333,8 +327,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -342,9 +336,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -364,7 +355,6 @@ Delete all identifiers from a retail-media contact list audience-segment, with e
 import time
 import criteo_api_retailmedia_v2025_04
 from criteo_api_retailmedia_v2025_04.api import audience_api
-from criteo_api_retailmedia_v2025_04.model.error_code_response import ErrorCodeResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -428,7 +418,6 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | The Contact List identifiers were deleted |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -507,7 +496,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -515,9 +504,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -584,7 +570,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             type="type_example",
         ),
     ) # RmAudienceSegmentSearchInputV1 | Segment search filters.
-    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 500. (optional) if omitted the server will use the default value of 50
     offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
@@ -610,7 +596,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| Account Id |
  **rm_audience_segment_search_input_v1** | [**RmAudienceSegmentSearchInputV1**](RmAudienceSegmentSearchInputV1.md)| Segment search filters. |
- **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 500. | [optional] if omitted the server will use the default value of 50
  **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
@@ -623,8 +609,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -632,9 +618,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -701,7 +684,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             type="type_example",
         ),
     ) # RmAudienceSearchInputV1 | Audience search filters.
-    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 100. (optional) if omitted the server will use the default value of 50
+    limit = 50 # int | The number of elements to be returned. The default is 50 and the maximum is 500. (optional) if omitted the server will use the default value of 50
     offset = 0 # int | The (zero-based) offset into the collection. The default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
@@ -727,7 +710,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| Account Id |
  **rm_audience_search_input_v1** | [**RmAudienceSearchInputV1**](RmAudienceSearchInputV1.md)| Audience search filters. |
- **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 100. | [optional] if omitted the server will use the default value of 50
+ **limit** | **int**| The number of elements to be returned. The default is 50 and the maximum is 500. | [optional] if omitted the server will use the default value of 50
  **offset** | **int**| The (zero-based) offset into the collection. The default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
@@ -740,8 +723,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -749,9 +732,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -771,7 +751,6 @@ Add/remove identifiers to or from a retail-media contact list audience-segment, 
 import time
 import criteo_api_retailmedia_v2025_04
 from criteo_api_retailmedia_v2025_04.api import audience_api
-from criteo_api_retailmedia_v2025_04.model.error_code_response import ErrorCodeResponse
 from criteo_api_retailmedia_v2025_04.model.retail_media_contactlist_amendment_request import RetailMediaContactlistAmendmentRequest
 from criteo_api_retailmedia_v2025_04.model.retail_media_contactlist_operation import RetailMediaContactlistOperation
 from pprint import pprint
@@ -851,7 +830,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Summary of created request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

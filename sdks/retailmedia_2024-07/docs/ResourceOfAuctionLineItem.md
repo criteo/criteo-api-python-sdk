@@ -1,11 +1,11 @@
 # ResourceOfAuctionLineItem
 
-Data model for a Resource
+A class that represents a domain entity exposed by an API
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**ExternalAuctionLineItem**](ExternalAuctionLineItem.md) |  | [optional] 
+**attributes** | [**AuctionLineItem**](AuctionLineItem.md) |  | [optional] 
 **id** | **str, none_type** | Id of the entity | [optional] 
 **type** | **str, none_type** | Canonical type name of the entity | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

@@ -55,6 +55,12 @@ class TransactionsReportQueryMessage(ModelNormal):
     """
 
     allowed_values = {
+        ('format',): {
+            'CSV': "csv",
+            'EXCEL': "excel",
+            'XML': "xml",
+            'JSON': "json",
+        },
     }
 
     validations = {
@@ -77,10 +83,10 @@ class TransactionsReportQueryMessage(ModelNormal):
         return {
             'currency': (str,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
-            'format': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'advertiser_ids': (str, none_type,),  # noqa: E501
             'event_type': (str, none_type,),  # noqa: E501
+            'format': (str,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
 
@@ -92,10 +98,10 @@ class TransactionsReportQueryMessage(ModelNormal):
     attribute_map = {
         'currency': 'currency',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
-        'format': 'format',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'advertiser_ids': 'advertiserIds',  # noqa: E501
         'event_type': 'eventType',  # noqa: E501
+        'format': 'format',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
 
@@ -106,13 +112,12 @@ class TransactionsReportQueryMessage(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, currency, end_date, format, start_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, currency, end_date, start_date, *args, **kwargs):  # noqa: E501
         """TransactionsReportQueryMessage - a model defined in OpenAPI
 
         Args:
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
         Keyword Args:
@@ -148,6 +153,7 @@ class TransactionsReportQueryMessage(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             advertiser_ids (str, none_type): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
             event_type (str, none_type): Apply a filter on Event type .. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -182,7 +188,6 @@ class TransactionsReportQueryMessage(ModelNormal):
 
         self.currency = currency
         self.end_date = end_date
-        self.format = format
         self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -204,13 +209,12 @@ class TransactionsReportQueryMessage(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, currency, end_date, format, start_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, currency, end_date, start_date, *args, **kwargs):  # noqa: E501
         """TransactionsReportQueryMessage - a model defined in OpenAPI
 
         Args:
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            format (str): The file format of the generated report: csv, xml, excel or json.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
 
         Keyword Args:
@@ -246,6 +250,7 @@ class TransactionsReportQueryMessage(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             advertiser_ids (str, none_type): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
             event_type (str, none_type): Apply a filter on Event type .. [optional]  # noqa: E501
+            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
             timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
@@ -278,7 +283,6 @@ class TransactionsReportQueryMessage(ModelNormal):
 
         self.currency = currency
         self.end_date = end_date
-        self.format = format
         self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

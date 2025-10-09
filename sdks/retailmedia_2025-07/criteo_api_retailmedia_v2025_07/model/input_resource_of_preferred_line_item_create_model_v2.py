@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_07.model.external_preferred_line_item_create_model_v2 import ExternalPreferredLineItemCreateModelV2
-    globals()['ExternalPreferredLineItemCreateModelV2'] = ExternalPreferredLineItemCreateModelV2
+    from criteo_api_retailmedia_v2025_07.model.preferred_line_item_create_model_v2 import PreferredLineItemCreateModelV2
+    globals()['PreferredLineItemCreateModelV2'] = PreferredLineItemCreateModelV2
 
 
 class InputResourceOfPreferredLineItemCreateModelV2(ModelNormal):
@@ -87,7 +87,7 @@ class InputResourceOfPreferredLineItemCreateModelV2(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalPreferredLineItemCreateModelV2,),  # noqa: E501
+            'attributes': (PreferredLineItemCreateModelV2,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class InputResourceOfPreferredLineItemCreateModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalPreferredLineItemCreateModelV2): [optional]  # noqa: E501
+            attributes (PreferredLineItemCreateModelV2): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class InputResourceOfPreferredLineItemCreateModelV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalPreferredLineItemCreateModelV2): [optional]  # noqa: E501
+            attributes (PreferredLineItemCreateModelV2): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2024_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_07.model.external_add_to_basket_ids_update_model202110 import ExternalAddToBasketIdsUpdateModel202110
-    globals()['ExternalAddToBasketIdsUpdateModel202110'] = ExternalAddToBasketIdsUpdateModel202110
+    from criteo_api_retailmedia_v2024_07.model.add_to_basket_ids_update_model202110 import AddToBasketIdsUpdateModel202110
+    globals()['AddToBasketIdsUpdateModel202110'] = AddToBasketIdsUpdateModel202110
 
 
 class ValueTypeResourceOfAddToBasketIdsUpdateModel202110(ModelNormal):
@@ -87,7 +87,7 @@ class ValueTypeResourceOfAddToBasketIdsUpdateModel202110(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalAddToBasketIdsUpdateModel202110,),  # noqa: E501
+            'attributes': (AddToBasketIdsUpdateModel202110,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class ValueTypeResourceOfAddToBasketIdsUpdateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAddToBasketIdsUpdateModel202110): [optional]  # noqa: E501
+            attributes (AddToBasketIdsUpdateModel202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class ValueTypeResourceOfAddToBasketIdsUpdateModel202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAddToBasketIdsUpdateModel202110): [optional]  # noqa: E501
+            attributes (AddToBasketIdsUpdateModel202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

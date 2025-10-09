@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**append_product_button_by_line_item_id**](CampaignApi.md#append_product_button_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/append | 
 [**create_auction_line_item_v2**](CampaignApi.md#create_auction_line_item_v2) | **POST** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
+[**create_creative**](CampaignApi.md#create_creative) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
 [**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**delete_product_button_by_line_item_and_product_button_id**](CampaignApi.md#delete_product_button_by_line_item_and_product_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/delete | 
@@ -18,9 +19,9 @@ Method | HTTP request | Description
 [**get_api_v1_external_retailer_by_retailer_id_seller_by_seller**](CampaignApi.md#get_api_v1_external_retailer_by_retailer_id_seller_by_seller) | **GET** /preview/retail-media/retailers/{retailerId}/sellers/{seller} | 
 [**get_api_v1_external_retailer_category_cpc_rates_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_category_cpc_rates_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/cpc-rates | 
 [**get_api_v1_external_retailer_placements_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_placements_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/placements | 
-[**get_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#get_api_v2_external_account_by_account_id_creativescreative_id) | **GET** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_auction_line_item_v2**](CampaignApi.md#get_auction_line_item_v2) | **GET** /preview/retail-media/auction-line-items/{lineItemId} | 
 [**get_auction_line_items_by_campaign_id_v2**](CampaignApi.md#get_auction_line_items_by_campaign_id_v2) | **GET** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
+[**get_creative**](CampaignApi.md#get_creative) | **GET** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_preferred_line_items_by_campaign_id**](CampaignApi.md#get_preferred_line_items_by_campaign_id) | **GET** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**get_preferred_line_items_by_line_item_id**](CampaignApi.md#get_preferred_line_items_by_line_item_id) | **GET** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**get_product_button_by_line_item_and_product_button_id**](CampaignApi.md#get_product_button_by_line_item_and_product_button_id) | **GET** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
@@ -32,15 +33,15 @@ Method | HTTP request | Description
 [**post_api_external_v2_account_seller_catalog_export_by_account_id**](CampaignApi.md#post_api_external_v2_account_seller_catalog_export_by_account_id) | **POST** /preview/retail-media/accounts/{accountId}/seller-catalog-export | 
 [**post_api_v1_external_catalogs_sku_retrieval**](CampaignApi.md#post_api_v1_external_catalogs_sku_retrieval) | **POST** /preview/retail-media/catalogs/sku-retrieval | 
 [**post_api_v1_external_catalogs_sku_search**](CampaignApi.md#post_api_v1_external_catalogs_sku_search) | **POST** /preview/retail-media/catalogs/sku-search | 
-[**post_api_v2_external_account_creatives_by_account_id**](CampaignApi.md#post_api_v2_external_account_creatives_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
-[**post_api_v2_external_account_creatives_search_by_account_id**](CampaignApi.md#post_api_v2_external_account_creatives_search_by_account_id) | **POST** /preview/retail-media/accounts/{account-id}/creatives/search | 
-[**put_api_v2_external_account_by_account_id_creativescreative_id**](CampaignApi.md#put_api_v2_external_account_by_account_id_creativescreative_id) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**recommended_keywords**](CampaignApi.md#recommended_keywords) | **POST** /preview/retail-media/retailers/{retailerId}/recommend-keywords | 
+[**search_account_creatives**](CampaignApi.md#search_account_creatives) | **POST** /preview/retail-media/accounts/{account-id}/creatives/search | 
 [**search_brands**](CampaignApi.md#search_brands) | **POST** /preview/retail-media/brands/search | 
 [**search_category**](CampaignApi.md#search_category) | **POST** /preview/retail-media/retailers/{retailerId}/categories/search | 
+[**search_retailers_v1**](CampaignApi.md#search_retailers_v1) | **POST** /preview/retail-media/accounts/{accountId}/retailers/search | 
 [**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /preview/retail-media/line-items/{id}/keywords/set-bid | 
 [**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/unpause | 
 [**update_auction_line_item_v2**](CampaignApi.md#update_auction_line_item_v2) | **PUT** /preview/retail-media/auction-line-items/{lineItemId} | 
+[**update_creative**](CampaignApi.md#update_creative) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**update_keyword_reviews_v1**](CampaignApi.md#update_keyword_reviews_v1) | **POST** /preview/retail-media/line-items/{line-item-id}/keywords/review | 
 [**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**update_product_button_by_line_item_and_product_button_id**](CampaignApi.md#update_product_button_by_line_item_and_product_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
@@ -441,6 +442,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 max_bid=3.14,
                 monthly_pacing=3.14,
                 name="name_example",
+                optimization_strategy_enum="manual",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 target_bid=3.14,
                 target_retailer_id="target_retailer_id_example",
@@ -492,6 +494,136 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_creative**
+> Creative2Response create_creative(account_id)
+
+
+
+Create a creative for an account
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
+from criteo_api_retailmedia_preview.model.creative_create_model2 import CreativeCreateModel2
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to create a creative for
+    creative_create_model2 = CreativeCreateModel2(
+        brand_id=1,
+        name="name_example",
+        retailer_id=1,
+        template_id=1,
+        template_variable_values=[
+            TemplateVariableValue(
+                choice_variable_value=ChoiceVariableValue(
+                    chosen_options=[
+                        "chosen_options_example",
+                    ],
+                ),
+                color_variable_value=ColorVariableValue(
+                    color="#2EC",
+                ),
+                files_variable_value=FilesVariableValue(
+                    asset_ids=[
+                        "asset_ids_example",
+                    ],
+                ),
+                hyperlink_variable_value=HyperlinkVariableValue(
+                    url="url_example",
+                ),
+                id="id_example",
+                text_variable_value=TextVariableValue(
+                    text="text_example",
+                ),
+                video_variable_value=VideoVariableValue(
+                    duration="duration_example",
+                    height=1,
+                    url="url_example",
+                    width=1,
+                ),
+            ),
+        ],
+    ) # CreativeCreateModel2 | The creative to create (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_creative(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_creative: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.create_creative(account_id, creative_create_model2=creative_create_model2)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->create_creative: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to create a creative for |
+ **creative_create_model2** | [**CreativeCreateModel2**](CreativeCreateModel2.md)| The creative to create | [optional]
+
+### Return type
+
+[**Creative2Response**](Creative2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Creatives created |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1438,92 +1570,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api_v2_external_account_by_account_id_creativescreative_id**
-> Creative2Response get_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-
-
-
-Get the specified creative
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id to retrieve creatives for
-    creative_id = "creative-id_example" # str | Creative to get
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v2_external_account_by_account_id_creativescreative_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id to retrieve creatives for |
- **creative_id** | **str**| Creative to get |
-
-### Return type
-
-[**Creative2Response**](Creative2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Creatives found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_auction_line_item_v2**
 > EntityResourceOutcomeOfSponsoredProductsLineItem get_auction_line_item_v2(line_item_id)
 
@@ -1705,6 +1751,92 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_creative**
+> Creative2Response get_creative(account_id, creative_id)
+
+
+
+Get the specified creative
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to retrieve creatives for
+    creative_id = "creative-id_example" # str | Creative to get
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_creative(account_id, creative_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_creative: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to retrieve creatives for |
+ **creative_id** | **str**| Creative to get |
+
+### Return type
+
+[**Creative2Response**](Creative2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Creatives found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2789,365 +2921,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_api_v2_external_account_creatives_by_account_id**
-> Creative2Response post_api_v2_external_account_creatives_by_account_id(account_id)
-
-
-
-Create a creative for an account
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
-from criteo_api_retailmedia_preview.model.creative_create_model2 import CreativeCreateModel2
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id to create a creative for
-    creative_create_model2 = CreativeCreateModel2(
-        brand_id=1,
-        name="name_example",
-        retailer_id=1,
-        template_id=1,
-        template_variable_values=[
-            TemplateVariableValue(
-                choice_variable_value=ChoiceVariableValue(
-                    chosen_options=[
-                        "chosen_options_example",
-                    ],
-                ),
-                color_variable_value=ColorVariableValue(
-                    color="#2EC",
-                ),
-                files_variable_value=FilesVariableValue(
-                    asset_ids=[
-                        "asset_ids_example",
-                    ],
-                ),
-                hyperlink_variable_value=HyperlinkVariableValue(
-                    url="url_example",
-                ),
-                id="id_example",
-                text_variable_value=TextVariableValue(
-                    text="text_example",
-                ),
-                video_variable_value=VideoVariableValue(
-                    duration="duration_example",
-                    height=1,
-                    url="url_example",
-                    width=1,
-                ),
-            ),
-        ],
-    ) # CreativeCreateModel2 | The creative to create (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v2_external_account_creatives_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v2_external_account_creatives_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v2_external_account_creatives_by_account_id(account_id, creative_create_model2=creative_create_model2)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v2_external_account_creatives_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id to create a creative for |
- **creative_create_model2** | [**CreativeCreateModel2**](CreativeCreateModel2.md)| The creative to create | [optional]
-
-### Return type
-
-[**Creative2Response**](Creative2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**201** | Creatives created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_v2_external_account_creatives_search_by_account_id**
-> Creative2ListResponse post_api_v2_external_account_creatives_search_by_account_id(account_id)
-
-
-
-Get account creatives
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.creative2_list_response import Creative2ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id to retrieve creatives for
-    creative_ids = [
-        "creative-ids_example",
-    ] # [str] | Creatives to filter by (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v2_external_account_creatives_search_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v2_external_account_creatives_search_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v2_external_account_creatives_search_by_account_id(account_id, creative_ids=creative_ids)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v2_external_account_creatives_search_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id to retrieve creatives for |
- **creative_ids** | **[str]**| Creatives to filter by | [optional]
-
-### Return type
-
-[**Creative2ListResponse**](Creative2ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Creatives found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **put_api_v2_external_account_by_account_id_creativescreative_id**
-> Creative2Response put_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-
-
-
-Update a creative
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
-from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | External account id containing the creative
-    creative_id = "creative-id_example" # str | Creative to update
-    creative_update_model2 = CreativeUpdateModel2(
-        brand_id=1,
-        name="name_example",
-        retailer_id=1,
-        template_id=1,
-        template_variable_values=[
-            TemplateVariableValue(
-                choice_variable_value=ChoiceVariableValue(
-                    chosen_options=[
-                        "chosen_options_example",
-                    ],
-                ),
-                color_variable_value=ColorVariableValue(
-                    color="#2EC",
-                ),
-                files_variable_value=FilesVariableValue(
-                    asset_ids=[
-                        "asset_ids_example",
-                    ],
-                ),
-                hyperlink_variable_value=HyperlinkVariableValue(
-                    url="url_example",
-                ),
-                id="id_example",
-                text_variable_value=TextVariableValue(
-                    text="text_example",
-                ),
-                video_variable_value=VideoVariableValue(
-                    duration="duration_example",
-                    height=1,
-                    url="url_example",
-                    width=1,
-                ),
-            ),
-        ],
-    ) # CreativeUpdateModel2 | The creative to create (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.put_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_v2_external_account_by_account_id_creativescreative_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id, creative_update_model2=creative_update_model2)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_api_v2_external_account_by_account_id_creativescreative_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| External account id containing the creative |
- **creative_id** | **str**| Creative to update |
- **creative_update_model2** | [**CreativeUpdateModel2**](CreativeUpdateModel2.md)| The creative to create | [optional]
-
-### Return type
-
-[**Creative2Response**](Creative2Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**204** | Creative updated |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **recommended_keywords**
 > ValueResourceOutcomeRecommendedKeywordsResponseV1 recommended_keywords(retailer_id)
 
@@ -3249,6 +3022,102 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_account_creatives**
+> Creative2ListResponse search_account_creatives(account_id)
+
+
+
+Get account creatives
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative2_list_response import Creative2ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to retrieve creatives for
+    creative_ids = [
+        "creative-ids_example",
+    ] # [str] | Creatives to filter by (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.search_account_creatives(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_account_creatives: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.search_account_creatives(account_id, creative_ids=creative_ids)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_account_creatives: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to retrieve creatives for |
+ **creative_ids** | **[str]**| Creatives to filter by | [optional]
+
+### Return type
+
+[**Creative2ListResponse**](Creative2ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Creatives found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3443,6 +3312,114 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EntityResourceCollectionOutcomeCategory202204Metadata**](EntityResourceCollectionOutcomeCategory202204Metadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_retailers_v1**
+> EntityResourceCollectionOutcomeOfRetailerResultAndMetadata search_retailers_v1(account_id)
+
+
+
+Searches for retailers associated with the specified account based on provided search criteria
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "accountId_example" # str | The external account identifier
+    limit = 5 # int | The maximum number of items to return. Must be between 1 and 10. Default is 5. (optional) if omitted the server will use the default value of 5
+    offset = 0 # int | The number of items to skip before starting to collect the result set. Default is 0. (optional) if omitted the server will use the default value of 0
+    value_resource_input_of_retailer_search_request = ValueResourceInputOfRetailerSearchRequest(
+        data=ValueResourceOfRetailerSearchRequest(
+            attributes=RetailerSearchRequest(
+                retailer_id_filter=[
+                    "retailer_id_filter_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfRetailerSearchRequest | The search request containing filtering parameters (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.search_retailers_v1(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_retailers_v1: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.search_retailers_v1(account_id, limit=limit, offset=offset, value_resource_input_of_retailer_search_request=value_resource_input_of_retailer_search_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->search_retailers_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The external account identifier |
+ **limit** | **int**| The maximum number of items to return. Must be between 1 and 10. Default is 5. | [optional] if omitted the server will use the default value of 5
+ **offset** | **int**| The number of items to skip before starting to collect the result set. Default is 0. | [optional] if omitted the server will use the default value of 0
+ **value_resource_input_of_retailer_search_request** | [**ValueResourceInputOfRetailerSearchRequest**](ValueResourceInputOfRetailerSearchRequest.md)| The search request containing filtering parameters | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeOfRetailerResultAndMetadata**](EntityResourceCollectionOutcomeOfRetailerResultAndMetadata.md)
 
 ### Authorization
 
@@ -3741,6 +3718,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 max_bid=3.14,
                 monthly_pacing=3.14,
                 name="name_example",
+                optimization_strategy="manual",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 status="active",
                 target_bid=3.14,
@@ -3792,6 +3770,139 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_creative**
+> Creative2Response update_creative(account_id, creative_id)
+
+
+
+Update a creative
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
+from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id containing the creative
+    creative_id = "creative-id_example" # str | Creative to update
+    creative_update_model2 = CreativeUpdateModel2(
+        brand_id=1,
+        name="name_example",
+        retailer_id=1,
+        template_id=1,
+        template_variable_values=[
+            TemplateVariableValue(
+                choice_variable_value=ChoiceVariableValue(
+                    chosen_options=[
+                        "chosen_options_example",
+                    ],
+                ),
+                color_variable_value=ColorVariableValue(
+                    color="#2EC",
+                ),
+                files_variable_value=FilesVariableValue(
+                    asset_ids=[
+                        "asset_ids_example",
+                    ],
+                ),
+                hyperlink_variable_value=HyperlinkVariableValue(
+                    url="url_example",
+                ),
+                id="id_example",
+                text_variable_value=TextVariableValue(
+                    text="text_example",
+                ),
+                video_variable_value=VideoVariableValue(
+                    duration="duration_example",
+                    height=1,
+                    url="url_example",
+                    width=1,
+                ),
+            ),
+        ],
+    ) # CreativeUpdateModel2 | The creative to create (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_creative(account_id, creative_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_creative: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.update_creative(account_id, creative_id, creative_update_model2=creative_update_model2)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->update_creative: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id containing the creative |
+ **creative_id** | **str**| Creative to update |
+ **creative_update_model2** | [**CreativeUpdateModel2**](CreativeUpdateModel2.md)| The creative to create | [optional]
+
+### Return type
+
+[**Creative2Response**](Creative2Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**204** | Creative updated |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -4,25 +4,25 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ad_set_v24_q3**](CampaignApi.md#create_ad_set_v24_q3) | **POST** /2025-04/marketing-solutions/ad-sets | 
+[**create_ad_set**](CampaignApi.md#create_ad_set) | **POST** /2025-04/marketing-solutions/ad-sets | 
 [**create_campaign**](CampaignApi.md#create_campaign) | **POST** /2025-04/marketing-solutions/campaigns | 
-[**get_ad_set_v24_q3**](CampaignApi.md#get_ad_set_v24_q3) | **GET** /2025-04/marketing-solutions/ad-sets/{ad-set-id} | 
-[**get_campaign_v23_q1**](CampaignApi.md#get_campaign_v23_q1) | **GET** /2025-04/marketing-solutions/campaigns/{campaign-id} | 
-[**get_category_bid_list**](CampaignApi.md#get_category_bid_list) | **GET** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
+[**get_ad_set**](CampaignApi.md#get_ad_set) | **GET** /2025-04/marketing-solutions/ad-sets/{ad-set-id} | 
+[**get_ad_set_category_bids**](CampaignApi.md#get_ad_set_category_bids) | **GET** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
+[**get_campaign**](CampaignApi.md#get_campaign) | **GET** /2025-04/marketing-solutions/campaigns/{campaign-id} | 
 [**get_display_multipliers**](CampaignApi.md#get_display_multipliers) | **GET** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
-[**patch_ad_sets_v24_q3**](CampaignApi.md#patch_ad_sets_v24_q3) | **PATCH** /2025-04/marketing-solutions/ad-sets | 
+[**patch_ad_set_category_bids**](CampaignApi.md#patch_ad_set_category_bids) | **PATCH** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
+[**patch_ad_sets**](CampaignApi.md#patch_ad_sets) | **PATCH** /2025-04/marketing-solutions/ad-sets | 
 [**patch_campaigns**](CampaignApi.md#patch_campaigns) | **PATCH** /2025-04/marketing-solutions/campaigns | 
-[**patch_category_bid_list**](CampaignApi.md#patch_category_bid_list) | **PATCH** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
 [**patch_display_multipliers**](CampaignApi.md#patch_display_multipliers) | **PATCH** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
-[**search_ad_sets_v24_q3**](CampaignApi.md#search_ad_sets_v24_q3) | **POST** /2025-04/marketing-solutions/ad-sets/search | 
-[**search_campaigns_v23_q1**](CampaignApi.md#search_campaigns_v23_q1) | **POST** /2025-04/marketing-solutions/campaigns/search | 
+[**search_ad_sets**](CampaignApi.md#search_ad_sets) | **POST** /2025-04/marketing-solutions/ad-sets/search | 
+[**search_campaigns**](CampaignApi.md#search_campaigns) | **POST** /2025-04/marketing-solutions/campaigns/search | 
 [**start_ad_sets**](CampaignApi.md#start_ad_sets) | **POST** /2025-04/marketing-solutions/ad-sets/start | 
 [**stop_ad_sets**](CampaignApi.md#stop_ad_sets) | **POST** /2025-04/marketing-solutions/ad-sets/stop | 
 [**update_ad_set_audience**](CampaignApi.md#update_ad_set_audience) | **PUT** /2025-04/marketing-solutions/ad-sets/{ad-set-id}/audience | 
 
 
-# **create_ad_set_v24_q3**
-> ResponseReadAdSetV24Q3 create_ad_set_v24_q3(create_ad_set_v24_q3_request)
+# **create_ad_set**
+> ResponseReadAdSetV24Q3 create_ad_set(create_ad_set_v24_q3_request)
 
 
 
@@ -139,10 +139,10 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_ad_set_v24_q3(create_ad_set_v24_q3_request)
+        api_response = api_instance.create_ad_set(create_ad_set_v24_q3_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->create_ad_set_v24_q3: %s\n" % e)
+        print("Exception when calling CampaignApi->create_ad_set: %s\n" % e)
 ```
 
 
@@ -162,8 +162,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -171,8 +171,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The ad set that has been created and errors / warnings |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -269,8 +267,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -278,13 +276,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The campaign that has been created and errors / warnings |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_ad_set_v24_q3**
-> ResponseReadAdSetV24Q3 get_ad_set_v24_q3(ad_set_id)
+# **get_ad_set**
+> ResponseReadAdSetV24Q3 get_ad_set(ad_set_id)
 
 
 
@@ -332,10 +328,10 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_ad_set_v24_q3(ad_set_id)
+        api_response = api_instance.get_ad_set(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_ad_set_v24_q3: %s\n" % e)
+        print("Exception when calling CampaignApi->get_ad_set: %s\n" % e)
 ```
 
 
@@ -356,7 +352,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -364,99 +360,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | data for the ad set |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_campaign_v23_q1**
-> CampaignV23Q1Response get_campaign_v23_q1(campaign_id)
-
-
-
-Get the data for the specified campaign
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_v2025_04
-from criteo_api_marketingsolutions_v2025_04.api import campaign_api
-from criteo_api_marketingsolutions_v2025_04.model.campaign_v23_q1_response import CampaignV23Q1Response
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = "campaign-id_example" # str | Id of the campaign
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_campaign_v23_q1(campaign_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_campaign_v23_q1: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign |
-
-### Return type
-
-[**CampaignV23Q1Response**](CampaignV23Q1Response.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | data for the campaign |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_category_bid_list**
-> AdSetCategoryBidListResponse get_category_bid_list(ad_set_id)
+# **get_ad_set_category_bids**
+> AdSetCategoryBidListResponse get_ad_set_category_bids(ad_set_id)
 
 
 
@@ -504,10 +412,10 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_category_bid_list(ad_set_id)
+        api_response = api_instance.get_ad_set_category_bids(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_category_bid_list: %s\n" % e)
+        print("Exception when calling CampaignApi->get_ad_set_category_bids: %s\n" % e)
 ```
 
 
@@ -528,7 +436,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -536,9 +444,90 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of Category Bids for all valid Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_campaign**
+> CampaignV23Q1Response get_campaign(campaign_id)
+
+
+
+Get the data for the specified campaign
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_v2025_04
+from criteo_api_marketingsolutions_v2025_04.api import campaign_api
+from criteo_api_marketingsolutions_v2025_04.model.campaign_v23_q1_response import CampaignV23Q1Response
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    campaign_id = "campaign-id_example" # str | Id of the campaign
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_campaign(campaign_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
+        print("Exception when calling CampaignApi->get_campaign: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **campaign_id** | **str**| Id of the campaign |
+
+### Return type
+
+[**CampaignV23Q1Response**](CampaignV23Q1Response.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | data for the campaign |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -615,7 +604,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -623,14 +612,116 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of Display Multipliers for all valid Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_ad_sets_v24_q3**
-> ResponsesAdSetIdV24Q3 patch_ad_sets_v24_q3()
+# **patch_ad_set_category_bids**
+> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id)
+
+
+
+Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_v2025_04
+from criteo_api_marketingsolutions_v2025_04.api import campaign_api
+from criteo_api_marketingsolutions_v2025_04.model.patch_ad_set_category_bid_result_list_response import PatchAdSetCategoryBidResultListResponse
+from criteo_api_marketingsolutions_v2025_04.model.patch_ad_set_category_bid_list_request import PatchAdSetCategoryBidListRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
+    patch_ad_set_category_bid_list_request = PatchAdSetCategoryBidListRequest(
+        data=[
+            PatchAdSetCategoryBidResource(
+                attributes=PatchAdSetCategoryBid(
+                    bid_amount=3.14,
+                ),
+                id="id_example",
+                type="AdSetCategoryBid",
+            ),
+        ],
+    ) # PatchAdSetCategoryBidListRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.patch_ad_set_category_bids(ad_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
+        print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request=patch_ad_set_category_bid_list_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
+        print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_set_id** | **str**| Id of the Ad Set |
+ **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  | [optional]
+
+### Return type
+
+[**PatchAdSetCategoryBidResultListResponse**](PatchAdSetCategoryBidResultListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of updated Category Bids for given Categories associated to an Ad Set. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **patch_ad_sets**
+> ResponsesAdSetIdV24Q3 patch_ad_sets()
 
 
 
@@ -746,10 +837,10 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.patch_ad_sets_v24_q3(requests_patch_ad_set_v24_q3=requests_patch_ad_set_v24_q3)
+        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3=requests_patch_ad_set_v24_q3)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->patch_ad_sets_v24_q3: %s\n" % e)
+        print("Exception when calling CampaignApi->patch_ad_sets: %s\n" % e)
 ```
 
 
@@ -769,8 +860,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -778,8 +869,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of patched adSets. |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -879,8 +968,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -888,116 +977,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of patched campaigns. |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **patch_category_bid_list**
-> PatchAdSetCategoryBidResultListResponse patch_category_bid_list(ad_set_id)
-
-
-
-Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_v2025_04
-from criteo_api_marketingsolutions_v2025_04.api import campaign_api
-from criteo_api_marketingsolutions_v2025_04.model.patch_ad_set_category_bid_result_list_response import PatchAdSetCategoryBidResultListResponse
-from criteo_api_marketingsolutions_v2025_04.model.patch_ad_set_category_bid_list_request import PatchAdSetCategoryBidListRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    ad_set_id = "ad-set-id_example" # str | Id of the Ad Set
-    patch_ad_set_category_bid_list_request = PatchAdSetCategoryBidListRequest(
-        data=[
-            PatchAdSetCategoryBidResource(
-                attributes=PatchAdSetCategoryBid(
-                    bid_amount=3.14,
-                ),
-                id="id_example",
-                type="AdSetCategoryBid",
-            ),
-        ],
-    ) # PatchAdSetCategoryBidListRequest |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.patch_category_bid_list(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->patch_category_bid_list: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_category_bid_list(ad_set_id, patch_ad_set_category_bid_list_request=patch_ad_set_category_bid_list_request)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->patch_category_bid_list: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  | [optional]
-
-### Return type
-
-[**PatchAdSetCategoryBidResultListResponse**](PatchAdSetCategoryBidResultListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List of updated Category Bids for given Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1094,8 +1073,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1103,14 +1082,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of updated Display Multipliers for given Categories associated to an Ad Set. |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_ad_sets_v24_q3**
-> ResponsesReadAdSetV24Q3 search_ad_sets_v24_q3()
+# **search_ad_sets**
+> ResponsesReadAdSetV24Q3 search_ad_sets()
 
 
 
@@ -1172,10 +1148,10 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_ad_sets_v24_q3(ad_set_search_request_v24_q3=ad_set_search_request_v24_q3)
+        api_response = api_instance.search_ad_sets(ad_set_search_request_v24_q3=ad_set_search_request_v24_q3)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->search_ad_sets_v24_q3: %s\n" % e)
+        print("Exception when calling CampaignApi->search_ad_sets: %s\n" % e)
 ```
 
 
@@ -1195,8 +1171,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1204,14 +1180,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | data for the ad sets |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource or the resource does not exist. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_campaigns_v23_q1**
-> CampaignV23Q1ListResponse search_campaigns_v23_q1()
+# **search_campaigns**
+> CampaignV23Q1ListResponse search_campaigns()
 
 
 
@@ -1270,10 +1243,10 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_campaigns_v23_q1(campaign_search_request_v23_q1=campaign_search_request_v23_q1)
+        api_response = api_instance.search_campaigns(campaign_search_request_v23_q1=campaign_search_request_v23_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->search_campaigns_v23_q1: %s\n" % e)
+        print("Exception when calling CampaignApi->search_campaigns: %s\n" % e)
 ```
 
 
@@ -1293,8 +1266,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1302,9 +1275,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | data for the campaigns |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1389,8 +1359,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1398,8 +1368,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of ad sets that have been started and errors / warnings by ad set |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1484,8 +1452,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1493,8 +1461,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List of ad sets that have been stopped and errors / warnings by ad set |  -  |
-**400** | Bad Request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1581,8 +1547,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -1590,9 +1556,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad request |  -  |
-**401** | The API client is not properly authenticated. |  -  |
-**403** | The API client is not authorized to access this resource. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

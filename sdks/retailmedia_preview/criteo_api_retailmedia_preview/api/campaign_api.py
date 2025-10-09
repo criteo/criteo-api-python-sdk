@@ -32,6 +32,7 @@ from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_bra
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204 import EntityResourceCollectionOutcomeCategory202204
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_category202204_metadata import EntityResourceCollectionOutcomeCategory202204Metadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_line_item_keyword_review_report_and_metadata import EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
@@ -55,6 +56,7 @@ from criteo_api_retailmedia_preview.model.sku_search_request_preview_request imp
 from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_of_brand_catalog_request_v2 import ValueResourceInputOfBrandCatalogRequestV2
+from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_of_seller_catalog_request_v2 import ValueResourceInputOfSellerCatalogRequestV2
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
@@ -295,6 +297,64 @@ class CampaignApi(object):
                 'location_map': {
                     'campaign_id': 'path',
                     'value_resource_input_of_sponsored_products_line_item_create_request_model': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_creative_endpoint = _Endpoint(
+            settings={
+                'response_type': (Creative2Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives',
+                'operation_id': 'create_creative',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_create_model2',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_create_model2':
+                        (CreativeCreateModel2,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_create_model2': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -896,64 +956,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_api_v2_external_account_by_account_id_creativescreative_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (Creative2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
-                'operation_id': 'get_api_v2_external_account_by_account_id_creativescreative_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'creative_id',
-                ],
-                'required': [
-                    'account_id',
-                    'creative_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'creative_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                    'creative_id': 'creative-id',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'creative_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_auction_line_item_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomeOfSponsoredProductsLineItem,),
@@ -1076,6 +1078,64 @@ class CampaignApi(object):
                 },
                 'collection_format_map': {
                     'limit_to_id': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_creative_endpoint = _Endpoint(
+            settings={
+                'response_type': (Creative2Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
+                'operation_id': 'get_creative',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_id',
+                ],
+                'required': [
+                    'account_id',
+                    'creative_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'creative_id': 'creative-id',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_id': 'path',
+                },
+                'collection_format_map': {
                 }
             },
             headers_map={
@@ -1784,186 +1844,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.post_api_v2_external_account_creatives_by_account_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (Creative2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives',
-                'operation_id': 'post_api_v2_external_account_creatives_by_account_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'creative_create_model2',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'creative_create_model2':
-                        (CreativeCreateModel2,),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'creative_create_model2': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.post_api_v2_external_account_creatives_search_by_account_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (Creative2ListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/search',
-                'operation_id': 'post_api_v2_external_account_creatives_search_by_account_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'creative_ids',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'creative_ids':
-                        ([str],),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                    'creative_ids': 'creative-ids',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'creative_ids': 'query',
-                },
-                'collection_format_map': {
-                    'creative_ids': 'multi',
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.put_api_v2_external_account_by_account_id_creativescreative_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (Creative2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
-                'operation_id': 'put_api_v2_external_account_by_account_id_creativescreative_id',
-                'http_method': 'PUT',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'creative_id',
-                    'creative_update_model2',
-                ],
-                'required': [
-                    'account_id',
-                    'creative_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'creative_id':
-                        (str,),
-                    'creative_update_model2':
-                        (CreativeUpdateModel2,),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                    'creative_id': 'creative-id',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'creative_id': 'path',
-                    'creative_update_model2': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.recommended_keywords_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceOutcomeRecommendedKeywordsResponseV1,),
@@ -2019,6 +1899,64 @@ class CampaignApi(object):
                 'content_type': [
                     'application/json'
                 ]
+            },
+            api_client=api_client
+        )
+        self.search_account_creatives_endpoint = _Endpoint(
+            settings={
+                'response_type': (Creative2ListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/search',
+                'operation_id': 'search_account_creatives',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_ids',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_ids':
+                        ([str],),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'creative_ids': 'creative-ids',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_ids': 'query',
+                },
+                'collection_format_map': {
+                    'creative_ids': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
             },
             api_client=api_client
         )
@@ -2161,6 +2099,86 @@ class CampaignApi(object):
                     'limit': 'query',
                     'offset': 'query',
                     'value_resource_input_categories_search_request_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.search_retailers_v1_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeOfRetailerResultAndMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{accountId}/retailers/search',
+                'operation_id': 'search_retailers_v1',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'limit',
+                    'offset',
+                    'value_resource_input_of_retailer_search_request',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 10,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'value_resource_input_of_retailer_search_request':
+                        (ValueResourceInputOfRetailerSearchRequest,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'limit': 'query',
+                    'offset': 'query',
+                    'value_resource_input_of_retailer_search_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2333,6 +2351,70 @@ class CampaignApi(object):
                 'location_map': {
                     'line_item_id': 'path',
                     'value_resource_input_of_sponsored_products_line_item_update_request_model': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_creative_endpoint = _Endpoint(
+            settings={
+                'response_type': (Creative2Response,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{account-id}/creatives/{creative-id}',
+                'operation_id': 'update_creative',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'creative_id',
+                    'creative_update_model2',
+                ],
+                'required': [
+                    'account_id',
+                    'creative_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'creative_id':
+                        (str,),
+                    'creative_update_model2':
+                        (CreativeUpdateModel2,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'creative_id': 'creative-id',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'creative_id': 'path',
+                    'creative_update_model2': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2864,6 +2946,90 @@ class CampaignApi(object):
         kwargs['campaign_id'] = \
             campaign_id
         return self.create_auction_line_item_v2_endpoint.call_with_http_info(**kwargs)
+
+    def create_creative(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """create_creative  # noqa: E501
+
+        Create a creative for an account  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_creative(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): External account id to create a creative for
+
+        Keyword Args:
+            creative_create_model2 (CreativeCreateModel2): The creative to create. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Creative2Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.create_creative_endpoint.call_with_http_info(**kwargs)
 
     def create_preferred_line_item_by_campaign_id(
         self,
@@ -3711,93 +3877,6 @@ class CampaignApi(object):
             retailer_id
         return self.get_api_v1_external_retailer_placements_by_retailer_id_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_v2_external_account_by_account_id_creativescreative_id(
-        self,
-        account_id,
-        creative_id,
-        **kwargs
-    ):
-        """get_api_v2_external_account_by_account_id_creativescreative_id  # noqa: E501
-
-        Get the specified creative  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): External account id to retrieve creatives for
-            creative_id (str): Creative to get
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            Creative2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        kwargs['creative_id'] = \
-            creative_id
-        return self.get_api_v2_external_account_by_account_id_creativescreative_id_endpoint.call_with_http_info(**kwargs)
-
     def get_auction_line_item_v2(
         self,
         line_item_id,
@@ -3966,6 +4045,93 @@ class CampaignApi(object):
         kwargs['campaign_id'] = \
             campaign_id
         return self.get_auction_line_items_by_campaign_id_v2_endpoint.call_with_http_info(**kwargs)
+
+    def get_creative(
+        self,
+        account_id,
+        creative_id,
+        **kwargs
+    ):
+        """get_creative  # noqa: E501
+
+        Get the specified creative  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_creative(account_id, creative_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): External account id to retrieve creatives for
+            creative_id (str): Creative to get
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Creative2Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['creative_id'] = \
+            creative_id
+        return self.get_creative_endpoint.call_with_http_info(**kwargs)
 
     def get_preferred_line_items_by_campaign_id(
         self,
@@ -4889,262 +5055,6 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.post_api_v1_external_catalogs_sku_search_endpoint.call_with_http_info(**kwargs)
 
-    def post_api_v2_external_account_creatives_by_account_id(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """post_api_v2_external_account_creatives_by_account_id  # noqa: E501
-
-        Create a creative for an account  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.post_api_v2_external_account_creatives_by_account_id(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): External account id to create a creative for
-
-        Keyword Args:
-            creative_create_model2 (CreativeCreateModel2): The creative to create. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            Creative2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.post_api_v2_external_account_creatives_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def post_api_v2_external_account_creatives_search_by_account_id(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """post_api_v2_external_account_creatives_search_by_account_id  # noqa: E501
-
-        Get account creatives  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.post_api_v2_external_account_creatives_search_by_account_id(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): External account id to retrieve creatives for
-
-        Keyword Args:
-            creative_ids ([str]): Creatives to filter by. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            Creative2ListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.post_api_v2_external_account_creatives_search_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def put_api_v2_external_account_by_account_id_creativescreative_id(
-        self,
-        account_id,
-        creative_id,
-        **kwargs
-    ):
-        """put_api_v2_external_account_by_account_id_creativescreative_id  # noqa: E501
-
-        Update a creative  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.put_api_v2_external_account_by_account_id_creativescreative_id(account_id, creative_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): External account id containing the creative
-            creative_id (str): Creative to update
-
-        Keyword Args:
-            creative_update_model2 (CreativeUpdateModel2): The creative to create. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            Creative2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        kwargs['creative_id'] = \
-            creative_id
-        return self.put_api_v2_external_account_by_account_id_creativescreative_id_endpoint.call_with_http_info(**kwargs)
-
     def recommended_keywords(
         self,
         retailer_id,
@@ -5228,6 +5138,90 @@ class CampaignApi(object):
         kwargs['retailer_id'] = \
             retailer_id
         return self.recommended_keywords_endpoint.call_with_http_info(**kwargs)
+
+    def search_account_creatives(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """search_account_creatives  # noqa: E501
+
+        Get account creatives  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_account_creatives(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): External account id to retrieve creatives for
+
+        Keyword Args:
+            creative_ids ([str]): Creatives to filter by. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Creative2ListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.search_account_creatives_endpoint.call_with_http_info(**kwargs)
 
     def search_brands(
         self,
@@ -5395,6 +5389,92 @@ class CampaignApi(object):
         kwargs['retailer_id'] = \
             retailer_id
         return self.search_category_endpoint.call_with_http_info(**kwargs)
+
+    def search_retailers_v1(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """search_retailers_v1  # noqa: E501
+
+        Searches for retailers associated with the specified account based on provided search criteria  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_retailers_v1(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The external account identifier
+
+        Keyword Args:
+            limit (int): The maximum number of items to return. Must be between 1 and 10. Default is 5.. [optional] if omitted the server will use the default value of 5
+            offset (int): The number of items to skip before starting to collect the result set. Default is 0.. [optional] if omitted the server will use the default value of 0
+            value_resource_input_of_retailer_search_request (ValueResourceInputOfRetailerSearchRequest): The search request containing filtering parameters. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.search_retailers_v1_endpoint.call_with_http_info(**kwargs)
 
     def set_keyword_bids(
         self,
@@ -5647,6 +5727,94 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.update_auction_line_item_v2_endpoint.call_with_http_info(**kwargs)
+
+    def update_creative(
+        self,
+        account_id,
+        creative_id,
+        **kwargs
+    ):
+        """update_creative  # noqa: E501
+
+        Update a creative  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_creative(account_id, creative_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): External account id containing the creative
+            creative_id (str): Creative to update
+
+        Keyword Args:
+            creative_update_model2 (CreativeUpdateModel2): The creative to create. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            Creative2Response
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['creative_id'] = \
+            creative_id
+        return self.update_creative_endpoint.call_with_http_info(**kwargs)
 
     def update_keyword_reviews_v1(
         self,

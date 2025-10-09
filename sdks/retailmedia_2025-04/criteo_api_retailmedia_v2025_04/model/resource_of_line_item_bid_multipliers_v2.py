@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_04.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_04.model.external_line_item_bid_multipliers_v2 import ExternalLineItemBidMultipliersV2
-    globals()['ExternalLineItemBidMultipliersV2'] = ExternalLineItemBidMultipliersV2
+    from criteo_api_retailmedia_v2025_04.model.line_item_bid_multipliers_v2 import LineItemBidMultipliersV2
+    globals()['LineItemBidMultipliersV2'] = LineItemBidMultipliersV2
 
 
 class ResourceOfLineItemBidMultipliersV2(ModelNormal):
@@ -87,7 +87,7 @@ class ResourceOfLineItemBidMultipliersV2(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalLineItemBidMultipliersV2,),  # noqa: E501
+            'attributes': (LineItemBidMultipliersV2,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
         }
@@ -144,7 +144,7 @@ class ResourceOfLineItemBidMultipliersV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalLineItemBidMultipliersV2): [optional]  # noqa: E501
+            attributes (LineItemBidMultipliersV2): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
@@ -232,7 +232,7 @@ class ResourceOfLineItemBidMultipliersV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalLineItemBidMultipliersV2): [optional]  # noqa: E501
+            attributes (LineItemBidMultipliersV2): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """

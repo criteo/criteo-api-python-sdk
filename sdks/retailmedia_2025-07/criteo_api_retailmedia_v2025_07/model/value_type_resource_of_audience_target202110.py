@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_07.model.external_audience_target202110 import ExternalAudienceTarget202110
-    globals()['ExternalAudienceTarget202110'] = ExternalAudienceTarget202110
+    from criteo_api_retailmedia_v2025_07.model.audience_target202110 import AudienceTarget202110
+    globals()['AudienceTarget202110'] = AudienceTarget202110
 
 
 class ValueTypeResourceOfAudienceTarget202110(ModelNormal):
@@ -87,7 +87,7 @@ class ValueTypeResourceOfAudienceTarget202110(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalAudienceTarget202110,),  # noqa: E501
+            'attributes': (AudienceTarget202110,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class ValueTypeResourceOfAudienceTarget202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAudienceTarget202110): [optional]  # noqa: E501
+            attributes (AudienceTarget202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class ValueTypeResourceOfAudienceTarget202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAudienceTarget202110): [optional]  # noqa: E501
+            attributes (AudienceTarget202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

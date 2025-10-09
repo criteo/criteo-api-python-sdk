@@ -23,7 +23,7 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
 )
 from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_ad import ResourceCollectionOutcomeOfAd
 from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_coupon import ResourceCollectionOutcomeOfCoupon
-from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_creative import ResourceCollectionOutcomeOfCreative
+from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_creative_read import ResourceCollectionOutcomeOfCreativeRead
 from criteo_api_marketingsolutions_preview.model.resource_input_of_ad_write import ResourceInputOfAdWrite
 from criteo_api_marketingsolutions_preview.model.resource_input_of_create_coupon import ResourceInputOfCreateCoupon
 from criteo_api_marketingsolutions_preview.model.resource_input_of_creative_write import ResourceInputOfCreativeWrite
@@ -931,7 +931,7 @@ class CreativeApi(object):
         )
         self.get_advertiser_creatives_endpoint = _Endpoint(
             settings={
-                'response_type': (ResourceCollectionOutcomeOfCreative,),
+                'response_type': (ResourceCollectionOutcomeOfCreativeRead,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2388,7 +2388,7 @@ class CreativeApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResourceCollectionOutcomeOfCreative
+            ResourceCollectionOutcomeOfCreativeRead
                 If the method is called asynchronously, returns the request
                 thread.
         """

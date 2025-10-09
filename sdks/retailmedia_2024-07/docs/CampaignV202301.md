@@ -6,23 +6,23 @@ A Retail Media Campaign used to represent an advertiser's marketing objective
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** |  | 
-**budget_remaining** | **float, none_type** |  | 
-**budget_spent** | **float, none_type** |  | 
 **created_at** | **datetime** |  | 
-**end_date** | **datetime, none_type** |  | 
 **is_auto_daily_pacing** | **bool** |  | 
 **name** | **str** |  | 
-**promoted_brand_ids** | **[str]** |  | 
-**start_date** | **datetime, none_type** |  | 
 **updated_at** | **datetime** |  | 
 **budget** | **float, none_type** |  | [optional] 
+**budget_remaining** | **float, none_type** |  | [optional] 
+**budget_spent** | **float, none_type** |  | [optional] 
 **click_attribution_scope** | **str, none_type** |  | [optional] 
 **click_attribution_window** | **str** |  | [optional]  if omitted the server will use the default value of "30D"
 **company_name** | **str, none_type** |  | [optional] 
 **daily_pacing** | **float, none_type** |  | [optional] 
 **drawable_balance_ids** | **[str]** |  | [optional] 
+**end_date** | **datetime, none_type** |  | [optional] 
 **monthly_pacing** | **float, none_type** |  | [optional] 
 **on_behalf_company_name** | **str, none_type** |  | [optional] 
+**promoted_brand_ids** | **[str]** |  | [optional] 
+**start_date** | **datetime, none_type** |  | [optional] 
 **status** | **str** |  | [optional] 
 **type** | **str** |  | [optional]  if omitted the server will use the default value of "auction"
 **view_attribution_scope** | **str, none_type** |  | [optional] 

@@ -103,12 +103,8 @@ class PrivateMarketFees(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, demand_managed, managed_service, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """PrivateMarketFees - a model defined in OpenAPI
-
-        Args:
-            demand_managed (DemandManagedFee):
-            managed_service (ManagedServiceFee):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -141,6 +137,8 @@ class PrivateMarketFees(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            demand_managed (DemandManagedFee): [optional]  # noqa: E501
+            managed_service (ManagedServiceFee): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -172,8 +170,6 @@ class PrivateMarketFees(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.demand_managed = demand_managed
-        self.managed_service = managed_service
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,12 +190,8 @@ class PrivateMarketFees(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, demand_managed, managed_service, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """PrivateMarketFees - a model defined in OpenAPI
-
-        Args:
-            demand_managed (DemandManagedFee):
-            managed_service (ManagedServiceFee):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -232,6 +224,8 @@ class PrivateMarketFees(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            demand_managed (DemandManagedFee): [optional]  # noqa: E501
+            managed_service (ManagedServiceFee): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -261,8 +255,6 @@ class PrivateMarketFees(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.demand_managed = demand_managed
-        self.managed_service = managed_service
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

@@ -1,6 +1,6 @@
 # BalanceCampaign202110ListRequest
 
-A class implementing the request of the Criteo API with a collection of entities as body
+A top-level object that encapsulates a Criteo API request for several entities
 
 ## Properties
 Name | Type | Description | Notes

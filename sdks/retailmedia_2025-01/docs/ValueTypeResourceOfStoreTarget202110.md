@@ -5,7 +5,7 @@ Data model for a value type resource
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**ExternalStoreTarget202110**](ExternalStoreTarget202110.md) |  | [optional] 
+**attributes** | [**StoreTarget202110**](StoreTarget202110.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

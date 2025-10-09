@@ -73,6 +73,11 @@ class SponsoredProductsLineItem(ModelNormal):
             'GENERICANDBRANDED': "genericAndBranded",
             'GENERICBRANDEDANDCONQUESTING': "genericBrandedAndConquesting",
         },
+        ('optimization_strategy',): {
+            'None': None,
+            'MANUAL': "manual",
+            'AUTOMATED': "automated",
+        },
         ('status',): {
             'None': None,
             'UNKNOWN': "unknown",
@@ -127,6 +132,7 @@ class SponsoredProductsLineItem(ModelNormal):
             'keyword_strategy': (str, none_type,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
+            'optimization_strategy': (str, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
         }
@@ -154,6 +160,7 @@ class SponsoredProductsLineItem(ModelNormal):
         'keyword_strategy': 'keywordStrategy',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
+        'optimization_strategy': 'optimizationStrategy',  # noqa: E501
         'status': 'status',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
     }
@@ -174,7 +181,7 @@ class SponsoredProductsLineItem(ModelNormal):
             created_at (datetime): The date and time when the line item was created.
             name (str): The name of the line item.
             start_date (datetime): The date and time when the line item starts running.
-            target_retailer_id (str):
+            target_retailer_id (str): The ID of the retailer targeted by this line item.
             updated_at (datetime): The date and time when the line item was last updated.
 
         Keyword Args:
@@ -218,6 +225,7 @@ class SponsoredProductsLineItem(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
+            optimization_strategy (str, none_type): [optional]  # noqa: E501
             status (str, none_type): The current status of the line item.. [optional]  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
@@ -287,7 +295,7 @@ class SponsoredProductsLineItem(ModelNormal):
             created_at (datetime): The date and time when the line item was created.
             name (str): The name of the line item.
             start_date (datetime): The date and time when the line item starts running.
-            target_retailer_id (str):
+            target_retailer_id (str): The ID of the retailer targeted by this line item.
             updated_at (datetime): The date and time when the line item was last updated.
 
         Keyword Args:
@@ -331,6 +339,7 @@ class SponsoredProductsLineItem(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
+            optimization_strategy (str, none_type): [optional]  # noqa: E501
             status (str, none_type): The current status of the line item.. [optional]  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """

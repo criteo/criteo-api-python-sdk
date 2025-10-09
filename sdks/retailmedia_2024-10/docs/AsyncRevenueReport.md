@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **id** | **str** | Supply account id to report on | [optional] 
 **ids** | **[str]** | Supply account ids to report on | [optional] 
 **line_item_ids** | **[str]** | Line item ids to filter | [optional] 
+**media_type** | **str** | Filter on the type of media: unknown, display, video | [optional]  if omitted the server will use the default value of "all"
 **metrics** | **[str]** | List of metrics to report on | [optional] 
 **report_type** | **str** | Type of report, if no dimensions and metrics are provided, falls back to advertiser reportType | [optional] 
 **retailer_ids** | **[str]** | Retailer ids to filter | [optional] 

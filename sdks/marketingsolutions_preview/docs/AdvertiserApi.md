@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_portfolio_get**](AdvertiserApi.md#api_portfolio_get) | **GET** /preview/advertisers/me | 
-[**get_dataset_list**](AdvertiserApi.md#get_dataset_list) | **GET** /preview/advertisers/{advertiser-id}/datasets | 
+[**list_advertisers**](AdvertiserApi.md#list_advertisers) | **GET** /preview/advertisers/me | 
+[**list_datasets_by_advertiser**](AdvertiserApi.md#list_datasets_by_advertiser) | **GET** /preview/advertisers/{advertiser-id}/datasets | 
 [**list_industries**](AdvertiserApi.md#list_industries) | **GET** /preview/industries | 
 
 
-# **api_portfolio_get**
-> GetPortfolioResponse api_portfolio_get()
+# **list_advertisers**
+> GetPortfolioResponse list_advertisers()
 
 
 
@@ -57,10 +57,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example, this endpoint has no required or optional parameters
     try:
-        api_response = api_instance.api_portfolio_get()
+        api_response = api_instance.list_advertisers()
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AdvertiserApi->api_portfolio_get: %s\n" % e)
+        print("Exception when calling AdvertiserApi->list_advertisers: %s\n" % e)
 ```
 
 
@@ -89,8 +89,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_dataset_list**
-> AdvertiserDatasetListResponse get_dataset_list(advertiser_id)
+# **list_datasets_by_advertiser**
+> AdvertiserDatasetListResponse list_datasets_by_advertiser(advertiser_id)
 
 
 
@@ -138,10 +138,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_dataset_list(advertiser_id)
+        api_response = api_instance.list_datasets_by_advertiser(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AdvertiserApi->get_dataset_list: %s\n" % e)
+        print("Exception when calling AdvertiserApi->list_datasets_by_advertiser: %s\n" % e)
 ```
 
 

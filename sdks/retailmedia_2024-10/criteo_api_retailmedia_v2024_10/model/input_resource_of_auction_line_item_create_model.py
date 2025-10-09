@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2024_10.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_10.model.external_auction_line_item_create_model import ExternalAuctionLineItemCreateModel
-    globals()['ExternalAuctionLineItemCreateModel'] = ExternalAuctionLineItemCreateModel
+    from criteo_api_retailmedia_v2024_10.model.auction_line_item_create_model import AuctionLineItemCreateModel
+    globals()['AuctionLineItemCreateModel'] = AuctionLineItemCreateModel
 
 
 class InputResourceOfAuctionLineItemCreateModel(ModelNormal):
@@ -87,7 +87,7 @@ class InputResourceOfAuctionLineItemCreateModel(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalAuctionLineItemCreateModel,),  # noqa: E501
+            'attributes': (AuctionLineItemCreateModel,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class InputResourceOfAuctionLineItemCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAuctionLineItemCreateModel): [optional]  # noqa: E501
+            attributes (AuctionLineItemCreateModel): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class InputResourceOfAuctionLineItemCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAuctionLineItemCreateModel): [optional]  # noqa: E501
+            attributes (AuctionLineItemCreateModel): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

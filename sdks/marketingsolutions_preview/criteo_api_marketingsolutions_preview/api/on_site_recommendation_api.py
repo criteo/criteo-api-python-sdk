@@ -36,7 +36,7 @@ class OnSiteRecommendationApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.api_v1_reco_post_endpoint = _Endpoint(
+        self.search_recommended_products_endpoint = _Endpoint(
             settings={
                 'response_type': (OnSiteRecoResponse,),
                 'auth': [
@@ -44,7 +44,7 @@ class OnSiteRecommendationApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/recommendation/search',
-                'operation_id': 'api_v1_reco_post',
+                'operation_id': 'search_recommended_products',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -88,17 +88,17 @@ class OnSiteRecommendationApi(object):
             api_client=api_client
         )
 
-    def api_v1_reco_post(
+    def search_recommended_products(
         self,
         **kwargs
     ):
-        """api_v1_reco_post  # noqa: E501
+        """search_recommended_products  # noqa: E501
 
         Retrieves a list of products recommended for the given user. This end point can either rely on a Criteo UserId, or a list of user events to perform the recommendation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.api_v1_reco_post(async_req=True)
+        >>> thread = api.search_recommended_products(async_req=True)
         >>> result = thread.get()
 
 
@@ -165,5 +165,5 @@ class OnSiteRecommendationApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.api_v1_reco_post_endpoint.call_with_http_info(**kwargs)
+        return self.search_recommended_products_endpoint.call_with_http_info(**kwargs)
 

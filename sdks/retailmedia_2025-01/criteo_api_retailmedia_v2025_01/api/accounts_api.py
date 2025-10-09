@@ -217,7 +217,7 @@ class AccountsApi(object):
             },
             api_client=api_client
         )
-        self.get_api_v1_external_accounts_endpoint = _Endpoint(
+        self.get_accounts_endpoint = _Endpoint(
             settings={
                 'response_type': (JsonApiPageResponseOfAccount,),
                 'auth': [
@@ -225,7 +225,7 @@ class AccountsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-01/retail-media/accounts',
-                'operation_id': 'get_api_v1_external_accounts',
+                'operation_id': 'get_accounts',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -272,9 +272,7 @@ class AccountsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -331,10 +329,7 @@ class AccountsApi(object):
             headers_map={
                 'accept': [],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -708,17 +703,17 @@ class AccountsApi(object):
             account_id
         return self.create_private_market_demand_seller_account_endpoint.call_with_http_info(**kwargs)
 
-    def get_api_v1_external_accounts(
+    def get_accounts(
         self,
         **kwargs
     ):
-        """get_api_v1_external_accounts  # noqa: E501
+        """get_accounts  # noqa: E501
 
         Gets page of account objects that the current user can access  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_api_v1_external_accounts(async_req=True)
+        >>> thread = api.get_accounts(async_req=True)
         >>> result = thread.get()
 
 
@@ -787,7 +782,7 @@ class AccountsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_api_v1_external_accounts_endpoint.call_with_http_info(**kwargs)
+        return self.get_accounts_endpoint.call_with_http_info(**kwargs)
 
     def grant_consent(
         self,

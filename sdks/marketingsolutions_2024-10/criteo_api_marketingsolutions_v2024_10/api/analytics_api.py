@@ -21,7 +21,6 @@ from criteo_api_marketingsolutions_v2024_10.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_marketingsolutions_v2024_10.model.outcome import Outcome
 from criteo_api_marketingsolutions_v2024_10.model.placements_report_query_message_list_request import PlacementsReportQueryMessageListRequest
 from criteo_api_marketingsolutions_v2024_10.model.statistics_report_query_message import StatisticsReportQueryMessage
 from criteo_api_marketingsolutions_v2024_10.model.transactions_report_query_message_list_request import TransactionsReportQueryMessageListRequest
@@ -83,18 +82,13 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
                     'application/json',
-                    'text/json',
                     'text/csv',
                     'text/xml',
                     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -142,19 +136,16 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
                     'application/json',
-                    'text/json',
                     'text/csv',
-                    'application/xml',
-                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                    'text/xml'
+                    'text/xml',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/xml',
+                    'text/xml',
+                    'application/*+xml'
                 ]
             },
             api_client=api_client
@@ -202,18 +193,16 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
                     'application/json',
-                    'text/json',
                     'text/csv',
                     'text/xml',
                     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/xml',
+                    'text/xml',
+                    'application/*+xml'
                 ]
             },
             api_client=api_client
@@ -268,17 +257,15 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
                     'application/json',
-                    'text/json',
                     'application/xml',
                     'text/xml'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
                     'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/xml',
+                    'text/xml',
+                    'application/*+xml'
                 ]
             },
             api_client=api_client

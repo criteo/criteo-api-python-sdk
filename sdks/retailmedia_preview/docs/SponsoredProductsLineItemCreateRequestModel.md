@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **keyword_strategy** | **str, none_type** | The keyword targeting strategy for this line item. | [optional] 
 **max_bid** | **float, none_type** | The maximum bid amount allowed for this line item. | [optional] 
 **monthly_pacing** | **float, none_type** | The monthly pacing limit for budget spending. | [optional] 
+**optimization_strategy_enum** | **str** |  | [optional]  if omitted the server will use the default value of "manual"
 **target_bid** | **float, none_type** | The target bid amount for the line item. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

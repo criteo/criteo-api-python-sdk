@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**call_07_retail_media_billing_partner_report_post**](BillingApi.md#call_07_retail_media_billing_partner_report_post) | **POST** /2025-07/retail-media/billing/partner-report | 
-[**call_07_retail_media_billing_partner_report_request_id_output_get**](BillingApi.md#call_07_retail_media_billing_partner_report_request_id_output_get) | **GET** /2025-07/retail-media/billing/partner-report/{requestId}/output | 
-[**call_07_retail_media_billing_partner_report_request_id_status_get**](BillingApi.md#call_07_retail_media_billing_partner_report_request_id_status_get) | **GET** /2025-07/retail-media/billing/partner-report/{requestId}/status | 
+[**create_partner_billing_report_request_v1**](BillingApi.md#create_partner_billing_report_request_v1) | **POST** /2025-07/retail-media/billing/partner-report | 
+[**get_partner_billing_report_output_v1**](BillingApi.md#get_partner_billing_report_output_v1) | **GET** /2025-07/retail-media/billing/partner-report/{requestId}/output | 
+[**get_partner_billing_report_status_v1**](BillingApi.md#get_partner_billing_report_status_v1) | **GET** /2025-07/retail-media/billing/partner-report/{requestId}/status | 
 
 
-# **call_07_retail_media_billing_partner_report_post**
-> EntityResourceOutcomePartnerBillingReportStatusV1 call_07_retail_media_billing_partner_report_post()
+# **create_partner_billing_report_request_v1**
+> EntityResourceOutcomePartnerBillingReportStatusV1 create_partner_billing_report_request_v1()
 
 
 
@@ -27,7 +27,6 @@ import criteo_api_retailmedia_v2025_07
 from criteo_api_retailmedia_v2025_07.api import billing_api
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_partner_billing_report_request_v1 import ValueResourceInputPartnerBillingReportRequestV1
 from criteo_api_retailmedia_v2025_07.model.entity_resource_outcome_partner_billing_report_status_v1 import EntityResourceOutcomePartnerBillingReportStatusV1
-from criteo_api_retailmedia_v2025_07.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -76,10 +75,10 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.call_07_retail_media_billing_partner_report_post(value_resource_input_partner_billing_report_request_v1=value_resource_input_partner_billing_report_request_v1)
+        api_response = api_instance.create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1=value_resource_input_partner_billing_report_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling BillingApi->call_07_retail_media_billing_partner_report_post: %s\n" % e)
+        print("Exception when calling BillingApi->create_partner_billing_report_request_v1: %s\n" % e)
 ```
 
 
@@ -100,7 +99,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -108,13 +107,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **call_07_retail_media_billing_partner_report_request_id_output_get**
-> file_type call_07_retail_media_billing_partner_report_request_id_output_get(request_id)
+# **get_partner_billing_report_output_v1**
+> file_type get_partner_billing_report_output_v1(request_id)
 
 
 
@@ -129,7 +126,6 @@ Get the output of an existing Partner Billing Report.
 import time
 import criteo_api_retailmedia_v2025_07
 from criteo_api_retailmedia_v2025_07.api import billing_api
-from criteo_api_retailmedia_v2025_07.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -162,10 +158,10 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.call_07_retail_media_billing_partner_report_request_id_output_get(request_id)
+        api_response = api_instance.get_partner_billing_report_output_v1(request_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling BillingApi->call_07_retail_media_billing_partner_report_request_id_output_get: %s\n" % e)
+        print("Exception when calling BillingApi->get_partner_billing_report_output_v1: %s\n" % e)
 ```
 
 
@@ -194,12 +190,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **call_07_retail_media_billing_partner_report_request_id_status_get**
-> EntityResourceOutcomePartnerBillingReportStatusV1 call_07_retail_media_billing_partner_report_request_id_status_get(request_id)
+# **get_partner_billing_report_status_v1**
+> EntityResourceOutcomePartnerBillingReportStatusV1 get_partner_billing_report_status_v1(request_id)
 
 
 
@@ -215,7 +210,6 @@ import time
 import criteo_api_retailmedia_v2025_07
 from criteo_api_retailmedia_v2025_07.api import billing_api
 from criteo_api_retailmedia_v2025_07.model.entity_resource_outcome_partner_billing_report_status_v1 import EntityResourceOutcomePartnerBillingReportStatusV1
-from criteo_api_retailmedia_v2025_07.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -248,10 +242,10 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.call_07_retail_media_billing_partner_report_request_id_status_get(request_id)
+        api_response = api_instance.get_partner_billing_report_status_v1(request_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling BillingApi->call_07_retail_media_billing_partner_report_request_id_status_get: %s\n" % e)
+        print("Exception when calling BillingApi->get_partner_billing_report_status_v1: %s\n" % e)
 ```
 
 
@@ -272,7 +266,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -280,7 +274,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -25,7 +25,6 @@ from criteo_api_retailmedia_v2025_01.model.async_campaigns_report_request import
 from criteo_api_retailmedia_v2025_01.model.async_line_items_report_request import AsyncLineItemsReportRequest
 from criteo_api_retailmedia_v2025_01.model.async_report_response import AsyncReportResponse
 from criteo_api_retailmedia_v2025_01.model.async_revenue_report_request import AsyncRevenueReportRequest
-from criteo_api_retailmedia_v2025_01.model.report_outcome import ReportOutcome
 
 
 class AnalyticsApi(object):
@@ -84,15 +83,10 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -142,15 +136,10 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -200,15 +189,10 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
-                    'application/json-patch+json',
-                    'application/json',
-                    'text/json',
-                    'application/*+json'
+                    'application/json'
                 ]
             },
             api_client=api_client
@@ -259,9 +243,7 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
@@ -313,9 +295,7 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },

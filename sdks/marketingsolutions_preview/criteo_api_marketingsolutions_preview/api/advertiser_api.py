@@ -37,7 +37,7 @@ class AdvertiserApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.api_portfolio_get_endpoint = _Endpoint(
+        self.list_advertisers_endpoint = _Endpoint(
             settings={
                 'response_type': (GetPortfolioResponse,),
                 'auth': [
@@ -45,7 +45,7 @@ class AdvertiserApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/me',
-                'operation_id': 'api_portfolio_get',
+                'operation_id': 'list_advertisers',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -82,7 +82,7 @@ class AdvertiserApi(object):
             },
             api_client=api_client
         )
-        self.get_dataset_list_endpoint = _Endpoint(
+        self.list_datasets_by_advertiser_endpoint = _Endpoint(
             settings={
                 'response_type': (AdvertiserDatasetListResponse,),
                 'auth': [
@@ -90,7 +90,7 @@ class AdvertiserApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/advertisers/{advertiser-id}/datasets',
-                'operation_id': 'get_dataset_list',
+                'operation_id': 'list_datasets_by_advertiser',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -180,17 +180,17 @@ class AdvertiserApi(object):
             api_client=api_client
         )
 
-    def api_portfolio_get(
+    def list_advertisers(
         self,
         **kwargs
     ):
-        """api_portfolio_get  # noqa: E501
+        """list_advertisers  # noqa: E501
 
         Fetch the portfolio of Advertisers for this account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.api_portfolio_get(async_req=True)
+        >>> thread = api.list_advertisers(async_req=True)
         >>> result = thread.get()
 
 
@@ -256,20 +256,20 @@ class AdvertiserApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.api_portfolio_get_endpoint.call_with_http_info(**kwargs)
+        return self.list_advertisers_endpoint.call_with_http_info(**kwargs)
 
-    def get_dataset_list(
+    def list_datasets_by_advertiser(
         self,
         advertiser_id,
         **kwargs
     ):
-        """get_dataset_list  # noqa: E501
+        """list_datasets_by_advertiser  # noqa: E501
 
         Retrieves corresponding Datasets for a given Advertiser. Only those Datasets are included for which the given Advertiser is marked a primary.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_dataset_list(advertiser_id, async_req=True)
+        >>> thread = api.list_datasets_by_advertiser(advertiser_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -339,7 +339,7 @@ class AdvertiserApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
-        return self.get_dataset_list_endpoint.call_with_http_info(**kwargs)
+        return self.list_datasets_by_advertiser_endpoint.call_with_http_info(**kwargs)
 
     def list_industries(
         self,

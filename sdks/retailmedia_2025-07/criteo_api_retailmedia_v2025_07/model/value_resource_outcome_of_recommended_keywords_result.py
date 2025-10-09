@@ -30,9 +30,9 @@ from criteo_api_retailmedia_v2025_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_07.model.common_problem import CommonProblem
+    from criteo_api_retailmedia_v2025_07.model.sdk_api_rest_common_problem import SdkApiRestCommonProblem
     from criteo_api_retailmedia_v2025_07.model.value_resource_of_recommended_keywords_result import ValueResourceOfRecommendedKeywordsResult
-    globals()['CommonProblem'] = CommonProblem
+    globals()['SdkApiRestCommonProblem'] = SdkApiRestCommonProblem
     globals()['ValueResourceOfRecommendedKeywordsResult'] = ValueResourceOfRecommendedKeywordsResult
 
 
@@ -83,8 +83,8 @@ class ValueResourceOutcomeOfRecommendedKeywordsResult(ModelNormal):
         lazy_import()
         return {
             'data': (ValueResourceOfRecommendedKeywordsResult,),  # noqa: E501
-            'errors': ([CommonProblem], none_type,),  # noqa: E501
-            'warnings': ([CommonProblem], none_type,),  # noqa: E501
+            'errors': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
+            'warnings': ([SdkApiRestCommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -142,8 +142,8 @@ class ValueResourceOutcomeOfRecommendedKeywordsResult(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ValueResourceOfRecommendedKeywordsResult): [optional]  # noqa: E501
-            errors ([CommonProblem], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,8 +230,8 @@ class ValueResourceOutcomeOfRecommendedKeywordsResult(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ValueResourceOfRecommendedKeywordsResult): [optional]  # noqa: E501
-            errors ([CommonProblem], none_type): [optional]  # noqa: E501
-            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
+            errors ([SdkApiRestCommonProblem], none_type): Errors that occured during this call.. [optional]  # noqa: E501
+            warnings ([SdkApiRestCommonProblem], none_type): Warnings that occured during this call.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

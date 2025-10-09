@@ -4,11 +4,11 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_portfolio_get**](AdvertiserApi.md#api_portfolio_get) | **GET** /2025-07/advertisers/me | 
+[**list_advertisers**](AdvertiserApi.md#list_advertisers) | **GET** /2025-07/advertisers/me | 
 
 
-# **api_portfolio_get**
-> GetPortfolioResponse api_portfolio_get()
+# **list_advertisers**
+> GetPortfolioResponse list_advertisers()
 
 
 
@@ -55,10 +55,10 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
 
     # example, this endpoint has no required or optional parameters
     try:
-        api_response = api_instance.api_portfolio_get()
+        api_response = api_instance.list_advertisers()
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
-        print("Exception when calling AdvertiserApi->api_portfolio_get: %s\n" % e)
+        print("Exception when calling AdvertiserApi->list_advertisers: %s\n" % e)
 ```
 
 
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, text/plain, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -84,7 +84,6 @@ This endpoint does not need any parameter.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

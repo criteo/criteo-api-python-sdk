@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_01.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_01.model.external_preferred_line_item_v2 import ExternalPreferredLineItemV2
-    globals()['ExternalPreferredLineItemV2'] = ExternalPreferredLineItemV2
+    from criteo_api_retailmedia_v2025_01.model.preferred_line_item_v2 import PreferredLineItemV2
+    globals()['PreferredLineItemV2'] = PreferredLineItemV2
 
 
 class ResourceOfPreferredLineItemV2(ModelNormal):
@@ -87,7 +87,7 @@ class ResourceOfPreferredLineItemV2(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalPreferredLineItemV2,),  # noqa: E501
+            'attributes': (PreferredLineItemV2,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
         }
@@ -144,7 +144,7 @@ class ResourceOfPreferredLineItemV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalPreferredLineItemV2): [optional]  # noqa: E501
+            attributes (PreferredLineItemV2): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
@@ -232,7 +232,7 @@ class ResourceOfPreferredLineItemV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalPreferredLineItemV2): [optional]  # noqa: E501
+            attributes (PreferredLineItemV2): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """

@@ -71,6 +71,10 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'GENERICANDBRANDED': "genericAndBranded",
             'GENERICBRANDEDANDCONQUESTING': "genericBrandedAndConquesting",
         },
+        ('optimization_strategy_enum',): {
+            'MANUAL': "manual",
+            'AUTOMATED': "automated",
+        },
     }
 
     validations = {
@@ -108,6 +112,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'keyword_strategy': (str, none_type,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
+            'optimization_strategy_enum': (str,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
         }
 
@@ -129,6 +134,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         'keyword_strategy': 'keywordStrategy',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
+        'optimization_strategy_enum': 'optimizationStrategyEnum',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
     }
 
@@ -187,6 +193,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
+            optimization_strategy_enum (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
@@ -290,6 +297,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
+            optimization_strategy_enum (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 

@@ -60,7 +60,6 @@ class RmEventsUpdateV1(ModelNormal):
 
     allowed_values = {
         ('lookback_days',): {
-            'UNKNOWN': "Unknown",
             'LAST7DAYS': "Last7Days",
             'LAST14DAYS': "Last14Days",
             'LAST30DAYS': "Last30Days",
@@ -72,7 +71,6 @@ class RmEventsUpdateV1(ModelNormal):
             'LAST180DAYS': "Last180Days",
         },
         ('shopper_activity',): {
-            'UNKNOWN': "Unknown",
             'VIEW': "View",
             'BUY': "Buy",
             'ADDTOCART': "AddToCart",

@@ -22,7 +22,6 @@ from criteo_api_retailmedia_v2025_07.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_v2025_07.model.entity_resource_outcome_partner_billing_report_status_v1 import EntityResourceOutcomePartnerBillingReportStatusV1
-from criteo_api_retailmedia_v2025_07.model.outcome import Outcome
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_partner_billing_report_request_v1 import ValueResourceInputPartnerBillingReportRequestV1
 
 
@@ -37,7 +36,7 @@ class BillingApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.call_07_retail_media_billing_partner_report_post_endpoint = _Endpoint(
+        self.create_partner_billing_report_request_v1_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomePartnerBillingReportStatusV1,),
                 'auth': [
@@ -45,7 +44,7 @@ class BillingApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/retail-media/billing/partner-report',
-                'operation_id': 'call_07_retail_media_billing_partner_report_post',
+                'operation_id': 'create_partner_billing_report_request_v1',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -80,9 +79,7 @@ class BillingApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [
                     'application/json'
@@ -90,7 +87,7 @@ class BillingApi(object):
             },
             api_client=api_client
         )
-        self.call_07_retail_media_billing_partner_report_request_id_output_get_endpoint = _Endpoint(
+        self.get_partner_billing_report_output_v1_endpoint = _Endpoint(
             settings={
                 'response_type': (file_type,),
                 'auth': [
@@ -98,7 +95,7 @@ class BillingApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/retail-media/billing/partner-report/{requestId}/output',
-                'operation_id': 'call_07_retail_media_billing_partner_report_request_id_output_get',
+                'operation_id': 'get_partner_billing_report_output_v1',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -143,7 +140,7 @@ class BillingApi(object):
             },
             api_client=api_client
         )
-        self.call_07_retail_media_billing_partner_report_request_id_status_get_endpoint = _Endpoint(
+        self.get_partner_billing_report_status_v1_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomePartnerBillingReportStatusV1,),
                 'auth': [
@@ -151,7 +148,7 @@ class BillingApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/retail-media/billing/partner-report/{requestId}/status',
-                'operation_id': 'call_07_retail_media_billing_partner_report_request_id_status_get',
+                'operation_id': 'get_partner_billing_report_status_v1',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -189,26 +186,24 @@ class BillingApi(object):
             },
             headers_map={
                 'accept': [
-                    'text/plain',
-                    'application/json',
-                    'text/json'
+                    'application/json'
                 ],
                 'content_type': [],
             },
             api_client=api_client
         )
 
-    def call_07_retail_media_billing_partner_report_post(
+    def create_partner_billing_report_request_v1(
         self,
         **kwargs
     ):
-        """call_07_retail_media_billing_partner_report_post  # noqa: E501
+        """create_partner_billing_report_request_v1  # noqa: E501
 
         Create a Partner Billing Report request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.call_07_retail_media_billing_partner_report_post(async_req=True)
+        >>> thread = api.create_partner_billing_report_request_v1(async_req=True)
         >>> result = thread.get()
 
 
@@ -275,20 +270,20 @@ class BillingApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.call_07_retail_media_billing_partner_report_post_endpoint.call_with_http_info(**kwargs)
+        return self.create_partner_billing_report_request_v1_endpoint.call_with_http_info(**kwargs)
 
-    def call_07_retail_media_billing_partner_report_request_id_output_get(
+    def get_partner_billing_report_output_v1(
         self,
         request_id,
         **kwargs
     ):
-        """call_07_retail_media_billing_partner_report_request_id_output_get  # noqa: E501
+        """get_partner_billing_report_output_v1  # noqa: E501
 
         Get the output of an existing Partner Billing Report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.call_07_retail_media_billing_partner_report_request_id_output_get(request_id, async_req=True)
+        >>> thread = api.get_partner_billing_report_output_v1(request_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -358,20 +353,20 @@ class BillingApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['request_id'] = \
             request_id
-        return self.call_07_retail_media_billing_partner_report_request_id_output_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_partner_billing_report_output_v1_endpoint.call_with_http_info(**kwargs)
 
-    def call_07_retail_media_billing_partner_report_request_id_status_get(
+    def get_partner_billing_report_status_v1(
         self,
         request_id,
         **kwargs
     ):
-        """call_07_retail_media_billing_partner_report_request_id_status_get  # noqa: E501
+        """get_partner_billing_report_status_v1  # noqa: E501
 
         Get the status of an existing Partner Billing Report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.call_07_retail_media_billing_partner_report_request_id_status_get(request_id, async_req=True)
+        >>> thread = api.get_partner_billing_report_status_v1(request_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -441,5 +436,5 @@ class BillingApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['request_id'] = \
             request_id
-        return self.call_07_retail_media_billing_partner_report_request_id_status_get_endpoint.call_with_http_info(**kwargs)
+        return self.get_partner_billing_report_status_v1_endpoint.call_with_http_info(**kwargs)
 

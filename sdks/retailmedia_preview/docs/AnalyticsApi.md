@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /preview/retail-media/reports/fillrate | 
 [**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /preview/retail-media/reports/line-items | 
 [**generate_async_offsite_report**](AnalyticsApi.md#generate_async_offsite_report) | **POST** /preview/retail-media/reports/offsite | 
+[**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /preview/retail-media/reports/unfilled-placements | 
 [**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /preview/retail-media/reports/sync/attributed-transactions | 
 [**generate_sync_campaigns_report**](AnalyticsApi.md#generate_sync_campaigns_report) | **POST** /preview/retail-media/reports/sync/campaigns | 
 [**generate_sync_line_items_report**](AnalyticsApi.md#generate_sync_line_items_report) | **POST** /preview/retail-media/reports/sync/line-items | 
@@ -580,6 +581,112 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **async_offsite_report_request** | [**AsyncOffsiteReportRequest**](AsyncOffsiteReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_unfilled_placements_report**
+> AsyncReportResponse generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
+
+
+
+Returns an asynchronous Unfilled Placements Report This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.async_unfilled_placements_report_request import AsyncUnfilledPlacementsReportRequest
+from criteo_api_retailmedia_preview.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_unfilled_placements_report_request = AsyncUnfilledPlacementsReportRequest(
+        data=AsyncUnfilledPlacementsReportResource(
+            attributes=AsyncUnfilledPlacementsReport(
+                ad_server_type="all",
+                campaign_type="all",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json",
+                metrics=[
+                    "totalUnfilledPlacements",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                supply_account_ids=[
+                    "supply_account_ids_example",
+                ],
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncUnfilledPlacementsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_unfilled_placements_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_unfilled_placements_report_request** | [**AsyncUnfilledPlacementsReportRequest**](AsyncUnfilledPlacementsReportRequest.md)|  |
 
 ### Return type
 

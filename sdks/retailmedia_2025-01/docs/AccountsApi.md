@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**add_brands**](AccountsApi.md#add_brands) | **POST** /2025-01/retail-media/account-management/accounts/{accountId}/brands/add | 
 [**create_private_market_demand_brand_account**](AccountsApi.md#create_private_market_demand_brand_account) | **POST** /2025-01/retail-media/account-management/accounts/{accountId}/create-brand-account | 
 [**create_private_market_demand_seller_account**](AccountsApi.md#create_private_market_demand_seller_account) | **POST** /2025-01/retail-media/account-management/accounts/{accountId}/create-seller-account | 
-[**get_api_v1_external_accounts**](AccountsApi.md#get_api_v1_external_accounts) | **GET** /2025-01/retail-media/accounts | 
+[**get_accounts**](AccountsApi.md#get_accounts) | **GET** /2025-01/retail-media/accounts | 
 [**grant_consent**](AccountsApi.md#grant_consent) | **POST** /2025-01/retail-media/accounts/{accountId}/grant-consent | 
 [**remove_brands**](AccountsApi.md#remove_brands) | **POST** /2025-01/retail-media/account-management/accounts/{accountId}/brands/remove | 
 [**update_sellers**](AccountsApi.md#update_sellers) | **PUT** /2025-01/retail-media/account-management/accounts/{accountId}/sellers | 
@@ -334,8 +334,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api_v1_external_accounts**
-> JsonApiPageResponseOfAccount get_api_v1_external_accounts()
+# **get_accounts**
+> JsonApiPageResponseOfAccount get_accounts()
 
 
 
@@ -388,10 +388,10 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_api_v1_external_accounts(limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
+        api_response = api_instance.get_accounts(limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling AccountsApi->get_api_v1_external_accounts: %s\n" % e)
+        print("Exception when calling AccountsApi->get_accounts: %s\n" % e)
 ```
 
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -516,7 +516,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 

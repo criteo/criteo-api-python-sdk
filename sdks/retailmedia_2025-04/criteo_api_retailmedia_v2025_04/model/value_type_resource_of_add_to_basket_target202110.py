@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2025_04.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2025_04.model.external_add_to_basket_target202110 import ExternalAddToBasketTarget202110
-    globals()['ExternalAddToBasketTarget202110'] = ExternalAddToBasketTarget202110
+    from criteo_api_retailmedia_v2025_04.model.add_to_basket_target202110 import AddToBasketTarget202110
+    globals()['AddToBasketTarget202110'] = AddToBasketTarget202110
 
 
 class ValueTypeResourceOfAddToBasketTarget202110(ModelNormal):
@@ -87,7 +87,7 @@ class ValueTypeResourceOfAddToBasketTarget202110(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalAddToBasketTarget202110,),  # noqa: E501
+            'attributes': (AddToBasketTarget202110,),  # noqa: E501
             'type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class ValueTypeResourceOfAddToBasketTarget202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAddToBasketTarget202110): [optional]  # noqa: E501
+            attributes (AddToBasketTarget202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class ValueTypeResourceOfAddToBasketTarget202110(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAddToBasketTarget202110): [optional]  # noqa: E501
+            attributes (AddToBasketTarget202110): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
         """
 

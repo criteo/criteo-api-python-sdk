@@ -5,7 +5,7 @@ Data model for a value type resource
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**ExternalKeywordTarget202110**](ExternalKeywordTarget202110.md) |  | [optional] 
+**attributes** | [**KeywordTarget202110**](KeywordTarget202110.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -60,6 +60,7 @@ class RmContactListCreateV1(ModelNormal):
             'USERIDENTIFIER': "UserIdentifier",
             'IDENTITYLINK': "IdentityLink",
             'CUSTOMERID': "CustomerId",
+            'PHONENUMBER': "PhoneNumber",
         },
     }
 

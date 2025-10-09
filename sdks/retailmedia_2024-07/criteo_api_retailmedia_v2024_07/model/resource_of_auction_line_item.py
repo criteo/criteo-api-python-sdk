@@ -30,8 +30,8 @@ from criteo_api_retailmedia_v2024_07.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_v2024_07.model.external_auction_line_item import ExternalAuctionLineItem
-    globals()['ExternalAuctionLineItem'] = ExternalAuctionLineItem
+    from criteo_api_retailmedia_v2024_07.model.auction_line_item import AuctionLineItem
+    globals()['AuctionLineItem'] = AuctionLineItem
 
 
 class ResourceOfAuctionLineItem(ModelNormal):
@@ -87,7 +87,7 @@ class ResourceOfAuctionLineItem(ModelNormal):
         """
         lazy_import()
         return {
-            'attributes': (ExternalAuctionLineItem,),  # noqa: E501
+            'attributes': (AuctionLineItem,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'type': (str, none_type,),  # noqa: E501
         }
@@ -144,7 +144,7 @@ class ResourceOfAuctionLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAuctionLineItem): [optional]  # noqa: E501
+            attributes (AuctionLineItem): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """
@@ -232,7 +232,7 @@ class ResourceOfAuctionLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ExternalAuctionLineItem): [optional]  # noqa: E501
+            attributes (AuctionLineItem): [optional]  # noqa: E501
             id (str, none_type): Id of the entity. [optional]  # noqa: E501
             type (str, none_type): Canonical type name of the entity. [optional]  # noqa: E501
         """

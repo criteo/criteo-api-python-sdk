@@ -88,6 +88,11 @@ class AsyncFillRateReport(ModelNormal):
             'REVENUE': "revenue",
             'WORKINGMEDIA': "workingMedia",
             'NETREVENUE': "netRevenue",
+            'NONDELIVERABLEPLACEMENTS': "nonDeliverablePlacements",
+            'DELIVERABLEPLACEMENTS': "deliverablePlacements",
+            'PLACEMENTSWITHCANDIDATES': "placementsWithCandidates",
+            'COVEREDPLACEMENTS': "coveredPlacements",
+            'COVERAGERATE': "coverageRate",
         },
         ('ad_server_type',): {
             'ALL': "all",

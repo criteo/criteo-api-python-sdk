@@ -28,7 +28,6 @@ import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import analytics_api
 from criteo_api_retailmedia_v2024_07.model.async_report_response import AsyncReportResponse
-from criteo_api_retailmedia_v2024_07.model.report_outcome import ReportOutcome
 from criteo_api_retailmedia_v2024_07.model.async_campaigns_report_request import AsyncCampaignsReportRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -72,6 +71,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                 ids=[
                     "ids_example",
                 ],
+                media_type="all",
                 metrics=[
                     "impressions",
                 ],
@@ -119,8 +119,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -128,8 +128,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -151,7 +149,6 @@ import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import analytics_api
 from criteo_api_retailmedia_v2024_07.model.async_report_response import AsyncReportResponse
 from criteo_api_retailmedia_v2024_07.model.async_line_items_report_request import AsyncLineItemsReportRequest
-from criteo_api_retailmedia_v2024_07.model.report_outcome import ReportOutcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -194,6 +191,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                 ids=[
                     "ids_example",
                 ],
+                media_type="all",
                 metrics=[
                     "impressions",
                 ],
@@ -241,8 +239,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -250,8 +248,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -273,7 +269,6 @@ import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import analytics_api
 from criteo_api_retailmedia_v2024_07.model.async_revenue_report_request import AsyncRevenueReportRequest
 from criteo_api_retailmedia_v2024_07.model.async_report_response import AsyncReportResponse
-from criteo_api_retailmedia_v2024_07.model.report_outcome import ReportOutcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -330,6 +325,7 @@ with criteo_api_retailmedia_v2024_07.ApiClient(configuration) as api_client:
                 line_item_ids=[
                     "line_item_ids_example",
                 ],
+                media_type="all",
                 metrics=[
                     "numberOfCampaigns",
                 ],
@@ -380,8 +376,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -389,8 +385,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -410,7 +404,6 @@ Returns the output of an async report
 import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import analytics_api
-from criteo_api_retailmedia_v2024_07.model.report_outcome import ReportOutcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -467,7 +460,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -475,8 +468,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -497,7 +488,6 @@ import time
 import criteo_api_retailmedia_v2024_07
 from criteo_api_retailmedia_v2024_07.api import analytics_api
 from criteo_api_retailmedia_v2024_07.model.async_report_response import AsyncReportResponse
-from criteo_api_retailmedia_v2024_07.model.report_outcome import ReportOutcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -554,7 +544,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -562,8 +552,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Bad Request |  -  |
-**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

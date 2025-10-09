@@ -43,6 +43,7 @@ criteo_api_marketingsolutions_v2025_07/model/ad_set_targeting_v24_q3_frequency_c
 criteo_api_marketingsolutions_v2025_07/model/ad_write.py
 criteo_api_marketingsolutions_v2025_07/model/adaptive_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/adaptive_colors.py
+criteo_api_marketingsolutions_v2025_07/model/adaptive_read_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/adaptive_write_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/algebra_node_v1.py
 criteo_api_marketingsolutions_v2025_07/model/application_summary_model.py
@@ -149,7 +150,10 @@ criteo_api_marketingsolutions_v2025_07/model/create_campaign_resource.py
 criteo_api_marketingsolutions_v2025_07/model/create_campaign_spend_limit.py
 criteo_api_marketingsolutions_v2025_07/model/create_coupon.py
 criteo_api_marketingsolutions_v2025_07/model/create_image_slide.py
+criteo_api_marketingsolutions_v2025_07/model/create_seller_budget_mapi_message.py
+criteo_api_marketingsolutions_v2025_07/model/create_seller_campaign_message_mapi.py
 criteo_api_marketingsolutions_v2025_07/model/creative.py
+criteo_api_marketingsolutions_v2025_07/model/creative_read.py
 criteo_api_marketingsolutions_v2025_07/model/creative_write.py
 criteo_api_marketingsolutions_v2025_07/model/criteo_api_error.py
 criteo_api_marketingsolutions_v2025_07/model/criteo_api_warning.py
@@ -157,7 +161,6 @@ criteo_api_marketingsolutions_v2025_07/model/delete_audience_contact_list_respon
 criteo_api_marketingsolutions_v2025_07/model/dynamic_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/dynamic_write_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/entity_of_portfolio_message.py
-criteo_api_marketingsolutions_v2025_07/model/error_code_response.py
 criteo_api_marketingsolutions_v2025_07/model/get_portfolio_response.py
 criteo_api_marketingsolutions_v2025_07/model/html_tag_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/html_tag_write_attributes.py
@@ -192,7 +195,6 @@ criteo_api_marketingsolutions_v2025_07/model/nillable_decimal.py
 criteo_api_marketingsolutions_v2025_07/model/nillable_gender_v1.py
 criteo_api_marketingsolutions_v2025_07/model/nillable_int32.py
 criteo_api_marketingsolutions_v2025_07/model/nillable_string.py
-criteo_api_marketingsolutions_v2025_07/model/outcome.py
 criteo_api_marketingsolutions_v2025_07/model/patch_ad_set_attribution_configuration_v24_q3.py
 criteo_api_marketingsolutions_v2025_07/model/patch_ad_set_bidding_v24_q3.py
 criteo_api_marketingsolutions_v2025_07/model/patch_ad_set_budget_v24_q3.py
@@ -235,7 +237,7 @@ criteo_api_marketingsolutions_v2025_07/model/requests_ad_set_id.py
 criteo_api_marketingsolutions_v2025_07/model/requests_patch_ad_set_v24_q3.py
 criteo_api_marketingsolutions_v2025_07/model/resource_collection_outcome_of_ad.py
 criteo_api_marketingsolutions_v2025_07/model/resource_collection_outcome_of_coupon.py
-criteo_api_marketingsolutions_v2025_07/model/resource_collection_outcome_of_creative.py
+criteo_api_marketingsolutions_v2025_07/model/resource_collection_outcome_of_creative_read.py
 criteo_api_marketingsolutions_v2025_07/model/resource_input_of_ad_write.py
 criteo_api_marketingsolutions_v2025_07/model/resource_input_of_create_coupon.py
 criteo_api_marketingsolutions_v2025_07/model/resource_input_of_creative_write.py
@@ -246,6 +248,7 @@ criteo_api_marketingsolutions_v2025_07/model/resource_of_coupon.py
 criteo_api_marketingsolutions_v2025_07/model/resource_of_coupon_supported_sizes.py
 criteo_api_marketingsolutions_v2025_07/model/resource_of_create_coupon.py
 criteo_api_marketingsolutions_v2025_07/model/resource_of_creative.py
+criteo_api_marketingsolutions_v2025_07/model/resource_of_creative_read.py
 criteo_api_marketingsolutions_v2025_07/model/resource_of_creative_write.py
 criteo_api_marketingsolutions_v2025_07/model/resource_of_update_coupon.py
 criteo_api_marketingsolutions_v2025_07/model/resource_outcome_of_ad.py
@@ -259,6 +262,12 @@ criteo_api_marketingsolutions_v2025_07/model/responses_read_ad_set_v24_q3.py
 criteo_api_marketingsolutions_v2025_07/model/retargeting_create_v1.py
 criteo_api_marketingsolutions_v2025_07/model/retargeting_update_v1.py
 criteo_api_marketingsolutions_v2025_07/model/retargeting_v1.py
+criteo_api_marketingsolutions_v2025_07/model/seller_base.py
+criteo_api_marketingsolutions_v2025_07/model/seller_budget_message.py
+criteo_api_marketingsolutions_v2025_07/model/seller_budget_status_v2.py
+criteo_api_marketingsolutions_v2025_07/model/seller_campaign_message.py
+criteo_api_marketingsolutions_v2025_07/model/seller_campaign_suspension_reason.py
+criteo_api_marketingsolutions_v2025_07/model/seller_campaign_update.py
 criteo_api_marketingsolutions_v2025_07/model/size.py
 criteo_api_marketingsolutions_v2025_07/model/statistics_report_query_message.py
 criteo_api_marketingsolutions_v2025_07/model/tag.py
@@ -271,6 +280,8 @@ criteo_api_marketingsolutions_v2025_07/model/transparency_report_file.py
 criteo_api_marketingsolutions_v2025_07/model/transparency_report_list_response.py
 criteo_api_marketingsolutions_v2025_07/model/transparency_report_resource.py
 criteo_api_marketingsolutions_v2025_07/model/update_coupon.py
+criteo_api_marketingsolutions_v2025_07/model/update_seller_budget_message.py
+criteo_api_marketingsolutions_v2025_07/model/update_seller_budget_message_base.py
 criteo_api_marketingsolutions_v2025_07/model/video_detail.py
 criteo_api_marketingsolutions_v2025_07/model/write_model_ad_set_id.py
 criteo_api_marketingsolutions_v2025_07/model/write_model_patch_ad_set_v24_q3.py
@@ -299,6 +310,7 @@ docs/AdSetTargetingV24Q3FrequencyCapping.md
 docs/AdWrite.md
 docs/AdaptiveAttributes.md
 docs/AdaptiveColors.md
+docs/AdaptiveReadAttributes.md
 docs/AdaptiveWriteAttributes.md
 docs/AdvertiserApi.md
 docs/AlgebraNodeV1.md
@@ -409,8 +421,11 @@ docs/CreateCampaignResource.md
 docs/CreateCampaignSpendLimit.md
 docs/CreateCoupon.md
 docs/CreateImageSlide.md
+docs/CreateSellerBudgetMapiMessage.md
+docs/CreateSellerCampaignMessageMapi.md
 docs/Creative.md
 docs/CreativeApi.md
+docs/CreativeRead.md
 docs/CreativeWrite.md
 docs/CriteoApiError.md
 docs/CriteoApiWarning.md
@@ -418,7 +433,6 @@ docs/DeleteAudienceContactListResponse.md
 docs/DynamicAttributes.md
 docs/DynamicWriteAttributes.md
 docs/EntityOfPortfolioMessage.md
-docs/ErrorCodeResponse.md
 docs/GatewayApi.md
 docs/GetPortfolioResponse.md
 docs/HtmlTagAttributes.md
@@ -454,7 +468,6 @@ docs/NillableDecimal.md
 docs/NillableGenderV1.md
 docs/NillableInt32.md
 docs/NillableString.md
-docs/Outcome.md
 docs/PatchAdSetAttributionConfigurationV24Q3.md
 docs/PatchAdSetBiddingV24Q3.md
 docs/PatchAdSetBudgetV24Q3.md
@@ -497,7 +510,7 @@ docs/RequestsAdSetId.md
 docs/RequestsPatchAdSetV24Q3.md
 docs/ResourceCollectionOutcomeOfAd.md
 docs/ResourceCollectionOutcomeOfCoupon.md
-docs/ResourceCollectionOutcomeOfCreative.md
+docs/ResourceCollectionOutcomeOfCreativeRead.md
 docs/ResourceInputOfAdWrite.md
 docs/ResourceInputOfCreateCoupon.md
 docs/ResourceInputOfCreativeWrite.md
@@ -508,6 +521,7 @@ docs/ResourceOfCoupon.md
 docs/ResourceOfCouponSupportedSizes.md
 docs/ResourceOfCreateCoupon.md
 docs/ResourceOfCreative.md
+docs/ResourceOfCreativeRead.md
 docs/ResourceOfCreativeWrite.md
 docs/ResourceOfUpdateCoupon.md
 docs/ResourceOutcomeOfAd.md
@@ -521,6 +535,12 @@ docs/ResponsesReadAdSetV24Q3.md
 docs/RetargetingCreateV1.md
 docs/RetargetingUpdateV1.md
 docs/RetargetingV1.md
+docs/SellerBase.md
+docs/SellerBudgetMessage.md
+docs/SellerBudgetStatusV2.md
+docs/SellerCampaignMessage.md
+docs/SellerCampaignSuspensionReason.md
+docs/SellerCampaignUpdate.md
 docs/Size.md
 docs/StatisticsReportQueryMessage.md
 docs/Tag.md
@@ -533,6 +553,8 @@ docs/TransparencyReportFile.md
 docs/TransparencyReportListResponse.md
 docs/TransparencyReportResource.md
 docs/UpdateCoupon.md
+docs/UpdateSellerBudgetMessage.md
+docs/UpdateSellerBudgetMessageBase.md
 docs/VideoDetail.md
 docs/WriteModelAdSetId.md
 docs/WriteModelPatchAdSetV24Q3.md
