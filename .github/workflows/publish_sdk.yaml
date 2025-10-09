@@ -37,26 +37,31 @@ jobs:
         with:
           password: ${{ secrets.PYPI_TOKEN }}
           packages_dir: packages/
-
+        
       - name: Send success notification
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: criteo-api-sdk-generator
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: Python sdk publish succeeded. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>
-          SLACK_USERNAME: sdk-generation-bot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_FOOTER: ''
-          SLACK_ICON_EMOJI: green_check_mark
-
+        if: ${{ success() }}
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK }}
+          webhook-type: incoming-webhook
+          payload: |
+            status: "${{ job.status }}"
+            channel: "C02J0CWR789"
+            username: "sdk-generation-bot"
+            color: "#80FF00"
+            text: "Python SDK publishing succeeded. <https://github.com/criteo/criteo-api-java-sdk/actions/runs/${{github.run_id}}|Link to build>."
+            icon_emoji: ":green_check_mark:"
+            
       - name: Send failure notification
         if: ${{ failure() }}
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: criteo-api-sdk-generator
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_MESSAGE: Python sdk publish failed. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>
-          SLACK_USERNAME: sdk-generation-bot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_FOOTER: ''
-          SLACK_ICON_EMOJI: x
+        uses: slackapi/slack-github-action@v2.1.1
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK }}
+          webhook-type: incoming-webhook
+          payload: |
+            status: "${{ job.status }}"
+            channel: "C02J0CWR789"
+            username: "sdk-generation-bot"
+            color: "#FF0000"
+            text: "Python SDK publishing failed. <https://github.com/criteo/criteo-api-java-sdk/actions/runs/${{github.run_id}}|Link to build>."
+            icon_emoji: ":x:"
