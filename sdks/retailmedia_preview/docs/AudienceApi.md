@@ -12,13 +12,13 @@ Method | HTTP request | Description
 [**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /preview/retail-media/accounts/{account-id}/audience-segments | 
 [**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes | 
 [**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /preview/retail-media/accounts/{account-id}/audiences/compute-sizes | 
-[**delete_contact_list_identifiers**](AudienceApi.md#delete_contact_list_identifiers) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
+[**delete_contact_list_by_audience_segment**](AudienceApi.md#delete_contact_list_by_audience_segment) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
 [**estimate_audience_segment_size**](AudienceApi.md#estimate_audience_segment_size) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/estimate-size | 
 [**estimate_audience_size**](AudienceApi.md#estimate_audience_size) | **POST** /preview/retail-media/accounts/{account-id}/audiences/estimate-size | 
 [**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | 
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/search | 
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/retail-media/accounts/{account-id}/audiences/search | 
-[**update_contact_list_identifiers**](AudienceApi.md#update_contact_list_identifiers) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
+[**update_contact_list_by_audience_segment**](AudienceApi.md#update_contact_list_by_audience_segment) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
 
 
 # **bulk_create_audience**
@@ -854,8 +854,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_contact_list_identifiers**
-> delete_contact_list_identifiers(audience_segment_id)
+# **delete_contact_list_by_audience_segment**
+> delete_contact_list_by_audience_segment(audience_segment_id)
 
 
 
@@ -902,9 +902,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.delete_contact_list_identifiers(audience_segment_id)
+        api_instance.delete_contact_list_by_audience_segment(audience_segment_id)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->delete_contact_list_identifiers: %s\n" % e)
+        print("Exception when calling AudienceApi->delete_contact_list_by_audience_segment: %s\n" % e)
 ```
 
 
@@ -1462,8 +1462,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_contact_list_identifiers**
-> RetailMediaContactlistOperation update_contact_list_identifiers(audience_segment_id, retail_media_contactlist_amendment_request)
+# **update_contact_list_by_audience_segment**
+> RetailMediaContactlistOperation update_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
 
 
 
@@ -1524,10 +1524,10 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_contact_list_identifiers(audience_segment_id, retail_media_contactlist_amendment_request)
+        api_response = api_instance.update_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling AudienceApi->update_contact_list_identifiers: %s\n" % e)
+        print("Exception when calling AudienceApi->update_contact_list_by_audience_segment: %s\n" % e)
 ```
 
 

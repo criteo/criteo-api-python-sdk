@@ -530,7 +530,7 @@ class AudienceApi(object):
             },
             api_client=api_client
         )
-        self.delete_contact_list_identifiers_endpoint = _Endpoint(
+        self.delete_contact_list_by_audience_segment_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -538,7 +538,7 @@ class AudienceApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear',
-                'operation_id': 'delete_contact_list_identifiers',
+                'operation_id': 'delete_contact_list_by_audience_segment',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -908,7 +908,7 @@ class AudienceApi(object):
             },
             api_client=api_client
         )
-        self.update_contact_list_identifiers_endpoint = _Endpoint(
+        self.update_contact_list_by_audience_segment_endpoint = _Endpoint(
             settings={
                 'response_type': (RetailMediaContactlistOperation,),
                 'auth': [
@@ -916,7 +916,7 @@ class AudienceApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove',
-                'operation_id': 'update_contact_list_identifiers',
+                'operation_id': 'update_contact_list_by_audience_segment',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -1664,18 +1664,18 @@ class AudienceApi(object):
             rm_audience_compute_sizes_input_v1
         return self.compute_audiences_sizes_endpoint.call_with_http_info(**kwargs)
 
-    def delete_contact_list_identifiers(
+    def delete_contact_list_by_audience_segment(
         self,
         audience_segment_id,
         **kwargs
     ):
-        """delete_contact_list_identifiers  # noqa: E501
+        """delete_contact_list_by_audience_segment  # noqa: E501
 
         Delete all identifiers from a retail-media contact list audience-segment, with external audience segment id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_contact_list_identifiers(audience_segment_id, async_req=True)
+        >>> thread = api.delete_contact_list_by_audience_segment(audience_segment_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1745,7 +1745,7 @@ class AudienceApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['audience_segment_id'] = \
             audience_segment_id
-        return self.delete_contact_list_identifiers_endpoint.call_with_http_info(**kwargs)
+        return self.delete_contact_list_by_audience_segment_endpoint.call_with_http_info(**kwargs)
 
     def estimate_audience_segment_size(
         self,
@@ -2186,19 +2186,19 @@ class AudienceApi(object):
             rm_audience_search_input_v1
         return self.search_audiences_endpoint.call_with_http_info(**kwargs)
 
-    def update_contact_list_identifiers(
+    def update_contact_list_by_audience_segment(
         self,
         audience_segment_id,
         retail_media_contactlist_amendment_request,
         **kwargs
     ):
-        """update_contact_list_identifiers  # noqa: E501
+        """update_contact_list_by_audience_segment  # noqa: E501
 
         Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_contact_list_identifiers(audience_segment_id, retail_media_contactlist_amendment_request, async_req=True)
+        >>> thread = api.update_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -2271,5 +2271,5 @@ class AudienceApi(object):
             audience_segment_id
         kwargs['retail_media_contactlist_amendment_request'] = \
             retail_media_contactlist_amendment_request
-        return self.update_contact_list_identifiers_endpoint.call_with_http_info(**kwargs)
+        return self.update_contact_list_by_audience_segment_endpoint.call_with_http_info(**kwargs)
 

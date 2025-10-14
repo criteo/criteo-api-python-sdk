@@ -4,16 +4,14 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/create | 
-[**bulk_create_audiences**](AudienceApi.md#bulk_create_audiences) | **POST** /preview/marketing-solutions/audiences/create | 
-[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/delete | 
-[**bulk_delete_audiences**](AudienceApi.md#bulk_delete_audiences) | **POST** /preview/marketing-solutions/audiences/delete | 
-[**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /preview/marketing-solutions/audience-segments | 
-[**bulk_update_audiences**](AudienceApi.md#bulk_update_audiences) | **PATCH** /preview/marketing-solutions/audiences | 
 [**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/compute-sizes | 
 [**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/compute-sizes | 
-[**estimate_audience_segment_size**](AudienceApi.md#estimate_audience_segment_size) | **POST** /preview/marketing-solutions/audience-segments/estimate-size | 
-[**estimate_audience_size**](AudienceApi.md#estimate_audience_size) | **POST** /preview/marketing-solutions/audiences/estimate-size | 
+[**create_audience_segments**](AudienceApi.md#create_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/create | 
+[**create_audiences**](AudienceApi.md#create_audiences) | **POST** /preview/marketing-solutions/audiences/create | 
+[**delete_audience_segments**](AudienceApi.md#delete_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/delete | 
+[**delete_audiences**](AudienceApi.md#delete_audiences) | **POST** /preview/marketing-solutions/audiences/delete | 
+[**estimate_audience_segments_sizes**](AudienceApi.md#estimate_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/estimate-size | 
+[**estimate_audiences_sizes**](AudienceApi.md#estimate_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/estimate-size | 
 [**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
 [**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | 
 [**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | 
@@ -22,689 +20,9 @@ Method | HTTP request | Description
 [**preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch**](AudienceApi.md#preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch) | **PATCH** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/search | 
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/marketing-solutions/audiences/search | 
+[**update_audience_segments**](AudienceApi.md#update_audience_segments) | **PATCH** /preview/marketing-solutions/audience-segments | 
+[**update_audiences**](AudienceApi.md#update_audiences) | **PATCH** /preview/marketing-solutions/audiences | 
 
-
-# **bulk_create_audience_segments**
-> AudienceSegmentEntityV1ListResponse bulk_create_audience_segments(audience_segment_bulk_create_input_v1)
-
-
-
-Creates all segments with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import audience_api
-from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_create_input_v1 import AudienceSegmentBulkCreateInputV1
-from criteo_api_marketingsolutions_preview.model.audience_segment_entity_v1_list_response import AudienceSegmentEntityV1ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_bulk_create_input_v1 = AudienceSegmentBulkCreateInputV1(
-        data=[
-            AudienceSegmentCreateEntityV1Resource(
-                attributes=AudienceSegmentCreateEntityV1(
-                    advertiser_id="advertiser_id_example",
-                    contact_list={},
-                    description="description_example",
-                    in_market=InMarketCreateV1(
-                        brand_ids=[
-                            "brand_ids_example",
-                        ],
-                        buying_power=[
-                            "Low",
-                        ],
-                        country="country_example",
-                        gender="Male",
-                        interest_ids=[
-                            "interest_ids_example",
-                        ],
-                        price_range=[
-                            "Low",
-                        ],
-                    ),
-                    location=LocationCreateV1(
-                        points_of_interest=[
-                            PointOfInterestV1(
-                                latitude=3.14,
-                                longitude=3.14,
-                                name="name_example",
-                            ),
-                        ],
-                        radius_in_km=1,
-                    ),
-                    lookalike=LookalikeCreateV1(
-                        seed_segment_id="seed_segment_id_example",
-                        target_size=1,
-                    ),
-                    name="name_example",
-                    prospecting=ProspectingCreateV1(
-                        days_since_last_visit_max=1,
-                        days_since_last_visit_min=1,
-                        users_type="Prospects",
-                    ),
-                    retargeting=RetargetingCreateV1(
-                        days_since_last_visit_max=1,
-                        days_since_last_visit_min=1,
-                        visitors_type="All",
-                    ),
-                ),
-                type="type_example",
-            ),
-        ],
-    ) # AudienceSegmentBulkCreateInputV1 | Segment creation parameter
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.bulk_create_audience_segments(audience_segment_bulk_create_input_v1)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_create_audience_segments: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_segment_bulk_create_input_v1** | [**AudienceSegmentBulkCreateInputV1**](AudienceSegmentBulkCreateInputV1.md)| Segment creation parameter |
-
-### Return type
-
-[**AudienceSegmentEntityV1ListResponse**](AudienceSegmentEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bulk_create_audiences**
-> AudienceEntityV1ListResponse bulk_create_audiences(audience_bulk_create_input_v1)
-
-
-
-Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import audience_api
-from criteo_api_marketingsolutions_preview.model.audience_bulk_create_input_v1 import AudienceBulkCreateInputV1
-from criteo_api_marketingsolutions_preview.model.audience_entity_v1_list_response import AudienceEntityV1ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_bulk_create_input_v1 = AudienceBulkCreateInputV1(
-        data=[
-            AudienceCreateEntityV1Resource(
-                attributes=AudienceCreateEntityV1(
-                    advertiser_id="advertiser_id_example",
-                    algebra=AlgebraNodeV1(
-                        _and=[
-                            AlgebraNodeV1(),
-                        ],
-                        audience_segment_id="audience_segment_id_example",
-                        _not=AlgebraNodeV1(),
-                        _or=[
-                            AlgebraNodeV1(),
-                        ],
-                    ),
-                    description="description_example",
-                    name="name_example",
-                ),
-                type="type_example",
-            ),
-        ],
-    ) # AudienceBulkCreateInputV1 | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.bulk_create_audiences(audience_bulk_create_input_v1)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_create_audiences: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_bulk_create_input_v1** | [**AudienceBulkCreateInputV1**](AudienceBulkCreateInputV1.md)|  |
-
-### Return type
-
-[**AudienceEntityV1ListResponse**](AudienceEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bulk_delete_audience_segments**
-> AudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segments(audience_segment_bulk_delete_input_v1)
-
-
-
-Delete the segments associated to the given audience IDs.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import audience_api
-from criteo_api_marketingsolutions_preview.model.audience_segment_id_entity_v1_list_response import AudienceSegmentIdEntityV1ListResponse
-from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_delete_input_v1 import AudienceSegmentBulkDeleteInputV1
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_bulk_delete_input_v1 = AudienceSegmentBulkDeleteInputV1(
-        data=[
-            AudienceSegmentDeleteEntityV1Resource(
-                attributes={},
-                id="id_example",
-                type="type_example",
-            ),
-        ],
-    ) # AudienceSegmentBulkDeleteInputV1 | Segment delete request.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.bulk_delete_audience_segments(audience_segment_bulk_delete_input_v1)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_delete_audience_segments: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_segment_bulk_delete_input_v1** | [**AudienceSegmentBulkDeleteInputV1**](AudienceSegmentBulkDeleteInputV1.md)| Segment delete request. |
-
-### Return type
-
-[**AudienceSegmentIdEntityV1ListResponse**](AudienceSegmentIdEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bulk_delete_audiences**
-> AudienceIdEntityV1ListResponse bulk_delete_audiences(audience_bulk_delete_input_v1)
-
-
-
-Deletes the audiences associated to the given audience IDs.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import audience_api
-from criteo_api_marketingsolutions_preview.model.audience_bulk_delete_input_v1 import AudienceBulkDeleteInputV1
-from criteo_api_marketingsolutions_preview.model.audience_id_entity_v1_list_response import AudienceIdEntityV1ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_bulk_delete_input_v1 = AudienceBulkDeleteInputV1(
-        data=[
-            AudienceDeleteEntityV1Resource(
-                attributes={},
-                id="id_example",
-                type="type_example",
-            ),
-        ],
-    ) # AudienceBulkDeleteInputV1 | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.bulk_delete_audiences(audience_bulk_delete_input_v1)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_delete_audiences: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_bulk_delete_input_v1** | [**AudienceBulkDeleteInputV1**](AudienceBulkDeleteInputV1.md)|  |
-
-### Return type
-
-[**AudienceIdEntityV1ListResponse**](AudienceIdEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-**204** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bulk_update_audience_segments**
-> AudienceSegmentEntityV1ListResponse bulk_update_audience_segments(audience_segment_bulk_update_input_v1)
-
-
-
-Updates the properties of all segments with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import audience_api
-from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_update_input_v1 import AudienceSegmentBulkUpdateInputV1
-from criteo_api_marketingsolutions_preview.model.audience_segment_entity_v1_list_response import AudienceSegmentEntityV1ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_bulk_update_input_v1 = AudienceSegmentBulkUpdateInputV1(
-        data=[
-            AudienceSegmentUpdateEntityV1Resource(
-                attributes=AudienceSegmentUpdateEntityV1(
-                    description=NillableString(
-                        value="value_example",
-                    ),
-                    in_market=InMarketUpdateV1(
-                        brand_ids=[
-                            "brand_ids_example",
-                        ],
-                        buying_power=[
-                            "Low",
-                        ],
-                        country="country_example",
-                        gender=NillableGenderV1(
-                            value="Male",
-                        ),
-                        interest_ids=[
-                            "interest_ids_example",
-                        ],
-                        price_range=[
-                            "Low",
-                        ],
-                    ),
-                    location=LocationUpdateV1(
-                        points_of_interest=[
-                            PointOfInterestV1(
-                                latitude=3.14,
-                                longitude=3.14,
-                                name="name_example",
-                            ),
-                        ],
-                        radius_in_km=1,
-                        registry_type="PointOfInterest",
-                    ),
-                    lookalike=LookalikeUpdateV1(
-                        target_size=1,
-                    ),
-                    name="name_example",
-                    prospecting=ProspectingUpdateV1(
-                        days_since_last_visit_max=NillableInt32(
-                            value=1,
-                        ),
-                        days_since_last_visit_min=NillableInt32(
-                            value=1,
-                        ),
-                        users_type="Prospects",
-                    ),
-                    retargeting=RetargetingUpdateV1(
-                        days_since_last_visit_max=1,
-                        days_since_last_visit_min=1,
-                        visitors_type="All",
-                    ),
-                ),
-                id="id_example",
-                type="type_example",
-            ),
-        ],
-    ) # AudienceSegmentBulkUpdateInputV1 | Segment Update request
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.bulk_update_audience_segments(audience_segment_bulk_update_input_v1)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_update_audience_segments: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_segment_bulk_update_input_v1** | [**AudienceSegmentBulkUpdateInputV1**](AudienceSegmentBulkUpdateInputV1.md)| Segment Update request |
-
-### Return type
-
-[**AudienceSegmentEntityV1ListResponse**](AudienceSegmentEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bulk_update_audiences**
-> AudienceEntityV1ListResponse bulk_update_audiences(audience_bulk_update_input_v1)
-
-
-
-Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import audience_api
-from criteo_api_marketingsolutions_preview.model.audience_bulk_update_input_v1 import AudienceBulkUpdateInputV1
-from criteo_api_marketingsolutions_preview.model.audience_entity_v1_list_response import AudienceEntityV1ListResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_bulk_update_input_v1 = AudienceBulkUpdateInputV1(
-        data=[
-            AudienceUpdateEntityV1Resource(
-                attributes=AudienceUpdateEntityV1(
-                    algebra=AlgebraNodeV1(
-                        _and=[
-                            AlgebraNodeV1(),
-                        ],
-                        audience_segment_id="audience_segment_id_example",
-                        _not=AlgebraNodeV1(),
-                        _or=[
-                            AlgebraNodeV1(),
-                        ],
-                    ),
-                    description=NillableString(
-                        value="value_example",
-                    ),
-                    name="name_example",
-                ),
-                id="id_example",
-                type="type_example",
-            ),
-        ],
-    ) # AudienceBulkUpdateInputV1 | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.bulk_update_audiences(audience_bulk_update_input_v1)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->bulk_update_audiences: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_bulk_update_input_v1** | [**AudienceBulkUpdateInputV1**](AudienceBulkUpdateInputV1.md)|  |
-
-### Return type
-
-[**AudienceEntityV1ListResponse**](AudienceEntityV1ListResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **compute_audience_segments_sizes**
 > AudienceSegmentSizeEntityV1ListResponse compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1)
@@ -892,8 +210,438 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **estimate_audience_segment_size**
-> AudienceSegmentSizeEstimationV1Response estimate_audience_segment_size(audience_segment_estimate_size_input_v1)
+# **create_audience_segments**
+> AudienceSegmentEntityV1ListResponse create_audience_segments(audience_segment_bulk_create_input_v1)
+
+
+
+Creates all segments with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_create_input_v1 import AudienceSegmentBulkCreateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_entity_v1_list_response import AudienceSegmentEntityV1ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_bulk_create_input_v1 = AudienceSegmentBulkCreateInputV1(
+        data=[
+            AudienceSegmentCreateEntityV1Resource(
+                attributes=AudienceSegmentCreateEntityV1(
+                    advertiser_id="advertiser_id_example",
+                    contact_list={},
+                    description="description_example",
+                    in_market=InMarketCreateV1(
+                        brand_ids=[
+                            "brand_ids_example",
+                        ],
+                        buying_power=[
+                            "Low",
+                        ],
+                        country="country_example",
+                        gender="Male",
+                        interest_ids=[
+                            "interest_ids_example",
+                        ],
+                        price_range=[
+                            "Low",
+                        ],
+                    ),
+                    location=LocationCreateV1(
+                        points_of_interest=[
+                            PointOfInterestV1(
+                                latitude=3.14,
+                                longitude=3.14,
+                                name="name_example",
+                            ),
+                        ],
+                        radius_in_km=1,
+                    ),
+                    lookalike=LookalikeCreateV1(
+                        seed_segment_id="seed_segment_id_example",
+                        target_size=1,
+                    ),
+                    name="name_example",
+                    prospecting=ProspectingCreateV1(
+                        days_since_last_visit_max=1,
+                        days_since_last_visit_min=1,
+                        users_type="Prospects",
+                    ),
+                    retargeting=RetargetingCreateV1(
+                        days_since_last_visit_max=1,
+                        days_since_last_visit_min=1,
+                        visitors_type="All",
+                    ),
+                ),
+                type="type_example",
+            ),
+        ],
+    ) # AudienceSegmentBulkCreateInputV1 | Segment creation parameter
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_audience_segments(audience_segment_bulk_create_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->create_audience_segments: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_bulk_create_input_v1** | [**AudienceSegmentBulkCreateInputV1**](AudienceSegmentBulkCreateInputV1.md)| Segment creation parameter |
+
+### Return type
+
+[**AudienceSegmentEntityV1ListResponse**](AudienceSegmentEntityV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success or partial success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_audiences**
+> AudienceEntityV1ListResponse create_audiences(audience_bulk_create_input_v1)
+
+
+
+Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.audience_bulk_create_input_v1 import AudienceBulkCreateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_entity_v1_list_response import AudienceEntityV1ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_bulk_create_input_v1 = AudienceBulkCreateInputV1(
+        data=[
+            AudienceCreateEntityV1Resource(
+                attributes=AudienceCreateEntityV1(
+                    advertiser_id="advertiser_id_example",
+                    algebra=AlgebraNodeV1(
+                        _and=[
+                            AlgebraNodeV1(),
+                        ],
+                        audience_segment_id="audience_segment_id_example",
+                        _not=AlgebraNodeV1(),
+                        _or=[
+                            AlgebraNodeV1(),
+                        ],
+                    ),
+                    description="description_example",
+                    name="name_example",
+                ),
+                type="type_example",
+            ),
+        ],
+    ) # AudienceBulkCreateInputV1 | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_audiences(audience_bulk_create_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->create_audiences: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_bulk_create_input_v1** | [**AudienceBulkCreateInputV1**](AudienceBulkCreateInputV1.md)|  |
+
+### Return type
+
+[**AudienceEntityV1ListResponse**](AudienceEntityV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success or partial success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_audience_segments**
+> AudienceSegmentIdEntityV1ListResponse delete_audience_segments(audience_segment_bulk_delete_input_v1)
+
+
+
+Delete the segments associated to the given audience IDs.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.audience_segment_id_entity_v1_list_response import AudienceSegmentIdEntityV1ListResponse
+from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_delete_input_v1 import AudienceSegmentBulkDeleteInputV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_bulk_delete_input_v1 = AudienceSegmentBulkDeleteInputV1(
+        data=[
+            AudienceSegmentDeleteEntityV1Resource(
+                attributes={},
+                id="id_example",
+                type="type_example",
+            ),
+        ],
+    ) # AudienceSegmentBulkDeleteInputV1 | Segment delete request.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.delete_audience_segments(audience_segment_bulk_delete_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->delete_audience_segments: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_bulk_delete_input_v1** | [**AudienceSegmentBulkDeleteInputV1**](AudienceSegmentBulkDeleteInputV1.md)| Segment delete request. |
+
+### Return type
+
+[**AudienceSegmentIdEntityV1ListResponse**](AudienceSegmentIdEntityV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success or partial success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_audiences**
+> AudienceIdEntityV1ListResponse delete_audiences(audience_bulk_delete_input_v1)
+
+
+
+Deletes the audiences associated to the given audience IDs.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.audience_bulk_delete_input_v1 import AudienceBulkDeleteInputV1
+from criteo_api_marketingsolutions_preview.model.audience_id_entity_v1_list_response import AudienceIdEntityV1ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_bulk_delete_input_v1 = AudienceBulkDeleteInputV1(
+        data=[
+            AudienceDeleteEntityV1Resource(
+                attributes={},
+                id="id_example",
+                type="type_example",
+            ),
+        ],
+    ) # AudienceBulkDeleteInputV1 | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.delete_audiences(audience_bulk_delete_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->delete_audiences: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_bulk_delete_input_v1** | [**AudienceBulkDeleteInputV1**](AudienceBulkDeleteInputV1.md)|  |
+
+### Return type
+
+[**AudienceIdEntityV1ListResponse**](AudienceIdEntityV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+**204** | Success or partial success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **estimate_audience_segments_sizes**
+> AudienceSegmentSizeEstimationV1Response estimate_audience_segments_sizes(audience_segment_estimate_size_input_v1)
 
 
 
@@ -975,10 +723,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.estimate_audience_segment_size(audience_segment_estimate_size_input_v1)
+        api_response = api_instance.estimate_audience_segments_sizes(audience_segment_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->estimate_audience_segment_size: %s\n" % e)
+        print("Exception when calling AudienceApi->estimate_audience_segments_sizes: %s\n" % e)
 ```
 
 
@@ -1010,8 +758,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **estimate_audience_size**
-> AudienceSizeEstimationV1Response estimate_audience_size(audience_estimate_size_input_v1)
+# **estimate_audiences_sizes**
+> AudienceSizeEstimationV1Response estimate_audiences_sizes(audience_estimate_size_input_v1)
 
 
 
@@ -1077,10 +825,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.estimate_audience_size(audience_estimate_size_input_v1)
+        api_response = api_instance.estimate_audiences_sizes(audience_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->estimate_audience_size: %s\n" % e)
+        print("Exception when calling AudienceApi->estimate_audiences_sizes: %s\n" % e)
 ```
 
 
@@ -1881,6 +1629,258 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_audience_segments**
+> AudienceSegmentEntityV1ListResponse update_audience_segments(audience_segment_bulk_update_input_v1)
+
+
+
+Updates the properties of all segments with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.audience_segment_bulk_update_input_v1 import AudienceSegmentBulkUpdateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_segment_entity_v1_list_response import AudienceSegmentEntityV1ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_bulk_update_input_v1 = AudienceSegmentBulkUpdateInputV1(
+        data=[
+            AudienceSegmentUpdateEntityV1Resource(
+                attributes=AudienceSegmentUpdateEntityV1(
+                    description=NillableString(
+                        value="value_example",
+                    ),
+                    in_market=InMarketUpdateV1(
+                        brand_ids=[
+                            "brand_ids_example",
+                        ],
+                        buying_power=[
+                            "Low",
+                        ],
+                        country="country_example",
+                        gender=NillableGenderV1(
+                            value="Male",
+                        ),
+                        interest_ids=[
+                            "interest_ids_example",
+                        ],
+                        price_range=[
+                            "Low",
+                        ],
+                    ),
+                    location=LocationUpdateV1(
+                        points_of_interest=[
+                            PointOfInterestV1(
+                                latitude=3.14,
+                                longitude=3.14,
+                                name="name_example",
+                            ),
+                        ],
+                        radius_in_km=1,
+                        registry_type="PointOfInterest",
+                    ),
+                    lookalike=LookalikeUpdateV1(
+                        target_size=1,
+                    ),
+                    name="name_example",
+                    prospecting=ProspectingUpdateV1(
+                        days_since_last_visit_max=NillableInt32(
+                            value=1,
+                        ),
+                        days_since_last_visit_min=NillableInt32(
+                            value=1,
+                        ),
+                        users_type="Prospects",
+                    ),
+                    retargeting=RetargetingUpdateV1(
+                        days_since_last_visit_max=1,
+                        days_since_last_visit_min=1,
+                        visitors_type="All",
+                    ),
+                ),
+                id="id_example",
+                type="type_example",
+            ),
+        ],
+    ) # AudienceSegmentBulkUpdateInputV1 | Segment Update request
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_audience_segments(audience_segment_bulk_update_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->update_audience_segments: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_bulk_update_input_v1** | [**AudienceSegmentBulkUpdateInputV1**](AudienceSegmentBulkUpdateInputV1.md)| Segment Update request |
+
+### Return type
+
+[**AudienceSegmentEntityV1ListResponse**](AudienceSegmentEntityV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success or partial success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_audiences**
+> AudienceEntityV1ListResponse update_audiences(audience_bulk_update_input_v1)
+
+
+
+Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.audience_bulk_update_input_v1 import AudienceBulkUpdateInputV1
+from criteo_api_marketingsolutions_preview.model.audience_entity_v1_list_response import AudienceEntityV1ListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_bulk_update_input_v1 = AudienceBulkUpdateInputV1(
+        data=[
+            AudienceUpdateEntityV1Resource(
+                attributes=AudienceUpdateEntityV1(
+                    algebra=AlgebraNodeV1(
+                        _and=[
+                            AlgebraNodeV1(),
+                        ],
+                        audience_segment_id="audience_segment_id_example",
+                        _not=AlgebraNodeV1(),
+                        _or=[
+                            AlgebraNodeV1(),
+                        ],
+                    ),
+                    description=NillableString(
+                        value="value_example",
+                    ),
+                    name="name_example",
+                ),
+                id="id_example",
+                type="type_example",
+            ),
+        ],
+    ) # AudienceBulkUpdateInputV1 | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.update_audiences(audience_bulk_update_input_v1)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->update_audiences: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_bulk_update_input_v1** | [**AudienceBulkUpdateInputV1**](AudienceBulkUpdateInputV1.md)|  |
+
+### Return type
+
+[**AudienceEntityV1ListResponse**](AudienceEntityV1ListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success or partial success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
