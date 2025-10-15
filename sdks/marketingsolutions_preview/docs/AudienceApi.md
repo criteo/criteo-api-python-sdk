@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**delete_audiences**](AudienceApi.md#delete_audiences) | **POST** /preview/marketing-solutions/audiences/delete | 
 [**estimate_audience_segments_sizes**](AudienceApi.md#estimate_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/estimate-size | 
 [**estimate_audiences_sizes**](AudienceApi.md#estimate_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/estimate-size | 
-[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
+[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics | 
 [**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | 
 [**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | 
 [**modify_audience_users_with_attributes**](AudienceApi.md#modify_audience_users_with_attributes) | **PATCH** /preview/audiences/{audience-id}/contactlist-attributes | 

@@ -60,7 +60,6 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
 
     allowed_values = {
         ('bid_strategy',): {
-            'UNKNOWN': "unknown",
             'CONVERSION': "conversion",
             'CLICKS': "clicks",
             'REVENUE': "revenue",
@@ -71,7 +70,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'GENERICANDBRANDED': "genericAndBranded",
             'GENERICBRANDEDANDCONQUESTING': "genericBrandedAndConquesting",
         },
-        ('optimization_strategy_enum',): {
+        ('optimization_strategy',): {
             'MANUAL': "manual",
             'AUTOMATED': "automated",
         },
@@ -112,7 +111,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'keyword_strategy': (str, none_type,),  # noqa: E501
             'max_bid': (float, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
-            'optimization_strategy_enum': (str,),  # noqa: E501
+            'optimization_strategy': (str,),  # noqa: E501
             'target_bid': (float, none_type,),  # noqa: E501
         }
 
@@ -134,7 +133,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
         'keyword_strategy': 'keywordStrategy',  # noqa: E501
         'max_bid': 'maxBid',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
-        'optimization_strategy_enum': 'optimizationStrategyEnum',  # noqa: E501
+        'optimization_strategy': 'optimizationStrategy',  # noqa: E501
         'target_bid': 'targetBid',  # noqa: E501
     }
 
@@ -150,7 +149,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
 
         Args:
             name (str): The name of the line item.
-            start_date (datetime): The date and time when the line item should start running.
+            start_date (datetime): The date and time when the line item starts running.
             target_retailer_id (str): The ID of the retailer to target for this line item.
 
         Keyword Args:
@@ -187,13 +186,13 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             bid_strategy (str): The bidding strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
-            end_date (datetime, none_type): The date and time when the line item should stop running.. [optional]  # noqa: E501
+            end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             is_auto_daily_pacing (bool): Indicates whether automatic daily pacing is enabled.  Default value is false.. [optional] if omitted the server will use the default value of False  # noqa: E501
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy_enum (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            optimization_strategy (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
@@ -254,7 +253,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
 
         Args:
             name (str): The name of the line item.
-            start_date (datetime): The date and time when the line item should start running.
+            start_date (datetime): The date and time when the line item starts running.
             target_retailer_id (str): The ID of the retailer to target for this line item.
 
         Keyword Args:
@@ -291,13 +290,13 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             bid_strategy (str): The bidding strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
-            end_date (datetime, none_type): The date and time when the line item should stop running.. [optional]  # noqa: E501
+            end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             is_auto_daily_pacing (bool): Indicates whether automatic daily pacing is enabled.  Default value is false.. [optional] if omitted the server will use the default value of False  # noqa: E501
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy_enum (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            optimization_strategy (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 

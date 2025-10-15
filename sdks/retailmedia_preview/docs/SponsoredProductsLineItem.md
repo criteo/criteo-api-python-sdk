@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **keyword_strategy** | **str, none_type** | The keyword targeting strategy for this line item. | [optional] 
 **max_bid** | **float, none_type** | The maximum bid amount allowed for this line item. | [optional] 
 **monthly_pacing** | **float, none_type** | The monthly pacing limit for budget spending. | [optional] 
-**optimization_strategy** | **str, none_type** |  | [optional] 
+**optimization_strategy** | **str, none_type** | Optimization strategy for the line item. | [optional] 
 **status** | **str, none_type** | The current status of the line item. | [optional] 
 **target_bid** | **float, none_type** | The target bid amount for the line item. | [optional] 
 

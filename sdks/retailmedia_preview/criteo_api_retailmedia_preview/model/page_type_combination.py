@@ -73,13 +73,13 @@ class PageTypeCombination(ModelNormal):
             'HOME': "home",
             'CHECKOUT': "checkout",
             'CATEGORY': "category",
-            'PRODUCTDETAIL': "productdetail",
+            'PRODUCTDETAIL': "productDetail",
             'CONFIRMATION': "confirmation",
             'MERCHANDISING': "merchandising",
             'DEALS': "deals",
             'FAVORITES': "favorites",
             'SEARCHBAR': "searchbar",
-            'CATEGORYMENU': "categorymenu",
+            'CATEGORYMENU': "categoryMenu",
         },
     }
 

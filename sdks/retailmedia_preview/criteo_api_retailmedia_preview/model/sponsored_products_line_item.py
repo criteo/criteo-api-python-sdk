@@ -61,10 +61,10 @@ class SponsoredProductsLineItem(ModelNormal):
     allowed_values = {
         ('bid_strategy',): {
             'None': None,
-            'UNKNOWN': "unknown",
             'CONVERSION': "conversion",
             'CLICKS': "clicks",
             'REVENUE': "revenue",
+            'UNKNOWN': "unknown",
         },
         ('keyword_strategy',): {
             'None': None,
@@ -77,6 +77,7 @@ class SponsoredProductsLineItem(ModelNormal):
             'None': None,
             'MANUAL': "manual",
             'AUTOMATED': "automated",
+            'UNKNOWN': "unknown",
         },
         ('status',): {
             'None': None,
@@ -225,7 +226,7 @@ class SponsoredProductsLineItem(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy (str, none_type): [optional]  # noqa: E501
+            optimization_strategy (str, none_type): Optimization strategy for the line item.. [optional]  # noqa: E501
             status (str, none_type): The current status of the line item.. [optional]  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
@@ -339,7 +340,7 @@ class SponsoredProductsLineItem(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy (str, none_type): [optional]  # noqa: E501
+            optimization_strategy (str, none_type): Optimization strategy for the line item.. [optional]  # noqa: E501
             status (str, none_type): The current status of the line item.. [optional]  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """

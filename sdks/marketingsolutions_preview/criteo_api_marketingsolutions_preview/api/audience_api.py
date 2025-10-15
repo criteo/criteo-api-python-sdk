@@ -494,7 +494,7 @@ class AudienceApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics',
                 'operation_id': 'get_audience_segment_contact_list_statistics',
                 'http_method': 'GET',
                 'servers': None,

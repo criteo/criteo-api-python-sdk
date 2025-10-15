@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**get_api_v1_external_retailer_placements_by_retailer_id**](CampaignApi.md#get_api_v1_external_retailer_placements_by_retailer_id) | **GET** /preview/retail-media/retailers/{retailer-id}/placements | 
 [**get_auction_line_item_v2**](CampaignApi.md#get_auction_line_item_v2) | **GET** /preview/retail-media/auction-line-items/{lineItemId} | 
 [**get_auction_line_items_by_campaign_id_v2**](CampaignApi.md#get_auction_line_items_by_campaign_id_v2) | **GET** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
+[**get_capout_history**](CampaignApi.md#get_capout_history) | **POST** /preview/retail-media/accounts/{account-id}/line-items/cap-out-history | 
 [**get_creative**](CampaignApi.md#get_creative) | **GET** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | 
 [**get_preferred_line_items_by_campaign_id**](CampaignApi.md#get_preferred_line_items_by_campaign_id) | **GET** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
 [**get_preferred_line_items_by_line_item_id**](CampaignApi.md#get_preferred_line_items_by_line_item_id) | **GET** /preview/retail-media/preferred-line-items/{line-item-id} | 
@@ -442,7 +443,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 max_bid=3.14,
                 monthly_pacing=3.14,
                 name="name_example",
-                optimization_strategy_enum="manual",
+                optimization_strategy="manual",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 target_bid=3.14,
                 target_retailer_id="target_retailer_id_example",
@@ -1700,11 +1701,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     campaign_id = "campaignId_example" # str | The id of the campaign
-    limit_to_id = [
-        "limitToId_example",
-    ] # [str] | The ids that you would like to limit your result set to (optional)
-    page_index = 0 # int | The 0 indexed page index you would like to receive given the page size (optional) if omitted the server will use the default value of 0
-    page_size = 25 # int | The maximum number of items you would like to receive in this request (optional) if omitted the server will use the default value of 25
+    limit = 25 # int | The number of elements to be returned on a page. (optional) if omitted the server will use the default value of 25
+    limit_to_ids = [
+        "limitToIds_example",
+    ] # [str] | The ids to limit the auction line item results to (optional)
+    offset = 0 # int | The (zero-based) starting offset into the collection. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     try:
@@ -1716,7 +1717,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_auction_line_items_by_campaign_id_v2(campaign_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
+        api_response = api_instance.get_auction_line_items_by_campaign_id_v2(campaign_id, limit=limit, limit_to_ids=limit_to_ids, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->get_auction_line_items_by_campaign_id_v2: %s\n" % e)
@@ -1728,9 +1729,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The id of the campaign |
- **limit_to_id** | **[str]**| The ids that you would like to limit your result set to | [optional]
- **page_index** | **int**| The 0 indexed page index you would like to receive given the page size | [optional] if omitted the server will use the default value of 0
- **page_size** | **int**| The maximum number of items you would like to receive in this request | [optional] if omitted the server will use the default value of 25
+ **limit** | **int**| The number of elements to be returned on a page. | [optional] if omitted the server will use the default value of 25
+ **limit_to_ids** | **[str]**| The ids to limit the auction line item results to | [optional]
+ **offset** | **int**| The (zero-based) starting offset into the collection. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
@@ -1743,6 +1744,105 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_capout_history**
+> ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse get_capout_history(account_id, value_resource_input_line_item_budget_cap_out_history_request)
+
+
+
+Get the cap out history for line items
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_outcome_line_item_budget_cap_out_history_response import ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse
+from criteo_api_retailmedia_preview.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | account id that own the lineitem
+    value_resource_input_line_item_budget_cap_out_history_request = ValueResourceInputLineItemBudgetCapOutHistoryRequest(
+        data=ValueResourceLineItemBudgetCapOutHistoryRequest(
+            attributes=LineItemBudgetCapOutHistoryRequest(
+                budget_types=[
+                    "total",
+                ],
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputLineItemBudgetCapOutHistoryRequest | lineitem budgetcapout history  object
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_capout_history(account_id, value_resource_input_line_item_budget_cap_out_history_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->get_capout_history: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| account id that own the lineitem |
+ **value_resource_input_line_item_budget_cap_out_history_request** | [**ValueResourceInputLineItemBudgetCapOutHistoryRequest**](ValueResourceInputLineItemBudgetCapOutHistoryRequest.md)| lineitem budgetcapout history  object |
+
+### Return type
+
+[**ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse**](ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

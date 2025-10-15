@@ -63,15 +63,15 @@ class CampaignAvailability(ModelNormal):
             'None': None,
             'UNKNOWN': "unknown",
             'AUCTION': "auction",
-            'PREFERREDDEALS': "preferreddeals",
+            'PREFERREDDEALS': "preferredDeals",
             'SPONSORSHIP': "sponsorship",
             'OFFSITE': "offsite",
         },
         ('campaign_type',): {
             'None': None,
             'UNKNOWN': "unknown",
-            'SPONSOREDPRODUCTS': "sponsoredproducts",
-            'ONSITEDISPLAY': "onsitedisplay",
+            'SPONSOREDPRODUCTS': "sponsoredProducts",
+            'ONSITEDISPLAY': "onsiteDisplay",
             'OFFSITE': "offsite",
         },
     }

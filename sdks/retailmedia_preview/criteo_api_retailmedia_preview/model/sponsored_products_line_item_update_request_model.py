@@ -65,7 +65,6 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
             'DRAFT': "draft",
         },
         ('bid_strategy',): {
-            'UNKNOWN': "unknown",
             'CONVERSION': "conversion",
             'CLICKS': "clicks",
             'REVENUE': "revenue",
