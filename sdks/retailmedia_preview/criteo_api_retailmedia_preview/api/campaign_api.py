@@ -53,8 +53,10 @@ from criteo_api_retailmedia_preview.model.seller_preview_response import SellerP
 from criteo_api_retailmedia_preview.model.set_bids_model_request import SetBidsModelRequest
 from criteo_api_retailmedia_preview.model.sku_data_preview_list_response import SkuDataPreviewListResponse
 from criteo_api_retailmedia_preview.model.sku_search_request_preview_request import SkuSearchRequestPreviewRequest
+from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_display_auction_min_bid_result import ValueResourceCollectionOutcomeDisplayAuctionMinBidResult
 from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
+from criteo_api_retailmedia_preview.model.value_resource_input_display_auction_min_bid_request import ValueResourceInputDisplayAuctionMinBidRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_of_brand_catalog_request_v2 import ValueResourceInputOfBrandCatalogRequestV2
 from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
@@ -241,6 +243,64 @@ class CampaignApi(object):
                 'location_map': {
                     'line_item_id': 'path',
                     'promoted_product_resource_collection_input': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.compute_display_min_bid_by_retailer_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceCollectionOutcomeDisplayAuctionMinBidResult,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/retailers/{retailerId}/compute-display-min-bid',
+                'operation_id': 'compute_display_min_bid_by_retailer_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'value_resource_input_display_auction_min_bid_request',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (int,),
+                    'value_resource_input_display_auction_min_bid_request':
+                        (ValueResourceInputDisplayAuctionMinBidRequest,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailerId',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'value_resource_input_display_auction_min_bid_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2923,6 +2983,90 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.append_promoted_products_endpoint.call_with_http_info(**kwargs)
+
+    def compute_display_min_bid_by_retailer_id(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """compute_display_min_bid_by_retailer_id  # noqa: E501
+
+        computes the min bid for relevant page types based on the provided information  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.compute_display_min_bid_by_retailer_id(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (int): the retailer id
+
+        Keyword Args:
+            value_resource_input_display_auction_min_bid_request (ValueResourceInputDisplayAuctionMinBidRequest): the details for what cratives and product ids to use to compute the min bids. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceCollectionOutcomeDisplayAuctionMinBidResult
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.compute_display_min_bid_by_retailer_id_endpoint.call_with_http_info(**kwargs)
 
     def create_auction_line_item_v2(
         self,

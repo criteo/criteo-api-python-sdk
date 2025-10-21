@@ -311,7 +311,7 @@ class AccountsApi(object):
     ):
         """get_private_market_child_accounts_by_account_id  # noqa: E501
 
-        Gets page of private market child accounts that are associated with the given account  # noqa: E501
+        Gets Private Market child accounts that are associated with the given account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

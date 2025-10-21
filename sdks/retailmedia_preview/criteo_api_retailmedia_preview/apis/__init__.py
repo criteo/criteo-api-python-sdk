@@ -23,3 +23,4 @@ from criteo_api_retailmedia_preview.api.campaign_api import CampaignApi
 from criteo_api_retailmedia_preview.api.catalog_api import CatalogApi
 from criteo_api_retailmedia_preview.api.gateway_api import GatewayApi
 from criteo_api_retailmedia_preview.api.on_site_recommendation_api import OnSiteRecommendationApi
+from criteo_api_retailmedia_preview.api.third_party_accounts_api import ThirdPartyAccountsApi

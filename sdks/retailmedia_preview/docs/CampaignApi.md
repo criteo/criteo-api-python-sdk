@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /preview/retail-media/line-items/{id}/keywords/add-remove | 
 [**append_product_button_by_line_item_id**](CampaignApi.md#append_product_button_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/append | 
+[**compute_display_min_bid_by_retailer_id**](CampaignApi.md#compute_display_min_bid_by_retailer_id) | **POST** /preview/retail-media/retailers/{retailerId}/compute-display-min-bid | 
 [**create_auction_line_item_v2**](CampaignApi.md#create_auction_line_item_v2) | **POST** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
 [**create_creative**](CampaignApi.md#create_creative) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
 [**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
@@ -372,6 +373,113 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Promoted products appended to the line item with warnings |  -  |
 **204** | Promoted products appended to the line item |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **compute_display_min_bid_by_retailer_id**
+> ValueResourceCollectionOutcomeDisplayAuctionMinBidResult compute_display_min_bid_by_retailer_id(retailer_id)
+
+
+
+computes the min bid for relevant page types based on the provided information
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_display_auction_min_bid_result import ValueResourceCollectionOutcomeDisplayAuctionMinBidResult
+from criteo_api_retailmedia_preview.model.value_resource_input_display_auction_min_bid_request import ValueResourceInputDisplayAuctionMinBidRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = 1 # int | the retailer id
+    value_resource_input_display_auction_min_bid_request = ValueResourceInputDisplayAuctionMinBidRequest(
+        data=ValueResourceDisplayAuctionMinBidRequest(
+            attributes=DisplayAuctionMinBidRequest(
+                creative_ids=[
+                    "creative_ids_example",
+                ],
+                product_ids=[
+                    "product_ids_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputDisplayAuctionMinBidRequest | the details for what cratives and product ids to use to compute the min bids (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.compute_display_min_bid_by_retailer_id(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->compute_display_min_bid_by_retailer_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.compute_display_min_bid_by_retailer_id(retailer_id, value_resource_input_display_auction_min_bid_request=value_resource_input_display_auction_min_bid_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->compute_display_min_bid_by_retailer_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **int**| the retailer id |
+ **value_resource_input_display_auction_min_bid_request** | [**ValueResourceInputDisplayAuctionMinBidRequest**](ValueResourceInputDisplayAuctionMinBidRequest.md)| the details for what cratives and product ids to use to compute the min bids | [optional]
+
+### Return type
+
+[**ValueResourceCollectionOutcomeDisplayAuctionMinBidResult**](ValueResourceCollectionOutcomeDisplayAuctionMinBidResult.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
