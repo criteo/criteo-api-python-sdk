@@ -83,7 +83,7 @@ class DisplayAuctionMinBidRequest(ModelNormal):
         """
         return {
             'creative_ids': ([str],),  # noqa: E501
-            'product_ids': ([str],),  # noqa: E501
+            'product_ids': ([str], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -138,7 +138,7 @@ class DisplayAuctionMinBidRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             creative_ids ([str]): List of Creatives to use. [optional]  # noqa: E501
-            product_ids ([str]): List of potential product ids (SkuIds) to put in creatives. [optional]  # noqa: E501
+            product_ids ([str], none_type): List of potential product ids (SkuIds) to put in creatives. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +225,7 @@ class DisplayAuctionMinBidRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             creative_ids ([str]): List of Creatives to use. [optional]  # noqa: E501
-            product_ids ([str]): List of potential product ids (SkuIds) to put in creatives. [optional]  # noqa: E501
+            product_ids ([str], none_type): List of potential product ids (SkuIds) to put in creatives. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
