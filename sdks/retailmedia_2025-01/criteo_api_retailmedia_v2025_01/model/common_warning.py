@@ -153,7 +153,7 @@ class CommonWarning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            code (str, none_type): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
+            code (str, none_type): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kebab-case.. [optional]  # noqa: E501
             detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
             instance (str, none_type): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
             source ({str: (str,)}, none_type): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501
@@ -246,7 +246,7 @@ class CommonWarning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            code (str, none_type): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case.. [optional]  # noqa: E501
+            code (str, none_type): (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kebab-case.. [optional]  # noqa: E501
             detail (str, none_type): (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
             instance (str, none_type): (REQUIRED) A URI reference that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
             source ({str: (str,)}, none_type): (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s). [optional]  # noqa: E501

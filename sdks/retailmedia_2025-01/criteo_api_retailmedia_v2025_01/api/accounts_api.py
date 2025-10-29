@@ -542,7 +542,7 @@ class AccountsApi(object):
     ):
         """create_private_market_demand_brand_account  # noqa: E501
 
-        Creates a new child Demand Brand Account for the provided parent private market account  # noqa: E501
+        Creates a new child Demand Brand account for the provided parent Private Market account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -626,7 +626,7 @@ class AccountsApi(object):
     ):
         """create_private_market_demand_seller_account  # noqa: E501
 
-        Creates a new child Demand Seller Account for the provided parent private market account  # noqa: E501
+        Creates a new child Demand Seller account for the provided parent Private Market account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

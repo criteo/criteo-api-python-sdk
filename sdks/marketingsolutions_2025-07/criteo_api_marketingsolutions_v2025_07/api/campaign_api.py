@@ -64,101 +64,6 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.campaigns_endpoint = _Endpoint(
-            settings={
-                'response_type': (str,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/stats/campaigns',
-                'operation_id': 'campaigns',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'campaign_id',
-                    'click_attribution_policy',
-                    'count',
-                    'end_date',
-                    'interval_size',
-                    'start_date',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                    'click_attribution_policy',
-                    'interval_size',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                    ('click_attribution_policy',): {
-
-                        "BOTH": "Both",
-                        "SAMESELLER": "SameSeller",
-                        "ANYSELLER": "AnySeller"
-                    },
-                    ('interval_size',): {
-
-                        "HOUR": "Hour",
-                        "DAY": "Day",
-                        "MONTH": "Month",
-                        "YEAR": "Year"
-                    },
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                    'campaign_id':
-                        (str,),
-                    'click_attribution_policy':
-                        (str,),
-                    'count':
-                        (int,),
-                    'end_date':
-                        (datetime,),
-                    'interval_size':
-                        (str,),
-                    'start_date':
-                        (datetime,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                    'campaign_id': 'campaignId',
-                    'click_attribution_policy': 'clickAttributionPolicy',
-                    'count': 'count',
-                    'end_date': 'endDate',
-                    'interval_size': 'intervalSize',
-                    'start_date': 'startDate',
-                },
-                'location_map': {
-                    'advertiser_id': 'query',
-                    'campaign_id': 'query',
-                    'click_attribution_policy': 'query',
-                    'count': 'query',
-                    'end_date': 'query',
-                    'interval_size': 'query',
-                    'start_date': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.create_ad_set_endpoint = _Endpoint(
             settings={
                 'response_type': (ResponseReadAdSetV24Q3,),
@@ -265,7 +170,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.create_seller_budgets_endpoint = _Endpoint(
+        self.create_marketplace_seller_budgets_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -273,7 +178,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/budgets',
-                'operation_id': 'create_seller_budgets',
+                'operation_id': 'create_marketplace_seller_budgets',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -314,7 +219,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.create_seller_campaigns_by_seller_endpoint = _Endpoint(
+        self.create_marketplace_seller_campaigns_by_seller_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -322,7 +227,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/seller-campaigns',
-                'operation_id': 'create_seller_campaigns_by_seller',
+                'operation_id': 'create_marketplace_seller_campaigns_by_seller',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -358,67 +263,6 @@ class CampaignApi(object):
                 'location_map': {
                     'seller_id': 'path',
                     'create_seller_campaign_message_mapi': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.create_sellers_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/sellers',
-                'operation_id': 'create_sellers',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'partner_id',
-                    'request_body',
-                ],
-                'required': [
-                    'advertiser_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                    'partner_id':
-                        (int,),
-                    'request_body':
-                        ([str],),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                    'partner_id': 'partnerId',
-                },
-                'location_map': {
-                    'advertiser_id': 'path',
-                    'partner_id': 'query',
-                    'request_body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -535,522 +379,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_advertiser_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}',
-                'operation_id': 'get_advertiser',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                ],
-                'required': [
-                    'advertiser_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                },
-                'location_map': {
-                    'advertiser_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_advertiser_adsets_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/adsets',
-                'operation_id': 'get_advertiser_adsets',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                ],
-                'required': [
-                    'advertiser_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                },
-                'location_map': {
-                    'advertiser_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_advertiser_campaigns_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/campaigns',
-                'operation_id': 'get_advertiser_campaigns',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                ],
-                'required': [
-                    'advertiser_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                },
-                'location_map': {
-                    'advertiser_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_advertiser_preview_limits_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/preview-limit',
-                'operation_id': 'get_advertiser_preview_limits',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_advertisers_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers',
-                'operation_id': 'get_advertisers',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                },
-                'attribute_map': {
-                },
-                'location_map': {
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_budgets_by_advertiser_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/budgets',
-                'operation_id': 'get_budgets_by_advertiser',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'budget_id',
-                    'end_after_date',
-                    'seller_id',
-                    'start_before_date',
-                    'status',
-                    'type',
-                    'with_balance',
-                    'with_spend',
-                ],
-                'required': [
-                    'advertiser_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                    'status',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                    ('status',): {
-
-                        "ARCHIVED": "Archived",
-                        "CURRENT": "Current",
-                        "SCHEDULED": "Scheduled"
-                    },
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                    'budget_id':
-                        (int,),
-                    'end_after_date':
-                        (datetime,),
-                    'seller_id':
-                        (int,),
-                    'start_before_date':
-                        (datetime,),
-                    'status':
-                        (str,),
-                    'type':
-                        (str,),
-                    'with_balance':
-                        (bool,),
-                    'with_spend':
-                        (bool,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                    'budget_id': 'budgetId',
-                    'end_after_date': 'endAfterDate',
-                    'seller_id': 'sellerId',
-                    'start_before_date': 'startBeforeDate',
-                    'status': 'status',
-                    'type': 'type',
-                    'with_balance': 'withBalance',
-                    'with_spend': 'withSpend',
-                },
-                'location_map': {
-                    'advertiser_id': 'path',
-                    'budget_id': 'query',
-                    'end_after_date': 'query',
-                    'seller_id': 'query',
-                    'start_before_date': 'query',
-                    'status': 'query',
-                    'type': 'query',
-                    'with_balance': 'query',
-                    'with_spend': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_budgets_by_seller_endpoint = _Endpoint(
-            settings={
-                'response_type': ([SellerBudgetMessage],),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/budgets',
-                'operation_id': 'get_budgets_by_seller',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'seller_id',
-                    'campaign_id',
-                    'end_after_date',
-                    'start_before_date',
-                    'status',
-                    'type',
-                    'with_balance',
-                    'with_spend',
-                ],
-                'required': [
-                    'seller_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                    'status',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                    ('status',): {
-
-                        "ARCHIVED": "Archived",
-                        "CURRENT": "Current",
-                        "SCHEDULED": "Scheduled"
-                    },
-                },
-                'openapi_types': {
-                    'seller_id':
-                        (str,),
-                    'campaign_id':
-                        (int,),
-                    'end_after_date':
-                        (datetime,),
-                    'start_before_date':
-                        (datetime,),
-                    'status':
-                        (str,),
-                    'type':
-                        (str,),
-                    'with_balance':
-                        (bool,),
-                    'with_spend':
-                        (bool,),
-                },
-                'attribute_map': {
-                    'seller_id': 'sellerId',
-                    'campaign_id': 'campaignId',
-                    'end_after_date': 'endAfterDate',
-                    'start_before_date': 'startBeforeDate',
-                    'status': 'status',
-                    'type': 'type',
-                    'with_balance': 'withBalance',
-                    'with_spend': 'withSpend',
-                },
-                'location_map': {
-                    'seller_id': 'path',
-                    'campaign_id': 'query',
-                    'end_after_date': 'query',
-                    'start_before_date': 'query',
-                    'status': 'query',
-                    'type': 'query',
-                    'with_balance': 'query',
-                    'with_spend': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.get_budgets_by_seller_campaign_id_endpoint = _Endpoint(
-            settings={
-                'response_type': ([SellerBudgetMessage],),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}/budgets',
-                'operation_id': 'get_budgets_by_seller_campaign_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'seller_campaign_id',
-                    'end_after_date',
-                    'start_before_date',
-                    'status',
-                    'type',
-                    'with_balance',
-                    'with_spend',
-                ],
-                'required': [
-                    'seller_campaign_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                    'status',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                    ('status',): {
-
-                        "ARCHIVED": "Archived",
-                        "CURRENT": "Current",
-                        "SCHEDULED": "Scheduled"
-                    },
-                },
-                'openapi_types': {
-                    'seller_campaign_id':
-                        (str,),
-                    'end_after_date':
-                        (datetime,),
-                    'start_before_date':
-                        (datetime,),
-                    'status':
-                        (str,),
-                    'type':
-                        (str,),
-                    'with_balance':
-                        (bool,),
-                    'with_spend':
-                        (bool,),
-                },
-                'attribute_map': {
-                    'seller_campaign_id': 'sellerCampaignId',
-                    'end_after_date': 'endAfterDate',
-                    'start_before_date': 'startBeforeDate',
-                    'status': 'status',
-                    'type': 'type',
-                    'with_balance': 'withBalance',
-                    'with_spend': 'withSpend',
-                },
-                'location_map': {
-                    'seller_campaign_id': 'path',
-                    'end_after_date': 'query',
-                    'start_before_date': 'query',
-                    'status': 'query',
-                    'type': 'query',
-                    'with_balance': 'query',
-                    'with_spend': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.get_campaign_endpoint = _Endpoint(
             settings={
                 'response_type': (CampaignV23Q1Response,),
@@ -1155,7 +483,618 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_endpoint = _Endpoint(
+        self.get_marketplace_ad_sets_by_advertiser_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/adsets',
+                'operation_id': 'get_marketplace_ad_sets_by_advertiser',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_advertiser_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}',
+                'operation_id': 'get_marketplace_advertiser',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_advertiser_preview_limits_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/preview-limit',
+                'operation_id': 'get_marketplace_advertiser_preview_limits',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_advertisers_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers',
+                'operation_id': 'get_marketplace_advertisers',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_budgets_by_advertiser_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/budgets',
+                'operation_id': 'get_marketplace_budgets_by_advertiser',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'budget_id',
+                    'end_after_date',
+                    'seller_id',
+                    'start_before_date',
+                    'status',
+                    'type',
+                    'with_balance',
+                    'with_spend',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'status',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('status',): {
+
+                        "ARCHIVED": "Archived",
+                        "CURRENT": "Current",
+                        "SCHEDULED": "Scheduled"
+                    },
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'budget_id':
+                        (int,),
+                    'end_after_date':
+                        (datetime,),
+                    'seller_id':
+                        (int,),
+                    'start_before_date':
+                        (datetime,),
+                    'status':
+                        (str,),
+                    'type':
+                        (str,),
+                    'with_balance':
+                        (bool,),
+                    'with_spend':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                    'budget_id': 'budgetId',
+                    'end_after_date': 'endAfterDate',
+                    'seller_id': 'sellerId',
+                    'start_before_date': 'startBeforeDate',
+                    'status': 'status',
+                    'type': 'type',
+                    'with_balance': 'withBalance',
+                    'with_spend': 'withSpend',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                    'budget_id': 'query',
+                    'end_after_date': 'query',
+                    'seller_id': 'query',
+                    'start_before_date': 'query',
+                    'status': 'query',
+                    'type': 'query',
+                    'with_balance': 'query',
+                    'with_spend': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_budgets_by_seller_endpoint = _Endpoint(
+            settings={
+                'response_type': ([SellerBudgetMessage],),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/budgets',
+                'operation_id': 'get_marketplace_budgets_by_seller',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'seller_id',
+                    'campaign_id',
+                    'end_after_date',
+                    'start_before_date',
+                    'status',
+                    'type',
+                    'with_balance',
+                    'with_spend',
+                ],
+                'required': [
+                    'seller_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'status',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('status',): {
+
+                        "ARCHIVED": "Archived",
+                        "CURRENT": "Current",
+                        "SCHEDULED": "Scheduled"
+                    },
+                },
+                'openapi_types': {
+                    'seller_id':
+                        (str,),
+                    'campaign_id':
+                        (int,),
+                    'end_after_date':
+                        (datetime,),
+                    'start_before_date':
+                        (datetime,),
+                    'status':
+                        (str,),
+                    'type':
+                        (str,),
+                    'with_balance':
+                        (bool,),
+                    'with_spend':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'seller_id': 'sellerId',
+                    'campaign_id': 'campaignId',
+                    'end_after_date': 'endAfterDate',
+                    'start_before_date': 'startBeforeDate',
+                    'status': 'status',
+                    'type': 'type',
+                    'with_balance': 'withBalance',
+                    'with_spend': 'withSpend',
+                },
+                'location_map': {
+                    'seller_id': 'path',
+                    'campaign_id': 'query',
+                    'end_after_date': 'query',
+                    'start_before_date': 'query',
+                    'status': 'query',
+                    'type': 'query',
+                    'with_balance': 'query',
+                    'with_spend': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_budgets_by_seller_campaign_endpoint = _Endpoint(
+            settings={
+                'response_type': ([SellerBudgetMessage],),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}/budgets',
+                'operation_id': 'get_marketplace_budgets_by_seller_campaign',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'seller_campaign_id',
+                    'end_after_date',
+                    'start_before_date',
+                    'status',
+                    'type',
+                    'with_balance',
+                    'with_spend',
+                ],
+                'required': [
+                    'seller_campaign_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                    'status',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('status',): {
+
+                        "ARCHIVED": "Archived",
+                        "CURRENT": "Current",
+                        "SCHEDULED": "Scheduled"
+                    },
+                },
+                'openapi_types': {
+                    'seller_campaign_id':
+                        (str,),
+                    'end_after_date':
+                        (datetime,),
+                    'start_before_date':
+                        (datetime,),
+                    'status':
+                        (str,),
+                    'type':
+                        (str,),
+                    'with_balance':
+                        (bool,),
+                    'with_spend':
+                        (bool,),
+                },
+                'attribute_map': {
+                    'seller_campaign_id': 'sellerCampaignId',
+                    'end_after_date': 'endAfterDate',
+                    'start_before_date': 'startBeforeDate',
+                    'status': 'status',
+                    'type': 'type',
+                    'with_balance': 'withBalance',
+                    'with_spend': 'withSpend',
+                },
+                'location_map': {
+                    'seller_campaign_id': 'path',
+                    'end_after_date': 'query',
+                    'start_before_date': 'query',
+                    'status': 'query',
+                    'type': 'query',
+                    'with_balance': 'query',
+                    'with_spend': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_campaigns_by_advertiser_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/campaigns',
+                'operation_id': 'get_marketplace_campaigns_by_advertiser',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_campaigns_stats_endpoint = _Endpoint(
+            settings={
+                'response_type': (str,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/stats/campaigns',
+                'operation_id': 'get_marketplace_campaigns_stats',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'campaign_id',
+                    'click_attribution_policy',
+                    'count',
+                    'end_date',
+                    'interval_size',
+                    'start_date',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                    'click_attribution_policy',
+                    'interval_size',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('click_attribution_policy',): {
+
+                        "BOTH": "Both",
+                        "SAMESELLER": "SameSeller",
+                        "ANYSELLER": "AnySeller"
+                    },
+                    ('interval_size',): {
+
+                        "HOUR": "Hour",
+                        "DAY": "Day",
+                        "MONTH": "Month",
+                        "YEAR": "Year"
+                    },
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'campaign_id':
+                        (str,),
+                    'click_attribution_policy':
+                        (str,),
+                    'count':
+                        (int,),
+                    'end_date':
+                        (datetime,),
+                    'interval_size':
+                        (str,),
+                    'start_date':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                    'campaign_id': 'campaignId',
+                    'click_attribution_policy': 'clickAttributionPolicy',
+                    'count': 'count',
+                    'end_date': 'endDate',
+                    'interval_size': 'intervalSize',
+                    'start_date': 'startDate',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'campaign_id': 'query',
+                    'click_attribution_policy': 'query',
+                    'count': 'query',
+                    'end_date': 'query',
+                    'interval_size': 'query',
+                    'start_date': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_seller_endpoint = _Endpoint(
             settings={
                 'response_type': (SellerBase,),
                 'auth': [
@@ -1163,7 +1102,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}',
-                'operation_id': 'get_seller',
+                'operation_id': 'get_marketplace_seller',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1207,7 +1146,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_ad_demo_endpoint = _Endpoint(
+        self.get_marketplace_seller_ad_preview_endpoint = _Endpoint(
             settings={
                 'response_type': (str,),
                 'auth': [
@@ -1215,7 +1154,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/ad-preview',
-                'operation_id': 'get_seller_ad_demo',
+                'operation_id': 'get_marketplace_seller_ad_preview',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1280,7 +1219,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_budget_endpoint = _Endpoint(
+        self.get_marketplace_seller_budget_endpoint = _Endpoint(
             settings={
                 'response_type': (SellerBudgetMessage,),
                 'auth': [
@@ -1288,7 +1227,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/budgets/{budgetId}',
-                'operation_id': 'get_seller_budget',
+                'operation_id': 'get_marketplace_seller_budget',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1332,7 +1271,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_budgets_endpoint = _Endpoint(
+        self.get_marketplace_seller_budgets_endpoint = _Endpoint(
             settings={
                 'response_type': ([SellerBudgetMessage],),
                 'auth': [
@@ -1340,7 +1279,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/budgets',
-                'operation_id': 'get_seller_budgets',
+                'operation_id': 'get_marketplace_seller_budgets',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1429,7 +1368,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_campaign_endpoint = _Endpoint(
+        self.get_marketplace_seller_campaign_endpoint = _Endpoint(
             settings={
                 'response_type': (SellerCampaignMessage,),
                 'auth': [
@@ -1437,7 +1376,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}',
-                'operation_id': 'get_seller_campaign',
+                'operation_id': 'get_marketplace_seller_campaign',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1481,7 +1420,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_campaigns_endpoint = _Endpoint(
+        self.get_marketplace_seller_campaigns_endpoint = _Endpoint(
             settings={
                 'response_type': ([SellerCampaignMessage],),
                 'auth': [
@@ -1489,7 +1428,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/seller-campaigns',
-                'operation_id': 'get_seller_campaigns',
+                'operation_id': 'get_marketplace_seller_campaigns',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1564,7 +1503,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_campaigns_by_advertiser_endpoint = _Endpoint(
+        self.get_marketplace_seller_campaigns_by_advertiser_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -1572,7 +1511,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/seller-campaigns',
-                'operation_id': 'get_seller_campaigns_by_advertiser',
+                'operation_id': 'get_marketplace_seller_campaigns_by_advertiser',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1614,7 +1553,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_seller_campaigns_by_seller_endpoint = _Endpoint(
+        self.get_marketplace_seller_campaigns_by_seller_endpoint = _Endpoint(
             settings={
                 'response_type': ([SellerCampaignMessage],),
                 'auth': [
@@ -1622,7 +1561,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/seller-campaigns',
-                'operation_id': 'get_seller_campaigns_by_seller',
+                'operation_id': 'get_marketplace_seller_campaigns_by_seller',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1694,7 +1633,107 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_sellers_endpoint = _Endpoint(
+        self.get_marketplace_seller_campaigns_stats_endpoint = _Endpoint(
+            settings={
+                'response_type': (str,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/stats/seller-campaigns',
+                'operation_id': 'get_marketplace_seller_campaigns_stats',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'campaign_id',
+                    'click_attribution_policy',
+                    'count',
+                    'end_date',
+                    'interval_size',
+                    'seller_id',
+                    'start_date',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                    'click_attribution_policy',
+                    'interval_size',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('click_attribution_policy',): {
+
+                        "BOTH": "Both",
+                        "SAMESELLER": "SameSeller",
+                        "ANYSELLER": "AnySeller"
+                    },
+                    ('interval_size',): {
+
+                        "HOUR": "Hour",
+                        "DAY": "Day",
+                        "MONTH": "Month",
+                        "YEAR": "Year"
+                    },
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'campaign_id':
+                        (str,),
+                    'click_attribution_policy':
+                        (str,),
+                    'count':
+                        (int,),
+                    'end_date':
+                        (datetime,),
+                    'interval_size':
+                        (str,),
+                    'seller_id':
+                        (str,),
+                    'start_date':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                    'campaign_id': 'campaignId',
+                    'click_attribution_policy': 'clickAttributionPolicy',
+                    'count': 'count',
+                    'end_date': 'endDate',
+                    'interval_size': 'intervalSize',
+                    'seller_id': 'sellerId',
+                    'start_date': 'startDate',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'campaign_id': 'query',
+                    'click_attribution_policy': 'query',
+                    'count': 'query',
+                    'end_date': 'query',
+                    'interval_size': 'query',
+                    'seller_id': 'query',
+                    'start_date': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_sellers_endpoint = _Endpoint(
             settings={
                 'response_type': ([SellerBudgetMessage],),
                 'auth': [
@@ -1702,7 +1741,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/sellers',
-                'operation_id': 'get_sellers',
+                'operation_id': 'get_marketplace_sellers',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1770,6 +1809,162 @@ class CampaignApi(object):
                     'seller_status': 'query',
                     'with_budget_status': 'query',
                     'with_products': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_sellers_by_advertiser_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/sellers',
+                'operation_id': 'get_marketplace_sellers_by_advertiser',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'partner_id',
+                    'request_body',
+                ],
+                'required': [
+                    'advertiser_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'partner_id':
+                        (int,),
+                    'request_body':
+                        ([str],),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                    'partner_id': 'partnerId',
+                },
+                'location_map': {
+                    'advertiser_id': 'path',
+                    'partner_id': 'query',
+                    'request_body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.get_marketplace_sellers_stats_endpoint = _Endpoint(
+            settings={
+                'response_type': (str,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/stats/sellers',
+                'operation_id': 'get_marketplace_sellers_stats',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'advertiser_id',
+                    'click_attribution_policy',
+                    'count',
+                    'end_date',
+                    'interval_size',
+                    'seller_id',
+                    'start_date',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                    'click_attribution_policy',
+                    'interval_size',
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                    ('click_attribution_policy',): {
+
+                        "BOTH": "Both",
+                        "SAMESELLER": "SameSeller",
+                        "ANYSELLER": "AnySeller"
+                    },
+                    ('interval_size',): {
+
+                        "HOUR": "Hour",
+                        "DAY": "Day",
+                        "MONTH": "Month",
+                        "YEAR": "Year"
+                    },
+                },
+                'openapi_types': {
+                    'advertiser_id':
+                        (int,),
+                    'click_attribution_policy':
+                        (str,),
+                    'count':
+                        (int,),
+                    'end_date':
+                        (datetime,),
+                    'interval_size':
+                        (str,),
+                    'seller_id':
+                        (str,),
+                    'start_date':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'advertiser_id': 'advertiserId',
+                    'click_attribution_policy': 'clickAttributionPolicy',
+                    'count': 'count',
+                    'end_date': 'endDate',
+                    'interval_size': 'intervalSize',
+                    'seller_id': 'sellerId',
+                    'start_date': 'startDate',
+                },
+                'location_map': {
+                    'advertiser_id': 'query',
+                    'click_attribution_policy': 'query',
+                    'count': 'query',
+                    'end_date': 'query',
+                    'interval_size': 'query',
+                    'seller_id': 'query',
+                    'start_date': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2102,201 +2297,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.seller_campaigns_endpoint = _Endpoint(
-            settings={
-                'response_type': (str,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/stats/seller-campaigns',
-                'operation_id': 'seller_campaigns',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'campaign_id',
-                    'click_attribution_policy',
-                    'count',
-                    'end_date',
-                    'interval_size',
-                    'seller_id',
-                    'start_date',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                    'click_attribution_policy',
-                    'interval_size',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                    ('click_attribution_policy',): {
-
-                        "BOTH": "Both",
-                        "SAMESELLER": "SameSeller",
-                        "ANYSELLER": "AnySeller"
-                    },
-                    ('interval_size',): {
-
-                        "HOUR": "Hour",
-                        "DAY": "Day",
-                        "MONTH": "Month",
-                        "YEAR": "Year"
-                    },
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                    'campaign_id':
-                        (str,),
-                    'click_attribution_policy':
-                        (str,),
-                    'count':
-                        (int,),
-                    'end_date':
-                        (datetime,),
-                    'interval_size':
-                        (str,),
-                    'seller_id':
-                        (str,),
-                    'start_date':
-                        (datetime,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                    'campaign_id': 'campaignId',
-                    'click_attribution_policy': 'clickAttributionPolicy',
-                    'count': 'count',
-                    'end_date': 'endDate',
-                    'interval_size': 'intervalSize',
-                    'seller_id': 'sellerId',
-                    'start_date': 'startDate',
-                },
-                'location_map': {
-                    'advertiser_id': 'query',
-                    'campaign_id': 'query',
-                    'click_attribution_policy': 'query',
-                    'count': 'query',
-                    'end_date': 'query',
-                    'interval_size': 'query',
-                    'seller_id': 'query',
-                    'start_date': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.sellers_endpoint = _Endpoint(
-            settings={
-                'response_type': (str,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/stats/sellers',
-                'operation_id': 'sellers',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'advertiser_id',
-                    'click_attribution_policy',
-                    'count',
-                    'end_date',
-                    'interval_size',
-                    'seller_id',
-                    'start_date',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                    'click_attribution_policy',
-                    'interval_size',
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                    ('click_attribution_policy',): {
-
-                        "BOTH": "Both",
-                        "SAMESELLER": "SameSeller",
-                        "ANYSELLER": "AnySeller"
-                    },
-                    ('interval_size',): {
-
-                        "HOUR": "Hour",
-                        "DAY": "Day",
-                        "MONTH": "Month",
-                        "YEAR": "Year"
-                    },
-                },
-                'openapi_types': {
-                    'advertiser_id':
-                        (int,),
-                    'click_attribution_policy':
-                        (str,),
-                    'count':
-                        (int,),
-                    'end_date':
-                        (datetime,),
-                    'interval_size':
-                        (str,),
-                    'seller_id':
-                        (str,),
-                    'start_date':
-                        (datetime,),
-                },
-                'attribute_map': {
-                    'advertiser_id': 'advertiserId',
-                    'click_attribution_policy': 'clickAttributionPolicy',
-                    'count': 'count',
-                    'end_date': 'endDate',
-                    'interval_size': 'intervalSize',
-                    'seller_id': 'sellerId',
-                    'start_date': 'startDate',
-                },
-                'location_map': {
-                    'advertiser_id': 'query',
-                    'click_attribution_policy': 'query',
-                    'count': 'query',
-                    'end_date': 'query',
-                    'interval_size': 'query',
-                    'seller_id': 'query',
-                    'start_date': 'query',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
         self.start_ad_sets_endpoint = _Endpoint(
             settings={
                 'response_type': (ResponsesAdSetId,),
@@ -2458,7 +2458,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.update_seller_budget_endpoint = _Endpoint(
+        self.update_marketplace_seller_budget_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -2466,7 +2466,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/budgets/{budgetId}',
-                'operation_id': 'update_seller_budget',
+                'operation_id': 'update_marketplace_seller_budget',
                 'http_method': 'PATCH',
                 'servers': None,
             },
@@ -2514,7 +2514,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.update_seller_budgets_endpoint = _Endpoint(
+        self.update_marketplace_seller_budgets_endpoint = _Endpoint(
             settings={
                 'response_type': None,
                 'auth': [
@@ -2522,7 +2522,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/budgets',
-                'operation_id': 'update_seller_budgets',
+                'operation_id': 'update_marketplace_seller_budgets',
                 'http_method': 'PATCH',
                 'servers': None,
             },
@@ -2563,7 +2563,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.update_seller_campaign_endpoint = _Endpoint(
+        self.update_marketplace_seller_campaign_endpoint = _Endpoint(
             settings={
                 'response_type': (SellerCampaignMessage,),
                 'auth': [
@@ -2571,7 +2571,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}',
-                'operation_id': 'update_seller_campaign',
+                'operation_id': 'update_marketplace_seller_campaign',
                 'http_method': 'PATCH',
                 'servers': None,
             },
@@ -2620,7 +2620,7 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.update_seller_campaigns_endpoint = _Endpoint(
+        self.update_marketplace_seller_campaigns_endpoint = _Endpoint(
             settings={
                 'response_type': ([SellerCampaignMessage],),
                 'auth': [
@@ -2628,7 +2628,7 @@ class CampaignApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/marketing-solutions/marketplace-performance-outcomes/seller-campaigns',
-                'operation_id': 'update_seller_campaigns',
+                'operation_id': 'update_marketplace_seller_campaigns',
                 'http_method': 'PATCH',
                 'servers': None,
             },
@@ -2671,91 +2671,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-
-    def campaigns(
-        self,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        ## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.campaigns(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            advertiser_id (int): Show only metrics for this advertiser.. [optional]
-            campaign_id (str): Show only metrics for this campaign (default all campaigns). [optional]
-            click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
-            count (int): Return up to the first count rows of data (default is all rows). [optional]
-            end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
-            interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
-            start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            str
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.campaigns_endpoint.call_with_http_info(**kwargs)
 
     def create_ad_set(
         self,
@@ -2923,7 +2838,7 @@ class CampaignApi(object):
             create_campaign_request
         return self.create_campaign_endpoint.call_with_http_info(**kwargs)
 
-    def create_seller_budgets(
+    def create_marketplace_seller_budgets(
         self,
         **kwargs
     ):
@@ -2933,7 +2848,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_seller_budgets(async_req=True)
+        >>> thread = api.create_marketplace_seller_budgets(async_req=True)
         >>> result = thread.get()
 
 
@@ -3000,9 +2915,9 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.create_seller_budgets_endpoint.call_with_http_info(**kwargs)
+        return self.create_marketplace_seller_budgets_endpoint.call_with_http_info(**kwargs)
 
-    def create_seller_campaigns_by_seller(
+    def create_marketplace_seller_campaigns_by_seller(
         self,
         seller_id,
         **kwargs
@@ -3013,7 +2928,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_seller_campaigns_by_seller(seller_id, async_req=True)
+        >>> thread = api.create_marketplace_seller_campaigns_by_seller(seller_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -3084,92 +2999,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['seller_id'] = \
             seller_id
-        return self.create_seller_campaigns_by_seller_endpoint.call_with_http_info(**kwargs)
-
-    def create_sellers(
-        self,
-        advertiser_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Create new sellers for an advertiser  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.create_sellers(advertiser_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            advertiser_id (int): Id of the advertiser
-
-        Keyword Args:
-            partner_id (int): Id of the partner. [optional]
-            request_body ([str]): Names of the sellers to associate with new Ids. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['advertiser_id'] = \
-            advertiser_id
-        return self.create_sellers_endpoint.call_with_http_info(**kwargs)
+        return self.create_marketplace_seller_campaigns_by_seller_endpoint.call_with_http_info(**kwargs)
 
     def get_ad_set(
         self,
@@ -3337,681 +3167,6 @@ class CampaignApi(object):
             ad_set_id
         return self.get_ad_set_category_bids_endpoint.call_with_http_info(**kwargs)
 
-    def get_advertiser(
-        self,
-        advertiser_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Get an advertiser.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_advertiser(advertiser_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            advertiser_id (int): Id of the advertiser
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['advertiser_id'] = \
-            advertiser_id
-        return self.get_advertiser_endpoint.call_with_http_info(**kwargs)
-
-    def get_advertiser_adsets(
-        self,
-        advertiser_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Get the collection of adsets associated with the advertiserId.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_advertiser_adsets(advertiser_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            advertiser_id (int): Id of the advertiser
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['advertiser_id'] = \
-            advertiser_id
-        return self.get_advertiser_adsets_endpoint.call_with_http_info(**kwargs)
-
-    def get_advertiser_campaigns(
-        self,
-        advertiser_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Get the collection of CRP campaigns associated with the advertiserId.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_advertiser_campaigns(advertiser_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            advertiser_id (int): Id of the advertiser
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['advertiser_id'] = \
-            advertiser_id
-        return self.get_advertiser_campaigns_endpoint.call_with_http_info(**kwargs)
-
-    def get_advertiser_preview_limits(
-        self,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Get the collection of advertisers preview limits associated with the authorized user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_advertiser_preview_limits(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_advertiser_preview_limits_endpoint.call_with_http_info(**kwargs)
-
-    def get_advertisers(
-        self,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Get the collection of advertisers associated with the user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_advertisers(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_advertisers_endpoint.call_with_http_info(**kwargs)
-
-    def get_budgets_by_advertiser(
-        self,
-        advertiser_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Get CRP budgets for a specific advertiser  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_budgets_by_advertiser(advertiser_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            advertiser_id (int): Id of the advertiser
-
-        Keyword Args:
-            budget_id (int): Return only budgets with given Id. [optional]
-            end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.              If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
-            seller_id (int): Return only budgets belonging to given sellerId. [optional]
-            start_before_date (datetime): Return budgets that start on or before the given date using the `yyyy-MM-DD` format.. [optional]
-            status (str): Return only budgets with the given status.. [optional]
-            type (str): Return only budgets with the given budget type.. [optional]
-            with_balance (bool): Return only budgets with the given status.. [optional]
-            with_spend (bool): Return budgets with any positive spend.. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['advertiser_id'] = \
-            advertiser_id
-        return self.get_budgets_by_advertiser_endpoint.call_with_http_info(**kwargs)
-
-    def get_budgets_by_seller(
-        self,
-        seller_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Return a collection of budgets for this seller filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used. See the budgets endpoint for additional details.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_budgets_by_seller(seller_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            seller_id (str): Return only budgets belonging to the given seller.
-
-        Keyword Args:
-            campaign_id (int): Return only budgets that pay for a given campaign.. [optional]
-            end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.              If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
-            start_before_date (datetime): Return budgets that start on or before the given date using the `yyyy-MM-DD` format.. [optional]
-            status (str): Return only budgets with the given status.. [optional]
-            type (str): Return only budgets with the given budget type.. [optional]
-            with_balance (bool): Return only budgets with the given status.. [optional]
-            with_spend (bool): Return budgets with any positive spend.. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            [SellerBudgetMessage]
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['seller_id'] = \
-            seller_id
-        return self.get_budgets_by_seller_endpoint.call_with_http_info(**kwargs)
-
-    def get_budgets_by_seller_campaign_id(
-        self,
-        seller_campaign_id,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        Return a collection of budgets for this seller campaign filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used.                See the budgets endpoint for additional details.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_budgets_by_seller_campaign_id(seller_campaign_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            seller_campaign_id (str): Return only budgets belonging to the given seller campaign.
-
-        Keyword Args:
-            end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.               If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
-            start_before_date (datetime): Return budgets that start on or before the given date using the `yyyy-MM-DD` format.. [optional]
-            status (str): Return only budgets with the given status.. [optional]
-            type (str): Return only budgets with the given budget type.. [optional]
-            with_balance (bool): Return only budgets with a positive balance.. [optional]
-            with_spend (bool): Return budgets with a positive spend.. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            [SellerBudgetMessage]
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['seller_campaign_id'] = \
-            seller_campaign_id
-        return self.get_budgets_by_seller_campaign_id_endpoint.call_with_http_info(**kwargs)
-
     def get_campaign(
         self,
         campaign_id,
@@ -4178,7 +3333,767 @@ class CampaignApi(object):
             ad_set_id
         return self.get_display_multipliers_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller(
+    def get_marketplace_ad_sets_by_advertiser(
+        self,
+        advertiser_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Get the collection of adsets associated with the advertiserId.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_ad_sets_by_advertiser(advertiser_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            advertiser_id (int): Id of the advertiser
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['advertiser_id'] = \
+            advertiser_id
+        return self.get_marketplace_ad_sets_by_advertiser_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_advertiser(
+        self,
+        advertiser_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Get an advertiser.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_advertiser(advertiser_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            advertiser_id (int): Id of the advertiser
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['advertiser_id'] = \
+            advertiser_id
+        return self.get_marketplace_advertiser_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_advertiser_preview_limits(
+        self,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Get the collection of advertisers preview limits associated with the authorized user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_advertiser_preview_limits(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_marketplace_advertiser_preview_limits_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_advertisers(
+        self,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Get the collection of advertisers associated with the user.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_advertisers(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_marketplace_advertisers_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_budgets_by_advertiser(
+        self,
+        advertiser_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Get CRP budgets for a specific advertiser  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_budgets_by_advertiser(advertiser_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            advertiser_id (int): Id of the advertiser
+
+        Keyword Args:
+            budget_id (int): Return only budgets with given Id. [optional]
+            end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.              If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
+            seller_id (int): Return only budgets belonging to given sellerId. [optional]
+            start_before_date (datetime): Return budgets that start on or before the given date using the `yyyy-MM-DD` format.. [optional]
+            status (str): Return only budgets with the given status.. [optional]
+            type (str): Return only budgets with the given budget type.. [optional]
+            with_balance (bool): Return only budgets with the given status.. [optional]
+            with_spend (bool): Return budgets with any positive spend.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['advertiser_id'] = \
+            advertiser_id
+        return self.get_marketplace_budgets_by_advertiser_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_budgets_by_seller(
+        self,
+        seller_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Return a collection of budgets for this seller filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used. See the budgets endpoint for additional details.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_budgets_by_seller(seller_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            seller_id (str): Return only budgets belonging to the given seller.
+
+        Keyword Args:
+            campaign_id (int): Return only budgets that pay for a given campaign.. [optional]
+            end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.              If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
+            start_before_date (datetime): Return budgets that start on or before the given date using the `yyyy-MM-DD` format.. [optional]
+            status (str): Return only budgets with the given status.. [optional]
+            type (str): Return only budgets with the given budget type.. [optional]
+            with_balance (bool): Return only budgets with the given status.. [optional]
+            with_spend (bool): Return budgets with any positive spend.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            [SellerBudgetMessage]
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['seller_id'] = \
+            seller_id
+        return self.get_marketplace_budgets_by_seller_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_budgets_by_seller_campaign(
+        self,
+        seller_campaign_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Return a collection of budgets for this seller campaign filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used.                See the budgets endpoint for additional details.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_budgets_by_seller_campaign(seller_campaign_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            seller_campaign_id (str): Return only budgets belonging to the given seller campaign.
+
+        Keyword Args:
+            end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.               If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
+            start_before_date (datetime): Return budgets that start on or before the given date using the `yyyy-MM-DD` format.. [optional]
+            status (str): Return only budgets with the given status.. [optional]
+            type (str): Return only budgets with the given budget type.. [optional]
+            with_balance (bool): Return only budgets with a positive balance.. [optional]
+            with_spend (bool): Return budgets with a positive spend.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            [SellerBudgetMessage]
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['seller_campaign_id'] = \
+            seller_campaign_id
+        return self.get_marketplace_budgets_by_seller_campaign_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_campaigns_by_advertiser(
+        self,
+        advertiser_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Get the collection of CRP campaigns associated with the advertiserId.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_campaigns_by_advertiser(advertiser_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            advertiser_id (int): Id of the advertiser
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['advertiser_id'] = \
+            advertiser_id
+        return self.get_marketplace_campaigns_by_advertiser_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_campaigns_stats(
+        self,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        ## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_campaigns_stats(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            advertiser_id (int): Show only metrics for this advertiser.. [optional]
+            campaign_id (str): Show only metrics for this campaign (default all campaigns). [optional]
+            click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
+            count (int): Return up to the first count rows of data (default is all rows). [optional]
+            end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
+            interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
+            start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            str
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_marketplace_campaigns_stats_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_seller(
         self,
         seller_id,
         **kwargs
@@ -4189,7 +4104,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller(seller_id, async_req=True)
+        >>> thread = api.get_marketplace_seller(seller_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4259,9 +4174,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['seller_id'] = \
             seller_id
-        return self.get_seller_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_ad_demo(
+    def get_marketplace_seller_ad_preview(
         self,
         advertiser_id,
         seller_id,
@@ -4273,7 +4188,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_ad_demo(advertiser_id, seller_id, async_req=True)
+        >>> thread = api.get_marketplace_seller_ad_preview(advertiser_id, seller_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4349,9 +4264,9 @@ class CampaignApi(object):
             advertiser_id
         kwargs['seller_id'] = \
             seller_id
-        return self.get_seller_ad_demo_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_ad_preview_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_budget(
+    def get_marketplace_seller_budget(
         self,
         budget_id,
         **kwargs
@@ -4362,7 +4277,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_budget(budget_id, async_req=True)
+        >>> thread = api.get_marketplace_seller_budget(budget_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4432,9 +4347,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['budget_id'] = \
             budget_id
-        return self.get_seller_budget_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_budget_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_budgets(
+    def get_marketplace_seller_budgets(
         self,
         **kwargs
     ):
@@ -4444,7 +4359,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_budgets(async_req=True)
+        >>> thread = api.get_marketplace_seller_budgets(async_req=True)
         >>> result = thread.get()
 
 
@@ -4519,9 +4434,9 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_seller_budgets_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_budgets_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_campaign(
+    def get_marketplace_seller_campaign(
         self,
         seller_campaign_id,
         **kwargs
@@ -4532,7 +4447,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_campaign(seller_campaign_id, async_req=True)
+        >>> thread = api.get_marketplace_seller_campaign(seller_campaign_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4602,9 +4517,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['seller_campaign_id'] = \
             seller_campaign_id
-        return self.get_seller_campaign_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_campaign_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_campaigns(
+    def get_marketplace_seller_campaigns(
         self,
         **kwargs
     ):
@@ -4614,7 +4529,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_campaigns(async_req=True)
+        >>> thread = api.get_marketplace_seller_campaigns(async_req=True)
         >>> result = thread.get()
 
 
@@ -4685,9 +4600,9 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_seller_campaigns_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_campaigns_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_campaigns_by_advertiser(
+    def get_marketplace_seller_campaigns_by_advertiser(
         self,
         advertiser_id,
         **kwargs
@@ -4698,7 +4613,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_campaigns_by_advertiser(advertiser_id, async_req=True)
+        >>> thread = api.get_marketplace_seller_campaigns_by_advertiser(advertiser_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4768,9 +4683,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
-        return self.get_seller_campaigns_by_advertiser_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_campaigns_by_advertiser_endpoint.call_with_http_info(**kwargs)
 
-    def get_seller_campaigns_by_seller(
+    def get_marketplace_seller_campaigns_by_seller(
         self,
         seller_id,
         **kwargs
@@ -4781,7 +4696,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_seller_campaigns_by_seller(seller_id, async_req=True)
+        >>> thread = api.get_marketplace_seller_campaigns_by_seller(seller_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4854,9 +4769,95 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['seller_id'] = \
             seller_id
-        return self.get_seller_campaigns_by_seller_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_seller_campaigns_by_seller_endpoint.call_with_http_info(**kwargs)
 
-    def get_sellers(
+    def get_marketplace_seller_campaigns_stats(
+        self,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        ## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The remaining columns are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_seller_campaigns_stats(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            advertiser_id (int): Show only metrics for this advertiser.. [optional]
+            campaign_id (str): Show only metrics for this campaign (default all campaigns). [optional]
+            click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
+            count (int): Return up to the first count rows of data (default is all rows). [optional]
+            end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
+            interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
+            seller_id (str): Show only metrics for this seller (default all sellers). [optional]
+            start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            str
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_marketplace_seller_campaigns_stats_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_sellers(
         self,
         **kwargs
     ):
@@ -4866,7 +4867,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_sellers(async_req=True)
+        >>> thread = api.get_marketplace_sellers(async_req=True)
         >>> result = thread.get()
 
 
@@ -4938,7 +4939,177 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.get_sellers_endpoint.call_with_http_info(**kwargs)
+        return self.get_marketplace_sellers_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_sellers_by_advertiser(
+        self,
+        advertiser_id,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        Create new sellers for an advertiser  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_sellers_by_advertiser(advertiser_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            advertiser_id (int): Id of the advertiser
+
+        Keyword Args:
+            partner_id (int): Id of the partner. [optional]
+            request_body ([str]): Names of the sellers to associate with new Ids. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['advertiser_id'] = \
+            advertiser_id
+        return self.get_marketplace_sellers_by_advertiser_endpoint.call_with_http_info(**kwargs)
+
+    def get_marketplace_sellers_stats(
+        self,
+        **kwargs
+    ):
+        """  # noqa: E501
+
+        ## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_marketplace_sellers_stats(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            advertiser_id (int): Show only metrics for this advertiser.. [optional]
+            click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
+            count (int): Return up to the first count rows of data (default is all rows). [optional]
+            end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
+            interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
+            seller_id (str): Show only metrics for this seller (default all sellers). [optional]
+            start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            str
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_marketplace_sellers_stats_endpoint.call_with_http_info(**kwargs)
 
     def patch_ad_set_category_bids(
         self,
@@ -5424,177 +5595,6 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.search_campaigns_endpoint.call_with_http_info(**kwargs)
 
-    def seller_campaigns(
-        self,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        ## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The remaining columns are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.seller_campaigns(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            advertiser_id (int): Show only metrics for this advertiser.. [optional]
-            campaign_id (str): Show only metrics for this campaign (default all campaigns). [optional]
-            click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
-            count (int): Return up to the first count rows of data (default is all rows). [optional]
-            end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
-            interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
-            seller_id (str): Show only metrics for this seller (default all sellers). [optional]
-            start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            str
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.seller_campaigns_endpoint.call_with_http_info(**kwargs)
-
-    def sellers(
-        self,
-        **kwargs
-    ):
-        """  # noqa: E501
-
-        ## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.sellers(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            advertiser_id (int): Show only metrics for this advertiser.. [optional]
-            click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
-            count (int): Return up to the first count rows of data (default is all rows). [optional]
-            end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
-            interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
-            seller_id (str): Show only metrics for this seller (default all sellers). [optional]
-            start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            str
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.sellers_endpoint.call_with_http_info(**kwargs)
-
     def start_ad_sets(
         self,
         **kwargs
@@ -5840,7 +5840,7 @@ class CampaignApi(object):
             ad_set_audience_link_input_entity_v1
         return self.update_ad_set_audience_endpoint.call_with_http_info(**kwargs)
 
-    def update_seller_budget(
+    def update_marketplace_seller_budget(
         self,
         budget_id,
         **kwargs
@@ -5851,7 +5851,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_seller_budget(budget_id, async_req=True)
+        >>> thread = api.update_marketplace_seller_budget(budget_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -5922,9 +5922,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['budget_id'] = \
             budget_id
-        return self.update_seller_budget_endpoint.call_with_http_info(**kwargs)
+        return self.update_marketplace_seller_budget_endpoint.call_with_http_info(**kwargs)
 
-    def update_seller_budgets(
+    def update_marketplace_seller_budgets(
         self,
         **kwargs
     ):
@@ -5934,7 +5934,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_seller_budgets(async_req=True)
+        >>> thread = api.update_marketplace_seller_budgets(async_req=True)
         >>> result = thread.get()
 
 
@@ -6001,9 +6001,9 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.update_seller_budgets_endpoint.call_with_http_info(**kwargs)
+        return self.update_marketplace_seller_budgets_endpoint.call_with_http_info(**kwargs)
 
-    def update_seller_campaign(
+    def update_marketplace_seller_campaign(
         self,
         seller_campaign_id,
         **kwargs
@@ -6014,7 +6014,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_seller_campaign(seller_campaign_id, async_req=True)
+        >>> thread = api.update_marketplace_seller_campaign(seller_campaign_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -6085,9 +6085,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['seller_campaign_id'] = \
             seller_campaign_id
-        return self.update_seller_campaign_endpoint.call_with_http_info(**kwargs)
+        return self.update_marketplace_seller_campaign_endpoint.call_with_http_info(**kwargs)
 
-    def update_seller_campaigns(
+    def update_marketplace_seller_campaigns(
         self,
         **kwargs
     ):
@@ -6097,7 +6097,7 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_seller_campaigns(async_req=True)
+        >>> thread = api.update_marketplace_seller_campaigns(async_req=True)
         >>> result = thread.get()
 
 
@@ -6164,5 +6164,5 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.update_seller_campaigns_endpoint.call_with_http_info(**kwargs)
+        return self.update_marketplace_seller_campaigns_endpoint.call_with_http_info(**kwargs)
 

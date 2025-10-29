@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new child Demand Brand Account for the provided parent private market account
+Creates a new child Demand Brand account for the provided parent Private Market account
 
 ### Example
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new child Demand Seller Account for the provided parent private market account
+Creates a new child Demand Seller account for the provided parent Private Market account
 
 ### Example
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 
 
-Gets page of private market child accounts that are associated with the given account
+Gets Private Market child accounts that are associated with the given account
 
 ### Example
 

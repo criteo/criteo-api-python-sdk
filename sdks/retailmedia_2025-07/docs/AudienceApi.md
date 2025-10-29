@@ -4,15 +4,113 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_remove_contact_list_by_audience_segment**](AudienceApi.md#add_remove_contact_list_by_audience_segment) | **POST** /2025-07/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
 [**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /2025-07/retail-media/accounts/{account-id}/audience-segments/create | 
 [**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /2025-07/retail-media/accounts/{account-id}/audience-segments/delete | 
 [**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /2025-07/retail-media/accounts/{account-id}/audience-segments | 
-[**delete_contact_list_identifiers**](AudienceApi.md#delete_contact_list_identifiers) | **POST** /2025-07/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
+[**clear_contact_list_by_audience_segment**](AudienceApi.md#clear_contact_list_by_audience_segment) | **POST** /2025-07/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
 [**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /2025-07/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | 
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /2025-07/retail-media/accounts/{account-id}/audience-segments/search | 
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /2025-07/retail-media/accounts/{account-id}/audiences/search | 
-[**update_contact_list_identifiers**](AudienceApi.md#update_contact_list_identifiers) | **POST** /2025-07/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
 
+
+# **add_remove_contact_list_by_audience_segment**
+> RetailMediaContactlistOperation add_remove_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
+
+
+
+Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_v2025_07
+from criteo_api_retailmedia_v2025_07.api import audience_api
+from criteo_api_retailmedia_v2025_07.model.retail_media_contactlist_amendment_request import RetailMediaContactlistAmendmentRequest
+from criteo_api_retailmedia_v2025_07.model.retail_media_contactlist_operation import RetailMediaContactlistOperation
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2025_07.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_07.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_segment_id = 1 # int | The id of the contact list audience-segment to amend, we only accept external Id here
+    retail_media_contactlist_amendment_request = RetailMediaContactlistAmendmentRequest(
+        data=RetailMediaContactlistAmendment(
+            attributes=RetailMediaContactlistAmendmentAttributes(
+                identifiers=[
+                    "identifiers_example",
+                ],
+                identifier_type="Email",
+                operation="add",
+            ),
+            type="AddRemoveContactlist",
+        ),
+    ) # RetailMediaContactlistAmendmentRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.add_remove_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_07.ApiException as e:
+        print("Exception when calling AudienceApi->add_remove_contact_list_by_audience_segment: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_segment_id** | **int**| The id of the contact list audience-segment to amend, we only accept external Id here |
+ **retail_media_contactlist_amendment_request** | [**RetailMediaContactlistAmendmentRequest**](RetailMediaContactlistAmendmentRequest.md)|  |
+
+### Return type
+
+[**RetailMediaContactlistOperation**](RetailMediaContactlistOperation.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Summary of created request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_create_audience_segments**
 > RmAudienceSegmentEntityV1ListResponse bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
@@ -339,8 +437,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_contact_list_identifiers**
-> delete_contact_list_identifiers(audience_segment_id)
+# **clear_contact_list_by_audience_segment**
+> clear_contact_list_by_audience_segment(audience_segment_id)
 
 
 
@@ -387,9 +485,9 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_instance.delete_contact_list_identifiers(audience_segment_id)
+        api_instance.clear_contact_list_by_audience_segment(audience_segment_id)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling AudienceApi->delete_contact_list_identifiers: %s\n" % e)
+        print("Exception when calling AudienceApi->clear_contact_list_by_audience_segment: %s\n" % e)
 ```
 
 
@@ -732,104 +830,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success or partial success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_contact_list_identifiers**
-> RetailMediaContactlistOperation update_contact_list_identifiers(audience_segment_id, retail_media_contactlist_amendment_request)
-
-
-
-Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_07
-from criteo_api_retailmedia_v2025_07.api import audience_api
-from criteo_api_retailmedia_v2025_07.model.retail_media_contactlist_amendment_request import RetailMediaContactlistAmendmentRequest
-from criteo_api_retailmedia_v2025_07.model.retail_media_contactlist_operation import RetailMediaContactlistOperation
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = 1 # int | The id of the contact list audience-segment to amend, we only accept external Id here
-    retail_media_contactlist_amendment_request = RetailMediaContactlistAmendmentRequest(
-        data=RetailMediaContactlistAmendment(
-            attributes=RetailMediaContactlistAmendmentAttributes(
-                identifiers=[
-                    "identifiers_example",
-                ],
-                identifier_type="Email",
-                operation="add",
-            ),
-            type="AddRemoveContactlist",
-        ),
-    ) # RetailMediaContactlistAmendmentRequest | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.update_contact_list_identifiers(audience_segment_id, retail_media_contactlist_amendment_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling AudienceApi->update_contact_list_identifiers: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **int**| The id of the contact list audience-segment to amend, we only accept external Id here |
- **retail_media_contactlist_amendment_request** | [**RetailMediaContactlistAmendmentRequest**](RetailMediaContactlistAmendmentRequest.md)|  |
-
-### Return type
-
-[**RetailMediaContactlistOperation**](RetailMediaContactlistOperation.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Summary of created request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

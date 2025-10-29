@@ -15,9 +15,10 @@ Method | HTTP request | Description
 [**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics | 
 [**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | 
 [**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | 
-[**modify_audience_users_with_attributes**](AudienceApi.md#modify_audience_users_with_attributes) | **PATCH** /preview/audiences/{audience-id}/contactlist-attributes | 
+[**preview_audiences_audience_id_contactlist_attributes_patch**](AudienceApi.md#preview_audiences_audience_id_contactlist_attributes_patch) | **PATCH** /preview/audiences/{audience-id}/contactlist-attributes | 
 [**preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete**](AudienceApi.md#preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete) | **DELETE** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
 [**preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch**](AudienceApi.md#preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch) | **PATCH** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
+[**preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch**](AudienceApi.md#preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch) | **PATCH** /preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes | 
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/search | 
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/marketing-solutions/audiences/search | 
 [**update_audience_segments**](AudienceApi.md#update_audience_segments) | **PATCH** /preview/marketing-solutions/audience-segments | 
@@ -1116,8 +1117,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **modify_audience_users_with_attributes**
-> ModifyAudienceResponse modify_audience_users_with_attributes(audience_id, contactlist_with_attributes_amendment_request)
+# **preview_audiences_audience_id_contactlist_attributes_patch**
+> ModifyAudienceResponse preview_audiences_audience_id_contactlist_attributes_patch(audience_id, contactlist_with_attributes_amendment_request)
 
 
 
@@ -1186,10 +1187,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.modify_audience_users_with_attributes(audience_id, contactlist_with_attributes_amendment_request)
+        api_response = api_instance.preview_audiences_audience_id_contactlist_attributes_patch(audience_id, contactlist_with_attributes_amendment_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AudienceApi->modify_audience_users_with_attributes: %s\n" % e)
+        print("Exception when calling AudienceApi->preview_audiences_audience_id_contactlist_attributes_patch: %s\n" % e)
 ```
 
 
@@ -1382,6 +1383,112 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **audience_segment_id** | **str**| The id of the contact list audience-segment to amend |
  **contactlist_amendment_request** | [**ContactlistAmendmentRequest**](ContactlistAmendmentRequest.md)|  |
+
+### Return type
+
+[**ModifyAudienceResponse**](ModifyAudienceResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Summary of created request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch**
+> ModifyAudienceResponse preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch(audience_id, contactlist_with_attributes_amendment_request)
+
+
+
+Add/remove identifiers to or from a contact list.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import audience_api
+from criteo_api_marketingsolutions_preview.model.contactlist_with_attributes_amendment_request import ContactlistWithAttributesAmendmentRequest
+from criteo_api_marketingsolutions_preview.model.modify_audience_response import ModifyAudienceResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    audience_id = "audience-id_example" # str | The id of the contact list audience-segment to amend
+    contactlist_with_attributes_amendment_request = ContactlistWithAttributesAmendmentRequest(
+        data=ContactlistWithAttributesAmendment(
+            attributes=ContactlistWithAttributesAmendmentAttributes(
+                identifiers=[
+                    UserDef(
+                        attributes=[
+                            Attribute(
+                                key="key_example",
+                                value="value_example",
+                            ),
+                        ],
+                        identifier="identifier_example",
+                    ),
+                ],
+                identifier_type="email",
+                operation="add",
+            ),
+            type="ContactlistWithUserAttributesAmendment",
+        ),
+    ) # ContactlistWithAttributesAmendmentRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch(audience_id, contactlist_with_attributes_amendment_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AudienceApi->preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **audience_id** | **str**| The id of the contact list audience-segment to amend |
+ **contactlist_with_attributes_amendment_request** | [**ContactlistWithAttributesAmendmentRequest**](ContactlistWithAttributesAmendmentRequest.md)|  |
 
 ### Return type
 

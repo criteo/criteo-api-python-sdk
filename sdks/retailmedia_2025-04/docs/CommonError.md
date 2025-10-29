@@ -5,7 +5,7 @@ A JSON:API Common error structure
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **str, none_type** | (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kabab-case. | [optional] 
+**code** | **str, none_type** | (REQUIRED) A machine-readable unique error code, expressed as a string value. The format used must be kebab-case. | [optional] 
 **detail** | **str, none_type** | (RECOMMENDED) A human-readable explanation specific to this occurrence of the problem. | [optional] 
 **instance** | **str, none_type** | (REQUIRED) A URI reference that identifies the specific occurrence of the problem. | [optional] 
 **source** | **{str: (str,)}, none_type** | (OPTIONAL) A machine-readable structure to reference to the exact location(s) causing the error(s) | [optional] 
