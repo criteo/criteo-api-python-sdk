@@ -30,6 +30,7 @@ criteo_api_marketingsolutions_v2025_07/model/ad_set_category_bid.py
 criteo_api_marketingsolutions_v2025_07/model/ad_set_category_bid_list_response.py
 criteo_api_marketingsolutions_v2025_07/model/ad_set_category_bid_resource.py
 criteo_api_marketingsolutions_v2025_07/model/ad_set_delivery_limitations_v24_q3.py
+criteo_api_marketingsolutions_v2025_07/model/ad_set_delivery_status.py
 criteo_api_marketingsolutions_v2025_07/model/ad_set_display_multiplier.py
 criteo_api_marketingsolutions_v2025_07/model/ad_set_display_multiplier_list_response.py
 criteo_api_marketingsolutions_v2025_07/model/ad_set_display_multiplier_resource.py
@@ -45,6 +46,10 @@ criteo_api_marketingsolutions_v2025_07/model/adaptive_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/adaptive_colors.py
 criteo_api_marketingsolutions_v2025_07/model/adaptive_read_attributes.py
 criteo_api_marketingsolutions_v2025_07/model/adaptive_write_attributes.py
+criteo_api_marketingsolutions_v2025_07/model/advertiser_adset_message.py
+criteo_api_marketingsolutions_v2025_07/model/advertiser_campaign_message.py
+criteo_api_marketingsolutions_v2025_07/model/advertiser_info_message.py
+criteo_api_marketingsolutions_v2025_07/model/advertiser_quota_message.py
 criteo_api_marketingsolutions_v2025_07/model/algebra_node_v1.py
 criteo_api_marketingsolutions_v2025_07/model/application_summary_model.py
 criteo_api_marketingsolutions_v2025_07/model/application_summary_model_resource.py
@@ -297,6 +302,7 @@ docs/AdSetCategoryBid.md
 docs/AdSetCategoryBidListResponse.md
 docs/AdSetCategoryBidResource.md
 docs/AdSetDeliveryLimitationsV24Q3.md
+docs/AdSetDeliveryStatus.md
 docs/AdSetDisplayMultiplier.md
 docs/AdSetDisplayMultiplierListResponse.md
 docs/AdSetDisplayMultiplierResource.md
@@ -312,7 +318,11 @@ docs/AdaptiveAttributes.md
 docs/AdaptiveColors.md
 docs/AdaptiveReadAttributes.md
 docs/AdaptiveWriteAttributes.md
+docs/AdvertiserAdsetMessage.md
 docs/AdvertiserApi.md
+docs/AdvertiserCampaignMessage.md
+docs/AdvertiserInfoMessage.md
+docs/AdvertiserQuotaMessage.md
 docs/AlgebraNodeV1.md
 docs/AnalyticsApi.md
 docs/ApplicationSummaryModel.md

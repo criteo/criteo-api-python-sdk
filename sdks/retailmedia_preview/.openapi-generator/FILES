@@ -114,6 +114,9 @@ criteo_api_retailmedia_preview/model/external_retail_media_seller_account_creati
 criteo_api_retailmedia_preview/model/files_variable_value.py
 criteo_api_retailmedia_preview/model/flight_leg.py
 criteo_api_retailmedia_preview/model/flight_schedule.py
+criteo_api_retailmedia_preview/model/grant_consent_input.py
+criteo_api_retailmedia_preview/model/grant_consent_model.py
+criteo_api_retailmedia_preview/model/grant_consent_model_value_resource.py
 criteo_api_retailmedia_preview/model/hyperlink_variable_value.py
 criteo_api_retailmedia_preview/model/inbot_discussion.py
 criteo_api_retailmedia_preview/model/inbot_discussion_body_model.py
@@ -462,6 +465,9 @@ docs/FilesVariableValue.md
 docs/FlightLeg.md
 docs/FlightSchedule.md
 docs/GatewayApi.md
+docs/GrantConsentInput.md
+docs/GrantConsentModel.md
+docs/GrantConsentModelValueResource.md
 docs/HyperlinkVariableValue.md
 docs/InbotDiscussion.md
 docs/InbotDiscussionBodyModel.md

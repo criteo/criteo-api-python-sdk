@@ -49,7 +49,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/product-sets',
+                'endpoint_path': '/2025-10/marketing-solutions/product-sets',
                 'operation_id': 'create_product_set',
                 'http_method': 'POST',
                 'servers': None,
@@ -100,7 +100,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/ads/{ad-id}/product-filter',
+                'endpoint_path': '/2025-10/marketing-solutions/ads/{ad-id}/product-filter',
                 'operation_id': 'disable_product_filtering',
                 'http_method': 'DELETE',
                 'servers': None,
@@ -152,7 +152,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/ads/{ad-id}/product-filter',
+                'endpoint_path': '/2025-10/marketing-solutions/ads/{ad-id}/product-filter',
                 'operation_id': 'enable_product_filtering',
                 'http_method': 'POST',
                 'servers': None,
@@ -210,7 +210,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/ads/{ad-id}/product-filter',
+                'endpoint_path': '/2025-10/marketing-solutions/ads/{ad-id}/product-filter',
                 'operation_id': 'fetch_product_filtering_config',
                 'http_method': 'GET',
                 'servers': None,
@@ -262,7 +262,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/product-sets/{product-set-id}/product-filters',
+                'endpoint_path': '/2025-10/marketing-solutions/product-sets/{product-set-id}/product-filters',
                 'operation_id': 'fetch_product_filtering_usages',
                 'http_method': 'GET',
                 'servers': None,
@@ -314,7 +314,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/product-sets/{product-set-id}',
+                'endpoint_path': '/2025-10/marketing-solutions/product-sets/{product-set-id}',
                 'operation_id': 'fetch_product_set',
                 'http_method': 'GET',
                 'servers': None,
@@ -366,7 +366,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/product-sets/dataset/{dataset-id}',
+                'endpoint_path': '/2025-10/marketing-solutions/product-sets/dataset/{dataset-id}',
                 'operation_id': 'fetch_product_sets',
                 'http_method': 'GET',
                 'servers': None,
@@ -418,7 +418,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/product-sets/{product-set-id}',
+                'endpoint_path': '/2025-10/marketing-solutions/product-sets/{product-set-id}',
                 'operation_id': 'patch_product_set',
                 'http_method': 'PATCH',
                 'servers': None,
@@ -476,7 +476,7 @@ class RecoApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2025-10/product-sets/{product-set-id}',
+                'endpoint_path': '/2025-10/marketing-solutions/product-sets/{product-set-id}',
                 'operation_id': 'remove_product_set',
                 'http_method': 'DELETE',
                 'servers': None,

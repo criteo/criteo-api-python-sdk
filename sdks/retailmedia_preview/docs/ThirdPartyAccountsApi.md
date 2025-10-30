@@ -4,12 +4,116 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**grant_third_party_consent**](ThirdPartyAccountsApi.md#grant_third_party_consent) | **POST** /preview/retail-media/accounts/{accountId}/grant-third-party-consent | 
 [**preview_retail_media_third_party_accounts_account_id_brands_add_post**](ThirdPartyAccountsApi.md#preview_retail_media_third_party_accounts_account_id_brands_add_post) | **POST** /preview/retail-media/third-party-accounts/{accountId}/brands/add | 
 [**preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post**](ThirdPartyAccountsApi.md#preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post) | **POST** /preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove | 
 [**preview_retail_media_third_party_accounts_account_id_create_brand_account_post**](ThirdPartyAccountsApi.md#preview_retail_media_third_party_accounts_account_id_create_brand_account_post) | **POST** /preview/retail-media/third-party-accounts/{accountId}/create-brand-account | 
 [**preview_retail_media_third_party_accounts_account_id_create_seller_account_post**](ThirdPartyAccountsApi.md#preview_retail_media_third_party_accounts_account_id_create_seller_account_post) | **POST** /preview/retail-media/third-party-accounts/{accountId}/create-seller-account | 
 [**preview_retail_media_third_party_accounts_account_id_sellers_put**](ThirdPartyAccountsApi.md#preview_retail_media_third_party_accounts_account_id_sellers_put) | **PUT** /preview/retail-media/third-party-accounts/{accountId}/sellers | 
 
+
+# **grant_third_party_consent**
+> grant_third_party_consent(account_id)
+
+
+
+Grant third-party consent to a business application on behalf of a Private Market demand account
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import third_party_accounts_api
+from criteo_api_retailmedia_preview.model.grant_consent_input import GrantConsentInput
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | The demand account ID on which to grant consent
+    grant_consent_input = GrantConsentInput(
+        data=GrantConsentModelValueResource(
+            attributes=GrantConsentModel(
+                callback_state="callback_state_example",
+                callback_url="callback_url_example",
+                client_id="client_id_example",
+            ),
+            type="type_example",
+        ),
+    ) # GrantConsentInput | The request input containing clientId, callbackURL, and callbackState (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # 
+        api_instance.grant_third_party_consent(account_id)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->grant_third_party_consent: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # 
+        api_instance.grant_third_party_consent(account_id, grant_consent_input=grant_consent_input)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->grant_third_party_consent: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The demand account ID on which to grant consent |
+ **grant_consent_input** | [**GrantConsentInput**](GrantConsentInput.md)| The request input containing clientId, callbackURL, and callbackState | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_retail_media_third_party_accounts_account_id_brands_add_post**
 > ValueResourceOutcomeOfRetailMediaBrands preview_retail_media_third_party_accounts_account_id_brands_add_post(account_id)

@@ -26,6 +26,10 @@ from criteo_api_marketingsolutions_v2025_07.model.ad_set_audience_link_input_ent
 from criteo_api_marketingsolutions_v2025_07.model.ad_set_category_bid_list_response import AdSetCategoryBidListResponse
 from criteo_api_marketingsolutions_v2025_07.model.ad_set_display_multiplier_list_response import AdSetDisplayMultiplierListResponse
 from criteo_api_marketingsolutions_v2025_07.model.ad_set_search_request_v24_q3 import AdSetSearchRequestV24Q3
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_adset_message import AdvertiserAdsetMessage
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_campaign_message import AdvertiserCampaignMessage
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_info_message import AdvertiserInfoMessage
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_quota_message import AdvertiserQuotaMessage
 from criteo_api_marketingsolutions_v2025_07.model.campaign_search_request_v23_q1 import CampaignSearchRequestV23Q1
 from criteo_api_marketingsolutions_v2025_07.model.campaign_v23_q1_list_response import CampaignV23Q1ListResponse
 from criteo_api_marketingsolutions_v2025_07.model.campaign_v23_q1_response import CampaignV23Q1Response
@@ -172,7 +176,7 @@ class CampaignApi(object):
         )
         self.create_marketplace_seller_budgets_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([SellerBudgetMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -212,7 +216,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -221,7 +227,7 @@ class CampaignApi(object):
         )
         self.create_marketplace_seller_campaigns_by_seller_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (SellerCampaignMessage,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -268,7 +274,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -485,7 +493,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_ad_sets_by_advertiser_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([AdvertiserAdsetMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -528,14 +536,16 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.get_marketplace_advertiser_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (AdvertiserInfoMessage,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -578,14 +588,16 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.get_marketplace_advertiser_preview_limits_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([AdvertiserQuotaMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -621,14 +633,16 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.get_marketplace_advertisers_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([AdvertiserInfoMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -664,14 +678,16 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
         )
         self.get_marketplace_budgets_by_advertiser_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([SellerBudgetMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -761,7 +777,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -951,7 +969,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_campaigns_by_advertiser_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([AdvertiserCampaignMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -994,7 +1012,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -1020,6 +1040,7 @@ class CampaignApi(object):
                     'end_date',
                     'interval_size',
                     'start_date',
+                    'time_zone_id',
                 ],
                 'required': [],
                 'nullable': [
@@ -1064,6 +1085,8 @@ class CampaignApi(object):
                         (str,),
                     'start_date':
                         (datetime,),
+                    'time_zone_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -1073,6 +1096,7 @@ class CampaignApi(object):
                     'end_date': 'endDate',
                     'interval_size': 'intervalSize',
                     'start_date': 'startDate',
+                    'time_zone_id': 'timeZoneId',
                 },
                 'location_map': {
                     'advertiser_id': 'query',
@@ -1082,6 +1106,7 @@ class CampaignApi(object):
                     'end_date': 'query',
                     'interval_size': 'query',
                     'start_date': 'query',
+                    'time_zone_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1370,7 +1395,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_seller_campaign_endpoint = _Endpoint(
             settings={
-                'response_type': (SellerCampaignMessage,),
+                'response_type': ([SellerCampaignMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1505,7 +1530,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_seller_campaigns_by_advertiser_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([SellerCampaignMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1548,7 +1573,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [],
             },
             api_client=api_client
@@ -1655,6 +1682,7 @@ class CampaignApi(object):
                     'interval_size',
                     'seller_id',
                     'start_date',
+                    'time_zone_id',
                 ],
                 'required': [],
                 'nullable': [
@@ -1701,6 +1729,8 @@ class CampaignApi(object):
                         (str,),
                     'start_date':
                         (datetime,),
+                    'time_zone_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -1711,6 +1741,7 @@ class CampaignApi(object):
                     'interval_size': 'intervalSize',
                     'seller_id': 'sellerId',
                     'start_date': 'startDate',
+                    'time_zone_id': 'timeZoneId',
                 },
                 'location_map': {
                     'advertiser_id': 'query',
@@ -1721,6 +1752,7 @@ class CampaignApi(object):
                     'interval_size': 'query',
                     'seller_id': 'query',
                     'start_date': 'query',
+                    'time_zone_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1735,7 +1767,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_sellers_endpoint = _Endpoint(
             settings={
-                'response_type': ([SellerBudgetMessage],),
+                'response_type': ([SellerBase],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1823,7 +1855,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_sellers_by_advertiser_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([SellerBase],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1875,7 +1907,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -1903,6 +1937,7 @@ class CampaignApi(object):
                     'interval_size',
                     'seller_id',
                     'start_date',
+                    'time_zone_id',
                 ],
                 'required': [],
                 'nullable': [
@@ -1947,6 +1982,8 @@ class CampaignApi(object):
                         (str,),
                     'start_date':
                         (datetime,),
+                    'time_zone_id':
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -1956,6 +1993,7 @@ class CampaignApi(object):
                     'interval_size': 'intervalSize',
                     'seller_id': 'sellerId',
                     'start_date': 'startDate',
+                    'time_zone_id': 'timeZoneId',
                 },
                 'location_map': {
                     'advertiser_id': 'query',
@@ -1965,6 +2003,7 @@ class CampaignApi(object):
                     'interval_size': 'query',
                     'seller_id': 'query',
                     'start_date': 'query',
+                    'time_zone_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2460,7 +2499,7 @@ class CampaignApi(object):
         )
         self.update_marketplace_seller_budget_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (SellerBudgetMessage,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2507,7 +2546,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -2516,7 +2557,7 @@ class CampaignApi(object):
         )
         self.update_marketplace_seller_budgets_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': ([SellerBudgetMessage],),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2556,7 +2597,9 @@ class CampaignApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -2886,7 +2929,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [SellerBudgetMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2968,7 +3011,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            SellerCampaignMessage
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3383,7 +3426,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [AdvertiserAdsetMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3466,7 +3509,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            AdvertiserInfoMessage
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3546,7 +3589,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [AdvertiserQuotaMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3624,7 +3667,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [AdvertiserInfoMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3713,7 +3756,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [SellerBudgetMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3975,7 +4018,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [AdvertiserCampaignMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4014,7 +4057,7 @@ class CampaignApi(object):
     ):
         """  # noqa: E501
 
-        ## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
+        ## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone  if provided. The aggregation interval size is controlled by `intervalSize`. The time  interval appears in the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4030,6 +4073,7 @@ class CampaignApi(object):
             end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
             interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
             start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
+            time_zone_id (str): Specify the timezone used in the aggregations (IANA code).. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4486,7 +4530,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            SellerCampaignMessage
+            [SellerCampaignMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4652,7 +4696,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [SellerCampaignMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4777,7 +4821,7 @@ class CampaignApi(object):
     ):
         """  # noqa: E501
 
-        ## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The remaining columns are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
+        ## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone if  provided. The aggregation interval size is controlled by `intervalSize`. The remaining columns  are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4794,6 +4838,7 @@ class CampaignApi(object):
             interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
             seller_id (str): Show only metrics for this seller (default all sellers). [optional]
             start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
+            time_zone_id (str): Specify the timezone used in the aggregations (IANA code).. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4910,7 +4955,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            [SellerBudgetMessage]
+            [SellerBase]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4993,7 +5038,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [SellerBase]
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5032,7 +5077,7 @@ class CampaignApi(object):
     ):
         """  # noqa: E501
 
-        ## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
+        ## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone  if provided. The aggregation interval size is controlled by `intervalSize`. The time interval  appears in the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -5048,6 +5093,7 @@ class CampaignApi(object):
             interval_size (str): Specify the aggregation interval for events used to compute stats (default is \"day\"). [optional] if omitted the server will use the default value of "Day"
             seller_id (str): Show only metrics for this seller (default all sellers). [optional]
             start_date (datetime): Filter out all events that occur before date (default is the value of `endDate`). [optional]
+            time_zone_id (str): Specify the timezone used in the aggregations (IANA code).. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5891,7 +5937,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            SellerBudgetMessage
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5972,7 +6018,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            [SellerBudgetMessage]
                 If the method is called asynchronously, returns the request
                 thread.
         """

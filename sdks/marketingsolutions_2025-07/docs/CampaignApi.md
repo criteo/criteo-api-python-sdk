@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_marketplace_seller_budgets**
-> create_marketplace_seller_budgets()
+> [SellerBudgetMessage] create_marketplace_seller_budgets()
 
 
 
@@ -323,6 +323,7 @@ import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
 from criteo_api_marketingsolutions_v2025_07.model.create_seller_budget_mapi_message import CreateSellerBudgetMapiMessage
+from criteo_api_marketingsolutions_v2025_07.model.seller_budget_message import SellerBudgetMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -368,7 +369,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_instance.create_marketplace_seller_budgets(create_seller_budget_mapi_message=create_seller_budget_mapi_message)
+        api_response = api_instance.create_marketplace_seller_budgets(create_seller_budget_mapi_message=create_seller_budget_mapi_message)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->create_marketplace_seller_budgets: %s\n" % e)
 ```
@@ -382,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[SellerBudgetMessage]**](SellerBudgetMessage.md)
 
 ### Authorization
 
@@ -391,19 +393,19 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_marketplace_seller_campaigns_by_seller**
-> create_marketplace_seller_campaigns_by_seller(seller_id)
+> SellerCampaignMessage create_marketplace_seller_campaigns_by_seller(seller_id)
 
 
 
@@ -418,6 +420,7 @@ Associate an existing Seller with an existing Campaign allowing for budget creat
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.seller_campaign_message import SellerCampaignMessage
 from criteo_api_marketingsolutions_v2025_07.model.create_seller_campaign_message_mapi import CreateSellerCampaignMessageMapi
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -456,7 +459,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.create_marketplace_seller_campaigns_by_seller(seller_id)
+        api_response = api_instance.create_marketplace_seller_campaigns_by_seller(seller_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->create_marketplace_seller_campaigns_by_seller: %s\n" % e)
 
@@ -464,7 +468,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_instance.create_marketplace_seller_campaigns_by_seller(seller_id, create_seller_campaign_message_mapi=create_seller_campaign_message_mapi)
+        api_response = api_instance.create_marketplace_seller_campaigns_by_seller(seller_id, create_seller_campaign_message_mapi=create_seller_campaign_message_mapi)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->create_marketplace_seller_campaigns_by_seller: %s\n" % e)
 ```
@@ -479,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**SellerCampaignMessage**](SellerCampaignMessage.md)
 
 ### Authorization
 
@@ -488,14 +493,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -836,7 +841,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_ad_sets_by_advertiser**
-> get_marketplace_ad_sets_by_advertiser(advertiser_id)
+> [AdvertiserAdsetMessage] get_marketplace_ad_sets_by_advertiser(advertiser_id)
 
 
 
@@ -851,6 +856,7 @@ Get the collection of adsets associated with the advertiserId.
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_adset_message import AdvertiserAdsetMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -884,7 +890,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.get_marketplace_ad_sets_by_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_ad_sets_by_advertiser(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_ad_sets_by_advertiser: %s\n" % e)
 ```
@@ -898,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[AdvertiserAdsetMessage]**](AdvertiserAdsetMessage.md)
 
 ### Authorization
 
@@ -907,19 +914,19 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_advertiser**
-> get_marketplace_advertiser(advertiser_id)
+> AdvertiserInfoMessage get_marketplace_advertiser(advertiser_id)
 
 
 
@@ -934,6 +941,7 @@ Get an advertiser.
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_info_message import AdvertiserInfoMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -967,7 +975,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.get_marketplace_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_advertiser(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_advertiser: %s\n" % e)
 ```
@@ -981,7 +990,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**AdvertiserInfoMessage**](AdvertiserInfoMessage.md)
 
 ### Authorization
 
@@ -990,19 +999,19 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_advertiser_preview_limits**
-> get_marketplace_advertiser_preview_limits()
+> [AdvertiserQuotaMessage] get_marketplace_advertiser_preview_limits()
 
 
 
@@ -1017,6 +1026,7 @@ Get the collection of advertisers preview limits associated with the authorized 
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_quota_message import AdvertiserQuotaMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1049,7 +1059,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example, this endpoint has no required or optional parameters
     try:
         # 
-        api_instance.get_marketplace_advertiser_preview_limits()
+        api_response = api_instance.get_marketplace_advertiser_preview_limits()
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_advertiser_preview_limits: %s\n" % e)
 ```
@@ -1060,7 +1071,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**[AdvertiserQuotaMessage]**](AdvertiserQuotaMessage.md)
 
 ### Authorization
 
@@ -1069,19 +1080,19 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_advertisers**
-> get_marketplace_advertisers()
+> [AdvertiserInfoMessage] get_marketplace_advertisers()
 
 
 
@@ -1096,6 +1107,7 @@ Get the collection of advertisers associated with the user.
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_info_message import AdvertiserInfoMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1128,7 +1140,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example, this endpoint has no required or optional parameters
     try:
         # 
-        api_instance.get_marketplace_advertisers()
+        api_response = api_instance.get_marketplace_advertisers()
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_advertisers: %s\n" % e)
 ```
@@ -1139,7 +1152,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**[AdvertiserInfoMessage]**](AdvertiserInfoMessage.md)
 
 ### Authorization
 
@@ -1148,19 +1161,19 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_budgets_by_advertiser**
-> get_marketplace_budgets_by_advertiser(advertiser_id)
+> [SellerBudgetMessage] get_marketplace_budgets_by_advertiser(advertiser_id)
 
 
 
@@ -1175,6 +1188,7 @@ Get CRP budgets for a specific advertiser
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.seller_budget_message import SellerBudgetMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1216,7 +1230,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.get_marketplace_budgets_by_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_budgets_by_advertiser(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_budgets_by_advertiser: %s\n" % e)
 
@@ -1224,7 +1239,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_instance.get_marketplace_budgets_by_advertiser(advertiser_id, budget_id=budget_id, end_after_date=end_after_date, seller_id=seller_id, start_before_date=start_before_date, status=status, type=type, with_balance=with_balance, with_spend=with_spend)
+        api_response = api_instance.get_marketplace_budgets_by_advertiser(advertiser_id, budget_id=budget_id, end_after_date=end_after_date, seller_id=seller_id, start_before_date=start_before_date, status=status, type=type, with_balance=with_balance, with_spend=with_spend)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_budgets_by_advertiser: %s\n" % e)
 ```
@@ -1246,7 +1262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[SellerBudgetMessage]**](SellerBudgetMessage.md)
 
 ### Authorization
 
@@ -1255,14 +1271,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1370,7 +1386,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1476,12 +1492,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_campaigns_by_advertiser**
-> get_marketplace_campaigns_by_advertiser(advertiser_id)
+> [AdvertiserCampaignMessage] get_marketplace_campaigns_by_advertiser(advertiser_id)
 
 
 
@@ -1496,6 +1512,7 @@ Get the collection of CRP campaigns associated with the advertiserId.
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.advertiser_campaign_message import AdvertiserCampaignMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1529,7 +1546,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.get_marketplace_campaigns_by_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_campaigns_by_advertiser(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_campaigns_by_advertiser: %s\n" % e)
 ```
@@ -1543,7 +1561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[AdvertiserCampaignMessage]**](AdvertiserCampaignMessage.md)
 
 ### Authorization
 
@@ -1552,14 +1570,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1568,7 +1586,7 @@ void (empty response body)
 
 
 
-## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.
+## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone  if provided. The aggregation interval size is controlled by `intervalSize`. The time  interval appears in the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.
 
 ### Example
 
@@ -1614,12 +1632,13 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     end_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Filter out all events that occur after date (default is today’s date) (optional)
     interval_size = "Day" # str | Specify the aggregation interval for events used to compute stats (default is \"day\") (optional) if omitted the server will use the default value of "Day"
     start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Filter out all events that occur before date (default is the value of `endDate`) (optional)
+    time_zone_id = "timeZoneId_example" # str | Specify the timezone used in the aggregations (IANA code). (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # 
-        api_response = api_instance.get_marketplace_campaigns_stats(advertiser_id=advertiser_id, campaign_id=campaign_id, click_attribution_policy=click_attribution_policy, count=count, end_date=end_date, interval_size=interval_size, start_date=start_date)
+        api_response = api_instance.get_marketplace_campaigns_stats(advertiser_id=advertiser_id, campaign_id=campaign_id, click_attribution_policy=click_attribution_policy, count=count, end_date=end_date, interval_size=interval_size, start_date=start_date, time_zone_id=time_zone_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_campaigns_stats: %s\n" % e)
@@ -1637,6 +1656,7 @@ Name | Type | Description  | Notes
  **end_date** | **datetime**| Filter out all events that occur after date (default is today’s date) | [optional]
  **interval_size** | **str**| Specify the aggregation interval for events used to compute stats (default is \&quot;day\&quot;) | [optional] if omitted the server will use the default value of "Day"
  **start_date** | **datetime**| Filter out all events that occur before date (default is the value of &#x60;endDate&#x60;) | [optional]
+ **time_zone_id** | **str**| Specify the timezone used in the aggregations (IANA code). | [optional]
 
 ### Return type
 
@@ -1741,7 +1761,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1842,7 +1862,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1927,7 +1947,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2029,12 +2049,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_seller_campaign**
-> SellerCampaignMessage get_marketplace_seller_campaign(seller_campaign_id)
+> [SellerCampaignMessage] get_marketplace_seller_campaign(seller_campaign_id)
 
 
 
@@ -2098,7 +2118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SellerCampaignMessage**](SellerCampaignMessage.md)
+[**[SellerCampaignMessage]**](SellerCampaignMessage.md)
 
 ### Authorization
 
@@ -2114,7 +2134,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2208,12 +2228,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_seller_campaigns_by_advertiser**
-> get_marketplace_seller_campaigns_by_advertiser(advertiser_id)
+> [SellerCampaignMessage] get_marketplace_seller_campaigns_by_advertiser(advertiser_id)
 
 
 
@@ -2228,6 +2248,7 @@ Get CRP seller campaigns for a specific advertiser
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.seller_campaign_message import SellerCampaignMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2261,7 +2282,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.get_marketplace_seller_campaigns_by_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_seller_campaigns_by_advertiser(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_seller_campaigns_by_advertiser: %s\n" % e)
 ```
@@ -2275,7 +2297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[SellerCampaignMessage]**](SellerCampaignMessage.md)
 
 ### Authorization
 
@@ -2284,14 +2306,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2391,7 +2413,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2400,7 +2422,7 @@ Name | Type | Description  | Notes
 
 
 
-## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The remaining columns are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.
+## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone if  provided. The aggregation interval size is controlled by `intervalSize`. The remaining columns  are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.
 
 ### Example
 
@@ -2447,12 +2469,13 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     interval_size = "Day" # str | Specify the aggregation interval for events used to compute stats (default is \"day\") (optional) if omitted the server will use the default value of "Day"
     seller_id = "sellerId_example" # str | Show only metrics for this seller (default all sellers) (optional)
     start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Filter out all events that occur before date (default is the value of `endDate`) (optional)
+    time_zone_id = "timeZoneId_example" # str | Specify the timezone used in the aggregations (IANA code). (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # 
-        api_response = api_instance.get_marketplace_seller_campaigns_stats(advertiser_id=advertiser_id, campaign_id=campaign_id, click_attribution_policy=click_attribution_policy, count=count, end_date=end_date, interval_size=interval_size, seller_id=seller_id, start_date=start_date)
+        api_response = api_instance.get_marketplace_seller_campaigns_stats(advertiser_id=advertiser_id, campaign_id=campaign_id, click_attribution_policy=click_attribution_policy, count=count, end_date=end_date, interval_size=interval_size, seller_id=seller_id, start_date=start_date, time_zone_id=time_zone_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_seller_campaigns_stats: %s\n" % e)
@@ -2471,6 +2494,7 @@ Name | Type | Description  | Notes
  **interval_size** | **str**| Specify the aggregation interval for events used to compute stats (default is \&quot;day\&quot;) | [optional] if omitted the server will use the default value of "Day"
  **seller_id** | **str**| Show only metrics for this seller (default all sellers) | [optional]
  **start_date** | **datetime**| Filter out all events that occur before date (default is the value of &#x60;endDate&#x60;) | [optional]
+ **time_zone_id** | **str**| Specify the timezone used in the aggregations (IANA code). | [optional]
 
 ### Return type
 
@@ -2495,7 +2519,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_sellers**
-> [SellerBudgetMessage] get_marketplace_sellers()
+> [SellerBase] get_marketplace_sellers()
 
 
 
@@ -2510,7 +2534,7 @@ Return a collection of sellers filtered by optional filter parameters.  If all p
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
-from criteo_api_marketingsolutions_v2025_07.model.seller_budget_message import SellerBudgetMessage
+from criteo_api_marketingsolutions_v2025_07.model.seller_base import SellerBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2570,7 +2594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[SellerBudgetMessage]**](SellerBudgetMessage.md)
+[**[SellerBase]**](SellerBase.md)
 
 ### Authorization
 
@@ -2586,12 +2610,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_sellers_by_advertiser**
-> get_marketplace_sellers_by_advertiser(advertiser_id)
+> [SellerBase] get_marketplace_sellers_by_advertiser(advertiser_id)
 
 
 
@@ -2606,6 +2630,7 @@ Create new sellers for an advertiser
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.seller_base import SellerBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2643,7 +2668,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.get_marketplace_sellers_by_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_sellers_by_advertiser(advertiser_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_sellers_by_advertiser: %s\n" % e)
 
@@ -2651,7 +2677,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_instance.get_marketplace_sellers_by_advertiser(advertiser_id, partner_id=partner_id, request_body=request_body)
+        api_response = api_instance.get_marketplace_sellers_by_advertiser(advertiser_id, partner_id=partner_id, request_body=request_body)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_sellers_by_advertiser: %s\n" % e)
 ```
@@ -2667,7 +2694,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[SellerBase]**](SellerBase.md)
 
 ### Authorization
 
@@ -2676,14 +2703,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2692,7 +2719,7 @@ void (empty response body)
 
 
 
-## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year`. The aggregation  interval size is controlled by `intervalSize`. The time interval appears in  the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.
+## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone  if provided. The aggregation interval size is controlled by `intervalSize`. The time interval  appears in the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.
 
 ### Example
 
@@ -2738,12 +2765,13 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     interval_size = "Day" # str | Specify the aggregation interval for events used to compute stats (default is \"day\") (optional) if omitted the server will use the default value of "Day"
     seller_id = "sellerId_example" # str | Show only metrics for this seller (default all sellers) (optional)
     start_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Filter out all events that occur before date (default is the value of `endDate`) (optional)
+    time_zone_id = "timeZoneId_example" # str | Specify the timezone used in the aggregations (IANA code). (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # 
-        api_response = api_instance.get_marketplace_sellers_stats(advertiser_id=advertiser_id, click_attribution_policy=click_attribution_policy, count=count, end_date=end_date, interval_size=interval_size, seller_id=seller_id, start_date=start_date)
+        api_response = api_instance.get_marketplace_sellers_stats(advertiser_id=advertiser_id, click_attribution_policy=click_attribution_policy, count=count, end_date=end_date, interval_size=interval_size, seller_id=seller_id, start_date=start_date, time_zone_id=time_zone_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_sellers_stats: %s\n" % e)
@@ -2761,6 +2789,7 @@ Name | Type | Description  | Notes
  **interval_size** | **str**| Specify the aggregation interval for events used to compute stats (default is \&quot;day\&quot;) | [optional] if omitted the server will use the default value of "Day"
  **seller_id** | **str**| Show only metrics for this seller (default all sellers) | [optional]
  **start_date** | **datetime**| Filter out all events that occur before date (default is the value of &#x60;endDate&#x60;) | [optional]
+ **time_zone_id** | **str**| Specify the timezone used in the aggregations (IANA code). | [optional]
 
 ### Return type
 
@@ -3729,7 +3758,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_marketplace_seller_budget**
-> update_marketplace_seller_budget(budget_id)
+> SellerBudgetMessage update_marketplace_seller_budget(budget_id)
 
 
 
@@ -3744,6 +3773,7 @@ Modify an existing active budget to change its limitations or status.  All three
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.seller_budget_message import SellerBudgetMessage
 from criteo_api_marketingsolutions_v2025_07.model.update_seller_budget_message_base import UpdateSellerBudgetMessageBase
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -3787,7 +3817,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_instance.update_marketplace_seller_budget(budget_id)
+        api_response = api_instance.update_marketplace_seller_budget(budget_id)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->update_marketplace_seller_budget: %s\n" % e)
 
@@ -3795,7 +3826,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_instance.update_marketplace_seller_budget(budget_id, update_seller_budget_message_base=update_seller_budget_message_base)
+        api_response = api_instance.update_marketplace_seller_budget(budget_id, update_seller_budget_message_base=update_seller_budget_message_base)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->update_marketplace_seller_budget: %s\n" % e)
 ```
@@ -3810,7 +3842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**SellerBudgetMessage**](SellerBudgetMessage.md)
 
 ### Authorization
 
@@ -3819,19 +3851,19 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_marketplace_seller_budgets**
-> update_marketplace_seller_budgets()
+> [SellerBudgetMessage] update_marketplace_seller_budgets()
 
 
 
@@ -3846,6 +3878,7 @@ Modify one or more existing active budgets to change their limitations or status
 import time
 import criteo_api_marketingsolutions_v2025_07
 from criteo_api_marketingsolutions_v2025_07.api import campaign_api
+from criteo_api_marketingsolutions_v2025_07.model.seller_budget_message import SellerBudgetMessage
 from criteo_api_marketingsolutions_v2025_07.model.update_seller_budget_message import UpdateSellerBudgetMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -3892,7 +3925,8 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_instance.update_marketplace_seller_budgets(update_seller_budget_message=update_seller_budget_message)
+        api_response = api_instance.update_marketplace_seller_budgets(update_seller_budget_message=update_seller_budget_message)
+        pprint(api_response)
     except criteo_api_marketingsolutions_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->update_marketplace_seller_budgets: %s\n" % e)
 ```
@@ -3906,7 +3940,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**[SellerBudgetMessage]**](SellerBudgetMessage.md)
 
 ### Authorization
 
@@ -3915,14 +3949,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4018,7 +4052,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -4110,7 +4144,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

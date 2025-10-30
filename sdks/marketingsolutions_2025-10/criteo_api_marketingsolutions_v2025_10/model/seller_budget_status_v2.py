@@ -106,10 +106,10 @@ class SellerBudgetStatusV2(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Types of budget status., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
+            args[0] (str): Status of a seller budget., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Types of budget status., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
+            value (str): Status of a seller budget., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -200,10 +200,10 @@ class SellerBudgetStatusV2(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Types of budget status., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
+            args[0] (str): Status of a seller budget., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Types of budget status., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
+            value (str): Status of a seller budget., must be one of ["Archived", "Current", "Scheduled", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
