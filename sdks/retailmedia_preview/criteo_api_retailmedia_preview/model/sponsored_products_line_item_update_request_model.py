@@ -65,13 +65,13 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
             'DRAFT': "draft",
         },
         ('bid_strategy',): {
+            'MANUAL': "manual",
+            'AUTOMATED': "automated",
+        },
+        ('optimization_strategy',): {
             'CONVERSION': "conversion",
             'CLICKS': "clicks",
             'REVENUE': "revenue",
-        },
-        ('optimization_strategy',): {
-            'MANUAL': "manual",
-            'AUTOMATED': "automated",
         },
     }
 
@@ -181,14 +181,14 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): The bidding strategy for the line item.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            bid_strategy (str): The bid strategy for the line item.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing amount for the line item.. [optional]  # noqa: E501
             end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount for the line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing amount for the line item.. [optional]  # noqa: E501
-            optimization_strategy (str): The optimization strategy for the line item.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            optimization_strategy (str): The optimization strategy for the line item.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
@@ -285,14 +285,14 @@ class SponsoredProductsLineItemUpdateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): The bidding strategy for the line item.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            bid_strategy (str): The bid strategy for the line item.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing amount for the line item.. [optional]  # noqa: E501
             end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
             flight_schedule (FlightSchedule): [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount for the line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing amount for the line item.. [optional]  # noqa: E501
-            optimization_strategy (str): The optimization strategy for the line item.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            optimization_strategy (str): The optimization strategy for the line item.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 

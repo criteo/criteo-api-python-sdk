@@ -60,9 +60,8 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
 
     allowed_values = {
         ('bid_strategy',): {
-            'CONVERSION': "conversion",
-            'CLICKS': "clicks",
-            'REVENUE': "revenue",
+            'MANUAL': "manual",
+            'AUTOMATED': "automated",
         },
         ('keyword_strategy',): {
             'None': None,
@@ -71,8 +70,9 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             'GENERICBRANDEDANDCONQUESTING': "genericBrandedAndConquesting",
         },
         ('optimization_strategy',): {
-            'MANUAL': "manual",
-            'AUTOMATED': "automated",
+            'CONVERSION': "conversion",
+            'CLICKS': "clicks",
+            'REVENUE': "revenue",
         },
     }
 
@@ -183,7 +183,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): The bidding strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            bid_strategy (str): The bidding strategy for this line item.  Default value is manual.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
             end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
@@ -192,7 +192,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            optimization_strategy (str): The optimization strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 
@@ -287,7 +287,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str): The bidding strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
+            bid_strategy (str): The bidding strategy for this line item.  Default value is manual.. [optional] if omitted the server will use the default value of "manual"  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
             end_date (datetime, none_type): The date and time when the line item stops running.. [optional]  # noqa: E501
@@ -296,7 +296,7 @@ class SponsoredProductsLineItemCreateRequestModel(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy (str): [optional] if omitted the server will use the default value of "manual"  # noqa: E501
+            optimization_strategy (str): The optimization strategy to use for this line item.  Default value is Conversion.. [optional] if omitted the server will use the default value of "conversion"  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
 

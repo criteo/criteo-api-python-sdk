@@ -417,7 +417,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     value_resource_input_of_sponsored_products_line_item_create_request_model = ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel(
         data=ValueResourceOfSponsoredProductsLineItemCreateRequestModel(
             attributes=SponsoredProductsLineItemCreateRequestModel(
-                bid_strategy="conversion",
+                bid_strategy="manual",
                 budget=3.14,
                 daily_pacing=3.14,
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
@@ -435,7 +435,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 max_bid=3.14,
                 monthly_pacing=3.14,
                 name="name_example",
-                optimization_strategy="manual",
+                optimization_strategy="conversion",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 target_bid=3.14,
                 target_retailer_id="target_retailer_id_example",
@@ -3283,7 +3283,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     value_resource_input_of_sponsored_products_line_item_update_request_model = ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel(
         data=ValueResourceOfSponsoredProductsLineItemUpdateRequestModel(
             attributes=SponsoredProductsLineItemUpdateRequestModel(
-                bid_strategy="conversion",
+                bid_strategy="manual",
                 budget=3.14,
                 daily_pacing=3.14,
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
@@ -3300,7 +3300,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 max_bid=3.14,
                 monthly_pacing=3.14,
                 name="name_example",
-                optimization_strategy="manual",
+                optimization_strategy="conversion",
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 status="active",
                 target_bid=3.14,

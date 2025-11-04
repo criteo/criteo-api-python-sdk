@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **start_date** | **datetime** | The date and time when the line item starts running. | 
 **target_retailer_id** | **str** | The ID of the retailer targeted by this line item. | 
 **updated_at** | **datetime** | The date and time when the line item was last updated. | 
-**bid_strategy** | **str, none_type** | Optional field. | [optional] 
+**bid_strategy** | **str, none_type** | Bid strategy for the line item. | [optional] 
 **budget** | **float, none_type** | The total budget allocated for this line item. | [optional] 
 **budget_spent** | **float, none_type** | The amount of the budget that has been spent so far. | [optional] 
 **daily_pacing** | **float, none_type** | The daily pacing limit for budget spending. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **keyword_strategy** | **str, none_type** | The keyword targeting strategy for this line item. | [optional] 
 **max_bid** | **float, none_type** | The maximum bid amount allowed for this line item. | [optional] 
 **monthly_pacing** | **float, none_type** | The monthly pacing limit for budget spending. | [optional] 
-**optimization_strategy** | **str, none_type** | Optimization strategy for the line item. | [optional] 
+**optimization_strategy** | **str, none_type** | The optimization strategy for this line item. | [optional] 
 **status** | **str, none_type** | The current status of the line item. | [optional] 
 **target_bid** | **float, none_type** | The target bid amount for the line item. | [optional] 
 

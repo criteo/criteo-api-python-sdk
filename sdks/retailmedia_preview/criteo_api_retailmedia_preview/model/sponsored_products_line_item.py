@@ -61,9 +61,8 @@ class SponsoredProductsLineItem(ModelNormal):
     allowed_values = {
         ('bid_strategy',): {
             'None': None,
-            'CONVERSION': "conversion",
-            'CLICKS': "clicks",
-            'REVENUE': "revenue",
+            'MANUAL': "manual",
+            'AUTOMATED': "automated",
             'UNKNOWN': "unknown",
         },
         ('keyword_strategy',): {
@@ -75,8 +74,9 @@ class SponsoredProductsLineItem(ModelNormal):
         },
         ('optimization_strategy',): {
             'None': None,
-            'MANUAL': "manual",
-            'AUTOMATED': "automated",
+            'CONVERSION': "conversion",
+            'CLICKS': "clicks",
+            'REVENUE': "revenue",
             'UNKNOWN': "unknown",
         },
         ('status',): {
@@ -216,7 +216,7 @@ class SponsoredProductsLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str, none_type): Optional field.. [optional]  # noqa: E501
+            bid_strategy (str, none_type): Bid strategy for the line item.. [optional]  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             budget_spent (float, none_type): The amount of the budget that has been spent so far.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
@@ -226,7 +226,7 @@ class SponsoredProductsLineItem(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy (str, none_type): Optimization strategy for the line item.. [optional]  # noqa: E501
+            optimization_strategy (str, none_type): The optimization strategy for this line item.. [optional]  # noqa: E501
             status (str, none_type): The current status of the line item.. [optional]  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
@@ -330,7 +330,7 @@ class SponsoredProductsLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_strategy (str, none_type): Optional field.. [optional]  # noqa: E501
+            bid_strategy (str, none_type): Bid strategy for the line item.. [optional]  # noqa: E501
             budget (float, none_type): The total budget allocated for this line item.. [optional]  # noqa: E501
             budget_spent (float, none_type): The amount of the budget that has been spent so far.. [optional]  # noqa: E501
             daily_pacing (float, none_type): The daily pacing limit for budget spending.. [optional]  # noqa: E501
@@ -340,7 +340,7 @@ class SponsoredProductsLineItem(ModelNormal):
             keyword_strategy (str, none_type): The keyword targeting strategy for this line item.. [optional]  # noqa: E501
             max_bid (float, none_type): The maximum bid amount allowed for this line item.. [optional]  # noqa: E501
             monthly_pacing (float, none_type): The monthly pacing limit for budget spending.. [optional]  # noqa: E501
-            optimization_strategy (str, none_type): Optimization strategy for the line item.. [optional]  # noqa: E501
+            optimization_strategy (str, none_type): The optimization strategy for this line item.. [optional]  # noqa: E501
             status (str, none_type): The current status of the line item.. [optional]  # noqa: E501
             target_bid (float, none_type): The target bid amount for the line item.. [optional]  # noqa: E501
         """
