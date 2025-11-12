@@ -8,12 +8,14 @@ Method | HTTP request | Description
 [**create_advertiser_coupon**](CreativeApi.md#create_advertiser_coupon) | **POST** /preview/advertisers/{advertiser-id}/coupons | 
 [**create_advertiser_creative**](CreativeApi.md#create_advertiser_creative) | **POST** /preview/advertisers/{advertiser-id}/creatives | 
 [**delete_ad**](CreativeApi.md#delete_ad) | **DELETE** /preview/ads/{id} | 
+[**delete_ad_segment_link**](CreativeApi.md#delete_ad_segment_link) | **DELETE** /preview/marketing-solutions/ads/{ad-id}/audience-segment | 
 [**delete_advertiser_coupon**](CreativeApi.md#delete_advertiser_coupon) | **DELETE** /preview/advertisers/{advertiser-id}/coupons/{id} | 
 [**delete_creative**](CreativeApi.md#delete_creative) | **DELETE** /preview/creatives/{id} | 
 [**edit_advertiser_coupon**](CreativeApi.md#edit_advertiser_coupon) | **PUT** /preview/advertisers/{advertiser-id}/coupons/{id} | 
 [**edit_creative**](CreativeApi.md#edit_creative) | **PUT** /preview/creatives/{id} | 
 [**generate_creative_preview**](CreativeApi.md#generate_creative_preview) | **POST** /preview/creatives/{id}/preview | 
 [**get_ad**](CreativeApi.md#get_ad) | **GET** /preview/ads/{id} | 
+[**get_ad_segment_link**](CreativeApi.md#get_ad_segment_link) | **GET** /preview/marketing-solutions/ads/{ad-id}/audience-segment | 
 [**get_advertiser_ads**](CreativeApi.md#get_advertiser_ads) | **GET** /preview/advertisers/{advertiser-id}/ads | 
 [**get_advertiser_coupon**](CreativeApi.md#get_advertiser_coupon) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id} | 
 [**get_advertiser_coupon_preview**](CreativeApi.md#get_advertiser_coupon_preview) | **GET** /preview/advertisers/{advertiser-id}/coupons/{id}/preview | 
@@ -21,6 +23,7 @@ Method | HTTP request | Description
 [**get_advertiser_coupons**](CreativeApi.md#get_advertiser_coupons) | **GET** /preview/advertisers/{advertiser-id}/coupons | 
 [**get_advertiser_creatives**](CreativeApi.md#get_advertiser_creatives) | **GET** /preview/advertisers/{advertiser-id}/creatives | 
 [**get_creative**](CreativeApi.md#get_creative) | **GET** /preview/creatives/{id} | 
+[**link_ad_segment**](CreativeApi.md#link_ad_segment) | **PUT** /preview/marketing-solutions/ads/{ad-id}/audience-segment | 
 
 
 # **create_advertiser_ad**
@@ -476,6 +479,88 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | The ad was deleted. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_ad_segment_link**
+> delete_ad_segment_link(ad_id)
+
+
+
+Delete the link between an Ad and an Audience Segment.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import creative_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = creative_api.CreativeApi(api_client)
+    ad_id = 1 # int | The ad identifier.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.delete_ad_segment_link(ad_id)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->delete_ad_segment_link: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **int**| The ad identifier. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | The link between the ad and its audience segment has been deleted. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1079,6 +1164,90 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The found ad is returned. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_ad_segment_link**
+> ValueResourceOutcomeOfExamAdAudienceSegmentLink get_ad_segment_link(ad_id)
+
+
+
+Retrieve the Ad audience segment link.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import creative_api
+from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_exam_ad_audience_segment_link import ValueResourceOutcomeOfExamAdAudienceSegmentLink
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = creative_api.CreativeApi(api_client)
+    ad_id = 1 # int | The ad identifier.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_ad_segment_link(ad_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->get_ad_segment_link: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **int**| The ad identifier. |
+
+### Return type
+
+[**ValueResourceOutcomeOfExamAdAudienceSegmentLink**](ValueResourceOutcomeOfExamAdAudienceSegmentLink.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The found ad audience segment link is returned. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1728,6 +1897,100 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The found creative is returned. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **link_ad_segment**
+> ValueResourceOutcomeOfExamAdAudienceSegmentLink link_ad_segment(ad_id, exam_ad_audience_segment_link_input)
+
+
+
+Link an Ad with an Audience Segment. If a link already exists, its segment ID will be updated.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import creative_api
+from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_exam_ad_audience_segment_link import ValueResourceOutcomeOfExamAdAudienceSegmentLink
+from criteo_api_marketingsolutions_preview.model.exam_ad_audience_segment_link_input import ExamAdAudienceSegmentLinkInput
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = creative_api.CreativeApi(api_client)
+    ad_id = 1 # int | The ad identifier.
+    exam_ad_audience_segment_link_input = ExamAdAudienceSegmentLinkInput(
+        data=ValueResourceOfExamAdAudienceSegmentLinkWrite(
+            attributes=ExamAdAudienceSegmentLinkWrite(
+                audience_segment_id="audience_segment_id_example",
+            ),
+            type="type_example",
+        ),
+    ) # ExamAdAudienceSegmentLinkInput | The audience segment link information.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.link_ad_segment(ad_id, exam_ad_audience_segment_link_input)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CreativeApi->link_ad_segment: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **int**| The ad identifier. |
+ **exam_ad_audience_segment_link_input** | [**ExamAdAudienceSegmentLinkInput**](ExamAdAudienceSegmentLinkInput.md)| The audience segment link information. |
+
+### Return type
+
+[**ValueResourceOutcomeOfExamAdAudienceSegmentLink**](ValueResourceOutcomeOfExamAdAudienceSegmentLink.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | The link between the Ad and the Audience Segment is returned. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_product_set**
-> ResourceOutcomeOfProductSet create_product_set()
+> ResourceOutcomeOfProductSet create_product_set(value_resource_input_of_create_product_set_request)
 
 
 
@@ -79,12 +79,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfCreateProductSetRequest |  (optional)
+    ) # ValueResourceInputOfCreateProductSetRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.create_product_set(value_resource_input_of_create_product_set_request=value_resource_input_of_create_product_set_request)
+        api_response = api_instance.create_product_set(value_resource_input_of_create_product_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling RecoApi->create_product_set: %s\n" % e)
@@ -95,7 +94,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **value_resource_input_of_create_product_set_request** | [**ValueResourceInputOfCreateProductSetRequest**](ValueResourceInputOfCreateProductSetRequest.md)|  | [optional]
+ **value_resource_input_of_create_product_set_request** | [**ValueResourceInputOfCreateProductSetRequest**](ValueResourceInputOfCreateProductSetRequest.md)|  |
 
 ### Return type
 
@@ -642,7 +641,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_product_set**
-> ResourceOutcomeOfProductSet patch_product_set(product_set_id)
+> ResourceOutcomeOfProductSet patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request)
 
 
 
@@ -706,19 +705,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfPatchProductSetRequest |  (optional)
+    ) # ValueResourceInputOfPatchProductSetRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_product_set(product_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling RecoApi->patch_product_set: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request=value_resource_input_of_patch_product_set_request)
+        api_response = api_instance.patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling RecoApi->patch_product_set: %s\n" % e)
@@ -730,7 +721,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_set_id** | **str**| ID of the product set |
- **value_resource_input_of_patch_product_set_request** | [**ValueResourceInputOfPatchProductSetRequest**](ValueResourceInputOfPatchProductSetRequest.md)|  | [optional]
+ **value_resource_input_of_patch_product_set_request** | [**ValueResourceInputOfPatchProductSetRequest**](ValueResourceInputOfPatchProductSetRequest.md)|  |
 
 ### Return type
 

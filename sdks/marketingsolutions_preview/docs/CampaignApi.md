@@ -1831,7 +1831,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_set_category_bids**
-> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id)
+> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
 
 
 
@@ -1887,19 +1887,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="AdSetCategoryBid",
             ),
         ],
-    ) # PatchAdSetCategoryBidListRequest |  (optional)
+    ) # PatchAdSetCategoryBidListRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_ad_set_category_bids(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request=patch_ad_set_category_bid_list_request)
+        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
@@ -1911,7 +1903,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  | [optional]
+ **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  |
 
 ### Return type
 
@@ -1936,7 +1928,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_sets**
-> ResponsesAdSetIdV24Q3 patch_ad_sets()
+> ResponsesAdSetIdV24Q3 patch_ad_sets(requests_patch_ad_set_v24_q3)
 
 
 
@@ -2047,12 +2039,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="PatchAdSetV24Q3",
             ),
         ],
-    ) # RequestsPatchAdSetV24Q3 | List of adsets to patch. (optional)
+    ) # RequestsPatchAdSetV24Q3 | List of adsets to patch.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3=requests_patch_ad_set_v24_q3)
+        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->patch_ad_sets: %s\n" % e)
@@ -2063,7 +2054,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requests_patch_ad_set_v24_q3** | [**RequestsPatchAdSetV24Q3**](RequestsPatchAdSetV24Q3.md)| List of adsets to patch. | [optional]
+ **requests_patch_ad_set_v24_q3** | [**RequestsPatchAdSetV24Q3**](RequestsPatchAdSetV24Q3.md)| List of adsets to patch. |
 
 ### Return type
 
@@ -2088,7 +2079,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_campaigns**
-> PatchResultCampaignListResponse patch_campaigns()
+> PatchResultCampaignListResponse patch_campaigns(patch_campaign_list_request)
 
 
 
@@ -2155,12 +2146,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="Campaign",
             ),
         ],
-    ) # PatchCampaignListRequest | List of campaigns to patch. (optional)
+    ) # PatchCampaignListRequest | List of campaigns to patch.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.patch_campaigns(patch_campaign_list_request=patch_campaign_list_request)
+        api_response = api_instance.patch_campaigns(patch_campaign_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->patch_campaigns: %s\n" % e)
@@ -2171,7 +2161,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. | [optional]
+ **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. |
 
 ### Return type
 
@@ -2196,7 +2186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_display_multipliers**
-> PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id)
+> PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
 
 
 
@@ -2252,19 +2242,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="AdSetDisplayMultiplier",
             ),
         ],
-    ) # PatchAdSetDisplayMultiplierListRequest |  (optional)
+    ) # PatchAdSetDisplayMultiplierListRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_display_multipliers(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->patch_display_multipliers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request=patch_ad_set_display_multiplier_list_request)
+        api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->patch_display_multipliers: %s\n" % e)
@@ -2276,7 +2258,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  | [optional]
+ **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  |
 
 ### Return type
 
@@ -2301,7 +2283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_advertiser_bundle_rules**
-> ApiResponseOfTargetingEntity post_advertiser_bundle_rules(advertiser_id)
+> ApiResponseOfTargetingEntity post_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
 
 
 
@@ -2362,19 +2344,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup (optional)
+    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.post_advertiser_bundle_rules(advertiser_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_advertiser_bundle_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.post_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->post_advertiser_bundle_rules: %s\n" % e)
@@ -2386,7 +2360,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **int**| The advertiser id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
 
@@ -2411,7 +2385,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_advertiser_domain_rules**
-> ApiResponseOfTargetingEntity post_advertiser_domain_rules(advertiser_id)
+> ApiResponseOfTargetingEntity post_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
 
 
 
@@ -2472,19 +2446,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup (optional)
+    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.post_advertiser_domain_rules(advertiser_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_advertiser_domain_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.post_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->post_advertiser_domain_rules: %s\n" % e)
@@ -2496,7 +2462,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **int**| The advertiser id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
 
@@ -2521,7 +2487,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_campaign_bundle_rules**
-> ApiResponseOfTargetingEntity post_campaign_bundle_rules(campaign_id)
+> ApiResponseOfTargetingEntity post_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
 
 
 
@@ -2582,19 +2548,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup (optional)
+    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.post_campaign_bundle_rules(campaign_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_campaign_bundle_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.post_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->post_campaign_bundle_rules: %s\n" % e)
@@ -2606,7 +2564,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| The campaign id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
 
@@ -2631,7 +2589,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_campaign_domain_rules**
-> ApiResponseOfTargetingEntity post_campaign_domain_rules(campaign_id)
+> ApiResponseOfTargetingEntity post_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
 
 
 
@@ -2692,19 +2650,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup (optional)
+    ) # ApiRequestOfTargetingEntity | Description of the targeting rule to setup
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.post_campaign_domain_rules(campaign_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->post_campaign_domain_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_campaign_domain_rules(campaign_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.post_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->post_campaign_domain_rules: %s\n" % e)
@@ -2716,7 +2666,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| The campaign id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
 
@@ -2741,7 +2691,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_advertiser_bundle_rules**
-> ApiResponseOfTargetingEntity put_advertiser_bundle_rules(advertiser_id)
+> ApiResponseOfTargetingEntity put_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
 
 
 
@@ -2802,19 +2752,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list (optional)
+    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_advertiser_bundle_rules(advertiser_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_advertiser_bundle_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.put_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->put_advertiser_bundle_rules: %s\n" % e)
@@ -2826,7 +2768,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **int**| The advertiser id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
 
@@ -2851,7 +2793,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_advertiser_domain_rules**
-> ApiResponseOfTargetingEntity put_advertiser_domain_rules(advertiser_id)
+> ApiResponseOfTargetingEntity put_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
 
 
 
@@ -2912,19 +2854,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list (optional)
+    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_advertiser_domain_rules(advertiser_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_advertiser_domain_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.put_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->put_advertiser_domain_rules: %s\n" % e)
@@ -2936,7 +2870,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **int**| The advertiser id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
 
@@ -2961,7 +2895,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_campaign_bundle_rules**
-> ApiResponseOfTargetingEntity put_campaign_bundle_rules(campaign_id)
+> ApiResponseOfTargetingEntity put_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
 
 
 
@@ -3022,19 +2956,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list (optional)
+    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_campaign_bundle_rules(campaign_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_campaign_bundle_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.put_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->put_campaign_bundle_rules: %s\n" % e)
@@ -3046,7 +2972,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| The campaign id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
 
@@ -3071,7 +2997,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_campaign_domain_rules**
-> ApiResponseOfTargetingEntity put_campaign_domain_rules(campaign_id)
+> ApiResponseOfTargetingEntity put_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
 
 
 
@@ -3132,19 +3058,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list (optional)
+    ) # ApiRequestOfTargetingEntity | Contains the list of items to add to the existing list
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_campaign_domain_rules(campaign_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->put_campaign_domain_rules: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_campaign_domain_rules(campaign_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
+        api_response = api_instance.put_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->put_campaign_domain_rules: %s\n" % e)
@@ -3156,7 +3074,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| The campaign id |
- **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list | [optional]
+ **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
 
@@ -3374,7 +3292,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_ad_set_targeting_deal_ids**
-> AdSetTargetingDealIdsSetResultResponse set_ad_set_targeting_deal_ids(ad_set_id)
+> AdSetTargetingDealIdsSetResultResponse set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request)
 
 
 
@@ -3432,19 +3350,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # SetAdSetTargetingDealIdsRequest | the new Deal Id Targeting configuration (optional)
+    ) # SetAdSetTargetingDealIdsRequest | the new Deal Id Targeting configuration
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.set_ad_set_targeting_deal_ids(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->set_ad_set_targeting_deal_ids: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request=set_ad_set_targeting_deal_ids_request)
+        api_response = api_instance.set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->set_ad_set_targeting_deal_ids: %s\n" % e)
@@ -3456,7 +3366,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **set_ad_set_targeting_deal_ids_request** | [**SetAdSetTargetingDealIdsRequest**](SetAdSetTargetingDealIdsRequest.md)| the new Deal Id Targeting configuration | [optional]
+ **set_ad_set_targeting_deal_ids_request** | [**SetAdSetTargetingDealIdsRequest**](SetAdSetTargetingDealIdsRequest.md)| the new Deal Id Targeting configuration |
 
 ### Return type
 
@@ -3481,7 +3391,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_ad_set_targeting_video_positioning**
-> AdSetTargetingVideoPositioningSetResultResponse set_ad_set_targeting_video_positioning(ad_set_id)
+> AdSetTargetingVideoPositioningSetResultResponse set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request)
 
 
 
@@ -3549,19 +3459,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # SetAdSetTargetingVideoPositioningRequest | the new Video Positioning Targeting configuration (optional)
+    ) # SetAdSetTargetingVideoPositioningRequest | the new Video Positioning Targeting configuration
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.set_ad_set_targeting_video_positioning(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CampaignApi->set_ad_set_targeting_video_positioning: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request=set_ad_set_targeting_video_positioning_request)
+        api_response = api_instance.set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->set_ad_set_targeting_video_positioning: %s\n" % e)
@@ -3573,7 +3475,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **set_ad_set_targeting_video_positioning_request** | [**SetAdSetTargetingVideoPositioningRequest**](SetAdSetTargetingVideoPositioningRequest.md)| the new Video Positioning Targeting configuration | [optional]
+ **set_ad_set_targeting_video_positioning_request** | [**SetAdSetTargetingVideoPositioningRequest**](SetAdSetTargetingVideoPositioningRequest.md)| the new Video Positioning Targeting configuration |
 
 ### Return type
 

@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **offer_set_bbw_v1**
-> ValueResourceOutcomeAsyncJobResponse offer_set_bbw_v1(retailer_id)
+> ValueResourceOutcomeAsyncJobResponse offer_set_bbw_v1(retailer_id, value_resource_input_set_sku_buy_box_winners_request)
 
 
 
@@ -185,19 +185,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputSetSkuBuyBoxWinnersRequest |  (optional)
+    ) # ValueResourceInputSetSkuBuyBoxWinnersRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.offer_set_bbw_v1(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CatalogApi->offer_set_bbw_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.offer_set_bbw_v1(retailer_id, value_resource_input_set_sku_buy_box_winners_request=value_resource_input_set_sku_buy_box_winners_request)
+        api_response = api_instance.offer_set_bbw_v1(retailer_id, value_resource_input_set_sku_buy_box_winners_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CatalogApi->offer_set_bbw_v1: %s\n" % e)
@@ -209,7 +201,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **retailer_id** | **int**| The retailer for which these buy box winners will be set |
- **value_resource_input_set_sku_buy_box_winners_request** | [**ValueResourceInputSetSkuBuyBoxWinnersRequest**](ValueResourceInputSetSkuBuyBoxWinnersRequest.md)|  | [optional]
+ **value_resource_input_set_sku_buy_box_winners_request** | [**ValueResourceInputSetSkuBuyBoxWinnersRequest**](ValueResourceInputSetSkuBuyBoxWinnersRequest.md)|  |
 
 ### Return type
 

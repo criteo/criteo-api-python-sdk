@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_async_adset_report**
-> MarketingSolutionsReportStatusResponse get_async_adset_report()
+> MarketingSolutionsReportStatusResponse get_async_adset_report(generate_statistics_report_request)
 
 
 
@@ -199,12 +199,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # GenerateStatisticsReportRequest |  (optional)
+    ) # GenerateStatisticsReportRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.get_async_adset_report(generate_statistics_report_request=generate_statistics_report_request)
+        api_response = api_instance.get_async_adset_report(generate_statistics_report_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_async_adset_report: %s\n" % e)
@@ -215,7 +214,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_statistics_report_request** | [**GenerateStatisticsReportRequest**](GenerateStatisticsReportRequest.md)|  | [optional]
+ **generate_statistics_report_request** | [**GenerateStatisticsReportRequest**](GenerateStatisticsReportRequest.md)|  |
 
 ### Return type
 
@@ -621,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_creatives_report**
-> JsonReportRowsListResponse get_creatives_report()
+> JsonReportRowsListResponse get_creatives_report(generate_creatives_report_request_attributes_request)
 
 
 
@@ -711,12 +710,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # GenerateCreativesReportRequestAttributesRequest |  (optional)
+    ) # GenerateCreativesReportRequestAttributesRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.get_creatives_report(generate_creatives_report_request_attributes_request=generate_creatives_report_request_attributes_request)
+        api_response = api_instance.get_creatives_report(generate_creatives_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_creatives_report: %s\n" % e)
@@ -727,7 +725,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_creatives_report_request_attributes_request** | [**GenerateCreativesReportRequestAttributesRequest**](GenerateCreativesReportRequestAttributesRequest.md)|  | [optional]
+ **generate_creatives_report_request_attributes_request** | [**GenerateCreativesReportRequestAttributesRequest**](GenerateCreativesReportRequestAttributesRequest.md)|  |
 
 ### Return type
 
@@ -968,7 +966,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_top_products_report**
-> JsonReportRowsListResponse get_top_products_report()
+> JsonReportRowsListResponse get_top_products_report(generate_top_products_report_request_attributes_request)
 
 
 
@@ -1047,12 +1045,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # GenerateTopProductsReportRequestAttributesRequest |  (optional)
+    ) # GenerateTopProductsReportRequestAttributesRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.get_top_products_report(generate_top_products_report_request_attributes_request=generate_top_products_report_request_attributes_request)
+        api_response = api_instance.get_top_products_report(generate_top_products_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling AnalyticsApi->get_top_products_report: %s\n" % e)
@@ -1063,7 +1060,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generate_top_products_report_request_attributes_request** | [**GenerateTopProductsReportRequestAttributesRequest**](GenerateTopProductsReportRequestAttributesRequest.md)|  | [optional]
+ **generate_top_products_report_request_attributes_request** | [**GenerateTopProductsReportRequestAttributesRequest**](GenerateTopProductsReportRequestAttributesRequest.md)|  |
 
 ### Return type
 

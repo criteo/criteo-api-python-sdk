@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_auction_line_item_v2**
-> EntityResourceOutcomeOfSponsoredProductsLineItem create_auction_line_item_v2(campaign_id)
+> EntityResourceOutcomeOfSponsoredProductsLineItem create_auction_line_item_v2(campaign_id, value_resource_input_of_sponsored_products_line_item_create_request_model)
 
 
 
@@ -442,19 +442,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel | The line item settings to create a line item with (optional)
+    ) # ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_auction_line_item_v2(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->create_auction_line_item_v2: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_auction_line_item_v2(campaign_id, value_resource_input_of_sponsored_products_line_item_create_request_model=value_resource_input_of_sponsored_products_line_item_create_request_model)
+        api_response = api_instance.create_auction_line_item_v2(campaign_id, value_resource_input_of_sponsored_products_line_item_create_request_model)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->create_auction_line_item_v2: %s\n" % e)
@@ -466,7 +458,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The given campaign id |
- **value_resource_input_of_sponsored_products_line_item_create_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel.md)| The line item settings to create a line item with | [optional]
+ **value_resource_input_of_sponsored_products_line_item_create_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel.md)| The line item settings to create a line item with |
 
 ### Return type
 
@@ -491,7 +483,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_creative**
-> Creative2Response create_creative(account_id)
+> Creative2Response create_creative(account_id, creative_create_model2)
 
 
 
@@ -572,19 +564,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ),
             ),
         ],
-    ) # CreativeCreateModel2 | The creative to create (optional)
+    ) # CreativeCreateModel2 | The creative to create
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_creative(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->create_creative: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_creative(account_id, creative_create_model2=creative_create_model2)
+        api_response = api_instance.create_creative(account_id, creative_create_model2)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->create_creative: %s\n" % e)
@@ -596,7 +580,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| External account id to create a creative for |
- **creative_create_model2** | [**CreativeCreateModel2**](CreativeCreateModel2.md)| The creative to create | [optional]
+ **creative_create_model2** | [**CreativeCreateModel2**](CreativeCreateModel2.md)| The creative to create |
 
 ### Return type
 
@@ -621,7 +605,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_preferred_line_item_by_campaign_id**
-> PreferredLineItemV2Response create_preferred_line_item_by_campaign_id(campaign_id)
+> PreferredLineItemV2Response create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request)
 
 
 
@@ -697,19 +681,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # PreferredLineItemCreateModelV2Request | The line item settings to create a line item with (optional)
+    ) # PreferredLineItemCreateModelV2Request | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->create_preferred_line_item_by_campaign_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request=preferred_line_item_create_model_v2_request)
+        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->create_preferred_line_item_by_campaign_id: %s\n" % e)
@@ -721,7 +697,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The given campaign id |
- **preferred_line_item_create_model_v2_request** | [**PreferredLineItemCreateModelV2Request**](PreferredLineItemCreateModelV2Request.md)| The line item settings to create a line item with | [optional]
+ **preferred_line_item_create_model_v2_request** | [**PreferredLineItemCreateModelV2Request**](PreferredLineItemCreateModelV2Request.md)| The line item settings to create a line item with |
 
 ### Return type
 
@@ -2203,7 +2179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_recommended_categories**
-> EntityResourceCollectionOutcomeCategory202204 get_recommended_categories(retailer_id)
+> EntityResourceCollectionOutcomeCategory202204 get_recommended_categories(retailer_id, value_resource_input_recommended_categories_request_v1)
 
 
 
@@ -2258,19 +2234,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputRecommendedCategoriesRequestV1 | Request of recommended categories. (optional)
+    ) # ValueResourceInputRecommendedCategoriesRequestV1 | Request of recommended categories.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_recommended_categories(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->get_recommended_categories: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_recommended_categories(retailer_id, value_resource_input_recommended_categories_request_v1=value_resource_input_recommended_categories_request_v1)
+        api_response = api_instance.get_recommended_categories(retailer_id, value_resource_input_recommended_categories_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->get_recommended_categories: %s\n" % e)
@@ -2282,7 +2250,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **retailer_id** | **int**| Retailer id. |
- **value_resource_input_recommended_categories_request_v1** | [**ValueResourceInputRecommendedCategoriesRequestV1**](ValueResourceInputRecommendedCategoriesRequestV1.md)| Request of recommended categories. | [optional]
+ **value_resource_input_recommended_categories_request_v1** | [**ValueResourceInputRecommendedCategoriesRequestV1**](ValueResourceInputRecommendedCategoriesRequestV1.md)| Request of recommended categories. |
 
 ### Return type
 
@@ -2612,7 +2580,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **recommended_keywords**
-> ValueResourceOutcomeRecommendedKeywordsResponseV1 recommended_keywords(retailer_id)
+> ValueResourceOutcomeRecommendedKeywordsResponseV1 recommended_keywords(retailer_id, value_resource_input_recommended_keywords_request_v1)
 
 
 
@@ -2667,19 +2635,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputRecommendedKeywordsRequestV1 | Request of recommended keywords. (optional)
+    ) # ValueResourceInputRecommendedKeywordsRequestV1 | Request of recommended keywords.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.recommended_keywords(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->recommended_keywords: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.recommended_keywords(retailer_id, value_resource_input_recommended_keywords_request_v1=value_resource_input_recommended_keywords_request_v1)
+        api_response = api_instance.recommended_keywords(retailer_id, value_resource_input_recommended_keywords_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->recommended_keywords: %s\n" % e)
@@ -2691,7 +2651,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **retailer_id** | **str**| Retailer id. |
- **value_resource_input_recommended_keywords_request_v1** | [**ValueResourceInputRecommendedKeywordsRequestV1**](ValueResourceInputRecommendedKeywordsRequestV1.md)| Request of recommended keywords. | [optional]
+ **value_resource_input_recommended_keywords_request_v1** | [**ValueResourceInputRecommendedKeywordsRequestV1**](ValueResourceInputRecommendedKeywordsRequestV1.md)| Request of recommended keywords. |
 
 ### Return type
 
@@ -3234,7 +3194,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_auction_line_item_v2**
-> EntityResourceOutcomeOfSponsoredProductsLineItem update_auction_line_item_v2(line_item_id)
+> EntityResourceOutcomeOfSponsoredProductsLineItem update_auction_line_item_v2(line_item_id, value_resource_input_of_sponsored_products_line_item_update_request_model)
 
 
 
@@ -3307,19 +3267,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel | An update request containing all details of the requested update. (optional)
+    ) # ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel | An update request containing all details of the requested update.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_auction_line_item_v2(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->update_auction_line_item_v2: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_auction_line_item_v2(line_item_id, value_resource_input_of_sponsored_products_line_item_update_request_model=value_resource_input_of_sponsored_products_line_item_update_request_model)
+        api_response = api_instance.update_auction_line_item_v2(line_item_id, value_resource_input_of_sponsored_products_line_item_update_request_model)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->update_auction_line_item_v2: %s\n" % e)
@@ -3331,7 +3283,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **int**| The external line item ID of the sponsored products line item. |
- **value_resource_input_of_sponsored_products_line_item_update_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel.md)| An update request containing all details of the requested update. | [optional]
+ **value_resource_input_of_sponsored_products_line_item_update_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel.md)| An update request containing all details of the requested update. |
 
 ### Return type
 
@@ -3356,7 +3308,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_creative**
-> Creative2Response update_creative(account_id, creative_id)
+> Creative2Response update_creative(account_id, creative_id, creative_update_model2)
 
 
 
@@ -3438,19 +3390,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ),
             ),
         ],
-    ) # CreativeUpdateModel2 | The creative to create (optional)
+    ) # CreativeUpdateModel2 | The creative to create
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_creative(account_id, creative_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->update_creative: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_creative(account_id, creative_id, creative_update_model2=creative_update_model2)
+        api_response = api_instance.update_creative(account_id, creative_id, creative_update_model2)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->update_creative: %s\n" % e)
@@ -3463,7 +3407,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| External account id containing the creative |
  **creative_id** | **str**| Creative to update |
- **creative_update_model2** | [**CreativeUpdateModel2**](CreativeUpdateModel2.md)| The creative to create | [optional]
+ **creative_update_model2** | [**CreativeUpdateModel2**](CreativeUpdateModel2.md)| The creative to create |
 
 ### Return type
 
@@ -3489,7 +3433,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_preferred_line_item_by_line_item_id**
-> PreferredLineItemV2Response update_preferred_line_item_by_line_item_id(line_item_id)
+> PreferredLineItemV2Response update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request)
 
 
 
@@ -3565,19 +3509,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # PreferredLineItemUpdateModelV2Request | The line item settings to create a line item with (optional)
+    ) # PreferredLineItemUpdateModelV2Request | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->update_preferred_line_item_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request=preferred_line_item_update_model_v2_request)
+        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->update_preferred_line_item_by_line_item_id: %s\n" % e)
@@ -3589,7 +3525,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The given line item id |
- **preferred_line_item_update_model_v2_request** | [**PreferredLineItemUpdateModelV2Request**](PreferredLineItemUpdateModelV2Request.md)| The line item settings to create a line item with | [optional]
+ **preferred_line_item_update_model_v2_request** | [**PreferredLineItemUpdateModelV2Request**](PreferredLineItemUpdateModelV2Request.md)| The line item settings to create a line item with |
 
 ### Return type
 
@@ -3614,7 +3550,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_product_button_by_line_item_and_product_button_id**
-> ProductButtonResponseListResponse update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
+> ProductButtonResponseListResponse update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, product_button_request_request)
 
 
 
@@ -3674,19 +3610,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # ProductButtonRequestRequest | Specific Product button update info (optional)
+    ) # ProductButtonRequestRequest | Specific Product button update info
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->update_product_button_by_line_item_and_product_button_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, product_button_request_request=product_button_request_request)
+        api_response = api_instance.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, product_button_request_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->update_product_button_by_line_item_and_product_button_id: %s\n" % e)
@@ -3699,7 +3627,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| LineItemId for productButton update |
  **product_button_id** | **str**| productButtonId used for update |
- **product_button_request_request** | [**ProductButtonRequestRequest**](ProductButtonRequestRequest.md)| Specific Product button update info | [optional]
+ **product_button_request_request** | [**ProductButtonRequestRequest**](ProductButtonRequestRequest.md)| Specific Product button update info |
 
 ### Return type
 

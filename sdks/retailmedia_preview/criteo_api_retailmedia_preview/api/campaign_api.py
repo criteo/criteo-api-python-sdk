@@ -267,6 +267,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'campaign_id',
+                    'value_resource_input_of_sponsored_products_line_item_create_request_model',
                 ],
                 'nullable': [
                 ],
@@ -325,6 +326,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'account_id',
+                    'creative_create_model2',
                 ],
                 'nullable': [
                 ],
@@ -383,6 +385,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'campaign_id',
+                    'preferred_line_item_create_model_v2_request',
                 ],
                 'nullable': [
                 ],
@@ -1409,6 +1412,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'retailer_id',
+                    'value_resource_input_recommended_categories_request_v1',
                 ],
                 'nullable': [
                 ],
@@ -1673,6 +1677,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'retailer_id',
+                    'value_resource_input_recommended_keywords_request_v1',
                 ],
                 'nullable': [
                 ],
@@ -2078,6 +2083,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'line_item_id',
+                    'value_resource_input_of_sponsored_products_line_item_update_request_model',
                 ],
                 'nullable': [
                 ],
@@ -2138,6 +2144,7 @@ class CampaignApi(object):
                 'required': [
                     'account_id',
                     'creative_id',
+                    'creative_update_model2',
                 ],
                 'nullable': [
                 ],
@@ -2200,6 +2207,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'line_item_id',
+                    'preferred_line_item_update_model_v2_request',
                 ],
                 'nullable': [
                 ],
@@ -2260,6 +2268,7 @@ class CampaignApi(object):
                 'required': [
                     'line_item_id',
                     'product_button_id',
+                    'product_button_request_request',
                 ],
                 'nullable': [
                     'product_button_request_request',
@@ -2560,6 +2569,7 @@ class CampaignApi(object):
     def create_auction_line_item_v2(
         self,
         campaign_id,
+        value_resource_input_of_sponsored_products_line_item_create_request_model,
         **kwargs
     ):
         """create_auction_line_item_v2  # noqa: E501
@@ -2568,14 +2578,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_auction_line_item_v2(campaign_id, async_req=True)
+        >>> thread = api.create_auction_line_item_v2(campaign_id, value_resource_input_of_sponsored_products_line_item_create_request_model, async_req=True)
         >>> result = thread.get()
 
         Args:
             campaign_id (str): The given campaign id
+            value_resource_input_of_sponsored_products_line_item_create_request_model (ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel): The line item settings to create a line item with
 
         Keyword Args:
-            value_resource_input_of_sponsored_products_line_item_create_request_model (ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel): The line item settings to create a line item with. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2639,11 +2649,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['campaign_id'] = \
             campaign_id
+        kwargs['value_resource_input_of_sponsored_products_line_item_create_request_model'] = \
+            value_resource_input_of_sponsored_products_line_item_create_request_model
         return self.create_auction_line_item_v2_endpoint.call_with_http_info(**kwargs)
 
     def create_creative(
         self,
         account_id,
+        creative_create_model2,
         **kwargs
     ):
         """create_creative  # noqa: E501
@@ -2652,14 +2665,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_creative(account_id, async_req=True)
+        >>> thread = api.create_creative(account_id, creative_create_model2, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): External account id to create a creative for
+            creative_create_model2 (CreativeCreateModel2): The creative to create
 
         Keyword Args:
-            creative_create_model2 (CreativeCreateModel2): The creative to create. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2723,11 +2736,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
+        kwargs['creative_create_model2'] = \
+            creative_create_model2
         return self.create_creative_endpoint.call_with_http_info(**kwargs)
 
     def create_preferred_line_item_by_campaign_id(
         self,
         campaign_id,
+        preferred_line_item_create_model_v2_request,
         **kwargs
     ):
         """create_preferred_line_item_by_campaign_id  # noqa: E501
@@ -2736,14 +2752,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_preferred_line_item_by_campaign_id(campaign_id, async_req=True)
+        >>> thread = api.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             campaign_id (str): The given campaign id
+            preferred_line_item_create_model_v2_request (PreferredLineItemCreateModelV2Request): The line item settings to create a line item with
 
         Keyword Args:
-            preferred_line_item_create_model_v2_request (PreferredLineItemCreateModelV2Request): The line item settings to create a line item with. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2807,6 +2823,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['campaign_id'] = \
             campaign_id
+        kwargs['preferred_line_item_create_model_v2_request'] = \
+            preferred_line_item_create_model_v2_request
         return self.create_preferred_line_item_by_campaign_id_endpoint.call_with_http_info(**kwargs)
 
     def delete_product_button_by_line_item_and_product_button_id(
@@ -4173,6 +4191,7 @@ class CampaignApi(object):
     def get_recommended_categories(
         self,
         retailer_id,
+        value_resource_input_recommended_categories_request_v1,
         **kwargs
     ):
         """get_recommended_categories  # noqa: E501
@@ -4181,14 +4200,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_recommended_categories(retailer_id, async_req=True)
+        >>> thread = api.get_recommended_categories(retailer_id, value_resource_input_recommended_categories_request_v1, async_req=True)
         >>> result = thread.get()
 
         Args:
             retailer_id (int): Retailer id.
+            value_resource_input_recommended_categories_request_v1 (ValueResourceInputRecommendedCategoriesRequestV1): Request of recommended categories.
 
         Keyword Args:
-            value_resource_input_recommended_categories_request_v1 (ValueResourceInputRecommendedCategoriesRequestV1): Request of recommended categories.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4252,6 +4271,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['retailer_id'] = \
             retailer_id
+        kwargs['value_resource_input_recommended_categories_request_v1'] = \
+            value_resource_input_recommended_categories_request_v1
         return self.get_recommended_categories_endpoint.call_with_http_info(**kwargs)
 
     def pause_promoted_products(
@@ -4503,6 +4524,7 @@ class CampaignApi(object):
     def recommended_keywords(
         self,
         retailer_id,
+        value_resource_input_recommended_keywords_request_v1,
         **kwargs
     ):
         """recommended_keywords  # noqa: E501
@@ -4511,14 +4533,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.recommended_keywords(retailer_id, async_req=True)
+        >>> thread = api.recommended_keywords(retailer_id, value_resource_input_recommended_keywords_request_v1, async_req=True)
         >>> result = thread.get()
 
         Args:
             retailer_id (str): Retailer id.
+            value_resource_input_recommended_keywords_request_v1 (ValueResourceInputRecommendedKeywordsRequestV1): Request of recommended keywords.
 
         Keyword Args:
-            value_resource_input_recommended_keywords_request_v1 (ValueResourceInputRecommendedKeywordsRequestV1): Request of recommended keywords.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4582,6 +4604,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['retailer_id'] = \
             retailer_id
+        kwargs['value_resource_input_recommended_keywords_request_v1'] = \
+            value_resource_input_recommended_keywords_request_v1
         return self.recommended_keywords_endpoint.call_with_http_info(**kwargs)
 
     def search_account_creatives(
@@ -5008,6 +5032,7 @@ class CampaignApi(object):
     def update_auction_line_item_v2(
         self,
         line_item_id,
+        value_resource_input_of_sponsored_products_line_item_update_request_model,
         **kwargs
     ):
         """update_auction_line_item_v2  # noqa: E501
@@ -5016,14 +5041,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_auction_line_item_v2(line_item_id, async_req=True)
+        >>> thread = api.update_auction_line_item_v2(line_item_id, value_resource_input_of_sponsored_products_line_item_update_request_model, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (int): The external line item ID of the sponsored products line item.
+            value_resource_input_of_sponsored_products_line_item_update_request_model (ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel): An update request containing all details of the requested update.
 
         Keyword Args:
-            value_resource_input_of_sponsored_products_line_item_update_request_model (ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel): An update request containing all details of the requested update.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5087,12 +5112,15 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
+        kwargs['value_resource_input_of_sponsored_products_line_item_update_request_model'] = \
+            value_resource_input_of_sponsored_products_line_item_update_request_model
         return self.update_auction_line_item_v2_endpoint.call_with_http_info(**kwargs)
 
     def update_creative(
         self,
         account_id,
         creative_id,
+        creative_update_model2,
         **kwargs
     ):
         """update_creative  # noqa: E501
@@ -5101,15 +5129,15 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_creative(account_id, creative_id, async_req=True)
+        >>> thread = api.update_creative(account_id, creative_id, creative_update_model2, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): External account id containing the creative
             creative_id (str): Creative to update
+            creative_update_model2 (CreativeUpdateModel2): The creative to create
 
         Keyword Args:
-            creative_update_model2 (CreativeUpdateModel2): The creative to create. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5175,11 +5203,14 @@ class CampaignApi(object):
             account_id
         kwargs['creative_id'] = \
             creative_id
+        kwargs['creative_update_model2'] = \
+            creative_update_model2
         return self.update_creative_endpoint.call_with_http_info(**kwargs)
 
     def update_preferred_line_item_by_line_item_id(
         self,
         line_item_id,
+        preferred_line_item_update_model_v2_request,
         **kwargs
     ):
         """update_preferred_line_item_by_line_item_id  # noqa: E501
@@ -5188,14 +5219,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_preferred_line_item_by_line_item_id(line_item_id, async_req=True)
+        >>> thread = api.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): The given line item id
+            preferred_line_item_update_model_v2_request (PreferredLineItemUpdateModelV2Request): The line item settings to create a line item with
 
         Keyword Args:
-            preferred_line_item_update_model_v2_request (PreferredLineItemUpdateModelV2Request): The line item settings to create a line item with. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5259,12 +5290,15 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
+        kwargs['preferred_line_item_update_model_v2_request'] = \
+            preferred_line_item_update_model_v2_request
         return self.update_preferred_line_item_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def update_product_button_by_line_item_and_product_button_id(
         self,
         line_item_id,
         product_button_id,
+        product_button_request_request,
         **kwargs
     ):
         """update_product_button_by_line_item_and_product_button_id  # noqa: E501
@@ -5273,15 +5307,15 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, async_req=True)
+        >>> thread = api.update_product_button_by_line_item_and_product_button_id(line_item_id, product_button_id, product_button_request_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): LineItemId for productButton update
             product_button_id (str): productButtonId used for update
+            product_button_request_request (ProductButtonRequestRequest): Specific Product button update info
 
         Keyword Args:
-            product_button_request_request (ProductButtonRequestRequest): Specific Product button update info. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5347,5 +5381,7 @@ class CampaignApi(object):
             line_item_id
         kwargs['product_button_id'] = \
             product_button_id
+        kwargs['product_button_request_request'] = \
+            product_button_request_request
         return self.update_product_button_by_line_item_and_product_button_id_endpoint.call_with_http_info(**kwargs)
 

@@ -1093,6 +1093,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'patch_ad_set_category_bid_list_request',
                 ],
                 'nullable': [
                 ],
@@ -1148,7 +1149,9 @@ class CampaignApi(object):
                 'all': [
                     'requests_patch_ad_set_v24_q3',
                 ],
-                'required': [],
+                'required': [
+                    'requests_patch_ad_set_v24_q3',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1199,7 +1202,9 @@ class CampaignApi(object):
                 'all': [
                     'patch_campaign_list_request',
                 ],
-                'required': [],
+                'required': [
+                    'patch_campaign_list_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1253,6 +1258,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'patch_ad_set_display_multiplier_list_request',
                 ],
                 'nullable': [
                 ],
@@ -1311,6 +1317,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'advertiser_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1369,6 +1376,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'advertiser_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1427,6 +1435,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'campaign_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1485,6 +1494,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'campaign_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1543,6 +1553,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'advertiser_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1601,6 +1612,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'advertiser_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1659,6 +1671,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'campaign_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1717,6 +1730,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'campaign_id',
+                    'api_request_of_targeting_entity',
                 ],
                 'nullable': [
                 ],
@@ -1877,6 +1891,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'set_ad_set_targeting_deal_ids_request',
                 ],
                 'nullable': [
                 ],
@@ -1935,6 +1950,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'set_ad_set_targeting_video_positioning_request',
                 ],
                 'nullable': [
                 ],
@@ -3715,6 +3731,7 @@ class CampaignApi(object):
     def patch_ad_set_category_bids(
         self,
         ad_set_id,
+        patch_ad_set_category_bid_list_request,
         **kwargs
     ):
         """patch_ad_set_category_bids  # noqa: E501
@@ -3723,14 +3740,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_set_category_bids(ad_set_id, async_req=True)
+        >>> thread = api.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest):
 
         Keyword Args:
-            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3794,10 +3811,13 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['patch_ad_set_category_bid_list_request'] = \
+            patch_ad_set_category_bid_list_request
         return self.patch_ad_set_category_bids_endpoint.call_with_http_info(**kwargs)
 
     def patch_ad_sets(
         self,
+        requests_patch_ad_set_v24_q3,
         **kwargs
     ):
         """patch_ad_sets  # noqa: E501
@@ -3806,12 +3826,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_sets(async_req=True)
+        >>> thread = api.patch_ad_sets(requests_patch_ad_set_v24_q3, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.
 
         Keyword Args:
-            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3873,10 +3894,13 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['requests_patch_ad_set_v24_q3'] = \
+            requests_patch_ad_set_v24_q3
         return self.patch_ad_sets_endpoint.call_with_http_info(**kwargs)
 
     def patch_campaigns(
         self,
+        patch_campaign_list_request,
         **kwargs
     ):
         """patch_campaigns  # noqa: E501
@@ -3885,12 +3909,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_campaigns(async_req=True)
+        >>> thread = api.patch_campaigns(patch_campaign_list_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.
 
         Keyword Args:
-            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3952,11 +3977,14 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['patch_campaign_list_request'] = \
+            patch_campaign_list_request
         return self.patch_campaigns_endpoint.call_with_http_info(**kwargs)
 
     def patch_display_multipliers(
         self,
         ad_set_id,
+        patch_ad_set_display_multiplier_list_request,
         **kwargs
     ):
         """patch_display_multipliers  # noqa: E501
@@ -3965,14 +3993,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_display_multipliers(ad_set_id, async_req=True)
+        >>> thread = api.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest):
 
         Keyword Args:
-            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4036,11 +4064,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['patch_ad_set_display_multiplier_list_request'] = \
+            patch_ad_set_display_multiplier_list_request
         return self.patch_display_multipliers_endpoint.call_with_http_info(**kwargs)
 
     def post_advertiser_bundle_rules(
         self,
         advertiser_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """post_advertiser_bundle_rules  # noqa: E501
@@ -4049,14 +4080,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_advertiser_bundle_rules(advertiser_id, async_req=True)
+        >>> thread = api.post_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (int): The advertiser id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4120,11 +4151,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.post_advertiser_bundle_rules_endpoint.call_with_http_info(**kwargs)
 
     def post_advertiser_domain_rules(
         self,
         advertiser_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """post_advertiser_domain_rules  # noqa: E501
@@ -4133,14 +4167,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_advertiser_domain_rules(advertiser_id, async_req=True)
+        >>> thread = api.post_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (int): The advertiser id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4204,11 +4238,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.post_advertiser_domain_rules_endpoint.call_with_http_info(**kwargs)
 
     def post_campaign_bundle_rules(
         self,
         campaign_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """post_campaign_bundle_rules  # noqa: E501
@@ -4217,14 +4254,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_campaign_bundle_rules(campaign_id, async_req=True)
+        >>> thread = api.post_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             campaign_id (int): The campaign id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4288,11 +4325,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['campaign_id'] = \
             campaign_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.post_campaign_bundle_rules_endpoint.call_with_http_info(**kwargs)
 
     def post_campaign_domain_rules(
         self,
         campaign_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """post_campaign_domain_rules  # noqa: E501
@@ -4301,14 +4341,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.post_campaign_domain_rules(campaign_id, async_req=True)
+        >>> thread = api.post_campaign_domain_rules(campaign_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             campaign_id (int): The campaign id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4372,11 +4412,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['campaign_id'] = \
             campaign_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.post_campaign_domain_rules_endpoint.call_with_http_info(**kwargs)
 
     def put_advertiser_bundle_rules(
         self,
         advertiser_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """put_advertiser_bundle_rules  # noqa: E501
@@ -4385,14 +4428,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.put_advertiser_bundle_rules(advertiser_id, async_req=True)
+        >>> thread = api.put_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (int): The advertiser id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4456,11 +4499,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.put_advertiser_bundle_rules_endpoint.call_with_http_info(**kwargs)
 
     def put_advertiser_domain_rules(
         self,
         advertiser_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """put_advertiser_domain_rules  # noqa: E501
@@ -4469,14 +4515,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.put_advertiser_domain_rules(advertiser_id, async_req=True)
+        >>> thread = api.put_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (int): The advertiser id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4540,11 +4586,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.put_advertiser_domain_rules_endpoint.call_with_http_info(**kwargs)
 
     def put_campaign_bundle_rules(
         self,
         campaign_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """put_campaign_bundle_rules  # noqa: E501
@@ -4553,14 +4602,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.put_campaign_bundle_rules(campaign_id, async_req=True)
+        >>> thread = api.put_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             campaign_id (int): The campaign id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4624,11 +4673,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['campaign_id'] = \
             campaign_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.put_campaign_bundle_rules_endpoint.call_with_http_info(**kwargs)
 
     def put_campaign_domain_rules(
         self,
         campaign_id,
+        api_request_of_targeting_entity,
         **kwargs
     ):
         """put_campaign_domain_rules  # noqa: E501
@@ -4637,14 +4689,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.put_campaign_domain_rules(campaign_id, async_req=True)
+        >>> thread = api.put_campaign_domain_rules(campaign_id, api_request_of_targeting_entity, async_req=True)
         >>> result = thread.get()
 
         Args:
             campaign_id (int): The campaign id
+            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
-            api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4708,6 +4760,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['campaign_id'] = \
             campaign_id
+        kwargs['api_request_of_targeting_entity'] = \
+            api_request_of_targeting_entity
         return self.put_campaign_domain_rules_endpoint.call_with_http_info(**kwargs)
 
     def search_ad_sets(
@@ -4871,6 +4925,7 @@ class CampaignApi(object):
     def set_ad_set_targeting_deal_ids(
         self,
         ad_set_id,
+        set_ad_set_targeting_deal_ids_request,
         **kwargs
     ):
         """set_ad_set_targeting_deal_ids  # noqa: E501
@@ -4879,14 +4934,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.set_ad_set_targeting_deal_ids(ad_set_id, async_req=True)
+        >>> thread = api.set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            set_ad_set_targeting_deal_ids_request (SetAdSetTargetingDealIdsRequest): the new Deal Id Targeting configuration
 
         Keyword Args:
-            set_ad_set_targeting_deal_ids_request (SetAdSetTargetingDealIdsRequest): the new Deal Id Targeting configuration. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4950,11 +5005,14 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['set_ad_set_targeting_deal_ids_request'] = \
+            set_ad_set_targeting_deal_ids_request
         return self.set_ad_set_targeting_deal_ids_endpoint.call_with_http_info(**kwargs)
 
     def set_ad_set_targeting_video_positioning(
         self,
         ad_set_id,
+        set_ad_set_targeting_video_positioning_request,
         **kwargs
     ):
         """set_ad_set_targeting_video_positioning  # noqa: E501
@@ -4963,14 +5021,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.set_ad_set_targeting_video_positioning(ad_set_id, async_req=True)
+        >>> thread = api.set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            set_ad_set_targeting_video_positioning_request (SetAdSetTargetingVideoPositioningRequest): the new Video Positioning Targeting configuration
 
         Keyword Args:
-            set_ad_set_targeting_video_positioning_request (SetAdSetTargetingVideoPositioningRequest): the new Video Positioning Targeting configuration. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5034,6 +5092,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['set_ad_set_targeting_video_positioning_request'] = \
+            set_ad_set_targeting_video_positioning_request
         return self.set_ad_set_targeting_video_positioning_endpoint.call_with_http_info(**kwargs)
 
     def start_ad_sets(

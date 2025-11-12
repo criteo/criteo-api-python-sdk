@@ -349,6 +349,7 @@ class ThirdPartyAccountsApi(object):
                 ],
                 'required': [
                     'account_id',
+                    'value_resource_collection_input_of_retail_media_seller',
                 ],
                 'nullable': [
                 ],
@@ -815,6 +816,7 @@ class ThirdPartyAccountsApi(object):
     def preview_retail_media_third_party_accounts_account_id_sellers_put(
         self,
         account_id,
+        value_resource_collection_input_of_retail_media_seller,
         **kwargs
     ):
         """preview_retail_media_third_party_accounts_account_id_sellers_put  # noqa: E501
@@ -823,14 +825,14 @@ class ThirdPartyAccountsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.preview_retail_media_third_party_accounts_account_id_sellers_put(account_id, async_req=True)
+        >>> thread = api.preview_retail_media_third_party_accounts_account_id_sellers_put(account_id, value_resource_collection_input_of_retail_media_seller, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): accountId to update sellers for
+            value_resource_collection_input_of_retail_media_seller (ValueResourceCollectionInputOfRetailMediaSeller): 
 
         Keyword Args:
-            value_resource_collection_input_of_retail_media_seller (ValueResourceCollectionInputOfRetailMediaSeller): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -894,5 +896,7 @@ class ThirdPartyAccountsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
+        kwargs['value_resource_collection_input_of_retail_media_seller'] = \
+            value_resource_collection_input_of_retail_media_seller
         return self.preview_retail_media_third_party_accounts_account_id_sellers_put_endpoint.call_with_http_info(**kwargs)
 

@@ -118,6 +118,7 @@ class CatalogApi(object):
                 ],
                 'required': [
                     'retailer_id',
+                    'value_resource_input_set_sku_buy_box_winners_request',
                 ],
                 'nullable': [
                 ],
@@ -408,6 +409,7 @@ class CatalogApi(object):
     def offer_set_bbw_v1(
         self,
         retailer_id,
+        value_resource_input_set_sku_buy_box_winners_request,
         **kwargs
     ):
         """offer_set_bbw_v1  # noqa: E501
@@ -416,14 +418,14 @@ class CatalogApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.offer_set_bbw_v1(retailer_id, async_req=True)
+        >>> thread = api.offer_set_bbw_v1(retailer_id, value_resource_input_set_sku_buy_box_winners_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             retailer_id (int): The retailer for which these buy box winners will be set
+            value_resource_input_set_sku_buy_box_winners_request (ValueResourceInputSetSkuBuyBoxWinnersRequest):
 
         Keyword Args:
-            value_resource_input_set_sku_buy_box_winners_request (ValueResourceInputSetSkuBuyBoxWinnersRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -487,6 +489,8 @@ class CatalogApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['retailer_id'] = \
             retailer_id
+        kwargs['value_resource_input_set_sku_buy_box_winners_request'] = \
+            value_resource_input_set_sku_buy_box_winners_request
         return self.offer_set_bbw_v1_endpoint.call_with_http_info(**kwargs)
 
     def offer_update_v1(

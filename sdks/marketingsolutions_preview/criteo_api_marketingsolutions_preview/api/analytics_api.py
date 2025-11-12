@@ -118,7 +118,9 @@ class AnalyticsApi(object):
                 'all': [
                     'generate_statistics_report_request',
                 ],
-                'required': [],
+                'required': [
+                    'generate_statistics_report_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -393,7 +395,9 @@ class AnalyticsApi(object):
                 'all': [
                     'generate_creatives_report_request_attributes_request',
                 ],
-                'required': [],
+                'required': [
+                    'generate_creatives_report_request_attributes_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -562,7 +566,9 @@ class AnalyticsApi(object):
                 'all': [
                     'generate_top_products_report_request_attributes_request',
                 ],
-                'required': [],
+                'required': [
+                    'generate_top_products_report_request_attributes_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -804,6 +810,7 @@ class AnalyticsApi(object):
 
     def get_async_adset_report(
         self,
+        generate_statistics_report_request,
         **kwargs
     ):
         """get_async_adset_report  # noqa: E501
@@ -812,12 +819,13 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_async_adset_report(async_req=True)
+        >>> thread = api.get_async_adset_report(generate_statistics_report_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            generate_statistics_report_request (GenerateStatisticsReportRequest):
 
         Keyword Args:
-            generate_statistics_report_request (GenerateStatisticsReportRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -879,6 +887,8 @@ class AnalyticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['generate_statistics_report_request'] = \
+            generate_statistics_report_request
         return self.get_async_adset_report_endpoint.call_with_http_info(**kwargs)
 
     def get_async_audience_report(
@@ -1207,6 +1217,7 @@ class AnalyticsApi(object):
 
     def get_creatives_report(
         self,
+        generate_creatives_report_request_attributes_request,
         **kwargs
     ):
         """get_creatives_report  # noqa: E501
@@ -1215,12 +1226,13 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_creatives_report(async_req=True)
+        >>> thread = api.get_creatives_report(generate_creatives_report_request_attributes_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            generate_creatives_report_request_attributes_request (GenerateCreativesReportRequestAttributesRequest):
 
         Keyword Args:
-            generate_creatives_report_request_attributes_request (GenerateCreativesReportRequestAttributesRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1282,6 +1294,8 @@ class AnalyticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['generate_creatives_report_request_attributes_request'] = \
+            generate_creatives_report_request_attributes_request
         return self.get_creatives_report_endpoint.call_with_http_info(**kwargs)
 
     def get_placements_report(
@@ -1444,6 +1458,7 @@ class AnalyticsApi(object):
 
     def get_top_products_report(
         self,
+        generate_top_products_report_request_attributes_request,
         **kwargs
     ):
         """get_top_products_report  # noqa: E501
@@ -1452,12 +1467,13 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_top_products_report(async_req=True)
+        >>> thread = api.get_top_products_report(generate_top_products_report_request_attributes_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            generate_top_products_report_request_attributes_request (GenerateTopProductsReportRequestAttributesRequest):
 
         Keyword Args:
-            generate_top_products_report_request_attributes_request (GenerateTopProductsReportRequestAttributesRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1519,6 +1535,8 @@ class AnalyticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['generate_top_products_report_request_attributes_request'] = \
+            generate_top_products_report_request_attributes_request
         return self.get_top_products_report_endpoint.call_with_http_info(**kwargs)
 
     def get_transactions_report(

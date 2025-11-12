@@ -381,6 +381,58 @@ class AudienceApi(object):
             },
             api_client=api_client
         )
+        self.delete_contact_list_by_audience_segment_endpoint = _Endpoint(
+            settings={
+                'response_type': (DeleteAudienceContactListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
+                'operation_id': 'delete_contact_list_by_audience_segment',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_id',
+                ],
+                'required': [
+                    'audience_segment_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'audience_segment_id': 'audience-segment-id',
+                },
+                'location_map': {
+                    'audience_segment_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.estimate_audience_segments_sizes_endpoint = _Endpoint(
             settings={
                 'response_type': (AudienceSegmentSizeEstimationV1Response,),
@@ -655,177 +707,7 @@ class AudienceApi(object):
             },
             api_client=api_client
         )
-        self.preview_audiences_audience_id_contactlist_attributes_patch_endpoint = _Endpoint(
-            settings={
-                'response_type': (ModifyAudienceResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/audiences/{audience-id}/contactlist-attributes',
-                'operation_id': 'preview_audiences_audience_id_contactlist_attributes_patch',
-                'http_method': 'PATCH',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'audience_id',
-                    'contactlist_with_attributes_amendment_request',
-                ],
-                'required': [
-                    'audience_id',
-                    'contactlist_with_attributes_amendment_request',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'audience_id':
-                        (str,),
-                    'contactlist_with_attributes_amendment_request':
-                        (ContactlistWithAttributesAmendmentRequest,),
-                },
-                'attribute_map': {
-                    'audience_id': 'audience-id',
-                },
-                'location_map': {
-                    'audience_id': 'path',
-                    'contactlist_with_attributes_amendment_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete_endpoint = _Endpoint(
-            settings={
-                'response_type': (DeleteAudienceContactListResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
-                'operation_id': 'preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete',
-                'http_method': 'DELETE',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'audience_segment_id',
-                ],
-                'required': [
-                    'audience_segment_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'audience_segment_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'audience_segment_id': 'audience-segment-id',
-                },
-                'location_map': {
-                    'audience_segment_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
-            },
-            api_client=api_client
-        )
-        self.preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch_endpoint = _Endpoint(
-            settings={
-                'response_type': (ModifyAudienceResponse,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
-                'operation_id': 'preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch',
-                'http_method': 'PATCH',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'audience_segment_id',
-                    'contactlist_amendment_request',
-                ],
-                'required': [
-                    'audience_segment_id',
-                    'contactlist_amendment_request',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'audience_segment_id':
-                        (str,),
-                    'contactlist_amendment_request':
-                        (ContactlistAmendmentRequest,),
-                },
-                'attribute_map': {
-                    'audience_segment_id': 'audience-segment-id',
-                },
-                'location_map': {
-                    'audience_segment_id': 'path',
-                    'contactlist_amendment_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch_endpoint = _Endpoint(
+        self.modify_audience_users_with_attributes_endpoint = _Endpoint(
             settings={
                 'response_type': (ModifyAudienceResponse,),
                 'auth': [
@@ -833,7 +715,7 @@ class AudienceApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes',
-                'operation_id': 'preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch',
+                'operation_id': 'modify_audience_users_with_attributes',
                 'http_method': 'PATCH',
                 'servers': None,
             },
@@ -1114,6 +996,65 @@ class AudienceApi(object):
                 },
                 'location_map': {
                     'audience_bulk_update_input_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_contact_list_by_audience_segment_endpoint = _Endpoint(
+            settings={
+                'response_type': (ModifyAudienceResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list',
+                'operation_id': 'update_contact_list_by_audience_segment',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'audience_segment_id',
+                    'contactlist_amendment_request',
+                ],
+                'required': [
+                    'audience_segment_id',
+                    'contactlist_amendment_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'audience_segment_id':
+                        (str,),
+                    'contactlist_amendment_request':
+                        (ContactlistAmendmentRequest,),
+                },
+                'attribute_map': {
+                    'audience_segment_id': 'audience-segment-id',
+                },
+                'location_map': {
+                    'audience_segment_id': 'path',
+                    'contactlist_amendment_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1627,6 +1568,89 @@ class AudienceApi(object):
             audience_bulk_delete_input_v1
         return self.delete_audiences_endpoint.call_with_http_info(**kwargs)
 
+    def delete_contact_list_by_audience_segment(
+        self,
+        audience_segment_id,
+        **kwargs
+    ):
+        """delete_contact_list_by_audience_segment  # noqa: E501
+
+        Delete all identifiers from a contact list audience-segment.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_contact_list_by_audience_segment(audience_segment_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            audience_segment_id (str): The id of the contact list audience-segment to amend
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            DeleteAudienceContactListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['audience_segment_id'] = \
+            audience_segment_id
+        return self.delete_contact_list_by_audience_segment_endpoint.call_with_http_info(**kwargs)
+
     def estimate_audience_segments_sizes(
         self,
         audience_segment_estimate_size_input_v1,
@@ -2050,19 +2074,19 @@ class AudienceApi(object):
             country
         return self.get_audience_segments_in_market_interests_endpoint.call_with_http_info(**kwargs)
 
-    def preview_audiences_audience_id_contactlist_attributes_patch(
+    def modify_audience_users_with_attributes(
         self,
         audience_id,
         contactlist_with_attributes_amendment_request,
         **kwargs
     ):
-        """preview_audiences_audience_id_contactlist_attributes_patch  # noqa: E501
+        """modify_audience_users_with_attributes  # noqa: E501
 
         Add/remove identifiers to or from a contact list.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.preview_audiences_audience_id_contactlist_attributes_patch(audience_id, contactlist_with_attributes_amendment_request, async_req=True)
+        >>> thread = api.modify_audience_users_with_attributes(audience_id, contactlist_with_attributes_amendment_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -2135,264 +2159,7 @@ class AudienceApi(object):
             audience_id
         kwargs['contactlist_with_attributes_amendment_request'] = \
             contactlist_with_attributes_amendment_request
-        return self.preview_audiences_audience_id_contactlist_attributes_patch_endpoint.call_with_http_info(**kwargs)
-
-    def preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete(
-        self,
-        audience_segment_id,
-        **kwargs
-    ):
-        """preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete  # noqa: E501
-
-        Delete all identifiers from a contact list audience-segment.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete(audience_segment_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            audience_segment_id (str): The id of the contact list audience-segment to amend
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            DeleteAudienceContactListResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['audience_segment_id'] = \
-            audience_segment_id
-        return self.preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_delete_endpoint.call_with_http_info(**kwargs)
-
-    def preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch(
-        self,
-        audience_segment_id,
-        contactlist_amendment_request,
-        **kwargs
-    ):
-        """preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch  # noqa: E501
-
-        Add/remove identifiers to or from a contact list audience-segment.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch(audience_segment_id, contactlist_amendment_request, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            audience_segment_id (str): The id of the contact list audience-segment to amend
-            contactlist_amendment_request (ContactlistAmendmentRequest):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ModifyAudienceResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['audience_segment_id'] = \
-            audience_segment_id
-        kwargs['contactlist_amendment_request'] = \
-            contactlist_amendment_request
-        return self.preview_marketing_solutions_audience_segments_audience_segment_id_contact_list_patch_endpoint.call_with_http_info(**kwargs)
-
-    def preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch(
-        self,
-        audience_id,
-        contactlist_with_attributes_amendment_request,
-        **kwargs
-    ):
-        """preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch  # noqa: E501
-
-        Add/remove identifiers to or from a contact list.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch(audience_id, contactlist_with_attributes_amendment_request, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            audience_id (str): The id of the contact list audience-segment to amend
-            contactlist_with_attributes_amendment_request (ContactlistWithAttributesAmendmentRequest):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ModifyAudienceResponse
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['audience_id'] = \
-            audience_id
-        kwargs['contactlist_with_attributes_amendment_request'] = \
-            contactlist_with_attributes_amendment_request
-        return self.preview_marketing_solutions_audiences_audience_id_contactlist_attributes_patch_endpoint.call_with_http_info(**kwargs)
+        return self.modify_audience_users_with_attributes_endpoint.call_with_http_info(**kwargs)
 
     def search_audience_segments(
         self,
@@ -2729,4 +2496,91 @@ class AudienceApi(object):
         kwargs['audience_bulk_update_input_v1'] = \
             audience_bulk_update_input_v1
         return self.update_audiences_endpoint.call_with_http_info(**kwargs)
+
+    def update_contact_list_by_audience_segment(
+        self,
+        audience_segment_id,
+        contactlist_amendment_request,
+        **kwargs
+    ):
+        """update_contact_list_by_audience_segment  # noqa: E501
+
+        Add/remove identifiers to or from a contact list audience-segment.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_contact_list_by_audience_segment(audience_segment_id, contactlist_amendment_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            audience_segment_id (str): The id of the contact list audience-segment to amend
+            contactlist_amendment_request (ContactlistAmendmentRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ModifyAudienceResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['audience_segment_id'] = \
+            audience_segment_id
+        kwargs['contactlist_amendment_request'] = \
+            contactlist_amendment_request
+        return self.update_contact_list_by_audience_segment_endpoint.call_with_http_info(**kwargs)
 

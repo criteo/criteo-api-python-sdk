@@ -21,6 +21,7 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_marketingsolutions_preview.model.exam_ad_audience_segment_link_input import ExamAdAudienceSegmentLinkInput
 from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_ad import ResourceCollectionOutcomeOfAd
 from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_coupon import ResourceCollectionOutcomeOfCoupon
 from criteo_api_marketingsolutions_preview.model.resource_collection_outcome_of_creative_read import ResourceCollectionOutcomeOfCreativeRead
@@ -32,6 +33,7 @@ from criteo_api_marketingsolutions_preview.model.resource_outcome_of_ad import R
 from criteo_api_marketingsolutions_preview.model.resource_outcome_of_coupon import ResourceOutcomeOfCoupon
 from criteo_api_marketingsolutions_preview.model.resource_outcome_of_coupon_supported_sizes import ResourceOutcomeOfCouponSupportedSizes
 from criteo_api_marketingsolutions_preview.model.resource_outcome_of_creative import ResourceOutcomeOfCreative
+from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_exam_ad_audience_segment_link import ValueResourceOutcomeOfExamAdAudienceSegmentLink
 
 
 class CreativeApi(object):
@@ -262,6 +264,56 @@ class CreativeApi(object):
                 },
                 'location_map': {
                     'id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.delete_ad_segment_link_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ads/{ad-id}/audience-segment',
+                'operation_id': 'delete_ad_segment_link',
+                'http_method': 'DELETE',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_id',
+                ],
+                'required': [
+                    'ad_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'ad_id': 'ad-id',
+                },
+                'location_map': {
+                    'ad_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -605,6 +657,58 @@ class CreativeApi(object):
                 },
                 'location_map': {
                     'id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_ad_segment_link_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeOfExamAdAudienceSegmentLink,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ads/{ad-id}/audience-segment',
+                'operation_id': 'get_ad_segment_link',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_id',
+                ],
+                'required': [
+                    'ad_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_id':
+                        (int,),
+                },
+                'attribute_map': {
+                    'ad_id': 'ad-id',
+                },
+                'location_map': {
+                    'ad_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -1045,6 +1149,65 @@ class CreativeApi(object):
             },
             api_client=api_client
         )
+        self.link_ad_segment_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeOfExamAdAudienceSegmentLink,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/ads/{ad-id}/audience-segment',
+                'operation_id': 'link_ad_segment',
+                'http_method': 'PUT',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'ad_id',
+                    'exam_ad_audience_segment_link_input',
+                ],
+                'required': [
+                    'ad_id',
+                    'exam_ad_audience_segment_link_input',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'ad_id':
+                        (int,),
+                    'exam_ad_audience_segment_link_input':
+                        (ExamAdAudienceSegmentLinkInput,),
+                },
+                'attribute_map': {
+                    'ad_id': 'ad-id',
+                },
+                'location_map': {
+                    'ad_id': 'path',
+                    'exam_ad_audience_segment_link_input': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
 
     def create_advertiser_ad(
         self,
@@ -1389,6 +1552,89 @@ class CreativeApi(object):
         kwargs['id'] = \
             id
         return self.delete_ad_endpoint.call_with_http_info(**kwargs)
+
+    def delete_ad_segment_link(
+        self,
+        ad_id,
+        **kwargs
+    ):
+        """delete_ad_segment_link  # noqa: E501
+
+        Delete the link between an Ad and an Audience Segment.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_ad_segment_link(ad_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            ad_id (int): The ad identifier.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['ad_id'] = \
+            ad_id
+        return self.delete_ad_segment_link_endpoint.call_with_http_info(**kwargs)
 
     def delete_advertiser_coupon(
         self,
@@ -1905,6 +2151,89 @@ class CreativeApi(object):
         kwargs['id'] = \
             id
         return self.get_ad_endpoint.call_with_http_info(**kwargs)
+
+    def get_ad_segment_link(
+        self,
+        ad_id,
+        **kwargs
+    ):
+        """get_ad_segment_link  # noqa: E501
+
+        Retrieve the Ad audience segment link.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_ad_segment_link(ad_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            ad_id (int): The ad identifier.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeOfExamAdAudienceSegmentLink
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['ad_id'] = \
+            ad_id
+        return self.get_ad_segment_link_endpoint.call_with_http_info(**kwargs)
 
     def get_advertiser_ads(
         self,
@@ -2503,4 +2832,91 @@ class CreativeApi(object):
         kwargs['id'] = \
             id
         return self.get_creative_endpoint.call_with_http_info(**kwargs)
+
+    def link_ad_segment(
+        self,
+        ad_id,
+        exam_ad_audience_segment_link_input,
+        **kwargs
+    ):
+        """link_ad_segment  # noqa: E501
+
+        Link an Ad with an Audience Segment. If a link already exists, its segment ID will be updated.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.link_ad_segment(ad_id, exam_ad_audience_segment_link_input, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            ad_id (int): The ad identifier.
+            exam_ad_audience_segment_link_input (ExamAdAudienceSegmentLinkInput): The audience segment link information.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeOfExamAdAudienceSegmentLink
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['ad_id'] = \
+            ad_id
+        kwargs['exam_ad_audience_segment_link_input'] = \
+            exam_ad_audience_segment_link_input
+        return self.link_ad_segment_endpoint.call_with_http_info(**kwargs)
 

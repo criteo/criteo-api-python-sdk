@@ -61,6 +61,7 @@ class BalanceApi(object):
                 'required': [
                     'account_id',
                     'balance_id',
+                    'change_dates_of_balance_v2_request',
                 ],
                 'nullable': [
                 ],
@@ -123,6 +124,7 @@ class BalanceApi(object):
                 ],
                 'required': [
                     'account_id',
+                    'create_balance_v2_request',
                 ],
                 'nullable': [
                 ],
@@ -400,6 +402,7 @@ class BalanceApi(object):
                 'required': [
                     'account_id',
                     'balance_id',
+                    'update_balance_model_v2_request',
                 ],
                 'nullable': [
                 ],
@@ -448,6 +451,7 @@ class BalanceApi(object):
         self,
         account_id,
         balance_id,
+        change_dates_of_balance_v2_request,
         **kwargs
     ):
         """change_dates_by_account_and_balance_id  # noqa: E501
@@ -456,15 +460,15 @@ class BalanceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.change_dates_by_account_and_balance_id(account_id, balance_id, async_req=True)
+        >>> thread = api.change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The account of the balance
             balance_id (str): The balance to change the dates
+            change_dates_of_balance_v2_request (ChangeDatesOfBalanceV2Request): An object that represents the available options to modify schedule of a balance.
 
         Keyword Args:
-            change_dates_of_balance_v2_request (ChangeDatesOfBalanceV2Request): An object that represents the available options to modify schedule of a balance.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -530,11 +534,14 @@ class BalanceApi(object):
             account_id
         kwargs['balance_id'] = \
             balance_id
+        kwargs['change_dates_of_balance_v2_request'] = \
+            change_dates_of_balance_v2_request
         return self.change_dates_by_account_and_balance_id_endpoint.call_with_http_info(**kwargs)
 
     def create_balance_by_account_id(
         self,
         account_id,
+        create_balance_v2_request,
         **kwargs
     ):
         """create_balance_by_account_id  # noqa: E501
@@ -543,14 +550,14 @@ class BalanceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_balance_by_account_id(account_id, async_req=True)
+        >>> thread = api.create_balance_by_account_id(account_id, create_balance_v2_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The account to create balances for
+            create_balance_v2_request (CreateBalanceV2Request): An object that represents the available options to set when creating a Retail Media Balance
 
         Keyword Args:
-            create_balance_v2_request (CreateBalanceV2Request): An object that represents the available options to set when creating a Retail Media Balance. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -614,6 +621,8 @@ class BalanceApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
+        kwargs['create_balance_v2_request'] = \
+            create_balance_v2_request
         return self.create_balance_by_account_id_endpoint.call_with_http_info(**kwargs)
 
     def get_balance_by_account_and_balance_id(
@@ -879,6 +888,7 @@ class BalanceApi(object):
         self,
         account_id,
         balance_id,
+        update_balance_model_v2_request,
         **kwargs
     ):
         """modify_balance_by_account_and_balance_id  # noqa: E501
@@ -887,15 +897,15 @@ class BalanceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.modify_balance_by_account_and_balance_id(account_id, balance_id, async_req=True)
+        >>> thread = api.modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The account of the balance
             balance_id (str): The balance to change the dates
+            update_balance_model_v2_request (UpdateBalanceModelV2Request): An object that represents the available options to modify a balance.
 
         Keyword Args:
-            update_balance_model_v2_request (UpdateBalanceModelV2Request): An object that represents the available options to modify a balance.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -961,5 +971,7 @@ class BalanceApi(object):
             account_id
         kwargs['balance_id'] = \
             balance_id
+        kwargs['update_balance_model_v2_request'] = \
+            update_balance_model_v2_request
         return self.modify_balance_by_account_and_balance_id_endpoint.call_with_http_info(**kwargs)
 

@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preview_retail_media_third_party_accounts_account_id_sellers_put**
-> ValueResourceCollectionOutcomeOfRetailMediaSeller preview_retail_media_third_party_accounts_account_id_sellers_put(account_id)
+> ValueResourceCollectionOutcomeOfRetailMediaSeller preview_retail_media_third_party_accounts_account_id_sellers_put(account_id, value_resource_collection_input_of_retail_media_seller)
 
 
 
@@ -579,19 +579,11 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 type="type_example",
             ),
         ],
-    ) # ValueResourceCollectionInputOfRetailMediaSeller |  (optional)
+    ) # ValueResourceCollectionInputOfRetailMediaSeller | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.preview_retail_media_third_party_accounts_account_id_sellers_put(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling ThirdPartyAccountsApi->preview_retail_media_third_party_accounts_account_id_sellers_put: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.preview_retail_media_third_party_accounts_account_id_sellers_put(account_id, value_resource_collection_input_of_retail_media_seller=value_resource_collection_input_of_retail_media_seller)
+        api_response = api_instance.preview_retail_media_third_party_accounts_account_id_sellers_put(account_id, value_resource_collection_input_of_retail_media_seller)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling ThirdPartyAccountsApi->preview_retail_media_third_party_accounts_account_id_sellers_put: %s\n" % e)
@@ -603,7 +595,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| accountId to update sellers for |
- **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  | [optional]
+ **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  |
 
 ### Return type
 
