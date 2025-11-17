@@ -2982,7 +2982,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_retailers_v1**
-> EntityResourceCollectionOutcomeOfRetailerResultAndMetadata search_retailers_v1(account_id)
+> EntityResourceCollectionOutcomeOfRetailerResultAndMetadata search_retailers_v1(account_id, value_resource_input_of_retailer_search_request)
 
 
 
@@ -3028,8 +3028,6 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     account_id = "accountId_example" # str | The external account identifier
-    limit = 5 # int | The maximum number of items to return. Must be between 1 and 10. Default is 5. (optional) if omitted the server will use the default value of 5
-    offset = 0 # int | The number of items to skip before starting to collect the result set. Default is 0. (optional) if omitted the server will use the default value of 0
     value_resource_input_of_retailer_search_request = ValueResourceInputOfRetailerSearchRequest(
         data=ValueResourceOfRetailerSearchRequest(
             attributes=RetailerSearchRequest(
@@ -3039,11 +3037,13 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfRetailerSearchRequest | The search request containing filtering parameters (optional)
+    ) # ValueResourceInputOfRetailerSearchRequest | The search request containing filtering parameters
+    limit = 5 # int | The maximum number of items to return. Must be between 1 and 10. Default is 5. (optional) if omitted the server will use the default value of 5
+    offset = 0 # int | The number of items to skip before starting to collect the result set. Default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.search_retailers_v1(account_id)
+        api_response = api_instance.search_retailers_v1(account_id, value_resource_input_of_retailer_search_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->search_retailers_v1: %s\n" % e)
@@ -3051,7 +3051,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.search_retailers_v1(account_id, limit=limit, offset=offset, value_resource_input_of_retailer_search_request=value_resource_input_of_retailer_search_request)
+        api_response = api_instance.search_retailers_v1(account_id, value_resource_input_of_retailer_search_request, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->search_retailers_v1: %s\n" % e)
@@ -3063,9 +3063,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The external account identifier |
+ **value_resource_input_of_retailer_search_request** | [**ValueResourceInputOfRetailerSearchRequest**](ValueResourceInputOfRetailerSearchRequest.md)| The search request containing filtering parameters |
  **limit** | **int**| The maximum number of items to return. Must be between 1 and 10. Default is 5. | [optional] if omitted the server will use the default value of 5
  **offset** | **int**| The number of items to skip before starting to collect the result set. Default is 0. | [optional] if omitted the server will use the default value of 0
- **value_resource_input_of_retailer_search_request** | [**ValueResourceInputOfRetailerSearchRequest**](ValueResourceInputOfRetailerSearchRequest.md)| The search request containing filtering parameters | [optional]
 
 ### Return type
 

@@ -1943,12 +1943,13 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
+                    'value_resource_input_of_retailer_search_request',
                     'limit',
                     'offset',
-                    'value_resource_input_of_retailer_search_request',
                 ],
                 'required': [
                     'account_id',
+                    'value_resource_input_of_retailer_search_request',
                 ],
                 'nullable': [
                 ],
@@ -1977,12 +1978,12 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
+                    'value_resource_input_of_retailer_search_request':
+                        (ValueResourceInputOfRetailerSearchRequest,),
                     'limit':
                         (int,),
                     'offset':
                         (int,),
-                    'value_resource_input_of_retailer_search_request':
-                        (ValueResourceInputOfRetailerSearchRequest,),
                 },
                 'attribute_map': {
                     'account_id': 'accountId',
@@ -1991,9 +1992,9 @@ class CampaignApi(object):
                 },
                 'location_map': {
                     'account_id': 'path',
+                    'value_resource_input_of_retailer_search_request': 'body',
                     'limit': 'query',
                     'offset': 'query',
-                    'value_resource_input_of_retailer_search_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -4862,6 +4863,7 @@ class CampaignApi(object):
     def search_retailers_v1(
         self,
         account_id,
+        value_resource_input_of_retailer_search_request,
         **kwargs
     ):
         """search_retailers_v1  # noqa: E501
@@ -4870,16 +4872,16 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_retailers_v1(account_id, async_req=True)
+        >>> thread = api.search_retailers_v1(account_id, value_resource_input_of_retailer_search_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The external account identifier
+            value_resource_input_of_retailer_search_request (ValueResourceInputOfRetailerSearchRequest): The search request containing filtering parameters
 
         Keyword Args:
             limit (int): The maximum number of items to return. Must be between 1 and 10. Default is 5.. [optional] if omitted the server will use the default value of 5
             offset (int): The number of items to skip before starting to collect the result set. Default is 0.. [optional] if omitted the server will use the default value of 0
-            value_resource_input_of_retailer_search_request (ValueResourceInputOfRetailerSearchRequest): The search request containing filtering parameters. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4943,6 +4945,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
+        kwargs['value_resource_input_of_retailer_search_request'] = \
+            value_resource_input_of_retailer_search_request
         return self.search_retailers_v1_endpoint.call_with_http_info(**kwargs)
 
     def unpause_promoted_products(
