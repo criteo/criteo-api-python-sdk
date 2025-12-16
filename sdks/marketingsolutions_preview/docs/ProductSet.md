@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **keep_variant_products** | **bool** |  | 
 **minimum_number_of_products** | **int** | Minimum amount of products that should match the product set to consider it valid.  Greater or equal than one. | 
 **name** | **str** | The name of the product set | 
-**number_of_products** | **int, none_type** | The number of product matching the product set.  Can be null for newly created product set. | 
+**number_of_products** | **int, none_type** | The number of products matching the product set.  Can be null for newly created product set. | 
 **rules** | [**[ProductSetRule]**](ProductSetRule.md) | The rules identifying the product belonging to the set | 
 **status** | **str** | The status of the product set | 
 **id** | **str, none_type** |  | [optional] 
+**is_fallback_allowed** | **bool** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

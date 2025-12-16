@@ -62,6 +62,10 @@ class SkuDataPreview(ModelNormal):
             'max_length': 120,
             'min_length': 0,
         },
+        ('id',): {
+            'max_length': 500,
+            'min_length': 0,
+        },
         ('retailer_name',): {
             'max_length': 100,
             'min_length': 0,
@@ -74,17 +78,15 @@ class SkuDataPreview(ModelNormal):
             'max_length': 1000,
             'min_length': 0,
         },
+        ('retailer_brand_name',): {
+            'max_length': 120,
+            'min_length': 0,
+        },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -99,7 +101,7 @@ class SkuDataPreview(ModelNormal):
         return {
             'brand_id': (str,),  # noqa: E501
             'brand_name': (str,),  # noqa: E501
-            'category_id': (str,),  # noqa: E501
+            'id': (str,),  # noqa: E501
             'is_in_stock': (bool,),  # noqa: E501
             'price': (float,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
@@ -107,18 +109,22 @@ class SkuDataPreview(ModelNormal):
             'sku_key': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'category': (str, none_type,),  # noqa: E501
+            'category_id': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'gtin': (str, none_type,),  # noqa: E501
-            'image_url': (str,),  # noqa: E501
-            'is_buybox': (bool,),  # noqa: E501
-            'is_seller_sku': (bool,),  # noqa: E501
+            'image_url': (str, none_type,),  # noqa: E501
+            'is_buybox': (bool, none_type,),  # noqa: E501
+            'is_seller_sku': (bool, none_type,),  # noqa: E501
             'model_number': (str, none_type,),  # noqa: E501
             'mpn': (str, none_type,),  # noqa: E501
-            'name': (str,),  # noqa: E501
+            'name': (str, none_type,),  # noqa: E501
             'parent_id': (str, none_type,),  # noqa: E501
             'product_page': (str, none_type,),  # noqa: E501
+            'retailer_brand_id': (str, none_type,),  # noqa: E501
+            'retailer_brand_name': (str, none_type,),  # noqa: E501
             'seller_id': (str, none_type,),  # noqa: E501
             'seller_name': (str, none_type,),  # noqa: E501
+            'uc_golbal_category_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -129,7 +135,7 @@ class SkuDataPreview(ModelNormal):
     attribute_map = {
         'brand_id': 'brandId',  # noqa: E501
         'brand_name': 'brandName',  # noqa: E501
-        'category_id': 'categoryId',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'is_in_stock': 'isInStock',  # noqa: E501
         'price': 'price',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
@@ -137,6 +143,7 @@ class SkuDataPreview(ModelNormal):
         'sku_key': 'skuKey',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'category': 'category',  # noqa: E501
+        'category_id': 'categoryId',  # noqa: E501
         'description': 'description',  # noqa: E501
         'gtin': 'gtin',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
@@ -147,8 +154,11 @@ class SkuDataPreview(ModelNormal):
         'name': 'name',  # noqa: E501
         'parent_id': 'parentId',  # noqa: E501
         'product_page': 'productPage',  # noqa: E501
+        'retailer_brand_id': 'retailerBrandId',  # noqa: E501
+        'retailer_brand_name': 'retailerBrandName',  # noqa: E501
         'seller_id': 'sellerId',  # noqa: E501
         'seller_name': 'sellerName',  # noqa: E501
+        'uc_golbal_category_id': 'ucGolbalCategoryId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -158,13 +168,13 @@ class SkuDataPreview(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, brand_id, brand_name, category_id, is_in_stock, price, retailer_id, retailer_name, sku_key, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, brand_id, brand_name, id, is_in_stock, price, retailer_id, retailer_name, sku_key, updated_at, *args, **kwargs):  # noqa: E501
         """SkuDataPreview - a model defined in OpenAPI
 
         Args:
             brand_id (str): The global brand id associated to the product.
             brand_name (str): The name of the global brand.
-            category_id (str): The category Id.
+            id (str): The product identifier.
             is_in_stock (bool): An indication of if the retailer currently has the product in stock.
             price (float): The price of the product on the retailer site.
             retailer_id (str): The identifier for the retailer the product is listed by.
@@ -204,18 +214,22 @@ class SkuDataPreview(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             category (str, none_type): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            category_id (str, none_type): The category Id.. [optional]  # noqa: E501
             description (str, none_type): A product description.. [optional]  # noqa: E501
             gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
-            is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
-            is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
+            image_url (str, none_type): An http image resource provided by the retailer.. [optional]  # noqa: E501
+            is_buybox (bool, none_type): whether the Sku is a Buybox Winner. [optional]  # noqa: E501
+            is_seller_sku (bool, none_type): An indication of if the sku is seller sku.. [optional]  # noqa: E501
             model_number (str, none_type): The Model Number for the product if available.. [optional]  # noqa: E501
             mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
-            name (str): A short product name.. [optional]  # noqa: E501
+            name (str, none_type): A short product name.. [optional]  # noqa: E501
             parent_id (str, none_type): The ParentId for the product if available.. [optional]  # noqa: E501
             product_page (str, none_type): The product page URL. [optional]  # noqa: E501
+            retailer_brand_id (str, none_type): The retailer brand id associated to the product.. [optional]  # noqa: E501
+            retailer_brand_name (str, none_type): The name of the retailer brand.. [optional]  # noqa: E501
             seller_id (str, none_type): The id of the seller.. [optional]  # noqa: E501
             seller_name (str, none_type): The name of the seller.. [optional]  # noqa: E501
+            uc_golbal_category_id (str, none_type): The global category Id.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -249,7 +263,7 @@ class SkuDataPreview(ModelNormal):
 
         self.brand_id = brand_id
         self.brand_name = brand_name
-        self.category_id = category_id
+        self.id = id
         self.is_in_stock = is_in_stock
         self.price = price
         self.retailer_id = retailer_id
@@ -276,13 +290,13 @@ class SkuDataPreview(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, brand_id, brand_name, category_id, is_in_stock, price, retailer_id, retailer_name, sku_key, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, brand_id, brand_name, id, is_in_stock, price, retailer_id, retailer_name, sku_key, updated_at, *args, **kwargs):  # noqa: E501
         """SkuDataPreview - a model defined in OpenAPI
 
         Args:
             brand_id (str): The global brand id associated to the product.
             brand_name (str): The name of the global brand.
-            category_id (str): The category Id.
+            id (str): The product identifier.
             is_in_stock (bool): An indication of if the retailer currently has the product in stock.
             price (float): The price of the product on the retailer site.
             retailer_id (str): The identifier for the retailer the product is listed by.
@@ -322,18 +336,22 @@ class SkuDataPreview(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             category (str, none_type): The full category breadcrumb in the retailers catalog.. [optional]  # noqa: E501
+            category_id (str, none_type): The category Id.. [optional]  # noqa: E501
             description (str, none_type): A product description.. [optional]  # noqa: E501
             gtin (str, none_type): A GTIN identifier for the product if available. Covers variations such as EANs and UPCs.. [optional]  # noqa: E501
-            image_url (str): An http image resource provided by the retailer.. [optional]  # noqa: E501
-            is_buybox (bool): Whether the Sku is a Buybox Winner.. [optional]  # noqa: E501
-            is_seller_sku (bool): An indication of if the sku is seller sku.. [optional]  # noqa: E501
+            image_url (str, none_type): An http image resource provided by the retailer.. [optional]  # noqa: E501
+            is_buybox (bool, none_type): whether the Sku is a Buybox Winner. [optional]  # noqa: E501
+            is_seller_sku (bool, none_type): An indication of if the sku is seller sku.. [optional]  # noqa: E501
             model_number (str, none_type): The Model Number for the product if available.. [optional]  # noqa: E501
             mpn (str, none_type): The MPN for the product if available.. [optional]  # noqa: E501
-            name (str): A short product name.. [optional]  # noqa: E501
+            name (str, none_type): A short product name.. [optional]  # noqa: E501
             parent_id (str, none_type): The ParentId for the product if available.. [optional]  # noqa: E501
             product_page (str, none_type): The product page URL. [optional]  # noqa: E501
+            retailer_brand_id (str, none_type): The retailer brand id associated to the product.. [optional]  # noqa: E501
+            retailer_brand_name (str, none_type): The name of the retailer brand.. [optional]  # noqa: E501
             seller_id (str, none_type): The id of the seller.. [optional]  # noqa: E501
             seller_name (str, none_type): The name of the seller.. [optional]  # noqa: E501
+            uc_golbal_category_id (str, none_type): The global category Id.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -365,7 +383,7 @@ class SkuDataPreview(ModelNormal):
 
         self.brand_id = brand_id
         self.brand_name = brand_name
-        self.category_id = category_id
+        self.id = id
         self.is_in_stock = is_in_stock
         self.price = price
         self.retailer_id = retailer_id

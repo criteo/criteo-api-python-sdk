@@ -55,6 +55,10 @@ class SkuSearchRequestPreview(ModelNormal):
     """
 
     allowed_values = {
+        ('brand_type',): {
+            'UC': "uC",
+            'RETAILER': "retailer",
+        },
         ('product_id_type',): {
             'SKUKEY': "skuKey",
             'GTIN': "gtin",
@@ -73,13 +77,7 @@ class SkuSearchRequestPreview(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -96,10 +94,12 @@ class SkuSearchRequestPreview(ModelNormal):
         return {
             'query_string': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
-            'brand_ids': ([str],),  # noqa: E501
-            'product_ids': ([str],),  # noqa: E501
+            'brand_ids': ([str], none_type,),  # noqa: E501
+            'brand_type': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
+            'product_ids': ([str], none_type,),  # noqa: E501
             'product_id_type': (str,),  # noqa: E501
-            'sellers': ([str],),  # noqa: E501
+            'sellers': ([str], none_type,),  # noqa: E501
             'sku_type': (str,),  # noqa: E501
         }
 
@@ -112,6 +112,8 @@ class SkuSearchRequestPreview(ModelNormal):
         'query_string': 'queryString',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
+        'brand_type': 'brandType',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'product_ids': 'productIds',  # noqa: E501
         'product_id_type': 'productIdType',  # noqa: E501
         'sellers': 'sellers',  # noqa: E501
@@ -163,10 +165,12 @@ class SkuSearchRequestPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([str]): A list of brand Id's. [optional]  # noqa: E501
-            product_ids ([str]): A list of product Id's, if not passed ignore and search by QueryString. [optional]  # noqa: E501
-            product_id_type (str): Type of product Ids to search for(SkuKey, SkuId, Gtin, Mpn, Model, ParentId). [optional] if omitted the server will use the default value of "skuKey"  # noqa: E501
-            sellers ([str]): A list of seller names and/or seller Id's. [optional]  # noqa: E501
+            brand_ids ([str], none_type): A list of brand Id's. [optional]  # noqa: E501
+            brand_type (str): Enum to set type of brand id's to filter by. [optional] if omitted the server will use the default value of "uC"  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
+            product_ids ([str], none_type): A list of product Id's, if not passed ignore and search by QueryString. [optional]  # noqa: E501
+            product_id_type (str): Type of Product Ids to search for.. [optional] if omitted the server will use the default value of "skuKey"  # noqa: E501
+            sellers ([str], none_type): A list of seller names and/or seller Id's. [optional]  # noqa: E501
             sku_type (str): Enum to set isSellerSku field. [optional] if omitted the server will use the default value of "brand"  # noqa: E501
         """
 
@@ -259,10 +263,12 @@ class SkuSearchRequestPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([str]): A list of brand Id's. [optional]  # noqa: E501
-            product_ids ([str]): A list of product Id's, if not passed ignore and search by QueryString. [optional]  # noqa: E501
-            product_id_type (str): Type of product Ids to search for(SkuKey, SkuId, Gtin, Mpn, Model, ParentId). [optional] if omitted the server will use the default value of "skuKey"  # noqa: E501
-            sellers ([str]): A list of seller names and/or seller Id's. [optional]  # noqa: E501
+            brand_ids ([str], none_type): A list of brand Id's. [optional]  # noqa: E501
+            brand_type (str): Enum to set type of brand id's to filter by. [optional] if omitted the server will use the default value of "uC"  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
+            product_ids ([str], none_type): A list of product Id's, if not passed ignore and search by QueryString. [optional]  # noqa: E501
+            product_id_type (str): Type of Product Ids to search for.. [optional] if omitted the server will use the default value of "skuKey"  # noqa: E501
+            sellers ([str], none_type): A list of seller names and/or seller Id's. [optional]  # noqa: E501
             sku_type (str): Enum to set isSellerSku field. [optional] if omitted the server will use the default value of "brand"  # noqa: E501
         """
 

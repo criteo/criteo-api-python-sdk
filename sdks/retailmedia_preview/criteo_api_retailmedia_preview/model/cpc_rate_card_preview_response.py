@@ -30,9 +30,9 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.problem_details import ProblemDetails
+    from criteo_api_retailmedia_preview.model.common_problem import CommonProblem
     from criteo_api_retailmedia_preview.model.resource_of_cpc_rate_card_preview import ResourceOfCpcRateCardPreview
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
     globals()['ResourceOfCpcRateCardPreview'] = ResourceOfCpcRateCardPreview
 
 
@@ -66,14 +66,7 @@ class CpcRateCardPreviewResponse(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -90,8 +83,8 @@ class CpcRateCardPreviewResponse(ModelNormal):
         lazy_import()
         return {
             'data': (ResourceOfCpcRateCardPreview,),  # noqa: E501
-            'errors': ([ProblemDetails],),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,8 +142,8 @@ class CpcRateCardPreviewResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ResourceOfCpcRateCardPreview): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,8 +230,8 @@ class CpcRateCardPreviewResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             data (ResourceOfCpcRateCardPreview): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

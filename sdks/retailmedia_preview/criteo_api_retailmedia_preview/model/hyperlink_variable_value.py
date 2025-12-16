@@ -94,8 +94,11 @@ class HyperlinkVariableValue(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, url, *args, **kwargs):  # noqa: E501
         """HyperlinkVariableValue - a model defined in OpenAPI
+
+        Args:
+            url (str, none_type): The url to redirect to
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -128,7 +131,6 @@ class HyperlinkVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            url (str, none_type): The url to redirect to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -160,6 +162,7 @@ class HyperlinkVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.url = url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -180,8 +183,11 @@ class HyperlinkVariableValue(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, url, *args, **kwargs):  # noqa: E501
         """HyperlinkVariableValue - a model defined in OpenAPI
+
+        Args:
+            url (str, none_type): The url to redirect to
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -214,7 +220,6 @@ class HyperlinkVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            url (str, none_type): The url to redirect to. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,6 +249,7 @@ class HyperlinkVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.url = url
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

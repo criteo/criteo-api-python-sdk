@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 
-Returns an asynchronous Accounts Report This endpoint is subject to specific rate limits.
+Returns an asynchronous Accounts Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 
 
-Return an asynchronous Campaigns Report This endpoint is subject to specific rate limits.
+Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an asynchronous Fill Rate Report This endpoint is subject to specific rate limits.
+Returns an asynchronous Fill Rate Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an asynchronous Line Items Report This endpoint is subject to specific rate limits.
+Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an asynchronous Offsite Report This endpoint is subject to specific rate limits.
+Returns an asynchronous Offsite Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns an asynchronous Unfilled Placements Report This endpoint is subject to specific rate limits.
+Returns an asynchronous Unfilled Placements Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 

@@ -60,15 +60,9 @@ class BrandPreview(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -82,6 +76,8 @@ class BrandPreview(ModelNormal):
         """
         return {
             'name': (str,),  # noqa: E501
+            'brand_type': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -91,6 +87,8 @@ class BrandPreview(ModelNormal):
 
     attribute_map = {
         'name': 'name',  # noqa: E501
+        'brand_type': 'brandType',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -137,6 +135,8 @@ class BrandPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            brand_type (str, none_type): Brand Type. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,6 +226,8 @@ class BrandPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            brand_type (str, none_type): Brand Type. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

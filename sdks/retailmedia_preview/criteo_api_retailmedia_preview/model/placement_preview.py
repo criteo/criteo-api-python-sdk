@@ -82,15 +82,9 @@ class PlacementPreview(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():
@@ -107,6 +101,7 @@ class PlacementPreview(ModelNormal):
             'page_environment_type': (str,),  # noqa: E501
             'page_type': (str,),  # noqa: E501
             'retailer_id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -119,6 +114,7 @@ class PlacementPreview(ModelNormal):
         'page_environment_type': 'pageEnvironmentType',  # noqa: E501
         'page_type': 'pageType',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -168,6 +164,7 @@ class PlacementPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,6 +260,7 @@ class PlacementPreview(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

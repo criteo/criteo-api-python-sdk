@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bidding** | [**CreateAdSetBiddingV24Q3**](CreateAdSetBiddingV24Q3.md) |  | 
 **campaign_id** | **str, none_type** | Campaign id this ad set belongs to | 
-**dataset_id** | **str, none_type** | Dataset id of this ad set | 
+**dataset_id** | **str** | Dataset id of this ad set | 
 **media_type** | **str** | Media type for the ad set | 
 **name** | **str, none_type** | Name of the ad set | 
 **objective** | **str** | Objective of the ad set | 

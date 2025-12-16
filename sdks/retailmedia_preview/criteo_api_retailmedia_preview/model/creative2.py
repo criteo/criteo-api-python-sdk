@@ -100,8 +100,6 @@ class Creative2(ModelNormal):
         """
         lazy_import()
         return {
-            'associated_line_item_ids': ([str],),  # noqa: E501
-            'brand_id': (int,),  # noqa: E501
             'creative_format_v2_type': (str,),  # noqa: E501
             'environments': ([PageTypeEnvironment2],),  # noqa: E501
             'format_id': (int,),  # noqa: E501
@@ -111,8 +109,10 @@ class Creative2(ModelNormal):
             'template_id': (int,),  # noqa: E501
             'template_name': (str,),  # noqa: E501
             'template_variable_values': ([TemplateVariableValue],),  # noqa: E501
-            'updated_at': (datetime,),  # noqa: E501
+            'associated_line_item_ids': ([str], none_type,),  # noqa: E501
+            'brand_id': (int, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'updated_at': (datetime, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -121,8 +121,6 @@ class Creative2(ModelNormal):
 
 
     attribute_map = {
-        'associated_line_item_ids': 'associatedLineItemIds',  # noqa: E501
-        'brand_id': 'brandId',  # noqa: E501
         'creative_format_v2_type': 'creativeFormatV2Type',  # noqa: E501
         'environments': 'environments',  # noqa: E501
         'format_id': 'formatId',  # noqa: E501
@@ -132,8 +130,10 @@ class Creative2(ModelNormal):
         'template_id': 'templateId',  # noqa: E501
         'template_name': 'templateName',  # noqa: E501
         'template_variable_values': 'templateVariableValues',  # noqa: E501
-        'updated_at': 'updatedAt',  # noqa: E501
+        'associated_line_item_ids': 'associatedLineItemIds',  # noqa: E501
+        'brand_id': 'brandId',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'updated_at': 'updatedAt',  # noqa: E501
     }
 
     read_only_vars = {
@@ -143,12 +143,10 @@ class Creative2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, associated_line_item_ids, brand_id, creative_format_v2_type, environments, format_id, name, retailer_id, status, template_id, template_name, template_variable_values, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, creative_format_v2_type, environments, format_id, name, retailer_id, status, template_id, template_name, template_variable_values, *args, **kwargs):  # noqa: E501
         """Creative2 - a model defined in OpenAPI
 
         Args:
-            associated_line_item_ids ([str]): Associated Line Item Ids
-            brand_id (int): Brand Id
             creative_format_v2_type (str): Creative format type
             environments ([PageTypeEnvironment2]): Environment type (e.g. mobile, web, app)
             format_id (int): Format Id
@@ -158,7 +156,6 @@ class Creative2(ModelNormal):
             template_id (int): Template Id
             template_name (str): Template Name
             template_variable_values ([TemplateVariableValue]): The template chosen values
-            updated_at (datetime): Updated at time
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -191,7 +188,10 @@ class Creative2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
+            brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
+            updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,6 @@ class Creative2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.associated_line_item_ids = associated_line_item_ids
-        self.brand_id = brand_id
         self.creative_format_v2_type = creative_format_v2_type
         self.environments = environments
         self.format_id = format_id
@@ -234,7 +232,6 @@ class Creative2(ModelNormal):
         self.template_id = template_id
         self.template_name = template_name
         self.template_variable_values = template_variable_values
-        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -255,12 +252,10 @@ class Creative2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, associated_line_item_ids, brand_id, creative_format_v2_type, environments, format_id, name, retailer_id, status, template_id, template_name, template_variable_values, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, creative_format_v2_type, environments, format_id, name, retailer_id, status, template_id, template_name, template_variable_values, *args, **kwargs):  # noqa: E501
         """Creative2 - a model defined in OpenAPI
 
         Args:
-            associated_line_item_ids ([str]): Associated Line Item Ids
-            brand_id (int): Brand Id
             creative_format_v2_type (str): Creative format type
             environments ([PageTypeEnvironment2]): Environment type (e.g. mobile, web, app)
             format_id (int): Format Id
@@ -270,7 +265,6 @@ class Creative2(ModelNormal):
             template_id (int): Template Id
             template_name (str): Template Name
             template_variable_values ([TemplateVariableValue]): The template chosen values
-            updated_at (datetime): Updated at time
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -303,7 +297,10 @@ class Creative2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
+            brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
+            updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -333,8 +330,6 @@ class Creative2(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.associated_line_item_ids = associated_line_item_ids
-        self.brand_id = brand_id
         self.creative_format_v2_type = creative_format_v2_type
         self.environments = environments
         self.format_id = format_id
@@ -344,7 +339,6 @@ class Creative2(ModelNormal):
         self.template_id = template_id
         self.template_name = template_name
         self.template_variable_values = template_variable_values
-        self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

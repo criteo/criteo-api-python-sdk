@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **expiration_date** | **str** | Date on which the item should expire, as specified upon insertion, in ISO 8601 format. | [optional] 
 **external_seller_id** | **str** | The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional] 
 **external_seller_name** | **str** | The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads. | [optional] 
+**filters** | **{str: ([str],)}** | Filter information of the product. | [optional] 
 **gender** | **str** | Target gender of the item. | [optional] 
 **google_product_category** | **str** | Google&#39;s category of the item (see Google product taxonomy). RECOMMENDED. | [optional] 
 **gtin** | **str** | Global Trade Item Number (GTIN) of the item. RECOMMENDED. | [optional] 

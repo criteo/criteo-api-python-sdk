@@ -42,6 +42,180 @@ class ThirdPartyAccountsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.add_third_party_account_brands_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeOfRetailMediaBrands,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/brands/add',
+                'operation_id': 'add_third_party_account_brands',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_retail_media_brands',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_retail_media_brands':
+                        (ValueResourceInputOfRetailMediaBrands,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_retail_media_brands': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_third_party_brand_account_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceOutcomeOfRetailMediaAccountV2,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/create-brand-account',
+                'operation_id': 'create_third_party_brand_account',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_retail_media_brand_account_creation_v2',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_retail_media_brand_account_creation_v2':
+                        (ValueResourceInputOfRetailMediaBrandAccountCreationV2,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_retail_media_brand_account_creation_v2': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_third_party_seller_account_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceOutcomeOfRetailMediaAccountV2,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/create-seller-account',
+                'operation_id': 'create_third_party_seller_account',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_retail_media_seller_account_creation_v2',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_retail_media_seller_account_creation_v2':
+                        (ValueResourceInputOfRetailMediaSellerAccountCreationV2,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_retail_media_seller_account_creation_v2': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.grant_third_party_consent_endpoint = _Endpoint(
             settings={
                 'response_type': None,
@@ -98,65 +272,7 @@ class ThirdPartyAccountsApi(object):
             },
             api_client=api_client
         )
-        self.preview_retail_media_third_party_accounts_account_id_brands_add_post_endpoint = _Endpoint(
-            settings={
-                'response_type': (ValueResourceOutcomeOfRetailMediaBrands,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/brands/add',
-                'operation_id': 'preview_retail_media_third_party_accounts_account_id_brands_add_post',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'value_resource_input_of_retail_media_brands',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'value_resource_input_of_retail_media_brands':
-                        (ValueResourceInputOfRetailMediaBrands,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'value_resource_input_of_retail_media_brands': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post_endpoint = _Endpoint(
+        self.remove_third_party_account_brand_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceOutcomeOfRetailMediaBrands,),
                 'auth': [
@@ -164,7 +280,7 @@ class ThirdPartyAccountsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove',
-                'operation_id': 'preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post',
+                'operation_id': 'remove_third_party_account_brand',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -214,123 +330,7 @@ class ThirdPartyAccountsApi(object):
             },
             api_client=api_client
         )
-        self.preview_retail_media_third_party_accounts_account_id_create_brand_account_post_endpoint = _Endpoint(
-            settings={
-                'response_type': (EntityResourceOutcomeOfRetailMediaAccountV2,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/create-brand-account',
-                'operation_id': 'preview_retail_media_third_party_accounts_account_id_create_brand_account_post',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'value_resource_input_of_retail_media_brand_account_creation_v2',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'value_resource_input_of_retail_media_brand_account_creation_v2':
-                        (ValueResourceInputOfRetailMediaBrandAccountCreationV2,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'value_resource_input_of_retail_media_brand_account_creation_v2': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.preview_retail_media_third_party_accounts_account_id_create_seller_account_post_endpoint = _Endpoint(
-            settings={
-                'response_type': (EntityResourceOutcomeOfRetailMediaAccountV2,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/create-seller-account',
-                'operation_id': 'preview_retail_media_third_party_accounts_account_id_create_seller_account_post',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'value_resource_input_of_retail_media_seller_account_creation_v2',
-                ],
-                'required': [
-                    'account_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'value_resource_input_of_retail_media_seller_account_creation_v2':
-                        (ValueResourceInputOfRetailMediaSellerAccountCreationV2,),
-                },
-                'attribute_map': {
-                    'account_id': 'accountId',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'value_resource_input_of_retail_media_seller_account_creation_v2': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
-        self.preview_retail_media_third_party_accounts_account_id_sellers_put_endpoint = _Endpoint(
+        self.update_third_party_account_sellers_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceCollectionOutcomeOfRetailMediaSeller,),
                 'auth': [
@@ -338,7 +338,7 @@ class ThirdPartyAccountsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/preview/retail-media/third-party-accounts/{accountId}/sellers',
-                'operation_id': 'preview_retail_media_third_party_accounts_account_id_sellers_put',
+                'operation_id': 'update_third_party_account_sellers',
                 'http_method': 'PUT',
                 'servers': None,
             },
@@ -389,6 +389,258 @@ class ThirdPartyAccountsApi(object):
             },
             api_client=api_client
         )
+
+    def add_third_party_account_brands(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """add_third_party_account_brands  # noqa: E501
+
+        add the provided brands to an account. This will not remove any existing brands.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.add_third_party_account_brands(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): account to add brands to
+
+        Keyword Args:
+            value_resource_input_of_retail_media_brands (ValueResourceInputOfRetailMediaBrands): list of bands to add to an account. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeOfRetailMediaBrands
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.add_third_party_account_brands_endpoint.call_with_http_info(**kwargs)
+
+    def create_third_party_brand_account(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """create_third_party_brand_account  # noqa: E501
+
+        Create a private market demand brand account under a given parent account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_third_party_brand_account(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): parent supply account to create account under
+
+        Keyword Args:
+            value_resource_input_of_retail_media_brand_account_creation_v2 (ValueResourceInputOfRetailMediaBrandAccountCreationV2): . [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceOutcomeOfRetailMediaAccountV2
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.create_third_party_brand_account_endpoint.call_with_http_info(**kwargs)
+
+    def create_third_party_seller_account(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """create_third_party_seller_account  # noqa: E501
+
+        Create a private market demand seller account under a given parent account.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_third_party_seller_account(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): parent supply account to create account under
+
+        Keyword Args:
+            value_resource_input_of_retail_media_seller_account_creation_v2 (ValueResourceInputOfRetailMediaSellerAccountCreationV2): . [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceOutcomeOfRetailMediaAccountV2
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.create_third_party_seller_account_endpoint.call_with_http_info(**kwargs)
 
     def grant_third_party_consent(
         self,
@@ -474,103 +726,19 @@ class ThirdPartyAccountsApi(object):
             account_id
         return self.grant_third_party_consent_endpoint.call_with_http_info(**kwargs)
 
-    def preview_retail_media_third_party_accounts_account_id_brands_add_post(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """preview_retail_media_third_party_accounts_account_id_brands_add_post  # noqa: E501
-
-        add the provided brands to an account. This will not remove any existing brands.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.preview_retail_media_third_party_accounts_account_id_brands_add_post(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): account to add brands to
-
-        Keyword Args:
-            value_resource_input_of_retail_media_brands (ValueResourceInputOfRetailMediaBrands): list of bands to add to an account. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ValueResourceOutcomeOfRetailMediaBrands
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.preview_retail_media_third_party_accounts_account_id_brands_add_post_endpoint.call_with_http_info(**kwargs)
-
-    def preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post(
+    def remove_third_party_account_brand(
         self,
         account_id,
         brand_id,
         **kwargs
     ):
-        """preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post  # noqa: E501
+        """remove_third_party_account_brand  # noqa: E501
 
         Attempt to remove the provided brand from the account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post(account_id, brand_id, async_req=True)
+        >>> thread = api.remove_third_party_account_brand(account_id, brand_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -643,189 +811,21 @@ class ThirdPartyAccountsApi(object):
             account_id
         kwargs['brand_id'] = \
             brand_id
-        return self.preview_retail_media_third_party_accounts_account_id_brands_brand_id_remove_post_endpoint.call_with_http_info(**kwargs)
+        return self.remove_third_party_account_brand_endpoint.call_with_http_info(**kwargs)
 
-    def preview_retail_media_third_party_accounts_account_id_create_brand_account_post(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """preview_retail_media_third_party_accounts_account_id_create_brand_account_post  # noqa: E501
-
-        Create a private market demand brand account under a given parent account.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.preview_retail_media_third_party_accounts_account_id_create_brand_account_post(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): parent supply account to create account under
-
-        Keyword Args:
-            value_resource_input_of_retail_media_brand_account_creation_v2 (ValueResourceInputOfRetailMediaBrandAccountCreationV2): . [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            EntityResourceOutcomeOfRetailMediaAccountV2
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.preview_retail_media_third_party_accounts_account_id_create_brand_account_post_endpoint.call_with_http_info(**kwargs)
-
-    def preview_retail_media_third_party_accounts_account_id_create_seller_account_post(
-        self,
-        account_id,
-        **kwargs
-    ):
-        """preview_retail_media_third_party_accounts_account_id_create_seller_account_post  # noqa: E501
-
-        Create a private market demand seller account under a given parent account.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.preview_retail_media_third_party_accounts_account_id_create_seller_account_post(account_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): parent supply account to create account under
-
-        Keyword Args:
-            value_resource_input_of_retail_media_seller_account_creation_v2 (ValueResourceInputOfRetailMediaSellerAccountCreationV2): . [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            EntityResourceOutcomeOfRetailMediaAccountV2
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        return self.preview_retail_media_third_party_accounts_account_id_create_seller_account_post_endpoint.call_with_http_info(**kwargs)
-
-    def preview_retail_media_third_party_accounts_account_id_sellers_put(
+    def update_third_party_account_sellers(
         self,
         account_id,
         value_resource_collection_input_of_retail_media_seller,
         **kwargs
     ):
-        """preview_retail_media_third_party_accounts_account_id_sellers_put  # noqa: E501
+        """update_third_party_account_sellers  # noqa: E501
 
         Update the list of sellers mapped to the account. This will override any existing mappings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.preview_retail_media_third_party_accounts_account_id_sellers_put(account_id, value_resource_collection_input_of_retail_media_seller, async_req=True)
+        >>> thread = api.update_third_party_account_sellers(account_id, value_resource_collection_input_of_retail_media_seller, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -898,5 +898,5 @@ class ThirdPartyAccountsApi(object):
             account_id
         kwargs['value_resource_collection_input_of_retail_media_seller'] = \
             value_resource_collection_input_of_retail_media_seller
-        return self.preview_retail_media_third_party_accounts_account_id_sellers_put_endpoint.call_with_http_info(**kwargs)
+        return self.update_third_party_account_sellers_endpoint.call_with_http_info(**kwargs)
 

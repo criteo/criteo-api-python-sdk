@@ -85,6 +85,7 @@ class CreativeUpdateModel2(ModelNormal):
             'template_id': (int,),  # noqa: E501
             'template_variable_values': ([TemplateVariableValue],),  # noqa: E501
             'brand_id': (int,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -98,6 +99,7 @@ class CreativeUpdateModel2(ModelNormal):
         'template_id': 'templateId',  # noqa: E501
         'template_variable_values': 'templateVariableValues',  # noqa: E501
         'brand_id': 'brandId',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -148,6 +150,7 @@ class CreativeUpdateModel2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             brand_id (int): The brand associated to the creative. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,6 +247,7 @@ class CreativeUpdateModel2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             brand_id (int): The brand associated to the creative. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

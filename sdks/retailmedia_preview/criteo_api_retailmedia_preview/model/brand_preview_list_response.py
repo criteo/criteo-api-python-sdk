@@ -30,9 +30,9 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.problem_details import ProblemDetails
+    from criteo_api_retailmedia_preview.model.common_problem import CommonProblem
     from criteo_api_retailmedia_preview.model.resource_of_brand_preview import ResourceOfBrandPreview
-    globals()['ProblemDetails'] = ProblemDetails
+    globals()['CommonProblem'] = CommonProblem
     globals()['ResourceOfBrandPreview'] = ResourceOfBrandPreview
 
 
@@ -66,14 +66,7 @@ class BrandPreviewListResponse(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -89,9 +82,9 @@ class BrandPreviewListResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([ResourceOfBrandPreview],),  # noqa: E501
-            'errors': ([ProblemDetails],),  # noqa: E501
-            'warnings': ([ProblemDetails],),  # noqa: E501
+            'data': ([ResourceOfBrandPreview], none_type,),  # noqa: E501
+            'errors': ([CommonProblem], none_type,),  # noqa: E501
+            'warnings': ([CommonProblem], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -148,9 +141,9 @@ class BrandPreviewListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([ResourceOfBrandPreview]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
+            data ([ResourceOfBrandPreview], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,9 +229,9 @@ class BrandPreviewListResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            data ([ResourceOfBrandPreview]): [optional]  # noqa: E501
-            errors ([ProblemDetails]): [optional]  # noqa: E501
-            warnings ([ProblemDetails]): [optional]  # noqa: E501
+            data ([ResourceOfBrandPreview], none_type): [optional]  # noqa: E501
+            errors ([CommonProblem], none_type): [optional]  # noqa: E501
+            warnings ([CommonProblem], none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

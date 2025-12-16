@@ -4,13 +4,191 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**preview_catalog_products_batch_post**](CatalogApi.md#preview_catalog_products_batch_post) | **POST** /preview/catalog/products/batch | 
-[**preview_catalog_products_batch_report_operation_token_get**](CatalogApi.md#preview_catalog_products_batch_report_operation_token_get) | **GET** /preview/catalog/products/batch/report/{operation-token} | 
-[**preview_catalog_stats_merchants_merchant_id_get**](CatalogApi.md#preview_catalog_stats_merchants_merchant_id_get) | **GET** /preview/catalog/stats/merchants/{merchant-id} | 
+[**get_catalog_merchant_stats**](CatalogApi.md#get_catalog_merchant_stats) | **GET** /preview/catalog/stats/merchants/{merchant-id} | 
+[**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /preview/catalog/products/batch/report/{operation-token} | 
+[**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /preview/catalog/products/batch | 
 
 
-# **preview_catalog_products_batch_post**
-> BatchAcceptedResponse preview_catalog_products_batch_post(products_custom_batch_request)
+# **get_catalog_merchant_stats**
+> StatisticsOkResponse get_catalog_merchant_stats(merchant_id)
+
+
+
+get an stats request
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import catalog_api
+from criteo_api_marketingsolutions_preview.model.statistics_ok_response import StatisticsOkResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = catalog_api.CatalogApi(api_client)
+    merchant_id = 1 # int | merchant-id to get
+    last_num_hours = 1 # int | the last number of hours (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_catalog_merchant_stats(merchant_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_merchant_stats: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.get_catalog_merchant_stats(merchant_id, last_num_hours=last_num_hours)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_merchant_stats: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **int**| merchant-id to get |
+ **last_num_hours** | **int**| the last number of hours | [optional]
+
+### Return type
+
+[**StatisticsOkResponse**](StatisticsOkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The successful response of GET stats request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_catalog_products_batch_report**
+> ReportOkResponse get_catalog_products_batch_report(operation_token)
+
+
+
+Get the report of an asynchronous batch operation previously requested
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import catalog_api
+from criteo_api_marketingsolutions_preview.model.report_ok_response import ReportOkResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = catalog_api.CatalogApi(api_client)
+    operation_token = "operation-token_example" # str | The token returned by the batch endpoint.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_catalog_products_batch_report(operation_token)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_products_batch_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **operation_token** | **str**| The token returned by the batch endpoint. |
+
+### Return type
+
+[**ReportOkResponse**](ReportOkResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The report object |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **submit_catalog_products_batch**
+> BatchAcceptedResponse submit_catalog_products_batch(products_custom_batch_request)
 
 
 
@@ -112,6 +290,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     expiration_date="expiration_date_example",
                     external_seller_id="external_seller_id_example",
                     external_seller_name="external_seller_name_example",
+                    filters={
+                        "key": [
+                            "key_example",
+                        ],
+                    },
                     gender="gender_example",
                     google_product_category="google_product_category_example",
                     gtin="gtin_example",
@@ -236,10 +419,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.preview_catalog_products_batch_post(products_custom_batch_request)
+        api_response = api_instance.submit_catalog_products_batch(products_custom_batch_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CatalogApi->preview_catalog_products_batch_post: %s\n" % e)
+        print("Exception when calling CatalogApi->submit_catalog_products_batch: %s\n" % e)
 ```
 
 
@@ -268,184 +451,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Batch accepted. The status of the operation can be tracked using the report endpoint and the operationToken. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **preview_catalog_products_batch_report_operation_token_get**
-> ReportOkResponse preview_catalog_products_batch_report_operation_token_get(operation_token)
-
-
-
-Get the report of an asynchronous batch operation previously requested
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import catalog_api
-from criteo_api_marketingsolutions_preview.model.report_ok_response import ReportOkResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = catalog_api.CatalogApi(api_client)
-    operation_token = "operation-token_example" # str | The token returned by the batch endpoint.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.preview_catalog_products_batch_report_operation_token_get(operation_token)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CatalogApi->preview_catalog_products_batch_report_operation_token_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **operation_token** | **str**| The token returned by the batch endpoint. |
-
-### Return type
-
-[**ReportOkResponse**](ReportOkResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The report object |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **preview_catalog_stats_merchants_merchant_id_get**
-> StatisticsOkResponse preview_catalog_stats_merchants_merchant_id_get(merchant_id)
-
-
-
-get an stats request
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import catalog_api
-from criteo_api_marketingsolutions_preview.model.statistics_ok_response import StatisticsOkResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = catalog_api.CatalogApi(api_client)
-    merchant_id = 1 # int | merchant-id to get
-    last_num_hours = 1 # int | the last number of hours (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.preview_catalog_stats_merchants_merchant_id_get(merchant_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CatalogApi->preview_catalog_stats_merchants_merchant_id_get: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.preview_catalog_stats_merchants_merchant_id_get(merchant_id, last_num_hours=last_num_hours)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling CatalogApi->preview_catalog_stats_merchants_merchant_id_get: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **merchant_id** | **int**| merchant-id to get |
- **last_num_hours** | **int**| the last number of hours | [optional]
-
-### Return type
-
-[**StatisticsOkResponse**](StatisticsOkResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | The successful response of GET stats request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

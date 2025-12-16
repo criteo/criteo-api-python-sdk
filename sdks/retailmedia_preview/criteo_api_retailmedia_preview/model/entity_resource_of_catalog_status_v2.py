@@ -64,14 +64,7 @@ class EntityResourceOfCatalogStatusV2(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = True
 
@@ -146,7 +139,7 @@ class EntityResourceOfCatalogStatusV2(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             attributes (CatalogStatusV2): [optional]  # noqa: E501
             id (str, none_type): Unique id of the entity.. [optional]  # noqa: E501
-            type (str, none_type): The Type of the resource.. [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,7 +227,7 @@ class EntityResourceOfCatalogStatusV2(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             attributes (CatalogStatusV2): [optional]  # noqa: E501
             id (str, none_type): Unique id of the entity.. [optional]  # noqa: E501
-            type (str, none_type): The Type of the resource.. [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

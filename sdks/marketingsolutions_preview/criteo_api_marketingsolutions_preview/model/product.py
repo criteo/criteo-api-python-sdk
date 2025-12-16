@@ -144,6 +144,7 @@ class Product(ModelNormal):
             'expiration_date': (str,),  # noqa: E501
             'external_seller_id': (str,),  # noqa: E501
             'external_seller_name': (str,),  # noqa: E501
+            'filters': ({str: ([str],)},),  # noqa: E501
             'gender': (str,),  # noqa: E501
             'google_product_category': (str,),  # noqa: E501
             'gtin': (str,),  # noqa: E501
@@ -234,6 +235,7 @@ class Product(ModelNormal):
         'expiration_date': 'expirationDate',  # noqa: E501
         'external_seller_id': 'externalSellerId',  # noqa: E501
         'external_seller_name': 'externalSellerName',  # noqa: E501
+        'filters': 'filters',  # noqa: E501
         'gender': 'gender',  # noqa: E501
         'google_product_category': 'googleProductCategory',  # noqa: E501
         'gtin': 'gtin',  # noqa: E501
@@ -361,6 +363,7 @@ class Product(ModelNormal):
             expiration_date (str): Date on which the item should expire, as specified upon insertion, in ISO 8601 format.. [optional]  # noqa: E501
             external_seller_id (str): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
             external_seller_name (str): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            filters ({str: ([str],)}): Filter information of the product.. [optional]  # noqa: E501
             gender (str): Target gender of the item.. [optional]  # noqa: E501
             google_product_category (str): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
             gtin (str): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
@@ -536,6 +539,7 @@ class Product(ModelNormal):
             expiration_date (str): Date on which the item should expire, as specified upon insertion, in ISO 8601 format.. [optional]  # noqa: E501
             external_seller_id (str): The external id of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
             external_seller_name (str): The external name of the seller (case sensitive and 50 UTF8 characters max). This information is required by the Criteo Offsite Ads.. [optional]  # noqa: E501
+            filters ({str: ([str],)}): Filter information of the product.. [optional]  # noqa: E501
             gender (str): Target gender of the item.. [optional]  # noqa: E501
             google_product_category (str): Google's category of the item (see Google product taxonomy). RECOMMENDED.. [optional]  # noqa: E501
             gtin (str): Global Trade Item Number (GTIN) of the item. RECOMMENDED.. [optional]  # noqa: E501
