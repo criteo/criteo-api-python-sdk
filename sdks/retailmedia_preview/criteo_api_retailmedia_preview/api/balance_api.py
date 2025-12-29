@@ -21,12 +21,10 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_preview.model.balance_response_v2_paged_list_response import BalanceResponseV2PagedListResponse
-from criteo_api_retailmedia_preview.model.balance_response_v2_response import BalanceResponseV2Response
-from criteo_api_retailmedia_preview.model.change_dates_of_balance_v2_request import ChangeDatesOfBalanceV2Request
-from criteo_api_retailmedia_preview.model.create_balance_v2_request import CreateBalanceV2Request
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_balance_campaign_v1_and_page_meta import EntityResourceCollectionOutcomeOfBalanceCampaignV1AndPageMeta
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_balance_response_v1_and_page_meta import EntityResourceCollectionOutcomeOfBalanceResponseV1AndPageMeta
 from criteo_api_retailmedia_preview.model.page_of_balance_history_change_data_capture_v1 import PageOfBalanceHistoryChangeDataCaptureV1
-from criteo_api_retailmedia_preview.model.update_balance_model_v2_request import UpdateBalanceModelV2Request
+from criteo_api_retailmedia_preview.model.value_resource_input_of_create_balance_v1 import ValueResourceInputOfCreateBalanceV1
 
 
 class BalanceApi(object):
@@ -40,74 +38,9 @@ class BalanceApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.change_dates_by_account_and_balance_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (BalanceResponseV2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates',
-                'operation_id': 'change_dates_by_account_and_balance_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'balance_id',
-                    'change_dates_of_balance_v2_request',
-                ],
-                'required': [
-                    'account_id',
-                    'balance_id',
-                    'change_dates_of_balance_v2_request',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'balance_id':
-                        (str,),
-                    'change_dates_of_balance_v2_request':
-                        (ChangeDatesOfBalanceV2Request,),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                    'balance_id': 'balance-id',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'balance_id': 'path',
-                    'change_dates_of_balance_v2_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.create_balance_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': (BalanceResponseV2Response,),
+                'response_type': None,
                 'auth': [
                     'oauth',
                     'oauth'
@@ -120,11 +53,11 @@ class BalanceApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'create_balance_v2_request',
+                    'value_resource_input_of_create_balance_v1',
                 ],
                 'required': [
                     'account_id',
-                    'create_balance_v2_request',
+                    'value_resource_input_of_create_balance_v1',
                 ],
                 'nullable': [
                 ],
@@ -141,84 +74,24 @@ class BalanceApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'create_balance_v2_request':
-                        (CreateBalanceV2Request,),
+                    'value_resource_input_of_create_balance_v1':
+                        (ValueResourceInputOfCreateBalanceV1,),
                 },
                 'attribute_map': {
                     'account_id': 'account-id',
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'create_balance_v2_request': 'body',
+                    'value_resource_input_of_create_balance_v1': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [
-                    'application/json'
-                ],
+                'accept': [],
                 'content_type': [
                     'application/json'
                 ]
-            },
-            api_client=api_client
-        )
-        self.get_balance_by_account_and_balance_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (BalanceResponseV2Response,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/balances/{balance-id}',
-                'operation_id': 'get_balance_by_account_and_balance_id',
-                'http_method': 'GET',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'account_id',
-                    'balance_id',
-                ],
-                'required': [
-                    'account_id',
-                    'balance_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'account_id':
-                        (str,),
-                    'balance_id':
-                        (str,),
-                },
-                'attribute_map': {
-                    'account_id': 'account-id',
-                    'balance_id': 'balance-id',
-                },
-                'location_map': {
-                    'account_id': 'path',
-                    'balance_id': 'path',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [],
             },
             api_client=api_client
         )
@@ -303,7 +176,7 @@ class BalanceApi(object):
         )
         self.get_balances_by_account_id_endpoint = _Endpoint(
             settings={
-                'response_type': (BalanceResponseV2PagedListResponse,),
+                'response_type': (EntityResourceCollectionOutcomeOfBalanceResponseV1AndPageMeta,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -351,7 +224,7 @@ class BalanceApi(object):
                     'account_id':
                         (str,),
                     'limit_to_id':
-                        ([str],),
+                        ([int],),
                     'page_index':
                         (int,),
                     'page_size':
@@ -381,167 +254,91 @@ class BalanceApi(object):
             },
             api_client=api_client
         )
-        self.modify_balance_by_account_and_balance_id_endpoint = _Endpoint(
+        self.get_campaigns_by_balance_id_endpoint = _Endpoint(
             settings={
-                'response_type': (BalanceResponseV2Response,),
+                'response_type': (EntityResourceCollectionOutcomeOfBalanceCampaignV1AndPageMeta,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/preview/retail-media/accounts/{account-id}/balances/{balance-id}',
-                'operation_id': 'modify_balance_by_account_and_balance_id',
-                'http_method': 'PATCH',
+                'endpoint_path': '/preview/retail-media/balances/{balance-id}/campaigns',
+                'operation_id': 'get_campaigns_by_balance_id',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'account_id',
                     'balance_id',
-                    'update_balance_model_v2_request',
+                    'limit_to_id',
+                    'page_index',
+                    'page_size',
                 ],
                 'required': [
-                    'account_id',
                     'balance_id',
-                    'update_balance_model_v2_request',
                 ],
                 'nullable': [
                 ],
                 'enum': [
                 ],
                 'validation': [
+                    'page_index',
+                    'page_size',
                 ]
             },
             root_map={
                 'validations': {
+                    ('page_index',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                    ('page_size',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 1,
+                    },
                 },
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'account_id':
-                        (str,),
                     'balance_id':
                         (str,),
-                    'update_balance_model_v2_request':
-                        (UpdateBalanceModelV2Request,),
+                    'limit_to_id':
+                        ([int],),
+                    'page_index':
+                        (int,),
+                    'page_size':
+                        (int,),
                 },
                 'attribute_map': {
-                    'account_id': 'account-id',
                     'balance_id': 'balance-id',
+                    'limit_to_id': 'limitToId',
+                    'page_index': 'pageIndex',
+                    'page_size': 'pageSize',
                 },
                 'location_map': {
-                    'account_id': 'path',
                     'balance_id': 'path',
-                    'update_balance_model_v2_request': 'body',
+                    'limit_to_id': 'query',
+                    'page_index': 'query',
+                    'page_size': 'query',
                 },
                 'collection_format_map': {
+                    'limit_to_id': 'multi',
                 }
             },
             headers_map={
                 'accept': [
                     'application/json'
                 ],
-                'content_type': [
-                    'application/json'
-                ]
+                'content_type': [],
             },
             api_client=api_client
         )
 
-    def change_dates_by_account_and_balance_id(
-        self,
-        account_id,
-        balance_id,
-        change_dates_of_balance_v2_request,
-        **kwargs
-    ):
-        """change_dates_by_account_and_balance_id  # noqa: E501
-
-        Change dates of a balance for the given account id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): The account of the balance
-            balance_id (str): The balance to change the dates
-            change_dates_of_balance_v2_request (ChangeDatesOfBalanceV2Request): An object that represents the available options to modify schedule of a balance.
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            BalanceResponseV2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        kwargs['balance_id'] = \
-            balance_id
-        kwargs['change_dates_of_balance_v2_request'] = \
-            change_dates_of_balance_v2_request
-        return self.change_dates_by_account_and_balance_id_endpoint.call_with_http_info(**kwargs)
-
     def create_balance_by_account_id(
         self,
         account_id,
-        create_balance_v2_request,
+        value_resource_input_of_create_balance_v1,
         **kwargs
     ):
         """create_balance_by_account_id  # noqa: E501
@@ -550,12 +347,12 @@ class BalanceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_balance_by_account_id(account_id, create_balance_v2_request, async_req=True)
+        >>> thread = api.create_balance_by_account_id(account_id, value_resource_input_of_create_balance_v1, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The account to create balances for
-            create_balance_v2_request (CreateBalanceV2Request): An object that represents the available options to set when creating a Retail Media Balance
+            value_resource_input_of_create_balance_v1 (ValueResourceInputOfCreateBalanceV1): An object that represents the available options to set when creating a Retail Media Balance
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -590,7 +387,7 @@ class BalanceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BalanceResponseV2Response
+            None
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -621,96 +418,9 @@ class BalanceApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
-        kwargs['create_balance_v2_request'] = \
-            create_balance_v2_request
+        kwargs['value_resource_input_of_create_balance_v1'] = \
+            value_resource_input_of_create_balance_v1
         return self.create_balance_by_account_id_endpoint.call_with_http_info(**kwargs)
-
-    def get_balance_by_account_and_balance_id(
-        self,
-        account_id,
-        balance_id,
-        **kwargs
-    ):
-        """get_balance_by_account_and_balance_id  # noqa: E501
-
-        Get a balance for the given account id and balance id  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.get_balance_by_account_and_balance_id(account_id, balance_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            account_id (str): The account of the balance
-            balance_id (str): The balance id
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            BalanceResponseV2Response
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
-        kwargs['balance_id'] = \
-            balance_id
-        return self.get_balance_by_account_and_balance_id_endpoint.call_with_http_info(**kwargs)
 
     def get_balance_history(
         self,
@@ -816,7 +526,7 @@ class BalanceApi(object):
             account_id (str): The account to get balances for
 
         Keyword Args:
-            limit_to_id ([str]): The ids that you would like to limit your result set to. [optional]
+            limit_to_id ([int]): The ids that you would like to limit your result set to. [optional]
             page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
             page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
@@ -851,7 +561,7 @@ class BalanceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BalanceResponseV2PagedListResponse
+            EntityResourceCollectionOutcomeOfBalanceResponseV1AndPageMeta
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -884,28 +594,27 @@ class BalanceApi(object):
             account_id
         return self.get_balances_by_account_id_endpoint.call_with_http_info(**kwargs)
 
-    def modify_balance_by_account_and_balance_id(
+    def get_campaigns_by_balance_id(
         self,
-        account_id,
         balance_id,
-        update_balance_model_v2_request,
         **kwargs
     ):
-        """modify_balance_by_account_and_balance_id  # noqa: E501
+        """get_campaigns_by_balance_id  # noqa: E501
 
-        Modify a balance for the given account id  # noqa: E501
+        Gets page of campaigns for the given balanceId  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request, async_req=True)
+        >>> thread = api.get_campaigns_by_balance_id(balance_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            account_id (str): The account of the balance
-            balance_id (str): The balance to change the dates
-            update_balance_model_v2_request (UpdateBalanceModelV2Request): An object that represents the available options to modify a balance.
+            balance_id (str): The balance to get campaigns from
 
         Keyword Args:
+            limit_to_id ([int]): The ids that you would like to limit your result set to. [optional]
+            page_index (int): The 0 indexed page index you would like to receive given the page size. [optional] if omitted the server will use the default value of 0
+            page_size (int): The maximum number of items you would like to receive in this request. [optional] if omitted the server will use the default value of 25
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -938,7 +647,7 @@ class BalanceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BalanceResponseV2Response
+            EntityResourceCollectionOutcomeOfBalanceCampaignV1AndPageMeta
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -967,11 +676,7 @@ class BalanceApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
         kwargs['balance_id'] = \
             balance_id
-        kwargs['update_balance_model_v2_request'] = \
-            update_balance_model_v2_request
-        return self.modify_balance_by_account_and_balance_id_endpoint.call_with_http_info(**kwargs)
+        return self.get_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
 
