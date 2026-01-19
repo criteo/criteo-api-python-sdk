@@ -1,11 +1,12 @@
-# ValueResourceInputLoadSkuOffersRequest
+# ValueResourceSetProductBuyBoxWinnersRequest
 
-A top-level object that encapsulates a Criteo API request for a single value objects.
+A value resource exposed by the API.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ValueResourceLoadSkuOffersRequest**](ValueResourceLoadSkuOffersRequest.md) |  | [optional] 
+**attributes** | [**SetProductBuyBoxWinnersRequest**](SetProductBuyBoxWinnersRequest.md) |  | [optional] 
+**type** | **str, none_type** | Type of the resource. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

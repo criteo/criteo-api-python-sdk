@@ -5,9 +5,8 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /preview/retail-media/catalog/products/batch/report/{operation-token} | 
-[**offer_load_v1**](CatalogApi.md#offer_load_v1) | **POST** /preview/retail-media/retailers/{retailerId}/offers/load | 
-[**offer_set_bbw_v1**](CatalogApi.md#offer_set_bbw_v1) | **POST** /preview/retail-media/retailers/{retailerId}/offers/set-buy-box-winners | 
-[**offer_update_v1**](CatalogApi.md#offer_update_v1) | **POST** /preview/retail-media/retailers/{retailerId}/offers/update | 
+[**offer_set_bbw_v1**](CatalogApi.md#offer_set_bbw_v1) | **POST** /preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners | 
+[**offer_update_v1**](CatalogApi.md#offer_update_v1) | **POST** /preview/retail-media/retailers/{retailer-id}/offers/update | 
 [**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /preview/retail-media/catalog/products/batch | 
 
 
@@ -95,127 +94,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **offer_load_v1**
-> ValueResourceOutcomeAsyncJobResponse offer_load_v1(retailer_id)
-
-
-
-Replace the offers for one or more SKUs with a snapshot of the new offers for each respective SKU
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import catalog_api
-from criteo_api_retailmedia_preview.model.value_resource_input_load_sku_offers_request import ValueResourceInputLoadSkuOffersRequest
-from criteo_api_retailmedia_preview.model.value_resource_outcome_async_job_response import ValueResourceOutcomeAsyncJobResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = catalog_api.CatalogApi(api_client)
-    retailer_id = 1 # int | The retailer for which these offers will be loaded
-    value_resource_input_load_sku_offers_request = ValueResourceInputLoadSkuOffersRequest(
-        data=ValueResourceLoadSkuOffersRequest(
-            attributes=LoadSkuOffersRequest(
-                sku_offer_loads=[
-                    SkuOfferLoad(
-                        buy_box_winner="buy_box_winner_example",
-                        offers=[
-                            OfferLoad(
-                                availability="OutOfStock",
-                                offer_type="Seller",
-                                price=3.14,
-                                seller_id="seller_id_example",
-                            ),
-                        ],
-                        sku_id="sku_id_example",
-                    ),
-                ],
-            ),
-            type="type_example",
-        ),
-    ) # ValueResourceInputLoadSkuOffersRequest |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.offer_load_v1(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CatalogApi->offer_load_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.offer_load_v1(retailer_id, value_resource_input_load_sku_offers_request=value_resource_input_load_sku_offers_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CatalogApi->offer_load_v1: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer for which these offers will be loaded |
- **value_resource_input_load_sku_offers_request** | [**ValueResourceInputLoadSkuOffersRequest**](ValueResourceInputLoadSkuOffersRequest.md)|  | [optional]
-
-### Return type
-
-[**ValueResourceOutcomeAsyncJobResponse**](ValueResourceOutcomeAsyncJobResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **offer_set_bbw_v1**
-> ValueResourceOutcomeAsyncJobResponse offer_set_bbw_v1(retailer_id, value_resource_input_set_sku_buy_box_winners_request)
+> Outcome offer_set_bbw_v1(retailer_id, value_resource_input_set_product_buy_box_winners_request)
 
 
 
-Update the buy box winner for one or more SKUs
+Update the buy box winner for one or more products
 
 ### Example
 
@@ -226,8 +110,8 @@ Update the buy box winner for one or more SKUs
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import catalog_api
-from criteo_api_retailmedia_preview.model.value_resource_outcome_async_job_response import ValueResourceOutcomeAsyncJobResponse
-from criteo_api_retailmedia_preview.model.value_resource_input_set_sku_buy_box_winners_request import ValueResourceInputSetSkuBuyBoxWinnersRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_set_product_buy_box_winners_request import ValueResourceInputSetProductBuyBoxWinnersRequest
+from criteo_api_retailmedia_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -256,24 +140,23 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = catalog_api.CatalogApi(api_client)
-    retailer_id = 1 # int | The retailer for which these buy box winners will be set
-    value_resource_input_set_sku_buy_box_winners_request = ValueResourceInputSetSkuBuyBoxWinnersRequest(
-        data=ValueResourceSetSkuBuyBoxWinnersRequest(
-            attributes=SetSkuBuyBoxWinnersRequest(
-                sku_buy_box_winners=[
-                    SkuBuyBoxWinner(
-                        seller_id="seller_id_example",
-                        sku_id="sku_id_example",
+    retailer_id = "retailer-id_example" # str | The retailer for which these buy box winners will be set
+    value_resource_input_set_product_buy_box_winners_request = ValueResourceInputSetProductBuyBoxWinnersRequest(
+        data=ValueResourceSetProductBuyBoxWinnersRequest(
+            attributes=SetProductBuyBoxWinnersRequest(
+                product_buy_box_winners=[
+                    ProductBuyBoxWinner(
+                        offer_id="offer_id_example",
                     ),
                 ],
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputSetSkuBuyBoxWinnersRequest | 
+    ) # ValueResourceInputSetProductBuyBoxWinnersRequest | Updated buy box winners for one or more products
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.offer_set_bbw_v1(retailer_id, value_resource_input_set_sku_buy_box_winners_request)
+        api_response = api_instance.offer_set_bbw_v1(retailer_id, value_resource_input_set_product_buy_box_winners_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CatalogApi->offer_set_bbw_v1: %s\n" % e)
@@ -284,12 +167,12 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer for which these buy box winners will be set |
- **value_resource_input_set_sku_buy_box_winners_request** | [**ValueResourceInputSetSkuBuyBoxWinnersRequest**](ValueResourceInputSetSkuBuyBoxWinnersRequest.md)|  |
+ **retailer_id** | **str**| The retailer for which these buy box winners will be set |
+ **value_resource_input_set_product_buy_box_winners_request** | [**ValueResourceInputSetProductBuyBoxWinnersRequest**](ValueResourceInputSetProductBuyBoxWinnersRequest.md)| Updated buy box winners for one or more products |
 
 ### Return type
 
-[**ValueResourceOutcomeAsyncJobResponse**](ValueResourceOutcomeAsyncJobResponse.md)
+[**Outcome**](Outcome.md)
 
 ### Authorization
 
@@ -310,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **offer_update_v1**
-> ValueResourceOutcomeAsyncJobResponse offer_update_v1(retailer_id)
+> Outcome offer_update_v1(retailer_id, value_resource_input_update_offers_request)
 
 
 
@@ -325,8 +208,8 @@ Update one or more offers by replacing each offer's price and availability with 
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import catalog_api
-from criteo_api_retailmedia_preview.model.value_resource_outcome_async_job_response import ValueResourceOutcomeAsyncJobResponse
 from criteo_api_retailmedia_preview.model.value_resource_input_update_offers_request import ValueResourceInputUpdateOffersRequest
+from criteo_api_retailmedia_preview.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -355,34 +238,25 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = catalog_api.CatalogApi(api_client)
-    retailer_id = 1 # int | The retailer for which these offers will be updated
+    retailer_id = "retailer-id_example" # str | The retailer for which these offers will be updated
     value_resource_input_update_offers_request = ValueResourceInputUpdateOffersRequest(
         data=ValueResourceUpdateOffersRequest(
             attributes=UpdateOffersRequest(
                 offer_updates=[
                     OfferUpdate(
-                        availability="OutOfStock",
+                        availability="outOfStock",
+                        offer_id="offer_id_example",
                         price=3.14,
-                        seller_id="seller_id_example",
-                        sku_id="sku_id_example",
                     ),
                 ],
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputUpdateOffersRequest |  (optional)
+    ) # ValueResourceInputUpdateOffersRequest | Collection of offer price and availability updates to be applied.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.offer_update_v1(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CatalogApi->offer_update_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.offer_update_v1(retailer_id, value_resource_input_update_offers_request=value_resource_input_update_offers_request)
+        api_response = api_instance.offer_update_v1(retailer_id, value_resource_input_update_offers_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CatalogApi->offer_update_v1: %s\n" % e)
@@ -393,12 +267,12 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer for which these offers will be updated |
- **value_resource_input_update_offers_request** | [**ValueResourceInputUpdateOffersRequest**](ValueResourceInputUpdateOffersRequest.md)|  | [optional]
+ **retailer_id** | **str**| The retailer for which these offers will be updated |
+ **value_resource_input_update_offers_request** | [**ValueResourceInputUpdateOffersRequest**](ValueResourceInputUpdateOffersRequest.md)| Collection of offer price and availability updates to be applied. |
 
 ### Return type
 
-[**ValueResourceOutcomeAsyncJobResponse**](ValueResourceOutcomeAsyncJobResponse.md)
+[**Outcome**](Outcome.md)
 
 ### Authorization
 

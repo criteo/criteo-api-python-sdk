@@ -1,13 +1,11 @@
-# SkuOfferLoad
+# ValueResourceInputSetProductBuyBoxWinnersRequest
 
-The new state of the offers for a SKU after a load operation
+A top-level object that encapsulates a Criteo API request for a single value object.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**offers** | [**[OfferLoad]**](OfferLoad.md) |  | 
-**sku_id** | **str** |  | 
-**buy_box_winner** | **str** |  | [optional] 
+**data** | [**ValueResourceSetProductBuyBoxWinnersRequest**](ValueResourceSetProductBuyBoxWinnersRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

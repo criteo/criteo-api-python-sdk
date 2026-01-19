@@ -1,11 +1,10 @@
-# ValueResourceOutcomeRecommendedKeywordsResponseV1
+# Outcome
 
-A top-level object that encapsulates a Criteo API response for a single value object.
+The outcome of an API call.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ValueResourceRecommendedKeywordsResponseV1**](ValueResourceRecommendedKeywordsResponseV1.md) |  | [optional] 
 **errors** | [**[SdkApiRestCommonProblem], none_type**](SdkApiRestCommonProblem.md) | Errors that occured during this call. | [optional] [readonly] 
 **warnings** | [**[SdkApiRestCommonProblem], none_type**](SdkApiRestCommonProblem.md) | Warnings that occured during this call. | [optional] [readonly] 
 

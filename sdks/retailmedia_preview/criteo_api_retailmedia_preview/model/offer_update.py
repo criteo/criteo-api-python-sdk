@@ -56,10 +56,10 @@ class OfferUpdate(ModelNormal):
 
     allowed_values = {
         ('availability',): {
-            'OUTOFSTOCK': "OutOfStock",
-            'PREORDER': "PreOrder",
-            'INSTOCK': "InStock",
-            'BACKORDER': "BackOrder",
+            'OUTOFSTOCK': "outOfStock",
+            'PREORDER': "preOrder",
+            'INSTOCK': "inStock",
+            'BACKORDER': "backOrder",
         },
     }
 
@@ -82,9 +82,8 @@ class OfferUpdate(ModelNormal):
         """
         return {
             'availability': (str,),  # noqa: E501
+            'offer_id': (str,),  # noqa: E501
             'price': (float,),  # noqa: E501
-            'seller_id': (str,),  # noqa: E501
-            'sku_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -94,9 +93,8 @@ class OfferUpdate(ModelNormal):
 
     attribute_map = {
         'availability': 'availability',  # noqa: E501
+        'offer_id': 'offerId',  # noqa: E501
         'price': 'price',  # noqa: E501
-        'seller_id': 'sellerId',  # noqa: E501
-        'sku_id': 'skuId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -106,14 +104,13 @@ class OfferUpdate(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, availability, price, seller_id, sku_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, availability, offer_id, price, *args, **kwargs):  # noqa: E501
         """OfferUpdate - a model defined in OpenAPI
 
         Args:
             availability (str):
+            offer_id (str):
             price (float):
-            seller_id (str):
-            sku_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -178,9 +175,8 @@ class OfferUpdate(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.availability = availability
+        self.offer_id = offer_id
         self.price = price
-        self.seller_id = seller_id
-        self.sku_id = sku_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -201,14 +197,13 @@ class OfferUpdate(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, availability, price, seller_id, sku_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, availability, offer_id, price, *args, **kwargs):  # noqa: E501
         """OfferUpdate - a model defined in OpenAPI
 
         Args:
             availability (str):
+            offer_id (str):
             price (float):
-            seller_id (str):
-            sku_id (str):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -271,9 +266,8 @@ class OfferUpdate(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.availability = availability
+        self.offer_id = offer_id
         self.price = price
-        self.seller_id = seller_id
-        self.sku_id = sku_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
