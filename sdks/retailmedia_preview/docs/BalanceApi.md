@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_balance_history**](BalanceApi.md#get_balance_history) | **GET** /preview/retail-media/balances/{balanceId}/history | 
 [**get_balances_by_account_id**](BalanceApi.md#get_balances_by_account_id) | **GET** /preview/retail-media/accounts/{account-id}/balances | 
 [**get_campaigns_by_balance_id**](BalanceApi.md#get_campaigns_by_balance_id) | **GET** /preview/retail-media/balances/{balance-id}/campaigns | 
+[**update_balance_v2**](BalanceApi.md#update_balance_v2) | **PATCH** /preview/retail-media/accounts/{account-id}/balances/{balance-id} | 
 
 
 # **create_balance_by_account_id**
@@ -396,6 +397,106 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_balance_v2**
+> update_balance_v2(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+
+
+
+Modify a balance for the given account id
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import balance_api
+from criteo_api_retailmedia_preview.model.value_resource_input_of_update_balance_model_v1 import ValueResourceInputOfUpdateBalanceModelV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = balance_api.BalanceApi(api_client)
+    account_id = "account-id_example" # str | The account of the balance
+    balance_id = "balance-id_example" # str | The balance to change the dates
+    value_resource_input_of_update_balance_model_v1 = ValueResourceInputOfUpdateBalanceModelV1(
+        data=ValueResourceOfUpdateBalanceModelV1(
+            attributes=UpdateBalanceModelV1(
+                end_date=NillableOfNullableOfDateOnly(
+                    value="value_example",
+                ),
+                memo="memo_example",
+                name="name_example",
+                po_number="po_number_example",
+                start_date="start_date_example",
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfUpdateBalanceModelV1 | An object that represents the available options to modify a balance.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_instance.update_balance_v2(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling BalanceApi->update_balance_v2: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The account of the balance |
+ **balance_id** | **str**| The balance to change the dates |
+ **value_resource_input_of_update_balance_model_v1** | [**ValueResourceInputOfUpdateBalanceModelV1**](ValueResourceInputOfUpdateBalanceModelV1.md)| An object that represents the available options to modify a balance. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 
 ### HTTP response details
