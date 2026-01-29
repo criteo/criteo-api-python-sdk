@@ -832,7 +832,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_sellers**
-> ValueResourceCollectionOutcomeOfSellerSearchResult search_sellers()
+> ValueResourceCollectionOutcomeOfSellerSearchResult search_sellers(value_resource_input_of_seller_search)
 
 
 
@@ -887,12 +887,11 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfSellerSearch |  (optional)
+    ) # ValueResourceInputOfSellerSearch | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.search_sellers(value_resource_input_of_seller_search=value_resource_input_of_seller_search)
+        api_response = api_instance.search_sellers(value_resource_input_of_seller_search)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->search_sellers: %s\n" % e)
@@ -903,7 +902,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **value_resource_input_of_seller_search** | [**ValueResourceInputOfSellerSearch**](ValueResourceInputOfSellerSearch.md)|  | [optional]
+ **value_resource_input_of_seller_search** | [**ValueResourceInputOfSellerSearch**](ValueResourceInputOfSellerSearch.md)|  |
 
 ### Return type
 
@@ -1031,7 +1030,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_sellers**
-> ValueResourceCollectionOutcomeOfRetailMediaSeller update_sellers(account_id)
+> ValueResourceCollectionOutcomeOfRetailMediaSeller update_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
 
 
 
@@ -1087,19 +1086,11 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
                 type="type_example",
             ),
         ],
-    ) # ValueResourceCollectionInputOfRetailMediaSeller |  (optional)
+    ) # ValueResourceCollectionInputOfRetailMediaSeller | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_sellers(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_10.ApiException as e:
-        print("Exception when calling AccountsApi->update_sellers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_sellers(account_id, value_resource_collection_input_of_retail_media_seller=value_resource_collection_input_of_retail_media_seller)
+        api_response = api_instance.update_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->update_sellers: %s\n" % e)
@@ -1111,7 +1102,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
- **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  | [optional]
+ **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  |
 
 ### Return type
 

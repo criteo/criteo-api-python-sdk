@@ -389,6 +389,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'patch_ad_set_category_bid_list_request',
                 ],
                 'nullable': [
                 ],
@@ -444,7 +445,9 @@ class CampaignApi(object):
                 'all': [
                     'requests_patch_ad_set_v24_q3',
                 ],
-                'required': [],
+                'required': [
+                    'requests_patch_ad_set_v24_q3',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -495,7 +498,9 @@ class CampaignApi(object):
                 'all': [
                     'patch_campaign_list_request',
                 ],
-                'required': [],
+                'required': [
+                    'patch_campaign_list_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -549,6 +554,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'patch_ad_set_display_multiplier_list_request',
                 ],
                 'nullable': [
                 ],
@@ -1353,6 +1359,7 @@ class CampaignApi(object):
     def patch_ad_set_category_bids(
         self,
         ad_set_id,
+        patch_ad_set_category_bid_list_request,
         **kwargs
     ):
         """patch_ad_set_category_bids  # noqa: E501
@@ -1361,14 +1368,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_set_category_bids(ad_set_id, async_req=True)
+        >>> thread = api.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest):
 
         Keyword Args:
-            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1432,10 +1439,13 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['patch_ad_set_category_bid_list_request'] = \
+            patch_ad_set_category_bid_list_request
         return self.patch_ad_set_category_bids_endpoint.call_with_http_info(**kwargs)
 
     def patch_ad_sets(
         self,
+        requests_patch_ad_set_v24_q3,
         **kwargs
     ):
         """patch_ad_sets  # noqa: E501
@@ -1444,12 +1454,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_sets(async_req=True)
+        >>> thread = api.patch_ad_sets(requests_patch_ad_set_v24_q3, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.
 
         Keyword Args:
-            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1511,10 +1522,13 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['requests_patch_ad_set_v24_q3'] = \
+            requests_patch_ad_set_v24_q3
         return self.patch_ad_sets_endpoint.call_with_http_info(**kwargs)
 
     def patch_campaigns(
         self,
+        patch_campaign_list_request,
         **kwargs
     ):
         """patch_campaigns  # noqa: E501
@@ -1523,12 +1537,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_campaigns(async_req=True)
+        >>> thread = api.patch_campaigns(patch_campaign_list_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.
 
         Keyword Args:
-            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1590,11 +1605,14 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['patch_campaign_list_request'] = \
+            patch_campaign_list_request
         return self.patch_campaigns_endpoint.call_with_http_info(**kwargs)
 
     def patch_display_multipliers(
         self,
         ad_set_id,
+        patch_ad_set_display_multiplier_list_request,
         **kwargs
     ):
         """patch_display_multipliers  # noqa: E501
@@ -1603,14 +1621,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_display_multipliers(ad_set_id, async_req=True)
+        >>> thread = api.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest):
 
         Keyword Args:
-            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1674,6 +1692,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['patch_ad_set_display_multiplier_list_request'] = \
+            patch_ad_set_display_multiplier_list_request
         return self.patch_display_multipliers_endpoint.call_with_http_info(**kwargs)
 
     def search_ad_sets(

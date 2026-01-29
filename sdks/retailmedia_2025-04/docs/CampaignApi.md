@@ -24,9 +24,7 @@ Method | HTTP request | Description
 [**get_account_creatives**](CampaignApi.md#get_account_creatives) | **GET** /2025-04/retail-media/accounts/{account-id}/creatives | 
 [**get_add_to_basket_targets_by_line_item_id**](CampaignApi.md#get_add_to_basket_targets_by_line_item_id) | **GET** /2025-04/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
 [**get_api202110_external_retailer_pages_by_retailer_id**](CampaignApi.md#get_api202110_external_retailer_pages_by_retailer_id) | **GET** /2025-04/retail-media/retailers/{retailerId}/pages | 
-[**get_api202204_external_categories**](CampaignApi.md#get_api202204_external_categories) | **GET** /2025-04/retail-media/categories | 
-[**get_api_v1_external_catalog_output_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_output_by_catalog_id) | **GET** /2025-04/retail-media/catalogs/{catalogId}/output | 
-[**get_api_v1_external_catalog_status_by_catalog_id**](CampaignApi.md#get_api_v1_external_catalog_status_by_catalog_id) | **GET** /2025-04/retail-media/catalogs/{catalogId}/status | 
+[**get_api_external_v1_categories**](CampaignApi.md#get_api_external_v1_categories) | **GET** /2025-04/retail-media/categories | 
 [**get_auction_line_items_by_campaign_id**](CampaignApi.md#get_auction_line_items_by_campaign_id) | **GET** /2025-04/retail-media/campaigns/{campaign-id}/auction-line-items | 
 [**get_auction_line_items_by_line_item_id**](CampaignApi.md#get_auction_line_items_by_line_item_id) | **GET** /2025-04/retail-media/auction-line-items/{line-item-id} | 
 [**get_audience_targets_by_line_item_id**](CampaignApi.md#get_audience_targets_by_line_item_id) | **GET** /2025-04/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
@@ -35,6 +33,8 @@ Method | HTTP request | Description
 [**get_campaign_budget_overrides**](CampaignApi.md#get_campaign_budget_overrides) | **GET** /2025-04/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
 [**get_campaign_by_campaign_id**](CampaignApi.md#get_campaign_by_campaign_id) | **GET** /2025-04/retail-media/campaigns/{campaignId} | 
 [**get_campaigns_by_account_id**](CampaignApi.md#get_campaigns_by_account_id) | **GET** /2025-04/retail-media/accounts/{account-id}/campaigns | 
+[**get_catalog_output**](CampaignApi.md#get_catalog_output) | **GET** /2025-04/retail-media/catalogs/{catalogId}/output | 
+[**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /2025-04/retail-media/catalogs/{catalogId}/status | 
 [**get_category**](CampaignApi.md#get_category) | **GET** /2025-04/retail-media/categories/{categoryId} | 
 [**get_cpc_min_bids_by_sku_ids_v1**](CampaignApi.md#get_cpc_min_bids_by_sku_ids_v1) | **POST** /2025-04/retail-media/retailers/{retailerId}/cpc-min-bids | 
 [**get_creative**](CampaignApi.md#get_creative) | **GET** /2025-04/retail-media/accounts/{account-id}/creatives/{creative-id} | 
@@ -50,8 +50,8 @@ Method | HTTP request | Description
 [**get_store_targets_by_line_item_id**](CampaignApi.md#get_store_targets_by_line_item_id) | **GET** /2025-04/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
 [**modify_auction_line_items_by_campaign_id**](CampaignApi.md#modify_auction_line_items_by_campaign_id) | **POST** /2025-04/retail-media/campaigns/{campaign-id}/auction-line-items | 
 [**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /2025-04/retail-media/line-items/{line-item-id}/products/pause | 
+[**post_api_external_v1_account_catalogs_sellers_by_account_id**](CampaignApi.md#post_api_external_v1_account_catalogs_sellers_by_account_id) | **POST** /2025-04/retail-media/accounts/{accountId}/catalogs/sellers | 
 [**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2025-04/retail-media/accounts/{accountId}/catalogs | 
-[**post_api_v1_external_account_catalogs_sellers_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_sellers_by_account_id) | **POST** /2025-04/retail-media/accounts/{accountId}/catalogs/sellers | 
 [**put_add_to_basket_target_by_line_item_id**](CampaignApi.md#put_add_to_basket_target_by_line_item_id) | **PUT** /2025-04/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
 [**put_audience_targets_by_line_item_id**](CampaignApi.md#put_audience_targets_by_line_item_id) | **PUT** /2025-04/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
 [**put_store_target_by_line_item_id**](CampaignApi.md#put_store_target_by_line_item_id) | **PUT** /2025-04/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
@@ -787,7 +787,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_campaigns_by_account_id**
-> JsonApiSingleResponseOfCampaignV202301 create_campaigns_by_account_id(account_id)
+> JsonApiSingleResponseOfCampaignV202301 create_campaigns_by_account_id(account_id, post_campaign_v202301)
 
 
 
@@ -856,19 +856,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # PostCampaignV202301 | The campaign settings to create a campaign with (optional)
+    ) # PostCampaignV202301 | The campaign settings to create a campaign with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_campaigns_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->create_campaigns_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_campaigns_by_account_id(account_id, post_campaign_v202301=post_campaign_v202301)
+        api_response = api_instance.create_campaigns_by_account_id(account_id, post_campaign_v202301)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->create_campaigns_by_account_id: %s\n" % e)
@@ -880,7 +872,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
- **post_campaign_v202301** | [**PostCampaignV202301**](PostCampaignV202301.md)| The campaign settings to create a campaign with | [optional]
+ **post_campaign_v202301** | [**PostCampaignV202301**](PostCampaignV202301.md)| The campaign settings to create a campaign with |
 
 ### Return type
 
@@ -905,7 +897,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_creative**
-> Creative202210Response create_creative(account_id)
+> Creative202210Response create_creative(account_id, creative_create_model202207)
 
 
 
@@ -953,6 +945,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
     account_id = "account-id_example" # str | External account id to create a creative for
     creative_create_model202207 = CreativeCreateModel202207(
         brand_id=1,
+        id="id_example",
         name="name_example",
         retailer_id=1,
         template_id=1,
@@ -986,19 +979,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
                 ),
             ),
         ],
-    ) # CreativeCreateModel202207 | The creative to create (optional)
+    ) # CreativeCreateModel202207 | The creative to create
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_creative(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->create_creative: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_creative(account_id, creative_create_model202207=creative_create_model202207)
+        api_response = api_instance.create_creative(account_id, creative_create_model202207)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->create_creative: %s\n" % e)
@@ -1010,7 +995,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| External account id to create a creative for |
- **creative_create_model202207** | [**CreativeCreateModel202207**](CreativeCreateModel202207.md)| The creative to create | [optional]
+ **creative_create_model202207** | [**CreativeCreateModel202207**](CreativeCreateModel202207.md)| The creative to create |
 
 ### Return type
 
@@ -1035,7 +1020,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_preferred_line_item_by_campaign_id**
-> PreferredLineItemV2Response create_preferred_line_item_by_campaign_id(campaign_id)
+> PreferredLineItemV2Response create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request)
 
 
 
@@ -1111,19 +1096,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # PreferredLineItemCreateModelV2Request | The line item settings to create a line item with (optional)
+    ) # PreferredLineItemCreateModelV2Request | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->create_preferred_line_item_by_campaign_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request=preferred_line_item_create_model_v2_request)
+        api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->create_preferred_line_item_by_campaign_id: %s\n" % e)
@@ -1135,7 +1112,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The given campaign id |
- **preferred_line_item_create_model_v2_request** | [**PreferredLineItemCreateModelV2Request**](PreferredLineItemCreateModelV2Request.md)| The line item settings to create a line item with | [optional]
+ **preferred_line_item_create_model_v2_request** | [**PreferredLineItemCreateModelV2Request**](PreferredLineItemCreateModelV2Request.md)| The line item settings to create a line item with |
 
 ### Return type
 
@@ -2032,7 +2009,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_api202110_external_retailer_pages_by_retailer_id**
-> ExternalRetailerPages202110 get_api202110_external_retailer_pages_by_retailer_id(retailer_id)
+> RetailerPages202110 get_api202110_external_retailer_pages_by_retailer_id(retailer_id)
 
 
 
@@ -2047,7 +2024,7 @@ Get the page types available for the given retailer
 import time
 import criteo_api_retailmedia_v2025_04
 from criteo_api_retailmedia_v2025_04.api import campaign_api
-from criteo_api_retailmedia_v2025_04.model.external_retailer_pages202110 import ExternalRetailerPages202110
+from criteo_api_retailmedia_v2025_04.model.retailer_pages202110 import RetailerPages202110
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2095,7 +2072,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalRetailerPages202110**](ExternalRetailerPages202110.md)
+[**RetailerPages202110**](RetailerPages202110.md)
 
 ### Authorization
 
@@ -2115,8 +2092,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_api202204_external_categories**
-> Category202204ListResponse get_api202204_external_categories()
+# **get_api_external_v1_categories**
+> Category202204ListResponse get_api_external_v1_categories()
 
 
 
@@ -2168,10 +2145,10 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.get_api202204_external_categories(page_index=page_index, page_size=page_size, retailer_id=retailer_id, text_substring=text_substring)
+        api_response = api_instance.get_api_external_v1_categories(page_index=page_index, page_size=page_size, retailer_id=retailer_id, text_substring=text_substring)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_api202204_external_categories: %s\n" % e)
+        print("Exception when calling CampaignApi->get_api_external_v1_categories: %s\n" % e)
 ```
 
 
@@ -2203,174 +2180,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Categories found. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_v1_external_catalog_output_by_catalog_id**
-> file_type get_api_v1_external_catalog_output_by_catalog_id(catalog_id)
-
-
-
-Output the indicated catalog. Catalogs are only available for retrieval when their associated status request  is at a Success status.  Produces application/x-json-stream of v2021_07 CatalogProduct json objects.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_04
-from criteo_api_retailmedia_v2025_04.api import campaign_api
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    catalog_id = "catalogId_example" # str | A catalog ID returned from an account catalog request.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_v1_external_catalog_output_by_catalog_id(catalog_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_catalog_output_by_catalog_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **catalog_id** | **str**| A catalog ID returned from an account catalog request. |
-
-### Return type
-
-**file_type**
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/x-json-stream, application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Catalog download initiated. |  -  |
-**204** | Catalog has expired. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_api_v1_external_catalog_status_by_catalog_id**
-> JsonApiSingleResponseOfCatalogStatus get_api_v1_external_catalog_status_by_catalog_id(catalog_id)
-
-
-
-Check the status of a catalog request.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_04
-from criteo_api_retailmedia_v2025_04.api import campaign_api
-from criteo_api_retailmedia_v2025_04.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    catalog_id = "catalogId_example" # str | A catalog ID returned from an account catalog request.
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.get_api_v1_external_catalog_status_by_catalog_id(catalog_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_api_v1_external_catalog_status_by_catalog_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **catalog_id** | **str**| A catalog ID returned from an account catalog request. |
-
-### Return type
-
-[**JsonApiSingleResponseOfCatalogStatus**](JsonApiSingleResponseOfCatalogStatus.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Catalog request found. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3094,6 +2903,174 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_catalog_output**
+> file_type get_catalog_output(catalog_id)
+
+
+
+Output the indicated catalog. Catalogs are only available for retrieval when their associated status request  is at a Success status.  Produces application/x-json-stream CatalogProduct json objects (first introduced in the 2021-07 version).
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_v2025_04
+from criteo_api_retailmedia_v2025_04.api import campaign_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    catalog_id = "catalogId_example" # str | A catalog ID returned from an account catalog request.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_catalog_output(catalog_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_04.ApiException as e:
+        print("Exception when calling CampaignApi->get_catalog_output: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **catalog_id** | **str**| A catalog ID returned from an account catalog request. |
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/x-json-stream
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Catalog download initiated. |  -  |
+**204** | Catalog has expired. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_catalog_status**
+> JsonApiSingleResponseOfCatalogStatus get_catalog_status(catalog_id)
+
+
+
+Check the status of a catalog request.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_v2025_04
+from criteo_api_retailmedia_v2025_04.api import campaign_api
+from criteo_api_retailmedia_v2025_04.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    catalog_id = "catalogId_example" # str | A catalog ID returned from an account catalog request.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_catalog_status(catalog_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_04.ApiException as e:
+        print("Exception when calling CampaignApi->get_catalog_status: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **catalog_id** | **str**| A catalog ID returned from an account catalog request. |
+
+### Return type
+
+[**JsonApiSingleResponseOfCatalogStatus**](JsonApiSingleResponseOfCatalogStatus.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Catalog request found. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_category**
 > Category202204 get_category(category_id)
 
@@ -3179,7 +3156,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_cpc_min_bids_by_sku_ids_v1**
-> ValueResourceOutcomeCpcMinBidsResponse get_cpc_min_bids_by_sku_ids_v1(retailer_id)
+> ValueResourceOutcomeCpcMinBidsResponse get_cpc_min_bids_by_sku_ids_v1(retailer_id, value_resource_input_cpc_min_bids_request)
 
 
 
@@ -3234,19 +3211,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputCpcMinBidsRequest | Cpc minimum bid amount request object. (optional)
+    ) # ValueResourceInputCpcMinBidsRequest | Cpc minimum bid amount request object.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.get_cpc_min_bids_by_sku_ids_v1(retailer_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->get_cpc_min_bids_by_sku_ids_v1: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.get_cpc_min_bids_by_sku_ids_v1(retailer_id, value_resource_input_cpc_min_bids_request=value_resource_input_cpc_min_bids_request)
+        api_response = api_instance.get_cpc_min_bids_by_sku_ids_v1(retailer_id, value_resource_input_cpc_min_bids_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->get_cpc_min_bids_by_sku_ids_v1: %s\n" % e)
@@ -3258,7 +3227,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **retailer_id** | **int**| Retailer Id. |
- **value_resource_input_cpc_min_bids_request** | [**ValueResourceInputCpcMinBidsRequest**](ValueResourceInputCpcMinBidsRequest.md)| Cpc minimum bid amount request object. | [optional]
+ **value_resource_input_cpc_min_bids_request** | [**ValueResourceInputCpcMinBidsRequest**](ValueResourceInputCpcMinBidsRequest.md)| Cpc minimum bid amount request object. |
 
 ### Return type
 
@@ -4265,7 +4234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **modify_auction_line_items_by_campaign_id**
-> AuctionLineItemResponse modify_auction_line_items_by_campaign_id(campaign_id)
+> AuctionLineItemResponse modify_auction_line_items_by_campaign_id(campaign_id, auction_line_item_create_model_request)
 
 
 
@@ -4329,19 +4298,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # AuctionLineItemCreateModelRequest | The line item settings to create a line item with (optional)
+    ) # AuctionLineItemCreateModelRequest | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.modify_auction_line_items_by_campaign_id(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->modify_auction_line_items_by_campaign_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.modify_auction_line_items_by_campaign_id(campaign_id, auction_line_item_create_model_request=auction_line_item_create_model_request)
+        api_response = api_instance.modify_auction_line_items_by_campaign_id(campaign_id, auction_line_item_create_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->modify_auction_line_items_by_campaign_id: %s\n" % e)
@@ -4353,7 +4314,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The given campaign id |
- **auction_line_item_create_model_request** | [**AuctionLineItemCreateModelRequest**](AuctionLineItemCreateModelRequest.md)| The line item settings to create a line item with | [optional]
+ **auction_line_item_create_model_request** | [**AuctionLineItemCreateModelRequest**](AuctionLineItemCreateModelRequest.md)| The line item settings to create a line item with |
 
 ### Return type
 
@@ -4481,113 +4442,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **post_api_v1_external_account_catalogs_by_account_id**
-> JsonApiSingleResponseOfCatalogStatus post_api_v1_external_account_catalogs_by_account_id(account_id)
-
-
-
-Create a request for a Catalog available to the indicated account.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_04
-from criteo_api_retailmedia_v2025_04.api import campaign_api
-from criteo_api_retailmedia_v2025_04.model.json_api_request_of_catalog_request import JsonApiRequestOfCatalogRequest
-from criteo_api_retailmedia_v2025_04.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_04.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "accountId_example" # str | The account to request the catalog for.
-    json_api_request_of_catalog_request = JsonApiRequestOfCatalogRequest(
-        data=JsonApiBodyWithoutIdOfCatalogRequestAndCatalogRequest(
-            attributes=ExternalCatalogRequest(
-                brand_id_filter=[
-                    "brand_id_filter_example",
-                ],
-                format="json-newline",
-            ),
-            type="type_example",
-        ),
-    ) # JsonApiRequestOfCatalogRequest |  (optional)
-
-    # example passing only required values which don't have defaults set
-    try:
-        api_response = api_instance.post_api_v1_external_account_catalogs_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v1_external_account_catalogs_by_account_id(account_id, json_api_request_of_catalog_request=json_api_request_of_catalog_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_by_account_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The account to request the catalog for. |
- **json_api_request_of_catalog_request** | [**JsonApiRequestOfCatalogRequest**](JsonApiRequestOfCatalogRequest.md)|  | [optional]
-
-### Return type
-
-[**JsonApiSingleResponseOfCatalogStatus**](JsonApiSingleResponseOfCatalogStatus.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Catalog request successfully created |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_api_v1_external_account_catalogs_sellers_by_account_id**
-> JsonApiSingleResponseOfCatalogStatus post_api_v1_external_account_catalogs_sellers_by_account_id(account_id)
+# **post_api_external_v1_account_catalogs_sellers_by_account_id**
+> JsonApiSingleResponseOfCatalogStatus post_api_external_v1_account_catalogs_sellers_by_account_id(account_id, json_api_request_of_seller_catalog_request)
 
 
 
@@ -4645,22 +4501,14 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # JsonApiRequestOfSellerCatalogRequest |  (optional)
+    ) # JsonApiRequestOfSellerCatalogRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.post_api_v1_external_account_catalogs_sellers_by_account_id(account_id)
+        api_response = api_instance.post_api_external_v1_account_catalogs_sellers_by_account_id(account_id, json_api_request_of_seller_catalog_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_sellers_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.post_api_v1_external_account_catalogs_sellers_by_account_id(account_id, json_api_request_of_seller_catalog_request=json_api_request_of_seller_catalog_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_sellers_by_account_id: %s\n" % e)
+        print("Exception when calling CampaignApi->post_api_external_v1_account_catalogs_sellers_by_account_id: %s\n" % e)
 ```
 
 
@@ -4669,7 +4517,104 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account to request the catalog for. |
- **json_api_request_of_seller_catalog_request** | [**JsonApiRequestOfSellerCatalogRequest**](JsonApiRequestOfSellerCatalogRequest.md)|  | [optional]
+ **json_api_request_of_seller_catalog_request** | [**JsonApiRequestOfSellerCatalogRequest**](JsonApiRequestOfSellerCatalogRequest.md)|  |
+
+### Return type
+
+[**JsonApiSingleResponseOfCatalogStatus**](JsonApiSingleResponseOfCatalogStatus.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Catalog request successfully created |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **post_api_v1_external_account_catalogs_by_account_id**
+> JsonApiSingleResponseOfCatalogStatus post_api_v1_external_account_catalogs_by_account_id(account_id, json_api_request_of_catalog_request)
+
+
+
+Create a request for a Catalog available to the indicated account.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_v2025_04
+from criteo_api_retailmedia_v2025_04.api import campaign_api
+from criteo_api_retailmedia_v2025_04.model.json_api_request_of_catalog_request import JsonApiRequestOfCatalogRequest
+from criteo_api_retailmedia_v2025_04.model.json_api_single_response_of_catalog_status import JsonApiSingleResponseOfCatalogStatus
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_04.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "accountId_example" # str | The account to request the catalog for.
+    json_api_request_of_catalog_request = JsonApiRequestOfCatalogRequest(
+        data=JsonApiBodyWithoutIdOfCatalogRequestAndCatalogRequest(
+            attributes=ExternalCatalogRequest(
+                brand_id_filter=[
+                    "brand_id_filter_example",
+                ],
+                format="json-newline",
+            ),
+            type="type_example",
+        ),
+    ) # JsonApiRequestOfCatalogRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.post_api_v1_external_account_catalogs_by_account_id(account_id, json_api_request_of_catalog_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_04.ApiException as e:
+        print("Exception when calling CampaignApi->post_api_v1_external_account_catalogs_by_account_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The account to request the catalog for. |
+ **json_api_request_of_catalog_request** | [**JsonApiRequestOfCatalogRequest**](JsonApiRequestOfCatalogRequest.md)|  |
 
 ### Return type
 
@@ -4694,7 +4639,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_add_to_basket_target_by_line_item_id**
-> AddToBasketTarget202110Response put_add_to_basket_target_by_line_item_id(line_item_id)
+> AddToBasketTarget202110Response put_add_to_basket_target_by_line_item_id(line_item_id, add_to_basket_target202110_request)
 
 
 
@@ -4753,19 +4698,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # AddToBasketTarget202110Request | The add to basket target to set the scope for (optional)
+    ) # AddToBasketTarget202110Request | The add to basket target to set the scope for
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_add_to_basket_target_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->put_add_to_basket_target_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_add_to_basket_target_by_line_item_id(line_item_id, add_to_basket_target202110_request=add_to_basket_target202110_request)
+        api_response = api_instance.put_add_to_basket_target_by_line_item_id(line_item_id, add_to_basket_target202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->put_add_to_basket_target_by_line_item_id: %s\n" % e)
@@ -4777,7 +4714,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item to interact with |
- **add_to_basket_target202110_request** | [**AddToBasketTarget202110Request**](AddToBasketTarget202110Request.md)| The add to basket target to set the scope for | [optional]
+ **add_to_basket_target202110_request** | [**AddToBasketTarget202110Request**](AddToBasketTarget202110Request.md)| The add to basket target to set the scope for |
 
 ### Return type
 
@@ -4802,7 +4739,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_audience_targets_by_line_item_id**
-> AudienceTarget202110Response put_audience_targets_by_line_item_id(line_item_id)
+> AudienceTarget202110Response put_audience_targets_by_line_item_id(line_item_id, audience_target202110_request)
 
 
 
@@ -4858,19 +4795,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # AudienceTarget202110Request | The audience target to set the scope for (optional)
+    ) # AudienceTarget202110Request | The audience target to set the scope for
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_audience_targets_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->put_audience_targets_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_audience_targets_by_line_item_id(line_item_id, audience_target202110_request=audience_target202110_request)
+        api_response = api_instance.put_audience_targets_by_line_item_id(line_item_id, audience_target202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->put_audience_targets_by_line_item_id: %s\n" % e)
@@ -4882,7 +4811,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item to interact with |
- **audience_target202110_request** | [**AudienceTarget202110Request**](AudienceTarget202110Request.md)| The audience target to set the scope for | [optional]
+ **audience_target202110_request** | [**AudienceTarget202110Request**](AudienceTarget202110Request.md)| The audience target to set the scope for |
 
 ### Return type
 
@@ -4907,7 +4836,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **put_store_target_by_line_item_id**
-> StoreTarget202110Response put_store_target_by_line_item_id(line_item_id)
+> StoreTarget202110Response put_store_target_by_line_item_id(line_item_id, store_target202110_request)
 
 
 
@@ -4963,19 +4892,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # StoreTarget202110Request | The store target to set the scope for (optional)
+    ) # StoreTarget202110Request | The store target to set the scope for
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.put_store_target_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->put_store_target_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.put_store_target_by_line_item_id(line_item_id, store_target202110_request=store_target202110_request)
+        api_response = api_instance.put_store_target_by_line_item_id(line_item_id, store_target202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->put_store_target_by_line_item_id: %s\n" % e)
@@ -4987,7 +4908,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item to interact with |
- **store_target202110_request** | [**StoreTarget202110Request**](StoreTarget202110Request.md)| The store target to set the scope for | [optional]
+ **store_target202110_request** | [**StoreTarget202110Request**](StoreTarget202110Request.md)| The store target to set the scope for |
 
 ### Return type
 
@@ -5320,7 +5241,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_auction_line_item_by_line_item_id**
-> AuctionLineItemResponse update_auction_line_item_by_line_item_id(line_item_id)
+> AuctionLineItemResponse update_auction_line_item_by_line_item_id(line_item_id, auction_line_item_update_model_request)
 
 
 
@@ -5384,19 +5305,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # AuctionLineItemUpdateModelRequest | The line item settings to create a line item with (optional)
+    ) # AuctionLineItemUpdateModelRequest | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_auction_line_item_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_auction_line_item_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_auction_line_item_by_line_item_id(line_item_id, auction_line_item_update_model_request=auction_line_item_update_model_request)
+        api_response = api_instance.update_auction_line_item_by_line_item_id(line_item_id, auction_line_item_update_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_auction_line_item_by_line_item_id: %s\n" % e)
@@ -5408,7 +5321,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The given line item id |
- **auction_line_item_update_model_request** | [**AuctionLineItemUpdateModelRequest**](AuctionLineItemUpdateModelRequest.md)| The line item settings to create a line item with | [optional]
+ **auction_line_item_update_model_request** | [**AuctionLineItemUpdateModelRequest**](AuctionLineItemUpdateModelRequest.md)| The line item settings to create a line item with |
 
 ### Return type
 
@@ -5433,7 +5346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_bid_multipliers_by_line_item_id**
-> LineItemBidMultipliersV2Response update_bid_multipliers_by_line_item_id(line_item_id)
+> LineItemBidMultipliersV2Response update_bid_multipliers_by_line_item_id(line_item_id, line_item_bid_multipliers_v2_request)
 
 
 
@@ -5498,19 +5411,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # LineItemBidMultipliersV2Request | New Bid Multipliers to be set (optional)
+    ) # LineItemBidMultipliersV2Request | New Bid Multipliers to be set
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_bid_multipliers_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_bid_multipliers_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_bid_multipliers_by_line_item_id(line_item_id, line_item_bid_multipliers_v2_request=line_item_bid_multipliers_v2_request)
+        api_response = api_instance.update_bid_multipliers_by_line_item_id(line_item_id, line_item_bid_multipliers_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_bid_multipliers_by_line_item_id: %s\n" % e)
@@ -5522,7 +5427,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| LineItemId for bid multiplier retrieval |
- **line_item_bid_multipliers_v2_request** | [**LineItemBidMultipliersV2Request**](LineItemBidMultipliersV2Request.md)| New Bid Multipliers to be set | [optional]
+ **line_item_bid_multipliers_v2_request** | [**LineItemBidMultipliersV2Request**](LineItemBidMultipliersV2Request.md)| New Bid Multipliers to be set |
 
 ### Return type
 
@@ -5547,7 +5452,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_campaign_budget_overrides**
-> ValueResourceOutcomeOfCampaignBudgetOverrides update_campaign_budget_overrides(campaign_id)
+> ValueResourceOutcomeOfCampaignBudgetOverrides update_campaign_budget_overrides(campaign_id, value_resource_input_of_campaign_budget_overrides)
 
 
 
@@ -5615,19 +5520,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfCampaignBudgetOverrides | New campaign budget overrides settings value resource input. (optional)
+    ) # ValueResourceInputOfCampaignBudgetOverrides | New campaign budget overrides settings value resource input.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_campaign_budget_overrides(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_campaign_budget_overrides: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_campaign_budget_overrides(campaign_id, value_resource_input_of_campaign_budget_overrides=value_resource_input_of_campaign_budget_overrides)
+        api_response = api_instance.update_campaign_budget_overrides(campaign_id, value_resource_input_of_campaign_budget_overrides)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_campaign_budget_overrides: %s\n" % e)
@@ -5639,7 +5536,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| Campaign id. |
- **value_resource_input_of_campaign_budget_overrides** | [**ValueResourceInputOfCampaignBudgetOverrides**](ValueResourceInputOfCampaignBudgetOverrides.md)| New campaign budget overrides settings value resource input. | [optional]
+ **value_resource_input_of_campaign_budget_overrides** | [**ValueResourceInputOfCampaignBudgetOverrides**](ValueResourceInputOfCampaignBudgetOverrides.md)| New campaign budget overrides settings value resource input. |
 
 ### Return type
 
@@ -5664,7 +5561,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_campaign_by_campaign_id**
-> JsonApiSingleResponseOfCampaignV202301 update_campaign_by_campaign_id(campaign_id)
+> JsonApiSingleResponseOfCampaignV202301 update_campaign_by_campaign_id(campaign_id, put_campaign_v202301)
 
 
 
@@ -5730,19 +5627,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # PutCampaignV202301 | The campaign settings to update that campaign with (optional)
+    ) # PutCampaignV202301 | The campaign settings to update that campaign with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_campaign_by_campaign_id(campaign_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_campaign_by_campaign_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_campaign_by_campaign_id(campaign_id, put_campaign_v202301=put_campaign_v202301)
+        api_response = api_instance.update_campaign_by_campaign_id(campaign_id, put_campaign_v202301)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_campaign_by_campaign_id: %s\n" % e)
@@ -5754,7 +5643,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **str**| The given campaign id |
- **put_campaign_v202301** | [**PutCampaignV202301**](PutCampaignV202301.md)| The campaign settings to update that campaign with | [optional]
+ **put_campaign_v202301** | [**PutCampaignV202301**](PutCampaignV202301.md)| The campaign settings to update that campaign with |
 
 ### Return type
 
@@ -5779,7 +5668,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_creative**
-> Creative202210Response update_creative(account_id, creative_id)
+> Creative202210Response update_creative(account_id, creative_id, creative_update_model202207)
 
 
 
@@ -5828,6 +5717,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
     creative_id = "creative-id_example" # str | Creative to update
     creative_update_model202207 = CreativeUpdateModel202207(
         brand_id=1,
+        id="id_example",
         name="name_example",
         retailer_id=1,
         template_id=1,
@@ -5861,19 +5751,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
                 ),
             ),
         ],
-    ) # CreativeUpdateModel202207 | The creative to create (optional)
+    ) # CreativeUpdateModel202207 | The creative to create
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_creative(account_id, creative_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_creative: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_creative(account_id, creative_id, creative_update_model202207=creative_update_model202207)
+        api_response = api_instance.update_creative(account_id, creative_id, creative_update_model202207)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_creative: %s\n" % e)
@@ -5886,7 +5768,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| External account id containing the creative |
  **creative_id** | **str**| Creative to update |
- **creative_update_model202207** | [**CreativeUpdateModel202207**](CreativeUpdateModel202207.md)| The creative to create | [optional]
+ **creative_update_model202207** | [**CreativeUpdateModel202207**](CreativeUpdateModel202207.md)| The creative to create |
 
 ### Return type
 
@@ -5911,7 +5793,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_line_item_budget_overrides**
-> ValueResourceOutcomeOfLineItemBudgetOverrides update_line_item_budget_overrides(line_item_id)
+> ValueResourceOutcomeOfLineItemBudgetOverrides update_line_item_budget_overrides(line_item_id, value_resource_input_of_line_item_budget_overrides)
 
 
 
@@ -5979,19 +5861,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfLineItemBudgetOverrides | New line item budget overrides settings value resource input. (optional)
+    ) # ValueResourceInputOfLineItemBudgetOverrides | New line item budget overrides settings value resource input.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_line_item_budget_overrides(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_line_item_budget_overrides: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_line_item_budget_overrides(line_item_id, value_resource_input_of_line_item_budget_overrides=value_resource_input_of_line_item_budget_overrides)
+        api_response = api_instance.update_line_item_budget_overrides(line_item_id, value_resource_input_of_line_item_budget_overrides)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_line_item_budget_overrides: %s\n" % e)
@@ -6003,7 +5877,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| Line item external id. |
- **value_resource_input_of_line_item_budget_overrides** | [**ValueResourceInputOfLineItemBudgetOverrides**](ValueResourceInputOfLineItemBudgetOverrides.md)| New line item budget overrides settings value resource input. | [optional]
+ **value_resource_input_of_line_item_budget_overrides** | [**ValueResourceInputOfLineItemBudgetOverrides**](ValueResourceInputOfLineItemBudgetOverrides.md)| New line item budget overrides settings value resource input. |
 
 ### Return type
 
@@ -6028,7 +5902,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_preferred_line_item_by_line_item_id**
-> PreferredLineItemV2Response update_preferred_line_item_by_line_item_id(line_item_id)
+> PreferredLineItemV2Response update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request)
 
 
 
@@ -6104,19 +5978,11 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # PreferredLineItemUpdateModelV2Request | The line item settings to create a line item with (optional)
+    ) # PreferredLineItemUpdateModelV2Request | The line item settings to create a line item with
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->update_preferred_line_item_by_line_item_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request=preferred_line_item_update_model_v2_request)
+        api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->update_preferred_line_item_by_line_item_id: %s\n" % e)
@@ -6128,7 +5994,7 @@ with criteo_api_retailmedia_v2025_04.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The given line item id |
- **preferred_line_item_update_model_v2_request** | [**PreferredLineItemUpdateModelV2Request**](PreferredLineItemUpdateModelV2Request.md)| The line item settings to create a line item with | [optional]
+ **preferred_line_item_update_model_v2_request** | [**PreferredLineItemUpdateModelV2Request**](PreferredLineItemUpdateModelV2Request.md)| The line item settings to create a line item with |
 
 ### Return type
 

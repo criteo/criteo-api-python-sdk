@@ -118,7 +118,6 @@ criteo_api_retailmedia_v2025_04/model/external_retail_media_child_account.py
 criteo_api_retailmedia_v2025_04/model/external_retail_media_seller.py
 criteo_api_retailmedia_v2025_04/model/external_retail_media_seller_account_creation.py
 criteo_api_retailmedia_v2025_04/model/external_retailer.py
-criteo_api_retailmedia_v2025_04/model/external_retailer_pages202110.py
 criteo_api_retailmedia_v2025_04/model/files_variable_value.py
 criteo_api_retailmedia_v2025_04/model/files_variables_specification.py
 criteo_api_retailmedia_v2025_04/model/grant_consent_input.py
@@ -178,7 +177,6 @@ criteo_api_retailmedia_v2025_04/model/preferred_line_item_update_model_v2_reques
 criteo_api_retailmedia_v2025_04/model/preferred_line_item_v2.py
 criteo_api_retailmedia_v2025_04/model/preferred_line_item_v2_paged_list_response.py
 criteo_api_retailmedia_v2025_04/model/preferred_line_item_v2_response.py
-criteo_api_retailmedia_v2025_04/model/problem_details.py
 criteo_api_retailmedia_v2025_04/model/product_metadata.py
 criteo_api_retailmedia_v2025_04/model/product_resource_outcome.py
 criteo_api_retailmedia_v2025_04/model/promoted_product.py
@@ -211,6 +209,7 @@ criteo_api_retailmedia_v2025_04/model/retail_media_contactlist_amendment_request
 criteo_api_retailmedia_v2025_04/model/retail_media_contactlist_operation.py
 criteo_api_retailmedia_v2025_04/model/retail_media_contactlist_operation_response_attributes.py
 criteo_api_retailmedia_v2025_04/model/retail_media_seller.py
+criteo_api_retailmedia_v2025_04/model/retailer_pages202110.py
 criteo_api_retailmedia_v2025_04/model/review_state_model.py
 criteo_api_retailmedia_v2025_04/model/rm_algebra_node_v1.py
 criteo_api_retailmedia_v2025_04/model/rm_audience_entity_v1.py
@@ -412,7 +411,6 @@ docs/ExternalRetailMediaChildAccount.md
 docs/ExternalRetailMediaSeller.md
 docs/ExternalRetailMediaSellerAccountCreation.md
 docs/ExternalRetailer.md
-docs/ExternalRetailerPages202110.md
 docs/FilesVariableValue.md
 docs/FilesVariablesSpecification.md
 docs/GatewayApi.md
@@ -473,7 +471,6 @@ docs/PreferredLineItemUpdateModelV2Request.md
 docs/PreferredLineItemV2.md
 docs/PreferredLineItemV2PagedListResponse.md
 docs/PreferredLineItemV2Response.md
-docs/ProblemDetails.md
 docs/ProductMetadata.md
 docs/ProductResourceOutcome.md
 docs/PromotedProduct.md
@@ -506,6 +503,7 @@ docs/RetailMediaContactlistAmendmentRequest.md
 docs/RetailMediaContactlistOperation.md
 docs/RetailMediaContactlistOperationResponseAttributes.md
 docs/RetailMediaSeller.md
+docs/RetailerPages202110.md
 docs/ReviewStateModel.md
 docs/RmAlgebraNodeV1.md
 docs/RmAudienceEntityV1.md

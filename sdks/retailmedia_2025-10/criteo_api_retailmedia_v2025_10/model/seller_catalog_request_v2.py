@@ -60,10 +60,11 @@ class SellerCatalogRequestV2(ModelNormal):
 
     allowed_values = {
         ('include_fields',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'DESCRIPTION': "Description",
             'IMAGEURL': "ImageUrl",
-            'GLOBALCATEGORYID': "GlobalCategoryId",
+            'GOOGLECATEGORY': "GoogleCategory",
             'RETAILERNAME': "RetailerName",
             'CATEGORY': "Category",
             'BRANDNAME': "BrandName",
@@ -73,16 +74,9 @@ class SellerCatalogRequestV2(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -96,9 +90,9 @@ class SellerCatalogRequestV2(ModelNormal):
         """
         lazy_import()
         return {
-            'include_fields': ([str],),  # noqa: E501
-            'modified_after': (datetime,),  # noqa: E501
-            'sellers': ([SellerIdentifierV2],),  # noqa: E501
+            'include_fields': ([str], none_type,),  # noqa: E501
+            'modified_after': (datetime, none_type,),  # noqa: E501
+            'sellers': ([SellerIdentifierV2], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -153,9 +147,9 @@ class SellerCatalogRequestV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
-            sellers ([SellerIdentifierV2]): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
+            include_fields ([str], none_type): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime, none_type): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            sellers ([SellerIdentifierV2], none_type): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,9 +235,9 @@ class SellerCatalogRequestV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
-            sellers ([SellerIdentifierV2]): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
+            include_fields ([str], none_type): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime, none_type): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            sellers ([SellerIdentifierV2], none_type): A list of sellers to restrict the catalog to.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

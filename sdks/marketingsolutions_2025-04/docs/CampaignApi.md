@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_set_category_bids**
-> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id)
+> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
 
 
 
@@ -672,19 +672,11 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
                 type="AdSetCategoryBid",
             ),
         ],
-    ) # PatchAdSetCategoryBidListRequest |  (optional)
+    ) # PatchAdSetCategoryBidListRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_ad_set_category_bids(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request=patch_ad_set_category_bid_list_request)
+        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
@@ -696,7 +688,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  | [optional]
+ **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  |
 
 ### Return type
 
@@ -721,7 +713,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_sets**
-> ResponsesAdSetIdV24Q3 patch_ad_sets()
+> ResponsesAdSetIdV24Q3 patch_ad_sets(requests_patch_ad_set_v24_q3)
 
 
 
@@ -832,12 +824,11 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
                 type="PatchAdSetV24Q3",
             ),
         ],
-    ) # RequestsPatchAdSetV24Q3 | List of adsets to patch. (optional)
+    ) # RequestsPatchAdSetV24Q3 | List of adsets to patch.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3=requests_patch_ad_set_v24_q3)
+        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->patch_ad_sets: %s\n" % e)
@@ -848,7 +839,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requests_patch_ad_set_v24_q3** | [**RequestsPatchAdSetV24Q3**](RequestsPatchAdSetV24Q3.md)| List of adsets to patch. | [optional]
+ **requests_patch_ad_set_v24_q3** | [**RequestsPatchAdSetV24Q3**](RequestsPatchAdSetV24Q3.md)| List of adsets to patch. |
 
 ### Return type
 
@@ -873,7 +864,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_campaigns**
-> PatchResultCampaignListResponse patch_campaigns()
+> PatchResultCampaignListResponse patch_campaigns(patch_campaign_list_request)
 
 
 
@@ -940,12 +931,11 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
                 type="Campaign",
             ),
         ],
-    ) # PatchCampaignListRequest | List of campaigns to patch. (optional)
+    ) # PatchCampaignListRequest | List of campaigns to patch.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.patch_campaigns(patch_campaign_list_request=patch_campaign_list_request)
+        api_response = api_instance.patch_campaigns(patch_campaign_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->patch_campaigns: %s\n" % e)
@@ -956,7 +946,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. | [optional]
+ **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. |
 
 ### Return type
 
@@ -981,7 +971,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_display_multipliers**
-> PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id)
+> PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
 
 
 
@@ -1037,19 +1027,11 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
                 type="AdSetDisplayMultiplier",
             ),
         ],
-    ) # PatchAdSetDisplayMultiplierListRequest |  (optional)
+    ) # PatchAdSetDisplayMultiplierListRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_display_multipliers(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_04.ApiException as e:
-        print("Exception when calling CampaignApi->patch_display_multipliers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request=patch_ad_set_display_multiplier_list_request)
+        api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_04.ApiException as e:
         print("Exception when calling CampaignApi->patch_display_multipliers: %s\n" % e)
@@ -1061,7 +1043,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  | [optional]
+ **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  |
 
 ### Return type
 

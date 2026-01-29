@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **add_funds_by_account_and_balance_id**
-> BalanceResponseV2Response add_funds_by_account_and_balance_id(account_id, balance_id)
+> BalanceResponseV2Response add_funds_by_account_and_balance_id(account_id, balance_id, add_funds_to_balance_v2_request)
 
 
 
@@ -72,19 +72,11 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # AddFundsToBalanceV2Request | An object that represents the available options of adding funds to a balance. (optional)
+    ) # AddFundsToBalanceV2Request | An object that represents the available options of adding funds to a balance.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.add_funds_by_account_and_balance_id(account_id, balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling BalanceApi->add_funds_by_account_and_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.add_funds_by_account_and_balance_id(account_id, balance_id, add_funds_to_balance_v2_request=add_funds_to_balance_v2_request)
+        api_response = api_instance.add_funds_by_account_and_balance_id(account_id, balance_id, add_funds_to_balance_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_01.ApiException as e:
         print("Exception when calling BalanceApi->add_funds_by_account_and_balance_id: %s\n" % e)
@@ -97,7 +89,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account of the balance |
  **balance_id** | **str**| The balance to add funds to |
- **add_funds_to_balance_v2_request** | [**AddFundsToBalanceV2Request**](AddFundsToBalanceV2Request.md)| An object that represents the available options of adding funds to a balance. | [optional]
+ **add_funds_to_balance_v2_request** | [**AddFundsToBalanceV2Request**](AddFundsToBalanceV2Request.md)| An object that represents the available options of adding funds to a balance. |
 
 ### Return type
 
@@ -122,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **change_dates_by_account_and_balance_id**
-> BalanceResponseV2Response change_dates_by_account_and_balance_id(account_id, balance_id)
+> BalanceResponseV2Response change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request)
 
 
 
@@ -179,19 +171,11 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # ChangeDatesOfBalanceV2Request | An object that represents the available options to modify schedule of a balance. (optional)
+    ) # ChangeDatesOfBalanceV2Request | An object that represents the available options to modify schedule of a balance.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.change_dates_by_account_and_balance_id(account_id, balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling BalanceApi->change_dates_by_account_and_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request=change_dates_of_balance_v2_request)
+        api_response = api_instance.change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_01.ApiException as e:
         print("Exception when calling BalanceApi->change_dates_by_account_and_balance_id: %s\n" % e)
@@ -204,7 +188,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account of the balance |
  **balance_id** | **str**| The balance to change the dates |
- **change_dates_of_balance_v2_request** | [**ChangeDatesOfBalanceV2Request**](ChangeDatesOfBalanceV2Request.md)| An object that represents the available options to modify schedule of a balance. | [optional]
+ **change_dates_of_balance_v2_request** | [**ChangeDatesOfBalanceV2Request**](ChangeDatesOfBalanceV2Request.md)| An object that represents the available options to modify schedule of a balance. |
 
 ### Return type
 
@@ -229,7 +213,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_balance_by_account_id**
-> BalanceResponseV2Response create_balance_by_account_id(account_id)
+> BalanceResponseV2Response create_balance_by_account_id(account_id, create_balance_v2_request)
 
 
 
@@ -289,19 +273,11 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # CreateBalanceV2Request | An object that represents the available options to set when creating a Retail Media Balance (optional)
+    ) # CreateBalanceV2Request | An object that represents the available options to set when creating a Retail Media Balance
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.create_balance_by_account_id(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling BalanceApi->create_balance_by_account_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.create_balance_by_account_id(account_id, create_balance_v2_request=create_balance_v2_request)
+        api_response = api_instance.create_balance_by_account_id(account_id, create_balance_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_01.ApiException as e:
         print("Exception when calling BalanceApi->create_balance_by_account_id: %s\n" % e)
@@ -313,7 +289,7 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account to create balances for |
- **create_balance_v2_request** | [**CreateBalanceV2Request**](CreateBalanceV2Request.md)| An object that represents the available options to set when creating a Retail Media Balance | [optional]
+ **create_balance_v2_request** | [**CreateBalanceV2Request**](CreateBalanceV2Request.md)| An object that represents the available options to set when creating a Retail Media Balance |
 
 ### Return type
 
@@ -722,7 +698,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **modify_balance_by_account_and_balance_id**
-> BalanceResponseV2Response modify_balance_by_account_and_balance_id(account_id, balance_id)
+> BalanceResponseV2Response modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request)
 
 
 
@@ -781,19 +757,11 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
             id="id_example",
             type="type_example",
         ),
-    ) # UpdateBalanceModelV2Request | An object that represents the available options to modify a balance. (optional)
+    ) # UpdateBalanceModelV2Request | An object that represents the available options to modify a balance.
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.modify_balance_by_account_and_balance_id(account_id, balance_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling BalanceApi->modify_balance_by_account_and_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request=update_balance_model_v2_request)
+        api_response = api_instance.modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_01.ApiException as e:
         print("Exception when calling BalanceApi->modify_balance_by_account_and_balance_id: %s\n" % e)
@@ -806,7 +774,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The account of the balance |
  **balance_id** | **str**| The balance to change the dates |
- **update_balance_model_v2_request** | [**UpdateBalanceModelV2Request**](UpdateBalanceModelV2Request.md)| An object that represents the available options to modify a balance. | [optional]
+ **update_balance_model_v2_request** | [**UpdateBalanceModelV2Request**](UpdateBalanceModelV2Request.md)| An object that represents the available options to modify a balance. |
 
 ### Return type
 

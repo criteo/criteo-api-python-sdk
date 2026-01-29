@@ -56,6 +56,7 @@ class ExternalCatalogRequest(ModelNormal):
 
     allowed_values = {
         ('format',): {
+            'UNKNOWN': "unknown",
             'JSON-NEWLINE': "json-newline",
         },
     }
@@ -63,13 +64,7 @@ class ExternalCatalogRequest(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -84,7 +79,7 @@ class ExternalCatalogRequest(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'brand_id_filter': ([str],),  # noqa: E501
+            'brand_id_filter': ([str], none_type,),  # noqa: E501
             'format': (str,),  # noqa: E501
         }
 
@@ -139,8 +134,8 @@ class ExternalCatalogRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id_filter ([str]): [optional]  # noqa: E501
-            format (str): [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
+            brand_id_filter ([str], none_type): [optional]  # noqa: E501
+            format (str): An enumeration of Catalog formats. [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,8 +221,8 @@ class ExternalCatalogRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id_filter ([str]): [optional]  # noqa: E501
-            format (str): [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
+            brand_id_filter ([str], none_type): [optional]  # noqa: E501
+            format (str): An enumeration of Catalog formats. [optional] if omitted the server will use the default value of "json-newline"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

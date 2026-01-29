@@ -69,6 +69,7 @@ class TemplateVariable(ModelNormal):
             'COLOR': "Color",
             'FILES': "Files",
             'HYPERLINK': "Hyperlink",
+            'VIDEO': "Video",
         },
     }
 

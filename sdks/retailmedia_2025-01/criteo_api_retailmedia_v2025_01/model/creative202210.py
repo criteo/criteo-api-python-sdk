@@ -190,7 +190,7 @@ class Creative202210(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
             brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 
@@ -299,7 +299,7 @@ class Creative202210(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             associated_line_item_ids ([str], none_type): Associated Line Item Ids. [optional]  # noqa: E501
             brand_id (int, none_type): Brand Id. [optional]  # noqa: E501
-            id (str, none_type): Id of the entity. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             updated_at (datetime, none_type): Updated at time. [optional]  # noqa: E501
         """
 

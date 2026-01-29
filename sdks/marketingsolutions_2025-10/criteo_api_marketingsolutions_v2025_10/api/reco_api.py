@@ -58,7 +58,9 @@ class RecoApi(object):
                 'all': [
                     'value_resource_input_of_create_product_set_request',
                 ],
-                'required': [],
+                'required': [
+                    'value_resource_input_of_create_product_set_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -430,6 +432,7 @@ class RecoApi(object):
                 ],
                 'required': [
                     'product_set_id',
+                    'value_resource_input_of_patch_product_set_request',
                 ],
                 'nullable': [
                 ],
@@ -524,6 +527,7 @@ class RecoApi(object):
 
     def create_product_set(
         self,
+        value_resource_input_of_create_product_set_request,
         **kwargs
     ):
         """create_product_set  # noqa: E501
@@ -532,12 +536,13 @@ class RecoApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_product_set(async_req=True)
+        >>> thread = api.create_product_set(value_resource_input_of_create_product_set_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            value_resource_input_of_create_product_set_request (ValueResourceInputOfCreateProductSetRequest):
 
         Keyword Args:
-            value_resource_input_of_create_product_set_request (ValueResourceInputOfCreateProductSetRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -599,6 +604,8 @@ class RecoApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['value_resource_input_of_create_product_set_request'] = \
+            value_resource_input_of_create_product_set_request
         return self.create_product_set_endpoint.call_with_http_info(**kwargs)
 
     def disable_product_filtering(
@@ -1103,6 +1110,7 @@ class RecoApi(object):
     def patch_product_set(
         self,
         product_set_id,
+        value_resource_input_of_patch_product_set_request,
         **kwargs
     ):
         """patch_product_set  # noqa: E501
@@ -1111,14 +1119,14 @@ class RecoApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_product_set(product_set_id, async_req=True)
+        >>> thread = api.patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             product_set_id (str): ID of the product set
+            value_resource_input_of_patch_product_set_request (ValueResourceInputOfPatchProductSetRequest):
 
         Keyword Args:
-            value_resource_input_of_patch_product_set_request (ValueResourceInputOfPatchProductSetRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1182,6 +1190,8 @@ class RecoApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['product_set_id'] = \
             product_set_id
+        kwargs['value_resource_input_of_patch_product_set_request'] = \
+            value_resource_input_of_patch_product_set_request
         return self.patch_product_set_endpoint.call_with_http_info(**kwargs)
 
     def remove_product_set(

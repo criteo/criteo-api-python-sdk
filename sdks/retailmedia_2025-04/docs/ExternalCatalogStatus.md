@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **message** | **str, none_type** | An optional information message intended for developer consumption. | 
 **row_count** | **int, none_type** | An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status. | 
 **status** | **str** | An enumeration of the status of the catalog. | 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

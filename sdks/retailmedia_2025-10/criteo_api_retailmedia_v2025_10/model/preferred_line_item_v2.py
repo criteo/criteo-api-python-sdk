@@ -112,7 +112,6 @@ class PreferredLineItemV2(ModelNormal):
         return {
             'budget': (float,),  # noqa: E501
             'campaign_id': (str,),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'start_date': (date,),  # noqa: E501
             'status': (str,),  # noqa: E501
@@ -122,6 +121,7 @@ class PreferredLineItemV2(ModelNormal):
             'capping': (LineItemCappingV2,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'creative_id': (str, none_type,),  # noqa: E501
+            'end_date': (date, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'pacing': (str, none_type,),  # noqa: E501
             'page': (LineItemPageV2,),  # noqa: E501
@@ -136,7 +136,6 @@ class PreferredLineItemV2(ModelNormal):
     attribute_map = {
         'budget': 'budget',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
         'name': 'name',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'status': 'status',  # noqa: E501
@@ -146,6 +145,7 @@ class PreferredLineItemV2(ModelNormal):
         'capping': 'capping',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'creative_id': 'creativeId',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
         'id': 'id',  # noqa: E501
         'pacing': 'pacing',  # noqa: E501
         'page': 'page',  # noqa: E501
@@ -159,13 +159,12 @@ class PreferredLineItemV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, budget, campaign_id, end_date, name, start_date, status, target_retailer_id, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget, campaign_id, name, start_date, status, target_retailer_id, *args, **kwargs):  # noqa: E501
         """PreferredLineItemV2 - a model defined in OpenAPI
 
         Args:
             budget (float):
             campaign_id (str):
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             name (str):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             status (str): Line Item Status Enum
@@ -207,6 +206,7 @@ class PreferredLineItemV2(ModelNormal):
             capping (LineItemCappingV2): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
             creative_id (str, none_type): creative Id. [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             pacing (str, none_type): [optional]  # noqa: E501
             page (LineItemPageV2): [optional]  # noqa: E501
@@ -244,7 +244,6 @@ class PreferredLineItemV2(ModelNormal):
 
         self.budget = budget
         self.campaign_id = campaign_id
-        self.end_date = end_date
         self.name = name
         self.start_date = start_date
         self.status = status
@@ -269,13 +268,12 @@ class PreferredLineItemV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, budget, campaign_id, end_date, name, start_date, status, target_retailer_id, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget, campaign_id, name, start_date, status, target_retailer_id, *args, **kwargs):  # noqa: E501
         """PreferredLineItemV2 - a model defined in OpenAPI
 
         Args:
             budget (float):
             campaign_id (str):
-            end_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             name (str):
             start_date (date): Represents the Date as a year, month, and day in the format YYYY-MM-DD
             status (str): Line Item Status Enum
@@ -317,6 +315,7 @@ class PreferredLineItemV2(ModelNormal):
             capping (LineItemCappingV2): [optional]  # noqa: E501
             created_at (datetime): [optional]  # noqa: E501
             creative_id (str, none_type): creative Id. [optional]  # noqa: E501
+            end_date (date, none_type): Represents the Date as a year, month, and day in the format YYYY-MM-DD. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             pacing (str, none_type): [optional]  # noqa: E501
             page (LineItemPageV2): [optional]  # noqa: E501
@@ -352,7 +351,6 @@ class PreferredLineItemV2(ModelNormal):
 
         self.budget = budget
         self.campaign_id = campaign_id
-        self.end_date = end_date
         self.name = name
         self.start_date = start_date
         self.status = status

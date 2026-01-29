@@ -110,6 +110,7 @@ class ProductSet(ModelNormal):
             'rules': ([ProductSetRule],),  # noqa: E501
             'status': (str,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
+            'is_fallback_allowed': (bool,),  # noqa: E501
         }
 
     @cached_property
@@ -128,6 +129,7 @@ class ProductSet(ModelNormal):
         'rules': 'rules',  # noqa: E501
         'status': 'status',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'is_fallback_allowed': 'isFallbackAllowed',  # noqa: E501
     }
 
     read_only_vars = {
@@ -147,7 +149,7 @@ class ProductSet(ModelNormal):
             keep_variant_products (bool):
             minimum_number_of_products (int): Minimum amount of products that should match the product set to consider it valid.  Greater or equal than one.
             name (str): The name of the product set
-            number_of_products (int, none_type): The number of product matching the product set.  Can be null for newly created product set.
+            number_of_products (int, none_type): The number of products matching the product set.  Can be null for newly created product set.
             rules ([ProductSetRule]): The rules identifying the product belonging to the set
             status (str): The status of the product set
 
@@ -183,6 +185,7 @@ class ProductSet(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): [optional]  # noqa: E501
+            is_fallback_allowed (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,7 +256,7 @@ class ProductSet(ModelNormal):
             keep_variant_products (bool):
             minimum_number_of_products (int): Minimum amount of products that should match the product set to consider it valid.  Greater or equal than one.
             name (str): The name of the product set
-            number_of_products (int, none_type): The number of product matching the product set.  Can be null for newly created product set.
+            number_of_products (int, none_type): The number of products matching the product set.  Can be null for newly created product set.
             rules ([ProductSetRule]): The rules identifying the product belonging to the set
             status (str): The status of the product set
 
@@ -289,6 +292,7 @@ class ProductSet(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             id (str, none_type): [optional]  # noqa: E501
+            is_fallback_allowed (bool): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

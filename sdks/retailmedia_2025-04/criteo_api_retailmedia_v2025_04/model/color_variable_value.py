@@ -99,8 +99,11 @@ class ColorVariableValue(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, color, *args, **kwargs):  # noqa: E501
         """ColorVariableValue - a model defined in OpenAPI
+
+        Args:
+            color (str, none_type): The displayed color (HEX format)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -133,7 +136,6 @@ class ColorVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            color (str, none_type): The displayed color (HEX format). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -165,6 +167,7 @@ class ColorVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.color = color
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -185,8 +188,11 @@ class ColorVariableValue(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, color, *args, **kwargs):  # noqa: E501
         """ColorVariableValue - a model defined in OpenAPI
+
+        Args:
+            color (str, none_type): The displayed color (HEX format)
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -219,7 +225,6 @@ class ColorVariableValue(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            color (str, none_type): The displayed color (HEX format). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -249,6 +254,7 @@ class ColorVariableValue(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.color = color
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

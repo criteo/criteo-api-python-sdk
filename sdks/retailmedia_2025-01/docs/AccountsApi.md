@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_sellers**
-> ValueResourceCollectionOutcomeOfRetailMediaSeller update_sellers(account_id)
+> ValueResourceCollectionOutcomeOfRetailMediaSeller update_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
 
 
 
@@ -689,19 +689,11 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
                 type="type_example",
             ),
         ],
-    ) # ValueResourceCollectionInputOfRetailMediaSeller |  (optional)
+    ) # ValueResourceCollectionInputOfRetailMediaSeller | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.update_sellers(account_id)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_01.ApiException as e:
-        print("Exception when calling AccountsApi->update_sellers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.update_sellers(account_id, value_resource_collection_input_of_retail_media_seller=value_resource_collection_input_of_retail_media_seller)
+        api_response = api_instance.update_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_01.ApiException as e:
         print("Exception when calling AccountsApi->update_sellers: %s\n" % e)
@@ -713,7 +705,7 @@ with criteo_api_retailmedia_v2025_01.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The given account id |
- **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  | [optional]
+ **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  |
 
 ### Return type
 

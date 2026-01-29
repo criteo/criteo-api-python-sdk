@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_marketplace_seller_budgets**
-> [SellerBudgetMessage] create_marketplace_seller_budgets()
+> [SellerBudgetMessage] create_marketplace_seller_budgets(create_seller_budget_mapi_message)
 
 
 
@@ -363,13 +363,12 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
             seller_id="seller_id_example",
             start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         ),
-    ] # [CreateSellerBudgetMapiMessage] |  (optional)
+    ] # [CreateSellerBudgetMapiMessage] | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # 
-        api_response = api_instance.create_marketplace_seller_budgets(create_seller_budget_mapi_message=create_seller_budget_mapi_message)
+        api_response = api_instance.create_marketplace_seller_budgets(create_seller_budget_mapi_message)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->create_marketplace_seller_budgets: %s\n" % e)
@@ -380,7 +379,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_seller_budget_mapi_message** | [**[CreateSellerBudgetMapiMessage]**](CreateSellerBudgetMapiMessage.md)|  | [optional]
+ **create_seller_budget_mapi_message** | [**[CreateSellerBudgetMapiMessage]**](CreateSellerBudgetMapiMessage.md)|  |
 
 ### Return type
 
@@ -405,7 +404,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_marketplace_seller_campaigns_by_seller**
-> SellerCampaignMessage create_marketplace_seller_campaigns_by_seller(seller_id)
+> SellerCampaignMessage create_marketplace_seller_campaigns_by_seller(seller_id, create_seller_campaign_message_mapi)
 
 
 
@@ -454,21 +453,12 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     create_seller_campaign_message_mapi = CreateSellerCampaignMessageMapi(
         bid=3.14,
         campaign_id=1,
-    ) # CreateSellerCampaignMessageMapi | Supply the campaign Id and bid to create the mapping (optional)
+    ) # CreateSellerCampaignMessageMapi | Supply the campaign Id and bid to create the mapping
 
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_response = api_instance.create_marketplace_seller_campaigns_by_seller(seller_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_10.ApiException as e:
-        print("Exception when calling CampaignApi->create_marketplace_seller_campaigns_by_seller: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # 
-        api_response = api_instance.create_marketplace_seller_campaigns_by_seller(seller_id, create_seller_campaign_message_mapi=create_seller_campaign_message_mapi)
+        api_response = api_instance.create_marketplace_seller_campaigns_by_seller(seller_id, create_seller_campaign_message_mapi)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->create_marketplace_seller_campaigns_by_seller: %s\n" % e)
@@ -480,7 +470,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **seller_id** | **str**| Supply a generated Id of an existing Seller |
- **create_seller_campaign_message_mapi** | [**CreateSellerCampaignMessageMapi**](CreateSellerCampaignMessageMapi.md)| Supply the campaign Id and bid to create the mapping | [optional]
+ **create_seller_campaign_message_mapi** | [**CreateSellerCampaignMessageMapi**](CreateSellerCampaignMessageMapi.md)| Supply the campaign Id and bid to create the mapping |
 
 ### Return type
 
@@ -2615,7 +2605,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_sellers_by_advertiser**
-> [SellerBase] get_marketplace_sellers_by_advertiser(advertiser_id)
+> [SellerBase] get_marketplace_sellers_by_advertiser(advertiser_id, request_body)
 
 
 
@@ -2660,15 +2650,15 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     advertiser_id = 1 # int | Id of the advertiser
-    partner_id = 1 # int | Id of the partner (optional)
     request_body = [
         "request_body_example",
-    ] # [str] | Names of the sellers to associate with new Ids (optional)
+    ] # [str] | Names of the sellers to associate with new Ids
+    partner_id = 1 # int | Id of the partner (optional)
 
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_response = api_instance.get_marketplace_sellers_by_advertiser(advertiser_id)
+        api_response = api_instance.get_marketplace_sellers_by_advertiser(advertiser_id, request_body)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_sellers_by_advertiser: %s\n" % e)
@@ -2677,7 +2667,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # and optional values
     try:
         # 
-        api_response = api_instance.get_marketplace_sellers_by_advertiser(advertiser_id, partner_id=partner_id, request_body=request_body)
+        api_response = api_instance.get_marketplace_sellers_by_advertiser(advertiser_id, request_body, partner_id=partner_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->get_marketplace_sellers_by_advertiser: %s\n" % e)
@@ -2689,8 +2679,8 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **int**| Id of the advertiser |
+ **request_body** | **[str]**| Names of the sellers to associate with new Ids |
  **partner_id** | **int**| Id of the partner | [optional]
- **request_body** | **[str]**| Names of the sellers to associate with new Ids | [optional]
 
 ### Return type
 
@@ -2814,7 +2804,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_set_category_bids**
-> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id)
+> PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
 
 
 
@@ -2870,19 +2860,11 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
                 type="AdSetCategoryBid",
             ),
         ],
-    ) # PatchAdSetCategoryBidListRequest |  (optional)
+    ) # PatchAdSetCategoryBidListRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_ad_set_category_bids(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_10.ApiException as e:
-        print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request=patch_ad_set_category_bid_list_request)
+        api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->patch_ad_set_category_bids: %s\n" % e)
@@ -2894,7 +2876,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  | [optional]
+ **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  |
 
 ### Return type
 
@@ -2919,7 +2901,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_ad_sets**
-> ResponsesAdSetIdV24Q3 patch_ad_sets()
+> ResponsesAdSetIdV24Q3 patch_ad_sets(requests_patch_ad_set_v24_q3)
 
 
 
@@ -3030,12 +3012,11 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
                 type="PatchAdSetV24Q3",
             ),
         ],
-    ) # RequestsPatchAdSetV24Q3 | List of adsets to patch. (optional)
+    ) # RequestsPatchAdSetV24Q3 | List of adsets to patch.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3=requests_patch_ad_set_v24_q3)
+        api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v24_q3)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->patch_ad_sets: %s\n" % e)
@@ -3046,7 +3027,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requests_patch_ad_set_v24_q3** | [**RequestsPatchAdSetV24Q3**](RequestsPatchAdSetV24Q3.md)| List of adsets to patch. | [optional]
+ **requests_patch_ad_set_v24_q3** | [**RequestsPatchAdSetV24Q3**](RequestsPatchAdSetV24Q3.md)| List of adsets to patch. |
 
 ### Return type
 
@@ -3071,7 +3052,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_campaigns**
-> PatchResultCampaignListResponse patch_campaigns()
+> PatchResultCampaignListResponse patch_campaigns(patch_campaign_list_request)
 
 
 
@@ -3138,12 +3119,11 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
                 type="Campaign",
             ),
         ],
-    ) # PatchCampaignListRequest | List of campaigns to patch. (optional)
+    ) # PatchCampaignListRequest | List of campaigns to patch.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.patch_campaigns(patch_campaign_list_request=patch_campaign_list_request)
+        api_response = api_instance.patch_campaigns(patch_campaign_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->patch_campaigns: %s\n" % e)
@@ -3154,7 +3134,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. | [optional]
+ **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. |
 
 ### Return type
 
@@ -3179,7 +3159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_display_multipliers**
-> PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id)
+> PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
 
 
 
@@ -3235,19 +3215,11 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
                 type="AdSetDisplayMultiplier",
             ),
         ],
-    ) # PatchAdSetDisplayMultiplierListRequest |  (optional)
+    ) # PatchAdSetDisplayMultiplierListRequest | 
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.patch_display_multipliers(ad_set_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_10.ApiException as e:
-        print("Exception when calling CampaignApi->patch_display_multipliers: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request=patch_ad_set_display_multiplier_list_request)
+        api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->patch_display_multipliers: %s\n" % e)
@@ -3259,7 +3231,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  | [optional]
+ **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  |
 
 ### Return type
 
@@ -3758,7 +3730,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_marketplace_seller_budget**
-> SellerBudgetMessage update_marketplace_seller_budget(budget_id)
+> SellerBudgetMessage update_marketplace_seller_budget(budget_id, update_seller_budget_message_base)
 
 
 
@@ -3812,21 +3784,12 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
         end_date="end_date_example",
         is_suspended=True,
         start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-    ) # UpdateSellerBudgetMessageBase |  (optional)
+    ) # UpdateSellerBudgetMessageBase | 
 
     # example passing only required values which don't have defaults set
     try:
         # 
-        api_response = api_instance.update_marketplace_seller_budget(budget_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_v2025_10.ApiException as e:
-        print("Exception when calling CampaignApi->update_marketplace_seller_budget: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # 
-        api_response = api_instance.update_marketplace_seller_budget(budget_id, update_seller_budget_message_base=update_seller_budget_message_base)
+        api_response = api_instance.update_marketplace_seller_budget(budget_id, update_seller_budget_message_base)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->update_marketplace_seller_budget: %s\n" % e)
@@ -3838,7 +3801,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budget_id** | **int**| Id of the budget |
- **update_seller_budget_message_base** | [**UpdateSellerBudgetMessageBase**](UpdateSellerBudgetMessageBase.md)|  | [optional]
+ **update_seller_budget_message_base** | [**UpdateSellerBudgetMessageBase**](UpdateSellerBudgetMessageBase.md)|  |
 
 ### Return type
 
@@ -3863,7 +3826,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_marketplace_seller_budgets**
-> [SellerBudgetMessage] update_marketplace_seller_budgets()
+> [SellerBudgetMessage] update_marketplace_seller_budgets(update_seller_budget_message)
 
 
 
@@ -3919,13 +3882,12 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
             is_suspended=True,
             start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         ),
-    ] # [UpdateSellerBudgetMessage] |  (optional)
+    ] # [UpdateSellerBudgetMessage] | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # 
-        api_response = api_instance.update_marketplace_seller_budgets(update_seller_budget_message=update_seller_budget_message)
+        api_response = api_instance.update_marketplace_seller_budgets(update_seller_budget_message)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->update_marketplace_seller_budgets: %s\n" % e)
@@ -3936,7 +3898,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **update_seller_budget_message** | [**[UpdateSellerBudgetMessage]**](UpdateSellerBudgetMessage.md)|  | [optional]
+ **update_seller_budget_message** | [**[UpdateSellerBudgetMessage]**](UpdateSellerBudgetMessage.md)|  |
 
 ### Return type
 
@@ -4057,7 +4019,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_marketplace_seller_campaigns**
-> [SellerCampaignMessage] update_marketplace_seller_campaigns()
+> [SellerCampaignMessage] update_marketplace_seller_campaigns(seller_campaign_update)
 
 
 
@@ -4107,13 +4069,12 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
             bid=3.14,
             id="id_example",
         ),
-    ] # [SellerCampaignUpdate] |  (optional)
+    ] # [SellerCampaignUpdate] | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # 
-        api_response = api_instance.update_marketplace_seller_campaigns(seller_campaign_update=seller_campaign_update)
+        api_response = api_instance.update_marketplace_seller_campaigns(seller_campaign_update)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CampaignApi->update_marketplace_seller_campaigns: %s\n" % e)
@@ -4124,7 +4085,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seller_campaign_update** | [**[SellerCampaignUpdate]**](SellerCampaignUpdate.md)|  | [optional]
+ **seller_campaign_update** | [**[SellerCampaignUpdate]**](SellerCampaignUpdate.md)|  |
 
 ### Return type
 

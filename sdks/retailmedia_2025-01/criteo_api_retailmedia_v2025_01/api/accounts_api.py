@@ -411,6 +411,7 @@ class AccountsApi(object):
                 ],
                 'required': [
                     'account_id',
+                    'value_resource_collection_input_of_retail_media_seller',
                 ],
                 'nullable': [
                 ],
@@ -955,6 +956,7 @@ class AccountsApi(object):
     def update_sellers(
         self,
         account_id,
+        value_resource_collection_input_of_retail_media_seller,
         **kwargs
     ):
         """update_sellers  # noqa: E501
@@ -963,14 +965,14 @@ class AccountsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_sellers(account_id, async_req=True)
+        >>> thread = api.update_sellers(account_id, value_resource_collection_input_of_retail_media_seller, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The given account id
+            value_resource_collection_input_of_retail_media_seller (ValueResourceCollectionInputOfRetailMediaSeller):
 
         Keyword Args:
-            value_resource_collection_input_of_retail_media_seller (ValueResourceCollectionInputOfRetailMediaSeller): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1034,5 +1036,7 @@ class AccountsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
+        kwargs['value_resource_collection_input_of_retail_media_seller'] = \
+            value_resource_collection_input_of_retail_media_seller
         return self.update_sellers_endpoint.call_with_http_info(**kwargs)
 

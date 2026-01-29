@@ -61,6 +61,7 @@ class FilesVariablesSpecification(ModelNormal):
             'PNG': "Png",
             'GIF': "Gif",
             'PDF': "Pdf",
+            'MP4': "Mp4",
         },
     }
 

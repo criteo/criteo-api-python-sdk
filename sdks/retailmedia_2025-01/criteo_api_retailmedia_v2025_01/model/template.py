@@ -101,6 +101,7 @@ class Template(ModelNormal):
             'sku_per_collection_min': (int,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'displayable_skus_max': (int, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'sku_collection_max': (int, none_type,),  # noqa: E501
             'sku_per_collection_max': (int, none_type,),  # noqa: E501
         }
@@ -120,6 +121,7 @@ class Template(ModelNormal):
         'sku_per_collection_min': 'skuPerCollectionMin',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'displayable_skus_max': 'displayableSkusMax',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'sku_collection_max': 'skuCollectionMax',  # noqa: E501
         'sku_per_collection_max': 'skuPerCollectionMax',  # noqa: E501
     }
@@ -176,6 +178,7 @@ class Template(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             sku_collection_max (int, none_type): Maximum number of skus in the collection. [optional]  # noqa: E501
             sku_per_collection_max (int, none_type): Maximum number of skus per collection. [optional]  # noqa: E501
         """
@@ -282,6 +285,7 @@ class Template(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             displayable_skus_max (int, none_type): Maximum number of displayable skus. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             sku_collection_max (int, none_type): Maximum number of skus in the collection. [optional]  # noqa: E501
             sku_per_collection_max (int, none_type): Maximum number of skus per collection. [optional]  # noqa: E501
         """

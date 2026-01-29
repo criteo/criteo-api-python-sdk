@@ -178,7 +178,7 @@ with criteo_api_marketingsolutions_v2025_01.ApiClient(configuration) as api_clie
                     environment="environment_example",
                     format="json",
                     metrics=[
-                        "metrics_example",
+                        "Clicks",
                     ],
                     placement="placement_example",
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),

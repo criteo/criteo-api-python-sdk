@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **template_variable_values** | [**[TemplateVariableValue]**](TemplateVariableValue.md) | The template chosen values | 
 **associated_line_item_ids** | **[str], none_type** | Associated Line Item Ids | [optional] 
 **brand_id** | **int, none_type** | Brand Id | [optional] 
-**id** | **str, none_type** | Id of the entity | [optional] 
+**id** | **str, none_type** |  | [optional] 
 **updated_at** | **datetime, none_type** | Updated at time | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

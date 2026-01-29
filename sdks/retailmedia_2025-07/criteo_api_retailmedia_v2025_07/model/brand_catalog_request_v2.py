@@ -56,6 +56,7 @@ class BrandCatalogRequestV2(ModelNormal):
 
     allowed_values = {
         ('include_fields',): {
+            'None': None,
             'UNKNOWN': "Unknown",
             'DESCRIPTION': "Description",
             'IMAGEURL': "ImageUrl",
@@ -69,15 +70,9 @@ class BrandCatalogRequestV2(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -90,10 +85,10 @@ class BrandCatalogRequestV2(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'brand_id_filter': ([str],),  # noqa: E501
-            'include_fields': ([str],),  # noqa: E501
-            'modified_after': (datetime,),  # noqa: E501
-            'retailer_id_filter': ([int],),  # noqa: E501
+            'brand_id_filter': ([str], none_type,),  # noqa: E501
+            'include_fields': ([str], none_type,),  # noqa: E501
+            'modified_after': (datetime, none_type,),  # noqa: E501
+            'retailer_id_filter': ([int], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -149,10 +144,10 @@ class BrandCatalogRequestV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id_filter ([str]): The brand ids to filter the catalog by.. [optional]  # noqa: E501
-            include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
-            retailer_id_filter ([int]): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
+            brand_id_filter ([str], none_type): The brand ids to filter the catalog by.. [optional]  # noqa: E501
+            include_fields ([str], none_type): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime, none_type): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            retailer_id_filter ([int], none_type): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,10 +233,10 @@ class BrandCatalogRequestV2(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_id_filter ([str]): The brand ids to filter the catalog by.. [optional]  # noqa: E501
-            include_fields ([str]): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
-            modified_after (datetime): Only products modified after this time will be returned.. [optional]  # noqa: E501
-            retailer_id_filter ([int]): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
+            brand_id_filter ([str], none_type): The brand ids to filter the catalog by.. [optional]  # noqa: E501
+            include_fields ([str], none_type): Out of the optional fields, only the ones specified will be included in the catalog generated.. [optional]  # noqa: E501
+            modified_after (datetime, none_type): Only products modified after this time will be returned.. [optional]  # noqa: E501
+            retailer_id_filter ([int], none_type): The retailer ids to filter the catalog by.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

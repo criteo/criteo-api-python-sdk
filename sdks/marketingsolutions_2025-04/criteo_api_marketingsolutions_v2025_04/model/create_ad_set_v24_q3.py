@@ -114,7 +114,7 @@ class CreateAdSetV24Q3(ModelNormal):
         return {
             'bidding': (CreateAdSetBiddingV24Q3,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
-            'dataset_id': (str, none_type,),  # noqa: E501
+            'dataset_id': (str,),  # noqa: E501
             'media_type': (str,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'objective': (str,),  # noqa: E501
@@ -157,7 +157,7 @@ class CreateAdSetV24Q3(ModelNormal):
         Args:
             bidding (CreateAdSetBiddingV24Q3):
             campaign_id (str, none_type): Campaign id this ad set belongs to
-            dataset_id (str, none_type): Dataset id of this ad set
+            dataset_id (str): Dataset id of this ad set
             media_type (str): Media type for the ad set
             name (str, none_type): Name of the ad set
             objective (str): Objective of the ad set
@@ -264,7 +264,7 @@ class CreateAdSetV24Q3(ModelNormal):
         Args:
             bidding (CreateAdSetBiddingV24Q3):
             campaign_id (str, none_type): Campaign id this ad set belongs to
-            dataset_id (str, none_type): Dataset id of this ad set
+            dataset_id (str): Dataset id of this ad set
             media_type (str): Media type for the ad set
             name (str, none_type): Name of the ad set
             objective (str): Objective of the ad set

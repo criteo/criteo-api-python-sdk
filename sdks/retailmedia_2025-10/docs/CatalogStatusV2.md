@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **md5_checksum** | **str, none_type** | An MD5 checksum of the catalog for use in confirming complete and uncorrupted retrieval.  Available when this catalog reaches a success status. | [optional] 
 **message** | **str, none_type** | An optional information message intended for developer consumption. | [optional] 
 **row_count** | **int, none_type** | An indication of the number of products contained in this catalog. Available when  this catalog reaches a success status. | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

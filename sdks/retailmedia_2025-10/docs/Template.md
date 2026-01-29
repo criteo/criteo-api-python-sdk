@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **sku_per_collection_min** | **int** | Minimum number of skus per collection | 
 **updated_at** | **datetime** | The time at which the template was updated | 
 **displayable_skus_max** | **int, none_type** | Maximum number of displayable skus | [optional] 
+**id** | **str, none_type** |  | [optional] 
 **sku_collection_max** | **int, none_type** | Maximum number of skus in the collection | [optional] 
 **sku_per_collection_max** | **int, none_type** | Maximum number of skus per collection | [optional] 
 

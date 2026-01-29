@@ -190,7 +190,9 @@ class CampaignApi(object):
                 'all': [
                     'create_seller_budget_mapi_message',
                 ],
-                'required': [],
+                'required': [
+                    'create_seller_budget_mapi_message',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -244,6 +246,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'seller_id',
+                    'create_seller_campaign_message_mapi',
                 ],
                 'nullable': [
                 ],
@@ -1868,11 +1871,12 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'advertiser_id',
-                    'partner_id',
                     'request_body',
+                    'partner_id',
                 ],
                 'required': [
                     'advertiser_id',
+                    'request_body',
                 ],
                 'nullable': [
                 ],
@@ -1889,10 +1893,10 @@ class CampaignApi(object):
                 'openapi_types': {
                     'advertiser_id':
                         (int,),
-                    'partner_id':
-                        (int,),
                     'request_body':
                         ([str],),
+                    'partner_id':
+                        (int,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -1900,8 +1904,8 @@ class CampaignApi(object):
                 },
                 'location_map': {
                     'advertiser_id': 'path',
-                    'partner_id': 'query',
                     'request_body': 'body',
+                    'partner_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2035,6 +2039,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'patch_ad_set_category_bid_list_request',
                 ],
                 'nullable': [
                 ],
@@ -2090,7 +2095,9 @@ class CampaignApi(object):
                 'all': [
                     'requests_patch_ad_set_v24_q3',
                 ],
-                'required': [],
+                'required': [
+                    'requests_patch_ad_set_v24_q3',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -2141,7 +2148,9 @@ class CampaignApi(object):
                 'all': [
                     'patch_campaign_list_request',
                 ],
-                'required': [],
+                'required': [
+                    'patch_campaign_list_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -2195,6 +2204,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'ad_set_id',
+                    'patch_ad_set_display_multiplier_list_request',
                 ],
                 'nullable': [
                 ],
@@ -2516,6 +2526,7 @@ class CampaignApi(object):
                 ],
                 'required': [
                     'budget_id',
+                    'update_seller_budget_message_base',
                 ],
                 'nullable': [
                 ],
@@ -2571,7 +2582,9 @@ class CampaignApi(object):
                 'all': [
                     'update_seller_budget_message',
                 ],
-                'required': [],
+                'required': [
+                    'update_seller_budget_message',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -2679,7 +2692,9 @@ class CampaignApi(object):
                 'all': [
                     'seller_campaign_update',
                 ],
-                'required': [],
+                'required': [
+                    'seller_campaign_update',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -2883,6 +2898,7 @@ class CampaignApi(object):
 
     def create_marketplace_seller_budgets(
         self,
+        create_seller_budget_mapi_message,
         **kwargs
     ):
         """  # noqa: E501
@@ -2891,12 +2907,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_marketplace_seller_budgets(async_req=True)
+        >>> thread = api.create_marketplace_seller_budgets(create_seller_budget_mapi_message, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            create_seller_budget_mapi_message ([CreateSellerBudgetMapiMessage]): 
 
         Keyword Args:
-            create_seller_budget_mapi_message ([CreateSellerBudgetMapiMessage]): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -2958,11 +2975,14 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['create_seller_budget_mapi_message'] = \
+            create_seller_budget_mapi_message
         return self.create_marketplace_seller_budgets_endpoint.call_with_http_info(**kwargs)
 
     def create_marketplace_seller_campaigns_by_seller(
         self,
         seller_id,
+        create_seller_campaign_message_mapi,
         **kwargs
     ):
         """  # noqa: E501
@@ -2971,14 +2991,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_marketplace_seller_campaigns_by_seller(seller_id, async_req=True)
+        >>> thread = api.create_marketplace_seller_campaigns_by_seller(seller_id, create_seller_campaign_message_mapi, async_req=True)
         >>> result = thread.get()
 
         Args:
             seller_id (str): Supply a generated Id of an existing Seller
+            create_seller_campaign_message_mapi (CreateSellerCampaignMessageMapi): Supply the campaign Id and bid to create the mapping
 
         Keyword Args:
-            create_seller_campaign_message_mapi (CreateSellerCampaignMessageMapi): Supply the campaign Id and bid to create the mapping. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3042,6 +3062,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['seller_id'] = \
             seller_id
+        kwargs['create_seller_campaign_message_mapi'] = \
+            create_seller_campaign_message_mapi
         return self.create_marketplace_seller_campaigns_by_seller_endpoint.call_with_http_info(**kwargs)
 
     def get_ad_set(
@@ -4989,6 +5011,7 @@ class CampaignApi(object):
     def get_marketplace_sellers_by_advertiser(
         self,
         advertiser_id,
+        request_body,
         **kwargs
     ):
         """  # noqa: E501
@@ -4997,15 +5020,15 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_marketplace_sellers_by_advertiser(advertiser_id, async_req=True)
+        >>> thread = api.get_marketplace_sellers_by_advertiser(advertiser_id, request_body, async_req=True)
         >>> result = thread.get()
 
         Args:
             advertiser_id (int): Id of the advertiser
+            request_body ([str]): Names of the sellers to associate with new Ids
 
         Keyword Args:
             partner_id (int): Id of the partner. [optional]
-            request_body ([str]): Names of the sellers to associate with new Ids. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5069,6 +5092,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['advertiser_id'] = \
             advertiser_id
+        kwargs['request_body'] = \
+            request_body
         return self.get_marketplace_sellers_by_advertiser_endpoint.call_with_http_info(**kwargs)
 
     def get_marketplace_sellers_stats(
@@ -5160,6 +5185,7 @@ class CampaignApi(object):
     def patch_ad_set_category_bids(
         self,
         ad_set_id,
+        patch_ad_set_category_bid_list_request,
         **kwargs
     ):
         """patch_ad_set_category_bids  # noqa: E501
@@ -5168,14 +5194,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_set_category_bids(ad_set_id, async_req=True)
+        >>> thread = api.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest):
 
         Keyword Args:
-            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5239,10 +5265,13 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['patch_ad_set_category_bid_list_request'] = \
+            patch_ad_set_category_bid_list_request
         return self.patch_ad_set_category_bids_endpoint.call_with_http_info(**kwargs)
 
     def patch_ad_sets(
         self,
+        requests_patch_ad_set_v24_q3,
         **kwargs
     ):
         """patch_ad_sets  # noqa: E501
@@ -5251,12 +5280,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_ad_sets(async_req=True)
+        >>> thread = api.patch_ad_sets(requests_patch_ad_set_v24_q3, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.
 
         Keyword Args:
-            requests_patch_ad_set_v24_q3 (RequestsPatchAdSetV24Q3): List of adsets to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5318,10 +5348,13 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['requests_patch_ad_set_v24_q3'] = \
+            requests_patch_ad_set_v24_q3
         return self.patch_ad_sets_endpoint.call_with_http_info(**kwargs)
 
     def patch_campaigns(
         self,
+        patch_campaign_list_request,
         **kwargs
     ):
         """patch_campaigns  # noqa: E501
@@ -5330,12 +5363,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_campaigns(async_req=True)
+        >>> thread = api.patch_campaigns(patch_campaign_list_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.
 
         Keyword Args:
-            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5397,11 +5431,14 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['patch_campaign_list_request'] = \
+            patch_campaign_list_request
         return self.patch_campaigns_endpoint.call_with_http_info(**kwargs)
 
     def patch_display_multipliers(
         self,
         ad_set_id,
+        patch_ad_set_display_multiplier_list_request,
         **kwargs
     ):
         """patch_display_multipliers  # noqa: E501
@@ -5410,14 +5447,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_display_multipliers(ad_set_id, async_req=True)
+        >>> thread = api.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             ad_set_id (str): Id of the Ad Set
+            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest):
 
         Keyword Args:
-            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5481,6 +5518,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['ad_set_id'] = \
             ad_set_id
+        kwargs['patch_ad_set_display_multiplier_list_request'] = \
+            patch_ad_set_display_multiplier_list_request
         return self.patch_display_multipliers_endpoint.call_with_http_info(**kwargs)
 
     def search_ad_sets(
@@ -5889,6 +5928,7 @@ class CampaignApi(object):
     def update_marketplace_seller_budget(
         self,
         budget_id,
+        update_seller_budget_message_base,
         **kwargs
     ):
         """  # noqa: E501
@@ -5897,14 +5937,14 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_marketplace_seller_budget(budget_id, async_req=True)
+        >>> thread = api.update_marketplace_seller_budget(budget_id, update_seller_budget_message_base, async_req=True)
         >>> result = thread.get()
 
         Args:
             budget_id (int): Id of the budget
+            update_seller_budget_message_base (UpdateSellerBudgetMessageBase): 
 
         Keyword Args:
-            update_seller_budget_message_base (UpdateSellerBudgetMessageBase): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5968,10 +6008,13 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['budget_id'] = \
             budget_id
+        kwargs['update_seller_budget_message_base'] = \
+            update_seller_budget_message_base
         return self.update_marketplace_seller_budget_endpoint.call_with_http_info(**kwargs)
 
     def update_marketplace_seller_budgets(
         self,
+        update_seller_budget_message,
         **kwargs
     ):
         """  # noqa: E501
@@ -5980,12 +6023,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_marketplace_seller_budgets(async_req=True)
+        >>> thread = api.update_marketplace_seller_budgets(update_seller_budget_message, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            update_seller_budget_message ([UpdateSellerBudgetMessage]): 
 
         Keyword Args:
-            update_seller_budget_message ([UpdateSellerBudgetMessage]): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -6047,6 +6091,8 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['update_seller_budget_message'] = \
+            update_seller_budget_message
         return self.update_marketplace_seller_budgets_endpoint.call_with_http_info(**kwargs)
 
     def update_marketplace_seller_campaign(
@@ -6135,6 +6181,7 @@ class CampaignApi(object):
 
     def update_marketplace_seller_campaigns(
         self,
+        seller_campaign_update,
         **kwargs
     ):
         """  # noqa: E501
@@ -6143,12 +6190,13 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_marketplace_seller_campaigns(async_req=True)
+        >>> thread = api.update_marketplace_seller_campaigns(seller_campaign_update, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            seller_campaign_update ([SellerCampaignUpdate]): 
 
         Keyword Args:
-            seller_campaign_update ([SellerCampaignUpdate]): . [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -6210,5 +6258,7 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['seller_campaign_update'] = \
+            seller_campaign_update
         return self.update_marketplace_seller_campaigns_endpoint.call_with_http_info(**kwargs)
 

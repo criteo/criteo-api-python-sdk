@@ -64,16 +64,9 @@ class ValueResourceOfSellerCatalogRequestV2(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        lazy_import()
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
-    _nullable = True
+    _nullable = False
 
     @cached_property
     def openapi_types():
@@ -88,7 +81,7 @@ class ValueResourceOfSellerCatalogRequestV2(ModelNormal):
         lazy_import()
         return {
             'attributes': (SellerCatalogRequestV2,),  # noqa: E501
-            'type': (str,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -143,7 +136,7 @@ class ValueResourceOfSellerCatalogRequestV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (SellerCatalogRequestV2): [optional]  # noqa: E501
-            type (str): The Type of the resource.. [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +223,7 @@ class ValueResourceOfSellerCatalogRequestV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attributes (SellerCatalogRequestV2): [optional]  # noqa: E501
-            type (str): The Type of the resource.. [optional]  # noqa: E501
+            type (str, none_type): Type of the resource.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

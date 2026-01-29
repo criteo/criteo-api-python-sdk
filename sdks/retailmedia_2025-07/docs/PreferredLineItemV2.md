@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **budget** | **float** |  | 
 **campaign_id** | **str** |  | 
-**end_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | 
 **name** | **str** |  | 
 **start_date** | **date** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | 
 **status** | **str** | Line Item Status Enum | 
@@ -17,6 +16,7 @@ Name | Type | Description | Notes
 **capping** | [**LineItemCappingV2**](LineItemCappingV2.md) |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **creative_id** | **str, none_type** | creative Id | [optional] 
+**end_date** | **date, none_type** | Represents the Date as a year, month, and day in the format YYYY-MM-DD | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **pacing** | **str, none_type** |  | [optional] 
 **page** | [**LineItemPageV2**](LineItemPageV2.md) |  | [optional] 
