@@ -280,7 +280,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_display_auction_min_bid_request':
                         (ValueResourceInputDisplayAuctionMinBidRequest,),
                 },
@@ -697,7 +697,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'brand_type':
                         (str,),
                     'sku_stock_type_filter':
@@ -759,7 +759,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'seller':
                         (str,),
                 },
@@ -925,7 +925,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'line_item_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'line_item_id': 'lineItemId',
@@ -1967,7 +1967,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'line_item_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_of_sponsored_products_line_item_update_request_model':
                         (ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel,),
                 },
@@ -2452,7 +2452,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): The retailer id
+            retailer_id (str): The retailer id
 
         Keyword Args:
             value_resource_input_display_auction_min_bid_request (ValueResourceInputDisplayAuctionMinBidRequest): The details for what creatives and product ids to use to compute the min bids. [optional]
@@ -3054,7 +3054,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): The retailer id for which brands should be fetched.
+            retailer_id (str): The retailer id for which brands should be fetched.
 
         Keyword Args:
             brand_type (str): Filter to narrow down brands [all|uc|retailer]. Defaults to uc. [optional] if omitted the server will use the default value of "uc"
@@ -3140,7 +3140,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): The retailer id for which seller should be fetched.
+            retailer_id (str): The retailer id for which seller should be fetched.
             seller (str): The seller id or seller name which should be validated.
 
         Keyword Args:
@@ -3393,7 +3393,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (int): The id of the line item
+            line_item_id (str): The id of the line item
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4756,7 +4756,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (int): The external line item ID of the sponsored products line item.
+            line_item_id (str): The external line item ID of the sponsored products line item.
             value_resource_input_of_sponsored_products_line_item_update_request_model (ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel): An update request containing all details of the requested update.
 
         Keyword Args:

@@ -572,7 +572,7 @@ class AudienceApi(object):
                 },
                 'openapi_types': {
                     'audience_segment_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'audience_segment_id': 'audience-segment-id',
@@ -1832,7 +1832,7 @@ class AudienceApi(object):
         >>> result = thread.get()
 
         Args:
-            audience_segment_id (int): The segment ID.
+            audience_segment_id (str): The segment ID.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

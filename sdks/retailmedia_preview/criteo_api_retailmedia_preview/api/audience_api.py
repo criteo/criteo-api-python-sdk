@@ -93,7 +93,7 @@ class AudienceApi(object):
                 },
                 'openapi_types': {
                     'audience_segment_id':
-                        (int,),
+                        (str,),
                     'retail_media_contactlist_amendment_request':
                         (RetailMediaContactlistAmendmentRequest,),
                 },
@@ -504,7 +504,7 @@ class AudienceApi(object):
                 },
                 'openapi_types': {
                     'audience_segment_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'audience_segment_id': 'audience-segment-id',
@@ -984,7 +984,7 @@ class AudienceApi(object):
         >>> result = thread.get()
 
         Args:
-            audience_segment_id (int): The id of the contact list audience-segment to amend, we only accept external Id here
+            audience_segment_id (str): The id of the contact list audience-segment to amend, we only accept external Id here
             retail_media_contactlist_amendment_request (RetailMediaContactlistAmendmentRequest):
 
         Keyword Args:
@@ -1592,7 +1592,7 @@ class AudienceApi(object):
         >>> result = thread.get()
 
         Args:
-            audience_segment_id (int): The id of the contact list audience-segment to amend, we only accept external Id here
+            audience_segment_id (str): The id of the contact list audience-segment to amend, we only accept external Id here
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

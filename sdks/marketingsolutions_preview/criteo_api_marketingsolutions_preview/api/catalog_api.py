@@ -72,7 +72,7 @@ class CatalogApi(object):
                 },
                 'openapi_types': {
                     'merchant_id':
-                        (int,),
+                        (str,),
                     'last_num_hours':
                         (int,),
                 },
@@ -216,7 +216,7 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         Args:
-            merchant_id (int): merchant-id to get
+            merchant_id (str): merchant-id to get
 
         Keyword Args:
             last_num_hours (int): the last number of hours. [optional]

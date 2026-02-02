@@ -348,7 +348,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -387,7 +387,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to delete from the list | [optional]
 
 ### Return type
@@ -458,7 +458,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -497,7 +497,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to delete from the list | [optional]
 
 ### Return type
@@ -568,7 +568,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -607,7 +607,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to delete from the list | [optional]
 
 ### Return type
@@ -678,7 +678,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -717,7 +717,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to delete from the list | [optional]
 
 ### Return type
@@ -1291,7 +1291,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
 
     # example passing only required values which don't have defaults set
     try:
@@ -1306,7 +1306,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
 
 ### Return type
 
@@ -1375,7 +1375,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
 
     # example passing only required values which don't have defaults set
     try:
@@ -1390,7 +1390,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
 
 ### Return type
 
@@ -1543,7 +1543,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
 
     # example passing only required values which don't have defaults set
     try:
@@ -1558,7 +1558,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
 
 ### Return type
 
@@ -1627,7 +1627,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
 
     # example passing only required values which don't have defaults set
     try:
@@ -1642,7 +1642,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
 
 ### Return type
 
@@ -2328,7 +2328,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2359,7 +2359,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
@@ -2430,7 +2430,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2461,7 +2461,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
@@ -2532,7 +2532,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2563,7 +2563,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
@@ -2634,7 +2634,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2665,7 +2665,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Description of the targeting rule to setup |
 
 ### Return type
@@ -2736,7 +2736,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2767,7 +2767,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
@@ -2838,7 +2838,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | The advertiser id
+    advertiser_id = "advertiserId_example" # str | The advertiser id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2869,7 +2869,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id |
+ **advertiser_id** | **str**| The advertiser id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
@@ -2940,7 +2940,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -2971,7 +2971,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type
@@ -3042,7 +3042,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | The campaign id
+    campaign_id = "campaignId_example" # str | The campaign id
     api_request_of_targeting_entity = ApiRequestOfTargetingEntity(
         data=EntityWrapperOfTargetingEntity(
             attributes=TargetingEntity(
@@ -3073,7 +3073,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| The campaign id |
+ **campaign_id** | **str**| The campaign id |
  **api_request_of_targeting_entity** | [**ApiRequestOfTargetingEntity**](ApiRequestOfTargetingEntity.md)| Contains the list of items to add to the existing list |
 
 ### Return type

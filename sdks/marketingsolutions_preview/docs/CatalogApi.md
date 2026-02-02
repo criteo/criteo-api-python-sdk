@@ -54,7 +54,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = catalog_api.CatalogApi(api_client)
-    merchant_id = 1 # int | merchant-id to get
+    merchant_id = "merchant-id_example" # str | merchant-id to get
     last_num_hours = 1 # int | the last number of hours (optional)
 
     # example passing only required values which don't have defaults set
@@ -78,7 +78,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **int**| merchant-id to get |
+ **merchant_id** | **str**| merchant-id to get |
  **last_num_hours** | **int**| the last number of hours | [optional]
 
 ### Return type

@@ -699,7 +699,7 @@ class AnalyticsApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'transparency_query_message':
                         (TransparencyQueryMessage,),
                 },
@@ -1633,7 +1633,7 @@ class AnalyticsApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id to fetch the transparency data.
+            advertiser_id (str): The advertiser id to fetch the transparency data.
 
         Keyword Args:
             transparency_query_message (TransparencyQueryMessage): The query message.. [optional]

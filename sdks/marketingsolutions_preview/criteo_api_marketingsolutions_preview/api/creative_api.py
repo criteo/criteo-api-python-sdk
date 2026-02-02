@@ -257,7 +257,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -307,7 +307,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'ad_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'ad_id': 'ad-id',
@@ -650,7 +650,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -702,7 +702,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'ad_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'ad_id': 'ad-id',
@@ -1184,7 +1184,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'ad_id':
-                        (int,),
+                        (str,),
                     'exam_ad_audience_segment_link_input':
                         (ExamAdAudienceSegmentLinkInput,),
                 },
@@ -1485,7 +1485,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            id (int): The ad identifier to delete.
+            id (str): The ad identifier to delete.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1568,7 +1568,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            ad_id (int): The ad identifier.
+            ad_id (str): The ad identifier.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2084,7 +2084,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            id (int): The ad identifier to retrieve.
+            id (str): The ad identifier to retrieve.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2167,7 +2167,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            ad_id (int): The ad identifier.
+            ad_id (str): The ad identifier.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2849,7 +2849,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            ad_id (int): The ad identifier.
+            ad_id (str): The ad identifier.
             exam_ad_audience_segment_link_input (ExamAdAudienceSegmentLinkInput): The audience segment link information.
 
         Keyword Args:

@@ -71,7 +71,7 @@ class OnSiteRecommendationApi(object):
                 },
                 'openapi_types': {
                     'catalogid':
-                        (int,),
+                        (str,),
                     'inbot_discussion_body_model':
                         (InbotDiscussionBodyModel,),
                 },
@@ -112,7 +112,7 @@ class OnSiteRecommendationApi(object):
         >>> result = thread.get()
 
         Args:
-            catalogid (int): the identifier of the catalog to query
+            catalogid (str): the identifier of the catalog to query
             inbot_discussion_body_model (InbotDiscussionBodyModel):
 
         Keyword Args:

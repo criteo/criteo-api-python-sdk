@@ -207,7 +207,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -265,7 +265,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -323,7 +323,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -381,7 +381,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -750,7 +750,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -802,7 +802,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -906,7 +906,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'campaign_id': 'campaignId',
@@ -958,7 +958,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'campaign_id': 'campaignId',
@@ -1333,7 +1333,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1392,7 +1392,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1451,7 +1451,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1510,7 +1510,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1569,7 +1569,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1628,7 +1628,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1687,7 +1687,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -1746,7 +1746,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'api_request_of_targeting_entity':
                         (ApiRequestOfTargetingEntity,),
                 },
@@ -2333,7 +2333,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
 
         Keyword Args:
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to delete from the list. [optional]
@@ -2417,7 +2417,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
 
         Keyword Args:
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to delete from the list. [optional]
@@ -2501,7 +2501,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
 
         Keyword Args:
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to delete from the list. [optional]
@@ -2585,7 +2585,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
 
         Keyword Args:
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to delete from the list. [optional]
@@ -3167,7 +3167,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3250,7 +3250,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3416,7 +3416,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3499,7 +3499,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4084,7 +4084,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
@@ -4171,7 +4171,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
@@ -4258,7 +4258,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
@@ -4345,7 +4345,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Description of the targeting rule to setup
 
         Keyword Args:
@@ -4432,7 +4432,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
@@ -4519,7 +4519,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): The advertiser id
+            advertiser_id (str): The advertiser id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
@@ -4606,7 +4606,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:
@@ -4693,7 +4693,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): The campaign id
+            campaign_id (str): The campaign id
             api_request_of_targeting_entity (ApiRequestOfTargetingEntity): Contains the list of items to add to the existing list
 
         Keyword Args:

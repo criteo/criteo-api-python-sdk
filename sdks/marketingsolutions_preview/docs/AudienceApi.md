@@ -989,7 +989,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = 1 # int | The segment ID.
+    audience_segment_id = "audience-segment-id_example" # str | The segment ID.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1004,7 +1004,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **int**| The segment ID. |
+ **audience_segment_id** | **str**| The segment ID. |
 
 ### Return type
 

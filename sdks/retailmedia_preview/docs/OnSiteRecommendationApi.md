@@ -53,7 +53,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = on_site_recommendation_api.OnSiteRecommendationApi(api_client)
-    catalogid = 1 # int | the identifier of the catalog to query
+    catalogid = "catalogid_example" # str | the identifier of the catalog to query
     inbot_discussion_body_model = InbotDiscussionBodyModel(
         data=InbotDiscussionDataInstanceModel(
             attributes=InbotDiscussion(
@@ -96,7 +96,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **catalogid** | **int**| the identifier of the catalog to query |
+ **catalogid** | **str**| the identifier of the catalog to query |
  **inbot_discussion_body_model** | [**InbotDiscussionBodyModel**](InbotDiscussionBodyModel.md)|  |
 
 ### Return type

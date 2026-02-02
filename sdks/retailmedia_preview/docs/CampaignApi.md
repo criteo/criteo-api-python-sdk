@@ -399,7 +399,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | The retailer id
+    retailer_id = "retailerId_example" # str | The retailer id
     value_resource_input_display_auction_min_bid_request = ValueResourceInputDisplayAuctionMinBidRequest(
         data=ValueResourceDisplayAuctionMinBidRequest(
             attributes=DisplayAuctionMinBidRequest(
@@ -435,7 +435,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer id |
+ **retailer_id** | **str**| The retailer id |
  **value_resource_input_display_auction_min_bid_request** | [**ValueResourceInputDisplayAuctionMinBidRequest**](ValueResourceInputDisplayAuctionMinBidRequest.md)| The details for what creatives and product ids to use to compute the min bids | [optional]
 
 ### Return type
@@ -1148,7 +1148,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | The retailer id for which brands should be fetched.
+    retailer_id = "retailerId_example" # str | The retailer id for which brands should be fetched.
     brand_type = "uc" # str | Filter to narrow down brands [all|uc|retailer]. Defaults to uc (optional) if omitted the server will use the default value of "uc"
     sku_stock_type_filter = "first-and-third-party" # str | Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party (optional) if omitted the server will use the default value of "first-and-third-party"
 
@@ -1173,7 +1173,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer id for which brands should be fetched. |
+ **retailer_id** | **str**| The retailer id for which brands should be fetched. |
  **brand_type** | **str**| Filter to narrow down brands [all|uc|retailer]. Defaults to uc | [optional] if omitted the server will use the default value of "uc"
  **sku_stock_type_filter** | **str**| Filter to narrow down brands [first-party|third-party|first-and-third-party]. Defaults to first-and-third-party | [optional] if omitted the server will use the default value of "first-and-third-party"
 
@@ -1244,7 +1244,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | The retailer id for which seller should be fetched.
+    retailer_id = "retailerId_example" # str | The retailer id for which seller should be fetched.
     seller = "seller_example" # str | The seller id or seller name which should be validated.
 
     # example passing only required values which don't have defaults set
@@ -1260,7 +1260,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailer id for which seller should be fetched. |
+ **retailer_id** | **str**| The retailer id for which seller should be fetched. |
  **seller** | **str**| The seller id or seller name which should be validated. |
 
 ### Return type
@@ -1510,7 +1510,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = 1 # int | The id of the line item
+    line_item_id = "lineItemId_example" # str | The id of the line item
 
     # example passing only required values which don't have defaults set
     try:
@@ -1525,7 +1525,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **int**| The id of the line item |
+ **line_item_id** | **str**| The id of the line item |
 
 ### Return type
 
@@ -3077,7 +3077,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = 1 # int | The external line item ID of the sponsored products line item.
+    line_item_id = "lineItemId_example" # str | The external line item ID of the sponsored products line item.
     value_resource_input_of_sponsored_products_line_item_update_request_model = ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel(
         data=ValueResourceOfSponsoredProductsLineItemUpdateRequestModel(
             attributes=SponsoredProductsLineItemUpdateRequestModel(
@@ -3120,7 +3120,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **int**| The external line item ID of the sponsored products line item. |
+ **line_item_id** | **str**| The external line item ID of the sponsored products line item. |
  **value_resource_input_of_sponsored_products_line_item_update_request_model** | [**ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel**](ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel.md)| An update request containing all details of the requested update. |
 
 ### Return type

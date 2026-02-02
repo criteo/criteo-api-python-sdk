@@ -444,7 +444,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    id = 1 # int | The ad identifier to delete.
+    id = "id_example" # str | The ad identifier to delete.
 
     # example passing only required values which don't have defaults set
     try:
@@ -458,7 +458,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ad identifier to delete. |
+ **id** | **str**| The ad identifier to delete. |
 
 ### Return type
 
@@ -526,7 +526,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    ad_id = 1 # int | The ad identifier.
+    ad_id = "ad-id_example" # str | The ad identifier.
 
     # example passing only required values which don't have defaults set
     try:
@@ -540,7 +540,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_id** | **int**| The ad identifier. |
+ **ad_id** | **str**| The ad identifier. |
 
 ### Return type
 
@@ -1128,7 +1128,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    id = 1 # int | The ad identifier to retrieve.
+    id = "id_example" # str | The ad identifier to retrieve.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1143,7 +1143,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ad identifier to retrieve. |
+ **id** | **str**| The ad identifier to retrieve. |
 
 ### Return type
 
@@ -1212,7 +1212,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    ad_id = 1 # int | The ad identifier.
+    ad_id = "ad-id_example" # str | The ad identifier.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1227,7 +1227,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_id** | **int**| The ad identifier. |
+ **ad_id** | **str**| The ad identifier. |
 
 ### Return type
 
@@ -1946,7 +1946,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    ad_id = 1 # int | The ad identifier.
+    ad_id = "ad-id_example" # str | The ad identifier.
     exam_ad_audience_segment_link_input = ExamAdAudienceSegmentLinkInput(
         data=ValueResourceOfExamAdAudienceSegmentLinkWrite(
             attributes=ExamAdAudienceSegmentLinkWrite(
@@ -1969,7 +1969,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_id** | **int**| The ad identifier. |
+ **ad_id** | **str**| The ad identifier. |
  **exam_ad_audience_segment_link_input** | [**ExamAdAudienceSegmentLinkInput**](ExamAdAudienceSegmentLinkInput.md)| The audience segment link information. |
 
 ### Return type

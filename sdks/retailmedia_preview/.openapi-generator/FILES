@@ -36,6 +36,7 @@ criteo_api_retailmedia_preview/model/async_campaigns_report_resource.py
 criteo_api_retailmedia_preview/model/async_fill_rate_report.py
 criteo_api_retailmedia_preview/model/async_fill_rate_report_request.py
 criteo_api_retailmedia_preview/model/async_fill_rate_report_resource.py
+criteo_api_retailmedia_preview/model/async_insight_response.py
 criteo_api_retailmedia_preview/model/async_line_items_report.py
 criteo_api_retailmedia_preview/model/async_line_items_report_request.py
 criteo_api_retailmedia_preview/model/async_line_items_report_resource.py
@@ -117,6 +118,8 @@ criteo_api_retailmedia_preview/model/inbot_discussion.py
 criteo_api_retailmedia_preview/model/inbot_discussion_body_model.py
 criteo_api_retailmedia_preview/model/inbot_discussion_data_instance_model.py
 criteo_api_retailmedia_preview/model/input_resource_of_preferred_line_item_create_model_v2.py
+criteo_api_retailmedia_preview/model/insight_status_response.py
+criteo_api_retailmedia_preview/model/insight_status_response_resource.py
 criteo_api_retailmedia_preview/model/installment.py
 criteo_api_retailmedia_preview/model/line_item_budget_cap_out_history.py
 criteo_api_retailmedia_preview/model/line_item_budget_cap_out_history_capout_times.py
@@ -272,7 +275,11 @@ criteo_api_retailmedia_preview/model/rmca_common_problem.py
 criteo_api_retailmedia_preview/model/sdk_api_rest_common_problem.py
 criteo_api_retailmedia_preview/model/seller_preview.py
 criteo_api_retailmedia_preview/model/seller_preview_response.py
+criteo_api_retailmedia_preview/model/served_category_filter.py
 criteo_api_retailmedia_preview/model/set_product_buy_box_winners_request.py
+criteo_api_retailmedia_preview/model/share_of_voice_insight.py
+criteo_api_retailmedia_preview/model/share_of_voice_insight_request.py
+criteo_api_retailmedia_preview/model/share_of_voice_insight_resource.py
 criteo_api_retailmedia_preview/model/sku_data_preview.py
 criteo_api_retailmedia_preview/model/sku_data_preview_list_response.py
 criteo_api_retailmedia_preview/model/sku_search_request_preview.py
@@ -347,6 +354,7 @@ docs/AsyncCampaignsReportResource.md
 docs/AsyncFillRateReport.md
 docs/AsyncFillRateReportRequest.md
 docs/AsyncFillRateReportResource.md
+docs/AsyncInsightResponse.md
 docs/AsyncLineItemsReport.md
 docs/AsyncLineItemsReportRequest.md
 docs/AsyncLineItemsReportResource.md
@@ -433,6 +441,8 @@ docs/InbotDiscussion.md
 docs/InbotDiscussionBodyModel.md
 docs/InbotDiscussionDataInstanceModel.md
 docs/InputResourceOfPreferredLineItemCreateModelV2.md
+docs/InsightStatusResponse.md
+docs/InsightStatusResponseResource.md
 docs/Installment.md
 docs/LineItemBudgetCapOutHistory.md
 docs/LineItemBudgetCapOutHistoryCapoutTimes.md
@@ -589,7 +599,11 @@ docs/RmcaCommonProblem.md
 docs/SdkApiRestCommonProblem.md
 docs/SellerPreview.md
 docs/SellerPreviewResponse.md
+docs/ServedCategoryFilter.md
 docs/SetProductBuyBoxWinnersRequest.md
+docs/ShareOfVoiceInsight.md
+docs/ShareOfVoiceInsightRequest.md
+docs/ShareOfVoiceInsightResource.md
 docs/SkuDataPreview.md
 docs/SkuDataPreviewListResponse.md
 docs/SkuSearchRequestPreview.md
