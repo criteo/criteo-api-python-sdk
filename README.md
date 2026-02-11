@@ -12,6 +12,7 @@ API clients are generated for each support API version and service. You can find
 Each of the generated SDKs is also published on PyPi
 * https://pypi.org/project/criteo-api-retailmedia-sdk/
 * https://pypi.org/project/criteo-api-marketingsolutions-sdk/
+* https://pypi.org/project/criteo-api-commercegrid-sdk/
 
 The version number contains the API version in its first two digits: 
 * the API version **2021-10** translates to version 2021.10.\*.\* of the artefact
