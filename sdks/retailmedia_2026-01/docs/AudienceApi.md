@@ -60,7 +60,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = 1 # int | The id of the contact list audience-segment to amend, we only accept external Id here
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend, we only accept external Id here
     retail_media_contactlist_amendment_request = RetailMediaContactlistAmendmentRequest(
         data=RetailMediaContactlistAmendment(
             attributes=RetailMediaContactlistAmendmentAttributes(
@@ -87,7 +87,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **int**| The id of the contact list audience-segment to amend, we only accept external Id here |
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend, we only accept external Id here |
  **retail_media_contactlist_amendment_request** | [**RetailMediaContactlistAmendmentRequest**](RetailMediaContactlistAmendmentRequest.md)|  |
 
 ### Return type
@@ -481,7 +481,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = audience_api.AudienceApi(api_client)
-    audience_segment_id = 1 # int | The id of the contact list audience-segment to amend, we only accept external Id here
+    audience_segment_id = "audience-segment-id_example" # str | The id of the contact list audience-segment to amend, we only accept external Id here
 
     # example passing only required values which don't have defaults set
     try:
@@ -495,7 +495,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **audience_segment_id** | **int**| The id of the contact list audience-segment to amend, we only accept external Id here |
+ **audience_segment_id** | **str**| The id of the contact list audience-segment to amend, we only accept external Id here |
 
 ### Return type
 

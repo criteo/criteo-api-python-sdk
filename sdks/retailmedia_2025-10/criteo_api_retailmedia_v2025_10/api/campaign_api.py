@@ -1348,7 +1348,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailerId',
@@ -1781,7 +1781,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'campaign_id': 'campaignId',
@@ -2069,7 +2069,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'category_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'category_id': 'categoryId',
@@ -2123,7 +2123,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_cpc_min_bids_request':
                         (ValueResourceInputCpcMinBidsRequest,),
                 },
@@ -2240,9 +2240,9 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'template_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailer-id',
@@ -2310,7 +2310,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'account_id':
-                        (int,),
+                        (str,),
                     'limit':
                         (int,),
                     'offset':
@@ -2707,7 +2707,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_recommended_categories_request_v1':
                         (ValueResourceInputRecommendedCategoriesRequestV1,),
                 },
@@ -2816,7 +2816,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'retailer_id': 'retailer-id',
@@ -3603,7 +3603,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'retailer_id':
-                        (int,),
+                        (str,),
                     'limit':
                         (int,),
                     'offset':
@@ -3903,7 +3903,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'campaign_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_of_campaign_budget_overrides':
                         (ValueResourceInputOfCampaignBudgetOverrides,),
                 },
@@ -4085,7 +4085,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'line_item_id':
-                        (int,),
+                        (str,),
                     'value_resource_input_retail_media_keywords_review':
                         (ValueResourceInputRetailMediaKeywordsReview,),
                 },
@@ -6020,7 +6020,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): The retailers to fetch pages for
+            retailer_id (str): The retailers to fetch pages for
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -6606,7 +6606,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): Campaign id.
+            campaign_id (str): Campaign id.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -7024,7 +7024,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            category_id (int): ID of the desired category
+            category_id (str): ID of the desired category
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -7108,7 +7108,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): Retailer Id.
+            retailer_id (str): Retailer Id.
             value_resource_input_cpc_min_bids_request (ValueResourceInputCpcMinBidsRequest): Cpc minimum bid amount request object.
 
         Keyword Args:
@@ -7282,8 +7282,8 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): Retailer Id
-            template_id (int): Template Id
+            retailer_id (str): Retailer Id
+            template_id (str): Template Id
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -7368,7 +7368,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            account_id (int): The account to generate a report for
+            account_id (str): The account to generate a report for
 
         Keyword Args:
             limit (int): Number of items per page. [optional] if omitted the server will use the default value of 25
@@ -7877,7 +7877,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): Retailer id.
+            retailer_id (str): Retailer id.
             value_resource_input_recommended_categories_request_v1 (ValueResourceInputRecommendedCategoriesRequestV1): Request of recommended categories.
 
         Keyword Args:
@@ -8046,7 +8046,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): External retailer id to retrieve creative templates for
+            retailer_id (str): External retailer id to retrieve creative templates for
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -9156,7 +9156,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            retailer_id (int): Retailer id.
+            retailer_id (str): Retailer id.
 
         Keyword Args:
             limit (int): Limit of the search result.. [optional] if omitted the server will use the default value of 50
@@ -9585,7 +9585,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (int): Campaign id.
+            campaign_id (str): Campaign id.
             value_resource_input_of_campaign_budget_overrides (ValueResourceInputOfCampaignBudgetOverrides): New campaign budget overrides settings value resource input.
 
         Keyword Args:
@@ -9849,7 +9849,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            line_item_id (int): The line item to update keyword review statuses for
+            line_item_id (str): The line item to update keyword review statuses for
 
         Keyword Args:
             value_resource_input_retail_media_keywords_review (ValueResourceInputRetailMediaKeywordsReview): Request object containing a list of Phrase-ReviewState pairs to update. [optional]

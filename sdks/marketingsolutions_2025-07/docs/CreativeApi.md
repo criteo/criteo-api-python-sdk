@@ -441,7 +441,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    id = 1 # int | The ad identifier to delete.
+    id = "id_example" # str | The ad identifier to delete.
 
     # example passing only required values which don't have defaults set
     try:
@@ -455,7 +455,7 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ad identifier to delete. |
+ **id** | **str**| The ad identifier to delete. |
 
 ### Return type
 
@@ -1043,7 +1043,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = creative_api.CreativeApi(api_client)
-    id = 1 # int | The ad identifier to retrieve.
+    id = "id_example" # str | The ad identifier to retrieve.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1058,7 +1058,7 @@ with criteo_api_marketingsolutions_v2025_07.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The ad identifier to retrieve. |
+ **id** | **str**| The ad identifier to retrieve. |
 
 ### Return type
 

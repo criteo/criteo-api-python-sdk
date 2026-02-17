@@ -2264,7 +2264,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | The retailers to fetch pages for
+    retailer_id = "retailerId_example" # str | The retailers to fetch pages for
 
     # example passing only required values which don't have defaults set
     try:
@@ -2279,7 +2279,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| The retailers to fetch pages for |
+ **retailer_id** | **str**| The retailers to fetch pages for |
 
 ### Return type
 
@@ -2891,7 +2891,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | Campaign id.
+    campaign_id = "campaignId_example" # str | Campaign id.
 
     # example passing only required values which don't have defaults set
     try:
@@ -2906,7 +2906,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Campaign id. |
+ **campaign_id** | **str**| Campaign id. |
 
 ### Return type
 
@@ -3327,7 +3327,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    category_id = 1 # int | ID of the desired category
+    category_id = "categoryId_example" # str | ID of the desired category
 
     # example passing only required values which don't have defaults set
     try:
@@ -3342,7 +3342,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **category_id** | **int**| ID of the desired category |
+ **category_id** | **str**| ID of the desired category |
 
 ### Return type
 
@@ -3412,7 +3412,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | Retailer Id.
+    retailer_id = "retailerId_example" # str | Retailer Id.
     value_resource_input_cpc_min_bids_request = ValueResourceInputCpcMinBidsRequest(
         data=ValueResourceCpcMinBidsRequest(
             attributes=CpcMinBidsRequest(
@@ -3437,7 +3437,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| Retailer Id. |
+ **retailer_id** | **str**| Retailer Id. |
  **value_resource_input_cpc_min_bids_request** | [**ValueResourceInputCpcMinBidsRequest**](ValueResourceInputCpcMinBidsRequest.md)| Cpc minimum bid amount request object. |
 
 ### Return type
@@ -3593,8 +3593,8 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | Retailer Id
-    template_id = 1 # int | Template Id
+    retailer_id = "retailer-id_example" # str | Retailer Id
+    template_id = "template-id_example" # str | Template Id
 
     # example passing only required values which don't have defaults set
     try:
@@ -3609,8 +3609,8 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| Retailer Id |
- **template_id** | **int**| Template Id |
+ **retailer_id** | **str**| Retailer Id |
+ **template_id** | **str**| Template Id |
 
 ### Return type
 
@@ -3679,7 +3679,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = 1 # int | The account to generate a report for
+    account_id = "account-id_example" # str | The account to generate a report for
     limit = 25 # int | Number of items per page (optional) if omitted the server will use the default value of 25
     offset = 0 # int | Offset for pagination (optional) if omitted the server will use the default value of 0
 
@@ -3704,7 +3704,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **int**| The account to generate a report for |
+ **account_id** | **str**| The account to generate a report for |
  **limit** | **int**| Number of items per page | [optional] if omitted the server will use the default value of 25
  **offset** | **int**| Offset for pagination | [optional] if omitted the server will use the default value of 0
 
@@ -4317,7 +4317,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    retailer_id = 1 # int | External retailer id to retrieve creative templates for
+    retailer_id = "retailer-id_example" # str | External retailer id to retrieve creative templates for
 
     # example passing only required values which don't have defaults set
     try:
@@ -4332,7 +4332,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **retailer_id** | **int**| External retailer id to retrieve creative templates for |
+ **retailer_id** | **str**| External retailer id to retrieve creative templates for |
 
 ### Return type
 
@@ -5905,7 +5905,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = 1 # int | Campaign id.
+    campaign_id = "campaignId_example" # str | Campaign id.
     value_resource_input_of_campaign_budget_overrides = ValueResourceInputOfCampaignBudgetOverrides(
         data=ValueResourceOfCampaignBudgetOverrides(
             attributes=CampaignBudgetOverrides(
@@ -5943,7 +5943,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **int**| Campaign id. |
+ **campaign_id** | **str**| Campaign id. |
  **value_resource_input_of_campaign_budget_overrides** | [**ValueResourceInputOfCampaignBudgetOverrides**](ValueResourceInputOfCampaignBudgetOverrides.md)| New campaign budget overrides settings value resource input. |
 
 ### Return type
@@ -6246,7 +6246,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = 1 # int | The line item to update keyword review statuses for
+    line_item_id = "line-item-id_example" # str | The line item to update keyword review statuses for
     value_resource_input_retail_media_keywords_review = ValueResourceInputRetailMediaKeywordsReview(
         data=ValueResourceRetailMediaKeywordsReview(
             attributes=RetailMediaKeywordsReview(
@@ -6282,7 +6282,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **int**| The line item to update keyword review statuses for |
+ **line_item_id** | **str**| The line item to update keyword review statuses for |
  **value_resource_input_retail_media_keywords_review** | [**ValueResourceInputRetailMediaKeywordsReview**](ValueResourceInputRetailMediaKeywordsReview.md)| Request object containing a list of Phrase-ReviewState pairs to update | [optional]
 
 ### Return type

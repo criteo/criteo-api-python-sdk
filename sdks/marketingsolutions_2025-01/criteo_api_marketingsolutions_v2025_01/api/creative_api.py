@@ -255,7 +255,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -598,7 +598,7 @@ class CreativeApi(object):
                 },
                 'openapi_types': {
                     'id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'id': 'id',
@@ -1322,7 +1322,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            id (int): The ad identifier to delete.
+            id (str): The ad identifier to delete.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1838,7 +1838,7 @@ class CreativeApi(object):
         >>> result = thread.get()
 
         Args:
-            id (int): The ad identifier to retrieve.
+            id (str): The ad identifier to retrieve.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

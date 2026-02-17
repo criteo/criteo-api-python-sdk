@@ -3156,6 +3156,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 "campaign_ids_example",
             ],
         ),
+        meta=AdSetSearchRequestMetadataV26Q1(
+            fields=[
+                "Name",
+            ],
+        ),
     ) # AdSetSearchRequestV26Q1 |  (optional)
 
     # example passing only required values which don't have defaults set

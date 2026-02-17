@@ -59,6 +59,7 @@ class OnSiteRecoRequest(ModelNormal):
             'CTOBUNDLE': "CtoBundle",
             'IDFA': "Idfa",
             'GAID': "Gaid",
+            'INTERNALUSERID': "InternalUserId",
         },
     }
 
@@ -155,7 +156,7 @@ class OnSiteRecoRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             ad_id (int): Id of the Ad. This field is optional, it allows to setup Reco controls at Ad level.. [optional]  # noqa: E501
             ad_set_id (int): Id of the AdSet. This field is optional and is resolved automatically for adsets previously configured.. [optional]  # noqa: E501
-            identity_type (str): Type of the user identifier (CtoBundle, Idfa, Gaid...)  Optional if its type is CtoBundle. [optional]  # noqa: E501
+            identity_type (str): Type of the user identifier (CtoBundle, Idfa, Gaid...) Optional if its type is CtoBundle. [optional]  # noqa: E501
             user_id (str): Used to retrieve user events from Criteo trackers.. [optional]  # noqa: E501
         """
 
@@ -250,7 +251,7 @@ class OnSiteRecoRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             ad_id (int): Id of the Ad. This field is optional, it allows to setup Reco controls at Ad level.. [optional]  # noqa: E501
             ad_set_id (int): Id of the AdSet. This field is optional and is resolved automatically for adsets previously configured.. [optional]  # noqa: E501
-            identity_type (str): Type of the user identifier (CtoBundle, Idfa, Gaid...)  Optional if its type is CtoBundle. [optional]  # noqa: E501
+            identity_type (str): Type of the user identifier (CtoBundle, Idfa, Gaid...) Optional if its type is CtoBundle. [optional]  # noqa: E501
             user_id (str): Used to retrieve user events from Criteo trackers.. [optional]  # noqa: E501
         """
 

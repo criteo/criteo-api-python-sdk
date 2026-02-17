@@ -1,6 +1,6 @@
 # OnSiteRecoResponse
 
-Recommendation response.
+Recommendation response
 
 ## Properties
 Name | Type | Description | Notes

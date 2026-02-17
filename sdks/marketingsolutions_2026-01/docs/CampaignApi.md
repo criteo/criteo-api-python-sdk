@@ -875,7 +875,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
 
     # example passing only required values which don't have defaults set
     try:
@@ -891,7 +891,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
 
 ### Return type
 
@@ -960,7 +960,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
 
     # example passing only required values which don't have defaults set
     try:
@@ -976,7 +976,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
 
 ### Return type
 
@@ -1207,7 +1207,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
     budget_id = 1 # int | Return only budgets with given Id (optional)
     end_after_date = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Return budgets that end after the given date using the `yyyy-MM-DD` format.              If param is not provided, default behavior is to only return budgets that have not yet ended. (optional)
     seller_id = 1 # int | Return only budgets belonging to given sellerId (optional)
@@ -1240,7 +1240,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
  **budget_id** | **int**| Return only budgets with given Id | [optional]
  **end_after_date** | **datetime**| Return budgets that end after the given date using the &#x60;yyyy-MM-DD&#x60; format.              If param is not provided, default behavior is to only return budgets that have not yet ended. | [optional]
  **seller_id** | **int**| Return only budgets belonging to given sellerId | [optional]
@@ -1531,7 +1531,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
 
     # example passing only required values which don't have defaults set
     try:
@@ -1547,7 +1547,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
 
 ### Return type
 
@@ -1799,7 +1799,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
     seller_id = 1 # int | Id of the seller
     campaign_id = 1 # int | Seller CampaignId (optional)
     height = 1 # int | Height of the ad to display (optional)
@@ -1828,7 +1828,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
  **seller_id** | **int**| Id of the seller |
  **campaign_id** | **int**| Seller CampaignId | [optional]
  **height** | **int**| Height of the ad to display | [optional]
@@ -1901,7 +1901,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    budget_id = 1 # int | Id of the budget.
+    budget_id = "budgetId_example" # str | Id of the budget.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1917,7 +1917,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **int**| Id of the budget. |
+ **budget_id** | **str**| Id of the budget. |
 
 ### Return type
 
@@ -2267,7 +2267,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
 
     # example passing only required values which don't have defaults set
     try:
@@ -2283,7 +2283,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
 
 ### Return type
 
@@ -2649,7 +2649,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    advertiser_id = 1 # int | Id of the advertiser
+    advertiser_id = "advertiserId_example" # str | Id of the advertiser
     request_body = [
         "request_body_example",
     ] # [str] | Names of the sellers to associate with new Ids
@@ -2678,7 +2678,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| Id of the advertiser |
+ **advertiser_id** | **str**| Id of the advertiser |
  **request_body** | **[str]**| Names of the sellers to associate with new Ids |
  **partner_id** | **int**| Id of the partner | [optional]
 
@@ -3775,7 +3775,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    budget_id = 1 # int | Id of the budget
+    budget_id = "budgetId_example" # str | Id of the budget
     update_seller_budget_message_base = UpdateSellerBudgetMessageBase(
         amount="amount_example",
         campaign_ids=[
@@ -3800,7 +3800,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget_id** | **int**| Id of the budget |
+ **budget_id** | **str**| Id of the budget |
  **update_seller_budget_message_base** | [**UpdateSellerBudgetMessageBase**](UpdateSellerBudgetMessageBase.md)|  |
 
 ### Return type

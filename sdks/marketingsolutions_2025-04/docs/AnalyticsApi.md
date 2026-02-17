@@ -373,7 +373,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    advertiser_id = 1 # int | The advertiser id to fetch the transparency data.
+    advertiser_id = "advertiser-id_example" # str | The advertiser id to fetch the transparency data.
     transparency_query_message = TransparencyQueryMessage(
         end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         should_display_product_ids=False,
@@ -401,7 +401,7 @@ with criteo_api_marketingsolutions_v2025_04.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **int**| The advertiser id to fetch the transparency data. |
+ **advertiser_id** | **str**| The advertiser id to fetch the transparency data. |
  **transparency_query_message** | [**TransparencyQueryMessage**](TransparencyQueryMessage.md)| The query message. | [optional]
 
 ### Return type

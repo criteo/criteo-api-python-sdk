@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **is_suspended** | **bool** |  | [optional] 
 **seller_id** | **str** |  | [optional] 
 **spend** | **float, none_type** |  | [optional] 
-**start_date** | **datetime** |  | [optional] 
+**start_date** | **date** |  | [optional] 
 **status** | [**SellerBudgetStatusV2**](SellerBudgetStatusV2.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

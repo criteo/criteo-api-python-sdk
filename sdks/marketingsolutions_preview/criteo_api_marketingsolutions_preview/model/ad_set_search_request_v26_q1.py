@@ -31,7 +31,9 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_preview.model.ad_set_search_filter_v26_q1 import AdSetSearchFilterV26Q1
+    from criteo_api_marketingsolutions_preview.model.ad_set_search_request_metadata_v26_q1 import AdSetSearchRequestMetadataV26Q1
     globals()['AdSetSearchFilterV26Q1'] = AdSetSearchFilterV26Q1
+    globals()['AdSetSearchRequestMetadataV26Q1'] = AdSetSearchRequestMetadataV26Q1
 
 
 class AdSetSearchRequestV26Q1(ModelNormal):
@@ -88,6 +90,7 @@ class AdSetSearchRequestV26Q1(ModelNormal):
         lazy_import()
         return {
             'filters': (AdSetSearchFilterV26Q1,),  # noqa: E501
+            'meta': (AdSetSearchRequestMetadataV26Q1,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +100,7 @@ class AdSetSearchRequestV26Q1(ModelNormal):
 
     attribute_map = {
         'filters': 'filters',  # noqa: E501
+        'meta': 'meta',  # noqa: E501
     }
 
     read_only_vars = {
@@ -141,6 +145,7 @@ class AdSetSearchRequestV26Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             filters (AdSetSearchFilterV26Q1): [optional]  # noqa: E501
+            meta (AdSetSearchRequestMetadataV26Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,6 +232,7 @@ class AdSetSearchRequestV26Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             filters (AdSetSearchFilterV26Q1): [optional]  # noqa: E501
+            meta (AdSetSearchRequestMetadataV26Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

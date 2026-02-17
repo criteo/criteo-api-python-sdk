@@ -527,7 +527,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -579,7 +579,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -736,7 +736,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'budget_id':
                         (int,),
                     'end_after_date':
@@ -1003,7 +1003,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -1212,7 +1212,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'seller_id':
                         (int,),
                     'campaign_id':
@@ -1280,7 +1280,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'budget_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'budget_id': 'budgetId',
@@ -1564,7 +1564,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                 },
                 'attribute_map': {
                     'advertiser_id': 'advertiserId',
@@ -1892,7 +1892,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'advertiser_id':
-                        (int,),
+                        (str,),
                     'request_body':
                         ([str],),
                     'partner_id':
@@ -2542,7 +2542,7 @@ class CampaignApi(object):
                 },
                 'openapi_types': {
                     'budget_id':
-                        (int,),
+                        (str,),
                     'update_seller_budget_message_base':
                         (UpdateSellerBudgetMessageBase,),
                 },
@@ -3413,7 +3413,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3496,7 +3496,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3735,7 +3735,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
 
         Keyword Args:
             budget_id (int): Return only budgets with given Id. [optional]
@@ -4005,7 +4005,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4258,7 +4258,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
             seller_id (int): Id of the seller
 
         Keyword Args:
@@ -4347,7 +4347,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (int): Id of the budget.
+            budget_id (str): Id of the budget.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4683,7 +4683,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -5024,7 +5024,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (int): Id of the advertiser
+            advertiser_id (str): Id of the advertiser
             request_body ([str]): Names of the sellers to associate with new Ids
 
         Keyword Args:
@@ -5941,7 +5941,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            budget_id (int): Id of the budget
+            budget_id (str): Id of the budget
             update_seller_budget_message_base (UpdateSellerBudgetMessageBase): 
 
         Keyword Args:

@@ -95,7 +95,7 @@ class SellerBudgetMessage(ModelNormal):
             'is_suspended': (bool,),  # noqa: E501
             'seller_id': (str,),  # noqa: E501
             'spend': (float, none_type,),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
+            'start_date': (date,),  # noqa: E501
             'status': (SellerBudgetStatusV2,),  # noqa: E501
         }
 
@@ -166,7 +166,7 @@ class SellerBudgetMessage(ModelNormal):
             is_suspended (bool): [optional]  # noqa: E501
             seller_id (str): [optional]  # noqa: E501
             spend (float, none_type): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
+            start_date (date): [optional]  # noqa: E501
             status (SellerBudgetStatusV2): [optional]  # noqa: E501
         """
 
@@ -261,7 +261,7 @@ class SellerBudgetMessage(ModelNormal):
             is_suspended (bool): [optional]  # noqa: E501
             seller_id (str): [optional]  # noqa: E501
             spend (float, none_type): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
+            start_date (date): [optional]  # noqa: E501
             status (SellerBudgetStatusV2): [optional]  # noqa: E501
         """
 

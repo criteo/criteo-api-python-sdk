@@ -89,7 +89,7 @@ class RecommendedProduct(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'price': (float, none_type,),  # noqa: E501
             'product_external_id': (str, none_type,),  # noqa: E501
-            'retailprice': (float, none_type,),  # noqa: E501
+            'retail_price': (float, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -106,7 +106,7 @@ class RecommendedProduct(ModelNormal):
         'name': 'name',  # noqa: E501
         'price': 'price',  # noqa: E501
         'product_external_id': 'productExternalId',  # noqa: E501
-        'retailprice': 'retailprice',  # noqa: E501
+        'retail_price': 'retailPrice',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,14 +151,14 @@ class RecommendedProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alternative_click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.. [optional]  # noqa: E501
-            click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on the default product URL field in the catalog.. [optional]  # noqa: E501
+            click_url (str, none_type): Url leading to product details page and also used to track user click. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
             image_url (str, none_type): Product image.. [optional]  # noqa: E501
-            name (str, none_type): Product name.. [optional]  # noqa: E501
+            name (str, none_type): Product name. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
-            product_external_id (str, none_type): Product external id. Same id than what is used in user events.. [optional]  # noqa: E501
-            retailprice (float, none_type): Product retail price.. [optional]  # noqa: E501
+            product_external_id (str, none_type): Product external id. Same id than what is used in user events. [optional]  # noqa: E501
+            retail_price (float, none_type): Product retail price.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,14 +245,14 @@ class RecommendedProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alternative_click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.. [optional]  # noqa: E501
-            click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on the default product URL field in the catalog.. [optional]  # noqa: E501
+            click_url (str, none_type): Url leading to product details page and also used to track user click. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
             image_url (str, none_type): Product image.. [optional]  # noqa: E501
-            name (str, none_type): Product name.. [optional]  # noqa: E501
+            name (str, none_type): Product name. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
-            product_external_id (str, none_type): Product external id. Same id than what is used in user events.. [optional]  # noqa: E501
-            retailprice (float, none_type): Product retail price.. [optional]  # noqa: E501
+            product_external_id (str, none_type): Product external id. Same id than what is used in user events. [optional]  # noqa: E501
+            retail_price (float, none_type): Product retail price.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

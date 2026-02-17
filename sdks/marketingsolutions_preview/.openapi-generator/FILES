@@ -39,6 +39,7 @@ criteo_api_marketingsolutions_preview/model/ad_set_display_multiplier_resource.p
 criteo_api_marketingsolutions_preview/model/ad_set_frequency_capping_v26_q1.py
 criteo_api_marketingsolutions_preview/model/ad_set_geo_location_v26_q1.py
 criteo_api_marketingsolutions_preview/model/ad_set_search_filter_v26_q1.py
+criteo_api_marketingsolutions_preview/model/ad_set_search_request_metadata_v26_q1.py
 criteo_api_marketingsolutions_preview/model/ad_set_search_request_v26_q1.py
 criteo_api_marketingsolutions_preview/model/ad_set_targeting_deal_ids.py
 criteo_api_marketingsolutions_preview/model/ad_set_targeting_deal_ids_disable_result_resource.py
@@ -262,7 +263,11 @@ criteo_api_marketingsolutions_preview/model/nillable_decimal.py
 criteo_api_marketingsolutions_preview/model/nillable_gender_v1.py
 criteo_api_marketingsolutions_preview/model/nillable_int32.py
 criteo_api_marketingsolutions_preview/model/nillable_string.py
+criteo_api_marketingsolutions_preview/model/on_site_reco_chat_message.py
+criteo_api_marketingsolutions_preview/model/on_site_reco_price.py
+criteo_api_marketingsolutions_preview/model/on_site_reco_product_context.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_request.py
+criteo_api_marketingsolutions_preview/model/on_site_reco_request_conversational.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_response.py
 criteo_api_marketingsolutions_preview/model/outcome.py
 criteo_api_marketingsolutions_preview/model/patch_ad_set_attribution_configuration_v26_q1.py
@@ -416,6 +421,7 @@ docs/AdSetDisplayMultiplierResource.md
 docs/AdSetFrequencyCappingV26Q1.md
 docs/AdSetGeoLocationV26Q1.md
 docs/AdSetSearchFilterV26Q1.md
+docs/AdSetSearchRequestMetadataV26Q1.md
 docs/AdSetSearchRequestV26Q1.md
 docs/AdSetTargetingDealIds.md
 docs/AdSetTargetingDealIdsDisableResultResource.md
@@ -646,7 +652,11 @@ docs/NillableDecimal.md
 docs/NillableGenderV1.md
 docs/NillableInt32.md
 docs/NillableString.md
+docs/OnSiteRecoChatMessage.md
+docs/OnSiteRecoPrice.md
+docs/OnSiteRecoProductContext.md
 docs/OnSiteRecoRequest.md
+docs/OnSiteRecoRequestConversational.md
 docs/OnSiteRecoResponse.md
 docs/OnSiteRecommendationApi.md
 docs/Outcome.md
