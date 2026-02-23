@@ -51,6 +51,8 @@ criteo_api_retailmedia_preview/model/audience_error.py
 criteo_api_retailmedia_preview/model/audience_warning.py
 criteo_api_retailmedia_preview/model/balance_history_change_data_capture_v1.py
 criteo_api_retailmedia_preview/model/batch_accepted_response.py
+criteo_api_retailmedia_preview/model/batch_store_inventory_delete_request.py
+criteo_api_retailmedia_preview/model/batch_store_inventory_request.py
 criteo_api_retailmedia_preview/model/bot_message.py
 criteo_api_retailmedia_preview/model/brand_id_search_request.py
 criteo_api_retailmedia_preview/model/brand_id_search_result.py
@@ -72,6 +74,7 @@ criteo_api_retailmedia_preview/model/creative_search_request.py
 criteo_api_retailmedia_preview/model/creative_search_response.py
 criteo_api_retailmedia_preview/model/creative_update_model2.py
 criteo_api_retailmedia_preview/model/custom_attribute.py
+criteo_api_retailmedia_preview/model/delete_entry.py
 criteo_api_retailmedia_preview/model/display_auction_min_bid_request.py
 criteo_api_retailmedia_preview/model/display_auction_min_bid_result.py
 criteo_api_retailmedia_preview/model/entity_resource_brand_id_search_result.py
@@ -91,6 +94,7 @@ criteo_api_retailmedia_preview/model/entity_resource_of_sponsored_products_line_
 criteo_api_retailmedia_preview/model/entity_resource_outcome_of_catalog_status_v2.py
 criteo_api_retailmedia_preview/model/entity_resource_outcome_of_retail_media_account_v2.py
 criteo_api_retailmedia_preview/model/entity_resource_outcome_of_sponsored_products_line_item.py
+criteo_api_retailmedia_preview/model/entry.py
 criteo_api_retailmedia_preview/model/export_report_column.py
 criteo_api_retailmedia_preview/model/export_report_meta_data.py
 criteo_api_retailmedia_preview/model/external_retail_media_account_v2.py
@@ -280,6 +284,8 @@ criteo_api_retailmedia_preview/model/sponsored_products_line_item_create_request
 criteo_api_retailmedia_preview/model/sponsored_products_line_item_update_request_model.py
 criteo_api_retailmedia_preview/model/status_response.py
 criteo_api_retailmedia_preview/model/status_response_resource.py
+criteo_api_retailmedia_preview/model/store_inventory_delete.py
+criteo_api_retailmedia_preview/model/store_inventory_upsert.py
 criteo_api_retailmedia_preview/model/sync_attributed_transactions_report.py
 criteo_api_retailmedia_preview/model/sync_attributed_transactions_report_request.py
 criteo_api_retailmedia_preview/model/sync_attributed_transactions_report_resource.py
@@ -360,6 +366,8 @@ docs/AudienceWarning.md
 docs/BalanceApi.md
 docs/BalanceHistoryChangeDataCaptureV1.md
 docs/BatchAcceptedResponse.md
+docs/BatchStoreInventoryDeleteRequest.md
+docs/BatchStoreInventoryRequest.md
 docs/BotMessage.md
 docs/BrandIdSearchRequest.md
 docs/BrandIdSearchResult.md
@@ -383,6 +391,7 @@ docs/CreativeSearchRequest.md
 docs/CreativeSearchResponse.md
 docs/CreativeUpdateModel2.md
 docs/CustomAttribute.md
+docs/DeleteEntry.md
 docs/DisplayAuctionMinBidRequest.md
 docs/DisplayAuctionMinBidResult.md
 docs/EntityResourceBrandIdSearchResult.md
@@ -402,6 +411,7 @@ docs/EntityResourceOfSponsoredProductsLineItem.md
 docs/EntityResourceOutcomeOfCatalogStatusV2.md
 docs/EntityResourceOutcomeOfRetailMediaAccountV2.md
 docs/EntityResourceOutcomeOfSponsoredProductsLineItem.md
+docs/Entry.md
 docs/ExportReportColumn.md
 docs/ExportReportMetaData.md
 docs/ExternalRetailMediaAccountV2.md
@@ -593,6 +603,8 @@ docs/SponsoredProductsLineItemCreateRequestModel.md
 docs/SponsoredProductsLineItemUpdateRequestModel.md
 docs/StatusResponse.md
 docs/StatusResponseResource.md
+docs/StoreInventoryDelete.md
+docs/StoreInventoryUpsert.md
 docs/SyncAttributedTransactionsReport.md
 docs/SyncAttributedTransactionsReportRequest.md
 docs/SyncAttributedTransactionsReportResource.md

@@ -158,13 +158,13 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         ],
         nb_requested_products=1,
         partner_id=1,
-        product=OnSiteRecoProductContext(
+        product=ProductContext(
             brand="brand_example",
             category="category_example",
             color="color_example",
             description="description_example",
             name="name_example",
-            price=OnSiteRecoPrice(
+            price=ProductPrice(
                 amount=3.14,
                 currency="currency_example",
             ),

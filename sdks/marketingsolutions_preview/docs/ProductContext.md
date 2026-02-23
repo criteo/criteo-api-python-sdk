@@ -1,4 +1,4 @@
-# OnSiteRecoProductContext
+# ProductContext
 
 Information about a product used as context for conversational recommendation
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **color** | **str** | Product color. | [optional] 
 **description** | **str** | Product description. | [optional] 
 **name** | **str** | Product name. | [optional] 
-**price** | [**OnSiteRecoPrice**](OnSiteRecoPrice.md) |  | [optional] 
+**price** | [**ProductPrice**](ProductPrice.md) |  | [optional] 
 **product_id** | **str** | Unique identifier of the product matching Criteo Catalog Integration | [optional] 
 **size** | **str** | Product size (e.g., M, 42, 500ml). | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

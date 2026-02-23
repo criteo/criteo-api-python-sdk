@@ -264,8 +264,6 @@ criteo_api_marketingsolutions_preview/model/nillable_gender_v1.py
 criteo_api_marketingsolutions_preview/model/nillable_int32.py
 criteo_api_marketingsolutions_preview/model/nillable_string.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_chat_message.py
-criteo_api_marketingsolutions_preview/model/on_site_reco_price.py
-criteo_api_marketingsolutions_preview/model/on_site_reco_product_context.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_request.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_request_conversational.py
 criteo_api_marketingsolutions_preview/model/on_site_reco_response.py
@@ -300,9 +298,11 @@ criteo_api_marketingsolutions_preview/model/point_of_interest_v1.py
 criteo_api_marketingsolutions_preview/model/portfolio_message.py
 criteo_api_marketingsolutions_preview/model/price.py
 criteo_api_marketingsolutions_preview/model/product.py
+criteo_api_marketingsolutions_preview/model/product_context.py
 criteo_api_marketingsolutions_preview/model/product_filter_config.py
 criteo_api_marketingsolutions_preview/model/product_importer_error.py
 criteo_api_marketingsolutions_preview/model/product_importer_warning.py
+criteo_api_marketingsolutions_preview/model/product_price.py
 criteo_api_marketingsolutions_preview/model/product_set.py
 criteo_api_marketingsolutions_preview/model/product_set_rule.py
 criteo_api_marketingsolutions_preview/model/product_shipping.py
@@ -653,8 +653,6 @@ docs/NillableGenderV1.md
 docs/NillableInt32.md
 docs/NillableString.md
 docs/OnSiteRecoChatMessage.md
-docs/OnSiteRecoPrice.md
-docs/OnSiteRecoProductContext.md
 docs/OnSiteRecoRequest.md
 docs/OnSiteRecoRequestConversational.md
 docs/OnSiteRecoResponse.md
@@ -690,9 +688,11 @@ docs/PointOfInterestV1.md
 docs/PortfolioMessage.md
 docs/Price.md
 docs/Product.md
+docs/ProductContext.md
 docs/ProductFilterConfig.md
 docs/ProductImporterError.md
 docs/ProductImporterWarning.md
+docs/ProductPrice.md
 docs/ProductSet.md
 docs/ProductSetRule.md
 docs/ProductShipping.md
