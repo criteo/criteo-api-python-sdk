@@ -761,6 +761,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
         data=ShareOfVoiceInsightResource(
             attributes=ShareOfVoiceInsight(
                 account_id="account_id_example",
+                aggregation_level="category",
                 brand_ids=[
                     "brand_ids_example",
                 ],
@@ -770,6 +771,12 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ],
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 format="json-compact",
+                keywords=[
+                    "keywords_example",
+                ],
+                keyword_types=[
+                    "unknown",
+                ],
                 metrics=[
                     "impressions",
                 ],

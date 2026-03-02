@@ -80,6 +80,8 @@ class ShareOfVoiceInsight(ModelNormal):
             'PRODUCTMPN': "productMpn",
             'PRODUCTCATEGORY': "productCategory",
             'SERVEDCATEGORY': "servedCategory",
+            'KEYWORD': "keyword",
+            'KEYWORDTYPE': "keywordType",
             'CAMPAIGNTYPE': "campaignType",
             'CREATIVETYPE': "creativeType",
             'ADFORMAT': "adFormat",
@@ -104,6 +106,10 @@ class ShareOfVoiceInsight(ModelNormal):
             'CLICKSHARE': "clickShare",
             'INVALIDCLICKS': "invalidClicks",
         },
+        ('aggregation_level',): {
+            'CATEGORY': "category",
+            'KEYWORD': "keyword",
+        },
         ('campaign_type',): {
             'ALL': "all",
             'ONSITESPONSOREDPRODUCTS': "onsiteSponsoredProducts",
@@ -114,6 +120,13 @@ class ShareOfVoiceInsight(ModelNormal):
             'JSON-COMPACT': "json-compact",
             'JSON-NEWLINE': "json-newline",
             'CSV': "csv",
+        },
+        ('keyword_types',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'GENERIC': "generic",
+            'BRANDED': "branded",
+            'CONQUESTING': "conquesting",
         },
     }
 
@@ -144,14 +157,17 @@ class ShareOfVoiceInsight(ModelNormal):
         return {
             'account_id': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
+            'end_date': (datetime,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
+            'aggregation_level': (str,),  # noqa: E501
             'brand_ids': ([str], none_type,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
-            'end_date': (datetime,),  # noqa: E501
             'format': (str,),  # noqa: E501
+            'keywords': ([str], none_type,),  # noqa: E501
+            'keyword_types': ([str], none_type,),  # noqa: E501
             'retailer_ids': ([str], none_type,),  # noqa: E501
             'served_categories': ([ServedCategoryFilter], none_type,),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -162,14 +178,17 @@ class ShareOfVoiceInsight(ModelNormal):
     attribute_map = {
         'account_id': 'accountId',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
+        'end_date': 'endDate',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
+        'start_date': 'startDate',  # noqa: E501
+        'aggregation_level': 'aggregationLevel',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
-        'end_date': 'endDate',  # noqa: E501
         'format': 'format',  # noqa: E501
+        'keywords': 'keywords',  # noqa: E501
+        'keyword_types': 'keywordTypes',  # noqa: E501
         'retailer_ids': 'retailerIds',  # noqa: E501
         'served_categories': 'servedCategories',  # noqa: E501
-        'start_date': 'startDate',  # noqa: E501
     }
 
     read_only_vars = {
@@ -179,13 +198,15 @@ class ShareOfVoiceInsight(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, account_id, dimensions, metrics, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_id, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """ShareOfVoiceInsight - a model defined in OpenAPI
 
         Args:
             account_id (str):
             dimensions ([str]):
+            end_date (datetime):
             metrics ([str]):
+            start_date (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -218,13 +239,14 @@ class ShareOfVoiceInsight(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            aggregation_level (str): [optional] if omitted the server will use the default value of "category"  # noqa: E501
             brand_ids ([str], none_type): [optional]  # noqa: E501
             campaign_type (str): [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            end_date (datetime): [optional]  # noqa: E501
             format (str): [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            keywords ([str], none_type): [optional]  # noqa: E501
+            keyword_types ([str], none_type): [optional]  # noqa: E501
             retailer_ids ([str], none_type): [optional]  # noqa: E501
             served_categories ([ServedCategoryFilter], none_type): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -258,7 +280,9 @@ class ShareOfVoiceInsight(ModelNormal):
 
         self.account_id = account_id
         self.dimensions = dimensions
+        self.end_date = end_date
         self.metrics = metrics
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -279,13 +303,15 @@ class ShareOfVoiceInsight(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, account_id, dimensions, metrics, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_id, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """ShareOfVoiceInsight - a model defined in OpenAPI
 
         Args:
             account_id (str):
             dimensions ([str]):
+            end_date (datetime):
             metrics ([str]):
+            start_date (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -318,13 +344,14 @@ class ShareOfVoiceInsight(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            aggregation_level (str): [optional] if omitted the server will use the default value of "category"  # noqa: E501
             brand_ids ([str], none_type): [optional]  # noqa: E501
             campaign_type (str): [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            end_date (datetime): [optional]  # noqa: E501
             format (str): [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            keywords ([str], none_type): [optional]  # noqa: E501
+            keyword_types ([str], none_type): [optional]  # noqa: E501
             retailer_ids ([str], none_type): [optional]  # noqa: E501
             served_categories ([ServedCategoryFilter], none_type): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -356,7 +383,9 @@ class ShareOfVoiceInsight(ModelNormal):
 
         self.account_id = account_id
         self.dimensions = dimensions
+        self.end_date = end_date
         self.metrics = metrics
+        self.start_date = start_date
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
