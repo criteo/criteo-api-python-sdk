@@ -30,8 +30,8 @@ from criteo_api_retailmedia_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_preview.model.entry import Entry
-    globals()['Entry'] = Entry
+    from criteo_api_retailmedia_preview.model.insert_entry import InsertEntry
+    globals()['InsertEntry'] = InsertEntry
 
 
 class BatchStoreInventoryRequest(ModelNormal):
@@ -87,7 +87,7 @@ class BatchStoreInventoryRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'data': ([Entry],),  # noqa: E501
+            'data': ([InsertEntry],),  # noqa: E501
         }
 
     @cached_property
@@ -110,7 +110,7 @@ class BatchStoreInventoryRequest(ModelNormal):
         """BatchStoreInventoryRequest - a model defined in OpenAPI
 
         Args:
-            data ([Entry]):
+            data ([InsertEntry]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -199,7 +199,7 @@ class BatchStoreInventoryRequest(ModelNormal):
         """BatchStoreInventoryRequest - a model defined in OpenAPI
 
         Args:
-            data ([Entry]):
+            data ([InsertEntry]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

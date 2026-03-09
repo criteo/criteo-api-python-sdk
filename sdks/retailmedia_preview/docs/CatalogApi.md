@@ -705,7 +705,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     merchant_id = "merchantId_example" # str | Identifies the merchant, can also be called partnerId
     batch_store_inventory_request = BatchStoreInventoryRequest(
         data=[
-            Entry(
+            InsertEntry(
                 attributes=StoreInventoryUpsert(
                     availability="backorder",
                     batch_id="batch_id_example",
