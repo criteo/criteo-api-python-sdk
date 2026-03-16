@@ -5,6 +5,7 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_balance_history**](BalanceApi.md#get_balance_history) | **GET** /preview/retail-media/balances/{balanceId}/history | 
+[**get_balance_v1**](BalanceApi.md#get_balance_v1) | **GET** /preview/retail-media/balances/{balanceId} | 
 [**update_balance_v1**](BalanceApi.md#update_balance_v1) | **PATCH** /preview/retail-media/accounts/{account-id}/balances/{balance-id} | 
 
 
@@ -87,6 +88,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageOfBalanceHistoryChangeDataCaptureV1**](PageOfBalanceHistoryChangeDataCaptureV1.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_balance_v1**
+> EntityResourceOutcomeBalanceV1 get_balance_v1(balance_id)
+
+
+
+Get a balance for the given balance id.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import balance_api
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_balance_v1 import EntityResourceOutcomeBalanceV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = balance_api.BalanceApi(api_client)
+    balance_id = "balanceId_example" # str | The balance id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_balance_v1(balance_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling BalanceApi->get_balance_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **balance_id** | **str**| The balance id. |
+
+### Return type
+
+[**EntityResourceOutcomeBalanceV1**](EntityResourceOutcomeBalanceV1.md)
 
 ### Authorization
 
