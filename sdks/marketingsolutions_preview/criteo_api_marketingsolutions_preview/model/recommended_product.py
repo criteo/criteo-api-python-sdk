@@ -89,6 +89,7 @@ class RecommendedProduct(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'price': (float, none_type,),  # noqa: E501
             'product_external_id': (str, none_type,),  # noqa: E501
+            'relevancy_score': (float, none_type,),  # noqa: E501
             'retail_price': (float, none_type,),  # noqa: E501
         }
 
@@ -106,6 +107,7 @@ class RecommendedProduct(ModelNormal):
         'name': 'name',  # noqa: E501
         'price': 'price',  # noqa: E501
         'product_external_id': 'productExternalId',  # noqa: E501
+        'relevancy_score': 'relevancyScore',  # noqa: E501
         'retail_price': 'retailPrice',  # noqa: E501
     }
 
@@ -158,6 +160,7 @@ class RecommendedProduct(ModelNormal):
             name (str, none_type): Product name. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
             product_external_id (str, none_type): Product external id. Same id than what is used in user events. [optional]  # noqa: E501
+            relevancy_score (float, none_type): Product Relevancy score. [optional]  # noqa: E501
             retail_price (float, none_type): Product retail price.. [optional]  # noqa: E501
         """
 
@@ -252,6 +255,7 @@ class RecommendedProduct(ModelNormal):
             name (str, none_type): Product name. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
             product_external_id (str, none_type): Product external id. Same id than what is used in user events. [optional]  # noqa: E501
+            relevancy_score (float, none_type): Product Relevancy score. [optional]  # noqa: E501
             retail_price (float, none_type): Product retail price.. [optional]  # noqa: E501
         """
 

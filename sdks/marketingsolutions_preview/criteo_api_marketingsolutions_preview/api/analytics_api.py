@@ -22,6 +22,7 @@ from criteo_api_marketingsolutions_preview.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_marketingsolutions_preview.model.export_result import ExportResult
+from criteo_api_marketingsolutions_preview.model.file_stream_result_response import FileStreamResultResponse
 from criteo_api_marketingsolutions_preview.model.generate_audience_performance_report_request import GenerateAudiencePerformanceReportRequest
 from criteo_api_marketingsolutions_preview.model.generate_categories_report_request_attributes_request import GenerateCategoriesReportRequestAttributesRequest
 from criteo_api_marketingsolutions_preview.model.generate_creatives_report_request_attributes_request import GenerateCreativesReportRequestAttributesRequest
@@ -31,6 +32,8 @@ from criteo_api_marketingsolutions_preview.model.generate_top_products_report_re
 from criteo_api_marketingsolutions_preview.model.json_report_rows_list_response import JsonReportRowsListResponse
 from criteo_api_marketingsolutions_preview.model.marketing_solutions_report_status_response import MarketingSolutionsReportStatusResponse
 from criteo_api_marketingsolutions_preview.model.placements_report_query_message_list_request import PlacementsReportQueryMessageListRequest
+from criteo_api_marketingsolutions_preview.model.real_time_product_report_job_request import RealTimeProductReportJobRequest
+from criteo_api_marketingsolutions_preview.model.real_time_product_report_job_status_response import RealTimeProductReportJobStatusResponse
 from criteo_api_marketingsolutions_preview.model.statistics_report_query_message import StatisticsReportQueryMessage
 from criteo_api_marketingsolutions_preview.model.transactions_report_query_message_list_request import TransactionsReportQueryMessageListRequest
 from criteo_api_marketingsolutions_preview.model.transparency_query_message import TransparencyQueryMessage
@@ -48,6 +51,62 @@ class AnalyticsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.create_realtime_product_report_endpoint = _Endpoint(
+            settings={
+                'response_type': (RealTimeProductReportJobStatusResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export',
+                'operation_id': 'create_realtime_product_report',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'real_time_product_report_job_request',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'real_time_product_report_job_request':
+                        (RealTimeProductReportJobRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'real_time_product_report_job_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json',
+                    'application/xml',
+                    'text/xml'
+                ],
+                'content_type': [
+                    'application/json',
+                    'application/xml',
+                    'text/xml',
+                    'application/*+xml'
+                ]
+            },
+            api_client=api_client
+        )
         self.get_adset_report_endpoint = _Endpoint(
             settings={
                 'response_type': (file_type,),
@@ -494,6 +553,114 @@ class AnalyticsApi(object):
             },
             api_client=api_client
         )
+        self.get_realtime_product_endpoint = _Endpoint(
+            settings={
+                'response_type': (FileStreamResultResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}',
+                'operation_id': 'get_realtime_product',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'report_id',
+                ],
+                'required': [
+                    'report_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'report_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'report_id': 'reportId',
+                },
+                'location_map': {
+                    'report_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json',
+                    'application/xml',
+                    'text/xml'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_realtime_product_job_endpoint = _Endpoint(
+            settings={
+                'response_type': (RealTimeProductReportJobStatusResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}',
+                'operation_id': 'get_realtime_product_job',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'report_id',
+                ],
+                'required': [
+                    'report_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'report_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'report_id': 'reportId',
+                },
+                'location_map': {
+                    'report_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json',
+                    'application/xml',
+                    'text/xml'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.get_realtime_statistics_report_endpoint = _Endpoint(
             settings={
                 'response_type': (JsonReportRowsListResponse,),
@@ -728,6 +895,85 @@ class AnalyticsApi(object):
             },
             api_client=api_client
         )
+
+    def create_realtime_product_report(
+        self,
+        **kwargs
+    ):
+        """create_realtime_product_report  # noqa: E501
+
+        This endpoint is subject to specific rate limits.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_realtime_product_report(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            real_time_product_report_job_request (RealTimeProductReportJobRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RealTimeProductReportJobStatusResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.create_realtime_product_report_endpoint.call_with_http_info(**kwargs)
 
     def get_adset_report(
         self,
@@ -1376,6 +1622,172 @@ class AnalyticsApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.get_placements_report_endpoint.call_with_http_info(**kwargs)
+
+    def get_realtime_product(
+        self,
+        report_id,
+        **kwargs
+    ):
+        """get_realtime_product  # noqa: E501
+
+        This endpoint is subject to specific rate limits.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_realtime_product(report_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            report_id (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            FileStreamResultResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['report_id'] = \
+            report_id
+        return self.get_realtime_product_endpoint.call_with_http_info(**kwargs)
+
+    def get_realtime_product_job(
+        self,
+        report_id,
+        **kwargs
+    ):
+        """get_realtime_product_job  # noqa: E501
+
+        This endpoint is subject to specific rate limits.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_realtime_product_job(report_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            report_id (str):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            RealTimeProductReportJobStatusResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['report_id'] = \
+            report_id
+        return self.get_realtime_product_job_endpoint.call_with_http_info(**kwargs)
 
     def get_realtime_statistics_report(
         self,

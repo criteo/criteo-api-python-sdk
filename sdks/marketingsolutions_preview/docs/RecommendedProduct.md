@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **name** | **str, none_type** | Product name | [optional] 
 **price** | **float, none_type** | Product price. | [optional] 
 **product_external_id** | **str, none_type** | Product external id. Same id than what is used in user events | [optional] 
+**relevancy_score** | **float, none_type** | Product Relevancy score | [optional] 
 **retail_price** | **float, none_type** | Product retail price. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

@@ -4,6 +4,7 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_realtime_product_report**](AnalyticsApi.md#create_realtime_product_report) | **POST** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export | 
 [**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /preview/statistics/report | 
 [**get_async_adset_report**](AnalyticsApi.md#get_async_adset_report) | **POST** /preview/reports/async-statistics | 
 [**get_async_audience_report**](AnalyticsApi.md#get_async_audience_report) | **POST** /preview/reports/async-audience-performance | 
@@ -12,11 +13,129 @@ Method | HTTP request | Description
 [**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | 
 [**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | 
 [**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | 
+[**get_realtime_product**](AnalyticsApi.md#get_realtime_product) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId} | 
+[**get_realtime_product_job**](AnalyticsApi.md#get_realtime_product_job) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId} | 
 [**get_realtime_statistics_report**](AnalyticsApi.md#get_realtime_statistics_report) | **POST** /preview/reports/realtime | 
 [**get_top_products_report**](AnalyticsApi.md#get_top_products_report) | **POST** /preview/reports/top-products | 
 [**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | 
 [**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /preview/log-level/advertisers/{advertiser-id}/report | 
 
+
+# **create_realtime_product_report**
+> RealTimeProductReportJobStatusResponse create_realtime_product_report()
+
+
+
+This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.real_time_product_report_job_request import RealTimeProductReportJobRequest
+from criteo_api_marketingsolutions_preview.model.real_time_product_report_job_status_response import RealTimeProductReportJobStatusResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    real_time_product_report_job_request = RealTimeProductReportJobRequest(
+        data=RealTimeProductReportJobResource(
+            attributes=RealTimeProductReportJob(
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                currency="currency_example",
+                dimensions=[
+                    "AdvertiserId",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                file_format="Csv",
+                lookback_window=1,
+                metrics=[
+                    "Clicks",
+                ],
+                partner_ids=[
+                    "partner_ids_example",
+                ],
+                seller_ids=[
+                    "seller_ids_example",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="timezone_example",
+            ),
+            type="type_example",
+        ),
+    ) # RealTimeProductReportJobRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.create_realtime_product_report(real_time_product_report_job_request=real_time_product_report_job_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->create_realtime_product_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **real_time_product_report_job_request** | [**RealTimeProductReportJobRequest**](RealTimeProductReportJobRequest.md)|  | [optional]
+
+### Return type
+
+[**RealTimeProductReportJobStatusResponse**](RealTimeProductReportJobStatusResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml, text/xml, application/*+xml
+ - **Accept**: application/json, application/xml, text/xml
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_adset_report**
 > file_type get_adset_report()
@@ -849,6 +968,174 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json, application/xml, text/xml, application/*+xml
  - **Accept**: application/json, text/csv, text/xml, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_realtime_product**
+> FileStreamResultResponse get_realtime_product(report_id)
+
+
+
+This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.file_stream_result_response import FileStreamResultResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "reportId_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_realtime_product(report_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_realtime_product: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**|  |
+
+### Return type
+
+[**FileStreamResultResponse**](FileStreamResultResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml, text/xml
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_realtime_product_job**
+> RealTimeProductReportJobStatusResponse get_realtime_product_job(report_id)
+
+
+
+This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.real_time_product_report_job_status_response import RealTimeProductReportJobStatusResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "reportId_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.get_realtime_product_job(report_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_realtime_product_job: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**|  |
+
+### Return type
+
+[**RealTimeProductReportJobStatusResponse**](RealTimeProductReportJobStatusResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml, text/xml
 
 
 ### HTTP response details
