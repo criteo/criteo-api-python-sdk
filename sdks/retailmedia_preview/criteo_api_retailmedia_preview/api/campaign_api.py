@@ -42,12 +42,15 @@ from criteo_api_retailmedia_preview.model.product_resource_outcome import Produc
 from criteo_api_retailmedia_preview.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
 from criteo_api_retailmedia_preview.model.promoted_product_resource_collection_outcome import PromotedProductResourceCollectionOutcome
 from criteo_api_retailmedia_preview.model.value_resource_collection_outcome_display_auction_min_bid_result import ValueResourceCollectionOutcomeDisplayAuctionMinBidResult
+from criteo_api_retailmedia_preview.model.value_resource_input_append_campaigns_request_v1 import ValueResourceInputAppendCampaignsRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_display_auction_min_bid_request import ValueResourceInputDisplayAuctionMinBidRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
+from criteo_api_retailmedia_preview.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
 from criteo_api_retailmedia_preview.model.value_resource_outcome_line_item_budget_cap_out_history_response import ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse
 
 
@@ -62,6 +65,65 @@ class CampaignApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.append_campaigns_to_balance_v1_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeBalanceCampaignsV1,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/balances/{balanceId}/campaigns/append',
+                'operation_id': 'append_campaigns_to_balance_v1',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'balance_id',
+                    'value_resource_input_append_campaigns_request_v1',
+                ],
+                'required': [
+                    'balance_id',
+                    'value_resource_input_append_campaigns_request_v1',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'balance_id':
+                        (str,),
+                    'value_resource_input_append_campaigns_request_v1':
+                        (ValueResourceInputAppendCampaignsRequestV1,),
+                },
+                'attribute_map': {
+                    'balance_id': 'balanceId',
+                },
+                'location_map': {
+                    'balance_id': 'path',
+                    'value_resource_input_append_campaigns_request_v1': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.append_product_button_by_line_item_id_endpoint = _Endpoint(
             settings={
                 'response_type': (ProductButtonResponseListResponse,),
@@ -400,6 +462,65 @@ class CampaignApi(object):
                 'location_map': {
                     'campaign_id': 'path',
                     'preferred_line_item_create_model_v2_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.delete_campaigns_from_balance_v1_endpoint = _Endpoint(
+            settings={
+                'response_type': (ValueResourceOutcomeBalanceCampaignsV1,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/balances/{balanceId}/campaigns/delete',
+                'operation_id': 'delete_campaigns_from_balance_v1',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'balance_id',
+                    'value_resource_input_delete_campaigns_request_v1',
+                ],
+                'required': [
+                    'balance_id',
+                    'value_resource_input_delete_campaigns_request_v1',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'balance_id':
+                        (str,),
+                    'value_resource_input_delete_campaigns_request_v1':
+                        (ValueResourceInputDeleteCampaignsRequestV1,),
+                },
+                'attribute_map': {
+                    'balance_id': 'balanceId',
+                },
+                'location_map': {
+                    'balance_id': 'path',
+                    'value_resource_input_delete_campaigns_request_v1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1735,6 +1856,93 @@ class CampaignApi(object):
             api_client=api_client
         )
 
+    def append_campaigns_to_balance_v1(
+        self,
+        balance_id,
+        value_resource_input_append_campaigns_request_v1,
+        **kwargs
+    ):
+        """append_campaigns_to_balance_v1  # noqa: E501
+
+        Appends one or more campaigns to the specified balance  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            balance_id (str): The balance to add campaigns from
+            value_resource_input_append_campaigns_request_v1 (ValueResourceInputAppendCampaignsRequestV1): The balance campaign appending request.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeBalanceCampaignsV1
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['balance_id'] = \
+            balance_id
+        kwargs['value_resource_input_append_campaigns_request_v1'] = \
+            value_resource_input_append_campaigns_request_v1
+        return self.append_campaigns_to_balance_v1_endpoint.call_with_http_info(**kwargs)
+
     def append_product_button_by_line_item_id(
         self,
         line_item_id,
@@ -2247,6 +2455,93 @@ class CampaignApi(object):
         kwargs['preferred_line_item_create_model_v2_request'] = \
             preferred_line_item_create_model_v2_request
         return self.create_preferred_line_item_by_campaign_id_endpoint.call_with_http_info(**kwargs)
+
+    def delete_campaigns_from_balance_v1(
+        self,
+        balance_id,
+        value_resource_input_delete_campaigns_request_v1,
+        **kwargs
+    ):
+        """delete_campaigns_from_balance_v1  # noqa: E501
+
+        Deletes one or more campaigns on the specified balance  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            balance_id (str): The balance to remove campaigns from
+            value_resource_input_delete_campaigns_request_v1 (ValueResourceInputDeleteCampaignsRequestV1): The balance campaign deleting request.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            ValueResourceOutcomeBalanceCampaignsV1
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['balance_id'] = \
+            balance_id
+        kwargs['value_resource_input_delete_campaigns_request_v1'] = \
+            value_resource_input_delete_campaigns_request_v1
+        return self.delete_campaigns_from_balance_v1_endpoint.call_with_http_info(**kwargs)
 
     def delete_product_button_by_line_item_and_product_button_id(
         self,

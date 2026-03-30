@@ -4,12 +4,14 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**append_campaigns_to_balance_v1**](CampaignApi.md#append_campaigns_to_balance_v1) | **POST** /preview/retail-media/balances/{balanceId}/campaigns/append | 
 [**append_product_button_by_line_item_id**](CampaignApi.md#append_product_button_by_line_item_id) | **POST** /preview/retail-media/line-items/{line-item-id}/product-buttons/create | 
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/append | 
 [**compute_display_min_bid_by_retailer_id**](CampaignApi.md#compute_display_min_bid_by_retailer_id) | **POST** /preview/retail-media/retailers/{retailerId}/compute-display-min-bid | 
 [**create_auction_line_item**](CampaignApi.md#create_auction_line_item) | **POST** /preview/retail-media/campaigns/{campaignId}/auction-line-items | 
 [**create_creative**](CampaignApi.md#create_creative) | **POST** /preview/retail-media/accounts/{account-id}/creatives | 
 [**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /preview/retail-media/campaigns/{campaign-id}/preferred-line-items | 
+[**delete_campaigns_from_balance_v1**](CampaignApi.md#delete_campaigns_from_balance_v1) | **POST** /preview/retail-media/balances/{balanceId}/campaigns/delete | 
 [**delete_product_button_by_line_item_and_product_button_id**](CampaignApi.md#delete_product_button_by_line_item_and_product_button_id) | **DELETE** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 [**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/delete | 
 [**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /preview/retail-media/line-items/{line-item-id}/products | 
@@ -32,6 +34,102 @@ Method | HTTP request | Description
 [**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /preview/retail-media/preferred-line-items/{line-item-id} | 
 [**update_product_button_by_line_item_and_product_button_id**](CampaignApi.md#update_product_button_by_line_item_and_product_button_id) | **PUT** /preview/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | 
 
+
+# **append_campaigns_to_balance_v1**
+> ValueResourceOutcomeBalanceCampaignsV1 append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1)
+
+
+
+Appends one or more campaigns to the specified balance
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
+from criteo_api_retailmedia_preview.model.value_resource_input_append_campaigns_request_v1 import ValueResourceInputAppendCampaignsRequestV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    balance_id = "balanceId_example" # str | The balance to add campaigns from
+    value_resource_input_append_campaigns_request_v1 = ValueResourceInputAppendCampaignsRequestV1(
+        data=ValueResourceAppendCampaignsRequestV1(
+            attributes=AppendCampaignsRequestV1(
+                ids=[
+                    "ids_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputAppendCampaignsRequestV1 | The balance campaign appending request.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->append_campaigns_to_balance_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **balance_id** | **str**| The balance to add campaigns from |
+ **value_resource_input_append_campaigns_request_v1** | [**ValueResourceInputAppendCampaignsRequestV1**](ValueResourceInputAppendCampaignsRequestV1.md)| The balance campaign appending request. |
+
+### Return type
+
+[**ValueResourceOutcomeBalanceCampaignsV1**](ValueResourceOutcomeBalanceCampaignsV1.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **append_product_button_by_line_item_id**
 > ProductButtonResponseListResponse append_product_button_by_line_item_id(line_item_id)
@@ -710,6 +808,102 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_campaigns_from_balance_v1**
+> ValueResourceOutcomeBalanceCampaignsV1 delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1)
+
+
+
+Deletes one or more campaigns on the specified balance
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import campaign_api
+from criteo_api_retailmedia_preview.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
+from criteo_api_retailmedia_preview.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    balance_id = "balanceId_example" # str | The balance to remove campaigns from
+    value_resource_input_delete_campaigns_request_v1 = ValueResourceInputDeleteCampaignsRequestV1(
+        data=ValueResourceDeleteCampaignsRequestV1(
+            attributes=DeleteCampaignsRequestV1(
+                ids=[
+                    "ids_example",
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputDeleteCampaignsRequestV1 | The balance campaign deleting request.
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling CampaignApi->delete_campaigns_from_balance_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **balance_id** | **str**| The balance to remove campaigns from |
+ **value_resource_input_delete_campaigns_request_v1** | [**ValueResourceInputDeleteCampaignsRequestV1**](ValueResourceInputDeleteCampaignsRequestV1.md)| The balance campaign deleting request. |
+
+### Return type
+
+[**ValueResourceOutcomeBalanceCampaignsV1**](ValueResourceOutcomeBalanceCampaignsV1.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

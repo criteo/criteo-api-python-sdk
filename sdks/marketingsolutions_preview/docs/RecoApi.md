@@ -4,9 +4,14 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_boosted_ad_association**](RecoApi.md#create_boosted_ad_association) | **POST** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | 
 [**create_product_set**](RecoApi.md#create_product_set) | **POST** /preview/product-sets | 
+[**delete_boosted_ad_association**](RecoApi.md#delete_boosted_ad_association) | **DELETE** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | 
 [**disable_product_filtering**](RecoApi.md#disable_product_filtering) | **DELETE** /preview/ads/{ad-id}/product-filter | 
 [**enable_product_filtering**](RecoApi.md#enable_product_filtering) | **POST** /preview/ads/{ad-id}/product-filter | 
+[**fetch_boosted_ad_association**](RecoApi.md#fetch_boosted_ad_association) | **GET** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | 
+[**fetch_boosted_ad_association_by_partner_id**](RecoApi.md#fetch_boosted_ad_association_by_partner_id) | **GET** /preview/marketing-solutions/dataset/{dataset-id}/product-boost | 
+[**fetch_boosted_ad_associations**](RecoApi.md#fetch_boosted_ad_associations) | **GET** /preview/marketing-solutions/ads/{ad-id}/product-boost | 
 [**fetch_product_filtering_config**](RecoApi.md#fetch_product_filtering_config) | **GET** /preview/ads/{ad-id}/product-filter | 
 [**fetch_product_filtering_usages**](RecoApi.md#fetch_product_filtering_usages) | **GET** /preview/product-sets/{product-set-id}/product-filters | 
 [**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /preview/product-sets/{product-set-id} | 
@@ -14,6 +19,111 @@ Method | HTTP request | Description
 [**patch_product_set**](RecoApi.md#patch_product_set) | **PATCH** /preview/product-sets/{product-set-id} | 
 [**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /preview/product-sets/{product-set-id} | 
 
+
+# **create_boosted_ad_association**
+> ValueResourceOutcomeOfBoostedAdProductSet create_boosted_ad_association(ad_id, product_set_id)
+
+
+
+Create or update product boosting configuration
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import reco_api
+from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_boosted_ad_product_set import ValueResourceOutcomeOfBoostedAdProductSet
+from criteo_api_marketingsolutions_preview.model.value_resource_input_of_boosting_configuration_request import ValueResourceInputOfBoostingConfigurationRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = reco_api.RecoApi(api_client)
+    ad_id = "ad-id_example" # str | ID of the ad
+    product_set_id = "product-set-id_example" # str | ID of the product set
+    value_resource_input_of_boosting_configuration_request = ValueResourceInputOfBoostingConfigurationRequest(
+        data=ValueResourceOfBoostingConfigurationRequest(
+            attributes=BoostingConfigurationRequest(
+                boosting_factor=3.14,
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfBoostingConfigurationRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.create_boosted_ad_association(ad_id, product_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->create_boosted_ad_association: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.create_boosted_ad_association(ad_id, product_set_id, value_resource_input_of_boosting_configuration_request=value_resource_input_of_boosting_configuration_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->create_boosted_ad_association: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **str**| ID of the ad |
+ **product_set_id** | **str**| ID of the product set |
+ **value_resource_input_of_boosting_configuration_request** | [**ValueResourceInputOfBoostingConfigurationRequest**](ValueResourceInputOfBoostingConfigurationRequest.md)|  | [optional]
+
+### Return type
+
+[**ValueResourceOutcomeOfBoostedAdProductSet**](ValueResourceOutcomeOfBoostedAdProductSet.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+**201** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_product_set**
 > ResourceOutcomeOfProductSet create_product_set(value_resource_input_of_create_product_set_request)
@@ -115,6 +225,92 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Product set created successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_boosted_ad_association**
+> ValueResourceOutcomeOfBoostedAdProductSet delete_boosted_ad_association(ad_id, product_set_id)
+
+
+
+Delete association and configuration.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import reco_api
+from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_boosted_ad_product_set import ValueResourceOutcomeOfBoostedAdProductSet
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = reco_api.RecoApi(api_client)
+    ad_id = "ad-id_example" # str | ID of the ad
+    product_set_id = "product-set-id_example" # str | ID of the product set
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.delete_boosted_ad_association(ad_id, product_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->delete_boosted_ad_association: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **str**| ID of the ad |
+ **product_set_id** | **str**| ID of the product set |
+
+### Return type
+
+[**ValueResourceOutcomeOfBoostedAdProductSet**](ValueResourceOutcomeOfBoostedAdProductSet.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -293,6 +489,270 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_boosted_ad_association**
+> ValueResourceOutcomeOfBoostedAdProductSet fetch_boosted_ad_association(ad_id, product_set_id)
+
+
+
+Fetch boosting association and configuration
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import reco_api
+from criteo_api_marketingsolutions_preview.model.value_resource_outcome_of_boosted_ad_product_set import ValueResourceOutcomeOfBoostedAdProductSet
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = reco_api.RecoApi(api_client)
+    ad_id = "ad-id_example" # str | ID of the ad
+    product_set_id = "product-set-id_example" # str | ID of the product set
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.fetch_boosted_ad_association(ad_id, product_set_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->fetch_boosted_ad_association: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **str**| ID of the ad |
+ **product_set_id** | **str**| ID of the product set |
+
+### Return type
+
+[**ValueResourceOutcomeOfBoostedAdProductSet**](ValueResourceOutcomeOfBoostedAdProductSet.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_boosted_ad_association_by_partner_id**
+> ValueResourceCollectionOutcomeOfBoostedAdProductSet fetch_boosted_ad_association_by_partner_id(dataset_id)
+
+
+
+Fetch boosting association and configuration for a given partner
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import reco_api
+from criteo_api_marketingsolutions_preview.model.value_resource_collection_outcome_of_boosted_ad_product_set import ValueResourceCollectionOutcomeOfBoostedAdProductSet
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = reco_api.RecoApi(api_client)
+    dataset_id = "dataset-id_example" # str | ID of the dataset
+    client_type = "Unknown" # str, none_type | Client type filter (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.fetch_boosted_ad_association_by_partner_id(dataset_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->fetch_boosted_ad_association_by_partner_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        api_response = api_instance.fetch_boosted_ad_association_by_partner_id(dataset_id, client_type=client_type)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->fetch_boosted_ad_association_by_partner_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dataset_id** | **str**| ID of the dataset |
+ **client_type** | **str, none_type**| Client type filter | [optional]
+
+### Return type
+
+[**ValueResourceCollectionOutcomeOfBoostedAdProductSet**](ValueResourceCollectionOutcomeOfBoostedAdProductSet.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **fetch_boosted_ad_associations**
+> ValueResourceCollectionOutcomeOfBoostedAdProductSet fetch_boosted_ad_associations(ad_id)
+
+
+
+Fetch all boosting associations and configurations
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import reco_api
+from criteo_api_marketingsolutions_preview.model.value_resource_collection_outcome_of_boosted_ad_product_set import ValueResourceCollectionOutcomeOfBoostedAdProductSet
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = reco_api.RecoApi(api_client)
+    ad_id = "ad-id_example" # str | ID of the ad
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.fetch_boosted_ad_associations(ad_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling RecoApi->fetch_boosted_ad_associations: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ad_id** | **str**| ID of the ad |
+
+### Return type
+
+[**ValueResourceCollectionOutcomeOfBoostedAdProductSet**](ValueResourceCollectionOutcomeOfBoostedAdProductSet.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
