@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /preview/retail-media/reports/sync/attributed-transactions | 
 [**generate_sync_campaigns_report**](AnalyticsApi.md#generate_sync_campaigns_report) | **POST** /preview/retail-media/reports/sync/campaigns | 
 [**generate_sync_line_items_report**](AnalyticsApi.md#generate_sync_line_items_report) | **POST** /preview/retail-media/reports/sync/line-items | 
+[**generate_sync_real_time_performance_report**](AnalyticsApi.md#generate_sync_real_time_performance_report) | **POST** /preview/retail-media/reports/sync/real-time-performance | 
 [**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/retail-media/reports/{reportId}/output | 
 [**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/retail-media/reports/{reportId}/status | 
 
@@ -1145,6 +1146,118 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sync_line_items_report_request** | [**SyncLineItemsReportRequest**](SyncLineItemsReportRequest.md)|  |
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_sync_real_time_performance_report**
+> ReportResponse generate_sync_real_time_performance_report(sync_real_time_performance_report_request)
+
+
+
+Returns a synchronous Real Time Performance Report. Returns empty rows; metadata includes dataCompleteThrough (latest time from streaming table in the request timezone).  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import analytics_api
+from criteo_api_retailmedia_preview.model.report_response import ReportResponse
+from criteo_api_retailmedia_preview.model.sync_real_time_performance_report_request import SyncRealTimePerformanceReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    sync_real_time_performance_report_request = SyncRealTimePerformanceReportRequest(
+        data=SyncRealTimePerformanceReportResource(
+            attributes=SyncRealTimePerformanceReport(
+                account_ids=[
+                    "account_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+                metrics=[
+                    "billableImpressions",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # SyncRealTimePerformanceReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.generate_sync_real_time_performance_report(sync_real_time_performance_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_sync_real_time_performance_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sync_real_time_performance_report_request** | [**SyncRealTimePerformanceReportRequest**](SyncRealTimePerformanceReportRequest.md)|  |
 
 ### Return type
 

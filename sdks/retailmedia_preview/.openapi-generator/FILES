@@ -72,6 +72,7 @@ criteo_api_retailmedia_preview/model/creative_search_request.py
 criteo_api_retailmedia_preview/model/creative_search_response.py
 criteo_api_retailmedia_preview/model/creative_update_model2.py
 criteo_api_retailmedia_preview/model/custom_attribute.py
+criteo_api_retailmedia_preview/model/data_complete_through.py
 criteo_api_retailmedia_preview/model/delete_campaigns_request_v1.py
 criteo_api_retailmedia_preview/model/delete_entry.py
 criteo_api_retailmedia_preview/model/display_auction_min_bid_request.py
@@ -282,6 +283,9 @@ criteo_api_retailmedia_preview/model/sync_campaigns_report_resource.py
 criteo_api_retailmedia_preview/model/sync_line_items_report.py
 criteo_api_retailmedia_preview/model/sync_line_items_report_request.py
 criteo_api_retailmedia_preview/model/sync_line_items_report_resource.py
+criteo_api_retailmedia_preview/model/sync_real_time_performance_report.py
+criteo_api_retailmedia_preview/model/sync_real_time_performance_report_request.py
+criteo_api_retailmedia_preview/model/sync_real_time_performance_report_resource.py
 criteo_api_retailmedia_preview/model/template_variable_value.py
 criteo_api_retailmedia_preview/model/text_variable_value.py
 criteo_api_retailmedia_preview/model/update_balance_model_v1.py
@@ -384,6 +388,7 @@ docs/CreativeSearchRequest.md
 docs/CreativeSearchResponse.md
 docs/CreativeUpdateModel2.md
 docs/CustomAttribute.md
+docs/DataCompleteThrough.md
 docs/DeleteCampaignsRequestV1.md
 docs/DeleteEntry.md
 docs/DisplayAuctionMinBidRequest.md
@@ -596,6 +601,9 @@ docs/SyncCampaignsReportResource.md
 docs/SyncLineItemsReport.md
 docs/SyncLineItemsReportRequest.md
 docs/SyncLineItemsReportResource.md
+docs/SyncRealTimePerformanceReport.md
+docs/SyncRealTimePerformanceReportRequest.md
+docs/SyncRealTimePerformanceReportResource.md
 docs/TemplateVariableValue.md
 docs/TextVariableValue.md
 docs/ThirdPartyAccountsApi.md
