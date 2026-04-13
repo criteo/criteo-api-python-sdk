@@ -1,6 +1,6 @@
 # CreateCampaignSpendLimit
 
-campaign spend limit create model
+Spend limit configuration for a marketing campaign. Controls how much can be spent and the renewal cadence.  When spendLimitType is \"capped\": spendLimitAmount and spendLimitRenewal are required.  When spendLimitType is \"uncapped\": spendLimitAmount is null and spendLimitRenewal is \"undefined\".
 
 ## Properties
 Name | Type | Description | Notes

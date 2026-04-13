@@ -1,6 +1,6 @@
 # PatchAdSetBudgetV26Q1
 
-Budget patch model for an ad set. Only provided fields are updated; omitted fields are left unchanged.  Switching to \"uncapped\": set budgetStrategy to \"uncapped\" and budgetAmount.value to null. Other budget fields (budgetRenewal, budgetDeliverySmoothing, budgetDeliveryWeek) are automatically cleared.  Switching to \"capped\": set budgetStrategy to \"capped\", budgetAmount.value to a positive number, budgetRenewal to a period, and budgetDeliverySmoothing to a pacing strategy.
+Budget patch model for an ad set. Only provided fields are updated; omitted fields are left unchanged.  Switching to \"uncapped\": set budgetStrategy to \"uncapped\" and budgetAmount.value to null. Other budget fields (budgetRenewal, budgetDeliverySmoothing, budgetDeliveryWeek) are automatically cleared.  Switching to \"capped\": set budgetStrategy to \"capped\", budgetAmount.value to a positive number, budgetRenewal to a period, and budgetDeliverySmoothing to a pacing strategy.  Manual budget updates are not supported when the linked marketing campaign has budget automation enabled.
 
 ## Properties
 Name | Type | Description | Notes

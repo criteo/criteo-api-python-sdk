@@ -113,7 +113,6 @@ class CreateAdSetV26Q1(ModelNormal):
         lazy_import()
         return {
             'bidding': (CreateAdSetBiddingV26Q1,),  # noqa: E501
-            'budget': (CreateAdSetBudgetV26Q1,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
             'dataset_id': (str,),  # noqa: E501
             'media_type': (str,),  # noqa: E501
@@ -123,6 +122,7 @@ class CreateAdSetV26Q1(ModelNormal):
             'targeting': (CreateAdSetTargetingV26Q1,),  # noqa: E501
             'tracking_code': (str, none_type,),  # noqa: E501
             'attribution_configuration': (CreateAdSetAttributionConfigurationV26Q1,),  # noqa: E501
+            'budget': (CreateAdSetBudgetV26Q1,),  # noqa: E501
         }
 
     @cached_property
@@ -132,7 +132,6 @@ class CreateAdSetV26Q1(ModelNormal):
 
     attribute_map = {
         'bidding': 'bidding',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'dataset_id': 'datasetId',  # noqa: E501
         'media_type': 'mediaType',  # noqa: E501
@@ -142,6 +141,7 @@ class CreateAdSetV26Q1(ModelNormal):
         'targeting': 'targeting',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
         'attribution_configuration': 'attributionConfiguration',  # noqa: E501
+        'budget': 'budget',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,12 +151,11 @@ class CreateAdSetV26Q1(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, bidding, budget, campaign_id, dataset_id, media_type, name, objective, schedule, targeting, tracking_code, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, bidding, campaign_id, dataset_id, media_type, name, objective, schedule, targeting, tracking_code, *args, **kwargs):  # noqa: E501
         """CreateAdSetV26Q1 - a model defined in OpenAPI
 
         Args:
             bidding (CreateAdSetBiddingV26Q1):
-            budget (CreateAdSetBudgetV26Q1):
             campaign_id (str, none_type): Campaign id this ad set belongs to
             dataset_id (str): Dataset id of this ad set
             media_type (str): Media type for the ad set
@@ -198,6 +197,7 @@ class CreateAdSetV26Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attribution_configuration (CreateAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
+            budget (CreateAdSetBudgetV26Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,6 @@ class CreateAdSetV26Q1(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.bidding = bidding
-        self.budget = budget
         self.campaign_id = campaign_id
         self.dataset_id = dataset_id
         self.media_type = media_type
@@ -259,12 +258,11 @@ class CreateAdSetV26Q1(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, bidding, budget, campaign_id, dataset_id, media_type, name, objective, schedule, targeting, tracking_code, *args, **kwargs):  # noqa: E501
+    def __init__(self, bidding, campaign_id, dataset_id, media_type, name, objective, schedule, targeting, tracking_code, *args, **kwargs):  # noqa: E501
         """CreateAdSetV26Q1 - a model defined in OpenAPI
 
         Args:
             bidding (CreateAdSetBiddingV26Q1):
-            budget (CreateAdSetBudgetV26Q1):
             campaign_id (str, none_type): Campaign id this ad set belongs to
             dataset_id (str): Dataset id of this ad set
             media_type (str): Media type for the ad set
@@ -306,6 +304,7 @@ class CreateAdSetV26Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attribution_configuration (CreateAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
+            budget (CreateAdSetBudgetV26Q1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -336,7 +335,6 @@ class CreateAdSetV26Q1(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.bidding = bidding
-        self.budget = budget
         self.campaign_id = campaign_id
         self.dataset_id = dataset_id
         self.media_type = media_type

@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "criteo-api-commercegrid-sdk"
-VERSION = "2026.01.0.260406"
+VERSION = "2026.01.0.260413"
 # To install the library, run the following
 #
 # python setup.py install
@@ -24,9 +24,9 @@ IMPORTANT: This Python package links to Criteo production environment. Any test 
 
 
 ```sh
-pip install criteo-api-commercegrid-sdk==2026.01.0.260406
+pip install criteo-api-commercegrid-sdk==2026.01.0.260413
 ```
-(you may need to run `pip` with root permission: `sudo pip install criteo-api-commercegrid-sdk==2026.01.0.260406`)
+(you may need to run `pip` with root permission: `sudo pip install criteo-api-commercegrid-sdk==2026.01.0.260413`)
 
 Then import the package:
 ```python

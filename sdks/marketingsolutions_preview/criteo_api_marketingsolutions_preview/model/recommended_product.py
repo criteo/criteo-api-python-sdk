@@ -82,6 +82,7 @@ class RecommendedProduct(ModelNormal):
         """
         return {
             'alternative_click_url': (str, none_type,),  # noqa: E501
+            'brand': (str, none_type,),  # noqa: E501
             'click_url': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'google_category': (str, none_type,),  # noqa: E501
@@ -100,6 +101,7 @@ class RecommendedProduct(ModelNormal):
 
     attribute_map = {
         'alternative_click_url': 'alternativeClickUrl',  # noqa: E501
+        'brand': 'brand',  # noqa: E501
         'click_url': 'clickUrl',  # noqa: E501
         'description': 'description',  # noqa: E501
         'google_category': 'googleCategory',  # noqa: E501
@@ -153,6 +155,7 @@ class RecommendedProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alternative_click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.. [optional]  # noqa: E501
+            brand (str, none_type): Product brand.. [optional]  # noqa: E501
             click_url (str, none_type): Url leading to product details page and also used to track user click. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
@@ -248,6 +251,7 @@ class RecommendedProduct(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             alternative_click_url (str, none_type): Url leading to product details page and also used to track user click. It's relying on a custom product URL field in the catalog.. [optional]  # noqa: E501
+            brand (str, none_type): Product brand.. [optional]  # noqa: E501
             click_url (str, none_type): Url leading to product details page and also used to track user click. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501

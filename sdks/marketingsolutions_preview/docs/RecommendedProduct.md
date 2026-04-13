@@ -6,6 +6,7 @@ Represents a recommended product.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **alternative_click_url** | **str, none_type** | Url leading to product details page and also used to track user click. It&#39;s relying on a custom product URL field in the catalog. | [optional] 
+**brand** | **str, none_type** | Product brand. | [optional] 
 **click_url** | **str, none_type** | Url leading to product details page and also used to track user click | [optional] 
 **description** | **str, none_type** | Product description. | [optional] 
 **google_category** | **str, none_type** | Product google category. | [optional] 

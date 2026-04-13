@@ -1,6 +1,6 @@
 # CampaignSpendLimitV23Q1
 
-campaign spend limit model
+Campaign spend-limit configuration. A capped spend limit restricts campaign spending per renewal period. An uncapped spend limit does not impose a spending ceiling.
 
 ## Properties
 Name | Type | Description | Notes
