@@ -161,7 +161,7 @@ class PatchAdSetV26Q1(ModelNormal):
             attribution_configuration (PatchAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
             bidding (PatchAdSetBiddingV26Q1): [optional]  # noqa: E501
             budget (PatchAdSetBudgetV26Q1): [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): Name of the ad set.. [optional]  # noqa: E501
             scheduling (PatchAdSetSchedulingV26Q1): [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
         """
@@ -252,7 +252,7 @@ class PatchAdSetV26Q1(ModelNormal):
             attribution_configuration (PatchAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
             bidding (PatchAdSetBiddingV26Q1): [optional]  # noqa: E501
             budget (PatchAdSetBudgetV26Q1): [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): Name of the ad set.. [optional]  # noqa: E501
             scheduling (PatchAdSetSchedulingV26Q1): [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
         """

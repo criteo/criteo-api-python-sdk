@@ -1,6 +1,6 @@
 # PatchAdSetSchedulingV26Q1
 
-ad set schedule patch model
+Model for patching ad set scheduling.
 
 ## Properties
 Name | Type | Description | Notes

@@ -2159,7 +2159,7 @@ class CampaignApi(object):
     ):
         """create_ad_set  # noqa: E501
 
-        Create the specified ad set  # noqa: E501
+        Create an ad set with the provided parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2242,7 +2242,7 @@ class CampaignApi(object):
     ):
         """create_campaign  # noqa: E501
 
-        Create the specified campaign  # noqa: E501
+        Create the specified campaign                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3325,7 +3325,7 @@ class CampaignApi(object):
     ):
         """get_campaign  # noqa: E501
 
-        Get the data for the specified campaign  # noqa: E501
+        Get the data for the specified campaign.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3333,7 +3333,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            campaign_id (str): Id of the campaign
+            campaign_id (str): ID of the marketing campaign; This field is required.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3736,7 +3736,7 @@ class CampaignApi(object):
     ):
         """patch_ad_set_category_bids  # noqa: E501
 
-        Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
+        Update the Category Bids for given Categories associated to an Ad Set  Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3745,7 +3745,7 @@ class CampaignApi(object):
 
         Args:
             ad_set_id (str): Id of the Ad Set
-            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest):
+            patch_ad_set_category_bid_list_request (PatchAdSetCategoryBidListRequest): Collection of category bids to update
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3905,7 +3905,7 @@ class CampaignApi(object):
     ):
         """patch_campaigns  # noqa: E501
 
-        Patch a list of Campaigns.  # noqa: E501
+        Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3989,7 +3989,7 @@ class CampaignApi(object):
     ):
         """patch_display_multipliers  # noqa: E501
 
-        Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
+        Update the Display Multipliers for given Categories associated to an Ad Set  Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3998,7 +3998,7 @@ class CampaignApi(object):
 
         Args:
             ad_set_id (str): Id of the Ad Set
-            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest):
+            patch_ad_set_display_multiplier_list_request (PatchAdSetDisplayMultiplierListRequest): List of display multiplier values to change
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4770,7 +4770,7 @@ class CampaignApi(object):
     ):
         """search_ad_sets  # noqa: E501
 
-        Search for ad sets  # noqa: E501
+        Search for ad sets based on provided criteria.  This returns the full configuration of ad sets matching those criteria.  Field projection can be used if only a subset of fields is required, instead of the full configuration.                If specific fields are precised in the user prompt, use meta.fields field projection in order to query only the value of these fields, else, provide every field.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4849,7 +4849,7 @@ class CampaignApi(object):
     ):
         """search_campaigns  # noqa: E501
 
-        Search for campaigns  # noqa: E501
+        Search endpoint for campaigns                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4858,7 +4858,7 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            campaign_search_request_v23_q1 (CampaignSearchRequestV23Q1): filters on campaigns. [optional]
+            campaign_search_request_v23_q1 (CampaignSearchRequestV23Q1): Filters for searching for campaigns. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object

@@ -26,10 +26,16 @@ from criteo_api_retailmedia_preview.model.creative_create_model2 import Creative
 from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_creative_search_response import EntityResourceCollectionOutcomeCreativeSearchResponse
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_auction_display_line_item_search_result_and_metadata import EntityResourceCollectionOutcomeOfAuctionDisplayLineItemSearchResultAndMetadata
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_display_campaign_and_metadata import EntityResourceCollectionOutcomeOfDisplayCampaignAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_input_creative_search_request import EntityResourceInputCreativeSearchRequest
+from criteo_api_retailmedia_preview.model.entity_resource_input_of_auction_display_line_item_recall_proposal_request import EntityResourceInputOfAuctionDisplayLineItemRecallProposalRequest
+from criteo_api_retailmedia_preview.model.entity_resource_input_of_auction_display_line_item_submit_proposal_request import EntityResourceInputOfAuctionDisplayLineItemSubmitProposalRequest
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_auction_display_line_item import EntityResourceOutcomeOfAuctionDisplayLineItem
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_display_campaign import EntityResourceOutcomeOfDisplayCampaign
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_preview.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
 from criteo_api_retailmedia_preview.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
@@ -47,6 +53,12 @@ from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_r
 from criteo_api_retailmedia_preview.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_display_auction_min_bid_request import ValueResourceInputDisplayAuctionMinBidRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_of_auction_display_line_item_create_model import ValueResourceInputOfAuctionDisplayLineItemCreateModel
+from criteo_api_retailmedia_preview.model.value_resource_input_of_auction_display_line_item_patch_model import ValueResourceInputOfAuctionDisplayLineItemPatchModel
+from criteo_api_retailmedia_preview.model.value_resource_input_of_auction_display_line_item_search_model import ValueResourceInputOfAuctionDisplayLineItemSearchModel
+from criteo_api_retailmedia_preview.model.value_resource_input_of_display_campaign_create_model import ValueResourceInputOfDisplayCampaignCreateModel
+from criteo_api_retailmedia_preview.model.value_resource_input_of_display_campaign_patch_model import ValueResourceInputOfDisplayCampaignPatchModel
+from criteo_api_retailmedia_preview.model.value_resource_input_of_display_campaign_search_model import ValueResourceInputOfDisplayCampaignSearchModel
 from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
@@ -299,6 +311,65 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.create_auction_display_line_item_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceOutcomeOfAuctionDisplayLineItem,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/campaigns/{campaignId}/auction-display-line-items',
+                'operation_id': 'create_auction_display_line_item',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'campaign_id',
+                    'value_resource_input_of_auction_display_line_item_create_model',
+                ],
+                'required': [
+                    'campaign_id',
+                    'value_resource_input_of_auction_display_line_item_create_model',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'campaign_id':
+                        (str,),
+                    'value_resource_input_of_auction_display_line_item_create_model':
+                        (ValueResourceInputOfAuctionDisplayLineItemCreateModel,),
+                },
+                'attribute_map': {
+                    'campaign_id': 'campaignId',
+                },
+                'location_map': {
+                    'campaign_id': 'path',
+                    'value_resource_input_of_auction_display_line_item_create_model': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.create_auction_line_item_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomeOfSponsoredProductsLineItem,),
@@ -403,6 +474,65 @@ class CampaignApi(object):
                 'location_map': {
                     'account_id': 'path',
                     'creative_create_model2': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_display_campaign_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceOutcomeOfDisplayCampaign,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{accountId}/display-campaigns',
+                'operation_id': 'create_display_campaign',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_display_campaign_create_model',
+                ],
+                'required': [
+                    'account_id',
+                    'value_resource_input_of_display_campaign_create_model',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_display_campaign_create_model':
+                        (ValueResourceInputOfDisplayCampaignCreateModel,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_display_campaign_create_model': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1315,6 +1445,63 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.recall_proposal_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/auction-display-line-items/{lineItemId}/recall-proposal',
+                'operation_id': 'recall_proposal',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'entity_resource_input_of_auction_display_line_item_recall_proposal_request',
+                ],
+                'required': [
+                    'line_item_id',
+                    'entity_resource_input_of_auction_display_line_item_recall_proposal_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'entity_resource_input_of_auction_display_line_item_recall_proposal_request':
+                        (EntityResourceInputOfAuctionDisplayLineItemRecallProposalRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'lineItemId',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'entity_resource_input_of_auction_display_line_item_recall_proposal_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.search_account_creatives_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceCollectionOutcomeCreativeSearchResponse,),
@@ -1477,6 +1664,93 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.search_auction_display_line_items_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeOfAuctionDisplayLineItemSearchResultAndMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{accountId}/auction-display-line-items/search',
+                'operation_id': 'search_auction_display_line_items',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_auction_display_line_item_search_model',
+                    'fields',
+                    'limit',
+                    'offset',
+                ],
+                'required': [
+                    'account_id',
+                    'value_resource_input_of_auction_display_line_item_search_model',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 5,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_auction_display_line_item_search_model':
+                        (ValueResourceInputOfAuctionDisplayLineItemSearchModel,),
+                    'fields':
+                        ([str],),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                    'fields': 'fields',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_auction_display_line_item_search_model': 'body',
+                    'fields': 'query',
+                    'limit': 'query',
+                    'offset': 'query',
+                },
+                'collection_format_map': {
+                    'fields': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.search_brands_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata,),
@@ -1550,6 +1824,144 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.search_display_campaigns_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeOfDisplayCampaignAndMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/accounts/{accountId}/display-campaigns/search',
+                'operation_id': 'search_display_campaigns',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_display_campaign_search_model',
+                    'limit',
+                    'offset',
+                ],
+                'required': [
+                    'account_id',
+                    'value_resource_input_of_display_campaign_search_model',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 500,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_display_campaign_search_model':
+                        (ValueResourceInputOfDisplayCampaignSearchModel,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_display_campaign_search_model': 'body',
+                    'limit': 'query',
+                    'offset': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.submit_proposal_endpoint = _Endpoint(
+            settings={
+                'response_type': None,
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/auction-display-line-items/{lineItemId}/submit-proposal',
+                'operation_id': 'submit_proposal',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'entity_resource_input_of_auction_display_line_item_submit_proposal_request',
+                ],
+                'required': [
+                    'line_item_id',
+                    'entity_resource_input_of_auction_display_line_item_submit_proposal_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'entity_resource_input_of_auction_display_line_item_submit_proposal_request':
+                        (EntityResourceInputOfAuctionDisplayLineItemSubmitProposalRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'lineItemId',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'entity_resource_input_of_auction_display_line_item_submit_proposal_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.unpause_promoted_products_endpoint = _Endpoint(
             settings={
                 'response_type': None,
@@ -1600,6 +2012,65 @@ class CampaignApi(object):
             },
             headers_map={
                 'accept': [],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_auction_display_line_item_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceOutcomeOfAuctionDisplayLineItem,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/auction-display-line-items/{lineItemId}',
+                'operation_id': 'update_auction_display_line_item',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'value_resource_input_of_auction_display_line_item_patch_model',
+                ],
+                'required': [
+                    'line_item_id',
+                    'value_resource_input_of_auction_display_line_item_patch_model',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'value_resource_input_of_auction_display_line_item_patch_model':
+                        (ValueResourceInputOfAuctionDisplayLineItemPatchModel,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'lineItemId',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'value_resource_input_of_auction_display_line_item_patch_model': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -1716,6 +2187,65 @@ class CampaignApi(object):
                     'account_id': 'path',
                     'creative_id': 'path',
                     'creative_update_model2': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.update_display_campaign_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceOutcomeOfDisplayCampaign,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/preview/retail-media/display-campaigns/{campaignId}',
+                'operation_id': 'update_display_campaign',
+                'http_method': 'PATCH',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'campaign_id',
+                    'value_resource_input_of_display_campaign_patch_model',
+                ],
+                'required': [
+                    'campaign_id',
+                    'value_resource_input_of_display_campaign_patch_model',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'campaign_id':
+                        (str,),
+                    'value_resource_input_of_display_campaign_patch_model':
+                        (ValueResourceInputOfDisplayCampaignPatchModel,),
+                },
+                'attribute_map': {
+                    'campaign_id': 'campaignId',
+                },
+                'location_map': {
+                    'campaign_id': 'path',
+                    'value_resource_input_of_display_campaign_patch_model': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2195,6 +2725,93 @@ class CampaignApi(object):
             retailer_id
         return self.compute_display_min_bid_by_retailer_id_endpoint.call_with_http_info(**kwargs)
 
+    def create_auction_display_line_item(
+        self,
+        campaign_id,
+        value_resource_input_of_auction_display_line_item_create_model,
+        **kwargs
+    ):
+        """create_auction_display_line_item  # noqa: E501
+
+        Creates a new auction display line item with the specified settings.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_auction_display_line_item(campaign_id, value_resource_input_of_auction_display_line_item_create_model, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            campaign_id (str): The id of the campaign to which the line item belongs
+            value_resource_input_of_auction_display_line_item_create_model (ValueResourceInputOfAuctionDisplayLineItemCreateModel): The line item settings to create a line item with
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceOutcomeOfAuctionDisplayLineItem
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['campaign_id'] = \
+            campaign_id
+        kwargs['value_resource_input_of_auction_display_line_item_create_model'] = \
+            value_resource_input_of_auction_display_line_item_create_model
+        return self.create_auction_display_line_item_endpoint.call_with_http_info(**kwargs)
+
     def create_auction_line_item(
         self,
         campaign_id,
@@ -2368,6 +2985,93 @@ class CampaignApi(object):
         kwargs['creative_create_model2'] = \
             creative_create_model2
         return self.create_creative_endpoint.call_with_http_info(**kwargs)
+
+    def create_display_campaign(
+        self,
+        account_id,
+        value_resource_input_of_display_campaign_create_model,
+        **kwargs
+    ):
+        """create_display_campaign  # noqa: E501
+
+        Creates a new display campaign with the specified settings.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_display_campaign(account_id, value_resource_input_of_display_campaign_create_model, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The id of the account to which the campaign belongs
+            value_resource_input_of_display_campaign_create_model (ValueResourceInputOfDisplayCampaignCreateModel): The campaign settings to create a campaign with
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceOutcomeOfDisplayCampaign
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['value_resource_input_of_display_campaign_create_model'] = \
+            value_resource_input_of_display_campaign_create_model
+        return self.create_display_campaign_endpoint.call_with_http_info(**kwargs)
 
     def create_preferred_line_item_by_campaign_id(
         self,
@@ -3649,6 +4353,93 @@ class CampaignApi(object):
             line_item_id
         return self.pause_promoted_products_endpoint.call_with_http_info(**kwargs)
 
+    def recall_proposal(
+        self,
+        line_item_id,
+        entity_resource_input_of_auction_display_line_item_recall_proposal_request,
+        **kwargs
+    ):
+        """recall_proposal  # noqa: E501
+
+        Recalls an auction display line item from approval.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.recall_proposal(line_item_id, entity_resource_input_of_auction_display_line_item_recall_proposal_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The id of the line item to recall from approval
+            entity_resource_input_of_auction_display_line_item_recall_proposal_request (EntityResourceInputOfAuctionDisplayLineItemRecallProposalRequest): Additional optional recall information
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        kwargs['entity_resource_input_of_auction_display_line_item_recall_proposal_request'] = \
+            entity_resource_input_of_auction_display_line_item_recall_proposal_request
+        return self.recall_proposal_endpoint.call_with_http_info(**kwargs)
+
     def search_account_creatives(
         self,
         account_id,
@@ -3827,6 +4618,96 @@ class CampaignApi(object):
             value_resource_input_of_retailer_search_request
         return self.search_account_retailers_endpoint.call_with_http_info(**kwargs)
 
+    def search_auction_display_line_items(
+        self,
+        account_id,
+        value_resource_input_of_auction_display_line_item_search_model,
+        **kwargs
+    ):
+        """search_auction_display_line_items  # noqa: E501
+
+        Searches for auction display line items based on various filters.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_auction_display_line_items(account_id, value_resource_input_of_auction_display_line_item_search_model, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The id of the account to search line items for.
+            value_resource_input_of_auction_display_line_item_search_model (ValueResourceInputOfAuctionDisplayLineItemSearchModel): The search filters to apply, including line item IDs and proposal filter.
+
+        Keyword Args:
+            fields ([str]): Optional list of field names to include in the response (e.g. \"proposalStatus\").. [optional]
+            limit (int): The maximum number of items to return. Must be between 1 and 5. Default is 2.. [optional] if omitted the server will use the default value of 2
+            offset (int): The number of items to skip before starting to collect the result set. Default is 0.. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeOfAuctionDisplayLineItemSearchResultAndMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['value_resource_input_of_auction_display_line_item_search_model'] = \
+            value_resource_input_of_auction_display_line_item_search_model
+        return self.search_auction_display_line_items_endpoint.call_with_http_info(**kwargs)
+
     def search_brands(
         self,
         **kwargs
@@ -3907,6 +4788,182 @@ class CampaignApi(object):
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.search_brands_endpoint.call_with_http_info(**kwargs)
+
+    def search_display_campaigns(
+        self,
+        account_id,
+        value_resource_input_of_display_campaign_search_model,
+        **kwargs
+    ):
+        """search_display_campaigns  # noqa: E501
+
+        Searches for display campaigns based on various filters.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_display_campaigns(account_id, value_resource_input_of_display_campaign_search_model, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The id of the account to search campaigns for.
+            value_resource_input_of_display_campaign_search_model (ValueResourceInputOfDisplayCampaignSearchModel): The search filters to apply, including campaign IDs and other criteria.
+
+        Keyword Args:
+            limit (int): The maximum number of items to return. Must be between 1 and 1000. Default is 100.. [optional] if omitted the server will use the default value of 25
+            offset (int): The number of items to skip before starting to collect the result set. Default is 0.. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeOfDisplayCampaignAndMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['value_resource_input_of_display_campaign_search_model'] = \
+            value_resource_input_of_display_campaign_search_model
+        return self.search_display_campaigns_endpoint.call_with_http_info(**kwargs)
+
+    def submit_proposal(
+        self,
+        line_item_id,
+        entity_resource_input_of_auction_display_line_item_submit_proposal_request,
+        **kwargs
+    ):
+        """submit_proposal  # noqa: E501
+
+        Submits an auction display line item for approval.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.submit_proposal(line_item_id, entity_resource_input_of_auction_display_line_item_submit_proposal_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The id of the line item to submit for approval
+            entity_resource_input_of_auction_display_line_item_submit_proposal_request (EntityResourceInputOfAuctionDisplayLineItemSubmitProposalRequest): Additional optional submission information
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            None
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        kwargs['entity_resource_input_of_auction_display_line_item_submit_proposal_request'] = \
+            entity_resource_input_of_auction_display_line_item_submit_proposal_request
+        return self.submit_proposal_endpoint.call_with_http_info(**kwargs)
 
     def unpause_promoted_products(
         self,
@@ -3991,6 +5048,93 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.unpause_promoted_products_endpoint.call_with_http_info(**kwargs)
+
+    def update_auction_display_line_item(
+        self,
+        line_item_id,
+        value_resource_input_of_auction_display_line_item_patch_model,
+        **kwargs
+    ):
+        """update_auction_display_line_item  # noqa: E501
+
+        Updates an auction display line item with the specified settings.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_auction_display_line_item(line_item_id, value_resource_input_of_auction_display_line_item_patch_model, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The id of the line item to update
+            value_resource_input_of_auction_display_line_item_patch_model (ValueResourceInputOfAuctionDisplayLineItemPatchModel): The line item settings to update
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceOutcomeOfAuctionDisplayLineItem
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        kwargs['value_resource_input_of_auction_display_line_item_patch_model'] = \
+            value_resource_input_of_auction_display_line_item_patch_model
+        return self.update_auction_display_line_item_endpoint.call_with_http_info(**kwargs)
 
     def update_auction_line_item(
         self,
@@ -4169,6 +5313,93 @@ class CampaignApi(object):
         kwargs['creative_update_model2'] = \
             creative_update_model2
         return self.update_creative_endpoint.call_with_http_info(**kwargs)
+
+    def update_display_campaign(
+        self,
+        campaign_id,
+        value_resource_input_of_display_campaign_patch_model,
+        **kwargs
+    ):
+        """update_display_campaign  # noqa: E501
+
+        Updates a display campaign with the specified settings.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.update_display_campaign(campaign_id, value_resource_input_of_display_campaign_patch_model, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            campaign_id (str): The id of the campaign to update
+            value_resource_input_of_display_campaign_patch_model (ValueResourceInputOfDisplayCampaignPatchModel): The campaign settings to update
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceOutcomeOfDisplayCampaign
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['campaign_id'] = \
+            campaign_id
+        kwargs['value_resource_input_of_display_campaign_patch_model'] = \
+            value_resource_input_of_display_campaign_patch_model
+        return self.update_display_campaign_endpoint.call_with_http_info(**kwargs)
 
     def update_preferred_line_item_by_line_item_id(
         self,

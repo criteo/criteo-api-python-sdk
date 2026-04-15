@@ -156,9 +156,9 @@ class AdSetDeliveryLimitationsV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            devices ([str], none_type): [optional]  # noqa: E501
-            environments ([str], none_type): [optional]  # noqa: E501
-            operating_systems ([str], none_type): [optional]  # noqa: E501
+            devices ([str], none_type): List of devices which the ad set should target.                No limitation if the list is empty.. [optional]  # noqa: E501
+            environments ([str], none_type): List of environments which the ad set should target.                No limitation if the list is empty.. [optional]  # noqa: E501
+            operating_systems ([str], none_type): List of operating systems which the ad set should target.                No limitation if the list is empty.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,9 +244,9 @@ class AdSetDeliveryLimitationsV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            devices ([str], none_type): [optional]  # noqa: E501
-            environments ([str], none_type): [optional]  # noqa: E501
-            operating_systems ([str], none_type): [optional]  # noqa: E501
+            devices ([str], none_type): List of devices which the ad set should target.                No limitation if the list is empty.. [optional]  # noqa: E501
+            environments ([str], none_type): List of environments which the ad set should target.                No limitation if the list is empty.. [optional]  # noqa: E501
+            operating_systems ([str], none_type): List of operating systems which the ad set should target.                No limitation if the list is empty.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

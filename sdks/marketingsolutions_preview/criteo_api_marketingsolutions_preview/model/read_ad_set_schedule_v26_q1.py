@@ -164,8 +164,8 @@ class ReadAdSetScheduleV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            activation_status (str, none_type): [optional]  # noqa: E501
-            delivery_status (str, none_type): [optional]  # noqa: E501
+            activation_status (str, none_type): Activation status of the ad set, i.e. whether the consumer wants it to deliver. [optional]  # noqa: E501
+            delivery_status (str, none_type): Delivery status of the ad set, i.e. whether the ad set is delivering.                Possible values:  - draft  - inactive  - live  - notLive  - pausing  - paused  - scheduled  - ended  - notDelivering  - archived. [optional]  # noqa: E501
             end_date (NillableDateTime): [optional]  # noqa: E501
             start_date (NillableDateTime): [optional]  # noqa: E501
         """
@@ -253,8 +253,8 @@ class ReadAdSetScheduleV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            activation_status (str, none_type): [optional]  # noqa: E501
-            delivery_status (str, none_type): [optional]  # noqa: E501
+            activation_status (str, none_type): Activation status of the ad set, i.e. whether the consumer wants it to deliver. [optional]  # noqa: E501
+            delivery_status (str, none_type): Delivery status of the ad set, i.e. whether the ad set is delivering.                Possible values:  - draft  - inactive  - live  - notLive  - pausing  - paused  - scheduled  - ended  - notDelivering  - archived. [optional]  # noqa: E501
             end_date (NillableDateTime): [optional]  # noqa: E501
             start_date (NillableDateTime): [optional]  # noqa: E501
         """

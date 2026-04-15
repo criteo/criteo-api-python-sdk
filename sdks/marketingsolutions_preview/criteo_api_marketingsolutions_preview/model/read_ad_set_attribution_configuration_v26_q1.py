@@ -155,7 +155,7 @@ class ReadAdSetAttributionConfigurationV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attribution_method (str, none_type): The attribution method.. [optional]  # noqa: E501
+            attribution_method (str, none_type): Ad set attribution method.  This defines how certain events (visits, clicks, sales...) are attributed to the ad set.                Possible values:  - unknown  - criteoAttribution (default attribution method)  - googleAnalyticsLastClick (requires Google Analytics integration)  - postClick  - sftp  - googleAnalytics (requires Google Analytics integration). [optional]  # noqa: E501
             lookback_window (str, none_type): The lookback window. Optional, should be specified only for attribution methods PostClick and LastClick.. [optional]  # noqa: E501
         """
 
@@ -242,7 +242,7 @@ class ReadAdSetAttributionConfigurationV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attribution_method (str, none_type): The attribution method.. [optional]  # noqa: E501
+            attribution_method (str, none_type): Ad set attribution method.  This defines how certain events (visits, clicks, sales...) are attributed to the ad set.                Possible values:  - unknown  - criteoAttribution (default attribution method)  - googleAnalyticsLastClick (requires Google Analytics integration)  - postClick  - sftp  - googleAnalytics (requires Google Analytics integration). [optional]  # noqa: E501
             lookback_window (str, none_type): The lookback window. Optional, should be specified only for attribution methods PostClick and LastClick.. [optional]  # noqa: E501
         """
 

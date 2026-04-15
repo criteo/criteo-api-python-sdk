@@ -158,11 +158,11 @@ class CampaignV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str, none_type): [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser id of the campaign (string-encoded integer). [optional]  # noqa: E501
             budget_automation (CampaignBudgetAutomationV23Q1): [optional]  # noqa: E501
-            goal (str, none_type): [optional]  # noqa: E501
+            goal (str, none_type): Goal of the campaign                Serialized values are {unspecified}, {acquisition} and {retention}.                Acquisition and retention are defined as follows:  - Acquisition: campaign with the goal of acquiring new customers. The success of an acquisition campaign is measured by the number of new customers it brings.  - Retention: campaign with the goal of retaining existing customers. The success of a retention campaign is measured by the number of existing customers it retains.. [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): Name of the campaign. [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 
@@ -249,11 +249,11 @@ class CampaignV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str, none_type): [optional]  # noqa: E501
+            advertiser_id (str, none_type): Advertiser id of the campaign (string-encoded integer). [optional]  # noqa: E501
             budget_automation (CampaignBudgetAutomationV23Q1): [optional]  # noqa: E501
-            goal (str, none_type): [optional]  # noqa: E501
+            goal (str, none_type): Goal of the campaign                Serialized values are {unspecified}, {acquisition} and {retention}.                Acquisition and retention are defined as follows:  - Acquisition: campaign with the goal of acquiring new customers. The success of an acquisition campaign is measured by the number of new customers it brings.  - Retention: campaign with the goal of retaining existing customers. The success of a retention campaign is measured by the number of existing customers it retains.. [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
-            name (str, none_type): [optional]  # noqa: E501
+            name (str, none_type): Name of the campaign. [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 

@@ -150,7 +150,7 @@ class AdSetSearchRequestMetadataV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            fields ([str], none_type): [optional]  # noqa: E501
+            fields ([str], none_type): List of fields to include in the response. If null or omitted, all fields are returned.  When only a subset of fields is projected, non-projected fields will have default values (e.g. null, 0, or enum defaults) which may not reflect the actual ad set state. Do not interpret non-projected fields as meaningful data.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,7 +236,7 @@ class AdSetSearchRequestMetadataV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            fields ([str], none_type): [optional]  # noqa: E501
+            fields ([str], none_type): List of fields to include in the response. If null or omitted, all fields are returned.  When only a subset of fields is projected, non-projected fields will have default values (e.g. null, 0, or enum defaults) which may not reflect the actual ad set state. Do not interpret non-projected fields as meaningful data.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -148,8 +148,8 @@ class ReadAdSetBiddingV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_amount (float, none_type): Decimal value target relating to the `adSetObjective` specified. May be `null` for objectives that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
-            cost_controller (str, none_type): How spend is controlled. [optional]  # noqa: E501
+            bid_amount (float, none_type): Decimal value target relating to the `adSetObjective` specified.  May be `null` for objectives that do not require a target value.  At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            cost_controller (str, none_type): Cost controller for the ad set.                Possible values:  - COS  - maxCPC  - CPI  - CPM  - CPO  - CPSV  - CPV  - dailyBudget  - targetCPM. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,8 +235,8 @@ class ReadAdSetBiddingV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_amount (float, none_type): Decimal value target relating to the `adSetObjective` specified. May be `null` for objectives that do not require a target value. At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
-            cost_controller (str, none_type): How spend is controlled. [optional]  # noqa: E501
+            bid_amount (float, none_type): Decimal value target relating to the `adSetObjective` specified.  May be `null` for objectives that do not require a target value.  At most 4 decimals are supported. Additional decimals are rounded.. [optional]  # noqa: E501
+            cost_controller (str, none_type): Cost controller for the ad set.                Possible values:  - COS  - maxCPC  - CPI  - CPM  - CPO  - CPSV  - CPV  - dailyBudget  - targetCPM. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
