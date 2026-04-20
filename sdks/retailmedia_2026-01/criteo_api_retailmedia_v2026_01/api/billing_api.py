@@ -52,7 +52,9 @@ class BillingApi(object):
                 'all': [
                     'value_resource_input_partner_billing_report_request_v1',
                 ],
-                'required': [],
+                'required': [
+                    'value_resource_input_partner_billing_report_request_v1',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -195,6 +197,7 @@ class BillingApi(object):
 
     def create_partner_billing_report_request_v1(
         self,
+        value_resource_input_partner_billing_report_request_v1,
         **kwargs
     ):
         """create_partner_billing_report_request_v1  # noqa: E501
@@ -203,12 +206,13 @@ class BillingApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_partner_billing_report_request_v1(async_req=True)
+        >>> thread = api.create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            value_resource_input_partner_billing_report_request_v1 (ValueResourceInputPartnerBillingReportRequestV1): Partner Billing Report request object.
 
         Keyword Args:
-            value_resource_input_partner_billing_report_request_v1 (ValueResourceInputPartnerBillingReportRequestV1): Partner Billing Report request object.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -270,6 +274,8 @@ class BillingApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['value_resource_input_partner_billing_report_request_v1'] = \
+            value_resource_input_partner_billing_report_request_v1
         return self.create_partner_billing_report_request_v1_endpoint.call_with_http_info(**kwargs)
 
     def get_partner_billing_report_output_v1(

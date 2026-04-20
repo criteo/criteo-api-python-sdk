@@ -143,7 +143,7 @@ class CampaignBudgetAutomationV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             automated_budget_configuration (AutomatedBudgetConfigurationV23Q1): [optional]  # noqa: E501
-            enabled (bool, none_type): [optional]  # noqa: E501
+            enabled (bool, none_type): Whether budget automation is enabled for this campaign. This field is always present in the response.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,7 @@ class CampaignBudgetAutomationV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             automated_budget_configuration (AutomatedBudgetConfigurationV23Q1): [optional]  # noqa: E501
-            enabled (bool, none_type): [optional]  # noqa: E501
+            enabled (bool, none_type): Whether budget automation is enabled for this campaign. This field is always present in the response.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

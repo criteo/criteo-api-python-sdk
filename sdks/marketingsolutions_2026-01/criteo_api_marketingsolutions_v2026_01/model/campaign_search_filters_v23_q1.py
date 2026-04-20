@@ -136,8 +136,8 @@ class CampaignSearchFiltersV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_ids ([str], none_type): [optional]  # noqa: E501
-            campaign_ids ([str], none_type): [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): Advertiser IDs to filter on (string-encoded integers).. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign IDs to filter on (string-encoded integers).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class CampaignSearchFiltersV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_ids ([str], none_type): [optional]  # noqa: E501
-            campaign_ids ([str], none_type): [optional]  # noqa: E501
+            advertiser_ids ([str], none_type): Advertiser IDs to filter on (string-encoded integers).. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Campaign IDs to filter on (string-encoded integers).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

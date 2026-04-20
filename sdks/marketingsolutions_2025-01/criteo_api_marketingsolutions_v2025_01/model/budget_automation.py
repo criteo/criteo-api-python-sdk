@@ -143,7 +143,7 @@ class BudgetAutomation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget_configuration (BudgetAutomationConfiguration): [optional]  # noqa: E501
-            enabled (bool): [optional]  # noqa: E501
+            enabled (bool): Whether budget automation is active for this marketing campaign.  - true: budget automation is enabled and \"budgetConfiguration\" must be provided with a valid objective.  - false (default when omitted): budget automation is disabled; \"budgetConfiguration\" is ignored if provided.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,7 +230,7 @@ class BudgetAutomation(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget_configuration (BudgetAutomationConfiguration): [optional]  # noqa: E501
-            enabled (bool): [optional]  # noqa: E501
+            enabled (bool): Whether budget automation is active for this marketing campaign.  - true: budget automation is enabled and \"budgetConfiguration\" must be provided with a valid objective.  - false (default when omitted): budget automation is disabled; \"budgetConfiguration\" is ignored if provided.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

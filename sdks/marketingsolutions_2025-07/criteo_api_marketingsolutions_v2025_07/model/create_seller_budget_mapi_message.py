@@ -144,12 +144,12 @@ class CreateSellerBudgetMapiMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (str): [optional]  # noqa: E501
-            budget_type (str): [optional]  # noqa: E501
-            campaign_ids ([int]): [optional]  # noqa: E501
-            end_date (str): [optional]  # noqa: E501
-            seller_id (str): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
+            amount (str): Budget amount as a string (e.g. '100.50'). [optional]  # noqa: E501
+            budget_type (str): Type of budget: 'Daily' (daily cap), 'Capped' (lifetime with fixed amount), or 'Uncapped' (lifetime with no limit). [optional]  # noqa: E501
+            campaign_ids ([int]): List of campaign IDs this budget applies to. [optional]  # noqa: E501
+            end_date (str): Budget end date as a string (format: YYYY-MM-DD), or empty string for open-ended. [optional]  # noqa: E501
+            seller_id (str): Identifier of the seller this budget is for. [optional]  # noqa: E501
+            start_date (datetime): Budget start date. Time component is ignored.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,12 +235,12 @@ class CreateSellerBudgetMapiMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (str): [optional]  # noqa: E501
-            budget_type (str): [optional]  # noqa: E501
-            campaign_ids ([int]): [optional]  # noqa: E501
-            end_date (str): [optional]  # noqa: E501
-            seller_id (str): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
+            amount (str): Budget amount as a string (e.g. '100.50'). [optional]  # noqa: E501
+            budget_type (str): Type of budget: 'Daily' (daily cap), 'Capped' (lifetime with fixed amount), or 'Uncapped' (lifetime with no limit). [optional]  # noqa: E501
+            campaign_ids ([int]): List of campaign IDs this budget applies to. [optional]  # noqa: E501
+            end_date (str): Budget end date as a string (format: YYYY-MM-DD), or empty string for open-ended. [optional]  # noqa: E501
+            seller_id (str): Identifier of the seller this budget is for. [optional]  # noqa: E501
+            start_date (datetime): Budget start date. Time component is ignored.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

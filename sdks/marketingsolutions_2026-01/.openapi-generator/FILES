@@ -282,10 +282,12 @@ criteo_api_marketingsolutions_v2026_01/model/seller_base.py
 criteo_api_marketingsolutions_v2026_01/model/seller_budget_message.py
 criteo_api_marketingsolutions_v2026_01/model/seller_budget_status_v2.py
 criteo_api_marketingsolutions_v2026_01/model/seller_campaign_message.py
+criteo_api_marketingsolutions_v2026_01/model/seller_campaign_product_set.py
 criteo_api_marketingsolutions_v2026_01/model/seller_campaign_suspension_reason.py
 criteo_api_marketingsolutions_v2026_01/model/seller_campaign_update.py
 criteo_api_marketingsolutions_v2026_01/model/size.py
 criteo_api_marketingsolutions_v2026_01/model/statistics_report_query_message.py
+criteo_api_marketingsolutions_v2026_01/model/stats_report_message.py
 criteo_api_marketingsolutions_v2026_01/model/tag.py
 criteo_api_marketingsolutions_v2026_01/model/transactions_report_query_message.py
 criteo_api_marketingsolutions_v2026_01/model/transactions_report_query_message_list_request.py
@@ -580,10 +582,12 @@ docs/SellerBase.md
 docs/SellerBudgetMessage.md
 docs/SellerBudgetStatusV2.md
 docs/SellerCampaignMessage.md
+docs/SellerCampaignProductSet.md
 docs/SellerCampaignSuspensionReason.md
 docs/SellerCampaignUpdate.md
 docs/Size.md
 docs/StatisticsReportQueryMessage.md
+docs/StatsReportMessage.md
 docs/Tag.md
 docs/TransactionsReportQueryMessage.md
 docs/TransactionsReportQueryMessageListRequest.md

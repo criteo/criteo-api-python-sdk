@@ -63,11 +63,13 @@ class AccountsApi(object):
             },
             params_map={
                 'all': [
+                    'value_resource_input_account_fees_search_request',
                     'limit',
                     'offset',
+                ],
+                'required': [
                     'value_resource_input_account_fees_search_request',
                 ],
-                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -93,21 +95,21 @@ class AccountsApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'value_resource_input_account_fees_search_request':
+                        (ValueResourceInputAccountFeesSearchRequest,),
                     'limit':
                         (int,),
                     'offset':
                         (int,),
-                    'value_resource_input_account_fees_search_request':
-                        (ValueResourceInputAccountFeesSearchRequest,),
                 },
                 'attribute_map': {
                     'limit': 'limit',
                     'offset': 'offset',
                 },
                 'location_map': {
+                    'value_resource_input_account_fees_search_request': 'body',
                     'limit': 'query',
                     'offset': 'query',
-                    'value_resource_input_account_fees_search_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -602,7 +604,9 @@ class AccountsApi(object):
                 'all': [
                     'value_resource_input_account_fees_update_request',
                 ],
-                'required': [],
+                'required': [
+                    'value_resource_input_account_fees_update_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -697,6 +701,7 @@ class AccountsApi(object):
 
     def account_fees_search(
         self,
+        value_resource_input_account_fees_search_request,
         **kwargs
     ):
         """account_fees_search  # noqa: E501
@@ -705,14 +710,15 @@ class AccountsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.account_fees_search(async_req=True)
+        >>> thread = api.account_fees_search(value_resource_input_account_fees_search_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            value_resource_input_account_fees_search_request (ValueResourceInputAccountFeesSearchRequest):
 
         Keyword Args:
             limit (int): used for paging, number of results returned per request, Maximum of 500. [optional] if omitted the server will use the default value of 50
             offset (int): used for paging, number of records to skip. [optional] if omitted the server will use the default value of 0
-            value_resource_input_account_fees_search_request (ValueResourceInputAccountFeesSearchRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -774,6 +780,8 @@ class AccountsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['value_resource_input_account_fees_search_request'] = \
+            value_resource_input_account_fees_search_request
         return self.account_fees_search_endpoint.call_with_http_info(**kwargs)
 
     def add_brands(
@@ -1447,6 +1455,7 @@ class AccountsApi(object):
 
     def update_account_fees(
         self,
+        value_resource_input_account_fees_update_request,
         **kwargs
     ):
         """update_account_fees  # noqa: E501
@@ -1455,12 +1464,13 @@ class AccountsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_account_fees(async_req=True)
+        >>> thread = api.update_account_fees(value_resource_input_account_fees_update_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            value_resource_input_account_fees_update_request (ValueResourceInputAccountFeesUpdateRequest):
 
         Keyword Args:
-            value_resource_input_account_fees_update_request (ValueResourceInputAccountFeesUpdateRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1522,6 +1532,8 @@ class AccountsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['value_resource_input_account_fees_update_request'] = \
+            value_resource_input_account_fees_update_request
         return self.update_account_fees_endpoint.call_with_http_info(**kwargs)
 
     def update_sellers(

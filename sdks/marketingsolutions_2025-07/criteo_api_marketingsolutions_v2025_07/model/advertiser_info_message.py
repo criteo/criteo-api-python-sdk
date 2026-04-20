@@ -84,6 +84,7 @@ class AdvertiserInfoMessage(ModelNormal):
             'advertiser_name': (str,),  # noqa: E501
             'currency_name': (str,),  # noqa: E501
             'id': (int,),  # noqa: E501
+            'time_zone_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -95,6 +96,7 @@ class AdvertiserInfoMessage(ModelNormal):
         'advertiser_name': 'advertiserName',  # noqa: E501
         'currency_name': 'currencyName',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'time_zone_id': 'timeZoneId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,9 +140,10 @@ class AdvertiserInfoMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_name (str): [optional]  # noqa: E501
-            currency_name (str): [optional]  # noqa: E501
-            id (int): [optional]  # noqa: E501
+            advertiser_name (str): Display name of the advertiser. [optional]  # noqa: E501
+            currency_name (str): Currency used by the advertiser for bids and budgets (e.g. USD, EUR). [optional]  # noqa: E501
+            id (int): Unique advertiser identifier. [optional]  # noqa: E501
+            time_zone_id (str, none_type): IANA timezone identifier for the advertiser (e.g. UTC, Asia/Tokyo). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,9 +229,10 @@ class AdvertiserInfoMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_name (str): [optional]  # noqa: E501
-            currency_name (str): [optional]  # noqa: E501
-            id (int): [optional]  # noqa: E501
+            advertiser_name (str): Display name of the advertiser. [optional]  # noqa: E501
+            currency_name (str): Currency used by the advertiser for bids and budgets (e.g. USD, EUR). [optional]  # noqa: E501
+            id (int): Unique advertiser identifier. [optional]  # noqa: E501
+            time_zone_id (str, none_type): IANA timezone identifier for the advertiser (e.g. UTC, Asia/Tokyo). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -136,8 +136,8 @@ class CreateSellerCampaignMessageMapi(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid (float): [optional]  # noqa: E501
-            campaign_id (int): [optional]  # noqa: E501
+            bid (float): Initial cost-per-click bid in the advertiser's currency. [optional]  # noqa: E501
+            campaign_id (int): ID of the campaign to associate the seller with. Must be an existing campaign.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class CreateSellerCampaignMessageMapi(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid (float): [optional]  # noqa: E501
-            campaign_id (int): [optional]  # noqa: E501
+            bid (float): Initial cost-per-click bid in the advertiser's currency. [optional]  # noqa: E501
+            campaign_id (int): ID of the campaign to associate the seller with. Must be an existing campaign.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

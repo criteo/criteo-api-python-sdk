@@ -58,6 +58,8 @@ class SellerCampaignSuspensionReason(ModelSimple):
             'NOCPCDEFINED': "NoCpcDefined",
             'REMOVEDFROMCATALOG': "RemovedFromCatalog",
             'NOTYETSTARTED': "NotYetStarted",
+            'NOMOREDAILYBUDGET': "NoMoreDailyBudget",
+            'OTHER': "Other",
         },
     }
 
@@ -109,10 +111,10 @@ class SellerCampaignSuspensionReason(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Public seller-campaign suspension reasons., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", ]  # noqa: E501
+            args[0] (str): Reason why a seller-campaign is suspended. Values: ManuallyStopped (manually paused by the partner), NoBudgetDefined (no valid budget linked), NoCpcDefined (no CPC bid set), NoMoreBudget (lifetime budget fully spent), NoMoreDailyBudget (daily budget limit reached), RemovedFromCatalog (all products removed from catalog), NotYetStarted (newly created, not yet processed), Other (internal issue preventing delivery).., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", "NoMoreDailyBudget", "Other", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Public seller-campaign suspension reasons., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", ]  # noqa: E501
+            value (str): Reason why a seller-campaign is suspended. Values: ManuallyStopped (manually paused by the partner), NoBudgetDefined (no valid budget linked), NoCpcDefined (no CPC bid set), NoMoreBudget (lifetime budget fully spent), NoMoreDailyBudget (daily budget limit reached), RemovedFromCatalog (all products removed from catalog), NotYetStarted (newly created, not yet processed), Other (internal issue preventing delivery).., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", "NoMoreDailyBudget", "Other", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -203,10 +205,10 @@ class SellerCampaignSuspensionReason(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Public seller-campaign suspension reasons., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", ]  # noqa: E501
+            args[0] (str): Reason why a seller-campaign is suspended. Values: ManuallyStopped (manually paused by the partner), NoBudgetDefined (no valid budget linked), NoCpcDefined (no CPC bid set), NoMoreBudget (lifetime budget fully spent), NoMoreDailyBudget (daily budget limit reached), RemovedFromCatalog (all products removed from catalog), NotYetStarted (newly created, not yet processed), Other (internal issue preventing delivery).., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", "NoMoreDailyBudget", "Other", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Public seller-campaign suspension reasons., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", ]  # noqa: E501
+            value (str): Reason why a seller-campaign is suspended. Values: ManuallyStopped (manually paused by the partner), NoBudgetDefined (no valid budget linked), NoCpcDefined (no CPC bid set), NoMoreBudget (lifetime budget fully spent), NoMoreDailyBudget (daily budget limit reached), RemovedFromCatalog (all products removed from catalog), NotYetStarted (newly created, not yet processed), Other (internal issue preventing delivery).., must be one of ["NoMoreBudget", "ManuallyStopped", "NoBudgetDefined", "NoCpcDefined", "RemovedFromCatalog", "NotYetStarted", "NoMoreDailyBudget", "Other", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

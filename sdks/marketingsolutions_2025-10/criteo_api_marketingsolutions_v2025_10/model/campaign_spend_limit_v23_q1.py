@@ -157,8 +157,8 @@ class CampaignSpendLimitV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
-            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
-            spend_limit_type (str, none_type): [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): The period over which the campaign spend limit is applied.  When spendLimitType is \"capped\", this is \"daily\", \"monthly\", or \"lifetime\".  When spendLimitType is \"uncapped\", this is \"undefined\".. [optional]  # noqa: E501
+            spend_limit_type (str, none_type): Controls whether the campaign has a spend limit.  \"capped\" returns a non-null spendLimitAmount.value and a spendLimitRenewal of \"daily\", \"monthly\", or \"lifetime\".  \"uncapped\" returns spendLimitAmount.value as null and spendLimitRenewal as \"undefined\".. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,8 +245,8 @@ class CampaignSpendLimitV23Q1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             spend_limit_amount (NillableDecimal): [optional]  # noqa: E501
-            spend_limit_renewal (str, none_type): [optional]  # noqa: E501
-            spend_limit_type (str, none_type): [optional]  # noqa: E501
+            spend_limit_renewal (str, none_type): The period over which the campaign spend limit is applied.  When spendLimitType is \"capped\", this is \"daily\", \"monthly\", or \"lifetime\".  When spendLimitType is \"uncapped\", this is \"undefined\".. [optional]  # noqa: E501
+            spend_limit_type (str, none_type): Controls whether the campaign has a spend limit.  \"capped\" returns a non-null spendLimitAmount.value and a spendLimitRenewal of \"daily\", \"monthly\", or \"lifetime\".  \"uncapped\" returns spendLimitAmount.value as null and spendLimitRenewal as \"undefined\".. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

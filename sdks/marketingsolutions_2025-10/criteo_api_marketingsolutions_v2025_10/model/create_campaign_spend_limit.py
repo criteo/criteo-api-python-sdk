@@ -118,7 +118,7 @@ class CreateCampaignSpendLimit(ModelNormal):
         """CreateCampaignSpendLimit - a model defined in OpenAPI
 
         Args:
-            spend_limit_type (str): Whether your spend limit is capped or not
+            spend_limit_type (str): Controls whether the campaign has a spending limit.  - \"capped\": spending is limited to spendLimitAmount. Requires spendLimitAmount (non-null) and spendLimitRenewal (not \"undefined\").  - \"uncapped\": no spending limit. spendLimitAmount is null and spendLimitRenewal is \"undefined\".
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -151,8 +151,8 @@ class CreateCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_amount (float, none_type): The amount of the spend limit. null if spendLimitType is uncapped.. [optional]  # noqa: E501
-            spend_limit_renewal (str): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_amount (float, none_type): Maximum spend amount in the advertiser's currency per renewal period. Non-null when capped. null when uncapped.. [optional]  # noqa: E501
+            spend_limit_renewal (str): The period over which the spend limit is consumed.  - \"daily\", \"monthly\": spend limit resets at the start of each period.  - \"lifetime\": spend limit covers the entire campaign duration without resetting.  - \"undefined\": only used when spendLimitType is \"uncapped\" (no renewal applies).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -209,7 +209,7 @@ class CreateCampaignSpendLimit(ModelNormal):
         """CreateCampaignSpendLimit - a model defined in OpenAPI
 
         Args:
-            spend_limit_type (str): Whether your spend limit is capped or not
+            spend_limit_type (str): Controls whether the campaign has a spending limit.  - \"capped\": spending is limited to spendLimitAmount. Requires spendLimitAmount (non-null) and spendLimitRenewal (not \"undefined\").  - \"uncapped\": no spending limit. spendLimitAmount is null and spendLimitRenewal is \"undefined\".
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -242,8 +242,8 @@ class CreateCampaignSpendLimit(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            spend_limit_amount (float, none_type): The amount of the spend limit. null if spendLimitType is uncapped.. [optional]  # noqa: E501
-            spend_limit_renewal (str): The pace of the spend limit renewal. [optional]  # noqa: E501
+            spend_limit_amount (float, none_type): Maximum spend amount in the advertiser's currency per renewal period. Non-null when capped. null when uncapped.. [optional]  # noqa: E501
+            spend_limit_renewal (str): The period over which the spend limit is consumed.  - \"daily\", \"monthly\": spend limit resets at the start of each period.  - \"lifetime\": spend limit covers the entire campaign duration without resetting.  - \"undefined\": only used when spendLimitType is \"uncapped\" (no renewal applies).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 
 
-Create the specified campaign
+Create the specified campaign                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
 ### Example
 
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 
 
-Get the data for the specified campaign
+Get the data for the specified campaign.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
 ### Example
 
@@ -707,7 +707,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_id = "campaign-id_example" # str | Id of the campaign
+    campaign_id = "campaign-id_example" # str | ID of the marketing campaign; This field is required.
 
     # example passing only required values which don't have defaults set
     try:
@@ -722,7 +722,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_id** | **str**| Id of the campaign |
+ **campaign_id** | **str**| ID of the marketing campaign; This field is required. |
 
 ### Return type
 
@@ -742,7 +742,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | data for the campaign |  -  |
+**200** | Returns the data of the specified marketing campaign. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1572,7 +1572,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_campaigns_stats**
-> str get_marketplace_campaigns_stats()
+> StatsReportMessage get_marketplace_campaigns_stats()
 
 
 
@@ -1587,6 +1587,7 @@ Name | Type | Description  | Notes
 import time
 import criteo_api_marketingsolutions_v2026_01
 from criteo_api_marketingsolutions_v2026_01.api import campaign_api
+from criteo_api_marketingsolutions_v2026_01.model.stats_report_message import StatsReportMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1650,7 +1651,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**StatsReportMessage**](StatsReportMessage.md)
 
 ### Authorization
 
@@ -2408,7 +2409,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_seller_campaigns_stats**
-> str get_marketplace_seller_campaigns_stats()
+> StatsReportMessage get_marketplace_seller_campaigns_stats()
 
 
 
@@ -2423,6 +2424,7 @@ Name | Type | Description  | Notes
 import time
 import criteo_api_marketingsolutions_v2026_01
 from criteo_api_marketingsolutions_v2026_01.api import campaign_api
+from criteo_api_marketingsolutions_v2026_01.model.stats_report_message import StatsReportMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2488,7 +2490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**StatsReportMessage**](StatsReportMessage.md)
 
 ### Authorization
 
@@ -2705,7 +2707,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marketplace_sellers_stats**
-> str get_marketplace_sellers_stats()
+> StatsReportMessage get_marketplace_sellers_stats()
 
 
 
@@ -2720,6 +2722,7 @@ Name | Type | Description  | Notes
 import time
 import criteo_api_marketingsolutions_v2026_01
 from criteo_api_marketingsolutions_v2026_01.api import campaign_api
+from criteo_api_marketingsolutions_v2026_01.model.stats_report_message import StatsReportMessage
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2783,7 +2786,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**StatsReportMessage**](StatsReportMessage.md)
 
 ### Authorization
 
@@ -2808,7 +2811,7 @@ Name | Type | Description  | Notes
 
 
 
-Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.
+Update the Category Bids for given Categories associated to an Ad Set  Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.
 
 ### Example
 
@@ -2860,7 +2863,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
                 type="AdSetCategoryBid",
             ),
         ],
-    ) # PatchAdSetCategoryBidListRequest | 
+    ) # PatchAdSetCategoryBidListRequest | Collection of category bids to update
 
     # example passing only required values which don't have defaults set
     try:
@@ -2876,7 +2879,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)|  |
+ **patch_ad_set_category_bid_list_request** | [**PatchAdSetCategoryBidListRequest**](PatchAdSetCategoryBidListRequest.md)| Collection of category bids to update |
 
 ### Return type
 
@@ -2896,7 +2899,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of updated Category Bids for given Categories associated to an Ad Set. |  -  |
+**200** | List of updated Category Bids for given Categories associated to an Ad Set, used for partial successes as well. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3056,7 +3059,7 @@ Name | Type | Description  | Notes
 
 
 
-Patch a list of Campaigns.
+Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
 ### Example
 
@@ -3163,7 +3166,7 @@ Name | Type | Description  | Notes
 
 
 
-Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.
+Update the Display Multipliers for given Categories associated to an Ad Set  Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.
 
 ### Example
 
@@ -3215,7 +3218,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
                 type="AdSetDisplayMultiplier",
             ),
         ],
-    ) # PatchAdSetDisplayMultiplierListRequest | 
+    ) # PatchAdSetDisplayMultiplierListRequest | List of display multiplier values to change
 
     # example passing only required values which don't have defaults set
     try:
@@ -3231,7 +3234,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ad_set_id** | **str**| Id of the Ad Set |
- **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)|  |
+ **patch_ad_set_display_multiplier_list_request** | [**PatchAdSetDisplayMultiplierListRequest**](PatchAdSetDisplayMultiplierListRequest.md)| List of display multiplier values to change |
 
 ### Return type
 
@@ -3251,7 +3254,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of updated Display Multipliers for given Categories associated to an Ad Set. |  -  |
+**200** | List of updated Display Multipliers for given Categories associated to an Ad Set. Make sure to check the error field in the response since a partial success will result in a 200 response code. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3358,7 +3361,7 @@ Name | Type | Description  | Notes
 
 
 
-Search for campaigns
+Search endpoint for campaigns                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
 ### Example
 
@@ -3408,7 +3411,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
                 "campaign_ids_example",
             ],
         ),
-    ) # CampaignSearchRequestV23Q1 | filters on campaigns (optional)
+    ) # CampaignSearchRequestV23Q1 | Filters for searching for campaigns (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -3424,7 +3427,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_search_request_v23_q1** | [**CampaignSearchRequestV23Q1**](CampaignSearchRequestV23Q1.md)| filters on campaigns | [optional]
+ **campaign_search_request_v23_q1** | [**CampaignSearchRequestV23Q1**](CampaignSearchRequestV23Q1.md)| Filters for searching for campaigns | [optional]
 
 ### Return type
 
@@ -3444,7 +3447,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | data for the campaigns |  -  |
+**200** | Returns a list of marketing campaigns&#39; data. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

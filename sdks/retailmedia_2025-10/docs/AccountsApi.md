@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **account_fees_search**
-> ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata account_fees_search()
+> ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata account_fees_search(value_resource_input_account_fees_search_request)
 
 
 
@@ -63,8 +63,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = accounts_api.AccountsApi(api_client)
-    limit = 50 # int | used for paging, number of results returned per request, Maximum of 500 (optional) if omitted the server will use the default value of 50
-    offset = 0 # int | used for paging, number of records to skip (optional) if omitted the server will use the default value of 0
     value_resource_input_account_fees_search_request = ValueResourceInputAccountFeesSearchRequest(
         data=ValueResourceAccountFeesSearchRequest(
             attributes=AccountFeesSearchRequest(
@@ -74,12 +72,21 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputAccountFeesSearchRequest |  (optional)
+    ) # ValueResourceInputAccountFeesSearchRequest | 
+    limit = 50 # int | used for paging, number of results returned per request, Maximum of 500 (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | used for paging, number of records to skip (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.account_fees_search(value_resource_input_account_fees_search_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_10.ApiException as e:
+        print("Exception when calling AccountsApi->account_fees_search: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        api_response = api_instance.account_fees_search(limit=limit, offset=offset, value_resource_input_account_fees_search_request=value_resource_input_account_fees_search_request)
+        api_response = api_instance.account_fees_search(value_resource_input_account_fees_search_request, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->account_fees_search: %s\n" % e)
@@ -90,9 +97,9 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **value_resource_input_account_fees_search_request** | [**ValueResourceInputAccountFeesSearchRequest**](ValueResourceInputAccountFeesSearchRequest.md)|  |
  **limit** | **int**| used for paging, number of results returned per request, Maximum of 500 | [optional] if omitted the server will use the default value of 50
  **offset** | **int**| used for paging, number of records to skip | [optional] if omitted the server will use the default value of 0
- **value_resource_input_account_fees_search_request** | [**ValueResourceInputAccountFeesSearchRequest**](ValueResourceInputAccountFeesSearchRequest.md)|  | [optional]
 
 ### Return type
 
@@ -927,7 +934,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_account_fees**
-> update_account_fees()
+> update_account_fees(value_resource_input_account_fees_update_request)
 
 
 
@@ -990,12 +997,11 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputAccountFeesUpdateRequest |  (optional)
+    ) # ValueResourceInputAccountFeesUpdateRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_instance.update_account_fees(value_resource_input_account_fees_update_request=value_resource_input_account_fees_update_request)
+        api_instance.update_account_fees(value_resource_input_account_fees_update_request)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->update_account_fees: %s\n" % e)
 ```
@@ -1005,7 +1011,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **value_resource_input_account_fees_update_request** | [**ValueResourceInputAccountFeesUpdateRequest**](ValueResourceInputAccountFeesUpdateRequest.md)|  | [optional]
+ **value_resource_input_account_fees_update_request** | [**ValueResourceInputAccountFeesUpdateRequest**](ValueResourceInputAccountFeesUpdateRequest.md)|  |
 
 ### Return type
 

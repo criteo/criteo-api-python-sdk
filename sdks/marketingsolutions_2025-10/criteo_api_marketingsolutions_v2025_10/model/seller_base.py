@@ -136,8 +136,8 @@ class SellerBase(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            seller_name (str): [optional]  # noqa: E501
+            id (str): Unique seller identifier. [optional]  # noqa: E501
+            seller_name (str): Display name of the seller (merchant). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class SellerBase(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            id (str): [optional]  # noqa: E501
-            seller_name (str): [optional]  # noqa: E501
+            id (str): Unique seller identifier. [optional]  # noqa: E501
+            seller_name (str): Display name of the seller (merchant). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

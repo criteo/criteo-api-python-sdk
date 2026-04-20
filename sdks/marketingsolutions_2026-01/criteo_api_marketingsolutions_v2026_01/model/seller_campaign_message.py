@@ -30,7 +30,9 @@ from criteo_api_marketingsolutions_v2026_01.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_v2026_01.model.seller_campaign_product_set import SellerCampaignProductSet
     from criteo_api_marketingsolutions_v2026_01.model.seller_campaign_suspension_reason import SellerCampaignSuspensionReason
+    globals()['SellerCampaignProductSet'] = SellerCampaignProductSet
     globals()['SellerCampaignSuspensionReason'] = SellerCampaignSuspensionReason
 
 
@@ -90,9 +92,10 @@ class SellerCampaignMessage(ModelNormal):
             'bid': (float, none_type,),  # noqa: E501
             'campaign_id': (int,),  # noqa: E501
             'id': (str,),  # noqa: E501
+            'product_set': (SellerCampaignProductSet,),  # noqa: E501
             'seller_id': (str,),  # noqa: E501
             'suspended_since': (datetime, none_type,),  # noqa: E501
-            'suspension_reasons': ([SellerCampaignSuspensionReason],),  # noqa: E501
+            'suspension_reasons': ([SellerCampaignSuspensionReason], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -104,6 +107,7 @@ class SellerCampaignMessage(ModelNormal):
         'bid': 'bid',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'id': 'id',  # noqa: E501
+        'product_set': 'productSet',  # noqa: E501
         'seller_id': 'sellerId',  # noqa: E501
         'suspended_since': 'suspendedSince',  # noqa: E501
         'suspension_reasons': 'suspensionReasons',  # noqa: E501
@@ -151,12 +155,13 @@ class SellerCampaignMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid (float, none_type): [optional]  # noqa: E501
-            campaign_id (int): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
-            seller_id (str): [optional]  # noqa: E501
-            suspended_since (datetime, none_type): [optional]  # noqa: E501
-            suspension_reasons ([SellerCampaignSuspensionReason]): [optional]  # noqa: E501
+            bid (float, none_type): Cost-per-click bid in the advertiser's currency. Null means no CPC is defined (seller-campaign will be suspended with NoCpcDefined). Set to 0 to stop delivery.. [optional]  # noqa: E501
+            campaign_id (int): Identifier of the campaign this seller participates in. [optional]  # noqa: E501
+            id (str): Composite identifier in format {sellerId}.{campaignId}. [optional]  # noqa: E501
+            product_set (SellerCampaignProductSet): [optional]  # noqa: E501
+            seller_id (str): Unique identifier of the seller (merchant). [optional]  # noqa: E501
+            suspended_since (datetime, none_type): Timestamp when the seller-campaign was suspended. Null means the seller-campaign is active.. [optional]  # noqa: E501
+            suspension_reasons ([SellerCampaignSuspensionReason], none_type): List of reasons why the seller-campaign is suspended. Null means the seller-campaign is active.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,12 +247,13 @@ class SellerCampaignMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid (float, none_type): [optional]  # noqa: E501
-            campaign_id (int): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
-            seller_id (str): [optional]  # noqa: E501
-            suspended_since (datetime, none_type): [optional]  # noqa: E501
-            suspension_reasons ([SellerCampaignSuspensionReason]): [optional]  # noqa: E501
+            bid (float, none_type): Cost-per-click bid in the advertiser's currency. Null means no CPC is defined (seller-campaign will be suspended with NoCpcDefined). Set to 0 to stop delivery.. [optional]  # noqa: E501
+            campaign_id (int): Identifier of the campaign this seller participates in. [optional]  # noqa: E501
+            id (str): Composite identifier in format {sellerId}.{campaignId}. [optional]  # noqa: E501
+            product_set (SellerCampaignProductSet): [optional]  # noqa: E501
+            seller_id (str): Unique identifier of the seller (merchant). [optional]  # noqa: E501
+            suspended_since (datetime, none_type): Timestamp when the seller-campaign was suspended. Null means the seller-campaign is active.. [optional]  # noqa: E501
+            suspension_reasons ([SellerCampaignSuspensionReason], none_type): List of reasons why the seller-campaign is suspended. Null means the seller-campaign is active.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **create_partner_billing_report_request_v1**
-> EntityResourceOutcomePartnerBillingReportStatusV1 create_partner_billing_report_request_v1()
+> EntityResourceOutcomePartnerBillingReportStatusV1 create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1)
 
 
 
@@ -70,12 +70,11 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputPartnerBillingReportRequestV1 | Partner Billing Report request object. (optional)
+    ) # ValueResourceInputPartnerBillingReportRequestV1 | Partner Billing Report request object.
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
-        api_response = api_instance.create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1=value_resource_input_partner_billing_report_request_v1)
+        api_response = api_instance.create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling BillingApi->create_partner_billing_report_request_v1: %s\n" % e)
@@ -86,7 +85,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **value_resource_input_partner_billing_report_request_v1** | [**ValueResourceInputPartnerBillingReportRequestV1**](ValueResourceInputPartnerBillingReportRequestV1.md)| Partner Billing Report request object. | [optional]
+ **value_resource_input_partner_billing_report_request_v1** | [**ValueResourceInputPartnerBillingReportRequestV1**](ValueResourceInputPartnerBillingReportRequestV1.md)| Partner Billing Report request object. |
 
 ### Return type
 

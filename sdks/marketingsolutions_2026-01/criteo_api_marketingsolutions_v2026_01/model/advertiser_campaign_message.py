@@ -152,10 +152,10 @@ class AdvertiserCampaignMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_delivery_status (str): [optional]  # noqa: E501
-            campaign_name (str): [optional]  # noqa: E501
-            id (int): [optional]  # noqa: E501
-            status (int, none_type): [optional]  # noqa: E501
+            ad_set_delivery_status (str): Human-readable delivery status of the campaign's ad set. [optional]  # noqa: E501
+            campaign_name (str): Display name of the campaign. [optional]  # noqa: E501
+            id (int): Unique campaign identifier. [optional]  # noqa: E501
+            status (int, none_type): Numeric delivery status: 0 = Running, 1 = Archived, 2 = NotRunning. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,10 +241,10 @@ class AdvertiserCampaignMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_delivery_status (str): [optional]  # noqa: E501
-            campaign_name (str): [optional]  # noqa: E501
-            id (int): [optional]  # noqa: E501
-            status (int, none_type): [optional]  # noqa: E501
+            ad_set_delivery_status (str): Human-readable delivery status of the campaign's ad set. [optional]  # noqa: E501
+            campaign_name (str): Display name of the campaign. [optional]  # noqa: E501
+            id (int): Unique campaign identifier. [optional]  # noqa: E501
+            status (int, none_type): Numeric delivery status: 0 = Running, 1 = Archived, 2 = NotRunning. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

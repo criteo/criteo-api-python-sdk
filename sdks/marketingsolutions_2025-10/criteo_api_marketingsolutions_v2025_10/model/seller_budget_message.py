@@ -158,15 +158,15 @@ class SellerBudgetMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (float, none_type): [optional]  # noqa: E501
-            budget_type (str): [optional]  # noqa: E501
-            campaign_ids ([int]): [optional]  # noqa: E501
-            end_date (str): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
-            is_suspended (bool): [optional]  # noqa: E501
-            seller_id (str): [optional]  # noqa: E501
-            spend (float, none_type): [optional]  # noqa: E501
-            start_date (date): [optional]  # noqa: E501
+            amount (float, none_type): Budget amount in the advertiser's currency. [optional]  # noqa: E501
+            budget_type (str): Type of budget: 'Daily' (daily cap), 'Capped' (lifetime with fixed amount), or 'Uncapped' (lifetime with no limit). [optional]  # noqa: E501
+            campaign_ids ([int]): List of campaign IDs this budget applies to. [optional]  # noqa: E501
+            end_date (str): End date of the budget period (format: YYYY-MM-DD), or empty string if open-ended. [optional]  # noqa: E501
+            id (str): Unique budget identifier. [optional]  # noqa: E501
+            is_suspended (bool): Whether the budget has been manually suspended by the partner. [optional]  # noqa: E501
+            seller_id (str): Identifier of the seller this budget belongs to. [optional]  # noqa: E501
+            spend (float, none_type): Amount spent against this budget so far, or null if not available. [optional]  # noqa: E501
+            start_date (date): Start date of the budget period (format: YYYY-MM-DD). [optional]  # noqa: E501
             status (SellerBudgetStatusV2): [optional]  # noqa: E501
         """
 
@@ -253,15 +253,15 @@ class SellerBudgetMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (float, none_type): [optional]  # noqa: E501
-            budget_type (str): [optional]  # noqa: E501
-            campaign_ids ([int]): [optional]  # noqa: E501
-            end_date (str): [optional]  # noqa: E501
-            id (str): [optional]  # noqa: E501
-            is_suspended (bool): [optional]  # noqa: E501
-            seller_id (str): [optional]  # noqa: E501
-            spend (float, none_type): [optional]  # noqa: E501
-            start_date (date): [optional]  # noqa: E501
+            amount (float, none_type): Budget amount in the advertiser's currency. [optional]  # noqa: E501
+            budget_type (str): Type of budget: 'Daily' (daily cap), 'Capped' (lifetime with fixed amount), or 'Uncapped' (lifetime with no limit). [optional]  # noqa: E501
+            campaign_ids ([int]): List of campaign IDs this budget applies to. [optional]  # noqa: E501
+            end_date (str): End date of the budget period (format: YYYY-MM-DD), or empty string if open-ended. [optional]  # noqa: E501
+            id (str): Unique budget identifier. [optional]  # noqa: E501
+            is_suspended (bool): Whether the budget has been manually suspended by the partner. [optional]  # noqa: E501
+            seller_id (str): Identifier of the seller this budget belongs to. [optional]  # noqa: E501
+            spend (float, none_type): Amount spent against this budget so far, or null if not available. [optional]  # noqa: E501
+            start_date (date): Start date of the budget period (format: YYYY-MM-DD). [optional]  # noqa: E501
             status (SellerBudgetStatusV2): [optional]  # noqa: E501
         """
 

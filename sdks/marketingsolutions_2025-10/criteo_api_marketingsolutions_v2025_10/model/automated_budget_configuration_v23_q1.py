@@ -141,7 +141,7 @@ class AutomatedBudgetConfigurationV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_optimization_objective (str, none_type): [optional]  # noqa: E501
+            ad_set_optimization_objective (str, none_type): Optimization objective used to automate budget allocation across ad sets.  Expected when budgetAutomation.enabled is true.  Possible values are \"conversions\", \"revenue\", \"visits\", and \"videoViews\".. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,7 +227,7 @@ class AutomatedBudgetConfigurationV23Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_optimization_objective (str, none_type): [optional]  # noqa: E501
+            ad_set_optimization_objective (str, none_type): Optimization objective used to automate budget allocation across ad sets.  Expected when budgetAutomation.enabled is true.  Possible values are \"conversions\", \"revenue\", \"visits\", and \"videoViews\".. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
