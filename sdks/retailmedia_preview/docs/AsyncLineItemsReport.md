@@ -7,6 +7,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **end_date** | **datetime** | End date | 
 **start_date** | **datetime** | Start date | 
+**activation_platforms** | **[str]** | Filter on the activation platform: CommerceMax, PrivateMarket | [optional] 
+**budget_models** | **[str]** | Filter on the budget model: CriteoBudget, RetailerBudget | [optional] 
+**buy_types** | **[str]** | Filter on the buy type: auction, preferredDeals, sponsorship | [optional] 
 **campaign_type** | **str** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
 **click_attribution_window** | **str** | Click attribution window | [optional]  if omitted the server will use the default value of "none"
 **dimensions** | **[str]** | List of dimensions to report on | [optional] 

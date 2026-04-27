@@ -55,9 +55,22 @@ class AsyncAccountsReport(ModelNormal):
     """
 
     allowed_values = {
+        ('activation_platforms',): {
+            'COMMERCEMAX': "CommerceMax",
+            'PRIVATEMARKET': "PrivateMarket",
+        },
         ('aggregation_level',): {
             'CAMPAIGN': "campaign",
             'LINEITEM': "lineItem",
+        },
+        ('budget_models',): {
+            'CRITEOBUDGET': "CriteoBudget",
+            'RETAILERBUDGET': "RetailerBudget",
+        },
+        ('buy_types',): {
+            'AUCTION': "auction",
+            'PREFERREDDEALS': "preferredDeals",
+            'SPONSORSHIP': "sponsorship",
         },
         ('campaign_type',): {
             'ALL': "all",
@@ -89,6 +102,9 @@ class AsyncAccountsReport(ModelNormal):
             'ADVPRODUCTNAME': "advProductName",
             'SALESCHANNEL': "salesChannel",
             'MEDIATYPE': "mediaType",
+            'BUYTYPE': "buyType",
+            'BUDGETMODEL': "budgetModel",
+            'ACTIVATIONPLATFORM': "activationPlatform",
             'ENVIRONMENT': "environment",
             'PAGETYPENAME': "pageTypeName",
             'PAGECATEGORY': "pageCategory",
@@ -228,7 +244,10 @@ class AsyncAccountsReport(ModelNormal):
             'account_ids': ([str],),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
+            'activation_platforms': ([str],),  # noqa: E501
             'aggregation_level': (str,),  # noqa: E501
+            'budget_models': ([str],),  # noqa: E501
+            'buy_types': ([str],),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
             'click_attribution_window': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
@@ -253,7 +272,10 @@ class AsyncAccountsReport(ModelNormal):
         'account_ids': 'accountIds',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
+        'activation_platforms': 'activationPlatforms',  # noqa: E501
         'aggregation_level': 'aggregationLevel',  # noqa: E501
+        'budget_models': 'budgetModels',  # noqa: E501
+        'buy_types': 'buyTypes',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
@@ -315,7 +337,10 @@ class AsyncAccountsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            activation_platforms ([str]): Filter on the activation platform: CommerceMax, PrivateMarket. [optional]  # noqa: E501
             aggregation_level (str): Level of aggregation, if no dimensions and metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            budget_models ([str]): Filter on the budget model: CriteoBudget, RetailerBudget. [optional]  # noqa: E501
+            buy_types ([str]): Filter on the buy type: auction, preferredDeals, sponsorship. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
@@ -422,7 +447,10 @@ class AsyncAccountsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            activation_platforms ([str]): Filter on the activation platform: CommerceMax, PrivateMarket. [optional]  # noqa: E501
             aggregation_level (str): Level of aggregation, if no dimensions and metrics are provided, falls back to campaign aggregationLevel. [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            budget_models ([str]): Filter on the budget model: CriteoBudget, RetailerBudget. [optional]  # noqa: E501
+            buy_types ([str]): Filter on the buy type: auction, preferredDeals, sponsorship. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501

@@ -71,7 +71,16 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 account_ids=[
                     "account_ids_example",
                 ],
+                activation_platforms=[
+                    "CommerceMax",
+                ],
                 aggregation_level="campaign",
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
                 campaign_type="all",
                 click_attribution_window="none",
                 dimensions=[
@@ -188,6 +197,15 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     async_campaigns_report_request = AsyncCampaignsReportRequest(
         data=AsyncCampaignsReportResource(
             attributes=AsyncCampaignsReport(
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
                 campaign_type="all",
                 click_attribution_window="none",
                 dimensions=[
@@ -413,6 +431,15 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     async_line_items_report_request = AsyncLineItemsReportRequest(
         data=AsyncLineItemsReportResource(
             attributes=AsyncLineItemsReport(
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
                 campaign_type="all",
                 click_attribution_window="none",
                 dimensions=[
