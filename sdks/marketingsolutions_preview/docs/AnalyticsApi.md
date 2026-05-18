@@ -1067,8 +1067,6 @@ Name | Type | Description  | Notes
 
 
 
-This endpoint is subject to specific rate limits.
-
 ### Example
 
 * OAuth Authentication (oauth):

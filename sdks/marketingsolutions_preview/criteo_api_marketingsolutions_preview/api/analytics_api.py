@@ -1713,7 +1713,6 @@ class AnalyticsApi(object):
     ):
         """get_realtime_product_job  # noqa: E501
 
-        This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
