@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 
 
-Generate a share of voice by category insight
+Generate a share of voice insight
 
 ### Example
 
@@ -789,6 +789,9 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
         data=ShareOfVoiceInsightResource(
             attributes=ShareOfVoiceInsight(
                 account_id="account_id_example",
+                account_ids=[
+                    "account_ids_example",
+                ],
                 aggregation_level="category",
                 brand_ids=[
                     "brand_ids_example",

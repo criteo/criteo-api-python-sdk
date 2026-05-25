@@ -160,6 +160,7 @@ class ShareOfVoiceInsight(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
+            'account_ids': ([str], none_type,),  # noqa: E501
             'aggregation_level': (str,),  # noqa: E501
             'brand_ids': ([str], none_type,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
@@ -181,6 +182,7 @@ class ShareOfVoiceInsight(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
+        'account_ids': 'accountIds',  # noqa: E501
         'aggregation_level': 'aggregationLevel',  # noqa: E501
         'brand_ids': 'brandIds',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
@@ -239,6 +241,7 @@ class ShareOfVoiceInsight(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            account_ids ([str], none_type): [optional]  # noqa: E501
             aggregation_level (str): [optional] if omitted the server will use the default value of "category"  # noqa: E501
             brand_ids ([str], none_type): [optional]  # noqa: E501
             campaign_type (str): [optional] if omitted the server will use the default value of "all"  # noqa: E501
@@ -344,6 +347,7 @@ class ShareOfVoiceInsight(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            account_ids ([str], none_type): [optional]  # noqa: E501
             aggregation_level (str): [optional] if omitted the server will use the default value of "category"  # noqa: E501
             brand_ids ([str], none_type): [optional]  # noqa: E501
             campaign_type (str): [optional] if omitted the server will use the default value of "all"  # noqa: E501

@@ -1238,7 +1238,7 @@ class AnalyticsApi(object):
     ):
         """generate_share_of_voice_insight  # noqa: E501
 
-        Generate a share of voice by category insight  # noqa: E501
+        Generate a share of voice insight  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

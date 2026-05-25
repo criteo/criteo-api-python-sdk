@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **end_date** | **datetime** |  | 
 **metrics** | **[str]** |  | 
 **start_date** | **datetime** |  | 
+**account_ids** | **[str], none_type** |  | [optional] 
 **aggregation_level** | **str** |  | [optional]  if omitted the server will use the default value of "category"
 **brand_ids** | **[str], none_type** |  | [optional] 
 **campaign_type** | **str** |  | [optional]  if omitted the server will use the default value of "all"
