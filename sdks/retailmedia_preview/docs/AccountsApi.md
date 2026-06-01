@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_private_market_child_accounts_by_account_id**](AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | 
+[**get_private_market_child_accounts_by_account_id**](AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
 
 
 # **get_private_market_child_accounts_by_account_id**
 > EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata get_private_market_child_accounts_by_account_id(account_id)
 
-
+/preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
 
 Gets Private Market child accounts that are associated with the given account
 
@@ -58,6 +58,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
         api_response = api_instance.get_private_market_child_accounts_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -66,6 +67,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
         api_response = api_instance.get_private_market_child_accounts_by_account_id(account_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:

@@ -70,6 +70,16 @@ class FlightLeg(ModelNormal):
     }
 
     validations = {
+        ('end_time',): {
+            'regex': {
+                'pattern': r'^([01][0-9]|2[0-3]):[0-5][0-9]$',  # noqa: E501
+            },
+        },
+        ('start_time',): {
+            'regex': {
+                'pattern': r'^([01][0-9]|2[0-3]):[0-5][0-9]$',  # noqa: E501
+            },
+        },
     }
 
     additional_properties_type = None
@@ -88,8 +98,8 @@ class FlightLeg(ModelNormal):
         """
         return {
             'day_of_week': (str,),  # noqa: E501
-            'end_time': (datetime,),  # noqa: E501
-            'start_time': (datetime,),  # noqa: E501
+            'end_time': (str,),  # noqa: E501
+            'start_time': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -115,8 +125,8 @@ class FlightLeg(ModelNormal):
 
         Args:
             day_of_week (str): Enum for the days of the week.
-            end_time (datetime):
-            start_time (datetime):
+            end_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 23:59.
+            start_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 08:00.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -208,8 +218,8 @@ class FlightLeg(ModelNormal):
 
         Args:
             day_of_week (str): Enum for the days of the week.
-            end_time (datetime):
-            start_time (datetime):
+            end_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 23:59.
+            start_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 08:00.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

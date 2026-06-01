@@ -144,7 +144,7 @@ class OnSiteRecommendationApi(object):
         self,
         **kwargs
     ):
-        """search_recommended_products  # noqa: E501
+        """/preview/recommendation/search  # noqa: E501
 
         Retrieves a list of products recommended for the given user. This end point can either rely on a Criteo UserId, or a list of user events to perform the recommendation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -223,7 +223,7 @@ class OnSiteRecommendationApi(object):
         self,
         **kwargs
     ):
-        """search_recommended_products_conversational  # noqa: E501
+        """/preview/recommendation/search-conversational  # noqa: E501
 
         Retrieves a list of products recommended for the given user based on a conversation between a user and a partner's agent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

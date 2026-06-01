@@ -85,7 +85,7 @@ class GatewayApi(object):
         self,
         **kwargs
     ):
-        """get_current_application  # noqa: E501
+        """/preview/retail-media/me  # noqa: E501
 
         Get information about the currently logged application  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

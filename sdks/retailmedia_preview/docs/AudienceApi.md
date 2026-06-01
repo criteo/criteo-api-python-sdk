@@ -4,27 +4,27 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_remove_contact_list_by_audience_segment**](AudienceApi.md#add_remove_contact_list_by_audience_segment) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
-[**bulk_create_audience**](AudienceApi.md#bulk_create_audience) | **POST** /preview/retail-media/accounts/{account-id}/audiences/create | 
-[**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/create | 
-[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/delete | 
-[**bulk_delete_audiences**](AudienceApi.md#bulk_delete_audiences) | **POST** /preview/retail-media/accounts/{account-id}/audiences/delete | 
-[**bulk_update_audience**](AudienceApi.md#bulk_update_audience) | **PATCH** /preview/retail-media/accounts/{account-id}/audiences | 
-[**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /preview/retail-media/accounts/{account-id}/audience-segments | 
-[**clear_contact_list_by_audience_segment**](AudienceApi.md#clear_contact_list_by_audience_segment) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
-[**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes | 
-[**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /preview/retail-media/accounts/{account-id}/audiences/compute-sizes | 
-[**estimate_audience_segment_size**](AudienceApi.md#estimate_audience_segment_size) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/estimate-size | 
-[**estimate_audience_size**](AudienceApi.md#estimate_audience_size) | **POST** /preview/retail-media/accounts/{account-id}/audiences/estimate-size | 
-[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | 
-[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/search | 
-[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/retail-media/accounts/{account-id}/audiences/search | 
+[**add_remove_contact_list_by_audience_segment**](AudienceApi.md#add_remove_contact_list_by_audience_segment) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove
+[**bulk_create_audience**](AudienceApi.md#bulk_create_audience) | **POST** /preview/retail-media/accounts/{account-id}/audiences/create | /preview/retail-media/accounts/{account-id}/audiences/create
+[**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/create | /preview/retail-media/accounts/{account-id}/audience-segments/create
+[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/delete | /preview/retail-media/accounts/{account-id}/audience-segments/delete
+[**bulk_delete_audiences**](AudienceApi.md#bulk_delete_audiences) | **POST** /preview/retail-media/accounts/{account-id}/audiences/delete | /preview/retail-media/accounts/{account-id}/audiences/delete
+[**bulk_update_audience**](AudienceApi.md#bulk_update_audience) | **PATCH** /preview/retail-media/accounts/{account-id}/audiences | /preview/retail-media/accounts/{account-id}/audiences
+[**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /preview/retail-media/accounts/{account-id}/audience-segments | /preview/retail-media/accounts/{account-id}/audience-segments
+[**clear_contact_list_by_audience_segment**](AudienceApi.md#clear_contact_list_by_audience_segment) | **POST** /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear
+[**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes | /preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes
+[**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /preview/retail-media/accounts/{account-id}/audiences/compute-sizes | /preview/retail-media/accounts/{account-id}/audiences/compute-sizes
+[**estimate_audience_segment_size**](AudienceApi.md#estimate_audience_segment_size) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/estimate-size | /preview/retail-media/accounts/{account-id}/audience-segments/estimate-size
+[**estimate_audience_size**](AudienceApi.md#estimate_audience_size) | **POST** /preview/retail-media/accounts/{account-id}/audiences/estimate-size | /preview/retail-media/accounts/{account-id}/audiences/estimate-size
+[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list
+[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/retail-media/accounts/{account-id}/audience-segments/search | /preview/retail-media/accounts/{account-id}/audience-segments/search
+[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/retail-media/accounts/{account-id}/audiences/search | /preview/retail-media/accounts/{account-id}/audiences/search
 
 
 # **add_remove_contact_list_by_audience_segment**
 > RetailMediaContactlistOperation add_remove_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
 
-
+/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove
 
 Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.
 
@@ -83,6 +83,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove
         api_response = api_instance.add_remove_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -122,7 +123,7 @@ Name | Type | Description  | Notes
 # **bulk_create_audience**
 > RmAudienceEntityV1ListResponse bulk_create_audience(account_id, rm_audience_bulk_create_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audiences/create
 
 Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
 
@@ -191,6 +192,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences/create
         api_response = api_instance.bulk_create_audience(account_id, rm_audience_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -230,7 +232,7 @@ Name | Type | Description  | Notes
 # **bulk_create_audience_segments**
 > RmAudienceSegmentEntityV1ListResponse bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments/create
 
 Creates all segments with a valid configuration, and returns the full segments. For those that cannot be created, one or multiple errors are returned.
 
@@ -304,6 +306,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/create
         api_response = api_instance.bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -343,7 +346,7 @@ Name | Type | Description  | Notes
 # **bulk_delete_audience_segments**
 > RmAudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segments(account_id, rm_audience_segment_bulk_delete_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments/delete
 
 Delete the segments associated to the given IDs.
 
@@ -399,6 +402,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/delete
         api_response = api_instance.bulk_delete_audience_segments(account_id, rm_audience_segment_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -438,7 +442,7 @@ Name | Type | Description  | Notes
 # **bulk_delete_audiences**
 > RmAudienceSegmentIdEntityV1ListResponse bulk_delete_audiences(account_id, rm_audience_bulk_delete_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audiences/delete
 
 Deletes the audiences associated to the given IDs.
 
@@ -494,6 +498,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences/delete
         api_response = api_instance.bulk_delete_audiences(account_id, rm_audience_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -534,7 +539,7 @@ Name | Type | Description  | Notes
 # **bulk_update_audience**
 > RmAudienceEntityV1ListResponse bulk_update_audience(account_id, rm_audience_bulk_update_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audiences
 
 Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
 
@@ -605,6 +610,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences
         api_response = api_instance.bulk_update_audience(account_id, rm_audience_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -644,7 +650,7 @@ Name | Type | Description  | Notes
 # **bulk_update_audience_segments**
 > RmAudienceSegmentEntityV1ListResponse bulk_update_audience_segments(account_id, rm_audience_segment_bulk_update_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments
 
 Updates the properties of all segments with a valid configuration, and returns the full segments. For those that cannot be updated, one or multiple errors are returned.
 
@@ -722,6 +728,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments
         api_response = api_instance.bulk_update_audience_segments(account_id, rm_audience_segment_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -761,7 +768,7 @@ Name | Type | Description  | Notes
 # **clear_contact_list_by_audience_segment**
 > clear_contact_list_by_audience_segment(audience_segment_id)
 
-
+/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear
 
 Delete all identifiers from a retail-media contact list audience-segment, with external audience segment id.
 
@@ -806,6 +813,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear
         api_instance.clear_contact_list_by_audience_segment(audience_segment_id)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling AudienceApi->clear_contact_list_by_audience_segment: %s\n" % e)
@@ -843,7 +851,7 @@ void (empty response body)
 # **compute_audience_segments_sizes**
 > RmAudienceSegmentSizeEntityV1ListResponse compute_audience_segments_sizes(account_id, rm_audience_segment_compute_sizes_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes
 
 Gets the size of all segments. An error is returned for those whose size calculation is not supported.
 
@@ -901,6 +909,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes
         api_response = api_instance.compute_audience_segments_sizes(account_id, rm_audience_segment_compute_sizes_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -940,7 +949,7 @@ Name | Type | Description  | Notes
 # **compute_audiences_sizes**
 > RmAudienceSizeEntityV1ListResponse compute_audiences_sizes(account_id, rm_audience_compute_sizes_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audiences/compute-sizes
 
 Gets the size of all audiences. An error is returned for those whose size calculation is not supported.
 
@@ -998,6 +1007,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences/compute-sizes
         api_response = api_instance.compute_audiences_sizes(account_id, rm_audience_compute_sizes_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1037,7 +1047,7 @@ Name | Type | Description  | Notes
 # **estimate_audience_segment_size**
 > RmAudienceSegmentSizeEstimationV1Response estimate_audience_segment_size(account_id, rm_audience_segment_estimate_size_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments/estimate-size
 
 Gets the size estimation of a non existent segment. An error is returned when size calculation is not supported.
 
@@ -1105,6 +1115,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/estimate-size
         api_response = api_instance.estimate_audience_segment_size(account_id, rm_audience_segment_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1144,7 +1155,7 @@ Name | Type | Description  | Notes
 # **estimate_audience_size**
 > RmAudienceSizeEstimationV1Response estimate_audience_size(account_id, rm_audience_estimate_size_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audiences/estimate-size
 
 Gets the size estimation of a non existent audience. An error is returned when size calculation is not supported.
 
@@ -1210,6 +1221,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences/estimate-size
         api_response = api_instance.estimate_audience_size(account_id, rm_audience_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1249,7 +1261,7 @@ Name | Type | Description  | Notes
 # **get_audience_segment_contact_list_statistics**
 > RmContactListStatisticsEntityV1Response get_audience_segment_contact_list_statistics(account_id, audience_segment_id)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list
 
 Returns the statistics of a contact list segment.
 
@@ -1296,6 +1308,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list
         api_response = api_instance.get_audience_segment_contact_list_statistics(account_id, audience_segment_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1335,7 +1348,7 @@ Name | Type | Description  | Notes
 # **search_audience_segments**
 > RmAudienceSegmentEntityV1RmAudienceSegmentSearchMetadataV1ListResponse search_audience_segments(account_id, rm_audience_segment_search_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audience-segments/search
 
 Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -1400,6 +1413,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/search
         api_response = api_instance.search_audience_segments(account_id, rm_audience_segment_search_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1408,6 +1422,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/accounts/{account-id}/audience-segments/search
         api_response = api_instance.search_audience_segments(account_id, rm_audience_segment_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1449,7 +1464,7 @@ Name | Type | Description  | Notes
 # **search_audiences**
 > RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse search_audiences(account_id, rm_audience_search_input_v1)
 
-
+/preview/retail-media/accounts/{account-id}/audiences/search
 
 Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -1514,6 +1529,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences/search
         api_response = api_instance.search_audiences(account_id, rm_audience_search_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1522,6 +1538,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/accounts/{account-id}/audiences/search
         api_response = api_instance.search_audiences(account_id, rm_audience_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:

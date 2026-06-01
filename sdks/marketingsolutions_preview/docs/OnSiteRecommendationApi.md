@@ -4,14 +4,14 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**search_recommended_products**](OnSiteRecommendationApi.md#search_recommended_products) | **POST** /preview/recommendation/search | 
-[**search_recommended_products_conversational**](OnSiteRecommendationApi.md#search_recommended_products_conversational) | **POST** /preview/recommendation/search-conversational | 
+[**search_recommended_products**](OnSiteRecommendationApi.md#search_recommended_products) | **POST** /preview/recommendation/search | /preview/recommendation/search
+[**search_recommended_products_conversational**](OnSiteRecommendationApi.md#search_recommended_products_conversational) | **POST** /preview/recommendation/search-conversational | /preview/recommendation/search-conversational
 
 
 # **search_recommended_products**
 > OnSiteRecoResponse search_recommended_products()
 
-
+/preview/recommendation/search
 
 Retrieves a list of products recommended for the given user. This end point can either rely on a Criteo UserId, or a list of user events to perform the recommendation
 
@@ -66,6 +66,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/recommendation/search
         api_response = api_instance.search_recommended_products(on_site_reco_request=on_site_reco_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -104,7 +105,7 @@ Name | Type | Description  | Notes
 # **search_recommended_products_conversational**
 > OnSiteRecoResponse search_recommended_products_conversational()
 
-
+/preview/recommendation/search-conversational
 
 Retrieves a list of products recommended for the given user based on a conversation between a user and a partner's agent
 
@@ -177,6 +178,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/recommendation/search-conversational
         api_response = api_instance.search_recommended_products_conversational(on_site_reco_request_conversational=on_site_reco_request_conversational)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

@@ -4,19 +4,19 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_remove_contact_list_by_audience_segment**](SegmentApi.md#add_remove_contact_list_by_audience_segment) | **POST** /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/add-remove | 
-[**bulk_create_audience_segments**](SegmentApi.md#bulk_create_audience_segments) | **POST** /preview/commerce-grid/audience-segments/create | 
-[**bulk_delete_audience_segments**](SegmentApi.md#bulk_delete_audience_segments) | **POST** /preview/commerce-grid/audience-segments/delete | 
-[**bulk_update_audience_segments**](SegmentApi.md#bulk_update_audience_segments) | **PATCH** /preview/commerce-grid/audience-segments | 
-[**clear_contact_list_by_audience_segment**](SegmentApi.md#clear_contact_list_by_audience_segment) | **POST** /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/clear | 
-[**get_audience_segment_contact_list_statistics**](SegmentApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/statistics | 
-[**search_audience_segments**](SegmentApi.md#search_audience_segments) | **POST** /preview/commerce-grid/audience-segments/search | 
+[**add_remove_contact_list_by_audience_segment**](SegmentApi.md#add_remove_contact_list_by_audience_segment) | **POST** /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/add-remove | /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/add-remove
+[**bulk_create_audience_segments**](SegmentApi.md#bulk_create_audience_segments) | **POST** /preview/commerce-grid/audience-segments/create | /preview/commerce-grid/audience-segments/create
+[**bulk_delete_audience_segments**](SegmentApi.md#bulk_delete_audience_segments) | **POST** /preview/commerce-grid/audience-segments/delete | /preview/commerce-grid/audience-segments/delete
+[**bulk_update_audience_segments**](SegmentApi.md#bulk_update_audience_segments) | **PATCH** /preview/commerce-grid/audience-segments | /preview/commerce-grid/audience-segments
+[**clear_contact_list_by_audience_segment**](SegmentApi.md#clear_contact_list_by_audience_segment) | **POST** /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/clear | /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/clear
+[**get_audience_segment_contact_list_statistics**](SegmentApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/statistics | /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/statistics
+[**search_audience_segments**](SegmentApi.md#search_audience_segments) | **POST** /preview/commerce-grid/audience-segments/search | /preview/commerce-grid/audience-segments/search
 
 
 # **add_remove_contact_list_by_audience_segment**
 > CommerceGridContactlistOperation add_remove_contact_list_by_audience_segment(audience_segment_id, commerce_grid_contactlist_amendment_request)
 
-
+/preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/add-remove
 
 Add/remove identifiers to or from a Commerce Grid audience segment of type Contact List.
 
@@ -75,6 +75,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/add-remove
         api_response = api_instance.add_remove_contact_list_by_audience_segment(audience_segment_id, commerce_grid_contactlist_amendment_request)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:
@@ -114,7 +115,7 @@ Name | Type | Description  | Notes
 # **bulk_create_audience_segments**
 > CgAudienceSegmentEntityV1ListResponse bulk_create_audience_segments(cg_audience_segment_bulk_create_input_v1)
 
-
+/preview/commerce-grid/audience-segments/create
 
 Creates all segments with a valid configuration, and returns the full segments. For those that cannot be created, one or multiple errors are returned.
 
@@ -175,6 +176,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments/create
         api_response = api_instance.bulk_create_audience_segments(cg_audience_segment_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:
@@ -213,7 +215,7 @@ Name | Type | Description  | Notes
 # **bulk_delete_audience_segments**
 > CgAudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segments(cg_audience_segment_bulk_delete_input_v1)
 
-
+/preview/commerce-grid/audience-segments/delete
 
 Delete the segments associated to the given IDs.
 
@@ -268,6 +270,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments/delete
         api_response = api_instance.bulk_delete_audience_segments(cg_audience_segment_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:
@@ -306,7 +309,7 @@ Name | Type | Description  | Notes
 # **bulk_update_audience_segments**
 > CgAudienceSegmentEntityV1ListResponse bulk_update_audience_segments(cg_audience_segment_bulk_update_input_v1)
 
-
+/preview/commerce-grid/audience-segments
 
 Updates the properties of all segments with a valid configuration, and returns the full segments. For those that cannot be updated, one or multiple errors are returned.
 
@@ -366,6 +369,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments
         api_response = api_instance.bulk_update_audience_segments(cg_audience_segment_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:
@@ -404,7 +408,7 @@ Name | Type | Description  | Notes
 # **clear_contact_list_by_audience_segment**
 > clear_contact_list_by_audience_segment(audience_segment_id)
 
-
+/preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/clear
 
 Delete all identifiers from a Commerce Grid audience segment of type Contact List.
 
@@ -449,6 +453,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/clear
         api_instance.clear_contact_list_by_audience_segment(audience_segment_id)
     except criteo_api_commercegrid_preview.ApiException as e:
         print("Exception when calling SegmentApi->clear_contact_list_by_audience_segment: %s\n" % e)
@@ -486,7 +491,7 @@ void (empty response body)
 # **get_audience_segment_contact_list_statistics**
 > CgContactListStatisticsEntityV1Response get_audience_segment_contact_list_statistics(audience_segment_id)
 
-
+/preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/statistics
 
 Returns the statistics of a contact list segment.
 
@@ -532,6 +537,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/statistics
         api_response = api_instance.get_audience_segment_contact_list_statistics(audience_segment_id)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:
@@ -570,7 +576,7 @@ Name | Type | Description  | Notes
 # **search_audience_segments**
 > CgAudienceSegmentEntityV1CgAudienceSegmentSearchMetadataV1ListResponse search_audience_segments(cg_audience_segment_search_input_v1)
 
-
+/preview/commerce-grid/audience-segments/search
 
 Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -637,6 +643,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/commerce-grid/audience-segments/search
         api_response = api_instance.search_audience_segments(cg_audience_segment_search_input_v1)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:
@@ -645,6 +652,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/commerce-grid/audience-segments/search
         api_response = api_instance.search_audience_segments(cg_audience_segment_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:

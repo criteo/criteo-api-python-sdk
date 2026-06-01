@@ -1215,7 +1215,7 @@ class CreativeApi(object):
         resource_input_of_ad_write,
         **kwargs
     ):
-        """create_advertiser_ad  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/ads  # noqa: E501
 
         Create an Ad  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1302,7 +1302,7 @@ class CreativeApi(object):
         resource_input_of_create_coupon,
         **kwargs
     ):
-        """create_advertiser_coupon  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons  # noqa: E501
 
         Create a Coupon  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1389,7 +1389,7 @@ class CreativeApi(object):
         resource_input_of_creative_write,
         **kwargs
     ):
-        """create_advertiser_creative  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/creatives  # noqa: E501
 
         Create a Creative  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1475,7 +1475,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """delete_ad  # noqa: E501
+        """/preview/ads/{id}  # noqa: E501
 
         Delete an Ad  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1558,7 +1558,7 @@ class CreativeApi(object):
         ad_id,
         **kwargs
     ):
-        """delete_ad_segment_link  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/audience-segment  # noqa: E501
 
         Delete the link between an Ad and an Audience Segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1642,7 +1642,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """delete_advertiser_coupon  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons/{id}  # noqa: E501
 
         Delete a Coupon  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1728,7 +1728,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """delete_creative  # noqa: E501
+        """/preview/creatives/{id}  # noqa: E501
 
         Delete a Creative if there are no ads binded to it  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1813,7 +1813,7 @@ class CreativeApi(object):
         resource_input_of_update_coupon,
         **kwargs
     ):
-        """edit_advertiser_coupon  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons/{id}  # noqa: E501
 
         Edit a specific Coupon  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1903,7 +1903,7 @@ class CreativeApi(object):
         resource_input_of_creative_write,
         **kwargs
     ):
-        """edit_creative  # noqa: E501
+        """/preview/creatives/{id}  # noqa: E501
 
         Edit a specific Creative  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1989,7 +1989,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """generate_creative_preview  # noqa: E501
+        """/preview/creatives/{id}/preview  # noqa: E501
 
         Get the preview of a specific Creative  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2074,7 +2074,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """get_ad  # noqa: E501
+        """/preview/ads/{id}  # noqa: E501
 
         Get an Ad with its id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2157,7 +2157,7 @@ class CreativeApi(object):
         ad_id,
         **kwargs
     ):
-        """get_ad_segment_link  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/audience-segment  # noqa: E501
 
         Retrieve the Ad audience segment link.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2240,7 +2240,7 @@ class CreativeApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_advertiser_ads  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/ads  # noqa: E501
 
         Get the list of self-services Ads for a given advertiser  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2326,7 +2326,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """get_advertiser_coupon  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons/{id}  # noqa: E501
 
         Get a Coupon with its id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2413,7 +2413,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """get_advertiser_coupon_preview  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons/{id}/preview  # noqa: E501
 
         Get the preview of a specific Coupon  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2501,7 +2501,7 @@ class CreativeApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_advertiser_coupon_supported_sizes  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons-supported-sizes  # noqa: E501
 
         Get the list of Coupon supported sizes  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2585,7 +2585,7 @@ class CreativeApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_advertiser_coupons  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/coupons  # noqa: E501
 
         Get the list of self-services Coupons for a given advertiser  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2670,7 +2670,7 @@ class CreativeApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_advertiser_creatives  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/creatives  # noqa: E501
 
         Get the list of self-services Creatives for a given advertiser  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2755,7 +2755,7 @@ class CreativeApi(object):
         id,
         **kwargs
     ):
-        """get_creative  # noqa: E501
+        """/preview/creatives/{id}  # noqa: E501
 
         Get a Creative with its id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2839,7 +2839,7 @@ class CreativeApi(object):
         exam_ad_audience_segment_link_input,
         **kwargs
     ):
-        """link_ad_segment  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/audience-segment  # noqa: E501
 
         Link an Ad with an Audience Segment. If a link already exists, its segment ID will be updated.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

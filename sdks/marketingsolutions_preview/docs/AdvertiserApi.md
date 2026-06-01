@@ -4,15 +4,15 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_advertisers**](AdvertiserApi.md#list_advertisers) | **GET** /preview/advertisers/me | 
-[**list_datasets_by_advertiser**](AdvertiserApi.md#list_datasets_by_advertiser) | **GET** /preview/advertisers/{advertiser-id}/datasets | 
-[**list_industries**](AdvertiserApi.md#list_industries) | **GET** /preview/industries | 
+[**list_advertisers**](AdvertiserApi.md#list_advertisers) | **GET** /preview/advertisers/me | /preview/advertisers/me
+[**list_datasets_by_advertiser**](AdvertiserApi.md#list_datasets_by_advertiser) | **GET** /preview/advertisers/{advertiser-id}/datasets | /preview/advertisers/{advertiser-id}/datasets
+[**list_industries**](AdvertiserApi.md#list_industries) | **GET** /preview/industries | /preview/industries
 
 
 # **list_advertisers**
 > GetPortfolioResponse list_advertisers()
 
-
+/preview/advertisers/me
 
 Fetch the portfolio of Advertisers for this account
 
@@ -57,6 +57,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /preview/advertisers/me
         api_response = api_instance.list_advertisers()
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -92,7 +93,7 @@ This endpoint does not need any parameter.
 # **list_datasets_by_advertiser**
 > AdvertiserDatasetListResponse list_datasets_by_advertiser(advertiser_id)
 
-
+/preview/advertisers/{advertiser-id}/datasets
 
 Retrieves corresponding Datasets for a given Advertiser. Only those Datasets are included for which the given Advertiser is marked a primary.
 
@@ -138,6 +139,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiser-id}/datasets
         api_response = api_instance.list_datasets_by_advertiser(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -176,7 +178,7 @@ Name | Type | Description  | Notes
 # **list_industries**
 > ListAvailableIndustriesResponse list_industries()
 
-
+/preview/industries
 
 Returns the list of available industries for new advertisers.
 
@@ -221,6 +223,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /preview/industries
         api_response = api_instance.list_industries()
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

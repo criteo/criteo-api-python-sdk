@@ -4,30 +4,30 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/compute-sizes | 
-[**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/compute-sizes | 
-[**create_audience_segments**](AudienceApi.md#create_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/create | 
-[**create_audiences**](AudienceApi.md#create_audiences) | **POST** /preview/marketing-solutions/audiences/create | 
-[**delete_audience_segments**](AudienceApi.md#delete_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/delete | 
-[**delete_audiences**](AudienceApi.md#delete_audiences) | **POST** /preview/marketing-solutions/audiences/delete | 
-[**delete_contact_list_by_audience_segment**](AudienceApi.md#delete_contact_list_by_audience_segment) | **DELETE** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
-[**estimate_audience_segments_sizes**](AudienceApi.md#estimate_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/estimate-size | 
-[**estimate_audiences_sizes**](AudienceApi.md#estimate_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/estimate-size | 
-[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics | 
-[**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | 
-[**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | 
-[**modify_audience_users_with_attributes**](AudienceApi.md#modify_audience_users_with_attributes) | **PATCH** /preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes | 
-[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/search | 
-[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/marketing-solutions/audiences/search | 
-[**update_audience_segments**](AudienceApi.md#update_audience_segments) | **PATCH** /preview/marketing-solutions/audience-segments | 
-[**update_audiences**](AudienceApi.md#update_audiences) | **PATCH** /preview/marketing-solutions/audiences | 
-[**update_contact_list_by_audience_segment**](AudienceApi.md#update_contact_list_by_audience_segment) | **PATCH** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | 
+[**compute_audience_segments_sizes**](AudienceApi.md#compute_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/compute-sizes | /preview/marketing-solutions/audience-segments/compute-sizes
+[**compute_audiences_sizes**](AudienceApi.md#compute_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/compute-sizes | /preview/marketing-solutions/audiences/compute-sizes
+[**create_audience_segments**](AudienceApi.md#create_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/create | /preview/marketing-solutions/audience-segments/create
+[**create_audiences**](AudienceApi.md#create_audiences) | **POST** /preview/marketing-solutions/audiences/create | /preview/marketing-solutions/audiences/create
+[**delete_audience_segments**](AudienceApi.md#delete_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/delete | /preview/marketing-solutions/audience-segments/delete
+[**delete_audiences**](AudienceApi.md#delete_audiences) | **POST** /preview/marketing-solutions/audiences/delete | /preview/marketing-solutions/audiences/delete
+[**delete_contact_list_by_audience_segment**](AudienceApi.md#delete_contact_list_by_audience_segment) | **DELETE** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list
+[**estimate_audience_segments_sizes**](AudienceApi.md#estimate_audience_segments_sizes) | **POST** /preview/marketing-solutions/audience-segments/estimate-size | /preview/marketing-solutions/audience-segments/estimate-size
+[**estimate_audiences_sizes**](AudienceApi.md#estimate_audiences_sizes) | **POST** /preview/marketing-solutions/audiences/estimate-size | /preview/marketing-solutions/audiences/estimate-size
+[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics | /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics
+[**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /preview/marketing-solutions/audience-segments/in-market-brands | /preview/marketing-solutions/audience-segments/in-market-brands
+[**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /preview/marketing-solutions/audience-segments/in-market-interests | /preview/marketing-solutions/audience-segments/in-market-interests
+[**modify_audience_users_with_attributes**](AudienceApi.md#modify_audience_users_with_attributes) | **PATCH** /preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes | /preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes
+[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /preview/marketing-solutions/audience-segments/search | /preview/marketing-solutions/audience-segments/search
+[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /preview/marketing-solutions/audiences/search | /preview/marketing-solutions/audiences/search
+[**update_audience_segments**](AudienceApi.md#update_audience_segments) | **PATCH** /preview/marketing-solutions/audience-segments | /preview/marketing-solutions/audience-segments
+[**update_audiences**](AudienceApi.md#update_audiences) | **PATCH** /preview/marketing-solutions/audiences | /preview/marketing-solutions/audiences
+[**update_contact_list_by_audience_segment**](AudienceApi.md#update_contact_list_by_audience_segment) | **PATCH** /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list | /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list
 
 
 # **compute_audience_segments_sizes**
 > AudienceSegmentSizeEntityV1ListResponse compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1)
 
-
+/preview/marketing-solutions/audience-segments/compute-sizes
 
 Gets the size of all segments. An error is returned for those whose size calculation is not supported.
 
@@ -82,6 +82,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/compute-sizes
         api_response = api_instance.compute_audience_segments_sizes(audience_segment_compute_sizes_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -120,7 +121,7 @@ Name | Type | Description  | Notes
 # **compute_audiences_sizes**
 > AudienceSizeEntityV1ListResponse compute_audiences_sizes(audience_compute_sizes_input_v1)
 
-
+/preview/marketing-solutions/audiences/compute-sizes
 
 Gets the size of all audiences. An error is returned for those whose size calculation is not supported.
 
@@ -175,6 +176,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences/compute-sizes
         api_response = api_instance.compute_audiences_sizes(audience_compute_sizes_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -213,7 +215,7 @@ Name | Type | Description  | Notes
 # **create_audience_segments**
 > AudienceSegmentEntityV1ListResponse create_audience_segments(audience_segment_bulk_create_input_v1)
 
-
+/preview/marketing-solutions/audience-segments/create
 
 Creates all segments with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
 
@@ -312,6 +314,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/create
         api_response = api_instance.create_audience_segments(audience_segment_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -350,7 +353,7 @@ Name | Type | Description  | Notes
 # **create_audiences**
 > AudienceEntityV1ListResponse create_audiences(audience_bulk_create_input_v1)
 
-
+/preview/marketing-solutions/audiences/create
 
 Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.
 
@@ -418,6 +421,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences/create
         api_response = api_instance.create_audiences(audience_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -456,7 +460,7 @@ Name | Type | Description  | Notes
 # **delete_audience_segments**
 > AudienceSegmentIdEntityV1ListResponse delete_audience_segments(audience_segment_bulk_delete_input_v1)
 
-
+/preview/marketing-solutions/audience-segments/delete
 
 Delete the segments associated to the given audience IDs.
 
@@ -511,6 +515,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/delete
         api_response = api_instance.delete_audience_segments(audience_segment_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -549,7 +554,7 @@ Name | Type | Description  | Notes
 # **delete_audiences**
 > AudienceIdEntityV1ListResponse delete_audiences(audience_bulk_delete_input_v1)
 
-
+/preview/marketing-solutions/audiences/delete
 
 Deletes the audiences associated to the given audience IDs.
 
@@ -604,6 +609,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences/delete
         api_response = api_instance.delete_audiences(audience_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -643,7 +649,7 @@ Name | Type | Description  | Notes
 # **delete_contact_list_by_audience_segment**
 > DeleteAudienceContactListResponse delete_contact_list_by_audience_segment(audience_segment_id)
 
-
+/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list
 
 Delete all identifiers from a contact list audience-segment.
 
@@ -689,6 +695,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list
         api_response = api_instance.delete_contact_list_by_audience_segment(audience_segment_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -727,7 +734,7 @@ Name | Type | Description  | Notes
 # **estimate_audience_segments_sizes**
 > AudienceSegmentSizeEstimationV1Response estimate_audience_segments_sizes(audience_segment_estimate_size_input_v1)
 
-
+/preview/marketing-solutions/audience-segments/estimate-size
 
 Gets the size estimation of a non existent segment. An error is returned when size calculation is not supported.
 
@@ -807,6 +814,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/estimate-size
         api_response = api_instance.estimate_audience_segments_sizes(audience_segment_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -845,7 +853,7 @@ Name | Type | Description  | Notes
 # **estimate_audiences_sizes**
 > AudienceSizeEstimationV1Response estimate_audiences_sizes(audience_estimate_size_input_v1)
 
-
+/preview/marketing-solutions/audiences/estimate-size
 
 Gets the size estimation of a non existent audience. An error is returned when size calculation is not supported.
 
@@ -909,6 +917,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences/estimate-size
         api_response = api_instance.estimate_audiences_sizes(audience_estimate_size_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -947,7 +956,7 @@ Name | Type | Description  | Notes
 # **get_audience_segment_contact_list_statistics**
 > ContactListStatisticsEntityV1Response get_audience_segment_contact_list_statistics(audience_segment_id)
 
-
+/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics
 
 Returns the statistics of a contact list segment.
 
@@ -993,6 +1002,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics
         api_response = api_instance.get_audience_segment_contact_list_statistics(audience_segment_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1031,7 +1041,7 @@ Name | Type | Description  | Notes
 # **get_audience_segments_in_market_brands**
 > InMarketAudienceSegmentBrandEntityV1ListResponse get_audience_segments_in_market_brands(advertiser_id, country)
 
-
+/preview/marketing-solutions/audience-segments/in-market-brands
 
 Returns a list with all available in-market brands that can be used to define an in-market segment.
 
@@ -1078,6 +1088,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/in-market-brands
         api_response = api_instance.get_audience_segments_in_market_brands(advertiser_id, country)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1117,7 +1128,7 @@ Name | Type | Description  | Notes
 # **get_audience_segments_in_market_interests**
 > InMarketAudienceSegmentInterestEntityV1ListResponse get_audience_segments_in_market_interests(advertiser_id, country)
 
-
+/preview/marketing-solutions/audience-segments/in-market-interests
 
 Returns a list with all available in-market interests that can be used to define an in-market segment. These in-market interests correspond to the Google product taxonomy.
 
@@ -1164,6 +1175,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/in-market-interests
         api_response = api_instance.get_audience_segments_in_market_interests(advertiser_id, country)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1203,7 +1215,7 @@ Name | Type | Description  | Notes
 # **modify_audience_users_with_attributes**
 > ModifyAudienceResponse modify_audience_users_with_attributes(audience_id, contactlist_with_attributes_amendment_request)
 
-
+/preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes
 
 Add/remove identifiers to or from a contact list.
 
@@ -1270,6 +1282,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes
         api_response = api_instance.modify_audience_users_with_attributes(audience_id, contactlist_with_attributes_amendment_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1309,7 +1322,7 @@ Name | Type | Description  | Notes
 # **search_audience_segments**
 > AudienceSegmentEntityV1AudienceSegmentSearchMetadataV1ListResponse search_audience_segments(audience_segment_search_input_v1)
 
-
+/preview/marketing-solutions/audience-segments/search
 
 Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -1373,6 +1386,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/search
         api_response = api_instance.search_audience_segments(audience_segment_search_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1381,6 +1395,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/audience-segments/search
         api_response = api_instance.search_audience_segments(audience_segment_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1421,7 +1436,7 @@ Name | Type | Description  | Notes
 # **search_audiences**
 > AudienceEntityV1AudienceSearchMetadataV1ListResponse search_audiences(audience_search_input_v1)
 
-
+/preview/marketing-solutions/audiences/search
 
 Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -1488,6 +1503,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences/search
         api_response = api_instance.search_audiences(audience_search_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1496,6 +1512,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/audiences/search
         api_response = api_instance.search_audiences(audience_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1536,7 +1553,7 @@ Name | Type | Description  | Notes
 # **update_audience_segments**
 > AudienceSegmentEntityV1ListResponse update_audience_segments(audience_segment_bulk_update_input_v1)
 
-
+/preview/marketing-solutions/audience-segments
 
 Updates the properties of all segments with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
 
@@ -1642,6 +1659,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments
         api_response = api_instance.update_audience_segments(audience_segment_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1680,7 +1698,7 @@ Name | Type | Description  | Notes
 # **update_audiences**
 > AudienceEntityV1ListResponse update_audiences(audience_bulk_update_input_v1)
 
-
+/preview/marketing-solutions/audiences
 
 Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.
 
@@ -1750,6 +1768,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audiences
         api_response = api_instance.update_audiences(audience_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1788,7 +1807,7 @@ Name | Type | Description  | Notes
 # **update_contact_list_by_audience_segment**
 > ModifyAudienceResponse update_contact_list_by_audience_segment(audience_segment_id, contactlist_amendment_request)
 
-
+/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list
 
 Add/remove identifiers to or from a contact list audience-segment.
 
@@ -1848,6 +1867,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list
         api_response = api_instance.update_contact_list_by_audience_segment(audience_segment_id, contactlist_amendment_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

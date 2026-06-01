@@ -831,7 +831,7 @@ class RecoApi(object):
         product_set_id,
         **kwargs
     ):
-        """create_boosted_ad_association  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}  # noqa: E501
 
         Create or update product boosting configuration  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -918,7 +918,7 @@ class RecoApi(object):
         value_resource_input_of_create_product_set_request,
         **kwargs
     ):
-        """create_product_set  # noqa: E501
+        """/preview/product-sets  # noqa: E501
 
         Create a new product set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1002,7 +1002,7 @@ class RecoApi(object):
         product_set_id,
         **kwargs
     ):
-        """delete_boosted_ad_association  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}  # noqa: E501
 
         Delete association and configuration.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1088,7 +1088,7 @@ class RecoApi(object):
         ad_id,
         **kwargs
     ):
-        """disable_product_filtering  # noqa: E501
+        """/preview/ads/{ad-id}/product-filter  # noqa: E501
 
         Disable product filtering for a given ad  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1171,7 +1171,7 @@ class RecoApi(object):
         ad_id,
         **kwargs
     ):
-        """enable_product_filtering  # noqa: E501
+        """/preview/ads/{ad-id}/product-filter  # noqa: E501
 
         Enable product filtering for a given ad  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1256,7 +1256,7 @@ class RecoApi(object):
         product_set_id,
         **kwargs
     ):
-        """fetch_boosted_ad_association  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}  # noqa: E501
 
         Fetch boosting association and configuration  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1342,7 +1342,7 @@ class RecoApi(object):
         dataset_id,
         **kwargs
     ):
-        """fetch_boosted_ad_association_by_partner_id  # noqa: E501
+        """/preview/marketing-solutions/dataset/{dataset-id}/product-boost  # noqa: E501
 
         Fetch boosting association and configuration for a given partner  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1426,7 +1426,7 @@ class RecoApi(object):
         ad_id,
         **kwargs
     ):
-        """fetch_boosted_ad_associations  # noqa: E501
+        """/preview/marketing-solutions/ads/{ad-id}/product-boost  # noqa: E501
 
         Fetch all boosting associations and configurations  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1509,7 +1509,7 @@ class RecoApi(object):
         ad_id,
         **kwargs
     ):
-        """fetch_product_filtering_config  # noqa: E501
+        """/preview/ads/{ad-id}/product-filter  # noqa: E501
 
         Fetch product filtering configuration for a given ad  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1592,7 +1592,7 @@ class RecoApi(object):
         product_set_id,
         **kwargs
     ):
-        """fetch_product_filtering_usages  # noqa: E501
+        """/preview/product-sets/{product-set-id}/product-filters  # noqa: E501
 
         Fetch product filtering usages for a given product set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1675,7 +1675,7 @@ class RecoApi(object):
         product_set_id,
         **kwargs
     ):
-        """fetch_product_set  # noqa: E501
+        """/preview/product-sets/{product-set-id}  # noqa: E501
 
         Fetch an existing product set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1758,7 +1758,7 @@ class RecoApi(object):
         dataset_id,
         **kwargs
     ):
-        """fetch_product_sets  # noqa: E501
+        """/preview/product-sets/dataset/{dataset-id}  # noqa: E501
 
         Fetch product sets of a given dataset  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1842,7 +1842,7 @@ class RecoApi(object):
         value_resource_input_of_patch_product_set_request,
         **kwargs
     ):
-        """patch_product_set  # noqa: E501
+        """/preview/product-sets/{product-set-id}  # noqa: E501
 
         Patch an existing product set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1928,7 +1928,7 @@ class RecoApi(object):
         product_set_id,
         **kwargs
     ):
-        """remove_product_set  # noqa: E501
+        """/preview/product-sets/{product-set-id}  # noqa: E501
 
         Remove a product set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

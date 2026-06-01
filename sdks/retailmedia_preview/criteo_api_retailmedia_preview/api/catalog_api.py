@@ -390,7 +390,7 @@ class CatalogApi(object):
         batch_store_inventory_delete_request,
         **kwargs
     ):
-        """delete_store_inventory_per_merchant_id  # noqa: E501
+        """/preview/retail-media/catalog/merchants/{merchantId}/store-inventory/delete  # noqa: E501
 
         Used to publish a batch of store inventories to delete. The batch is processed asynchronously.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -476,7 +476,7 @@ class CatalogApi(object):
         operation_token,
         **kwargs
     ):
-        """get_catalog_products_batch_report  # noqa: E501
+        """/preview/retail-media/catalog/products/batch/report/{operation-token}  # noqa: E501
 
         Get the report of an asynchronous batch operation previously requested  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -560,7 +560,7 @@ class CatalogApi(object):
         value_resource_input_set_product_buy_box_winners_request,
         **kwargs
     ):
-        """offer_set_bbw_v1  # noqa: E501
+        """/preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners  # noqa: E501
 
         Update the buy box winner for one or more products  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -647,7 +647,7 @@ class CatalogApi(object):
         value_resource_input_update_offers_request,
         **kwargs
     ):
-        """offer_update_v1  # noqa: E501
+        """/preview/retail-media/retailers/{retailer-id}/offers/update  # noqa: E501
 
         Update one or more offers by replacing each offer's price and availability with the given values  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -733,7 +733,7 @@ class CatalogApi(object):
         products_custom_batch_request,
         **kwargs
     ):
-        """submit_catalog_products_batch  # noqa: E501
+        """/preview/retail-media/catalog/products/batch  # noqa: E501
 
         Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -817,7 +817,7 @@ class CatalogApi(object):
         batch_store_inventory_request,
         **kwargs
     ):
-        """upsert_store_inventory_per_merchant_id  # noqa: E501
+        """/preview/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert  # noqa: E501
 
         Used to publish a batch of store inventories to upsert. The batch is processed asynchronously.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

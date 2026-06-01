@@ -442,7 +442,7 @@ class SegmentApi(object):
         commerce_grid_contactlist_amendment_request,
         **kwargs
     ):
-        """add_remove_contact_list_by_audience_segment  # noqa: E501
+        """/preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/add-remove  # noqa: E501
 
         Add/remove identifiers to or from a Commerce Grid audience segment of type Contact List.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -528,7 +528,7 @@ class SegmentApi(object):
         cg_audience_segment_bulk_create_input_v1,
         **kwargs
     ):
-        """bulk_create_audience_segments  # noqa: E501
+        """/preview/commerce-grid/audience-segments/create  # noqa: E501
 
         Creates all segments with a valid configuration, and returns the full segments. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -611,7 +611,7 @@ class SegmentApi(object):
         cg_audience_segment_bulk_delete_input_v1,
         **kwargs
     ):
-        """bulk_delete_audience_segments  # noqa: E501
+        """/preview/commerce-grid/audience-segments/delete  # noqa: E501
 
         Delete the segments associated to the given IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -694,7 +694,7 @@ class SegmentApi(object):
         cg_audience_segment_bulk_update_input_v1,
         **kwargs
     ):
-        """bulk_update_audience_segments  # noqa: E501
+        """/preview/commerce-grid/audience-segments  # noqa: E501
 
         Updates the properties of all segments with a valid configuration, and returns the full segments. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -777,7 +777,7 @@ class SegmentApi(object):
         audience_segment_id,
         **kwargs
     ):
-        """clear_contact_list_by_audience_segment  # noqa: E501
+        """/preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/clear  # noqa: E501
 
         Delete all identifiers from a Commerce Grid audience segment of type Contact List.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -860,7 +860,7 @@ class SegmentApi(object):
         audience_segment_id,
         **kwargs
     ):
-        """get_audience_segment_contact_list_statistics  # noqa: E501
+        """/preview/commerce-grid/audience-segments/{audience-segment-id}/contact-list/statistics  # noqa: E501
 
         Returns the statistics of a contact list segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -943,7 +943,7 @@ class SegmentApi(object):
         cg_audience_segment_search_input_v1,
         **kwargs
     ):
-        """search_audience_segments  # noqa: E501
+        """/preview/commerce-grid/audience-segments/search  # noqa: E501
 
         Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

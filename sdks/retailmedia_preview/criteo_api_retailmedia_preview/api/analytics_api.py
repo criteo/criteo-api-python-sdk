@@ -739,7 +739,7 @@ class AnalyticsApi(object):
         async_accounts_report_request,
         **kwargs
     ):
-        """generate_async_accounts_report  # noqa: E501
+        """/preview/retail-media/reports/accounts  # noqa: E501
 
         Returns an asynchronous Accounts Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -822,7 +822,7 @@ class AnalyticsApi(object):
         async_campaigns_report_request,
         **kwargs
     ):
-        """generate_async_campaigns_report  # noqa: E501
+        """/preview/retail-media/reports/campaigns  # noqa: E501
 
         Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -905,7 +905,7 @@ class AnalyticsApi(object):
         async_fill_rate_report_request,
         **kwargs
     ):
-        """generate_async_fill_rate_report  # noqa: E501
+        """/preview/retail-media/reports/fillrate  # noqa: E501
 
         Returns an asynchronous Fill Rate Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -988,7 +988,7 @@ class AnalyticsApi(object):
         async_line_items_report_request,
         **kwargs
     ):
-        """generate_async_line_items_report  # noqa: E501
+        """/preview/retail-media/reports/line-items  # noqa: E501
 
         Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1071,7 +1071,7 @@ class AnalyticsApi(object):
         async_offsite_report_request,
         **kwargs
     ):
-        """generate_async_offsite_report  # noqa: E501
+        """/preview/retail-media/reports/offsite  # noqa: E501
 
         Returns an asynchronous Offsite Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1154,7 +1154,7 @@ class AnalyticsApi(object):
         async_unfilled_placements_report_request,
         **kwargs
     ):
-        """generate_async_unfilled_placements_report  # noqa: E501
+        """/preview/retail-media/reports/unfilled-placements  # noqa: E501
 
         Returns an asynchronous Unfilled Placements Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1236,7 +1236,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """generate_share_of_voice_insight  # noqa: E501
+        """/preview/retail-media/insights/share-of-voice  # noqa: E501
 
         Generate a share of voice insight  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1316,7 +1316,7 @@ class AnalyticsApi(object):
         sync_attributed_transactions_report_request,
         **kwargs
     ):
-        """generate_sync_attributed_transactions_report  # noqa: E501
+        """/preview/retail-media/reports/sync/attributed-transactions  # noqa: E501
 
         Returns a synchronous Attributed Transactions Report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1399,7 +1399,7 @@ class AnalyticsApi(object):
         sync_campaigns_report_request,
         **kwargs
     ):
-        """generate_sync_campaigns_report  # noqa: E501
+        """/preview/retail-media/reports/sync/campaigns  # noqa: E501
 
         Returns a synchronous Campaigns Report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1482,7 +1482,7 @@ class AnalyticsApi(object):
         sync_line_items_report_request,
         **kwargs
     ):
-        """generate_sync_line_items_report  # noqa: E501
+        """/preview/retail-media/reports/sync/line-items  # noqa: E501
 
         Returns a synchronous Line Items Report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1565,7 +1565,7 @@ class AnalyticsApi(object):
         sync_real_time_performance_report_request,
         **kwargs
     ):
-        """generate_sync_real_time_performance_report  # noqa: E501
+        """/preview/retail-media/reports/sync/real-time-performance  # noqa: E501
 
         Returns a synchronous Real Time Performance Report. Returns empty rows; metadata includes dataCompleteThrough (latest time from streaming table in the request timezone).  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1648,7 +1648,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_async_export_output  # noqa: E501
+        """/preview/retail-media/reports/{reportId}/output  # noqa: E501
 
         Returns the output of an async report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1731,7 +1731,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_async_export_status  # noqa: E501
+        """/preview/retail-media/reports/{reportId}/status  # noqa: E501
 
         Returns the status of an async report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

@@ -323,7 +323,7 @@ class BalanceApi(object):
         balance_id,
         **kwargs
     ):
-        """get_balance_history_v1  # noqa: E501
+        """/preview/retail-media/balances/{balanceId}/history  # noqa: E501
 
         Gets the balance's historical change data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -409,7 +409,7 @@ class BalanceApi(object):
         balance_id,
         **kwargs
     ):
-        """get_balance_v1  # noqa: E501
+        """/preview/retail-media/balances/{balanceId}  # noqa: E501
 
         Get a balance for the given balance id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -492,7 +492,7 @@ class BalanceApi(object):
         account_id,
         **kwargs
     ):
-        """get_page_of_balances_v1  # noqa: E501
+        """/preview/retail-media/accounts/{accountId}/balances  # noqa: E501
 
         Gets page of balance objects for the given account id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -580,7 +580,7 @@ class BalanceApi(object):
         value_resource_input_of_update_balance_model_v1,
         **kwargs
     ):
-        """update_balance_v1  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/balances/{balance-id}  # noqa: E501
 
         Modify a balance for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

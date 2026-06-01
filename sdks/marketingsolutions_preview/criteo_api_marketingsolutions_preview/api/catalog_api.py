@@ -206,7 +206,7 @@ class CatalogApi(object):
         merchant_id,
         **kwargs
     ):
-        """get_catalog_merchant_stats  # noqa: E501
+        """/preview/catalog/stats/merchants/{merchant-id}  # noqa: E501
 
         get an stats request  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -290,7 +290,7 @@ class CatalogApi(object):
         operation_token,
         **kwargs
     ):
-        """get_catalog_products_batch_report  # noqa: E501
+        """/preview/catalog/products/batch/report/{operation-token}  # noqa: E501
 
         Get the report of an asynchronous batch operation previously requested  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -373,7 +373,7 @@ class CatalogApi(object):
         products_custom_batch_request,
         **kwargs
     ):
-        """submit_catalog_products_batch  # noqa: E501
+        """/preview/catalog/products/batch  # noqa: E501
 
         Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_store_inventory_per_merchant_id**](CatalogApi.md#delete_store_inventory_per_merchant_id) | **POST** /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/delete | 
-[**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /preview/retail-media/catalog/products/batch/report/{operation-token} | 
-[**offer_set_bbw_v1**](CatalogApi.md#offer_set_bbw_v1) | **POST** /preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners | 
-[**offer_update_v1**](CatalogApi.md#offer_update_v1) | **POST** /preview/retail-media/retailers/{retailer-id}/offers/update | 
-[**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /preview/retail-media/catalog/products/batch | 
-[**upsert_store_inventory_per_merchant_id**](CatalogApi.md#upsert_store_inventory_per_merchant_id) | **POST** /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert | 
+[**delete_store_inventory_per_merchant_id**](CatalogApi.md#delete_store_inventory_per_merchant_id) | **POST** /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/delete | /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
+[**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /preview/retail-media/catalog/products/batch/report/{operation-token} | /preview/retail-media/catalog/products/batch/report/{operation-token}
+[**offer_set_bbw_v1**](CatalogApi.md#offer_set_bbw_v1) | **POST** /preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners | /preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners
+[**offer_update_v1**](CatalogApi.md#offer_update_v1) | **POST** /preview/retail-media/retailers/{retailer-id}/offers/update | /preview/retail-media/retailers/{retailer-id}/offers/update
+[**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /preview/retail-media/catalog/products/batch | /preview/retail-media/catalog/products/batch
+[**upsert_store_inventory_per_merchant_id**](CatalogApi.md#upsert_store_inventory_per_merchant_id) | **POST** /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert | /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert
 
 
 # **delete_store_inventory_per_merchant_id**
 > delete_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_delete_request)
 
-
+/preview/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
 
 Used to publish a batch of store inventories to delete. The batch is processed asynchronously.
 
@@ -73,6 +73,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
         api_instance.delete_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_delete_request)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CatalogApi->delete_store_inventory_per_merchant_id: %s\n" % e)
@@ -111,7 +112,7 @@ void (empty response body)
 # **get_catalog_products_batch_report**
 > ReportOkResponse get_catalog_products_batch_report(operation_token)
 
-
+/preview/retail-media/catalog/products/batch/report/{operation-token}
 
 Get the report of an asynchronous batch operation previously requested
 
@@ -157,6 +158,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/catalog/products/batch/report/{operation-token}
         api_response = api_instance.get_catalog_products_batch_report(operation_token)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -195,7 +197,7 @@ Name | Type | Description  | Notes
 # **offer_set_bbw_v1**
 > Outcome offer_set_bbw_v1(retailer_id, value_resource_input_set_product_buy_box_winners_request)
 
-
+/preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners
 
 Update the buy box winner for one or more products
 
@@ -254,6 +256,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/retailers/{retailer-id}/products/set-buy-box-winners
         api_response = api_instance.offer_set_bbw_v1(retailer_id, value_resource_input_set_product_buy_box_winners_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -293,7 +296,7 @@ Name | Type | Description  | Notes
 # **offer_update_v1**
 > Outcome offer_update_v1(retailer_id, value_resource_input_update_offers_request)
 
-
+/preview/retail-media/retailers/{retailer-id}/offers/update
 
 Update one or more offers by replacing each offer's price and availability with the given values
 
@@ -354,6 +357,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/retailers/{retailer-id}/offers/update
         api_response = api_instance.offer_update_v1(retailer_id, value_resource_input_update_offers_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -393,7 +397,7 @@ Name | Type | Description  | Notes
 # **submit_catalog_products_batch**
 > BatchAcceptedResponse submit_catalog_products_batch(products_custom_batch_request)
 
-
+/preview/retail-media/catalog/products/batch
 
 Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.
 
@@ -622,6 +626,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/catalog/products/batch
         api_response = api_instance.submit_catalog_products_batch(products_custom_batch_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -660,7 +665,7 @@ Name | Type | Description  | Notes
 # **upsert_store_inventory_per_merchant_id**
 > upsert_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_request)
 
-
+/preview/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert
 
 Used to publish a batch of store inventories to upsert. The batch is processed asynchronously.
 
@@ -721,6 +726,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert
         api_instance.upsert_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_request)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CatalogApi->upsert_store_inventory_per_merchant_id: %s\n" % e)

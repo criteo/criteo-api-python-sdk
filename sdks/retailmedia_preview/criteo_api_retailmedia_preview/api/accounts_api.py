@@ -103,7 +103,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """get_private_market_child_accounts_by_account_id  # noqa: E501
+        """/preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts  # noqa: E501
 
         Gets Private Market child accounts that are associated with the given account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

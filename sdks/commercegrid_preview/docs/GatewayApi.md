@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /preview/commerce-grid/me | 
+[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /preview/commerce-grid/me | /preview/commerce-grid/me
 
 
 # **get_current_application**
 > ApplicationSummaryModelResponse get_current_application()
 
-
+/preview/commerce-grid/me
 
 Get information about the currently logged application
 
@@ -55,6 +55,7 @@ with criteo_api_commercegrid_preview.ApiClient(configuration) as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /preview/commerce-grid/me
         api_response = api_instance.get_current_application()
         pprint(api_response)
     except criteo_api_commercegrid_preview.ApiException as e:

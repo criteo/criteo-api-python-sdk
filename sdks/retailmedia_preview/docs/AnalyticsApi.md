@@ -4,25 +4,25 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /preview/retail-media/reports/accounts | 
-[**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /preview/retail-media/reports/campaigns | 
-[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /preview/retail-media/reports/fillrate | 
-[**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /preview/retail-media/reports/line-items | 
-[**generate_async_offsite_report**](AnalyticsApi.md#generate_async_offsite_report) | **POST** /preview/retail-media/reports/offsite | 
-[**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /preview/retail-media/reports/unfilled-placements | 
-[**generate_share_of_voice_insight**](AnalyticsApi.md#generate_share_of_voice_insight) | **POST** /preview/retail-media/insights/share-of-voice | 
-[**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /preview/retail-media/reports/sync/attributed-transactions | 
-[**generate_sync_campaigns_report**](AnalyticsApi.md#generate_sync_campaigns_report) | **POST** /preview/retail-media/reports/sync/campaigns | 
-[**generate_sync_line_items_report**](AnalyticsApi.md#generate_sync_line_items_report) | **POST** /preview/retail-media/reports/sync/line-items | 
-[**generate_sync_real_time_performance_report**](AnalyticsApi.md#generate_sync_real_time_performance_report) | **POST** /preview/retail-media/reports/sync/real-time-performance | 
-[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/retail-media/reports/{reportId}/output | 
-[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/retail-media/reports/{reportId}/status | 
+[**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /preview/retail-media/reports/accounts | /preview/retail-media/reports/accounts
+[**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /preview/retail-media/reports/campaigns | /preview/retail-media/reports/campaigns
+[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /preview/retail-media/reports/fillrate | /preview/retail-media/reports/fillrate
+[**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /preview/retail-media/reports/line-items | /preview/retail-media/reports/line-items
+[**generate_async_offsite_report**](AnalyticsApi.md#generate_async_offsite_report) | **POST** /preview/retail-media/reports/offsite | /preview/retail-media/reports/offsite
+[**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /preview/retail-media/reports/unfilled-placements | /preview/retail-media/reports/unfilled-placements
+[**generate_share_of_voice_insight**](AnalyticsApi.md#generate_share_of_voice_insight) | **POST** /preview/retail-media/insights/share-of-voice | /preview/retail-media/insights/share-of-voice
+[**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /preview/retail-media/reports/sync/attributed-transactions | /preview/retail-media/reports/sync/attributed-transactions
+[**generate_sync_campaigns_report**](AnalyticsApi.md#generate_sync_campaigns_report) | **POST** /preview/retail-media/reports/sync/campaigns | /preview/retail-media/reports/sync/campaigns
+[**generate_sync_line_items_report**](AnalyticsApi.md#generate_sync_line_items_report) | **POST** /preview/retail-media/reports/sync/line-items | /preview/retail-media/reports/sync/line-items
+[**generate_sync_real_time_performance_report**](AnalyticsApi.md#generate_sync_real_time_performance_report) | **POST** /preview/retail-media/reports/sync/real-time-performance | /preview/retail-media/reports/sync/real-time-performance
+[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/retail-media/reports/{reportId}/output | /preview/retail-media/reports/{reportId}/output
+[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/retail-media/reports/{reportId}/status | /preview/retail-media/reports/{reportId}/status
 
 
 # **generate_async_accounts_report**
 > AsyncReportResponse generate_async_accounts_report(async_accounts_report_request)
 
-
+/preview/retail-media/reports/accounts
 
 Returns an asynchronous Accounts Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -113,6 +113,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/accounts
         api_response = api_instance.generate_async_accounts_report(async_accounts_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -151,7 +152,7 @@ Name | Type | Description  | Notes
 # **generate_async_campaigns_report**
 > AsyncReportResponse generate_async_campaigns_report(async_campaigns_report_request)
 
-
+/preview/retail-media/reports/campaigns
 
 Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -242,6 +243,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/campaigns
         api_response = api_instance.generate_async_campaigns_report(async_campaigns_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -280,7 +282,7 @@ Name | Type | Description  | Notes
 # **generate_async_fill_rate_report**
 > AsyncReportResponse generate_async_fill_rate_report(async_fill_rate_report_request)
 
-
+/preview/retail-media/reports/fillrate
 
 Returns an asynchronous Fill Rate Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -347,6 +349,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/fillrate
         api_response = api_instance.generate_async_fill_rate_report(async_fill_rate_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -385,7 +388,7 @@ Name | Type | Description  | Notes
 # **generate_async_line_items_report**
 > AsyncReportResponse generate_async_line_items_report(async_line_items_report_request)
 
-
+/preview/retail-media/reports/line-items
 
 Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -476,6 +479,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/line-items
         api_response = api_instance.generate_async_line_items_report(async_line_items_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -514,7 +518,7 @@ Name | Type | Description  | Notes
 # **generate_async_offsite_report**
 > AsyncReportResponse generate_async_offsite_report(async_offsite_report_request)
 
-
+/preview/retail-media/reports/offsite
 
 Returns an asynchronous Offsite Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -598,6 +602,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/offsite
         api_response = api_instance.generate_async_offsite_report(async_offsite_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -636,7 +641,7 @@ Name | Type | Description  | Notes
 # **generate_async_unfilled_placements_report**
 > AsyncReportResponse generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
 
-
+/preview/retail-media/reports/unfilled-placements
 
 Returns an asynchronous Unfilled Placements Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -704,6 +709,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/unfilled-placements
         api_response = api_instance.generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -742,7 +748,7 @@ Name | Type | Description  | Notes
 # **generate_share_of_voice_insight**
 > AsyncInsightResponse generate_share_of_voice_insight()
 
-
+/preview/retail-media/insights/share-of-voice
 
 Generate a share of voice insight
 
@@ -831,6 +837,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/insights/share-of-voice
         api_response = api_instance.generate_share_of_voice_insight(share_of_voice_insight_request=share_of_voice_insight_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -869,7 +876,7 @@ Name | Type | Description  | Notes
 # **generate_sync_attributed_transactions_report**
 > ReportResponse generate_sync_attributed_transactions_report(sync_attributed_transactions_report_request)
 
-
+/preview/retail-media/reports/sync/attributed-transactions
 
 Returns a synchronous Attributed Transactions Report
 
@@ -943,6 +950,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/sync/attributed-transactions
         api_response = api_instance.generate_sync_attributed_transactions_report(sync_attributed_transactions_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -981,7 +989,7 @@ Name | Type | Description  | Notes
 # **generate_sync_campaigns_report**
 > ReportResponse generate_sync_campaigns_report(sync_campaigns_report_request)
 
-
+/preview/retail-media/reports/sync/campaigns
 
 Returns a synchronous Campaigns Report
 
@@ -1052,6 +1060,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/sync/campaigns
         api_response = api_instance.generate_sync_campaigns_report(sync_campaigns_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1090,7 +1099,7 @@ Name | Type | Description  | Notes
 # **generate_sync_line_items_report**
 > ReportResponse generate_sync_line_items_report(sync_line_items_report_request)
 
-
+/preview/retail-media/reports/sync/line-items
 
 Returns a synchronous Line Items Report
 
@@ -1164,6 +1173,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/sync/line-items
         api_response = api_instance.generate_sync_line_items_report(sync_line_items_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1202,7 +1212,7 @@ Name | Type | Description  | Notes
 # **generate_sync_real_time_performance_report**
 > ReportResponse generate_sync_real_time_performance_report(sync_real_time_performance_report_request)
 
-
+/preview/retail-media/reports/sync/real-time-performance
 
 Returns a synchronous Real Time Performance Report. Returns empty rows; metadata includes dataCompleteThrough (latest time from streaming table in the request timezone).  <br />  This endpoint is subject to specific rate limits.
 
@@ -1276,6 +1286,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/sync/real-time-performance
         api_response = api_instance.generate_sync_real_time_performance_report(sync_real_time_performance_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1314,7 +1325,7 @@ Name | Type | Description  | Notes
 # **get_async_export_output**
 > file_type get_async_export_output(report_id)
 
-
+/preview/retail-media/reports/{reportId}/output
 
 Returns the output of an async report
 
@@ -1359,6 +1370,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/{reportId}/output
         api_response = api_instance.get_async_export_output(report_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -1397,7 +1409,7 @@ Name | Type | Description  | Notes
 # **get_async_export_status**
 > AsyncReportResponse get_async_export_status(report_id)
 
-
+/preview/retail-media/reports/{reportId}/status
 
 Returns the status of an async report
 
@@ -1443,6 +1455,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/reports/{reportId}/status
         api_response = api_instance.get_async_export_status(report_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:

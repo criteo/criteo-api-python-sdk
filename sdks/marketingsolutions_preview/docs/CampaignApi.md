@@ -4,50 +4,50 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ad_set**](CampaignApi.md#create_ad_set) | **POST** /preview/marketing-solutions/ad-sets | 
-[**create_campaign**](CampaignApi.md#create_campaign) | **POST** /preview/marketing-solutions/campaigns | 
-[**delete_advertiser_bundle_rules**](CampaignApi.md#delete_advertiser_bundle_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
-[**delete_advertiser_domain_rules**](CampaignApi.md#delete_advertiser_domain_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
-[**delete_campaign_bundle_rules**](CampaignApi.md#delete_campaign_bundle_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
-[**delete_campaign_domain_rules**](CampaignApi.md#delete_campaign_domain_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/domain-rules | 
-[**disable_ad_set_targeting_deal_ids**](CampaignApi.md#disable_ad_set_targeting_deal_ids) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable | 
-[**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | 
-[**get_ad_set**](CampaignApi.md#get_ad_set) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id} | 
-[**get_ad_set_category_bids**](CampaignApi.md#get_ad_set_category_bids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
-[**get_ad_set_targeting_deal_ids**](CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
-[**get_ad_set_targeting_video_positioning**](CampaignApi.md#get_ad_set_targeting_video_positioning) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | 
-[**get_advertiser_bundle_rules**](CampaignApi.md#get_advertiser_bundle_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
-[**get_advertiser_domain_rules**](CampaignApi.md#get_advertiser_domain_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
-[**get_campaign**](CampaignApi.md#get_campaign) | **GET** /preview/marketing-solutions/campaigns/{campaign-id} | 
-[**get_campaign_bundle_rules**](CampaignApi.md#get_campaign_bundle_rules) | **GET** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
-[**get_campaign_domain_rules**](CampaignApi.md#get_campaign_domain_rules) | **GET** /preview/campaigns/{campaignId}/targeting/domain-rules | 
-[**get_display_multipliers**](CampaignApi.md#get_display_multipliers) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
-[**get_supply_vendor_list**](CampaignApi.md#get_supply_vendor_list) | **GET** /preview/marketing-solutions/ad-sets/targeting/supply-vendors | 
-[**patch_ad_set_category_bids**](CampaignApi.md#patch_ad_set_category_bids) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | 
-[**patch_ad_sets**](CampaignApi.md#patch_ad_sets) | **PATCH** /preview/marketing-solutions/ad-sets | 
-[**patch_campaigns**](CampaignApi.md#patch_campaigns) | **PATCH** /preview/marketing-solutions/campaigns | 
-[**patch_display_multipliers**](CampaignApi.md#patch_display_multipliers) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | 
-[**post_advertiser_bundle_rules**](CampaignApi.md#post_advertiser_bundle_rules) | **POST** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
-[**post_advertiser_domain_rules**](CampaignApi.md#post_advertiser_domain_rules) | **POST** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
-[**post_campaign_bundle_rules**](CampaignApi.md#post_campaign_bundle_rules) | **POST** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
-[**post_campaign_domain_rules**](CampaignApi.md#post_campaign_domain_rules) | **POST** /preview/campaigns/{campaignId}/targeting/domain-rules | 
-[**put_advertiser_bundle_rules**](CampaignApi.md#put_advertiser_bundle_rules) | **PUT** /preview/advertisers/{advertiserId}/targeting/bundle-rules | 
-[**put_advertiser_domain_rules**](CampaignApi.md#put_advertiser_domain_rules) | **PUT** /preview/advertisers/{advertiserId}/targeting/domain-rules | 
-[**put_campaign_bundle_rules**](CampaignApi.md#put_campaign_bundle_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/bundle-rules | 
-[**put_campaign_domain_rules**](CampaignApi.md#put_campaign_domain_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/domain-rules | 
-[**search_ad_sets**](CampaignApi.md#search_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/search | 
-[**search_campaigns**](CampaignApi.md#search_campaigns) | **POST** /preview/marketing-solutions/campaigns/search | 
-[**set_ad_set_targeting_deal_ids**](CampaignApi.md#set_ad_set_targeting_deal_ids) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | 
-[**set_ad_set_targeting_video_positioning**](CampaignApi.md#set_ad_set_targeting_video_positioning) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | 
-[**start_ad_sets**](CampaignApi.md#start_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/start | 
-[**stop_ad_sets**](CampaignApi.md#stop_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/stop | 
-[**update_ad_set_audience**](CampaignApi.md#update_ad_set_audience) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/audience | 
+[**create_ad_set**](CampaignApi.md#create_ad_set) | **POST** /preview/marketing-solutions/ad-sets | /preview/marketing-solutions/ad-sets
+[**create_campaign**](CampaignApi.md#create_campaign) | **POST** /preview/marketing-solutions/campaigns | /preview/marketing-solutions/campaigns
+[**delete_advertiser_bundle_rules**](CampaignApi.md#delete_advertiser_bundle_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/bundle-rules | /preview/advertisers/{advertiserId}/targeting/bundle-rules
+[**delete_advertiser_domain_rules**](CampaignApi.md#delete_advertiser_domain_rules) | **DELETE** /preview/advertisers/{advertiserId}/targeting/domain-rules | /preview/advertisers/{advertiserId}/targeting/domain-rules
+[**delete_campaign_bundle_rules**](CampaignApi.md#delete_campaign_bundle_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/bundle-rules | /preview/campaigns/{campaignId}/targeting/bundle-rules
+[**delete_campaign_domain_rules**](CampaignApi.md#delete_campaign_domain_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/domain-rules | /preview/campaigns/{campaignId}/targeting/domain-rules
+[**disable_ad_set_targeting_deal_ids**](CampaignApi.md#disable_ad_set_targeting_deal_ids) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable
+[**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
+[**get_ad_set**](CampaignApi.md#get_ad_set) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id} | /preview/marketing-solutions/ad-sets/{ad-set-id}
+[**get_ad_set_category_bids**](CampaignApi.md#get_ad_set_category_bids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
+[**get_ad_set_targeting_deal_ids**](CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
+[**get_ad_set_targeting_video_positioning**](CampaignApi.md#get_ad_set_targeting_video_positioning) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning
+[**get_advertiser_bundle_rules**](CampaignApi.md#get_advertiser_bundle_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/bundle-rules | /preview/advertisers/{advertiserId}/targeting/bundle-rules
+[**get_advertiser_domain_rules**](CampaignApi.md#get_advertiser_domain_rules) | **GET** /preview/advertisers/{advertiserId}/targeting/domain-rules | /preview/advertisers/{advertiserId}/targeting/domain-rules
+[**get_campaign**](CampaignApi.md#get_campaign) | **GET** /preview/marketing-solutions/campaigns/{campaign-id} | /preview/marketing-solutions/campaigns/{campaign-id}
+[**get_campaign_bundle_rules**](CampaignApi.md#get_campaign_bundle_rules) | **GET** /preview/campaigns/{campaignId}/targeting/bundle-rules | /preview/campaigns/{campaignId}/targeting/bundle-rules
+[**get_campaign_domain_rules**](CampaignApi.md#get_campaign_domain_rules) | **GET** /preview/campaigns/{campaignId}/targeting/domain-rules | /preview/campaigns/{campaignId}/targeting/domain-rules
+[**get_display_multipliers**](CampaignApi.md#get_display_multipliers) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers
+[**get_supply_vendor_list**](CampaignApi.md#get_supply_vendor_list) | **GET** /preview/marketing-solutions/ad-sets/targeting/supply-vendors | /preview/marketing-solutions/ad-sets/targeting/supply-vendors
+[**patch_ad_set_category_bids**](CampaignApi.md#patch_ad_set_category_bids) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
+[**patch_ad_sets**](CampaignApi.md#patch_ad_sets) | **PATCH** /preview/marketing-solutions/ad-sets | /preview/marketing-solutions/ad-sets
+[**patch_campaigns**](CampaignApi.md#patch_campaigns) | **PATCH** /preview/marketing-solutions/campaigns | /preview/marketing-solutions/campaigns
+[**patch_display_multipliers**](CampaignApi.md#patch_display_multipliers) | **PATCH** /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers | /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers
+[**post_advertiser_bundle_rules**](CampaignApi.md#post_advertiser_bundle_rules) | **POST** /preview/advertisers/{advertiserId}/targeting/bundle-rules | /preview/advertisers/{advertiserId}/targeting/bundle-rules
+[**post_advertiser_domain_rules**](CampaignApi.md#post_advertiser_domain_rules) | **POST** /preview/advertisers/{advertiserId}/targeting/domain-rules | /preview/advertisers/{advertiserId}/targeting/domain-rules
+[**post_campaign_bundle_rules**](CampaignApi.md#post_campaign_bundle_rules) | **POST** /preview/campaigns/{campaignId}/targeting/bundle-rules | /preview/campaigns/{campaignId}/targeting/bundle-rules
+[**post_campaign_domain_rules**](CampaignApi.md#post_campaign_domain_rules) | **POST** /preview/campaigns/{campaignId}/targeting/domain-rules | /preview/campaigns/{campaignId}/targeting/domain-rules
+[**put_advertiser_bundle_rules**](CampaignApi.md#put_advertiser_bundle_rules) | **PUT** /preview/advertisers/{advertiserId}/targeting/bundle-rules | /preview/advertisers/{advertiserId}/targeting/bundle-rules
+[**put_advertiser_domain_rules**](CampaignApi.md#put_advertiser_domain_rules) | **PUT** /preview/advertisers/{advertiserId}/targeting/domain-rules | /preview/advertisers/{advertiserId}/targeting/domain-rules
+[**put_campaign_bundle_rules**](CampaignApi.md#put_campaign_bundle_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/bundle-rules | /preview/campaigns/{campaignId}/targeting/bundle-rules
+[**put_campaign_domain_rules**](CampaignApi.md#put_campaign_domain_rules) | **PUT** /preview/campaigns/{campaignId}/targeting/domain-rules | /preview/campaigns/{campaignId}/targeting/domain-rules
+[**search_ad_sets**](CampaignApi.md#search_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/search | /preview/marketing-solutions/ad-sets/search
+[**search_campaigns**](CampaignApi.md#search_campaigns) | **POST** /preview/marketing-solutions/campaigns/search | /preview/marketing-solutions/campaigns/search
+[**set_ad_set_targeting_deal_ids**](CampaignApi.md#set_ad_set_targeting_deal_ids) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
+[**set_ad_set_targeting_video_positioning**](CampaignApi.md#set_ad_set_targeting_video_positioning) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning
+[**start_ad_sets**](CampaignApi.md#start_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/start | /preview/marketing-solutions/ad-sets/start
+[**stop_ad_sets**](CampaignApi.md#stop_ad_sets) | **POST** /preview/marketing-solutions/ad-sets/stop | /preview/marketing-solutions/ad-sets/stop
+[**update_ad_set_audience**](CampaignApi.md#update_ad_set_audience) | **PUT** /preview/marketing-solutions/ad-sets/{ad-set-id}/audience | /preview/marketing-solutions/ad-sets/{ad-set-id}/audience
 
 
 # **create_ad_set**
 > ResponseReadAdSetV26Q1 create_ad_set(create_ad_set_v26_q1_request)
 
-
+/preview/marketing-solutions/ad-sets
 
 Create an ad set with the provided parameters
 
@@ -162,6 +162,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets
         api_response = api_instance.create_ad_set(create_ad_set_v26_q1_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -200,7 +201,7 @@ Name | Type | Description  | Notes
 # **create_campaign**
 > CampaignV23Q1Response create_campaign(create_campaign_request)
 
-
+/preview/marketing-solutions/campaigns
 
 Create the specified campaign                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
@@ -267,6 +268,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/campaigns
         api_response = api_instance.create_campaign(create_campaign_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -305,7 +307,7 @@ Name | Type | Description  | Notes
 # **delete_advertiser_bundle_rules**
 > ApiResponseOfTargetingEntity delete_advertiser_bundle_rules(advertiser_id)
 
-
+/preview/advertisers/{advertiserId}/targeting/bundle-rules
 
 Removes some bundles from the current list of targeted bundles for a given advertiser.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -368,6 +370,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/bundle-rules
         api_response = api_instance.delete_advertiser_bundle_rules(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -376,6 +379,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/advertisers/{advertiserId}/targeting/bundle-rules
         api_response = api_instance.delete_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -415,7 +419,7 @@ Name | Type | Description  | Notes
 # **delete_advertiser_domain_rules**
 > ApiResponseOfTargetingEntity delete_advertiser_domain_rules(advertiser_id)
 
-
+/preview/advertisers/{advertiserId}/targeting/domain-rules
 
 Removes some domains from the current list of targeted domains for a given advertiser.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -478,6 +482,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/domain-rules
         api_response = api_instance.delete_advertiser_domain_rules(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -486,6 +491,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/advertisers/{advertiserId}/targeting/domain-rules
         api_response = api_instance.delete_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -525,7 +531,7 @@ Name | Type | Description  | Notes
 # **delete_campaign_bundle_rules**
 > ApiResponseOfTargetingEntity delete_campaign_bundle_rules(campaign_id)
 
-
+/preview/campaigns/{campaignId}/targeting/bundle-rules
 
 Removes some bundles from the current list of targeted bundles for a given campaign.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -588,6 +594,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/bundle-rules
         api_response = api_instance.delete_campaign_bundle_rules(campaign_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -596,6 +603,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/campaigns/{campaignId}/targeting/bundle-rules
         api_response = api_instance.delete_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -635,7 +643,7 @@ Name | Type | Description  | Notes
 # **delete_campaign_domain_rules**
 > ApiResponseOfTargetingEntity delete_campaign_domain_rules(campaign_id)
 
-
+/preview/campaigns/{campaignId}/targeting/domain-rules
 
 Removes some domains from the current list of targeted domains for a given campaign.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -698,6 +706,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/domain-rules
         api_response = api_instance.delete_campaign_domain_rules(campaign_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -706,6 +715,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/campaigns/{campaignId}/targeting/domain-rules
         api_response = api_instance.delete_campaign_domain_rules(campaign_id, api_request_of_targeting_entity=api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -745,7 +755,7 @@ Name | Type | Description  | Notes
 # **disable_ad_set_targeting_deal_ids**
 > AdSetTargetingDealIdsDisableResultResponse disable_ad_set_targeting_deal_ids(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable
 
 Disable the Deal Id Targeting configuration for the ad set whose id is specified
 
@@ -791,6 +801,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable
         api_response = api_instance.disable_ad_set_targeting_deal_ids(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -829,7 +840,7 @@ Name | Type | Description  | Notes
 # **disable_ad_set_targeting_video_positioning**
 > AdSetTargetingVideoPositioningDisableResultResponse disable_ad_set_targeting_video_positioning(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
 
 Disable the Video Positioning Targeting configuration for the ad set whose id is specified
 
@@ -875,6 +886,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
         api_response = api_instance.disable_ad_set_targeting_video_positioning(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -913,7 +925,7 @@ Name | Type | Description  | Notes
 # **get_ad_set**
 > ResponseReadAdSetV26Q1 get_ad_set(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}
 
 Get the data for the specified ad set
 
@@ -959,6 +971,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}
         api_response = api_instance.get_ad_set(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -997,7 +1010,7 @@ Name | Type | Description  | Notes
 # **get_ad_set_category_bids**
 > AdSetCategoryBidListResponse get_ad_set_category_bids(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
 
 Get the Category Bids for all valid Categories associated to an Ad Set
 
@@ -1043,6 +1056,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
         api_response = api_instance.get_ad_set_category_bids(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1081,7 +1095,7 @@ Name | Type | Description  | Notes
 # **get_ad_set_targeting_deal_ids**
 > AdSetTargetingDealIdsResponse get_ad_set_targeting_deal_ids(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
 
 Get the Deal Id Targeting configuration for the ad set whose id is specified
 
@@ -1127,6 +1141,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
         api_response = api_instance.get_ad_set_targeting_deal_ids(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1165,7 +1180,7 @@ Name | Type | Description  | Notes
 # **get_ad_set_targeting_video_positioning**
 > AdSetTargetingVideoPositioningResponse get_ad_set_targeting_video_positioning(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning
 
 Get the Video Positioning Targeting configuration for the ad set whose id is specified
 
@@ -1211,6 +1226,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning
         api_response = api_instance.get_ad_set_targeting_video_positioning(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1249,7 +1265,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_bundle_rules**
 > ApiResponseOfTargetingEntity get_advertiser_bundle_rules(advertiser_id)
 
-
+/preview/advertisers/{advertiserId}/targeting/bundle-rules
 
 Returns a list of all targeted bundles for an advertiser.
 
@@ -1295,6 +1311,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/bundle-rules
         api_response = api_instance.get_advertiser_bundle_rules(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1333,7 +1350,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_domain_rules**
 > ApiResponseOfTargetingEntity get_advertiser_domain_rules(advertiser_id)
 
-
+/preview/advertisers/{advertiserId}/targeting/domain-rules
 
 Returns a list of all targeted domains for an advertiser.
 
@@ -1379,6 +1396,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/domain-rules
         api_response = api_instance.get_advertiser_domain_rules(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1417,7 +1435,7 @@ Name | Type | Description  | Notes
 # **get_campaign**
 > CampaignV23Q1Response get_campaign(campaign_id)
 
-
+/preview/marketing-solutions/campaigns/{campaign-id}
 
 Get the data for the specified campaign.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
@@ -1463,6 +1481,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/campaigns/{campaign-id}
         api_response = api_instance.get_campaign(campaign_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1501,7 +1520,7 @@ Name | Type | Description  | Notes
 # **get_campaign_bundle_rules**
 > ApiResponseOfTargetingEntity get_campaign_bundle_rules(campaign_id)
 
-
+/preview/campaigns/{campaignId}/targeting/bundle-rules
 
 Returns a list of all targeted bundles for a campaign.
 
@@ -1547,6 +1566,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/bundle-rules
         api_response = api_instance.get_campaign_bundle_rules(campaign_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1585,7 +1605,7 @@ Name | Type | Description  | Notes
 # **get_campaign_domain_rules**
 > ApiResponseOfTargetingEntity get_campaign_domain_rules(campaign_id)
 
-
+/preview/campaigns/{campaignId}/targeting/domain-rules
 
 Returns a list of all targeted domains for a campaign.
 
@@ -1631,6 +1651,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/domain-rules
         api_response = api_instance.get_campaign_domain_rules(campaign_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1669,7 +1690,7 @@ Name | Type | Description  | Notes
 # **get_display_multipliers**
 > AdSetDisplayMultiplierListResponse get_display_multipliers(ad_set_id)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers
 
 Get the Display Multipliers for all valid Categories associated to an Ad Set
 
@@ -1715,6 +1736,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers
         api_response = api_instance.get_display_multipliers(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1753,7 +1775,7 @@ Name | Type | Description  | Notes
 # **get_supply_vendor_list**
 > SupplyVendorListResponse get_supply_vendor_list()
 
-
+/preview/marketing-solutions/ad-sets/targeting/supply-vendors
 
 Fetch the list of available supply vendors for any Ad Set targetings
 
@@ -1798,6 +1820,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /preview/marketing-solutions/ad-sets/targeting/supply-vendors
         api_response = api_instance.get_supply_vendor_list()
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1833,7 +1856,7 @@ This endpoint does not need any parameter.
 # **patch_ad_set_category_bids**
 > PatchAdSetCategoryBidResultListResponse patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
 
 Update the Category Bids for given Categories associated to an Ad Set  Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.
 
@@ -1891,6 +1914,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
         api_response = api_instance.patch_ad_set_category_bids(ad_set_id, patch_ad_set_category_bid_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1930,7 +1954,7 @@ Name | Type | Description  | Notes
 # **patch_ad_sets**
 > ResponsesAdSetIdV26Q1 patch_ad_sets(requests_patch_ad_set_v26_q1)
 
-
+/preview/marketing-solutions/ad-sets
 
 Patch a list of AdSets.
 
@@ -2043,6 +2067,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets
         api_response = api_instance.patch_ad_sets(requests_patch_ad_set_v26_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2081,7 +2106,7 @@ Name | Type | Description  | Notes
 # **patch_campaigns**
 > PatchResultCampaignListResponse patch_campaigns(patch_campaign_list_request)
 
-
+/preview/marketing-solutions/campaigns
 
 Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
@@ -2150,6 +2175,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/campaigns
         api_response = api_instance.patch_campaigns(patch_campaign_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2188,7 +2214,7 @@ Name | Type | Description  | Notes
 # **patch_display_multipliers**
 > PatchAdSetDisplayMultiplierResultListResponse patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers
 
 Update the Display Multipliers for given Categories associated to an Ad Set  Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.
 
@@ -2246,6 +2272,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers
         api_response = api_instance.patch_display_multipliers(ad_set_id, patch_ad_set_display_multiplier_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2285,7 +2312,7 @@ Name | Type | Description  | Notes
 # **post_advertiser_bundle_rules**
 > ApiResponseOfTargetingEntity post_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
 
-
+/preview/advertisers/{advertiserId}/targeting/bundle-rules
 
 Inserts a list of targeted bundles for an advertiser and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.
 
@@ -2348,6 +2375,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/bundle-rules
         api_response = api_instance.post_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2387,7 +2415,7 @@ Name | Type | Description  | Notes
 # **post_advertiser_domain_rules**
 > ApiResponseOfTargetingEntity post_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
 
-
+/preview/advertisers/{advertiserId}/targeting/domain-rules
 
 Inserts a list of targeted domains for an advertiser and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.
 
@@ -2450,6 +2478,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/domain-rules
         api_response = api_instance.post_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2489,7 +2518,7 @@ Name | Type | Description  | Notes
 # **post_campaign_bundle_rules**
 > ApiResponseOfTargetingEntity post_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
 
-
+/preview/campaigns/{campaignId}/targeting/bundle-rules
 
 Inserts a list of targeted bundles for a campaign and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.
 
@@ -2552,6 +2581,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/bundle-rules
         api_response = api_instance.post_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2591,7 +2621,7 @@ Name | Type | Description  | Notes
 # **post_campaign_domain_rules**
 > ApiResponseOfTargetingEntity post_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
 
-
+/preview/campaigns/{campaignId}/targeting/domain-rules
 
 Inserts a list of targeted domains for a campaign and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.
 
@@ -2654,6 +2684,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/domain-rules
         api_response = api_instance.post_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2693,7 +2724,7 @@ Name | Type | Description  | Notes
 # **put_advertiser_bundle_rules**
 > ApiResponseOfTargetingEntity put_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
 
-
+/preview/advertisers/{advertiserId}/targeting/bundle-rules
 
 Updates the targeted bundles for an advertiser by adding a list of bundles to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -2756,6 +2787,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/bundle-rules
         api_response = api_instance.put_advertiser_bundle_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2795,7 +2827,7 @@ Name | Type | Description  | Notes
 # **put_advertiser_domain_rules**
 > ApiResponseOfTargetingEntity put_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
 
-
+/preview/advertisers/{advertiserId}/targeting/domain-rules
 
 Updates the targeted domains for an advertiser by adding a list of domains to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -2858,6 +2890,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/advertisers/{advertiserId}/targeting/domain-rules
         api_response = api_instance.put_advertiser_domain_rules(advertiser_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2897,7 +2930,7 @@ Name | Type | Description  | Notes
 # **put_campaign_bundle_rules**
 > ApiResponseOfTargetingEntity put_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
 
-
+/preview/campaigns/{campaignId}/targeting/bundle-rules
 
 Updates the targeted bundles for a campaign by adding a list of bundles to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -2960,6 +2993,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/bundle-rules
         api_response = api_instance.put_campaign_bundle_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -2999,7 +3033,7 @@ Name | Type | Description  | Notes
 # **put_campaign_domain_rules**
 > ApiResponseOfTargetingEntity put_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
 
-
+/preview/campaigns/{campaignId}/targeting/domain-rules
 
 Updates the targeted domains for a campaign by adding a list of domains to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.
 
@@ -3062,6 +3096,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/campaigns/{campaignId}/targeting/domain-rules
         api_response = api_instance.put_campaign_domain_rules(campaign_id, api_request_of_targeting_entity)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3101,7 +3136,7 @@ Name | Type | Description  | Notes
 # **search_ad_sets**
 > ResponsesReadAdSetV26Q1 search_ad_sets()
 
-
+/preview/marketing-solutions/ad-sets/search
 
 Search for ad sets based on provided criteria.  This returns the full configuration of ad sets matching those criteria.  Field projection can be used if only a subset of fields is required, instead of the full configuration.                If specific fields are precised in the user prompt, use meta.fields field projection in order to query only the value of these fields, else, provide every field.
 
@@ -3166,6 +3201,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/ad-sets/search
         api_response = api_instance.search_ad_sets(ad_set_search_request_v26_q1=ad_set_search_request_v26_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3204,7 +3240,7 @@ Name | Type | Description  | Notes
 # **search_campaigns**
 > CampaignV23Q1ListResponse search_campaigns()
 
-
+/preview/marketing-solutions/campaigns/search
 
 Search endpoint for campaigns                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
@@ -3261,6 +3297,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/campaigns/search
         api_response = api_instance.search_campaigns(campaign_search_request_v23_q1=campaign_search_request_v23_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3299,7 +3336,7 @@ Name | Type | Description  | Notes
 # **set_ad_set_targeting_deal_ids**
 > AdSetTargetingDealIdsSetResultResponse set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
 
 Set the Deal Id Targeting configuration for the ad set whose id is specified
 
@@ -3359,6 +3396,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
         api_response = api_instance.set_ad_set_targeting_deal_ids(ad_set_id, set_ad_set_targeting_deal_ids_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3398,7 +3436,7 @@ Name | Type | Description  | Notes
 # **set_ad_set_targeting_video_positioning**
 > AdSetTargetingVideoPositioningSetResultResponse set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning
 
 Set the Video Positioning Targeting configuration for the ad set whose id is specified
 
@@ -3468,6 +3506,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning
         api_response = api_instance.set_ad_set_targeting_video_positioning(ad_set_id, set_ad_set_targeting_video_positioning_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3507,7 +3546,7 @@ Name | Type | Description  | Notes
 # **start_ad_sets**
 > ResponsesAdSetId start_ad_sets()
 
-
+/preview/marketing-solutions/ad-sets/start
 
 Start the specified list of ad sets
 
@@ -3562,6 +3601,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/ad-sets/start
         api_response = api_instance.start_ad_sets(requests_ad_set_id=requests_ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3600,7 +3640,7 @@ Name | Type | Description  | Notes
 # **stop_ad_sets**
 > ResponsesAdSetId stop_ad_sets()
 
-
+/preview/marketing-solutions/ad-sets/stop
 
 Stop the specified list of ad sets
 
@@ -3655,6 +3695,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/ad-sets/stop
         api_response = api_instance.stop_ad_sets(requests_ad_set_id=requests_ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -3693,7 +3734,7 @@ Name | Type | Description  | Notes
 # **update_ad_set_audience**
 > AdSetAudienceLinkEntityV1Response update_ad_set_audience(ad_set_id, ad_set_audience_link_input_entity_v1)
 
-
+/preview/marketing-solutions/ad-sets/{ad-set-id}/audience
 
 Link or unlink an audience with an ad set
 
@@ -3749,6 +3790,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/audience
         api_response = api_instance.update_ad_set_audience(ad_set_id, ad_set_audience_link_input_entity_v1)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

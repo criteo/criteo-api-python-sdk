@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /preview/retail-media/me | 
+[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /preview/retail-media/me | /preview/retail-media/me
 
 
 # **get_current_application**
 > ApplicationSummaryModelResponse get_current_application()
 
-
+/preview/retail-media/me
 
 Get information about the currently logged application
 
@@ -55,6 +55,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /preview/retail-media/me
         api_response = api_instance.get_current_application()
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:

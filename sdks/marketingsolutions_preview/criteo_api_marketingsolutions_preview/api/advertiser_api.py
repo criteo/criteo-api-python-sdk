@@ -184,7 +184,7 @@ class AdvertiserApi(object):
         self,
         **kwargs
     ):
-        """list_advertisers  # noqa: E501
+        """/preview/advertisers/me  # noqa: E501
 
         Fetch the portfolio of Advertisers for this account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -263,7 +263,7 @@ class AdvertiserApi(object):
         advertiser_id,
         **kwargs
     ):
-        """list_datasets_by_advertiser  # noqa: E501
+        """/preview/advertisers/{advertiser-id}/datasets  # noqa: E501
 
         Retrieves corresponding Datasets for a given Advertiser. Only those Datasets are included for which the given Advertiser is marked a primary.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -345,7 +345,7 @@ class AdvertiserApi(object):
         self,
         **kwargs
     ):
-        """list_industries  # noqa: E501
+        """/preview/industries  # noqa: E501
 
         Returns the list of available industries for new advertisers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

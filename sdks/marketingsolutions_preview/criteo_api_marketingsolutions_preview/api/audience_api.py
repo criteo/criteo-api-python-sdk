@@ -1075,7 +1075,7 @@ class AudienceApi(object):
         audience_segment_compute_sizes_input_v1,
         **kwargs
     ):
-        """compute_audience_segments_sizes  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/compute-sizes  # noqa: E501
 
         Gets the size of all segments. An error is returned for those whose size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1158,7 +1158,7 @@ class AudienceApi(object):
         audience_compute_sizes_input_v1,
         **kwargs
     ):
-        """compute_audiences_sizes  # noqa: E501
+        """/preview/marketing-solutions/audiences/compute-sizes  # noqa: E501
 
         Gets the size of all audiences. An error is returned for those whose size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1241,7 +1241,7 @@ class AudienceApi(object):
         audience_segment_bulk_create_input_v1,
         **kwargs
     ):
-        """create_audience_segments  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/create  # noqa: E501
 
         Creates all segments with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1324,7 +1324,7 @@ class AudienceApi(object):
         audience_bulk_create_input_v1,
         **kwargs
     ):
-        """create_audiences  # noqa: E501
+        """/preview/marketing-solutions/audiences/create  # noqa: E501
 
         Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1407,7 +1407,7 @@ class AudienceApi(object):
         audience_segment_bulk_delete_input_v1,
         **kwargs
     ):
-        """delete_audience_segments  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/delete  # noqa: E501
 
         Delete the segments associated to the given audience IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1490,7 +1490,7 @@ class AudienceApi(object):
         audience_bulk_delete_input_v1,
         **kwargs
     ):
-        """delete_audiences  # noqa: E501
+        """/preview/marketing-solutions/audiences/delete  # noqa: E501
 
         Deletes the audiences associated to the given audience IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1573,7 +1573,7 @@ class AudienceApi(object):
         audience_segment_id,
         **kwargs
     ):
-        """delete_contact_list_by_audience_segment  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list  # noqa: E501
 
         Delete all identifiers from a contact list audience-segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1656,7 +1656,7 @@ class AudienceApi(object):
         audience_segment_estimate_size_input_v1,
         **kwargs
     ):
-        """estimate_audience_segments_sizes  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/estimate-size  # noqa: E501
 
         Gets the size estimation of a non existent segment. An error is returned when size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1739,7 +1739,7 @@ class AudienceApi(object):
         audience_estimate_size_input_v1,
         **kwargs
     ):
-        """estimate_audiences_sizes  # noqa: E501
+        """/preview/marketing-solutions/audiences/estimate-size  # noqa: E501
 
         Gets the size estimation of a non existent audience. An error is returned when size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1822,7 +1822,7 @@ class AudienceApi(object):
         audience_segment_id,
         **kwargs
     ):
-        """get_audience_segment_contact_list_statistics  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list/statistics  # noqa: E501
 
         Returns the statistics of a contact list segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1906,7 +1906,7 @@ class AudienceApi(object):
         country,
         **kwargs
     ):
-        """get_audience_segments_in_market_brands  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/in-market-brands  # noqa: E501
 
         Returns a list with all available in-market brands that can be used to define an in-market segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1993,7 +1993,7 @@ class AudienceApi(object):
         country,
         **kwargs
     ):
-        """get_audience_segments_in_market_interests  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/in-market-interests  # noqa: E501
 
         Returns a list with all available in-market interests that can be used to define an in-market segment. These in-market interests correspond to the Google product taxonomy.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2080,7 +2080,7 @@ class AudienceApi(object):
         contactlist_with_attributes_amendment_request,
         **kwargs
     ):
-        """modify_audience_users_with_attributes  # noqa: E501
+        """/preview/marketing-solutions/audiences/{audience-id}/contactlist-attributes  # noqa: E501
 
         Add/remove identifiers to or from a contact list.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2166,7 +2166,7 @@ class AudienceApi(object):
         audience_segment_search_input_v1,
         **kwargs
     ):
-        """search_audience_segments  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/search  # noqa: E501
 
         Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2251,7 +2251,7 @@ class AudienceApi(object):
         audience_search_input_v1,
         **kwargs
     ):
-        """search_audiences  # noqa: E501
+        """/preview/marketing-solutions/audiences/search  # noqa: E501
 
         Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2336,7 +2336,7 @@ class AudienceApi(object):
         audience_segment_bulk_update_input_v1,
         **kwargs
     ):
-        """update_audience_segments  # noqa: E501
+        """/preview/marketing-solutions/audience-segments  # noqa: E501
 
         Updates the properties of all segments with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2419,7 +2419,7 @@ class AudienceApi(object):
         audience_bulk_update_input_v1,
         **kwargs
     ):
-        """update_audiences  # noqa: E501
+        """/preview/marketing-solutions/audiences  # noqa: E501
 
         Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2503,7 +2503,7 @@ class AudienceApi(object):
         contactlist_amendment_request,
         **kwargs
     ):
-        """update_contact_list_by_audience_segment  # noqa: E501
+        """/preview/marketing-solutions/audience-segments/{audience-segment-id}/contact-list  # noqa: E501
 
         Add/remove identifiers to or from a contact list audience-segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

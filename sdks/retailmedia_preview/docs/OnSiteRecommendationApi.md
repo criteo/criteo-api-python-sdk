@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**chatbot_product_recommendations**](OnSiteRecommendationApi.md#chatbot_product_recommendations) | **POST** /preview/retail-media/chatbot-catalogs/{catalogid}/product-recommendations | 
+[**chatbot_product_recommendations**](OnSiteRecommendationApi.md#chatbot_product_recommendations) | **POST** /preview/retail-media/chatbot-catalogs/{catalogid}/product-recommendations | /preview/retail-media/chatbot-catalogs/{catalogid}/product-recommendations
 
 
 # **chatbot_product_recommendations**
 > MessageBodyModel chatbot_product_recommendations(catalogid, inbot_discussion_body_model)
 
-
+/preview/retail-media/chatbot-catalogs/{catalogid}/product-recommendations
 
 Ask a chatbot for a product recommendation
 
@@ -85,6 +85,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/chatbot-catalogs/{catalogid}/product-recommendations
         api_response = api_instance.chatbot_product_recommendations(catalogid, inbot_discussion_body_model)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:

@@ -900,7 +900,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """create_realtime_product_report  # noqa: E501
+        """/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export  # noqa: E501
 
         This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -979,7 +979,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_adset_report  # noqa: E501
+        """/preview/statistics/report  # noqa: E501
 
         This Statistics endpoint provides adset related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1059,7 +1059,7 @@ class AnalyticsApi(object):
         generate_statistics_report_request,
         **kwargs
     ):
-        """get_async_adset_report  # noqa: E501
+        """/preview/reports/async-statistics  # noqa: E501
 
         This Statistics endpoint provides an export Id that let you retrieve data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1141,7 +1141,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_async_audience_report  # noqa: E501
+        """/preview/reports/async-audience-performance  # noqa: E501
 
         This Statistics endpoint provides an export Id that lets you retrieve data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1221,7 +1221,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_async_export_output  # noqa: E501
+        """/preview/reports/{report-id}/output  # noqa: E501
 
         This endpoint gives you the output of the report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1304,7 +1304,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_async_export_status  # noqa: E501
+        """/preview/reports/{report-id}/status  # noqa: E501
 
         This endpoint gives you the status of the report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1386,7 +1386,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_categories_report  # noqa: E501
+        """/preview/categories/report  # noqa: E501
 
         With this endpoint you can analyse what are the categories of the placements' domains your ads are placed in.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1466,7 +1466,7 @@ class AnalyticsApi(object):
         generate_creatives_report_request_attributes_request,
         **kwargs
     ):
-        """get_creatives_report  # noqa: E501
+        """/preview/reports/creatives  # noqa: E501
 
         With Creatives endpoint, you can analyse the daily performances of your creatives on the main metrics: clicks, ctr, displays.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1548,7 +1548,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_placements_report  # noqa: E501
+        """/preview/placements/report  # noqa: E501
 
         Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1628,7 +1628,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_realtime_product  # noqa: E501
+        """/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}  # noqa: E501
 
         This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1711,7 +1711,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_realtime_product_job  # noqa: E501
+        """/preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1792,7 +1792,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_realtime_statistics_report  # noqa: E501
+        """/preview/reports/realtime  # noqa: E501
 
         With Realtime endpoint, you can analyse the realtime values of the main metrics: displays, clicks, cost.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1872,7 +1872,7 @@ class AnalyticsApi(object):
         generate_top_products_report_request_attributes_request,
         **kwargs
     ):
-        """get_top_products_report  # noqa: E501
+        """/preview/reports/top-products  # noqa: E501
 
         With the topProducts endpoint, you can analyse the performances for each publisher, by top displays, top clicks or top sales.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1954,7 +1954,7 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_transactions_report  # noqa: E501
+        """/preview/transactions/report  # noqa: E501
 
         This Transactions endpoint provides transactions id related data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2034,7 +2034,7 @@ class AnalyticsApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_transparency_report  # noqa: E501
+        """/preview/log-level/advertisers/{advertiser-id}/report  # noqa: E501
 
         This Statistics endpoint provides publisher data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

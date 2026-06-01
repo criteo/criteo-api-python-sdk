@@ -974,7 +974,7 @@ class AudienceApi(object):
         retail_media_contactlist_amendment_request,
         **kwargs
     ):
-        """add_remove_contact_list_by_audience_segment  # noqa: E501
+        """/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove  # noqa: E501
 
         Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1061,7 +1061,7 @@ class AudienceApi(object):
         rm_audience_bulk_create_input_v1,
         **kwargs
     ):
-        """bulk_create_audience  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audiences/create  # noqa: E501
 
         Creates all audiences with a valid configuration, and returns their IDs. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1148,7 +1148,7 @@ class AudienceApi(object):
         rm_audience_segment_bulk_create_input_v1,
         **kwargs
     ):
-        """bulk_create_audience_segments  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments/create  # noqa: E501
 
         Creates all segments with a valid configuration, and returns the full segments. For those that cannot be created, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1235,7 +1235,7 @@ class AudienceApi(object):
         rm_audience_segment_bulk_delete_input_v1,
         **kwargs
     ):
-        """bulk_delete_audience_segments  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments/delete  # noqa: E501
 
         Delete the segments associated to the given IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1322,7 +1322,7 @@ class AudienceApi(object):
         rm_audience_bulk_delete_input_v1,
         **kwargs
     ):
-        """bulk_delete_audiences  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audiences/delete  # noqa: E501
 
         Deletes the audiences associated to the given IDs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1409,7 +1409,7 @@ class AudienceApi(object):
         rm_audience_bulk_update_input_v1,
         **kwargs
     ):
-        """bulk_update_audience  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audiences  # noqa: E501
 
         Updates the properties of all audiences with a valid configuration, and returns their IDs. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1496,7 +1496,7 @@ class AudienceApi(object):
         rm_audience_segment_bulk_update_input_v1,
         **kwargs
     ):
-        """bulk_update_audience_segments  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments  # noqa: E501
 
         Updates the properties of all segments with a valid configuration, and returns the full segments. For those that cannot be updated, one or multiple errors are returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1582,7 +1582,7 @@ class AudienceApi(object):
         audience_segment_id,
         **kwargs
     ):
-        """clear_contact_list_by_audience_segment  # noqa: E501
+        """/preview/retail-media/audience-segments/{audience-segment-id}/contact-list/clear  # noqa: E501
 
         Delete all identifiers from a retail-media contact list audience-segment, with external audience segment id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1666,7 +1666,7 @@ class AudienceApi(object):
         rm_audience_segment_compute_sizes_input_v1,
         **kwargs
     ):
-        """compute_audience_segments_sizes  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments/compute-sizes  # noqa: E501
 
         Gets the size of all segments. An error is returned for those whose size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1753,7 +1753,7 @@ class AudienceApi(object):
         rm_audience_compute_sizes_input_v1,
         **kwargs
     ):
-        """compute_audiences_sizes  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audiences/compute-sizes  # noqa: E501
 
         Gets the size of all audiences. An error is returned for those whose size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1840,7 +1840,7 @@ class AudienceApi(object):
         rm_audience_segment_estimate_size_input_v1,
         **kwargs
     ):
-        """estimate_audience_segment_size  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments/estimate-size  # noqa: E501
 
         Gets the size estimation of a non existent segment. An error is returned when size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1927,7 +1927,7 @@ class AudienceApi(object):
         rm_audience_estimate_size_input_v1,
         **kwargs
     ):
-        """estimate_audience_size  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audiences/estimate-size  # noqa: E501
 
         Gets the size estimation of a non existent audience. An error is returned when size calculation is not supported.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2014,7 +2014,7 @@ class AudienceApi(object):
         audience_segment_id,
         **kwargs
     ):
-        """get_audience_segment_contact_list_statistics  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list  # noqa: E501
 
         Returns the statistics of a contact list segment.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2101,7 +2101,7 @@ class AudienceApi(object):
         rm_audience_segment_search_input_v1,
         **kwargs
     ):
-        """search_audience_segments  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audience-segments/search  # noqa: E501
 
         Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2190,7 +2190,7 @@ class AudienceApi(object):
         rm_audience_search_input_v1,
         **kwargs
     ):
-        """search_audiences  # noqa: E501
+        """/preview/retail-media/accounts/{account-id}/audiences/search  # noqa: E501
 
         Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

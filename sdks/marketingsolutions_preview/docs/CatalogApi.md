@@ -4,15 +4,15 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_catalog_merchant_stats**](CatalogApi.md#get_catalog_merchant_stats) | **GET** /preview/catalog/stats/merchants/{merchant-id} | 
-[**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /preview/catalog/products/batch/report/{operation-token} | 
-[**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /preview/catalog/products/batch | 
+[**get_catalog_merchant_stats**](CatalogApi.md#get_catalog_merchant_stats) | **GET** /preview/catalog/stats/merchants/{merchant-id} | /preview/catalog/stats/merchants/{merchant-id}
+[**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /preview/catalog/products/batch/report/{operation-token} | /preview/catalog/products/batch/report/{operation-token}
+[**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /preview/catalog/products/batch | /preview/catalog/products/batch
 
 
 # **get_catalog_merchant_stats**
 > StatisticsOkResponse get_catalog_merchant_stats(merchant_id)
 
-
+/preview/catalog/stats/merchants/{merchant-id}
 
 get an stats request
 
@@ -59,6 +59,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/catalog/stats/merchants/{merchant-id}
         api_response = api_instance.get_catalog_merchant_stats(merchant_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -67,6 +68,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/catalog/stats/merchants/{merchant-id}
         api_response = api_instance.get_catalog_merchant_stats(merchant_id, last_num_hours=last_num_hours)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -106,7 +108,7 @@ Name | Type | Description  | Notes
 # **get_catalog_products_batch_report**
 > ReportOkResponse get_catalog_products_batch_report(operation_token)
 
-
+/preview/catalog/products/batch/report/{operation-token}
 
 Get the report of an asynchronous batch operation previously requested
 
@@ -152,6 +154,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/catalog/products/batch/report/{operation-token}
         api_response = api_instance.get_catalog_products_batch_report(operation_token)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -190,7 +193,7 @@ Name | Type | Description  | Notes
 # **submit_catalog_products_batch**
 > BatchAcceptedResponse submit_catalog_products_batch(products_custom_batch_request)
 
-
+/preview/catalog/products/batch
 
 Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.
 
@@ -419,6 +422,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/catalog/products/batch
         api_response = api_instance.submit_catalog_products_batch(products_custom_batch_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

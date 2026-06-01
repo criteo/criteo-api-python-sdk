@@ -2157,7 +2157,7 @@ class CampaignApi(object):
         create_ad_set_v26_q1_request,
         **kwargs
     ):
-        """create_ad_set  # noqa: E501
+        """/preview/marketing-solutions/ad-sets  # noqa: E501
 
         Create an ad set with the provided parameters  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2240,7 +2240,7 @@ class CampaignApi(object):
         create_campaign_request,
         **kwargs
     ):
-        """create_campaign  # noqa: E501
+        """/preview/marketing-solutions/campaigns  # noqa: E501
 
         Create the specified campaign                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2323,7 +2323,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """delete_advertiser_bundle_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/bundle-rules  # noqa: E501
 
         Removes some bundles from the current list of targeted bundles for a given advertiser.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2407,7 +2407,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """delete_advertiser_domain_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/domain-rules  # noqa: E501
 
         Removes some domains from the current list of targeted domains for a given advertiser.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2491,7 +2491,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """delete_campaign_bundle_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/bundle-rules  # noqa: E501
 
         Removes some bundles from the current list of targeted bundles for a given campaign.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2575,7 +2575,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """delete_campaign_domain_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/domain-rules  # noqa: E501
 
         Removes some domains from the current list of targeted domains for a given campaign.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2659,7 +2659,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """disable_ad_set_targeting_deal_ids  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable  # noqa: E501
 
         Disable the Deal Id Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2742,7 +2742,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """disable_ad_set_targeting_video_positioning  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable  # noqa: E501
 
         Disable the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2825,7 +2825,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}  # noqa: E501
 
         Get the data for the specified ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2908,7 +2908,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set_category_bids  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids  # noqa: E501
 
         Get the Category Bids for all valid Categories associated to an Ad Set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2991,7 +2991,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set_targeting_deal_ids  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids  # noqa: E501
 
         Get the Deal Id Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3074,7 +3074,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set_targeting_video_positioning  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning  # noqa: E501
 
         Get the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3157,7 +3157,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_advertiser_bundle_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/bundle-rules  # noqa: E501
 
         Returns a list of all targeted bundles for an advertiser.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3240,7 +3240,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_advertiser_domain_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/domain-rules  # noqa: E501
 
         Returns a list of all targeted domains for an advertiser.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3323,7 +3323,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_campaign  # noqa: E501
+        """/preview/marketing-solutions/campaigns/{campaign-id}  # noqa: E501
 
         Get the data for the specified campaign.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3406,7 +3406,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_campaign_bundle_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/bundle-rules  # noqa: E501
 
         Returns a list of all targeted bundles for a campaign.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3489,7 +3489,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_campaign_domain_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/domain-rules  # noqa: E501
 
         Returns a list of all targeted domains for a campaign.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3572,7 +3572,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_display_multipliers  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers  # noqa: E501
 
         Get the Display Multipliers for all valid Categories associated to an Ad Set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3654,7 +3654,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """get_supply_vendor_list  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/targeting/supply-vendors  # noqa: E501
 
         Fetch the list of available supply vendors for any Ad Set targetings  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3734,7 +3734,7 @@ class CampaignApi(object):
         patch_ad_set_category_bid_list_request,
         **kwargs
     ):
-        """patch_ad_set_category_bids  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids  # noqa: E501
 
         Update the Category Bids for given Categories associated to an Ad Set  Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3820,7 +3820,7 @@ class CampaignApi(object):
         requests_patch_ad_set_v26_q1,
         **kwargs
     ):
-        """patch_ad_sets  # noqa: E501
+        """/preview/marketing-solutions/ad-sets  # noqa: E501
 
         Patch a list of AdSets.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3903,7 +3903,7 @@ class CampaignApi(object):
         patch_campaign_list_request,
         **kwargs
     ):
-        """patch_campaigns  # noqa: E501
+        """/preview/marketing-solutions/campaigns  # noqa: E501
 
         Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3987,7 +3987,7 @@ class CampaignApi(object):
         patch_ad_set_display_multiplier_list_request,
         **kwargs
     ):
-        """patch_display_multipliers  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers  # noqa: E501
 
         Update the Display Multipliers for given Categories associated to an Ad Set  Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4074,7 +4074,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """post_advertiser_bundle_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/bundle-rules  # noqa: E501
 
         Inserts a list of targeted bundles for an advertiser and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4161,7 +4161,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """post_advertiser_domain_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/domain-rules  # noqa: E501
 
         Inserts a list of targeted domains for an advertiser and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4248,7 +4248,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """post_campaign_bundle_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/bundle-rules  # noqa: E501
 
         Inserts a list of targeted bundles for a campaign and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4335,7 +4335,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """post_campaign_domain_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/domain-rules  # noqa: E501
 
         Inserts a list of targeted domains for a campaign and sets the targeting mode : blocklisting or allowlisting.<br />  It will replace the current list if any.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4422,7 +4422,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """put_advertiser_bundle_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/bundle-rules  # noqa: E501
 
         Updates the targeted bundles for an advertiser by adding a list of bundles to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4509,7 +4509,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """put_advertiser_domain_rules  # noqa: E501
+        """/preview/advertisers/{advertiserId}/targeting/domain-rules  # noqa: E501
 
         Updates the targeted domains for an advertiser by adding a list of domains to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4596,7 +4596,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """put_campaign_bundle_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/bundle-rules  # noqa: E501
 
         Updates the targeted bundles for a campaign by adding a list of bundles to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4683,7 +4683,7 @@ class CampaignApi(object):
         api_request_of_targeting_entity,
         **kwargs
     ):
-        """put_campaign_domain_rules  # noqa: E501
+        """/preview/campaigns/{campaignId}/targeting/domain-rules  # noqa: E501
 
         Updates the targeted domains for a campaign by adding a list of domains to the current list.<br />  The mode of targeting (allowlist/blocklist) cannot be updated through this method.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4768,7 +4768,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """search_ad_sets  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/search  # noqa: E501
 
         Search for ad sets based on provided criteria.  This returns the full configuration of ad sets matching those criteria.  Field projection can be used if only a subset of fields is required, instead of the full configuration.                If specific fields are precised in the user prompt, use meta.fields field projection in order to query only the value of these fields, else, provide every field.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4847,7 +4847,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """search_campaigns  # noqa: E501
+        """/preview/marketing-solutions/campaigns/search  # noqa: E501
 
         Search endpoint for campaigns                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4928,7 +4928,7 @@ class CampaignApi(object):
         set_ad_set_targeting_deal_ids_request,
         **kwargs
     ):
-        """set_ad_set_targeting_deal_ids  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids  # noqa: E501
 
         Set the Deal Id Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5015,7 +5015,7 @@ class CampaignApi(object):
         set_ad_set_targeting_video_positioning_request,
         **kwargs
     ):
-        """set_ad_set_targeting_video_positioning  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning  # noqa: E501
 
         Set the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5100,7 +5100,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """start_ad_sets  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/start  # noqa: E501
 
         Start the specified list of ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5179,7 +5179,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """stop_ad_sets  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/stop  # noqa: E501
 
         Stop the specified list of ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5260,7 +5260,7 @@ class CampaignApi(object):
         ad_set_audience_link_input_entity_v1,
         **kwargs
     ):
-        """update_ad_set_audience  # noqa: E501
+        """/preview/marketing-solutions/ad-sets/{ad-set-id}/audience  # noqa: E501
 
         Link or unlink an audience with an ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

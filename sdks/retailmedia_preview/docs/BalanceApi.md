@@ -4,16 +4,16 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_balance_history_v1**](BalanceApi.md#get_balance_history_v1) | **GET** /preview/retail-media/balances/{balanceId}/history | 
-[**get_balance_v1**](BalanceApi.md#get_balance_v1) | **GET** /preview/retail-media/balances/{balanceId} | 
-[**get_page_of_balances_v1**](BalanceApi.md#get_page_of_balances_v1) | **GET** /preview/retail-media/accounts/{accountId}/balances | 
-[**update_balance_v1**](BalanceApi.md#update_balance_v1) | **PATCH** /preview/retail-media/accounts/{account-id}/balances/{balance-id} | 
+[**get_balance_history_v1**](BalanceApi.md#get_balance_history_v1) | **GET** /preview/retail-media/balances/{balanceId}/history | /preview/retail-media/balances/{balanceId}/history
+[**get_balance_v1**](BalanceApi.md#get_balance_v1) | **GET** /preview/retail-media/balances/{balanceId} | /preview/retail-media/balances/{balanceId}
+[**get_page_of_balances_v1**](BalanceApi.md#get_page_of_balances_v1) | **GET** /preview/retail-media/accounts/{accountId}/balances | /preview/retail-media/accounts/{accountId}/balances
+[**update_balance_v1**](BalanceApi.md#update_balance_v1) | **PATCH** /preview/retail-media/accounts/{account-id}/balances/{balance-id} | /preview/retail-media/accounts/{account-id}/balances/{balance-id}
 
 
 # **get_balance_history_v1**
 > ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata get_balance_history_v1(balance_id)
 
-
+/preview/retail-media/balances/{balanceId}/history
 
 Gets the balance's historical change data.
 
@@ -62,6 +62,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/balances/{balanceId}/history
         api_response = api_instance.get_balance_history_v1(balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -70,6 +71,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/balances/{balanceId}/history
         api_response = api_instance.get_balance_history_v1(balance_id, limit=limit, limit_to_change_types=limit_to_change_types, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -111,7 +113,7 @@ Name | Type | Description  | Notes
 # **get_balance_v1**
 > EntityResourceOutcomeBalanceV1 get_balance_v1(balance_id)
 
-
+/preview/retail-media/balances/{balanceId}
 
 Get a balance for the given balance id.
 
@@ -157,6 +159,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/balances/{balanceId}
         api_response = api_instance.get_balance_v1(balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -195,7 +198,7 @@ Name | Type | Description  | Notes
 # **get_page_of_balances_v1**
 > EntityResourceCollectionOutcomeBalanceV1AndMetadata get_page_of_balances_v1(account_id)
 
-
+/preview/retail-media/accounts/{accountId}/balances
 
 Gets page of balance objects for the given account id.
 
@@ -246,6 +249,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{accountId}/balances
         api_response = api_instance.get_page_of_balances_v1(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -254,6 +258,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/accounts/{accountId}/balances
         api_response = api_instance.get_page_of_balances_v1(account_id, limit=limit, limit_to_id=limit_to_id, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -295,7 +300,7 @@ Name | Type | Description  | Notes
 # **update_balance_v1**
 > update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
 
-
+/preview/retail-media/accounts/{account-id}/balances/{balance-id}
 
 Modify a balance for the given account id
 
@@ -356,6 +361,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/accounts/{account-id}/balances/{balance-id}
         api_instance.update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling BalanceApi->update_balance_v1: %s\n" % e)

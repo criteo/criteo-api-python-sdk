@@ -395,7 +395,7 @@ class ThirdPartyAccountsApi(object):
         account_id,
         **kwargs
     ):
-        """add_third_party_account_brands  # noqa: E501
+        """/preview/retail-media/third-party-accounts/{accountId}/brands/add  # noqa: E501
 
         add the provided brands to an account. This will not remove any existing brands.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -479,7 +479,7 @@ class ThirdPartyAccountsApi(object):
         account_id,
         **kwargs
     ):
-        """create_third_party_brand_account  # noqa: E501
+        """/preview/retail-media/third-party-accounts/{accountId}/create-brand-account  # noqa: E501
 
         Create a private market demand brand account under a given parent account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -563,7 +563,7 @@ class ThirdPartyAccountsApi(object):
         account_id,
         **kwargs
     ):
-        """create_third_party_seller_account  # noqa: E501
+        """/preview/retail-media/third-party-accounts/{accountId}/create-seller-account  # noqa: E501
 
         Create a private market demand seller account under a given parent account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -647,7 +647,7 @@ class ThirdPartyAccountsApi(object):
         account_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/preview/retail-media/accounts/{accountId}/grant-third-party-consent  # noqa: E501
 
         Grant third-party consent to a business application on behalf of a Private Market demand account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -732,7 +732,7 @@ class ThirdPartyAccountsApi(object):
         brand_id,
         **kwargs
     ):
-        """remove_third_party_account_brand  # noqa: E501
+        """/preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove  # noqa: E501
 
         Attempt to remove the provided brand from the account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -819,7 +819,7 @@ class ThirdPartyAccountsApi(object):
         value_resource_collection_input_of_retail_media_seller,
         **kwargs
     ):
-        """update_third_party_account_sellers  # noqa: E501
+        """/preview/retail-media/third-party-accounts/{accountId}/sellers  # noqa: E501
 
         Update the list of sellers mapped to the account. This will override any existing mappings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

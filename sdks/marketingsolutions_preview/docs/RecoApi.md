@@ -4,26 +4,26 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_boosted_ad_association**](RecoApi.md#create_boosted_ad_association) | **POST** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | 
-[**create_product_set**](RecoApi.md#create_product_set) | **POST** /preview/product-sets | 
-[**delete_boosted_ad_association**](RecoApi.md#delete_boosted_ad_association) | **DELETE** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | 
-[**disable_product_filtering**](RecoApi.md#disable_product_filtering) | **DELETE** /preview/ads/{ad-id}/product-filter | 
-[**enable_product_filtering**](RecoApi.md#enable_product_filtering) | **POST** /preview/ads/{ad-id}/product-filter | 
-[**fetch_boosted_ad_association**](RecoApi.md#fetch_boosted_ad_association) | **GET** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | 
-[**fetch_boosted_ad_association_by_partner_id**](RecoApi.md#fetch_boosted_ad_association_by_partner_id) | **GET** /preview/marketing-solutions/dataset/{dataset-id}/product-boost | 
-[**fetch_boosted_ad_associations**](RecoApi.md#fetch_boosted_ad_associations) | **GET** /preview/marketing-solutions/ads/{ad-id}/product-boost | 
-[**fetch_product_filtering_config**](RecoApi.md#fetch_product_filtering_config) | **GET** /preview/ads/{ad-id}/product-filter | 
-[**fetch_product_filtering_usages**](RecoApi.md#fetch_product_filtering_usages) | **GET** /preview/product-sets/{product-set-id}/product-filters | 
-[**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /preview/product-sets/{product-set-id} | 
-[**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /preview/product-sets/dataset/{dataset-id} | 
-[**patch_product_set**](RecoApi.md#patch_product_set) | **PATCH** /preview/product-sets/{product-set-id} | 
-[**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /preview/product-sets/{product-set-id} | 
+[**create_boosted_ad_association**](RecoApi.md#create_boosted_ad_association) | **POST** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
+[**create_product_set**](RecoApi.md#create_product_set) | **POST** /preview/product-sets | /preview/product-sets
+[**delete_boosted_ad_association**](RecoApi.md#delete_boosted_ad_association) | **DELETE** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
+[**disable_product_filtering**](RecoApi.md#disable_product_filtering) | **DELETE** /preview/ads/{ad-id}/product-filter | /preview/ads/{ad-id}/product-filter
+[**enable_product_filtering**](RecoApi.md#enable_product_filtering) | **POST** /preview/ads/{ad-id}/product-filter | /preview/ads/{ad-id}/product-filter
+[**fetch_boosted_ad_association**](RecoApi.md#fetch_boosted_ad_association) | **GET** /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id} | /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
+[**fetch_boosted_ad_association_by_partner_id**](RecoApi.md#fetch_boosted_ad_association_by_partner_id) | **GET** /preview/marketing-solutions/dataset/{dataset-id}/product-boost | /preview/marketing-solutions/dataset/{dataset-id}/product-boost
+[**fetch_boosted_ad_associations**](RecoApi.md#fetch_boosted_ad_associations) | **GET** /preview/marketing-solutions/ads/{ad-id}/product-boost | /preview/marketing-solutions/ads/{ad-id}/product-boost
+[**fetch_product_filtering_config**](RecoApi.md#fetch_product_filtering_config) | **GET** /preview/ads/{ad-id}/product-filter | /preview/ads/{ad-id}/product-filter
+[**fetch_product_filtering_usages**](RecoApi.md#fetch_product_filtering_usages) | **GET** /preview/product-sets/{product-set-id}/product-filters | /preview/product-sets/{product-set-id}/product-filters
+[**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /preview/product-sets/{product-set-id} | /preview/product-sets/{product-set-id}
+[**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /preview/product-sets/dataset/{dataset-id} | /preview/product-sets/dataset/{dataset-id}
+[**patch_product_set**](RecoApi.md#patch_product_set) | **PATCH** /preview/product-sets/{product-set-id} | /preview/product-sets/{product-set-id}
+[**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /preview/product-sets/{product-set-id} | /preview/product-sets/{product-set-id}
 
 
 # **create_boosted_ad_association**
 > ValueResourceOutcomeOfBoostedAdProductSet create_boosted_ad_association(ad_id, product_set_id)
 
-
+/preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
 
 Create or update product boosting configuration
 
@@ -79,6 +79,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
         api_response = api_instance.create_boosted_ad_association(ad_id, product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -87,6 +88,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
         api_response = api_instance.create_boosted_ad_association(ad_id, product_set_id, value_resource_input_of_boosting_configuration_request=value_resource_input_of_boosting_configuration_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -128,7 +130,7 @@ Name | Type | Description  | Notes
 # **create_product_set**
 > ResourceOutcomeOfProductSet create_product_set(value_resource_input_of_create_product_set_request)
 
-
+/preview/product-sets
 
 Create a new product set
 
@@ -193,6 +195,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/product-sets
         api_response = api_instance.create_product_set(value_resource_input_of_create_product_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -231,7 +234,7 @@ Name | Type | Description  | Notes
 # **delete_boosted_ad_association**
 > ValueResourceOutcomeOfBoostedAdProductSet delete_boosted_ad_association(ad_id, product_set_id)
 
-
+/preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
 
 Delete association and configuration.
 
@@ -278,6 +281,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
         api_response = api_instance.delete_boosted_ad_association(ad_id, product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -317,7 +321,7 @@ Name | Type | Description  | Notes
 # **disable_product_filtering**
 > ValueResourceOutcomeOfProductFilterConfig disable_product_filtering(ad_id)
 
-
+/preview/ads/{ad-id}/product-filter
 
 Disable product filtering for a given ad
 
@@ -363,6 +367,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/ads/{ad-id}/product-filter
         api_response = api_instance.disable_product_filtering(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -401,7 +406,7 @@ Name | Type | Description  | Notes
 # **enable_product_filtering**
 > ValueResourceOutcomeOfProductFilterConfig enable_product_filtering(ad_id)
 
-
+/preview/ads/{ad-id}/product-filter
 
 Enable product filtering for a given ad
 
@@ -456,6 +461,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/ads/{ad-id}/product-filter
         api_response = api_instance.enable_product_filtering(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -464,6 +470,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/ads/{ad-id}/product-filter
         api_response = api_instance.enable_product_filtering(ad_id, value_resource_input_of_create_product_filter_request=value_resource_input_of_create_product_filter_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -503,7 +510,7 @@ Name | Type | Description  | Notes
 # **fetch_boosted_ad_association**
 > ValueResourceOutcomeOfBoostedAdProductSet fetch_boosted_ad_association(ad_id, product_set_id)
 
-
+/preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
 
 Fetch boosting association and configuration
 
@@ -550,6 +557,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ads/{ad-id}/product-boost/{product-set-id}
         api_response = api_instance.fetch_boosted_ad_association(ad_id, product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -589,7 +597,7 @@ Name | Type | Description  | Notes
 # **fetch_boosted_ad_association_by_partner_id**
 > ValueResourceCollectionOutcomeOfBoostedAdProductSet fetch_boosted_ad_association_by_partner_id(dataset_id)
 
-
+/preview/marketing-solutions/dataset/{dataset-id}/product-boost
 
 Fetch boosting association and configuration for a given partner
 
@@ -636,6 +644,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/dataset/{dataset-id}/product-boost
         api_response = api_instance.fetch_boosted_ad_association_by_partner_id(dataset_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -644,6 +653,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/dataset/{dataset-id}/product-boost
         api_response = api_instance.fetch_boosted_ad_association_by_partner_id(dataset_id, client_type=client_type)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -683,7 +693,7 @@ Name | Type | Description  | Notes
 # **fetch_boosted_ad_associations**
 > ValueResourceCollectionOutcomeOfBoostedAdProductSet fetch_boosted_ad_associations(ad_id)
 
-
+/preview/marketing-solutions/ads/{ad-id}/product-boost
 
 Fetch all boosting associations and configurations
 
@@ -729,6 +739,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/ads/{ad-id}/product-boost
         api_response = api_instance.fetch_boosted_ad_associations(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -767,7 +778,7 @@ Name | Type | Description  | Notes
 # **fetch_product_filtering_config**
 > ValueResourceOutcomeOfProductFilterConfig fetch_product_filtering_config(ad_id)
 
-
+/preview/ads/{ad-id}/product-filter
 
 Fetch product filtering configuration for a given ad
 
@@ -813,6 +824,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/ads/{ad-id}/product-filter
         api_response = api_instance.fetch_product_filtering_config(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -851,7 +863,7 @@ Name | Type | Description  | Notes
 # **fetch_product_filtering_usages**
 > ValueResourceCollectionOutcomeOfProductFilterConfig fetch_product_filtering_usages(product_set_id)
 
-
+/preview/product-sets/{product-set-id}/product-filters
 
 Fetch product filtering usages for a given product set
 
@@ -897,6 +909,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/product-sets/{product-set-id}/product-filters
         api_response = api_instance.fetch_product_filtering_usages(product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -935,7 +948,7 @@ Name | Type | Description  | Notes
 # **fetch_product_set**
 > ResourceOutcomeOfProductSet fetch_product_set(product_set_id)
 
-
+/preview/product-sets/{product-set-id}
 
 Fetch an existing product set
 
@@ -981,6 +994,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/product-sets/{product-set-id}
         api_response = api_instance.fetch_product_set(product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1019,7 +1033,7 @@ Name | Type | Description  | Notes
 # **fetch_product_sets**
 > ResourceCollectionOutcomeOfProductSet fetch_product_sets(dataset_id)
 
-
+/preview/product-sets/dataset/{dataset-id}
 
 Fetch product sets of a given dataset
 
@@ -1065,6 +1079,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/product-sets/dataset/{dataset-id}
         api_response = api_instance.fetch_product_sets(dataset_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1103,7 +1118,7 @@ Name | Type | Description  | Notes
 # **patch_product_set**
 > ResourceOutcomeOfProductSet patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request)
 
-
+/preview/product-sets/{product-set-id}
 
 Patch an existing product set
 
@@ -1169,6 +1184,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/product-sets/{product-set-id}
         api_response = api_instance.patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1208,7 +1224,7 @@ Name | Type | Description  | Notes
 # **remove_product_set**
 > Outcome remove_product_set(product_set_id)
 
-
+/preview/product-sets/{product-set-id}
 
 Remove a product set
 
@@ -1254,6 +1270,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/product-sets/{product-set-id}
         api_response = api_instance.remove_product_set(product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

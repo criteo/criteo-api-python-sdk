@@ -102,7 +102,7 @@ class OnSiteRecommendationApi(object):
         inbot_discussion_body_model,
         **kwargs
     ):
-        """chatbot_product_recommendations  # noqa: E501
+        """/preview/retail-media/chatbot-catalogs/{catalogid}/product-recommendations  # noqa: E501
 
         Ask a chatbot for a product recommendation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

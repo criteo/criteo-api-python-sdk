@@ -4,27 +4,27 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_realtime_product_report**](AnalyticsApi.md#create_realtime_product_report) | **POST** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export | 
-[**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /preview/statistics/report | 
-[**get_async_adset_report**](AnalyticsApi.md#get_async_adset_report) | **POST** /preview/reports/async-statistics | 
-[**get_async_audience_report**](AnalyticsApi.md#get_async_audience_report) | **POST** /preview/reports/async-audience-performance | 
-[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/reports/{report-id}/output | 
-[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/reports/{report-id}/status | 
-[**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | 
-[**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | 
-[**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | 
-[**get_realtime_product**](AnalyticsApi.md#get_realtime_product) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId} | 
-[**get_realtime_product_job**](AnalyticsApi.md#get_realtime_product_job) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId} | 
-[**get_realtime_statistics_report**](AnalyticsApi.md#get_realtime_statistics_report) | **POST** /preview/reports/realtime | 
-[**get_top_products_report**](AnalyticsApi.md#get_top_products_report) | **POST** /preview/reports/top-products | 
-[**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | 
-[**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /preview/log-level/advertisers/{advertiser-id}/report | 
+[**create_realtime_product_report**](AnalyticsApi.md#create_realtime_product_report) | **POST** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export | /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
+[**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /preview/statistics/report | /preview/statistics/report
+[**get_async_adset_report**](AnalyticsApi.md#get_async_adset_report) | **POST** /preview/reports/async-statistics | /preview/reports/async-statistics
+[**get_async_audience_report**](AnalyticsApi.md#get_async_audience_report) | **POST** /preview/reports/async-audience-performance | /preview/reports/async-audience-performance
+[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /preview/reports/{report-id}/output | /preview/reports/{report-id}/output
+[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/reports/{report-id}/status | /preview/reports/{report-id}/status
+[**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | /preview/categories/report
+[**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | /preview/reports/creatives
+[**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | /preview/placements/report
+[**get_realtime_product**](AnalyticsApi.md#get_realtime_product) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId} | /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
+[**get_realtime_product_job**](AnalyticsApi.md#get_realtime_product_job) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId} | /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
+[**get_realtime_statistics_report**](AnalyticsApi.md#get_realtime_statistics_report) | **POST** /preview/reports/realtime | /preview/reports/realtime
+[**get_top_products_report**](AnalyticsApi.md#get_top_products_report) | **POST** /preview/reports/top-products | /preview/reports/top-products
+[**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | /preview/transactions/report
+[**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /preview/log-level/advertisers/{advertiser-id}/report | /preview/log-level/advertisers/{advertiser-id}/report
 
 
 # **create_realtime_product_report**
 > RealTimeProductReportJobStatusResponse create_realtime_product_report()
 
-
+/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
 
 This endpoint is subject to specific rate limits.
 
@@ -102,6 +102,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
         api_response = api_instance.create_realtime_product_report(real_time_product_report_job_request=real_time_product_report_job_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -140,7 +141,7 @@ Name | Type | Description  | Notes
 # **get_adset_report**
 > file_type get_adset_report()
 
-
+/preview/statistics/report
 
 This Statistics endpoint provides adset related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.
 
@@ -209,6 +210,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/statistics/report
         api_response = api_instance.get_adset_report(statistics_report_query_message=statistics_report_query_message)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -247,7 +249,7 @@ Name | Type | Description  | Notes
 # **get_async_adset_report**
 > MarketingSolutionsReportStatusResponse get_async_adset_report(generate_statistics_report_request)
 
-
+/preview/reports/async-statistics
 
 This Statistics endpoint provides an export Id that let you retrieve data.
 
@@ -322,6 +324,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/reports/async-statistics
         api_response = api_instance.get_async_adset_report(generate_statistics_report_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -360,7 +363,7 @@ Name | Type | Description  | Notes
 # **get_async_audience_report**
 > MarketingSolutionsReportStatusResponse get_async_audience_report()
 
-
+/preview/reports/async-audience-performance
 
 This Statistics endpoint provides an export Id that lets you retrieve data.
 
@@ -432,6 +435,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/reports/async-audience-performance
         api_response = api_instance.get_async_audience_report(generate_audience_performance_report_request=generate_audience_performance_report_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -470,7 +474,7 @@ Name | Type | Description  | Notes
 # **get_async_export_output**
 > ExportResult get_async_export_output(report_id)
 
-
+/preview/reports/{report-id}/output
 
 This endpoint gives you the output of the report.
 
@@ -516,6 +520,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/reports/{report-id}/output
         api_response = api_instance.get_async_export_output(report_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -554,7 +559,7 @@ Name | Type | Description  | Notes
 # **get_async_export_status**
 > MarketingSolutionsReportStatusResponse get_async_export_status(report_id)
 
-
+/preview/reports/{report-id}/status
 
 This endpoint gives you the status of the report.
 
@@ -600,6 +605,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/reports/{report-id}/status
         api_response = api_instance.get_async_export_status(report_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -638,7 +644,7 @@ Name | Type | Description  | Notes
 # **get_categories_report**
 > file_type get_categories_report()
 
-
+/preview/categories/report
 
 With this endpoint you can analyse what are the categories of the placements' domains your ads are placed in.
 
@@ -703,6 +709,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/categories/report
         api_response = api_instance.get_categories_report(generate_categories_report_request_attributes_request=generate_categories_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -741,7 +748,7 @@ Name | Type | Description  | Notes
 # **get_creatives_report**
 > JsonReportRowsListResponse get_creatives_report(generate_creatives_report_request_attributes_request)
 
-
+/preview/reports/creatives
 
 With Creatives endpoint, you can analyse the daily performances of your creatives on the main metrics: clicks, ctr, displays.
 
@@ -833,6 +840,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/reports/creatives
         api_response = api_instance.get_creatives_report(generate_creatives_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -871,7 +879,7 @@ Name | Type | Description  | Notes
 # **get_placements_report**
 > file_type get_placements_report()
 
-
+/preview/placements/report
 
 Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.
 
@@ -943,6 +951,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/placements/report
         api_response = api_instance.get_placements_report(placements_report_query_message_list_request=placements_report_query_message_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -981,7 +990,7 @@ Name | Type | Description  | Notes
 # **get_realtime_product**
 > FileStreamResultResponse get_realtime_product(report_id)
 
-
+/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
 
 This endpoint is subject to specific rate limits.
 
@@ -1027,6 +1036,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
         api_response = api_instance.get_realtime_product(report_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1065,7 +1075,7 @@ Name | Type | Description  | Notes
 # **get_realtime_product_job**
 > RealTimeProductReportJobStatusResponse get_realtime_product_job(report_id)
 
-
+/preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
 
 ### Example
 
@@ -1109,6 +1119,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
         api_response = api_instance.get_realtime_product_job(report_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1147,7 +1158,7 @@ Name | Type | Description  | Notes
 # **get_realtime_statistics_report**
 > JsonReportRowsListResponse get_realtime_statistics_report()
 
-
+/preview/reports/realtime
 
 With Realtime endpoint, you can analyse the realtime values of the main metrics: displays, clicks, cost.
 
@@ -1215,6 +1226,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/reports/realtime
         api_response = api_instance.get_realtime_statistics_report(generate_realtime_statistics_report_request_attributes_request=generate_realtime_statistics_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1253,7 +1265,7 @@ Name | Type | Description  | Notes
 # **get_top_products_report**
 > JsonReportRowsListResponse get_top_products_report(generate_top_products_report_request_attributes_request)
 
-
+/preview/reports/top-products
 
 With the topProducts endpoint, you can analyse the performances for each publisher, by top displays, top clicks or top sales.
 
@@ -1334,6 +1346,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/reports/top-products
         api_response = api_instance.get_top_products_report(generate_top_products_report_request_attributes_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1372,7 +1385,7 @@ Name | Type | Description  | Notes
 # **get_transactions_report**
 > file_type get_transactions_report()
 
-
+/preview/transactions/report
 
 This Transactions endpoint provides transactions id related data.
 
@@ -1434,6 +1447,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/transactions/report
         api_response = api_instance.get_transactions_report(transactions_report_query_message_list_request=transactions_report_query_message_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1472,7 +1486,7 @@ Name | Type | Description  | Notes
 # **get_transparency_report**
 > TransparencyReportListResponse get_transparency_report(advertiser_id)
 
-
+/preview/log-level/advertisers/{advertiser-id}/report
 
 This Statistics endpoint provides publisher data.
 
@@ -1524,6 +1538,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/log-level/advertisers/{advertiser-id}/report
         api_response = api_instance.get_transparency_report(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
@@ -1532,6 +1547,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/log-level/advertisers/{advertiser-id}/report
         api_response = api_instance.get_transparency_report(advertiser_id, transparency_query_message=transparency_query_message)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:

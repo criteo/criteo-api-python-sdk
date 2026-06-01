@@ -4,18 +4,18 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_third_party_account_brands**](ThirdPartyAccountsApi.md#add_third_party_account_brands) | **POST** /preview/retail-media/third-party-accounts/{accountId}/brands/add | 
-[**create_third_party_brand_account**](ThirdPartyAccountsApi.md#create_third_party_brand_account) | **POST** /preview/retail-media/third-party-accounts/{accountId}/create-brand-account | 
-[**create_third_party_seller_account**](ThirdPartyAccountsApi.md#create_third_party_seller_account) | **POST** /preview/retail-media/third-party-accounts/{accountId}/create-seller-account | 
-[**grant_third_party_consent**](ThirdPartyAccountsApi.md#grant_third_party_consent) | **POST** /preview/retail-media/accounts/{accountId}/grant-third-party-consent | 
-[**remove_third_party_account_brand**](ThirdPartyAccountsApi.md#remove_third_party_account_brand) | **POST** /preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove | 
-[**update_third_party_account_sellers**](ThirdPartyAccountsApi.md#update_third_party_account_sellers) | **PUT** /preview/retail-media/third-party-accounts/{accountId}/sellers | 
+[**add_third_party_account_brands**](ThirdPartyAccountsApi.md#add_third_party_account_brands) | **POST** /preview/retail-media/third-party-accounts/{accountId}/brands/add | /preview/retail-media/third-party-accounts/{accountId}/brands/add
+[**create_third_party_brand_account**](ThirdPartyAccountsApi.md#create_third_party_brand_account) | **POST** /preview/retail-media/third-party-accounts/{accountId}/create-brand-account | /preview/retail-media/third-party-accounts/{accountId}/create-brand-account
+[**create_third_party_seller_account**](ThirdPartyAccountsApi.md#create_third_party_seller_account) | **POST** /preview/retail-media/third-party-accounts/{accountId}/create-seller-account | /preview/retail-media/third-party-accounts/{accountId}/create-seller-account
+[**grant_third_party_consent**](ThirdPartyAccountsApi.md#grant_third_party_consent) | **POST** /preview/retail-media/accounts/{accountId}/grant-third-party-consent | /preview/retail-media/accounts/{accountId}/grant-third-party-consent
+[**remove_third_party_account_brand**](ThirdPartyAccountsApi.md#remove_third_party_account_brand) | **POST** /preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove | /preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove
+[**update_third_party_account_sellers**](ThirdPartyAccountsApi.md#update_third_party_account_sellers) | **PUT** /preview/retail-media/third-party-accounts/{accountId}/sellers | /preview/retail-media/third-party-accounts/{accountId}/sellers
 
 
 # **add_third_party_account_brands**
 > ValueResourceOutcomeOfRetailMediaBrands add_third_party_account_brands(account_id)
 
-
+/preview/retail-media/third-party-accounts/{accountId}/brands/add
 
 add the provided brands to an account. This will not remove any existing brands.
 
@@ -72,6 +72,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/brands/add
         api_response = api_instance.add_third_party_account_brands(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -80,6 +81,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/brands/add
         api_response = api_instance.add_third_party_account_brands(account_id, value_resource_input_of_retail_media_brands=value_resource_input_of_retail_media_brands)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -119,7 +121,7 @@ Name | Type | Description  | Notes
 # **create_third_party_brand_account**
 > EntityResourceOutcomeOfRetailMediaAccountV2 create_third_party_brand_account(account_id)
 
-
+/preview/retail-media/third-party-accounts/{accountId}/create-brand-account
 
 Create a private market demand brand account under a given parent account.
 
@@ -179,6 +181,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/create-brand-account
         api_response = api_instance.create_third_party_brand_account(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -187,6 +190,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/create-brand-account
         api_response = api_instance.create_third_party_brand_account(account_id, value_resource_input_of_retail_media_brand_account_creation_v2=value_resource_input_of_retail_media_brand_account_creation_v2)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -226,7 +230,7 @@ Name | Type | Description  | Notes
 # **create_third_party_seller_account**
 > EntityResourceOutcomeOfRetailMediaAccountV2 create_third_party_seller_account(account_id)
 
-
+/preview/retail-media/third-party-accounts/{accountId}/create-seller-account
 
 Create a private market demand seller account under a given parent account.
 
@@ -289,6 +293,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/create-seller-account
         api_response = api_instance.create_third_party_seller_account(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -297,6 +302,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/create-seller-account
         api_response = api_instance.create_third_party_seller_account(account_id, value_resource_input_of_retail_media_seller_account_creation_v2=value_resource_input_of_retail_media_seller_account_creation_v2)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -336,7 +342,7 @@ Name | Type | Description  | Notes
 # **grant_third_party_consent**
 > grant_third_party_consent(account_id)
 
-
+/preview/retail-media/accounts/{accountId}/grant-third-party-consent
 
 Grant third-party consent to a business application on behalf of a Private Market demand account
 
@@ -392,7 +398,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # 
+        # /preview/retail-media/accounts/{accountId}/grant-third-party-consent
         api_instance.grant_third_party_consent(account_id)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling ThirdPartyAccountsApi->grant_third_party_consent: %s\n" % e)
@@ -400,7 +406,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # 
+        # /preview/retail-media/accounts/{accountId}/grant-third-party-consent
         api_instance.grant_third_party_consent(account_id, grant_consent_input=grant_consent_input)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling ThirdPartyAccountsApi->grant_third_party_consent: %s\n" % e)
@@ -439,7 +445,7 @@ void (empty response body)
 # **remove_third_party_account_brand**
 > ValueResourceOutcomeOfRetailMediaBrands remove_third_party_account_brand(account_id, brand_id)
 
-
+/preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove
 
 Attempt to remove the provided brand from the account.
 
@@ -486,6 +492,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove
         api_response = api_instance.remove_third_party_account_brand(account_id, brand_id)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
@@ -525,7 +532,7 @@ Name | Type | Description  | Notes
 # **update_third_party_account_sellers**
 > ValueResourceCollectionOutcomeOfRetailMediaSeller update_third_party_account_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
 
-
+/preview/retail-media/third-party-accounts/{accountId}/sellers
 
 Update the list of sellers mapped to the account. This will override any existing mappings.
 
@@ -583,6 +590,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /preview/retail-media/third-party-accounts/{accountId}/sellers
         api_response = api_instance.update_third_party_account_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
