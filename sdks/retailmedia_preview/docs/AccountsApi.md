@@ -5,6 +5,7 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_private_market_child_accounts_by_account_id**](AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | /preview/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
+[**search_brands**](AccountsApi.md#search_brands) | **POST** /preview/retail-media/brands/search | /preview/retail-media/brands/search
 
 
 # **get_private_market_child_accounts_by_account_id**
@@ -94,6 +95,108 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_brands**
+> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands()
+
+/preview/retail-media/brands/search
+
+Search for brands given a retailer ID and search term.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_preview
+from criteo_api_retailmedia_preview.api import accounts_api
+from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounts_api.AccountsApi(api_client)
+    limit = 25 # int | the number of brands to return (optional) if omitted the server will use the default value of 25
+    offset = 0 # int | offset of paginated results (optional) if omitted the server will use the default value of 0
+    value_resource_input_brand_id_search_request = ValueResourceInputBrandIdSearchRequest(
+        data=ValueResourceBrandIdSearchRequest(
+            attributes=BrandIdSearchRequest(
+                brand_type="uc",
+                name="name_example",
+                retailer_ids=[
+                    1,
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputBrandIdSearchRequest | BrandIdSearchRequest which contains the request parameters (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /preview/retail-media/brands/search
+        api_response = api_instance.search_brands(limit=limit, offset=offset, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_preview.ApiException as e:
+        print("Exception when calling AccountsApi->search_brands: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| the number of brands to return | [optional] if omitted the server will use the default value of 25
+ **offset** | **int**| offset of paginated results | [optional] if omitted the server will use the default value of 0
+ **value_resource_input_brand_id_search_request** | [**ValueResourceInputBrandIdSearchRequest**](ValueResourceInputBrandIdSearchRequest.md)| BrandIdSearchRequest which contains the request parameters | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata**](EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 

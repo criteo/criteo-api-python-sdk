@@ -27,7 +27,6 @@ Method | HTTP request | Description
 [**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/pause | /preview/retail-media/line-items/{line-item-id}/products/pause
 [**search_account_creatives**](CampaignApi.md#search_account_creatives) | **POST** /preview/retail-media/accounts/{account-id}/creatives/search | /preview/retail-media/accounts/{account-id}/creatives/search
 [**search_account_retailers**](CampaignApi.md#search_account_retailers) | **POST** /preview/retail-media/accounts/{accountId}/retailers/search | /preview/retail-media/accounts/{accountId}/retailers/search
-[**search_brands**](CampaignApi.md#search_brands) | **POST** /preview/retail-media/brands/search | /preview/retail-media/brands/search
 [**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /preview/retail-media/line-items/{line-item-id}/products/unpause | /preview/retail-media/line-items/{line-item-id}/products/unpause
 [**update_auction_line_item**](CampaignApi.md#update_auction_line_item) | **PUT** /preview/retail-media/auction-line-items/{lineItemId} | /preview/retail-media/auction-line-items/{lineItemId}
 [**update_creative**](CampaignApi.md#update_creative) | **PUT** /preview/retail-media/accounts/{account-id}/creatives/{creative-id} | /preview/retail-media/accounts/{account-id}/creatives/{creative-id}
@@ -2353,108 +2352,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EntityResourceCollectionOutcomeOfRetailerResultAndMetadata**](EntityResourceCollectionOutcomeOfRetailerResultAndMetadata.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **search_brands**
-> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands()
-
-/preview/retail-media/brands/search
-
-Search for brands given a retailer ID and search term.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_preview
-from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    limit = 25 # int | the number of brands to return (optional) if omitted the server will use the default value of 25
-    offset = 0 # int | offset of paginated results (optional) if omitted the server will use the default value of 0
-    value_resource_input_brand_id_search_request = ValueResourceInputBrandIdSearchRequest(
-        data=ValueResourceBrandIdSearchRequest(
-            attributes=BrandIdSearchRequest(
-                brand_type="uc",
-                name="name_example",
-                retailer_ids=[
-                    1,
-                ],
-            ),
-            type="type_example",
-        ),
-    ) # ValueResourceInputBrandIdSearchRequest | BrandIdSearchRequest which contains the request parameters (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # /preview/retail-media/brands/search
-        api_response = api_instance.search_brands(limit=limit, offset=offset, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_preview.ApiException as e:
-        print("Exception when calling CampaignApi->search_brands: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| the number of brands to return | [optional] if omitted the server will use the default value of 25
- **offset** | **int**| offset of paginated results | [optional] if omitted the server will use the default value of 0
- **value_resource_input_brand_id_search_request** | [**ValueResourceInputBrandIdSearchRequest**](ValueResourceInputBrandIdSearchRequest.md)| BrandIdSearchRequest which contains the request parameters | [optional]
-
-### Return type
-
-[**EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata**](EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata.md)
 
 ### Authorization
 

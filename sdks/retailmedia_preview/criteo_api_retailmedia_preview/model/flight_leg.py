@@ -125,8 +125,8 @@ class FlightLeg(ModelNormal):
 
         Args:
             day_of_week (str): Enum for the days of the week.
-            end_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 23:59.
-            start_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 08:00.
+            end_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone.
+            start_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -218,8 +218,8 @@ class FlightLeg(ModelNormal):
 
         Args:
             day_of_week (str): Enum for the days of the week.
-            end_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 23:59.
-            start_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone. Example: 08:00.
+            end_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone.
+            start_time (str): Wall-clock time of day in HH:mm, 24-hour. No timezone.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
