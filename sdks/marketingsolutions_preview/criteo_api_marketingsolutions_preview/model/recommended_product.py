@@ -91,6 +91,7 @@ class RecommendedProduct(ModelNormal):
             'click_url': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
             'google_category': (str, none_type,),  # noqa: E501
+            'has_variants': (bool, none_type,),  # noqa: E501
             'image_url': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'price': (float, none_type,),  # noqa: E501
@@ -111,6 +112,7 @@ class RecommendedProduct(ModelNormal):
         'click_url': 'clickUrl',  # noqa: E501
         'description': 'description',  # noqa: E501
         'google_category': 'googleCategory',  # noqa: E501
+        'has_variants': 'hasVariants',  # noqa: E501
         'image_url': 'imageUrl',  # noqa: E501
         'name': 'name',  # noqa: E501
         'price': 'price',  # noqa: E501
@@ -166,6 +168,7 @@ class RecommendedProduct(ModelNormal):
             click_url (str, none_type): Url leading to product details page and also used to track user click. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
+            has_variants (bool, none_type): Whether the product has variants available.. [optional]  # noqa: E501
             image_url (str, none_type): Product image.. [optional]  # noqa: E501
             name (str, none_type): Product name. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501
@@ -263,6 +266,7 @@ class RecommendedProduct(ModelNormal):
             click_url (str, none_type): Url leading to product details page and also used to track user click. [optional]  # noqa: E501
             description (str, none_type): Product description.. [optional]  # noqa: E501
             google_category (str, none_type): Product google category.. [optional]  # noqa: E501
+            has_variants (bool, none_type): Whether the product has variants available.. [optional]  # noqa: E501
             image_url (str, none_type): Product image.. [optional]  # noqa: E501
             name (str, none_type): Product name. [optional]  # noqa: E501
             price (float, none_type): Product price.. [optional]  # noqa: E501

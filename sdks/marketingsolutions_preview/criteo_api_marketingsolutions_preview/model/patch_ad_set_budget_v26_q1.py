@@ -88,6 +88,12 @@ class PatchAdSetBudgetV26Q1(ModelNormal):
             'CAPPED': "capped",
             'UNCAPPED': "uncapped",
         },
+        ('pacing_behavior',): {
+            'None': None,
+            'UNDEFINED': "undefined",
+            'TARGETFULLBUDGET': "targetFullBudget",
+            'TARGETAVERAGEDAILYBUDGET': "targetAverageDailyBudget",
+        },
     }
 
     validations = {
@@ -121,6 +127,7 @@ class PatchAdSetBudgetV26Q1(ModelNormal):
             'budget_delivery_week': (str, none_type,),  # noqa: E501
             'budget_renewal': (str, none_type,),  # noqa: E501
             'budget_strategy': (str, none_type,),  # noqa: E501
+            'pacing_behavior': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -134,6 +141,7 @@ class PatchAdSetBudgetV26Q1(ModelNormal):
         'budget_delivery_week': 'budgetDeliveryWeek',  # noqa: E501
         'budget_renewal': 'budgetRenewal',  # noqa: E501
         'budget_strategy': 'budgetStrategy',  # noqa: E501
+        'pacing_behavior': 'pacingBehavior',  # noqa: E501
     }
 
     read_only_vars = {
@@ -182,6 +190,7 @@ class PatchAdSetBudgetV26Q1(ModelNormal):
             budget_delivery_week (str, none_type): Defines which day-of-week boundaries are used for weekly budget renewal. Only applicable when budgetStrategy is \"capped\", budgetRenewal is \"weekly\", and budgetDeliverySmoothing is \"standard\".  - \"mondayToSunday\", \"tuesdayToMonday\", etc.: the day range over which the weekly budget is paced. Changing this value on the active budget also propagates to all scheduled budgets of the same ad set.  - \"undefined\": used when budgetStrategy is \"uncapped\", when budgetRenewal is not \"weekly\", or when budgetDeliverySmoothing is \"accelerated\".. [optional]  # noqa: E501
             budget_renewal (str, none_type): The period over which the budget is spent.  - \"daily\", \"monthly\", \"weekly\": budget resets at the start of each period.  - \"lifetime\": budget covers the entire ad set duration without resetting.  - \"undefined\": only used when budgetStrategy is \"uncapped\" (no renewal applies). Required for capped budgets (must not be \"undefined\").. [optional]  # noqa: E501
             budget_strategy (str, none_type): Controls whether the ad set has a spending limit.  - \"capped\": spending is limited to budgetAmount. Requires budgetAmount (non-null), budgetRenewal (not \"undefined\"), and budgetDeliverySmoothing (not null).  - \"uncapped\": no spending limit. budgetAmount is null, budgetRenewal is \"undefined\", and budgetDeliverySmoothing is null.. [optional]  # noqa: E501
+            pacing_behavior (str, none_type): Controls how a standard capped budget is paced.  - \"targetFullBudget\": spend toward the full budget amount within the renewal period.  - \"targetAverageDailyBudget\": spend toward an average daily amount. Only supported for capped, standard, monthly budgets.  - \"undefined\": no explicit pacing behavior. Required for uncapped budgets and accelerated budgets.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -272,6 +281,7 @@ class PatchAdSetBudgetV26Q1(ModelNormal):
             budget_delivery_week (str, none_type): Defines which day-of-week boundaries are used for weekly budget renewal. Only applicable when budgetStrategy is \"capped\", budgetRenewal is \"weekly\", and budgetDeliverySmoothing is \"standard\".  - \"mondayToSunday\", \"tuesdayToMonday\", etc.: the day range over which the weekly budget is paced. Changing this value on the active budget also propagates to all scheduled budgets of the same ad set.  - \"undefined\": used when budgetStrategy is \"uncapped\", when budgetRenewal is not \"weekly\", or when budgetDeliverySmoothing is \"accelerated\".. [optional]  # noqa: E501
             budget_renewal (str, none_type): The period over which the budget is spent.  - \"daily\", \"monthly\", \"weekly\": budget resets at the start of each period.  - \"lifetime\": budget covers the entire ad set duration without resetting.  - \"undefined\": only used when budgetStrategy is \"uncapped\" (no renewal applies). Required for capped budgets (must not be \"undefined\").. [optional]  # noqa: E501
             budget_strategy (str, none_type): Controls whether the ad set has a spending limit.  - \"capped\": spending is limited to budgetAmount. Requires budgetAmount (non-null), budgetRenewal (not \"undefined\"), and budgetDeliverySmoothing (not null).  - \"uncapped\": no spending limit. budgetAmount is null, budgetRenewal is \"undefined\", and budgetDeliverySmoothing is null.. [optional]  # noqa: E501
+            pacing_behavior (str, none_type): Controls how a standard capped budget is paced.  - \"targetFullBudget\": spend toward the full budget amount within the renewal period.  - \"targetAverageDailyBudget\": spend toward an average daily amount. Only supported for capped, standard, monthly budgets.  - \"undefined\": no explicit pacing behavior. Required for uncapped budgets and accelerated budgets.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

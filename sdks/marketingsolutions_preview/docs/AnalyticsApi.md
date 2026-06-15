@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
 
-This endpoint is subject to specific rate limits.
+This endpoint is subject to specific rate limits.  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -992,7 +992,7 @@ Name | Type | Description  | Notes
 
 /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
 
-This endpoint is subject to specific rate limits.
+This endpoint is subject to specific rate limits.  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -1032,7 +1032,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    report_id = "reportId_example" # str | 
+    report_id = "reportId_example" # str | Unique ID (UUID) of the report to retrieve.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1048,7 +1048,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **str**|  |
+ **report_id** | **str**| Unique ID (UUID) of the report to retrieve. |
 
 ### Return type
 
@@ -1076,6 +1076,8 @@ Name | Type | Description  | Notes
 > RealTimeProductReportJobStatusResponse get_realtime_product_job(report_id)
 
 /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
+
+This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -1115,7 +1117,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    report_id = "reportId_example" # str | 
+    report_id = "reportId_example" # str | Unique ID (UUID) of the report job.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1131,7 +1133,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **str**|  |
+ **report_id** | **str**| Unique ID (UUID) of the report job. |
 
 ### Return type
 

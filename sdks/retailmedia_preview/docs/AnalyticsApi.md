@@ -798,9 +798,15 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 account_ids=[
                     "account_ids_example",
                 ],
+                activation_platforms=[
+                    "commerceMax",
+                ],
                 aggregation_level="category",
                 brand_ids=[
                     "brand_ids_example",
+                ],
+                budget_models=[
+                    "criteoBudget",
                 ],
                 campaign_type="all",
                 dimensions=[
@@ -821,12 +827,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                     "retailer_ids_example",
                 ],
                 served_categories=[
-                    ServedCategoryFilter(
-                        retailer_id="retailer_id_example",
-                        served_categories=[
-                            "served_categories_example",
-                        ],
-                    ),
+                    "served_categories_example",
                 ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
             ),

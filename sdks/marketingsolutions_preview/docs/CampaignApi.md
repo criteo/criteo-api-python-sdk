@@ -107,6 +107,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     budget_delivery_week="undefined",
                     budget_renewal="undefined",
                     budget_strategy="capped",
+                    pacing_behavior="undefined",
                 ),
                 campaign_id="campaign_id_example",
                 dataset_id="dataset_id_example",
@@ -2018,6 +2019,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                         budget_delivery_week="undefined",
                         budget_renewal="undefined",
                         budget_strategy="capped",
+                        pacing_behavior="undefined",
                     ),
                     name="name_example",
                     scheduling=PatchAdSetSchedulingV26Q1(

@@ -902,7 +902,7 @@ class AnalyticsApi(object):
     ):
         """/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export  # noqa: E501
 
-        This endpoint is subject to specific rate limits.  # noqa: E501
+        This endpoint is subject to specific rate limits.  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1630,7 +1630,7 @@ class AnalyticsApi(object):
     ):
         """/preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}  # noqa: E501
 
-        This endpoint is subject to specific rate limits.  # noqa: E501
+        This endpoint is subject to specific rate limits.  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1638,7 +1638,7 @@ class AnalyticsApi(object):
         >>> result = thread.get()
 
         Args:
-            report_id (str):
+            report_id (str): Unique ID (UUID) of the report to retrieve.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1713,6 +1713,7 @@ class AnalyticsApi(object):
     ):
         """/preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}  # noqa: E501
 
+        This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1720,7 +1721,7 @@ class AnalyticsApi(object):
         >>> result = thread.get()
 
         Args:
-            report_id (str):
+            report_id (str): Unique ID (UUID) of the report job.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
