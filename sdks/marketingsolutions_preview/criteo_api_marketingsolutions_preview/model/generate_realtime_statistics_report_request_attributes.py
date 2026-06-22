@@ -140,7 +140,7 @@ class GenerateRealtimeStatisticsReportRequestAttributes(ModelNormal):
         """GenerateRealtimeStatisticsReportRequestAttributes - a model defined in OpenAPI
 
         Args:
-            advertiser_ids ([str]): List of advertiser ids to report on.
+            advertiser_ids ([str]): List of advertiser IDs to report on. The advertisers must already exist. Between 1 and 10 advertiser IDs can be provided.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -173,13 +173,13 @@ class GenerateRealtimeStatisticsReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            adset_ids ([str], none_type): List of adset ids to filter.. [optional]  # noqa: E501
-            campaign_ids ([str], none_type): List of campaign ids to filter.. [optional]  # noqa: E501
+            adset_ids ([str], none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Optional list of campaign IDs to filter on. The campaigns must already exist. If empty, all campaigns will be included.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional] if omitted the server will use the default value of "EUR"  # noqa: E501
-            dimensions ([str], none_type): List of dimensions for the report.. [optional] if omitted the server will use the default value of ["AdvertiserId","Advertiser","CampaignId","Campaign","AdsetId","Adset","Day","Hour"]  # noqa: E501
-            lookback_window (int): The number of hours to consider in the past.. [optional] if omitted the server will use the default value of 12  # noqa: E501
-            metrics ([str], none_type): List of metrics for the report.. [optional] if omitted the server will use the default value of ["Displays","Clicks","Cost"]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            dimensions ([str], none_type): List of dimensions for the report. If not included, the default list of dimensions will be used.. [optional] if omitted the server will use the default value of ["AdvertiserId","Advertiser","CampaignId","Campaign","AdsetId","Adset","Day","Hour"]  # noqa: E501
+            lookback_window (int): Optional number of hours to consider in the past.. [optional] if omitted the server will use the default value of 12  # noqa: E501
+            metrics ([str], none_type): List of metrics for the report. If included, at least one metric should be provided.. [optional] if omitted the server will use the default value of ["Displays","Clicks","Cost"]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,7 +236,7 @@ class GenerateRealtimeStatisticsReportRequestAttributes(ModelNormal):
         """GenerateRealtimeStatisticsReportRequestAttributes - a model defined in OpenAPI
 
         Args:
-            advertiser_ids ([str]): List of advertiser ids to report on.
+            advertiser_ids ([str]): List of advertiser IDs to report on. The advertisers must already exist. Between 1 and 10 advertiser IDs can be provided.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -269,13 +269,13 @@ class GenerateRealtimeStatisticsReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            adset_ids ([str], none_type): List of adset ids to filter.. [optional]  # noqa: E501
-            campaign_ids ([str], none_type): List of campaign ids to filter.. [optional]  # noqa: E501
+            adset_ids ([str], none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Optional list of campaign IDs to filter on. The campaigns must already exist. If empty, all campaigns will be included.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional] if omitted the server will use the default value of "EUR"  # noqa: E501
-            dimensions ([str], none_type): List of dimensions for the report.. [optional] if omitted the server will use the default value of ["AdvertiserId","Advertiser","CampaignId","Campaign","AdsetId","Adset","Day","Hour"]  # noqa: E501
-            lookback_window (int): The number of hours to consider in the past.. [optional] if omitted the server will use the default value of 12  # noqa: E501
-            metrics ([str], none_type): List of metrics for the report.. [optional] if omitted the server will use the default value of ["Displays","Clicks","Cost"]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            dimensions ([str], none_type): List of dimensions for the report. If not included, the default list of dimensions will be used.. [optional] if omitted the server will use the default value of ["AdvertiserId","Advertiser","CampaignId","Campaign","AdsetId","Adset","Day","Hour"]  # noqa: E501
+            lookback_window (int): Optional number of hours to consider in the past.. [optional] if omitted the server will use the default value of 12  # noqa: E501
+            metrics ([str], none_type): List of metrics for the report. If included, at least one metric should be provided.. [optional] if omitted the server will use the default value of ["Displays","Clicks","Cost"]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

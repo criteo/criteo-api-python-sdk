@@ -352,7 +352,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
                 ),
                 memo="memo_example",
                 name="name_example",
-                po_number="po_number_example",
+                retailer_po_number="retailer_po_number_example",
                 start_date="start_date_example",
             ),
             type="type_example",

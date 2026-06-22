@@ -60,6 +60,12 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
             'DISPLAYS': "Displays",
             'SALES': "Sales",
         },
+        ('ad_set_status',): {
+            'None': None,
+            'ACTIVE': "Active",
+            'NOTRUNNING': "NotRunning",
+            'DEAD': "Dead",
+        },
         ('dimensions',): {
             'None': None,
             'CAMPAIGN': "Campaign",
@@ -88,6 +94,10 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
     }
 
     validations = {
+        ('limit',): {
+            'inclusive_maximum': 200,
+            'inclusive_minimum': 1,
+        },
     }
 
     additional_properties_type = None
@@ -106,6 +116,7 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
         """
         return {
             'advertiser_id': (str,),  # noqa: E501
+            'currency': (str,),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
             'rank_products_by': (str,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
@@ -114,7 +125,6 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
             'brands': ([str], none_type,),  # noqa: E501
             'campaign_ids': ([str], none_type,),  # noqa: E501
             'category_ids': ([str], none_type,),  # noqa: E501
-            'currency': (str, none_type,),  # noqa: E501
             'dimensions': ([str], none_type,),  # noqa: E501
             'limit': (int,),  # noqa: E501
             'metrics': ([str], none_type,),  # noqa: E501
@@ -128,6 +138,7 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
 
     attribute_map = {
         'advertiser_id': 'advertiserId',  # noqa: E501
+        'currency': 'currency',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'rank_products_by': 'rankProductsBy',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
@@ -136,7 +147,6 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
         'brands': 'brands',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
         'category_ids': 'categoryIds',  # noqa: E501
-        'currency': 'currency',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'limit': 'limit',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
@@ -154,12 +164,13 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
         """GenerateTopProductsReportRequestAttributes - a model defined in OpenAPI
 
         Args:
-            advertiser_id (str): The client id.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            rank_products_by (str): The metric used to filter the top products.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            advertiser_id (str): The advertiser ID to report on. The advertiser must already exist. At least one advertiser ID should be provided
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            rank_products_by (str): Optional metric used to rank the top products. Allowed values: 'Clicks', 'Displays', 'Sales'.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
+            currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).. defaults to "EUR"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -190,18 +201,18 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str], none_type): The list of adSet ids.. [optional]  # noqa: E501
-            ad_set_status ([str], none_type): The list of adSet status (ex: 'Active','NotRunning').. [optional]  # noqa: E501
-            brands ([str], none_type): The list of brands names.. [optional]  # noqa: E501
-            campaign_ids ([str], none_type): The list of campaign ids.. [optional]  # noqa: E501
-            category_ids ([str], none_type): The list of category ids.. [optional]  # noqa: E501
-            currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional] if omitted the server will use the default value of "EUR"  # noqa: E501
-            dimensions ([str], none_type): The dimensions for the report.. [optional]  # noqa: E501
-            limit (int): The maximum number of top products returned.. [optional]  # noqa: E501
-            metrics ([str], none_type): The list of metrics to report.. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            ad_set_ids ([str], none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            ad_set_status ([str], none_type): Optional list of ad set statuses to filter on. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            brands ([str], none_type): Optional list of brand names to filter on. If empty, all brands will be included.. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Optional list of campaign IDs to filter on. The campaigns must already exist. If empty, all campaigns will be included.. [optional]  # noqa: E501
+            category_ids ([str], none_type): Optional list of product catalog category IDs to filter on. If empty, all categories will be included.. [optional]  # noqa: E501
+            dimensions ([str], none_type): Optional list of dimensions for the report. If not provided, defaults to [ProductId, Product, ProductUrl]. When an ID dimension is requested (e.g., CampaignId), the corresponding name dimension (e.g., Campaign) is automatically included, and vice versa. This applies to the following pairs: CampaignId/Campaign, AdSetId/AdSet, ProductId/Product, CategoryId/Category, AdvertiserId/Advertiser.. [optional]  # noqa: E501
+            limit (int): Optional maximum number of top products returned. Must be between 1 and 200.. [optional] if omitted the server will use the default value of 200  # noqa: E501
+            metrics ([str], none_type): Optional list of metrics to report. If not provided, defaults to the metric specified in rankProductsBy.. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
+        currency = kwargs.get('currency', "EUR")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -232,6 +243,7 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.advertiser_id = advertiser_id
+        self.currency = currency
         self.end_date = end_date
         self.rank_products_by = rank_products_by
         self.start_date = start_date
@@ -259,12 +271,13 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
         """GenerateTopProductsReportRequestAttributes - a model defined in OpenAPI
 
         Args:
-            advertiser_id (str): The client id.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            rank_products_by (str): The metric used to filter the top products.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            advertiser_id (str): The advertiser ID to report on. The advertiser must already exist. At least one advertiser ID should be provided
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            rank_products_by (str): Optional metric used to rank the top products. Allowed values: 'Clicks', 'Displays', 'Sales'.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
+            currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).. defaults to "EUR"  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -295,18 +308,18 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str], none_type): The list of adSet ids.. [optional]  # noqa: E501
-            ad_set_status ([str], none_type): The list of adSet status (ex: 'Active','NotRunning').. [optional]  # noqa: E501
-            brands ([str], none_type): The list of brands names.. [optional]  # noqa: E501
-            campaign_ids ([str], none_type): The list of campaign ids.. [optional]  # noqa: E501
-            category_ids ([str], none_type): The list of category ids.. [optional]  # noqa: E501
-            currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional] if omitted the server will use the default value of "EUR"  # noqa: E501
-            dimensions ([str], none_type): The dimensions for the report.. [optional]  # noqa: E501
-            limit (int): The maximum number of top products returned.. [optional]  # noqa: E501
-            metrics ([str], none_type): The list of metrics to report.. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            ad_set_ids ([str], none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            ad_set_status ([str], none_type): Optional list of ad set statuses to filter on. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            brands ([str], none_type): Optional list of brand names to filter on. If empty, all brands will be included.. [optional]  # noqa: E501
+            campaign_ids ([str], none_type): Optional list of campaign IDs to filter on. The campaigns must already exist. If empty, all campaigns will be included.. [optional]  # noqa: E501
+            category_ids ([str], none_type): Optional list of product catalog category IDs to filter on. If empty, all categories will be included.. [optional]  # noqa: E501
+            dimensions ([str], none_type): Optional list of dimensions for the report. If not provided, defaults to [ProductId, Product, ProductUrl]. When an ID dimension is requested (e.g., CampaignId), the corresponding name dimension (e.g., Campaign) is automatically included, and vice versa. This applies to the following pairs: CampaignId/Campaign, AdSetId/AdSet, ProductId/Product, CategoryId/Category, AdvertiserId/Advertiser.. [optional]  # noqa: E501
+            limit (int): Optional maximum number of top products returned. Must be between 1 and 200.. [optional] if omitted the server will use the default value of 200  # noqa: E501
+            metrics ([str], none_type): Optional list of metrics to report. If not provided, defaults to the metric specified in rankProductsBy.. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
+        currency = kwargs.get('currency', "EUR")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -335,6 +348,7 @@ class GenerateTopProductsReportRequestAttributes(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.advertiser_id = advertiser_id
+        self.currency = currency
         self.end_date = end_date
         self.rank_products_by = rank_products_by
         self.start_date = start_date

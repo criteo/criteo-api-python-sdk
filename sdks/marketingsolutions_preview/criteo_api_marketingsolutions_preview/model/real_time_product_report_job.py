@@ -62,6 +62,7 @@ class RealTimeProductReportJob(ModelNormal):
             'CAMPAIGNID': "CampaignId",
             'SELLERID': "SellerId",
             'PRODUCTID': "ProductId",
+            'SELLERNAME': "SellerName",
             'YEAR': "Year",
             'MONTH': "Month",
             'WEEK': "Week",
@@ -176,15 +177,15 @@ class RealTimeProductReportJob(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             advertiser_ids ([str], none_type): List of advertiser IDs to include in the export. Required.. [optional]  # noqa: E501
             campaign_ids ([str], none_type): Optional list of campaign IDs to filter the export.. [optional]  # noqa: E501
-            currency (str, none_type): Currency for the export. Default is \"EUR\".. [optional]  # noqa: E501
+            currency (str, none_type): Currency for the export. Default is _local currency_.. [optional]  # noqa: E501
             dimensions ([str], none_type): List of dimensions to include in the export. Default: [\"advertiserId\", \"campaignId\", \"sellerId\", \"productId\", \"day\"].. [optional]  # noqa: E501
-            end_date (datetime, none_type): End of the reporting interval, in ISOâ€‘8601 dateâ€‘time format (UTC). Mutually exclusive with lookbackWindow.  If omitted while startDate is provided, defaults to the current time.. [optional]  # noqa: E501
+            end_date (datetime, none_type): End of the reporting interval, in ISO‑8601 date‑time format (UTC). Mutually exclusive with lookbackWindow.  If omitted while startDate is provided, defaults to the current time.. [optional]  # noqa: E501
             file_format (str): The file format for the export. Allowed values: \"csv\", \"json\". Default is \"csv\".. [optional]  # noqa: E501
-            lookback_window (int, none_type): Lookback window in days. Default is 60.. [optional]  # noqa: E501
+            lookback_window (int, none_type): Lookback window in minutes. Default is 60.. [optional]  # noqa: E501
             metrics ([str], none_type): List of metrics to include in the export. Default: [\"clicks\", \"displays\", \"cost\"].. [optional]  # noqa: E501
             partner_ids ([str], none_type): Optional list of partner IDs to filter the export.. [optional]  # noqa: E501
             seller_ids ([str], none_type): Optional list of seller IDs to filter the export.. [optional]  # noqa: E501
-            start_date (datetime, none_type): Start of the reporting interval, in ISOâ€‘8601 dateâ€‘time format (UTC). Mutually exclusive with lookbackWindow.. [optional]  # noqa: E501
+            start_date (datetime, none_type): Start of the reporting interval, in ISO‑8601 date‑time format (UTC). Mutually exclusive with lookbackWindow.. [optional]  # noqa: E501
             timezone (str, none_type): Timezone for the export. Default is \"UTC\".. [optional]  # noqa: E501
         """
 
@@ -273,15 +274,15 @@ class RealTimeProductReportJob(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             advertiser_ids ([str], none_type): List of advertiser IDs to include in the export. Required.. [optional]  # noqa: E501
             campaign_ids ([str], none_type): Optional list of campaign IDs to filter the export.. [optional]  # noqa: E501
-            currency (str, none_type): Currency for the export. Default is \"EUR\".. [optional]  # noqa: E501
+            currency (str, none_type): Currency for the export. Default is _local currency_.. [optional]  # noqa: E501
             dimensions ([str], none_type): List of dimensions to include in the export. Default: [\"advertiserId\", \"campaignId\", \"sellerId\", \"productId\", \"day\"].. [optional]  # noqa: E501
-            end_date (datetime, none_type): End of the reporting interval, in ISOâ€‘8601 dateâ€‘time format (UTC). Mutually exclusive with lookbackWindow.  If omitted while startDate is provided, defaults to the current time.. [optional]  # noqa: E501
+            end_date (datetime, none_type): End of the reporting interval, in ISO‑8601 date‑time format (UTC). Mutually exclusive with lookbackWindow.  If omitted while startDate is provided, defaults to the current time.. [optional]  # noqa: E501
             file_format (str): The file format for the export. Allowed values: \"csv\", \"json\". Default is \"csv\".. [optional]  # noqa: E501
-            lookback_window (int, none_type): Lookback window in days. Default is 60.. [optional]  # noqa: E501
+            lookback_window (int, none_type): Lookback window in minutes. Default is 60.. [optional]  # noqa: E501
             metrics ([str], none_type): List of metrics to include in the export. Default: [\"clicks\", \"displays\", \"cost\"].. [optional]  # noqa: E501
             partner_ids ([str], none_type): Optional list of partner IDs to filter the export.. [optional]  # noqa: E501
             seller_ids ([str], none_type): Optional list of seller IDs to filter the export.. [optional]  # noqa: E501
-            start_date (datetime, none_type): Start of the reporting interval, in ISOâ€‘8601 dateâ€‘time format (UTC). Mutually exclusive with lookbackWindow.. [optional]  # noqa: E501
+            start_date (datetime, none_type): Start of the reporting interval, in ISO‑8601 date‑time format (UTC). Mutually exclusive with lookbackWindow.. [optional]  # noqa: E501
             timezone (str, none_type): Timezone for the export. Default is \"UTC\".. [optional]  # noqa: E501
         """
 

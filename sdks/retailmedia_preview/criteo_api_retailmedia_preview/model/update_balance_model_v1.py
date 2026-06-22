@@ -83,7 +83,7 @@ class UpdateBalanceModelV1(ModelNormal):
             'end_date': (NillableOfNullableOfDateOnly,),  # noqa: E501
             'memo': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
-            'po_number': (str, none_type,),  # noqa: E501
+            'retailer_po_number': (str, none_type,),  # noqa: E501
             'start_date': (str, none_type,),  # noqa: E501
         }
 
@@ -96,7 +96,7 @@ class UpdateBalanceModelV1(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'memo': 'memo',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'po_number': 'poNumber',  # noqa: E501
+        'retailer_po_number': 'retailerPoNumber',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
     }
 
@@ -144,7 +144,7 @@ class UpdateBalanceModelV1(ModelNormal):
             end_date (NillableOfNullableOfDateOnly): [optional]  # noqa: E501
             memo (str, none_type): Memo.. [optional]  # noqa: E501
             name (str, none_type): Name of the balance.. [optional]  # noqa: E501
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
+            retailer_po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
         """
 
@@ -234,7 +234,7 @@ class UpdateBalanceModelV1(ModelNormal):
             end_date (NillableOfNullableOfDateOnly): [optional]  # noqa: E501
             memo (str, none_type): Memo.. [optional]  # noqa: E501
             name (str, none_type): Name of the balance.. [optional]  # noqa: E501
-            po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
+            retailer_po_number (str, none_type): Purchase Order number.. [optional]  # noqa: E501
             start_date (str, none_type): Start date of the balance in the format YYYY-MM-DD.. [optional]  # noqa: E501
         """
 

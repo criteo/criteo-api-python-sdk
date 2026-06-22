@@ -155,7 +155,7 @@ class InsightStatusResponse(ModelNormal):
             md5_check_sum (str, none_type): [optional]  # noqa: E501
             message (str, none_type): [optional]  # noqa: E501
             row_count (int, none_type): [optional]  # noqa: E501
-            status (str, none_type): Status of an async report request. [optional]  # noqa: E501
+            status (str, none_type): Status of an async insight request. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -247,7 +247,7 @@ class InsightStatusResponse(ModelNormal):
             md5_check_sum (str, none_type): [optional]  # noqa: E501
             message (str, none_type): [optional]  # noqa: E501
             row_count (int, none_type): [optional]  # noqa: E501
-            status (str, none_type): Status of an async report request. [optional]  # noqa: E501
+            status (str, none_type): Status of an async insight request. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

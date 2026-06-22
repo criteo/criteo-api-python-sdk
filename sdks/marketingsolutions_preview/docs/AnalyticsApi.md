@@ -12,9 +12,9 @@ Method | HTTP request | Description
 [**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /preview/reports/{report-id}/status | /preview/reports/{report-id}/status
 [**get_categories_report**](AnalyticsApi.md#get_categories_report) | **POST** /preview/categories/report | /preview/categories/report
 [**get_creatives_report**](AnalyticsApi.md#get_creatives_report) | **POST** /preview/reports/creatives | /preview/reports/creatives
+[**get_export_status**](AnalyticsApi.md#get_export_status) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId} | /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
 [**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /preview/placements/report | /preview/placements/report
 [**get_realtime_product**](AnalyticsApi.md#get_realtime_product) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId} | /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
-[**get_realtime_product_job**](AnalyticsApi.md#get_realtime_product_job) | **GET** /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId} | /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
 [**get_realtime_statistics_report**](AnalyticsApi.md#get_realtime_statistics_report) | **POST** /preview/reports/realtime | /preview/reports/realtime
 [**get_top_products_report**](AnalyticsApi.md#get_top_products_report) | **POST** /preview/reports/top-products | /preview/reports/top-products
 [**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /preview/transactions/report | /preview/transactions/report
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
 
-This endpoint is subject to specific rate limits.  <br />  This endpoint is subject to specific rate limits.
+Creates a marketplace performance outcomes realtime report export.  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -97,7 +97,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             ),
             type="type_example",
         ),
-    ) # RealTimeProductReportJobRequest |  (optional)
+    ) # RealTimeProductReportJobRequest | The realtime report export request. (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
@@ -114,7 +114,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **real_time_product_report_job_request** | [**RealTimeProductReportJobRequest**](RealTimeProductReportJobRequest.md)|  | [optional]
+ **real_time_product_report_job_request** | [**RealTimeProductReportJobRequest**](RealTimeProductReportJobRequest.md)| The realtime report export request. | [optional]
 
 ### Return type
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 /preview/statistics/report
 
-This Statistics endpoint provides adset related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.
+This Statistics endpoint provides ad set related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.
 
 ### Example
 
@@ -191,7 +191,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             "ad_set_names_example",
         ],
         ad_set_status=[
-            "ad_set_status_example",
+            "Active",
         ],
         advertiser_ids="advertiser_ids_example",
         currency="currency_example",
@@ -545,7 +545,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, application/xml, text/xml
 
 
 ### HTTP response details
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 /preview/categories/report
 
-With this endpoint you can analyse what are the categories of the placements' domains your ads are placed in.
+With this endpoint you can analyse what are the categories of the placements' domains your ads are placed in.  <br/><br/>  This endpoint supports data retrieval for up to three months in the past.
 
 ### Example
 
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 /preview/reports/creatives
 
-With Creatives endpoint, you can analyse the daily performances of your creatives on the main metrics: clicks, ctr, displays.
+With Creatives endpoint, you can analyse the daily performances of your creatives on the main metrics: clicks, ctr, displays.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.
 
 ### Example
 
@@ -795,7 +795,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
         data=GenerateCreativesReportRequestAttributesResource(
             attributes=GenerateCreativesReportRequestAttributes(
                 ad_formats=[
-                    "ad_formats_example",
+                    "Dynamic",
                 ],
                 ad_ids=[
                     "ad_ids_example",
@@ -807,7 +807,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     "ad_set_ids_example",
                 ],
                 ad_set_status=[
-                    "ad_set_status_example",
+                    "Active",
                 ],
                 advertiser_ids=[
                     "advertiser_ids_example",
@@ -832,7 +832,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     "Clicks",
                 ],
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                timezone="timezone_example",
+                timezone="UTC",
             ),
             type="type_example",
         ),
@@ -876,12 +876,97 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_export_status**
+> ExportStatusModelResponse get_export_status(report_id)
+
+/preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
+
+Gets the status of a marketplace performance outcomes report export job.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_preview
+from criteo_api_marketingsolutions_preview.api import analytics_api
+from criteo_api_marketingsolutions_preview.model.export_status_model_response import ExportStatusModelResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_preview.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "reportId_example" # str | The identifier of the report export job.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
+        api_response = api_instance.get_export_status(report_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_preview.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_export_status: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| The identifier of the report export job. |
+
+### Return type
+
+[**ExportStatusModelResponse**](ExportStatusModelResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/xml, text/xml
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_placements_report**
 > file_type get_placements_report()
 
 /preview/placements/report
 
-Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.
+Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.  <br/><br/>  This endpoint supports data retrieval for up to three months in the past.
 
 ### Example
 
@@ -934,7 +1019,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     ],
                     disclosed=True,
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    environment="environment_example",
+                    environment="Web",
                     format="json",
                     metrics=[
                         "Clicks",
@@ -992,7 +1077,7 @@ Name | Type | Description  | Notes
 
 /preview/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
 
-This endpoint is subject to specific rate limits.  <br />  This endpoint is subject to specific rate limits.
+Downloads the generated marketplace performance outcomes realtime report export.  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -1032,7 +1117,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    report_id = "reportId_example" # str | Unique ID (UUID) of the report to retrieve.
+    report_id = "reportId_example" # str | The identifier of the realtime report export.
 
     # example passing only required values which don't have defaults set
     try:
@@ -1048,96 +1133,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **report_id** | **str**| Unique ID (UUID) of the report to retrieve. |
+ **report_id** | **str**| The identifier of the realtime report export. |
 
 ### Return type
 
 [**FileStreamResultResponse**](FileStreamResultResponse.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, text/xml
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_realtime_product_job**
-> RealTimeProductReportJobStatusResponse get_realtime_product_job(report_id)
-
-/preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
-
-This endpoint is subject to specific rate limits.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_marketingsolutions_preview
-from criteo_api_marketingsolutions_preview.api import analytics_api
-from criteo_api_marketingsolutions_preview.model.real_time_product_report_job_status_response import RealTimeProductReportJobStatusResponse
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_marketingsolutions_preview.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = analytics_api.AnalyticsApi(api_client)
-    report_id = "reportId_example" # str | Unique ID (UUID) of the report job.
-
-    # example passing only required values which don't have defaults set
-    try:
-        # /preview/marketing-solutions/marketplace-performance-outcomes/stats/report-jobs/{reportId}
-        api_response = api_instance.get_realtime_product_job(report_id)
-        pprint(api_response)
-    except criteo_api_marketingsolutions_preview.ApiException as e:
-        print("Exception when calling AnalyticsApi->get_realtime_product_job: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **report_id** | **str**| Unique ID (UUID) of the report job. |
-
-### Return type
-
-[**RealTimeProductReportJobStatusResponse**](RealTimeProductReportJobStatusResponse.md)
 
 ### Authorization
 
@@ -1269,7 +1269,7 @@ Name | Type | Description  | Notes
 
 /preview/reports/top-products
 
-With the topProducts endpoint, you can analyse the performances for each publisher, by top displays, top clicks or top sales.
+With the topProducts endpoint, you can analyse the performances for each publisher, by top displays, top clicks or top sales.  <br/><br/>  This endpoint supports data retrieval for up to one year in the past.
 
 ### Example
 
@@ -1317,7 +1317,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     "ad_set_ids_example",
                 ],
                 ad_set_status=[
-                    "ad_set_status_example",
+                    "Active",
                 ],
                 advertiser_id="advertiser_id_example",
                 brands=[
@@ -1334,7 +1334,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     "Campaign",
                 ],
                 end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                limit=1,
+                limit=200,
                 metrics=[
                     "Clicks",
                 ],
@@ -1389,7 +1389,7 @@ Name | Type | Description  | Notes
 
 /preview/transactions/report
 
-This Transactions endpoint provides transactions id related data.
+This Transactions endpoint provides transactions id related data.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.
 
 ### Example
 
@@ -1436,7 +1436,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     advertiser_ids="advertiser_ids_example",
                     currency="currency_example",
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    event_type="event_type_example",
+                    event_type="Click",
                     format="json",
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     timezone="UTC",
@@ -1531,7 +1531,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    advertiser_id = "advertiser-id_example" # str | The advertiser id to fetch the transparency data.
+    advertiser_id = "advertiser-id_example" # str | The advertiser ID to fetch the transparency data for. The advertiser must already exist. Must be greater than 0.
     transparency_query_message = TransparencyQueryMessage(
         end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         should_display_product_ids=False,
@@ -1561,7 +1561,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **str**| The advertiser id to fetch the transparency data. |
+ **advertiser_id** | **str**| The advertiser ID to fetch the transparency data for. The advertiser must already exist. Must be greater than 0. |
  **transparency_query_message** | [**TransparencyQueryMessage**](TransparencyQueryMessage.md)| The query message. | [optional]
 
 ### Return type

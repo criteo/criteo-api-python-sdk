@@ -204,6 +204,9 @@ criteo_api_marketingsolutions_preview/model/export_column.py
 criteo_api_marketingsolutions_preview/model/export_meta_data.py
 criteo_api_marketingsolutions_preview/model/export_result.py
 criteo_api_marketingsolutions_preview/model/export_result_data.py
+criteo_api_marketingsolutions_preview/model/export_status_model.py
+criteo_api_marketingsolutions_preview/model/export_status_model_resource.py
+criteo_api_marketingsolutions_preview/model/export_status_model_response.py
 criteo_api_marketingsolutions_preview/model/file_stream_result_resource.py
 criteo_api_marketingsolutions_preview/model/file_stream_result_response.py
 criteo_api_marketingsolutions_preview/model/generate_audience_performance_report.py
@@ -607,6 +610,9 @@ docs/ExportColumn.md
 docs/ExportMetaData.md
 docs/ExportResult.md
 docs/ExportResultData.md
+docs/ExportStatusModel.md
+docs/ExportStatusModelResource.md
+docs/ExportStatusModelResponse.md
 docs/FileStreamResultResource.md
 docs/FileStreamResultResponse.md
 docs/GatewayApi.md

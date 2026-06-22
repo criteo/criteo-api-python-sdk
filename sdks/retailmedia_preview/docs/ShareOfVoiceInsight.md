@@ -1,6 +1,6 @@
 # ShareOfVoiceInsight
 
-The filters to apply
+Description of a Share of voice insight
 
 ## Properties
 Name | Type | Description | Notes

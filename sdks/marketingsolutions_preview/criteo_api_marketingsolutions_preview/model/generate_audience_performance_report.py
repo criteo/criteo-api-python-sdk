@@ -174,7 +174,7 @@ class GenerateAudiencePerformanceReport(ModelNormal):
             audience_ids ([str], none_type): The list of Audiences ids. If empty, all the Audiences will be fetched.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional]  # noqa: E501
             segments_ids ([str], none_type): The list of Segments ids. If empty, all the segments will be fetched.. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -276,7 +276,7 @@ class GenerateAudiencePerformanceReport(ModelNormal):
             audience_ids ([str], none_type): The list of Audiences ids. If empty, all the Audiences will be fetched.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional]  # noqa: E501
             segments_ids ([str], none_type): The list of Segments ids. If empty, all the segments will be fetched.. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

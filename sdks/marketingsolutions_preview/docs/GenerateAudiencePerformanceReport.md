@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **audience_ids** | **[str], none_type** | The list of Audiences ids. If empty, all the Audiences will be fetched. | [optional] 
 **currency** | **str, none_type** | The currency used for the report. ISO 4217 code (three-letter capitals). | [optional] 
 **segments_ids** | **[str], none_type** | The list of Segments ids. If empty, all the segments will be fetched. | [optional] 
-**timezone** | **str, none_type** | The timezone used for the report. Timezone Database format (Tz). | [optional] 
+**timezone** | **str, none_type** | Optional timezone used for the report. Timezone Database format (Tz). | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -64,6 +64,9 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
     }
 
     validations = {
+        ('advertiser_ids',): {
+            'min_items': 1,
+        },
     }
 
     additional_properties_type = None
@@ -122,9 +125,9 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
         """GenerateCategoriesReportRequestAttributes - a model defined in OpenAPI
 
         Args:
-            advertiser_ids ([str]): List of Advertiser ids.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            advertiser_ids ([str]): List of advertiser IDs to report on. The advertisers must already exist. At least one advertiser ID should be provided.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -157,13 +160,13 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            adset_id (str, none_type): Report only on the specified AdSet id.. [optional]  # noqa: E501
-            campaign_id (str, none_type): Report only on the specified Campaign id.. [optional]  # noqa: E501
-            category (str, none_type): Report only on the specified category.. [optional]  # noqa: E501
-            domain (str, none_type): Report only on the specified domain.. [optional]  # noqa: E501
-            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            should_display_domain_dimension (bool): Specify if the domain dimension is displayed in the report.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            adset_id (str, none_type): Optional adset id to filter on. The adset must already exist. If empty, all adsets will be fetched.. [optional]  # noqa: E501
+            campaign_id (str, none_type): Optional campaign id to filter on. The campaign must already exist. If empty, all campaign will be fetched.. [optional]  # noqa: E501
+            category (str, none_type): Optional category to filter on. If empty, all categories will be fetched.. [optional]  # noqa: E501
+            domain (str, none_type): Optional domain to filter on. If empty, all domains will be fetched.. [optional]  # noqa: E501
+            format (str): Optional file format of the generated report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            should_display_domain_dimension (bool): Optionally specify if the domain dimension is displayed in the report.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,9 +225,9 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
         """GenerateCategoriesReportRequestAttributes - a model defined in OpenAPI
 
         Args:
-            advertiser_ids ([str]): List of Advertiser ids.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            advertiser_ids ([str]): List of advertiser IDs to report on. The advertisers must already exist. At least one advertiser ID should be provided.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -257,13 +260,13 @@ class GenerateCategoriesReportRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            adset_id (str, none_type): Report only on the specified AdSet id.. [optional]  # noqa: E501
-            campaign_id (str, none_type): Report only on the specified Campaign id.. [optional]  # noqa: E501
-            category (str, none_type): Report only on the specified category.. [optional]  # noqa: E501
-            domain (str, none_type): Report only on the specified domain.. [optional]  # noqa: E501
-            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            should_display_domain_dimension (bool): Specify if the domain dimension is displayed in the report.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            adset_id (str, none_type): Optional adset id to filter on. The adset must already exist. If empty, all adsets will be fetched.. [optional]  # noqa: E501
+            campaign_id (str, none_type): Optional campaign id to filter on. The campaign must already exist. If empty, all campaign will be fetched.. [optional]  # noqa: E501
+            category (str, none_type): Optional category to filter on. If empty, all categories will be fetched.. [optional]  # noqa: E501
+            domain (str, none_type): Optional domain to filter on. If empty, all domains will be fetched.. [optional]  # noqa: E501
+            format (str): Optional file format of the generated report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            should_display_domain_dimension (bool): Optionally specify if the domain dimension is displayed in the report.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

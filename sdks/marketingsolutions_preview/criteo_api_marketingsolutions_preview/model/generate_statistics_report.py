@@ -113,8 +113,6 @@ class GenerateStatisticsReport(ModelNormal):
             'SALESALLPC7D': "SalesAllPc7d",
             'SALESPC7DPV24': "SalesPc7dPv24",
             'SALESALLPC7DPV24': "SalesAllPc7dPv24",
-            'SALESPC7DPV24H': "SalesPc7dPv24h",
-            'SALESALLPC7DPV24H': "SalesAllPc7dPv24h",
             'SALESPV24H': "SalesPv24h",
             'SALESALLPV24H': "SalesAllPv24h",
             'SALESPC30PV24': "SalesPc30Pv24",
@@ -145,8 +143,6 @@ class GenerateStatisticsReport(ModelNormal):
             'REVENUEGENERATEDALLPC30PV24': "RevenueGeneratedAllPc30Pv24",
             'REVENUEGENERATEDPC30DPV24H': "RevenueGeneratedPc30dPv24h",
             'REVENUEGENERATEDALLPC30DPV24H': "RevenueGeneratedAllPc30dPv24h",
-            'REVENUEGENERATEDPC7DPV24H': "RevenueGeneratedPc7dPv24h",
-            'REVENUEGENERATEDALLPC7DPV24H': "RevenueGeneratedAllPc7dPv24h",
             'REVENUEGENERATEDPC7DPV24': "RevenueGeneratedPc7dPv24",
             'REVENUEGENERATEDALLPC7DPV24': "RevenueGeneratedAllPc7dPv24",
             'REVENUEGENERATEDOFFLINEPC': "RevenueGeneratedOfflinePc",
@@ -171,8 +167,6 @@ class GenerateStatisticsReport(ModelNormal):
             'CONVERSIONRATEALLPC30DPV24H': "ConversionRateAllPc30dPv24h",
             'CONVERSIONRATEPC7DPV24': "ConversionRatePc7dPv24",
             'CONVERSIONRATEALLPC7DPV24': "ConversionRateAllPc7dPv24",
-            'CONVERSIONRATEPC7DPV24H': "ConversionRatePc7dPv24h",
-            'CONVERSIONRATEALLPC7DPV24H': "ConversionRateAllPc7dPv24h",
             'CONVERSIONRATEPIPCPV': "ConversionRatePiPcPv",
             'POSTINSTALLCONVERSIONRATE': "PostInstallConversionRate",
             'ECOSPC30DCLIENTATTRIBUTION': "ECosPc30dClientAttribution",
@@ -191,8 +185,6 @@ class GenerateStatisticsReport(ModelNormal):
             'ECOSALLPC30PV24': "ECosAllPc30Pv24",
             'ECOSPC30DPV24H': "ECosPc30dPv24h",
             'ECOSALLPC30DPV24H': "ECosAllPc30dPv24h",
-            'ECOSPC7DPV24H': "ECosPc7dPv24h",
-            'ECOSALLPC7DPV24H': "ECosAllPc7dPv24h",
             'ECOSPC7DPV24': "ECosPc7dPv24",
             'ECOSALLPC7DPV24': "ECosAllPc7dPv24",
             'COSTPERORDERPC30DCLIENTATTRIBUTION': "CostPerOrderPc30dClientAttribution",
@@ -211,8 +203,6 @@ class GenerateStatisticsReport(ModelNormal):
             'COSTPERORDERALLPC30PV24': "CostPerOrderAllPc30Pv24",
             'COSTPERORDERPC30DPV24H': "CostPerOrderPc30dPv24h",
             'COSTPERORDERALLPC30DPV24H': "CostPerOrderAllPc30dPv24h",
-            'COSTPERORDERPC7DPV24H': "CostPerOrderPc7dPv24h",
-            'COSTPERORDERALLPC7DPV24H': "CostPerOrderAllPc7dPv24h",
             'COSTPERORDERPC7DPV24': "CostPerOrderPc7dPv24",
             'COSTPERORDERALLPC7DPV24': "CostPerOrderAllPc7dPv24",
             'EXPOSEDUSERS': "ExposedUsers",
@@ -234,8 +224,6 @@ class GenerateStatisticsReport(ModelNormal):
             'AVERAGECARTALLPC30PV24': "AverageCartAllPc30Pv24",
             'AVERAGECARTPC30DPV24H': "AverageCartPc30dPv24h",
             'AVERAGECARTALLPC30DPV24H': "AverageCartAllPc30dPv24h",
-            'AVERAGECARTPC7DPV24H': "AverageCartPc7dPv24h",
-            'AVERAGECARTALLPC7DPV24H': "AverageCartAllPc7dPv24h",
             'AVERAGECARTPC7DPV24': "AverageCartPc7dPv24",
             'AVERAGECARTALLPC7DPV24': "AverageCartAllPc7dPv24",
             'CLICKTHROUGHRATE': "ClickThroughRate",
@@ -260,11 +248,11 @@ class GenerateStatisticsReport(ModelNormal):
             'COSTPERVISIT': "CostPerVisit",
             'INSTALLRATEPCPV': "InstallRatePcPv",
             'INSTALLRATE': "InstallRate",
-            'OMNICHANNELROASPC30D': "OmniChannelRoasPc30d",
+            'OMNICHANNELROASPC30D': "OmnichannelRoasPc30d",
             'OMNICHANNELROASALLPC30D': "OmnichannelRoasAllPc30d",
-            'OMNICHANNELREVENUEPC30D': "OmniChannelRevenuePc30d",
+            'OMNICHANNELREVENUEPC30D': "OmnichannelRevenuePc30d",
             'OMNICHANNELREVENUEALLPC30D': "OmnichannelRevenueAllPc30d",
-            'OMNICHANNELSALESPC30D': "OmniChannelSalesPc30d",
+            'OMNICHANNELSALESPC30D': "OmnichannelSalesPc30d",
             'OMNICHANNELSALESALLPC30D': "OmnichannelSalesAllPc30d",
             'OMNICHANNELROASALLPV24H': "OmnichannelRoasAllPv24h",
             'OMNICHANNELROASPV24H': "OmnichannelRoasPv24h",
@@ -293,8 +281,6 @@ class GenerateStatisticsReport(ModelNormal):
             'ROASALLPC30DPV24H': "RoasAllPc30dPv24h",
             'ROASPC7DPV24': "RoasPc7dPv24",
             'ROASALLPC7DPV24': "RoasAllPc7dPv24",
-            'ROASPC7DPV24H': "RoasPc7dPv24h",
-            'ROASALLPC7DPV24H': "RoasAllPc7dPv24h",
             'COSTOFSALEPI': "CostOfSalePi",
             'COSTPERORDERPI': "CostPerOrderPi",
             'POSTINSTALLCOSTOFSALE': "PostInstallCostOfSale",
@@ -363,10 +349,17 @@ class GenerateStatisticsReport(ModelNormal):
             'ASSISTSSALESRATIOPIPC': "AssistsSalesRatioPiPc",
             'ASSISTSSALESRATIOPIPV': "AssistsSalesRatioPiPv",
             'ASSISTSSALESRATIOPIPCPV': "AssistsSalesRatioPiPcPv",
+            'SALESLC': "SalesLc",
+            'SALESALLLC': "SalesAllLc",
+            'REVENUEGENERATEDLC': "RevenueGeneratedLc",
+            'REVENUEGENERATEDALLLC': "RevenueGeneratedAllLc",
         },
     }
 
     validations = {
+        ('dimensions',): {
+            'min_items': 1,
+        },
     }
 
     additional_properties_type = None
@@ -384,16 +377,16 @@ class GenerateStatisticsReport(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'advertiser_ids': ([str],),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
+            'timezone': (str,),  # noqa: E501
             'ad_set_ids': ([str], none_type,),  # noqa: E501
             'ad_set_names': ([str], none_type,),  # noqa: E501
             'ad_set_status': ([str], none_type,),  # noqa: E501
-            'advertiser_ids': ([str], none_type,),  # noqa: E501
             'currency': (str, none_type,),  # noqa: E501
-            'timezone': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -402,16 +395,16 @@ class GenerateStatisticsReport(ModelNormal):
 
 
     attribute_map = {
+        'advertiser_ids': 'advertiserIds',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
+        'timezone': 'timezone',  # noqa: E501
         'ad_set_ids': 'adSetIds',  # noqa: E501
         'ad_set_names': 'adSetNames',  # noqa: E501
         'ad_set_status': 'adSetStatus',  # noqa: E501
-        'advertiser_ids': 'advertiserIds',  # noqa: E501
         'currency': 'currency',  # noqa: E501
-        'timezone': 'timezone',  # noqa: E501
     }
 
     read_only_vars = {
@@ -421,14 +414,16 @@ class GenerateStatisticsReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_ids, dimensions, end_date, metrics, start_date, timezone, *args, **kwargs):  # noqa: E501
         """GenerateStatisticsReport - a model defined in OpenAPI
 
         Args:
+            advertiser_ids ([str]): The list of advertiser ids
             dimensions ([str]): The dimensions for the report.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            timezone (str): Optional timezone used for the report. Timezone Database format (Tz).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -461,12 +456,10 @@ class GenerateStatisticsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str], none_type): The list of adSets ids. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_names ([str], none_type): The list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_status ([str], none_type): The list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            advertiser_ids ([str], none_type): The list of advertiser ids. [optional]  # noqa: E501
+            ad_set_ids ([str], none_type): List of advertiser IDs to report on, provided as a single comma-separated string (e.g., \"123,456,789\"). The advertisers must already exist. If empty, all advertisers will be used.. [optional]  # noqa: E501
+            ad_set_names ([str], none_type): The list of ad sets names. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
+            ad_set_status ([str], none_type): The list of ad sets status. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -498,10 +491,12 @@ class GenerateStatisticsReport(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.advertiser_ids = advertiser_ids
         self.dimensions = dimensions
         self.end_date = end_date
         self.metrics = metrics
         self.start_date = start_date
+        self.timezone = timezone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -522,14 +517,16 @@ class GenerateStatisticsReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_ids, dimensions, end_date, metrics, start_date, timezone, *args, **kwargs):  # noqa: E501
         """GenerateStatisticsReport - a model defined in OpenAPI
 
         Args:
+            advertiser_ids ([str]): The list of advertiser ids
             dimensions ([str]): The dimensions for the report.
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            timezone (str): Optional timezone used for the report. Timezone Database format (Tz).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -562,12 +559,10 @@ class GenerateStatisticsReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str], none_type): The list of adSets ids. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_names ([str], none_type): The list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_status ([str], none_type): The list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            advertiser_ids ([str], none_type): The list of advertiser ids. [optional]  # noqa: E501
+            ad_set_ids ([str], none_type): List of advertiser IDs to report on, provided as a single comma-separated string (e.g., \"123,456,789\"). The advertisers must already exist. If empty, all advertisers will be used.. [optional]  # noqa: E501
+            ad_set_names ([str], none_type): The list of ad sets names. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
+            ad_set_status ([str], none_type): The list of ad sets status. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -597,10 +592,12 @@ class GenerateStatisticsReport(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.advertiser_ids = advertiser_ids
         self.dimensions = dimensions
         self.end_date = end_date
         self.metrics = metrics
         self.start_date = start_date
+        self.timezone = timezone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
