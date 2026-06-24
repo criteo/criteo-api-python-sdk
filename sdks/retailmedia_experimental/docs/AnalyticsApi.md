@@ -1,0 +1,1783 @@
+# criteo_api_retailmedia_experimental.AnalyticsApi
+
+All URIs are relative to *https://api.criteo.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /experimental/retail-media/reports/accounts | /experimental/retail-media/reports/accounts
+[**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /experimental/retail-media/reports/campaigns | /experimental/retail-media/reports/campaigns
+[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /experimental/retail-media/reports/fillrate | /experimental/retail-media/reports/fillrate
+[**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /experimental/retail-media/reports/line-items | /experimental/retail-media/reports/line-items
+[**generate_async_offsite_report**](AnalyticsApi.md#generate_async_offsite_report) | **POST** /experimental/retail-media/reports/offsite | /experimental/retail-media/reports/offsite
+[**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /experimental/retail-media/reports/unfilled-placements | /experimental/retail-media/reports/unfilled-placements
+[**generate_digital_shelf_intelligence_insight**](AnalyticsApi.md#generate_digital_shelf_intelligence_insight) | **POST** /experimental/retail-media/insights/digital-shelf-intelligence | /experimental/retail-media/insights/digital-shelf-intelligence
+[**generate_share_of_voice_insight**](AnalyticsApi.md#generate_share_of_voice_insight) | **POST** /experimental/retail-media/insights/share-of-voice | /experimental/retail-media/insights/share-of-voice
+[**generate_sync_attributed_transactions_report**](AnalyticsApi.md#generate_sync_attributed_transactions_report) | **POST** /experimental/retail-media/reports/sync/attributed-transactions | /experimental/retail-media/reports/sync/attributed-transactions
+[**generate_sync_campaigns_report**](AnalyticsApi.md#generate_sync_campaigns_report) | **POST** /experimental/retail-media/reports/sync/campaigns | /experimental/retail-media/reports/sync/campaigns
+[**generate_sync_line_items_report**](AnalyticsApi.md#generate_sync_line_items_report) | **POST** /experimental/retail-media/reports/sync/line-items | /experimental/retail-media/reports/sync/line-items
+[**generate_sync_real_time_performance_report**](AnalyticsApi.md#generate_sync_real_time_performance_report) | **POST** /experimental/retail-media/reports/sync/real-time-performance | /experimental/retail-media/reports/sync/real-time-performance
+[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /experimental/retail-media/reports/{reportId}/output | /experimental/retail-media/reports/{reportId}/output
+[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /experimental/retail-media/reports/{reportId}/status | /experimental/retail-media/reports/{reportId}/status
+[**get_insight_report_output**](AnalyticsApi.md#get_insight_report_output) | **GET** /experimental/retail-media/insights/{insightId}/output | /experimental/retail-media/insights/{insightId}/output
+[**get_insight_report_status**](AnalyticsApi.md#get_insight_report_status) | **GET** /experimental/retail-media/insights/{insightId}/status | /experimental/retail-media/insights/{insightId}/status
+
+
+# **generate_async_accounts_report**
+> AsyncReportResponse generate_async_accounts_report(async_accounts_report_request)
+
+/experimental/retail-media/reports/accounts
+
+Returns an asynchronous Accounts Report  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from criteo_api_retailmedia_experimental.model.async_accounts_report_request import AsyncAccountsReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_accounts_report_request = AsyncAccountsReportRequest(
+        data=AsyncAccountsReportResource(
+            attributes=AsyncAccountsReport(
+                account_ids=[
+                    "account_ids_example",
+                ],
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                aggregation_level="campaign",
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                media_type="all",
+                metrics=[
+                    "impressions",
+                ],
+                report_type="summary",
+                sales_channel="all",
+                search_term_targetings=[
+                    "unknown",
+                ],
+                search_term_types=[
+                    "unknown",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                targeted_keyword_types=[
+                    "unknown",
+                ],
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncAccountsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/accounts
+        api_response = api_instance.generate_async_accounts_report(async_accounts_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_accounts_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_accounts_report_request** | [**AsyncAccountsReportRequest**](AsyncAccountsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_campaigns_report**
+> AsyncReportResponse generate_async_campaigns_report(async_campaigns_report_request)
+
+/experimental/retail-media/reports/campaigns
+
+Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_campaigns_report_request import AsyncCampaignsReportRequest
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_campaigns_report_request = AsyncCampaignsReportRequest(
+        data=AsyncCampaignsReportResource(
+            attributes=AsyncCampaignsReport(
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                id="id_example",
+                ids=[
+                    "ids_example",
+                ],
+                media_type="all",
+                metrics=[
+                    "impressions",
+                ],
+                report_type="summary",
+                sales_channel="all",
+                search_term_targetings=[
+                    "unknown",
+                ],
+                search_term_types=[
+                    "unknown",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                targeted_keyword_types=[
+                    "unknown",
+                ],
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncCampaignsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/campaigns
+        api_response = api_instance.generate_async_campaigns_report(async_campaigns_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_campaigns_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_campaigns_report_request** | [**AsyncCampaignsReportRequest**](AsyncCampaignsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_fill_rate_report**
+> AsyncReportResponse generate_async_fill_rate_report(async_fill_rate_report_request)
+
+/experimental/retail-media/reports/fillrate
+
+Returns an asynchronous Fill Rate Report  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_fill_rate_report_request import AsyncFillRateReportRequest
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_fill_rate_report_request = AsyncFillRateReportRequest(
+        data=AsyncFillRateReportResource(
+            attributes=AsyncFillRateReport(
+                ad_server_type="all",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json",
+                metrics=[
+                    "pageViews",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                supply_account_ids=[
+                    "supply_account_ids_example",
+                ],
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncFillRateReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/fillrate
+        api_response = api_instance.generate_async_fill_rate_report(async_fill_rate_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_fill_rate_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_fill_rate_report_request** | [**AsyncFillRateReportRequest**](AsyncFillRateReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_line_items_report**
+> AsyncReportResponse generate_async_line_items_report(async_line_items_report_request)
+
+/experimental/retail-media/reports/line-items
+
+Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_line_items_report_request import AsyncLineItemsReportRequest
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_line_items_report_request = AsyncLineItemsReportRequest(
+        data=AsyncLineItemsReportResource(
+            attributes=AsyncLineItemsReport(
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                id="id_example",
+                ids=[
+                    "ids_example",
+                ],
+                media_type="all",
+                metrics=[
+                    "impressions",
+                ],
+                report_type="summary",
+                sales_channel="all",
+                search_term_targetings=[
+                    "unknown",
+                ],
+                search_term_types=[
+                    "unknown",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                targeted_keyword_types=[
+                    "unknown",
+                ],
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncLineItemsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/line-items
+        api_response = api_instance.generate_async_line_items_report(async_line_items_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_line_items_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_line_items_report_request** | [**AsyncLineItemsReportRequest**](AsyncLineItemsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_offsite_report**
+> AsyncReportResponse generate_async_offsite_report(async_offsite_report_request)
+
+/experimental/retail-media/reports/offsite
+
+Returns an asynchronous Offsite Report  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_offsite_report_request import AsyncOffsiteReportRequest
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_offsite_report_request = AsyncOffsiteReportRequest(
+        data=AsyncOffsiteReportResource(
+            attributes=AsyncOffsiteReport(
+                account_ids=[
+                    "account_ids_example",
+                ],
+                buy_type="auction",
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                creative_ids=[
+                    "creative_ids_example",
+                ],
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+                media_type="all",
+                metrics=[
+                    "audience",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                sales_channel="all",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncOffsiteReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/offsite
+        api_response = api_instance.generate_async_offsite_report(async_offsite_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_offsite_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_offsite_report_request** | [**AsyncOffsiteReportRequest**](AsyncOffsiteReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_unfilled_placements_report**
+> AsyncReportResponse generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
+
+/experimental/retail-media/reports/unfilled-placements
+
+Returns an asynchronous Unfilled Placements Report  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from criteo_api_retailmedia_experimental.model.async_unfilled_placements_report_request import AsyncUnfilledPlacementsReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_unfilled_placements_report_request = AsyncUnfilledPlacementsReportRequest(
+        data=AsyncUnfilledPlacementsReportResource(
+            attributes=AsyncUnfilledPlacementsReport(
+                ad_server_type="all",
+                campaign_type="all",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json",
+                metrics=[
+                    "totalUnfilledPlacements",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                supply_account_ids=[
+                    "supply_account_ids_example",
+                ],
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncUnfilledPlacementsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/unfilled-placements
+        api_response = api_instance.generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_unfilled_placements_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_unfilled_placements_report_request** | [**AsyncUnfilledPlacementsReportRequest**](AsyncUnfilledPlacementsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_digital_shelf_intelligence_insight**
+> AsyncInsightResponse generate_digital_shelf_intelligence_insight(digital_shelf_intelligence_insight_request)
+
+/experimental/retail-media/insights/digital-shelf-intelligence
+
+Generate a Digital Shelf Intelligence insight
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.digital_shelf_intelligence_insight_request import DigitalShelfIntelligenceInsightRequest
+from criteo_api_retailmedia_experimental.model.async_insight_response import AsyncInsightResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    digital_shelf_intelligence_insight_request = DigitalShelfIntelligenceInsightRequest(
+        data=DigitalShelfIntelligenceInsightResource(
+            attributes=DigitalShelfIntelligenceInsight(
+                account_id="account_id_example",
+                aggregation_level="brand",
+                brand_ids=[
+                    "brand_ids_example",
+                ],
+                categories=[
+                    "categories_example",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                metrics=[
+                    "considerationIndex",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                sku_ids=[
+                    SkuFilter(
+                        retailer_id="retailer_id_example",
+                        retailer_sku_ids=[
+                            "retailer_sku_ids_example",
+                        ],
+                    ),
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+            ),
+            type="type_example",
+        ),
+    ) # DigitalShelfIntelligenceInsightRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/insights/digital-shelf-intelligence
+        api_response = api_instance.generate_digital_shelf_intelligence_insight(digital_shelf_intelligence_insight_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_digital_shelf_intelligence_insight: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **digital_shelf_intelligence_insight_request** | [**DigitalShelfIntelligenceInsightRequest**](DigitalShelfIntelligenceInsightRequest.md)|  |
+
+### Return type
+
+[**AsyncInsightResponse**](AsyncInsightResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_share_of_voice_insight**
+> AsyncInsightResponse generate_share_of_voice_insight()
+
+/experimental/retail-media/insights/share-of-voice
+
+Generate a share of voice insight
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.share_of_voice_insight_request import ShareOfVoiceInsightRequest
+from criteo_api_retailmedia_experimental.model.async_insight_response import AsyncInsightResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    share_of_voice_insight_request = ShareOfVoiceInsightRequest(
+        data=ShareOfVoiceInsightResource(
+            attributes=ShareOfVoiceInsight(
+                account_id="account_id_example",
+                account_ids=[
+                    "account_ids_example",
+                ],
+                activation_platforms=[
+                    "commerceMax",
+                ],
+                aggregation_level="category",
+                brand_ids=[
+                    "brand_ids_example",
+                ],
+                budget_models=[
+                    "criteoBudget",
+                ],
+                campaign_type="all",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json-compact",
+                keywords=[
+                    "keywords_example",
+                ],
+                keyword_types=[
+                    "unknown",
+                ],
+                metrics=[
+                    "impressions",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                served_categories=[
+                    "served_categories_example",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+            ),
+            type="type_example",
+        ),
+    ) # ShareOfVoiceInsightRequest |  (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/insights/share-of-voice
+        api_response = api_instance.generate_share_of_voice_insight(share_of_voice_insight_request=share_of_voice_insight_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_share_of_voice_insight: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **share_of_voice_insight_request** | [**ShareOfVoiceInsightRequest**](ShareOfVoiceInsightRequest.md)|  | [optional]
+
+### Return type
+
+[**AsyncInsightResponse**](AsyncInsightResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_sync_attributed_transactions_report**
+> ReportResponse generate_sync_attributed_transactions_report(sync_attributed_transactions_report_request)
+
+/experimental/retail-media/reports/sync/attributed-transactions
+
+Returns a synchronous Attributed Transactions Report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.sync_attributed_transactions_report_request import SyncAttributedTransactionsReportRequest
+from criteo_api_retailmedia_experimental.model.report_response import ReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    sync_attributed_transactions_report_request = SyncAttributedTransactionsReportRequest(
+        data=SyncAttributedTransactionsReportResource(
+            attributes=SyncAttributedTransactionsReport(
+                account_id="account_id_example",
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "purchasedDate",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+                media_type="all",
+                metrics=[
+                    "attributedUnits",
+                ],
+                sales_channel="all",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # SyncAttributedTransactionsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/sync/attributed-transactions
+        api_response = api_instance.generate_sync_attributed_transactions_report(sync_attributed_transactions_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_sync_attributed_transactions_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sync_attributed_transactions_report_request** | [**SyncAttributedTransactionsReportRequest**](SyncAttributedTransactionsReportRequest.md)|  |
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_sync_campaigns_report**
+> ReportResponse generate_sync_campaigns_report(sync_campaigns_report_request)
+
+/experimental/retail-media/reports/sync/campaigns
+
+Returns a synchronous Campaigns Report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.report_response import ReportResponse
+from criteo_api_retailmedia_experimental.model.sync_campaigns_report_request import SyncCampaignsReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    sync_campaigns_report_request = SyncCampaignsReportRequest(
+        data=SyncCampaignsReportResource(
+            attributes=SyncCampaignsReport(
+                account_id="account_id_example",
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                metrics=[
+                    "impressions",
+                ],
+                report_type="summary",
+                sales_channel="all",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # SyncCampaignsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/sync/campaigns
+        api_response = api_instance.generate_sync_campaigns_report(sync_campaigns_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_sync_campaigns_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sync_campaigns_report_request** | [**SyncCampaignsReportRequest**](SyncCampaignsReportRequest.md)|  |
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_sync_line_items_report**
+> ReportResponse generate_sync_line_items_report(sync_line_items_report_request)
+
+/experimental/retail-media/reports/sync/line-items
+
+Returns a synchronous Line Items Report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.report_response import ReportResponse
+from criteo_api_retailmedia_experimental.model.sync_line_items_report_request import SyncLineItemsReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    sync_line_items_report_request = SyncLineItemsReportRequest(
+        data=SyncLineItemsReportResource(
+            attributes=SyncLineItemsReport(
+                account_id="account_id_example",
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                campaign_type="all",
+                click_attribution_window="none",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+                metrics=[
+                    "impressions",
+                ],
+                report_type="summary",
+                sales_channel="all",
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+                view_attribution_window="none",
+            ),
+            type="type_example",
+        ),
+    ) # SyncLineItemsReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/sync/line-items
+        api_response = api_instance.generate_sync_line_items_report(sync_line_items_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_sync_line_items_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sync_line_items_report_request** | [**SyncLineItemsReportRequest**](SyncLineItemsReportRequest.md)|  |
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_sync_real_time_performance_report**
+> ReportResponse generate_sync_real_time_performance_report(sync_real_time_performance_report_request)
+
+/experimental/retail-media/reports/sync/real-time-performance
+
+Returns a synchronous Real Time Performance Report. Returns empty rows; metadata includes dataCompleteThrough (latest time from streaming table in the request timezone).  <br />  This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.report_response import ReportResponse
+from criteo_api_retailmedia_experimental.model.sync_real_time_performance_report_request import SyncRealTimePerformanceReportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    sync_real_time_performance_report_request = SyncRealTimePerformanceReportRequest(
+        data=SyncRealTimePerformanceReportResource(
+            attributes=SyncRealTimePerformanceReport(
+                account_ids=[
+                    "account_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                line_item_ids=[
+                    "line_item_ids_example",
+                ],
+                metrics=[
+                    "billableImpressions",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # SyncRealTimePerformanceReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/sync/real-time-performance
+        api_response = api_instance.generate_sync_real_time_performance_report(sync_real_time_performance_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_sync_real_time_performance_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sync_real_time_performance_report_request** | [**SyncRealTimePerformanceReportRequest**](SyncRealTimePerformanceReportRequest.md)|  |
+
+### Return type
+
+[**ReportResponse**](ReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_async_export_output**
+> file_type get_async_export_output(report_id)
+
+/experimental/retail-media/reports/{reportId}/output
+
+Returns the output of an async report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "reportId_example" # str | The ID of the report to retrieve
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/{reportId}/output
+        api_response = api_instance.get_async_export_output(report_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_async_export_output: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| The ID of the report to retrieve |
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_async_export_status**
+> AsyncReportResponse get_async_export_status(report_id)
+
+/experimental/retail-media/reports/{reportId}/status
+
+Returns the status of an async report
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "reportId_example" # str | The ID of the report to retrieve
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/{reportId}/status
+        api_response = api_instance.get_async_export_status(report_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_async_export_status: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| The ID of the report to retrieve |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_insight_report_output**
+> file_type get_insight_report_output(insight_id)
+
+/experimental/retail-media/insights/{insightId}/output
+
+Returns the output of an async insight
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    insight_id = "insightId_example" # str | The ID of the asynchronous insight report. Must be a valid ID format.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/insights/{insightId}/output
+        api_response = api_instance.get_insight_report_output(insight_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_insight_report_output: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **insight_id** | **str**| The ID of the asynchronous insight report. Must be a valid ID format. |
+
+### Return type
+
+**file_type**
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_insight_report_status**
+> AsyncInsightResponse get_insight_report_status(insight_id)
+
+/experimental/retail-media/insights/{insightId}/status
+
+Returns the status of an async insight
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_insight_response import AsyncInsightResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    insight_id = "insightId_example" # str | The ID of the asynchronous insight report. Must be a valid ID format.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/insights/{insightId}/status
+        api_response = api_instance.get_insight_report_status(insight_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->get_insight_report_status: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **insight_id** | **str**| The ID of the asynchronous insight report. Must be a valid ID format. |
+
+### Return type
+
+[**AsyncInsightResponse**](AsyncInsightResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

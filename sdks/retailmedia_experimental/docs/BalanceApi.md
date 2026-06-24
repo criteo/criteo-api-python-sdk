@@ -1,0 +1,400 @@
+# criteo_api_retailmedia_experimental.BalanceApi
+
+All URIs are relative to *https://api.criteo.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**get_balance_history_v1**](BalanceApi.md#get_balance_history_v1) | **GET** /experimental/retail-media/balances/{balanceId}/history | /experimental/retail-media/balances/{balanceId}/history
+[**get_balance_v1**](BalanceApi.md#get_balance_v1) | **GET** /experimental/retail-media/balances/{balanceId} | /experimental/retail-media/balances/{balanceId}
+[**get_page_of_balances_v1**](BalanceApi.md#get_page_of_balances_v1) | **GET** /experimental/retail-media/accounts/{accountId}/balances | /experimental/retail-media/accounts/{accountId}/balances
+[**update_balance_v1**](BalanceApi.md#update_balance_v1) | **PATCH** /experimental/retail-media/accounts/{account-id}/balances/{balance-id} | /experimental/retail-media/accounts/{account-id}/balances/{balance-id}
+
+
+# **get_balance_history_v1**
+> ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata get_balance_history_v1(balance_id)
+
+/experimental/retail-media/balances/{balanceId}/history
+
+Gets the balance's historical change data.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import balance_api
+from criteo_api_retailmedia_experimental.model.value_resource_collection_outcome_balance_history_change_data_capture_v1_and_metadata import ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = balance_api.BalanceApi(api_client)
+    balance_id = "balanceId_example" # str | Balance id.
+    limit = 25 # int | The number of elements to be returned. (optional) if omitted the server will use the default value of 25
+    limit_to_change_types = "limitToChangeTypes_example" # str | Comma separated change types string that will be queried. (optional)
+    offset = 0 # int | The (zero-based) starting offset in the collection. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/balances/{balanceId}/history
+        api_response = api_instance.get_balance_history_v1(balance_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling BalanceApi->get_balance_history_v1: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/balances/{balanceId}/history
+        api_response = api_instance.get_balance_history_v1(balance_id, limit=limit, limit_to_change_types=limit_to_change_types, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling BalanceApi->get_balance_history_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **balance_id** | **str**| Balance id. |
+ **limit** | **int**| The number of elements to be returned. | [optional] if omitted the server will use the default value of 25
+ **limit_to_change_types** | **str**| Comma separated change types string that will be queried. | [optional]
+ **offset** | **int**| The (zero-based) starting offset in the collection. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata**](ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_balance_v1**
+> EntityResourceOutcomeBalanceV1 get_balance_v1(balance_id)
+
+/experimental/retail-media/balances/{balanceId}
+
+Get a balance for the given balance id.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import balance_api
+from criteo_api_retailmedia_experimental.model.entity_resource_outcome_balance_v1 import EntityResourceOutcomeBalanceV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = balance_api.BalanceApi(api_client)
+    balance_id = "balanceId_example" # str | The balance id.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/balances/{balanceId}
+        api_response = api_instance.get_balance_v1(balance_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling BalanceApi->get_balance_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **balance_id** | **str**| The balance id. |
+
+### Return type
+
+[**EntityResourceOutcomeBalanceV1**](EntityResourceOutcomeBalanceV1.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_page_of_balances_v1**
+> EntityResourceCollectionOutcomeBalanceV1AndMetadata get_page_of_balances_v1(account_id)
+
+/experimental/retail-media/accounts/{accountId}/balances
+
+Gets page of balance objects for the given account id.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import balance_api
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_balance_v1_and_metadata import EntityResourceCollectionOutcomeBalanceV1AndMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = balance_api.BalanceApi(api_client)
+    account_id = "accountId_example" # str | The account to get balances for.
+    limit = 25 # int | The number of elements to be returned. (optional) if omitted the server will use the default value of 25
+    limit_to_id = [
+        "limit-to-id_example",
+    ] # [str] | The balance ids which the result is limited to. (optional)
+    offset = 0 # int | The (zero-based) starting offset in the collection. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/accounts/{accountId}/balances
+        api_response = api_instance.get_page_of_balances_v1(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling BalanceApi->get_page_of_balances_v1: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/accounts/{accountId}/balances
+        api_response = api_instance.get_page_of_balances_v1(account_id, limit=limit, limit_to_id=limit_to_id, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling BalanceApi->get_page_of_balances_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The account to get balances for. |
+ **limit** | **int**| The number of elements to be returned. | [optional] if omitted the server will use the default value of 25
+ **limit_to_id** | **[str]**| The balance ids which the result is limited to. | [optional]
+ **offset** | **int**| The (zero-based) starting offset in the collection. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**EntityResourceCollectionOutcomeBalanceV1AndMetadata**](EntityResourceCollectionOutcomeBalanceV1AndMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_balance_v1**
+> update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+
+/experimental/retail-media/accounts/{account-id}/balances/{balance-id}
+
+Modify a balance for the given account id
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import balance_api
+from criteo_api_retailmedia_experimental.model.value_resource_input_of_update_balance_model_v1 import ValueResourceInputOfUpdateBalanceModelV1
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = balance_api.BalanceApi(api_client)
+    account_id = "account-id_example" # str | The account of the balance
+    balance_id = "balance-id_example" # str | The balance to change the dates
+    value_resource_input_of_update_balance_model_v1 = ValueResourceInputOfUpdateBalanceModelV1(
+        data=ValueResourceOfUpdateBalanceModelV1(
+            attributes=UpdateBalanceModelV1(
+                end_date=NillableOfNullableOfDateOnly(
+                    value="value_example",
+                ),
+                memo="memo_example",
+                name="name_example",
+                retailer_po_number="retailer_po_number_example",
+                start_date="start_date_example",
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfUpdateBalanceModelV1 | An object that represents the available options to modify a balance.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/accounts/{account-id}/balances/{balance-id}
+        api_instance.update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling BalanceApi->update_balance_v1: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The account of the balance |
+ **balance_id** | **str**| The balance to change the dates |
+ **value_resource_input_of_update_balance_model_v1** | [**ValueResourceInputOfUpdateBalanceModelV1**](ValueResourceInputOfUpdateBalanceModelV1.md)| An object that represents the available options to modify a balance. |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

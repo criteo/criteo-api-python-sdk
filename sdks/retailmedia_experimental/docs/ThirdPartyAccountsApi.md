@@ -1,0 +1,629 @@
+# criteo_api_retailmedia_experimental.ThirdPartyAccountsApi
+
+All URIs are relative to *https://api.criteo.com*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**add_third_party_account_brands**](ThirdPartyAccountsApi.md#add_third_party_account_brands) | **POST** /experimental/retail-media/third-party-accounts/{accountId}/brands/add | /experimental/retail-media/third-party-accounts/{accountId}/brands/add
+[**create_third_party_brand_account**](ThirdPartyAccountsApi.md#create_third_party_brand_account) | **POST** /experimental/retail-media/third-party-accounts/{accountId}/create-brand-account | /experimental/retail-media/third-party-accounts/{accountId}/create-brand-account
+[**create_third_party_seller_account**](ThirdPartyAccountsApi.md#create_third_party_seller_account) | **POST** /experimental/retail-media/third-party-accounts/{accountId}/create-seller-account | /experimental/retail-media/third-party-accounts/{accountId}/create-seller-account
+[**grant_third_party_consent**](ThirdPartyAccountsApi.md#grant_third_party_consent) | **POST** /experimental/retail-media/accounts/{accountId}/grant-third-party-consent | /experimental/retail-media/accounts/{accountId}/grant-third-party-consent
+[**remove_third_party_account_brand**](ThirdPartyAccountsApi.md#remove_third_party_account_brand) | **POST** /experimental/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove | /experimental/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove
+[**update_third_party_account_sellers**](ThirdPartyAccountsApi.md#update_third_party_account_sellers) | **PUT** /experimental/retail-media/third-party-accounts/{accountId}/sellers | /experimental/retail-media/third-party-accounts/{accountId}/sellers
+
+
+# **add_third_party_account_brands**
+> ValueResourceOutcomeOfRetailMediaBrands add_third_party_account_brands(account_id)
+
+/experimental/retail-media/third-party-accounts/{accountId}/brands/add
+
+add the provided brands to an account. This will not remove any existing brands.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import third_party_accounts_api
+from criteo_api_retailmedia_experimental.model.value_resource_outcome_of_retail_media_brands import ValueResourceOutcomeOfRetailMediaBrands
+from criteo_api_retailmedia_experimental.model.value_resource_input_of_retail_media_brands import ValueResourceInputOfRetailMediaBrands
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | account to add brands to
+    value_resource_input_of_retail_media_brands = ValueResourceInputOfRetailMediaBrands(
+        data=ValueResourceOfRetailMediaBrands(
+            attributes=ExternalRetailMediaBrands(
+                brand_ids=[
+                    1,
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfRetailMediaBrands | list of bands to add to an account (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/brands/add
+        api_response = api_instance.add_third_party_account_brands(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->add_third_party_account_brands: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/brands/add
+        api_response = api_instance.add_third_party_account_brands(account_id, value_resource_input_of_retail_media_brands=value_resource_input_of_retail_media_brands)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->add_third_party_account_brands: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| account to add brands to |
+ **value_resource_input_of_retail_media_brands** | [**ValueResourceInputOfRetailMediaBrands**](ValueResourceInputOfRetailMediaBrands.md)| list of bands to add to an account | [optional]
+
+### Return type
+
+[**ValueResourceOutcomeOfRetailMediaBrands**](ValueResourceOutcomeOfRetailMediaBrands.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_third_party_brand_account**
+> EntityResourceOutcomeOfRetailMediaAccountV2 create_third_party_brand_account(account_id)
+
+/experimental/retail-media/third-party-accounts/{accountId}/create-brand-account
+
+Create a private market demand brand account under a given parent account.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import third_party_accounts_api
+from criteo_api_retailmedia_experimental.model.value_resource_input_of_retail_media_brand_account_creation_v2 import ValueResourceInputOfRetailMediaBrandAccountCreationV2
+from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_retail_media_account_v2 import EntityResourceOutcomeOfRetailMediaAccountV2
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | parent supply account to create account under
+    value_resource_input_of_retail_media_brand_account_creation_v2 = ValueResourceInputOfRetailMediaBrandAccountCreationV2(
+        data=ValueResourceOfRetailMediaBrandAccountCreationV2(
+            attributes=ExternalRetailMediaBrandAccountCreationV2(
+                brands=[
+                    1,
+                ],
+                name="name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
+                paying_company_name="paying_company_name_example",
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfRetailMediaBrandAccountCreationV2 |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/create-brand-account
+        api_response = api_instance.create_third_party_brand_account(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->create_third_party_brand_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/create-brand-account
+        api_response = api_instance.create_third_party_brand_account(account_id, value_resource_input_of_retail_media_brand_account_creation_v2=value_resource_input_of_retail_media_brand_account_creation_v2)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->create_third_party_brand_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| parent supply account to create account under |
+ **value_resource_input_of_retail_media_brand_account_creation_v2** | [**ValueResourceInputOfRetailMediaBrandAccountCreationV2**](ValueResourceInputOfRetailMediaBrandAccountCreationV2.md)|  | [optional]
+
+### Return type
+
+[**EntityResourceOutcomeOfRetailMediaAccountV2**](EntityResourceOutcomeOfRetailMediaAccountV2.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_third_party_seller_account**
+> EntityResourceOutcomeOfRetailMediaAccountV2 create_third_party_seller_account(account_id)
+
+/experimental/retail-media/third-party-accounts/{accountId}/create-seller-account
+
+Create a private market demand seller account under a given parent account.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import third_party_accounts_api
+from criteo_api_retailmedia_experimental.model.value_resource_input_of_retail_media_seller_account_creation_v2 import ValueResourceInputOfRetailMediaSellerAccountCreationV2
+from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_retail_media_account_v2 import EntityResourceOutcomeOfRetailMediaAccountV2
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | parent supply account to create account under
+    value_resource_input_of_retail_media_seller_account_creation_v2 = ValueResourceInputOfRetailMediaSellerAccountCreationV2(
+        data=ValueResourceOfRetailMediaSellerAccountCreationV2(
+            attributes=ExternalRetailMediaSellerAccountCreationV2(
+                name="name_example",
+                on_behalf_company_name="on_behalf_company_name_example",
+                paying_company_name="paying_company_name_example",
+                sellers=[
+                    ExternalRetailMediaSeller(
+                        retailer_id=1,
+                        seller_id="seller_id_example",
+                    ),
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfRetailMediaSellerAccountCreationV2 |  (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/create-seller-account
+        api_response = api_instance.create_third_party_seller_account(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->create_third_party_seller_account: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/create-seller-account
+        api_response = api_instance.create_third_party_seller_account(account_id, value_resource_input_of_retail_media_seller_account_creation_v2=value_resource_input_of_retail_media_seller_account_creation_v2)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->create_third_party_seller_account: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| parent supply account to create account under |
+ **value_resource_input_of_retail_media_seller_account_creation_v2** | [**ValueResourceInputOfRetailMediaSellerAccountCreationV2**](ValueResourceInputOfRetailMediaSellerAccountCreationV2.md)|  | [optional]
+
+### Return type
+
+[**EntityResourceOutcomeOfRetailMediaAccountV2**](EntityResourceOutcomeOfRetailMediaAccountV2.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **grant_third_party_consent**
+> grant_third_party_consent(account_id)
+
+/experimental/retail-media/accounts/{accountId}/grant-third-party-consent
+
+Grant third-party consent to a business application on behalf of a Private Market demand account
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import third_party_accounts_api
+from criteo_api_retailmedia_experimental.model.grant_consent_input import GrantConsentInput
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | The demand account ID on which to grant consent
+    grant_consent_input = GrantConsentInput(
+        data=GrantConsentModelValueResource(
+            attributes=GrantConsentModel(
+                callback_state="callback_state_example",
+                callback_url="callback_url_example",
+                client_id="client_id_example",
+            ),
+            type="type_example",
+        ),
+    ) # GrantConsentInput | The request input containing clientId, callbackURL, and callbackState (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/accounts/{accountId}/grant-third-party-consent
+        api_instance.grant_third_party_consent(account_id)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->grant_third_party_consent: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/accounts/{accountId}/grant-third-party-consent
+        api_instance.grant_third_party_consent(account_id, grant_consent_input=grant_consent_input)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->grant_third_party_consent: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The demand account ID on which to grant consent |
+ **grant_consent_input** | [**GrantConsentInput**](GrantConsentInput.md)| The request input containing clientId, callbackURL, and callbackState | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **remove_third_party_account_brand**
+> ValueResourceOutcomeOfRetailMediaBrands remove_third_party_account_brand(account_id, brand_id)
+
+/experimental/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove
+
+Attempt to remove the provided brand from the account.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import third_party_accounts_api
+from criteo_api_retailmedia_experimental.model.value_resource_outcome_of_retail_media_brands import ValueResourceOutcomeOfRetailMediaBrands
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | account id to remove brand from
+    brand_id = "brandId_example" # str | brand to remove
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/brands/{brandId}/remove
+        api_response = api_instance.remove_third_party_account_brand(account_id, brand_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->remove_third_party_account_brand: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| account id to remove brand from |
+ **brand_id** | **str**| brand to remove |
+
+### Return type
+
+[**ValueResourceOutcomeOfRetailMediaBrands**](ValueResourceOutcomeOfRetailMediaBrands.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_third_party_account_sellers**
+> ValueResourceCollectionOutcomeOfRetailMediaSeller update_third_party_account_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
+
+/experimental/retail-media/third-party-accounts/{accountId}/sellers
+
+Update the list of sellers mapped to the account. This will override any existing mappings.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import third_party_accounts_api
+from criteo_api_retailmedia_experimental.model.value_resource_collection_outcome_of_retail_media_seller import ValueResourceCollectionOutcomeOfRetailMediaSeller
+from criteo_api_retailmedia_experimental.model.value_resource_collection_input_of_retail_media_seller import ValueResourceCollectionInputOfRetailMediaSeller
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = third_party_accounts_api.ThirdPartyAccountsApi(api_client)
+    account_id = "accountId_example" # str | accountId to update sellers for
+    value_resource_collection_input_of_retail_media_seller = ValueResourceCollectionInputOfRetailMediaSeller(
+        data=[
+            ValueResourceOfRetailMediaSeller(
+                attributes=ExternalRetailMediaSeller(
+                    retailer_id=1,
+                    seller_id="seller_id_example",
+                ),
+                type="type_example",
+            ),
+        ],
+    ) # ValueResourceCollectionInputOfRetailMediaSeller | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/third-party-accounts/{accountId}/sellers
+        api_response = api_instance.update_third_party_account_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling ThirdPartyAccountsApi->update_third_party_account_sellers: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| accountId to update sellers for |
+ **value_resource_collection_input_of_retail_media_seller** | [**ValueResourceCollectionInputOfRetailMediaSeller**](ValueResourceCollectionInputOfRetailMediaSeller.md)|  |
+
+### Return type
+
+[**ValueResourceCollectionOutcomeOfRetailMediaSeller**](ValueResourceCollectionOutcomeOfRetailMediaSeller.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
