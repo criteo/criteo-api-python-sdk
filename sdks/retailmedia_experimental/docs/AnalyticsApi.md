@@ -866,7 +866,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **generate_share_of_voice_insight**
-> AsyncInsightResponse generate_share_of_voice_insight()
+> AsyncInsightResponse generate_share_of_voice_insight(share_of_voice_insight_request)
 
 /experimental/retail-media/insights/share-of-voice
 
@@ -953,13 +953,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ShareOfVoiceInsightRequest |  (optional)
+    ) # ShareOfVoiceInsightRequest | 
 
     # example passing only required values which don't have defaults set
-    # and optional values
     try:
         # /experimental/retail-media/insights/share-of-voice
-        api_response = api_instance.generate_share_of_voice_insight(share_of_voice_insight_request=share_of_voice_insight_request)
+        api_response = api_instance.generate_share_of_voice_insight(share_of_voice_insight_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling AnalyticsApi->generate_share_of_voice_insight: %s\n" % e)
@@ -970,7 +969,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **share_of_voice_insight_request** | [**ShareOfVoiceInsightRequest**](ShareOfVoiceInsightRequest.md)|  | [optional]
+ **share_of_voice_insight_request** | [**ShareOfVoiceInsightRequest**](ShareOfVoiceInsightRequest.md)|  |
 
 ### Return type
 
@@ -1393,7 +1392,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     "line_item_ids_example",
                 ],
                 metrics=[
-                    "billableImpressions",
+                    "impressions",
                 ],
                 retailer_ids=[
                     "retailer_ids_example",

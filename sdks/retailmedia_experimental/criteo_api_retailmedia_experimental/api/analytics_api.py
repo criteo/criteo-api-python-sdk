@@ -436,7 +436,9 @@ class AnalyticsApi(object):
                 'all': [
                     'share_of_voice_insight_request',
                 ],
-                'required': [],
+                'required': [
+                    'share_of_voice_insight_request',
+                ],
                 'nullable': [
                 ],
                 'enum': [
@@ -1475,6 +1477,7 @@ class AnalyticsApi(object):
 
     def generate_share_of_voice_insight(
         self,
+        share_of_voice_insight_request,
         **kwargs
     ):
         """/experimental/retail-media/insights/share-of-voice  # noqa: E501
@@ -1483,12 +1486,13 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_share_of_voice_insight(async_req=True)
+        >>> thread = api.generate_share_of_voice_insight(share_of_voice_insight_request, async_req=True)
         >>> result = thread.get()
 
+        Args:
+            share_of_voice_insight_request (ShareOfVoiceInsightRequest):
 
         Keyword Args:
-            share_of_voice_insight_request (ShareOfVoiceInsightRequest): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -1550,6 +1554,8 @@ class AnalyticsApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['share_of_voice_insight_request'] = \
+            share_of_voice_insight_request
         return self.generate_share_of_voice_insight_endpoint.call_with_http_info(**kwargs)
 
     def generate_sync_attributed_transactions_report(
