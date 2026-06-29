@@ -101,8 +101,11 @@ class ShareOfVoiceInsightResource(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, attributes, *args, **kwargs):  # noqa: E501
         """ShareOfVoiceInsightResource - a model defined in OpenAPI
+
+        Args:
+            attributes (ShareOfVoiceInsight):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -135,7 +138,6 @@ class ShareOfVoiceInsightResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ShareOfVoiceInsight): [optional]  # noqa: E501
             type (str, none_type): Type of the resource.. [optional]  # noqa: E501
         """
 
@@ -168,6 +170,7 @@ class ShareOfVoiceInsightResource(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.attributes = attributes
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -188,8 +191,11 @@ class ShareOfVoiceInsightResource(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, attributes, *args, **kwargs):  # noqa: E501
         """ShareOfVoiceInsightResource - a model defined in OpenAPI
+
+        Args:
+            attributes (ShareOfVoiceInsight):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -222,7 +228,6 @@ class ShareOfVoiceInsightResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            attributes (ShareOfVoiceInsight): [optional]  # noqa: E501
             type (str, none_type): Type of the resource.. [optional]  # noqa: E501
         """
 
@@ -253,6 +258,7 @@ class ShareOfVoiceInsightResource(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.attributes = attributes
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

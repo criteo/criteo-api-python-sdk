@@ -382,11 +382,11 @@ class GenerateStatisticsReport(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
             'ad_set_ids': ([str], none_type,),  # noqa: E501
             'ad_set_names': ([str], none_type,),  # noqa: E501
             'ad_set_status': ([str], none_type,),  # noqa: E501
             'currency': (str, none_type,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -400,11 +400,11 @@ class GenerateStatisticsReport(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
-        'timezone': 'timezone',  # noqa: E501
         'ad_set_ids': 'adSetIds',  # noqa: E501
         'ad_set_names': 'adSetNames',  # noqa: E501
         'ad_set_status': 'adSetStatus',  # noqa: E501
         'currency': 'currency',  # noqa: E501
+        'timezone': 'timezone',  # noqa: E501
     }
 
     read_only_vars = {
@@ -414,7 +414,7 @@ class GenerateStatisticsReport(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, advertiser_ids, dimensions, end_date, metrics, start_date, timezone, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_ids, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """GenerateStatisticsReport - a model defined in OpenAPI
 
         Args:
@@ -423,7 +423,6 @@ class GenerateStatisticsReport(ModelNormal):
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            timezone (str): Optional timezone used for the report. Timezone Database format (Tz).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -460,6 +459,7 @@ class GenerateStatisticsReport(ModelNormal):
             ad_set_names ([str], none_type): The list of ad sets names. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
             ad_set_status ([str], none_type): The list of ad sets status. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -496,7 +496,6 @@ class GenerateStatisticsReport(ModelNormal):
         self.end_date = end_date
         self.metrics = metrics
         self.start_date = start_date
-        self.timezone = timezone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -517,7 +516,7 @@ class GenerateStatisticsReport(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, advertiser_ids, dimensions, end_date, metrics, start_date, timezone, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_ids, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """GenerateStatisticsReport - a model defined in OpenAPI
 
         Args:
@@ -526,7 +525,6 @@ class GenerateStatisticsReport(ModelNormal):
             end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
             metrics ([str]): The list of metrics to report.
             start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            timezone (str): Optional timezone used for the report. Timezone Database format (Tz).
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -563,6 +561,7 @@ class GenerateStatisticsReport(ModelNormal):
             ad_set_names ([str], none_type): The list of ad sets names. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
             ad_set_status ([str], none_type): The list of ad sets status. If empty, all the adSets will be fetched.. [optional]  # noqa: E501
             currency (str, none_type): The currency used for the report. ISO 4217 code (three-letter capitals).. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -597,7 +596,6 @@ class GenerateStatisticsReport(ModelNormal):
         self.end_date = end_date
         self.metrics = metrics
         self.start_date = start_date
-        self.timezone = timezone
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
