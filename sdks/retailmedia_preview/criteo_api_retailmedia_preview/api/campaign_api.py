@@ -25,7 +25,7 @@ from criteo_api_retailmedia_preview.model.creative2_response import Creative2Res
 from criteo_api_retailmedia_preview.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_creative_search_response import EntityResourceCollectionOutcomeCreativeSearchResponse
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_input_creative_search_request import EntityResourceInputCreativeSearchRequest
 from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
@@ -45,7 +45,7 @@ from criteo_api_retailmedia_preview.model.value_resource_input_append_campaigns_
 from criteo_api_retailmedia_preview.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
 from criteo_api_retailmedia_preview.model.value_resource_input_display_auction_min_bid_request import ValueResourceInputDisplayAuctionMinBidRequest
 from criteo_api_retailmedia_preview.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
-from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
+from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request_v2 import ValueResourceInputOfRetailerSearchRequestV2
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
 from criteo_api_retailmedia_preview.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
@@ -1396,7 +1396,7 @@ class CampaignApi(object):
         )
         self.search_account_retailers_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceCollectionOutcomeOfRetailerResultAndMetadata,),
+                'response_type': (EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1409,13 +1409,13 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'value_resource_input_of_retailer_search_request',
+                    'value_resource_input_of_retailer_search_request_v2',
                     'limit',
                     'offset',
                 ],
                 'required': [
                     'account_id',
-                    'value_resource_input_of_retailer_search_request',
+                    'value_resource_input_of_retailer_search_request_v2',
                 ],
                 'nullable': [
                 ],
@@ -1444,8 +1444,8 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'value_resource_input_of_retailer_search_request':
-                        (ValueResourceInputOfRetailerSearchRequest,),
+                    'value_resource_input_of_retailer_search_request_v2':
+                        (ValueResourceInputOfRetailerSearchRequestV2,),
                     'limit':
                         (int,),
                     'offset':
@@ -1458,7 +1458,7 @@ class CampaignApi(object):
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'value_resource_input_of_retailer_search_request': 'body',
+                    'value_resource_input_of_retailer_search_request_v2': 'body',
                     'limit': 'query',
                     'offset': 'query',
                 },
@@ -3666,21 +3666,21 @@ class CampaignApi(object):
     def search_account_retailers(
         self,
         account_id,
-        value_resource_input_of_retailer_search_request,
+        value_resource_input_of_retailer_search_request_v2,
         **kwargs
     ):
         """/preview/retail-media/accounts/{accountId}/retailers/search  # noqa: E501
 
-        Searches for retailers associated with the specified account based on provided search criteria  # noqa: E501
+        Searches for retailers associated with the specified account and returns budget model availability for each retailer  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_account_retailers(account_id, value_resource_input_of_retailer_search_request, async_req=True)
+        >>> thread = api.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The external account identifier
-            value_resource_input_of_retailer_search_request (ValueResourceInputOfRetailerSearchRequest): The search request containing filtering parameters
+            value_resource_input_of_retailer_search_request_v2 (ValueResourceInputOfRetailerSearchRequestV2): The search request containing filtering parameters
 
         Keyword Args:
             limit (int): The maximum number of items to return. Must be between 1 and 10. Default is 5.. [optional] if omitted the server will use the default value of 5
@@ -3717,7 +3717,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+            EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3748,8 +3748,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
-        kwargs['value_resource_input_of_retailer_search_request'] = \
-            value_resource_input_of_retailer_search_request
+        kwargs['value_resource_input_of_retailer_search_request_v2'] = \
+            value_resource_input_of_retailer_search_request_v2
         return self.search_account_retailers_endpoint.call_with_http_info(**kwargs)
 
     def unpause_promoted_products(

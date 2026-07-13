@@ -136,8 +136,8 @@ class DataCompleteThrough(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            date_time (str, none_type): The instant through which data is complete, in the format \"yyyy-MM-dd HH:mm:ss\" in Criteo.RetailMedia.Exam.Reporting.Resources.Models.Outputs.DataCompleteThrough.Timezone.. [optional]  # noqa: E501
-            timezone (str, none_type): IANA timezone for Criteo.RetailMedia.Exam.Reporting.Resources.Models.Outputs.DataCompleteThrough.DateTime (e.g. \"UTC\", \"America/New_York\"). Matches the query timezone.. [optional]  # noqa: E501
+            date_time (str, none_type): The instant through which data is complete, in the format \"yyyy-MM-dd HH:mm:ss\" in the timezone given by the {timezone} field.. [optional]  # noqa: E501
+            timezone (str, none_type): IANA timezone for the {dateTime} field (e.g. \"UTC\", \"America/New_York\"). Matches the query timezone.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class DataCompleteThrough(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            date_time (str, none_type): The instant through which data is complete, in the format \"yyyy-MM-dd HH:mm:ss\" in Criteo.RetailMedia.Exam.Reporting.Resources.Models.Outputs.DataCompleteThrough.Timezone.. [optional]  # noqa: E501
-            timezone (str, none_type): IANA timezone for Criteo.RetailMedia.Exam.Reporting.Resources.Models.Outputs.DataCompleteThrough.DateTime (e.g. \"UTC\", \"America/New_York\"). Matches the query timezone.. [optional]  # noqa: E501
+            date_time (str, none_type): The instant through which data is complete, in the format \"yyyy-MM-dd HH:mm:ss\" in the timezone given by the {timezone} field.. [optional]  # noqa: E501
+            timezone (str, none_type): IANA timezone for the {dateTime} field (e.g. \"UTC\", \"America/New_York\"). Matches the query timezone.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

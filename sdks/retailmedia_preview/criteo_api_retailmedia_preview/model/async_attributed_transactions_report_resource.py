@@ -59,15 +59,19 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
     """
 
     allowed_values = {
-        ('type',): {
-            'ASYNCATTRIBUTEDTRANSACTIONSREPORT': "AsyncAttributedTransactionsReport",
-        },
     }
 
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -104,11 +108,8 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, attributes, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """AsyncAttributedTransactionsReportResource - a model defined in OpenAPI
-
-        Args:
-            attributes (AsyncAttributedTransactionsReport):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -141,7 +142,8 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): Optional JSON:API resource type. If provided, it must match this create resource.. [optional] if omitted the server will use the default value of "AsyncAttributedTransactionsReport"  # noqa: E501
+            attributes (AsyncAttributedTransactionsReport): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -173,7 +175,6 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.attributes = attributes
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -194,11 +195,8 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, attributes, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """AsyncAttributedTransactionsReportResource - a model defined in OpenAPI
-
-        Args:
-            attributes (AsyncAttributedTransactionsReport):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -231,7 +229,8 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str): Optional JSON:API resource type. If provided, it must match this create resource.. [optional] if omitted the server will use the default value of "AsyncAttributedTransactionsReport"  # noqa: E501
+            attributes (AsyncAttributedTransactionsReport): [optional]  # noqa: E501
+            type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -261,7 +260,6 @@ class AsyncAttributedTransactionsReportResource(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.attributes = attributes
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

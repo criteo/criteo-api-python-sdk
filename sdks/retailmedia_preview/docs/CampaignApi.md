@@ -2262,11 +2262,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_account_retailers**
-> EntityResourceCollectionOutcomeOfRetailerResultAndMetadata search_account_retailers(account_id, value_resource_input_of_retailer_search_request)
+> EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2)
 
 /preview/retail-media/accounts/{accountId}/retailers/search
 
-Searches for retailers associated with the specified account based on provided search criteria
+Searches for retailers associated with the specified account and returns budget model availability for each retailer
 
 ### Example
 
@@ -2277,8 +2277,8 @@ Searches for retailers associated with the specified account based on provided s
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import campaign_api
-from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+from criteo_api_retailmedia_preview.model.value_resource_input_of_retailer_search_request_v2 import ValueResourceInputOfRetailerSearchRequestV2
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2308,23 +2308,23 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     account_id = "accountId_example" # str | The external account identifier
-    value_resource_input_of_retailer_search_request = ValueResourceInputOfRetailerSearchRequest(
-        data=ValueResourceOfRetailerSearchRequest(
-            attributes=RetailerSearchRequest(
+    value_resource_input_of_retailer_search_request_v2 = ValueResourceInputOfRetailerSearchRequestV2(
+        data=ValueResourceOfRetailerSearchRequestV2(
+            attributes=RetailerSearchRequestV2(
                 retailer_id_filter=[
                     "retailer_id_filter_example",
                 ],
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfRetailerSearchRequest | The search request containing filtering parameters
+    ) # ValueResourceInputOfRetailerSearchRequestV2 | The search request containing filtering parameters
     limit = 5 # int | The maximum number of items to return. Must be between 1 and 10. Default is 5. (optional) if omitted the server will use the default value of 5
     offset = 0 # int | The number of items to skip before starting to collect the result set. Default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     try:
         # /preview/retail-media/accounts/{accountId}/retailers/search
-        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request)
+        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->search_account_retailers: %s\n" % e)
@@ -2333,7 +2333,7 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # /preview/retail-media/accounts/{accountId}/retailers/search
-        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request, limit=limit, offset=offset)
+        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling CampaignApi->search_account_retailers: %s\n" % e)
@@ -2345,13 +2345,13 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The external account identifier |
- **value_resource_input_of_retailer_search_request** | [**ValueResourceInputOfRetailerSearchRequest**](ValueResourceInputOfRetailerSearchRequest.md)| The search request containing filtering parameters |
+ **value_resource_input_of_retailer_search_request_v2** | [**ValueResourceInputOfRetailerSearchRequestV2**](ValueResourceInputOfRetailerSearchRequestV2.md)| The search request containing filtering parameters |
  **limit** | **int**| The maximum number of items to return. Must be between 1 and 10. Default is 5. | [optional] if omitted the server will use the default value of 5
  **offset** | **int**| The number of items to skip before starting to collect the result set. Default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
-[**EntityResourceCollectionOutcomeOfRetailerResultAndMetadata**](EntityResourceCollectionOutcomeOfRetailerResultAndMetadata.md)
+[**EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata**](EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata.md)
 
 ### Authorization
 

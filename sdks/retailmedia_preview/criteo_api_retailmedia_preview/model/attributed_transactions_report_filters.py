@@ -59,28 +59,20 @@ class AttributedTransactionsReportFilters(ModelNormal):
             'UNKNOWN': "unknown",
             'VIDEO': "video",
             'DISPLAY': "display",
+            'ALL': "all",
         },
     }
 
     validations = {
-        ('account_ids',): {
-            'max_items': 5,
-            'min_items': 1,
-        },
-        ('campaign_ids',): {
-            'max_items': 50,
-            'min_items': 1,
-        },
-        ('line_item_ids',): {
-            'max_items': 50,
-            'min_items': 1,
-        },
-        ('media_types',): {
-            'min_items': 1,
-        },
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -154,10 +146,10 @@ class AttributedTransactionsReportFilters(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_ids ([str]): Optional scope filter. Allows up to 5 account IDs per request.. [optional]  # noqa: E501
-            campaign_ids ([str]): Optional scope filter. Allows up to 50 campaign IDs per request.. [optional]  # noqa: E501
-            line_item_ids ([str]): Optional scope filter. Allows up to 50 line-item IDs per request.. [optional]  # noqa: E501
-            media_types ([str]): Optional media type filter.. [optional]  # noqa: E501
+            account_ids ([str]): [optional]  # noqa: E501
+            campaign_ids ([str]): [optional]  # noqa: E501
+            line_item_ids ([str]): [optional]  # noqa: E501
+            media_types ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,10 +235,10 @@ class AttributedTransactionsReportFilters(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_ids ([str]): Optional scope filter. Allows up to 5 account IDs per request.. [optional]  # noqa: E501
-            campaign_ids ([str]): Optional scope filter. Allows up to 50 campaign IDs per request.. [optional]  # noqa: E501
-            line_item_ids ([str]): Optional scope filter. Allows up to 50 line-item IDs per request.. [optional]  # noqa: E501
-            media_types ([str]): Optional media type filter.. [optional]  # noqa: E501
+            account_ids ([str]): [optional]  # noqa: E501
+            campaign_ids ([str]): [optional]  # noqa: E501
+            line_item_ids ([str]): [optional]  # noqa: E501
+            media_types ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

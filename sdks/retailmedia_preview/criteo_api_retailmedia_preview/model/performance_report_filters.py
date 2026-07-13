@@ -69,6 +69,7 @@ class PerformanceReportFilters(ModelNormal):
             'SPONSORSHIP': "sponsorship",
         },
         ('campaign_types',): {
+            'ALL': "all",
             'SPONSOREDPRODUCTS': "sponsoredProducts",
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
@@ -76,10 +77,12 @@ class PerformanceReportFilters(ModelNormal):
             'UNKNOWN': "unknown",
             'VIDEO': "video",
             'DISPLAY': "display",
+            'ALL': "all",
         },
         ('sales_channels',): {
             'ONLINE': "online",
             'OFFLINE': "offline",
+            'ALL': "all",
         },
         ('search_term_targetings',): {
             'UNKNOWN': "unknown",
@@ -100,48 +103,15 @@ class PerformanceReportFilters(ModelNormal):
     }
 
     validations = {
-        ('account_ids',): {
-            'max_items': 5,
-            'min_items': 1,
-        },
-        ('activation_platforms',): {
-            'min_items': 1,
-        },
-        ('budget_models',): {
-            'min_items': 1,
-        },
-        ('buy_types',): {
-            'min_items': 1,
-        },
-        ('campaign_ids',): {
-            'max_items': 50,
-            'min_items': 1,
-        },
-        ('campaign_types',): {
-            'min_items': 1,
-        },
-        ('line_item_ids',): {
-            'max_items': 50,
-            'min_items': 1,
-        },
-        ('media_types',): {
-            'min_items': 1,
-        },
-        ('sales_channels',): {
-            'min_items': 1,
-        },
-        ('search_term_targetings',): {
-            'min_items': 1,
-        },
-        ('search_term_types',): {
-            'min_items': 1,
-        },
-        ('targeted_keyword_types',): {
-            'min_items': 1,
-        },
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -231,18 +201,18 @@ class PerformanceReportFilters(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_ids ([str]): Optional scope filter. Allows up to 5 account IDs per request.. [optional]  # noqa: E501
-            activation_platforms ([str]): Optional activation platform filter.. [optional]  # noqa: E501
-            budget_models ([str]): Optional budget model filter.. [optional]  # noqa: E501
-            buy_types ([str]): Optional buy type filter.. [optional]  # noqa: E501
-            campaign_ids ([str]): Optional scope filter. Allows up to 50 campaign IDs per request.. [optional]  # noqa: E501
-            campaign_types ([str]): Optional inherited campaign type filter.. [optional]  # noqa: E501
-            line_item_ids ([str]): Optional scope filter. Allows up to 50 line-item IDs per request.. [optional]  # noqa: E501
-            media_types ([str]): Optional inherited media type filter.. [optional]  # noqa: E501
-            sales_channels ([str]): Optional inherited sales channel filter.. [optional]  # noqa: E501
-            search_term_targetings ([str]): Optional search term targeting filter.. [optional]  # noqa: E501
-            search_term_types ([str]): Optional search term type filter.. [optional]  # noqa: E501
-            targeted_keyword_types ([str]): Optional targeted keyword type filter.. [optional]  # noqa: E501
+            account_ids ([str]): [optional]  # noqa: E501
+            activation_platforms ([str]): [optional]  # noqa: E501
+            budget_models ([str]): [optional]  # noqa: E501
+            buy_types ([str]): [optional]  # noqa: E501
+            campaign_ids ([str]): [optional]  # noqa: E501
+            campaign_types ([str]): [optional]  # noqa: E501
+            line_item_ids ([str]): [optional]  # noqa: E501
+            media_types ([str]): [optional]  # noqa: E501
+            sales_channels ([str]): [optional]  # noqa: E501
+            search_term_targetings ([str]): [optional]  # noqa: E501
+            search_term_types ([str]): [optional]  # noqa: E501
+            targeted_keyword_types ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -328,18 +298,18 @@ class PerformanceReportFilters(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            account_ids ([str]): Optional scope filter. Allows up to 5 account IDs per request.. [optional]  # noqa: E501
-            activation_platforms ([str]): Optional activation platform filter.. [optional]  # noqa: E501
-            budget_models ([str]): Optional budget model filter.. [optional]  # noqa: E501
-            buy_types ([str]): Optional buy type filter.. [optional]  # noqa: E501
-            campaign_ids ([str]): Optional scope filter. Allows up to 50 campaign IDs per request.. [optional]  # noqa: E501
-            campaign_types ([str]): Optional inherited campaign type filter.. [optional]  # noqa: E501
-            line_item_ids ([str]): Optional scope filter. Allows up to 50 line-item IDs per request.. [optional]  # noqa: E501
-            media_types ([str]): Optional inherited media type filter.. [optional]  # noqa: E501
-            sales_channels ([str]): Optional inherited sales channel filter.. [optional]  # noqa: E501
-            search_term_targetings ([str]): Optional search term targeting filter.. [optional]  # noqa: E501
-            search_term_types ([str]): Optional search term type filter.. [optional]  # noqa: E501
-            targeted_keyword_types ([str]): Optional targeted keyword type filter.. [optional]  # noqa: E501
+            account_ids ([str]): [optional]  # noqa: E501
+            activation_platforms ([str]): [optional]  # noqa: E501
+            budget_models ([str]): [optional]  # noqa: E501
+            buy_types ([str]): [optional]  # noqa: E501
+            campaign_ids ([str]): [optional]  # noqa: E501
+            campaign_types ([str]): [optional]  # noqa: E501
+            line_item_ids ([str]): [optional]  # noqa: E501
+            media_types ([str]): [optional]  # noqa: E501
+            sales_channels ([str]): [optional]  # noqa: E501
+            search_term_targetings ([str]): [optional]  # noqa: E501
+            search_term_types ([str]): [optional]  # noqa: E501
+            targeted_keyword_types ([str]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

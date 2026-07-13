@@ -98,7 +98,14 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -115,10 +122,10 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
         lazy_import()
         return {
             'dimensions': ([str],),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
+            'end_date': (datetime,),  # noqa: E501
             'filters': (MissedOpportunitiesReportFilters,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
             'format': (str,),  # noqa: E501
         }
 
@@ -147,11 +154,11 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
         """AsyncMissedOpportunitiesReport - a model defined in OpenAPI
 
         Args:
-            dimensions ([str]): Required output grouping fields. Empty array means no grouping fields. At least one of dimensions or metrics must be non-empty.
-            end_date (date): Required inclusive report end date in YYYY-MM-DD format. Must be greater than or equal to startDate.
+            dimensions ([str]):
+            end_date (datetime):
             filters (MissedOpportunitiesReportFilters):
-            metrics ([str]): Required output measure fields. Empty array means no measure fields. At least one of dimensions or metrics must be non-empty.
-            start_date (date): Required inclusive report start date in YYYY-MM-DD format.
+            metrics ([str]):
+            start_date (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -184,7 +191,7 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            format (str): Output format. If omitted, json-compact is used.. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            format (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -245,11 +252,11 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
         """AsyncMissedOpportunitiesReport - a model defined in OpenAPI
 
         Args:
-            dimensions ([str]): Required output grouping fields. Empty array means no grouping fields. At least one of dimensions or metrics must be non-empty.
-            end_date (date): Required inclusive report end date in YYYY-MM-DD format. Must be greater than or equal to startDate.
+            dimensions ([str]):
+            end_date (datetime):
             filters (MissedOpportunitiesReportFilters):
-            metrics ([str]): Required output measure fields. Empty array means no measure fields. At least one of dimensions or metrics must be non-empty.
-            start_date (date): Required inclusive report start date in YYYY-MM-DD format.
+            metrics ([str]):
+            start_date (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -282,7 +289,7 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            format (str): Output format. If omitted, json-compact is used.. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
+            format (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

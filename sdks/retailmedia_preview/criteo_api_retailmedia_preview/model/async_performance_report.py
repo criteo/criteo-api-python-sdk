@@ -145,6 +145,12 @@ class AsyncPerformanceReport(ModelNormal):
             '14D': "14D",
             '30D': "30D",
         },
+        ('click_match_level',): {
+            'SAMESKU': "sameSku",
+            'SAMECATEGORY': "sameCategory",
+            'SAMEBRAND': "sameBrand",
+            'CAMPAIGN': "campaign",
+        },
         ('format',): {
             'JSON': "json",
             'JSON-COMPACT': "json-compact",
@@ -158,12 +164,25 @@ class AsyncPerformanceReport(ModelNormal):
             '14D': "14D",
             '30D': "30D",
         },
+        ('view_match_level',): {
+            'SAMESKU': "sameSku",
+            'SAMECATEGORY': "sameCategory",
+            'SAMEBRAND': "sameBrand",
+            'CAMPAIGN': "campaign",
+        },
     }
 
     validations = {
     }
 
-    additional_properties_type = None
+    @cached_property
+    def additional_properties_type():
+        """
+        This must be a method because a model may have properties that are
+        of type self, this must run after the class is loaded
+        """
+        lazy_import()
+        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
 
     _nullable = False
 
@@ -180,14 +199,16 @@ class AsyncPerformanceReport(ModelNormal):
         lazy_import()
         return {
             'dimensions': ([str],),  # noqa: E501
-            'end_date': (date,),  # noqa: E501
+            'end_date': (datetime,),  # noqa: E501
             'filters': (PerformanceReportFilters,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
-            'start_date': (date,),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
             'click_attribution_window': (str,),  # noqa: E501
+            'click_match_level': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
             'timezone': (str,),  # noqa: E501
             'view_attribution_window': (str,),  # noqa: E501
+            'view_match_level': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -202,9 +223,11 @@ class AsyncPerformanceReport(ModelNormal):
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'click_attribution_window': 'clickAttributionWindow',  # noqa: E501
+        'click_match_level': 'clickMatchLevel',  # noqa: E501
         'format': 'format',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
         'view_attribution_window': 'viewAttributionWindow',  # noqa: E501
+        'view_match_level': 'viewMatchLevel',  # noqa: E501
     }
 
     read_only_vars = {
@@ -218,11 +241,11 @@ class AsyncPerformanceReport(ModelNormal):
         """AsyncPerformanceReport - a model defined in OpenAPI
 
         Args:
-            dimensions ([str]): Required output grouping fields. Empty array means no grouping fields. At least one of dimensions or metrics must be non-empty.
-            end_date (date): Required inclusive report end date in YYYY-MM-DD format. Must be greater than or equal to startDate.
+            dimensions ([str]):
+            end_date (datetime):
             filters (PerformanceReportFilters):
-            metrics ([str]): Required output measure fields. Empty array means no measure fields. At least one of dimensions or metrics must be non-empty.
-            start_date (date): Required inclusive report start date in YYYY-MM-DD format.
+            metrics ([str]):
+            start_date (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -255,10 +278,12 @@ class AsyncPerformanceReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            click_attribution_window (str): Optional click attribution window.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            format (str): Output format. If omitted, json-compact is used.. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            timezone (str): Optional time zone identifier. If omitted, UTC is used. If provided, it must be valid.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
-            view_attribution_window (str): Optional view attribution window.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_attribution_window (str): [optional]  # noqa: E501
+            click_match_level (str): [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            format (str): [optional]  # noqa: E501
+            timezone (str): [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str): [optional]  # noqa: E501
+            view_match_level (str): [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -319,11 +344,11 @@ class AsyncPerformanceReport(ModelNormal):
         """AsyncPerformanceReport - a model defined in OpenAPI
 
         Args:
-            dimensions ([str]): Required output grouping fields. Empty array means no grouping fields. At least one of dimensions or metrics must be non-empty.
-            end_date (date): Required inclusive report end date in YYYY-MM-DD format. Must be greater than or equal to startDate.
+            dimensions ([str]):
+            end_date (datetime):
             filters (PerformanceReportFilters):
-            metrics ([str]): Required output measure fields. Empty array means no measure fields. At least one of dimensions or metrics must be non-empty.
-            start_date (date): Required inclusive report start date in YYYY-MM-DD format.
+            metrics ([str]):
+            start_date (datetime):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -356,10 +381,12 @@ class AsyncPerformanceReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            click_attribution_window (str): Optional click attribution window.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
-            format (str): Output format. If omitted, json-compact is used.. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            timezone (str): Optional time zone identifier. If omitted, UTC is used. If provided, it must be valid.. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
-            view_attribution_window (str): Optional view attribution window.. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_attribution_window (str): [optional]  # noqa: E501
+            click_match_level (str): [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
+            format (str): [optional]  # noqa: E501
+            timezone (str): [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str): [optional]  # noqa: E501
+            view_match_level (str): [optional] if omitted the server will use the default value of "campaign"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
