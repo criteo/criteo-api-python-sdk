@@ -1,12 +1,11 @@
-# ValueResourceOfRetailerSearchRequest
+# RetailerSearchRequestV2
 
-A value resource exposed by the API.
+Request model for searching retailers
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**RetailerSearchRequest**](RetailerSearchRequest.md) |  | [optional] 
-**type** | **str, none_type** | Type of the resource. | [optional] 
+**retailer_id_filter** | **[str], none_type** | Optional list of retailer IDs to filter the results | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

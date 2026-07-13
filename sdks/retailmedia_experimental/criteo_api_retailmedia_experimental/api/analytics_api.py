@@ -49,7 +49,7 @@ class AnalyticsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.generate_async_accounts_report_endpoint = _Endpoint(
+        self.generate_async_accounts_report_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (AsyncReportResponse,),
                 'auth': [
@@ -57,7 +57,7 @@ class AnalyticsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/experimental/retail-media/reports/accounts',
-                'operation_id': 'generate_async_accounts_report',
+                'operation_id': 'generate_async_accounts_report_v2',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -102,7 +102,7 @@ class AnalyticsApi(object):
             },
             api_client=api_client
         )
-        self.generate_async_campaigns_report_endpoint = _Endpoint(
+        self.generate_async_campaigns_report_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (AsyncReportResponse,),
                 'auth': [
@@ -110,7 +110,7 @@ class AnalyticsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/experimental/retail-media/reports/campaigns',
-                'operation_id': 'generate_async_campaigns_report',
+                'operation_id': 'generate_async_campaigns_report_v2',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -208,7 +208,7 @@ class AnalyticsApi(object):
             },
             api_client=api_client
         )
-        self.generate_async_line_items_report_endpoint = _Endpoint(
+        self.generate_async_line_items_report_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (AsyncReportResponse,),
                 'auth': [
@@ -216,7 +216,7 @@ class AnalyticsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/experimental/retail-media/reports/line-items',
-                'operation_id': 'generate_async_line_items_report',
+                'operation_id': 'generate_async_line_items_report_v2',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -894,7 +894,7 @@ class AnalyticsApi(object):
             api_client=api_client
         )
 
-    def generate_async_accounts_report(
+    def generate_async_accounts_report_v2(
         self,
         async_accounts_report_request,
         **kwargs
@@ -905,7 +905,7 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_accounts_report(async_accounts_report_request, async_req=True)
+        >>> thread = api.generate_async_accounts_report_v2(async_accounts_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -975,9 +975,9 @@ class AnalyticsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['async_accounts_report_request'] = \
             async_accounts_report_request
-        return self.generate_async_accounts_report_endpoint.call_with_http_info(**kwargs)
+        return self.generate_async_accounts_report_v2_endpoint.call_with_http_info(**kwargs)
 
-    def generate_async_campaigns_report(
+    def generate_async_campaigns_report_v2(
         self,
         async_campaigns_report_request,
         **kwargs
@@ -988,7 +988,7 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_campaigns_report(async_campaigns_report_request, async_req=True)
+        >>> thread = api.generate_async_campaigns_report_v2(async_campaigns_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1058,7 +1058,7 @@ class AnalyticsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['async_campaigns_report_request'] = \
             async_campaigns_report_request
-        return self.generate_async_campaigns_report_endpoint.call_with_http_info(**kwargs)
+        return self.generate_async_campaigns_report_v2_endpoint.call_with_http_info(**kwargs)
 
     def generate_async_fill_rate_report(
         self,
@@ -1143,7 +1143,7 @@ class AnalyticsApi(object):
             async_fill_rate_report_request
         return self.generate_async_fill_rate_report_endpoint.call_with_http_info(**kwargs)
 
-    def generate_async_line_items_report(
+    def generate_async_line_items_report_v2(
         self,
         async_line_items_report_request,
         **kwargs
@@ -1154,7 +1154,7 @@ class AnalyticsApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_line_items_report(async_line_items_report_request, async_req=True)
+        >>> thread = api.generate_async_line_items_report_v2(async_line_items_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -1224,7 +1224,7 @@ class AnalyticsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['async_line_items_report_request'] = \
             async_line_items_report_request
-        return self.generate_async_line_items_report_endpoint.call_with_http_info(**kwargs)
+        return self.generate_async_line_items_report_v2_endpoint.call_with_http_info(**kwargs)
 
     def generate_async_offsite_report(
         self,

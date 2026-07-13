@@ -4,10 +4,10 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /experimental/retail-media/reports/accounts | /experimental/retail-media/reports/accounts
-[**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /experimental/retail-media/reports/campaigns | /experimental/retail-media/reports/campaigns
+[**generate_async_accounts_report_v2**](AnalyticsApi.md#generate_async_accounts_report_v2) | **POST** /experimental/retail-media/reports/accounts | /experimental/retail-media/reports/accounts
+[**generate_async_campaigns_report_v2**](AnalyticsApi.md#generate_async_campaigns_report_v2) | **POST** /experimental/retail-media/reports/campaigns | /experimental/retail-media/reports/campaigns
 [**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /experimental/retail-media/reports/fillrate | /experimental/retail-media/reports/fillrate
-[**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /experimental/retail-media/reports/line-items | /experimental/retail-media/reports/line-items
+[**generate_async_line_items_report_v2**](AnalyticsApi.md#generate_async_line_items_report_v2) | **POST** /experimental/retail-media/reports/line-items | /experimental/retail-media/reports/line-items
 [**generate_async_offsite_report**](AnalyticsApi.md#generate_async_offsite_report) | **POST** /experimental/retail-media/reports/offsite | /experimental/retail-media/reports/offsite
 [**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /experimental/retail-media/reports/unfilled-placements | /experimental/retail-media/reports/unfilled-placements
 [**generate_digital_shelf_intelligence_insight**](AnalyticsApi.md#generate_digital_shelf_intelligence_insight) | **POST** /experimental/retail-media/insights/digital-shelf-intelligence | /experimental/retail-media/insights/digital-shelf-intelligence
@@ -22,8 +22,8 @@ Method | HTTP request | Description
 [**get_insight_report_status**](AnalyticsApi.md#get_insight_report_status) | **GET** /experimental/retail-media/insights/{insightId}/status | /experimental/retail-media/insights/{insightId}/status
 
 
-# **generate_async_accounts_report**
-> AsyncReportResponse generate_async_accounts_report(async_accounts_report_request)
+# **generate_async_accounts_report_v2**
+> AsyncReportResponse generate_async_accounts_report_v2(async_accounts_report_request)
 
 /experimental/retail-media/reports/accounts
 
@@ -117,10 +117,10 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/reports/accounts
-        api_response = api_instance.generate_async_accounts_report(async_accounts_report_request)
+        api_response = api_instance.generate_async_accounts_report_v2(async_accounts_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_async_accounts_report: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_accounts_report_v2: %s\n" % e)
 ```
 
 
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_async_campaigns_report**
-> AsyncReportResponse generate_async_campaigns_report(async_campaigns_report_request)
+# **generate_async_campaigns_report_v2**
+> AsyncReportResponse generate_async_campaigns_report_v2(async_campaigns_report_request)
 
 /experimental/retail-media/reports/campaigns
 
@@ -247,10 +247,10 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/reports/campaigns
-        api_response = api_instance.generate_async_campaigns_report(async_campaigns_report_request)
+        api_response = api_instance.generate_async_campaigns_report_v2(async_campaigns_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_async_campaigns_report: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_campaigns_report_v2: %s\n" % e)
 ```
 
 
@@ -388,8 +388,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_async_line_items_report**
-> AsyncReportResponse generate_async_line_items_report(async_line_items_report_request)
+# **generate_async_line_items_report_v2**
+> AsyncReportResponse generate_async_line_items_report_v2(async_line_items_report_request)
 
 /experimental/retail-media/reports/line-items
 
@@ -483,10 +483,10 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/reports/line-items
-        api_response = api_instance.generate_async_line_items_report(async_line_items_report_request)
+        api_response = api_instance.generate_async_line_items_report_v2(async_line_items_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_async_line_items_report: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_line_items_report_v2: %s\n" % e)
 ```
 
 

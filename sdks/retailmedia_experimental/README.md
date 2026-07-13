@@ -58,10 +58,10 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**get_private_market_child_accounts_by_account_id**](docs/AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /experimental/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | /experimental/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
 *AccountsApi* | [**search_brands**](docs/AccountsApi.md#search_brands) | **POST** /experimental/retail-media/brands/search | /experimental/retail-media/brands/search
-*AnalyticsApi* | [**generate_async_accounts_report**](docs/AnalyticsApi.md#generate_async_accounts_report) | **POST** /experimental/retail-media/reports/accounts | /experimental/retail-media/reports/accounts
-*AnalyticsApi* | [**generate_async_campaigns_report**](docs/AnalyticsApi.md#generate_async_campaigns_report) | **POST** /experimental/retail-media/reports/campaigns | /experimental/retail-media/reports/campaigns
+*AnalyticsApi* | [**generate_async_accounts_report_v2**](docs/AnalyticsApi.md#generate_async_accounts_report_v2) | **POST** /experimental/retail-media/reports/accounts | /experimental/retail-media/reports/accounts
+*AnalyticsApi* | [**generate_async_campaigns_report_v2**](docs/AnalyticsApi.md#generate_async_campaigns_report_v2) | **POST** /experimental/retail-media/reports/campaigns | /experimental/retail-media/reports/campaigns
 *AnalyticsApi* | [**generate_async_fill_rate_report**](docs/AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /experimental/retail-media/reports/fillrate | /experimental/retail-media/reports/fillrate
-*AnalyticsApi* | [**generate_async_line_items_report**](docs/AnalyticsApi.md#generate_async_line_items_report) | **POST** /experimental/retail-media/reports/line-items | /experimental/retail-media/reports/line-items
+*AnalyticsApi* | [**generate_async_line_items_report_v2**](docs/AnalyticsApi.md#generate_async_line_items_report_v2) | **POST** /experimental/retail-media/reports/line-items | /experimental/retail-media/reports/line-items
 *AnalyticsApi* | [**generate_async_offsite_report**](docs/AnalyticsApi.md#generate_async_offsite_report) | **POST** /experimental/retail-media/reports/offsite | /experimental/retail-media/reports/offsite
 *AnalyticsApi* | [**generate_async_unfilled_placements_report**](docs/AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /experimental/retail-media/reports/unfilled-placements | /experimental/retail-media/reports/unfilled-placements
 *AnalyticsApi* | [**generate_digital_shelf_intelligence_insight**](docs/AnalyticsApi.md#generate_digital_shelf_intelligence_insight) | **POST** /experimental/retail-media/insights/digital-shelf-intelligence | /experimental/retail-media/insights/digital-shelf-intelligence
@@ -174,7 +174,7 @@ Class | Method | HTTP request | Description
  - [BotMessage](docs/BotMessage.md)
  - [BrandIdSearchRequest](docs/BrandIdSearchRequest.md)
  - [BrandIdSearchResult](docs/BrandIdSearchResult.md)
- - [CampaignAvailability](docs/CampaignAvailability.md)
+ - [CampaignAvailabilityV2](docs/CampaignAvailabilityV2.md)
  - [CatalogStatusV2](docs/CatalogStatusV2.md)
  - [ChangeDetailsV1](docs/ChangeDetailsV1.md)
  - [ChoiceVariableValue](docs/ChoiceVariableValue.md)
@@ -201,7 +201,7 @@ Class | Method | HTTP request | Description
  - [EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata](docs/EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata.md)
  - [EntityResourceCollectionOutcomeCreativeSearchResponse](docs/EntityResourceCollectionOutcomeCreativeSearchResponse.md)
  - [EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata](docs/EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata.md)
- - [EntityResourceCollectionOutcomeOfRetailerResultAndMetadata](docs/EntityResourceCollectionOutcomeOfRetailerResultAndMetadata.md)
+ - [EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata](docs/EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata.md)
  - [EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata](docs/EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata.md)
  - [EntityResourceCreativeSearchRequest](docs/EntityResourceCreativeSearchRequest.md)
  - [EntityResourceCreativeSearchResponse](docs/EntityResourceCreativeSearchResponse.md)
@@ -209,7 +209,7 @@ Class | Method | HTTP request | Description
  - [EntityResourceOfCatalogStatusV2](docs/EntityResourceOfCatalogStatusV2.md)
  - [EntityResourceOfRetailMediaAccountV2](docs/EntityResourceOfRetailMediaAccountV2.md)
  - [EntityResourceOfRetailMediaChildAccount](docs/EntityResourceOfRetailMediaChildAccount.md)
- - [EntityResourceOfRetailerResult](docs/EntityResourceOfRetailerResult.md)
+ - [EntityResourceOfRetailerResultV2](docs/EntityResourceOfRetailerResultV2.md)
  - [EntityResourceOfSponsoredProductsLineItem](docs/EntityResourceOfSponsoredProductsLineItem.md)
  - [EntityResourceOutcomeBalanceV1](docs/EntityResourceOutcomeBalanceV1.md)
  - [EntityResourceOutcomeOfCatalogStatusV2](docs/EntityResourceOutcomeOfCatalogStatusV2.md)
@@ -258,7 +258,7 @@ Class | Method | HTTP request | Description
  - [OfferUpdate](docs/OfferUpdate.md)
  - [Outcome](docs/Outcome.md)
  - [PageMetadata](docs/PageMetadata.md)
- - [PageTypeCombination](docs/PageTypeCombination.md)
+ - [PageTypeCombinationV2](docs/PageTypeCombinationV2.md)
  - [PageTypeEnvironment2](docs/PageTypeEnvironment2.md)
  - [PagingOffsetLimitMetadata](docs/PagingOffsetLimitMetadata.md)
  - [PreferredLineItemCreateModelV2](docs/PreferredLineItemCreateModelV2.md)
@@ -308,8 +308,8 @@ Class | Method | HTTP request | Description
  - [RetailMediaContactlistAmendmentRequest](docs/RetailMediaContactlistAmendmentRequest.md)
  - [RetailMediaContactlistOperation](docs/RetailMediaContactlistOperation.md)
  - [RetailMediaContactlistOperationResponseAttributes](docs/RetailMediaContactlistOperationResponseAttributes.md)
- - [RetailerResult](docs/RetailerResult.md)
- - [RetailerSearchRequest](docs/RetailerSearchRequest.md)
+ - [RetailerResultV2](docs/RetailerResultV2.md)
+ - [RetailerSearchRequestV2](docs/RetailerSearchRequestV2.md)
  - [RmAlgebraNodeV1](docs/RmAlgebraNodeV1.md)
  - [RmAudienceBulkCreateInputV1](docs/RmAudienceBulkCreateInputV1.md)
  - [RmAudienceBulkDeleteInputV1](docs/RmAudienceBulkDeleteInputV1.md)
@@ -427,7 +427,7 @@ Class | Method | HTTP request | Description
  - [ValueResourceInputOfRetailMediaBrandAccountCreationV2](docs/ValueResourceInputOfRetailMediaBrandAccountCreationV2.md)
  - [ValueResourceInputOfRetailMediaBrands](docs/ValueResourceInputOfRetailMediaBrands.md)
  - [ValueResourceInputOfRetailMediaSellerAccountCreationV2](docs/ValueResourceInputOfRetailMediaSellerAccountCreationV2.md)
- - [ValueResourceInputOfRetailerSearchRequest](docs/ValueResourceInputOfRetailerSearchRequest.md)
+ - [ValueResourceInputOfRetailerSearchRequestV2](docs/ValueResourceInputOfRetailerSearchRequestV2.md)
  - [ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel](docs/ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel.md)
  - [ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel](docs/ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel.md)
  - [ValueResourceInputOfUpdateBalanceModelV1](docs/ValueResourceInputOfUpdateBalanceModelV1.md)
@@ -439,7 +439,7 @@ Class | Method | HTTP request | Description
  - [ValueResourceOfRetailMediaBrands](docs/ValueResourceOfRetailMediaBrands.md)
  - [ValueResourceOfRetailMediaSeller](docs/ValueResourceOfRetailMediaSeller.md)
  - [ValueResourceOfRetailMediaSellerAccountCreationV2](docs/ValueResourceOfRetailMediaSellerAccountCreationV2.md)
- - [ValueResourceOfRetailerSearchRequest](docs/ValueResourceOfRetailerSearchRequest.md)
+ - [ValueResourceOfRetailerSearchRequestV2](docs/ValueResourceOfRetailerSearchRequestV2.md)
  - [ValueResourceOfSponsoredProductsLineItemCreateRequestModel](docs/ValueResourceOfSponsoredProductsLineItemCreateRequestModel.md)
  - [ValueResourceOfSponsoredProductsLineItemUpdateRequestModel](docs/ValueResourceOfSponsoredProductsLineItemUpdateRequestModel.md)
  - [ValueResourceOfUpdateBalanceModelV1](docs/ValueResourceOfUpdateBalanceModelV1.md)

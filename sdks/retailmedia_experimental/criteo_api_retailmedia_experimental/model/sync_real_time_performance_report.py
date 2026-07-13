@@ -172,10 +172,10 @@ class SyncRealTimePerformanceReport(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             account_ids ([str]): Account ids to filter (plural; base has AccountId for single account).. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter.. [optional]  # noqa: E501
-            dimensions ([str]): List of dimensions to report on (real-time: at least one required). Only values from Criteo.RetailMedia.Exam.Reporting.Resources.Models.Inputs.RealTimePerformance.SyncRealTimeDimension are valid.. [optional]  # noqa: E501
+            dimensions ([str]): List of dimensions to report on (real-time: at least one required). Only the supported dimension values are valid.. [optional]  # noqa: E501
             end_date (datetime): Optional end date/time (inclusive in the request timezone). If empty or not provided, no end date filter is applied.  When provided, used as the inclusive upper bound for the report range.  Hides base Report.EndDate so this report can treat end date as optional (no [Required]).. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter.. [optional]  # noqa: E501
-            metrics ([str]): List of metrics to report on (real-time: at least one required). Only values from Criteo.RetailMedia.Exam.Reporting.Resources.Models.Inputs.RealTimePerformance.SyncRealTimeMetric are valid.. [optional]  # noqa: E501
+            metrics ([str]): List of metrics to report on (real-time: at least one required). Only the supported metric values are valid.. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. This is not used for security, so no need to check for > 0 elements. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
@@ -269,10 +269,10 @@ class SyncRealTimePerformanceReport(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             account_ids ([str]): Account ids to filter (plural; base has AccountId for single account).. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter.. [optional]  # noqa: E501
-            dimensions ([str]): List of dimensions to report on (real-time: at least one required). Only values from Criteo.RetailMedia.Exam.Reporting.Resources.Models.Inputs.RealTimePerformance.SyncRealTimeDimension are valid.. [optional]  # noqa: E501
+            dimensions ([str]): List of dimensions to report on (real-time: at least one required). Only the supported dimension values are valid.. [optional]  # noqa: E501
             end_date (datetime): Optional end date/time (inclusive in the request timezone). If empty or not provided, no end date filter is applied.  When provided, used as the inclusive upper bound for the report range.  Hides base Report.EndDate so this report can treat end date as optional (no [Required]).. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter.. [optional]  # noqa: E501
-            metrics ([str]): List of metrics to report on (real-time: at least one required). Only values from Criteo.RetailMedia.Exam.Reporting.Resources.Models.Inputs.RealTimePerformance.SyncRealTimeMetric are valid.. [optional]  # noqa: E501
+            metrics ([str]): List of metrics to report on (real-time: at least one required). Only the supported metric values are valid.. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. This is not used for security, so no need to check for > 0 elements. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
