@@ -4,78 +4,77 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /2025-07/retail-media/line-items/{id}/keywords/add-remove | 
-[**append_add_to_basket_targets_by_line_item_id**](CampaignApi.md#append_add_to_basket_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append | 
-[**append_audience_targets_by_line_item_id**](CampaignApi.md#append_audience_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append | 
-[**append_campaigns_by_balance_id**](CampaignApi.md#append_campaigns_by_balance_id) | **POST** /2025-07/retail-media/balances/{balance-id}/campaigns/append | 
-[**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/append | 
-[**append_store_targets_by_line_item_id**](CampaignApi.md#append_store_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append | 
-[**create_asset**](CampaignApi.md#create_asset) | **POST** /2025-07/retail-media/assets | 
-[**create_brand_catalog_export**](CampaignApi.md#create_brand_catalog_export) | **POST** /2025-07/retail-media/accounts/{accountId}/brand-catalog-export | 
-[**create_campaigns_by_account_id**](CampaignApi.md#create_campaigns_by_account_id) | **POST** /2025-07/retail-media/accounts/{account-id}/campaigns | 
-[**create_creative**](CampaignApi.md#create_creative) | **POST** /2025-07/retail-media/accounts/{account-id}/creatives | 
-[**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items | 
-[**create_seller_catalog_export**](CampaignApi.md#create_seller_catalog_export) | **POST** /2025-07/retail-media/accounts/{accountId}/seller-catalog-export | 
-[**delete_add_to_basket_targets_by_line_item_id**](CampaignApi.md#delete_add_to_basket_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete | 
-[**delete_audience_targets_by_line_item_id**](CampaignApi.md#delete_audience_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete | 
-[**delete_campaigns_by_balance_id**](CampaignApi.md#delete_campaigns_by_balance_id) | **POST** /2025-07/retail-media/balances/{balance-id}/campaigns/delete | 
-[**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/delete | 
-[**delete_store_target_by_line_item_id**](CampaignApi.md#delete_store_target_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete | 
-[**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /2025-07/retail-media/line-items/{id}/keywords | 
-[**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /2025-07/retail-media/line-items/{line-item-id}/products | 
-[**get_account_creatives**](CampaignApi.md#get_account_creatives) | **GET** /2025-07/retail-media/accounts/{account-id}/creatives | 
-[**get_add_to_basket_targets_by_line_item_id**](CampaignApi.md#get_add_to_basket_targets_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
-[**get_api202110_external_retailer_pages_by_retailer_id**](CampaignApi.md#get_api202110_external_retailer_pages_by_retailer_id) | **GET** /2025-07/retail-media/retailers/{retailerId}/pages | 
-[**get_api_external_v1_categories**](CampaignApi.md#get_api_external_v1_categories) | **GET** /2025-07/retail-media/categories | 
-[**get_auction_line_items_by_campaign_id**](CampaignApi.md#get_auction_line_items_by_campaign_id) | **GET** /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items | 
-[**get_auction_line_items_by_line_item_id**](CampaignApi.md#get_auction_line_items_by_line_item_id) | **GET** /2025-07/retail-media/auction-line-items/{line-item-id} | 
-[**get_audience_targets_by_line_item_id**](CampaignApi.md#get_audience_targets_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
-[**get_bid_multipliers_by_line_item_id**](CampaignApi.md#get_bid_multipliers_by_line_item_id) | **GET** /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers | 
-[**get_brands_by_account_id**](CampaignApi.md#get_brands_by_account_id) | **GET** /2025-07/retail-media/accounts/{accountId}/brands | 
-[**get_campaign_budget_overrides**](CampaignApi.md#get_campaign_budget_overrides) | **GET** /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
-[**get_campaign_by_campaign_id**](CampaignApi.md#get_campaign_by_campaign_id) | **GET** /2025-07/retail-media/campaigns/{campaignId} | 
-[**get_campaigns_by_account_id**](CampaignApi.md#get_campaigns_by_account_id) | **GET** /2025-07/retail-media/accounts/{account-id}/campaigns | 
-[**get_catalog_output**](CampaignApi.md#get_catalog_output) | **GET** /2025-07/retail-media/catalogs/{catalogId}/output | 
-[**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /2025-07/retail-media/catalogs/{catalogId}/status | 
-[**get_category**](CampaignApi.md#get_category) | **GET** /2025-07/retail-media/categories/{categoryId} | 
-[**get_cpc_min_bids_by_sku_ids_v1**](CampaignApi.md#get_cpc_min_bids_by_sku_ids_v1) | **POST** /2025-07/retail-media/retailers/{retailerId}/cpc-min-bids | 
-[**get_creative**](CampaignApi.md#get_creative) | **GET** /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id} | 
-[**get_creative_template**](CampaignApi.md#get_creative_template) | **GET** /2025-07/retail-media/retailers/{retailer-id}/templates/{template-id} | 
-[**get_keyword_in_review_report**](CampaignApi.md#get_keyword_in_review_report) | **GET** /2025-07/retail-media/accounts/{account-id}/keywords/in-review-report | 
-[**get_line_item_budget_overrides**](CampaignApi.md#get_line_item_budget_overrides) | **GET** /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
-[**get_line_items_by_account_id**](CampaignApi.md#get_line_items_by_account_id) | **GET** /2025-07/retail-media/accounts/{account-id}/line-items | 
-[**get_line_items_by_campaign_id**](CampaignApi.md#get_line_items_by_campaign_id) | **GET** /2025-07/retail-media/line-items/{line-item-id} | 
-[**get_preferred_line_items_by_campaign_id**](CampaignApi.md#get_preferred_line_items_by_campaign_id) | **GET** /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items | 
-[**get_preferred_line_items_by_line_item_id**](CampaignApi.md#get_preferred_line_items_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id} | 
-[**get_recommended_keywords**](CampaignApi.md#get_recommended_keywords) | **GET** /2025-07/retail-media/line-items/{externalLineItemId}/keywords/recommended | 
-[**get_retailer_creative_templates**](CampaignApi.md#get_retailer_creative_templates) | **GET** /2025-07/retail-media/retailers/{retailer-id}/templates | 
-[**get_retailers_by_account_id**](CampaignApi.md#get_retailers_by_account_id) | **GET** /2025-07/retail-media/accounts/{accountId}/retailers | 
-[**get_store_targets_by_line_item_id**](CampaignApi.md#get_store_targets_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
-[**modify_auction_line_items_by_campaign_id**](CampaignApi.md#modify_auction_line_items_by_campaign_id) | **POST** /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items | 
-[**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/pause | 
-[**post_api_external_v1_account_catalogs_sellers_by_account_id**](CampaignApi.md#post_api_external_v1_account_catalogs_sellers_by_account_id) | **POST** /2025-07/retail-media/accounts/{accountId}/catalogs/sellers | 
-[**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2025-07/retail-media/accounts/{accountId}/catalogs | 
-[**put_add_to_basket_target_by_line_item_id**](CampaignApi.md#put_add_to_basket_target_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | 
-[**put_audience_targets_by_line_item_id**](CampaignApi.md#put_audience_targets_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | 
-[**put_store_target_by_line_item_id**](CampaignApi.md#put_store_target_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores | 
-[**search_account_creatives**](CampaignApi.md#search_account_creatives) | **POST** /2025-07/retail-media/accounts/{account-id}/creatives/search | 
-[**search_brands**](CampaignApi.md#search_brands) | **POST** /2025-07/retail-media/brands/search | 
-[**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /2025-07/retail-media/line-items/{id}/keywords/set-bid | 
-[**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/unpause | 
-[**update_auction_line_item_by_line_item_id**](CampaignApi.md#update_auction_line_item_by_line_item_id) | **PUT** /2025-07/retail-media/auction-line-items/{line-item-id} | 
-[**update_bid_multipliers_by_line_item_id**](CampaignApi.md#update_bid_multipliers_by_line_item_id) | **PUT** /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers | 
-[**update_campaign_budget_overrides**](CampaignApi.md#update_campaign_budget_overrides) | **PUT** /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides | 
-[**update_campaign_by_campaign_id**](CampaignApi.md#update_campaign_by_campaign_id) | **PUT** /2025-07/retail-media/campaigns/{campaignId} | 
-[**update_creative**](CampaignApi.md#update_creative) | **PUT** /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id} | 
-[**update_keyword_reviews**](CampaignApi.md#update_keyword_reviews) | **POST** /2025-07/retail-media/line-items/{line-item-id}/keywords/review | 
-[**update_line_item_budget_overrides**](CampaignApi.md#update_line_item_budget_overrides) | **PUT** /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides | 
-[**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id} | 
+[**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /2025-07/retail-media/line-items/{id}/keywords/add-remove | /2025-07/retail-media/line-items/{id}/keywords/add-remove
+[**append_add_to_basket_targets_by_line_item_id**](CampaignApi.md#append_add_to_basket_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append
+[**append_audience_targets_by_line_item_id**](CampaignApi.md#append_audience_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append
+[**append_campaigns_by_balance_id**](CampaignApi.md#append_campaigns_by_balance_id) | **POST** /2025-07/retail-media/balances/{balance-id}/campaigns/append | /2025-07/retail-media/balances/{balance-id}/campaigns/append
+[**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/append | /2025-07/retail-media/line-items/{line-item-id}/products/append
+[**append_store_targets_by_line_item_id**](CampaignApi.md#append_store_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append
+[**create_asset**](CampaignApi.md#create_asset) | **POST** /2025-07/retail-media/assets | /2025-07/retail-media/assets
+[**create_brand_catalog_export**](CampaignApi.md#create_brand_catalog_export) | **POST** /2025-07/retail-media/accounts/{accountId}/brand-catalog-export | /2025-07/retail-media/accounts/{accountId}/brand-catalog-export
+[**create_campaigns_by_account_id**](CampaignApi.md#create_campaigns_by_account_id) | **POST** /2025-07/retail-media/accounts/{account-id}/campaigns | /2025-07/retail-media/accounts/{account-id}/campaigns
+[**create_creative**](CampaignApi.md#create_creative) | **POST** /2025-07/retail-media/accounts/{account-id}/creatives | /2025-07/retail-media/accounts/{account-id}/creatives
+[**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items | /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
+[**create_seller_catalog_export**](CampaignApi.md#create_seller_catalog_export) | **POST** /2025-07/retail-media/accounts/{accountId}/seller-catalog-export | /2025-07/retail-media/accounts/{accountId}/seller-catalog-export
+[**delete_add_to_basket_targets_by_line_item_id**](CampaignApi.md#delete_add_to_basket_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete
+[**delete_audience_targets_by_line_item_id**](CampaignApi.md#delete_audience_targets_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete
+[**delete_campaigns_by_balance_id**](CampaignApi.md#delete_campaigns_by_balance_id) | **POST** /2025-07/retail-media/balances/{balance-id}/campaigns/delete | /2025-07/retail-media/balances/{balance-id}/campaigns/delete
+[**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/delete | /2025-07/retail-media/line-items/{line-item-id}/products/delete
+[**delete_store_target_by_line_item_id**](CampaignApi.md#delete_store_target_by_line_item_id) | **POST** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete
+[**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /2025-07/retail-media/line-items/{id}/keywords | /2025-07/retail-media/line-items/{id}/keywords
+[**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /2025-07/retail-media/line-items/{line-item-id}/products | /2025-07/retail-media/line-items/{line-item-id}/products
+[**get_account_creatives**](CampaignApi.md#get_account_creatives) | **GET** /2025-07/retail-media/accounts/{account-id}/creatives | /2025-07/retail-media/accounts/{account-id}/creatives
+[**get_add_to_basket_targets_by_line_item_id**](CampaignApi.md#get_add_to_basket_targets_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket
+[**get_api202110_external_retailer_pages_by_retailer_id**](CampaignApi.md#get_api202110_external_retailer_pages_by_retailer_id) | **GET** /2025-07/retail-media/retailers/{retailerId}/pages | /2025-07/retail-media/retailers/{retailerId}/pages
+[**get_api_external_v1_categories**](CampaignApi.md#get_api_external_v1_categories) | **GET** /2025-07/retail-media/categories | /2025-07/retail-media/categories
+[**get_auction_line_items_by_campaign_id**](CampaignApi.md#get_auction_line_items_by_campaign_id) | **GET** /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items | /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
+[**get_auction_line_items_by_line_item_id**](CampaignApi.md#get_auction_line_items_by_line_item_id) | **GET** /2025-07/retail-media/auction-line-items/{line-item-id} | /2025-07/retail-media/auction-line-items/{line-item-id}
+[**get_audience_targets_by_line_item_id**](CampaignApi.md#get_audience_targets_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences
+[**get_bid_multipliers_by_line_item_id**](CampaignApi.md#get_bid_multipliers_by_line_item_id) | **GET** /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers | /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers
+[**get_brands_by_account_id**](CampaignApi.md#get_brands_by_account_id) | **GET** /2025-07/retail-media/accounts/{accountId}/brands | /2025-07/retail-media/accounts/{accountId}/brands
+[**get_campaign_budget_overrides**](CampaignApi.md#get_campaign_budget_overrides) | **GET** /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides | /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides
+[**get_campaign_by_campaign_id**](CampaignApi.md#get_campaign_by_campaign_id) | **GET** /2025-07/retail-media/campaigns/{campaignId} | /2025-07/retail-media/campaigns/{campaignId}
+[**get_campaigns_by_account_id**](CampaignApi.md#get_campaigns_by_account_id) | **GET** /2025-07/retail-media/accounts/{account-id}/campaigns | /2025-07/retail-media/accounts/{account-id}/campaigns
+[**get_catalog_output**](CampaignApi.md#get_catalog_output) | **GET** /2025-07/retail-media/catalogs/{catalogId}/output | /2025-07/retail-media/catalogs/{catalogId}/output
+[**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /2025-07/retail-media/catalogs/{catalogId}/status | /2025-07/retail-media/catalogs/{catalogId}/status
+[**get_category**](CampaignApi.md#get_category) | **GET** /2025-07/retail-media/categories/{categoryId} | /2025-07/retail-media/categories/{categoryId}
+[**get_cpc_min_bids_by_sku_ids_v1**](CampaignApi.md#get_cpc_min_bids_by_sku_ids_v1) | **POST** /2025-07/retail-media/retailers/{retailerId}/cpc-min-bids | /2025-07/retail-media/retailers/{retailerId}/cpc-min-bids
+[**get_creative**](CampaignApi.md#get_creative) | **GET** /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id} | /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}
+[**get_creative_template**](CampaignApi.md#get_creative_template) | **GET** /2025-07/retail-media/retailers/{retailer-id}/templates/{template-id} | /2025-07/retail-media/retailers/{retailer-id}/templates/{template-id}
+[**get_keyword_in_review_report**](CampaignApi.md#get_keyword_in_review_report) | **GET** /2025-07/retail-media/accounts/{account-id}/keywords/in-review-report | /2025-07/retail-media/accounts/{account-id}/keywords/in-review-report
+[**get_line_item_budget_overrides**](CampaignApi.md#get_line_item_budget_overrides) | **GET** /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides | /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides
+[**get_line_items_by_account_id**](CampaignApi.md#get_line_items_by_account_id) | **GET** /2025-07/retail-media/accounts/{account-id}/line-items | /2025-07/retail-media/accounts/{account-id}/line-items
+[**get_line_items_by_campaign_id**](CampaignApi.md#get_line_items_by_campaign_id) | **GET** /2025-07/retail-media/line-items/{line-item-id} | /2025-07/retail-media/line-items/{line-item-id}
+[**get_preferred_line_items_by_campaign_id**](CampaignApi.md#get_preferred_line_items_by_campaign_id) | **GET** /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items | /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
+[**get_preferred_line_items_by_line_item_id**](CampaignApi.md#get_preferred_line_items_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id} | /2025-07/retail-media/preferred-line-items/{line-item-id}
+[**get_recommended_keywords**](CampaignApi.md#get_recommended_keywords) | **GET** /2025-07/retail-media/line-items/{externalLineItemId}/keywords/recommended | /2025-07/retail-media/line-items/{externalLineItemId}/keywords/recommended
+[**get_retailer_creative_templates**](CampaignApi.md#get_retailer_creative_templates) | **GET** /2025-07/retail-media/retailers/{retailer-id}/templates | /2025-07/retail-media/retailers/{retailer-id}/templates
+[**get_retailers_by_account_id**](CampaignApi.md#get_retailers_by_account_id) | **GET** /2025-07/retail-media/accounts/{accountId}/retailers | /2025-07/retail-media/accounts/{accountId}/retailers
+[**get_store_targets_by_line_item_id**](CampaignApi.md#get_store_targets_by_line_item_id) | **GET** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores
+[**modify_auction_line_items_by_campaign_id**](CampaignApi.md#modify_auction_line_items_by_campaign_id) | **POST** /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items | /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
+[**pause_promoted_products**](CampaignApi.md#pause_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/pause | /2025-07/retail-media/line-items/{line-item-id}/products/pause
+[**post_api_external_v1_account_catalogs_sellers_by_account_id**](CampaignApi.md#post_api_external_v1_account_catalogs_sellers_by_account_id) | **POST** /2025-07/retail-media/accounts/{accountId}/catalogs/sellers | /2025-07/retail-media/accounts/{accountId}/catalogs/sellers
+[**post_api_v1_external_account_catalogs_by_account_id**](CampaignApi.md#post_api_v1_external_account_catalogs_by_account_id) | **POST** /2025-07/retail-media/accounts/{accountId}/catalogs | /2025-07/retail-media/accounts/{accountId}/catalogs
+[**put_add_to_basket_target_by_line_item_id**](CampaignApi.md#put_add_to_basket_target_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket
+[**put_audience_targets_by_line_item_id**](CampaignApi.md#put_audience_targets_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences
+[**put_store_target_by_line_item_id**](CampaignApi.md#put_store_target_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores | /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores
+[**search_account_creatives**](CampaignApi.md#search_account_creatives) | **POST** /2025-07/retail-media/accounts/{account-id}/creatives/search | /2025-07/retail-media/accounts/{account-id}/creatives/search
+[**set_keyword_bids**](CampaignApi.md#set_keyword_bids) | **POST** /2025-07/retail-media/line-items/{id}/keywords/set-bid | /2025-07/retail-media/line-items/{id}/keywords/set-bid
+[**unpause_promoted_products**](CampaignApi.md#unpause_promoted_products) | **POST** /2025-07/retail-media/line-items/{line-item-id}/products/unpause | /2025-07/retail-media/line-items/{line-item-id}/products/unpause
+[**update_auction_line_item_by_line_item_id**](CampaignApi.md#update_auction_line_item_by_line_item_id) | **PUT** /2025-07/retail-media/auction-line-items/{line-item-id} | /2025-07/retail-media/auction-line-items/{line-item-id}
+[**update_bid_multipliers_by_line_item_id**](CampaignApi.md#update_bid_multipliers_by_line_item_id) | **PUT** /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers | /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers
+[**update_campaign_budget_overrides**](CampaignApi.md#update_campaign_budget_overrides) | **PUT** /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides | /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides
+[**update_campaign_by_campaign_id**](CampaignApi.md#update_campaign_by_campaign_id) | **PUT** /2025-07/retail-media/campaigns/{campaignId} | /2025-07/retail-media/campaigns/{campaignId}
+[**update_creative**](CampaignApi.md#update_creative) | **PUT** /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id} | /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}
+[**update_keyword_reviews**](CampaignApi.md#update_keyword_reviews) | **POST** /2025-07/retail-media/line-items/{line-item-id}/keywords/review | /2025-07/retail-media/line-items/{line-item-id}/keywords/review
+[**update_line_item_budget_overrides**](CampaignApi.md#update_line_item_budget_overrides) | **PUT** /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides | /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides
+[**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /2025-07/retail-media/preferred-line-items/{line-item-id} | /2025-07/retail-media/preferred-line-items/{line-item-id}
 
 
 # **add_remove_keywords**
 > ResourceOutcome add_remove_keywords(id)
 
-
+/2025-07/retail-media/line-items/{id}/keywords/add-remove
 
 Add or Remove keywords from the line item in bulk
 
@@ -137,6 +136,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{id}/keywords/add-remove
         api_response = api_instance.add_remove_keywords(id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -145,6 +145,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{id}/keywords/add-remove
         api_response = api_instance.add_remove_keywords(id, add_remove_keywords_model_request=add_remove_keywords_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -184,7 +185,7 @@ Name | Type | Description  | Notes
 # **append_add_to_basket_targets_by_line_item_id**
 > AddToBasketTarget202110Response append_add_to_basket_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append
 
 This endpoint appends one or more add to basket ids to targeting on the specified line item.  The resulting state of the add to basket target is returned.
 
@@ -244,6 +245,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append
         api_response = api_instance.append_add_to_basket_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -252,6 +254,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append
         api_response = api_instance.append_add_to_basket_targets_by_line_item_id(line_item_id, add_to_basket_ids_update_model202110_request=add_to_basket_ids_update_model202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -291,7 +294,7 @@ Name | Type | Description  | Notes
 # **append_audience_targets_by_line_item_id**
 > AudienceTarget202110Response append_audience_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append
 
 This endpoint appends one or more audiences ids to targeting on the specified line item.  The resulting state of the audience target is returned.
 
@@ -348,6 +351,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append
         api_response = api_instance.append_audience_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -356,6 +360,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append
         api_response = api_instance.append_audience_targets_by_line_item_id(line_item_id, audience_ids_update_model202110_request=audience_ids_update_model202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -395,7 +400,7 @@ Name | Type | Description  | Notes
 # **append_campaigns_by_balance_id**
 > BalanceCampaign202110PagedListResponse append_campaigns_by_balance_id(balance_id)
 
-
+/2025-07/retail-media/balances/{balance-id}/campaigns/append
 
 appends one or more campaigns to the specified balance
 
@@ -451,6 +456,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/balances/{balance-id}/campaigns/append
         api_response = api_instance.append_campaigns_by_balance_id(balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -459,6 +465,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/balances/{balance-id}/campaigns/append
         api_response = api_instance.append_campaigns_by_balance_id(balance_id, balance_campaign202110_list_request=balance_campaign202110_list_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -498,7 +505,7 @@ Name | Type | Description  | Notes
 # **append_promoted_products**
 > ProductResourceOutcome append_promoted_products(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/products/append
 
 Append a collection of promoted products to a line item
 
@@ -558,6 +565,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/append
         api_response = api_instance.append_promoted_products(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -566,6 +574,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/append
         api_response = api_instance.append_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -606,7 +615,7 @@ Name | Type | Description  | Notes
 # **append_store_targets_by_line_item_id**
 > StoreTarget202110Response append_store_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append
 
 This endpoint appends one or more store ids to targeting on the specified line item.  The resulting state of the store target is returned.
 
@@ -663,6 +672,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append
         api_response = api_instance.append_store_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -671,6 +681,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append
         api_response = api_instance.append_store_targets_by_line_item_id(line_item_id, store_ids_update_model202110_request=store_ids_update_model202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -710,7 +721,7 @@ Name | Type | Description  | Notes
 # **create_asset**
 > AssetResponse create_asset(asset_file)
 
-
+/2025-07/retail-media/assets
 
 Creates an asset
 
@@ -756,6 +767,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/assets
         api_response = api_instance.create_asset(asset_file)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -794,7 +806,7 @@ Name | Type | Description  | Notes
 # **create_brand_catalog_export**
 > EntityResourceOutcomeOfCatalogStatusV2 create_brand_catalog_export(account_id, value_resource_input_of_brand_catalog_request_v2)
 
-
+/2025-07/retail-media/accounts/{accountId}/brand-catalog-export
 
 Create a request for a Catalog available to the indicated account.
 
@@ -858,6 +870,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{accountId}/brand-catalog-export
         api_response = api_instance.create_brand_catalog_export(account_id, value_resource_input_of_brand_catalog_request_v2)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -897,7 +910,7 @@ Name | Type | Description  | Notes
 # **create_campaigns_by_account_id**
 > JsonApiSingleResponseOfCampaignV202301 create_campaigns_by_account_id(account_id, post_campaign_v202301)
 
-
+/2025-07/retail-media/accounts/{account-id}/campaigns
 
 Creates a new campaign with the specified settings
 
@@ -957,6 +970,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
                 monthly_pacing=3.14,
                 name="name_example",
                 on_behalf_company_name="on_behalf_company_name_example",
+                retailer_id=1,
                 start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 type="auction",
                 view_attribution_scope="unknown",
@@ -968,6 +982,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/campaigns
         api_response = api_instance.create_campaigns_by_account_id(account_id, post_campaign_v202301)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1007,7 +1022,7 @@ Name | Type | Description  | Notes
 # **create_creative**
 > Creative202210Response create_creative(account_id, creative_create_model202207)
 
-
+/2025-07/retail-media/accounts/{account-id}/creatives
 
 Create a creative for an account
 
@@ -1091,6 +1106,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/creatives
         api_response = api_instance.create_creative(account_id, creative_create_model202207)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1130,7 +1146,7 @@ Name | Type | Description  | Notes
 # **create_preferred_line_item_by_campaign_id**
 > PreferredLineItemV2Response create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request)
 
-
+/2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
 
 Creates a new preferred line item with the specified settings
 
@@ -1208,6 +1224,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
         api_response = api_instance.create_preferred_line_item_by_campaign_id(campaign_id, preferred_line_item_create_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1247,7 +1264,7 @@ Name | Type | Description  | Notes
 # **create_seller_catalog_export**
 > EntityResourceOutcomeOfCatalogStatusV2 create_seller_catalog_export(account_id, value_resource_input_of_seller_catalog_request_v2)
 
-
+/2025-07/retail-media/accounts/{accountId}/seller-catalog-export
 
 Create a request for a Catalog available to the indicated account.
 
@@ -1311,6 +1328,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{accountId}/seller-catalog-export
         api_response = api_instance.create_seller_catalog_export(account_id, value_resource_input_of_seller_catalog_request_v2)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1350,7 +1368,7 @@ Name | Type | Description  | Notes
 # **delete_add_to_basket_targets_by_line_item_id**
 > AddToBasketTarget202110Response delete_add_to_basket_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete
 
 This endpoint removes one or more add to basket ids from targeting on the specified line item.  The resulting state of the add to basket target is returned.
 
@@ -1410,6 +1428,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete
         api_response = api_instance.delete_add_to_basket_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1418,6 +1437,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete
         api_response = api_instance.delete_add_to_basket_targets_by_line_item_id(line_item_id, add_to_basket_ids_update_model202110_request=add_to_basket_ids_update_model202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1457,7 +1477,7 @@ Name | Type | Description  | Notes
 # **delete_audience_targets_by_line_item_id**
 > AudienceTarget202110Response delete_audience_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete
 
 This endpoint removes one or more audiences ids from targeting on the specified line item.  The resulting state of the audience target is returned.
 
@@ -1514,6 +1534,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete
         api_response = api_instance.delete_audience_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1522,6 +1543,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete
         api_response = api_instance.delete_audience_targets_by_line_item_id(line_item_id, audience_ids_update_model202110_request=audience_ids_update_model202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1561,7 +1583,7 @@ Name | Type | Description  | Notes
 # **delete_campaigns_by_balance_id**
 > BalanceCampaign202110PagedListResponse delete_campaigns_by_balance_id(balance_id)
 
-
+/2025-07/retail-media/balances/{balance-id}/campaigns/delete
 
 Removes one or more campaigns on the specified balance
 
@@ -1617,6 +1639,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/balances/{balance-id}/campaigns/delete
         api_response = api_instance.delete_campaigns_by_balance_id(balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1625,6 +1648,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/balances/{balance-id}/campaigns/delete
         api_response = api_instance.delete_campaigns_by_balance_id(balance_id, balance_campaign202110_list_request=balance_campaign202110_list_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1664,7 +1688,7 @@ Name | Type | Description  | Notes
 # **delete_promoted_products**
 > delete_promoted_products(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/products/delete
 
 Remove a collection of promoted products from a line item
 
@@ -1723,6 +1747,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/delete
         api_instance.delete_promoted_products(line_item_id)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->delete_promoted_products: %s\n" % e)
@@ -1730,6 +1755,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/delete
         api_instance.delete_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->delete_promoted_products: %s\n" % e)
@@ -1768,7 +1794,7 @@ void (empty response body)
 # **delete_store_target_by_line_item_id**
 > StoreTarget202110Response delete_store_target_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete
 
 This endpoint removes one or more store ids from targeting on the specified line item.  The resulting state of the store target is returned.
 
@@ -1825,6 +1851,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete
         api_response = api_instance.delete_store_target_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1833,6 +1860,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete
         api_response = api_instance.delete_store_target_by_line_item_id(line_item_id, store_ids_update_model202110_request=store_ids_update_model202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1872,7 +1900,7 @@ Name | Type | Description  | Notes
 # **fetch_keywords**
 > KeywordsModelResponse fetch_keywords(id)
 
-
+/2025-07/retail-media/line-items/{id}/keywords
 
 Fetch keywords associated with the specified line item
 
@@ -1918,6 +1946,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{id}/keywords
         api_response = api_instance.fetch_keywords(id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -1956,7 +1985,7 @@ Name | Type | Description  | Notes
 # **fetch_promoted_products**
 > PromotedProductResourceCollectionOutcome fetch_promoted_products(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/products
 
 Retrieve a page of promoted products for a line item
 
@@ -2005,6 +2034,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products
         api_response = api_instance.fetch_promoted_products(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2013,6 +2043,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products
         api_response = api_instance.fetch_promoted_products(line_item_id, fields=fields, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2054,7 +2085,7 @@ Name | Type | Description  | Notes
 # **get_account_creatives**
 > Creative202110ListResponse get_account_creatives(account_id)
 
-
+/2025-07/retail-media/accounts/{account-id}/creatives
 
 Get account creatives
 
@@ -2100,6 +2131,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/creatives
         api_response = api_instance.get_account_creatives(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2138,7 +2170,7 @@ Name | Type | Description  | Notes
 # **get_add_to_basket_targets_by_line_item_id**
 > AddToBasketTarget202110Response get_add_to_basket_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket
 
 This endpoint gets the add to basket target on the specified line item.
 
@@ -2184,6 +2216,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket
         api_response = api_instance.get_add_to_basket_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2222,7 +2255,7 @@ Name | Type | Description  | Notes
 # **get_api202110_external_retailer_pages_by_retailer_id**
 > RetailerPages202110 get_api202110_external_retailer_pages_by_retailer_id(retailer_id)
 
-
+/2025-07/retail-media/retailers/{retailerId}/pages
 
 Get the page types available for the given retailer
 
@@ -2268,6 +2301,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/retailers/{retailerId}/pages
         api_response = api_instance.get_api202110_external_retailer_pages_by_retailer_id(retailer_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2306,7 +2340,7 @@ Name | Type | Description  | Notes
 # **get_api_external_v1_categories**
 > Category202204ListResponse get_api_external_v1_categories()
 
-
+/2025-07/retail-media/categories
 
 Endpoint to search categories by text and retailer.
 
@@ -2356,6 +2390,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/categories
         api_response = api_instance.get_api_external_v1_categories(page_index=page_index, page_size=page_size, retailer_id=retailer_id, text_substring=text_substring)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2397,7 +2432,7 @@ Name | Type | Description  | Notes
 # **get_auction_line_items_by_campaign_id**
 > AuctionLineItemPagedListResponse get_auction_line_items_by_campaign_id(campaign_id)
 
-
+/2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
 
 Gets page of auction line item objects for the given campaign id
 
@@ -2448,6 +2483,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
         api_response = api_instance.get_auction_line_items_by_campaign_id(campaign_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2456,6 +2492,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
         api_response = api_instance.get_auction_line_items_by_campaign_id(campaign_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2497,7 +2534,7 @@ Name | Type | Description  | Notes
 # **get_auction_line_items_by_line_item_id**
 > AuctionLineItemResponse get_auction_line_items_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/auction-line-items/{line-item-id}
 
 Gets the auction line item for the given line item id
 
@@ -2543,6 +2580,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/auction-line-items/{line-item-id}
         api_response = api_instance.get_auction_line_items_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2581,7 +2619,7 @@ Name | Type | Description  | Notes
 # **get_audience_targets_by_line_item_id**
 > AudienceTarget202110Response get_audience_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences
 
 This endpoint gets the audience target on the specified line item.
 
@@ -2627,6 +2665,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences
         api_response = api_instance.get_audience_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2665,7 +2704,7 @@ Name | Type | Description  | Notes
 # **get_bid_multipliers_by_line_item_id**
 > JsonApiSingleResponseOfLineItemBidMultipliersV2 get_bid_multipliers_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/bid-multipliers
 
 Fetch all bid multipliers for a given line item
 
@@ -2711,6 +2750,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers
         api_response = api_instance.get_bid_multipliers_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2749,7 +2789,7 @@ Name | Type | Description  | Notes
 # **get_brands_by_account_id**
 > JsonApiPageResponseOfBrand get_brands_by_account_id(account_id)
 
-
+/2025-07/retail-media/accounts/{accountId}/brands
 
 Gets page of retailer objects that are associated with the given account
 
@@ -2800,6 +2840,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{accountId}/brands
         api_response = api_instance.get_brands_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2808,6 +2849,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/accounts/{accountId}/brands
         api_response = api_instance.get_brands_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2849,7 +2891,7 @@ Name | Type | Description  | Notes
 # **get_campaign_budget_overrides**
 > ValueResourceOutcomeOfCampaignBudgetOverrides get_campaign_budget_overrides(campaign_id)
 
-
+/2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides
 
 Get current campaign budget overrides by given campaign id.
 
@@ -2895,6 +2937,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides
         api_response = api_instance.get_campaign_budget_overrides(campaign_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -2933,7 +2976,7 @@ Name | Type | Description  | Notes
 # **get_campaign_by_campaign_id**
 > JsonApiSingleResponseOfCampaignV202301 get_campaign_by_campaign_id(campaign_id)
 
-
+/2025-07/retail-media/campaigns/{campaignId}
 
 Gets the campaign for the given campaign id
 
@@ -2979,6 +3022,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaignId}
         api_response = api_instance.get_campaign_by_campaign_id(campaign_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3017,7 +3061,7 @@ Name | Type | Description  | Notes
 # **get_campaigns_by_account_id**
 > JsonApiPageResponseOfCampaignV202301 get_campaigns_by_account_id(account_id)
 
-
+/2025-07/retail-media/accounts/{account-id}/campaigns
 
 Gets page of campaign objects for the given account id
 
@@ -3068,6 +3112,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/campaigns
         api_response = api_instance.get_campaigns_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3076,6 +3121,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/accounts/{account-id}/campaigns
         api_response = api_instance.get_campaigns_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3117,7 +3163,7 @@ Name | Type | Description  | Notes
 # **get_catalog_output**
 > file_type get_catalog_output(catalog_id)
 
-
+/2025-07/retail-media/catalogs/{catalogId}/output
 
 Output the indicated catalog. Catalogs are only available for retrieval when their associated status request  is at a Success status.  Produces application/x-json-stream CatalogProduct json objects (first introduced in the 2021-07 version).
 
@@ -3162,6 +3208,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/catalogs/{catalogId}/output
         api_response = api_instance.get_catalog_output(catalog_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3201,7 +3248,7 @@ Name | Type | Description  | Notes
 # **get_catalog_status**
 > JsonApiSingleResponseOfCatalogStatus get_catalog_status(catalog_id)
 
-
+/2025-07/retail-media/catalogs/{catalogId}/status
 
 Check the status of a catalog request.
 
@@ -3247,6 +3294,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/catalogs/{catalogId}/status
         api_response = api_instance.get_catalog_status(catalog_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3285,7 +3333,7 @@ Name | Type | Description  | Notes
 # **get_category**
 > Category202204 get_category(category_id)
 
-
+/2025-07/retail-media/categories/{categoryId}
 
 Endpoint to search for a specific category by categoryId.
 
@@ -3331,6 +3379,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/categories/{categoryId}
         api_response = api_instance.get_category(category_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3369,7 +3418,7 @@ Name | Type | Description  | Notes
 # **get_cpc_min_bids_by_sku_ids_v1**
 > ValueResourceOutcomeCpcMinBidsResponse get_cpc_min_bids_by_sku_ids_v1(retailer_id, value_resource_input_cpc_min_bids_request)
 
-
+/2025-07/retail-media/retailers/{retailerId}/cpc-min-bids
 
 Get overall and individual minimum bid amount for given retailer id and sku id list.
 
@@ -3426,6 +3475,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/retailers/{retailerId}/cpc-min-bids
         api_response = api_instance.get_cpc_min_bids_by_sku_ids_v1(retailer_id, value_resource_input_cpc_min_bids_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3465,7 +3515,7 @@ Name | Type | Description  | Notes
 # **get_creative**
 > Creative2Response get_creative(account_id, creative_id)
 
-
+/2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}
 
 Get the specified creative
 
@@ -3512,6 +3562,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}
         api_response = api_instance.get_creative(account_id, creative_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3551,7 +3602,7 @@ Name | Type | Description  | Notes
 # **get_creative_template**
 > TemplateResponse get_creative_template(retailer_id, template_id)
 
-
+/2025-07/retail-media/retailers/{retailer-id}/templates/{template-id}
 
 Gets the template for the specified retailer id and template id
 
@@ -3598,6 +3649,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/retailers/{retailer-id}/templates/{template-id}
         api_response = api_instance.get_creative_template(retailer_id, template_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3637,7 +3689,7 @@ Name | Type | Description  | Notes
 # **get_keyword_in_review_report**
 > EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata get_keyword_in_review_report(account_id)
 
-
+/2025-07/retail-media/accounts/{account-id}/keywords/in-review-report
 
 Generate a list of reports for line items which contain one or more actionable keyword reviews
 
@@ -3685,6 +3737,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/keywords/in-review-report
         api_response = api_instance.get_keyword_in_review_report(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3693,6 +3746,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/accounts/{account-id}/keywords/in-review-report
         api_response = api_instance.get_keyword_in_review_report(account_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3733,7 +3787,7 @@ Name | Type | Description  | Notes
 # **get_line_item_budget_overrides**
 > ValueResourceOutcomeOfLineItemBudgetOverrides get_line_item_budget_overrides(line_item_id)
 
-
+/2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides
 
 Gets a collection of monthly and daily budget overrides for the provided line item.
 
@@ -3779,6 +3833,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides
         api_response = api_instance.get_line_item_budget_overrides(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3817,7 +3872,7 @@ Name | Type | Description  | Notes
 # **get_line_items_by_account_id**
 > CommonLineItemPagedListResponse get_line_items_by_account_id(account_id)
 
-
+/2025-07/retail-media/accounts/{account-id}/line-items
 
 Gets page of line item objects for the given account id
 
@@ -3872,6 +3927,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/line-items
         api_response = api_instance.get_line_items_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3880,6 +3936,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/accounts/{account-id}/line-items
         api_response = api_instance.get_line_items_by_account_id(account_id, limit_to_campaign_id=limit_to_campaign_id, limit_to_id=limit_to_id, limit_to_type=limit_to_type, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -3923,7 +3980,7 @@ Name | Type | Description  | Notes
 # **get_line_items_by_campaign_id**
 > CommonLineItemResponse get_line_items_by_campaign_id(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}
 
 Gets the line item for the given line item id
 
@@ -3969,6 +4026,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}
         api_response = api_instance.get_line_items_by_campaign_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4007,7 +4065,7 @@ Name | Type | Description  | Notes
 # **get_preferred_line_items_by_campaign_id**
 > PreferredLineItemV2PagedListResponse get_preferred_line_items_by_campaign_id(campaign_id)
 
-
+/2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
 
 Gets page of preferred line item objects for the given campaign id
 
@@ -4058,6 +4116,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
         api_response = api_instance.get_preferred_line_items_by_campaign_id(campaign_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4066,6 +4125,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items
         api_response = api_instance.get_preferred_line_items_by_campaign_id(campaign_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4107,7 +4167,7 @@ Name | Type | Description  | Notes
 # **get_preferred_line_items_by_line_item_id**
 > PreferredLineItemV2Response get_preferred_line_items_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}
 
 Gets the preferred line item for the given line item id
 
@@ -4153,6 +4213,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}
         api_response = api_instance.get_preferred_line_items_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4191,7 +4252,7 @@ Name | Type | Description  | Notes
 # **get_recommended_keywords**
 > ValueResourceOutcomeOfRecommendedKeywordsResult get_recommended_keywords(external_line_item_id)
 
-
+/2025-07/retail-media/line-items/{externalLineItemId}/keywords/recommended
 
 Retrieves a collection of recommended keywords for a line item
 
@@ -4237,6 +4298,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{externalLineItemId}/keywords/recommended
         api_response = api_instance.get_recommended_keywords(external_line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4275,7 +4337,7 @@ Name | Type | Description  | Notes
 # **get_retailer_creative_templates**
 > TemplateListResponse get_retailer_creative_templates(retailer_id)
 
-
+/2025-07/retail-media/retailers/{retailer-id}/templates
 
 Get retailer creative templates
 
@@ -4321,6 +4383,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/retailers/{retailer-id}/templates
         api_response = api_instance.get_retailer_creative_templates(retailer_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4359,7 +4422,7 @@ Name | Type | Description  | Notes
 # **get_retailers_by_account_id**
 > JsonApiPageResponseOfRetailer get_retailers_by_account_id(account_id)
 
-
+/2025-07/retail-media/accounts/{accountId}/retailers
 
 Gets page of retailer objects that are associated with the given account
 
@@ -4410,6 +4473,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{accountId}/retailers
         api_response = api_instance.get_retailers_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4418,6 +4482,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/accounts/{accountId}/retailers
         api_response = api_instance.get_retailers_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4459,7 +4524,7 @@ Name | Type | Description  | Notes
 # **get_store_targets_by_line_item_id**
 > StoreTarget202110Response get_store_targets_by_line_item_id(line_item_id)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores
 
 This endpoint gets the store target on the specified line item.
 
@@ -4505,6 +4570,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores
         api_response = api_instance.get_store_targets_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4543,7 +4609,7 @@ Name | Type | Description  | Notes
 # **modify_auction_line_items_by_campaign_id**
 > AuctionLineItemResponse modify_auction_line_items_by_campaign_id(campaign_id, auction_line_item_create_model_request)
 
-
+/2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
 
 Creates new auction line item with the specified settings
 
@@ -4609,6 +4675,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaign-id}/auction-line-items
         api_response = api_instance.modify_auction_line_items_by_campaign_id(campaign_id, auction_line_item_create_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4648,7 +4715,7 @@ Name | Type | Description  | Notes
 # **pause_promoted_products**
 > pause_promoted_products(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/products/pause
 
 Pause a collection of promoted products associated with a line item
 
@@ -4707,6 +4774,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/pause
         api_instance.pause_promoted_products(line_item_id)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->pause_promoted_products: %s\n" % e)
@@ -4714,6 +4782,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/pause
         api_instance.pause_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->pause_promoted_products: %s\n" % e)
@@ -4752,7 +4821,7 @@ void (empty response body)
 # **post_api_external_v1_account_catalogs_sellers_by_account_id**
 > JsonApiSingleResponseOfCatalogStatus post_api_external_v1_account_catalogs_sellers_by_account_id(account_id, json_api_request_of_seller_catalog_request)
 
-
+/2025-07/retail-media/accounts/{accountId}/catalogs/sellers
 
 Create a request for a Catalog available to the indicated account.
 
@@ -4812,6 +4881,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{accountId}/catalogs/sellers
         api_response = api_instance.post_api_external_v1_account_catalogs_sellers_by_account_id(account_id, json_api_request_of_seller_catalog_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4851,7 +4921,7 @@ Name | Type | Description  | Notes
 # **post_api_v1_external_account_catalogs_by_account_id**
 > JsonApiSingleResponseOfCatalogStatus post_api_v1_external_account_catalogs_by_account_id(account_id, json_api_request_of_catalog_request)
 
-
+/2025-07/retail-media/accounts/{accountId}/catalogs
 
 Create a request for a Catalog available to the indicated account.
 
@@ -4909,6 +4979,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{accountId}/catalogs
         api_response = api_instance.post_api_v1_external_account_catalogs_by_account_id(account_id, json_api_request_of_catalog_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -4948,7 +5019,7 @@ Name | Type | Description  | Notes
 # **put_add_to_basket_target_by_line_item_id**
 > AddToBasketTarget202110Response put_add_to_basket_target_by_line_item_id(line_item_id, add_to_basket_target202110_request)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket
 
 This endpoint sets the scope of the add to basket target on the specified line item.
 
@@ -5009,6 +5080,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket
         api_response = api_instance.put_add_to_basket_target_by_line_item_id(line_item_id, add_to_basket_target202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5048,7 +5120,7 @@ Name | Type | Description  | Notes
 # **put_audience_targets_by_line_item_id**
 > AudienceTarget202110Response put_audience_targets_by_line_item_id(line_item_id, audience_target202110_request)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences
 
 This endpoint sets the scope of the audience target on the specified line item.
 
@@ -5106,6 +5178,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences
         api_response = api_instance.put_audience_targets_by_line_item_id(line_item_id, audience_target202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5145,7 +5218,7 @@ Name | Type | Description  | Notes
 # **put_store_target_by_line_item_id**
 > StoreTarget202110Response put_store_target_by_line_item_id(line_item_id, store_target202110_request)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores
 
 This endpoint sets the scope of the store target on the specified line item.
 
@@ -5203,6 +5276,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores
         api_response = api_instance.put_store_target_by_line_item_id(line_item_id, store_target202110_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5242,7 +5316,7 @@ Name | Type | Description  | Notes
 # **search_account_creatives**
 > Creative2ListResponse search_account_creatives(account_id)
 
-
+/2025-07/retail-media/accounts/{account-id}/creatives/search
 
 Get account creatives
 
@@ -5291,6 +5365,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/creatives/search
         api_response = api_instance.search_account_creatives(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5299,6 +5374,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/accounts/{account-id}/creatives/search
         api_response = api_instance.search_account_creatives(account_id, creative_ids=creative_ids)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5335,111 +5411,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_brands**
-> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands()
-
-
-
-Search for brands given a retailer ID and search term.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_v2025_07
-from criteo_api_retailmedia_v2025_07.api import campaign_api
-from criteo_api_retailmedia_v2025_07.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
-from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_v2025_07.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = campaign_api.CampaignApi(api_client)
-    limit = 25 # int | the number of brands to return (optional) if omitted the server will use the default value of 25
-    offset = 0 # int | offset of paginated results (optional) if omitted the server will use the default value of 0
-    value_resource_input_brand_id_search_request = ValueResourceInputBrandIdSearchRequest(
-        data=ValueResourceBrandIdSearchRequest(
-            attributes=BrandIdSearchRequest(
-                brand_type="uc",
-                name="name_example",
-                retailer_ids=[
-                    1,
-                ],
-            ),
-            type="type_example",
-        ),
-    ) # ValueResourceInputBrandIdSearchRequest | BrandIdSearchRequest which contains the request parameters (optional)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        api_response = api_instance.search_brands(limit=limit, offset=offset, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2025_07.ApiException as e:
-        print("Exception when calling CampaignApi->search_brands: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **int**| the number of brands to return | [optional] if omitted the server will use the default value of 25
- **offset** | **int**| offset of paginated results | [optional] if omitted the server will use the default value of 0
- **value_resource_input_brand_id_search_request** | [**ValueResourceInputBrandIdSearchRequest**](ValueResourceInputBrandIdSearchRequest.md)| BrandIdSearchRequest which contains the request parameters | [optional]
-
-### Return type
-
-[**EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata**](EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata.md)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Success |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **set_keyword_bids**
 > ResourceOutcome set_keyword_bids(id)
 
-
+/2025-07/retail-media/line-items/{id}/keywords/set-bid
 
 Set bid overrides for associated keywords to the given line item in bulk
 
@@ -5500,6 +5475,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{id}/keywords/set-bid
         api_response = api_instance.set_keyword_bids(id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5508,6 +5484,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{id}/keywords/set-bid
         api_response = api_instance.set_keyword_bids(id, set_bids_model_request=set_bids_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5547,7 +5524,7 @@ Name | Type | Description  | Notes
 # **unpause_promoted_products**
 > unpause_promoted_products(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/products/unpause
 
 Un-pause a collection of promoted products associated with a line item
 
@@ -5606,6 +5583,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/unpause
         api_instance.unpause_promoted_products(line_item_id)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->unpause_promoted_products: %s\n" % e)
@@ -5613,6 +5591,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/products/unpause
         api_instance.unpause_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
         print("Exception when calling CampaignApi->unpause_promoted_products: %s\n" % e)
@@ -5651,7 +5630,7 @@ void (empty response body)
 # **update_auction_line_item_by_line_item_id**
 > AuctionLineItemResponse update_auction_line_item_by_line_item_id(line_item_id, auction_line_item_update_model_request)
 
-
+/2025-07/retail-media/auction-line-items/{line-item-id}
 
 Updates the auction line item for the given line item id
 
@@ -5717,6 +5696,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/auction-line-items/{line-item-id}
         api_response = api_instance.update_auction_line_item_by_line_item_id(line_item_id, auction_line_item_update_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5756,7 +5736,7 @@ Name | Type | Description  | Notes
 # **update_bid_multipliers_by_line_item_id**
 > LineItemBidMultipliersV2Response update_bid_multipliers_by_line_item_id(line_item_id, line_item_bid_multipliers_v2_request)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/bid-multipliers
 
 Updates the bid multipliers for a given line item
 
@@ -5823,6 +5803,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/bid-multipliers
         api_response = api_instance.update_bid_multipliers_by_line_item_id(line_item_id, line_item_bid_multipliers_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5862,7 +5843,7 @@ Name | Type | Description  | Notes
 # **update_campaign_budget_overrides**
 > ValueResourceOutcomeOfCampaignBudgetOverrides update_campaign_budget_overrides(campaign_id, value_resource_input_of_campaign_budget_overrides)
 
-
+/2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides
 
 Update campaign budget overrides by given campaign id and new campaign budget overrides settings.
 
@@ -5932,6 +5913,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides
         api_response = api_instance.update_campaign_budget_overrides(campaign_id, value_resource_input_of_campaign_budget_overrides)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -5971,7 +5953,7 @@ Name | Type | Description  | Notes
 # **update_campaign_by_campaign_id**
 > JsonApiSingleResponseOfCampaignV202301 update_campaign_by_campaign_id(campaign_id, put_campaign_v202301)
 
-
+/2025-07/retail-media/campaigns/{campaignId}
 
 Updates the campaign for the given campaign id
 
@@ -6039,6 +6021,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/campaigns/{campaignId}
         api_response = api_instance.update_campaign_by_campaign_id(campaign_id, put_campaign_v202301)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -6078,7 +6061,7 @@ Name | Type | Description  | Notes
 # **update_creative**
 > Creative202210Response update_creative(account_id, creative_id, creative_update_model202207)
 
-
+/2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}
 
 Update a creative
 
@@ -6163,6 +6146,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}
         api_response = api_instance.update_creative(account_id, creative_id, creative_update_model202207)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -6203,7 +6187,7 @@ Name | Type | Description  | Notes
 # **update_keyword_reviews**
 > ValueResourceOutcomeRetailMediaKeywordsReviewResult update_keyword_reviews(line_item_id)
 
-
+/2025-07/retail-media/line-items/{line-item-id}/keywords/review
 
 Update the status of keyword reviews under a line item
 
@@ -6263,6 +6247,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/keywords/review
         api_response = api_instance.update_keyword_reviews(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -6271,6 +6256,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-07/retail-media/line-items/{line-item-id}/keywords/review
         api_response = api_instance.update_keyword_reviews(line_item_id, value_resource_input_retail_media_keywords_review=value_resource_input_retail_media_keywords_review)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -6310,7 +6296,7 @@ Name | Type | Description  | Notes
 # **update_line_item_budget_overrides**
 > ValueResourceOutcomeOfLineItemBudgetOverrides update_line_item_budget_overrides(line_item_id, value_resource_input_of_line_item_budget_overrides)
 
-
+/2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides
 
 Update line item budget overrides by given external line item id and new line item budget overrides settings.
 
@@ -6380,6 +6366,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides
         api_response = api_instance.update_line_item_budget_overrides(line_item_id, value_resource_input_of_line_item_budget_overrides)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:
@@ -6419,7 +6406,7 @@ Name | Type | Description  | Notes
 # **update_preferred_line_item_by_line_item_id**
 > PreferredLineItemV2Response update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request)
 
-
+/2025-07/retail-media/preferred-line-items/{line-item-id}
 
 Updates the preferred line item for the given line item id
 
@@ -6497,6 +6484,7 @@ with criteo_api_retailmedia_v2025_07.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-07/retail-media/preferred-line-items/{line-item-id}
         api_response = api_instance.update_preferred_line_item_by_line_item_id(line_item_id, preferred_line_item_update_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_07.ApiException as e:

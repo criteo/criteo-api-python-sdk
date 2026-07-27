@@ -200,7 +200,7 @@ class BillingApi(object):
         value_resource_input_partner_billing_report_request_v1,
         **kwargs
     ):
-        """create_partner_billing_report_request_v1  # noqa: E501
+        """/2025-10/retail-media/billing/partner-report  # noqa: E501
 
         Create a Partner Billing Report request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -283,7 +283,7 @@ class BillingApi(object):
         request_id,
         **kwargs
     ):
-        """get_partner_billing_report_output_v1  # noqa: E501
+        """/2025-10/retail-media/billing/partner-report/{requestId}/output  # noqa: E501
 
         Get the output of an existing Partner Billing Report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -366,7 +366,7 @@ class BillingApi(object):
         request_id,
         **kwargs
     ):
-        """get_partner_billing_report_status_v1  # noqa: E501
+        """/2025-10/retail-media/billing/partner-report/{requestId}/status  # noqa: E501
 
         Get the status of an existing Partner Billing Report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

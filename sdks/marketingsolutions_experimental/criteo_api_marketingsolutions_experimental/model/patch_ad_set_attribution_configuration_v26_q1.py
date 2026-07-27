@@ -59,8 +59,6 @@ class PatchAdSetAttributionConfigurationV26Q1(ModelNormal):
             'None': None,
             'UNKNOWN': "unknown",
             'CRITEOATTRIBUTION': "criteoAttribution",
-            'GOOGLEANALYTICSLASTCLICK': "googleAnalyticsLastClick",
-            'GOOGLEANALYTICSDATADRIVEN': "googleAnalyticsDataDriven",
             'LASTCLICK': "lastClick",
             'POSTCLICK': "postClick",
             'SFTP': "sftp",

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**add_remove_keywords**](CampaignApi.md#add_remove_keywords) | **POST** /2026-07/retail-media/line-items/{id}/keywords/add-remove | /2026-07/retail-media/line-items/{id}/keywords/add-remove
 [**append_add_to_basket_targets_by_line_item_id**](CampaignApi.md#append_add_to_basket_targets_by_line_item_id) | **POST** /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append | /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append
 [**append_audience_targets_by_line_item_id**](CampaignApi.md#append_audience_targets_by_line_item_id) | **POST** /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append | /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append
-[**append_campaigns_by_balance_id**](CampaignApi.md#append_campaigns_by_balance_id) | **POST** /2026-07/retail-media/balances/{balance-id}/campaigns/append | /2026-07/retail-media/balances/{balance-id}/campaigns/append
+[**append_campaigns_to_balance_v1**](CampaignApi.md#append_campaigns_to_balance_v1) | **POST** /2026-07/retail-media/balances/{balanceId}/campaigns/append | /2026-07/retail-media/balances/{balanceId}/campaigns/append
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /2026-07/retail-media/line-items/{line-item-id}/products/append | /2026-07/retail-media/line-items/{line-item-id}/products/append
 [**append_store_targets_by_line_item_id**](CampaignApi.md#append_store_targets_by_line_item_id) | **POST** /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append | /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append
 [**create_asset**](CampaignApi.md#create_asset) | **POST** /2026-07/retail-media/assets | /2026-07/retail-media/assets
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**create_seller_catalog_export**](CampaignApi.md#create_seller_catalog_export) | **POST** /2026-07/retail-media/accounts/{accountId}/seller-catalog-export | /2026-07/retail-media/accounts/{accountId}/seller-catalog-export
 [**delete_add_to_basket_targets_by_line_item_id**](CampaignApi.md#delete_add_to_basket_targets_by_line_item_id) | **POST** /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete | /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete
 [**delete_audience_targets_by_line_item_id**](CampaignApi.md#delete_audience_targets_by_line_item_id) | **POST** /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete | /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete
-[**delete_campaigns_by_balance_id**](CampaignApi.md#delete_campaigns_by_balance_id) | **POST** /2026-07/retail-media/balances/{balance-id}/campaigns/delete | /2026-07/retail-media/balances/{balance-id}/campaigns/delete
+[**delete_campaigns_from_balance_v1**](CampaignApi.md#delete_campaigns_from_balance_v1) | **POST** /2026-07/retail-media/balances/{balanceId}/campaigns/delete | /2026-07/retail-media/balances/{balanceId}/campaigns/delete
 [**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /2026-07/retail-media/line-items/{line-item-id}/products/delete | /2026-07/retail-media/line-items/{line-item-id}/products/delete
 [**delete_store_target_by_line_item_id**](CampaignApi.md#delete_store_target_by_line_item_id) | **POST** /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete | /2026-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete
 [**fetch_keywords**](CampaignApi.md#fetch_keywords) | **GET** /2026-07/retail-media/line-items/{id}/keywords | /2026-07/retail-media/line-items/{id}/keywords
@@ -400,12 +400,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **append_campaigns_by_balance_id**
-> BalanceCampaign202110PagedListResponse append_campaigns_by_balance_id(balance_id)
+# **append_campaigns_to_balance_v1**
+> ValueResourceOutcomeBalanceCampaignsV1 append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1)
 
-/2026-07/retail-media/balances/{balance-id}/campaigns/append
+/2026-07/retail-media/balances/{balanceId}/campaigns/append
 
-appends one or more campaigns to the specified balance
+Appends one or more campaigns to the specified balance
 
 ### Example
 
@@ -416,8 +416,8 @@ appends one or more campaigns to the specified balance
 import time
 import criteo_api_retailmedia_v2026_07
 from criteo_api_retailmedia_v2026_07.api import campaign_api
-from criteo_api_retailmedia_v2026_07.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
-from criteo_api_retailmedia_v2026_07.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
+from criteo_api_retailmedia_v2026_07.model.value_resource_input_append_campaigns_request_v1 import ValueResourceInputAppendCampaignsRequestV1
+from criteo_api_retailmedia_v2026_07.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -446,33 +446,25 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    balance_id = "balance-id_example" # str | The balance to add campaigns from
-    balance_campaign202110_list_request = BalanceCampaign202110ListRequest(
-        data=[
-            ResourceOfBalanceCampaign202110(
-                attributes={},
-                id="id_example",
-                type="type_example",
+    balance_id = "balanceId_example" # str | The balance to add campaigns from
+    value_resource_input_append_campaigns_request_v1 = ValueResourceInputAppendCampaignsRequestV1(
+        data=ValueResourceAppendCampaignsRequestV1(
+            attributes=AppendCampaignsRequestV1(
+                ids=[
+                    "ids_example",
+                ],
             ),
-        ],
-    ) # BalanceCampaign202110ListRequest | The campaigns to append (optional)
+            type="type_example",
+        ),
+    ) # ValueResourceInputAppendCampaignsRequestV1 | The balance campaign appending request.
 
     # example passing only required values which don't have defaults set
     try:
-        # /2026-07/retail-media/balances/{balance-id}/campaigns/append
-        api_response = api_instance.append_campaigns_by_balance_id(balance_id)
+        # /2026-07/retail-media/balances/{balanceId}/campaigns/append
+        api_response = api_instance.append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_07.ApiException as e:
-        print("Exception when calling CampaignApi->append_campaigns_by_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # /2026-07/retail-media/balances/{balance-id}/campaigns/append
-        api_response = api_instance.append_campaigns_by_balance_id(balance_id, balance_campaign202110_list_request=balance_campaign202110_list_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2026_07.ApiException as e:
-        print("Exception when calling CampaignApi->append_campaigns_by_balance_id: %s\n" % e)
+        print("Exception when calling CampaignApi->append_campaigns_to_balance_v1: %s\n" % e)
 ```
 
 
@@ -481,11 +473,11 @@ with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **balance_id** | **str**| The balance to add campaigns from |
- **balance_campaign202110_list_request** | [**BalanceCampaign202110ListRequest**](BalanceCampaign202110ListRequest.md)| The campaigns to append | [optional]
+ **value_resource_input_append_campaigns_request_v1** | [**ValueResourceInputAppendCampaignsRequestV1**](ValueResourceInputAppendCampaignsRequestV1.md)| The balance campaign appending request. |
 
 ### Return type
 
-[**BalanceCampaign202110PagedListResponse**](BalanceCampaign202110PagedListResponse.md)
+[**ValueResourceOutcomeBalanceCampaignsV1**](ValueResourceOutcomeBalanceCampaignsV1.md)
 
 ### Authorization
 
@@ -1699,12 +1691,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_campaigns_by_balance_id**
-> BalanceCampaign202110PagedListResponse delete_campaigns_by_balance_id(balance_id)
+# **delete_campaigns_from_balance_v1**
+> ValueResourceOutcomeBalanceCampaignsV1 delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1)
 
-/2026-07/retail-media/balances/{balance-id}/campaigns/delete
+/2026-07/retail-media/balances/{balanceId}/campaigns/delete
 
-Removes one or more campaigns on the specified balance
+Deletes one or more campaigns on the specified balance
 
 ### Example
 
@@ -1715,8 +1707,8 @@ Removes one or more campaigns on the specified balance
 import time
 import criteo_api_retailmedia_v2026_07
 from criteo_api_retailmedia_v2026_07.api import campaign_api
-from criteo_api_retailmedia_v2026_07.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
-from criteo_api_retailmedia_v2026_07.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
+from criteo_api_retailmedia_v2026_07.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
+from criteo_api_retailmedia_v2026_07.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1745,33 +1737,25 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    balance_id = "balance-id_example" # str | The balance to remove campaigns from
-    balance_campaign202110_list_request = BalanceCampaign202110ListRequest(
-        data=[
-            ResourceOfBalanceCampaign202110(
-                attributes={},
-                id="id_example",
-                type="type_example",
+    balance_id = "balanceId_example" # str | The balance to remove campaigns from
+    value_resource_input_delete_campaigns_request_v1 = ValueResourceInputDeleteCampaignsRequestV1(
+        data=ValueResourceDeleteCampaignsRequestV1(
+            attributes=DeleteCampaignsRequestV1(
+                ids=[
+                    "ids_example",
+                ],
             ),
-        ],
-    ) # BalanceCampaign202110ListRequest | The campaigns to append (optional)
+            type="type_example",
+        ),
+    ) # ValueResourceInputDeleteCampaignsRequestV1 | The balance campaign deleting request.
 
     # example passing only required values which don't have defaults set
     try:
-        # /2026-07/retail-media/balances/{balance-id}/campaigns/delete
-        api_response = api_instance.delete_campaigns_by_balance_id(balance_id)
+        # /2026-07/retail-media/balances/{balanceId}/campaigns/delete
+        api_response = api_instance.delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_07.ApiException as e:
-        print("Exception when calling CampaignApi->delete_campaigns_by_balance_id: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # /2026-07/retail-media/balances/{balance-id}/campaigns/delete
-        api_response = api_instance.delete_campaigns_by_balance_id(balance_id, balance_campaign202110_list_request=balance_campaign202110_list_request)
-        pprint(api_response)
-    except criteo_api_retailmedia_v2026_07.ApiException as e:
-        print("Exception when calling CampaignApi->delete_campaigns_by_balance_id: %s\n" % e)
+        print("Exception when calling CampaignApi->delete_campaigns_from_balance_v1: %s\n" % e)
 ```
 
 
@@ -1780,11 +1764,11 @@ with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **balance_id** | **str**| The balance to remove campaigns from |
- **balance_campaign202110_list_request** | [**BalanceCampaign202110ListRequest**](BalanceCampaign202110ListRequest.md)| The campaigns to append | [optional]
+ **value_resource_input_delete_campaigns_request_v1** | [**ValueResourceInputDeleteCampaignsRequestV1**](ValueResourceInputDeleteCampaignsRequestV1.md)| The balance campaign deleting request. |
 
 ### Return type
 
-[**BalanceCampaign202110PagedListResponse**](BalanceCampaign202110PagedListResponse.md)
+[**ValueResourceOutcomeBalanceCampaignsV1**](ValueResourceOutcomeBalanceCampaignsV1.md)
 
 ### Authorization
 
@@ -5517,11 +5501,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_account_retailers**
-> EntityResourceCollectionOutcomeOfRetailerResultAndMetadata search_account_retailers(account_id, value_resource_input_of_retailer_search_request)
+> EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2)
 
 /2026-07/retail-media/accounts/{accountId}/retailers/search
 
-Searches for retailers associated with the specified account based on provided search criteria
+Searches for retailers associated with the specified account and returns budget model availability for each retailer
 
 ### Example
 
@@ -5532,8 +5516,8 @@ Searches for retailers associated with the specified account based on provided s
 import time
 import criteo_api_retailmedia_v2026_07
 from criteo_api_retailmedia_v2026_07.api import campaign_api
-from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
-from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_retailer_search_request_v2 import ValueResourceInputOfRetailerSearchRequestV2
+from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -5563,23 +5547,23 @@ with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     account_id = "accountId_example" # str | The external account identifier
-    value_resource_input_of_retailer_search_request = ValueResourceInputOfRetailerSearchRequest(
-        data=ValueResourceOfRetailerSearchRequest(
-            attributes=RetailerSearchRequest(
+    value_resource_input_of_retailer_search_request_v2 = ValueResourceInputOfRetailerSearchRequestV2(
+        data=ValueResourceOfRetailerSearchRequestV2(
+            attributes=RetailerSearchRequestV2(
                 retailer_id_filter=[
                     "retailer_id_filter_example",
                 ],
             ),
             type="type_example",
         ),
-    ) # ValueResourceInputOfRetailerSearchRequest | The search request containing filtering parameters
+    ) # ValueResourceInputOfRetailerSearchRequestV2 | The search request containing filtering parameters
     limit = 5 # int | The maximum number of items to return. Must be between 1 and 10. Default is 5. (optional) if omitted the server will use the default value of 5
     offset = 0 # int | The number of items to skip before starting to collect the result set. Default is 0. (optional) if omitted the server will use the default value of 0
 
     # example passing only required values which don't have defaults set
     try:
         # /2026-07/retail-media/accounts/{accountId}/retailers/search
-        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request)
+        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_07.ApiException as e:
         print("Exception when calling CampaignApi->search_account_retailers: %s\n" % e)
@@ -5588,7 +5572,7 @@ with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
     # and optional values
     try:
         # /2026-07/retail-media/accounts/{accountId}/retailers/search
-        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request, limit=limit, offset=offset)
+        api_response = api_instance.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_07.ApiException as e:
         print("Exception when calling CampaignApi->search_account_retailers: %s\n" % e)
@@ -5600,13 +5584,13 @@ with criteo_api_retailmedia_v2026_07.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | **str**| The external account identifier |
- **value_resource_input_of_retailer_search_request** | [**ValueResourceInputOfRetailerSearchRequest**](ValueResourceInputOfRetailerSearchRequest.md)| The search request containing filtering parameters |
+ **value_resource_input_of_retailer_search_request_v2** | [**ValueResourceInputOfRetailerSearchRequestV2**](ValueResourceInputOfRetailerSearchRequestV2.md)| The search request containing filtering parameters |
  **limit** | **int**| The maximum number of items to return. Must be between 1 and 10. Default is 5. | [optional] if omitted the server will use the default value of 5
  **offset** | **int**| The number of items to skip before starting to collect the result set. Default is 0. | [optional] if omitted the server will use the default value of 0
 
 ### Return type
 
-[**EntityResourceCollectionOutcomeOfRetailerResultAndMetadata**](EntityResourceCollectionOutcomeOfRetailerResultAndMetadata.md)
+[**EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata**](EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata.md)
 
 ### Authorization
 

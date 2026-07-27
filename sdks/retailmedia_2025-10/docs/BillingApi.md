@@ -4,15 +4,15 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_partner_billing_report_request_v1**](BillingApi.md#create_partner_billing_report_request_v1) | **POST** /2025-10/retail-media/billing/partner-report | 
-[**get_partner_billing_report_output_v1**](BillingApi.md#get_partner_billing_report_output_v1) | **GET** /2025-10/retail-media/billing/partner-report/{requestId}/output | 
-[**get_partner_billing_report_status_v1**](BillingApi.md#get_partner_billing_report_status_v1) | **GET** /2025-10/retail-media/billing/partner-report/{requestId}/status | 
+[**create_partner_billing_report_request_v1**](BillingApi.md#create_partner_billing_report_request_v1) | **POST** /2025-10/retail-media/billing/partner-report | /2025-10/retail-media/billing/partner-report
+[**get_partner_billing_report_output_v1**](BillingApi.md#get_partner_billing_report_output_v1) | **GET** /2025-10/retail-media/billing/partner-report/{requestId}/output | /2025-10/retail-media/billing/partner-report/{requestId}/output
+[**get_partner_billing_report_status_v1**](BillingApi.md#get_partner_billing_report_status_v1) | **GET** /2025-10/retail-media/billing/partner-report/{requestId}/status | /2025-10/retail-media/billing/partner-report/{requestId}/status
 
 
 # **create_partner_billing_report_request_v1**
 > EntityResourceOutcomePartnerBillingReportStatusV1 create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1)
 
-
+/2025-10/retail-media/billing/partner-report
 
 Create a Partner Billing Report request.
 
@@ -74,6 +74,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/billing/partner-report
         api_response = api_instance.create_partner_billing_report_request_v1(value_resource_input_partner_billing_report_request_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -112,7 +113,7 @@ Name | Type | Description  | Notes
 # **get_partner_billing_report_output_v1**
 > file_type get_partner_billing_report_output_v1(request_id)
 
-
+/2025-10/retail-media/billing/partner-report/{requestId}/output
 
 Get the output of an existing Partner Billing Report.
 
@@ -157,6 +158,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/billing/partner-report/{requestId}/output
         api_response = api_instance.get_partner_billing_report_output_v1(request_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -195,7 +197,7 @@ Name | Type | Description  | Notes
 # **get_partner_billing_report_status_v1**
 > EntityResourceOutcomePartnerBillingReportStatusV1 get_partner_billing_report_status_v1(request_id)
 
-
+/2025-10/retail-media/billing/partner-report/{requestId}/status
 
 Get the status of an existing Partner Billing Report.
 
@@ -241,6 +243,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/billing/partner-report/{requestId}/status
         api_response = api_instance.get_partner_billing_report_status_v1(request_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:

@@ -21,6 +21,7 @@ from criteo_api_retailmedia_v2025_07.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
 from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_of_retail_media_child_account_and_metadata import EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata
 from criteo_api_retailmedia_v2025_07.model.entity_resource_outcome_of_retail_media_account import EntityResourceOutcomeOfRetailMediaAccount
 from criteo_api_retailmedia_v2025_07.model.grant_consent_input import GrantConsentInput
@@ -28,6 +29,7 @@ from criteo_api_retailmedia_v2025_07.model.json_api_page_response_of_account imp
 from criteo_api_retailmedia_v2025_07.model.value_resource_collection_input_of_retail_media_seller import ValueResourceCollectionInputOfRetailMediaSeller
 from criteo_api_retailmedia_v2025_07.model.value_resource_collection_outcome_of_retail_media_seller import ValueResourceCollectionOutcomeOfRetailMediaSeller
 from criteo_api_retailmedia_v2025_07.model.value_resource_collection_outcome_of_seller_search_result import ValueResourceCollectionOutcomeOfSellerSearchResult
+from criteo_api_retailmedia_v2025_07.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_of_retail_media_brand_account_creation import ValueResourceInputOfRetailMediaBrandAccountCreation
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_of_retail_media_brands import ValueResourceInputOfRetailMediaBrands
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_of_retail_media_seller_account_creation import ValueResourceInputOfRetailMediaSellerAccountCreation
@@ -457,6 +459,79 @@ class AccountsApi(object):
             },
             api_client=api_client
         )
+        self.search_brands_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/2025-07/retail-media/brands/search',
+                'operation_id': 'search_brands',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'limit',
+                    'offset',
+                    'value_resource_input_brand_id_search_request',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 100,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                    'value_resource_input_brand_id_search_request':
+                        (ValueResourceInputBrandIdSearchRequest,),
+                },
+                'attribute_map': {
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'limit': 'query',
+                    'offset': 'query',
+                    'value_resource_input_brand_id_search_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.search_sellers_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceCollectionOutcomeOfSellerSearchResult,),
@@ -575,7 +650,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """add_brands  # noqa: E501
+        """/2025-07/retail-media/account-management/accounts/{accountId}/brands/add  # noqa: E501
 
         Add brands to an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -659,7 +734,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """create_private_market_demand_brand_account  # noqa: E501
+        """/2025-07/retail-media/account-management/accounts/{accountId}/create-brand-account  # noqa: E501
 
         Creates a new child Demand Brand account for the provided parent Private Market account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -743,7 +818,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """create_private_market_demand_seller_account  # noqa: E501
+        """/2025-07/retail-media/account-management/accounts/{accountId}/create-seller-account  # noqa: E501
 
         Creates a new child Demand Seller account for the provided parent Private Market account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -826,7 +901,7 @@ class AccountsApi(object):
         self,
         **kwargs
     ):
-        """get_accounts  # noqa: E501
+        """/2025-07/retail-media/accounts  # noqa: E501
 
         Gets page of account objects that the current user can access  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -908,7 +983,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """get_private_market_child_accounts_by_account_id  # noqa: E501
+        """/2025-07/retail-media/account-management/accounts/{accountId}/private-market-child-accounts  # noqa: E501
 
         Gets Private Market child accounts that are associated with the given account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -993,7 +1068,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/grant-consent  # noqa: E501
 
         Grant consent to a business application on behalf of a Private Market demand account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1077,7 +1152,7 @@ class AccountsApi(object):
         account_id,
         **kwargs
     ):
-        """remove_brands  # noqa: E501
+        """/2025-07/retail-media/account-management/accounts/{accountId}/brands/remove  # noqa: E501
 
         Remove brands from an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1156,12 +1231,93 @@ class AccountsApi(object):
             account_id
         return self.remove_brands_endpoint.call_with_http_info(**kwargs)
 
+    def search_brands(
+        self,
+        **kwargs
+    ):
+        """/2025-07/retail-media/brands/search  # noqa: E501
+
+        Search for brands given a retailer ID and search term.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_brands(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            limit (int): the number of brands to return. [optional] if omitted the server will use the default value of 25
+            offset (int): offset of paginated results. [optional] if omitted the server will use the default value of 0
+            value_resource_input_brand_id_search_request (ValueResourceInputBrandIdSearchRequest): BrandIdSearchRequest which contains the request parameters. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.search_brands_endpoint.call_with_http_info(**kwargs)
+
     def search_sellers(
         self,
         value_resource_input_of_seller_search,
         **kwargs
     ):
-        """search_sellers  # noqa: E501
+        """/2025-07/retail-media/accounts/sellers/search  # noqa: E501
 
         Get the sellers mapped to provided accounts  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1245,7 +1401,7 @@ class AccountsApi(object):
         value_resource_collection_input_of_retail_media_seller,
         **kwargs
     ):
-        """update_sellers  # noqa: E501
+        """/2025-07/retail-media/account-management/accounts/{accountId}/sellers  # noqa: E501
 
         Replace the sellers associated with an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

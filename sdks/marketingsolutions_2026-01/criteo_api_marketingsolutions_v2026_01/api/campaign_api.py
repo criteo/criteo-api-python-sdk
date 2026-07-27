@@ -1399,7 +1399,7 @@ class CampaignApi(object):
         )
         self.get_marketplace_seller_campaign_endpoint = _Endpoint(
             settings={
-                'response_type': ([SellerCampaignMessage],),
+                'response_type': (SellerCampaignMessage,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2736,7 +2736,7 @@ class CampaignApi(object):
         create_ad_set_v24_q3_request,
         **kwargs
     ):
-        """create_ad_set  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets  # noqa: E501
 
         Create the specified ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2819,7 +2819,7 @@ class CampaignApi(object):
         create_campaign_request,
         **kwargs
     ):
-        """create_campaign  # noqa: E501
+        """/2026-01/marketing-solutions/campaigns  # noqa: E501
 
         Create the specified campaign                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2902,7 +2902,7 @@ class CampaignApi(object):
         create_seller_budget_mapi_message,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/budgets  # noqa: E501
 
         Create one or more new budgets to enable spending with the given limitations.  All three types of budgets can be created this way.                The following constraints apply when creating a new budget.                • <b>sellerId</b>: the seller MUST be supplied<br />  • <b>campaignIds</b>: a non-empty array of campaign ids MUST be supplied<br />  • <b>budgetType</b>: a budget type MUST be supplied<br />  • <b>amount</b>: an amount MAY be supplied only if the type is not Uncapped and if supplied it MUST be non-negative<br />  • <b>startDate</b>: a future start date MUST be supplied<br />  • <b>endDate</b>: an end date MAY be supplied and if supplied MUST be greater than the start date<br />                Other attributes MUST NOT be supplied.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -2986,7 +2986,7 @@ class CampaignApi(object):
         create_seller_campaign_message_mapi,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/seller-campaigns  # noqa: E501
 
         Associate an existing Seller with an existing Campaign allowing for budget creation  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3072,7 +3072,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/{ad-set-id}  # noqa: E501
 
         Get the data for the specified ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3155,7 +3155,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_ad_set_category_bids  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/{ad-set-id}/category-bids  # noqa: E501
 
         Get the Category Bids for all valid Categories associated to an Ad Set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3238,7 +3238,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_campaign  # noqa: E501
+        """/2026-01/marketing-solutions/campaigns/{campaign-id}  # noqa: E501
 
         Get the data for the specified campaign.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3321,7 +3321,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """get_display_multipliers  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers  # noqa: E501
 
         Get the Display Multipliers for all valid Categories associated to an Ad Set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3404,7 +3404,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/adsets  # noqa: E501
 
         Get the collection of adsets associated with the advertiserId.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3487,7 +3487,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}  # noqa: E501
 
         Get an advertiser.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3569,7 +3569,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/preview-limit  # noqa: E501
 
         Get the collection of advertisers preview limits associated with the authorized user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3647,7 +3647,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers  # noqa: E501
 
         Get the collection of advertisers associated with the user.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3726,7 +3726,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/budgets  # noqa: E501
 
         Get CRP budgets for a specific advertiser  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3817,9 +3817,9 @@ class CampaignApi(object):
         seller_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/budgets  # noqa: E501
 
-        Return a collection of budgets for this seller filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used. See the budgets endpoint for additional details.  # noqa: E501
+        Return current (non-archived) budgets for this seller. Budgets whose endDate is in the past are excluded by default. To retrieve archived or past budgets, use the `/budgets` endpoint (GetMarketplaceSellerBudgets) with the `endAfterDate` filter instead.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3907,7 +3907,7 @@ class CampaignApi(object):
         seller_campaign_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}/budgets  # noqa: E501
 
         Return a collection of budgets for this seller campaign filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used.                See the budgets endpoint for additional details.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -3917,7 +3917,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            seller_campaign_id (str): Return only budgets belonging to the given seller campaign.
+            seller_campaign_id (str): Return only budgets belonging to the given seller campaign. Format: `{sellerId}.{campaignId}`, e.g. `2578464.187625`.
 
         Keyword Args:
             end_after_date (datetime): Return budgets that end after the given date using the `yyyy-MM-DD` format.               If param is not provided, default behavior is to only return budgets that have not yet ended.. [optional]
@@ -3996,7 +3996,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/campaigns  # noqa: E501
 
         Get the collection of CRP campaigns associated with the advertiserId.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4078,7 +4078,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/stats/campaigns  # noqa: E501
 
         ## Dimensions                Get performance statistics aggregated for _campaigns_. The campaign id appears  in the output as the first column.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone  if provided. The aggregation interval size is controlled by `intervalSize`. The time  interval appears in the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by campaign, date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {     \"columns\": [ \"campaignId\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\" ],     \"data\": [         [168423, \"2019-05-01\", 3969032, 13410, 1111.295, 985, 190758099, 0.073, 1.128, 0.000, 171653.880 ],         [168423, \"2019-06-01\", 8479603, 25619, 2190.705, 740, 152783656, 0.028, 2.960, 0.000, 69741.775 ]         ],     \"rows\": 2  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  column comes first and consists of the campaign id.  The interval column comes next and defines the aggregation period.  The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4089,7 +4089,7 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            advertiser_id (int): Show only metrics for this advertiser.. [optional]
+            advertiser_id (int): Filter metrics to this advertiser. Strongly recommended — omitting this on large accounts causes timeouts.. [optional]
             campaign_id (str): Show only metrics for this campaign (default all campaigns). [optional]
             click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
             count (int): Return up to the first count rows of data (default is all rows). [optional]
@@ -4165,7 +4165,7 @@ class CampaignApi(object):
         seller_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}  # noqa: E501
 
         Return details for the selected seller. For example,                    {          \"id\" : \"123456\"          \"sellerName\": \"HBogart\",      }  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4249,7 +4249,7 @@ class CampaignApi(object):
         seller_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/ad-preview  # noqa: E501
 
         Get a preview of an HTML ad with products belonging to the provided seller  • <b>advertiserId</b>: Valid crp advertiserId, seller belongs to provided advertiser<br />  • <b>sellerId</b>: Products from given SellerId will fill the ad preview, must be existing crp sellerId<br />  • <b>height</b>: height may be supplied to request a specific ad preview height. Default height: 250<br />  • <b>width</b>: width may be supplied to request a specific ad preview width. Default width: 300<br />                Ad preview api calls are capped to 1000 per day per advertiser by default. Current usage, limit, and period can be found using v2/crp/advertisers/preview-limit  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4338,7 +4338,7 @@ class CampaignApi(object):
         budget_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/budgets/{budgetId}  # noqa: E501
 
         Return a budget. For example,                    {          \"id\": \"1759183\",          \"sellerId\": \"321392\",          \"campaignIds\": [              143962          ],          \"budgetType\": \"Capped\",          \"amount\": 1000,          \"startDate\": \"2021-01-11\",          \"endDate\": \"2021-01-12\",          \"spend\": null,          \"status\": \"Active\"      }                A budget limits the spend of a seller for one or more campaigns.                There are three types of budget:<br /><b>Uncapped</b> budgets put no limit on the total amount of spend.<br /><b>Capped</b> budgets limit the total spend to a fixed amount.<br /><b>Daily</b> budgets limit daily spend to a fixed amount.<br />                In addition, budgets can limit the spend to a specific range of dates using  the start and end date attributes. Finally a budget must be active to be used.                <b>Spend</b> approximates the current spend against this budget. There may be a lag  between when an ad is clicked and the time it accrues to the spend. Daily budgets  show spend against the most recent day only.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4420,9 +4420,9 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/budgets  # noqa: E501
 
-        Return a collection of budgets filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned, except those whose endDate is in the past. Returned budgets must satisfy all supplied filter  criteria if multiple parameters are used.                <b>Date filter.</b> Filtering can return only budgets that were active for a  date range by specifying the startBeforeDate and endAfterDate. Leaving off the startBeforeDate  value makes budgets with any startDate qualify, whereas when leaving off the endAfterDate value will only return  budgets whose endDate has not already passed. To get budgets that were active  on a specific date, set both values to that day.                <b>Spend.</b> If the endAfterDate is supplied, the spend excludes spend that  happened after that date. In the case of a daily budget, only the spend for  the final day is displayed.                See the budgets endpoint for additional details.  # noqa: E501
+        Return a collection of budgets filtered by optional filter parameters, **including archived budgets**. This is the endpoint to use when investigating past budget history.                By default, budgets whose endDate is in the past are excluded. Use `endAfterDate` to retrieve archived budgets (e.g. `endAfterDate=2025-01-01` returns all budgets ending after that date). Use `sellerId` to filter to a specific seller — omitting it on large advertisers causes timeouts.                <b>Date filter.</b> To find budgets that were active on a specific date, set both `startBeforeDate` and `endAfterDate` to that day.                <b>Spend.</b> If `endAfterDate` is supplied, the spend excludes spend that happened after that date. For daily budgets, only the spend for the final day is displayed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4508,7 +4508,7 @@ class CampaignApi(object):
         seller_campaign_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}  # noqa: E501
 
         Return details for a seller campaign. For example,                    {          \"id\": \"543210.123456\",          \"sellerId\": \"543210\",          \"campaignId\": 123456,          \"bid\": 1.55,          \"suspendedSince\": \"2018-07-30T15:15:24.813\",          \"suspensionReasons\": [              \"NoMoreBudget\"          ]      }                An active seller campaign is one for which the value of <b>suspendedSince</b> is null and  the <b>bid</b> is positive. The currency of the bid is the <b>bidCurrency</b> of the  associated campaign.                Any active seller campaign must also have an active total (capped or uncapped) budget.  It may optionally have an active daily budget as well to further limit spending.                Suspension reasons:  - ManuallyStopped: The Seller-Campaign has been manually paused. This is not related to the other suspension reasons.  - NoBudgetDefined: No valid budget has been linked to the Seller-Campaign.  - NoCpcDefined: No CPC has been set for the Seller-Campaign.  - NoMoreBudget: The current budget of the Seller-Campaign has been exhausted.  - RemovedFromCatalog: All the products of the Seller-Campaign have been deleted from the catalog.  - NotYetStarted: The Seller-Campaign has just been created and has not yet been processed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4518,7 +4518,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            seller_campaign_id (str): Id of the seller campaign.
+            seller_campaign_id (str): Composite id of the seller campaign in the format `{sellerId}.{campaignId}`, e.g. `2578464.187625`.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4553,7 +4553,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            [SellerCampaignMessage]
+            SellerCampaignMessage
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4590,7 +4590,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/seller-campaigns  # noqa: E501
 
         Return a collection of seller campaigns filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned. Returned sellers must satisfy all supplied filter  criteria if multiple parameters are used.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4674,7 +4674,7 @@ class CampaignApi(object):
         advertiser_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/seller-campaigns  # noqa: E501
 
         Get CRP seller campaigns for a specific advertiser  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4757,7 +4757,7 @@ class CampaignApi(object):
         seller_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/sellers/{sellerId}/seller-campaigns  # noqa: E501
 
         Return a collection of seller campaigns for this seller filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned. Returned sellers must satisfy all supplied filter  criteria if multiple parameters are used. See the seller campaigns endpoint for additional details.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4842,7 +4842,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/stats/seller-campaigns  # noqa: E501
 
         ## Dimensions                Get performance statistics aggregated for _seller campaigns_.The campaign id, seller id, and  seller name appear in the first three columns of the output. These are followed by the interval  size column.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone if  provided. The aggregation interval size is controlled by `intervalSize`. The remaining columns  are metrics.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by date or count.                Filtering the results to events associated with a specific campaign is done by setting  the `campaignId` filter parameter to the desired value.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [          \"campaignId\", \"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"      ],      \"data\": [          [168423, 1110222, \"118883955\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110222, \"118883955\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-05-01\", 12502, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],          [168423, 1110225, \"117980027\", \"2019-06-01\", 20266, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the campaign id, seller id, and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4853,7 +4853,7 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            advertiser_id (int): Show only metrics for this advertiser.. [optional]
+            advertiser_id (int): Filter metrics to this advertiser. Strongly recommended — omitting this on large accounts causes timeouts.. [optional]
             campaign_id (str): Show only metrics for this campaign (default all campaigns). [optional]
             click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
             count (int): Return up to the first count rows of data (default is all rows). [optional]
@@ -4929,7 +4929,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/sellers  # noqa: E501
 
         Return a collection of sellers filtered by optional filter parameters.  If all parameters are omitted the entire collection to which the user has  access is returned. Returned sellers must satisfy all supplied filter  criteria if multiple parameters are used.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5015,7 +5015,7 @@ class CampaignApi(object):
         request_body,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/advertisers/{advertiserId}/sellers  # noqa: E501
 
         Create new sellers for an advertiser  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5101,7 +5101,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/stats/sellers  # noqa: E501
 
         ## Dimensions                Get performance statistics aggregated for _sellers_. The seller id appears  in the output in the first column and the seller name appears in the second.                Aggregation can be done by `hour`, `day`, `month`, or `year` aligned with the user timezone  if provided. The aggregation interval size is controlled by `intervalSize`. The time interval  appears in the output as the second column.                ## Metrics                The metrics reported by this endpoint are                .  | Metric Group | Description  ---|--------------|------------  A | impressions | Number of times product is shown in a banner  B | clicks | Number of clicks on product  C | cost | Amount spent for clicks on products  D | saleUnits | Number of products sold attributed to clicks  E | revenue | Revenue generated by sales  F | CR = Conversion Rate | salesUnits / clicks  G | CPO = Cost Per Order | cost / salesUnits  H | COS = Cost of Sale | cost / revenue  I | ROAS = Return On Add Spend | revenue / cost                The last six metrics can be computed in two ways depending on the policy to count only  the sales that result from clicks on the same sellers product in a banner  (same-seller) or not (any-seller).  Reporting can be controlled by `clickAttributionPolicy`.                The 9 (or 15) metric values appear in the output as the final 9 (or 15) columns.                ## Filtering                The results can be filtered by seller id, date or count.                Filtering the results to events associated with a specific seller is done by setting  the `sellerId` filter parameter to the desired value.                Filtering the results to events  that happened in a time interval is done by setting the `startDate` and  `endDate` filter parameters using the `yyyy-MM-DD` format. The start date  includes all events timestamped since the beginning of that day while the end  date includes events until the end of day. The maximum duration of the date  range is 1 year. If the aggregation interval is `hour`, then the maximum  duration of the date range is 31 days. Note that month and year aggregate values  may contain partial data for the interval if filtering by date.                Filtering the results to a maximum number of data rows is done by setting the  `count` filter parameter. When combined with startDate this can be used to perform  simple pagination.                ## Response Format                The representation format can be specified by MIME values in the Accept header.  For now the only supported values for the accept header is `application/json` and  `text/csv`.                ```json  {      \"columns\": [\"sellerId\", \"sellerName\", \"month\", \"impressions\", \"clicks\", \"cost\", \"saleUnits\", \"revenue\", \"cr\", \"cpo\", \"cos\", \"roas\"],      \"data\": [         [1200972, \"sellerA\", \"2019-05-01\", 14542, 48, 3.36, 0, 0.0, 0.0, null, null, 0.0],         [1200972, \"sellerA\", \"2019-06-01\", 16619, 53, 3.71, 0, 0.0, 0.0, null, null, 0.0],         [1200974, \"sellerB\", \"2019-05-01\", 10102, 47, 3.29, 3, 396000.0, 0.063, 1.096, 8.308E-6, 120364.741],         [1200974, \"sellerB\", \"2019-06-01\", 11576, 54, 3.78, 1, 132000.0, 0.018, 3.78, 2.863E-5, 34920.634]      ],      \"rows\": 4  }  ```                The JSON result is an object with three fields (`columns`, `data`, and `rows`). The  “columns” array acts as the header for the data rows. The categorical dimension  columns come first and include the seller id and seller name.  The interval column comes next and defines the aggregation period. The interval size is  determined by the `intervalSize` parameter. This is followed by either nine or  fifteen metrics columns. The first three metrics (impressions, clicks, and cost)  always appear. The remaining metrics depend on the `clickAttributionPolicy` parameter.                The “data” array contains data rows whose values match the entries in the  “columns” array. Id dimensions are numbers while name and date dimensions are strings. The metrics are JSON objects  whose type is number. Some of these are natural numbers (e.g. clicks and  impressions) whereas others are decimal values. A divide by zero yields null. The  currency is assumed to be the local currency established by the advertiser.                The “row” value is a count of the number of rows in the data array, and can be  used to check the integrity of the data.                Further information on the campaign or seller (e.g. the seller name) can be  obtained from the existing V1 or V2 endpoints using the campaign and/or seller  ID values.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5112,7 +5112,7 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            advertiser_id (int): Show only metrics for this advertiser.. [optional]
+            advertiser_id (int): Filter metrics to this advertiser. Strongly recommended — omitting this on large accounts causes timeouts.. [optional]
             click_attribution_policy (str): Specify the click attribution policy for salesUnits, revenue, CR, CPO, COS, and ROAS. [optional] if omitted the server will use the default value of "AnySeller"
             count (int): Return up to the first count rows of data (default is all rows). [optional]
             end_date (datetime): Filter out all events that occur after date (default is today’s date). [optional]
@@ -5189,7 +5189,7 @@ class CampaignApi(object):
         patch_ad_set_category_bid_list_request,
         **kwargs
     ):
-        """patch_ad_set_category_bids  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/{ad-set-id}/category-bids  # noqa: E501
 
         Update the Category Bids for given Categories associated to an Ad Set  Patch Category Bids for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5275,7 +5275,7 @@ class CampaignApi(object):
         requests_patch_ad_set_v24_q3,
         **kwargs
     ):
-        """patch_ad_sets  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets  # noqa: E501
 
         Patch a list of AdSets.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5358,7 +5358,7 @@ class CampaignApi(object):
         patch_campaign_list_request,
         **kwargs
     ):
-        """patch_campaigns  # noqa: E501
+        """/2026-01/marketing-solutions/campaigns  # noqa: E501
 
         Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5442,7 +5442,7 @@ class CampaignApi(object):
         patch_ad_set_display_multiplier_list_request,
         **kwargs
     ):
-        """patch_display_multipliers  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/{ad-set-id}/display-multipliers  # noqa: E501
 
         Update the Display Multipliers for given Categories associated to an Ad Set  Patch Display Multipliers for one or more Categories in a single request. Partial success policy is followed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5527,7 +5527,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """search_ad_sets  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/search  # noqa: E501
 
         Search for ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5606,7 +5606,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """search_campaigns  # noqa: E501
+        """/2026-01/marketing-solutions/campaigns/search  # noqa: E501
 
         Search endpoint for campaigns                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5685,7 +5685,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """start_ad_sets  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/start  # noqa: E501
 
         Start the specified list of ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5764,7 +5764,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """stop_ad_sets  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/stop  # noqa: E501
 
         Stop the specified list of ad sets  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5845,7 +5845,7 @@ class CampaignApi(object):
         ad_set_audience_link_input_entity_v1,
         **kwargs
     ):
-        """update_ad_set_audience  # noqa: E501
+        """/2026-01/marketing-solutions/ad-sets/{ad-set-id}/audience  # noqa: E501
 
         Link or unlink an audience with an ad set  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5932,7 +5932,7 @@ class CampaignApi(object):
         update_seller_budget_message_base,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/budgets/{budgetId}  # noqa: E501
 
         Modify an existing active budget to change its limitations or status.  All three types of budgets can be modified.                See the additional restrictions listed in the PATCH budgets endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6018,7 +6018,7 @@ class CampaignApi(object):
         update_seller_budget_message,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/budgets  # noqa: E501
 
         Modify one or more existing active budgets to change their limitations or status.  All three types of budgets can be modified.                The following constraints apply when modifying an existing budget.                • <b>campaignIds</b>: a non-empty subset of the original campaign ids MAY be supplied<br />  • <b>amount</b>: an amount MAY be supplied only if the type is not Uncapped and if supplied it MUST be non-negative<br />  • <b>startDate</b>: a future start date MAY be supplied for budgets that have not yet started<br />  • <b>endDate</b>: an end date MAY be supplied and if supplied MUST be a future date greater than the start date<br />                Other attributes MUST NOT be supplied.                Adding new campaigns to a budget is not allowed. In addition, reducing the amount for  a Capped budget to a value less than the current spend not allowed.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6101,7 +6101,7 @@ class CampaignApi(object):
         seller_campaign_id,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/seller-campaigns/{sellerCampaignId}  # noqa: E501
 
         Patching a seller campaign allows the bid to be modified. The bid must be a non-negative value.  Setting the bid to zero will make a seller campaign inactive.                The currency used for bids will be the default currency of the campaign.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6111,7 +6111,7 @@ class CampaignApi(object):
         >>> result = thread.get()
 
         Args:
-            seller_campaign_id (str): Id of the existing seller campaign to update
+            seller_campaign_id (str): Composite id of the seller campaign to update in the format `{sellerId}.{campaignId}`, e.g. `2578464.187625`.
 
         Keyword Args:
             bid (float): The new bid for the seller campaign.. [optional]
@@ -6185,7 +6185,7 @@ class CampaignApi(object):
         seller_campaign_update,
         **kwargs
     ):
-        """  # noqa: E501
+        """/2026-01/marketing-solutions/marketplace-performance-outcomes/seller-campaigns  # noqa: E501
 
         Patching a collection of seller campaigns allows their bids to be modified.  Each bid must be a non-negative value. Setting the bid to zero will make a seller campaign inactive.                The currency used for bids will be the default currency of the campaign.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

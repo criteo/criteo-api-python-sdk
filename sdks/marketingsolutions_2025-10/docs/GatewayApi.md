@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /2025-10/marketing-solutions/me | 
+[**get_current_application**](GatewayApi.md#get_current_application) | **GET** /2025-10/marketing-solutions/me | /2025-10/marketing-solutions/me
 
 
 # **get_current_application**
 > ApplicationSummaryModelResponse get_current_application()
 
-
+/2025-10/marketing-solutions/me
 
 Get information about the currently logged application
 
@@ -55,6 +55,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /2025-10/marketing-solutions/me
         api_response = api_instance.get_current_application()
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:

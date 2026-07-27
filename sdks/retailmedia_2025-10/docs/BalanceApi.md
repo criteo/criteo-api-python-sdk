@@ -4,20 +4,20 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_funds_by_account_and_balance_id**](BalanceApi.md#add_funds_by_account_and_balance_id) | **POST** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds | 
-[**change_dates_by_account_and_balance_id**](BalanceApi.md#change_dates_by_account_and_balance_id) | **POST** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates | 
-[**create_balance_by_account_id**](BalanceApi.md#create_balance_by_account_id) | **POST** /2025-10/retail-media/accounts/{account-id}/balances | 
-[**get_balance_by_account_and_balance_id**](BalanceApi.md#get_balance_by_account_and_balance_id) | **GET** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id} | 
-[**get_balance_history**](BalanceApi.md#get_balance_history) | **GET** /2025-10/retail-media/balances/{balanceId}/history | 
-[**get_balances_by_account_id**](BalanceApi.md#get_balances_by_account_id) | **GET** /2025-10/retail-media/accounts/{account-id}/balances | 
-[**get_campaigns_by_balance_id**](BalanceApi.md#get_campaigns_by_balance_id) | **GET** /2025-10/retail-media/balances/{balance-id}/campaigns | 
-[**modify_balance_by_account_and_balance_id**](BalanceApi.md#modify_balance_by_account_and_balance_id) | **PATCH** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id} | 
+[**add_funds_by_account_and_balance_id**](BalanceApi.md#add_funds_by_account_and_balance_id) | **POST** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds | /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds
+[**change_dates_by_account_and_balance_id**](BalanceApi.md#change_dates_by_account_and_balance_id) | **POST** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates | /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates
+[**create_balance_by_account_id**](BalanceApi.md#create_balance_by_account_id) | **POST** /2025-10/retail-media/accounts/{account-id}/balances | /2025-10/retail-media/accounts/{account-id}/balances
+[**get_balance_by_account_and_balance_id**](BalanceApi.md#get_balance_by_account_and_balance_id) | **GET** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id} | /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}
+[**get_balance_history**](BalanceApi.md#get_balance_history) | **GET** /2025-10/retail-media/balances/{balanceId}/history | /2025-10/retail-media/balances/{balanceId}/history
+[**get_balances_by_account_id**](BalanceApi.md#get_balances_by_account_id) | **GET** /2025-10/retail-media/accounts/{account-id}/balances | /2025-10/retail-media/accounts/{account-id}/balances
+[**get_campaigns_by_balance_id**](BalanceApi.md#get_campaigns_by_balance_id) | **GET** /2025-10/retail-media/balances/{balance-id}/campaigns | /2025-10/retail-media/balances/{balance-id}/campaigns
+[**modify_balance_by_account_and_balance_id**](BalanceApi.md#modify_balance_by_account_and_balance_id) | **PATCH** /2025-10/retail-media/accounts/{account-id}/balances/{balance-id} | /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}
 
 
 # **add_funds_by_account_and_balance_id**
 > BalanceResponseV2Response add_funds_by_account_and_balance_id(account_id, balance_id, add_funds_to_balance_v2_request)
 
-
+/2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds
 
 Add funds to a balance for the given account id
 
@@ -76,6 +76,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds
         api_response = api_instance.add_funds_by_account_and_balance_id(account_id, balance_id, add_funds_to_balance_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -116,7 +117,7 @@ Name | Type | Description  | Notes
 # **change_dates_by_account_and_balance_id**
 > BalanceResponseV2Response change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request)
 
-
+/2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates
 
 Change dates of a balance for the given account id
 
@@ -175,6 +176,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates
         api_response = api_instance.change_dates_by_account_and_balance_id(account_id, balance_id, change_dates_of_balance_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -215,7 +217,7 @@ Name | Type | Description  | Notes
 # **create_balance_by_account_id**
 > BalanceResponseV2Response create_balance_by_account_id(account_id, create_balance_v2_request)
 
-
+/2025-10/retail-media/accounts/{account-id}/balances
 
 Create balance for the given account id
 
@@ -277,6 +279,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances
         api_response = api_instance.create_balance_by_account_id(account_id, create_balance_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -316,7 +319,7 @@ Name | Type | Description  | Notes
 # **get_balance_by_account_and_balance_id**
 > BalanceResponseV2Response get_balance_by_account_and_balance_id(account_id, balance_id)
 
-
+/2025-10/retail-media/accounts/{account-id}/balances/{balance-id}
 
 Get a balance for the given account id and balance id
 
@@ -363,6 +366,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}
         api_response = api_instance.get_balance_by_account_and_balance_id(account_id, balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -402,7 +406,7 @@ Name | Type | Description  | Notes
 # **get_balance_history**
 > PageOfBalanceHistoryChangeDataCaptureV1 get_balance_history(balance_id)
 
-
+/2025-10/retail-media/balances/{balanceId}/history
 
 Gets the balance's historical change data.
 
@@ -451,6 +455,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/balances/{balanceId}/history
         api_response = api_instance.get_balance_history(balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -459,6 +464,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/balances/{balanceId}/history
         api_response = api_instance.get_balance_history(balance_id, limit=limit, limit_to_change_types=limit_to_change_types, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -500,7 +506,7 @@ Name | Type | Description  | Notes
 # **get_balances_by_account_id**
 > BalanceResponseV2PagedListResponse get_balances_by_account_id(account_id)
 
-
+/2025-10/retail-media/accounts/{account-id}/balances
 
 Gets page of balance objects for the given account id
 
@@ -551,6 +557,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances
         api_response = api_instance.get_balances_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -559,6 +566,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances
         api_response = api_instance.get_balances_by_account_id(account_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -600,7 +608,7 @@ Name | Type | Description  | Notes
 # **get_campaigns_by_balance_id**
 > BalanceCampaign202110PagedListResponse get_campaigns_by_balance_id(balance_id)
 
-
+/2025-10/retail-media/balances/{balance-id}/campaigns
 
 Gets page of campaigns for the given balanceId
 
@@ -651,6 +659,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/balances/{balance-id}/campaigns
         api_response = api_instance.get_campaigns_by_balance_id(balance_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -659,6 +668,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/balances/{balance-id}/campaigns
         api_response = api_instance.get_campaigns_by_balance_id(balance_id, limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -700,7 +710,7 @@ Name | Type | Description  | Notes
 # **modify_balance_by_account_and_balance_id**
 > BalanceResponseV2Response modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request)
 
-
+/2025-10/retail-media/accounts/{account-id}/balances/{balance-id}
 
 Modify a balance for the given account id
 
@@ -761,6 +771,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/balances/{balance-id}
         api_response = api_instance.modify_balance_by_account_and_balance_id(account_id, balance_id, update_balance_model_v2_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:

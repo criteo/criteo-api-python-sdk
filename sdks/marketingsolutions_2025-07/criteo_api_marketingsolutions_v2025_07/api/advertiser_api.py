@@ -85,7 +85,7 @@ class AdvertiserApi(object):
         self,
         **kwargs
     ):
-        """list_advertisers  # noqa: E501
+        """/2025-07/advertisers/me  # noqa: E501
 
         Fetch the portfolio of Advertisers for this account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

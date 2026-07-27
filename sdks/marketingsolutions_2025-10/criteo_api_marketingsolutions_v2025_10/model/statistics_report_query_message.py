@@ -231,6 +231,7 @@ class StatisticsReportQueryMessage(ModelNormal):
             'QUALIFIEDVISITS': "QualifiedVisits",
             'VISITS': "Visits",
             'VISITSPV1D': "VisitsPV1D",
+            'VISITSALLPV1D': "VisitsAllPv1d",
             'ORDERVALUEPI': "OrderValuePi",
             'POSTINSTALLORDERVALUE': "PostInstallOrderValue",
             'BOUNCERATE': "BounceRate",
@@ -279,17 +280,6 @@ class StatisticsReportQueryMessage(ModelNormal):
             'POSTINSTALLCOSTOFSALE': "PostInstallCostOfSale",
             'POSTINSTALLCOSTPERORDER': "PostInstallCostPerOrder",
             'RETURNONADVERTISERSPENDINGPI': "ReturnOnAdvertiserSpendingPi",
-            'CACCLIENTATTRIBUTION': "CacClientAttribution",
-            'CACPC30D': "CacPc30d",
-            'CACPC7D': "CacPc7d",
-            'CACPC1D': "CacPc1d",
-            'CACPV24H': "CacPv24h",
-            'CACPV7D': "CacPv7d",
-            'CACPV14D': "CacPv14d",
-            'CACPV30D': "CacPv30d",
-            'CACPC30PV24H': "CacPc30Pv24h",
-            'CACPC7DPV24H': "CacPc7dPv24h",
-            'CACLC30D': "CacLc30d",
             'POSTINSTALLROAS': "PostInstallRoas",
             'RETURNONADVERTISERSPENDINGOFFLINEPC': "ReturnOnAdvertiserSpendingOfflinePc",
             'RETURNONADVERTISERSPENDINGOFFLINEPV': "ReturnOnAdvertiserSpendingOfflinePv",
@@ -315,6 +305,18 @@ class StatisticsReportQueryMessage(ModelNormal):
             'VIDEOAVERAGEVIEWRATE': "VideoAverageViewRate",
             'VIDEOCPV': "VideoCpv",
             'VIDEOCPCV': "VideoCpcv",
+            'POTENTIALUSERS': "PotentialUsers",
+            'RETAILERMARGINEURO': "RetailerMarginEuro",
+            'PLATFORMFEEEURO': "PlatformFeeEuro",
+            'ALLINMEDIACOST': "AllInMediaCost",
+            'NETMEDIACOST': "NetMediaCost",
+            'COS': "Cos",
+        },
+        ('ad_set_status',): {
+            'None': None,
+            'ACTIVE': "Active",
+            'NOTRUNNING': "NotRunning",
+            'DEAD': "Dead",
         },
         ('format',): {
             'CSV': "csv",
@@ -325,6 +327,9 @@ class StatisticsReportQueryMessage(ModelNormal):
     }
 
     validations = {
+        ('dimensions',): {
+            'min_items': 1,
+        },
     }
 
     additional_properties_type = None
@@ -342,6 +347,7 @@ class StatisticsReportQueryMessage(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'advertiser_ids': (str,),  # noqa: E501
             'currency': (str,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'end_date': (datetime,),  # noqa: E501
@@ -350,7 +356,6 @@ class StatisticsReportQueryMessage(ModelNormal):
             'ad_set_ids': ([str], none_type,),  # noqa: E501
             'ad_set_names': ([str], none_type,),  # noqa: E501
             'ad_set_status': ([str], none_type,),  # noqa: E501
-            'advertiser_ids': (str, none_type,),  # noqa: E501
             'format': (str,),  # noqa: E501
             'timezone': (str, none_type,),  # noqa: E501
         }
@@ -361,6 +366,7 @@ class StatisticsReportQueryMessage(ModelNormal):
 
 
     attribute_map = {
+        'advertiser_ids': 'advertiserIds',  # noqa: E501
         'currency': 'currency',  # noqa: E501
         'dimensions': 'dimensions',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
@@ -369,7 +375,6 @@ class StatisticsReportQueryMessage(ModelNormal):
         'ad_set_ids': 'adSetIds',  # noqa: E501
         'ad_set_names': 'adSetNames',  # noqa: E501
         'ad_set_status': 'adSetStatus',  # noqa: E501
-        'advertiser_ids': 'advertiserIds',  # noqa: E501
         'format': 'format',  # noqa: E501
         'timezone': 'timezone',  # noqa: E501
     }
@@ -381,15 +386,16 @@ class StatisticsReportQueryMessage(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, advertiser_ids, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """StatisticsReportQueryMessage - a model defined in OpenAPI
 
         Args:
+            advertiser_ids (str): List of advertiser IDs to report on, provided as a single comma-separated string (e.g., \"123,456,789\"). The advertisers must already exist. If empty, all advertisers will be used.
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
-            dimensions ([str]): The dimensions for the report.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            metrics ([str]): The list of metrics to report.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            dimensions ([str]): List of dimensions for the report. At least one dimension should be provided. <br/><br/> When an ID dimension is requested (e.g., AdsetId), the corresponding name dimension (e.g., Adset) is automatically included, and vice versa. This applies to the following pairs: AdsetId/Adset, AdId/Ad, AdvertiserId/Advertiser, CampaignId/Campaign, CategoryId/Category, CouponId/Coupon, MarketingObjectiveId/MarketingObjective, ChannelId/Channel.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            metrics ([str]): List of metrics for the report. Provide at least one metric to return performance data; otherwise, the response will include only dimension-related information.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -422,12 +428,11 @@ class StatisticsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str], none_type): list of adSets ids. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_names ([str], none_type): list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_status ([str], none_type): list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            advertiser_ids (str, none_type): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
-            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            ad_set_ids ([str], none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be fetched.. [optional]  # noqa: E501
+            ad_set_names ([str], none_type): Optional list of ad set names to filter on. If empty, all ad sets will be fetched.. [optional]  # noqa: E501
+            ad_set_status ([str], none_type): Optional list of ad set statuses to filter on. If empty, all ad sets will be fetched.. [optional]  # noqa: E501
+            format (str): Optional file format of the generated report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -459,6 +464,7 @@ class StatisticsReportQueryMessage(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.advertiser_ids = advertiser_ids
         self.currency = currency
         self.dimensions = dimensions
         self.end_date = end_date
@@ -484,15 +490,16 @@ class StatisticsReportQueryMessage(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
+    def __init__(self, advertiser_ids, currency, dimensions, end_date, metrics, start_date, *args, **kwargs):  # noqa: E501
         """StatisticsReportQueryMessage - a model defined in OpenAPI
 
         Args:
+            advertiser_ids (str): List of advertiser IDs to report on, provided as a single comma-separated string (e.g., \"123,456,789\"). The advertisers must already exist. If empty, all advertisers will be used.
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
-            dimensions ([str]): The dimensions for the report.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            metrics ([str]): The list of metrics to report.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            dimensions ([str]): List of dimensions for the report. At least one dimension should be provided. <br/><br/> When an ID dimension is requested (e.g., AdsetId), the corresponding name dimension (e.g., Adset) is automatically included, and vice versa. This applies to the following pairs: AdsetId/Adset, AdId/Ad, AdvertiserId/Advertiser, CampaignId/Campaign, CategoryId/Category, CouponId/Coupon, MarketingObjectiveId/MarketingObjective, ChannelId/Channel.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            metrics ([str]): List of metrics for the report. Provide at least one metric to return performance data; otherwise, the response will include only dimension-related information.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -525,12 +532,11 @@ class StatisticsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            ad_set_ids ([str], none_type): list of adSets ids. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_names ([str], none_type): list of adSets names. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            ad_set_status ([str], none_type): list of adSets status. If empty, all the adSets will be fetched. [optional]  # noqa: E501
-            advertiser_ids (str, none_type): The comma-separated list of advertiser ids. If empty, all the advertisers in the portfolio will be used. [optional]  # noqa: E501
-            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            ad_set_ids ([str], none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be fetched.. [optional]  # noqa: E501
+            ad_set_names ([str], none_type): Optional list of ad set names to filter on. If empty, all ad sets will be fetched.. [optional]  # noqa: E501
+            ad_set_status ([str], none_type): Optional list of ad set statuses to filter on. If empty, all ad sets will be fetched.. [optional]  # noqa: E501
+            format (str): Optional file format of the generated report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -560,6 +566,7 @@ class StatisticsReportQueryMessage(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.advertiser_ids = advertiser_ids
         self.currency = currency
         self.dimensions = dimensions
         self.end_date = end_date

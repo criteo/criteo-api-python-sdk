@@ -23,6 +23,7 @@ from criteo_api_retailmedia_experimental.model_utils import (  # noqa: F401
 )
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_balance_v1_and_metadata import EntityResourceCollectionOutcomeBalanceV1AndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_balance_v1 import EntityResourceOutcomeBalanceV1
+from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_balance_response_v1 import EntityResourceOutcomeOfBalanceResponseV1
 from criteo_api_retailmedia_experimental.model.value_resource_collection_outcome_balance_history_change_data_capture_v1_and_metadata import ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_update_balance_model_v1 import ValueResourceInputOfUpdateBalanceModelV1
 
@@ -256,7 +257,7 @@ class BalanceApi(object):
         )
         self.update_balance_v1_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (EntityResourceOutcomeOfBalanceResponseV1,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -310,7 +311,9 @@ class BalanceApi(object):
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -627,7 +630,7 @@ class BalanceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            EntityResourceOutcomeOfBalanceResponseV1
                 If the method is called asynchronously, returns the request
                 thread.
         """

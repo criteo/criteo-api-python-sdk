@@ -5,7 +5,7 @@ Request object for approval of keyword reviews, containing a list of Phrase-Revi
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**keywords** | [**[ReviewSetState]**](ReviewSetState.md) | List of Phrase-ReviewState pairs describing keyword review updates to perform | 
+**keywords** | [**[ReviewSetState]**](ReviewSetState.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,29 +4,29 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_advertiser_ad**](CreativeApi.md#create_advertiser_ad) | **POST** /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads | 
-[**create_advertiser_coupon**](CreativeApi.md#create_advertiser_coupon) | **POST** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons | 
-[**create_advertiser_creative**](CreativeApi.md#create_advertiser_creative) | **POST** /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives | 
-[**delete_ad**](CreativeApi.md#delete_ad) | **DELETE** /2025-10/marketing-solutions/ads/{id} | 
-[**delete_advertiser_coupon**](CreativeApi.md#delete_advertiser_coupon) | **DELETE** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} | 
-[**delete_creative**](CreativeApi.md#delete_creative) | **DELETE** /2025-10/marketing-solutions/creatives/{id} | 
-[**edit_advertiser_coupon**](CreativeApi.md#edit_advertiser_coupon) | **PUT** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} | 
-[**edit_creative**](CreativeApi.md#edit_creative) | **PUT** /2025-10/marketing-solutions/creatives/{id} | 
-[**generate_creative_preview**](CreativeApi.md#generate_creative_preview) | **POST** /2025-10/marketing-solutions/creatives/{id}/preview | 
-[**get_ad**](CreativeApi.md#get_ad) | **GET** /2025-10/marketing-solutions/ads/{id} | 
-[**get_advertiser_ads**](CreativeApi.md#get_advertiser_ads) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads | 
-[**get_advertiser_coupon**](CreativeApi.md#get_advertiser_coupon) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} | 
-[**get_advertiser_coupon_preview**](CreativeApi.md#get_advertiser_coupon_preview) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview | 
-[**get_advertiser_coupon_supported_sizes**](CreativeApi.md#get_advertiser_coupon_supported_sizes) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes | 
-[**get_advertiser_coupons**](CreativeApi.md#get_advertiser_coupons) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons | 
-[**get_advertiser_creatives**](CreativeApi.md#get_advertiser_creatives) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives | 
-[**get_creative**](CreativeApi.md#get_creative) | **GET** /2025-10/marketing-solutions/creatives/{id} | 
+[**create_advertiser_ad**](CreativeApi.md#create_advertiser_ad) | **POST** /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads | /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
+[**create_advertiser_coupon**](CreativeApi.md#create_advertiser_coupon) | **POST** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
+[**create_advertiser_creative**](CreativeApi.md#create_advertiser_creative) | **POST** /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives | /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
+[**delete_ad**](CreativeApi.md#delete_ad) | **DELETE** /2025-10/marketing-solutions/ads/{id} | /2025-10/marketing-solutions/ads/{id}
+[**delete_advertiser_coupon**](CreativeApi.md#delete_advertiser_coupon) | **DELETE** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
+[**delete_creative**](CreativeApi.md#delete_creative) | **DELETE** /2025-10/marketing-solutions/creatives/{id} | /2025-10/marketing-solutions/creatives/{id}
+[**edit_advertiser_coupon**](CreativeApi.md#edit_advertiser_coupon) | **PUT** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
+[**edit_creative**](CreativeApi.md#edit_creative) | **PUT** /2025-10/marketing-solutions/creatives/{id} | /2025-10/marketing-solutions/creatives/{id}
+[**generate_creative_preview**](CreativeApi.md#generate_creative_preview) | **POST** /2025-10/marketing-solutions/creatives/{id}/preview | /2025-10/marketing-solutions/creatives/{id}/preview
+[**get_ad**](CreativeApi.md#get_ad) | **GET** /2025-10/marketing-solutions/ads/{id} | /2025-10/marketing-solutions/ads/{id}
+[**get_advertiser_ads**](CreativeApi.md#get_advertiser_ads) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads | /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
+[**get_advertiser_coupon**](CreativeApi.md#get_advertiser_coupon) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id} | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
+[**get_advertiser_coupon_preview**](CreativeApi.md#get_advertiser_coupon_preview) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview
+[**get_advertiser_coupon_supported_sizes**](CreativeApi.md#get_advertiser_coupon_supported_sizes) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes
+[**get_advertiser_coupons**](CreativeApi.md#get_advertiser_coupons) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons | /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
+[**get_advertiser_creatives**](CreativeApi.md#get_advertiser_creatives) | **GET** /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives | /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
+[**get_creative**](CreativeApi.md#get_creative) | **GET** /2025-10/marketing-solutions/creatives/{id} | /2025-10/marketing-solutions/creatives/{id}
 
 
 # **create_advertiser_ad**
 > ResourceOutcomeOfAd create_advertiser_ad(advertiser_id, resource_input_of_ad_write)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
 
 Create an Ad
 
@@ -88,6 +88,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
         api_response = api_instance.create_advertiser_ad(advertiser_id, resource_input_of_ad_write)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -127,7 +128,7 @@ Name | Type | Description  | Notes
 # **create_advertiser_coupon**
 > ResourceOutcomeOfCoupon create_advertiser_coupon(advertiser_id, resource_input_of_create_coupon)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
 
 Create a Coupon
 
@@ -201,6 +202,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
         api_response = api_instance.create_advertiser_coupon(advertiser_id, resource_input_of_create_coupon)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -240,7 +242,7 @@ Name | Type | Description  | Notes
 # **create_advertiser_creative**
 > ResourceOutcomeOfCreative create_advertiser_creative(advertiser_id, resource_input_of_creative_write)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
 
 Create a Creative
 
@@ -361,6 +363,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
         api_response = api_instance.create_advertiser_creative(advertiser_id, resource_input_of_creative_write)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -400,7 +403,7 @@ Name | Type | Description  | Notes
 # **delete_ad**
 > delete_ad(id)
 
-
+/2025-10/marketing-solutions/ads/{id}
 
 Delete an Ad
 
@@ -445,6 +448,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/ads/{id}
         api_instance.delete_ad(id)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CreativeApi->delete_ad: %s\n" % e)
@@ -482,7 +486,7 @@ void (empty response body)
 # **delete_advertiser_coupon**
 > delete_advertiser_coupon(advertiser_id, id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
 
 Delete a Coupon
 
@@ -528,6 +532,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
         api_instance.delete_advertiser_coupon(advertiser_id, id)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CreativeApi->delete_advertiser_coupon: %s\n" % e)
@@ -566,7 +571,7 @@ void (empty response body)
 # **delete_creative**
 > delete_creative(id)
 
-
+/2025-10/marketing-solutions/creatives/{id}
 
 Delete a Creative if there are no ads binded to it
 
@@ -611,6 +616,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/creatives/{id}
         api_instance.delete_creative(id)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
         print("Exception when calling CreativeApi->delete_creative: %s\n" % e)
@@ -648,7 +654,7 @@ void (empty response body)
 # **edit_advertiser_coupon**
 > ResourceOutcomeOfCoupon edit_advertiser_coupon(advertiser_id, id, resource_input_of_update_coupon)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
 
 Edit a specific Coupon
 
@@ -706,6 +712,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
         api_response = api_instance.edit_advertiser_coupon(advertiser_id, id, resource_input_of_update_coupon)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -746,7 +753,7 @@ Name | Type | Description  | Notes
 # **edit_creative**
 > ResourceOutcomeOfCreative edit_creative(id, resource_input_of_creative_write)
 
-
+/2025-10/marketing-solutions/creatives/{id}
 
 Edit a specific Creative
 
@@ -867,6 +874,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/creatives/{id}
         api_response = api_instance.edit_creative(id, resource_input_of_creative_write)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -906,7 +914,7 @@ Name | Type | Description  | Notes
 # **generate_creative_preview**
 > str generate_creative_preview(id)
 
-
+/2025-10/marketing-solutions/creatives/{id}/preview
 
 Get the preview of a specific Creative
 
@@ -953,6 +961,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/creatives/{id}/preview
         api_response = api_instance.generate_creative_preview(id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -961,6 +970,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/marketing-solutions/creatives/{id}/preview
         api_response = api_instance.generate_creative_preview(id, height=height, width=width)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1001,7 +1011,7 @@ Name | Type | Description  | Notes
 # **get_ad**
 > ResourceOutcomeOfAd get_ad(id)
 
-
+/2025-10/marketing-solutions/ads/{id}
 
 Get an Ad with its id
 
@@ -1047,6 +1057,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/ads/{id}
         api_response = api_instance.get_ad(id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1085,7 +1096,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_ads**
 > ResourceCollectionOutcomeOfAd get_advertiser_ads(advertiser_id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
 
 Get the list of self-services Ads for a given advertiser
 
@@ -1133,6 +1144,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
         api_response = api_instance.get_advertiser_ads(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1141,6 +1153,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/ads
         api_response = api_instance.get_advertiser_ads(advertiser_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1181,7 +1194,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_coupon**
 > ResourceOutcomeOfCoupon get_advertiser_coupon(advertiser_id, id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
 
 Get a Coupon with its id
 
@@ -1228,6 +1241,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}
         api_response = api_instance.get_advertiser_coupon(advertiser_id, id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1267,7 +1281,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_coupon_preview**
 > str get_advertiser_coupon_preview(advertiser_id, id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview
 
 Get the preview of a specific Coupon
 
@@ -1315,6 +1329,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview
         api_response = api_instance.get_advertiser_coupon_preview(advertiser_id, id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1323,6 +1338,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons/{id}/preview
         api_response = api_instance.get_advertiser_coupon_preview(advertiser_id, id, height=height, width=width)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1364,7 +1380,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_coupon_supported_sizes**
 > ResourceOutcomeOfCouponSupportedSizes get_advertiser_coupon_supported_sizes(advertiser_id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes
 
 Get the list of Coupon supported sizes
 
@@ -1411,6 +1427,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes
         api_response = api_instance.get_advertiser_coupon_supported_sizes(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1419,6 +1436,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons-supported-sizes
         api_response = api_instance.get_advertiser_coupon_supported_sizes(advertiser_id, ad_set_id=ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1458,7 +1476,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_coupons**
 > ResourceCollectionOutcomeOfCoupon get_advertiser_coupons(advertiser_id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
 
 Get the list of self-services Coupons for a given advertiser
 
@@ -1506,6 +1524,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
         api_response = api_instance.get_advertiser_coupons(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1514,6 +1533,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/coupons
         api_response = api_instance.get_advertiser_coupons(advertiser_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1554,7 +1574,7 @@ Name | Type | Description  | Notes
 # **get_advertiser_creatives**
 > ResourceCollectionOutcomeOfCreativeRead get_advertiser_creatives(advertiser_id)
 
-
+/2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
 
 Get the list of self-services Creatives for a given advertiser
 
@@ -1602,6 +1622,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
         api_response = api_instance.get_advertiser_creatives(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1610,6 +1631,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/marketing-solutions/advertisers/{advertiser-id}/creatives
         api_response = api_instance.get_advertiser_creatives(advertiser_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:
@@ -1650,7 +1672,7 @@ Name | Type | Description  | Notes
 # **get_creative**
 > ResourceOutcomeOfCreative get_creative(id)
 
-
+/2025-10/marketing-solutions/creatives/{id}
 
 Get a Creative with its id
 
@@ -1696,6 +1718,7 @@ with criteo_api_marketingsolutions_v2025_10.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/marketing-solutions/creatives/{id}
         api_response = api_instance.get_creative(id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2025_10.ApiException as e:

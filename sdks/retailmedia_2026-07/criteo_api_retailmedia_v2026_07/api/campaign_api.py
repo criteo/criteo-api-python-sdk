@@ -29,8 +29,6 @@ from criteo_api_retailmedia_v2026_07.model.asset_response import AssetResponse
 from criteo_api_retailmedia_v2026_07.model.audience_ids_update_model202110_request import AudienceIdsUpdateModel202110Request
 from criteo_api_retailmedia_v2026_07.model.audience_target202110_request import AudienceTarget202110Request
 from criteo_api_retailmedia_v2026_07.model.audience_target202110_response import AudienceTarget202110Response
-from criteo_api_retailmedia_v2026_07.model.balance_campaign202110_list_request import BalanceCampaign202110ListRequest
-from criteo_api_retailmedia_v2026_07.model.balance_campaign202110_paged_list_response import BalanceCampaign202110PagedListResponse
 from criteo_api_retailmedia_v2026_07.model.category202204 import Category202204
 from criteo_api_retailmedia_v2026_07.model.category202204_list_response import Category202204ListResponse
 from criteo_api_retailmedia_v2026_07.model.common_line_item_paged_list_response import CommonLineItemPagedListResponse
@@ -44,7 +42,7 @@ from criteo_api_retailmedia_v2026_07.model.creative_update_model202207 import Cr
 from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_category202204 import EntityResourceCollectionOutcomeCategory202204
 from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_category202204_metadata import EntityResourceCollectionOutcomeCategory202204Metadata
 from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_line_item_keyword_review_report_and_metadata import EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata
-from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_of_retailer_result_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from criteo_api_retailmedia_v2026_07.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_v2026_07.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_v2026_07.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
@@ -75,18 +73,21 @@ from criteo_api_retailmedia_v2026_07.model.store_target202110_request import Sto
 from criteo_api_retailmedia_v2026_07.model.store_target202110_response import StoreTarget202110Response
 from criteo_api_retailmedia_v2026_07.model.template_list_response import TemplateListResponse
 from criteo_api_retailmedia_v2026_07.model.template_response import TemplateResponse
+from criteo_api_retailmedia_v2026_07.model.value_resource_input_append_campaigns_request_v1 import ValueResourceInputAppendCampaignsRequestV1
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_categories_search_request_v1 import ValueResourceInputCategoriesSearchRequestV1
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_cpc_min_bids_request import ValueResourceInputCpcMinBidsRequest
+from criteo_api_retailmedia_v2026_07.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_brand_catalog_request_v2 import ValueResourceInputOfBrandCatalogRequestV2
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_campaign_budget_overrides import ValueResourceInputOfCampaignBudgetOverrides
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_line_item_budget_overrides import ValueResourceInputOfLineItemBudgetOverrides
-from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_retailer_search_request import ValueResourceInputOfRetailerSearchRequest
+from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_retailer_search_request_v2 import ValueResourceInputOfRetailerSearchRequestV2
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_seller_catalog_request_v2 import ValueResourceInputOfSellerCatalogRequestV2
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_recommended_categories_request_v1 import ValueResourceInputRecommendedCategoriesRequestV1
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_recommended_keywords_request_v1 import ValueResourceInputRecommendedKeywordsRequestV1
 from criteo_api_retailmedia_v2026_07.model.value_resource_input_retail_media_keywords_review import ValueResourceInputRetailMediaKeywordsReview
+from criteo_api_retailmedia_v2026_07.model.value_resource_outcome_balance_campaigns_v1 import ValueResourceOutcomeBalanceCampaignsV1
 from criteo_api_retailmedia_v2026_07.model.value_resource_outcome_cpc_min_bids_response import ValueResourceOutcomeCpcMinBidsResponse
 from criteo_api_retailmedia_v2026_07.model.value_resource_outcome_of_campaign_budget_overrides import ValueResourceOutcomeOfCampaignBudgetOverrides
 from criteo_api_retailmedia_v2026_07.model.value_resource_outcome_of_line_item_budget_overrides import ValueResourceOutcomeOfLineItemBudgetOverrides
@@ -280,25 +281,26 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.append_campaigns_by_balance_id_endpoint = _Endpoint(
+        self.append_campaigns_to_balance_v1_endpoint = _Endpoint(
             settings={
-                'response_type': (BalanceCampaign202110PagedListResponse,),
+                'response_type': (ValueResourceOutcomeBalanceCampaignsV1,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2026-07/retail-media/balances/{balance-id}/campaigns/append',
-                'operation_id': 'append_campaigns_by_balance_id',
+                'endpoint_path': '/2026-07/retail-media/balances/{balanceId}/campaigns/append',
+                'operation_id': 'append_campaigns_to_balance_v1',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'balance_id',
-                    'balance_campaign202110_list_request',
+                    'value_resource_input_append_campaigns_request_v1',
                 ],
                 'required': [
                     'balance_id',
+                    'value_resource_input_append_campaigns_request_v1',
                 ],
                 'nullable': [
                 ],
@@ -315,15 +317,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'balance_id':
                         (str,),
-                    'balance_campaign202110_list_request':
-                        (BalanceCampaign202110ListRequest,),
+                    'value_resource_input_append_campaigns_request_v1':
+                        (ValueResourceInputAppendCampaignsRequestV1,),
                 },
                 'attribute_map': {
-                    'balance_id': 'balance-id',
+                    'balance_id': 'balanceId',
                 },
                 'location_map': {
                     'balance_id': 'path',
-                    'balance_campaign202110_list_request': 'body',
+                    'value_resource_input_append_campaigns_request_v1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -978,25 +980,26 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.delete_campaigns_by_balance_id_endpoint = _Endpoint(
+        self.delete_campaigns_from_balance_v1_endpoint = _Endpoint(
             settings={
-                'response_type': (BalanceCampaign202110PagedListResponse,),
+                'response_type': (ValueResourceOutcomeBalanceCampaignsV1,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/2026-07/retail-media/balances/{balance-id}/campaigns/delete',
-                'operation_id': 'delete_campaigns_by_balance_id',
+                'endpoint_path': '/2026-07/retail-media/balances/{balanceId}/campaigns/delete',
+                'operation_id': 'delete_campaigns_from_balance_v1',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'balance_id',
-                    'balance_campaign202110_list_request',
+                    'value_resource_input_delete_campaigns_request_v1',
                 ],
                 'required': [
                     'balance_id',
+                    'value_resource_input_delete_campaigns_request_v1',
                 ],
                 'nullable': [
                 ],
@@ -1013,15 +1016,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'balance_id':
                         (str,),
-                    'balance_campaign202110_list_request':
-                        (BalanceCampaign202110ListRequest,),
+                    'value_resource_input_delete_campaigns_request_v1':
+                        (ValueResourceInputDeleteCampaignsRequestV1,),
                 },
                 'attribute_map': {
-                    'balance_id': 'balance-id',
+                    'balance_id': 'balanceId',
                 },
                 'location_map': {
                     'balance_id': 'path',
-                    'balance_campaign202110_list_request': 'body',
+                    'value_resource_input_delete_campaigns_request_v1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -3415,7 +3418,7 @@ class CampaignApi(object):
         )
         self.search_account_retailers_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceCollectionOutcomeOfRetailerResultAndMetadata,),
+                'response_type': (EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -3428,13 +3431,13 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'value_resource_input_of_retailer_search_request',
+                    'value_resource_input_of_retailer_search_request_v2',
                     'limit',
                     'offset',
                 ],
                 'required': [
                     'account_id',
-                    'value_resource_input_of_retailer_search_request',
+                    'value_resource_input_of_retailer_search_request_v2',
                 ],
                 'nullable': [
                 ],
@@ -3463,8 +3466,8 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'value_resource_input_of_retailer_search_request':
-                        (ValueResourceInputOfRetailerSearchRequest,),
+                    'value_resource_input_of_retailer_search_request_v2':
+                        (ValueResourceInputOfRetailerSearchRequestV2,),
                     'limit':
                         (int,),
                     'offset':
@@ -3477,7 +3480,7 @@ class CampaignApi(object):
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'value_resource_input_of_retailer_search_request': 'body',
+                    'value_resource_input_of_retailer_search_request_v2': 'body',
                     'limit': 'query',
                     'offset': 'query',
                 },
@@ -4419,25 +4422,26 @@ class CampaignApi(object):
             line_item_id
         return self.append_audience_targets_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
-    def append_campaigns_by_balance_id(
+    def append_campaigns_to_balance_v1(
         self,
         balance_id,
+        value_resource_input_append_campaigns_request_v1,
         **kwargs
     ):
-        """/2026-07/retail-media/balances/{balance-id}/campaigns/append  # noqa: E501
+        """/2026-07/retail-media/balances/{balanceId}/campaigns/append  # noqa: E501
 
-        appends one or more campaigns to the specified balance  # noqa: E501
+        Appends one or more campaigns to the specified balance  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.append_campaigns_by_balance_id(balance_id, async_req=True)
+        >>> thread = api.append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1, async_req=True)
         >>> result = thread.get()
 
         Args:
             balance_id (str): The balance to add campaigns from
+            value_resource_input_append_campaigns_request_v1 (ValueResourceInputAppendCampaignsRequestV1): The balance campaign appending request.
 
         Keyword Args:
-            balance_campaign202110_list_request (BalanceCampaign202110ListRequest): The campaigns to append. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4470,7 +4474,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BalanceCampaign202110PagedListResponse
+            ValueResourceOutcomeBalanceCampaignsV1
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4501,7 +4505,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['balance_id'] = \
             balance_id
-        return self.append_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
+        kwargs['value_resource_input_append_campaigns_request_v1'] = \
+            value_resource_input_append_campaigns_request_v1
+        return self.append_campaigns_to_balance_v1_endpoint.call_with_http_info(**kwargs)
 
     def append_promoted_products(
         self,
@@ -5444,25 +5450,26 @@ class CampaignApi(object):
             line_item_id
         return self.delete_audience_targets_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
-    def delete_campaigns_by_balance_id(
+    def delete_campaigns_from_balance_v1(
         self,
         balance_id,
+        value_resource_input_delete_campaigns_request_v1,
         **kwargs
     ):
-        """/2026-07/retail-media/balances/{balance-id}/campaigns/delete  # noqa: E501
+        """/2026-07/retail-media/balances/{balanceId}/campaigns/delete  # noqa: E501
 
-        Removes one or more campaigns on the specified balance  # noqa: E501
+        Deletes one or more campaigns on the specified balance  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_campaigns_by_balance_id(balance_id, async_req=True)
+        >>> thread = api.delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1, async_req=True)
         >>> result = thread.get()
 
         Args:
             balance_id (str): The balance to remove campaigns from
+            value_resource_input_delete_campaigns_request_v1 (ValueResourceInputDeleteCampaignsRequestV1): The balance campaign deleting request.
 
         Keyword Args:
-            balance_campaign202110_list_request (BalanceCampaign202110ListRequest): The campaigns to append. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5495,7 +5502,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BalanceCampaign202110PagedListResponse
+            ValueResourceOutcomeBalanceCampaignsV1
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5526,7 +5533,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['balance_id'] = \
             balance_id
-        return self.delete_campaigns_by_balance_id_endpoint.call_with_http_info(**kwargs)
+        kwargs['value_resource_input_delete_campaigns_request_v1'] = \
+            value_resource_input_delete_campaigns_request_v1
+        return self.delete_campaigns_from_balance_v1_endpoint.call_with_http_info(**kwargs)
 
     def delete_promoted_products(
         self,
@@ -8916,21 +8925,21 @@ class CampaignApi(object):
     def search_account_retailers(
         self,
         account_id,
-        value_resource_input_of_retailer_search_request,
+        value_resource_input_of_retailer_search_request_v2,
         **kwargs
     ):
         """/2026-07/retail-media/accounts/{accountId}/retailers/search  # noqa: E501
 
-        Searches for retailers associated with the specified account based on provided search criteria  # noqa: E501
+        Searches for retailers associated with the specified account and returns budget model availability for each retailer  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.search_account_retailers(account_id, value_resource_input_of_retailer_search_request, async_req=True)
+        >>> thread = api.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The external account identifier
-            value_resource_input_of_retailer_search_request (ValueResourceInputOfRetailerSearchRequest): The search request containing filtering parameters
+            value_resource_input_of_retailer_search_request_v2 (ValueResourceInputOfRetailerSearchRequestV2): The search request containing filtering parameters
 
         Keyword Args:
             limit (int): The maximum number of items to return. Must be between 1 and 10. Default is 5.. [optional] if omitted the server will use the default value of 5
@@ -8967,7 +8976,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceCollectionOutcomeOfRetailerResultAndMetadata
+            EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -8998,8 +9007,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
-        kwargs['value_resource_input_of_retailer_search_request'] = \
-            value_resource_input_of_retailer_search_request
+        kwargs['value_resource_input_of_retailer_search_request_v2'] = \
+            value_resource_input_of_retailer_search_request_v2
         return self.search_account_retailers_endpoint.call_with_http_info(**kwargs)
 
     def search_category(

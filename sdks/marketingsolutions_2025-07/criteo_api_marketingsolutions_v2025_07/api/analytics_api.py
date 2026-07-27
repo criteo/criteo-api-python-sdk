@@ -275,9 +275,9 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_adset_report  # noqa: E501
+        """/2025-07/statistics/report  # noqa: E501
 
-        This Statistics endpoint provides adset related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.  # noqa: E501
+        This Statistics endpoint provides ad set related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -354,9 +354,9 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_placements_report  # noqa: E501
+        """/2025-07/placements/report  # noqa: E501
 
-        Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.  # noqa: E501
+        Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.  <br/><br/>  This endpoint supports data retrieval for up to three months in the past.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -433,9 +433,9 @@ class AnalyticsApi(object):
         self,
         **kwargs
     ):
-        """get_transactions_report  # noqa: E501
+        """/2025-07/transactions/report  # noqa: E501
 
-        This Transactions endpoint provides transactions id related data.  # noqa: E501
+        This Transactions endpoint provides transactions id related data.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -513,7 +513,7 @@ class AnalyticsApi(object):
         advertiser_id,
         **kwargs
     ):
-        """get_transparency_report  # noqa: E501
+        """/2025-07/log-level/advertisers/{advertiser-id}/report  # noqa: E501
 
         This Statistics endpoint provides publisher data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -523,7 +523,7 @@ class AnalyticsApi(object):
         >>> result = thread.get()
 
         Args:
-            advertiser_id (str): The advertiser id to fetch the transparency data.
+            advertiser_id (str): The advertiser ID to fetch the transparency data for. The advertiser must already exist. Must be greater than 0.
 
         Keyword Args:
             transparency_query_message (TransparencyQueryMessage): The query message.. [optional]

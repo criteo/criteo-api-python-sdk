@@ -4,13 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_advertisers**](AdvertiserApi.md#list_advertisers) | **GET** /2026-01/advertisers/me | 
+[**list_advertisers**](AdvertiserApi.md#list_advertisers) | **GET** /2026-01/advertisers/me | /2026-01/advertisers/me
 
 
 # **list_advertisers**
 > GetPortfolioResponse list_advertisers()
 
-
+/2026-01/advertisers/me
 
 Fetch the portfolio of Advertisers for this account
 
@@ -55,6 +55,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example, this endpoint has no required or optional parameters
     try:
+        # /2026-01/advertisers/me
         api_response = api_instance.list_advertisers()
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:

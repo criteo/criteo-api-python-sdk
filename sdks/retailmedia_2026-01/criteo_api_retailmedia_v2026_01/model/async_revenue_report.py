@@ -55,10 +55,18 @@ class AsyncRevenueReport(ModelNormal):
     """
 
     allowed_values = {
+        ('activation_platforms',): {
+            'COMMERCEMAX': "CommerceMax",
+            'PRIVATEMARKET': "PrivateMarket",
+        },
         ('advertiser_types',): {
             'RETAILER': "retailer",
             'BRAND': "brand",
             'SELLER': "seller",
+        },
+        ('budget_models',): {
+            'CRITEOBUDGET': "CriteoBudget",
+            'RETAILERBUDGET': "RetailerBudget",
         },
         ('buy_type',): {
             'AUCTION': "auction",
@@ -114,6 +122,8 @@ class AsyncRevenueReport(ModelNormal):
             'ADVPRODUCTGTIN': "advProductGtin",
             'ADVPRODUCTMPN': "advProductMpn",
             'BUYTYPE': "buyType",
+            'BUDGETMODEL': "budgetModel",
+            'ACTIVATIONPLATFORM': "activationPlatform",
             'SOLDBY': "soldBy",
             'SALECHANNEL': "saleChannel",
             'SALESCHANNEL': "salesChannel",
@@ -226,6 +236,7 @@ class AsyncRevenueReport(ModelNormal):
             'DIRECTSOLD': "directSold",
             'INDIRECTSOLD': "indirectSold",
             'PRIVATEMARKET': "privateMarket",
+            'AUTHORIZEDBUYER': "authorizedBuyer",
         },
         ('targeted_keyword_types',): {
             'UNKNOWN': "unknown",
@@ -275,7 +286,9 @@ class AsyncRevenueReport(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
             'account_ids': ([str],),  # noqa: E501
+            'activation_platforms': ([str],),  # noqa: E501
             'advertiser_types': ([str],),  # noqa: E501
+            'budget_models': ([str],),  # noqa: E501
             'buy_type': (str,),  # noqa: E501
             'campaign_ids': ([str],),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
@@ -309,7 +322,9 @@ class AsyncRevenueReport(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'account_ids': 'accountIds',  # noqa: E501
+        'activation_platforms': 'activationPlatforms',  # noqa: E501
         'advertiser_types': 'advertiserTypes',  # noqa: E501
+        'budget_models': 'budgetModels',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
         'campaign_ids': 'campaignIds',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
@@ -380,7 +395,9 @@ class AsyncRevenueReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_ids ([str]): Account ids to filter. [optional]  # noqa: E501
+            activation_platforms ([str]): Filter on the activation platform: CommerceMax, PrivateMarket. [optional]  # noqa: E501
             advertiser_types ([str]): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
+            budget_models ([str]): Filter on the budget model: CriteoBudget, RetailerBudget. [optional]  # noqa: E501
             buy_type (str): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
@@ -398,7 +415,7 @@ class AsyncRevenueReport(ModelNormal):
             revenue_type (str): Type of revenue. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sku_relations ([str]): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
-            sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            sold_by (str): Filter on the seller: Indirect Sold, Direct Sold, Authorized Buyer or Private Market. [optional]  # noqa: E501
             targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
@@ -495,7 +512,9 @@ class AsyncRevenueReport(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_ids ([str]): Account ids to filter. [optional]  # noqa: E501
+            activation_platforms ([str]): Filter on the activation platform: CommerceMax, PrivateMarket. [optional]  # noqa: E501
             advertiser_types ([str]): Filter on the type of advertiser: retailer, brand, seller. [optional]  # noqa: E501
+            budget_models ([str]): Filter on the budget model: CriteoBudget, RetailerBudget. [optional]  # noqa: E501
             buy_type (str): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
@@ -513,7 +532,7 @@ class AsyncRevenueReport(ModelNormal):
             revenue_type (str): Type of revenue. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             sku_relations ([str]): Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller. [optional]  # noqa: E501
-            sold_by (str): Filter on the seller: Indirect Sold, Direct Sold or Private Market. [optional]  # noqa: E501
+            sold_by (str): Filter on the seller: Indirect Sold, Direct Sold, Authorized Buyer or Private Market. [optional]  # noqa: E501
             targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
             timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
             view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501

@@ -4,21 +4,21 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_product_set**](RecoApi.md#create_product_set) | **POST** /2026-01/marketing-solutions/product-sets | 
-[**disable_product_filtering**](RecoApi.md#disable_product_filtering) | **DELETE** /2026-01/marketing-solutions/ads/{ad-id}/product-filter | 
-[**enable_product_filtering**](RecoApi.md#enable_product_filtering) | **POST** /2026-01/marketing-solutions/ads/{ad-id}/product-filter | 
-[**fetch_product_filtering_config**](RecoApi.md#fetch_product_filtering_config) | **GET** /2026-01/marketing-solutions/ads/{ad-id}/product-filter | 
-[**fetch_product_filtering_usages**](RecoApi.md#fetch_product_filtering_usages) | **GET** /2026-01/marketing-solutions/product-sets/{product-set-id}/product-filters | 
-[**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /2026-01/marketing-solutions/product-sets/{product-set-id} | 
-[**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /2026-01/marketing-solutions/product-sets/dataset/{dataset-id} | 
-[**patch_product_set**](RecoApi.md#patch_product_set) | **PATCH** /2026-01/marketing-solutions/product-sets/{product-set-id} | 
-[**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /2026-01/marketing-solutions/product-sets/{product-set-id} | 
+[**create_product_set**](RecoApi.md#create_product_set) | **POST** /2026-01/marketing-solutions/product-sets | /2026-01/marketing-solutions/product-sets
+[**disable_product_filtering**](RecoApi.md#disable_product_filtering) | **DELETE** /2026-01/marketing-solutions/ads/{ad-id}/product-filter | /2026-01/marketing-solutions/ads/{ad-id}/product-filter
+[**enable_product_filtering**](RecoApi.md#enable_product_filtering) | **POST** /2026-01/marketing-solutions/ads/{ad-id}/product-filter | /2026-01/marketing-solutions/ads/{ad-id}/product-filter
+[**fetch_product_filtering_config**](RecoApi.md#fetch_product_filtering_config) | **GET** /2026-01/marketing-solutions/ads/{ad-id}/product-filter | /2026-01/marketing-solutions/ads/{ad-id}/product-filter
+[**fetch_product_filtering_usages**](RecoApi.md#fetch_product_filtering_usages) | **GET** /2026-01/marketing-solutions/product-sets/{product-set-id}/product-filters | /2026-01/marketing-solutions/product-sets/{product-set-id}/product-filters
+[**fetch_product_set**](RecoApi.md#fetch_product_set) | **GET** /2026-01/marketing-solutions/product-sets/{product-set-id} | /2026-01/marketing-solutions/product-sets/{product-set-id}
+[**fetch_product_sets**](RecoApi.md#fetch_product_sets) | **GET** /2026-01/marketing-solutions/product-sets/dataset/{dataset-id} | /2026-01/marketing-solutions/product-sets/dataset/{dataset-id}
+[**patch_product_set**](RecoApi.md#patch_product_set) | **PATCH** /2026-01/marketing-solutions/product-sets/{product-set-id} | /2026-01/marketing-solutions/product-sets/{product-set-id}
+[**remove_product_set**](RecoApi.md#remove_product_set) | **DELETE** /2026-01/marketing-solutions/product-sets/{product-set-id} | /2026-01/marketing-solutions/product-sets/{product-set-id}
 
 
 # **create_product_set**
 > ResourceOutcomeOfProductSet create_product_set(value_resource_input_of_create_product_set_request)
 
-
+/2026-01/marketing-solutions/product-sets
 
 Create a new product set
 
@@ -83,6 +83,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/product-sets
         api_response = api_instance.create_product_set(value_resource_input_of_create_product_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -121,7 +122,7 @@ Name | Type | Description  | Notes
 # **disable_product_filtering**
 > ValueResourceOutcomeOfProductFilterConfig disable_product_filtering(ad_id)
 
-
+/2026-01/marketing-solutions/ads/{ad-id}/product-filter
 
 Disable product filtering for a given ad
 
@@ -167,6 +168,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/ads/{ad-id}/product-filter
         api_response = api_instance.disable_product_filtering(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -205,7 +207,7 @@ Name | Type | Description  | Notes
 # **enable_product_filtering**
 > ValueResourceOutcomeOfProductFilterConfig enable_product_filtering(ad_id)
 
-
+/2026-01/marketing-solutions/ads/{ad-id}/product-filter
 
 Enable product filtering for a given ad
 
@@ -260,6 +262,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/ads/{ad-id}/product-filter
         api_response = api_instance.enable_product_filtering(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -268,6 +271,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2026-01/marketing-solutions/ads/{ad-id}/product-filter
         api_response = api_instance.enable_product_filtering(ad_id, value_resource_input_of_create_product_filter_request=value_resource_input_of_create_product_filter_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -307,7 +311,7 @@ Name | Type | Description  | Notes
 # **fetch_product_filtering_config**
 > ValueResourceOutcomeOfProductFilterConfig fetch_product_filtering_config(ad_id)
 
-
+/2026-01/marketing-solutions/ads/{ad-id}/product-filter
 
 Fetch product filtering configuration for a given ad
 
@@ -353,6 +357,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/ads/{ad-id}/product-filter
         api_response = api_instance.fetch_product_filtering_config(ad_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -391,7 +396,7 @@ Name | Type | Description  | Notes
 # **fetch_product_filtering_usages**
 > ValueResourceCollectionOutcomeOfProductFilterConfig fetch_product_filtering_usages(product_set_id)
 
-
+/2026-01/marketing-solutions/product-sets/{product-set-id}/product-filters
 
 Fetch product filtering usages for a given product set
 
@@ -437,6 +442,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/product-sets/{product-set-id}/product-filters
         api_response = api_instance.fetch_product_filtering_usages(product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -475,7 +481,7 @@ Name | Type | Description  | Notes
 # **fetch_product_set**
 > ResourceOutcomeOfProductSet fetch_product_set(product_set_id)
 
-
+/2026-01/marketing-solutions/product-sets/{product-set-id}
 
 Fetch an existing product set
 
@@ -521,6 +527,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/product-sets/{product-set-id}
         api_response = api_instance.fetch_product_set(product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -559,7 +566,7 @@ Name | Type | Description  | Notes
 # **fetch_product_sets**
 > ResourceCollectionOutcomeOfProductSet fetch_product_sets(dataset_id)
 
-
+/2026-01/marketing-solutions/product-sets/dataset/{dataset-id}
 
 Fetch product sets of a given dataset
 
@@ -605,6 +612,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/product-sets/dataset/{dataset-id}
         api_response = api_instance.fetch_product_sets(dataset_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -643,7 +651,7 @@ Name | Type | Description  | Notes
 # **patch_product_set**
 > ResourceOutcomeOfProductSet patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request)
 
-
+/2026-01/marketing-solutions/product-sets/{product-set-id}
 
 Patch an existing product set
 
@@ -709,6 +717,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/product-sets/{product-set-id}
         api_response = api_instance.patch_product_set(product_set_id, value_resource_input_of_patch_product_set_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -748,7 +757,7 @@ Name | Type | Description  | Notes
 # **remove_product_set**
 > Outcome remove_product_set(product_set_id)
 
-
+/2026-01/marketing-solutions/product-sets/{product-set-id}
 
 Remove a product set
 
@@ -794,6 +803,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/marketing-solutions/product-sets/{product-set-id}
         api_response = api_instance.remove_product_set(product_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:

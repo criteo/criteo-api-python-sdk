@@ -4,23 +4,24 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**account_fees_search**](AccountsApi.md#account_fees_search) | **POST** /2025-10/retail-media/accounts/fees/search | 
-[**add_brands**](AccountsApi.md#add_brands) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/brands/add | 
-[**create_private_market_demand_brand_account**](AccountsApi.md#create_private_market_demand_brand_account) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/create-brand-account | 
-[**create_private_market_demand_seller_account**](AccountsApi.md#create_private_market_demand_seller_account) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/create-seller-account | 
-[**get_accounts**](AccountsApi.md#get_accounts) | **GET** /2025-10/retail-media/accounts | 
-[**get_private_market_child_accounts_by_account_id**](AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /2025-10/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | 
-[**grant_consent**](AccountsApi.md#grant_consent) | **POST** /2025-10/retail-media/accounts/{accountId}/grant-consent | 
-[**remove_brands**](AccountsApi.md#remove_brands) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/brands/remove | 
-[**search_sellers**](AccountsApi.md#search_sellers) | **POST** /2025-10/retail-media/accounts/sellers/search | 
-[**update_account_fees**](AccountsApi.md#update_account_fees) | **POST** /2025-10/retail-media/accounts/fees/update | 
-[**update_sellers**](AccountsApi.md#update_sellers) | **PUT** /2025-10/retail-media/account-management/accounts/{accountId}/sellers | 
+[**account_fees_search**](AccountsApi.md#account_fees_search) | **POST** /2025-10/retail-media/accounts/fees/search | /2025-10/retail-media/accounts/fees/search
+[**add_brands**](AccountsApi.md#add_brands) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/brands/add | /2025-10/retail-media/account-management/accounts/{accountId}/brands/add
+[**create_private_market_demand_brand_account**](AccountsApi.md#create_private_market_demand_brand_account) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/create-brand-account | /2025-10/retail-media/account-management/accounts/{accountId}/create-brand-account
+[**create_private_market_demand_seller_account**](AccountsApi.md#create_private_market_demand_seller_account) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/create-seller-account | /2025-10/retail-media/account-management/accounts/{accountId}/create-seller-account
+[**get_accounts**](AccountsApi.md#get_accounts) | **GET** /2025-10/retail-media/accounts | /2025-10/retail-media/accounts
+[**get_private_market_child_accounts_by_account_id**](AccountsApi.md#get_private_market_child_accounts_by_account_id) | **GET** /2025-10/retail-media/account-management/accounts/{accountId}/private-market-child-accounts | /2025-10/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
+[**grant_consent**](AccountsApi.md#grant_consent) | **POST** /2025-10/retail-media/accounts/{accountId}/grant-consent | /2025-10/retail-media/accounts/{accountId}/grant-consent
+[**remove_brands**](AccountsApi.md#remove_brands) | **POST** /2025-10/retail-media/account-management/accounts/{accountId}/brands/remove | /2025-10/retail-media/account-management/accounts/{accountId}/brands/remove
+[**search_brands**](AccountsApi.md#search_brands) | **POST** /2025-10/retail-media/brands/search | /2025-10/retail-media/brands/search
+[**search_sellers**](AccountsApi.md#search_sellers) | **POST** /2025-10/retail-media/accounts/sellers/search | /2025-10/retail-media/accounts/sellers/search
+[**update_account_fees**](AccountsApi.md#update_account_fees) | **POST** /2025-10/retail-media/accounts/fees/update | /2025-10/retail-media/accounts/fees/update
+[**update_sellers**](AccountsApi.md#update_sellers) | **PUT** /2025-10/retail-media/account-management/accounts/{accountId}/sellers | /2025-10/retail-media/account-management/accounts/{accountId}/sellers
 
 
 # **account_fees_search**
 > ValueResourceCollectionOutcomePrivateMarketAccountFeesAndMetadata account_fees_search(value_resource_input_account_fees_search_request)
 
-
+/2025-10/retail-media/accounts/fees/search
 
 Get fees for provided accounts
 
@@ -78,6 +79,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/fees/search
         api_response = api_instance.account_fees_search(value_resource_input_account_fees_search_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -86,6 +88,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/accounts/fees/search
         api_response = api_instance.account_fees_search(value_resource_input_account_fees_search_request, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -126,7 +129,7 @@ Name | Type | Description  | Notes
 # **add_brands**
 > ValueResourceOutcomeOfRetailMediaBrands add_brands(account_id)
 
-
+/2025-10/retail-media/account-management/accounts/{accountId}/brands/add
 
 Add brands to an account
 
@@ -183,6 +186,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/brands/add
         api_response = api_instance.add_brands(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -191,6 +195,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/brands/add
         api_response = api_instance.add_brands(account_id, value_resource_input_of_retail_media_brands=value_resource_input_of_retail_media_brands)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -230,7 +235,7 @@ Name | Type | Description  | Notes
 # **create_private_market_demand_brand_account**
 > EntityResourceOutcomeOfRetailMediaAccount create_private_market_demand_brand_account(account_id)
 
-
+/2025-10/retail-media/account-management/accounts/{accountId}/create-brand-account
 
 Creates a new child Demand Brand account for the provided parent Private Market account
 
@@ -290,6 +295,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/create-brand-account
         api_response = api_instance.create_private_market_demand_brand_account(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -298,6 +304,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/create-brand-account
         api_response = api_instance.create_private_market_demand_brand_account(account_id, value_resource_input_of_retail_media_brand_account_creation=value_resource_input_of_retail_media_brand_account_creation)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -337,7 +344,7 @@ Name | Type | Description  | Notes
 # **create_private_market_demand_seller_account**
 > EntityResourceOutcomeOfRetailMediaAccount create_private_market_demand_seller_account(account_id)
 
-
+/2025-10/retail-media/account-management/accounts/{accountId}/create-seller-account
 
 Creates a new child Demand Seller account for the provided parent Private Market account
 
@@ -400,6 +407,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/create-seller-account
         api_response = api_instance.create_private_market_demand_seller_account(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -408,6 +416,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/create-seller-account
         api_response = api_instance.create_private_market_demand_seller_account(account_id, value_resource_input_of_retail_media_seller_account_creation=value_resource_input_of_retail_media_seller_account_creation)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -447,7 +456,7 @@ Name | Type | Description  | Notes
 # **get_accounts**
 > JsonApiPageResponseOfAccount get_accounts()
 
-
+/2025-10/retail-media/accounts
 
 Gets page of account objects that the current user can access
 
@@ -498,6 +507,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/accounts
         api_response = api_instance.get_accounts(limit_to_id=limit_to_id, page_index=page_index, page_size=page_size)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -538,7 +548,7 @@ Name | Type | Description  | Notes
 # **get_private_market_child_accounts_by_account_id**
 > EntityResourceCollectionOutcomeOfRetailMediaChildAccountAndMetadata get_private_market_child_accounts_by_account_id(account_id)
 
-
+/2025-10/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
 
 Gets Private Market child accounts that are associated with the given account
 
@@ -586,6 +596,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
         api_response = api_instance.get_private_market_child_accounts_by_account_id(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -594,6 +605,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/private-market-child-accounts
         api_response = api_instance.get_private_market_child_accounts_by_account_id(account_id, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -634,7 +646,7 @@ Name | Type | Description  | Notes
 # **grant_consent**
 > grant_consent(account_id)
 
-
+/2025-10/retail-media/accounts/{accountId}/grant-consent
 
 Grant consent to a business application on behalf of a Private Market demand account
 
@@ -690,7 +702,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # 
+        # /2025-10/retail-media/accounts/{accountId}/grant-consent
         api_instance.grant_consent(account_id)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->grant_consent: %s\n" % e)
@@ -698,7 +710,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # 
+        # /2025-10/retail-media/accounts/{accountId}/grant-consent
         api_instance.grant_consent(account_id, grant_consent_input=grant_consent_input)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->grant_consent: %s\n" % e)
@@ -737,7 +749,7 @@ void (empty response body)
 # **remove_brands**
 > ValueResourceOutcomeOfRetailMediaBrands remove_brands(account_id)
 
-
+/2025-10/retail-media/account-management/accounts/{accountId}/brands/remove
 
 Remove brands from an account
 
@@ -794,6 +806,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/brands/remove
         api_response = api_instance.remove_brands(account_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -802,6 +815,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/brands/remove
         api_response = api_instance.remove_brands(account_id, value_resource_input_of_retail_media_brands=value_resource_input_of_retail_media_brands)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -838,10 +852,112 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_brands**
+> EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata search_brands()
+
+/2025-10/retail-media/brands/search
+
+Search for brands given a retailer ID and search term.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_v2025_10
+from criteo_api_retailmedia_v2025_10.api import accounts_api
+from criteo_api_retailmedia_v2025_10.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
+from criteo_api_retailmedia_v2025_10.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_v2025_10.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_v2025_10.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = accounts_api.AccountsApi(api_client)
+    limit = 25 # int | the number of brands to return (optional) if omitted the server will use the default value of 25
+    offset = 0 # int | offset of paginated results (optional) if omitted the server will use the default value of 0
+    value_resource_input_brand_id_search_request = ValueResourceInputBrandIdSearchRequest(
+        data=ValueResourceBrandIdSearchRequest(
+            attributes=BrandIdSearchRequest(
+                brand_type="uc",
+                name="name_example",
+                retailer_ids=[
+                    1,
+                ],
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputBrandIdSearchRequest | BrandIdSearchRequest which contains the request parameters (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /2025-10/retail-media/brands/search
+        api_response = api_instance.search_brands(limit=limit, offset=offset, value_resource_input_brand_id_search_request=value_resource_input_brand_id_search_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_v2025_10.ApiException as e:
+        print("Exception when calling AccountsApi->search_brands: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| the number of brands to return | [optional] if omitted the server will use the default value of 25
+ **offset** | **int**| offset of paginated results | [optional] if omitted the server will use the default value of 0
+ **value_resource_input_brand_id_search_request** | [**ValueResourceInputBrandIdSearchRequest**](ValueResourceInputBrandIdSearchRequest.md)| BrandIdSearchRequest which contains the request parameters | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata**](EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_sellers**
 > ValueResourceCollectionOutcomeOfSellerSearchResult search_sellers(value_resource_input_of_seller_search)
 
-
+/2025-10/retail-media/accounts/sellers/search
 
 Get the sellers mapped to provided accounts
 
@@ -898,6 +1014,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/sellers/search
         api_response = api_instance.search_sellers(value_resource_input_of_seller_search)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -936,7 +1053,7 @@ Name | Type | Description  | Notes
 # **update_account_fees**
 > update_account_fees(value_resource_input_account_fees_update_request)
 
-
+/2025-10/retail-media/accounts/fees/update
 
 Set fees for provided accounts
 
@@ -1001,6 +1118,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/fees/update
         api_instance.update_account_fees(value_resource_input_account_fees_update_request)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AccountsApi->update_account_fees: %s\n" % e)
@@ -1038,7 +1156,7 @@ void (empty response body)
 # **update_sellers**
 > ValueResourceCollectionOutcomeOfRetailMediaSeller update_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
 
-
+/2025-10/retail-media/account-management/accounts/{accountId}/sellers
 
 Replace the sellers associated with an account
 
@@ -1096,6 +1214,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/account-management/accounts/{accountId}/sellers
         api_response = api_instance.update_sellers(account_id, value_resource_collection_input_of_retail_media_seller)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:

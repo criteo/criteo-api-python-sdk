@@ -4,20 +4,20 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_remove_contact_list_by_audience_segment**](AudienceApi.md#add_remove_contact_list_by_audience_segment) | **POST** /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | 
-[**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /2025-10/retail-media/accounts/{account-id}/audience-segments/create | 
-[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /2025-10/retail-media/accounts/{account-id}/audience-segments/delete | 
-[**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /2025-10/retail-media/accounts/{account-id}/audience-segments | 
-[**clear_contact_list_by_audience_segment**](AudienceApi.md#clear_contact_list_by_audience_segment) | **POST** /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | 
-[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /2025-10/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | 
-[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /2025-10/retail-media/accounts/{account-id}/audience-segments/search | 
-[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /2025-10/retail-media/accounts/{account-id}/audiences/search | 
+[**add_remove_contact_list_by_audience_segment**](AudienceApi.md#add_remove_contact_list_by_audience_segment) | **POST** /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove | /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove
+[**bulk_create_audience_segments**](AudienceApi.md#bulk_create_audience_segments) | **POST** /2025-10/retail-media/accounts/{account-id}/audience-segments/create | /2025-10/retail-media/accounts/{account-id}/audience-segments/create
+[**bulk_delete_audience_segments**](AudienceApi.md#bulk_delete_audience_segments) | **POST** /2025-10/retail-media/accounts/{account-id}/audience-segments/delete | /2025-10/retail-media/accounts/{account-id}/audience-segments/delete
+[**bulk_update_audience_segments**](AudienceApi.md#bulk_update_audience_segments) | **PATCH** /2025-10/retail-media/accounts/{account-id}/audience-segments | /2025-10/retail-media/accounts/{account-id}/audience-segments
+[**clear_contact_list_by_audience_segment**](AudienceApi.md#clear_contact_list_by_audience_segment) | **POST** /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/clear | /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/clear
+[**get_audience_segment_contact_list_statistics**](AudienceApi.md#get_audience_segment_contact_list_statistics) | **GET** /2025-10/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list | /2025-10/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list
+[**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /2025-10/retail-media/accounts/{account-id}/audience-segments/search | /2025-10/retail-media/accounts/{account-id}/audience-segments/search
+[**search_audiences**](AudienceApi.md#search_audiences) | **POST** /2025-10/retail-media/accounts/{account-id}/audiences/search | /2025-10/retail-media/accounts/{account-id}/audiences/search
 
 
 # **add_remove_contact_list_by_audience_segment**
 > RetailMediaContactlistOperation add_remove_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
 
-
+/2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove
 
 Add/remove identifiers to or from a retail-media contact list audience-segment, with external audience segment id.
 
@@ -76,6 +76,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/add-remove
         api_response = api_instance.add_remove_contact_list_by_audience_segment(audience_segment_id, retail_media_contactlist_amendment_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -115,7 +116,7 @@ Name | Type | Description  | Notes
 # **bulk_create_audience_segments**
 > RmAudienceSegmentEntityV1ListResponse bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
 
-
+/2025-10/retail-media/accounts/{account-id}/audience-segments/create
 
 Creates all segments with a valid configuration, and returns the full segments. For those that cannot be created, one or multiple errors are returned.
 
@@ -189,6 +190,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audience-segments/create
         api_response = api_instance.bulk_create_audience_segments(account_id, rm_audience_segment_bulk_create_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -228,7 +230,7 @@ Name | Type | Description  | Notes
 # **bulk_delete_audience_segments**
 > RmAudienceSegmentIdEntityV1ListResponse bulk_delete_audience_segments(account_id, rm_audience_segment_bulk_delete_input_v1)
 
-
+/2025-10/retail-media/accounts/{account-id}/audience-segments/delete
 
 Delete the segments associated to the given IDs.
 
@@ -284,6 +286,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audience-segments/delete
         api_response = api_instance.bulk_delete_audience_segments(account_id, rm_audience_segment_bulk_delete_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -323,7 +326,7 @@ Name | Type | Description  | Notes
 # **bulk_update_audience_segments**
 > RmAudienceSegmentEntityV1ListResponse bulk_update_audience_segments(account_id, rm_audience_segment_bulk_update_input_v1)
 
-
+/2025-10/retail-media/accounts/{account-id}/audience-segments
 
 Updates the properties of all segments with a valid configuration, and returns the full segments. For those that cannot be updated, one or multiple errors are returned.
 
@@ -401,6 +404,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audience-segments
         api_response = api_instance.bulk_update_audience_segments(account_id, rm_audience_segment_bulk_update_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -440,7 +444,7 @@ Name | Type | Description  | Notes
 # **clear_contact_list_by_audience_segment**
 > clear_contact_list_by_audience_segment(audience_segment_id)
 
-
+/2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/clear
 
 Delete all identifiers from a retail-media contact list audience-segment, with external audience segment id.
 
@@ -485,6 +489,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/audience-segments/{audience-segment-id}/contact-list/clear
         api_instance.clear_contact_list_by_audience_segment(audience_segment_id)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
         print("Exception when calling AudienceApi->clear_contact_list_by_audience_segment: %s\n" % e)
@@ -522,7 +527,7 @@ void (empty response body)
 # **get_audience_segment_contact_list_statistics**
 > RmContactListStatisticsEntityV1Response get_audience_segment_contact_list_statistics(account_id, audience_segment_id)
 
-
+/2025-10/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list
 
 Returns the statistics of a contact list segment.
 
@@ -569,6 +574,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audience-segments/{audience-segment-id}/contact-list
         api_response = api_instance.get_audience_segment_contact_list_statistics(account_id, audience_segment_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -608,7 +614,7 @@ Name | Type | Description  | Notes
 # **search_audience_segments**
 > RmAudienceSegmentEntityV1RmAudienceSegmentSearchMetadataV1ListResponse search_audience_segments(account_id, rm_audience_segment_search_input_v1)
 
-
+/2025-10/retail-media/accounts/{account-id}/audience-segments/search
 
 Returns a list of segments that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -673,6 +679,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audience-segments/search
         api_response = api_instance.search_audience_segments(account_id, rm_audience_segment_search_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -681,6 +688,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audience-segments/search
         api_response = api_instance.search_audience_segments(account_id, rm_audience_segment_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -722,7 +730,7 @@ Name | Type | Description  | Notes
 # **search_audiences**
 > RmAudienceEntityV1RmAudienceSearchMetadataV1ListResponse search_audiences(account_id, rm_audience_search_input_v1)
 
-
+/2025-10/retail-media/accounts/{account-id}/audiences/search
 
 Returns a list of audiences that match the provided filters. If present, the filters are AND'ed together when applied.
 
@@ -787,6 +795,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audiences/search
         api_response = api_instance.search_audiences(account_id, rm_audience_search_input_v1)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:
@@ -795,6 +804,7 @@ with criteo_api_retailmedia_v2025_10.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2025-10/retail-media/accounts/{account-id}/audiences/search
         api_response = api_instance.search_audiences(account_id, rm_audience_search_input_v1, limit=limit, offset=offset)
         pprint(api_response)
     except criteo_api_retailmedia_v2025_10.ApiException as e:

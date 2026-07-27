@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_balance_v1**
-> update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+> EntityResourceOutcomeOfBalanceResponseV1 update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
 
 /preview/retail-media/accounts/{account-id}/balances/{balance-id}
 
@@ -313,6 +313,7 @@ Modify a balance for the given account id
 import time
 import criteo_api_retailmedia_preview
 from criteo_api_retailmedia_preview.api import balance_api
+from criteo_api_retailmedia_preview.model.entity_resource_outcome_of_balance_response_v1 import EntityResourceOutcomeOfBalanceResponseV1
 from criteo_api_retailmedia_preview.model.value_resource_input_of_update_balance_model_v1 import ValueResourceInputOfUpdateBalanceModelV1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -362,7 +363,8 @@ with criteo_api_retailmedia_preview.ApiClient(configuration) as api_client:
     # example passing only required values which don't have defaults set
     try:
         # /preview/retail-media/accounts/{account-id}/balances/{balance-id}
-        api_instance.update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+        api_response = api_instance.update_balance_v1(account_id, balance_id, value_resource_input_of_update_balance_model_v1)
+        pprint(api_response)
     except criteo_api_retailmedia_preview.ApiException as e:
         print("Exception when calling BalanceApi->update_balance_v1: %s\n" % e)
 ```
@@ -378,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EntityResourceOutcomeOfBalanceResponseV1**](EntityResourceOutcomeOfBalanceResponseV1.md)
 
 ### Authorization
 
@@ -387,7 +389,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details

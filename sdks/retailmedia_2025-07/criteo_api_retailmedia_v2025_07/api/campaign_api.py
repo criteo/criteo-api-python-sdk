@@ -45,7 +45,6 @@ from criteo_api_retailmedia_v2025_07.model.creative2_list_response import Creati
 from criteo_api_retailmedia_v2025_07.model.creative2_response import Creative2Response
 from criteo_api_retailmedia_v2025_07.model.creative_create_model202207 import CreativeCreateModel202207
 from criteo_api_retailmedia_v2025_07.model.creative_update_model202207 import CreativeUpdateModel202207
-from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_brand_id_search_result_paging_offset_limit_metadata import EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
 from criteo_api_retailmedia_v2025_07.model.entity_resource_collection_outcome_line_item_keyword_review_report_and_metadata import EntityResourceCollectionOutcomeLineItemKeywordReviewReportAndMetadata
 from criteo_api_retailmedia_v2025_07.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_v2025_07.model.json_api_page_response_of_brand import JsonApiPageResponseOfBrand
@@ -76,7 +75,6 @@ from criteo_api_retailmedia_v2025_07.model.store_target202110_request import Sto
 from criteo_api_retailmedia_v2025_07.model.store_target202110_response import StoreTarget202110Response
 from criteo_api_retailmedia_v2025_07.model.template_list_response import TemplateListResponse
 from criteo_api_retailmedia_v2025_07.model.template_response import TemplateResponse
-from criteo_api_retailmedia_v2025_07.model.value_resource_input_brand_id_search_request import ValueResourceInputBrandIdSearchRequest
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_cpc_min_bids_request import ValueResourceInputCpcMinBidsRequest
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_of_brand_catalog_request_v2 import ValueResourceInputOfBrandCatalogRequestV2
 from criteo_api_retailmedia_v2025_07.model.value_resource_input_of_campaign_budget_overrides import ValueResourceInputOfCampaignBudgetOverrides
@@ -3358,79 +3356,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.search_brands_endpoint = _Endpoint(
-            settings={
-                'response_type': (EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/2025-07/retail-media/brands/search',
-                'operation_id': 'search_brands',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'limit',
-                    'offset',
-                    'value_resource_input_brand_id_search_request',
-                ],
-                'required': [],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                    'limit',
-                    'offset',
-                ]
-            },
-            root_map={
-                'validations': {
-                    ('limit',): {
-
-                        'inclusive_maximum': 100,
-                        'inclusive_minimum': 1,
-                    },
-                    ('offset',): {
-
-                        'inclusive_maximum': 2147483647,
-                        'inclusive_minimum': 0,
-                    },
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'limit':
-                        (int,),
-                    'offset':
-                        (int,),
-                    'value_resource_input_brand_id_search_request':
-                        (ValueResourceInputBrandIdSearchRequest,),
-                },
-                'attribute_map': {
-                    'limit': 'limit',
-                    'offset': 'offset',
-                },
-                'location_map': {
-                    'limit': 'query',
-                    'offset': 'query',
-                    'value_resource_input_brand_id_search_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.set_keyword_bids_endpoint = _Endpoint(
             settings={
                 'response_type': (ResourceOutcome,),
@@ -4029,7 +3954,7 @@ class CampaignApi(object):
         id,
         **kwargs
     ):
-        """add_remove_keywords  # noqa: E501
+        """/2025-07/retail-media/line-items/{id}/keywords/add-remove  # noqa: E501
 
         Add or Remove keywords from the line item in bulk  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4113,7 +4038,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """append_add_to_basket_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/append  # noqa: E501
 
         This endpoint appends one or more add to basket ids to targeting on the specified line item.  The resulting state of the add to basket target is returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4197,7 +4122,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """append_audience_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/append  # noqa: E501
 
         This endpoint appends one or more audiences ids to targeting on the specified line item.  The resulting state of the audience target is returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4281,7 +4206,7 @@ class CampaignApi(object):
         balance_id,
         **kwargs
     ):
-        """append_campaigns_by_balance_id  # noqa: E501
+        """/2025-07/retail-media/balances/{balance-id}/campaigns/append  # noqa: E501
 
         appends one or more campaigns to the specified balance  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4365,7 +4290,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """append_promoted_products  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/products/append  # noqa: E501
 
         Append a collection of promoted products to a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4449,7 +4374,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """append_store_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/append  # noqa: E501
 
         This endpoint appends one or more store ids to targeting on the specified line item.  The resulting state of the store target is returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4533,7 +4458,7 @@ class CampaignApi(object):
         asset_file,
         **kwargs
     ):
-        """create_asset  # noqa: E501
+        """/2025-07/retail-media/assets  # noqa: E501
 
         Creates an asset  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4617,7 +4542,7 @@ class CampaignApi(object):
         value_resource_input_of_brand_catalog_request_v2,
         **kwargs
     ):
-        """create_brand_catalog_export  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/brand-catalog-export  # noqa: E501
 
         Create a request for a Catalog available to the indicated account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4704,7 +4629,7 @@ class CampaignApi(object):
         post_campaign_v202301,
         **kwargs
     ):
-        """create_campaigns_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/campaigns  # noqa: E501
 
         Creates a new campaign with the specified settings  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4791,7 +4716,7 @@ class CampaignApi(object):
         creative_create_model202207,
         **kwargs
     ):
-        """create_creative  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/creatives  # noqa: E501
 
         Create a creative for an account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4878,7 +4803,7 @@ class CampaignApi(object):
         preferred_line_item_create_model_v2_request,
         **kwargs
     ):
-        """create_preferred_line_item_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items  # noqa: E501
 
         Creates a new preferred line item with the specified settings  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -4965,7 +4890,7 @@ class CampaignApi(object):
         value_resource_input_of_seller_catalog_request_v2,
         **kwargs
     ):
-        """create_seller_catalog_export  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/seller-catalog-export  # noqa: E501
 
         Create a request for a Catalog available to the indicated account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5051,7 +4976,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """delete_add_to_basket_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket/delete  # noqa: E501
 
         This endpoint removes one or more add to basket ids from targeting on the specified line item.  The resulting state of the add to basket target is returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5135,7 +5060,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """delete_audience_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences/delete  # noqa: E501
 
         This endpoint removes one or more audiences ids from targeting on the specified line item.  The resulting state of the audience target is returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5219,7 +5144,7 @@ class CampaignApi(object):
         balance_id,
         **kwargs
     ):
-        """delete_campaigns_by_balance_id  # noqa: E501
+        """/2025-07/retail-media/balances/{balance-id}/campaigns/delete  # noqa: E501
 
         Removes one or more campaigns on the specified balance  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5303,7 +5228,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """delete_promoted_products  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/products/delete  # noqa: E501
 
         Remove a collection of promoted products from a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5387,7 +5312,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """delete_store_target_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores/delete  # noqa: E501
 
         This endpoint removes one or more store ids from targeting on the specified line item.  The resulting state of the store target is returned.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5471,7 +5396,7 @@ class CampaignApi(object):
         id,
         **kwargs
     ):
-        """fetch_keywords  # noqa: E501
+        """/2025-07/retail-media/line-items/{id}/keywords  # noqa: E501
 
         Fetch keywords associated with the specified line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5554,7 +5479,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """fetch_promoted_products  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/products  # noqa: E501
 
         Retrieve a page of promoted products for a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5640,7 +5565,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """get_account_creatives  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/creatives  # noqa: E501
 
         Get account creatives  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5723,7 +5648,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_add_to_basket_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket  # noqa: E501
 
         This endpoint gets the add to basket target on the specified line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5806,7 +5731,7 @@ class CampaignApi(object):
         retailer_id,
         **kwargs
     ):
-        """get_api202110_external_retailer_pages_by_retailer_id  # noqa: E501
+        """/2025-07/retail-media/retailers/{retailerId}/pages  # noqa: E501
 
         Get the page types available for the given retailer  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5888,7 +5813,7 @@ class CampaignApi(object):
         self,
         **kwargs
     ):
-        """get_api_external_v1_categories  # noqa: E501
+        """/2025-07/retail-media/categories  # noqa: E501
 
         Endpoint to search categories by text and retailer.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -5971,7 +5896,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_auction_line_items_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaign-id}/auction-line-items  # noqa: E501
 
         Gets page of auction line item objects for the given campaign id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6057,7 +5982,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_auction_line_items_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/auction-line-items/{line-item-id}  # noqa: E501
 
         Gets the auction line item for the given line item id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6140,7 +6065,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_audience_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences  # noqa: E501
 
         This endpoint gets the audience target on the specified line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6223,7 +6148,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_bid_multipliers_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/bid-multipliers  # noqa: E501
 
         Fetch all bid multipliers for a given line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6306,7 +6231,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """get_brands_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/brands  # noqa: E501
 
         Gets page of retailer objects that are associated with the given account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6392,7 +6317,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_campaign_budget_overrides  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides  # noqa: E501
 
         Get current campaign budget overrides by given campaign id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6475,7 +6400,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_campaign_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaignId}  # noqa: E501
 
         Gets the campaign for the given campaign id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6558,7 +6483,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """get_campaigns_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/campaigns  # noqa: E501
 
         Gets page of campaign objects for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6644,7 +6569,7 @@ class CampaignApi(object):
         catalog_id,
         **kwargs
     ):
-        """get_catalog_output  # noqa: E501
+        """/2025-07/retail-media/catalogs/{catalogId}/output  # noqa: E501
 
         Output the indicated catalog. Catalogs are only available for retrieval when their associated status request  is at a Success status.  Produces application/x-json-stream CatalogProduct json objects (first introduced in the 2021-07 version).  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6727,7 +6652,7 @@ class CampaignApi(object):
         catalog_id,
         **kwargs
     ):
-        """get_catalog_status  # noqa: E501
+        """/2025-07/retail-media/catalogs/{catalogId}/status  # noqa: E501
 
         Check the status of a catalog request.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6810,7 +6735,7 @@ class CampaignApi(object):
         category_id,
         **kwargs
     ):
-        """get_category  # noqa: E501
+        """/2025-07/retail-media/categories/{categoryId}  # noqa: E501
 
         Endpoint to search for a specific category by categoryId.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6894,7 +6819,7 @@ class CampaignApi(object):
         value_resource_input_cpc_min_bids_request,
         **kwargs
     ):
-        """get_cpc_min_bids_by_sku_ids_v1  # noqa: E501
+        """/2025-07/retail-media/retailers/{retailerId}/cpc-min-bids  # noqa: E501
 
         Get overall and individual minimum bid amount for given retailer id and sku id list.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -6981,7 +6906,7 @@ class CampaignApi(object):
         creative_id,
         **kwargs
     ):
-        """get_creative  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}  # noqa: E501
 
         Get the specified creative  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7068,7 +6993,7 @@ class CampaignApi(object):
         template_id,
         **kwargs
     ):
-        """get_creative_template  # noqa: E501
+        """/2025-07/retail-media/retailers/{retailer-id}/templates/{template-id}  # noqa: E501
 
         Gets the template for the specified retailer id and template id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7154,7 +7079,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """get_keyword_in_review_report  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/keywords/in-review-report  # noqa: E501
 
         Generate a list of reports for line items which contain one or more actionable keyword reviews  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7239,7 +7164,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_line_item_budget_overrides  # noqa: E501
+        """/2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides  # noqa: E501
 
         Gets a collection of monthly and daily budget overrides for the provided line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7322,7 +7247,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """get_line_items_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/line-items  # noqa: E501
 
         Gets page of line item objects for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7410,7 +7335,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_line_items_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}  # noqa: E501
 
         Gets the line item for the given line item id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7493,7 +7418,7 @@ class CampaignApi(object):
         campaign_id,
         **kwargs
     ):
-        """get_preferred_line_items_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaign-id}/preferred-line-items  # noqa: E501
 
         Gets page of preferred line item objects for the given campaign id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7579,7 +7504,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_preferred_line_items_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}  # noqa: E501
 
         Gets the preferred line item for the given line item id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7662,7 +7587,7 @@ class CampaignApi(object):
         external_line_item_id,
         **kwargs
     ):
-        """get_recommended_keywords  # noqa: E501
+        """/2025-07/retail-media/line-items/{externalLineItemId}/keywords/recommended  # noqa: E501
 
         Retrieves a collection of recommended keywords for a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7745,7 +7670,7 @@ class CampaignApi(object):
         retailer_id,
         **kwargs
     ):
-        """get_retailer_creative_templates  # noqa: E501
+        """/2025-07/retail-media/retailers/{retailer-id}/templates  # noqa: E501
 
         Get retailer creative templates  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7828,7 +7753,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """get_retailers_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/retailers  # noqa: E501
 
         Gets page of retailer objects that are associated with the given account  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7914,7 +7839,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """get_store_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores  # noqa: E501
 
         This endpoint gets the store target on the specified line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -7998,7 +7923,7 @@ class CampaignApi(object):
         auction_line_item_create_model_request,
         **kwargs
     ):
-        """modify_auction_line_items_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaign-id}/auction-line-items  # noqa: E501
 
         Creates new auction line item with the specified settings  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8084,7 +8009,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """pause_promoted_products  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/products/pause  # noqa: E501
 
         Pause a collection of promoted products associated with a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8169,7 +8094,7 @@ class CampaignApi(object):
         json_api_request_of_seller_catalog_request,
         **kwargs
     ):
-        """post_api_external_v1_account_catalogs_sellers_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/catalogs/sellers  # noqa: E501
 
         Create a request for a Catalog available to the indicated account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8256,7 +8181,7 @@ class CampaignApi(object):
         json_api_request_of_catalog_request,
         **kwargs
     ):
-        """post_api_v1_external_account_catalogs_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{accountId}/catalogs  # noqa: E501
 
         Create a request for a Catalog available to the indicated account.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8343,7 +8268,7 @@ class CampaignApi(object):
         add_to_basket_target202110_request,
         **kwargs
     ):
-        """put_add_to_basket_target_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/add-to-basket  # noqa: E501
 
         This endpoint sets the scope of the add to basket target on the specified line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8430,7 +8355,7 @@ class CampaignApi(object):
         audience_target202110_request,
         **kwargs
     ):
-        """put_audience_targets_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/audiences  # noqa: E501
 
         This endpoint sets the scope of the audience target on the specified line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8517,7 +8442,7 @@ class CampaignApi(object):
         store_target202110_request,
         **kwargs
     ):
-        """put_store_target_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}/targeting/stores  # noqa: E501
 
         This endpoint sets the scope of the store target on the specified line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8603,7 +8528,7 @@ class CampaignApi(object):
         account_id,
         **kwargs
     ):
-        """search_account_creatives  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/creatives/search  # noqa: E501
 
         Get account creatives  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8682,93 +8607,12 @@ class CampaignApi(object):
             account_id
         return self.search_account_creatives_endpoint.call_with_http_info(**kwargs)
 
-    def search_brands(
-        self,
-        **kwargs
-    ):
-        """search_brands  # noqa: E501
-
-        Search for brands given a retailer ID and search term.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.search_brands(async_req=True)
-        >>> result = thread.get()
-
-
-        Keyword Args:
-            limit (int): the number of brands to return. [optional] if omitted the server will use the default value of 25
-            offset (int): offset of paginated results. [optional] if omitted the server will use the default value of 0
-            value_resource_input_brand_id_search_request (ValueResourceInputBrandIdSearchRequest): BrandIdSearchRequest which contains the request parameters. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            EntityResourceCollectionOutcomeBrandIdSearchResultPagingOffsetLimitMetadata
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        return self.search_brands_endpoint.call_with_http_info(**kwargs)
-
     def set_keyword_bids(
         self,
         id,
         **kwargs
     ):
-        """set_keyword_bids  # noqa: E501
+        """/2025-07/retail-media/line-items/{id}/keywords/set-bid  # noqa: E501
 
         Set bid overrides for associated keywords to the given line item in bulk  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8852,7 +8696,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """unpause_promoted_products  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/products/unpause  # noqa: E501
 
         Un-pause a collection of promoted products associated with a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -8937,7 +8781,7 @@ class CampaignApi(object):
         auction_line_item_update_model_request,
         **kwargs
     ):
-        """update_auction_line_item_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/auction-line-items/{line-item-id}  # noqa: E501
 
         Updates the auction line item for the given line item id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9024,7 +8868,7 @@ class CampaignApi(object):
         line_item_bid_multipliers_v2_request,
         **kwargs
     ):
-        """update_bid_multipliers_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/bid-multipliers  # noqa: E501
 
         Updates the bid multipliers for a given line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9111,7 +8955,7 @@ class CampaignApi(object):
         value_resource_input_of_campaign_budget_overrides,
         **kwargs
     ):
-        """update_campaign_budget_overrides  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaignId}/campaign-budget-overrides  # noqa: E501
 
         Update campaign budget overrides by given campaign id and new campaign budget overrides settings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9198,7 +9042,7 @@ class CampaignApi(object):
         put_campaign_v202301,
         **kwargs
     ):
-        """update_campaign_by_campaign_id  # noqa: E501
+        """/2025-07/retail-media/campaigns/{campaignId}  # noqa: E501
 
         Updates the campaign for the given campaign id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9286,7 +9130,7 @@ class CampaignApi(object):
         creative_update_model202207,
         **kwargs
     ):
-        """update_creative  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/creatives/{creative-id}  # noqa: E501
 
         Update a creative  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9375,7 +9219,7 @@ class CampaignApi(object):
         line_item_id,
         **kwargs
     ):
-        """update_keyword_reviews  # noqa: E501
+        """/2025-07/retail-media/line-items/{line-item-id}/keywords/review  # noqa: E501
 
         Update the status of keyword reviews under a line item  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9460,7 +9304,7 @@ class CampaignApi(object):
         value_resource_input_of_line_item_budget_overrides,
         **kwargs
     ):
-        """update_line_item_budget_overrides  # noqa: E501
+        """/2025-07/retail-media/line-items/{lineItemId}/line-item-budget-overrides  # noqa: E501
 
         Update line item budget overrides by given external line item id and new line item budget overrides settings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -9547,7 +9391,7 @@ class CampaignApi(object):
         preferred_line_item_update_model_v2_request,
         **kwargs
     ):
-        """update_preferred_line_item_by_line_item_id  # noqa: E501
+        """/2025-07/retail-media/preferred-line-items/{line-item-id}  # noqa: E501
 
         Updates the preferred line item for the given line item id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

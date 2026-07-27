@@ -60,17 +60,19 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
 
     allowed_values = {
         ('change_type',): {
-            'BALANCECREATED': "BalanceCreated",
-            'BALANCEADDED': "BalanceAdded",
-            'BALANCEREMOVED': "BalanceRemoved",
-            'BALANCEUNCAPPED': "BalanceUncapped",
-            'BALANCECAPPED': "BalanceCapped",
-            'ENDDATE': "EndDate",
-            'STARTDATE': "StartDate",
-            'BALANCENAME': "BalanceName",
-            'PONUMBER': "PoNumber",
-            'VALUEADD': "ValueAdd",
-            'UNKNOWN': "Unknown",
+            'BALANCECREATED': "balanceCreated",
+            'BALANCEADDED': "balanceAdded",
+            'BALANCEREMOVED': "balanceRemoved",
+            'BALANCEUNCAPPED': "balanceUncapped",
+            'BALANCECAPPED': "balanceCapped",
+            'ENDDATE': "endDate",
+            'STARTDATE': "startDate",
+            'BALANCENAME': "balanceName",
+            'RETAILERPONUMBER': "retailerPoNumber",
+            'CRITEOPONUMBER': "criteoPoNumber",
+            'RETAILERID': "retailerId",
+            'VALUEADD': "valueAdd",
+            'UNKNOWN': "unknown",
         },
     }
 
@@ -79,7 +81,7 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
 
     additional_properties_type = None
 
-    _nullable = False
+    _nullable = True
 
     @cached_property
     def openapi_types():

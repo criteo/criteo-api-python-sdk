@@ -601,7 +601,7 @@ class BalanceApi(object):
         add_funds_to_balance_v2_request,
         **kwargs
     ):
-        """add_funds_by_account_and_balance_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/balances/{balance-id}/add-funds  # noqa: E501
 
         Add funds to a balance for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -692,7 +692,7 @@ class BalanceApi(object):
         change_dates_of_balance_v2_request,
         **kwargs
     ):
-        """change_dates_by_account_and_balance_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/balances/{balance-id}/change-dates  # noqa: E501
 
         Change dates of a balance for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -782,7 +782,7 @@ class BalanceApi(object):
         create_balance_v2_request,
         **kwargs
     ):
-        """create_balance_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/balances  # noqa: E501
 
         Create balance for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -869,7 +869,7 @@ class BalanceApi(object):
         balance_id,
         **kwargs
     ):
-        """get_balance_by_account_and_balance_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/balances/{balance-id}  # noqa: E501
 
         Get a balance for the given account id and balance id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -955,7 +955,7 @@ class BalanceApi(object):
         balance_id,
         **kwargs
     ):
-        """get_balance_history  # noqa: E501
+        """/2025-07/retail-media/balances/{balanceId}/history  # noqa: E501
 
         Gets the balance's historical change data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1041,7 +1041,7 @@ class BalanceApi(object):
         account_id,
         **kwargs
     ):
-        """get_balances_by_account_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/balances  # noqa: E501
 
         Gets page of balance objects for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1127,7 +1127,7 @@ class BalanceApi(object):
         balance_id,
         **kwargs
     ):
-        """get_campaigns_by_balance_id  # noqa: E501
+        """/2025-07/retail-media/balances/{balance-id}/campaigns  # noqa: E501
 
         Gets page of campaigns for the given balanceId  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -1215,7 +1215,7 @@ class BalanceApi(object):
         update_balance_model_v2_request,
         **kwargs
     ):
-        """modify_balance_by_account_and_balance_id  # noqa: E501
+        """/2025-07/retail-media/accounts/{account-id}/balances/{balance-id}  # noqa: E501
 
         Modify a balance for the given account id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

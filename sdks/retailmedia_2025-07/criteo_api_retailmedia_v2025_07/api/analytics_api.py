@@ -38,7 +38,7 @@ class AnalyticsApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.generate_async_campaigns_report_endpoint = _Endpoint(
+        self.generate_async_campaigns_report_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (AsyncReportResponse,),
                 'auth': [
@@ -46,7 +46,7 @@ class AnalyticsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/retail-media/reports/campaigns',
-                'operation_id': 'generate_async_campaigns_report',
+                'operation_id': 'generate_async_campaigns_report_v2',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -91,7 +91,7 @@ class AnalyticsApi(object):
             },
             api_client=api_client
         )
-        self.generate_async_line_items_report_endpoint = _Endpoint(
+        self.generate_async_line_items_report_v2_endpoint = _Endpoint(
             settings={
                 'response_type': (AsyncReportResponse,),
                 'auth': [
@@ -99,7 +99,7 @@ class AnalyticsApi(object):
                     'oauth'
                 ],
                 'endpoint_path': '/2025-07/retail-media/reports/line-items',
-                'operation_id': 'generate_async_line_items_report',
+                'operation_id': 'generate_async_line_items_report_v2',
                 'http_method': 'POST',
                 'servers': None,
             },
@@ -302,18 +302,18 @@ class AnalyticsApi(object):
             api_client=api_client
         )
 
-    def generate_async_campaigns_report(
+    def generate_async_campaigns_report_v2(
         self,
         async_campaigns_report_request,
         **kwargs
     ):
-        """generate_async_campaigns_report  # noqa: E501
+        """/2025-07/retail-media/reports/campaigns  # noqa: E501
 
         Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_campaigns_report(async_campaigns_report_request, async_req=True)
+        >>> thread = api.generate_async_campaigns_report_v2(async_campaigns_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -383,20 +383,20 @@ class AnalyticsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['async_campaigns_report_request'] = \
             async_campaigns_report_request
-        return self.generate_async_campaigns_report_endpoint.call_with_http_info(**kwargs)
+        return self.generate_async_campaigns_report_v2_endpoint.call_with_http_info(**kwargs)
 
-    def generate_async_line_items_report(
+    def generate_async_line_items_report_v2(
         self,
         async_line_items_report_request,
         **kwargs
     ):
-        """generate_async_line_items_report  # noqa: E501
+        """/2025-07/retail-media/reports/line-items  # noqa: E501
 
         Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.generate_async_line_items_report(async_line_items_report_request, async_req=True)
+        >>> thread = api.generate_async_line_items_report_v2(async_line_items_report_request, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -466,14 +466,14 @@ class AnalyticsApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['async_line_items_report_request'] = \
             async_line_items_report_request
-        return self.generate_async_line_items_report_endpoint.call_with_http_info(**kwargs)
+        return self.generate_async_line_items_report_v2_endpoint.call_with_http_info(**kwargs)
 
     def generate_async_revenue_report(
         self,
         async_revenue_report_request,
         **kwargs
     ):
-        """generate_async_revenue_report  # noqa: E501
+        """/2025-07/retail-media/reports/revenue  # noqa: E501
 
         Returns an asynchronous Revenue Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -556,7 +556,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_async_export_output  # noqa: E501
+        """/2025-07/retail-media/reports/{reportId}/output  # noqa: E501
 
         Returns the output of an async report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -639,7 +639,7 @@ class AnalyticsApi(object):
         report_id,
         **kwargs
     ):
-        """get_async_export_status  # noqa: E501
+        """/2025-07/retail-media/reports/{reportId}/status  # noqa: E501
 
         Returns the status of an async report  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

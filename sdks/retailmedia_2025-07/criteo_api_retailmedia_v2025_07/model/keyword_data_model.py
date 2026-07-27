@@ -31,10 +31,8 @@ from criteo_api_retailmedia_v2025_07.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_v2025_07.model.input_keywords_model import InputKeywordsModel
-    from criteo_api_retailmedia_v2025_07.model.match_type_model import MatchTypeModel
     from criteo_api_retailmedia_v2025_07.model.review_state_model import ReviewStateModel
     globals()['InputKeywordsModel'] = InputKeywordsModel
-    globals()['MatchTypeModel'] = MatchTypeModel
     globals()['ReviewStateModel'] = ReviewStateModel
 
 
@@ -63,6 +61,11 @@ class KeywordDataModel(ModelNormal):
     """
 
     allowed_values = {
+        ('match_type',): {
+            'POSITIVEEXACTMATCH': "PositiveExactMatch",
+            'NEGATIVEEXACTMATCH': "NegativeExactMatch",
+            'NEGATIVEBROADMATCH': "NegativeBroadMatch",
+        },
     }
 
     validations = {
@@ -87,7 +90,7 @@ class KeywordDataModel(ModelNormal):
             'bid': (float, none_type,),  # noqa: E501
             'created_at': (datetime,),  # noqa: E501
             'input_keywords': (InputKeywordsModel,),  # noqa: E501
-            'match_type': (MatchTypeModel,),  # noqa: E501
+            'match_type': (str,),  # noqa: E501
             'review_state': (ReviewStateModel,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
         }
@@ -147,12 +150,12 @@ class KeywordDataModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid (float, none_type): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            bid (float, none_type): The bid to use when a positive keyword matches the shopper search phrase.. [optional]  # noqa: E501
+            created_at (datetime): The time at which this keyword was created in UTC.. [optional]  # noqa: E501
             input_keywords (InputKeywordsModel): [optional]  # noqa: E501
-            match_type (MatchTypeModel): [optional]  # noqa: E501
+            match_type (str): The matching algorithm to be used when comparing this keyword with the shopper search phrase.. [optional]  # noqa: E501
             review_state (ReviewStateModel): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime): The time at which this keyword was last modified in UTC.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -238,12 +241,12 @@ class KeywordDataModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid (float, none_type): [optional]  # noqa: E501
-            created_at (datetime): [optional]  # noqa: E501
+            bid (float, none_type): The bid to use when a positive keyword matches the shopper search phrase.. [optional]  # noqa: E501
+            created_at (datetime): The time at which this keyword was created in UTC.. [optional]  # noqa: E501
             input_keywords (InputKeywordsModel): [optional]  # noqa: E501
-            match_type (MatchTypeModel): [optional]  # noqa: E501
+            match_type (str): The matching algorithm to be used when comparing this keyword with the shopper search phrase.. [optional]  # noqa: E501
             review_state (ReviewStateModel): [optional]  # noqa: E501
-            updated_at (datetime): [optional]  # noqa: E501
+            updated_at (datetime): The time at which this keyword was last modified in UTC.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

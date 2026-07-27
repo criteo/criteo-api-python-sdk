@@ -58,8 +58,6 @@ class CreateAdSetAttributionConfigurationV26Q1(ModelNormal):
         ('attribution_method',): {
             'UNKNOWN': "unknown",
             'CRITEOATTRIBUTION': "criteoAttribution",
-            'GOOGLEANALYTICSLASTCLICK': "googleAnalyticsLastClick",
-            'GOOGLEANALYTICSDATADRIVEN': "googleAnalyticsDataDriven",
             'LASTCLICK': "lastClick",
             'POSTCLICK': "postClick",
             'SFTP': "sftp",

@@ -142,6 +142,7 @@ class CampaignV202301(ModelNormal):
             'monthly_pacing': (float, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
             'promoted_brand_ids': ([str],),  # noqa: E501
+            'retailer_id': (int, none_type,),  # noqa: E501
             'start_date': (datetime, none_type,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
@@ -172,6 +173,7 @@ class CampaignV202301(ModelNormal):
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
         'promoted_brand_ids': 'promotedBrandIds',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'status': 'status',  # noqa: E501
         'type': 'type',  # noqa: E501
@@ -239,6 +241,7 @@ class CampaignV202301(ModelNormal):
             monthly_pacing (float, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             promoted_brand_ids ([str]): [optional]  # noqa: E501
+            retailer_id (int, none_type): [optional]  # noqa: E501
             start_date (datetime, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
@@ -353,6 +356,7 @@ class CampaignV202301(ModelNormal):
             monthly_pacing (float, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             promoted_brand_ids ([str]): [optional]  # noqa: E501
+            retailer_id (int, none_type): [optional]  # noqa: E501
             start_date (datetime, none_type): [optional]  # noqa: E501
             status (str): [optional]  # noqa: E501
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501

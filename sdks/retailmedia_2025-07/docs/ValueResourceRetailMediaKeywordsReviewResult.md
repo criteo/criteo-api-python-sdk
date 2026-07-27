@@ -6,7 +6,7 @@ A value resource exposed by the API.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**RetailMediaKeywordsReviewResult**](RetailMediaKeywordsReviewResult.md) |  | [optional] 
-**type** | **str, none_type** | Type of the resource. | [optional] 
+**type** | **str, none_type** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -129,6 +129,7 @@ class CampaignAttributesV202301(ModelNormal):
             'end_date': (datetime, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'retailer_id': (int,),  # noqa: E501
             'start_date': (datetime, none_type,),  # noqa: E501
             'type': (str,),  # noqa: E501
             'view_attribution_scope': (str, none_type,),  # noqa: E501
@@ -152,6 +153,7 @@ class CampaignAttributesV202301(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'retailer_id': 'retailerId',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
         'type': 'type',  # noqa: E501
         'view_attribution_scope': 'viewAttributionScope',  # noqa: E501
@@ -212,6 +214,7 @@ class CampaignAttributesV202301(ModelNormal):
             end_date (datetime, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            retailer_id (int): [optional]  # noqa: E501
             start_date (datetime, none_type): [optional]  # noqa: E501
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
             view_attribution_scope (str, none_type): [optional]  # noqa: E501
@@ -316,6 +319,7 @@ class CampaignAttributesV202301(ModelNormal):
             end_date (datetime, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            retailer_id (int): [optional]  # noqa: E501
             start_date (datetime, none_type): [optional]  # noqa: E501
             type (str): [optional] if omitted the server will use the default value of "auction"  # noqa: E501
             view_attribution_scope (str, none_type): [optional]  # noqa: E501

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **end_date** | **datetime, none_type** |  | [optional] 
 **monthly_pacing** | **float, none_type** |  | [optional] 
 **on_behalf_company_name** | **str, none_type** |  | [optional] 
+**retailer_id** | **int** |  | [optional] 
 **start_date** | **datetime, none_type** |  | [optional] 
 **type** | **str** |  | [optional]  if omitted the server will use the default value of "auction"
 **view_attribution_scope** | **str, none_type** |  | [optional] 

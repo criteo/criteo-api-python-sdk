@@ -106,7 +106,7 @@ class RetailMediaKeywordsReview(ModelNormal):
         """RetailMediaKeywordsReview - a model defined in OpenAPI
 
         Args:
-            keywords ([ReviewSetState]): List of Phrase-ReviewState pairs describing keyword review updates to perform
+            keywords ([ReviewSetState]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -195,7 +195,7 @@ class RetailMediaKeywordsReview(ModelNormal):
         """RetailMediaKeywordsReview - a model defined in OpenAPI
 
         Args:
-            keywords ([ReviewSetState]): List of Phrase-ReviewState pairs describing keyword review updates to perform
+            keywords ([ReviewSetState]):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

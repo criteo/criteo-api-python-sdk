@@ -102,8 +102,8 @@ class TransparencyQueryMessage(ModelNormal):
         """TransparencyQueryMessage - a model defined in OpenAPI
 
         Args:
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -194,8 +194,8 @@ class TransparencyQueryMessage(ModelNormal):
         """TransparencyQueryMessage - a model defined in OpenAPI
 
         Args:
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

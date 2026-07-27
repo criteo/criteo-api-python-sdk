@@ -86,6 +86,12 @@ class PlacementsReportQueryMessage(ModelNormal):
             'CPOPV1D': "CpoPv1d",
             'CVRPV1D': "CvrPv1d",
         },
+        ('environment',): {
+            'None': None,
+            'WEB': "Web",
+            'ANDROID': "Android",
+            'IOS': "Ios",
+        },
         ('format',): {
             'CSV': "csv",
             'EXCEL': "excel",
@@ -95,6 +101,12 @@ class PlacementsReportQueryMessage(ModelNormal):
     }
 
     validations = {
+        ('dimensions',): {
+            'min_items': 1,
+        },
+        ('metrics',): {
+            'min_items': 1,
+        },
     }
 
     additional_properties_type = None
@@ -159,12 +171,12 @@ class PlacementsReportQueryMessage(ModelNormal):
         """PlacementsReportQueryMessage - a model defined in OpenAPI
 
         Args:
-            advertiser_ids (str): The comma-separated list of advertiser ids.
+            advertiser_ids (str): List of advertiser IDs to report on, provided as a single comma-separated string (e.g., \"123,456,789\"). The advertisers must already exist. If empty, all advertisers will be used.
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
-            dimensions ([str]): The dimensions for the report.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            metrics ([str]): The list of metrics to report.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            dimensions ([str]): List of dimensions for the report. At least one dimension should be provided.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            metrics ([str]): List of metrics for the report. At least one dimension should be provided.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -197,13 +209,13 @@ class PlacementsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            adset_ids (str, none_type): The comma-separated list of adSet ids.. [optional]  # noqa: E501
-            campaign_ids (str, none_type): The comma-separated list of campaign ids.. [optional]  # noqa: E501
-            disclosed (bool): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            environment (str, none_type): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
-            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            placement (str, none_type): Filter the value of the placement. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            adset_ids (str, none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            campaign_ids (str, none_type): Optional list of campaign IDs to filter on. The campaigns must already exist. If empty, all campaigns will be included.. [optional]  # noqa: E501
+            disclosed (bool): Optionally returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            environment (str, none_type): Optional type of environment to filter on. If empty, all environments will be included.. [optional]  # noqa: E501
+            format (str): Optional file format of the generated report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            placement (str, none_type): Optional filter on a specific placement domain name. If empty, all placements will be included.. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -265,12 +277,12 @@ class PlacementsReportQueryMessage(ModelNormal):
         """PlacementsReportQueryMessage - a model defined in OpenAPI
 
         Args:
-            advertiser_ids (str): The comma-separated list of advertiser ids.
+            advertiser_ids (str): List of advertiser IDs to report on, provided as a single comma-separated string (e.g., \"123,456,789\"). The advertisers must already exist. If empty, all advertisers will be used.
             currency (str): The currency used for the report. ISO 4217 code (three-letter capitals).
-            dimensions ([str]): The dimensions for the report.
-            end_date (datetime): End date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
-            metrics ([str]): The list of metrics to report.
-            start_date (datetime): Start date of the report. Date component of ISO 8061 format, any time or timezone component is ignored.
+            dimensions ([str]): List of dimensions for the report. At least one dimension should be provided.
+            end_date (datetime): End date of the report. Date component of ISO 8601 format, any time or timezone component is ignored.
+            metrics ([str]): List of metrics for the report. At least one dimension should be provided.
+            start_date (datetime): Start date of the report. Date component of ISO 8601 format, any time or timezone component is ignored. Must be ≤ endDate.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -303,13 +315,13 @@ class PlacementsReportQueryMessage(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            adset_ids (str, none_type): The comma-separated list of adSet ids.. [optional]  # noqa: E501
-            campaign_ids (str, none_type): The comma-separated list of campaign ids.. [optional]  # noqa: E501
-            disclosed (bool): Returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
-            environment (str, none_type): Type of environment: Web, Android or iOS.. [optional]  # noqa: E501
-            format (str): The file format of the generated report. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            placement (str, none_type): Filter the value of the placement. [optional]  # noqa: E501
-            timezone (str, none_type): The timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            adset_ids (str, none_type): Optional list of ad set IDs to filter on. The ad sets must already exist. If empty, all ad sets will be included.. [optional]  # noqa: E501
+            campaign_ids (str, none_type): Optional list of campaign IDs to filter on. The campaigns must already exist. If empty, all campaigns will be included.. [optional]  # noqa: E501
+            disclosed (bool): Optionally returns disclosed or undisclosed placements.. [optional] if omitted the server will use the default value of True  # noqa: E501
+            environment (str, none_type): Optional type of environment to filter on. If empty, all environments will be included.. [optional]  # noqa: E501
+            format (str): Optional file format of the generated report.. [optional] if omitted the server will use the default value of "json"  # noqa: E501
+            placement (str, none_type): Optional filter on a specific placement domain name. If empty, all placements will be included.. [optional]  # noqa: E501
+            timezone (str, none_type): Optional timezone used for the report. Timezone Database format (Tz).. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

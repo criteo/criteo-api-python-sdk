@@ -132,7 +132,7 @@ class ChangeDetailsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            change_value (str, none_type): Change detail of a property of the insertion order.. [optional]  # noqa: E501
+            change_value (str, none_type): Change amount of a property of the insertion order.. [optional]  # noqa: E501
             current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
             previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
         """
@@ -220,7 +220,7 @@ class ChangeDetailsV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            change_value (str, none_type): Change detail of a property of the insertion order.. [optional]  # noqa: E501
+            change_value (str, none_type): Change amount of a property of the insertion order.. [optional]  # noqa: E501
             current_value (str, none_type): Current value of a property of the insertion order.. [optional]  # noqa: E501
             previous_value (str, none_type): Previous value of a property of the insertion order.. [optional]  # noqa: E501
         """

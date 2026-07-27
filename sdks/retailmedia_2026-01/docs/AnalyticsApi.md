@@ -4,20 +4,20 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generate_async_accounts_report**](AnalyticsApi.md#generate_async_accounts_report) | **POST** /2026-01/retail-media/reports/accounts | 
-[**generate_async_campaigns_report**](AnalyticsApi.md#generate_async_campaigns_report) | **POST** /2026-01/retail-media/reports/campaigns | 
-[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /2026-01/retail-media/reports/fillrate | 
-[**generate_async_line_items_report**](AnalyticsApi.md#generate_async_line_items_report) | **POST** /2026-01/retail-media/reports/line-items | 
-[**generate_async_revenue_report**](AnalyticsApi.md#generate_async_revenue_report) | **POST** /2026-01/retail-media/reports/revenue | 
-[**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /2026-01/retail-media/reports/unfilled-placements | 
-[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /2026-01/retail-media/reports/{reportId}/output | 
-[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /2026-01/retail-media/reports/{reportId}/status | 
+[**generate_async_accounts_report_v2**](AnalyticsApi.md#generate_async_accounts_report_v2) | **POST** /2026-01/retail-media/reports/accounts | /2026-01/retail-media/reports/accounts
+[**generate_async_campaigns_report_v2**](AnalyticsApi.md#generate_async_campaigns_report_v2) | **POST** /2026-01/retail-media/reports/campaigns | /2026-01/retail-media/reports/campaigns
+[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /2026-01/retail-media/reports/fillrate | /2026-01/retail-media/reports/fillrate
+[**generate_async_line_items_report_v2**](AnalyticsApi.md#generate_async_line_items_report_v2) | **POST** /2026-01/retail-media/reports/line-items | /2026-01/retail-media/reports/line-items
+[**generate_async_revenue_report**](AnalyticsApi.md#generate_async_revenue_report) | **POST** /2026-01/retail-media/reports/revenue | /2026-01/retail-media/reports/revenue
+[**generate_async_unfilled_placements_report**](AnalyticsApi.md#generate_async_unfilled_placements_report) | **POST** /2026-01/retail-media/reports/unfilled-placements | /2026-01/retail-media/reports/unfilled-placements
+[**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /2026-01/retail-media/reports/{reportId}/output | /2026-01/retail-media/reports/{reportId}/output
+[**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /2026-01/retail-media/reports/{reportId}/status | /2026-01/retail-media/reports/{reportId}/status
 
 
-# **generate_async_accounts_report**
-> AsyncReportResponse generate_async_accounts_report(async_accounts_report_request)
+# **generate_async_accounts_report_v2**
+> AsyncReportResponse generate_async_accounts_report_v2(async_accounts_report_request)
 
-
+/2026-01/retail-media/reports/accounts
 
 Returns an asynchronous Accounts Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -66,7 +66,16 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
                 account_ids=[
                     "account_ids_example",
                 ],
+                activation_platforms=[
+                    "CommerceMax",
+                ],
                 aggregation_level="campaign",
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
                 campaign_type="all",
                 click_attribution_window="none",
                 dimensions=[
@@ -99,10 +108,11 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.generate_async_accounts_report(async_accounts_report_request)
+        # /2026-01/retail-media/reports/accounts
+        api_response = api_instance.generate_async_accounts_report_v2(async_accounts_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_async_accounts_report: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_accounts_report_v2: %s\n" % e)
 ```
 
 
@@ -134,10 +144,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_async_campaigns_report**
-> AsyncReportResponse generate_async_campaigns_report(async_campaigns_report_request)
+# **generate_async_campaigns_report_v2**
+> AsyncReportResponse generate_async_campaigns_report_v2(async_campaigns_report_request)
 
-
+/2026-01/retail-media/reports/campaigns
 
 Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -183,6 +193,15 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
     async_campaigns_report_request = AsyncCampaignsReportRequest(
         data=AsyncCampaignsReportResource(
             attributes=AsyncCampaignsReport(
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
                 campaign_type="all",
                 click_attribution_window="none",
                 dimensions=[
@@ -219,10 +238,11 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.generate_async_campaigns_report(async_campaigns_report_request)
+        # /2026-01/retail-media/reports/campaigns
+        api_response = api_instance.generate_async_campaigns_report_v2(async_campaigns_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_async_campaigns_report: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_campaigns_report_v2: %s\n" % e)
 ```
 
 
@@ -257,7 +277,7 @@ Name | Type | Description  | Notes
 # **generate_async_fill_rate_report**
 > AsyncReportResponse generate_async_fill_rate_report(async_fill_rate_report_request)
 
-
+/2026-01/retail-media/reports/fillrate
 
 Returns an asynchronous Fill Rate Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -324,6 +344,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/retail-media/reports/fillrate
         api_response = api_instance.generate_async_fill_rate_report(async_fill_rate_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
@@ -359,10 +380,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **generate_async_line_items_report**
-> AsyncReportResponse generate_async_line_items_report(async_line_items_report_request)
+# **generate_async_line_items_report_v2**
+> AsyncReportResponse generate_async_line_items_report_v2(async_line_items_report_request)
 
-
+/2026-01/retail-media/reports/line-items
 
 Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -408,6 +429,15 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
     async_line_items_report_request = AsyncLineItemsReportRequest(
         data=AsyncLineItemsReportResource(
             attributes=AsyncLineItemsReport(
+                activation_platforms=[
+                    "CommerceMax",
+                ],
+                budget_models=[
+                    "CriteoBudget",
+                ],
+                buy_types=[
+                    "auction",
+                ],
                 campaign_type="all",
                 click_attribution_window="none",
                 dimensions=[
@@ -444,10 +474,11 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        api_response = api_instance.generate_async_line_items_report(async_line_items_report_request)
+        # /2026-01/retail-media/reports/line-items
+        api_response = api_instance.generate_async_line_items_report_v2(async_line_items_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
-        print("Exception when calling AnalyticsApi->generate_async_line_items_report: %s\n" % e)
+        print("Exception when calling AnalyticsApi->generate_async_line_items_report_v2: %s\n" % e)
 ```
 
 
@@ -482,7 +513,7 @@ Name | Type | Description  | Notes
 # **generate_async_revenue_report**
 > AsyncReportResponse generate_async_revenue_report(async_revenue_report_request)
 
-
+/2026-01/retail-media/reports/revenue
 
 Returns an asynchronous Revenue Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -531,8 +562,14 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
                 account_ids=[
                     "account_ids_example",
                 ],
+                activation_platforms=[
+                    "CommerceMax",
+                ],
                 advertiser_types=[
                     "retailer",
+                ],
+                budget_models=[
+                    "CriteoBudget",
                 ],
                 buy_type="auction",
                 campaign_ids=[
@@ -581,6 +618,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/retail-media/reports/revenue
         api_response = api_instance.generate_async_revenue_report(async_revenue_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
@@ -619,7 +657,7 @@ Name | Type | Description  | Notes
 # **generate_async_unfilled_placements_report**
 > AsyncReportResponse generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
 
-
+/2026-01/retail-media/reports/unfilled-placements
 
 Returns an asynchronous Unfilled Placements Report  <br />  This endpoint is subject to specific rate limits.
 
@@ -687,6 +725,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/retail-media/reports/unfilled-placements
         api_response = api_instance.generate_async_unfilled_placements_report(async_unfilled_placements_report_request)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
@@ -725,7 +764,7 @@ Name | Type | Description  | Notes
 # **get_async_export_output**
 > file_type get_async_export_output(report_id)
 
-
+/2026-01/retail-media/reports/{reportId}/output
 
 Returns the output of an async report
 
@@ -770,6 +809,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/retail-media/reports/{reportId}/output
         api_response = api_instance.get_async_export_output(report_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:
@@ -808,7 +848,7 @@ Name | Type | Description  | Notes
 # **get_async_export_status**
 > AsyncReportResponse get_async_export_status(report_id)
 
-
+/2026-01/retail-media/reports/{reportId}/status
 
 Returns the status of an async report
 
@@ -854,6 +894,7 @@ with criteo_api_retailmedia_v2026_01.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/retail-media/reports/{reportId}/status
         api_response = api_instance.get_async_export_status(report_id)
         pprint(api_response)
     except criteo_api_retailmedia_v2026_01.ApiException as e:

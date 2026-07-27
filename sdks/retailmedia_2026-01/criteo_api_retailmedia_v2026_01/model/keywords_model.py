@@ -135,8 +135,8 @@ class KeywordsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            keywords ({str: (KeywordDataModel,)}, none_type): [optional]  # noqa: E501
-            rank ([str], none_type): [optional]  # noqa: E501
+            keywords ({str: (KeywordDataModel,)}, none_type): A dictionary of normalized keywords mapped to their properties.. [optional]  # noqa: E501
+            rank ([str], none_type): The top suggested keywords for products in this line item ranked by popularity score.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -222,8 +222,8 @@ class KeywordsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            keywords ({str: (KeywordDataModel,)}, none_type): [optional]  # noqa: E501
-            rank ([str], none_type): [optional]  # noqa: E501
+            keywords ({str: (KeywordDataModel,)}, none_type): A dictionary of normalized keywords mapped to their properties.. [optional]  # noqa: E501
+            rank ([str], none_type): The top suggested keywords for products in this line item ranked by popularity score.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -8,7 +8,9 @@ Name | Type | Description | Notes
 **end_date** | **datetime** | End date | 
 **start_date** | **datetime** | Start date | 
 **account_ids** | **[str]** | Account ids to filter | [optional] 
+**activation_platforms** | **[str]** | Filter on the activation platform: CommerceMax, PrivateMarket | [optional] 
 **advertiser_types** | **[str]** | Filter on the type of advertiser: retailer, brand, seller | [optional] 
+**budget_models** | **[str]** | Filter on the budget model: CriteoBudget, RetailerBudget | [optional] 
 **buy_type** | **str** | Filter on buy type: Auction, Preferred Deals or Sponsorship | [optional] 
 **campaign_ids** | **[str]** | Campaign ids to filter | [optional] 
 **campaign_type** | **str** | Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays | [optional]  if omitted the server will use the default value of "all"
@@ -26,7 +28,7 @@ Name | Type | Description | Notes
 **revenue_type** | **str** | Type of revenue | [optional] 
 **sales_channel** | **str** | Filter on specific sales channel: offline or online | [optional]  if omitted the server will use the default value of "all"
 **sku_relations** | **[str]** | Filter on sku relations: Same SKU, Same Parent SKU, Same Category, Same Brand or Same Seller | [optional] 
-**sold_by** | **str** | Filter on the seller: Indirect Sold, Direct Sold or Private Market | [optional] 
+**sold_by** | **str** | Filter on the seller: Indirect Sold, Direct Sold, Authorized Buyer or Private Market | [optional] 
 **targeted_keyword_types** | **[str]** | Filter on targeted keyword type: unknown, generic, branded, conquesting | [optional] 
 **timezone** | **str** | Time zone : see criteo developer portal for supported time zones | [optional]  if omitted the server will use the default value of "UTC"
 **view_attribution_window** | **str** | View attribution window | [optional]  if omitted the server will use the default value of "none"

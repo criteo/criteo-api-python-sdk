@@ -132,9 +132,9 @@ class InputKeywordsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            negative_broad ([str], none_type): [optional]  # noqa: E501
-            negative_exact ([str], none_type): [optional]  # noqa: E501
-            positive_exact ([str], none_type): [optional]  # noqa: E501
+            negative_broad ([str], none_type): The collection of supplied negative broad phrases.. [optional]  # noqa: E501
+            negative_exact ([str], none_type): The collection of supplied negative exact phrases.. [optional]  # noqa: E501
+            positive_exact ([str], none_type): The collection of supplied positive exact phrases.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,9 +220,9 @@ class InputKeywordsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            negative_broad ([str], none_type): [optional]  # noqa: E501
-            negative_exact ([str], none_type): [optional]  # noqa: E501
-            positive_exact ([str], none_type): [optional]  # noqa: E501
+            negative_broad ([str], none_type): The collection of supplied negative broad phrases.. [optional]  # noqa: E501
+            negative_exact ([str], none_type): The collection of supplied negative exact phrases.. [optional]  # noqa: E501
+            positive_exact ([str], none_type): The collection of supplied positive exact phrases.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -4,18 +4,18 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /2026-01/statistics/report | 
-[**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /2026-01/placements/report | 
-[**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /2026-01/transactions/report | 
-[**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /2026-01/log-level/advertisers/{advertiser-id}/report | 
+[**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /2026-01/statistics/report | /2026-01/statistics/report
+[**get_placements_report**](AnalyticsApi.md#get_placements_report) | **POST** /2026-01/placements/report | /2026-01/placements/report
+[**get_transactions_report**](AnalyticsApi.md#get_transactions_report) | **POST** /2026-01/transactions/report | /2026-01/transactions/report
+[**get_transparency_report**](AnalyticsApi.md#get_transparency_report) | **POST** /2026-01/log-level/advertisers/{advertiser-id}/report | /2026-01/log-level/advertisers/{advertiser-id}/report
 
 
 # **get_adset_report**
 > file_type get_adset_report()
 
+/2026-01/statistics/report
 
-
-This Statistics endpoint provides adset related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.
+This Statistics endpoint provides ad set related data. It is an upgrade of our previous Statistics endpoint, and includes new metrics and customization capabilities.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.
 
 ### Example
 
@@ -63,7 +63,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
             "ad_set_names_example",
         ],
         ad_set_status=[
-            "ad_set_status_example",
+            "Active",
         ],
         advertiser_ids="advertiser_ids_example",
         currency="currency_example",
@@ -82,6 +82,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2026-01/statistics/report
         api_response = api_instance.get_adset_report(statistics_report_query_message=statistics_report_query_message)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -120,9 +121,9 @@ Name | Type | Description  | Notes
 # **get_placements_report**
 > file_type get_placements_report()
 
+/2026-01/placements/report
 
-
-Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.
+Your ads are placed in different domains (publishers) and environments (websites and apps). Thanks to the placements endpoint, you can analyse the performances for each publisher, comparing displays, clicks and sales generated.  <br/><br/>  This endpoint supports data retrieval for up to three months in the past.
 
 ### Example
 
@@ -175,7 +176,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
                     ],
                     disclosed=True,
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    environment="environment_example",
+                    environment="Web",
                     format="json",
                     metrics=[
                         "Clicks",
@@ -192,6 +193,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2026-01/placements/report
         api_response = api_instance.get_placements_report(placements_report_query_message_list_request=placements_report_query_message_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -230,9 +232,9 @@ Name | Type | Description  | Notes
 # **get_transactions_report**
 > file_type get_transactions_report()
 
+/2026-01/transactions/report
 
-
-This Transactions endpoint provides transactions id related data.
+This Transactions endpoint provides transactions id related data.  <br/><br/>  This endpoint supports data retrieval for up to two years in the past.
 
 ### Example
 
@@ -279,7 +281,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
                     advertiser_ids="advertiser_ids_example",
                     currency="currency_example",
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                    event_type="event_type_example",
+                    event_type="Click",
                     format="json",
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     timezone="UTC",
@@ -292,6 +294,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2026-01/transactions/report
         api_response = api_instance.get_transactions_report(transactions_report_query_message_list_request=transactions_report_query_message_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -330,7 +333,7 @@ Name | Type | Description  | Notes
 # **get_transparency_report**
 > TransparencyReportListResponse get_transparency_report(advertiser_id)
 
-
+/2026-01/log-level/advertisers/{advertiser-id}/report
 
 This Statistics endpoint provides publisher data.
 
@@ -373,7 +376,7 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    advertiser_id = "advertiser-id_example" # str | The advertiser id to fetch the transparency data.
+    advertiser_id = "advertiser-id_example" # str | The advertiser ID to fetch the transparency data for. The advertiser must already exist. Must be greater than 0.
     transparency_query_message = TransparencyQueryMessage(
         end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
         should_display_product_ids=False,
@@ -382,6 +385,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
     # example passing only required values which don't have defaults set
     try:
+        # /2026-01/log-level/advertisers/{advertiser-id}/report
         api_response = api_instance.get_transparency_report(advertiser_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -390,6 +394,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
     # example passing only required values which don't have defaults set
     # and optional values
     try:
+        # /2026-01/log-level/advertisers/{advertiser-id}/report
         api_response = api_instance.get_transparency_report(advertiser_id, transparency_query_message=transparency_query_message)
         pprint(api_response)
     except criteo_api_marketingsolutions_v2026_01.ApiException as e:
@@ -401,7 +406,7 @@ with criteo_api_marketingsolutions_v2026_01.ApiClient(configuration) as api_clie
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **str**| The advertiser id to fetch the transparency data. |
+ **advertiser_id** | **str**| The advertiser ID to fetch the transparency data for. The advertiser must already exist. Must be greater than 0. |
  **transparency_query_message** | [**TransparencyQueryMessage**](TransparencyQueryMessage.md)| The query message. | [optional]
 
 ### Return type
