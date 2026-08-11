@@ -60,19 +60,19 @@ class BalanceHistoryChangeDataCaptureV1(ModelNormal):
 
     allowed_values = {
         ('change_type',): {
-            'BALANCECREATED': "balanceCreated",
-            'BALANCEADDED': "balanceAdded",
-            'BALANCEREMOVED': "balanceRemoved",
-            'BALANCEUNCAPPED': "balanceUncapped",
-            'BALANCECAPPED': "balanceCapped",
-            'ENDDATE': "endDate",
-            'STARTDATE': "startDate",
-            'BALANCENAME': "balanceName",
-            'RETAILERPONUMBER': "retailerPoNumber",
-            'CRITEOPONUMBER': "criteoPoNumber",
-            'RETAILERID': "retailerId",
-            'VALUEADD': "valueAdd",
-            'UNKNOWN': "unknown",
+            'BALANCECREATED': "BalanceCreated",
+            'BALANCEADDED': "BalanceAdded",
+            'BALANCEREMOVED': "BalanceRemoved",
+            'BALANCEUNCAPPED': "BalanceUncapped",
+            'BALANCECAPPED': "BalanceCapped",
+            'ENDDATE': "EndDate",
+            'STARTDATE': "StartDate",
+            'BALANCENAME': "BalanceName",
+            'RETAILERPONUMBER': "RetailerPoNumber",
+            'CRITEOPONUMBER': "CriteoPoNumber",
+            'RETAILERID': "RetailerId",
+            'VALUEADD': "ValueAdd",
+            'UNKNOWN': "Unknown",
         },
     }
 

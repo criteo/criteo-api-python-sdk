@@ -61,6 +61,8 @@ class AsyncMissedOpportunitiesReport(ModelNormal):
     allowed_values = {
         ('dimensions',): {
             'DATE': "date",
+            'ACCOUNTID': "accountId",
+            'ACCOUNTNAME': "accountName",
             'CAMPAIGNID': "campaignId",
             'CAMPAIGNNAME': "campaignName",
             'LINEITEMID': "lineItemId",

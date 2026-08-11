@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **name** | **str, none_type** | Name of the ad set | [optional] 
 **objective** | **str, none_type** | Ad set objective.                Possible values:  - customAction (previously \&quot;Actions\&quot;)  - clicks  - conversions  - displays  - appPromotion (previously \&quot;Installs\&quot;)  - revenue  - storeConversions  - value  - reach (previously \&quot;ViewedImpressions\&quot;)  - visits  - videoViews (previously \&quot;CompletedVideoViews\&quot;) | [optional] 
 **schedule** | [**ReadAdSetScheduleV26Q1**](ReadAdSetScheduleV26Q1.md) |  | [optional] 
+**scheduled_budgets** | [**[ReadAdSetScheduledBudgetV26Q1], none_type**](ReadAdSetScheduledBudgetV26Q1.md) |  | [optional] 
 **targeting** | [**AdSetTargetingV26Q1**](AdSetTargetingV26Q1.md) |  | [optional] 
 **video_channel** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

@@ -31,8 +31,10 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_marketingsolutions_preview.model.campaign_budget_automation_v23_q1 import CampaignBudgetAutomationV23Q1
+    from criteo_api_marketingsolutions_preview.model.campaign_scheduled_spend_limit_v23_q1 import CampaignScheduledSpendLimitV23Q1
     from criteo_api_marketingsolutions_preview.model.campaign_spend_limit_v23_q1 import CampaignSpendLimitV23Q1
     globals()['CampaignBudgetAutomationV23Q1'] = CampaignBudgetAutomationV23Q1
+    globals()['CampaignScheduledSpendLimitV23Q1'] = CampaignScheduledSpendLimitV23Q1
     globals()['CampaignSpendLimitV23Q1'] = CampaignSpendLimitV23Q1
 
 
@@ -100,6 +102,7 @@ class CampaignV23Q1(ModelNormal):
             'goal': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
+            'scheduled_spend_limits': ([CampaignScheduledSpendLimitV23Q1], none_type,),  # noqa: E501
             'spend_limit': (CampaignSpendLimitV23Q1,),  # noqa: E501
         }
 
@@ -114,6 +117,7 @@ class CampaignV23Q1(ModelNormal):
         'goal': 'goal',  # noqa: E501
         'id': 'id',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'scheduled_spend_limits': 'scheduledSpendLimits',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
     }
 
@@ -163,6 +167,7 @@ class CampaignV23Q1(ModelNormal):
             goal (str, none_type): Goal of the campaign                Serialized values are {unspecified}, {acquisition} and {retention}.                Acquisition and retention are defined as follows:  - Acquisition: campaign with the goal of acquiring new customers. The success of an acquisition campaign is measured by the number of new customers it brings.  - Retention: campaign with the goal of retaining existing customers. The success of a retention campaign is measured by the number of existing customers it retains.. [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
             name (str, none_type): Name of the campaign. [optional]  # noqa: E501
+            scheduled_spend_limits ([CampaignScheduledSpendLimitV23Q1], none_type): Spend limits scheduled to become active in the future. Empty when the campaign has no scheduled spend limits.. [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 
@@ -254,6 +259,7 @@ class CampaignV23Q1(ModelNormal):
             goal (str, none_type): Goal of the campaign                Serialized values are {unspecified}, {acquisition} and {retention}.                Acquisition and retention are defined as follows:  - Acquisition: campaign with the goal of acquiring new customers. The success of an acquisition campaign is measured by the number of new customers it brings.  - Retention: campaign with the goal of retaining existing customers. The success of a retention campaign is measured by the number of existing customers it retains.. [optional]  # noqa: E501
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
             name (str, none_type): Name of the campaign. [optional]  # noqa: E501
+            scheduled_spend_limits ([CampaignScheduledSpendLimitV23Q1], none_type): Spend limits scheduled to become active in the future. Empty when the campaign has no scheduled spend limits.. [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 

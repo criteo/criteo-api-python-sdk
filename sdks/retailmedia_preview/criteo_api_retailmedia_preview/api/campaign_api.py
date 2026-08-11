@@ -24,7 +24,7 @@ from criteo_api_retailmedia_preview.model_utils import (  # noqa: F401
 from criteo_api_retailmedia_preview.model.creative2_response import Creative2Response
 from criteo_api_retailmedia_preview.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_preview.model.creative_update_model2 import CreativeUpdateModel2
-from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_creative_search_response import EntityResourceCollectionOutcomeCreativeSearchResponse
+from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_creative_search_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_preview.model.entity_resource_input_creative_search_request import EntityResourceInputCreativeSearchRequest
@@ -1315,7 +1315,7 @@ class CampaignApi(object):
         )
         self.search_account_creatives_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceCollectionOutcomeCreativeSearchResponse,),
+                'response_type': (EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -3628,7 +3628,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceCollectionOutcomeCreativeSearchResponse
+            EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
                 If the method is called asynchronously, returns the request
                 thread.
         """

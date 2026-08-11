@@ -30,8 +30,10 @@ from criteo_api_marketingsolutions_experimental.exceptions import ApiAttributeEr
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_experimental.model.patch_campaign_scheduled_spend_limit import PatchCampaignScheduledSpendLimit
     from criteo_api_marketingsolutions_experimental.model.patch_campaign_spend_limit import PatchCampaignSpendLimit
     from criteo_api_marketingsolutions_experimental.model.patch_marketing_campaign_budget_automation import PatchMarketingCampaignBudgetAutomation
+    globals()['PatchCampaignScheduledSpendLimit'] = PatchCampaignScheduledSpendLimit
     globals()['PatchCampaignSpendLimit'] = PatchCampaignSpendLimit
     globals()['PatchMarketingCampaignBudgetAutomation'] = PatchMarketingCampaignBudgetAutomation
 
@@ -90,6 +92,7 @@ class PatchCampaign(ModelNormal):
         lazy_import()
         return {
             'budget_automation': (PatchMarketingCampaignBudgetAutomation,),  # noqa: E501
+            'scheduled_spend_limit': (PatchCampaignScheduledSpendLimit,),  # noqa: E501
             'spend_limit': (PatchCampaignSpendLimit,),  # noqa: E501
         }
 
@@ -100,6 +103,7 @@ class PatchCampaign(ModelNormal):
 
     attribute_map = {
         'budget_automation': 'budgetAutomation',  # noqa: E501
+        'scheduled_spend_limit': 'scheduledSpendLimit',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
     }
 
@@ -145,6 +149,7 @@ class PatchCampaign(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget_automation (PatchMarketingCampaignBudgetAutomation): [optional]  # noqa: E501
+            scheduled_spend_limit (PatchCampaignScheduledSpendLimit): [optional]  # noqa: E501
             spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
         """
 
@@ -232,6 +237,7 @@ class PatchCampaign(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget_automation (PatchMarketingCampaignBudgetAutomation): [optional]  # noqa: E501
+            scheduled_spend_limit (PatchCampaignScheduledSpendLimit): [optional]  # noqa: E501
             spend_limit (PatchCampaignSpendLimit): [optional]  # noqa: E501
         """
 

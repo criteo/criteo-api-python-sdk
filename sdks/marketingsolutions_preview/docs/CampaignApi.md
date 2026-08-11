@@ -2022,6 +2022,38 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                         pacing_behavior="undefined",
                     ),
                     name="name_example",
+                    scheduled_budget=PatchAdSetScheduledBudgetV26Q1(
+                        scheduled_budget_creations=[
+                            PatchAdSetScheduledBudgetCreationV26Q1(
+                                budget_amount=3.14,
+                                budget_delivery_smoothing="accelerated",
+                                budget_delivery_week="undefined",
+                                budget_renewal="undefined",
+                                budget_strategy="capped",
+                                pacing_behavior="undefined",
+                                start_date=dateutil_parser('1970-01-01').date(),
+                            ),
+                        ],
+                        scheduled_budget_deletions=[
+                            PatchAdSetScheduledBudgetDeletionV26Q1(
+                                id="id_example",
+                            ),
+                        ],
+                        scheduled_budget_updates=[
+                            PatchAdSetScheduledBudgetUpdateV26Q1(
+                                budget_amount=NillableDecimal(
+                                    value=3.14,
+                                ),
+                                budget_delivery_smoothing="accelerated",
+                                budget_delivery_week="undefined",
+                                budget_renewal="undefined",
+                                budget_strategy="capped",
+                                id="id_example",
+                                pacing_behavior="undefined",
+                                start_date=dateutil_parser('1970-01-01').date(),
+                            ),
+                        ],
+                    ),
                     scheduling=PatchAdSetSchedulingV26Q1(
                         end_date=NillableDateTime(
                             value=dateutil_parser('1970-01-01T00:00:00.00Z'),
@@ -2160,6 +2192,34 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             ad_set_objectives="conversions",
                         ),
                         enabled=True,
+                    ),
+                    scheduled_spend_limit=PatchCampaignScheduledSpendLimit(
+                        scheduled_spend_limit_creations=[
+                            PatchCampaignScheduledSpendLimitCreation(
+                                spend_limit_amount=NillableDecimal(
+                                    value=3.14,
+                                ),
+                                spend_limit_renewal="undefined",
+                                spend_limit_type="capped",
+                                start_date=dateutil_parser('1970-01-01').date(),
+                            ),
+                        ],
+                        scheduled_spend_limit_deletions=[
+                            PatchCampaignScheduledSpendLimitDeletion(
+                                id="id_example",
+                            ),
+                        ],
+                        scheduled_spend_limit_updates=[
+                            PatchCampaignScheduledSpendLimitUpdate(
+                                id="id_example",
+                                spend_limit_amount=NillableDecimal(
+                                    value=3.14,
+                                ),
+                                spend_limit_renewal="undefined",
+                                spend_limit_type="capped",
+                                start_date=dateutil_parser('1970-01-01').date(),
+                            ),
+                        ],
                     ),
                     spend_limit=PatchCampaignSpendLimit(
                         spend_limit_amount=NillableDecimal(

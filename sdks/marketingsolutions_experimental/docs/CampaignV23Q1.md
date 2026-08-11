@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **goal** | **str, none_type** | Goal of the campaign                Serialized values are {unspecified}, {acquisition} and {retention}.                Acquisition and retention are defined as follows:  - Acquisition: campaign with the goal of acquiring new customers. The success of an acquisition campaign is measured by the number of new customers it brings.  - Retention: campaign with the goal of retaining existing customers. The success of a retention campaign is measured by the number of existing customers it retains. | [optional] 
 **id** | **str, none_type** | Id of the entity (duplicate of the parent id). | [optional] 
 **name** | **str, none_type** | Name of the campaign | [optional] 
+**scheduled_spend_limits** | [**[CampaignScheduledSpendLimitV23Q1], none_type**](CampaignScheduledSpendLimitV23Q1.md) | Spend limits scheduled to become active in the future. Empty when the campaign has no scheduled spend limits. | [optional] 
 **spend_limit** | [**CampaignSpendLimitV23Q1**](CampaignSpendLimitV23Q1.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

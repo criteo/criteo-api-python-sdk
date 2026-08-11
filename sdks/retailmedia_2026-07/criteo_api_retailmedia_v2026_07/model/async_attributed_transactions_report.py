@@ -65,6 +65,8 @@ class AsyncAttributedTransactionsReport(ModelNormal):
             'ADVERTISEDDATE': "advertisedDate",
             'ADVERTISEDHOUR': "advertisedHour",
             'DAYSDIFFERENCE': "daysDifference",
+            'ACCOUNTID': "accountId",
+            'ACCOUNTNAME': "accountName",
             'CAMPAIGNID': "campaignId",
             'CAMPAIGNNAME': "campaignName",
             'LINEITEMID': "lineItemId",

@@ -87,10 +87,10 @@ class LineItemBudgetCapOutHistoryCapoutTimes(ModelNormal):
 
 
     attribute_map = {
-        'daily': 'daily',  # noqa: E501
-        'hourly': 'hourly',  # noqa: E501
-        'monthly': 'monthly',  # noqa: E501
-        'total': 'total',  # noqa: E501
+        'daily': 'Daily',  # noqa: E501
+        'hourly': 'Hourly',  # noqa: E501
+        'monthly': 'Monthly',  # noqa: E501
+        'total': 'Total',  # noqa: E501
     }
 
     read_only_vars = {

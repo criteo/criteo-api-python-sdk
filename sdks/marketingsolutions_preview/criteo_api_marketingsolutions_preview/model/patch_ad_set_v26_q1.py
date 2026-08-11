@@ -34,11 +34,13 @@ def lazy_import():
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_attribution_configuration_v26_q1 import PatchAdSetAttributionConfigurationV26Q1
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_bidding_v26_q1 import PatchAdSetBiddingV26Q1
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_budget_v26_q1 import PatchAdSetBudgetV26Q1
+    from criteo_api_marketingsolutions_preview.model.patch_ad_set_scheduled_budget_v26_q1 import PatchAdSetScheduledBudgetV26Q1
     from criteo_api_marketingsolutions_preview.model.patch_ad_set_scheduling_v26_q1 import PatchAdSetSchedulingV26Q1
     globals()['AdSetTargetingV26Q1'] = AdSetTargetingV26Q1
     globals()['PatchAdSetAttributionConfigurationV26Q1'] = PatchAdSetAttributionConfigurationV26Q1
     globals()['PatchAdSetBiddingV26Q1'] = PatchAdSetBiddingV26Q1
     globals()['PatchAdSetBudgetV26Q1'] = PatchAdSetBudgetV26Q1
+    globals()['PatchAdSetScheduledBudgetV26Q1'] = PatchAdSetScheduledBudgetV26Q1
     globals()['PatchAdSetSchedulingV26Q1'] = PatchAdSetSchedulingV26Q1
 
 
@@ -99,6 +101,7 @@ class PatchAdSetV26Q1(ModelNormal):
             'bidding': (PatchAdSetBiddingV26Q1,),  # noqa: E501
             'budget': (PatchAdSetBudgetV26Q1,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
+            'scheduled_budget': (PatchAdSetScheduledBudgetV26Q1,),  # noqa: E501
             'scheduling': (PatchAdSetSchedulingV26Q1,),  # noqa: E501
             'targeting': (AdSetTargetingV26Q1,),  # noqa: E501
         }
@@ -113,6 +116,7 @@ class PatchAdSetV26Q1(ModelNormal):
         'bidding': 'bidding',  # noqa: E501
         'budget': 'budget',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'scheduled_budget': 'scheduledBudget',  # noqa: E501
         'scheduling': 'scheduling',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
     }
@@ -162,6 +166,7 @@ class PatchAdSetV26Q1(ModelNormal):
             bidding (PatchAdSetBiddingV26Q1): [optional]  # noqa: E501
             budget (PatchAdSetBudgetV26Q1): [optional]  # noqa: E501
             name (str, none_type): Name of the ad set.. [optional]  # noqa: E501
+            scheduled_budget (PatchAdSetScheduledBudgetV26Q1): [optional]  # noqa: E501
             scheduling (PatchAdSetSchedulingV26Q1): [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
         """
@@ -253,6 +258,7 @@ class PatchAdSetV26Q1(ModelNormal):
             bidding (PatchAdSetBiddingV26Q1): [optional]  # noqa: E501
             budget (PatchAdSetBudgetV26Q1): [optional]  # noqa: E501
             name (str, none_type): Name of the ad set.. [optional]  # noqa: E501
+            scheduled_budget (PatchAdSetScheduledBudgetV26Q1): [optional]  # noqa: E501
             scheduling (PatchAdSetSchedulingV26Q1): [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
         """

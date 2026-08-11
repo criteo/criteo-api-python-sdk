@@ -70,6 +70,14 @@ class Template(ModelNormal):
             'CUSTOM': "CUSTOM",
             'DISPLAYPANEL': "DisplayPanel",
             'DIGITALSHELFTALKER': "DigitalShelfTalker",
+            'COMMERCEVIDEOSPOTLIGHT': "CommerceVideoSpotlight",
+            'BRANDINGVIDEOSTANDOUT': "BrandingVideoStandout",
+            'COMMERCEDISPLAYSPOTLIGHT': "CommerceDisplaySpotlight",
+            'BRANDINGDISPLAYSPOTLIGHTSOLO': "BrandingDisplaySpotlightSolo",
+            'COMMERCEDISPLAYGRIDSHELF': "CommerceDisplayGridShelf",
+            'COMMERCEDISPLAYGRIDDUET': "CommerceDisplayGridDuet",
+            'BRANDINGDISPLAYGRIDSOLO': "BrandingDisplayGridSolo",
+            'COMMERCEVIDEOGRIDDUET': "CommerceVideoGridDuet",
         },
     }
 

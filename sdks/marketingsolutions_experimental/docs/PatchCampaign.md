@@ -6,6 +6,7 @@ Campaign patch model.  The campaign identifier is provided in the resource {id} 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **budget_automation** | [**PatchMarketingCampaignBudgetAutomation**](PatchMarketingCampaignBudgetAutomation.md) |  | [optional] 
+**scheduled_spend_limit** | [**PatchCampaignScheduledSpendLimit**](PatchCampaignScheduledSpendLimit.md) |  | [optional] 
 **spend_limit** | [**PatchCampaignSpendLimit**](PatchCampaignSpendLimit.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

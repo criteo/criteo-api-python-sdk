@@ -35,11 +35,13 @@ def lazy_import():
     from criteo_api_marketingsolutions_preview.model.read_ad_set_bidding_v26_q1 import ReadAdSetBiddingV26Q1
     from criteo_api_marketingsolutions_preview.model.read_ad_set_budget_v26_q1 import ReadAdSetBudgetV26Q1
     from criteo_api_marketingsolutions_preview.model.read_ad_set_schedule_v26_q1 import ReadAdSetScheduleV26Q1
+    from criteo_api_marketingsolutions_preview.model.read_ad_set_scheduled_budget_v26_q1 import ReadAdSetScheduledBudgetV26Q1
     globals()['AdSetTargetingV26Q1'] = AdSetTargetingV26Q1
     globals()['ReadAdSetAttributionConfigurationV26Q1'] = ReadAdSetAttributionConfigurationV26Q1
     globals()['ReadAdSetBiddingV26Q1'] = ReadAdSetBiddingV26Q1
     globals()['ReadAdSetBudgetV26Q1'] = ReadAdSetBudgetV26Q1
     globals()['ReadAdSetScheduleV26Q1'] = ReadAdSetScheduleV26Q1
+    globals()['ReadAdSetScheduledBudgetV26Q1'] = ReadAdSetScheduledBudgetV26Q1
 
 
 class ReadAdSetV26Q1(ModelNormal):
@@ -136,6 +138,7 @@ class ReadAdSetV26Q1(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'objective': (str, none_type,),  # noqa: E501
             'schedule': (ReadAdSetScheduleV26Q1,),  # noqa: E501
+            'scheduled_budgets': ([ReadAdSetScheduledBudgetV26Q1], none_type,),  # noqa: E501
             'targeting': (AdSetTargetingV26Q1,),  # noqa: E501
             'video_channel': (str, none_type,),  # noqa: E501
         }
@@ -157,6 +160,7 @@ class ReadAdSetV26Q1(ModelNormal):
         'name': 'name',  # noqa: E501
         'objective': 'objective',  # noqa: E501
         'schedule': 'schedule',  # noqa: E501
+        'scheduled_budgets': 'scheduledBudgets',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
         'video_channel': 'videoChannel',  # noqa: E501
     }
@@ -213,6 +217,7 @@ class ReadAdSetV26Q1(ModelNormal):
             name (str, none_type): Name of the ad set. [optional]  # noqa: E501
             objective (str, none_type): Ad set objective.                Possible values:  - customAction (previously \"Actions\")  - clicks  - conversions  - displays  - appPromotion (previously \"Installs\")  - revenue  - storeConversions  - value  - reach (previously \"ViewedImpressions\")  - visits  - videoViews (previously \"CompletedVideoViews\"). [optional]  # noqa: E501
             schedule (ReadAdSetScheduleV26Q1): [optional]  # noqa: E501
+            scheduled_budgets ([ReadAdSetScheduledBudgetV26Q1], none_type): [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
         """
@@ -311,6 +316,7 @@ class ReadAdSetV26Q1(ModelNormal):
             name (str, none_type): Name of the ad set. [optional]  # noqa: E501
             objective (str, none_type): Ad set objective.                Possible values:  - customAction (previously \"Actions\")  - clicks  - conversions  - displays  - appPromotion (previously \"Installs\")  - revenue  - storeConversions  - value  - reach (previously \"ViewedImpressions\")  - visits  - videoViews (previously \"CompletedVideoViews\"). [optional]  # noqa: E501
             schedule (ReadAdSetScheduleV26Q1): [optional]  # noqa: E501
+            scheduled_budgets ([ReadAdSetScheduledBudgetV26Q1], none_type): [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
         """
