@@ -4,11 +4,13 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**add_products**](CampaignApi.md#add_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/add | /experimental/retail-media/line-items/{line-item-id}/products/add
 [**append_campaigns_to_balance_v1**](CampaignApi.md#append_campaigns_to_balance_v1) | **POST** /experimental/retail-media/balances/{balanceId}/campaigns/append | /experimental/retail-media/balances/{balanceId}/campaigns/append
 [**append_product_button_by_line_item_id**](CampaignApi.md#append_product_button_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/product-buttons/create | /experimental/retail-media/line-items/{line-item-id}/product-buttons/create
 [**append_promoted_products**](CampaignApi.md#append_promoted_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/append | /experimental/retail-media/line-items/{line-item-id}/products/append
 [**compute_display_min_bid_by_retailer_id**](CampaignApi.md#compute_display_min_bid_by_retailer_id) | **POST** /experimental/retail-media/retailers/{retailerId}/compute-display-min-bid | /experimental/retail-media/retailers/{retailerId}/compute-display-min-bid
 [**create_auction_line_item**](CampaignApi.md#create_auction_line_item) | **POST** /experimental/retail-media/campaigns/{campaignId}/auction-line-items | /experimental/retail-media/campaigns/{campaignId}/auction-line-items
+[**create_campaign**](CampaignApi.md#create_campaign) | **POST** /experimental/retail-media/accounts/{account-id}/campaigns | /experimental/retail-media/accounts/{account-id}/campaigns
 [**create_creative**](CampaignApi.md#create_creative) | **POST** /experimental/retail-media/accounts/{account-id}/creatives | /experimental/retail-media/accounts/{account-id}/creatives
 [**create_line_item**](CampaignApi.md#create_line_item) | **POST** /experimental/retail-media/line-items | /experimental/retail-media/line-items
 [**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /experimental/retail-media/campaigns/{campaign-id}/preferred-line-items | /experimental/retail-media/campaigns/{campaign-id}/preferred-line-items
@@ -37,6 +39,106 @@ Method | HTTP request | Description
 [**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /experimental/retail-media/preferred-line-items/{line-item-id} | /experimental/retail-media/preferred-line-items/{line-item-id}
 [**update_product_button_by_line_item_and_product_button_id**](CampaignApi.md#update_product_button_by_line_item_and_product_button_id) | **PUT** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
 
+
+# **add_products**
+> AddProductsResultModelResponse add_products(line_item_id, add_products_model_request)
+
+/experimental/retail-media/line-items/{line-item-id}/products/add
+
+Add products to a line item.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.add_products_model_request import AddProductsModelRequest
+from criteo_api_retailmedia_experimental.model.add_products_result_model_response import AddProductsResultModelResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The line item id.
+    add_products_model_request = AddProductsModelRequest(
+        data=AddProductsModelResource(
+            attributes=AddProductsModel(
+                display_product_details=[
+                    ProductModel(
+                        product_id="product_id_example",
+                    ),
+                ],
+                product_type="DisplayProduct",
+            ),
+            type="type_example",
+        ),
+    ) # AddProductsModelRequest | The products to add.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}/products/add
+        api_response = api_instance.add_products(line_item_id, add_products_model_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->add_products: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item id. |
+ **add_products_model_request** | [**AddProductsModelRequest**](AddProductsModelRequest.md)| The products to add. |
+
+### Return type
+
+[**AddProductsResultModelResponse**](AddProductsResultModelResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **append_campaigns_to_balance_v1**
 > ValueResourceOutcomeBalanceCampaignsV1 append_campaigns_to_balance_v1(balance_id, value_resource_input_append_campaigns_request_v1)
@@ -563,6 +665,126 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EntityResourceOutcomeOfSponsoredProductsLineItem**](EntityResourceOutcomeOfSponsoredProductsLineItem.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_campaign**
+> EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2 create_campaign(account_id, value_resource_input_of_orchestrator_contract_campaign_create_model_v2)
+
+/experimental/retail-media/accounts/{account-id}/campaigns
+
+Creates a campaign under the specified account.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.value_resource_input_of_orchestrator_contract_campaign_create_model_v2 import ValueResourceInputOfOrchestratorContractCampaignCreateModelV2
+from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_orchestrator_contract_campaign_response_model_v2 import EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | The external id of the account.
+    value_resource_input_of_orchestrator_contract_campaign_create_model_v2 = ValueResourceInputOfOrchestratorContractCampaignCreateModelV2(
+        data=ValueResourceOfOrchestratorContractCampaignCreateModelV2(
+            attributes=OrchestratorContractCampaignCreateModelV2(
+                attribution_settings=CampaignServiceContractAttributionSettingsCreateModelV2(
+                    click_attribution_scope="SameSku",
+                    click_attribution_window="OneWeek",
+                    view_attribution_scope="SameSku",
+                    view_attribution_window="None",
+                ),
+                bill_by_retailer_id="bill_by_retailer_id_example",
+                budget_details=OrchestratorContractBudgetDetailsCreateModelV2(
+                    budget=3.14,
+                    daily_pacing=3.14,
+                    is_auto_daily_pacing=True,
+                    monthly_pacing=3.14,
+                ),
+                buy_type="Auction",
+                campaign_type="SponsoredProducts",
+                company_name="company_name_example",
+                drawable_balance_ids=[
+                    "drawable_balance_ids_example",
+                ],
+                name="name_example",
+                objective="Manual",
+                on_behalf_company_name="on_behalf_company_name_example",
+                schedule_details=CampaignServiceContractScheduleDetailsCreateModelV2(
+                    end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                    start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                ),
+            ),
+            type="type_example",
+        ),
+    ) # ValueResourceInputOfOrchestratorContractCampaignCreateModelV2 | The campaign to create.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/accounts/{account-id}/campaigns
+        api_response = api_instance.create_campaign(account_id, value_resource_input_of_orchestrator_contract_campaign_create_model_v2)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->create_campaign: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| The external id of the account. |
+ **value_resource_input_of_orchestrator_contract_campaign_create_model_v2** | [**ValueResourceInputOfOrchestratorContractCampaignCreateModelV2**](ValueResourceInputOfOrchestratorContractCampaignCreateModelV2.md)| The campaign to create. |
+
+### Return type
+
+[**EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2**](EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2.md)
 
 ### Authorization
 
