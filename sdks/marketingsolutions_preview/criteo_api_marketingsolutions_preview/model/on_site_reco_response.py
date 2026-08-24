@@ -88,6 +88,7 @@ class OnSiteRecoResponse(ModelNormal):
         lazy_import()
         return {
             'extra_infos': ([int], none_type,),  # noqa: E501
+            'impression_id': (str, none_type,),  # noqa: E501
             'products': ([RecommendedProduct], none_type,),  # noqa: E501
         }
 
@@ -98,6 +99,7 @@ class OnSiteRecoResponse(ModelNormal):
 
     attribute_map = {
         'extra_infos': 'extraInfos',  # noqa: E501
+        'impression_id': 'impressionId',  # noqa: E501
         'products': 'products',  # noqa: E501
     }
 
@@ -143,6 +145,7 @@ class OnSiteRecoResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             extra_infos ([int], none_type): Additional information in case of warnings, errors.... [optional]  # noqa: E501
+            impression_id (str, none_type): Identifier of the recommendation impression, to be used to correlate displays and clicks. [optional]  # noqa: E501
             products ([RecommendedProduct], none_type): Recommended products. [optional]  # noqa: E501
         """
 
@@ -230,6 +233,7 @@ class OnSiteRecoResponse(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             extra_infos ([int], none_type): Additional information in case of warnings, errors.... [optional]  # noqa: E501
+            impression_id (str, none_type): Identifier of the recommendation impression, to be used to correlate displays and clicks. [optional]  # noqa: E501
             products ([RecommendedProduct], none_type): Recommended products. [optional]  # noqa: E501
         """
 
