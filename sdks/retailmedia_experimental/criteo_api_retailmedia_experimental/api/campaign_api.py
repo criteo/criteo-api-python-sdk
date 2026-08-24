@@ -23,16 +23,19 @@ from criteo_api_retailmedia_experimental.model_utils import (  # noqa: F401
 )
 from criteo_api_retailmedia_experimental.model.add_products_model_request import AddProductsModelRequest
 from criteo_api_retailmedia_experimental.model.add_products_result_model_response import AddProductsResultModelResponse
+from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
+from criteo_api_retailmedia_experimental.model.campaign_create_model_request import CampaignCreateModelRequest
+from criteo_api_retailmedia_experimental.model.campaign_response_model_response import CampaignResponseModelResponse
 from criteo_api_retailmedia_experimental.model.creative2_response import Creative2Response
 from criteo_api_retailmedia_experimental.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_experimental.model.creative_update_model2 import CreativeUpdateModel2
+from criteo_api_retailmedia_experimental.model.creatives_model_response import CreativesModelResponse
 from criteo_api_retailmedia_experimental.model.demand_search_request import DemandSearchRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_of_sponsored_products_line_item_and_metadata import EntityResourceCollectionOutcomeOfSponsoredProductsLineItemAndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_search_request import EntityResourceInputCreativeSearchRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
-from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_orchestrator_contract_campaign_response_model_v2 import EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_experimental.model.experimental_create_line_item_model_request import ExperimentalCreateLineItemModelRequest
 from criteo_api_retailmedia_experimental.model.experimental_line_item_model_response import ExperimentalLineItemModelResponse
@@ -49,12 +52,11 @@ from criteo_api_retailmedia_experimental.model.product_resource_outcome import P
 from criteo_api_retailmedia_experimental.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
 from criteo_api_retailmedia_experimental.model.promoted_product_resource_collection_outcome import PromotedProductResourceCollectionOutcome
 from criteo_api_retailmedia_experimental.model.supply_search_request import SupplySearchRequest
-from criteo_api_retailmedia_experimental.model.value_resource_collection_outcome_display_auction_min_bid_result import ValueResourceCollectionOutcomeDisplayAuctionMinBidResult
+from criteo_api_retailmedia_experimental.model.target_list_response_with_page_metadata import TargetListResponseWithPageMetadata
+from criteo_api_retailmedia_experimental.model.upsert_creatives_model_request import UpsertCreativesModelRequest
 from criteo_api_retailmedia_experimental.model.value_resource_input_append_campaigns_request_v1 import ValueResourceInputAppendCampaignsRequestV1
 from criteo_api_retailmedia_experimental.model.value_resource_input_delete_campaigns_request_v1 import ValueResourceInputDeleteCampaignsRequestV1
-from criteo_api_retailmedia_experimental.model.value_resource_input_display_auction_min_bid_request import ValueResourceInputDisplayAuctionMinBidRequest
 from criteo_api_retailmedia_experimental.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
-from criteo_api_retailmedia_experimental.model.value_resource_input_of_orchestrator_contract_campaign_create_model_v2 import ValueResourceInputOfOrchestratorContractCampaignCreateModelV2
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_retailer_search_request_v2 import ValueResourceInputOfRetailerSearchRequestV2
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
@@ -308,64 +310,6 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.compute_display_min_bid_by_retailer_id_endpoint = _Endpoint(
-            settings={
-                'response_type': (ValueResourceCollectionOutcomeDisplayAuctionMinBidResult,),
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/experimental/retail-media/retailers/{retailerId}/compute-display-min-bid',
-                'operation_id': 'compute_display_min_bid_by_retailer_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'retailer_id',
-                    'value_resource_input_display_auction_min_bid_request',
-                ],
-                'required': [
-                    'retailer_id',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'retailer_id':
-                        (str,),
-                    'value_resource_input_display_auction_min_bid_request':
-                        (ValueResourceInputDisplayAuctionMinBidRequest,),
-                },
-                'attribute_map': {
-                    'retailer_id': 'retailerId',
-                },
-                'location_map': {
-                    'retailer_id': 'path',
-                    'value_resource_input_display_auction_min_bid_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
         self.create_auction_line_item_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceOutcomeOfSponsoredProductsLineItem,),
@@ -427,7 +371,7 @@ class CampaignApi(object):
         )
         self.create_campaign_endpoint = _Endpoint(
             settings={
-                'response_type': (EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2,),
+                'response_type': (CampaignResponseModelResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -440,11 +384,11 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'account_id',
-                    'value_resource_input_of_orchestrator_contract_campaign_create_model_v2',
+                    'campaign_create_model_request',
                 ],
                 'required': [
                     'account_id',
-                    'value_resource_input_of_orchestrator_contract_campaign_create_model_v2',
+                    'campaign_create_model_request',
                 ],
                 'nullable': [
                 ],
@@ -461,15 +405,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'account_id':
                         (str,),
-                    'value_resource_input_of_orchestrator_contract_campaign_create_model_v2':
-                        (ValueResourceInputOfOrchestratorContractCampaignCreateModelV2,),
+                    'campaign_create_model_request':
+                        (CampaignCreateModelRequest,),
                 },
                 'attribute_map': {
                     'account_id': 'account-id',
                 },
                 'location_map': {
                     'account_id': 'path',
-                    'value_resource_input_of_orchestrator_contract_campaign_create_model_v2': 'body',
+                    'campaign_create_model_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1027,6 +971,58 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.get_bidding_strategy_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (BiddingSettingsResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/bidding-strategy',
+                'operation_id': 'get_bidding_strategy_by_line_item_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.get_capout_history_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse,),
@@ -1426,6 +1422,68 @@ class CampaignApi(object):
                 },
                 'location_map': {
                     'line_item_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_targets_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (TargetListResponseWithPageMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/targets',
+                'operation_id': 'get_targets_by_line_item_id',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'limit',
+                    'offset',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'limit': 'query',
+                    'offset': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -2126,6 +2184,65 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.upsert_creatives_endpoint = _Endpoint(
+            settings={
+                'response_type': (CreativesModelResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/creatives/upsert',
+                'operation_id': 'upsert_creatives',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'upsert_creatives_model_request',
+                ],
+                'required': [
+                    'line_item_id',
+                    'upsert_creatives_model_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'upsert_creatives_model_request':
+                        (UpsertCreativesModelRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'upsert_creatives_model_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
 
     def add_products(
         self,
@@ -2469,90 +2586,6 @@ class CampaignApi(object):
             line_item_id
         return self.append_promoted_products_endpoint.call_with_http_info(**kwargs)
 
-    def compute_display_min_bid_by_retailer_id(
-        self,
-        retailer_id,
-        **kwargs
-    ):
-        """/experimental/retail-media/retailers/{retailerId}/compute-display-min-bid  # noqa: E501
-
-        Computes the min bid for relevant page types based on the provided information  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.compute_display_min_bid_by_retailer_id(retailer_id, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            retailer_id (str): The retailer id
-
-        Keyword Args:
-            value_resource_input_display_auction_min_bid_request (ValueResourceInputDisplayAuctionMinBidRequest): The details for what creatives and product ids to use to compute the min bids. [optional]
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            ValueResourceCollectionOutcomeDisplayAuctionMinBidResult
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['retailer_id'] = \
-            retailer_id
-        return self.compute_display_min_bid_by_retailer_id_endpoint.call_with_http_info(**kwargs)
-
     def create_auction_line_item(
         self,
         campaign_id,
@@ -2643,7 +2676,7 @@ class CampaignApi(object):
     def create_campaign(
         self,
         account_id,
-        value_resource_input_of_orchestrator_contract_campaign_create_model_v2,
+        campaign_create_model_request,
         **kwargs
     ):
         """/experimental/retail-media/accounts/{account-id}/campaigns  # noqa: E501
@@ -2652,12 +2685,12 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.create_campaign(account_id, value_resource_input_of_orchestrator_contract_campaign_create_model_v2, async_req=True)
+        >>> thread = api.create_campaign(account_id, campaign_create_model_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             account_id (str): The external id of the account.
-            value_resource_input_of_orchestrator_contract_campaign_create_model_v2 (ValueResourceInputOfOrchestratorContractCampaignCreateModelV2): The campaign to create.
+            campaign_create_model_request (CampaignCreateModelRequest): The campaign to create.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2692,7 +2725,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2
+            CampaignResponseModelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2723,8 +2756,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['account_id'] = \
             account_id
-        kwargs['value_resource_input_of_orchestrator_contract_campaign_create_model_v2'] = \
-            value_resource_input_of_orchestrator_contract_campaign_create_model_v2
+        kwargs['campaign_create_model_request'] = \
+            campaign_create_model_request
         return self.create_campaign_endpoint.call_with_http_info(**kwargs)
 
     def create_creative(
@@ -3497,6 +3530,89 @@ class CampaignApi(object):
             campaign_id
         return self.get_auction_line_items_by_campaign_endpoint.call_with_http_info(**kwargs)
 
+    def get_bidding_strategy_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/line-items/{line-item-id}/bidding-strategy  # noqa: E501
+
+        Returns the current bidding configuration for a Display auction line item, including the active  bidding strategy and any preserved Standard and Adaptive strategy settings. Other line item types are  not currently supported by this endpoint.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_bidding_strategy_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The identifier of the line item whose bidding settings are requested.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            BiddingSettingsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.get_bidding_strategy_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
     def get_capout_history(
         self,
         account_id,
@@ -4092,6 +4208,91 @@ class CampaignApi(object):
         kwargs['line_item_id'] = \
             line_item_id
         return self.get_product_buttons_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_targets_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/line-items/{line-item-id}/targets  # noqa: E501
+
+        Returns a list of targets for a given line item id  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_targets_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): Unique identifier of the Line Item for which targets will be fetched
+
+        Keyword Args:
+            limit (int): The number of elements to be returned. Defaults to 500.. [optional] if omitted the server will use the default value of 500
+            offset (int): The (zero-based) starting offset in the collection. Defaults to 0.. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TargetListResponseWithPageMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.get_targets_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def line_items_demand_search(
         self,
@@ -5047,4 +5248,91 @@ class CampaignApi(object):
         kwargs['product_button_request_request'] = \
             product_button_request_request
         return self.update_product_button_by_line_item_and_product_button_id_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_creatives(
+        self,
+        line_item_id,
+        upsert_creatives_model_request,
+        **kwargs
+    ):
+        """/experimental/retail-media/line-items/{line-item-id}/creatives/upsert  # noqa: E501
+
+        Resolves each supplied stable creative identifier to its latest revision and  associates those revisions with the line item's proposal.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.upsert_creatives(line_item_id, upsert_creatives_model_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The line item id.
+            upsert_creatives_model_request (UpsertCreativesModelRequest): The creatives to upsert.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CreativesModelResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        kwargs['upsert_creatives_model_request'] = \
+            upsert_creatives_model_request
+        return self.upsert_creatives_endpoint.call_with_http_info(**kwargs)
 

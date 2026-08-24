@@ -97,7 +97,6 @@ Class | Method | HTTP request | Description
 *CampaignApi* | [**append_campaigns_to_balance_v1**](docs/CampaignApi.md#append_campaigns_to_balance_v1) | **POST** /experimental/retail-media/balances/{balanceId}/campaigns/append | /experimental/retail-media/balances/{balanceId}/campaigns/append
 *CampaignApi* | [**append_product_button_by_line_item_id**](docs/CampaignApi.md#append_product_button_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/product-buttons/create | /experimental/retail-media/line-items/{line-item-id}/product-buttons/create
 *CampaignApi* | [**append_promoted_products**](docs/CampaignApi.md#append_promoted_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/append | /experimental/retail-media/line-items/{line-item-id}/products/append
-*CampaignApi* | [**compute_display_min_bid_by_retailer_id**](docs/CampaignApi.md#compute_display_min_bid_by_retailer_id) | **POST** /experimental/retail-media/retailers/{retailerId}/compute-display-min-bid | /experimental/retail-media/retailers/{retailerId}/compute-display-min-bid
 *CampaignApi* | [**create_auction_line_item**](docs/CampaignApi.md#create_auction_line_item) | **POST** /experimental/retail-media/campaigns/{campaignId}/auction-line-items | /experimental/retail-media/campaigns/{campaignId}/auction-line-items
 *CampaignApi* | [**create_campaign**](docs/CampaignApi.md#create_campaign) | **POST** /experimental/retail-media/accounts/{account-id}/campaigns | /experimental/retail-media/accounts/{account-id}/campaigns
 *CampaignApi* | [**create_creative**](docs/CampaignApi.md#create_creative) | **POST** /experimental/retail-media/accounts/{account-id}/creatives | /experimental/retail-media/accounts/{account-id}/creatives
@@ -109,6 +108,7 @@ Class | Method | HTTP request | Description
 *CampaignApi* | [**fetch_promoted_products**](docs/CampaignApi.md#fetch_promoted_products) | **GET** /experimental/retail-media/line-items/{line-item-id}/products | /experimental/retail-media/line-items/{line-item-id}/products
 *CampaignApi* | [**get_auction_line_item**](docs/CampaignApi.md#get_auction_line_item) | **GET** /experimental/retail-media/auction-line-items/{lineItemId} | /experimental/retail-media/auction-line-items/{lineItemId}
 *CampaignApi* | [**get_auction_line_items_by_campaign**](docs/CampaignApi.md#get_auction_line_items_by_campaign) | **GET** /experimental/retail-media/campaigns/{campaignId}/auction-line-items | /experimental/retail-media/campaigns/{campaignId}/auction-line-items
+*CampaignApi* | [**get_bidding_strategy_by_line_item_id**](docs/CampaignApi.md#get_bidding_strategy_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/bidding-strategy
 *CampaignApi* | [**get_capout_history**](docs/CampaignApi.md#get_capout_history) | **POST** /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history | /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history
 *CampaignApi* | [**get_catalog_status**](docs/CampaignApi.md#get_catalog_status) | **GET** /experimental/retail-media/catalogs/{catalogId}/status | /experimental/retail-media/catalogs/{catalogId}/status
 *CampaignApi* | [**get_creative**](docs/CampaignApi.md#get_creative) | **GET** /experimental/retail-media/accounts/{account-id}/creatives/{creative-id} | /experimental/retail-media/accounts/{account-id}/creatives/{creative-id}
@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *CampaignApi* | [**get_preferred_line_items_by_line_item_id**](docs/CampaignApi.md#get_preferred_line_items_by_line_item_id) | **GET** /experimental/retail-media/preferred-line-items/{line-item-id} | /experimental/retail-media/preferred-line-items/{line-item-id}
 *CampaignApi* | [**get_product_button_by_line_item_and_product_button_id**](docs/CampaignApi.md#get_product_button_by_line_item_and_product_button_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
 *CampaignApi* | [**get_product_buttons_by_line_item_id**](docs/CampaignApi.md#get_product_buttons_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/product-buttons | /experimental/retail-media/line-items/{line-item-id}/product-buttons
+*CampaignApi* | [**get_targets_by_line_item_id**](docs/CampaignApi.md#get_targets_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/targets | /experimental/retail-media/line-items/{line-item-id}/targets
 *CampaignApi* | [**line_items_demand_search**](docs/CampaignApi.md#line_items_demand_search) | **POST** /experimental/retail-media/line-items/demand-search | /experimental/retail-media/line-items/demand-search
 *CampaignApi* | [**line_items_supply_search**](docs/CampaignApi.md#line_items_supply_search) | **POST** /experimental/retail-media/line-items/supply-search | /experimental/retail-media/line-items/supply-search
 *CampaignApi* | [**pause_promoted_products**](docs/CampaignApi.md#pause_promoted_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/pause | /experimental/retail-media/line-items/{line-item-id}/products/pause
@@ -127,6 +128,7 @@ Class | Method | HTTP request | Description
 *CampaignApi* | [**update_line_item**](docs/CampaignApi.md#update_line_item) | **PATCH** /experimental/retail-media/line-items/{line-item-id} | /experimental/retail-media/line-items/{line-item-id}
 *CampaignApi* | [**update_preferred_line_item_by_line_item_id**](docs/CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /experimental/retail-media/preferred-line-items/{line-item-id} | /experimental/retail-media/preferred-line-items/{line-item-id}
 *CampaignApi* | [**update_product_button_by_line_item_and_product_button_id**](docs/CampaignApi.md#update_product_button_by_line_item_and_product_button_id) | **PUT** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
+*CampaignApi* | [**upsert_creatives**](docs/CampaignApi.md#upsert_creatives) | **POST** /experimental/retail-media/line-items/{line-item-id}/creatives/upsert | /experimental/retail-media/line-items/{line-item-id}/creatives/upsert
 *CatalogApi* | [**delete_store_inventory_per_merchant_id**](docs/CatalogApi.md#delete_store_inventory_per_merchant_id) | **POST** /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete | /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
 *CatalogApi* | [**get_catalog_products_batch_report**](docs/CatalogApi.md#get_catalog_products_batch_report) | **GET** /experimental/retail-media/catalog/products/batch/report/{operation-token} | /experimental/retail-media/catalog/products/batch/report/{operation-token}
 *CatalogApi* | [**offer_set_bbw_v1**](docs/CatalogApi.md#offer_set_bbw_v1) | **POST** /experimental/retail-media/retailers/{retailer-id}/products/set-buy-box-winners | /experimental/retail-media/retailers/{retailer-id}/products/set-buy-box-winners
@@ -145,12 +147,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AdaptiveBiddingSettings](docs/AdaptiveBiddingSettings.md)
  - [AddProductsModel](docs/AddProductsModel.md)
  - [AddProductsModelRequest](docs/AddProductsModelRequest.md)
  - [AddProductsModelResource](docs/AddProductsModelResource.md)
  - [AddProductsResultModel](docs/AddProductsResultModel.md)
  - [AddProductsResultModelResource](docs/AddProductsResultModelResource.md)
  - [AddProductsResultModelResponse](docs/AddProductsResultModelResponse.md)
+ - [ApiResourcesPageMetadata](docs/ApiResourcesPageMetadata.md)
  - [AppendCampaignsRequestV1](docs/AppendCampaignsRequestV1.md)
  - [ApplicationSummaryModel](docs/ApplicationSummaryModel.md)
  - [ApplicationSummaryModelResource](docs/ApplicationSummaryModelResource.md)
@@ -175,6 +179,10 @@ Class | Method | HTTP request | Description
  - [AsyncUnfilledPlacementsReport](docs/AsyncUnfilledPlacementsReport.md)
  - [AsyncUnfilledPlacementsReportRequest](docs/AsyncUnfilledPlacementsReportRequest.md)
  - [AsyncUnfilledPlacementsReportResource](docs/AsyncUnfilledPlacementsReportResource.md)
+ - [AttributionSettingsCreateModel](docs/AttributionSettingsCreateModel.md)
+ - [AttributionSettingsModel](docs/AttributionSettingsModel.md)
+ - [AuctionCreativeDetailsInputModel](docs/AuctionCreativeDetailsInputModel.md)
+ - [AuctionCreativeDetailsModel](docs/AuctionCreativeDetailsModel.md)
  - [AudienceError](docs/AudienceError.md)
  - [AudienceWarning](docs/AudienceWarning.md)
  - [BalanceCampaignsV1](docs/BalanceCampaignsV1.md)
@@ -184,28 +192,42 @@ Class | Method | HTTP request | Description
  - [BatchAcceptedResponse](docs/BatchAcceptedResponse.md)
  - [BatchStoreInventoryDeleteRequest](docs/BatchStoreInventoryDeleteRequest.md)
  - [BatchStoreInventoryRequest](docs/BatchStoreInventoryRequest.md)
+ - [BiddingSettings](docs/BiddingSettings.md)
+ - [BiddingSettingsResource](docs/BiddingSettingsResource.md)
+ - [BiddingSettingsResponse](docs/BiddingSettingsResponse.md)
  - [BotMessage](docs/BotMessage.md)
  - [BrandIdSearchRequest](docs/BrandIdSearchRequest.md)
  - [BrandIdSearchResult](docs/BrandIdSearchResult.md)
+ - [BudgetDetailsCreateModel](docs/BudgetDetailsCreateModel.md)
+ - [BudgetDetailsModel](docs/BudgetDetailsModel.md)
  - [CampaignAvailabilityV2](docs/CampaignAvailabilityV2.md)
- - [CampaignServiceContractAttributionSettingsCreateModelV2](docs/CampaignServiceContractAttributionSettingsCreateModelV2.md)
- - [CampaignServiceContractAttributionSettingsModelV2](docs/CampaignServiceContractAttributionSettingsModelV2.md)
- - [CampaignServiceContractScheduleDetailsCreateModelV2](docs/CampaignServiceContractScheduleDetailsCreateModelV2.md)
- - [CampaignServiceContractScheduleDetailsModelV2](docs/CampaignServiceContractScheduleDetailsModelV2.md)
+ - [CampaignCreateModel](docs/CampaignCreateModel.md)
+ - [CampaignCreateModelRequest](docs/CampaignCreateModelRequest.md)
+ - [CampaignCreateModelResource](docs/CampaignCreateModelResource.md)
+ - [CampaignResponseModel](docs/CampaignResponseModel.md)
+ - [CampaignResponseModelResource](docs/CampaignResponseModelResource.md)
+ - [CampaignResponseModelResponse](docs/CampaignResponseModelResponse.md)
  - [CatalogStatusV2](docs/CatalogStatusV2.md)
+ - [CategoryTargetDetails](docs/CategoryTargetDetails.md)
  - [ChangeDetailsV1](docs/ChangeDetailsV1.md)
  - [ChoiceVariableValue](docs/ChoiceVariableValue.md)
  - [ColorVariableValue](docs/ColorVariableValue.md)
- - [CommerceDisplayAttributes](docs/CommerceDisplayAttributes.md)
- - [CommerceDisplayAuctionAttributes](docs/CommerceDisplayAuctionAttributes.md)
  - [CommonProblem](docs/CommonProblem.md)
  - [ConquestingSettings](docs/ConquestingSettings.md)
+ - [CpmBiddingSettings](docs/CpmBiddingSettings.md)
  - [Creative2](docs/Creative2.md)
  - [Creative2Response](docs/Creative2Response.md)
  - [CreativeCreateModel2](docs/CreativeCreateModel2.md)
+ - [CreativeInputModel](docs/CreativeInputModel.md)
+ - [CreativeModel](docs/CreativeModel.md)
+ - [CreativeProductCollectionInputModel](docs/CreativeProductCollectionInputModel.md)
+ - [CreativeProductCollectionModel](docs/CreativeProductCollectionModel.md)
  - [CreativeSearchRequest](docs/CreativeSearchRequest.md)
  - [CreativeSearchResponse](docs/CreativeSearchResponse.md)
  - [CreativeUpdateModel2](docs/CreativeUpdateModel2.md)
+ - [CreativesModel](docs/CreativesModel.md)
+ - [CreativesModelResource](docs/CreativesModelResource.md)
+ - [CreativesModelResponse](docs/CreativesModelResponse.md)
  - [CustomAttribute](docs/CustomAttribute.md)
  - [DataCompleteThrough](docs/DataCompleteThrough.md)
  - [DeleteCampaignsRequestV1](docs/DeleteCampaignsRequestV1.md)
@@ -216,8 +238,8 @@ Class | Method | HTTP request | Description
  - [DigitalShelfIntelligenceInsight](docs/DigitalShelfIntelligenceInsight.md)
  - [DigitalShelfIntelligenceInsightRequest](docs/DigitalShelfIntelligenceInsightRequest.md)
  - [DigitalShelfIntelligenceInsightResource](docs/DigitalShelfIntelligenceInsightResource.md)
- - [DisplayAuctionMinBidRequest](docs/DisplayAuctionMinBidRequest.md)
- - [DisplayAuctionMinBidResult](docs/DisplayAuctionMinBidResult.md)
+ - [DisplayProductInputModel](docs/DisplayProductInputModel.md)
+ - [DisplayProductModel](docs/DisplayProductModel.md)
  - [DisplayProductResultModel](docs/DisplayProductResultModel.md)
  - [EntityResourceBalanceV1](docs/EntityResourceBalanceV1.md)
  - [EntityResourceBrandIdSearchResult](docs/EntityResourceBrandIdSearchResult.md)
@@ -232,7 +254,6 @@ Class | Method | HTTP request | Description
  - [EntityResourceInputCreativeSearchRequest](docs/EntityResourceInputCreativeSearchRequest.md)
  - [EntityResourceOfBalanceResponseV1](docs/EntityResourceOfBalanceResponseV1.md)
  - [EntityResourceOfCatalogStatusV2](docs/EntityResourceOfCatalogStatusV2.md)
- - [EntityResourceOfOrchestratorContractCampaignResponseModelV2](docs/EntityResourceOfOrchestratorContractCampaignResponseModelV2.md)
  - [EntityResourceOfRetailMediaAccountV2](docs/EntityResourceOfRetailMediaAccountV2.md)
  - [EntityResourceOfRetailMediaChildAccount](docs/EntityResourceOfRetailMediaChildAccount.md)
  - [EntityResourceOfRetailerResultV2](docs/EntityResourceOfRetailerResultV2.md)
@@ -240,7 +261,6 @@ Class | Method | HTTP request | Description
  - [EntityResourceOutcomeBalanceV1](docs/EntityResourceOutcomeBalanceV1.md)
  - [EntityResourceOutcomeOfBalanceResponseV1](docs/EntityResourceOutcomeOfBalanceResponseV1.md)
  - [EntityResourceOutcomeOfCatalogStatusV2](docs/EntityResourceOutcomeOfCatalogStatusV2.md)
- - [EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2](docs/EntityResourceOutcomeOfOrchestratorContractCampaignResponseModelV2.md)
  - [EntityResourceOutcomeOfRetailMediaAccountV2](docs/EntityResourceOutcomeOfRetailMediaAccountV2.md)
  - [EntityResourceOutcomeOfSponsoredProductsLineItem](docs/EntityResourceOutcomeOfSponsoredProductsLineItem.md)
  - [ExperimentalConquestingSettingsModel](docs/ExperimentalConquestingSettingsModel.md)
@@ -285,17 +305,21 @@ Class | Method | HTTP request | Description
  - [InsightStatusResponseResource](docs/InsightStatusResponseResource.md)
  - [Installment](docs/Installment.md)
  - [LineItem](docs/LineItem.md)
+ - [LineItemAuctionBid](docs/LineItemAuctionBid.md)
  - [LineItemBudgetCapOutHistory](docs/LineItemBudgetCapOutHistory.md)
  - [LineItemBudgetCapOutHistoryCapoutTimes](docs/LineItemBudgetCapOutHistoryCapoutTimes.md)
  - [LineItemBudgetCapOutHistoryRequest](docs/LineItemBudgetCapOutHistoryRequest.md)
  - [LineItemBudgetCapOutHistoryResponse](docs/LineItemBudgetCapOutHistoryResponse.md)
  - [LineItemCappingV2](docs/LineItemCappingV2.md)
+ - [LineItemCreativeInputModel](docs/LineItemCreativeInputModel.md)
+ - [LineItemCreativeModel](docs/LineItemCreativeModel.md)
  - [LineItemListResponseWithPagination](docs/LineItemListResponseWithPagination.md)
  - [LineItemPageCategoryV2](docs/LineItemPageCategoryV2.md)
  - [LineItemPageV2](docs/LineItemPageV2.md)
  - [LineItemProductStatus](docs/LineItemProductStatus.md)
  - [LineItemResource](docs/LineItemResource.md)
  - [LoyaltyPoints](docs/LoyaltyPoints.md)
+ - [ManualKeywordTargetDetails](docs/ManualKeywordTargetDetails.md)
  - [Message](docs/Message.md)
  - [MessageBodyModel](docs/MessageBodyModel.md)
  - [MessageDataInstanceModel](docs/MessageDataInstanceModel.md)
@@ -305,16 +329,17 @@ Class | Method | HTTP request | Description
  - [NillableOfNullableOfDateOnly](docs/NillableOfNullableOfDateOnly.md)
  - [NillableString](docs/NillableString.md)
  - [OfferUpdate](docs/OfferUpdate.md)
- - [OrchestratorContractBudgetDetailsCreateModelV2](docs/OrchestratorContractBudgetDetailsCreateModelV2.md)
- - [OrchestratorContractBudgetDetailsModelV2](docs/OrchestratorContractBudgetDetailsModelV2.md)
- - [OrchestratorContractCampaignCreateModelV2](docs/OrchestratorContractCampaignCreateModelV2.md)
- - [OrchestratorContractCampaignResponseModelV2](docs/OrchestratorContractCampaignResponseModelV2.md)
+ - [OnsiteDisplayAttributes](docs/OnsiteDisplayAttributes.md)
+ - [OnsiteDisplayAuctionAttributes](docs/OnsiteDisplayAuctionAttributes.md)
  - [Outcome](docs/Outcome.md)
  - [PageMetadata](docs/PageMetadata.md)
  - [PageTypeCombinationV2](docs/PageTypeCombinationV2.md)
  - [PageTypeEnvironment2](docs/PageTypeEnvironment2.md)
+ - [PageTypeTargetDetails](docs/PageTypeTargetDetails.md)
  - [Pagination](docs/Pagination.md)
  - [PagingOffsetLimitMetadata](docs/PagingOffsetLimitMetadata.md)
+ - [PreferredDealsCreativeDetailsInputModel](docs/PreferredDealsCreativeDetailsInputModel.md)
+ - [PreferredDealsCreativeDetailsModel](docs/PreferredDealsCreativeDetailsModel.md)
  - [PreferredLineItemCreateModelV2](docs/PreferredLineItemCreateModelV2.md)
  - [PreferredLineItemCreateModelV2Request](docs/PreferredLineItemCreateModelV2Request.md)
  - [PreferredLineItemUpdateModelV2](docs/PreferredLineItemUpdateModelV2.md)
@@ -434,6 +459,8 @@ Class | Method | HTTP request | Description
  - [RmEventsUpdateV1](docs/RmEventsUpdateV1.md)
  - [RmEventsV1](docs/RmEventsV1.md)
  - [RmcaCommonProblem](docs/RmcaCommonProblem.md)
+ - [ScheduleDetailsCreateModel](docs/ScheduleDetailsCreateModel.md)
+ - [ScheduleDetailsModel](docs/ScheduleDetailsModel.md)
  - [SdkApiRestCommonProblem](docs/SdkApiRestCommonProblem.md)
  - [SetProductBuyBoxWinnersRequest](docs/SetProductBuyBoxWinnersRequest.md)
  - [ShareOfVoiceInsight](docs/ShareOfVoiceInsight.md)
@@ -445,6 +472,7 @@ Class | Method | HTTP request | Description
  - [SponsoredProductsLineItem](docs/SponsoredProductsLineItem.md)
  - [SponsoredProductsLineItemCreateRequestModel](docs/SponsoredProductsLineItemCreateRequestModel.md)
  - [SponsoredProductsLineItemUpdateRequestModel](docs/SponsoredProductsLineItemUpdateRequestModel.md)
+ - [StandardBiddingSettings](docs/StandardBiddingSettings.md)
  - [StatusResponse](docs/StatusResponse.md)
  - [StatusResponseResource](docs/StatusResponseResource.md)
  - [StoreInventoryDelete](docs/StoreInventoryDelete.md)
@@ -464,27 +492,28 @@ Class | Method | HTTP request | Description
  - [SyncRealTimePerformanceReport](docs/SyncRealTimePerformanceReport.md)
  - [SyncRealTimePerformanceReportRequest](docs/SyncRealTimePerformanceReportRequest.md)
  - [SyncRealTimePerformanceReportResource](docs/SyncRealTimePerformanceReportResource.md)
+ - [Target](docs/Target.md)
+ - [TargetListResponseWithPageMetadata](docs/TargetListResponseWithPageMetadata.md)
+ - [TargetResource](docs/TargetResource.md)
  - [TemplateVariableValue](docs/TemplateVariableValue.md)
  - [TextVariableValue](docs/TextVariableValue.md)
  - [UpdateBalanceModelV1](docs/UpdateBalanceModelV1.md)
  - [UpdateOffersRequest](docs/UpdateOffersRequest.md)
+ - [UpsertCreativesModel](docs/UpsertCreativesModel.md)
+ - [UpsertCreativesModelRequest](docs/UpsertCreativesModelRequest.md)
+ - [UpsertCreativesModelResource](docs/UpsertCreativesModelResource.md)
  - [ValueResourceAppendCampaignsRequestV1](docs/ValueResourceAppendCampaignsRequestV1.md)
  - [ValueResourceBalanceCampaignsV1](docs/ValueResourceBalanceCampaignsV1.md)
  - [ValueResourceBalanceHistoryChangeDataCaptureV1](docs/ValueResourceBalanceHistoryChangeDataCaptureV1.md)
  - [ValueResourceBrandIdSearchRequest](docs/ValueResourceBrandIdSearchRequest.md)
  - [ValueResourceCollectionInputOfRetailMediaSeller](docs/ValueResourceCollectionInputOfRetailMediaSeller.md)
  - [ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata](docs/ValueResourceCollectionOutcomeBalanceHistoryChangeDataCaptureV1AndMetadata.md)
- - [ValueResourceCollectionOutcomeDisplayAuctionMinBidResult](docs/ValueResourceCollectionOutcomeDisplayAuctionMinBidResult.md)
  - [ValueResourceCollectionOutcomeOfRetailMediaSeller](docs/ValueResourceCollectionOutcomeOfRetailMediaSeller.md)
  - [ValueResourceDeleteCampaignsRequestV1](docs/ValueResourceDeleteCampaignsRequestV1.md)
- - [ValueResourceDisplayAuctionMinBidRequest](docs/ValueResourceDisplayAuctionMinBidRequest.md)
- - [ValueResourceDisplayAuctionMinBidResult](docs/ValueResourceDisplayAuctionMinBidResult.md)
  - [ValueResourceInputAppendCampaignsRequestV1](docs/ValueResourceInputAppendCampaignsRequestV1.md)
  - [ValueResourceInputBrandIdSearchRequest](docs/ValueResourceInputBrandIdSearchRequest.md)
  - [ValueResourceInputDeleteCampaignsRequestV1](docs/ValueResourceInputDeleteCampaignsRequestV1.md)
- - [ValueResourceInputDisplayAuctionMinBidRequest](docs/ValueResourceInputDisplayAuctionMinBidRequest.md)
  - [ValueResourceInputLineItemBudgetCapOutHistoryRequest](docs/ValueResourceInputLineItemBudgetCapOutHistoryRequest.md)
- - [ValueResourceInputOfOrchestratorContractCampaignCreateModelV2](docs/ValueResourceInputOfOrchestratorContractCampaignCreateModelV2.md)
  - [ValueResourceInputOfRetailMediaBrandAccountCreationV2](docs/ValueResourceInputOfRetailMediaBrandAccountCreationV2.md)
  - [ValueResourceInputOfRetailMediaBrands](docs/ValueResourceInputOfRetailMediaBrands.md)
  - [ValueResourceInputOfRetailMediaSellerAccountCreationV2](docs/ValueResourceInputOfRetailMediaSellerAccountCreationV2.md)
@@ -496,7 +525,6 @@ Class | Method | HTTP request | Description
  - [ValueResourceInputUpdateOffersRequest](docs/ValueResourceInputUpdateOffersRequest.md)
  - [ValueResourceLineItemBudgetCapOutHistoryRequest](docs/ValueResourceLineItemBudgetCapOutHistoryRequest.md)
  - [ValueResourceLineItemBudgetCapOutHistoryResponse](docs/ValueResourceLineItemBudgetCapOutHistoryResponse.md)
- - [ValueResourceOfOrchestratorContractCampaignCreateModelV2](docs/ValueResourceOfOrchestratorContractCampaignCreateModelV2.md)
  - [ValueResourceOfRetailMediaBrandAccountCreationV2](docs/ValueResourceOfRetailMediaBrandAccountCreationV2.md)
  - [ValueResourceOfRetailMediaBrands](docs/ValueResourceOfRetailMediaBrands.md)
  - [ValueResourceOfRetailMediaSeller](docs/ValueResourceOfRetailMediaSeller.md)
