@@ -76,6 +76,7 @@ criteo_api_retailmedia_preview/model/custom_attribute.py
 criteo_api_retailmedia_preview/model/data_complete_through.py
 criteo_api_retailmedia_preview/model/delete_campaigns_request_v1.py
 criteo_api_retailmedia_preview/model/delete_entry.py
+criteo_api_retailmedia_preview/model/digital_shelf_intelligence_filters.py
 criteo_api_retailmedia_preview/model/digital_shelf_intelligence_insight.py
 criteo_api_retailmedia_preview/model/digital_shelf_intelligence_insight_request.py
 criteo_api_retailmedia_preview/model/digital_shelf_intelligence_insight_resource.py
@@ -267,6 +268,7 @@ criteo_api_retailmedia_preview/model/rm_events_v1.py
 criteo_api_retailmedia_preview/model/rmca_common_problem.py
 criteo_api_retailmedia_preview/model/sdk_api_rest_common_problem.py
 criteo_api_retailmedia_preview/model/set_product_buy_box_winners_request.py
+criteo_api_retailmedia_preview/model/share_of_voice_filters.py
 criteo_api_retailmedia_preview/model/share_of_voice_insight.py
 criteo_api_retailmedia_preview/model/share_of_voice_insight_request.py
 criteo_api_retailmedia_preview/model/share_of_voice_insight_resource.py
@@ -392,6 +394,7 @@ docs/CustomAttribute.md
 docs/DataCompleteThrough.md
 docs/DeleteCampaignsRequestV1.md
 docs/DeleteEntry.md
+docs/DigitalShelfIntelligenceFilters.md
 docs/DigitalShelfIntelligenceInsight.md
 docs/DigitalShelfIntelligenceInsightRequest.md
 docs/DigitalShelfIntelligenceInsightResource.md
@@ -585,6 +588,7 @@ docs/RmEventsV1.md
 docs/RmcaCommonProblem.md
 docs/SdkApiRestCommonProblem.md
 docs/SetProductBuyBoxWinnersRequest.md
+docs/ShareOfVoiceFilters.md
 docs/ShareOfVoiceInsight.md
 docs/ShareOfVoiceInsightRequest.md
 docs/ShareOfVoiceInsightResource.md

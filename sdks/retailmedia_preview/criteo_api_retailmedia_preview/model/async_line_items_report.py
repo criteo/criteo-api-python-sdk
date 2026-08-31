@@ -171,6 +171,7 @@ class AsyncLineItemsReport(ModelNormal):
             'WINRATE': "winRate",
             'SAMPLEDBIDSWON': "sampledBidsWon",
             'SAMPLEDBIDSPARTICIPATED': "sampledBidsParticipated",
+            'MAKEGOODSPEND': "makeGoodSpend",
         },
         ('report_type',): {
             'SUMMARY': "summary",

@@ -265,6 +265,43 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                     advertiser_id="advertiser_id_example",
                     contact_list={},
                     description="description_example",
+                    filter_based=FilterBasedCreateV1(
+                        algebra=FilterBasedAlgebraNodeV1(
+                            _and=[
+                                FilterBasedAlgebraNodeV1(),
+                            ],
+                            filter=FilterBasedDefinitionV1(
+                                partner_id=IntegerFilterV1(
+                                    operator="Unknown",
+                                    values=[
+                                        1,
+                                    ],
+                                ),
+                                product_category=ProductCategoryFilterV1(
+                                    operator="Unknown",
+                                    values=[
+                                        ProductCategoryV1(
+                                            id="id_example",
+                                            level=1,
+                                        ),
+                                    ],
+                                ),
+                                seller_id=LongFilterV1(
+                                    operator="Unknown",
+                                    values=[
+                                        1,
+                                    ],
+                                ),
+                            ),
+                            _not=FilterBasedAlgebraNodeV1(),
+                            _or=[
+                                FilterBasedAlgebraNodeV1(),
+                            ],
+                        ),
+                        country_codes=[
+                            "country_codes_example",
+                        ],
+                    ),
                     in_market=InMarketCreateV1(
                         brand_ids=[
                             "brand_ids_example",
@@ -1602,6 +1639,43 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 attributes=AudienceSegmentUpdateEntityV1(
                     description=NillableString(
                         value="value_example",
+                    ),
+                    filter_based=FilterBasedUpdateV1(
+                        algebra=FilterBasedAlgebraNodeV1(
+                            _and=[
+                                FilterBasedAlgebraNodeV1(),
+                            ],
+                            filter=FilterBasedDefinitionV1(
+                                partner_id=IntegerFilterV1(
+                                    operator="Unknown",
+                                    values=[
+                                        1,
+                                    ],
+                                ),
+                                product_category=ProductCategoryFilterV1(
+                                    operator="Unknown",
+                                    values=[
+                                        ProductCategoryV1(
+                                            id="id_example",
+                                            level=1,
+                                        ),
+                                    ],
+                                ),
+                                seller_id=LongFilterV1(
+                                    operator="Unknown",
+                                    values=[
+                                        1,
+                                    ],
+                                ),
+                            ),
+                            _not=FilterBasedAlgebraNodeV1(),
+                            _or=[
+                                FilterBasedAlgebraNodeV1(),
+                            ],
+                        ),
+                        country_codes=[
+                            "country_codes_example",
+                        ],
                     ),
                     in_market=InMarketUpdateV1(
                         brand_ids=[

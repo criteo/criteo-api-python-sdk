@@ -30,12 +30,14 @@ from criteo_api_marketingsolutions_preview.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_preview.model.filter_based_update_v1 import FilterBasedUpdateV1
     from criteo_api_marketingsolutions_preview.model.in_market_update_v1 import InMarketUpdateV1
     from criteo_api_marketingsolutions_preview.model.location_update_v1 import LocationUpdateV1
     from criteo_api_marketingsolutions_preview.model.lookalike_update_v1 import LookalikeUpdateV1
     from criteo_api_marketingsolutions_preview.model.nillable_string import NillableString
     from criteo_api_marketingsolutions_preview.model.prospecting_update_v1 import ProspectingUpdateV1
     from criteo_api_marketingsolutions_preview.model.retargeting_update_v1 import RetargetingUpdateV1
+    globals()['FilterBasedUpdateV1'] = FilterBasedUpdateV1
     globals()['InMarketUpdateV1'] = InMarketUpdateV1
     globals()['LocationUpdateV1'] = LocationUpdateV1
     globals()['LookalikeUpdateV1'] = LookalikeUpdateV1
@@ -98,6 +100,7 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
         lazy_import()
         return {
             'description': (NillableString,),  # noqa: E501
+            'filter_based': (FilterBasedUpdateV1,),  # noqa: E501
             'in_market': (InMarketUpdateV1,),  # noqa: E501
             'location': (LocationUpdateV1,),  # noqa: E501
             'lookalike': (LookalikeUpdateV1,),  # noqa: E501
@@ -113,6 +116,7 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
 
     attribute_map = {
         'description': 'description',  # noqa: E501
+        'filter_based': 'filterBased',  # noqa: E501
         'in_market': 'inMarket',  # noqa: E501
         'location': 'location',  # noqa: E501
         'lookalike': 'lookalike',  # noqa: E501
@@ -163,6 +167,7 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (NillableString): [optional]  # noqa: E501
+            filter_based (FilterBasedUpdateV1): [optional]  # noqa: E501
             in_market (InMarketUpdateV1): [optional]  # noqa: E501
             location (LocationUpdateV1): [optional]  # noqa: E501
             lookalike (LookalikeUpdateV1): [optional]  # noqa: E501
@@ -255,6 +260,7 @@ class AudienceSegmentUpdateEntityV1(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             description (NillableString): [optional]  # noqa: E501
+            filter_based (FilterBasedUpdateV1): [optional]  # noqa: E501
             in_market (InMarketUpdateV1): [optional]  # noqa: E501
             location (LocationUpdateV1): [optional]  # noqa: E501
             lookalike (LookalikeUpdateV1): [optional]  # noqa: E501

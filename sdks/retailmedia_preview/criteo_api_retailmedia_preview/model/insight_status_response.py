@@ -149,13 +149,13 @@ class InsightStatusResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (str, none_type): [optional]  # noqa: E501
-            expires_at (str, none_type): [optional]  # noqa: E501
-            file_size_bytes (int, none_type): [optional]  # noqa: E501
-            md5_check_sum (str, none_type): [optional]  # noqa: E501
-            message (str, none_type): [optional]  # noqa: E501
-            row_count (int, none_type): [optional]  # noqa: E501
-            status (str, none_type): Status of an async insight request. [optional]  # noqa: E501
+            created_at (str, none_type): When the insight report was created.. [optional]  # noqa: E501
+            expires_at (str, none_type): When the insight report expires and can no longer be downloaded.. [optional]  # noqa: E501
+            file_size_bytes (int, none_type): Size of the generated report file in bytes, when available.. [optional]  # noqa: E501
+            md5_check_sum (str, none_type): MD5 checksum of the generated report file, when available.. [optional]  # noqa: E501
+            message (str, none_type): Additional information about the report status, when available.. [optional]  # noqa: E501
+            row_count (int, none_type): Number of rows in the generated report, when available.. [optional]  # noqa: E501
+            status (str, none_type): Current status of the insight report.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,13 +241,13 @@ class InsightStatusResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            created_at (str, none_type): [optional]  # noqa: E501
-            expires_at (str, none_type): [optional]  # noqa: E501
-            file_size_bytes (int, none_type): [optional]  # noqa: E501
-            md5_check_sum (str, none_type): [optional]  # noqa: E501
-            message (str, none_type): [optional]  # noqa: E501
-            row_count (int, none_type): [optional]  # noqa: E501
-            status (str, none_type): Status of an async insight request. [optional]  # noqa: E501
+            created_at (str, none_type): When the insight report was created.. [optional]  # noqa: E501
+            expires_at (str, none_type): When the insight report expires and can no longer be downloaded.. [optional]  # noqa: E501
+            file_size_bytes (int, none_type): Size of the generated report file in bytes, when available.. [optional]  # noqa: E501
+            md5_check_sum (str, none_type): MD5 checksum of the generated report file, when available.. [optional]  # noqa: E501
+            message (str, none_type): Additional information about the report status, when available.. [optional]  # noqa: E501
+            row_count (int, none_type): Number of rows in the generated report, when available.. [optional]  # noqa: E501
+            status (str, none_type): Current status of the insight report.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
