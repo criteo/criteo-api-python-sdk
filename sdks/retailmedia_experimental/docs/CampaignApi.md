@@ -13,9 +13,10 @@ Method | HTTP request | Description
 [**create_creative**](CampaignApi.md#create_creative) | **POST** /experimental/retail-media/accounts/{account-id}/creatives | /experimental/retail-media/accounts/{account-id}/creatives
 [**create_line_item**](CampaignApi.md#create_line_item) | **POST** /experimental/retail-media/line-items | /experimental/retail-media/line-items
 [**create_preferred_line_item_by_campaign_id**](CampaignApi.md#create_preferred_line_item_by_campaign_id) | **POST** /experimental/retail-media/campaigns/{campaign-id}/preferred-line-items | /experimental/retail-media/campaigns/{campaign-id}/preferred-line-items
+[**create_targets_by_line_item_id**](CampaignApi.md#create_targets_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/targets/create | /experimental/retail-media/line-items/{line-item-id}/targets/create
 [**delete_campaigns_from_balance_v1**](CampaignApi.md#delete_campaigns_from_balance_v1) | **POST** /experimental/retail-media/balances/{balanceId}/campaigns/delete | /experimental/retail-media/balances/{balanceId}/campaigns/delete
 [**delete_product_button_by_line_item_and_product_button_id**](CampaignApi.md#delete_product_button_by_line_item_and_product_button_id) | **DELETE** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
-[**delete_promoted_products**](CampaignApi.md#delete_promoted_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/delete | /experimental/retail-media/line-items/{line-item-id}/products/delete
+[**delete_products**](CampaignApi.md#delete_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/delete | /experimental/retail-media/line-items/{line-item-id}/products/delete
 [**fetch_promoted_products**](CampaignApi.md#fetch_promoted_products) | **GET** /experimental/retail-media/line-items/{line-item-id}/products | /experimental/retail-media/line-items/{line-item-id}/products
 [**get_auction_line_item**](CampaignApi.md#get_auction_line_item) | **GET** /experimental/retail-media/auction-line-items/{lineItemId} | /experimental/retail-media/auction-line-items/{lineItemId}
 [**get_auction_line_items_by_campaign**](CampaignApi.md#get_auction_line_items_by_campaign) | **GET** /experimental/retail-media/campaigns/{campaignId}/auction-line-items | /experimental/retail-media/campaigns/{campaignId}/auction-line-items
@@ -1045,6 +1046,125 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_targets_by_line_item_id**
+> TargetListResponse create_targets_by_line_item_id(line_item_id)
+
+/experimental/retail-media/line-items/{line-item-id}/targets/create
+
+Creates a given target
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.create_target_request_model_list_request import CreateTargetRequestModelListRequest
+from criteo_api_retailmedia_experimental.model.target_list_response import TargetListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | Unique identifier for the line item
+    create_target_request_model_list_request = CreateTargetRequestModelListRequest(
+        data=[
+            CreateTargetRequestModelResource(
+                attributes=CreateTargetRequestModel(
+                    bid_multiplier=3.14,
+                    category_target_details=CategoryTargetDetails(
+                        category_id="category_id_example",
+                        include_children=True,
+                    ),
+                    manual_keyword_target_details=ManualKeywordTargetDetails(
+                        keyword_input="keyword_input_example",
+                        match_type="Broad",
+                    ),
+                    negative=True,
+                    page_type_target_details=PageTypeTargetDetails(
+                        page_type="Unknown",
+                    ),
+                    target_type="Unknown",
+                ),
+                type="type_example",
+            ),
+        ],
+    ) # CreateTargetRequestModelListRequest | Target to configure on the line item (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}/targets/create
+        api_response = api_instance.create_targets_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->create_targets_by_line_item_id: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}/targets/create
+        api_response = api_instance.create_targets_by_line_item_id(line_item_id, create_target_request_model_list_request=create_target_request_model_list_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->create_targets_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| Unique identifier for the line item |
+ **create_target_request_model_list_request** | [**CreateTargetRequestModelListRequest**](CreateTargetRequestModelListRequest.md)| Target to configure on the line item | [optional]
+
+### Return type
+
+[**TargetListResponse**](TargetListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_campaigns_from_balance_v1**
 > ValueResourceOutcomeBalanceCampaignsV1 delete_campaigns_from_balance_v1(balance_id, value_resource_input_delete_campaigns_request_v1)
 
@@ -1229,12 +1349,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_promoted_products**
-> delete_promoted_products(line_item_id)
+# **delete_products**
+> Outcome delete_products(line_item_id, delete_product_model_request)
 
 /experimental/retail-media/line-items/{line-item-id}/products/delete
 
-Remove a collection of promoted products from a line item
+Delete products from a line item.
 
 ### Example
 
@@ -1245,7 +1365,8 @@ Remove a collection of promoted products from a line item
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
+from criteo_api_retailmedia_experimental.model.outcome import Outcome
+from criteo_api_retailmedia_experimental.model.delete_product_model_request import DeleteProductModelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1274,35 +1395,26 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | ID of the line item
-    promoted_product_resource_collection_input = PromotedProductResourceCollectionInput(
-        data=[
-            PromotedProductResource(
-                attributes=PromotedProduct(
-                    bid_override=3.14,
-                    id="id_example",
-                    status=LineItemProductStatus("unknown"),
-                ),
-                id="id_example",
-                type="type_example",
+    line_item_id = "line-item-id_example" # str | The line item id.
+    delete_product_model_request = DeleteProductModelRequest(
+        data=DeleteProductModelResource(
+            attributes=DeleteProductModel(
+                product_ids=[
+                    "product_ids_example",
+                ],
+                product_type="DisplayProduct",
             ),
-        ],
-    ) # PromotedProductResourceCollectionInput | Request body whose {data} contains an array of promoted products. (optional)
+            type="type_example",
+        ),
+    ) # DeleteProductModelRequest | The products to delete.
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}/products/delete
-        api_instance.delete_promoted_products(line_item_id)
+        api_response = api_instance.delete_products(line_item_id, delete_product_model_request)
+        pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CampaignApi->delete_promoted_products: %s\n" % e)
-
-    # example passing only required values which don't have defaults set
-    # and optional values
-    try:
-        # /experimental/retail-media/line-items/{line-item-id}/products/delete
-        api_instance.delete_promoted_products(line_item_id, promoted_product_resource_collection_input=promoted_product_resource_collection_input)
-    except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CampaignApi->delete_promoted_products: %s\n" % e)
+        print("Exception when calling CampaignApi->delete_products: %s\n" % e)
 ```
 
 
@@ -1310,12 +1422,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| ID of the line item |
- **promoted_product_resource_collection_input** | [**PromotedProductResourceCollectionInput**](PromotedProductResourceCollectionInput.md)| Request body whose {data} contains an array of promoted products. | [optional]
+ **line_item_id** | **str**| The line item id. |
+ **delete_product_model_request** | [**DeleteProductModelRequest**](DeleteProductModelRequest.md)| The products to delete. |
 
 ### Return type
 
-void (empty response body)
+[**Outcome**](Outcome.md)
 
 ### Authorization
 
@@ -1324,14 +1436,14 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Promoted products removed from the line item |  -  |
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

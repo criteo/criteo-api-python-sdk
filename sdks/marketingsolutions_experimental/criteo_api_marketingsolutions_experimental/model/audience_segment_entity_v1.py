@@ -32,6 +32,7 @@ from criteo_api_marketingsolutions_experimental.exceptions import ApiAttributeEr
 def lazy_import():
     from criteo_api_marketingsolutions_experimental.model.behavioral_v1 import BehavioralV1
     from criteo_api_marketingsolutions_experimental.model.contact_list_v1 import ContactListV1
+    from criteo_api_marketingsolutions_experimental.model.filter_based_v1 import FilterBasedV1
     from criteo_api_marketingsolutions_experimental.model.in_market_v1 import InMarketV1
     from criteo_api_marketingsolutions_experimental.model.location_v1 import LocationV1
     from criteo_api_marketingsolutions_experimental.model.lookalike_v1 import LookalikeV1
@@ -39,6 +40,7 @@ def lazy_import():
     from criteo_api_marketingsolutions_experimental.model.retargeting_v1 import RetargetingV1
     globals()['BehavioralV1'] = BehavioralV1
     globals()['ContactListV1'] = ContactListV1
+    globals()['FilterBasedV1'] = FilterBasedV1
     globals()['InMarketV1'] = InMarketV1
     globals()['LocationV1'] = LocationV1
     globals()['LookalikeV1'] = LookalikeV1
@@ -115,6 +117,7 @@ class AudienceSegmentEntityV1(ModelNormal):
             'contact_list': (ContactListV1,),  # noqa: E501
             'created_at': (datetime, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'filter_based': (FilterBasedV1,),  # noqa: E501
             'in_market': (InMarketV1,),  # noqa: E501
             'location': (LocationV1,),  # noqa: E501
             'lookalike': (LookalikeV1,),  # noqa: E501
@@ -136,6 +139,7 @@ class AudienceSegmentEntityV1(ModelNormal):
         'contact_list': 'contactList',  # noqa: E501
         'created_at': 'createdAt',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'filter_based': 'filterBased',  # noqa: E501
         'in_market': 'inMarket',  # noqa: E501
         'location': 'location',  # noqa: E501
         'lookalike': 'lookalike',  # noqa: E501
@@ -192,6 +196,7 @@ class AudienceSegmentEntityV1(ModelNormal):
             contact_list (ContactListV1): [optional]  # noqa: E501
             created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            filter_based (FilterBasedV1): [optional]  # noqa: E501
             in_market (InMarketV1): [optional]  # noqa: E501
             location (LocationV1): [optional]  # noqa: E501
             lookalike (LookalikeV1): [optional]  # noqa: E501
@@ -290,6 +295,7 @@ class AudienceSegmentEntityV1(ModelNormal):
             contact_list (ContactListV1): [optional]  # noqa: E501
             created_at (datetime, none_type): ISO-8601 timestamp in UTC of segment creation (read-only). [optional]  # noqa: E501
             description (str, none_type): Description of the segment. [optional]  # noqa: E501
+            filter_based (FilterBasedV1): [optional]  # noqa: E501
             in_market (InMarketV1): [optional]  # noqa: E501
             location (LocationV1): [optional]  # noqa: E501
             lookalike (LookalikeV1): [optional]  # noqa: E501

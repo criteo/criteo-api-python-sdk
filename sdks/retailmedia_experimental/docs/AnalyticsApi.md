@@ -18,8 +18,8 @@ Method | HTTP request | Description
 [**generate_sync_real_time_performance_report**](AnalyticsApi.md#generate_sync_real_time_performance_report) | **POST** /experimental/retail-media/reports/sync/real-time-performance | /experimental/retail-media/reports/sync/real-time-performance
 [**get_async_export_output**](AnalyticsApi.md#get_async_export_output) | **GET** /experimental/retail-media/reports/{reportId}/output | /experimental/retail-media/reports/{reportId}/output
 [**get_async_export_status**](AnalyticsApi.md#get_async_export_status) | **GET** /experimental/retail-media/reports/{reportId}/status | /experimental/retail-media/reports/{reportId}/status
-[**get_insight_report_output**](AnalyticsApi.md#get_insight_report_output) | **GET** /experimental/retail-media/insights/{insightId}/output | /experimental/retail-media/insights/{insightId}/output
-[**get_insight_report_status**](AnalyticsApi.md#get_insight_report_status) | **GET** /experimental/retail-media/insights/{insightId}/status | /experimental/retail-media/insights/{insightId}/status
+[**get_insight_report_output**](AnalyticsApi.md#get_insight_report_output) | **GET** /experimental/retail-media/insights/{insight-id}/output | /experimental/retail-media/insights/{insight-id}/output
+[**get_insight_report_status**](AnalyticsApi.md#get_insight_report_status) | **GET** /experimental/retail-media/insights/{insight-id}/status | /experimental/retail-media/insights/{insight-id}/status
 
 
 # **generate_async_accounts_report_v2**
@@ -753,7 +753,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/insights/digital-shelf-intelligence
 
-Generate a Digital Shelf Intelligence insight
+Requests a Digital Shelf Intelligence insight report. This is an asynchronous, non-transactional operation:  it does not return the analytic data. It enqueues an export job and returns the created insight  report, whose id is then used to poll the insight status endpoint until the report is ready and to  download the result from the insight output endpoint.
 
 ### Example
 
@@ -799,29 +799,31 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
             attributes=DigitalShelfIntelligenceInsight(
                 account_id="account_id_example",
                 aggregation_level="brand",
-                brand_ids=[
-                    "brand_ids_example",
-                ],
-                categories=[
-                    "categories_example",
-                ],
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date="end_date_example",
+                filters=DigitalShelfIntelligenceFilters(
+                    brand_ids=[
+                        "brand_ids_example",
+                    ],
+                    categories=[
+                        "categories_example",
+                    ],
+                    retailer_ids=[
+                        "retailer_ids_example",
+                    ],
+                    sku_ids=[
+                        SkuFilter(
+                            retailer_id="retailer_id_example",
+                            retailer_sku_ids=[
+                                "retailer_sku_ids_example",
+                            ],
+                        ),
+                    ],
+                ),
                 format="json-compact",
                 metrics=[
                     "considerationIndex",
                 ],
-                retailer_ids=[
-                    "retailer_ids_example",
-                ],
-                sku_ids=[
-                    SkuFilter(
-                        retailer_id="retailer_id_example",
-                        retailer_sku_ids=[
-                            "retailer_sku_ids_example",
-                        ],
-                    ),
-                ],
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                start_date="start_date_example",
             ),
             type="type_example",
         ),
@@ -870,7 +872,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/insights/share-of-voice
 
-Generate a share of voice insight
+Requests a Share of Voice insight report. This is an asynchronous, non-transactional operation:  it does not return the analytic data. It enqueues an export job and returns the created insight  report, whose id is then used to poll the insight status endpoint until the report is ready and to  download the result from the insight output endpoint.
 
 ### Example
 
@@ -915,41 +917,43 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
         data=ShareOfVoiceInsightResource(
             attributes=ShareOfVoiceInsight(
                 account_id="account_id_example",
-                account_ids=[
-                    "account_ids_example",
-                ],
-                activation_platforms=[
-                    "commerceMax",
-                ],
                 aggregation_level="category",
-                brand_ids=[
-                    "brand_ids_example",
-                ],
-                budget_models=[
-                    "criteoBudget",
-                ],
-                campaign_type="all",
                 dimensions=[
                     "date",
                 ],
-                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                end_date="end_date_example",
+                filters=ShareOfVoiceFilters(
+                    account_ids=[
+                        "account_ids_example",
+                    ],
+                    activation_platforms=[
+                        "commerceMax",
+                    ],
+                    brand_ids=[
+                        "brand_ids_example",
+                    ],
+                    budget_models=[
+                        "criteoBudget",
+                    ],
+                    campaign_type="all",
+                    keywords=[
+                        "keywords_example",
+                    ],
+                    keyword_types=[
+                        "unknown",
+                    ],
+                    retailer_ids=[
+                        "retailer_ids_example",
+                    ],
+                    served_categories=[
+                        "served_categories_example",
+                    ],
+                ),
                 format="json-compact",
-                keywords=[
-                    "keywords_example",
-                ],
-                keyword_types=[
-                    "unknown",
-                ],
                 metrics=[
                     "impressions",
                 ],
-                retailer_ids=[
-                    "retailer_ids_example",
-                ],
-                served_categories=[
-                    "served_categories_example",
-                ],
-                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                start_date="start_date_example",
             ),
             type="type_example",
         ),
@@ -1614,9 +1618,9 @@ Name | Type | Description  | Notes
 # **get_insight_report_output**
 > file_type get_insight_report_output(insight_id)
 
-/experimental/retail-media/insights/{insightId}/output
+/experimental/retail-media/insights/{insight-id}/output
 
-Returns the output of an async insight
+Downloads the file output of a completed insight report. The report must have reached the `Success`  status; otherwise an error is returned. Check readiness first with the insight status endpoint.
 
 ### Example
 
@@ -1655,11 +1659,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    insight_id = "insightId_example" # str | The ID of the asynchronous insight report. Must be a valid ID format.
+    insight_id = "insight-id_example" # str | The ID of the asynchronous insight report. Must be a valid ID format.
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/insights/{insightId}/output
+        # /experimental/retail-media/insights/{insight-id}/output
         api_response = api_instance.get_insight_report_output(insight_id)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
@@ -1684,7 +1688,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 
 ### HTTP response details
@@ -1698,9 +1702,9 @@ Name | Type | Description  | Notes
 # **get_insight_report_status**
 > AsyncInsightResponse get_insight_report_status(insight_id)
 
-/experimental/retail-media/insights/{insightId}/status
+/experimental/retail-media/insights/{insight-id}/status
 
-Returns the status of an async insight
+Returns the current status of an asynchronously generated insight report. Poll this endpoint until the  status is `Success`, then download the report from the insight output endpoint.
 
 ### Example
 
@@ -1740,11 +1744,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = analytics_api.AnalyticsApi(api_client)
-    insight_id = "insightId_example" # str | The ID of the asynchronous insight report. Must be a valid ID format.
+    insight_id = "insight-id_example" # str | The ID of the asynchronous insight report. Must be a valid ID format.
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/insights/{insightId}/status
+        # /experimental/retail-media/insights/{insight-id}/status
         api_response = api_instance.get_insight_report_status(insight_id)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:

@@ -796,7 +796,7 @@ class AnalyticsApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/insights/{insightId}/output',
+                'endpoint_path': '/experimental/retail-media/insights/{insight-id}/output',
                 'operation_id': 'get_insight_report_output',
                 'http_method': 'GET',
                 'servers': None,
@@ -825,7 +825,7 @@ class AnalyticsApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'insight_id': 'insightId',
+                    'insight_id': 'insight-id',
                 },
                 'location_map': {
                     'insight_id': 'path',
@@ -835,7 +835,7 @@ class AnalyticsApi(object):
             },
             headers_map={
                 'accept': [
-                    'application/json'
+                    'text/plain'
                 ],
                 'content_type': [],
             },
@@ -848,7 +848,7 @@ class AnalyticsApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/insights/{insightId}/status',
+                'endpoint_path': '/experimental/retail-media/insights/{insight-id}/status',
                 'operation_id': 'get_insight_report_status',
                 'http_method': 'GET',
                 'servers': None,
@@ -877,7 +877,7 @@ class AnalyticsApi(object):
                         (str,),
                 },
                 'attribute_map': {
-                    'insight_id': 'insightId',
+                    'insight_id': 'insight-id',
                 },
                 'location_map': {
                     'insight_id': 'path',
@@ -1399,7 +1399,7 @@ class AnalyticsApi(object):
     ):
         """/experimental/retail-media/insights/digital-shelf-intelligence  # noqa: E501
 
-        Generate a Digital Shelf Intelligence insight  # noqa: E501
+        Requests a Digital Shelf Intelligence insight report. This is an asynchronous, non-transactional operation:  it does not return the analytic data. It enqueues an export job and returns the created insight  report, whose id is then used to poll the insight status endpoint until the report is ready and to  download the result from the insight output endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1482,7 +1482,7 @@ class AnalyticsApi(object):
     ):
         """/experimental/retail-media/insights/share-of-voice  # noqa: E501
 
-        Generate a share of voice insight  # noqa: E501
+        Requests a Share of Voice insight report. This is an asynchronous, non-transactional operation:  it does not return the analytic data. It enqueues an export job and returns the created insight  report, whose id is then used to poll the insight status endpoint until the report is ready and to  download the result from the insight output endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2061,9 +2061,9 @@ class AnalyticsApi(object):
         insight_id,
         **kwargs
     ):
-        """/experimental/retail-media/insights/{insightId}/output  # noqa: E501
+        """/experimental/retail-media/insights/{insight-id}/output  # noqa: E501
 
-        Returns the output of an async insight  # noqa: E501
+        Downloads the file output of a completed insight report. The report must have reached the `Success`  status; otherwise an error is returned. Check readiness first with the insight status endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2144,9 +2144,9 @@ class AnalyticsApi(object):
         insight_id,
         **kwargs
     ):
-        """/experimental/retail-media/insights/{insightId}/status  # noqa: E501
+        """/experimental/retail-media/insights/{insight-id}/status  # noqa: E501
 
-        Returns the status of an async insight  # noqa: E501
+        Returns the current status of an asynchronously generated insight report. Poll this endpoint until the  status is `Success`, then download the report from the insight output endpoint.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

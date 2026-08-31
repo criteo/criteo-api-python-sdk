@@ -30,8 +30,8 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.sku_filter import SkuFilter
-    globals()['SkuFilter'] = SkuFilter
+    from criteo_api_retailmedia_experimental.model.digital_shelf_intelligence_filters import DigitalShelfIntelligenceFilters
+    globals()['DigitalShelfIntelligenceFilters'] = DigitalShelfIntelligenceFilters
 
 
 class DigitalShelfIntelligenceInsight(ModelNormal):
@@ -105,14 +105,11 @@ class DigitalShelfIntelligenceInsight(ModelNormal):
         return {
             'account_id': (str,),  # noqa: E501
             'aggregation_level': (str,),  # noqa: E501
-            'end_date': (datetime,),  # noqa: E501
+            'end_date': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
-            'brand_ids': ([str], none_type,),  # noqa: E501
-            'categories': ([str], none_type,),  # noqa: E501
+            'start_date': (str,),  # noqa: E501
+            'filters': (DigitalShelfIntelligenceFilters,),  # noqa: E501
             'format': (str,),  # noqa: E501
-            'retailer_ids': ([str], none_type,),  # noqa: E501
-            'sku_ids': ([SkuFilter], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -126,11 +123,8 @@ class DigitalShelfIntelligenceInsight(ModelNormal):
         'end_date': 'endDate',  # noqa: E501
         'metrics': 'metrics',  # noqa: E501
         'start_date': 'startDate',  # noqa: E501
-        'brand_ids': 'brandIds',  # noqa: E501
-        'categories': 'categories',  # noqa: E501
+        'filters': 'filters',  # noqa: E501
         'format': 'format',  # noqa: E501
-        'retailer_ids': 'retailerIds',  # noqa: E501
-        'sku_ids': 'skuIds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -144,11 +138,11 @@ class DigitalShelfIntelligenceInsight(ModelNormal):
         """DigitalShelfIntelligenceInsight - a model defined in OpenAPI
 
         Args:
-            account_id (str):
-            aggregation_level (str):
-            end_date (datetime):
-            metrics ([str]):
-            start_date (datetime):
+            account_id (str): Account ID the insight report is generated for.
+            aggregation_level (str): Aggregation level of the report. Allowed values: `brand`, `sku`.
+            end_date (str): End date of the report (inclusive), in ISO 8601 format (YYYY-MM-DD).  Adjusted to the Sunday of the week containing the provided date.
+            metrics ([str]): Metrics to report on.
+            start_date (str): Start date of the report (inclusive), in ISO 8601 format (YYYY-MM-DD).  Adjusted to the Monday of the week containing the provided date.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -181,11 +175,8 @@ class DigitalShelfIntelligenceInsight(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([str], none_type): [optional]  # noqa: E501
-            categories ([str], none_type): [optional]  # noqa: E501
-            format (str): [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            retailer_ids ([str], none_type): [optional]  # noqa: E501
-            sku_ids ([SkuFilter], none_type): [optional]  # noqa: E501
+            filters (DigitalShelfIntelligenceFilters): [optional]  # noqa: E501
+            format (str): Output format of the report. Allowed values: `json`, `json-compact`, `json-newline`, `csv`. Defaults to `json-compact`.. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -246,11 +237,11 @@ class DigitalShelfIntelligenceInsight(ModelNormal):
         """DigitalShelfIntelligenceInsight - a model defined in OpenAPI
 
         Args:
-            account_id (str):
-            aggregation_level (str):
-            end_date (datetime):
-            metrics ([str]):
-            start_date (datetime):
+            account_id (str): Account ID the insight report is generated for.
+            aggregation_level (str): Aggregation level of the report. Allowed values: `brand`, `sku`.
+            end_date (str): End date of the report (inclusive), in ISO 8601 format (YYYY-MM-DD).  Adjusted to the Sunday of the week containing the provided date.
+            metrics ([str]): Metrics to report on.
+            start_date (str): Start date of the report (inclusive), in ISO 8601 format (YYYY-MM-DD).  Adjusted to the Monday of the week containing the provided date.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -283,11 +274,8 @@ class DigitalShelfIntelligenceInsight(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            brand_ids ([str], none_type): [optional]  # noqa: E501
-            categories ([str], none_type): [optional]  # noqa: E501
-            format (str): [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            retailer_ids ([str], none_type): [optional]  # noqa: E501
-            sku_ids ([SkuFilter], none_type): [optional]  # noqa: E501
+            filters (DigitalShelfIntelligenceFilters): [optional]  # noqa: E501
+            format (str): Output format of the report. Allowed values: `json`, `json-compact`, `json-newline`, `csv`. Defaults to `json-compact`.. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

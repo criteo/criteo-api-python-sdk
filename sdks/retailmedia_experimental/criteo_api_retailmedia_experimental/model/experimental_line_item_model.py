@@ -63,14 +63,14 @@ class ExperimentalLineItemModel(ModelNormal):
     """
 
     allowed_values = {
-        ('financial_status',): {
+        ('funding_status',): {
             'None': None,
             'UNKNOWN': "Unknown",
-            'ACTIVE': "Active",
-            'BUDGETHITDAILY': "BudgetHitDaily",
-            'BUDGETHITMONTHLY': "BudgetHitMonthly",
-            'BUDGETHITTOTAL': "BudgetHitTotal",
-            'BALANCEHIT': "BalanceHit",
+            'FUNDED': "Funded",
+            'DAILYBUDGETREACHED': "DailyBudgetReached",
+            'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
+            'TOTALBUDGETREACHED': "TotalBudgetReached",
+            'BALANCEEXHAUSTED': "BalanceExhausted",
         },
         ('type',): {
             'None': None,
@@ -102,7 +102,7 @@ class ExperimentalLineItemModel(ModelNormal):
             'campaign_id': (str, none_type,),  # noqa: E501
             'conquesting_settings': (ExperimentalConquestingSettingsModel,),  # noqa: E501
             'effective_flight_dates': (ExperimentalFlightDatesModel,),  # noqa: E501
-            'financial_status': (str, none_type,),  # noqa: E501
+            'funding_status': (str, none_type,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
@@ -121,7 +121,7 @@ class ExperimentalLineItemModel(ModelNormal):
         'campaign_id': 'campaignId',  # noqa: E501
         'conquesting_settings': 'conquestingSettings',  # noqa: E501
         'effective_flight_dates': 'effectiveFlightDates',  # noqa: E501
-        'financial_status': 'financialStatus',  # noqa: E501
+        'funding_status': 'fundingStatus',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -175,8 +175,8 @@ class ExperimentalLineItemModel(ModelNormal):
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ExperimentalConquestingSettingsModel): [optional]  # noqa: E501
             effective_flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
-            financial_status (str, none_type): The financial status of the line item.. [optional]  # noqa: E501
-            is_paused (bool, none_type): Whether the line item should be paused or unpaused.. [optional]  # noqa: E501
+            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
+            is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
@@ -271,8 +271,8 @@ class ExperimentalLineItemModel(ModelNormal):
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ExperimentalConquestingSettingsModel): [optional]  # noqa: E501
             effective_flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
-            financial_status (str, none_type): The financial status of the line item.. [optional]  # noqa: E501
-            is_paused (bool, none_type): Whether the line item should be paused or unpaused.. [optional]  # noqa: E501
+            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
+            is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalOnsiteDisplayLineItemDetails): [optional]  # noqa: E501

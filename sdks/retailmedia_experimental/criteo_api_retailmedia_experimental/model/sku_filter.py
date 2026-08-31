@@ -103,8 +103,8 @@ class SkuFilter(ModelNormal):
         """SkuFilter - a model defined in OpenAPI
 
         Args:
-            retailer_id (str):
-            retailer_sku_ids ([str]):
+            retailer_id (str): Retailer the SKUs belong to.
+            retailer_sku_ids ([str]): Retailer SKU IDs to filter on.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -194,8 +194,8 @@ class SkuFilter(ModelNormal):
         """SkuFilter - a model defined in OpenAPI
 
         Args:
-            retailer_id (str):
-            retailer_sku_ids ([str]):
+            retailer_id (str): Retailer the SKUs belong to.
+            retailer_sku_ids ([str]): Retailer SKU IDs to filter on.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

@@ -6,7 +6,7 @@ The line item settings to change. Omitted fields are left unchanged.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **flight_dates** | [**ExperimentalFlightDatesModel**](ExperimentalFlightDatesModel.md) |  | [optional] 
-**is_paused** | **bool, none_type** | Whether the line item should be paused or unpaused. | [optional] 
+**is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **name** | **str, none_type** | The name of the line item. | [optional] 
 **onsite_display_details** | [**ExperimentalUpdateOnsiteDisplayLineItemDetails**](ExperimentalUpdateOnsiteDisplayLineItemDetails.md) |  | [optional] 
 **serve_to_opt_out_user** | **bool, none_type** | Whether to serve ads to users who have opted out of personalization. | [optional] 

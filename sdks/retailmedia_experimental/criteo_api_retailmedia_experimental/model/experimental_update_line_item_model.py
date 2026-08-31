@@ -144,7 +144,7 @@ class ExperimentalUpdateLineItemModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
-            is_paused (bool, none_type): Whether the line item should be paused or unpaused.. [optional]  # noqa: E501
+            is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalUpdateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
@@ -234,7 +234,7 @@ class ExperimentalUpdateLineItemModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
-            is_paused (bool, none_type): Whether the line item should be paused or unpaused.. [optional]  # noqa: E501
+            is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalUpdateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501

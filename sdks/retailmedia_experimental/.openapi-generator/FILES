@@ -92,6 +92,9 @@ criteo_api_retailmedia_experimental/model/color_variable_value.py
 criteo_api_retailmedia_experimental/model/common_problem.py
 criteo_api_retailmedia_experimental/model/conquesting_settings.py
 criteo_api_retailmedia_experimental/model/cpm_bidding_settings.py
+criteo_api_retailmedia_experimental/model/create_target_request_model.py
+criteo_api_retailmedia_experimental/model/create_target_request_model_list_request.py
+criteo_api_retailmedia_experimental/model/create_target_request_model_resource.py
 criteo_api_retailmedia_experimental/model/creative2.py
 criteo_api_retailmedia_experimental/model/creative2_response.py
 criteo_api_retailmedia_experimental/model/creative_create_model2.py
@@ -109,9 +112,13 @@ criteo_api_retailmedia_experimental/model/custom_attribute.py
 criteo_api_retailmedia_experimental/model/data_complete_through.py
 criteo_api_retailmedia_experimental/model/delete_campaigns_request_v1.py
 criteo_api_retailmedia_experimental/model/delete_entry.py
+criteo_api_retailmedia_experimental/model/delete_product_model.py
+criteo_api_retailmedia_experimental/model/delete_product_model_request.py
+criteo_api_retailmedia_experimental/model/delete_product_model_resource.py
 criteo_api_retailmedia_experimental/model/demand_search.py
 criteo_api_retailmedia_experimental/model/demand_search_request.py
 criteo_api_retailmedia_experimental/model/demand_search_resource.py
+criteo_api_retailmedia_experimental/model/digital_shelf_intelligence_filters.py
 criteo_api_retailmedia_experimental/model/digital_shelf_intelligence_insight.py
 criteo_api_retailmedia_experimental/model/digital_shelf_intelligence_insight_request.py
 criteo_api_retailmedia_experimental/model/digital_shelf_intelligence_insight_resource.py
@@ -340,6 +347,7 @@ criteo_api_retailmedia_experimental/model/schedule_details_create_model.py
 criteo_api_retailmedia_experimental/model/schedule_details_model.py
 criteo_api_retailmedia_experimental/model/sdk_api_rest_common_problem.py
 criteo_api_retailmedia_experimental/model/set_product_buy_box_winners_request.py
+criteo_api_retailmedia_experimental/model/share_of_voice_filters.py
 criteo_api_retailmedia_experimental/model/share_of_voice_insight.py
 criteo_api_retailmedia_experimental/model/share_of_voice_insight_request.py
 criteo_api_retailmedia_experimental/model/share_of_voice_insight_resource.py
@@ -370,6 +378,7 @@ criteo_api_retailmedia_experimental/model/sync_real_time_performance_report.py
 criteo_api_retailmedia_experimental/model/sync_real_time_performance_report_request.py
 criteo_api_retailmedia_experimental/model/sync_real_time_performance_report_resource.py
 criteo_api_retailmedia_experimental/model/target.py
+criteo_api_retailmedia_experimental/model/target_list_response.py
 criteo_api_retailmedia_experimental/model/target_list_response_with_page_metadata.py
 criteo_api_retailmedia_experimental/model/target_resource.py
 criteo_api_retailmedia_experimental/model/template_variable_value.py
@@ -493,6 +502,9 @@ docs/ColorVariableValue.md
 docs/CommonProblem.md
 docs/ConquestingSettings.md
 docs/CpmBiddingSettings.md
+docs/CreateTargetRequestModel.md
+docs/CreateTargetRequestModelListRequest.md
+docs/CreateTargetRequestModelResource.md
 docs/Creative2.md
 docs/Creative2Response.md
 docs/CreativeCreateModel2.md
@@ -510,9 +522,13 @@ docs/CustomAttribute.md
 docs/DataCompleteThrough.md
 docs/DeleteCampaignsRequestV1.md
 docs/DeleteEntry.md
+docs/DeleteProductModel.md
+docs/DeleteProductModelRequest.md
+docs/DeleteProductModelResource.md
 docs/DemandSearch.md
 docs/DemandSearchRequest.md
 docs/DemandSearchResource.md
+docs/DigitalShelfIntelligenceFilters.md
 docs/DigitalShelfIntelligenceInsight.md
 docs/DigitalShelfIntelligenceInsightRequest.md
 docs/DigitalShelfIntelligenceInsightResource.md
@@ -743,6 +759,7 @@ docs/ScheduleDetailsCreateModel.md
 docs/ScheduleDetailsModel.md
 docs/SdkApiRestCommonProblem.md
 docs/SetProductBuyBoxWinnersRequest.md
+docs/ShareOfVoiceFilters.md
 docs/ShareOfVoiceInsight.md
 docs/ShareOfVoiceInsightRequest.md
 docs/ShareOfVoiceInsightResource.md
@@ -773,6 +790,7 @@ docs/SyncRealTimePerformanceReport.md
 docs/SyncRealTimePerformanceReportRequest.md
 docs/SyncRealTimePerformanceReportResource.md
 docs/Target.md
+docs/TargetListResponse.md
 docs/TargetListResponseWithPageMetadata.md
 docs/TargetResource.md
 docs/TemplateVariableValue.md

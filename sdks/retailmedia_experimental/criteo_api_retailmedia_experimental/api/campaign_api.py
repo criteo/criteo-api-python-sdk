@@ -26,10 +26,12 @@ from criteo_api_retailmedia_experimental.model.add_products_result_model_respons
 from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
 from criteo_api_retailmedia_experimental.model.campaign_create_model_request import CampaignCreateModelRequest
 from criteo_api_retailmedia_experimental.model.campaign_response_model_response import CampaignResponseModelResponse
+from criteo_api_retailmedia_experimental.model.create_target_request_model_list_request import CreateTargetRequestModelListRequest
 from criteo_api_retailmedia_experimental.model.creative2_response import Creative2Response
 from criteo_api_retailmedia_experimental.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_experimental.model.creative_update_model2 import CreativeUpdateModel2
 from criteo_api_retailmedia_experimental.model.creatives_model_response import CreativesModelResponse
+from criteo_api_retailmedia_experimental.model.delete_product_model_request import DeleteProductModelRequest
 from criteo_api_retailmedia_experimental.model.demand_search_request import DemandSearchRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
@@ -41,6 +43,7 @@ from criteo_api_retailmedia_experimental.model.experimental_create_line_item_mod
 from criteo_api_retailmedia_experimental.model.experimental_line_item_model_response import ExperimentalLineItemModelResponse
 from criteo_api_retailmedia_experimental.model.experimental_update_line_item_model_request import ExperimentalUpdateLineItemModelRequest
 from criteo_api_retailmedia_experimental.model.line_item_list_response_with_pagination import LineItemListResponseWithPagination
+from criteo_api_retailmedia_experimental.model.outcome import Outcome
 from criteo_api_retailmedia_experimental.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
 from criteo_api_retailmedia_experimental.model.preferred_line_item_update_model_v2_request import PreferredLineItemUpdateModelV2Request
 from criteo_api_retailmedia_experimental.model.preferred_line_item_v2_paged_list_response import PreferredLineItemV2PagedListResponse
@@ -52,6 +55,7 @@ from criteo_api_retailmedia_experimental.model.product_resource_outcome import P
 from criteo_api_retailmedia_experimental.model.promoted_product_resource_collection_input import PromotedProductResourceCollectionInput
 from criteo_api_retailmedia_experimental.model.promoted_product_resource_collection_outcome import PromotedProductResourceCollectionOutcome
 from criteo_api_retailmedia_experimental.model.supply_search_request import SupplySearchRequest
+from criteo_api_retailmedia_experimental.model.target_list_response import TargetListResponse
 from criteo_api_retailmedia_experimental.model.target_list_response_with_page_metadata import TargetListResponseWithPageMetadata
 from criteo_api_retailmedia_experimental.model.upsert_creatives_model_request import UpsertCreativesModelRequest
 from criteo_api_retailmedia_experimental.model.value_resource_input_append_campaigns_request_v1 import ValueResourceInputAppendCampaignsRequestV1
@@ -599,6 +603,64 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.create_targets_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (TargetListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/targets/create',
+                'operation_id': 'create_targets_by_line_item_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'create_target_request_model_list_request',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'create_target_request_model_list_request':
+                        (CreateTargetRequestModelListRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'create_target_request_model_list_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.delete_campaigns_from_balance_v1_endpoint = _Endpoint(
             settings={
                 'response_type': (ValueResourceOutcomeBalanceCampaignsV1,),
@@ -716,25 +778,26 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.delete_promoted_products_endpoint = _Endpoint(
+        self.delete_products_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (Outcome,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
                 'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/products/delete',
-                'operation_id': 'delete_promoted_products',
+                'operation_id': 'delete_products',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'line_item_id',
-                    'promoted_product_resource_collection_input',
+                    'delete_product_model_request',
                 ],
                 'required': [
                     'line_item_id',
+                    'delete_product_model_request',
                 ],
                 'nullable': [
                 ],
@@ -751,21 +814,23 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'promoted_product_resource_collection_input':
-                        (PromotedProductResourceCollectionInput,),
+                    'delete_product_model_request':
+                        (DeleteProductModelRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'promoted_product_resource_collection_input': 'body',
+                    'delete_product_model_request': 'body',
                 },
                 'collection_format_map': {
                 }
             },
             headers_map={
-                'accept': [],
+                'accept': [
+                    'application/json'
+                ],
                 'content_type': [
                     'application/json'
                 ]
@@ -3017,6 +3082,90 @@ class CampaignApi(object):
             preferred_line_item_create_model_v2_request
         return self.create_preferred_line_item_by_campaign_id_endpoint.call_with_http_info(**kwargs)
 
+    def create_targets_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/line-items/{line-item-id}/targets/create  # noqa: E501
+
+        Creates a given target  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_targets_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): Unique identifier for the line item
+
+        Keyword Args:
+            create_target_request_model_list_request (CreateTargetRequestModelListRequest): Target to configure on the line item. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TargetListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.create_targets_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
     def delete_campaigns_from_balance_v1(
         self,
         balance_id,
@@ -3191,25 +3340,26 @@ class CampaignApi(object):
             product_button_id
         return self.delete_product_button_by_line_item_and_product_button_id_endpoint.call_with_http_info(**kwargs)
 
-    def delete_promoted_products(
+    def delete_products(
         self,
         line_item_id,
+        delete_product_model_request,
         **kwargs
     ):
         """/experimental/retail-media/line-items/{line-item-id}/products/delete  # noqa: E501
 
-        Remove a collection of promoted products from a line item  # noqa: E501
+        Delete products from a line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_promoted_products(line_item_id, async_req=True)
+        >>> thread = api.delete_products(line_item_id, delete_product_model_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): ID of the line item
+            line_item_id (str): The line item id.
+            delete_product_model_request (DeleteProductModelRequest): The products to delete.
 
         Keyword Args:
-            promoted_product_resource_collection_input (PromotedProductResourceCollectionInput): Request body whose {data} contains an array of promoted products.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -3242,7 +3392,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            Outcome
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3273,7 +3423,9 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        return self.delete_promoted_products_endpoint.call_with_http_info(**kwargs)
+        kwargs['delete_product_model_request'] = \
+            delete_product_model_request
+        return self.delete_products_endpoint.call_with_http_info(**kwargs)
 
     def fetch_promoted_products(
         self,

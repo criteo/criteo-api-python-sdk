@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | [optional] 
 **conquesting_settings** | [**ConquestingSettings**](ConquestingSettings.md) |  | [optional] 
 **flight_dates** | [**FlightDates**](FlightDates.md) |  | [optional] 
+**funding_status** | **str, none_type** | Indicates whether the line item is funded. | [optional] 
+**is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **line_item_id** | **str, none_type** | The id of the line item. | [optional] 
 **line_item_type** | **str, none_type** | The type of the line item. | [optional] 
 **name** | **str, none_type** | The name of the line item. | [optional] 

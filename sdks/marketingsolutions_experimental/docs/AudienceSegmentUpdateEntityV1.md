@@ -6,6 +6,7 @@ Set of rules that defines specific people to target.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | [**NillableString**](NillableString.md) |  | [optional] 
+**filter_based** | [**FilterBasedUpdateV1**](FilterBasedUpdateV1.md) |  | [optional] 
 **in_market** | [**InMarketUpdateV1**](InMarketUpdateV1.md) |  | [optional] 
 **location** | [**LocationUpdateV1**](LocationUpdateV1.md) |  | [optional] 
 **lookalike** | [**LookalikeUpdateV1**](LookalikeUpdateV1.md) |  | [optional] 

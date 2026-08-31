@@ -30,11 +30,13 @@ from criteo_api_marketingsolutions_experimental.exceptions import ApiAttributeEr
 
 
 def lazy_import():
+    from criteo_api_marketingsolutions_experimental.model.filter_based_create_v1 import FilterBasedCreateV1
     from criteo_api_marketingsolutions_experimental.model.in_market_create_v1 import InMarketCreateV1
     from criteo_api_marketingsolutions_experimental.model.location_create_v1 import LocationCreateV1
     from criteo_api_marketingsolutions_experimental.model.lookalike_create_v1 import LookalikeCreateV1
     from criteo_api_marketingsolutions_experimental.model.prospecting_create_v1 import ProspectingCreateV1
     from criteo_api_marketingsolutions_experimental.model.retargeting_create_v1 import RetargetingCreateV1
+    globals()['FilterBasedCreateV1'] = FilterBasedCreateV1
     globals()['InMarketCreateV1'] = InMarketCreateV1
     globals()['LocationCreateV1'] = LocationCreateV1
     globals()['LookalikeCreateV1'] = LookalikeCreateV1
@@ -99,6 +101,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
             'name': (str,),  # noqa: E501
             'contact_list': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'filter_based': (FilterBasedCreateV1,),  # noqa: E501
             'in_market': (InMarketCreateV1,),  # noqa: E501
             'location': (LocationCreateV1,),  # noqa: E501
             'lookalike': (LookalikeCreateV1,),  # noqa: E501
@@ -116,6 +119,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
         'name': 'name',  # noqa: E501
         'contact_list': 'contactList',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'filter_based': 'filterBased',  # noqa: E501
         'in_market': 'inMarket',  # noqa: E501
         'location': 'location',  # noqa: E501
         'lookalike': 'lookalike',  # noqa: E501
@@ -170,6 +174,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
             description (str): Description of the segment. [optional]  # noqa: E501
+            filter_based (FilterBasedCreateV1): [optional]  # noqa: E501
             in_market (InMarketCreateV1): [optional]  # noqa: E501
             location (LocationCreateV1): [optional]  # noqa: E501
             lookalike (LookalikeCreateV1): [optional]  # noqa: E501
@@ -268,6 +273,7 @@ class AudienceSegmentCreateEntityV1(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             contact_list ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): Settings to target users with your contact lists.. [optional]  # noqa: E501
             description (str): Description of the segment. [optional]  # noqa: E501
+            filter_based (FilterBasedCreateV1): [optional]  # noqa: E501
             in_market (InMarketCreateV1): [optional]  # noqa: E501
             location (LocationCreateV1): [optional]  # noqa: E501
             lookalike (LookalikeCreateV1): [optional]  # noqa: E501

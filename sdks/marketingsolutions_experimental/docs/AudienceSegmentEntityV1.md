@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **contact_list** | [**ContactListV1**](ContactListV1.md) |  | [optional] 
 **created_at** | **datetime, none_type** | ISO-8601 timestamp in UTC of segment creation (read-only) | [optional] 
 **description** | **str, none_type** | Description of the segment | [optional] 
+**filter_based** | [**FilterBasedV1**](FilterBasedV1.md) |  | [optional] 
 **in_market** | [**InMarketV1**](InMarketV1.md) |  | [optional] 
 **location** | [**LocationV1**](LocationV1.md) |  | [optional] 
 **lookalike** | [**LookalikeV1**](LookalikeV1.md) |  | [optional] 

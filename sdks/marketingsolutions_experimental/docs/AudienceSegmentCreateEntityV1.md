@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **name** | **str** | Name of the segment | 
 **contact_list** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** | Settings to target users with your contact lists. | [optional] 
 **description** | **str** | Description of the segment | [optional] 
+**filter_based** | [**FilterBasedCreateV1**](FilterBasedCreateV1.md) |  | [optional] 
 **in_market** | [**InMarketCreateV1**](InMarketCreateV1.md) |  | [optional] 
 **location** | [**LocationCreateV1**](LocationCreateV1.md) |  | [optional] 
 **lookalike** | [**LookalikeCreateV1**](LookalikeCreateV1.md) |  | [optional] 

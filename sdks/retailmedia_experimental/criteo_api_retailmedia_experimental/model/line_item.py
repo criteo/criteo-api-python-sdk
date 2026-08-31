@@ -71,6 +71,15 @@ class LineItem(ModelNormal):
             'PREFERREDDEALS': "PreferredDeals",
             'SPONSORSHIP': "Sponsorship",
         },
+        ('funding_status',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'FUNDED': "Funded",
+            'DAILYBUDGETREACHED': "DailyBudgetReached",
+            'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
+            'TOTALBUDGETREACHED': "TotalBudgetReached",
+            'BALANCEEXHAUSTED': "BalanceExhausted",
+        },
         ('line_item_type',): {
             'None': None,
             'SPONSOREDPRODUCT': "SponsoredProduct",
@@ -102,6 +111,8 @@ class LineItem(ModelNormal):
             'campaign_id': (str, none_type,),  # noqa: E501
             'conquesting_settings': (ConquestingSettings,),  # noqa: E501
             'flight_dates': (FlightDates,),  # noqa: E501
+            'funding_status': (str, none_type,),  # noqa: E501
+            'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
             'line_item_type': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
@@ -122,6 +133,8 @@ class LineItem(ModelNormal):
         'campaign_id': 'campaignId',  # noqa: E501
         'conquesting_settings': 'conquestingSettings',  # noqa: E501
         'flight_dates': 'flightDates',  # noqa: E501
+        'funding_status': 'fundingStatus',  # noqa: E501
+        'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
         'line_item_type': 'lineItemType',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -177,6 +190,8 @@ class LineItem(ModelNormal):
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ConquestingSettings): [optional]  # noqa: E501
             flight_dates (FlightDates): [optional]  # noqa: E501
+            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
+            is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
             line_item_type (str, none_type): The type of the line item.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
@@ -274,6 +289,8 @@ class LineItem(ModelNormal):
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ConquestingSettings): [optional]  # noqa: E501
             flight_dates (FlightDates): [optional]  # noqa: E501
+            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
+            is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
             line_item_type (str, none_type): The type of the line item.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501

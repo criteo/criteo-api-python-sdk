@@ -210,6 +210,11 @@ criteo_api_marketingsolutions_experimental/model/export_status_model_resource.py
 criteo_api_marketingsolutions_experimental/model/export_status_model_response.py
 criteo_api_marketingsolutions_experimental/model/file_stream_result_resource.py
 criteo_api_marketingsolutions_experimental/model/file_stream_result_response.py
+criteo_api_marketingsolutions_experimental/model/filter_based_algebra_node_v1.py
+criteo_api_marketingsolutions_experimental/model/filter_based_create_v1.py
+criteo_api_marketingsolutions_experimental/model/filter_based_definition_v1.py
+criteo_api_marketingsolutions_experimental/model/filter_based_update_v1.py
+criteo_api_marketingsolutions_experimental/model/filter_based_v1.py
 criteo_api_marketingsolutions_experimental/model/generate_all_products_report_request_attributes.py
 criteo_api_marketingsolutions_experimental/model/generate_all_products_report_request_attributes_request.py
 criteo_api_marketingsolutions_experimental/model/generate_all_products_report_request_attributes_resource.py
@@ -251,6 +256,7 @@ criteo_api_marketingsolutions_experimental/model/in_market_size_estimation_v1.py
 criteo_api_marketingsolutions_experimental/model/in_market_update_v1.py
 criteo_api_marketingsolutions_experimental/model/in_market_v1.py
 criteo_api_marketingsolutions_experimental/model/installment.py
+criteo_api_marketingsolutions_experimental/model/integer_filter_v1.py
 criteo_api_marketingsolutions_experimental/model/json_report_rows.py
 criteo_api_marketingsolutions_experimental/model/json_report_rows_list_response.py
 criteo_api_marketingsolutions_experimental/model/json_report_rows_resource.py
@@ -259,6 +265,7 @@ criteo_api_marketingsolutions_experimental/model/location_create_v1.py
 criteo_api_marketingsolutions_experimental/model/location_size_estimation_v1.py
 criteo_api_marketingsolutions_experimental/model/location_update_v1.py
 criteo_api_marketingsolutions_experimental/model/location_v1.py
+criteo_api_marketingsolutions_experimental/model/long_filter_v1.py
 criteo_api_marketingsolutions_experimental/model/lookalike_create_v1.py
 criteo_api_marketingsolutions_experimental/model/lookalike_update_v1.py
 criteo_api_marketingsolutions_experimental/model/lookalike_v1.py
@@ -317,6 +324,8 @@ criteo_api_marketingsolutions_experimental/model/point_of_interest_v1.py
 criteo_api_marketingsolutions_experimental/model/portfolio_message.py
 criteo_api_marketingsolutions_experimental/model/price.py
 criteo_api_marketingsolutions_experimental/model/product.py
+criteo_api_marketingsolutions_experimental/model/product_category_filter_v1.py
+criteo_api_marketingsolutions_experimental/model/product_category_v1.py
 criteo_api_marketingsolutions_experimental/model/product_context.py
 criteo_api_marketingsolutions_experimental/model/product_filter_config.py
 criteo_api_marketingsolutions_experimental/model/product_importer_error.py
@@ -629,6 +638,11 @@ docs/ExportStatusModelResource.md
 docs/ExportStatusModelResponse.md
 docs/FileStreamResultResource.md
 docs/FileStreamResultResponse.md
+docs/FilterBasedAlgebraNodeV1.md
+docs/FilterBasedCreateV1.md
+docs/FilterBasedDefinitionV1.md
+docs/FilterBasedUpdateV1.md
+docs/FilterBasedV1.md
 docs/GatewayApi.md
 docs/GenerateAllProductsReportRequestAttributes.md
 docs/GenerateAllProductsReportRequestAttributesRequest.md
@@ -671,6 +685,7 @@ docs/InMarketSizeEstimationV1.md
 docs/InMarketUpdateV1.md
 docs/InMarketV1.md
 docs/Installment.md
+docs/IntegerFilterV1.md
 docs/JsonReportRows.md
 docs/JsonReportRowsListResponse.md
 docs/JsonReportRowsResource.md
@@ -679,6 +694,7 @@ docs/LocationCreateV1.md
 docs/LocationSizeEstimationV1.md
 docs/LocationUpdateV1.md
 docs/LocationV1.md
+docs/LongFilterV1.md
 docs/LookalikeCreateV1.md
 docs/LookalikeUpdateV1.md
 docs/LookalikeV1.md
@@ -738,6 +754,8 @@ docs/PointOfInterestV1.md
 docs/PortfolioMessage.md
 docs/Price.md
 docs/Product.md
+docs/ProductCategoryFilterV1.md
+docs/ProductCategoryV1.md
 docs/ProductContext.md
 docs/ProductFilterConfig.md
 docs/ProductImporterError.md
