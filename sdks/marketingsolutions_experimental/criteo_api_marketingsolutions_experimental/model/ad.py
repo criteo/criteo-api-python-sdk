@@ -55,6 +55,11 @@ class Ad(ModelNormal):
     """
 
     allowed_values = {
+        ('ad_delivery_status',): {
+            'None': None,
+            'LIVE': "Live",
+            'PAUSED': "Paused",
+        },
         ('inventory_type',): {
             'None': None,
             'NATIVE': "Native",
@@ -87,6 +92,7 @@ class Ad(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'ad_delivery_status': (str, none_type,),  # noqa: E501
             'ad_set_id': (str, none_type,),  # noqa: E501
             'creative_id': (str, none_type,),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
@@ -103,6 +109,7 @@ class Ad(ModelNormal):
 
 
     attribute_map = {
+        'ad_delivery_status': 'adDeliveryStatus',  # noqa: E501
         'ad_set_id': 'adSetId',  # noqa: E501
         'creative_id': 'creativeId',  # noqa: E501
         'description': 'description',  # noqa: E501
@@ -154,11 +161,12 @@ class Ad(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_delivery_status (str, none_type): The delivery status of the ad. Possible values are \"Live\" and \"Paused\". This is read-only: use the  dedicated pause and unpause operations to change it.. [optional]  # noqa: E501
             ad_set_id (str, none_type): The id of the Ad Set binded to this Ad. [optional]  # noqa: E501
             creative_id (str, none_type): The id of the Creative binded to this Ad. [optional]  # noqa: E501
             description (str, none_type): The description of the ad. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
-            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             inventory_type (str, none_type): The inventory the Ad belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
             name (str, none_type): The name of the ad. [optional]  # noqa: E501
             start_date (str, none_type): The date when the ad will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
@@ -247,11 +255,12 @@ class Ad(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_delivery_status (str, none_type): The delivery status of the ad. Possible values are \"Live\" and \"Paused\". This is read-only: use the  dedicated pause and unpause operations to change it.. [optional]  # noqa: E501
             ad_set_id (str, none_type): The id of the Ad Set binded to this Ad. [optional]  # noqa: E501
             creative_id (str, none_type): The id of the Creative binded to this Ad. [optional]  # noqa: E501
             description (str, none_type): The description of the ad. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
-            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             inventory_type (str, none_type): The inventory the Ad belongs to. Possible values are \"Display\" and \"Native\". This is optional since this doesn't make sense for every creative type but will throw an error if not set for a dynamic creative.. [optional]  # noqa: E501
             name (str, none_type): The name of the ad. [optional]  # noqa: E501
             start_date (str, none_type): The date when the ad will be launched  String must be in ISO8601 format. [optional]  # noqa: E501

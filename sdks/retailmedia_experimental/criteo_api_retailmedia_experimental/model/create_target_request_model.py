@@ -31,9 +31,11 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.category_target_details import CategoryTargetDetails
+    from criteo_api_retailmedia_experimental.model.geography_target_details import GeographyTargetDetails
     from criteo_api_retailmedia_experimental.model.manual_keyword_target_details import ManualKeywordTargetDetails
     from criteo_api_retailmedia_experimental.model.page_type_target_details import PageTypeTargetDetails
     globals()['CategoryTargetDetails'] = CategoryTargetDetails
+    globals()['GeographyTargetDetails'] = GeographyTargetDetails
     globals()['ManualKeywordTargetDetails'] = ManualKeywordTargetDetails
     globals()['PageTypeTargetDetails'] = PageTypeTargetDetails
 
@@ -68,6 +70,7 @@ class CreateTargetRequestModel(ModelNormal):
             'MANUALKEYWORD': "ManualKeyword",
             'PAGETYPE': "PageType",
             'CATEGORY': "Category",
+            'GEOGRAPHY': "Geography",
         },
     }
 
@@ -94,6 +97,7 @@ class CreateTargetRequestModel(ModelNormal):
             'target_type': (str,),  # noqa: E501
             'bid_multiplier': (float, none_type,),  # noqa: E501
             'category_target_details': (CategoryTargetDetails,),  # noqa: E501
+            'geography_target_details': (GeographyTargetDetails,),  # noqa: E501
             'manual_keyword_target_details': (ManualKeywordTargetDetails,),  # noqa: E501
             'page_type_target_details': (PageTypeTargetDetails,),  # noqa: E501
         }
@@ -108,6 +112,7 @@ class CreateTargetRequestModel(ModelNormal):
         'target_type': 'targetType',  # noqa: E501
         'bid_multiplier': 'bidMultiplier',  # noqa: E501
         'category_target_details': 'categoryTargetDetails',  # noqa: E501
+        'geography_target_details': 'geographyTargetDetails',  # noqa: E501
         'manual_keyword_target_details': 'manualKeywordTargetDetails',  # noqa: E501
         'page_type_target_details': 'pageTypeTargetDetails',  # noqa: E501
     }
@@ -159,6 +164,7 @@ class CreateTargetRequestModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bid_multiplier (float, none_type): [optional]  # noqa: E501
             category_target_details (CategoryTargetDetails): [optional]  # noqa: E501
+            geography_target_details (GeographyTargetDetails): [optional]  # noqa: E501
             manual_keyword_target_details (ManualKeywordTargetDetails): [optional]  # noqa: E501
             page_type_target_details (PageTypeTargetDetails): [optional]  # noqa: E501
         """
@@ -254,6 +260,7 @@ class CreateTargetRequestModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bid_multiplier (float, none_type): [optional]  # noqa: E501
             category_target_details (CategoryTargetDetails): [optional]  # noqa: E501
+            geography_target_details (GeographyTargetDetails): [optional]  # noqa: E501
             manual_keyword_target_details (ManualKeywordTargetDetails): [optional]  # noqa: E501
             page_type_target_details (PageTypeTargetDetails): [optional]  # noqa: E501
         """

@@ -464,7 +464,7 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable',
+                'endpoint_path': '/experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable',
                 'operation_id': 'disable_ad_set_targeting_video_positioning',
                 'http_method': 'POST',
                 'servers': None,
@@ -2742,7 +2742,7 @@ class CampaignApi(object):
         ad_set_id,
         **kwargs
     ):
-        """/experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable  # noqa: E501
+        """/experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable  # noqa: E501
 
         Disable the Video Positioning Targeting configuration for the ad set whose id is specified  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **budget_details** | [**BudgetDetailsModel**](BudgetDetailsModel.md) |  | [optional] 
 **company_name** | **str, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
-**objective** | **str, none_type** | Dynamic Campaign Budgets control: manual keeps today&#39;s behavior; clicks, conversion and  revenue activate campaign-level budget allocation. | [optional] 
+**objective** | **str, none_type** | Dynamic Campaign Budgets control: manual keeps today&#39;s behavior; clicks, conversion and  revenue activate campaign-level budget allocation. Impressions is the Onsite Display  objective. | [optional] 
 **on_behalf_company_name** | **str, none_type** |  | [optional] 
 **schedule_details** | [**ScheduleDetailsModel**](ScheduleDetailsModel.md) |  | [optional] 
 

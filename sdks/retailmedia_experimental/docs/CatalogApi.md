@@ -4,20 +4,20 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_store_inventory_per_merchant_id**](CatalogApi.md#delete_store_inventory_per_merchant_id) | **POST** /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete | /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
+[**get_catalog_ingestion_report_summary**](CatalogApi.md#get_catalog_ingestion_report_summary) | **GET** /experimental/retail-media/catalog/ingestion/{ingestion-id}/reports/summary | /experimental/retail-media/catalog/ingestion/{ingestion-id}/reports/summary
+[**get_catalog_ingestion_reports**](CatalogApi.md#get_catalog_ingestion_reports) | **GET** /experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports | /experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports
 [**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /experimental/retail-media/catalog/products/batch/report/{operation-token} | /experimental/retail-media/catalog/products/batch/report/{operation-token}
 [**offer_set_bbw_v1**](CatalogApi.md#offer_set_bbw_v1) | **POST** /experimental/retail-media/retailers/{retailer-id}/products/set-buy-box-winners | /experimental/retail-media/retailers/{retailer-id}/products/set-buy-box-winners
 [**offer_update_v1**](CatalogApi.md#offer_update_v1) | **POST** /experimental/retail-media/retailers/{retailer-id}/offers/update | /experimental/retail-media/retailers/{retailer-id}/offers/update
 [**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /experimental/retail-media/catalog/products/batch | /experimental/retail-media/catalog/products/batch
-[**upsert_store_inventory_per_merchant_id**](CatalogApi.md#upsert_store_inventory_per_merchant_id) | **POST** /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert | /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert
 
 
-# **delete_store_inventory_per_merchant_id**
-> delete_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_delete_request)
+# **get_catalog_ingestion_report_summary**
+> CatalogIngestionSummaryResponse get_catalog_ingestion_report_summary(ingestion_id)
 
-/experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
+/experimental/retail-media/catalog/ingestion/{ingestion-id}/reports/summary
 
-Used to publish a batch of store inventories to delete. The batch is processed asynchronously.
+Get the summary report of a catalog ingestion: what triggered it, how long it ran, how many offers it held, what it changed and how clean the data was.
 
 ### Example
 
@@ -28,7 +28,7 @@ Used to publish a batch of store inventories to delete. The batch is processed a
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import catalog_api
-from criteo_api_retailmedia_experimental.model.batch_store_inventory_delete_request import BatchStoreInventoryDeleteRequest
+from criteo_api_retailmedia_experimental.model.catalog_ingestion_summary_response import CatalogIngestionSummaryResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -57,26 +57,15 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = catalog_api.CatalogApi(api_client)
-    merchant_id = "merchantId_example" # str | Identifies the merchant, can also be called partnerId
-    batch_store_inventory_delete_request = BatchStoreInventoryDeleteRequest(
-        data=[
-            DeleteEntry(
-                attributes=StoreInventoryDelete(
-                    batch_id="batch_id_example",
-                    product_id="product_id_example",
-                    store_id="store_id_example",
-                ),
-                type="Delete",
-            ),
-        ],
-    ) # BatchStoreInventoryDeleteRequest | 
+    ingestion_id = "ingestion-id_example" # str | Identifies the catalog ingestion to report on.
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete
-        api_instance.delete_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_delete_request)
+        # /experimental/retail-media/catalog/ingestion/{ingestion-id}/reports/summary
+        api_response = api_instance.get_catalog_ingestion_report_summary(ingestion_id)
+        pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CatalogApi->delete_store_inventory_per_merchant_id: %s\n" % e)
+        print("Exception when calling CatalogApi->get_catalog_ingestion_report_summary: %s\n" % e)
 ```
 
 
@@ -84,12 +73,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| Identifies the merchant, can also be called partnerId |
- **batch_store_inventory_delete_request** | [**BatchStoreInventoryDeleteRequest**](BatchStoreInventoryDeleteRequest.md)|  |
+ **ingestion_id** | **str**| Identifies the catalog ingestion to report on. |
 
 ### Return type
 
-void (empty response body)
+[**CatalogIngestionSummaryResponse**](CatalogIngestionSummaryResponse.md)
 
 ### Authorization
 
@@ -97,7 +85,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
@@ -105,7 +93,105 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | Batch accepted. |  -  |
+**200** | The summary report of the ingestion. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_catalog_ingestion_reports**
+> CatalogIngestionReportListResponse get_catalog_ingestion_reports(merchant_id)
+
+/experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports
+
+List the catalog ingestions of a merchant, most recent first, with their type, status and timing.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import catalog_api
+from criteo_api_retailmedia_experimental.model.catalog_ingestion_report_list_response import CatalogIngestionReportListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = catalog_api.CatalogApi(api_client)
+    merchant_id = "merchant-id_example" # str | Identifies the merchant whose catalog ingestions are reported.
+    limit = 25 # int | Maximum number of ingestion reports returned in the page. (optional) if omitted the server will use the default value of 25
+    offset = 0 # int | Index of the first ingestion report of the page, used to page through the collection. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports
+        api_response = api_instance.get_catalog_ingestion_reports(merchant_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_ingestion_reports: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports
+        api_response = api_instance.get_catalog_ingestion_reports(merchant_id, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_ingestion_reports: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **str**| Identifies the merchant whose catalog ingestions are reported. |
+ **limit** | **int**| Maximum number of ingestion reports returned in the page. | [optional] if omitted the server will use the default value of 25
+ **offset** | **int**| Index of the first ingestion report of the page, used to page through the collection. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**CatalogIngestionReportListResponse**](CatalogIngestionReportListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The page of catalog ingestion reports. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -659,106 +745,6 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **202** | Batch accepted. The status of the operation can be tracked using the report endpoint and the operationToken. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **upsert_store_inventory_per_merchant_id**
-> upsert_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_request)
-
-/experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert
-
-Used to publish a batch of store inventories to upsert. The batch is processed asynchronously.
-
-### Example
-
-* OAuth Authentication (oauth):
-* OAuth Authentication (oauth):
-
-```python
-import time
-import criteo_api_retailmedia_experimental
-from criteo_api_retailmedia_experimental.api import catalog_api
-from criteo_api_retailmedia_experimental.model.batch_store_inventory_request import BatchStoreInventoryRequest
-from pprint import pprint
-# Defining the host is optional and defaults to https://api.criteo.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = criteo_api_retailmedia_experimental.Configuration(
-    host = "https://api.criteo.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_experimental.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Configure OAuth2 access token for authorization: oauth
-configuration = criteo_api_retailmedia_experimental.Configuration(
-    host = "https://api.criteo.com"
-)
-configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# Enter a context with an instance of the API client
-with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = catalog_api.CatalogApi(api_client)
-    merchant_id = "merchantId_example" # str | Identifies the merchant, can also be called partnerId
-    batch_store_inventory_request = BatchStoreInventoryRequest(
-        data=[
-            InsertEntry(
-                attributes=StoreInventoryUpsert(
-                    availability="backorder",
-                    batch_id="batch_id_example",
-                    price="price_example",
-                    product_id="product_id_example",
-                    sale_price="sale_price_example",
-                    store_id="store_id_example",
-                ),
-                type="Upsert",
-            ),
-        ],
-    ) # BatchStoreInventoryRequest | 
-
-    # example passing only required values which don't have defaults set
-    try:
-        # /experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert
-        api_instance.upsert_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_request)
-    except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CatalogApi->upsert_store_inventory_per_merchant_id: %s\n" % e)
-```
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **merchant_id** | **str**| Identifies the merchant, can also be called partnerId |
- **batch_store_inventory_request** | [**BatchStoreInventoryRequest**](BatchStoreInventoryRequest.md)|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth](../README.md#oauth), [oauth](../README.md#oauth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | Batch accepted. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

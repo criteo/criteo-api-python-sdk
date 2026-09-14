@@ -76,8 +76,6 @@ class BudgetDetailsModel(ModelNormal):
         """
         return {
             'budget': (float, none_type,),  # noqa: E501
-            'budget_remaining': (float, none_type,),  # noqa: E501
-            'budget_spent': (float, none_type,),  # noqa: E501
             'daily_pacing': (float, none_type,),  # noqa: E501
             'is_auto_daily_pacing': (bool, none_type,),  # noqa: E501
             'monthly_pacing': (float, none_type,),  # noqa: E501
@@ -90,8 +88,6 @@ class BudgetDetailsModel(ModelNormal):
 
     attribute_map = {
         'budget': 'budget',  # noqa: E501
-        'budget_remaining': 'budgetRemaining',  # noqa: E501
-        'budget_spent': 'budgetSpent',  # noqa: E501
         'daily_pacing': 'dailyPacing',  # noqa: E501
         'is_auto_daily_pacing': 'isAutoDailyPacing',  # noqa: E501
         'monthly_pacing': 'monthlyPacing',  # noqa: E501
@@ -139,8 +135,6 @@ class BudgetDetailsModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget (float, none_type): [optional]  # noqa: E501
-            budget_remaining (float, none_type): [optional]  # noqa: E501
-            budget_spent (float, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
             is_auto_daily_pacing (bool, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501
@@ -230,8 +224,6 @@ class BudgetDetailsModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget (float, none_type): [optional]  # noqa: E501
-            budget_remaining (float, none_type): [optional]  # noqa: E501
-            budget_spent (float, none_type): [optional]  # noqa: E501
             daily_pacing (float, none_type): [optional]  # noqa: E501
             is_auto_daily_pacing (bool, none_type): [optional]  # noqa: E501
             monthly_pacing (float, none_type): [optional]  # noqa: E501

@@ -22,8 +22,8 @@ from criteo_api_retailmedia_experimental.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from criteo_api_retailmedia_experimental.model.batch_accepted_response import BatchAcceptedResponse
-from criteo_api_retailmedia_experimental.model.batch_store_inventory_delete_request import BatchStoreInventoryDeleteRequest
-from criteo_api_retailmedia_experimental.model.batch_store_inventory_request import BatchStoreInventoryRequest
+from criteo_api_retailmedia_experimental.model.catalog_ingestion_report_list_response import CatalogIngestionReportListResponse
+from criteo_api_retailmedia_experimental.model.catalog_ingestion_summary_response import CatalogIngestionSummaryResponse
 from criteo_api_retailmedia_experimental.model.outcome import Outcome
 from criteo_api_retailmedia_experimental.model.products_custom_batch_request import ProductsCustomBatchRequest
 from criteo_api_retailmedia_experimental.model.report_ok_response import ReportOkResponse
@@ -42,26 +42,24 @@ class CatalogApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
-        self.delete_store_inventory_per_merchant_id_endpoint = _Endpoint(
+        self.get_catalog_ingestion_report_summary_endpoint = _Endpoint(
             settings={
-                'response_type': None,
+                'response_type': (CatalogIngestionSummaryResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete',
-                'operation_id': 'delete_store_inventory_per_merchant_id',
-                'http_method': 'POST',
+                'endpoint_path': '/experimental/retail-media/catalog/ingestion/{ingestion-id}/reports/summary',
+                'operation_id': 'get_catalog_ingestion_report_summary',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'merchant_id',
-                    'batch_store_inventory_delete_request',
+                    'ingestion_id',
                 ],
                 'required': [
-                    'merchant_id',
-                    'batch_store_inventory_delete_request',
+                    'ingestion_id',
                 ],
                 'nullable': [
                 ],
@@ -76,17 +74,14 @@ class CatalogApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'merchant_id':
+                    'ingestion_id':
                         (str,),
-                    'batch_store_inventory_delete_request':
-                        (BatchStoreInventoryDeleteRequest,),
                 },
                 'attribute_map': {
-                    'merchant_id': 'merchantId',
+                    'ingestion_id': 'ingestion-id',
                 },
                 'location_map': {
-                    'merchant_id': 'path',
-                    'batch_store_inventory_delete_request': 'body',
+                    'ingestion_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -95,9 +90,75 @@ class CatalogApi(object):
                 'accept': [
                     'application/json'
                 ],
-                'content_type': [
-                    'application/json'
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_catalog_ingestion_reports_endpoint = _Endpoint(
+            settings={
+                'response_type': (CatalogIngestionReportListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports',
+                'operation_id': 'get_catalog_ingestion_reports',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'merchant_id',
+                    'limit',
+                    'offset',
+                ],
+                'required': [
+                    'merchant_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
                 ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 100,
+                        'inclusive_minimum': 1,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'merchant_id':
+                        (str,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                },
+                'attribute_map': {
+                    'merchant_id': 'merchant-id',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'merchant_id': 'path',
+                    'limit': 'query',
+                    'offset': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
             },
             api_client=api_client
         )
@@ -324,84 +385,23 @@ class CatalogApi(object):
             },
             api_client=api_client
         )
-        self.upsert_store_inventory_per_merchant_id_endpoint = _Endpoint(
-            settings={
-                'response_type': None,
-                'auth': [
-                    'oauth',
-                    'oauth'
-                ],
-                'endpoint_path': '/experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert',
-                'operation_id': 'upsert_store_inventory_per_merchant_id',
-                'http_method': 'POST',
-                'servers': None,
-            },
-            params_map={
-                'all': [
-                    'merchant_id',
-                    'batch_store_inventory_request',
-                ],
-                'required': [
-                    'merchant_id',
-                    'batch_store_inventory_request',
-                ],
-                'nullable': [
-                ],
-                'enum': [
-                ],
-                'validation': [
-                ]
-            },
-            root_map={
-                'validations': {
-                },
-                'allowed_values': {
-                },
-                'openapi_types': {
-                    'merchant_id':
-                        (str,),
-                    'batch_store_inventory_request':
-                        (BatchStoreInventoryRequest,),
-                },
-                'attribute_map': {
-                    'merchant_id': 'merchantId',
-                },
-                'location_map': {
-                    'merchant_id': 'path',
-                    'batch_store_inventory_request': 'body',
-                },
-                'collection_format_map': {
-                }
-            },
-            headers_map={
-                'accept': [
-                    'application/json'
-                ],
-                'content_type': [
-                    'application/json'
-                ]
-            },
-            api_client=api_client
-        )
 
-    def delete_store_inventory_per_merchant_id(
+    def get_catalog_ingestion_report_summary(
         self,
-        merchant_id,
-        batch_store_inventory_delete_request,
+        ingestion_id,
         **kwargs
     ):
-        """/experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/delete  # noqa: E501
+        """/experimental/retail-media/catalog/ingestion/{ingestion-id}/reports/summary  # noqa: E501
 
-        Used to publish a batch of store inventories to delete. The batch is processed asynchronously.  # noqa: E501
+        Get the summary report of a catalog ingestion: what triggered it, how long it ran, how many offers it held, what it changed and how clean the data was.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_delete_request, async_req=True)
+        >>> thread = api.get_catalog_ingestion_report_summary(ingestion_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            merchant_id (str): Identifies the merchant, can also be called partnerId
-            batch_store_inventory_delete_request (BatchStoreInventoryDeleteRequest):
+            ingestion_id (str): Identifies the catalog ingestion to report on.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -436,7 +436,92 @@ class CatalogApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            None
+            CatalogIngestionSummaryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['ingestion_id'] = \
+            ingestion_id
+        return self.get_catalog_ingestion_report_summary_endpoint.call_with_http_info(**kwargs)
+
+    def get_catalog_ingestion_reports(
+        self,
+        merchant_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/catalog/merchants/{merchant-id}/ingestion/reports  # noqa: E501
+
+        List the catalog ingestions of a merchant, most recent first, with their type, status and timing.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_catalog_ingestion_reports(merchant_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            merchant_id (str): Identifies the merchant whose catalog ingestions are reported.
+
+        Keyword Args:
+            limit (int): Maximum number of ingestion reports returned in the page.. [optional] if omitted the server will use the default value of 25
+            offset (int): Index of the first ingestion report of the page, used to page through the collection.. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            CatalogIngestionReportListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -467,9 +552,7 @@ class CatalogApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['merchant_id'] = \
             merchant_id
-        kwargs['batch_store_inventory_delete_request'] = \
-            batch_store_inventory_delete_request
-        return self.delete_store_inventory_per_merchant_id_endpoint.call_with_http_info(**kwargs)
+        return self.get_catalog_ingestion_reports_endpoint.call_with_http_info(**kwargs)
 
     def get_catalog_products_batch_report(
         self,
@@ -810,91 +893,4 @@ class CatalogApi(object):
         kwargs['products_custom_batch_request'] = \
             products_custom_batch_request
         return self.submit_catalog_products_batch_endpoint.call_with_http_info(**kwargs)
-
-    def upsert_store_inventory_per_merchant_id(
-        self,
-        merchant_id,
-        batch_store_inventory_request,
-        **kwargs
-    ):
-        """/experimental/retail-media/catalog/merchants/{merchantId}/store-inventory/upsert  # noqa: E501
-
-        Used to publish a batch of store inventories to upsert. The batch is processed asynchronously.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.upsert_store_inventory_per_merchant_id(merchant_id, batch_store_inventory_request, async_req=True)
-        >>> result = thread.get()
-
-        Args:
-            merchant_id (str): Identifies the merchant, can also be called partnerId
-            batch_store_inventory_request (BatchStoreInventoryRequest):
-
-        Keyword Args:
-            _return_http_data_only (bool): response data without head status
-                code and headers. Default is True.
-            _preload_content (bool): if False, the urllib3.HTTPResponse object
-                will be returned without reading/decoding response data.
-                Default is True.
-            _request_timeout (int/float/tuple): timeout setting for this request. If
-                one number provided, it will be total request timeout. It can also
-                be a pair (tuple) of (connection, read) timeouts.
-                Default is None.
-            _check_input_type (bool): specifies if type checking
-                should be done one the data sent to the server.
-                Default is True.
-            _check_return_type (bool): specifies if type checking
-                should be done one the data received from the server.
-                Default is True.
-            _spec_property_naming (bool): True if the variable names in the input data
-                are serialized names, as specified in the OpenAPI document.
-                False if the variable names in the input data
-                are pythonic names, e.g. snake case (default)
-            _content_type (str/None): force body content-type.
-                Default is None and content-type will be predicted by allowed
-                content-types and body.
-            _host_index (int/None): specifies the index of the server
-                that we want to use.
-                Default is read from the configuration.
-            _request_auths (list): set to override the auth_settings for an a single
-                request; this effectively ignores the authentication
-                in the spec for a single request.
-                Default is None
-            async_req (bool): execute request asynchronously
-
-        Returns:
-            None
-                If the method is called asynchronously, returns the request
-                thread.
-        """
-        kwargs['async_req'] = kwargs.get(
-            'async_req', False
-        )
-        kwargs['_return_http_data_only'] = kwargs.get(
-            '_return_http_data_only', True
-        )
-        kwargs['_preload_content'] = kwargs.get(
-            '_preload_content', True
-        )
-        kwargs['_request_timeout'] = kwargs.get(
-            '_request_timeout', None
-        )
-        kwargs['_check_input_type'] = kwargs.get(
-            '_check_input_type', True
-        )
-        kwargs['_check_return_type'] = kwargs.get(
-            '_check_return_type', True
-        )
-        kwargs['_spec_property_naming'] = kwargs.get(
-            '_spec_property_naming', False
-        )
-        kwargs['_content_type'] = kwargs.get(
-            '_content_type')
-        kwargs['_host_index'] = kwargs.get('_host_index')
-        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['merchant_id'] = \
-            merchant_id
-        kwargs['batch_store_inventory_request'] = \
-            batch_store_inventory_request
-        return self.upsert_store_inventory_per_merchant_id_endpoint.call_with_http_info(**kwargs)
 

@@ -85,6 +85,7 @@ class CampaignResponseModel(ModelNormal):
             'CLICKS': "Clicks",
             'CONVERSION': "Conversion",
             'REVENUE': "Revenue",
+            'IMPRESSIONS': "Impressions",
             'UNKNOWN': "Unknown",
         },
     }
@@ -210,7 +211,7 @@ class CampaignResponseModel(ModelNormal):
             budget_details (BudgetDetailsModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
-            objective (str, none_type): Dynamic Campaign Budgets control: manual keeps today's behavior; clicks, conversion and  revenue activate campaign-level budget allocation.. [optional]  # noqa: E501
+            objective (str, none_type): Dynamic Campaign Budgets control: manual keeps today's behavior; clicks, conversion and  revenue activate campaign-level budget allocation. Impressions is the Onsite Display  objective.. [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsModel): [optional]  # noqa: E501
         """
@@ -322,7 +323,7 @@ class CampaignResponseModel(ModelNormal):
             budget_details (BudgetDetailsModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
-            objective (str, none_type): Dynamic Campaign Budgets control: manual keeps today's behavior; clicks, conversion and  revenue activate campaign-level budget allocation.. [optional]  # noqa: E501
+            objective (str, none_type): Dynamic Campaign Budgets control: manual keeps today's behavior; clicks, conversion and  revenue activate campaign-level budget allocation. Impressions is the Onsite Display  objective.. [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsModel): [optional]  # noqa: E501
         """

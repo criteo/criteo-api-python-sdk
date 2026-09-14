@@ -5,7 +5,6 @@ The line item settings to change. Omitted fields are left unchanged.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**flight_dates** | [**ExperimentalFlightDatesModel**](ExperimentalFlightDatesModel.md) |  | [optional] 
 **is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **name** | **str, none_type** | The name of the line item. | [optional] 
 **onsite_display_details** | [**ExperimentalUpdateOnsiteDisplayLineItemDetails**](ExperimentalUpdateOnsiteDisplayLineItemDetails.md) |  | [optional] 

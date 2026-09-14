@@ -30,7 +30,9 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_retailmedia_experimental.model.experimental_frequency_capping_model import ExperimentalFrequencyCappingModel
     from criteo_api_retailmedia_experimental.model.experimental_onsite_display_auction_line_item_details import ExperimentalOnsiteDisplayAuctionLineItemDetails
+    globals()['ExperimentalFrequencyCappingModel'] = ExperimentalFrequencyCappingModel
     globals()['ExperimentalOnsiteDisplayAuctionLineItemDetails'] = ExperimentalOnsiteDisplayAuctionLineItemDetails
 
 
@@ -81,6 +83,7 @@ class ExperimentalOnsiteDisplayLineItemDetails(ModelNormal):
         lazy_import()
         return {
             'auction_details': (ExperimentalOnsiteDisplayAuctionLineItemDetails,),  # noqa: E501
+            'frequency_capping': (ExperimentalFrequencyCappingModel,),  # noqa: E501
         }
 
     @cached_property
@@ -90,6 +93,7 @@ class ExperimentalOnsiteDisplayLineItemDetails(ModelNormal):
 
     attribute_map = {
         'auction_details': 'auctionDetails',  # noqa: E501
+        'frequency_capping': 'frequencyCapping',  # noqa: E501
     }
 
     read_only_vars = {
@@ -134,6 +138,7 @@ class ExperimentalOnsiteDisplayLineItemDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (ExperimentalOnsiteDisplayAuctionLineItemDetails): [optional]  # noqa: E501
+            frequency_capping (ExperimentalFrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,6 +225,7 @@ class ExperimentalOnsiteDisplayLineItemDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (ExperimentalOnsiteDisplayAuctionLineItemDetails): [optional]  # noqa: E501
+            frequency_capping (ExperimentalFrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -30,9 +30,7 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.experimental_flight_dates_model import ExperimentalFlightDatesModel
     from criteo_api_retailmedia_experimental.model.experimental_update_onsite_display_line_item_details import ExperimentalUpdateOnsiteDisplayLineItemDetails
-    globals()['ExperimentalFlightDatesModel'] = ExperimentalFlightDatesModel
     globals()['ExperimentalUpdateOnsiteDisplayLineItemDetails'] = ExperimentalUpdateOnsiteDisplayLineItemDetails
 
 
@@ -82,7 +80,6 @@ class ExperimentalUpdateLineItemModel(ModelNormal):
         """
         lazy_import()
         return {
-            'flight_dates': (ExperimentalFlightDatesModel,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'onsite_display_details': (ExperimentalUpdateOnsiteDisplayLineItemDetails,),  # noqa: E501
@@ -95,7 +92,6 @@ class ExperimentalUpdateLineItemModel(ModelNormal):
 
 
     attribute_map = {
-        'flight_dates': 'flightDates',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'name': 'name',  # noqa: E501
         'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
@@ -143,7 +139,6 @@ class ExperimentalUpdateLineItemModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalUpdateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
@@ -233,7 +228,6 @@ class ExperimentalUpdateLineItemModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalUpdateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501

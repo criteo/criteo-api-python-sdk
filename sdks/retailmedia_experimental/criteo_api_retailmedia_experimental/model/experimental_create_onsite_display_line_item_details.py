@@ -31,7 +31,9 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.experimental_create_onsite_display_auction_line_item_details import ExperimentalCreateOnsiteDisplayAuctionLineItemDetails
+    from criteo_api_retailmedia_experimental.model.experimental_frequency_capping_model import ExperimentalFrequencyCappingModel
     globals()['ExperimentalCreateOnsiteDisplayAuctionLineItemDetails'] = ExperimentalCreateOnsiteDisplayAuctionLineItemDetails
+    globals()['ExperimentalFrequencyCappingModel'] = ExperimentalFrequencyCappingModel
 
 
 class ExperimentalCreateOnsiteDisplayLineItemDetails(ModelNormal):
@@ -81,6 +83,7 @@ class ExperimentalCreateOnsiteDisplayLineItemDetails(ModelNormal):
         lazy_import()
         return {
             'auction_details': (ExperimentalCreateOnsiteDisplayAuctionLineItemDetails,),  # noqa: E501
+            'frequency_capping': (ExperimentalFrequencyCappingModel,),  # noqa: E501
         }
 
     @cached_property
@@ -90,6 +93,7 @@ class ExperimentalCreateOnsiteDisplayLineItemDetails(ModelNormal):
 
     attribute_map = {
         'auction_details': 'auctionDetails',  # noqa: E501
+        'frequency_capping': 'frequencyCapping',  # noqa: E501
     }
 
     read_only_vars = {
@@ -134,6 +138,7 @@ class ExperimentalCreateOnsiteDisplayLineItemDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (ExperimentalCreateOnsiteDisplayAuctionLineItemDetails): [optional]  # noqa: E501
+            frequency_capping (ExperimentalFrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,6 +225,7 @@ class ExperimentalCreateOnsiteDisplayLineItemDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (ExperimentalCreateOnsiteDisplayAuctionLineItemDetails): [optional]  # noqa: E501
+            frequency_capping (ExperimentalFrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

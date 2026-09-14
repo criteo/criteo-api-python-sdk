@@ -76,6 +76,7 @@ class CampaignCreateModel(ModelNormal):
             'CLICKS': "Clicks",
             'CONVERSION': "Conversion",
             'REVENUE': "Revenue",
+            'IMPRESSIONS': "Impressions",
         },
     }
 

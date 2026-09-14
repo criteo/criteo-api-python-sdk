@@ -180,7 +180,7 @@ class Creative(ModelNormal):
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             format (str, none_type): The format of the creative. [optional]  # noqa: E501
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
-            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             image_attributes (ImageAttributes): [optional]  # noqa: E501
         """
 
@@ -283,7 +283,7 @@ class Creative(ModelNormal):
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             format (str, none_type): The format of the creative. [optional]  # noqa: E501
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
-            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             image_attributes (ImageAttributes): [optional]  # noqa: E501
         """
 

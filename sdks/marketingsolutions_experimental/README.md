@@ -102,7 +102,7 @@ Class | Method | HTTP request | Description
 *CampaignApi* | [**delete_campaign_bundle_rules**](docs/CampaignApi.md#delete_campaign_bundle_rules) | **DELETE** /experimental/campaigns/{campaignId}/targeting/bundle-rules | /experimental/campaigns/{campaignId}/targeting/bundle-rules
 *CampaignApi* | [**delete_campaign_domain_rules**](docs/CampaignApi.md#delete_campaign_domain_rules) | **DELETE** /experimental/campaigns/{campaignId}/targeting/domain-rules | /experimental/campaigns/{campaignId}/targeting/domain-rules
 *CampaignApi* | [**disable_ad_set_targeting_deal_ids**](docs/CampaignApi.md#disable_ad_set_targeting_deal_ids) | **POST** /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable | /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable
-*CampaignApi* | [**disable_ad_set_targeting_video_positioning**](docs/CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
+*CampaignApi* | [**disable_ad_set_targeting_video_positioning**](docs/CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable | /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable
 *CampaignApi* | [**get_ad_set**](docs/CampaignApi.md#get_ad_set) | **GET** /experimental/marketing-solutions/ad-sets/{ad-set-id} | /experimental/marketing-solutions/ad-sets/{ad-set-id}
 *CampaignApi* | [**get_ad_set_category_bids**](docs/CampaignApi.md#get_ad_set_category_bids) | **GET** /experimental/marketing-solutions/ad-sets/{ad-set-id}/category-bids | /experimental/marketing-solutions/ad-sets/{ad-set-id}/category-bids
 *CampaignApi* | [**get_ad_set_targeting_deal_ids**](docs/CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | /experimental/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
@@ -133,6 +133,8 @@ Class | Method | HTTP request | Description
 *CampaignApi* | [**start_ad_sets**](docs/CampaignApi.md#start_ad_sets) | **POST** /experimental/marketing-solutions/ad-sets/start | /experimental/marketing-solutions/ad-sets/start
 *CampaignApi* | [**stop_ad_sets**](docs/CampaignApi.md#stop_ad_sets) | **POST** /experimental/marketing-solutions/ad-sets/stop | /experimental/marketing-solutions/ad-sets/stop
 *CampaignApi* | [**update_ad_set_audience**](docs/CampaignApi.md#update_ad_set_audience) | **PUT** /experimental/marketing-solutions/ad-sets/{ad-set-id}/audience | /experimental/marketing-solutions/ad-sets/{ad-set-id}/audience
+*CatalogApi* | [**get_catalog_ingestion_report_summary**](docs/CatalogApi.md#get_catalog_ingestion_report_summary) | **GET** /experimental/catalog/ingestion/{ingestion-id}/reports/summary | /experimental/catalog/ingestion/{ingestion-id}/reports/summary
+*CatalogApi* | [**get_catalog_ingestion_reports**](docs/CatalogApi.md#get_catalog_ingestion_reports) | **GET** /experimental/catalog/merchants/{merchant-id}/ingestion/reports | /experimental/catalog/merchants/{merchant-id}/ingestion/reports
 *CatalogApi* | [**get_catalog_merchant_stats**](docs/CatalogApi.md#get_catalog_merchant_stats) | **GET** /experimental/catalog/stats/merchants/{merchant-id} | /experimental/catalog/stats/merchants/{merchant-id}
 *CatalogApi* | [**get_catalog_products_batch_report**](docs/CatalogApi.md#get_catalog_products_batch_report) | **GET** /experimental/catalog/products/batch/report/{operation-token} | /experimental/catalog/products/batch/report/{operation-token}
 *CatalogApi* | [**submit_catalog_products_batch**](docs/CatalogApi.md#submit_catalog_products_batch) | **POST** /experimental/catalog/products/batch | /experimental/catalog/products/batch
@@ -302,6 +304,21 @@ Class | Method | HTTP request | Description
  - [CampaignV23Q1ListResponse](docs/CampaignV23Q1ListResponse.md)
  - [CampaignV23Q1Resource](docs/CampaignV23Q1Resource.md)
  - [CampaignV23Q1Response](docs/CampaignV23Q1Response.md)
+ - [CatalogIngestionReport](docs/CatalogIngestionReport.md)
+ - [CatalogIngestionReportListResponse](docs/CatalogIngestionReportListResponse.md)
+ - [CatalogIngestionReportResource](docs/CatalogIngestionReportResource.md)
+ - [CatalogIngestionReportingDataQuality](docs/CatalogIngestionReportingDataQuality.md)
+ - [CatalogIngestionReportingDataQualitySummary](docs/CatalogIngestionReportingDataQualitySummary.md)
+ - [CatalogIngestionReportingDelta](docs/CatalogIngestionReportingDelta.md)
+ - [CatalogIngestionReportingError](docs/CatalogIngestionReportingError.md)
+ - [CatalogIngestionReportingErrors](docs/CatalogIngestionReportingErrors.md)
+ - [CatalogIngestionReportingQuality](docs/CatalogIngestionReportingQuality.md)
+ - [CatalogIngestionReportingTrigger](docs/CatalogIngestionReportingTrigger.md)
+ - [CatalogIngestionReportingVolume](docs/CatalogIngestionReportingVolume.md)
+ - [CatalogIngestionReportingWarnings](docs/CatalogIngestionReportingWarnings.md)
+ - [CatalogIngestionSummary](docs/CatalogIngestionSummary.md)
+ - [CatalogIngestionSummaryResource](docs/CatalogIngestionSummaryResource.md)
+ - [CatalogIngestionSummaryResponse](docs/CatalogIngestionSummaryResponse.md)
  - [CommonProblem](docs/CommonProblem.md)
  - [ContactListStatisticsEntityV1](docs/ContactListStatisticsEntityV1.md)
  - [ContactListStatisticsEntityV1Resource](docs/ContactListStatisticsEntityV1Resource.md)
@@ -408,6 +425,8 @@ Class | Method | HTTP request | Description
  - [InMarketSizeEstimationV1](docs/InMarketSizeEstimationV1.md)
  - [InMarketUpdateV1](docs/InMarketUpdateV1.md)
  - [InMarketV1](docs/InMarketV1.md)
+ - [IngestionStatus](docs/IngestionStatus.md)
+ - [IngestionType](docs/IngestionType.md)
  - [Installment](docs/Installment.md)
  - [IntegerFilterV1](docs/IntegerFilterV1.md)
  - [JsonReportRows](docs/JsonReportRows.md)
@@ -427,6 +446,15 @@ Class | Method | HTTP request | Description
  - [MarketingSolutionsReportStatusResource](docs/MarketingSolutionsReportStatusResource.md)
  - [MarketingSolutionsReportStatusResponse](docs/MarketingSolutionsReportStatusResponse.md)
  - [ModifyAudienceResponse](docs/ModifyAudienceResponse.md)
+ - [MultiSourceAttributeCoverage](docs/MultiSourceAttributeCoverage.md)
+ - [MultiSourceAttributeDetails](docs/MultiSourceAttributeDetails.md)
+ - [MultiSourceAttributeMapping](docs/MultiSourceAttributeMapping.md)
+ - [MultiSourceAttributeResolution](docs/MultiSourceAttributeResolution.md)
+ - [MultiSourceConfiguration](docs/MultiSourceConfiguration.md)
+ - [MultiSourceImpact](docs/MultiSourceImpact.md)
+ - [MultiSourceReporting](docs/MultiSourceReporting.md)
+ - [MultiSourceReportingStatus](docs/MultiSourceReportingStatus.md)
+ - [MultiSourceValueOrigin](docs/MultiSourceValueOrigin.md)
  - [NillableAdSetTargetingRuleV26Q1](docs/NillableAdSetTargetingRuleV26Q1.md)
  - [NillableAdSetTargetingRuleV26Q1Value](docs/NillableAdSetTargetingRuleV26Q1Value.md)
  - [NillableDateTime](docs/NillableDateTime.md)
@@ -439,6 +467,7 @@ Class | Method | HTTP request | Description
  - [OnSiteRecoRequestConversational](docs/OnSiteRecoRequestConversational.md)
  - [OnSiteRecoResponse](docs/OnSiteRecoResponse.md)
  - [Outcome](docs/Outcome.md)
+ - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PatchAdSetAttributionConfigurationV26Q1](docs/PatchAdSetAttributionConfigurationV26Q1.md)
  - [PatchAdSetBiddingV26Q1](docs/PatchAdSetBiddingV26Q1.md)
  - [PatchAdSetBudgetV26Q1](docs/PatchAdSetBudgetV26Q1.md)
@@ -497,6 +526,7 @@ Class | Method | HTTP request | Description
  - [ProspectingCreateV1](docs/ProspectingCreateV1.md)
  - [ProspectingUpdateV1](docs/ProspectingUpdateV1.md)
  - [ProspectingV1](docs/ProspectingV1.md)
+ - [QualityDecision](docs/QualityDecision.md)
  - [ReadAdSetAttributionConfigurationV26Q1](docs/ReadAdSetAttributionConfigurationV26Q1.md)
  - [ReadAdSetBiddingV26Q1](docs/ReadAdSetBiddingV26Q1.md)
  - [ReadAdSetBudgetV26Q1](docs/ReadAdSetBudgetV26Q1.md)
@@ -574,6 +604,7 @@ Class | Method | HTTP request | Description
  - [TransparencyReportFile](docs/TransparencyReportFile.md)
  - [TransparencyReportListResponse](docs/TransparencyReportListResponse.md)
  - [TransparencyReportResource](docs/TransparencyReportResource.md)
+ - [TriggerType](docs/TriggerType.md)
  - [UpdateCoupon](docs/UpdateCoupon.md)
  - [UserDef](docs/UserDef.md)
  - [ValueResourceCollectionOutcomeOfBoostedAdProductSet](docs/ValueResourceCollectionOutcomeOfBoostedAdProductSet.md)

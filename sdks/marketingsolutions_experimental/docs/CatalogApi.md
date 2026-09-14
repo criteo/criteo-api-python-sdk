@@ -4,10 +4,195 @@ All URIs are relative to *https://api.criteo.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_catalog_ingestion_report_summary**](CatalogApi.md#get_catalog_ingestion_report_summary) | **GET** /experimental/catalog/ingestion/{ingestion-id}/reports/summary | /experimental/catalog/ingestion/{ingestion-id}/reports/summary
+[**get_catalog_ingestion_reports**](CatalogApi.md#get_catalog_ingestion_reports) | **GET** /experimental/catalog/merchants/{merchant-id}/ingestion/reports | /experimental/catalog/merchants/{merchant-id}/ingestion/reports
 [**get_catalog_merchant_stats**](CatalogApi.md#get_catalog_merchant_stats) | **GET** /experimental/catalog/stats/merchants/{merchant-id} | /experimental/catalog/stats/merchants/{merchant-id}
 [**get_catalog_products_batch_report**](CatalogApi.md#get_catalog_products_batch_report) | **GET** /experimental/catalog/products/batch/report/{operation-token} | /experimental/catalog/products/batch/report/{operation-token}
 [**submit_catalog_products_batch**](CatalogApi.md#submit_catalog_products_batch) | **POST** /experimental/catalog/products/batch | /experimental/catalog/products/batch
 
+
+# **get_catalog_ingestion_report_summary**
+> CatalogIngestionSummaryResponse get_catalog_ingestion_report_summary(ingestion_id)
+
+/experimental/catalog/ingestion/{ingestion-id}/reports/summary
+
+Get the summary report of a catalog ingestion: what triggered it, how long it ran, how many offers it held, what it changed and how clean the data was.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_experimental
+from criteo_api_marketingsolutions_experimental.api import catalog_api
+from criteo_api_marketingsolutions_experimental.model.catalog_ingestion_summary_response import CatalogIngestionSummaryResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = catalog_api.CatalogApi(api_client)
+    ingestion_id = "ingestion-id_example" # str | Identifies the catalog ingestion to report on.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/catalog/ingestion/{ingestion-id}/reports/summary
+        api_response = api_instance.get_catalog_ingestion_report_summary(ingestion_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_experimental.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_ingestion_report_summary: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ingestion_id** | **str**| Identifies the catalog ingestion to report on. |
+
+### Return type
+
+[**CatalogIngestionSummaryResponse**](CatalogIngestionSummaryResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The summary report of the ingestion. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_catalog_ingestion_reports**
+> CatalogIngestionReportListResponse get_catalog_ingestion_reports(merchant_id)
+
+/experimental/catalog/merchants/{merchant-id}/ingestion/reports
+
+List the catalog ingestions of a merchant, most recent first, with their type, status and timing.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_experimental
+from criteo_api_marketingsolutions_experimental.api import catalog_api
+from criteo_api_marketingsolutions_experimental.model.catalog_ingestion_report_list_response import CatalogIngestionReportListResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = catalog_api.CatalogApi(api_client)
+    merchant_id = "merchant-id_example" # str | Identifies the merchant whose catalog ingestions are reported.
+    limit = 25 # int | Maximum number of ingestion reports returned in the page. (optional) if omitted the server will use the default value of 25
+    offset = 0 # int | Index of the first ingestion report of the page, used to page through the collection. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/catalog/merchants/{merchant-id}/ingestion/reports
+        api_response = api_instance.get_catalog_ingestion_reports(merchant_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_experimental.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_ingestion_reports: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/catalog/merchants/{merchant-id}/ingestion/reports
+        api_response = api_instance.get_catalog_ingestion_reports(merchant_id, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_experimental.ApiException as e:
+        print("Exception when calling CatalogApi->get_catalog_ingestion_reports: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **merchant_id** | **str**| Identifies the merchant whose catalog ingestions are reported. |
+ **limit** | **int**| Maximum number of ingestion reports returned in the page. | [optional] if omitted the server will use the default value of 25
+ **offset** | **int**| Index of the first ingestion report of the page, used to page through the collection. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**CatalogIngestionReportListResponse**](CatalogIngestionReportListResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The page of catalog ingestion reports. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_catalog_merchant_stats**
 > StatisticsOkResponse get_catalog_merchant_stats(merchant_id)

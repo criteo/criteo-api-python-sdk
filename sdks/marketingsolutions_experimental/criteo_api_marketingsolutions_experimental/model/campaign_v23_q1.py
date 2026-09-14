@@ -103,6 +103,7 @@ class CampaignV23Q1(ModelNormal):
             'id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'scheduled_spend_limits': ([CampaignScheduledSpendLimitV23Q1], none_type,),  # noqa: E501
+            'seller_id': (str, none_type,),  # noqa: E501
             'spend_limit': (CampaignSpendLimitV23Q1,),  # noqa: E501
         }
 
@@ -118,6 +119,7 @@ class CampaignV23Q1(ModelNormal):
         'id': 'id',  # noqa: E501
         'name': 'name',  # noqa: E501
         'scheduled_spend_limits': 'scheduledSpendLimits',  # noqa: E501
+        'seller_id': 'sellerId',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
     }
 
@@ -168,6 +170,7 @@ class CampaignV23Q1(ModelNormal):
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
             name (str, none_type): Name of the campaign. [optional]  # noqa: E501
             scheduled_spend_limits ([CampaignScheduledSpendLimitV23Q1], none_type): Spend limits scheduled to become active in the future. Empty when the campaign has no scheduled spend limits.. [optional]  # noqa: E501
+            seller_id (str, none_type): Optional marketplace seller id of the campaign (string-encoded long). [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 
@@ -260,6 +263,7 @@ class CampaignV23Q1(ModelNormal):
             id (str, none_type): Id of the entity (duplicate of the parent id).. [optional]  # noqa: E501
             name (str, none_type): Name of the campaign. [optional]  # noqa: E501
             scheduled_spend_limits ([CampaignScheduledSpendLimitV23Q1], none_type): Spend limits scheduled to become active in the future. Empty when the campaign has no scheduled spend limits.. [optional]  # noqa: E501
+            seller_id (str, none_type): Optional marketplace seller id of the campaign (string-encoded long). [optional]  # noqa: E501
             spend_limit (CampaignSpendLimitV23Q1): [optional]  # noqa: E501
         """
 

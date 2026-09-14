@@ -1226,7 +1226,7 @@ class CreativeApi(object):
 
         Args:
             advertiser_id (str): The advertiser identifier.
-            resource_input_of_ad_write (ResourceInputOfAdWrite):
+            resource_input_of_ad_write (ResourceInputOfAdWrite): The ad information.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1400,7 +1400,7 @@ class CreativeApi(object):
 
         Args:
             advertiser_id (str): The advertiser identifier.
-            resource_input_of_creative_write (ResourceInputOfCreativeWrite):
+            resource_input_of_creative_write (ResourceInputOfCreativeWrite): The creative information.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

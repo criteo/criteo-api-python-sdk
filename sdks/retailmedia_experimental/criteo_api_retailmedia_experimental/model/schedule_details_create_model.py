@@ -100,7 +100,7 @@ class ScheduleDetailsCreateModel(ModelNormal):
         """ScheduleDetailsCreateModel - a model defined in OpenAPI
 
         Args:
-            end_date (datetime): Campaign end date.
+            end_date (datetime): Campaign end date. Pass exactly {9999-12-30T00:00:00Z} for a SponsoredProducts campaign that  runs indefinitely; any other value, including a neighbouring far-future date, is a real end date.
             start_date (datetime): Campaign start date.
 
         Keyword Args:
@@ -191,7 +191,7 @@ class ScheduleDetailsCreateModel(ModelNormal):
         """ScheduleDetailsCreateModel - a model defined in OpenAPI
 
         Args:
-            end_date (datetime): Campaign end date.
+            end_date (datetime): Campaign end date. Pass exactly {9999-12-30T00:00:00Z} for a SponsoredProducts campaign that  runs indefinitely; any other value, including a neighbouring far-future date, is a real end date.
             start_date (datetime): Campaign start date.
 
         Keyword Args:
