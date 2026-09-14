@@ -174,7 +174,7 @@ class Coupon(ModelNormal):
             description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
             format (str, none_type): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\". [optional]  # noqa: E501
-            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
             landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
             name (str, none_type): The name of the Coupon. [optional]  # noqa: E501
@@ -274,7 +274,7 @@ class Coupon(ModelNormal):
             description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
             end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
             format (str, none_type): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\". [optional]  # noqa: E501
-            id (str, none_type): Unique identifier (duplicate of the parent id).. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
             landing_page_url (str, none_type): Web redirection of the landing page url. [optional]  # noqa: E501
             name (str, none_type): The name of the Coupon. [optional]  # noqa: E501

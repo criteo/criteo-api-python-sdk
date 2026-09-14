@@ -1002,7 +1002,7 @@ Name | Type | Description  | Notes
 
 /preview/retail-media/reports/sync/attributed-transactions
 
-Returns a synchronous Attributed Transactions Report
+Returns a synchronous Attributed Transactions Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -1115,7 +1115,7 @@ Name | Type | Description  | Notes
 
 /preview/retail-media/reports/sync/campaigns
 
-Returns a synchronous Campaigns Report
+Returns a synchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -1225,7 +1225,7 @@ Name | Type | Description  | Notes
 
 /preview/retail-media/reports/sync/line-items
 
-Returns a synchronous Line Items Report
+Returns a synchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.
 
 ### Example
 

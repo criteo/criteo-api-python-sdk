@@ -87,7 +87,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # ResourceInputOfAdWrite | 
+    ) # ResourceInputOfAdWrite | The ad information.
 
     # example passing only required values which don't have defaults set
     try:
@@ -104,7 +104,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **resource_input_of_ad_write** | [**ResourceInputOfAdWrite**](ResourceInputOfAdWrite.md)|  |
+ **resource_input_of_ad_write** | [**ResourceInputOfAdWrite**](ResourceInputOfAdWrite.md)| The ad information. |
 
 ### Return type
 
@@ -362,7 +362,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
             id="id_example",
             type="type_example",
         ),
-    ) # ResourceInputOfCreativeWrite | 
+    ) # ResourceInputOfCreativeWrite | The creative information.
 
     # example passing only required values which don't have defaults set
     try:
@@ -379,7 +379,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| The advertiser identifier. |
- **resource_input_of_creative_write** | [**ResourceInputOfCreativeWrite**](ResourceInputOfCreativeWrite.md)|  |
+ **resource_input_of_creative_write** | [**ResourceInputOfCreativeWrite**](ResourceInputOfCreativeWrite.md)| The creative information. |
 
 ### Return type
 
@@ -1836,7 +1836,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The list of self-services Creatives is returned.This list will contain creatives in draft status as well which will have some properties as null |  -  |
+**200** | The list of self-services Creatives is returned. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

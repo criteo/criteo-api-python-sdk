@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **description** | **str, none_type** | The description of the Coupon | [optional] 
 **end_date** | **str, none_type** | The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format | [optional] 
 **format** | **str, none_type** | Format of the Coupon, it can have two values: \&quot;FullFrame\&quot; or \&quot;LogoZone\&quot; | [optional] 
-**id** | **str, none_type** | Unique identifier (duplicate of the parent id). | [optional] 
+**id** | **str, none_type** |  | [optional] 
 **images** | [**[ImageSlide], none_type**](ImageSlide.md) | List of slides containing the image URLs | [optional] 
 **landing_page_url** | **str, none_type** | Web redirection of the landing page url | [optional] 
 **name** | **str, none_type** | The name of the Coupon | [optional] 

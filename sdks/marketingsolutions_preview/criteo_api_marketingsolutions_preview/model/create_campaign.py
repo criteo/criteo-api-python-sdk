@@ -99,6 +99,7 @@ class CreateCampaign(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'spend_limit': (CreateCampaignSpendLimit,),  # noqa: E501
             'budget_automation': (BudgetAutomation,),  # noqa: E501
+            'seller_id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -112,6 +113,7 @@ class CreateCampaign(ModelNormal):
         'name': 'name',  # noqa: E501
         'spend_limit': 'spendLimit',  # noqa: E501
         'budget_automation': 'budgetAutomation',  # noqa: E501
+        'seller_id': 'sellerId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -162,6 +164,7 @@ class CreateCampaign(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget_automation (BudgetAutomation): [optional]  # noqa: E501
+            seller_id (str, none_type): Optional marketplace seller id attached to this campaign (string-encoded long). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -258,6 +261,7 @@ class CreateCampaign(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget_automation (BudgetAutomation): [optional]  # noqa: E501
+            seller_id (str, none_type): Optional marketplace seller id attached to this campaign (string-encoded long). [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **str, none_type** | Id of the entity (duplicate of the parent id). | [optional] 
 **name** | **str, none_type** | Name of the campaign | [optional] 
 **scheduled_spend_limits** | [**[CampaignScheduledSpendLimitV23Q1], none_type**](CampaignScheduledSpendLimitV23Q1.md) | Spend limits scheduled to become active in the future. Empty when the campaign has no scheduled spend limits. | [optional] 
+**seller_id** | **str, none_type** | Optional marketplace seller id of the campaign (string-encoded long) | [optional] 
 **spend_limit** | [**CampaignSpendLimitV23Q1**](CampaignSpendLimitV23Q1.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

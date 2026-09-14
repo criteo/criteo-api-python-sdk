@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **dynamic_attributes** | [**DynamicAttributes**](DynamicAttributes.md) |  | [optional] 
 **format** | **str, none_type** | The format of the creative | [optional] 
 **html_tag_attributes** | [**HtmlTagAttributes**](HtmlTagAttributes.md) |  | [optional] 
-**id** | **str, none_type** | Unique identifier (duplicate of the parent id). | [optional] 
+**id** | **str, none_type** |  | [optional] 
 **image_attributes** | [**ImageAttributes**](ImageAttributes.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

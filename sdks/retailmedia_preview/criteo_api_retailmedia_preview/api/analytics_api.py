@@ -1565,7 +1565,7 @@ class AnalyticsApi(object):
     ):
         """/preview/retail-media/reports/sync/attributed-transactions  # noqa: E501
 
-        Returns a synchronous Attributed Transactions Report  # noqa: E501
+        Returns a synchronous Attributed Transactions Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1648,7 +1648,7 @@ class AnalyticsApi(object):
     ):
         """/preview/retail-media/reports/sync/campaigns  # noqa: E501
 
-        Returns a synchronous Campaigns Report  # noqa: E501
+        Returns a synchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1731,7 +1731,7 @@ class AnalyticsApi(object):
     ):
         """/preview/retail-media/reports/sync/line-items  # noqa: E501
 
-        Returns a synchronous Line Items Report  # noqa: E501
+        Returns a synchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

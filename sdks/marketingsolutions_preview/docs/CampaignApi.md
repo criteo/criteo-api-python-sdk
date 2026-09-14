@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**delete_campaign_bundle_rules**](CampaignApi.md#delete_campaign_bundle_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/bundle-rules | /preview/campaigns/{campaignId}/targeting/bundle-rules
 [**delete_campaign_domain_rules**](CampaignApi.md#delete_campaign_domain_rules) | **DELETE** /preview/campaigns/{campaignId}/targeting/domain-rules | /preview/campaigns/{campaignId}/targeting/domain-rules
 [**disable_ad_set_targeting_deal_ids**](CampaignApi.md#disable_ad_set_targeting_deal_ids) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids/disable
-[**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
+[**disable_ad_set_targeting_video_positioning**](CampaignApi.md#disable_ad_set_targeting_video_positioning) | **POST** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable
 [**get_ad_set**](CampaignApi.md#get_ad_set) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id} | /preview/marketing-solutions/ad-sets/{ad-set-id}
 [**get_ad_set_category_bids**](CampaignApi.md#get_ad_set_category_bids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids | /preview/marketing-solutions/ad-sets/{ad-set-id}/category-bids
 [**get_ad_set_targeting_deal_ids**](CampaignApi.md#get_ad_set_targeting_deal_ids) | **GET** /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids | /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/deal-ids
@@ -257,6 +257,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 ),
                 goal="Unspecified",
                 name="name_example",
+                seller_id="seller_id_example",
                 spend_limit=CreateCampaignSpendLimit(
                     spend_limit_amount=3.14,
                     spend_limit_renewal="undefined",
@@ -841,7 +842,7 @@ Name | Type | Description  | Notes
 # **disable_ad_set_targeting_video_positioning**
 > AdSetTargetingVideoPositioningDisableResultResponse disable_ad_set_targeting_video_positioning(ad_set_id)
 
-/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
+/preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable
 
 Disable the Video Positioning Targeting configuration for the ad set whose id is specified
 
@@ -887,7 +888,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
     # example passing only required values which don't have defaults set
     try:
-        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positionings/disable
+        # /preview/marketing-solutions/ad-sets/{ad-set-id}/targeting/video-positioning/disable
         api_response = api_instance.disable_ad_set_targeting_video_positioning(ad_set_id)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
