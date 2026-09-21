@@ -31,11 +31,13 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.attribution_settings_create_model import AttributionSettingsCreateModel
-    from criteo_api_retailmedia_experimental.model.budget_details_create_model import BudgetDetailsCreateModel
+    from criteo_api_retailmedia_experimental.model.onsite_display_details_create_model import OnsiteDisplayDetailsCreateModel
     from criteo_api_retailmedia_experimental.model.schedule_details_create_model import ScheduleDetailsCreateModel
+    from criteo_api_retailmedia_experimental.model.sponsored_products_details_create_model import SponsoredProductsDetailsCreateModel
     globals()['AttributionSettingsCreateModel'] = AttributionSettingsCreateModel
-    globals()['BudgetDetailsCreateModel'] = BudgetDetailsCreateModel
+    globals()['OnsiteDisplayDetailsCreateModel'] = OnsiteDisplayDetailsCreateModel
     globals()['ScheduleDetailsCreateModel'] = ScheduleDetailsCreateModel
+    globals()['SponsoredProductsDetailsCreateModel'] = SponsoredProductsDetailsCreateModel
 
 
 class CampaignCreateModel(ModelNormal):
@@ -70,13 +72,10 @@ class CampaignCreateModel(ModelNormal):
             'SPONSOREDPRODUCTS': "SponsoredProducts",
             'ONSITEDISPLAY': "OnsiteDisplay",
         },
-        ('objective',): {
+        ('regulated_category',): {
             'None': None,
-            'MANUAL': "Manual",
-            'CLICKS': "Clicks",
-            'CONVERSION': "Conversion",
-            'REVENUE': "Revenue",
-            'IMPRESSIONS': "Impressions",
+            'NONE': "None",
+            'ALCOHOL': "Alcohol",
         },
     }
 
@@ -108,12 +107,13 @@ class CampaignCreateModel(ModelNormal):
             'name': (str,),  # noqa: E501
             'attribution_settings': (AttributionSettingsCreateModel,),  # noqa: E501
             'bill_by_retailer_id': (str, none_type,),  # noqa: E501
-            'budget_details': (BudgetDetailsCreateModel,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'drawable_balance_ids': ([str], none_type,),  # noqa: E501
-            'objective': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'onsite_display_details': (OnsiteDisplayDetailsCreateModel,),  # noqa: E501
+            'regulated_category': (str, none_type,),  # noqa: E501
             'schedule_details': (ScheduleDetailsCreateModel,),  # noqa: E501
+            'sponsored_products_details': (SponsoredProductsDetailsCreateModel,),  # noqa: E501
         }
 
     @cached_property
@@ -127,12 +127,13 @@ class CampaignCreateModel(ModelNormal):
         'name': 'name',  # noqa: E501
         'attribution_settings': 'attributionSettings',  # noqa: E501
         'bill_by_retailer_id': 'billByRetailerId',  # noqa: E501
-        'budget_details': 'budgetDetails',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'drawable_balance_ids': 'drawableBalanceIds',  # noqa: E501
-        'objective': 'objective',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
+        'regulated_category': 'regulatedCategory',  # noqa: E501
         'schedule_details': 'scheduleDetails',  # noqa: E501
+        'sponsored_products_details': 'sponsoredProductsDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -183,12 +184,13 @@ class CampaignCreateModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             attribution_settings (AttributionSettingsCreateModel): [optional]  # noqa: E501
             bill_by_retailer_id (str, none_type): [optional]  # noqa: E501
-            budget_details (BudgetDetailsCreateModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             drawable_balance_ids ([str], none_type): [optional]  # noqa: E501
-            objective (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            onsite_display_details (OnsiteDisplayDetailsCreateModel): [optional]  # noqa: E501
+            regulated_category (str, none_type): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsCreateModel): [optional]  # noqa: E501
+            sponsored_products_details (SponsoredProductsDetailsCreateModel): [optional]  # noqa: E501
         """
 
         buy_type = kwargs.get('buy_type', "Auction")
@@ -285,12 +287,13 @@ class CampaignCreateModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             attribution_settings (AttributionSettingsCreateModel): [optional]  # noqa: E501
             bill_by_retailer_id (str, none_type): [optional]  # noqa: E501
-            budget_details (BudgetDetailsCreateModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             drawable_balance_ids ([str], none_type): [optional]  # noqa: E501
-            objective (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            onsite_display_details (OnsiteDisplayDetailsCreateModel): [optional]  # noqa: E501
+            regulated_category (str, none_type): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsCreateModel): [optional]  # noqa: E501
+            sponsored_products_details (SponsoredProductsDetailsCreateModel): [optional]  # noqa: E501
         """
 
         buy_type = kwargs.get('buy_type', "Auction")

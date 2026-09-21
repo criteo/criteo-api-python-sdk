@@ -6,7 +6,6 @@ The settings to create a line item with.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | [optional] 
-**flight_dates** | [**ExperimentalFlightDatesModel**](ExperimentalFlightDatesModel.md) |  | [optional] 
 **is_paused** | **bool, none_type** | Indicates whether the line item is paused. Defaults to false. | [optional] 
 **name** | **str, none_type** | The name of the line item. | [optional] 
 **onsite_display_details** | [**ExperimentalCreateOnsiteDisplayLineItemDetails**](ExperimentalCreateOnsiteDisplayLineItemDetails.md) |  | [optional] 

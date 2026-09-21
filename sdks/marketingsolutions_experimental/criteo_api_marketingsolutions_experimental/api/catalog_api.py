@@ -47,7 +47,7 @@ class CatalogApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/catalog/ingestion/{ingestion-id}/reports/summary',
+                'endpoint_path': '/experimental/marketing-solutions/catalog/ingestion/{ingestion-id}/reports/summary',
                 'operation_id': 'get_catalog_ingestion_report_summary',
                 'http_method': 'GET',
                 'servers': None,
@@ -99,7 +99,7 @@ class CatalogApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/catalog/merchants/{merchant-id}/ingestion/reports',
+                'endpoint_path': '/experimental/marketing-solutions/catalog/merchants/{merchant-id}/ingestion/reports',
                 'operation_id': 'get_catalog_ingestion_reports',
                 'http_method': 'GET',
                 'servers': None,
@@ -328,7 +328,7 @@ class CatalogApi(object):
         ingestion_id,
         **kwargs
     ):
-        """/experimental/catalog/ingestion/{ingestion-id}/reports/summary  # noqa: E501
+        """/experimental/marketing-solutions/catalog/ingestion/{ingestion-id}/reports/summary  # noqa: E501
 
         Get the summary report of a catalog ingestion: what triggered it, how long it ran, how many offers it held, what it changed and how clean the data was.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -411,7 +411,7 @@ class CatalogApi(object):
         merchant_id,
         **kwargs
     ):
-        """/experimental/catalog/merchants/{merchant-id}/ingestion/reports  # noqa: E501
+        """/experimental/marketing-solutions/catalog/merchants/{merchant-id}/ingestion/reports  # noqa: E501
 
         List the catalog ingestions of a merchant, most recent first, with their type, status and timing.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

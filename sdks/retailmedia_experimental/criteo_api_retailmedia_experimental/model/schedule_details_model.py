@@ -130,7 +130,7 @@ class ScheduleDetailsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (datetime, none_type): Campaign end date. A SponsoredProducts campaign that runs indefinitely reports  {9999-12-30T00:00:00Z}.. [optional]  # noqa: E501
+            end_date (datetime, none_type): Campaign end date. A SponsoredProducts campaign that runs indefinitely reports  {9999-12-30T00:00:00Z}. An OnsiteDisplay campaign reports a real end date, and omits  it when neither the campaign nor its line items carry one.. [optional]  # noqa: E501
             start_date (datetime, none_type): Campaign start date. Defaults to the creation timestamp.. [optional]  # noqa: E501
         """
 
@@ -217,7 +217,7 @@ class ScheduleDetailsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (datetime, none_type): Campaign end date. A SponsoredProducts campaign that runs indefinitely reports  {9999-12-30T00:00:00Z}.. [optional]  # noqa: E501
+            end_date (datetime, none_type): Campaign end date. A SponsoredProducts campaign that runs indefinitely reports  {9999-12-30T00:00:00Z}. An OnsiteDisplay campaign reports a real end date, and omits  it when neither the campaign nor its line items carry one.. [optional]  # noqa: E501
             start_date (datetime, none_type): Campaign start date. Defaults to the creation timestamp.. [optional]  # noqa: E501
         """
 

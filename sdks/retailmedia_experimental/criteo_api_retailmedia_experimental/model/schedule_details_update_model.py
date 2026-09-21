@@ -100,7 +100,7 @@ class ScheduleDetailsUpdateModel(ModelNormal):
         """ScheduleDetailsUpdateModel - a model defined in OpenAPI
 
         Args:
-            end_date (datetime): New campaign end date. Pass exactly {9999-12-30T00:00:00Z} to make the campaign run  indefinitely; any other value is a real end date.
+            end_date (datetime): New campaign end date. Pass exactly {9999-12-30T00:00:00Z} to make a SponsoredProducts  campaign run indefinitely; any other value is a real end date. An OnsiteDisplay Auction  campaign cannot run indefinitely and rejects that date.
             start_date (datetime): New campaign start date.
 
         Keyword Args:
@@ -191,7 +191,7 @@ class ScheduleDetailsUpdateModel(ModelNormal):
         """ScheduleDetailsUpdateModel - a model defined in OpenAPI
 
         Args:
-            end_date (datetime): New campaign end date. Pass exactly {9999-12-30T00:00:00Z} to make the campaign run  indefinitely; any other value is a real end date.
+            end_date (datetime): New campaign end date. Pass exactly {9999-12-30T00:00:00Z} to make a SponsoredProducts  campaign run indefinitely; any other value is a real end date. An OnsiteDisplay Auction  campaign cannot run indefinitely and rejects that date.
             start_date (datetime): New campaign start date.
 
         Keyword Args:

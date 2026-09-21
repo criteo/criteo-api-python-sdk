@@ -31,11 +31,13 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.attribution_settings_model import AttributionSettingsModel
-    from criteo_api_retailmedia_experimental.model.budget_details_model import BudgetDetailsModel
+    from criteo_api_retailmedia_experimental.model.onsite_display_details_model import OnsiteDisplayDetailsModel
     from criteo_api_retailmedia_experimental.model.schedule_details_model import ScheduleDetailsModel
+    from criteo_api_retailmedia_experimental.model.sponsored_products_details_model import SponsoredProductsDetailsModel
     globals()['AttributionSettingsModel'] = AttributionSettingsModel
-    globals()['BudgetDetailsModel'] = BudgetDetailsModel
+    globals()['OnsiteDisplayDetailsModel'] = OnsiteDisplayDetailsModel
     globals()['ScheduleDetailsModel'] = ScheduleDetailsModel
+    globals()['SponsoredProductsDetailsModel'] = SponsoredProductsDetailsModel
 
 
 class CampaignResponseModel(ModelNormal):
@@ -74,19 +76,15 @@ class CampaignResponseModel(ModelNormal):
             'SPONSOREDPRODUCTS': "SponsoredProducts",
             'ONSITEDISPLAY': "OnsiteDisplay",
         },
+        ('regulated_category',): {
+            'UNKNOWN': "Unknown",
+            'NONE': "None",
+            'ALCOHOL': "Alcohol",
+        },
         ('status',): {
             'UNKNOWN': "Unknown",
             'ACTIVE': "Active",
             'INACTIVE': "Inactive",
-        },
-        ('objective',): {
-            'None': None,
-            'MANUAL': "Manual",
-            'CLICKS': "Clicks",
-            'CONVERSION': "Conversion",
-            'REVENUE': "Revenue",
-            'IMPRESSIONS': "Impressions",
-            'UNKNOWN': "Unknown",
         },
     }
 
@@ -120,15 +118,16 @@ class CampaignResponseModel(ModelNormal):
             'created_at': (datetime,),  # noqa: E501
             'drawable_balance_ids': ([str],),  # noqa: E501
             'name': (str,),  # noqa: E501
+            'regulated_category': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'bill_by_retailer_id': (str, none_type,),  # noqa: E501
-            'budget_details': (BudgetDetailsModel,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
-            'objective': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
+            'onsite_display_details': (OnsiteDisplayDetailsModel,),  # noqa: E501
             'schedule_details': (ScheduleDetailsModel,),  # noqa: E501
+            'sponsored_products_details': (SponsoredProductsDetailsModel,),  # noqa: E501
         }
 
     @cached_property
@@ -144,15 +143,16 @@ class CampaignResponseModel(ModelNormal):
         'created_at': 'createdAt',  # noqa: E501
         'drawable_balance_ids': 'drawableBalanceIds',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'regulated_category': 'regulatedCategory',  # noqa: E501
         'status': 'status',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'bill_by_retailer_id': 'billByRetailerId',  # noqa: E501
-        'budget_details': 'budgetDetails',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'id': 'id',  # noqa: E501
-        'objective': 'objective',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'schedule_details': 'scheduleDetails',  # noqa: E501
+        'sponsored_products_details': 'sponsoredProductsDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -162,7 +162,7 @@ class CampaignResponseModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, account_id, attribution_settings, buy_type, campaign_type, created_at, drawable_balance_ids, name, status, updated_at, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, account_id, attribution_settings, buy_type, campaign_type, created_at, drawable_balance_ids, name, regulated_category, status, updated_at, *args, **kwargs):  # noqa: E501
         """CampaignResponseModel - a model defined in OpenAPI
 
         Args:
@@ -173,6 +173,7 @@ class CampaignResponseModel(ModelNormal):
             created_at (datetime):
             drawable_balance_ids ([str]):
             name (str):
+            regulated_category (str): Regulated category the campaign advertises in, set only on creation.
             status (str): Campaign status, derived from the status of Line Items it holds; active if at least  one line item is active.
             updated_at (datetime):
 
@@ -208,12 +209,12 @@ class CampaignResponseModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bill_by_retailer_id (str, none_type): [optional]  # noqa: E501
-            budget_details (BudgetDetailsModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
-            objective (str, none_type): Dynamic Campaign Budgets control: manual keeps today's behavior; clicks, conversion and  revenue activate campaign-level budget allocation. Impressions is the Onsite Display  objective.. [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            onsite_display_details (OnsiteDisplayDetailsModel): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsModel): [optional]  # noqa: E501
+            sponsored_products_details (SponsoredProductsDetailsModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -252,6 +253,7 @@ class CampaignResponseModel(ModelNormal):
         self.created_at = created_at
         self.drawable_balance_ids = drawable_balance_ids
         self.name = name
+        self.regulated_category = regulated_category
         self.status = status
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():
@@ -274,7 +276,7 @@ class CampaignResponseModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, account_id, attribution_settings, buy_type, campaign_type, created_at, drawable_balance_ids, name, status, updated_at, *args, **kwargs):  # noqa: E501
+    def __init__(self, account_id, attribution_settings, buy_type, campaign_type, created_at, drawable_balance_ids, name, regulated_category, status, updated_at, *args, **kwargs):  # noqa: E501
         """CampaignResponseModel - a model defined in OpenAPI
 
         Args:
@@ -285,6 +287,7 @@ class CampaignResponseModel(ModelNormal):
             created_at (datetime):
             drawable_balance_ids ([str]):
             name (str):
+            regulated_category (str): Regulated category the campaign advertises in, set only on creation.
             status (str): Campaign status, derived from the status of Line Items it holds; active if at least  one line item is active.
             updated_at (datetime):
 
@@ -320,12 +323,12 @@ class CampaignResponseModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bill_by_retailer_id (str, none_type): [optional]  # noqa: E501
-            budget_details (BudgetDetailsModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
-            objective (str, none_type): Dynamic Campaign Budgets control: manual keeps today's behavior; clicks, conversion and  revenue activate campaign-level budget allocation. Impressions is the Onsite Display  objective.. [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
+            onsite_display_details (OnsiteDisplayDetailsModel): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsModel): [optional]  # noqa: E501
+            sponsored_products_details (SponsoredProductsDetailsModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -362,6 +365,7 @@ class CampaignResponseModel(ModelNormal):
         self.created_at = created_at
         self.drawable_balance_ids = drawable_balance_ids
         self.name = name
+        self.regulated_category = regulated_category
         self.status = status
         self.updated_at = updated_at
         for var_name, var_value in kwargs.items():

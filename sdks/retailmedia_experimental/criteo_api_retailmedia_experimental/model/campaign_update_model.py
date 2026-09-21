@@ -31,12 +31,14 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.attribution_settings_update_model import AttributionSettingsUpdateModel
-    from criteo_api_retailmedia_experimental.model.budget_details_update_model import BudgetDetailsUpdateModel
+    from criteo_api_retailmedia_experimental.model.onsite_display_details_update_model import OnsiteDisplayDetailsUpdateModel
     from criteo_api_retailmedia_experimental.model.schedule_details_update_model import ScheduleDetailsUpdateModel
+    from criteo_api_retailmedia_experimental.model.sponsored_products_details_update_model import SponsoredProductsDetailsUpdateModel
     from criteo_api_retailmedia_experimental.model.string_nillable_v2 import StringNillableV2
     globals()['AttributionSettingsUpdateModel'] = AttributionSettingsUpdateModel
-    globals()['BudgetDetailsUpdateModel'] = BudgetDetailsUpdateModel
+    globals()['OnsiteDisplayDetailsUpdateModel'] = OnsiteDisplayDetailsUpdateModel
     globals()['ScheduleDetailsUpdateModel'] = ScheduleDetailsUpdateModel
+    globals()['SponsoredProductsDetailsUpdateModel'] = SponsoredProductsDetailsUpdateModel
     globals()['StringNillableV2'] = StringNillableV2
 
 
@@ -65,14 +67,6 @@ class CampaignUpdateModel(ModelNormal):
     """
 
     allowed_values = {
-        ('objective',): {
-            'None': None,
-            'MANUAL': "Manual",
-            'CLICKS': "Clicks",
-            'CONVERSION': "Conversion",
-            'REVENUE': "Revenue",
-            'IMPRESSIONS': "Impressions",
-        },
     }
 
     validations = {
@@ -95,12 +89,12 @@ class CampaignUpdateModel(ModelNormal):
         lazy_import()
         return {
             'attribution_settings': (AttributionSettingsUpdateModel,),  # noqa: E501
-            'budget_details': (BudgetDetailsUpdateModel,),  # noqa: E501
             'company_name': (StringNillableV2,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
-            'objective': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (StringNillableV2,),  # noqa: E501
+            'onsite_display_details': (OnsiteDisplayDetailsUpdateModel,),  # noqa: E501
             'schedule_details': (ScheduleDetailsUpdateModel,),  # noqa: E501
+            'sponsored_products_details': (SponsoredProductsDetailsUpdateModel,),  # noqa: E501
         }
 
     @cached_property
@@ -110,12 +104,12 @@ class CampaignUpdateModel(ModelNormal):
 
     attribute_map = {
         'attribution_settings': 'attributionSettings',  # noqa: E501
-        'budget_details': 'budgetDetails',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'objective': 'objective',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
+        'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'schedule_details': 'scheduleDetails',  # noqa: E501
+        'sponsored_products_details': 'sponsoredProductsDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,12 +154,12 @@ class CampaignUpdateModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attribution_settings (AttributionSettingsUpdateModel): [optional]  # noqa: E501
-            budget_details (BudgetDetailsUpdateModel): [optional]  # noqa: E501
             company_name (StringNillableV2): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
-            objective (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (StringNillableV2): [optional]  # noqa: E501
+            onsite_display_details (OnsiteDisplayDetailsUpdateModel): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsUpdateModel): [optional]  # noqa: E501
+            sponsored_products_details (SponsoredProductsDetailsUpdateModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -252,12 +246,12 @@ class CampaignUpdateModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attribution_settings (AttributionSettingsUpdateModel): [optional]  # noqa: E501
-            budget_details (BudgetDetailsUpdateModel): [optional]  # noqa: E501
             company_name (StringNillableV2): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
-            objective (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (StringNillableV2): [optional]  # noqa: E501
+            onsite_display_details (OnsiteDisplayDetailsUpdateModel): [optional]  # noqa: E501
             schedule_details (ScheduleDetailsUpdateModel): [optional]  # noqa: E501
+            sponsored_products_details (SponsoredProductsDetailsUpdateModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

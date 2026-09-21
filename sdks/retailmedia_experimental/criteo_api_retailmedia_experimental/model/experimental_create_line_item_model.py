@@ -31,9 +31,7 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.experimental_create_onsite_display_line_item_details import ExperimentalCreateOnsiteDisplayLineItemDetails
-    from criteo_api_retailmedia_experimental.model.experimental_flight_dates_model import ExperimentalFlightDatesModel
     globals()['ExperimentalCreateOnsiteDisplayLineItemDetails'] = ExperimentalCreateOnsiteDisplayLineItemDetails
-    globals()['ExperimentalFlightDatesModel'] = ExperimentalFlightDatesModel
 
 
 class ExperimentalCreateLineItemModel(ModelNormal):
@@ -83,7 +81,6 @@ class ExperimentalCreateLineItemModel(ModelNormal):
         lazy_import()
         return {
             'campaign_id': (str, none_type,),  # noqa: E501
-            'flight_dates': (ExperimentalFlightDatesModel,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'onsite_display_details': (ExperimentalCreateOnsiteDisplayLineItemDetails,),  # noqa: E501
@@ -98,7 +95,6 @@ class ExperimentalCreateLineItemModel(ModelNormal):
 
     attribute_map = {
         'campaign_id': 'campaignId',  # noqa: E501
-        'flight_dates': 'flightDates',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'name': 'name',  # noqa: E501
         'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
@@ -148,7 +144,6 @@ class ExperimentalCreateLineItemModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused. Defaults to false.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalCreateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
@@ -240,7 +235,6 @@ class ExperimentalCreateLineItemModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            flight_dates (ExperimentalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused. Defaults to false.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExperimentalCreateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501

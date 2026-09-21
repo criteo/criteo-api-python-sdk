@@ -82,6 +82,7 @@ class CouponSupportedSizes(ModelNormal):
         """
         return {
             'full_frame': ([str], none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'logo_zone': ([str], none_type,),  # noqa: E501
         }
 
@@ -92,6 +93,7 @@ class CouponSupportedSizes(ModelNormal):
 
     attribute_map = {
         'full_frame': 'fullFrame',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'logo_zone': 'logoZone',  # noqa: E501
     }
 
@@ -137,6 +139,7 @@ class CouponSupportedSizes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             full_frame ([str], none_type): Array of FullFrame sizes as string in width x height format. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             logo_zone ([str], none_type): Array of LogoZone sizes as string in width x height format. [optional]  # noqa: E501
         """
 
@@ -224,6 +227,7 @@ class CouponSupportedSizes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             full_frame ([str], none_type): Array of FullFrame sizes as string in width x height format. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             logo_zone ([str], none_type): Array of LogoZone sizes as string in width x height format. [optional]  # noqa: E501
         """
 

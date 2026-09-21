@@ -136,8 +136,8 @@ class Size(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            height (int, none_type): [optional]  # noqa: E501
-            width (int, none_type): [optional]  # noqa: E501
+            height (int, none_type): The height of the creative, in pixels. [optional]  # noqa: E501
+            width (int, none_type): The width of the creative, in pixels. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -223,8 +223,8 @@ class Size(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            height (int, none_type): [optional]  # noqa: E501
-            width (int, none_type): [optional]  # noqa: E501
+            height (int, none_type): The height of the creative, in pixels. [optional]  # noqa: E501
+            width (int, none_type): The width of the creative, in pixels. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

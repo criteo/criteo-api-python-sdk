@@ -1,11 +1,12 @@
-# DecimalNullableNillableV2
+# SubmitLineItemRequestModelResource
 
-A wrapper around an optional decimal value in an update payload. Omit the property to leave the current value unchanged, or send a null value to clear it.
+A value resource exposed by the API.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **float, none_type** |  | [optional] 
+**attributes** | [**SubmitLineItemRequestModel**](SubmitLineItemRequestModel.md) |  | [optional] 
+**type** | **str, none_type** | Type of the resource. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

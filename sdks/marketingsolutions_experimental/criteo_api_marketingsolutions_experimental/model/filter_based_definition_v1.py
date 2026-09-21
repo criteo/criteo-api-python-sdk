@@ -30,11 +30,9 @@ from criteo_api_marketingsolutions_experimental.exceptions import ApiAttributeEr
 
 
 def lazy_import():
-    from criteo_api_marketingsolutions_experimental.model.integer_filter_v1 import IntegerFilterV1
-    from criteo_api_marketingsolutions_experimental.model.long_filter_v1 import LongFilterV1
+    from criteo_api_marketingsolutions_experimental.model.id_filter_v1 import IdFilterV1
     from criteo_api_marketingsolutions_experimental.model.product_category_filter_v1 import ProductCategoryFilterV1
-    globals()['IntegerFilterV1'] = IntegerFilterV1
-    globals()['LongFilterV1'] = LongFilterV1
+    globals()['IdFilterV1'] = IdFilterV1
     globals()['ProductCategoryFilterV1'] = ProductCategoryFilterV1
 
 
@@ -91,9 +89,9 @@ class FilterBasedDefinitionV1(ModelNormal):
         """
         lazy_import()
         return {
-            'partner_id': (IntegerFilterV1,),  # noqa: E501
+            'partner_id': (IdFilterV1,),  # noqa: E501
             'product_category': (ProductCategoryFilterV1,),  # noqa: E501
-            'seller_id': (LongFilterV1,),  # noqa: E501
+            'seller_id': (IdFilterV1,),  # noqa: E501
         }
 
     @cached_property
@@ -148,9 +146,9 @@ class FilterBasedDefinitionV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            partner_id (IntegerFilterV1): [optional]  # noqa: E501
+            partner_id (IdFilterV1): [optional]  # noqa: E501
             product_category (ProductCategoryFilterV1): [optional]  # noqa: E501
-            seller_id (LongFilterV1): [optional]  # noqa: E501
+            seller_id (IdFilterV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -236,9 +234,9 @@ class FilterBasedDefinitionV1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            partner_id (IntegerFilterV1): [optional]  # noqa: E501
+            partner_id (IdFilterV1): [optional]  # noqa: E501
             product_category (ProductCategoryFilterV1): [optional]  # noqa: E501
-            seller_id (LongFilterV1): [optional]  # noqa: E501
+            seller_id (IdFilterV1): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
