@@ -5,13 +5,15 @@ An ad is the binding that connects a creative with an ad set
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ad_click_tracking** | [**[ExamAdClickTracking], none_type**](ExamAdClickTracking.md) | Optional ad-level click tracking configuration. | [optional] 
 **ad_delivery_status** | **str, none_type** | The delivery status of the ad. Possible values are \&quot;Live\&quot; and \&quot;Paused\&quot;. This is read-only: use the  dedicated pause and unpause operations to change it. | [optional] 
+**ad_impression_tracking** | [**[ExamAdImpressionTracking], none_type**](ExamAdImpressionTracking.md) | Optional ad-level impression tracking configuration. | [optional] 
 **ad_set_id** | **str, none_type** | The id of the Ad Set binded to this Ad | [optional] 
 **creative_id** | **str, none_type** | The id of the Creative binded to this Ad | [optional] 
 **description** | **str, none_type** | The description of the ad | [optional] 
 **end_date** | **str, none_type** | The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format | [optional] 
 **id** | **str, none_type** |  | [optional] 
-**inventory_type** | **str, none_type** | The inventory the Ad belongs to. Possible values are \&quot;Display\&quot; and \&quot;Native\&quot;. This is optional since this doesn&#39;t make sense for every creative type but will throw an error if not set for a dynamic creative. | [optional] 
+**inventory_type** | **str, none_type** | The inventory the Ad belongs to. Possible values are \&quot;Display\&quot;, \&quot;Native\&quot;, \&quot;Video\&quot; and \&quot;Meta\&quot;. This is  optional since it doesn&#39;t make sense for every creative type: it is inferred from the creative for a  video creative, and an error is returned if it is not set for a dynamic creative. | [optional] 
 **name** | **str, none_type** | The name of the ad | [optional] 
 **start_date** | **str, none_type** | The date when the ad will be launched  String must be in ISO8601 format | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

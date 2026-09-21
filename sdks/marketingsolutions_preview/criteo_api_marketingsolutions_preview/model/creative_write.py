@@ -34,10 +34,16 @@ def lazy_import():
     from criteo_api_marketingsolutions_preview.model.dynamic_write_attributes import DynamicWriteAttributes
     from criteo_api_marketingsolutions_preview.model.html_tag_write_attributes import HtmlTagWriteAttributes
     from criteo_api_marketingsolutions_preview.model.image_write_attributes import ImageWriteAttributes
+    from criteo_api_marketingsolutions_preview.model.showcase_write_attributes import ShowcaseWriteAttributes
+    from criteo_api_marketingsolutions_preview.model.social_settings import SocialSettings
+    from criteo_api_marketingsolutions_preview.model.vast_tag_write_attributes import VastTagWriteAttributes
     globals()['AdaptiveWriteAttributes'] = AdaptiveWriteAttributes
     globals()['DynamicWriteAttributes'] = DynamicWriteAttributes
     globals()['HtmlTagWriteAttributes'] = HtmlTagWriteAttributes
     globals()['ImageWriteAttributes'] = ImageWriteAttributes
+    globals()['ShowcaseWriteAttributes'] = ShowcaseWriteAttributes
+    globals()['SocialSettings'] = SocialSettings
+    globals()['VastTagWriteAttributes'] = VastTagWriteAttributes
 
 
 class CreativeWrite(ModelNormal):
@@ -66,10 +72,12 @@ class CreativeWrite(ModelNormal):
 
     allowed_values = {
         ('format',): {
-            'IMAGE': "Image",
-            'HTMLTAG': "HtmlTag",
             'DYNAMIC': "Dynamic",
+            'HTMLTAG': "HtmlTag",
+            'IMAGE': "Image",
             'ADAPTIVE': "Adaptive",
+            'SHOWCASE': "Showcase",
+            'VASTTAG': "VastTag",
         },
     }
 
@@ -106,7 +114,11 @@ class CreativeWrite(ModelNormal):
             'description': (str, none_type,),  # noqa: E501
             'dynamic_write_attributes': (DynamicWriteAttributes,),  # noqa: E501
             'html_tag_write_attributes': (HtmlTagWriteAttributes,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'image_write_attributes': (ImageWriteAttributes,),  # noqa: E501
+            'showcase_write_attributes': (ShowcaseWriteAttributes,),  # noqa: E501
+            'social_settings': (SocialSettings,),  # noqa: E501
+            'vast_tag_write_attributes': (VastTagWriteAttributes,),  # noqa: E501
         }
 
     @cached_property
@@ -122,7 +134,11 @@ class CreativeWrite(ModelNormal):
         'description': 'description',  # noqa: E501
         'dynamic_write_attributes': 'dynamicWriteAttributes',  # noqa: E501
         'html_tag_write_attributes': 'htmlTagWriteAttributes',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'image_write_attributes': 'imageWriteAttributes',  # noqa: E501
+        'showcase_write_attributes': 'showcaseWriteAttributes',  # noqa: E501
+        'social_settings': 'socialSettings',  # noqa: E501
+        'vast_tag_write_attributes': 'vastTagWriteAttributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -137,7 +153,7 @@ class CreativeWrite(ModelNormal):
 
         Args:
             dataset_id (str): Dataset linked to the Creative
-            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\", \"Dynamic\" or \"Adaptive\"
+            format (str): The format of the creative.  You can use \"Image\", \"HtmlTag\", \"Dynamic\", \"Adaptive\", \"Showcase\" or \"VastTag\"
             name (str): The name of the creative
 
         Keyword Args:
@@ -175,7 +191,11 @@ class CreativeWrite(ModelNormal):
             description (str, none_type): The description of the creative. [optional]  # noqa: E501
             dynamic_write_attributes (DynamicWriteAttributes): [optional]  # noqa: E501
             html_tag_write_attributes (HtmlTagWriteAttributes): [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             image_write_attributes (ImageWriteAttributes): [optional]  # noqa: E501
+            showcase_write_attributes (ShowcaseWriteAttributes): [optional]  # noqa: E501
+            social_settings (SocialSettings): [optional]  # noqa: E501
+            vast_tag_write_attributes (VastTagWriteAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -235,7 +255,7 @@ class CreativeWrite(ModelNormal):
 
         Args:
             dataset_id (str): Dataset linked to the Creative
-            format (str): The format of the creative  You can use \"Image\", \" HtmlTag\", \"Dynamic\" or \"Adaptive\"
+            format (str): The format of the creative.  You can use \"Image\", \"HtmlTag\", \"Dynamic\", \"Adaptive\", \"Showcase\" or \"VastTag\"
             name (str): The name of the creative
 
         Keyword Args:
@@ -273,7 +293,11 @@ class CreativeWrite(ModelNormal):
             description (str, none_type): The description of the creative. [optional]  # noqa: E501
             dynamic_write_attributes (DynamicWriteAttributes): [optional]  # noqa: E501
             html_tag_write_attributes (HtmlTagWriteAttributes): [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             image_write_attributes (ImageWriteAttributes): [optional]  # noqa: E501
+            showcase_write_attributes (ShowcaseWriteAttributes): [optional]  # noqa: E501
+            social_settings (SocialSettings): [optional]  # noqa: E501
+            vast_tag_write_attributes (VastTagWriteAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

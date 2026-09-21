@@ -1217,7 +1217,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/ads  # noqa: E501
 
-        Create an Ad  # noqa: E501
+        Creates an ad by binding an existing creative to an existing ad set of the advertiser, delivering  from the start date given. The creative and the ad set must both belong to that advertiser. Returns  the new ad and its id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1304,7 +1304,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons  # noqa: E501
 
-        Create a Coupon  # noqa: E501
+        Creates a coupon on one ad set of the advertiser. The ad set must already carry dynamic display or  HTML ads, and each slide image must match a size that ad set supports, which the supported-sizes  operation lists. Returns the new coupon and its id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1313,7 +1313,7 @@ class CreativeApi(object):
 
         Args:
             advertiser_id (str): The advertiser identifier.
-            resource_input_of_create_coupon (ResourceInputOfCreateCoupon):
+            resource_input_of_create_coupon (ResourceInputOfCreateCoupon): The coupon to create.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1391,7 +1391,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/creatives  # noqa: E501
 
-        Create a Creative  # noqa: E501
+        Creates a creative in the library of one advertiser. The format decides which attributes block must  be filled in, and the dataset must be one of that advertiser's. Returns the new creative, whose id is  what an ad binds to.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1477,7 +1477,7 @@ class CreativeApi(object):
     ):
         """/preview/ads/{id}  # noqa: E501
 
-        Delete an Ad  # noqa: E501
+        Deletes one ad, which stops it delivering for good. The creative it was bound to is kept and can be  reused; to stop delivery without losing the ad, pause it instead.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1644,7 +1644,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons/{id}  # noqa: E501
 
-        Delete a Coupon  # noqa: E501
+        Deletes one coupon of an advertiser. A coupon that is already deleted or under review cannot be  deleted.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1730,7 +1730,7 @@ class CreativeApi(object):
     ):
         """/preview/creatives/{id}  # noqa: E501
 
-        Delete a Creative if there are no ads binded to it  # noqa: E501
+        Deletes one creative. Every ad bound to it must be deleted or rebound first, and a creative that is  already deleted or under review cannot be deleted.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1815,7 +1815,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons/{id}  # noqa: E501
 
-        Edit a specific Coupon  # noqa: E501
+        Changes when a coupon runs; only the start and end dates can be edited, and the start date must come  before the end date. The coupon must still be a draft or live coupon that is not yet delivering.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1825,7 +1825,7 @@ class CreativeApi(object):
         Args:
             advertiser_id (str): The advertiser identifier.
             id (str): The Coupon identifier to edit.
-            resource_input_of_update_coupon (ResourceInputOfUpdateCoupon):
+            resource_input_of_update_coupon (ResourceInputOfUpdateCoupon): The new start and end dates of the coupon.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1905,7 +1905,7 @@ class CreativeApi(object):
     ):
         """/preview/creatives/{id}  # noqa: E501
 
-        Edit a specific Creative  # noqa: E501
+        Replaces the attributes of one creative: any attribute left out is cleared, so read the creative  first and send it back with your changes applied. The format must be the creative's existing format  and the dataset must stay the one it already belongs to; neither can be changed here. A creative  that is being deployed, archived or deleted cannot be edited.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1914,7 +1914,7 @@ class CreativeApi(object):
 
         Args:
             id (str): The creative identifier to edit.
-            resource_input_of_creative_write (ResourceInputOfCreativeWrite):
+            resource_input_of_creative_write (ResourceInputOfCreativeWrite): The complete new attributes of the creative.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1991,7 +1991,7 @@ class CreativeApi(object):
     ):
         """/preview/creatives/{id}/preview  # noqa: E501
 
-        Get the preview of a specific Creative  # noqa: E501
+        Renders one creative as preview HTML at the size asked for. Only the sizes the creative was built for  can be previewed; when the size does not match, the error lists the ones that can.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2076,7 +2076,7 @@ class CreativeApi(object):
     ):
         """/preview/ads/{id}  # noqa: E501
 
-        Get an Ad with its id  # noqa: E501
+        Reads one ad by its id: the creative and ad set it binds, its schedule and its delivery status. The  id comes from the ad list of the advertiser.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2242,7 +2242,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/ads  # noqa: E501
 
-        Get the list of self-services Ads for a given advertiser  # noqa: E501
+        Lists the ads of one advertiser, each one binding a creative to an ad set. Use it to find an ad id  before reading, pausing, unpausing or deleting a single ad. Page through the ads with limit and  offset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2328,7 +2328,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons/{id}  # noqa: E501
 
-        Get a Coupon with its id  # noqa: E501
+        Reads one coupon of an advertiser by its id: its schedule, its slides and the ad set it runs on. The  id comes from the coupon list of the advertiser.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2415,7 +2415,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons/{id}/preview  # noqa: E501
 
-        Get the preview of a specific Coupon  # noqa: E501
+        Renders one coupon as preview HTML at the size asked for. The size must be one the coupon's ad set  supports, as listed by the supported-sizes operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2503,7 +2503,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons-supported-sizes  # noqa: E501
 
-        Get the list of Coupon supported sizes  # noqa: E501
+        Lists, per coupon format, the sizes an ad set supports. Call it before creating a coupon to pick a  valid slide size; the ad set must already carry dynamic ads.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2587,7 +2587,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/coupons  # noqa: E501
 
-        Get the list of self-services Coupons for a given advertiser  # noqa: E501
+        Lists the coupons of one advertiser. Use it to find a coupon id before reading, editing, previewing  or deleting a single coupon. Page through the coupons with limit and offset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2672,7 +2672,7 @@ class CreativeApi(object):
     ):
         """/preview/advertisers/{advertiser-id}/creatives  # noqa: E501
 
-        Get the list of self-services Creatives for a given advertiser  # noqa: E501
+        Lists the creatives in the library of one advertiser. Use it to find a creative id before reading,  editing or previewing a creative, or before binding one to an ad. Page through the library with  limit and offset.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2757,7 +2757,7 @@ class CreativeApi(object):
     ):
         """/preview/creatives/{id}  # noqa: E501
 
-        Get a Creative with its id  # noqa: E501
+        Reads one creative by its id, with the attributes of its format. Use it to check a creative before  editing it or binding it to an ad.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

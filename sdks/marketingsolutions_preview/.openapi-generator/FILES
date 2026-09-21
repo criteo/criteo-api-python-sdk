@@ -138,6 +138,7 @@ criteo_api_marketingsolutions_preview/model/batch_accepted_response.py
 criteo_api_marketingsolutions_preview/model/behavioral_v1.py
 criteo_api_marketingsolutions_preview/model/boosted_ad_product_set.py
 criteo_api_marketingsolutions_preview/model/boosting_configuration_request.py
+criteo_api_marketingsolutions_preview/model/branding_image_input.py
 criteo_api_marketingsolutions_preview/model/budget_automation.py
 criteo_api_marketingsolutions_preview/model/budget_automation_configuration.py
 criteo_api_marketingsolutions_preview/model/campaign_budget_automation_v23_q1.py
@@ -182,7 +183,9 @@ criteo_api_marketingsolutions_preview/model/create_image_slide.py
 criteo_api_marketingsolutions_preview/model/create_product_filter_request.py
 criteo_api_marketingsolutions_preview/model/create_product_set_request.py
 criteo_api_marketingsolutions_preview/model/creative.py
+criteo_api_marketingsolutions_preview/model/creative_meta_setting.py
 criteo_api_marketingsolutions_preview/model/creative_read.py
+criteo_api_marketingsolutions_preview/model/creative_tik_tok_setting.py
 criteo_api_marketingsolutions_preview/model/creative_write.py
 criteo_api_marketingsolutions_preview/model/criteo_api_error.py
 criteo_api_marketingsolutions_preview/model/criteo_api_warning.py
@@ -201,6 +204,8 @@ criteo_api_marketingsolutions_preview/model/entity_wrapper_of_targeting_entity.p
 criteo_api_marketingsolutions_preview/model/exam_ad_audience_segment_link.py
 criteo_api_marketingsolutions_preview/model/exam_ad_audience_segment_link_input.py
 criteo_api_marketingsolutions_preview/model/exam_ad_audience_segment_link_write.py
+criteo_api_marketingsolutions_preview/model/exam_ad_click_tracking.py
+criteo_api_marketingsolutions_preview/model/exam_ad_impression_tracking.py
 criteo_api_marketingsolutions_preview/model/export_column.py
 criteo_api_marketingsolutions_preview/model/export_meta_data.py
 criteo_api_marketingsolutions_preview/model/export_result.py
@@ -239,6 +244,7 @@ criteo_api_marketingsolutions_preview/model/generate_top_products_report_request
 criteo_api_marketingsolutions_preview/model/get_portfolio_response.py
 criteo_api_marketingsolutions_preview/model/html_tag_attributes.py
 criteo_api_marketingsolutions_preview/model/html_tag_write_attributes.py
+criteo_api_marketingsolutions_preview/model/id_filter_v1.py
 criteo_api_marketingsolutions_preview/model/image_attributes.py
 criteo_api_marketingsolutions_preview/model/image_set.py
 criteo_api_marketingsolutions_preview/model/image_set_base64.py
@@ -256,7 +262,6 @@ criteo_api_marketingsolutions_preview/model/in_market_size_estimation_v1.py
 criteo_api_marketingsolutions_preview/model/in_market_update_v1.py
 criteo_api_marketingsolutions_preview/model/in_market_v1.py
 criteo_api_marketingsolutions_preview/model/installment.py
-criteo_api_marketingsolutions_preview/model/integer_filter_v1.py
 criteo_api_marketingsolutions_preview/model/json_report_rows.py
 criteo_api_marketingsolutions_preview/model/json_report_rows_list_response.py
 criteo_api_marketingsolutions_preview/model/json_report_rows_resource.py
@@ -265,7 +270,7 @@ criteo_api_marketingsolutions_preview/model/location_create_v1.py
 criteo_api_marketingsolutions_preview/model/location_size_estimation_v1.py
 criteo_api_marketingsolutions_preview/model/location_update_v1.py
 criteo_api_marketingsolutions_preview/model/location_v1.py
-criteo_api_marketingsolutions_preview/model/long_filter_v1.py
+criteo_api_marketingsolutions_preview/model/logo_input.py
 criteo_api_marketingsolutions_preview/model/lookalike_create_v1.py
 criteo_api_marketingsolutions_preview/model/lookalike_update_v1.py
 criteo_api_marketingsolutions_preview/model/lookalike_v1.py
@@ -403,7 +408,15 @@ criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_deal_ids_resour
 criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_video_positioning.py
 criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_video_positioning_request.py
 criteo_api_marketingsolutions_preview/model/set_ad_set_targeting_video_positioning_resource.py
+criteo_api_marketingsolutions_preview/model/showcase_attributes.py
+criteo_api_marketingsolutions_preview/model/showcase_branding_image.py
+criteo_api_marketingsolutions_preview/model/showcase_colors.py
+criteo_api_marketingsolutions_preview/model/showcase_logo.py
+criteo_api_marketingsolutions_preview/model/showcase_meta_setting.py
+criteo_api_marketingsolutions_preview/model/showcase_price_settings.py
+criteo_api_marketingsolutions_preview/model/showcase_write_attributes.py
 criteo_api_marketingsolutions_preview/model/size.py
+criteo_api_marketingsolutions_preview/model/social_settings.py
 criteo_api_marketingsolutions_preview/model/statistics_ok_response.py
 criteo_api_marketingsolutions_preview/model/statistics_record.py
 criteo_api_marketingsolutions_preview/model/statistics_record_list.py
@@ -440,6 +453,8 @@ criteo_api_marketingsolutions_preview/model/value_resource_of_product_filter_con
 criteo_api_marketingsolutions_preview/model/value_resource_outcome_of_boosted_ad_product_set.py
 criteo_api_marketingsolutions_preview/model/value_resource_outcome_of_exam_ad_audience_segment_link.py
 criteo_api_marketingsolutions_preview/model/value_resource_outcome_of_product_filter_config.py
+criteo_api_marketingsolutions_preview/model/vast_tag_attributes.py
+criteo_api_marketingsolutions_preview/model/vast_tag_write_attributes.py
 criteo_api_marketingsolutions_preview/model/video_detail.py
 criteo_api_marketingsolutions_preview/model/write_model_ad_set_id.py
 criteo_api_marketingsolutions_preview/model/write_model_patch_ad_set_v26_q1.py
@@ -563,6 +578,7 @@ docs/BatchAcceptedResponse.md
 docs/BehavioralV1.md
 docs/BoostedAdProductSet.md
 docs/BoostingConfigurationRequest.md
+docs/BrandingImageInput.md
 docs/BudgetAutomation.md
 docs/BudgetAutomationConfiguration.md
 docs/CampaignApi.md
@@ -610,7 +626,9 @@ docs/CreateProductFilterRequest.md
 docs/CreateProductSetRequest.md
 docs/Creative.md
 docs/CreativeApi.md
+docs/CreativeMetaSetting.md
 docs/CreativeRead.md
+docs/CreativeTikTokSetting.md
 docs/CreativeWrite.md
 docs/CriteoApiError.md
 docs/CriteoApiWarning.md
@@ -629,6 +647,8 @@ docs/EntityWrapperOfTargetingEntity.md
 docs/ExamAdAudienceSegmentLink.md
 docs/ExamAdAudienceSegmentLinkInput.md
 docs/ExamAdAudienceSegmentLinkWrite.md
+docs/ExamAdClickTracking.md
+docs/ExamAdImpressionTracking.md
 docs/ExportColumn.md
 docs/ExportMetaData.md
 docs/ExportResult.md
@@ -668,6 +688,7 @@ docs/GenerateTopProductsReportRequestAttributesResource.md
 docs/GetPortfolioResponse.md
 docs/HtmlTagAttributes.md
 docs/HtmlTagWriteAttributes.md
+docs/IdFilterV1.md
 docs/ImageAttributes.md
 docs/ImageSet.md
 docs/ImageSetBase64.md
@@ -685,7 +706,6 @@ docs/InMarketSizeEstimationV1.md
 docs/InMarketUpdateV1.md
 docs/InMarketV1.md
 docs/Installment.md
-docs/IntegerFilterV1.md
 docs/JsonReportRows.md
 docs/JsonReportRowsListResponse.md
 docs/JsonReportRowsResource.md
@@ -694,7 +714,7 @@ docs/LocationCreateV1.md
 docs/LocationSizeEstimationV1.md
 docs/LocationUpdateV1.md
 docs/LocationV1.md
-docs/LongFilterV1.md
+docs/LogoInput.md
 docs/LookalikeCreateV1.md
 docs/LookalikeUpdateV1.md
 docs/LookalikeV1.md
@@ -834,7 +854,15 @@ docs/SetAdSetTargetingDealIdsResource.md
 docs/SetAdSetTargetingVideoPositioning.md
 docs/SetAdSetTargetingVideoPositioningRequest.md
 docs/SetAdSetTargetingVideoPositioningResource.md
+docs/ShowcaseAttributes.md
+docs/ShowcaseBrandingImage.md
+docs/ShowcaseColors.md
+docs/ShowcaseLogo.md
+docs/ShowcaseMetaSetting.md
+docs/ShowcasePriceSettings.md
+docs/ShowcaseWriteAttributes.md
 docs/Size.md
+docs/SocialSettings.md
 docs/StatisticsOkResponse.md
 docs/StatisticsRecord.md
 docs/StatisticsRecordList.md
@@ -871,6 +899,8 @@ docs/ValueResourceOfProductFilterConfig.md
 docs/ValueResourceOutcomeOfBoostedAdProductSet.md
 docs/ValueResourceOutcomeOfExamAdAudienceSegmentLink.md
 docs/ValueResourceOutcomeOfProductFilterConfig.md
+docs/VastTagAttributes.md
+docs/VastTagWriteAttributes.md
 docs/VideoDetail.md
 docs/WriteModelAdSetId.md
 docs/WriteModelPatchAdSetV26Q1.md

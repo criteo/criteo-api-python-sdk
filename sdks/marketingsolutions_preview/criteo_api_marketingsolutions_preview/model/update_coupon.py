@@ -83,6 +83,7 @@ class UpdateCoupon(ModelNormal):
         return {
             'start_date': (str,),  # noqa: E501
             'end_date': (str, none_type,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,6 +94,7 @@ class UpdateCoupon(ModelNormal):
     attribute_map = {
         'start_date': 'startDate',  # noqa: E501
         'end_date': 'endDate',  # noqa: E501
+        'id': 'id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,6 +142,7 @@ class UpdateCoupon(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -230,6 +233,7 @@ class UpdateCoupon(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

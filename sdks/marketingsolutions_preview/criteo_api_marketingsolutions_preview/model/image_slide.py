@@ -139,7 +139,7 @@ class ImageSlide(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             height (int, none_type): Height of the Coupon slide. [optional]  # noqa: E501
-            slide_urls ([str], none_type): Array of images of the same size uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
+            slide_urls ([str], none_type): Array of images of the same size uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
             width (int, none_type): Width of the Coupon slide. [optional]  # noqa: E501
         """
 
@@ -227,7 +227,7 @@ class ImageSlide(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             height (int, none_type): Height of the Coupon slide. [optional]  # noqa: E501
-            slide_urls ([str], none_type): Array of images of the same size uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
+            slide_urls ([str], none_type): Array of images of the same size uploaded on demostatic.criteo.com when deploying and then static.criteo.net. [optional]  # noqa: E501
             width (int, none_type): Width of the Coupon slide. [optional]  # noqa: E501
         """
 

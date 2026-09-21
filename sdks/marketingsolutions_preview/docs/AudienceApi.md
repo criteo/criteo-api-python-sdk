@@ -271,10 +271,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                                 FilterBasedAlgebraNodeV1(),
                             ],
                             filter=FilterBasedDefinitionV1(
-                                partner_id=IntegerFilterV1(
+                                partner_id=IdFilterV1(
                                     operator="Unknown",
                                     values=[
-                                        1,
+                                        "values_example",
                                     ],
                                 ),
                                 product_category=ProductCategoryFilterV1(
@@ -286,10 +286,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                                         ),
                                     ],
                                 ),
-                                seller_id=LongFilterV1(
+                                seller_id=IdFilterV1(
                                     operator="Unknown",
                                     values=[
-                                        1,
+                                        "values_example",
                                     ],
                                 ),
                             ),
@@ -1646,10 +1646,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                                 FilterBasedAlgebraNodeV1(),
                             ],
                             filter=FilterBasedDefinitionV1(
-                                partner_id=IntegerFilterV1(
+                                partner_id=IdFilterV1(
                                     operator="Unknown",
                                     values=[
-                                        1,
+                                        "values_example",
                                     ],
                                 ),
                                 product_category=ProductCategoryFilterV1(
@@ -1661,10 +1661,10 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                                         ),
                                     ],
                                 ),
-                                seller_id=LongFilterV1(
+                                seller_id=IdFilterV1(
                                     operator="Unknown",
                                     values=[
-                                        1,
+                                        "values_example",
                                     ],
                                 ),
                             ),

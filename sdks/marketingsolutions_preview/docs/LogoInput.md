@@ -1,12 +1,12 @@
-# LongFilterV1
+# LogoInput
 
-Filter that compares 64-bit integers against one or more values.
+Logo input with shape and base-64 encoded image data.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**operator** | **str, none_type** | Comparison operator for the long filter | [optional] 
-**values** | **[int], none_type** | 64-bit integer values to compare against | [optional] 
+**base64_string** | **str** | Logo image as a base-64 encoded string. | 
+**shape** | **str** | Shape of the logo.  Possible values are \&quot;Horizontal\&quot;, \&quot;Vertical\&quot;, \&quot;Square\&quot;. | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

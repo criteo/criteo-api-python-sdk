@@ -34,10 +34,16 @@ def lazy_import():
     from criteo_api_marketingsolutions_preview.model.dynamic_attributes import DynamicAttributes
     from criteo_api_marketingsolutions_preview.model.html_tag_attributes import HtmlTagAttributes
     from criteo_api_marketingsolutions_preview.model.image_attributes import ImageAttributes
+    from criteo_api_marketingsolutions_preview.model.showcase_attributes import ShowcaseAttributes
+    from criteo_api_marketingsolutions_preview.model.social_settings import SocialSettings
+    from criteo_api_marketingsolutions_preview.model.vast_tag_attributes import VastTagAttributes
     globals()['AdaptiveReadAttributes'] = AdaptiveReadAttributes
     globals()['DynamicAttributes'] = DynamicAttributes
     globals()['HtmlTagAttributes'] = HtmlTagAttributes
     globals()['ImageAttributes'] = ImageAttributes
+    globals()['ShowcaseAttributes'] = ShowcaseAttributes
+    globals()['SocialSettings'] = SocialSettings
+    globals()['VastTagAttributes'] = VastTagAttributes
 
 
 class CreativeRead(ModelNormal):
@@ -103,7 +109,11 @@ class CreativeRead(ModelNormal):
             'dynamic_attributes': (DynamicAttributes,),  # noqa: E501
             'format': (str, none_type,),  # noqa: E501
             'html_tag_attributes': (HtmlTagAttributes,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'image_attributes': (ImageAttributes,),  # noqa: E501
+            'showcase_attributes': (ShowcaseAttributes,),  # noqa: E501
+            'social_settings': (SocialSettings,),  # noqa: E501
+            'vast_tag_attributes': (VastTagAttributes,),  # noqa: E501
         }
 
     @cached_property
@@ -122,7 +132,11 @@ class CreativeRead(ModelNormal):
         'dynamic_attributes': 'dynamicAttributes',  # noqa: E501
         'format': 'format',  # noqa: E501
         'html_tag_attributes': 'htmlTagAttributes',  # noqa: E501
+        'id': 'id',  # noqa: E501
         'image_attributes': 'imageAttributes',  # noqa: E501
+        'showcase_attributes': 'showcaseAttributes',  # noqa: E501
+        'social_settings': 'socialSettings',  # noqa: E501
+        'vast_tag_attributes': 'vastTagAttributes',  # noqa: E501
     }
 
     read_only_vars = {
@@ -178,7 +192,11 @@ class CreativeRead(ModelNormal):
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             format (str, none_type): The format of the creative. [optional]  # noqa: E501
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             image_attributes (ImageAttributes): [optional]  # noqa: E501
+            showcase_attributes (ShowcaseAttributes): [optional]  # noqa: E501
+            social_settings (SocialSettings): [optional]  # noqa: E501
+            vast_tag_attributes (VastTagAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -280,7 +298,11 @@ class CreativeRead(ModelNormal):
             dynamic_attributes (DynamicAttributes): [optional]  # noqa: E501
             format (str, none_type): The format of the creative. [optional]  # noqa: E501
             html_tag_attributes (HtmlTagAttributes): [optional]  # noqa: E501
+            id (str, none_type): [optional]  # noqa: E501
             image_attributes (ImageAttributes): [optional]  # noqa: E501
+            showcase_attributes (ShowcaseAttributes): [optional]  # noqa: E501
+            social_settings (SocialSettings): [optional]  # noqa: E501
+            vast_tag_attributes (VastTagAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
