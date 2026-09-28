@@ -363,6 +363,12 @@ criteo_api_marketingsolutions_experimental/model/product_filter_config.py
 criteo_api_marketingsolutions_experimental/model/product_importer_error.py
 criteo_api_marketingsolutions_experimental/model/product_importer_warning.py
 criteo_api_marketingsolutions_experimental/model/product_price.py
+criteo_api_marketingsolutions_experimental/model/product_report_data.py
+criteo_api_marketingsolutions_experimental/model/product_report_data_resource.py
+criteo_api_marketingsolutions_experimental/model/product_report_data_response.py
+criteo_api_marketingsolutions_experimental/model/product_report_job.py
+criteo_api_marketingsolutions_experimental/model/product_report_job_request.py
+criteo_api_marketingsolutions_experimental/model/product_report_job_resource.py
 criteo_api_marketingsolutions_experimental/model/product_set.py
 criteo_api_marketingsolutions_experimental/model/product_set_rule.py
 criteo_api_marketingsolutions_experimental/model/product_shipping.py
@@ -397,6 +403,9 @@ criteo_api_marketingsolutions_experimental/model/report_detail_error.py
 criteo_api_marketingsolutions_experimental/model/report_detail_errors.py
 criteo_api_marketingsolutions_experimental/model/report_detail_warning.py
 criteo_api_marketingsolutions_experimental/model/report_detail_warnings.py
+criteo_api_marketingsolutions_experimental/model/report_job_status.py
+criteo_api_marketingsolutions_experimental/model/report_job_status_resource.py
+criteo_api_marketingsolutions_experimental/model/report_job_status_response.py
 criteo_api_marketingsolutions_experimental/model/report_ok_response.py
 criteo_api_marketingsolutions_experimental/model/requests_ad_set_id.py
 criteo_api_marketingsolutions_experimental/model/requests_patch_ad_set_v26_q1.py
@@ -837,6 +846,12 @@ docs/ProductFilterConfig.md
 docs/ProductImporterError.md
 docs/ProductImporterWarning.md
 docs/ProductPrice.md
+docs/ProductReportData.md
+docs/ProductReportDataResource.md
+docs/ProductReportDataResponse.md
+docs/ProductReportJob.md
+docs/ProductReportJobRequest.md
+docs/ProductReportJobResource.md
 docs/ProductSet.md
 docs/ProductSetRule.md
 docs/ProductShipping.md
@@ -872,6 +887,9 @@ docs/ReportDetailError.md
 docs/ReportDetailErrors.md
 docs/ReportDetailWarning.md
 docs/ReportDetailWarnings.md
+docs/ReportJobStatus.md
+docs/ReportJobStatusResource.md
+docs/ReportJobStatusResponse.md
 docs/ReportOkResponse.md
 docs/RequestsAdSetId.md
 docs/RequestsPatchAdSetV26Q1.md

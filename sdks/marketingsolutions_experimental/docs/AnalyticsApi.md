@@ -5,8 +5,10 @@ All URIs are relative to *https://api.criteo.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_all_products_export**](AnalyticsApi.md#create_all_products_export) | **POST** /experimental/marketing-solutions/report/products/export | /experimental/marketing-solutions/report/products/export
+[**create_mpo_products_export**](AnalyticsApi.md#create_mpo_products_export) | **POST** /experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/export | /experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/export
 [**create_realtime_product_report**](AnalyticsApi.md#create_realtime_product_report) | **POST** /experimental/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export | /experimental/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
 [**download_all_products_export**](AnalyticsApi.md#download_all_products_export) | **GET** /experimental/marketing-solutions/report/products/{reportId} | /experimental/marketing-solutions/report/products/{reportId}
+[**download_mpo_products_export**](AnalyticsApi.md#download_mpo_products_export) | **GET** /experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/{reportId} | /experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/{reportId}
 [**get_adset_report**](AnalyticsApi.md#get_adset_report) | **POST** /experimental/statistics/report | /experimental/statistics/report
 [**get_async_adset_report**](AnalyticsApi.md#get_async_adset_report) | **POST** /experimental/reports/async-statistics | /experimental/reports/async-statistics
 [**get_async_audience_report**](AnalyticsApi.md#get_async_audience_report) | **POST** /experimental/reports/async-audience-performance | /experimental/reports/async-audience-performance
@@ -29,7 +31,7 @@ Method | HTTP request | Description
 
 /experimental/marketing-solutions/report/products/export
 
-Creates an all-products report export job.  <br />  This endpoint is subject to specific rate limits.
+Creates an all-products report export job. <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -140,12 +142,119 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_mpo_products_export**
+> ReportJobStatusResponse create_mpo_products_export()
+
+/experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/export
+
+Creates an MPO products report export job. <br /> This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_experimental
+from criteo_api_marketingsolutions_experimental.api import analytics_api
+from criteo_api_marketingsolutions_experimental.model.report_job_status_response import ReportJobStatusResponse
+from criteo_api_marketingsolutions_experimental.model.product_report_job_request import ProductReportJobRequest
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    product_report_job_request = ProductReportJobRequest(
+        data=ProductReportJobResource(
+            attributes=ProductReportJob(
+                ad_set_ids=[
+                    "ad_set_ids_example",
+                ],
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+                dimensions=["advertiserId","adSetId","sellerId","productId"],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                file_format="csv",
+                metrics=["clicks","impressions","cost"],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+            ),
+            type="type_example",
+        ),
+    ) # ProductReportJobRequest | The MPO products report export request. (optional)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/export
+        api_response = api_instance.create_mpo_products_export(product_report_job_request=product_report_job_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->create_mpo_products_export: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_report_job_request** | [**ProductReportJobRequest**](ProductReportJobRequest.md)| The MPO products report export request. | [optional]
+
+### Return type
+
+[**ReportJobStatusResponse**](ReportJobStatusResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **create_realtime_product_report**
 > RealTimeProductReportJobStatusResponse create_realtime_product_report()
 
 /experimental/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/export
 
-Creates a marketplace performance outcomes realtime report export.  <br />  This endpoint is subject to specific rate limits.
+Creates a marketplace performance outcomes realtime report export. <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -262,7 +371,7 @@ Name | Type | Description  | Notes
 
 /experimental/marketing-solutions/report/products/{reportId}
 
-Downloads the generated all-products report export.  <br />  This endpoint is subject to specific rate limits.
+Downloads the generated all-products report export. <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -331,6 +440,91 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **download_mpo_products_export**
+> ProductReportDataResponse download_mpo_products_export(report_id)
+
+/experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/{reportId}
+
+Downloads the generated MPO products report export. <br /> This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_experimental
+from criteo_api_marketingsolutions_experimental.api import analytics_api
+from criteo_api_marketingsolutions_experimental.model.product_report_data_response import ProductReportDataResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    report_id = "reportId_example" # str | The identifier of the MPO products report export.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/marketing-solutions/marketplace-performance-outcomes/stats/product-reports/{reportId}
+        api_response = api_instance.download_mpo_products_export(report_id)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->download_mpo_products_export: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **report_id** | **str**| The identifier of the MPO products report export. |
+
+### Return type
+
+[**ProductReportDataResponse**](ProductReportDataResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/csv
 
 
 ### HTTP response details
@@ -1365,7 +1559,7 @@ Name | Type | Description  | Notes
 
 /experimental/marketing-solutions/marketplace-performance-outcomes/stats/realtime-reports/{reportId}
 
-Downloads the generated marketplace performance outcomes realtime report export.  <br />  This endpoint is subject to specific rate limits.
+Downloads the generated marketplace performance outcomes realtime report export. <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 

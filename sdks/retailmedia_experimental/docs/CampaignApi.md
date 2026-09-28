@@ -16,11 +16,13 @@ Method | HTTP request | Description
 [**delete_product_button_by_line_item_and_product_button_id**](CampaignApi.md#delete_product_button_by_line_item_and_product_button_id) | **DELETE** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
 [**delete_products**](CampaignApi.md#delete_products) | **POST** /experimental/retail-media/line-items/{line-item-id}/products/delete | /experimental/retail-media/line-items/{line-item-id}/products/delete
 [**fetch_creatives**](CampaignApi.md#fetch_creatives) | **GET** /experimental/retail-media/line-items/{line-item-id}/creatives | /experimental/retail-media/line-items/{line-item-id}/creatives
+[**fetch_products**](CampaignApi.md#fetch_products) | **GET** /experimental/retail-media/line-items/{line-item-id}/products | /experimental/retail-media/line-items/{line-item-id}/products
 [**get_bidding_strategy_by_line_item_id**](CampaignApi.md#get_bidding_strategy_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/bidding-strategy
 [**get_campaign**](CampaignApi.md#get_campaign) | **GET** /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id} | /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
 [**get_capout_history**](CampaignApi.md#get_capout_history) | **POST** /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history | /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history
 [**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /experimental/retail-media/catalogs/{catalogId}/status | /experimental/retail-media/catalogs/{catalogId}/status
 [**get_creative**](CampaignApi.md#get_creative) | **GET** /experimental/retail-media/accounts/{account-id}/creatives/{creative-id} | /experimental/retail-media/accounts/{account-id}/creatives/{creative-id}
+[**get_min_bids_by_line_item_id**](CampaignApi.md#get_min_bids_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/min-bids | /experimental/retail-media/line-items/{line-item-id}/min-bids
 [**get_product_button_by_line_item_and_product_button_id**](CampaignApi.md#get_product_button_by_line_item_and_product_button_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
 [**get_product_buttons_by_line_item_id**](CampaignApi.md#get_product_buttons_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/product-buttons | /experimental/retail-media/line-items/{line-item-id}/product-buttons
 [**get_targets_by_line_item_id**](CampaignApi.md#get_targets_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/targets | /experimental/retail-media/line-items/{line-item-id}/targets
@@ -627,7 +629,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_line_item**
-> ExperimentalLineItemModelResponse create_line_item(experimental_create_line_item_model_request)
+> LineItemResponse create_line_item(external_create_line_item_model_request)
 
 /experimental/retail-media/line-items
 
@@ -642,8 +644,8 @@ Create a new line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.experimental_line_item_model_response import ExperimentalLineItemModelResponse
-from criteo_api_retailmedia_experimental.model.experimental_create_line_item_model_request import ExperimentalCreateLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.external_create_line_item_model_request import ExternalCreateLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.line_item_response import LineItemResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -672,17 +674,17 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    experimental_create_line_item_model_request = ExperimentalCreateLineItemModelRequest(
-        data=ExperimentalCreateLineItemModelResource(
-            attributes=ExperimentalCreateLineItemModel(
+    external_create_line_item_model_request = ExternalCreateLineItemModelRequest(
+        data=ExternalCreateLineItemModelResource(
+            attributes=ExternalCreateLineItemModel(
                 campaign_id="campaign_id_example",
                 is_paused=True,
                 name="name_example",
-                onsite_display_details=ExperimentalCreateOnsiteDisplayLineItemDetails(
-                    auction_details=ExperimentalCreateOnsiteDisplayAuctionLineItemDetails(
+                onsite_display_details=ExternalCreateOnsiteDisplayLineItemDetails(
+                    auction_details=ExternalCreateOnsiteDisplayAuctionLineItemDetails(
                         is_dynamic_match=True,
                     ),
-                    frequency_capping=ExperimentalFrequencyCappingModel(
+                    frequency_capping=ExternalFrequencyCappingModel(
                         capping_count=1,
                         capping_duration_type="Unknown",
                     ),
@@ -692,12 +694,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ExperimentalCreateLineItemModelRequest | Line item details
+    ) # ExternalCreateLineItemModelRequest | Line item details
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items
-        api_response = api_instance.create_line_item(experimental_create_line_item_model_request)
+        api_response = api_instance.create_line_item(external_create_line_item_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->create_line_item: %s\n" % e)
@@ -708,11 +710,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **experimental_create_line_item_model_request** | [**ExperimentalCreateLineItemModelRequest**](ExperimentalCreateLineItemModelRequest.md)| Line item details |
+ **external_create_line_item_model_request** | [**ExternalCreateLineItemModelRequest**](ExternalCreateLineItemModelRequest.md)| Line item details |
 
 ### Return type
 
-[**ExperimentalLineItemModelResponse**](ExperimentalLineItemModelResponse.md)
+[**LineItemResponse**](LineItemResponse.md)
 
 ### Authorization
 
@@ -1339,6 +1341,104 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **fetch_products**
+> LineItemProductListResponseV2WithPaginationMeta fetch_products(line_item_id)
+
+/experimental/retail-media/line-items/{line-item-id}/products
+
+Retrieve a page of products configured on a line item.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.line_item_product_list_response_v2_with_pagination_meta import LineItemProductListResponseV2WithPaginationMeta
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The line item id.
+    limit = 500 # int | The maximum number of products to return. (optional) if omitted the server will use the default value of 500
+    offset = 0 # int | The zero-based offset into the line item's product pool. (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}/products
+        api_response = api_instance.fetch_products(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->fetch_products: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}/products
+        api_response = api_instance.fetch_products(line_item_id, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->fetch_products: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item id. |
+ **limit** | **int**| The maximum number of products to return. | [optional] if omitted the server will use the default value of 500
+ **offset** | **int**| The zero-based offset into the line item&#39;s product pool. | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**LineItemProductListResponseV2WithPaginationMeta**](LineItemProductListResponseV2WithPaginationMeta.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_bidding_strategy_by_line_item_id**
 > BiddingSettingsResponse get_bidding_strategy_by_line_item_id(line_item_id)
 
@@ -1780,6 +1880,91 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Creatives found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_min_bids_by_line_item_id**
+> LineItemMinBidsResponse get_min_bids_by_line_item_id(line_item_id)
+
+/experimental/retail-media/line-items/{line-item-id}/min-bids
+
+Returns page-type minimum bids and derived bidding thresholds for a Display auction line item.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.line_item_min_bids_response import LineItemMinBidsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The identifier of the line item whose minimum bids are requested.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}/min-bids
+        api_response = api_instance.get_min_bids_by_line_item_id(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->get_min_bids_by_line_item_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The identifier of the line item whose minimum bids are requested. |
+
+### Return type
+
+[**LineItemMinBidsResponse**](LineItemMinBidsResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3099,7 +3284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_line_item**
-> ExperimentalLineItemModelResponse update_line_item(line_item_id, experimental_update_line_item_model_request)
+> LineItemResponse update_line_item(line_item_id, external_update_line_item_model_request)
 
 /experimental/retail-media/line-items/{line-item-id}
 
@@ -3114,8 +3299,8 @@ Update an existing line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.experimental_line_item_model_response import ExperimentalLineItemModelResponse
-from criteo_api_retailmedia_experimental.model.experimental_update_line_item_model_request import ExperimentalUpdateLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.external_update_line_item_model_request import ExternalUpdateLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.line_item_response import LineItemResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3145,17 +3330,17 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     line_item_id = "line-item-id_example" # str | The line item id
-    experimental_update_line_item_model_request = ExperimentalUpdateLineItemModelRequest(
-        data=ExperimentalUpdateLineItemModelResource(
-            attributes=ExperimentalUpdateLineItemModel(
+    external_update_line_item_model_request = ExternalUpdateLineItemModelRequest(
+        data=ExternalUpdateLineItemModelResource(
+            attributes=ExternalUpdateLineItemModel(
                 is_paused=True,
                 name="name_example",
-                onsite_display_details=ExperimentalUpdateOnsiteDisplayLineItemDetails(
-                    auction_details=ExperimentalUpdateOnsiteDisplayAuctionLineItemDetails(
+                onsite_display_details=ExternalUpdateOnsiteDisplayLineItemDetails(
+                    auction_details=ExternalUpdateOnsiteDisplayAuctionLineItemDetails(
                         is_dynamic_match=True,
                     ),
-                    frequency_capping=ExperimentalFrequencyCappingModelNillableV2(
-                        value=ExperimentalFrequencyCappingModel(
+                    frequency_capping=ExternalFrequencyCappingModelNillableV2(
+                        value=ExternalFrequencyCappingModel(
                             capping_count=1,
                             capping_duration_type="Unknown",
                         ),
@@ -3165,12 +3350,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ExperimentalUpdateLineItemModelRequest | Line item details
+    ) # ExternalUpdateLineItemModelRequest | Line item details
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}
-        api_response = api_instance.update_line_item(line_item_id, experimental_update_line_item_model_request)
+        api_response = api_instance.update_line_item(line_item_id, external_update_line_item_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->update_line_item: %s\n" % e)
@@ -3182,11 +3367,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item id |
- **experimental_update_line_item_model_request** | [**ExperimentalUpdateLineItemModelRequest**](ExperimentalUpdateLineItemModelRequest.md)| Line item details |
+ **external_update_line_item_model_request** | [**ExternalUpdateLineItemModelRequest**](ExternalUpdateLineItemModelRequest.md)| Line item details |
 
 ### Return type
 
-[**ExperimentalLineItemModelResponse**](ExperimentalLineItemModelResponse.md)
+[**LineItemResponse**](LineItemResponse.md)
 
 ### Authorization
 

@@ -172,7 +172,7 @@ class Coupon(ModelNormal):
             advertiser_id (str, none_type): Advertiser linked to the Coupon. [optional]  # noqa: E501
             author (str, none_type): The login of the person who created this Coupon. [optional]  # noqa: E501
             description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
-            end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            end_date (str, none_type): The date when we will stop showing this coupon. If the end date is not specified (i.e. null)  then the coupon will go on forever.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:00:00.000Z\".. [optional]  # noqa: E501
             format (str, none_type): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\". [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
@@ -181,7 +181,7 @@ class Coupon(ModelNormal):
             rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
             show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
             show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
-            start_date (str, none_type): The date when the Coupon will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            start_date (str, none_type): The date when the coupon will be launched.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:00:00.000Z\".. [optional]  # noqa: E501
             status (str, none_type): The status of the Coupon. [optional]  # noqa: E501
         """
 
@@ -272,7 +272,7 @@ class Coupon(ModelNormal):
             advertiser_id (str, none_type): Advertiser linked to the Coupon. [optional]  # noqa: E501
             author (str, none_type): The login of the person who created this Coupon. [optional]  # noqa: E501
             description (str, none_type): The description of the Coupon. [optional]  # noqa: E501
-            end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            end_date (str, none_type): The date when we will stop showing this coupon. If the end date is not specified (i.e. null)  then the coupon will go on forever.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:00:00.000Z\".. [optional]  # noqa: E501
             format (str, none_type): Format of the Coupon, it can have two values: \"FullFrame\" or \"LogoZone\". [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             images ([ImageSlide], none_type): List of slides containing the image URLs. [optional]  # noqa: E501
@@ -281,7 +281,7 @@ class Coupon(ModelNormal):
             rotations_number (int, none_type): Number of rotations for the Coupons (from 1 to 10 times). [optional]  # noqa: E501
             show_duration (int, none_type): Show Coupon for a duration of N seconds (between 1 and 5). [optional]  # noqa: E501
             show_every (int, none_type): Show the Coupon every N seconds (between 1 and 10). [optional]  # noqa: E501
-            start_date (str, none_type): The date when the Coupon will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            start_date (str, none_type): The date when the coupon will be launched.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:00:00.000Z\".. [optional]  # noqa: E501
             status (str, none_type): The status of the Coupon. [optional]  # noqa: E501
         """
 

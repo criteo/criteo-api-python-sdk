@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **advertiser_id** | **str, none_type** | Advertiser linked to the Coupon | [optional] 
 **author** | **str, none_type** | The login of the person who created this Coupon | [optional] 
 **description** | **str, none_type** | The description of the Coupon | [optional] 
-**end_date** | **str, none_type** | The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format | [optional] 
+**end_date** | **str, none_type** | The date when we will stop showing this coupon. If the end date is not specified (i.e. null)  then the coupon will go on forever.  String must be in ISO8601 format, more precisely \&quot;yyyy-MM-ddTHH:mm:ss.fffZ\&quot;: a UTC timestamp whose  three millisecond digits and trailing \&quot;Z\&quot; are always present, for example \&quot;2026-10-01T09:00:00.000Z\&quot;. | [optional] 
 **format** | **str, none_type** | Format of the Coupon, it can have two values: \&quot;FullFrame\&quot; or \&quot;LogoZone\&quot; | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **images** | [**[ImageSlide], none_type**](ImageSlide.md) | List of slides containing the image URLs | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **rotations_number** | **int, none_type** | Number of rotations for the Coupons (from 1 to 10 times) | [optional] 
 **show_duration** | **int, none_type** | Show Coupon for a duration of N seconds (between 1 and 5) | [optional] 
 **show_every** | **int, none_type** | Show the Coupon every N seconds (between 1 and 10) | [optional] 
-**start_date** | **str, none_type** | The date when the Coupon will be launched  String must be in ISO8601 format | [optional] 
+**start_date** | **str, none_type** | The date when the coupon will be launched.  String must be in ISO8601 format, more precisely \&quot;yyyy-MM-ddTHH:mm:ss.fffZ\&quot;: a UTC timestamp whose  three millisecond digits and trailing \&quot;Z\&quot; are always present, for example \&quot;2026-10-01T09:00:00.000Z\&quot;. | [optional] 
 **status** | **str, none_type** | The status of the Coupon | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

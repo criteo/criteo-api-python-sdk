@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 /experimental/retail-media/reports/accounts
 
-Returns an asynchronous Accounts Report  <br />  This endpoint is subject to specific rate limits.
+Returns an asynchronous Accounts Report <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/reports/campaigns
 
-Return an asynchronous Campaigns Report  <br />  This endpoint is subject to specific rate limits.
+Return an asynchronous Campaigns Report <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/reports/line-items
 
-Returns an asynchronous Line Items Report  <br />  This endpoint is subject to specific rate limits.
+Returns an asynchronous Line Items Report <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/reports/offsite
 
-Returns an asynchronous Offsite Report  <br />  This endpoint is subject to specific rate limits.
+Returns an asynchronous Offsite Report <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
@@ -782,7 +782,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/reports/sync/real-time-performance
 
-Returns a synchronous Real Time Performance Report. Returns empty rows; metadata includes dataCompleteThrough (latest time from streaming table in the request timezone).  <br />  This endpoint is subject to specific rate limits.
+Returns a synchronous Real Time Performance Report. Returns empty rows; metadata includes dataCompleteThrough (latest time from streaming table in the request timezone). <br /> This endpoint is subject to specific rate limits.
 
 ### Example
 
