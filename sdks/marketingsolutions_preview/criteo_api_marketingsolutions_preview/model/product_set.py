@@ -63,6 +63,7 @@ class ProductSet(ModelNormal):
             'UNKNOWN': "Unknown",
             'CGROWTH': "CGrowth",
             'CMAX': "CMax",
+            'GOENTERPRISE': "GoEnterprise",
         },
         ('status',): {
             'UNKNOWN': "Unknown",

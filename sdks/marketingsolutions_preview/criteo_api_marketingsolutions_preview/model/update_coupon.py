@@ -108,7 +108,7 @@ class UpdateCoupon(ModelNormal):
         """UpdateCoupon - a model defined in OpenAPI
 
         Args:
-            start_date (str): The date when the Coupon will be launched  String must be in ISO8601 format
+            start_date (str): The date when the coupon will be launched. It must be a date in the future, and it must not  move earlier than the start date the coupon already has.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are both required, for example \"2026-10-01T09:00:00.000Z\".  No other ISO8601 layout is accepted, neither a UTC offset such as \"2026-10-01T11:00:00+02:00\" nor a  second-precision \"2026-10-01T09:00:00Z\".  A date that does not fall on a whole hour is rounded up to the next one, so  \"2026-10-01T09:30:00.000Z\" is stored as \"2026-10-01T10:00:00.000Z\".
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -141,7 +141,7 @@ class UpdateCoupon(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            end_date (str, none_type): The date when we will stop showing this coupon, which must come after the start date. If the  end date is not specified (i.e. null) then the coupon will go on forever.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are both required, for example \"2026-10-01T09:00:00.000Z\".  No other ISO8601 layout is accepted, neither a UTC offset such as \"2026-10-01T11:00:00+02:00\" nor a  second-precision \"2026-10-01T09:00:00Z\".  A date that does not fall on a whole hour is rounded up to the next one, so  \"2026-10-01T09:30:00.000Z\" is stored as \"2026-10-01T10:00:00.000Z\".. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
         """
 
@@ -199,7 +199,7 @@ class UpdateCoupon(ModelNormal):
         """UpdateCoupon - a model defined in OpenAPI
 
         Args:
-            start_date (str): The date when the Coupon will be launched  String must be in ISO8601 format
+            start_date (str): The date when the coupon will be launched. It must be a date in the future, and it must not  move earlier than the start date the coupon already has.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are both required, for example \"2026-10-01T09:00:00.000Z\".  No other ISO8601 layout is accepted, neither a UTC offset such as \"2026-10-01T11:00:00+02:00\" nor a  second-precision \"2026-10-01T09:00:00Z\".  A date that does not fall on a whole hour is rounded up to the next one, so  \"2026-10-01T09:30:00.000Z\" is stored as \"2026-10-01T10:00:00.000Z\".
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -232,7 +232,7 @@ class UpdateCoupon(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            end_date (str, none_type): The date when when we will stop to show this Coupon. If the end date is not specified (i.e. null) then the Coupon will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            end_date (str, none_type): The date when we will stop showing this coupon, which must come after the start date. If the  end date is not specified (i.e. null) then the coupon will go on forever.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are both required, for example \"2026-10-01T09:00:00.000Z\".  No other ISO8601 layout is accepted, neither a UTC offset such as \"2026-10-01T11:00:00+02:00\" nor a  second-precision \"2026-10-01T09:00:00Z\".  A date that does not fall on a whole hour is rounded up to the next one, so  \"2026-10-01T09:30:00.000Z\" is stored as \"2026-10-01T10:00:00.000Z\".. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
         """
 

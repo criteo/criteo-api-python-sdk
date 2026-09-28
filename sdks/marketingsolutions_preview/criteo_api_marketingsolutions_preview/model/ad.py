@@ -180,11 +180,11 @@ class Ad(ModelNormal):
             ad_set_id (str, none_type): The id of the Ad Set binded to this Ad. [optional]  # noqa: E501
             creative_id (str, none_type): The id of the Creative binded to this Ad. [optional]  # noqa: E501
             description (str, none_type): The description of the ad. [optional]  # noqa: E501
-            end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            end_date (str, none_type): The date when we will stop showing this ad. If the end date is not specified (i.e. null) then  the ad will go on forever.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:30:00.000Z\".. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             inventory_type (str, none_type): The inventory the Ad belongs to. Possible values are \"Display\", \"Native\", \"Video\" and \"Meta\". This is  optional since it doesn't make sense for every creative type: it is inferred from the creative for a  video creative, and an error is returned if it is not set for a dynamic creative.. [optional]  # noqa: E501
             name (str, none_type): The name of the ad. [optional]  # noqa: E501
-            start_date (str, none_type): The date when the ad will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            start_date (str, none_type): The date when the ad will be launched.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:30:00.000Z\".. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -276,11 +276,11 @@ class Ad(ModelNormal):
             ad_set_id (str, none_type): The id of the Ad Set binded to this Ad. [optional]  # noqa: E501
             creative_id (str, none_type): The id of the Creative binded to this Ad. [optional]  # noqa: E501
             description (str, none_type): The description of the ad. [optional]  # noqa: E501
-            end_date (str, none_type): The date when when we will stop to show this ad. If the end date is not specified (i.e. null) then the ad will go on forever  String must be in ISO8601 format. [optional]  # noqa: E501
+            end_date (str, none_type): The date when we will stop showing this ad. If the end date is not specified (i.e. null) then  the ad will go on forever.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:30:00.000Z\".. [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             inventory_type (str, none_type): The inventory the Ad belongs to. Possible values are \"Display\", \"Native\", \"Video\" and \"Meta\". This is  optional since it doesn't make sense for every creative type: it is inferred from the creative for a  video creative, and an error is returned if it is not set for a dynamic creative.. [optional]  # noqa: E501
             name (str, none_type): The name of the ad. [optional]  # noqa: E501
-            start_date (str, none_type): The date when the ad will be launched  String must be in ISO8601 format. [optional]  # noqa: E501
+            start_date (str, none_type): The date when the ad will be launched.  String must be in ISO8601 format, more precisely \"yyyy-MM-ddTHH:mm:ss.fffZ\": a UTC timestamp whose  three millisecond digits and trailing \"Z\" are always present, for example \"2026-10-01T09:30:00.000Z\".. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

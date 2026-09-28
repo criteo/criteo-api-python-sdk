@@ -425,7 +425,8 @@ class RecoApi(object):
                         'None': None,
                         "UNKNOWN": "Unknown",
                         "CGROWTH": "CGrowth",
-                        "CMAX": "CMax"
+                        "CMAX": "CMax",
+                        "GOENTERPRISE": "GoEnterprise"
                     },
                 },
                 'openapi_types': {
