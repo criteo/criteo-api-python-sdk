@@ -125,6 +125,9 @@ class SetAdSetTargetingVideoPositioning(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'include_not_rewarded': (bool,),  # noqa: E501
+            'include_rewarded': (bool,),  # noqa: E501
+            'include_unknown_rewarded': (bool,),  # noqa: E501
             'playback_method': ([str],),  # noqa: E501
             'skippable': (str,),  # noqa: E501
             'video_aspect_ratio': ([str],),  # noqa: E501
@@ -139,6 +142,9 @@ class SetAdSetTargetingVideoPositioning(ModelNormal):
 
 
     attribute_map = {
+        'include_not_rewarded': 'includeNotRewarded',  # noqa: E501
+        'include_rewarded': 'includeRewarded',  # noqa: E501
+        'include_unknown_rewarded': 'includeUnknownRewarded',  # noqa: E501
         'playback_method': 'playbackMethod',  # noqa: E501
         'skippable': 'skippable',  # noqa: E501
         'video_aspect_ratio': 'videoAspectRatio',  # noqa: E501
@@ -188,6 +194,9 @@ class SetAdSetTargetingVideoPositioning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_not_rewarded (bool): Should target inventory marked as not rewarded?. [optional]  # noqa: E501
+            include_rewarded (bool): Should target inventory marked as rewarded?. [optional]  # noqa: E501
+            include_unknown_rewarded (bool): Should target inventory which rewarded status is unknown?. [optional]  # noqa: E501
             playback_method ([str]): [optional]  # noqa: E501
             skippable (str): [optional]  # noqa: E501
             video_aspect_ratio ([str]): [optional]  # noqa: E501
@@ -279,6 +288,9 @@ class SetAdSetTargetingVideoPositioning(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            include_not_rewarded (bool): Should target inventory marked as not rewarded?. [optional]  # noqa: E501
+            include_rewarded (bool): Should target inventory marked as rewarded?. [optional]  # noqa: E501
+            include_unknown_rewarded (bool): Should target inventory which rewarded status is unknown?. [optional]  # noqa: E501
             playback_method ([str]): [optional]  # noqa: E501
             skippable (str): [optional]  # noqa: E501
             video_aspect_ratio ([str]): [optional]  # noqa: E501

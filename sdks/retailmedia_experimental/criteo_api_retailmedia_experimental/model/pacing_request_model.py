@@ -56,6 +56,7 @@ class PacingRequestModel(ModelNormal):
 
     allowed_values = {
         ('type',): {
+            'NONE': "None",
             'AUTOMATIC': "Automatic",
         },
     }
@@ -97,13 +98,13 @@ class PacingRequestModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, *args, **kwargs):  # noqa: E501
         """PacingRequestModel - a model defined in OpenAPI
 
         Args:
+            type (str): How the platform spreads a campaign budget over its flight.
 
         Keyword Args:
-            type (str): How the platform spreads a campaign budget over its flight.. defaults to "Automatic", must be one of ["Automatic", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -136,7 +137,6 @@ class PacingRequestModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
         """
 
-        type = kwargs.get('type', "Automatic")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -187,13 +187,13 @@ class PacingRequestModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, *args, **kwargs):  # noqa: E501
         """PacingRequestModel - a model defined in OpenAPI
 
         Args:
+            type (str): How the platform spreads a campaign budget over its flight.
 
         Keyword Args:
-            type (str): How the platform spreads a campaign budget over its flight.. defaults to "Automatic", must be one of ["Automatic", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -226,7 +226,6 @@ class PacingRequestModel(ModelNormal):
                                 _visited_composed_classes = (Animal,)
         """
 
-        type = kwargs.get('type', "Automatic")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())

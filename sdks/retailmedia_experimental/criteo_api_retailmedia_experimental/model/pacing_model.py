@@ -57,8 +57,9 @@ class PacingModel(ModelNormal):
     allowed_values = {
         ('type',): {
             'None': None,
-            'UNKNOWN': "Unknown",
+            'NONE': "None",
             'AUTOMATIC': "Automatic",
+            'UNKNOWN': "Unknown",
         },
     }
 

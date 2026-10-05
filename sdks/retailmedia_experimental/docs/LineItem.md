@@ -6,11 +6,11 @@ Line Item search attributes
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str, none_type** | The account id of the associated account. | [optional] 
+**budget_status** | **str, none_type** | Indicates whether the line item has budget headroom to serve ads. | [optional] 
 **buy_type** | **str, none_type** | The buy type of the line item. | [optional] 
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | [optional] 
 **conquesting_settings** | [**ConquestingSettings**](ConquestingSettings.md) |  | [optional] 
 **flight_dates** | [**FlightDates**](FlightDates.md) |  | [optional] 
-**funding_status** | **str, none_type** | Indicates whether the line item is funded. | [optional] 
 **is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **line_item_id** | **str, none_type** | The id of the line item. | [optional] 
 **line_item_type** | **str, none_type** | The type of the line item. | [optional] 

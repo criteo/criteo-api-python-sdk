@@ -63,14 +63,13 @@ class ExternalLineItem(ModelNormal):
     """
 
     allowed_values = {
-        ('funding_status',): {
+        ('budget_status',): {
             'None': None,
             'UNKNOWN': "Unknown",
-            'FUNDED': "Funded",
+            'BUDGETAVAILABLE': "BudgetAvailable",
             'DAILYBUDGETREACHED': "DailyBudgetReached",
             'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
             'TOTALBUDGETREACHED': "TotalBudgetReached",
-            'BALANCEEXHAUSTED': "BalanceExhausted",
         },
         ('type',): {
             'None': None,
@@ -99,10 +98,10 @@ class ExternalLineItem(ModelNormal):
         """
         lazy_import()
         return {
+            'budget_status': (str, none_type,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
             'conquesting_settings': (ExternalConquestingSettings,),  # noqa: E501
             'effective_flight_dates': (ExternalFlightDatesModel,),  # noqa: E501
-            'funding_status': (str, none_type,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
@@ -118,10 +117,10 @@ class ExternalLineItem(ModelNormal):
 
 
     attribute_map = {
+        'budget_status': 'budgetStatus',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'conquesting_settings': 'conquestingSettings',  # noqa: E501
         'effective_flight_dates': 'effectiveFlightDates',  # noqa: E501
-        'funding_status': 'fundingStatus',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -172,10 +171,10 @@ class ExternalLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ExternalConquestingSettings): [optional]  # noqa: E501
             effective_flight_dates (ExternalFlightDatesModel): [optional]  # noqa: E501
-            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501
@@ -268,10 +267,10 @@ class ExternalLineItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ExternalConquestingSettings): [optional]  # noqa: E501
             effective_flight_dates (ExternalFlightDatesModel): [optional]  # noqa: E501
-            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
             name (str, none_type): The name of the line item.. [optional]  # noqa: E501

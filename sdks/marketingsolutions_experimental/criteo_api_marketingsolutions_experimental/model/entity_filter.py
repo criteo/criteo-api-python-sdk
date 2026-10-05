@@ -81,8 +81,6 @@ class EntityFilter(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'active': (bool, none_type,),  # noqa: E501
-            'read_only': (bool, none_type,),  # noqa: E501
             'value': (str, none_type,),  # noqa: E501
         }
 
@@ -92,8 +90,6 @@ class EntityFilter(ModelNormal):
 
 
     attribute_map = {
-        'active': 'active',  # noqa: E501
-        'read_only': 'readOnly',  # noqa: E501
         'value': 'value',  # noqa: E501
     }
 
@@ -138,8 +134,6 @@ class EntityFilter(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            active (bool, none_type): [optional]  # noqa: E501
-            read_only (bool, none_type): [optional]  # noqa: E501
             value (str, none_type): Could be a domain or a bundle depending on the context. [optional]  # noqa: E501
         """
 
@@ -226,8 +220,6 @@ class EntityFilter(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            active (bool, none_type): [optional]  # noqa: E501
-            read_only (bool, none_type): [optional]  # noqa: E501
             value (str, none_type): Could be a domain or a bundle depending on the context. [optional]  # noqa: E501
         """
 

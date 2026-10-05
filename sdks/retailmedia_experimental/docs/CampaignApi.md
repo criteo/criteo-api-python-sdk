@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**get_capout_history**](CampaignApi.md#get_capout_history) | **POST** /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history | /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history
 [**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /experimental/retail-media/catalogs/{catalogId}/status | /experimental/retail-media/catalogs/{catalogId}/status
 [**get_creative**](CampaignApi.md#get_creative) | **GET** /experimental/retail-media/accounts/{account-id}/creatives/{creative-id} | /experimental/retail-media/accounts/{account-id}/creatives/{creative-id}
+[**get_line_item**](CampaignApi.md#get_line_item) | **GET** /experimental/retail-media/line-items/{line-item-id} | /experimental/retail-media/line-items/{line-item-id}
 [**get_min_bids_by_line_item_id**](CampaignApi.md#get_min_bids_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/min-bids | /experimental/retail-media/line-items/{line-item-id}/min-bids
 [**get_product_button_by_line_item_and_product_button_id**](CampaignApi.md#get_product_button_by_line_item_and_product_button_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id} | /experimental/retail-media/line-items/{line-item-id}/product-buttons/{product-button-id}
 [**get_product_buttons_by_line_item_id**](CampaignApi.md#get_product_buttons_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/product-buttons | /experimental/retail-media/line-items/{line-item-id}/product-buttons
@@ -93,7 +94,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
         data=AddProductsModelResource(
             attributes=AddProductsModel(
                 display_product_details=[
-                    ProductModel(
+                    AddDisplayProductDetailModel(
                         product_id="product_id_example",
                     ),
                 ],
@@ -455,7 +456,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                             ),
                         ],
                         pacing=PacingRequestModel(
-                            type="Automatic",
+                            type="None",
                         ),
                     ),
                     objective="Manual",
@@ -975,7 +976,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_creatives**
-> Outcome delete_creatives(line_item_id, delete_creatives_model_request)
+> Outcome delete_creatives(line_item_id, delete_line_item_creatives_request)
 
 /experimental/retail-media/line-items/{line-item-id}/creatives/delete
 
@@ -990,7 +991,7 @@ Delete creatives and their product collections from a line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.delete_creatives_model_request import DeleteCreativesModelRequest
+from criteo_api_retailmedia_experimental.model.delete_line_item_creatives_request import DeleteLineItemCreativesRequest
 from criteo_api_retailmedia_experimental.model.outcome import Outcome
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
@@ -1021,21 +1022,21 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     line_item_id = "line-item-id_example" # str | The external line item id.
-    delete_creatives_model_request = DeleteCreativesModelRequest(
-        data=DeleteCreativesModelResource(
-            attributes=DeleteCreativesModel(
+    delete_line_item_creatives_request = DeleteLineItemCreativesRequest(
+        data=DeleteLineItemCreativesInputResource(
+            attributes=DeleteLineItemCreativesInput(
                 creative_ids=[
                     "creative_ids_example",
                 ],
             ),
             type="type_example",
         ),
-    ) # DeleteCreativesModelRequest | The stable creative identifiers to delete.
+    ) # DeleteLineItemCreativesRequest | The stable creative identifiers to delete.
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}/creatives/delete
-        api_response = api_instance.delete_creatives(line_item_id, delete_creatives_model_request)
+        api_response = api_instance.delete_creatives(line_item_id, delete_line_item_creatives_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->delete_creatives: %s\n" % e)
@@ -1047,7 +1048,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The external line item id. |
- **delete_creatives_model_request** | [**DeleteCreativesModelRequest**](DeleteCreativesModelRequest.md)| The stable creative identifiers to delete. |
+ **delete_line_item_creatives_request** | [**DeleteLineItemCreativesRequest**](DeleteLineItemCreativesRequest.md)| The stable creative identifiers to delete. |
 
 ### Return type
 
@@ -1257,7 +1258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **fetch_creatives**
-> FetchCreativesModelResponse fetch_creatives(line_item_id)
+> LineItemCreativesResponse fetch_creatives(line_item_id)
 
 /experimental/retail-media/line-items/{line-item-id}/creatives
 
@@ -1272,7 +1273,7 @@ Retrieve the creatives and product collections associated with a line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.fetch_creatives_model_response import FetchCreativesModelResponse
+from criteo_api_retailmedia_experimental.model.line_item_creatives_response import LineItemCreativesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1321,7 +1322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FetchCreativesModelResponse**](FetchCreativesModelResponse.md)
+[**LineItemCreativesResponse**](LineItemCreativesResponse.md)
 
 ### Authorization
 
@@ -1880,6 +1881,91 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Creatives found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_line_item**
+> LineItemDetailsResponse get_line_item(line_item_id)
+
+/experimental/retail-media/line-items/{line-item-id}
+
+Retrieves a consolidated line item view from the line item domain services.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.line_item_details_response import LineItemDetailsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    line_item_id = "line-item-id_example" # str | The line item identifier.
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/line-items/{line-item-id}
+        api_response = api_instance.get_line_item(line_item_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->get_line_item: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **str**| The line item identifier. |
+
+### Return type
+
+[**LineItemDetailsResponse**](LineItemDetailsResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3099,7 +3185,9 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                 ),
                 sponsored_products_details=SponsoredProductsDetailsUpdateModel(
                     budget=SponsoredProductsBudgetUpdateModel(
-                        amount=3.14,
+                        amount=DecimalNullableNillableV2(
+                            value=3.14,
+                        ),
                         cappings=[
                             BudgetCappingRequestModel(
                                 amount=3.14,
@@ -3107,7 +3195,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                             ),
                         ],
                         pacing=PacingRequestModel(
-                            type="Automatic",
+                            type="None",
                         ),
                     ),
                 ),
@@ -3736,7 +3824,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upsert_creatives**
-> CreativesModelResponse upsert_creatives(line_item_id, upsert_creatives_model_request)
+> UpsertLineItemCreativesResponse upsert_creatives(line_item_id, upsert_line_item_creatives_request)
 
 /experimental/retail-media/line-items/{line-item-id}/creatives/upsert
 
@@ -3751,8 +3839,8 @@ Resolves each supplied stable creative identifier to its latest revision and  as
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.upsert_creatives_model_request import UpsertCreativesModelRequest
-from criteo_api_retailmedia_experimental.model.creatives_model_response import CreativesModelResponse
+from criteo_api_retailmedia_experimental.model.upsert_line_item_creatives_request import UpsertLineItemCreativesRequest
+from criteo_api_retailmedia_experimental.model.upsert_line_item_creatives_response import UpsertLineItemCreativesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3782,20 +3870,20 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     line_item_id = "line-item-id_example" # str | The line item id.
-    upsert_creatives_model_request = UpsertCreativesModelRequest(
-        data=UpsertCreativesModelResource(
-            attributes=UpsertCreativesModel(
-                auction_creative_details=AuctionCreativeDetailsInputModel(
+    upsert_line_item_creatives_request = UpsertLineItemCreativesRequest(
+        data=UpsertLineItemCreativesInputResource(
+            attributes=UpsertLineItemCreativesInput(
+                auction_creative_details=AuctionCreativeDetailsInput(
                     line_item_creatives=[
-                        LineItemCreativeInputModel(
-                            creative=CreativeInputModel(
+                        LineItemCreativeInput(
+                            creative=CreativeInput(
                                 id="id_example",
                             ),
                             creative_product_collections=[
-                                CreativeProductCollectionInputModel(
+                                CreativeProductCollectionInput(
                                     is_mandatory=True,
                                     products=[
-                                        DisplayProductInputModel(
+                                        DisplayProductInput(
                                             id="id_example",
                                         ),
                                     ],
@@ -3805,16 +3893,16 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     ],
                 ),
                 creative_type="Unknown",
-                preferred_deals_creative_details=PreferredDealsCreativeDetailsInputModel(
-                    line_item_creative=LineItemCreativeInputModel(
-                        creative=CreativeInputModel(
+                preferred_deals_creative_details=PreferredDealsCreativeDetailsInput(
+                    line_item_creative=LineItemCreativeInput(
+                        creative=CreativeInput(
                             id="id_example",
                         ),
                         creative_product_collections=[
-                            CreativeProductCollectionInputModel(
+                            CreativeProductCollectionInput(
                                 is_mandatory=True,
                                 products=[
-                                    DisplayProductInputModel(
+                                    DisplayProductInput(
                                         id="id_example",
                                     ),
                                 ],
@@ -3825,12 +3913,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # UpsertCreativesModelRequest | The creatives to upsert.
+    ) # UpsertLineItemCreativesRequest | The creatives to upsert.
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}/creatives/upsert
-        api_response = api_instance.upsert_creatives(line_item_id, upsert_creatives_model_request)
+        api_response = api_instance.upsert_creatives(line_item_id, upsert_line_item_creatives_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->upsert_creatives: %s\n" % e)
@@ -3842,11 +3930,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item id. |
- **upsert_creatives_model_request** | [**UpsertCreativesModelRequest**](UpsertCreativesModelRequest.md)| The creatives to upsert. |
+ **upsert_line_item_creatives_request** | [**UpsertLineItemCreativesRequest**](UpsertLineItemCreativesRequest.md)| The creatives to upsert. |
 
 ### Return type
 
-[**CreativesModelResponse**](CreativesModelResponse.md)
+[**UpsertLineItemCreativesResponse**](UpsertLineItemCreativesResponse.md)
 
 ### Authorization
 

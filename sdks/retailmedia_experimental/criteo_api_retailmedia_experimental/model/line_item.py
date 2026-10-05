@@ -65,20 +65,19 @@ class LineItem(ModelNormal):
     """
 
     allowed_values = {
+        ('budget_status',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'BUDGETAVAILABLE': "BudgetAvailable",
+            'DAILYBUDGETREACHED': "DailyBudgetReached",
+            'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
+            'TOTALBUDGETREACHED': "TotalBudgetReached",
+        },
         ('buy_type',): {
             'None': None,
             'AUCTION': "Auction",
             'PREFERREDDEALS': "PreferredDeals",
             'SPONSORSHIP': "Sponsorship",
-        },
-        ('funding_status',): {
-            'None': None,
-            'UNKNOWN': "Unknown",
-            'FUNDED': "Funded",
-            'DAILYBUDGETREACHED': "DailyBudgetReached",
-            'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
-            'TOTALBUDGETREACHED': "TotalBudgetReached",
-            'BALANCEEXHAUSTED': "BalanceExhausted",
         },
         ('line_item_type',): {
             'None': None,
@@ -107,11 +106,11 @@ class LineItem(ModelNormal):
         lazy_import()
         return {
             'account_id': (str, none_type,),  # noqa: E501
+            'budget_status': (str, none_type,),  # noqa: E501
             'buy_type': (str, none_type,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
             'conquesting_settings': (ConquestingSettings,),  # noqa: E501
             'flight_dates': (FlightDates,),  # noqa: E501
-            'funding_status': (str, none_type,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
             'line_item_type': (str, none_type,),  # noqa: E501
@@ -129,11 +128,11 @@ class LineItem(ModelNormal):
 
     attribute_map = {
         'account_id': 'accountId',  # noqa: E501
+        'budget_status': 'budgetStatus',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
         'conquesting_settings': 'conquestingSettings',  # noqa: E501
         'flight_dates': 'flightDates',  # noqa: E501
-        'funding_status': 'fundingStatus',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
         'line_item_type': 'lineItemType',  # noqa: E501
@@ -186,11 +185,11 @@ class LineItem(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str, none_type): The account id of the associated account.. [optional]  # noqa: E501
+            budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             buy_type (str, none_type): The buy type of the line item.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ConquestingSettings): [optional]  # noqa: E501
             flight_dates (FlightDates): [optional]  # noqa: E501
-            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
             line_item_type (str, none_type): The type of the line item.. [optional]  # noqa: E501
@@ -285,11 +284,11 @@ class LineItem(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             account_id (str, none_type): The account id of the associated account.. [optional]  # noqa: E501
+            budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             buy_type (str, none_type): The buy type of the line item.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
             conquesting_settings (ConquestingSettings): [optional]  # noqa: E501
             flight_dates (FlightDates): [optional]  # noqa: E501
-            funding_status (str, none_type): Indicates whether the line item is funded.. [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
             line_item_type (str, none_type): The type of the line item.. [optional]  # noqa: E501

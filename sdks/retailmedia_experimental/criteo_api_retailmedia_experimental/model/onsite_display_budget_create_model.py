@@ -75,7 +75,7 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'amount': (float, none_type,),  # noqa: E501
+            'amount': (float,),  # noqa: E501
         }
 
     @cached_property
@@ -94,8 +94,11 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, amount, *args, **kwargs):  # noqa: E501
         """OnsiteDisplayBudgetCreateModel - a model defined in OpenAPI
+
+        Args:
+            amount (float): Total the campaign may spend over its flight.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -128,7 +131,6 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (float, none_type): Total the campaign may spend over its flight.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -160,6 +162,7 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.amount = amount
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -180,8 +183,11 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, amount, *args, **kwargs):  # noqa: E501
         """OnsiteDisplayBudgetCreateModel - a model defined in OpenAPI
+
+        Args:
+            amount (float): Total the campaign may spend over its flight.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -214,7 +220,6 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (float, none_type): Total the campaign may spend over its flight.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,6 +249,7 @@ class OnsiteDisplayBudgetCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.amount = amount
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

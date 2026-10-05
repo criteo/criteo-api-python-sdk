@@ -358,8 +358,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -470,8 +468,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -582,8 +578,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -694,8 +688,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -2424,8 +2416,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -2527,8 +2517,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -2630,8 +2618,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -2733,8 +2719,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -2836,8 +2820,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -2939,8 +2921,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -3042,8 +3022,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -3145,8 +3123,6 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=TargetingEntity(
                 data=[
                     EntityFilter(
-                        active=True,
-                        read_only=True,
                         value="value_example",
                     ),
                 ],
@@ -3546,6 +3522,9 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
     set_ad_set_targeting_video_positioning_request = SetAdSetTargetingVideoPositioningRequest(
         data=SetAdSetTargetingVideoPositioningResource(
             attributes=SetAdSetTargetingVideoPositioning(
+                include_not_rewarded=True,
+                include_rewarded=True,
+                include_unknown_rewarded=True,
                 playback_method=[
                     "AutoSoundOn",
                 ],

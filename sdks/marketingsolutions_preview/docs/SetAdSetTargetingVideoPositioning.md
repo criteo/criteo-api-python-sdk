@@ -5,6 +5,9 @@ Video positioning targeting writing model
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**include_not_rewarded** | **bool** | Should target inventory marked as not rewarded? | [optional] 
+**include_rewarded** | **bool** | Should target inventory marked as rewarded? | [optional] 
+**include_unknown_rewarded** | **bool** | Should target inventory which rewarded status is unknown? | [optional] 
 **playback_method** | **[str]** |  | [optional] 
 **skippable** | **str** |  | [optional] 
 **video_aspect_ratio** | **[str]** |  | [optional] 

@@ -30,8 +30,8 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.product_model import ProductModel
-    globals()['ProductModel'] = ProductModel
+    from criteo_api_retailmedia_experimental.model.add_display_product_detail_model import AddDisplayProductDetailModel
+    globals()['AddDisplayProductDetailModel'] = AddDisplayProductDetailModel
 
 
 class AddProductsModel(ModelNormal):
@@ -87,7 +87,7 @@ class AddProductsModel(ModelNormal):
         """
         lazy_import()
         return {
-            'display_product_details': ([ProductModel], none_type,),  # noqa: E501
+            'display_product_details': ([AddDisplayProductDetailModel], none_type,),  # noqa: E501
             'product_type': (str,),  # noqa: E501
         }
 
@@ -142,7 +142,7 @@ class AddProductsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_product_details ([ProductModel], none_type): The display products to add to the line item.. [optional]  # noqa: E501
+            display_product_details ([AddDisplayProductDetailModel], none_type): The display products to add to the line item.. [optional]  # noqa: E501
             product_type (str): The type of product being added.. [optional] if omitted the server will use the default value of "DisplayProduct"  # noqa: E501
         """
 
@@ -229,7 +229,7 @@ class AddProductsModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            display_product_details ([ProductModel], none_type): The display products to add to the line item.. [optional]  # noqa: E501
+            display_product_details ([AddDisplayProductDetailModel], none_type): The display products to add to the line item.. [optional]  # noqa: E501
             product_type (str): The type of product being added.. [optional] if omitted the server will use the default value of "DisplayProduct"  # noqa: E501
         """
 

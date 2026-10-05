@@ -31,8 +31,10 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.budget_capping_request_model import BudgetCappingRequestModel
+    from criteo_api_retailmedia_experimental.model.decimal_nullable_nillable_v2 import DecimalNullableNillableV2
     from criteo_api_retailmedia_experimental.model.pacing_request_model import PacingRequestModel
     globals()['BudgetCappingRequestModel'] = BudgetCappingRequestModel
+    globals()['DecimalNullableNillableV2'] = DecimalNullableNillableV2
     globals()['PacingRequestModel'] = PacingRequestModel
 
 
@@ -82,7 +84,7 @@ class SponsoredProductsBudgetUpdateModel(ModelNormal):
         """
         lazy_import()
         return {
-            'amount': (float, none_type,),  # noqa: E501
+            'amount': (DecimalNullableNillableV2,),  # noqa: E501
             'cappings': ([BudgetCappingRequestModel], none_type,),  # noqa: E501
             'pacing': (PacingRequestModel,),  # noqa: E501
         }
@@ -139,7 +141,7 @@ class SponsoredProductsBudgetUpdateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (float, none_type): [optional]  # noqa: E501
+            amount (DecimalNullableNillableV2): [optional]  # noqa: E501
             cappings ([BudgetCappingRequestModel], none_type): Per-period ceilings. At most one entry per period.. [optional]  # noqa: E501
             pacing (PacingRequestModel): [optional]  # noqa: E501
         """
@@ -227,7 +229,7 @@ class SponsoredProductsBudgetUpdateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            amount (float, none_type): [optional]  # noqa: E501
+            amount (DecimalNullableNillableV2): [optional]  # noqa: E501
             cappings ([BudgetCappingRequestModel], none_type): Per-period ceilings. At most one entry per period.. [optional]  # noqa: E501
             pacing (PacingRequestModel): [optional]  # noqa: E501
         """

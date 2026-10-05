@@ -34,8 +34,7 @@ from criteo_api_retailmedia_experimental.model.create_target_request_model_list_
 from criteo_api_retailmedia_experimental.model.creative2_response import Creative2Response
 from criteo_api_retailmedia_experimental.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_experimental.model.creative_update_model2 import CreativeUpdateModel2
-from criteo_api_retailmedia_experimental.model.creatives_model_response import CreativesModelResponse
-from criteo_api_retailmedia_experimental.model.delete_creatives_model_request import DeleteCreativesModelRequest
+from criteo_api_retailmedia_experimental.model.delete_line_item_creatives_request import DeleteLineItemCreativesRequest
 from criteo_api_retailmedia_experimental.model.delete_product_model_request import DeleteProductModelRequest
 from criteo_api_retailmedia_experimental.model.demand_search_request import DemandSearchRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
@@ -44,7 +43,8 @@ from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_catalo
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_experimental.model.external_create_line_item_model_request import ExternalCreateLineItemModelRequest
 from criteo_api_retailmedia_experimental.model.external_update_line_item_model_request import ExternalUpdateLineItemModelRequest
-from criteo_api_retailmedia_experimental.model.fetch_creatives_model_response import FetchCreativesModelResponse
+from criteo_api_retailmedia_experimental.model.line_item_creatives_response import LineItemCreativesResponse
+from criteo_api_retailmedia_experimental.model.line_item_details_response import LineItemDetailsResponse
 from criteo_api_retailmedia_experimental.model.line_item_list_response_with_pagination import LineItemListResponseWithPagination
 from criteo_api_retailmedia_experimental.model.line_item_min_bids_response import LineItemMinBidsResponse
 from criteo_api_retailmedia_experimental.model.line_item_product_list_response_v2_with_pagination_meta import LineItemProductListResponseV2WithPaginationMeta
@@ -61,7 +61,8 @@ from criteo_api_retailmedia_experimental.model.supply_search_request import Supp
 from criteo_api_retailmedia_experimental.model.target_list_request import TargetListRequest
 from criteo_api_retailmedia_experimental.model.target_list_response import TargetListResponse
 from criteo_api_retailmedia_experimental.model.target_list_response_with_page_metadata import TargetListResponseWithPageMetadata
-from criteo_api_retailmedia_experimental.model.upsert_creatives_model_request import UpsertCreativesModelRequest
+from criteo_api_retailmedia_experimental.model.upsert_line_item_creatives_request import UpsertLineItemCreativesRequest
+from criteo_api_retailmedia_experimental.model.upsert_line_item_creatives_response import UpsertLineItemCreativesResponse
 from criteo_api_retailmedia_experimental.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
@@ -559,11 +560,11 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'delete_creatives_model_request',
+                    'delete_line_item_creatives_request',
                 ],
                 'required': [
                     'line_item_id',
-                    'delete_creatives_model_request',
+                    'delete_line_item_creatives_request',
                 ],
                 'nullable': [
                 ],
@@ -580,15 +581,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'delete_creatives_model_request':
-                        (DeleteCreativesModelRequest,),
+                    'delete_line_item_creatives_request':
+                        (DeleteLineItemCreativesRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'delete_creatives_model_request': 'body',
+                    'delete_line_item_creatives_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -722,7 +723,7 @@ class CampaignApi(object):
         )
         self.fetch_creatives_endpoint = _Endpoint(
             settings={
-                'response_type': (FetchCreativesModelResponse,),
+                'response_type': (LineItemCreativesResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1113,6 +1114,58 @@ class CampaignApi(object):
                 'location_map': {
                     'account_id': 'path',
                     'creative_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_line_item_endpoint = _Endpoint(
+            settings={
+                'response_type': (LineItemDetailsResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}',
+                'operation_id': 'get_line_item',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -2141,7 +2194,7 @@ class CampaignApi(object):
         )
         self.upsert_creatives_endpoint = _Endpoint(
             settings={
-                'response_type': (CreativesModelResponse,),
+                'response_type': (UpsertLineItemCreativesResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2154,11 +2207,11 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'upsert_creatives_model_request',
+                    'upsert_line_item_creatives_request',
                 ],
                 'required': [
                     'line_item_id',
-                    'upsert_creatives_model_request',
+                    'upsert_line_item_creatives_request',
                 ],
                 'nullable': [
                 ],
@@ -2175,15 +2228,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'upsert_creatives_model_request':
-                        (UpsertCreativesModelRequest,),
+                    'upsert_line_item_creatives_request':
+                        (UpsertLineItemCreativesRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'upsert_creatives_model_request': 'body',
+                    'upsert_line_item_creatives_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2888,7 +2941,7 @@ class CampaignApi(object):
     def delete_creatives(
         self,
         line_item_id,
-        delete_creatives_model_request,
+        delete_line_item_creatives_request,
         **kwargs
     ):
         """/experimental/retail-media/line-items/{line-item-id}/creatives/delete  # noqa: E501
@@ -2897,12 +2950,12 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_creatives(line_item_id, delete_creatives_model_request, async_req=True)
+        >>> thread = api.delete_creatives(line_item_id, delete_line_item_creatives_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): The external line item id.
-            delete_creatives_model_request (DeleteCreativesModelRequest): The stable creative identifiers to delete.
+            delete_line_item_creatives_request (DeleteLineItemCreativesRequest): The stable creative identifiers to delete.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2968,8 +3021,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        kwargs['delete_creatives_model_request'] = \
-            delete_creatives_model_request
+        kwargs['delete_line_item_creatives_request'] = \
+            delete_line_item_creatives_request
         return self.delete_creatives_endpoint.call_with_http_info(**kwargs)
 
     def delete_product_button_by_line_item_and_product_button_id(
@@ -3196,7 +3249,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            FetchCreativesModelResponse
+            LineItemCreativesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3740,6 +3793,89 @@ class CampaignApi(object):
         kwargs['creative_id'] = \
             creative_id
         return self.get_creative_endpoint.call_with_http_info(**kwargs)
+
+    def get_line_item(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/line-items/{line-item-id}  # noqa: E501
+
+        Retrieves a consolidated line item view from the line item domain services.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_line_item(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): The line item identifier.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LineItemDetailsResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.get_line_item_endpoint.call_with_http_info(**kwargs)
 
     def get_min_bids_by_line_item_id(
         self,
@@ -5207,7 +5343,7 @@ class CampaignApi(object):
     def upsert_creatives(
         self,
         line_item_id,
-        upsert_creatives_model_request,
+        upsert_line_item_creatives_request,
         **kwargs
     ):
         """/experimental/retail-media/line-items/{line-item-id}/creatives/upsert  # noqa: E501
@@ -5216,12 +5352,12 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.upsert_creatives(line_item_id, upsert_creatives_model_request, async_req=True)
+        >>> thread = api.upsert_creatives(line_item_id, upsert_line_item_creatives_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): The line item id.
-            upsert_creatives_model_request (UpsertCreativesModelRequest): The creatives to upsert.
+            upsert_line_item_creatives_request (UpsertLineItemCreativesRequest): The creatives to upsert.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -5256,7 +5392,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CreativesModelResponse
+            UpsertLineItemCreativesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5287,7 +5423,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        kwargs['upsert_creatives_model_request'] = \
-            upsert_creatives_model_request
+        kwargs['upsert_line_item_creatives_request'] = \
+            upsert_line_item_creatives_request
         return self.upsert_creatives_endpoint.call_with_http_info(**kwargs)
 

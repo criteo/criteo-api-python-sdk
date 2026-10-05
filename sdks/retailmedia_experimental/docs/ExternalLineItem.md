@@ -5,10 +5,10 @@ A unit of ad delivery configuration within a campaign. It defines how a specific
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**budget_status** | **str, none_type** | Indicates whether the line item has budget headroom to serve ads. | [optional] 
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | [optional] 
 **conquesting_settings** | [**ExternalConquestingSettings**](ExternalConquestingSettings.md) |  | [optional] 
 **effective_flight_dates** | [**ExternalFlightDatesModel**](ExternalFlightDatesModel.md) |  | [optional] 
-**funding_status** | **str, none_type** | Indicates whether the line item is funded. | [optional] 
 **is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **line_item_id** | **str, none_type** | The unique identifier of the line item. | [optional] 
 **name** | **str, none_type** | The name of the line item. | [optional] 
