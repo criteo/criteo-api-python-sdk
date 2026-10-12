@@ -60,7 +60,6 @@ class SponsoredProductDetails(ModelNormal):
             'UNKNOWN': "Unknown",
             'ACTIVE': "Active",
             'INACTIVE': "Inactive",
-            'EXPIRED': "Expired",
             'REMOVED': "Removed",
             'DELETED': "Deleted",
         },
@@ -84,7 +83,6 @@ class SponsoredProductDetails(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'bid_override': (float, none_type,),  # noqa: E501
             'status': (str, none_type,),  # noqa: E501
         }
 
@@ -94,7 +92,6 @@ class SponsoredProductDetails(ModelNormal):
 
 
     attribute_map = {
-        'bid_override': 'bidOverride',  # noqa: E501
         'status': 'status',  # noqa: E501
     }
 
@@ -139,7 +136,6 @@ class SponsoredProductDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_override (float, none_type): The per-product bid override. Null means the line-item bid applies.. [optional]  # noqa: E501
             status (str, none_type): The product's status in the sponsored products pool.. [optional]  # noqa: E501
         """
 
@@ -226,7 +222,6 @@ class SponsoredProductDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_override (float, none_type): The per-product bid override. Null means the line-item bid applies.. [optional]  # noqa: E501
             status (str, none_type): The product's status in the sponsored products pool.. [optional]  # noqa: E501
         """
 

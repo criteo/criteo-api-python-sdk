@@ -21,8 +21,8 @@ from criteo_api_retailmedia_experimental.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
-from criteo_api_retailmedia_experimental.model.add_products_model_request import AddProductsModelRequest
-from criteo_api_retailmedia_experimental.model.add_products_result_model_response import AddProductsResultModelResponse
+from criteo_api_retailmedia_experimental.model.add_line_item_products_list_request import AddLineItemProductsListRequest
+from criteo_api_retailmedia_experimental.model.add_line_item_products_list_response import AddLineItemProductsListResponse
 from criteo_api_retailmedia_experimental.model.bidding_settings_request import BiddingSettingsRequest
 from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
 from criteo_api_retailmedia_experimental.model.campaign_create_model_request import CampaignCreateModelRequest
@@ -35,9 +35,13 @@ from criteo_api_retailmedia_experimental.model.creative2_response import Creativ
 from criteo_api_retailmedia_experimental.model.creative_create_model2 import CreativeCreateModel2
 from criteo_api_retailmedia_experimental.model.creative_update_model2 import CreativeUpdateModel2
 from criteo_api_retailmedia_experimental.model.delete_line_item_creatives_request import DeleteLineItemCreativesRequest
-from criteo_api_retailmedia_experimental.model.delete_product_model_request import DeleteProductModelRequest
+from criteo_api_retailmedia_experimental.model.delete_line_item_products_list_request import DeleteLineItemProductsListRequest
+from criteo_api_retailmedia_experimental.model.delete_line_item_products_list_response import DeleteLineItemProductsListResponse
 from criteo_api_retailmedia_experimental.model.demand_search_request import DemandSearchRequest
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_enriched_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_v2_of_change_history_entry_response_and_sdk_page_metadata import EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata
+from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_search_enriched_request import EntityResourceInputCreativeSearchEnrichedRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_search_request import EntityResourceInputCreativeSearchRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
@@ -82,7 +86,7 @@ class CampaignApi(object):
         self.api_client = api_client
         self.add_products_endpoint = _Endpoint(
             settings={
-                'response_type': (AddProductsResultModelResponse,),
+                'response_type': (AddLineItemProductsListResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -95,11 +99,11 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'add_products_model_request',
+                    'add_line_item_products_list_request',
                 ],
                 'required': [
                     'line_item_id',
-                    'add_products_model_request',
+                    'add_line_item_products_list_request',
                 ],
                 'nullable': [
                 ],
@@ -116,15 +120,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'add_products_model_request':
-                        (AddProductsModelRequest,),
+                    'add_line_item_products_list_request':
+                        (AddLineItemProductsListRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'add_products_model_request': 'body',
+                    'add_line_item_products_list_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -664,7 +668,7 @@ class CampaignApi(object):
         )
         self.delete_products_endpoint = _Endpoint(
             settings={
-                'response_type': (Outcome,),
+                'response_type': (DeleteLineItemProductsListResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -677,11 +681,11 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'delete_product_model_request',
+                    'delete_line_item_products_list_request',
                 ],
                 'required': [
                     'line_item_id',
-                    'delete_product_model_request',
+                    'delete_line_item_products_list_request',
                 ],
                 'nullable': [
                 ],
@@ -698,15 +702,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'delete_product_model_request':
-                        (DeleteProductModelRequest,),
+                    'delete_line_item_products_list_request':
+                        (DeleteLineItemProductsListRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'delete_product_model_request': 'body',
+                    'delete_line_item_products_list_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -808,7 +812,7 @@ class CampaignApi(object):
                     ('limit',): {
 
                         'inclusive_maximum': 1000,
-                        'inclusive_minimum': 0,
+                        'inclusive_minimum': 1,
                     },
                     ('offset',): {
 
@@ -1508,6 +1512,220 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.list_account_change_history_entries_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/accounts/{account-id}/change-history-entries',
+                'operation_id': 'list_account_change_history_entries',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'campaign_ids',
+                    'end_time',
+                    'entity_types',
+                    'event_types',
+                    'limit',
+                    'line_item_ids',
+                    'offset',
+                    'start_time',
+                ],
+                'required': [
+                    'account_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 100,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'campaign_ids':
+                        ([str],),
+                    'end_time':
+                        (datetime,),
+                    'entity_types':
+                        ([str],),
+                    'event_types':
+                        ([str],),
+                    'limit':
+                        (int,),
+                    'line_item_ids':
+                        ([str],),
+                    'offset':
+                        (int,),
+                    'start_time':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'campaign_ids': 'campaign-ids',
+                    'end_time': 'end-time',
+                    'entity_types': 'entity-types',
+                    'event_types': 'event-types',
+                    'limit': 'limit',
+                    'line_item_ids': 'line-item-ids',
+                    'offset': 'offset',
+                    'start_time': 'start-time',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'campaign_ids': 'query',
+                    'end_time': 'query',
+                    'entity_types': 'query',
+                    'event_types': 'query',
+                    'limit': 'query',
+                    'line_item_ids': 'query',
+                    'offset': 'query',
+                    'start_time': 'query',
+                },
+                'collection_format_map': {
+                    'campaign_ids': 'multi',
+                    'entity_types': 'multi',
+                    'event_types': 'multi',
+                    'line_item_ids': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.list_retailer_change_history_entries_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/retailers/{retailer-id}/change-history-entries',
+                'operation_id': 'list_retailer_change_history_entries',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'retailer_id',
+                    'campaign_ids',
+                    'end_time',
+                    'entity_types',
+                    'event_types',
+                    'limit',
+                    'line_item_ids',
+                    'offset',
+                    'start_time',
+                ],
+                'required': [
+                    'retailer_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 100,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'retailer_id':
+                        (str,),
+                    'campaign_ids':
+                        ([str],),
+                    'end_time':
+                        (datetime,),
+                    'entity_types':
+                        ([str],),
+                    'event_types':
+                        ([str],),
+                    'limit':
+                        (int,),
+                    'line_item_ids':
+                        ([str],),
+                    'offset':
+                        (int,),
+                    'start_time':
+                        (datetime,),
+                },
+                'attribute_map': {
+                    'retailer_id': 'retailer-id',
+                    'campaign_ids': 'campaign-ids',
+                    'end_time': 'end-time',
+                    'entity_types': 'entity-types',
+                    'event_types': 'event-types',
+                    'limit': 'limit',
+                    'line_item_ids': 'line-item-ids',
+                    'offset': 'offset',
+                    'start_time': 'start-time',
+                },
+                'location_map': {
+                    'retailer_id': 'path',
+                    'campaign_ids': 'query',
+                    'end_time': 'query',
+                    'entity_types': 'query',
+                    'event_types': 'query',
+                    'limit': 'query',
+                    'line_item_ids': 'query',
+                    'offset': 'query',
+                    'start_time': 'query',
+                },
+                'collection_format_map': {
+                    'campaign_ids': 'multi',
+                    'entity_types': 'multi',
+                    'event_types': 'multi',
+                    'line_item_ids': 'multi',
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.search_account_creatives_endpoint = _Endpoint(
             settings={
                 'response_type': (EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata,),
@@ -1573,6 +1791,87 @@ class CampaignApi(object):
                 'location_map': {
                     'account_id': 'path',
                     'entity_resource_input_creative_search_request': 'body',
+                    'limit': 'query',
+                    'offset': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.search_account_creatives_enriched_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/accounts/{account-id}/creatives/search-enriched',
+                'operation_id': 'search_account_creatives_enriched',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'entity_resource_input_creative_search_enriched_request',
+                    'limit',
+                    'offset',
+                ],
+                'required': [
+                    'account_id',
+                    'entity_resource_input_creative_search_enriched_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 500,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'entity_resource_input_creative_search_enriched_request':
+                        (EntityResourceInputCreativeSearchEnrichedRequest,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                },
+                'attribute_map': {
+                    'account_id': 'account-id',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'entity_resource_input_creative_search_enriched_request': 'body',
                     'limit': 'query',
                     'offset': 'query',
                 },
@@ -2255,7 +2554,7 @@ class CampaignApi(object):
     def add_products(
         self,
         line_item_id,
-        add_products_model_request,
+        add_line_item_products_list_request,
         **kwargs
     ):
         """/experimental/retail-media/line-items/{line-item-id}/products/add  # noqa: E501
@@ -2264,12 +2563,12 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.add_products(line_item_id, add_products_model_request, async_req=True)
+        >>> thread = api.add_products(line_item_id, add_line_item_products_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): The line item id.
-            add_products_model_request (AddProductsModelRequest): The products to add.
+            add_line_item_products_list_request (AddLineItemProductsListRequest): The products to add.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -2304,7 +2603,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            AddProductsResultModelResponse
+            AddLineItemProductsListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -2335,8 +2634,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        kwargs['add_products_model_request'] = \
-            add_products_model_request
+        kwargs['add_line_item_products_list_request'] = \
+            add_line_item_products_list_request
         return self.add_products_endpoint.call_with_http_info(**kwargs)
 
     def append_product_button_by_line_item_id(
@@ -3115,7 +3414,7 @@ class CampaignApi(object):
     def delete_products(
         self,
         line_item_id,
-        delete_product_model_request,
+        delete_line_item_products_list_request,
         **kwargs
     ):
         """/experimental/retail-media/line-items/{line-item-id}/products/delete  # noqa: E501
@@ -3124,12 +3423,12 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_products(line_item_id, delete_product_model_request, async_req=True)
+        >>> thread = api.delete_products(line_item_id, delete_line_item_products_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): The line item id.
-            delete_product_model_request (DeleteProductModelRequest): The products to delete.
+            delete_line_item_products_list_request (DeleteLineItemProductsListRequest): The products to delete.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3164,7 +3463,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            Outcome
+            DeleteLineItemProductsListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3195,8 +3494,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        kwargs['delete_product_model_request'] = \
-            delete_product_model_request
+        kwargs['delete_line_item_products_list_request'] = \
+            delete_line_item_products_list_request
         return self.delete_products_endpoint.call_with_http_info(**kwargs)
 
     def fetch_creatives(
@@ -4381,6 +4680,188 @@ class CampaignApi(object):
             supply_search_request
         return self.line_items_supply_search_endpoint.call_with_http_info(**kwargs)
 
+    def list_account_change_history_entries(
+        self,
+        account_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/accounts/{account-id}/change-history-entries  # noqa: E501
+
+        Returns a paginated collection of changes to Retail Media objects under the requested account. Use `event-types` and `entity-types` to narrow the results.  Requests for inaccessible or unknown accounts return `403`. Changes outside the caller's access are omitted. Actor information is limited to role labels; user identifiers are not returned.  Results are returned in descending order by `occurredAt`. The relative order of entries with identical `occurredAt` values is unspecified.  Additional `eventType`, entity `type`, and change `field` values may be returned. Clients must tolerate values they do not recognize.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_account_change_history_entries(account_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): External opaque identifier of the advertiser account whose change history is requested.
+
+        Keyword Args:
+            campaign_ids ([str]): When provided, only changes for these external opaque campaign identifiers are returned. Entries for campaigns outside the caller's account access are excluded without revealing whether the campaign exists. Omission is equivalent to an empty array. . [optional]
+            end_time (datetime): Inclusive upper bound on change time, in UTC (ISO-8601 date-time). Defaults to the request time when omitted.. [optional]
+            entity_types ([str]): Restrict results to changes on the given entity types (see the entity `type` field). Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array. . [optional]
+            event_types ([str]): Restrict results to specific change-event types (see `eventType`). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array. . [optional]
+            limit (int): Maximum number of change-history entries to return in a single page.. [optional] if omitted the server will use the default value of 25
+            line_item_ids ([str]): When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's account access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array. . [optional]
+            offset (int): Zero-based index of the first change-history entry to return.. [optional] if omitted the server will use the default value of 0
+            start_time (datetime): Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        return self.list_account_change_history_entries_endpoint.call_with_http_info(**kwargs)
+
+    def list_retailer_change_history_entries(
+        self,
+        retailer_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/retailers/{retailer-id}/change-history-entries  # noqa: E501
+
+        Returns a paginated collection of changes to Retail Media objects under the requested retailer. Use `event-types` and `entity-types` to narrow the results.  Requests for inaccessible or unknown retailers return `403`. Changes outside the caller's access are omitted. Offsite campaign-level changes are not returned; offsite line-item changes are included. Actor information is limited to role labels; user identifiers are not returned.  Results are returned in descending order by `occurredAt`. The relative order of entries with identical `occurredAt` values is unspecified.  Additional `eventType`, entity `type`, and change `field` values may be returned. Clients must tolerate values they do not recognize.   # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.list_retailer_change_history_entries(retailer_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            retailer_id (str): External opaque identifier of the retailer whose change history is requested.
+
+        Keyword Args:
+            campaign_ids ([str]): When provided, only changes for these external opaque campaign identifiers are returned. Entries for campaigns outside the caller's retailer access are excluded without revealing whether the campaign exists. Omission is equivalent to an empty array. . [optional]
+            end_time (datetime): Inclusive upper bound on change time, in UTC (ISO-8601 date-time). Defaults to the request time when omitted.. [optional]
+            entity_types ([str]): Restrict results to changes on the given entity types (see the entity `type` field). Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array. . [optional]
+            event_types ([str]): Restrict results to specific change-event types (see `eventType`). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array. . [optional]
+            limit (int): Maximum number of change-history entries to return in a single page.. [optional] if omitted the server will use the default value of 25
+            line_item_ids ([str]): When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's retailer access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array. . [optional]
+            offset (int): Zero-based index of the first change-history entry to return.. [optional] if omitted the server will use the default value of 0
+            start_time (datetime): Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['retailer_id'] = \
+            retailer_id
+        return self.list_retailer_change_history_entries_endpoint.call_with_http_info(**kwargs)
+
     def search_account_creatives(
         self,
         account_id,
@@ -4469,6 +4950,95 @@ class CampaignApi(object):
         kwargs['entity_resource_input_creative_search_request'] = \
             entity_resource_input_creative_search_request
         return self.search_account_creatives_endpoint.call_with_http_info(**kwargs)
+
+    def search_account_creatives_enriched(
+        self,
+        account_id,
+        entity_resource_input_creative_search_enriched_request,
+        **kwargs
+    ):
+        """/experimental/retail-media/accounts/{account-id}/creatives/search-enriched  # noqa: E501
+
+        Get account creatives enriched with the product collection constraints of their template.              The returned id is the first parent external id of the creative (stable across versions).  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_account_creatives_enriched(account_id, entity_resource_input_creative_search_enriched_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): External account id to retrieve creatives for
+            entity_resource_input_creative_search_enriched_request (EntityResourceInputCreativeSearchEnrichedRequest): search request filter
+
+        Keyword Args:
+            limit (int): limit to paginated result. [optional] if omitted the server will use the default value of 50
+            offset (int): offset to paginated result. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['entity_resource_input_creative_search_enriched_request'] = \
+            entity_resource_input_creative_search_enriched_request
+        return self.search_account_creatives_enriched_endpoint.call_with_http_info(**kwargs)
 
     def search_campaigns(
         self,

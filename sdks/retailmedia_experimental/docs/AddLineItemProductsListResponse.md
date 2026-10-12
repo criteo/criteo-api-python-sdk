@@ -1,11 +1,11 @@
-# AddProductsResultModelResponse
+# AddLineItemProductsListResponse
 
-A top-level object that encapsulates a Criteo API response for a single value object.
+The products added to a line item's product pool, one resource per product.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**AddProductsResultModelResource**](AddProductsResultModelResource.md) |  | [optional] 
+**data** | [**[LineItemProductResource], none_type**](LineItemProductResource.md) |  | [optional] 
 **errors** | [**[CommonProblem], none_type**](CommonProblem.md) | Errors that occured during this call. | [optional] [readonly] 
 **warnings** | [**[CommonProblem], none_type**](CommonProblem.md) | Warnings that occured during this call. | [optional] [readonly] 
 

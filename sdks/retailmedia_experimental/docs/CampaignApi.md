@@ -29,7 +29,10 @@ Method | HTTP request | Description
 [**get_targets_by_line_item_id**](CampaignApi.md#get_targets_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/targets | /experimental/retail-media/line-items/{line-item-id}/targets
 [**line_items_demand_search**](CampaignApi.md#line_items_demand_search) | **POST** /experimental/retail-media/line-items/demand-search | /experimental/retail-media/line-items/demand-search
 [**line_items_supply_search**](CampaignApi.md#line_items_supply_search) | **POST** /experimental/retail-media/line-items/supply-search | /experimental/retail-media/line-items/supply-search
+[**list_account_change_history_entries**](CampaignApi.md#list_account_change_history_entries) | **GET** /experimental/retail-media/accounts/{account-id}/change-history-entries | /experimental/retail-media/accounts/{account-id}/change-history-entries
+[**list_retailer_change_history_entries**](CampaignApi.md#list_retailer_change_history_entries) | **GET** /experimental/retail-media/retailers/{retailer-id}/change-history-entries | /experimental/retail-media/retailers/{retailer-id}/change-history-entries
 [**search_account_creatives**](CampaignApi.md#search_account_creatives) | **POST** /experimental/retail-media/accounts/{account-id}/creatives/search | /experimental/retail-media/accounts/{account-id}/creatives/search
+[**search_account_creatives_enriched**](CampaignApi.md#search_account_creatives_enriched) | **POST** /experimental/retail-media/accounts/{account-id}/creatives/search-enriched | /experimental/retail-media/accounts/{account-id}/creatives/search-enriched
 [**search_campaigns**](CampaignApi.md#search_campaigns) | **POST** /experimental/retail-media/accounts/{account-id}/campaigns/search | /experimental/retail-media/accounts/{account-id}/campaigns/search
 [**set_bidding_strategy_by_line_item_id**](CampaignApi.md#set_bidding_strategy_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy
 [**submit_line_item**](CampaignApi.md#submit_line_item) | **POST** /experimental/retail-media/line-items/{line-item-id}/submit | /experimental/retail-media/line-items/{line-item-id}/submit
@@ -44,7 +47,7 @@ Method | HTTP request | Description
 
 
 # **add_products**
-> AddProductsResultModelResponse add_products(line_item_id, add_products_model_request)
+> AddLineItemProductsListResponse add_products(line_item_id, add_line_item_products_list_request)
 
 /experimental/retail-media/line-items/{line-item-id}/products/add
 
@@ -59,8 +62,8 @@ Add products to a line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.add_products_model_request import AddProductsModelRequest
-from criteo_api_retailmedia_experimental.model.add_products_result_model_response import AddProductsResultModelResponse
+from criteo_api_retailmedia_experimental.model.add_line_item_products_list_request import AddLineItemProductsListRequest
+from criteo_api_retailmedia_experimental.model.add_line_item_products_list_response import AddLineItemProductsListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -90,24 +93,26 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     line_item_id = "line-item-id_example" # str | The line item id.
-    add_products_model_request = AddProductsModelRequest(
-        data=AddProductsModelResource(
-            attributes=AddProductsModel(
-                display_product_details=[
-                    AddDisplayProductDetailModel(
-                        product_id="product_id_example",
+    add_line_item_products_list_request = AddLineItemProductsListRequest(
+        data=[
+            LineItemProductInputResource(
+                attributes=LineItemProductInput(
+                    display_product_details={},
+                    product_type="Unknown",
+                    sponsored_product_details=SponsoredProductDetails(
+                        status="Unknown",
                     ),
-                ],
-                product_type="DisplayProduct",
+                ),
+                id="id_example",
+                type="type_example",
             ),
-            type="type_example",
-        ),
-    ) # AddProductsModelRequest | The products to add.
+        ],
+    ) # AddLineItemProductsListRequest | The products to add.
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}/products/add
-        api_response = api_instance.add_products(line_item_id, add_products_model_request)
+        api_response = api_instance.add_products(line_item_id, add_line_item_products_list_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->add_products: %s\n" % e)
@@ -119,11 +124,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item id. |
- **add_products_model_request** | [**AddProductsModelRequest**](AddProductsModelRequest.md)| The products to add. |
+ **add_line_item_products_list_request** | [**AddLineItemProductsListRequest**](AddLineItemProductsListRequest.md)| The products to add. |
 
 ### Return type
 
-[**AddProductsResultModelResponse**](AddProductsResultModelResponse.md)
+[**AddLineItemProductsListResponse**](AddLineItemProductsListResponse.md)
 
 ### Authorization
 
@@ -1160,7 +1165,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_products**
-> Outcome delete_products(line_item_id, delete_product_model_request)
+> DeleteLineItemProductsListResponse delete_products(line_item_id, delete_line_item_products_list_request)
 
 /experimental/retail-media/line-items/{line-item-id}/products/delete
 
@@ -1175,8 +1180,8 @@ Delete products from a line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.outcome import Outcome
-from criteo_api_retailmedia_experimental.model.delete_product_model_request import DeleteProductModelRequest
+from criteo_api_retailmedia_experimental.model.delete_line_item_products_list_response import DeleteLineItemProductsListResponse
+from criteo_api_retailmedia_experimental.model.delete_line_item_products_list_request import DeleteLineItemProductsListRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1206,22 +1211,22 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     line_item_id = "line-item-id_example" # str | The line item id.
-    delete_product_model_request = DeleteProductModelRequest(
-        data=DeleteProductModelResource(
-            attributes=DeleteProductModel(
+    delete_line_item_products_list_request = DeleteLineItemProductsListRequest(
+        data=DeleteLineItemProductsInputResource(
+            attributes=DeleteLineItemProductsInput(
                 product_ids=[
                     "product_ids_example",
                 ],
-                product_type="DisplayProduct",
+                product_type="Unknown",
             ),
             type="type_example",
         ),
-    ) # DeleteProductModelRequest | The products to delete.
+    ) # DeleteLineItemProductsListRequest | The products to delete.
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}/products/delete
-        api_response = api_instance.delete_products(line_item_id, delete_product_model_request)
+        api_response = api_instance.delete_products(line_item_id, delete_line_item_products_list_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->delete_products: %s\n" % e)
@@ -1233,11 +1238,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item id. |
- **delete_product_model_request** | [**DeleteProductModelRequest**](DeleteProductModelRequest.md)| The products to delete. |
+ **delete_line_item_products_list_request** | [**DeleteLineItemProductsListRequest**](DeleteLineItemProductsListRequest.md)| The products to delete. |
 
 ### Return type
 
-[**Outcome**](Outcome.md)
+[**DeleteLineItemProductsListResponse**](DeleteLineItemProductsListResponse.md)
 
 ### Authorization
 
@@ -2533,6 +2538,242 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **list_account_change_history_entries**
+> EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata list_account_change_history_entries(account_id)
+
+/experimental/retail-media/accounts/{account-id}/change-history-entries
+
+Returns a paginated collection of changes to Retail Media objects under the requested account. Use `event-types` and `entity-types` to narrow the results.  Requests for inaccessible or unknown accounts return `403`. Changes outside the caller's access are omitted. Actor information is limited to role labels; user identifiers are not returned.  Results are returned in descending order by `occurredAt`. The relative order of entries with identical `occurredAt` values is unspecified.  Additional `eventType`, entity `type`, and change `field` values may be returned. Clients must tolerate values they do not recognize. 
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_v2_of_change_history_entry_response_and_sdk_page_metadata import EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External opaque identifier of the advertiser account whose change history is requested.
+    campaign_ids = [
+        "campaign-ids_example",
+    ] # [str] | When provided, only changes for these external opaque campaign identifiers are returned. Entries for campaigns outside the caller's account access are excluded without revealing whether the campaign exists. Omission is equivalent to an empty array.  (optional)
+    end_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Inclusive upper bound on change time, in UTC (ISO-8601 date-time). Defaults to the request time when omitted. (optional)
+    entity_types = [
+        "entity-types_example",
+    ] # [str] | Restrict results to changes on the given entity types (see the entity `type` field). Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  (optional)
+    event_types = [
+        "event-types_example",
+    ] # [str] | Restrict results to specific change-event types (see `eventType`). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  (optional)
+    limit = 25 # int | Maximum number of change-history entries to return in a single page. (optional) if omitted the server will use the default value of 25
+    line_item_ids = [
+        "line-item-ids_example",
+    ] # [str] | When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's account access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  (optional)
+    offset = 0 # int | Zero-based index of the first change-history entry to return. (optional) if omitted the server will use the default value of 0
+    start_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/accounts/{account-id}/change-history-entries
+        api_response = api_instance.list_account_change_history_entries(account_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->list_account_change_history_entries: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/accounts/{account-id}/change-history-entries
+        api_response = api_instance.list_account_change_history_entries(account_id, campaign_ids=campaign_ids, end_time=end_time, entity_types=entity_types, event_types=event_types, limit=limit, line_item_ids=line_item_ids, offset=offset, start_time=start_time)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->list_account_change_history_entries: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External opaque identifier of the advertiser account whose change history is requested. |
+ **campaign_ids** | **[str]**| When provided, only changes for these external opaque campaign identifiers are returned. Entries for campaigns outside the caller&#39;s account access are excluded without revealing whether the campaign exists. Omission is equivalent to an empty array.  | [optional]
+ **end_time** | **datetime**| Inclusive upper bound on change time, in UTC (ISO-8601 date-time). Defaults to the request time when omitted. | [optional]
+ **entity_types** | **[str]**| Restrict results to changes on the given entity types (see the entity &#x60;type&#x60; field). Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  | [optional]
+ **event_types** | **[str]**| Restrict results to specific change-event types (see &#x60;eventType&#x60;). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  | [optional]
+ **limit** | **int**| Maximum number of change-history entries to return in a single page. | [optional] if omitted the server will use the default value of 25
+ **line_item_ids** | **[str]**| When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller&#39;s account access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  | [optional]
+ **offset** | **int**| Zero-based index of the first change-history entry to return. | [optional] if omitted the server will use the default value of 0
+ **start_time** | **datetime**| Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata**](EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Change history entries retrieved. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_retailer_change_history_entries**
+> EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata list_retailer_change_history_entries(retailer_id)
+
+/experimental/retail-media/retailers/{retailer-id}/change-history-entries
+
+Returns a paginated collection of changes to Retail Media objects under the requested retailer. Use `event-types` and `entity-types` to narrow the results.  Requests for inaccessible or unknown retailers return `403`. Changes outside the caller's access are omitted. Offsite campaign-level changes are not returned; offsite line-item changes are included. Actor information is limited to role labels; user identifiers are not returned.  Results are returned in descending order by `occurredAt`. The relative order of entries with identical `occurredAt` values is unspecified.  Additional `eventType`, entity `type`, and change `field` values may be returned. Clients must tolerate values they do not recognize. 
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_v2_of_change_history_entry_response_and_sdk_page_metadata import EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    retailer_id = "retailer-id_example" # str | External opaque identifier of the retailer whose change history is requested.
+    campaign_ids = [
+        "campaign-ids_example",
+    ] # [str] | When provided, only changes for these external opaque campaign identifiers are returned. Entries for campaigns outside the caller's retailer access are excluded without revealing whether the campaign exists. Omission is equivalent to an empty array.  (optional)
+    end_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Inclusive upper bound on change time, in UTC (ISO-8601 date-time). Defaults to the request time when omitted. (optional)
+    entity_types = [
+        "entity-types_example",
+    ] # [str] | Restrict results to changes on the given entity types (see the entity `type` field). Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  (optional)
+    event_types = [
+        "event-types_example",
+    ] # [str] | Restrict results to specific change-event types (see `eventType`). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  (optional)
+    limit = 25 # int | Maximum number of change-history entries to return in a single page. (optional) if omitted the server will use the default value of 25
+    line_item_ids = [
+        "line-item-ids_example",
+    ] # [str] | When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's retailer access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  (optional)
+    offset = 0 # int | Zero-based index of the first change-history entry to return. (optional) if omitted the server will use the default value of 0
+    start_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/retailers/{retailer-id}/change-history-entries
+        api_response = api_instance.list_retailer_change_history_entries(retailer_id)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->list_retailer_change_history_entries: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/retailers/{retailer-id}/change-history-entries
+        api_response = api_instance.list_retailer_change_history_entries(retailer_id, campaign_ids=campaign_ids, end_time=end_time, entity_types=entity_types, event_types=event_types, limit=limit, line_item_ids=line_item_ids, offset=offset, start_time=start_time)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->list_retailer_change_history_entries: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retailer_id** | **str**| External opaque identifier of the retailer whose change history is requested. |
+ **campaign_ids** | **[str]**| When provided, only changes for these external opaque campaign identifiers are returned. Entries for campaigns outside the caller&#39;s retailer access are excluded without revealing whether the campaign exists. Omission is equivalent to an empty array.  | [optional]
+ **end_time** | **datetime**| Inclusive upper bound on change time, in UTC (ISO-8601 date-time). Defaults to the request time when omitted. | [optional]
+ **entity_types** | **[str]**| Restrict results to changes on the given entity types (see the entity &#x60;type&#x60; field). Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  | [optional]
+ **event_types** | **[str]**| Restrict results to specific change-event types (see &#x60;eventType&#x60;). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  | [optional]
+ **limit** | **int**| Maximum number of change-history entries to return in a single page. | [optional] if omitted the server will use the default value of 25
+ **line_item_ids** | **[str]**| When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller&#39;s retailer access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  | [optional]
+ **offset** | **int**| Zero-based index of the first change-history entry to return. | [optional] if omitted the server will use the default value of 0
+ **start_time** | **datetime**| Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. | [optional]
+
+### Return type
+
+[**EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata**](EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Change history entries retrieved. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_account_creatives**
 > EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata search_account_creatives(account_id, entity_resource_input_creative_search_request)
 
@@ -2641,6 +2882,130 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata**](EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Creatives found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_account_creatives_enriched**
+> EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata search_account_creatives_enriched(account_id, entity_resource_input_creative_search_enriched_request)
+
+/experimental/retail-media/accounts/{account-id}/creatives/search-enriched
+
+Get account creatives enriched with the product collection constraints of their template.              The returned id is the first parent external id of the creative (stable across versions).
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import campaign_api
+from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_search_enriched_request import EntityResourceInputCreativeSearchEnrichedRequest
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_enriched_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = campaign_api.CampaignApi(api_client)
+    account_id = "account-id_example" # str | External account id to retrieve creatives for
+    entity_resource_input_creative_search_enriched_request = EntityResourceInputCreativeSearchEnrichedRequest(
+        data=EntityResourceCreativeSearchEnrichedRequest(
+            attributes=CreativeSearchEnrichedRequest(
+                creative_ids=[
+                    "creative_ids_example",
+                ],
+                creative_name="creative_name_example",
+                creative_types=[
+                    "CommerceDisplay",
+                ],
+                page_types=[
+                    "Unknown",
+                ],
+                retailer_ids=[
+                    "retailer_ids_example",
+                ],
+                template_ids=[
+                    "template_ids_example",
+                ],
+            ),
+            id="id_example",
+            type="type_example",
+        ),
+    ) # EntityResourceInputCreativeSearchEnrichedRequest | search request filter
+    limit = 50 # int | limit to paginated result (optional) if omitted the server will use the default value of 50
+    offset = 0 # int | offset to paginated result (optional) if omitted the server will use the default value of 0
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/accounts/{account-id}/creatives/search-enriched
+        api_response = api_instance.search_account_creatives_enriched(account_id, entity_resource_input_creative_search_enriched_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->search_account_creatives_enriched: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # /experimental/retail-media/accounts/{account-id}/creatives/search-enriched
+        api_response = api_instance.search_account_creatives_enriched(account_id, entity_resource_input_creative_search_enriched_request, limit=limit, offset=offset)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling CampaignApi->search_account_creatives_enriched: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| External account id to retrieve creatives for |
+ **entity_resource_input_creative_search_enriched_request** | [**EntityResourceInputCreativeSearchEnrichedRequest**](EntityResourceInputCreativeSearchEnrichedRequest.md)| search request filter |
+ **limit** | **int**| limit to paginated result | [optional] if omitted the server will use the default value of 50
+ **offset** | **int**| offset to paginated result | [optional] if omitted the server will use the default value of 0
+
+### Return type
+
+[**EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata**](EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata.md)
 
 ### Authorization
 

@@ -1,12 +1,11 @@
-# DisplayProductResultModel
+# ActorRole
 
-A display product returned after being added to a line item.
+Role label exposed to external callers for the actor of a change.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**approval_status** | **str, none_type** | The approval status of the product. | [optional] 
-**product_id** | **str, none_type** | The identifier of the product. | [optional] 
+**value** | **str** | Role label exposed to external callers for the actor of a change. |  must be one of ["unknown", "internal", "external", "api", "automatedTask", ]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

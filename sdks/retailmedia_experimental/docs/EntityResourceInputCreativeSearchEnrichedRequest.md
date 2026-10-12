@@ -1,11 +1,11 @@
-# AddProductsModelRequest
+# EntityResourceInputCreativeSearchEnrichedRequest
 
-A top-level object that encapsulates a Criteo API request for a single value object.
+A top-level object that encapsulates a Criteo API request for a single entity.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**AddProductsModelResource**](AddProductsModelResource.md) |  | [optional] 
+**data** | [**EntityResourceCreativeSearchEnrichedRequest**](EntityResourceCreativeSearchEnrichedRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

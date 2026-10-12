@@ -1,6 +1,6 @@
 # CreateAdSetBudgetV26Q1
 
-Budget create model for an ad set.  For \"capped\": budgetAmount (required, non-null), budgetRenewal (required, not \"undefined\"), and budgetDeliverySmoothing (required) must all be provided.  pacingBehavior is optional; \"targetAverageDailyBudget\" is only supported for capped, standard, monthly budgets.  For \"uncapped\": budgetAmount must be null, budgetRenewal must be \"undefined\", budgetDeliverySmoothing, budgetDeliveryWeek, and pacingBehavior must be omitted or \"undefined\".  For marketing campaigns with budget automation enabled, omit this object.  In that case, the ad set budget is initialized from the marketing campaign spend limit amount and renewal period.
+Budget create model for an ad set.  - For marketing campaigns with budget automation enabled, omit this object. In that case, the ad set budget is initialized from the marketing campaign spend limit amount and renewal period.  - If \"capped\" budget strategy: budgetAmount (required, non-null), budgetRenewal (required, not \"undefined\"), and budgetDeliverySmoothing (required) must all be provided.    + If \"standard\" budgetDeliverySmoothing: pacingBehavior ( required, not \"undefined\") must be provided.    + If \"accelerated\" budgetDeliverySmoothing: pacingBehavior must be omitted or \"undefined\".  - If \"uncapped\" budget strategy: budgetAmount must be null, budgetRenewal must be \"undefined\", budgetDeliverySmoothing, budgetDeliveryWeek, and pacingBehavior must be omitted or \"undefined\".
 
 ## Properties
 Name | Type | Description | Notes
