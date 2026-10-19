@@ -93,6 +93,8 @@ class AsyncFillRateReport(ModelNormal):
             'PLACEMENTSWITHCANDIDATES': "placementsWithCandidates",
             'COVEREDPLACEMENTS': "coveredPlacements",
             'COVERAGERATE': "coverageRate",
+            'COVEREDSLOTS': "coveredSlots",
+            'DELIVERABLESLOTSINFERRED': "deliverableSlotsInferred",
         },
         ('ad_server_type',): {
             'ALL': "all",

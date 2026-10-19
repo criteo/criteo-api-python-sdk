@@ -2131,11 +2131,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **patch_campaigns**
-> PatchResultCampaignListResponse patch_campaigns(patch_campaign_list_request)
+> PatchResultCampaignV27Q1ListResponse patch_campaigns(patch_campaign_v27_q1_list_request)
 
 /preview/marketing-solutions/campaigns
 
-Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
+Patch a list of Campaigns: name, spend limit, scheduled spend limits and budget automation.  Omitted attributes are left unchanged. When provided, the name must not be empty.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.
 
 ### Example
 
@@ -2146,8 +2146,8 @@ Patch a list of Campaigns.                A campaign, or in other words a market
 import time
 import criteo_api_marketingsolutions_preview
 from criteo_api_marketingsolutions_preview.api import campaign_api
-from criteo_api_marketingsolutions_preview.model.patch_result_campaign_list_response import PatchResultCampaignListResponse
-from criteo_api_marketingsolutions_preview.model.patch_campaign_list_request import PatchCampaignListRequest
+from criteo_api_marketingsolutions_preview.model.patch_campaign_v27_q1_list_request import PatchCampaignV27Q1ListRequest
+from criteo_api_marketingsolutions_preview.model.patch_result_campaign_v27_q1_list_response import PatchResultCampaignV27Q1ListResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2176,19 +2176,20 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    patch_campaign_list_request = PatchCampaignListRequest(
+    patch_campaign_v27_q1_list_request = PatchCampaignV27Q1ListRequest(
         data=[
-            PatchCampaignWriteResource(
-                attributes=PatchCampaign(
-                    budget_automation=PatchMarketingCampaignBudgetAutomation(
-                        budget_configuration=BudgetAutomationConfiguration(
+            PatchCampaignV27Q1WriteResource(
+                attributes=PatchCampaignV27Q1(
+                    budget_automation=PatchMarketingCampaignBudgetAutomationV27Q1(
+                        budget_configuration=PatchBudgetAutomationConfiguration(
                             ad_set_objectives="conversions",
                         ),
                         enabled=True,
                     ),
-                    scheduled_spend_limit=PatchCampaignScheduledSpendLimit(
+                    name="name_example",
+                    scheduled_spend_limit=PatchCampaignScheduledSpendLimitV27Q1(
                         scheduled_spend_limit_creations=[
-                            PatchCampaignScheduledSpendLimitCreation(
+                            PatchCampaignScheduledSpendLimitCreationV27Q1(
                                 spend_limit_amount=NillableDecimal(
                                     value=3.14,
                                 ),
@@ -2198,12 +2199,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             ),
                         ],
                         scheduled_spend_limit_deletions=[
-                            PatchCampaignScheduledSpendLimitDeletion(
+                            PatchCampaignScheduledSpendLimitDeletionV27Q1(
                                 id="id_example",
                             ),
                         ],
                         scheduled_spend_limit_updates=[
-                            PatchCampaignScheduledSpendLimitUpdate(
+                            PatchCampaignScheduledSpendLimitUpdateV27Q1(
                                 id="id_example",
                                 spend_limit_amount=NillableDecimal(
                                     value=3.14,
@@ -2214,7 +2215,7 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                             ),
                         ],
                     ),
-                    spend_limit=PatchCampaignSpendLimit(
+                    spend_limit=PatchCampaignSpendLimitV27Q1(
                         spend_limit_amount=NillableDecimal(
                             value=3.14,
                         ),
@@ -2226,12 +2227,12 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
                 type="Campaign",
             ),
         ],
-    ) # PatchCampaignListRequest | List of campaigns to patch.
+    ) # PatchCampaignV27Q1ListRequest | List of campaigns to patch.
 
     # example passing only required values which don't have defaults set
     try:
         # /preview/marketing-solutions/campaigns
-        api_response = api_instance.patch_campaigns(patch_campaign_list_request)
+        api_response = api_instance.patch_campaigns(patch_campaign_v27_q1_list_request)
         pprint(api_response)
     except criteo_api_marketingsolutions_preview.ApiException as e:
         print("Exception when calling CampaignApi->patch_campaigns: %s\n" % e)
@@ -2242,11 +2243,11 @@ with criteo_api_marketingsolutions_preview.ApiClient(configuration) as api_clien
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **patch_campaign_list_request** | [**PatchCampaignListRequest**](PatchCampaignListRequest.md)| List of campaigns to patch. |
+ **patch_campaign_v27_q1_list_request** | [**PatchCampaignV27Q1ListRequest**](PatchCampaignV27Q1ListRequest.md)| List of campaigns to patch. |
 
 ### Return type
 
-[**PatchResultCampaignListResponse**](PatchResultCampaignListResponse.md)
+[**PatchResultCampaignV27Q1ListResponse**](PatchResultCampaignV27Q1ListResponse.md)
 
 ### Authorization
 

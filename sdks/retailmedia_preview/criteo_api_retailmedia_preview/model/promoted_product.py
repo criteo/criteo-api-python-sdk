@@ -137,7 +137,7 @@ class PromotedProduct(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_override (float, none_type): The bid override for the promoted product for this line item. Ignored unless adding a product.. [optional]  # noqa: E501
+            bid_override (float, none_type): The bid override for the promoted product for this line item. Only honored by the products `/append` endpoint; ignored by the `/delete`, `/pause`, and `/unpause` endpoints.. [optional]  # noqa: E501
             id (str, none_type): A retailer defined SKU ID for the promoted product.. [optional]  # noqa: E501
             status (LineItemProductStatus): [optional]  # noqa: E501
         """
@@ -225,7 +225,7 @@ class PromotedProduct(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bid_override (float, none_type): The bid override for the promoted product for this line item. Ignored unless adding a product.. [optional]  # noqa: E501
+            bid_override (float, none_type): The bid override for the promoted product for this line item. Only honored by the products `/append` endpoint; ignored by the `/delete`, `/pause`, and `/unpause` endpoints.. [optional]  # noqa: E501
             id (str, none_type): A retailer defined SKU ID for the promoted product.. [optional]  # noqa: E501
             status (LineItemProductStatus): [optional]  # noqa: E501
         """

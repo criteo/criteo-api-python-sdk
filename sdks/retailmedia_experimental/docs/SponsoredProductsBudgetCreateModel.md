@@ -1,13 +1,11 @@
 # SponsoredProductsBudgetCreateModel
 
-Financial intent of a SponsoredProducts campaign.
+Financial intent of a SponsoredProducts campaign. An amount only: the platform derives the  periods and pacing from the objective.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **float, none_type** | Total the campaign may spend over its flight. | [optional] 
-**cappings** | [**[BudgetCappingRequestModel], none_type**](BudgetCappingRequestModel.md) | Per-period ceilings. At most one entry per period. | [optional] 
-**pacing** | [**PacingRequestModel**](PacingRequestModel.md) |  | [optional] 
+**amount** | **float** | Total the campaign may spend over its flight. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**generate_async_accounts_report_v2**](AnalyticsApi.md#generate_async_accounts_report_v2) | **POST** /experimental/retail-media/reports/accounts | /experimental/retail-media/reports/accounts
 [**generate_async_campaigns_report_v2**](AnalyticsApi.md#generate_async_campaigns_report_v2) | **POST** /experimental/retail-media/reports/campaigns | /experimental/retail-media/reports/campaigns
+[**generate_async_fill_rate_report**](AnalyticsApi.md#generate_async_fill_rate_report) | **POST** /experimental/retail-media/reports/fillrate | /experimental/retail-media/reports/fillrate
 [**generate_async_line_items_report_v2**](AnalyticsApi.md#generate_async_line_items_report_v2) | **POST** /experimental/retail-media/reports/line-items | /experimental/retail-media/reports/line-items
 [**generate_async_offsite_report**](AnalyticsApi.md#generate_async_offsite_report) | **POST** /experimental/retail-media/reports/offsite | /experimental/retail-media/reports/offsite
 [**generate_digital_shelf_intelligence_insight**](AnalyticsApi.md#generate_digital_shelf_intelligence_insight) | **POST** /experimental/retail-media/insights/digital-shelf-intelligence | /experimental/retail-media/insights/digital-shelf-intelligence
@@ -252,6 +253,112 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **async_campaigns_report_request** | [**AsyncCampaignsReportRequest**](AsyncCampaignsReportRequest.md)|  |
+
+### Return type
+
+[**AsyncReportResponse**](AsyncReportResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Success |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **generate_async_fill_rate_report**
+> AsyncReportResponse generate_async_fill_rate_report(async_fill_rate_report_request)
+
+/experimental/retail-media/reports/fillrate
+
+Returns an asynchronous Fill Rate Report <br /> This endpoint is subject to specific rate limits.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_retailmedia_experimental
+from criteo_api_retailmedia_experimental.api import analytics_api
+from criteo_api_retailmedia_experimental.model.async_fill_rate_report_request import AsyncFillRateReportRequest
+from criteo_api_retailmedia_experimental.model.async_report_response import AsyncReportResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_retailmedia_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = analytics_api.AnalyticsApi(api_client)
+    async_fill_rate_report_request = AsyncFillRateReportRequest(
+        data=AsyncFillRateReportResource(
+            attributes=AsyncFillRateReport(
+                ad_server_type="all",
+                dimensions=[
+                    "date",
+                ],
+                end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                format="json",
+                metrics=[
+                    "pageViews",
+                ],
+                start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
+                supply_account_ids=[
+                    "supply_account_ids_example",
+                ],
+                timezone="UTC",
+            ),
+            type="type_example",
+        ),
+    ) # AsyncFillRateReportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/retail-media/reports/fillrate
+        api_response = api_instance.generate_async_fill_rate_report(async_fill_rate_report_request)
+        pprint(api_response)
+    except criteo_api_retailmedia_experimental.ApiException as e:
+        print("Exception when calling AnalyticsApi->generate_async_fill_rate_report: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **async_fill_rate_report_request** | [**AsyncFillRateReportRequest**](AsyncFillRateReportRequest.md)|  |
 
 ### Return type
 

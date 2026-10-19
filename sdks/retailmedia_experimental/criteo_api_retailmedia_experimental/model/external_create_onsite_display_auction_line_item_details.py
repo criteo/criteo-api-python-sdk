@@ -128,7 +128,7 @@ class ExternalCreateOnsiteDisplayAuctionLineItemDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_dynamic_match (bool, none_type): Whether to serve only products relevant to the page context, replacing manual SKU curation.. [optional]  # noqa: E501
+            is_dynamic_match (bool, none_type): Whether only products relevant to the page context serve.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -214,7 +214,7 @@ class ExternalCreateOnsiteDisplayAuctionLineItemDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            is_dynamic_match (bool, none_type): Whether to serve only products relevant to the page context, replacing manual SKU curation.. [optional]  # noqa: E501
+            is_dynamic_match (bool, none_type): Whether only products relevant to the page context serve.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

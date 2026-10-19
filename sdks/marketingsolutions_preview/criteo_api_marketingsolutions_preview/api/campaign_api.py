@@ -43,8 +43,8 @@ from criteo_api_marketingsolutions_preview.model.patch_ad_set_category_bid_list_
 from criteo_api_marketingsolutions_preview.model.patch_ad_set_category_bid_result_list_response import PatchAdSetCategoryBidResultListResponse
 from criteo_api_marketingsolutions_preview.model.patch_ad_set_display_multiplier_list_request import PatchAdSetDisplayMultiplierListRequest
 from criteo_api_marketingsolutions_preview.model.patch_ad_set_display_multiplier_result_list_response import PatchAdSetDisplayMultiplierResultListResponse
-from criteo_api_marketingsolutions_preview.model.patch_campaign_list_request import PatchCampaignListRequest
-from criteo_api_marketingsolutions_preview.model.patch_result_campaign_list_response import PatchResultCampaignListResponse
+from criteo_api_marketingsolutions_preview.model.patch_campaign_v27_q1_list_request import PatchCampaignV27Q1ListRequest
+from criteo_api_marketingsolutions_preview.model.patch_result_campaign_v27_q1_list_response import PatchResultCampaignV27Q1ListResponse
 from criteo_api_marketingsolutions_preview.model.requests_ad_set_id import RequestsAdSetId
 from criteo_api_marketingsolutions_preview.model.requests_patch_ad_set_v26_q1 import RequestsPatchAdSetV26Q1
 from criteo_api_marketingsolutions_preview.model.response_read_ad_set_v26_q1 import ResponseReadAdSetV26Q1
@@ -1188,7 +1188,7 @@ class CampaignApi(object):
         )
         self.patch_campaigns_endpoint = _Endpoint(
             settings={
-                'response_type': (PatchResultCampaignListResponse,),
+                'response_type': (PatchResultCampaignV27Q1ListResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1200,10 +1200,10 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'patch_campaign_list_request',
+                    'patch_campaign_v27_q1_list_request',
                 ],
                 'required': [
-                    'patch_campaign_list_request',
+                    'patch_campaign_v27_q1_list_request',
                 ],
                 'nullable': [
                 ],
@@ -1218,13 +1218,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'patch_campaign_list_request':
-                        (PatchCampaignListRequest,),
+                    'patch_campaign_v27_q1_list_request':
+                        (PatchCampaignV27Q1ListRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'patch_campaign_list_request': 'body',
+                    'patch_campaign_v27_q1_list_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -3900,20 +3900,20 @@ class CampaignApi(object):
 
     def patch_campaigns(
         self,
-        patch_campaign_list_request,
+        patch_campaign_v27_q1_list_request,
         **kwargs
     ):
         """/preview/marketing-solutions/campaigns  # noqa: E501
 
-        Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
+        Patch a list of Campaigns: name, spend limit, scheduled spend limits and budget automation.  Omitted attributes are left unchanged. When provided, the name must not be empty.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_campaigns(patch_campaign_list_request, async_req=True)
+        >>> thread = api.patch_campaigns(patch_campaign_v27_q1_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.
+            patch_campaign_v27_q1_list_request (PatchCampaignV27Q1ListRequest): List of campaigns to patch.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3948,7 +3948,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PatchResultCampaignListResponse
+            PatchResultCampaignV27Q1ListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3977,8 +3977,8 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['patch_campaign_list_request'] = \
-            patch_campaign_list_request
+        kwargs['patch_campaign_v27_q1_list_request'] = \
+            patch_campaign_v27_q1_list_request
         return self.patch_campaigns_endpoint.call_with_http_info(**kwargs)
 
     def patch_display_multipliers(

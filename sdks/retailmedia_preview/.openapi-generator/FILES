@@ -157,11 +157,6 @@ criteo_api_retailmedia_preview/model/preferred_line_item_v2_paged_list_response.
 criteo_api_retailmedia_preview/model/preferred_line_item_v2_response.py
 criteo_api_retailmedia_preview/model/price.py
 criteo_api_retailmedia_preview/model/product.py
-criteo_api_retailmedia_preview/model/product_button_request.py
-criteo_api_retailmedia_preview/model/product_button_request_list_request.py
-criteo_api_retailmedia_preview/model/product_button_request_request.py
-criteo_api_retailmedia_preview/model/product_button_response.py
-criteo_api_retailmedia_preview/model/product_button_response_list_response.py
 criteo_api_retailmedia_preview/model/product_buy_box_winner.py
 criteo_api_retailmedia_preview/model/product_metadata.py
 criteo_api_retailmedia_preview/model/product_recommendation.py
@@ -188,8 +183,6 @@ criteo_api_retailmedia_preview/model/report_response.py
 criteo_api_retailmedia_preview/model/resource_of_creative2.py
 criteo_api_retailmedia_preview/model/resource_of_preferred_line_item_update_model_v2.py
 criteo_api_retailmedia_preview/model/resource_of_preferred_line_item_v2.py
-criteo_api_retailmedia_preview/model/resource_of_product_button_request.py
-criteo_api_retailmedia_preview/model/resource_of_product_button_response.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_amendment.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_amendment_attributes.py
 criteo_api_retailmedia_preview/model/retail_media_contactlist_amendment_request.py
@@ -477,11 +470,6 @@ docs/PreferredLineItemV2PagedListResponse.md
 docs/PreferredLineItemV2Response.md
 docs/Price.md
 docs/Product.md
-docs/ProductButtonRequest.md
-docs/ProductButtonRequestListRequest.md
-docs/ProductButtonRequestRequest.md
-docs/ProductButtonResponse.md
-docs/ProductButtonResponseListResponse.md
 docs/ProductBuyBoxWinner.md
 docs/ProductMetadata.md
 docs/ProductRecommendation.md
@@ -508,8 +496,6 @@ docs/ReportResponse.md
 docs/ResourceOfCreative2.md
 docs/ResourceOfPreferredLineItemUpdateModelV2.md
 docs/ResourceOfPreferredLineItemV2.md
-docs/ResourceOfProductButtonRequest.md
-docs/ResourceOfProductButtonResponse.md
 docs/RetailMediaContactlistAmendment.md
 docs/RetailMediaContactlistAmendmentAttributes.md
 docs/RetailMediaContactlistAmendmentRequest.md

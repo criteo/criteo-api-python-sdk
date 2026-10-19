@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**get_audience_segments_in_market_brands**](AudienceApi.md#get_audience_segments_in_market_brands) | **GET** /experimental/marketing-solutions/audience-segments/in-market-brands | /experimental/marketing-solutions/audience-segments/in-market-brands
 [**get_audience_segments_in_market_interests**](AudienceApi.md#get_audience_segments_in_market_interests) | **GET** /experimental/marketing-solutions/audience-segments/in-market-interests | /experimental/marketing-solutions/audience-segments/in-market-interests
 [**modify_audience_users_with_attributes**](AudienceApi.md#modify_audience_users_with_attributes) | **PATCH** /experimental/marketing-solutions/audiences/{audience-id}/contactlist-attributes | /experimental/marketing-solutions/audiences/{audience-id}/contactlist-attributes
+[**recommend_segments**](AudienceApi.md#recommend_segments) | **POST** /experimental/marketing-solutions/audiences/recommend-segments | /experimental/marketing-solutions/audiences/recommend-segments
 [**search_audience_segments**](AudienceApi.md#search_audience_segments) | **POST** /experimental/marketing-solutions/audience-segments/search | /experimental/marketing-solutions/audience-segments/search
 [**search_audiences**](AudienceApi.md#search_audiences) | **POST** /experimental/marketing-solutions/audiences/search | /experimental/marketing-solutions/audiences/search
 [**update_audience_segments**](AudienceApi.md#update_audience_segments) | **PATCH** /experimental/marketing-solutions/audience-segments | /experimental/marketing-solutions/audience-segments
@@ -1353,6 +1354,105 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Summary of created request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **recommend_segments**
+> RecommendSegmentsResponse recommend_segments(recommend_segments_request)
+
+/experimental/marketing-solutions/audiences/recommend-segments
+
+Recommend audience segments for MarketingSolutions from a freeform brief.
+
+### Example
+
+* OAuth Authentication (oauth):
+* OAuth Authentication (oauth):
+
+```python
+import time
+import criteo_api_marketingsolutions_experimental
+from criteo_api_marketingsolutions_experimental.api import audience_api
+from criteo_api_marketingsolutions_experimental.model.recommend_segments_request import RecommendSegmentsRequest
+from criteo_api_marketingsolutions_experimental.model.recommend_segments_response import RecommendSegmentsResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.criteo.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Configure OAuth2 access token for authorization: oauth
+configuration = criteo_api_marketingsolutions_experimental.Configuration(
+    host = "https://api.criteo.com"
+)
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Enter a context with an instance of the API client
+with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = audience_api.AudienceApi(api_client)
+    recommend_segments_request = RecommendSegmentsRequest(
+        data=RecommendSegmentsRequestData(
+            attributes=RecommendSegmentsRequestAttributes(
+                advertiser_id="advertiser_id_example",
+                brief="brief_example",
+                nb_segments=5,
+                segment_status_to_recommend="new",
+                segment_types_to_recommend=[
+                    "affinityAllLevels",
+                ],
+            ),
+            type="RecommendSegmentsRequest",
+        ),
+    ) # RecommendSegmentsRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # /experimental/marketing-solutions/audiences/recommend-segments
+        api_response = api_instance.recommend_segments(recommend_segments_request)
+        pprint(api_response)
+    except criteo_api_marketingsolutions_experimental.ApiException as e:
+        print("Exception when calling AudienceApi->recommend_segments: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recommend_segments_request** | [**RecommendSegmentsRequest**](RecommendSegmentsRequest.md)|  |
+
+### Return type
+
+[**RecommendSegmentsResponse**](RecommendSegmentsResponse.md)
+
+### Authorization
+
+[oauth](../README.md#oauth), [oauth](../README.md#oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Recommended audience segments. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

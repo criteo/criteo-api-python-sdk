@@ -43,14 +43,16 @@ from criteo_api_marketingsolutions_experimental.model.patch_ad_set_category_bid_
 from criteo_api_marketingsolutions_experimental.model.patch_ad_set_category_bid_result_list_response import PatchAdSetCategoryBidResultListResponse
 from criteo_api_marketingsolutions_experimental.model.patch_ad_set_display_multiplier_list_request import PatchAdSetDisplayMultiplierListRequest
 from criteo_api_marketingsolutions_experimental.model.patch_ad_set_display_multiplier_result_list_response import PatchAdSetDisplayMultiplierResultListResponse
-from criteo_api_marketingsolutions_experimental.model.patch_campaign_list_request import PatchCampaignListRequest
-from criteo_api_marketingsolutions_experimental.model.patch_result_campaign_list_response import PatchResultCampaignListResponse
+from criteo_api_marketingsolutions_experimental.model.patch_campaign_v27_q1_list_request import PatchCampaignV27Q1ListRequest
+from criteo_api_marketingsolutions_experimental.model.patch_result_campaign_v27_q1_list_response import PatchResultCampaignV27Q1ListResponse
 from criteo_api_marketingsolutions_experimental.model.requests_ad_set_id import RequestsAdSetId
 from criteo_api_marketingsolutions_experimental.model.requests_patch_ad_set_v26_q1 import RequestsPatchAdSetV26Q1
 from criteo_api_marketingsolutions_experimental.model.response_read_ad_set_v26_q1 import ResponseReadAdSetV26Q1
 from criteo_api_marketingsolutions_experimental.model.responses_ad_set_id import ResponsesAdSetId
 from criteo_api_marketingsolutions_experimental.model.responses_ad_set_id_v26_q1 import ResponsesAdSetIdV26Q1
 from criteo_api_marketingsolutions_experimental.model.responses_read_ad_set_v26_q1 import ResponsesReadAdSetV26Q1
+from criteo_api_marketingsolutions_experimental.model.seller_report_data_response import SellerReportDataResponse
+from criteo_api_marketingsolutions_experimental.model.seller_report_request_request import SellerReportRequestRequest
 from criteo_api_marketingsolutions_experimental.model.set_ad_set_targeting_deal_ids_request import SetAdSetTargetingDealIdsRequest
 from criteo_api_marketingsolutions_experimental.model.set_ad_set_targeting_video_positioning_request import SetAdSetTargetingVideoPositioningRequest
 from criteo_api_marketingsolutions_experimental.model.supply_vendor_list_response import SupplyVendorListResponse
@@ -166,6 +168,60 @@ class CampaignApi(object):
             headers_map={
                 'accept': [
                     'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.create_marketplace_stats_report_endpoint = _Endpoint(
+            settings={
+                'response_type': (SellerReportDataResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/marketing-solutions/marketplace-performance-outcomes/stats/report',
+                'operation_id': 'create_marketplace_stats_report',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'seller_report_request_request',
+                ],
+                'required': [
+                    'seller_report_request_request',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'seller_report_request_request':
+                        (SellerReportRequestRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'seller_report_request_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json',
+                    'text/csv'
                 ],
                 'content_type': [
                     'application/json'
@@ -1188,7 +1244,7 @@ class CampaignApi(object):
         )
         self.patch_campaigns_endpoint = _Endpoint(
             settings={
-                'response_type': (PatchResultCampaignListResponse,),
+                'response_type': (PatchResultCampaignV27Q1ListResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1200,10 +1256,10 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'patch_campaign_list_request',
+                    'patch_campaign_v27_q1_list_request',
                 ],
                 'required': [
-                    'patch_campaign_list_request',
+                    'patch_campaign_v27_q1_list_request',
                 ],
                 'nullable': [
                 ],
@@ -1218,13 +1274,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'patch_campaign_list_request':
-                        (PatchCampaignListRequest,),
+                    'patch_campaign_v27_q1_list_request':
+                        (PatchCampaignV27Q1ListRequest,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'patch_campaign_list_request': 'body',
+                    'patch_campaign_v27_q1_list_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2317,6 +2373,89 @@ class CampaignApi(object):
         kwargs['create_campaign_request'] = \
             create_campaign_request
         return self.create_campaign_endpoint.call_with_http_info(**kwargs)
+
+    def create_marketplace_stats_report(
+        self,
+        seller_report_request_request,
+        **kwargs
+    ):
+        """/experimental/marketing-solutions/marketplace-performance-outcomes/stats/report  # noqa: E501
+
+        Generates a seller performance report synchronously and returns the report data directly in the response payload.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.create_marketplace_stats_report(seller_report_request_request, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            seller_report_request_request (SellerReportRequestRequest): The seller report filters, dimensions, metrics, and output format.
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            SellerReportDataResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['seller_report_request_request'] = \
+            seller_report_request_request
+        return self.create_marketplace_stats_report_endpoint.call_with_http_info(**kwargs)
 
     def delete_advertiser_bundle_rules(
         self,
@@ -3900,20 +4039,20 @@ class CampaignApi(object):
 
     def patch_campaigns(
         self,
-        patch_campaign_list_request,
+        patch_campaign_v27_q1_list_request,
         **kwargs
     ):
         """/experimental/marketing-solutions/campaigns  # noqa: E501
 
-        Patch a list of Campaigns.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
+        Patch a list of Campaigns: name, spend limit, scheduled spend limits and budget automation.  Omitted attributes are left unchanged. When provided, the name must not be empty.                A campaign, or in other words a marketing campaign, is an entity that defines advertising objectives and success criteria.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.patch_campaigns(patch_campaign_list_request, async_req=True)
+        >>> thread = api.patch_campaigns(patch_campaign_v27_q1_list_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            patch_campaign_list_request (PatchCampaignListRequest): List of campaigns to patch.
+            patch_campaign_v27_q1_list_request (PatchCampaignV27Q1ListRequest): List of campaigns to patch.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3948,7 +4087,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            PatchResultCampaignListResponse
+            PatchResultCampaignV27Q1ListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3977,8 +4116,8 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['patch_campaign_list_request'] = \
-            patch_campaign_list_request
+        kwargs['patch_campaign_v27_q1_list_request'] = \
+            patch_campaign_v27_q1_list_request
         return self.patch_campaigns_endpoint.call_with_http_info(**kwargs)
 
     def patch_display_multipliers(

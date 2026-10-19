@@ -81,10 +81,9 @@ class ExternalCreateLineItemModel(ModelNormal):
         lazy_import()
         return {
             'campaign_id': (str, none_type,),  # noqa: E501
-            'is_paused': (bool, none_type,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
-            'onsite_display_details': (ExternalCreateOnsiteDisplayLineItemDetails,),  # noqa: E501
             'retailer_id': (str, none_type,),  # noqa: E501
+            'onsite_display_details': (ExternalCreateOnsiteDisplayLineItemDetails,),  # noqa: E501
             'serve_to_opt_out_user': (bool, none_type,),  # noqa: E501
         }
 
@@ -95,10 +94,9 @@ class ExternalCreateLineItemModel(ModelNormal):
 
     attribute_map = {
         'campaign_id': 'campaignId',  # noqa: E501
-        'is_paused': 'isPaused',  # noqa: E501
         'name': 'name',  # noqa: E501
-        'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
+        'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'serve_to_opt_out_user': 'serveToOptOutUser',  # noqa: E501
     }
 
@@ -109,8 +107,13 @@ class ExternalCreateLineItemModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, campaign_id, name, retailer_id, *args, **kwargs):  # noqa: E501
         """ExternalCreateLineItemModel - a model defined in OpenAPI
+
+        Args:
+            campaign_id (str, none_type): The campaign id of the associated campaign.
+            name (str, none_type): The name of the line item.
+            retailer_id (str, none_type): The retailer id of the associated retailer.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -143,11 +146,7 @@ class ExternalCreateLineItemModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            is_paused (bool, none_type): Indicates whether the line item is paused. Defaults to false.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExternalCreateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
-            retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
         """
 
@@ -180,6 +179,9 @@ class ExternalCreateLineItemModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.campaign_id = campaign_id
+        self.name = name
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -200,8 +202,13 @@ class ExternalCreateLineItemModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, campaign_id, name, retailer_id, *args, **kwargs):  # noqa: E501
         """ExternalCreateLineItemModel - a model defined in OpenAPI
+
+        Args:
+            campaign_id (str, none_type): The campaign id of the associated campaign.
+            name (str, none_type): The name of the line item.
+            retailer_id (str, none_type): The retailer id of the associated retailer.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -234,11 +241,7 @@ class ExternalCreateLineItemModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            is_paused (bool, none_type): Indicates whether the line item is paused. Defaults to false.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExternalCreateOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
-            retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
         """
 
@@ -269,6 +272,9 @@ class ExternalCreateLineItemModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.campaign_id = campaign_id
+        self.name = name
+        self.retailer_id = retailer_id
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

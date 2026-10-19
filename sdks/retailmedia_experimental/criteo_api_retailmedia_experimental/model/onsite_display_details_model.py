@@ -59,6 +59,12 @@ class OnsiteDisplayDetailsModel(ModelNormal):
     """
 
     allowed_values = {
+        ('objective',): {
+            'None': None,
+            'MANUAL': "Manual",
+            'IMPRESSIONS': "Impressions",
+            'UNKNOWN': "Unknown",
+        },
     }
 
     validations = {
@@ -81,6 +87,7 @@ class OnsiteDisplayDetailsModel(ModelNormal):
         lazy_import()
         return {
             'budget': (OnsiteDisplayBudgetModel,),  # noqa: E501
+            'objective': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -90,6 +97,7 @@ class OnsiteDisplayDetailsModel(ModelNormal):
 
     attribute_map = {
         'budget': 'budget',  # noqa: E501
+        'objective': 'objective',  # noqa: E501
     }
 
     read_only_vars = {
@@ -134,6 +142,7 @@ class OnsiteDisplayDetailsModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget (OnsiteDisplayBudgetModel): [optional]  # noqa: E501
+            objective (str, none_type): Objective of an OnsiteDisplay campaign.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -220,6 +229,7 @@ class OnsiteDisplayDetailsModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             budget (OnsiteDisplayBudgetModel): [optional]  # noqa: E501
+            objective (str, none_type): Objective of an OnsiteDisplay campaign.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

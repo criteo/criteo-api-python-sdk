@@ -59,6 +59,9 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
     """
 
     allowed_values = {
+        ('objective',): {
+            'IMPRESSIONS': "Impressions",
+        },
     }
 
     validations = {
@@ -81,6 +84,7 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
         lazy_import()
         return {
             'budget': (OnsiteDisplayBudgetCreateModel,),  # noqa: E501
+            'objective': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -90,6 +94,7 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
 
     attribute_map = {
         'budget': 'budget',  # noqa: E501
+        'objective': 'objective',  # noqa: E501
     }
 
     read_only_vars = {
@@ -99,10 +104,14 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget, *args, **kwargs):  # noqa: E501
         """OnsiteDisplayDetailsCreateModel - a model defined in OpenAPI
 
+        Args:
+            budget (OnsiteDisplayBudgetCreateModel):
+
         Keyword Args:
+            objective (str): Objective an OnsiteDisplay campaign is optimized for. The platform derives the line item  budgets from the campaign budget to serve it.. defaults to "Impressions", must be one of ["Impressions", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -133,9 +142,9 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget (OnsiteDisplayBudgetCreateModel): [optional]  # noqa: E501
         """
 
+        objective = kwargs.get('objective', "Impressions")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', True)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -165,6 +174,8 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget = budget
+        self.objective = objective
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -185,10 +196,14 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget, *args, **kwargs):  # noqa: E501
         """OnsiteDisplayDetailsCreateModel - a model defined in OpenAPI
 
+        Args:
+            budget (OnsiteDisplayBudgetCreateModel):
+
         Keyword Args:
+            objective (str): Objective an OnsiteDisplay campaign is optimized for. The platform derives the line item  budgets from the campaign budget to serve it.. defaults to "Impressions", must be one of ["Impressions", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -219,9 +234,9 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget (OnsiteDisplayBudgetCreateModel): [optional]  # noqa: E501
         """
 
+        objective = kwargs.get('objective', "Impressions")
         _check_type = kwargs.pop('_check_type', True)
         _spec_property_naming = kwargs.pop('_spec_property_naming', False)
         _path_to_item = kwargs.pop('_path_to_item', ())
@@ -249,6 +264,8 @@ class OnsiteDisplayDetailsCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget = budget
+        self.objective = objective
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

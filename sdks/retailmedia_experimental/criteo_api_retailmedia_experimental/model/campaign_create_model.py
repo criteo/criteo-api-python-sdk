@@ -105,6 +105,7 @@ class CampaignCreateModel(ModelNormal):
             'buy_type': (str,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
+            'schedule_details': (ScheduleDetailsCreateModel,),  # noqa: E501
             'attribution_settings': (AttributionSettingsCreateModel,),  # noqa: E501
             'bill_by_retailer_id': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
@@ -112,7 +113,6 @@ class CampaignCreateModel(ModelNormal):
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
             'onsite_display_details': (OnsiteDisplayDetailsCreateModel,),  # noqa: E501
             'regulated_category': (str, none_type,),  # noqa: E501
-            'schedule_details': (ScheduleDetailsCreateModel,),  # noqa: E501
             'sponsored_products_details': (SponsoredProductsDetailsCreateModel,),  # noqa: E501
         }
 
@@ -125,6 +125,7 @@ class CampaignCreateModel(ModelNormal):
         'buy_type': 'buyType',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'schedule_details': 'scheduleDetails',  # noqa: E501
         'attribution_settings': 'attributionSettings',  # noqa: E501
         'bill_by_retailer_id': 'billByRetailerId',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
@@ -132,7 +133,6 @@ class CampaignCreateModel(ModelNormal):
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
         'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'regulated_category': 'regulatedCategory',  # noqa: E501
-        'schedule_details': 'scheduleDetails',  # noqa: E501
         'sponsored_products_details': 'sponsoredProductsDetails',  # noqa: E501
     }
 
@@ -143,12 +143,13 @@ class CampaignCreateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, campaign_type, name, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, campaign_type, name, schedule_details, *args, **kwargs):  # noqa: E501
         """CampaignCreateModel - a model defined in OpenAPI
 
         Args:
             campaign_type (str): Type of campaign, set only on creation.
             name (str):
+            schedule_details (ScheduleDetailsCreateModel):
 
         Keyword Args:
             buy_type (str): Buy type of campaign, set only on creation. Auction is the only buy type currently supported.. defaults to "Auction", must be one of ["Auction", ]  # noqa: E501
@@ -189,7 +190,6 @@ class CampaignCreateModel(ModelNormal):
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             onsite_display_details (OnsiteDisplayDetailsCreateModel): [optional]  # noqa: E501
             regulated_category (str, none_type): [optional]  # noqa: E501
-            schedule_details (ScheduleDetailsCreateModel): [optional]  # noqa: E501
             sponsored_products_details (SponsoredProductsDetailsCreateModel): [optional]  # noqa: E501
         """
 
@@ -226,6 +226,7 @@ class CampaignCreateModel(ModelNormal):
         self.buy_type = buy_type
         self.campaign_type = campaign_type
         self.name = name
+        self.schedule_details = schedule_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -246,12 +247,13 @@ class CampaignCreateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, campaign_type, name, *args, **kwargs):  # noqa: E501
+    def __init__(self, campaign_type, name, schedule_details, *args, **kwargs):  # noqa: E501
         """CampaignCreateModel - a model defined in OpenAPI
 
         Args:
             campaign_type (str): Type of campaign, set only on creation.
             name (str):
+            schedule_details (ScheduleDetailsCreateModel):
 
         Keyword Args:
             buy_type (str): Buy type of campaign, set only on creation. Auction is the only buy type currently supported.. defaults to "Auction", must be one of ["Auction", ]  # noqa: E501
@@ -292,7 +294,6 @@ class CampaignCreateModel(ModelNormal):
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
             onsite_display_details (OnsiteDisplayDetailsCreateModel): [optional]  # noqa: E501
             regulated_category (str, none_type): [optional]  # noqa: E501
-            schedule_details (ScheduleDetailsCreateModel): [optional]  # noqa: E501
             sponsored_products_details (SponsoredProductsDetailsCreateModel): [optional]  # noqa: E501
         """
 
@@ -327,6 +328,7 @@ class CampaignCreateModel(ModelNormal):
         self.buy_type = buy_type
         self.campaign_type = campaign_type
         self.name = name
+        self.schedule_details = schedule_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

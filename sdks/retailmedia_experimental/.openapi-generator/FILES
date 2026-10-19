@@ -38,6 +38,9 @@ criteo_api_retailmedia_experimental/model/async_accounts_report_resource.py
 criteo_api_retailmedia_experimental/model/async_campaigns_report.py
 criteo_api_retailmedia_experimental/model/async_campaigns_report_request.py
 criteo_api_retailmedia_experimental/model/async_campaigns_report_resource.py
+criteo_api_retailmedia_experimental/model/async_fill_rate_report.py
+criteo_api_retailmedia_experimental/model/async_fill_rate_report_request.py
+criteo_api_retailmedia_experimental/model/async_fill_rate_report_resource.py
 criteo_api_retailmedia_experimental/model/async_insight_response.py
 criteo_api_retailmedia_experimental/model/async_line_items_report.py
 criteo_api_retailmedia_experimental/model/async_line_items_report_request.py
@@ -61,7 +64,6 @@ criteo_api_retailmedia_experimental/model/bot_message.py
 criteo_api_retailmedia_experimental/model/brand_id_search_request.py
 criteo_api_retailmedia_experimental/model/brand_id_search_result.py
 criteo_api_retailmedia_experimental/model/budget_capping_model.py
-criteo_api_retailmedia_experimental/model/budget_capping_request_model.py
 criteo_api_retailmedia_experimental/model/campaign_create_model.py
 criteo_api_retailmedia_experimental/model/campaign_create_model_request.py
 criteo_api_retailmedia_experimental/model/campaign_create_model_resource.py
@@ -119,7 +121,6 @@ criteo_api_retailmedia_experimental/model/creative_search_response.py
 criteo_api_retailmedia_experimental/model/creative_update_model2.py
 criteo_api_retailmedia_experimental/model/custom_attribute.py
 criteo_api_retailmedia_experimental/model/data_complete_through.py
-criteo_api_retailmedia_experimental/model/decimal_nullable_nillable_v2.py
 criteo_api_retailmedia_experimental/model/delete_line_item_creatives_input.py
 criteo_api_retailmedia_experimental/model/delete_line_item_creatives_input_resource.py
 criteo_api_retailmedia_experimental/model/delete_line_item_creatives_request.py
@@ -167,6 +168,7 @@ criteo_api_retailmedia_experimental/model/external_create_line_item_model_resour
 criteo_api_retailmedia_experimental/model/external_create_onsite_display_auction_line_item_details.py
 criteo_api_retailmedia_experimental/model/external_create_onsite_display_line_item_details.py
 criteo_api_retailmedia_experimental/model/external_flight_dates_model.py
+criteo_api_retailmedia_experimental/model/external_flight_dates_model_v2.py
 criteo_api_retailmedia_experimental/model/external_frequency_capping_model.py
 criteo_api_retailmedia_experimental/model/external_frequency_capping_model_nillable_v2.py
 criteo_api_retailmedia_experimental/model/external_line_item.py
@@ -228,8 +230,11 @@ criteo_api_retailmedia_experimental/model/line_item_product_input_resource.py
 criteo_api_retailmedia_experimental/model/line_item_product_list_response_v2_with_pagination_meta.py
 criteo_api_retailmedia_experimental/model/line_item_product_resource.py
 criteo_api_retailmedia_experimental/model/line_item_resource.py
+criteo_api_retailmedia_experimental/model/line_item_resource_v2.py
 criteo_api_retailmedia_experimental/model/line_item_response.py
+criteo_api_retailmedia_experimental/model/line_item_response_v2.py
 criteo_api_retailmedia_experimental/model/line_item_targeting_details.py
+criteo_api_retailmedia_experimental/model/line_item_v2.py
 criteo_api_retailmedia_experimental/model/loyalty_points.py
 criteo_api_retailmedia_experimental/model/manual_keyword_target_details.py
 criteo_api_retailmedia_experimental/model/message.py
@@ -251,6 +256,7 @@ criteo_api_retailmedia_experimental/model/offer_update.py
 criteo_api_retailmedia_experimental/model/onsite_display_attributes.py
 criteo_api_retailmedia_experimental/model/onsite_display_auction_attributes.py
 criteo_api_retailmedia_experimental/model/onsite_display_auction_line_item_details.py
+criteo_api_retailmedia_experimental/model/onsite_display_auction_line_item_details_v2.py
 criteo_api_retailmedia_experimental/model/onsite_display_budget_create_model.py
 criteo_api_retailmedia_experimental/model/onsite_display_budget_model.py
 criteo_api_retailmedia_experimental/model/onsite_display_budget_update_model.py
@@ -258,9 +264,9 @@ criteo_api_retailmedia_experimental/model/onsite_display_details_create_model.py
 criteo_api_retailmedia_experimental/model/onsite_display_details_model.py
 criteo_api_retailmedia_experimental/model/onsite_display_details_update_model.py
 criteo_api_retailmedia_experimental/model/onsite_display_line_item_details.py
+criteo_api_retailmedia_experimental/model/onsite_display_line_item_details_v2.py
 criteo_api_retailmedia_experimental/model/outcome.py
 criteo_api_retailmedia_experimental/model/pacing_model.py
-criteo_api_retailmedia_experimental/model/pacing_request_model.py
 criteo_api_retailmedia_experimental/model/page_type_environment2.py
 criteo_api_retailmedia_experimental/model/page_type_min_bid.py
 criteo_api_retailmedia_experimental/model/page_type_target_details.py
@@ -278,11 +284,6 @@ criteo_api_retailmedia_experimental/model/preferred_line_item_v2.py
 criteo_api_retailmedia_experimental/model/preferred_line_item_v2_response.py
 criteo_api_retailmedia_experimental/model/price.py
 criteo_api_retailmedia_experimental/model/product.py
-criteo_api_retailmedia_experimental/model/product_button_request.py
-criteo_api_retailmedia_experimental/model/product_button_request_list_request.py
-criteo_api_retailmedia_experimental/model/product_button_request_request.py
-criteo_api_retailmedia_experimental/model/product_button_response.py
-criteo_api_retailmedia_experimental/model/product_button_response_list_response.py
 criteo_api_retailmedia_experimental/model/product_buy_box_winner.py
 criteo_api_retailmedia_experimental/model/product_recommendation.py
 criteo_api_retailmedia_experimental/model/product_shipping.py
@@ -305,8 +306,6 @@ criteo_api_retailmedia_experimental/model/report_response.py
 criteo_api_retailmedia_experimental/model/resource_of_creative2.py
 criteo_api_retailmedia_experimental/model/resource_of_preferred_line_item_update_model_v2.py
 criteo_api_retailmedia_experimental/model/resource_of_preferred_line_item_v2.py
-criteo_api_retailmedia_experimental/model/resource_of_product_button_request.py
-criteo_api_retailmedia_experimental/model/resource_of_product_button_response.py
 criteo_api_retailmedia_experimental/model/rm_algebra_node_v1.py
 criteo_api_retailmedia_experimental/model/rm_audience_bulk_create_input_v1.py
 criteo_api_retailmedia_experimental/model/rm_audience_bulk_delete_input_v1.py
@@ -442,6 +441,9 @@ docs/AsyncAccountsReportResource.md
 docs/AsyncCampaignsReport.md
 docs/AsyncCampaignsReportRequest.md
 docs/AsyncCampaignsReportResource.md
+docs/AsyncFillRateReport.md
+docs/AsyncFillRateReportRequest.md
+docs/AsyncFillRateReportResource.md
 docs/AsyncInsightResponse.md
 docs/AsyncLineItemsReport.md
 docs/AsyncLineItemsReportRequest.md
@@ -467,7 +469,6 @@ docs/BotMessage.md
 docs/BrandIdSearchRequest.md
 docs/BrandIdSearchResult.md
 docs/BudgetCappingModel.md
-docs/BudgetCappingRequestModel.md
 docs/CampaignApi.md
 docs/CampaignCreateModel.md
 docs/CampaignCreateModelRequest.md
@@ -527,7 +528,6 @@ docs/CreativeSearchResponse.md
 docs/CreativeUpdateModel2.md
 docs/CustomAttribute.md
 docs/DataCompleteThrough.md
-docs/DecimalNullableNillableV2.md
 docs/DeleteLineItemCreativesInput.md
 docs/DeleteLineItemCreativesInputResource.md
 docs/DeleteLineItemCreativesRequest.md
@@ -575,6 +575,7 @@ docs/ExternalCreateLineItemModelResource.md
 docs/ExternalCreateOnsiteDisplayAuctionLineItemDetails.md
 docs/ExternalCreateOnsiteDisplayLineItemDetails.md
 docs/ExternalFlightDatesModel.md
+docs/ExternalFlightDatesModelV2.md
 docs/ExternalFrequencyCappingModel.md
 docs/ExternalFrequencyCappingModelNillableV2.md
 docs/ExternalLineItem.md
@@ -637,8 +638,11 @@ docs/LineItemProductInputResource.md
 docs/LineItemProductListResponseV2WithPaginationMeta.md
 docs/LineItemProductResource.md
 docs/LineItemResource.md
+docs/LineItemResourceV2.md
 docs/LineItemResponse.md
+docs/LineItemResponseV2.md
 docs/LineItemTargetingDetails.md
+docs/LineItemV2.md
 docs/LoyaltyPoints.md
 docs/ManualKeywordTargetDetails.md
 docs/Message.md
@@ -661,6 +665,7 @@ docs/OnSiteRecommendationApi.md
 docs/OnsiteDisplayAttributes.md
 docs/OnsiteDisplayAuctionAttributes.md
 docs/OnsiteDisplayAuctionLineItemDetails.md
+docs/OnsiteDisplayAuctionLineItemDetailsV2.md
 docs/OnsiteDisplayBudgetCreateModel.md
 docs/OnsiteDisplayBudgetModel.md
 docs/OnsiteDisplayBudgetUpdateModel.md
@@ -668,9 +673,9 @@ docs/OnsiteDisplayDetailsCreateModel.md
 docs/OnsiteDisplayDetailsModel.md
 docs/OnsiteDisplayDetailsUpdateModel.md
 docs/OnsiteDisplayLineItemDetails.md
+docs/OnsiteDisplayLineItemDetailsV2.md
 docs/Outcome.md
 docs/PacingModel.md
-docs/PacingRequestModel.md
 docs/PageTypeEnvironment2.md
 docs/PageTypeMinBid.md
 docs/PageTypeTargetDetails.md
@@ -688,11 +693,6 @@ docs/PreferredLineItemV2.md
 docs/PreferredLineItemV2Response.md
 docs/Price.md
 docs/Product.md
-docs/ProductButtonRequest.md
-docs/ProductButtonRequestListRequest.md
-docs/ProductButtonRequestRequest.md
-docs/ProductButtonResponse.md
-docs/ProductButtonResponseListResponse.md
 docs/ProductBuyBoxWinner.md
 docs/ProductRecommendation.md
 docs/ProductShipping.md
@@ -715,8 +715,6 @@ docs/ReportResponse.md
 docs/ResourceOfCreative2.md
 docs/ResourceOfPreferredLineItemUpdateModelV2.md
 docs/ResourceOfPreferredLineItemV2.md
-docs/ResourceOfProductButtonRequest.md
-docs/ResourceOfProductButtonResponse.md
 docs/RmAlgebraNodeV1.md
 docs/RmAudienceBulkCreateInputV1.md
 docs/RmAudienceBulkDeleteInputV1.md

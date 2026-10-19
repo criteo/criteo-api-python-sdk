@@ -60,8 +60,6 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
 
     allowed_values = {
         ('objective',): {
-            'None': None,
-            'MANUAL': "Manual",
             'CLICKS': "Clicks",
             'CONVERSION': "Conversion",
             'REVENUE': "Revenue",
@@ -88,7 +86,7 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
         lazy_import()
         return {
             'budget': (SponsoredProductsBudgetCreateModel,),  # noqa: E501
-            'objective': (str, none_type,),  # noqa: E501
+            'objective': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -108,8 +106,12 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget, objective, *args, **kwargs):  # noqa: E501
         """SponsoredProductsDetailsCreateModel - a model defined in OpenAPI
+
+        Args:
+            budget (SponsoredProductsBudgetCreateModel):
+            objective (str): Objective a SponsoredProducts campaign is optimized for. The platform derives the line item  budgets from the campaign budget to serve it.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -142,8 +144,6 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget (SponsoredProductsBudgetCreateModel): [optional]  # noqa: E501
-            objective (str, none_type): Defaults to manual when omitted.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -175,6 +175,8 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget = budget
+        self.objective = objective
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -195,8 +197,12 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget, objective, *args, **kwargs):  # noqa: E501
         """SponsoredProductsDetailsCreateModel - a model defined in OpenAPI
+
+        Args:
+            budget (SponsoredProductsBudgetCreateModel):
+            objective (str): Objective a SponsoredProducts campaign is optimized for. The platform derives the line item  budgets from the campaign budget to serve it.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -229,8 +235,6 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            budget (SponsoredProductsBudgetCreateModel): [optional]  # noqa: E501
-            objective (str, none_type): Defaults to manual when omitted.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -260,6 +264,8 @@ class SponsoredProductsDetailsCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget = budget
+        self.objective = objective
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

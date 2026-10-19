@@ -31,9 +31,7 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.external_create_onsite_display_auction_line_item_details import ExternalCreateOnsiteDisplayAuctionLineItemDetails
-    from criteo_api_retailmedia_experimental.model.external_frequency_capping_model import ExternalFrequencyCappingModel
     globals()['ExternalCreateOnsiteDisplayAuctionLineItemDetails'] = ExternalCreateOnsiteDisplayAuctionLineItemDetails
-    globals()['ExternalFrequencyCappingModel'] = ExternalFrequencyCappingModel
 
 
 class ExternalCreateOnsiteDisplayLineItemDetails(ModelNormal):
@@ -83,7 +81,7 @@ class ExternalCreateOnsiteDisplayLineItemDetails(ModelNormal):
         lazy_import()
         return {
             'auction_details': (ExternalCreateOnsiteDisplayAuctionLineItemDetails,),  # noqa: E501
-            'frequency_capping': (ExternalFrequencyCappingModel,),  # noqa: E501
+            'is_paused': (bool, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,7 +91,7 @@ class ExternalCreateOnsiteDisplayLineItemDetails(ModelNormal):
 
     attribute_map = {
         'auction_details': 'auctionDetails',  # noqa: E501
-        'frequency_capping': 'frequencyCapping',  # noqa: E501
+        'is_paused': 'isPaused',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,7 +136,7 @@ class ExternalCreateOnsiteDisplayLineItemDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (ExternalCreateOnsiteDisplayAuctionLineItemDetails): [optional]  # noqa: E501
-            frequency_capping (ExternalFrequencyCappingModel): [optional]  # noqa: E501
+            is_paused (bool, none_type): Whether to pause the display line item. Defaults to false.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +223,7 @@ class ExternalCreateOnsiteDisplayLineItemDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (ExternalCreateOnsiteDisplayAuctionLineItemDetails): [optional]  # noqa: E501
-            frequency_capping (ExternalFrequencyCappingModel): [optional]  # noqa: E501
+            is_paused (bool, none_type): Whether to pause the display line item. Defaults to false.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
