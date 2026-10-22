@@ -108,10 +108,10 @@ class ActorRole(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Role label exposed to external callers for the actor of a change.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
+            args[0] (str): Role label of the actor that performed the change. No user identifiers are exposed.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Role label exposed to external callers for the actor of a change.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
+            value (str): Role label of the actor that performed the change. No user identifiers are exposed.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.
@@ -202,10 +202,10 @@ class ActorRole(ModelSimple):
         Note that value can be passed either in args or in kwargs, but not in both.
 
         Args:
-            args[0] (str): Role label exposed to external callers for the actor of a change.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
+            args[0] (str): Role label of the actor that performed the change. No user identifiers are exposed.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
 
         Keyword Args:
-            value (str): Role label exposed to external callers for the actor of a change.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
+            value (str): Role label of the actor that performed the change. No user identifiers are exposed.., must be one of ["unknown", "internal", "external", "api", "automatedTask", ]  # noqa: E501
             _check_type (bool): if True, values for parameters in openapi_types
                                 will be type checked and a TypeError will be
                                 raised if the wrong type is input.

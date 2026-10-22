@@ -157,6 +157,7 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
                 role="role_example",
             ),
         ],
+        identity_type="CtoBundle",
         nb_requested_products=1,
         partner_id=1,
         product=ProductContext(
@@ -173,6 +174,7 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             size="size_example",
         ),
         user_id="user_id_example",
+        user_id_origin="user_id_origin_example",
     ) # OnSiteRecoRequestConversational |  (optional)
 
     # example passing only required values which don't have defaults set

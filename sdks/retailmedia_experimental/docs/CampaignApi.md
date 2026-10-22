@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**fetch_creatives**](CampaignApi.md#fetch_creatives) | **GET** /experimental/retail-media/line-items/{line-item-id}/creatives | /experimental/retail-media/line-items/{line-item-id}/creatives
 [**fetch_products**](CampaignApi.md#fetch_products) | **GET** /experimental/retail-media/line-items/{line-item-id}/products | /experimental/retail-media/line-items/{line-item-id}/products
 [**get_bidding_strategy_by_line_item_id**](CampaignApi.md#get_bidding_strategy_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/bidding-strategy
-[**get_campaign**](CampaignApi.md#get_campaign) | **GET** /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id} | /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
+[**get_campaign**](CampaignApi.md#get_campaign) | **GET** /experimental/retail-media/campaigns/{campaign-id} | /experimental/retail-media/campaigns/{campaign-id}
 [**get_capout_history**](CampaignApi.md#get_capout_history) | **POST** /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history | /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history
 [**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /experimental/retail-media/catalogs/{catalogId}/status | /experimental/retail-media/catalogs/{catalogId}/status
 [**get_creative**](CampaignApi.md#get_creative) | **GET** /experimental/retail-media/accounts/{account-id}/creatives/{creative-id} | /experimental/retail-media/accounts/{account-id}/creatives/{creative-id}
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**set_bidding_strategy_by_line_item_id**](CampaignApi.md#set_bidding_strategy_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy
 [**submit_line_item**](CampaignApi.md#submit_line_item) | **POST** /experimental/retail-media/line-items/{line-item-id}/submit | /experimental/retail-media/line-items/{line-item-id}/submit
 [**update_auction_line_item**](CampaignApi.md#update_auction_line_item) | **PUT** /experimental/retail-media/auction-line-items/{lineItemId} | /experimental/retail-media/auction-line-items/{lineItemId}
-[**update_campaign**](CampaignApi.md#update_campaign) | **PATCH** /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id} | /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
+[**update_campaign**](CampaignApi.md#update_campaign) | **PATCH** /experimental/retail-media/campaigns/{campaign-id} | /experimental/retail-media/campaigns/{campaign-id}
 [**update_creative**](CampaignApi.md#update_creative) | **PUT** /experimental/retail-media/accounts/{account-id}/creatives/{creative-id} | /experimental/retail-media/accounts/{account-id}/creatives/{creative-id}
 [**update_line_item**](CampaignApi.md#update_line_item) | **PATCH** /experimental/retail-media/line-items/{line-item-id} | /experimental/retail-media/line-items/{line-item-id}
 [**update_preferred_line_item_by_line_item_id**](CampaignApi.md#update_preferred_line_item_by_line_item_id) | **PUT** /experimental/retail-media/preferred-line-items/{line-item-id} | /experimental/retail-media/preferred-line-items/{line-item-id}
@@ -316,6 +316,9 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     view_attribution_window="None",
                 ),
                 bill_by_retailer_id="bill_by_retailer_id_example",
+                budget=DynamicBudgetCreateModel(
+                    amount=3.14,
+                ),
                 buy_type="Auction",
                 campaign_type="SponsoredProducts",
                 company_name="company_name_example",
@@ -323,23 +326,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     "drawable_balance_ids_example",
                 ],
                 name="name_example",
+                objective="Clicks",
                 on_behalf_company_name="on_behalf_company_name_example",
-                onsite_display_details=OnsiteDisplayDetailsCreateModel(
-                    budget=OnsiteDisplayBudgetCreateModel(
-                        amount=3.14,
-                    ),
-                    objective="Impressions",
-                ),
                 regulated_category="None",
                 schedule_details=ScheduleDetailsCreateModel(
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                ),
-                sponsored_products_details=SponsoredProductsDetailsCreateModel(
-                    budget=SponsoredProductsBudgetCreateModel(
-                        amount=3.14,
-                    ),
-                    objective="Clicks",
                 ),
             ),
             type="type_example",
@@ -1315,9 +1307,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_campaign**
-> CampaignResponseModelResponse get_campaign(account_id, campaign_id)
+> CampaignResponseModelResponse get_campaign(campaign_id)
 
-/experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
+/experimental/retail-media/campaigns/{campaign-id}
 
 Gets a campaign by its external id.
 
@@ -1359,13 +1351,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | The external id of the account.
     campaign_id = "campaign-id_example" # str | The external id of the campaign.
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
-        api_response = api_instance.get_campaign(account_id, campaign_id)
+        # /experimental/retail-media/campaigns/{campaign-id}
+        api_response = api_instance.get_campaign(campaign_id)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->get_campaign: %s\n" % e)
@@ -1376,7 +1367,6 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The external id of the account. |
  **campaign_id** | **str**| The external id of the campaign. |
 
 ### Return type
@@ -3088,9 +3078,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_campaign**
-> CampaignResponseModelResponse update_campaign(account_id, campaign_id, campaign_update_model_request)
+> CampaignModelResponse update_campaign(campaign_id, campaign_update_model_request)
 
-/experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
+/experimental/retail-media/campaigns/{campaign-id}
 
 Selectively updates a campaign. Omitted properties remain unchanged.
 
@@ -3104,7 +3094,7 @@ import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
 from criteo_api_retailmedia_experimental.model.campaign_update_model_request import CampaignUpdateModelRequest
-from criteo_api_retailmedia_experimental.model.campaign_response_model_response import CampaignResponseModelResponse
+from criteo_api_retailmedia_experimental.model.campaign_model_response import CampaignModelResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3133,7 +3123,6 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    account_id = "account-id_example" # str | The external id of the account.
     campaign_id = "campaign-id_example" # str | The external id of the campaign.
     campaign_update_model_request = CampaignUpdateModelRequest(
         data=CampaignUpdateModelResource(
@@ -3144,6 +3133,10 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     view_attribution_scope="SameSku",
                     view_attribution_window="None",
                 ),
+                budget=DynamicBudgetUpdateModel(
+                    amount=3.14,
+                    memo="memo_example",
+                ),
                 company_name=StringNillableV2(
                     value="value_example",
                 ),
@@ -3151,19 +3144,9 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                 on_behalf_company_name=StringNillableV2(
                     value="value_example",
                 ),
-                onsite_display_details=OnsiteDisplayDetailsUpdateModel(
-                    budget=OnsiteDisplayBudgetUpdateModel(
-                        amount=3.14,
-                    ),
-                ),
                 schedule_details=ScheduleDetailsUpdateModel(
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
-                ),
-                sponsored_products_details=SponsoredProductsDetailsUpdateModel(
-                    budget=SponsoredProductsBudgetUpdateModel(
-                        amount=3.14,
-                    ),
                 ),
             ),
             type="type_example",
@@ -3172,8 +3155,8 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}
-        api_response = api_instance.update_campaign(account_id, campaign_id, campaign_update_model_request)
+        # /experimental/retail-media/campaigns/{campaign-id}
+        api_response = api_instance.update_campaign(campaign_id, campaign_update_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->update_campaign: %s\n" % e)
@@ -3184,13 +3167,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| The external id of the account. |
  **campaign_id** | **str**| The external id of the campaign. |
  **campaign_update_model_request** | [**CampaignUpdateModelRequest**](CampaignUpdateModelRequest.md)| The campaign fields to update. |
 
 ### Return type
 
-[**CampaignResponseModelResponse**](CampaignResponseModelResponse.md)
+[**CampaignModelResponse**](CampaignModelResponse.md)
 
 ### Authorization
 
@@ -3338,7 +3320,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_line_item**
-> LineItemResponse update_line_item(line_item_id, external_update_line_item_model_request)
+> LineItemResponseV2 update_line_item(line_item_id, external_patch_line_item_model_request)
 
 /experimental/retail-media/line-items/{line-item-id}
 
@@ -3353,8 +3335,8 @@ Update an existing line item.
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.external_update_line_item_model_request import ExternalUpdateLineItemModelRequest
-from criteo_api_retailmedia_experimental.model.line_item_response import LineItemResponse
+from criteo_api_retailmedia_experimental.model.line_item_response_v2 import LineItemResponseV2
+from criteo_api_retailmedia_experimental.model.external_patch_line_item_model_request import ExternalPatchLineItemModelRequest
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3384,13 +3366,13 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
     line_item_id = "line-item-id_example" # str | The line item id
-    external_update_line_item_model_request = ExternalUpdateLineItemModelRequest(
-        data=ExternalUpdateLineItemModelResource(
-            attributes=ExternalUpdateLineItemModel(
+    external_patch_line_item_model_request = ExternalPatchLineItemModelRequest(
+        data=ExternalPatchLineItemModelResource(
+            attributes=ExternalPatchLineItemModel(
                 is_paused=True,
                 name="name_example",
-                onsite_display_details=ExternalUpdateOnsiteDisplayLineItemDetails(
-                    auction_details=ExternalUpdateOnsiteDisplayAuctionLineItemDetails(
+                onsite_display_details=ExternalPatchOnsiteDisplayLineItemDetails(
+                    auction_details=ExternalPatchOnsiteDisplayAuctionLineItemDetails(
                         is_dynamic_match=True,
                     ),
                     frequency_capping=ExternalFrequencyCappingModelNillableV2(
@@ -3404,12 +3386,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
             ),
             type="type_example",
         ),
-    ) # ExternalUpdateLineItemModelRequest | Line item details
+    ) # ExternalPatchLineItemModelRequest | Line item details
 
     # example passing only required values which don't have defaults set
     try:
         # /experimental/retail-media/line-items/{line-item-id}
-        api_response = api_instance.update_line_item(line_item_id, external_update_line_item_model_request)
+        api_response = api_instance.update_line_item(line_item_id, external_patch_line_item_model_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
         print("Exception when calling CampaignApi->update_line_item: %s\n" % e)
@@ -3421,11 +3403,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **line_item_id** | **str**| The line item id |
- **external_update_line_item_model_request** | [**ExternalUpdateLineItemModelRequest**](ExternalUpdateLineItemModelRequest.md)| Line item details |
+ **external_patch_line_item_model_request** | [**ExternalPatchLineItemModelRequest**](ExternalPatchLineItemModelRequest.md)| Line item details |
 
 ### Return type
 
-[**LineItemResponse**](LineItemResponse.md)
+[**LineItemResponseV2**](LineItemResponseV2.md)
 
 ### Authorization
 

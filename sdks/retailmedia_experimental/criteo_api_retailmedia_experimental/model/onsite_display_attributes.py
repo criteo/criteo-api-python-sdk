@@ -30,9 +30,7 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.frequency_capping_model import FrequencyCappingModel
     from criteo_api_retailmedia_experimental.model.onsite_display_auction_attributes import OnsiteDisplayAuctionAttributes
-    globals()['FrequencyCappingModel'] = FrequencyCappingModel
     globals()['OnsiteDisplayAuctionAttributes'] = OnsiteDisplayAuctionAttributes
 
 
@@ -83,7 +81,6 @@ class OnsiteDisplayAttributes(ModelNormal):
         lazy_import()
         return {
             'auction': (OnsiteDisplayAuctionAttributes,),  # noqa: E501
-            'frequency_capping': (FrequencyCappingModel,),  # noqa: E501
         }
 
     @cached_property
@@ -93,7 +90,6 @@ class OnsiteDisplayAttributes(ModelNormal):
 
     attribute_map = {
         'auction': 'auction',  # noqa: E501
-        'frequency_capping': 'frequencyCapping',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,7 +134,6 @@ class OnsiteDisplayAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction (OnsiteDisplayAuctionAttributes): [optional]  # noqa: E501
-            frequency_capping (FrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +220,6 @@ class OnsiteDisplayAttributes(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction (OnsiteDisplayAuctionAttributes): [optional]  # noqa: E501
-            frequency_capping (FrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

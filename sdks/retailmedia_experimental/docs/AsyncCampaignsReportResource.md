@@ -1,11 +1,11 @@
 # AsyncCampaignsReportResource
 
-A top-level object that encapsulates a Criteo API response for a single value
+A report request resource containing its type and required attributes.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**AsyncCampaignsReport**](AsyncCampaignsReport.md) |  | [optional] 
+**attributes** | [**AsyncCampaignsReport**](AsyncCampaignsReport.md) |  | 
 **type** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

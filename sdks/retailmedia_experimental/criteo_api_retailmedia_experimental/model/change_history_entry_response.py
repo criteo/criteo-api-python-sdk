@@ -30,8 +30,10 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from criteo_api_retailmedia_experimental.model.actor_role import ActorRole
     from criteo_api_retailmedia_experimental.model.change_history_entry_response_entity import ChangeHistoryEntryResponseEntity
     from criteo_api_retailmedia_experimental.model.changed_field import ChangedField
+    globals()['ActorRole'] = ActorRole
     globals()['ChangeHistoryEntryResponseEntity'] = ChangeHistoryEntryResponseEntity
     globals()['ChangedField'] = ChangedField
 
@@ -82,7 +84,7 @@ class ChangeHistoryEntryResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'actor_role': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'actor_role': (ActorRole,),  # noqa: E501
             'changes': ([ChangedField],),  # noqa: E501
             'entity': (ChangeHistoryEntryResponseEntity,),  # noqa: E501
             'event_type': (str,),  # noqa: E501
@@ -113,7 +115,7 @@ class ChangeHistoryEntryResponse(ModelNormal):
         """ChangeHistoryEntryResponse - a model defined in OpenAPI
 
         Args:
-            actor_role (bool, date, datetime, dict, float, int, list, str, none_type): Role label of the actor that performed the change. No user identifiers are exposed.
+            actor_role (ActorRole):
             changes ([ChangedField]): Old and new values for each field changed as part of this event.
             entity (ChangeHistoryEntryResponseEntity):
             event_type (str): Semantic type of the configuration change, `<entityType><Action>` style — for example `campaignCreated`, `lineItemUpdated`, `balanceUpdated`. Additional values may be returned. 
@@ -210,7 +212,7 @@ class ChangeHistoryEntryResponse(ModelNormal):
         """ChangeHistoryEntryResponse - a model defined in OpenAPI
 
         Args:
-            actor_role (bool, date, datetime, dict, float, int, list, str, none_type): Role label of the actor that performed the change. No user identifiers are exposed.
+            actor_role (ActorRole):
             changes ([ChangedField]): Old and new values for each field changed as part of this event.
             entity (ChangeHistoryEntryResponseEntity):
             event_type (str): Semantic type of the configuration change, `<entityType><Action>` style — for example `campaignCreated`, `lineItemUpdated`, `balanceUpdated`. Additional values may be returned. 

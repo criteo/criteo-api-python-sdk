@@ -31,13 +31,11 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 def lazy_import():
     from criteo_api_retailmedia_experimental.model.attribution_settings_create_model import AttributionSettingsCreateModel
-    from criteo_api_retailmedia_experimental.model.onsite_display_details_create_model import OnsiteDisplayDetailsCreateModel
+    from criteo_api_retailmedia_experimental.model.dynamic_budget_create_model import DynamicBudgetCreateModel
     from criteo_api_retailmedia_experimental.model.schedule_details_create_model import ScheduleDetailsCreateModel
-    from criteo_api_retailmedia_experimental.model.sponsored_products_details_create_model import SponsoredProductsDetailsCreateModel
     globals()['AttributionSettingsCreateModel'] = AttributionSettingsCreateModel
-    globals()['OnsiteDisplayDetailsCreateModel'] = OnsiteDisplayDetailsCreateModel
+    globals()['DynamicBudgetCreateModel'] = DynamicBudgetCreateModel
     globals()['ScheduleDetailsCreateModel'] = ScheduleDetailsCreateModel
-    globals()['SponsoredProductsDetailsCreateModel'] = SponsoredProductsDetailsCreateModel
 
 
 class CampaignCreateModel(ModelNormal):
@@ -72,6 +70,12 @@ class CampaignCreateModel(ModelNormal):
             'SPONSOREDPRODUCTS': "SponsoredProducts",
             'ONSITEDISPLAY': "OnsiteDisplay",
         },
+        ('objective',): {
+            'CLICKS': "Clicks",
+            'CONVERSION': "Conversion",
+            'REVENUE': "Revenue",
+            'IMPRESSIONS': "Impressions",
+        },
         ('regulated_category',): {
             'None': None,
             'NONE': "None",
@@ -102,18 +106,18 @@ class CampaignCreateModel(ModelNormal):
         """
         lazy_import()
         return {
+            'budget': (DynamicBudgetCreateModel,),  # noqa: E501
             'buy_type': (str,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
+            'objective': (str,),  # noqa: E501
             'schedule_details': (ScheduleDetailsCreateModel,),  # noqa: E501
             'attribution_settings': (AttributionSettingsCreateModel,),  # noqa: E501
             'bill_by_retailer_id': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'drawable_balance_ids': ([str], none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
-            'onsite_display_details': (OnsiteDisplayDetailsCreateModel,),  # noqa: E501
             'regulated_category': (str, none_type,),  # noqa: E501
-            'sponsored_products_details': (SponsoredProductsDetailsCreateModel,),  # noqa: E501
         }
 
     @cached_property
@@ -122,18 +126,18 @@ class CampaignCreateModel(ModelNormal):
 
 
     attribute_map = {
+        'budget': 'budget',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'name': 'name',  # noqa: E501
+        'objective': 'objective',  # noqa: E501
         'schedule_details': 'scheduleDetails',  # noqa: E501
         'attribution_settings': 'attributionSettings',  # noqa: E501
         'bill_by_retailer_id': 'billByRetailerId',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'drawable_balance_ids': 'drawableBalanceIds',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
-        'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'regulated_category': 'regulatedCategory',  # noqa: E501
-        'sponsored_products_details': 'sponsoredProductsDetails',  # noqa: E501
     }
 
     read_only_vars = {
@@ -143,12 +147,14 @@ class CampaignCreateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, campaign_type, name, schedule_details, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget, campaign_type, name, objective, schedule_details, *args, **kwargs):  # noqa: E501
         """CampaignCreateModel - a model defined in OpenAPI
 
         Args:
+            budget (DynamicBudgetCreateModel):
             campaign_type (str): Type of campaign, set only on creation.
             name (str):
+            objective (str): Objective the campaign is optimized for. The platform derives the line item budgets from the  campaign budget to serve it. SponsoredProducts accepts clicks, conversion and revenue;  OnsiteDisplay accepts impressions.
             schedule_details (ScheduleDetailsCreateModel):
 
         Keyword Args:
@@ -188,9 +194,7 @@ class CampaignCreateModel(ModelNormal):
             company_name (str, none_type): [optional]  # noqa: E501
             drawable_balance_ids ([str], none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            onsite_display_details (OnsiteDisplayDetailsCreateModel): [optional]  # noqa: E501
             regulated_category (str, none_type): [optional]  # noqa: E501
-            sponsored_products_details (SponsoredProductsDetailsCreateModel): [optional]  # noqa: E501
         """
 
         buy_type = kwargs.get('buy_type', "Auction")
@@ -223,9 +227,11 @@ class CampaignCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget = budget
         self.buy_type = buy_type
         self.campaign_type = campaign_type
         self.name = name
+        self.objective = objective
         self.schedule_details = schedule_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
@@ -247,12 +253,14 @@ class CampaignCreateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, campaign_type, name, schedule_details, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget, campaign_type, name, objective, schedule_details, *args, **kwargs):  # noqa: E501
         """CampaignCreateModel - a model defined in OpenAPI
 
         Args:
+            budget (DynamicBudgetCreateModel):
             campaign_type (str): Type of campaign, set only on creation.
             name (str):
+            objective (str): Objective the campaign is optimized for. The platform derives the line item budgets from the  campaign budget to serve it. SponsoredProducts accepts clicks, conversion and revenue;  OnsiteDisplay accepts impressions.
             schedule_details (ScheduleDetailsCreateModel):
 
         Keyword Args:
@@ -292,9 +300,7 @@ class CampaignCreateModel(ModelNormal):
             company_name (str, none_type): [optional]  # noqa: E501
             drawable_balance_ids ([str], none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
-            onsite_display_details (OnsiteDisplayDetailsCreateModel): [optional]  # noqa: E501
             regulated_category (str, none_type): [optional]  # noqa: E501
-            sponsored_products_details (SponsoredProductsDetailsCreateModel): [optional]  # noqa: E501
         """
 
         buy_type = kwargs.get('buy_type', "Auction")
@@ -325,9 +331,11 @@ class CampaignCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
+        self.budget = budget
         self.buy_type = buy_type
         self.campaign_type = campaign_type
         self.name = name
+        self.objective = objective
         self.schedule_details = schedule_details
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \

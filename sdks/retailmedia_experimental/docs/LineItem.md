@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **budget_status** | **str, none_type** | Indicates whether the line item has budget headroom to serve ads. | [optional] 
 **buy_type** | **str, none_type** | The buy type of the line item. | [optional] 
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | [optional] 
-**conquesting_settings** | [**ConquestingSettings**](ConquestingSettings.md) |  | [optional] 
 **flight_dates** | [**FlightDates**](FlightDates.md) |  | [optional] 
 **is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **line_item_id** | **str, none_type** | The id of the line item. | [optional] 
@@ -18,7 +17,6 @@ Name | Type | Description | Notes
 **onsite_display** | [**OnsiteDisplayAttributes**](OnsiteDisplayAttributes.md) |  | [optional] 
 **retailer_id** | **str, none_type** | The retailer id of the associated retailer. | [optional] 
 **serve_to_opt_out_user** | **bool, none_type** | Whether to serve ads to users who have opted out of personalization. | [optional] 
-**sponsored_products** | [**SponsoredProductsAttributes**](SponsoredProductsAttributes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

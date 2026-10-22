@@ -26,6 +26,7 @@ from criteo_api_retailmedia_experimental.model.add_line_item_products_list_respo
 from criteo_api_retailmedia_experimental.model.bidding_settings_request import BiddingSettingsRequest
 from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
 from criteo_api_retailmedia_experimental.model.campaign_create_model_request import CampaignCreateModelRequest
+from criteo_api_retailmedia_experimental.model.campaign_model_response import CampaignModelResponse
 from criteo_api_retailmedia_experimental.model.campaign_response_model_list_response_with_campaign_search_metadata_model import CampaignResponseModelListResponseWithCampaignSearchMetadataModel
 from criteo_api_retailmedia_experimental.model.campaign_response_model_response import CampaignResponseModelResponse
 from criteo_api_retailmedia_experimental.model.campaign_search_model_request import CampaignSearchModelRequest
@@ -46,13 +47,12 @@ from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_se
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_catalog_status_v2 import EntityResourceOutcomeOfCatalogStatusV2
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_experimental.model.external_create_line_item_model_request import ExternalCreateLineItemModelRequest
-from criteo_api_retailmedia_experimental.model.external_update_line_item_model_request import ExternalUpdateLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.external_patch_line_item_model_request import ExternalPatchLineItemModelRequest
 from criteo_api_retailmedia_experimental.model.line_item_creatives_response import LineItemCreativesResponse
 from criteo_api_retailmedia_experimental.model.line_item_details_response import LineItemDetailsResponse
 from criteo_api_retailmedia_experimental.model.line_item_list_response_with_pagination import LineItemListResponseWithPagination
 from criteo_api_retailmedia_experimental.model.line_item_min_bids_response import LineItemMinBidsResponse
 from criteo_api_retailmedia_experimental.model.line_item_product_list_response_v2_with_pagination_meta import LineItemProductListResponseV2WithPaginationMeta
-from criteo_api_retailmedia_experimental.model.line_item_response import LineItemResponse
 from criteo_api_retailmedia_experimental.model.line_item_response_v2 import LineItemResponseV2
 from criteo_api_retailmedia_experimental.model.outcome import Outcome
 from criteo_api_retailmedia_experimental.model.preferred_line_item_create_model_v2_request import PreferredLineItemCreateModelV2Request
@@ -791,18 +791,16 @@ class CampaignApi(object):
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}',
+                'endpoint_path': '/experimental/retail-media/campaigns/{campaign-id}',
                 'operation_id': 'get_campaign',
                 'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'account_id',
                     'campaign_id',
                 ],
                 'required': [
-                    'account_id',
                     'campaign_id',
                 ],
                 'nullable': [
@@ -818,17 +816,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'account_id':
-                        (str,),
                     'campaign_id':
                         (str,),
                 },
                 'attribute_map': {
-                    'account_id': 'account-id',
                     'campaign_id': 'campaign-id',
                 },
                 'location_map': {
-                    'account_id': 'path',
                     'campaign_id': 'path',
                 },
                 'collection_format_map': {
@@ -1892,24 +1886,22 @@ class CampaignApi(object):
         )
         self.update_campaign_endpoint = _Endpoint(
             settings={
-                'response_type': (CampaignResponseModelResponse,),
+                'response_type': (CampaignModelResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}',
+                'endpoint_path': '/experimental/retail-media/campaigns/{campaign-id}',
                 'operation_id': 'update_campaign',
                 'http_method': 'PATCH',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'account_id',
                     'campaign_id',
                     'campaign_update_model_request',
                 ],
                 'required': [
-                    'account_id',
                     'campaign_id',
                     'campaign_update_model_request',
                 ],
@@ -1926,19 +1918,15 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'account_id':
-                        (str,),
                     'campaign_id':
                         (str,),
                     'campaign_update_model_request':
                         (CampaignUpdateModelRequest,),
                 },
                 'attribute_map': {
-                    'account_id': 'account-id',
                     'campaign_id': 'campaign-id',
                 },
                 'location_map': {
-                    'account_id': 'path',
                     'campaign_id': 'path',
                     'campaign_update_model_request': 'body',
                 },
@@ -2022,7 +2010,7 @@ class CampaignApi(object):
         )
         self.update_line_item_endpoint = _Endpoint(
             settings={
-                'response_type': (LineItemResponse,),
+                'response_type': (LineItemResponseV2,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -2035,11 +2023,11 @@ class CampaignApi(object):
             params_map={
                 'all': [
                     'line_item_id',
-                    'external_update_line_item_model_request',
+                    'external_patch_line_item_model_request',
                 ],
                 'required': [
                     'line_item_id',
-                    'external_update_line_item_model_request',
+                    'external_patch_line_item_model_request',
                 ],
                 'nullable': [
                 ],
@@ -2056,15 +2044,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'external_update_line_item_model_request':
-                        (ExternalUpdateLineItemModelRequest,),
+                    'external_patch_line_item_model_request':
+                        (ExternalPatchLineItemModelRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'external_update_line_item_model_request': 'body',
+                    'external_patch_line_item_model_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -3285,21 +3273,19 @@ class CampaignApi(object):
 
     def get_campaign(
         self,
-        account_id,
         campaign_id,
         **kwargs
     ):
-        """/experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}  # noqa: E501
+        """/experimental/retail-media/campaigns/{campaign-id}  # noqa: E501
 
         Gets a campaign by its external id.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_campaign(account_id, campaign_id, async_req=True)
+        >>> thread = api.get_campaign(campaign_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            account_id (str): The external id of the account.
             campaign_id (str): The external id of the campaign.
 
         Keyword Args:
@@ -3364,8 +3350,6 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
         kwargs['campaign_id'] = \
             campaign_id
         return self.get_campaign_endpoint.call_with_http_info(**kwargs)
@@ -4745,22 +4729,20 @@ class CampaignApi(object):
 
     def update_campaign(
         self,
-        account_id,
         campaign_id,
         campaign_update_model_request,
         **kwargs
     ):
-        """/experimental/retail-media/accounts/{account-id}/campaigns/{campaign-id}  # noqa: E501
+        """/experimental/retail-media/campaigns/{campaign-id}  # noqa: E501
 
         Selectively updates a campaign. Omitted properties remain unchanged.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_campaign(account_id, campaign_id, campaign_update_model_request, async_req=True)
+        >>> thread = api.update_campaign(campaign_id, campaign_update_model_request, async_req=True)
         >>> result = thread.get()
 
         Args:
-            account_id (str): The external id of the account.
             campaign_id (str): The external id of the campaign.
             campaign_update_model_request (CampaignUpdateModelRequest): The campaign fields to update.
 
@@ -4797,7 +4779,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CampaignResponseModelResponse
+            CampaignModelResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4826,8 +4808,6 @@ class CampaignApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['account_id'] = \
-            account_id
         kwargs['campaign_id'] = \
             campaign_id
         kwargs['campaign_update_model_request'] = \
@@ -4928,7 +4908,7 @@ class CampaignApi(object):
     def update_line_item(
         self,
         line_item_id,
-        external_update_line_item_model_request,
+        external_patch_line_item_model_request,
         **kwargs
     ):
         """/experimental/retail-media/line-items/{line-item-id}  # noqa: E501
@@ -4937,12 +4917,12 @@ class CampaignApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_line_item(line_item_id, external_update_line_item_model_request, async_req=True)
+        >>> thread = api.update_line_item(line_item_id, external_patch_line_item_model_request, async_req=True)
         >>> result = thread.get()
 
         Args:
             line_item_id (str): The line item id
-            external_update_line_item_model_request (ExternalUpdateLineItemModelRequest): Line item details
+            external_patch_line_item_model_request (ExternalPatchLineItemModelRequest): Line item details
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -4977,7 +4957,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            LineItemResponse
+            LineItemResponseV2
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5008,8 +4988,8 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        kwargs['external_update_line_item_model_request'] = \
-            external_update_line_item_model_request
+        kwargs['external_patch_line_item_model_request'] = \
+            external_patch_line_item_model_request
         return self.update_line_item_endpoint.call_with_http_info(**kwargs)
 
     def update_preferred_line_item_by_line_item_id(

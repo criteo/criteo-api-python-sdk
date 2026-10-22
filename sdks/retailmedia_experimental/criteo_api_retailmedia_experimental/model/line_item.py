@@ -30,14 +30,10 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.conquesting_settings import ConquestingSettings
     from criteo_api_retailmedia_experimental.model.flight_dates import FlightDates
     from criteo_api_retailmedia_experimental.model.onsite_display_attributes import OnsiteDisplayAttributes
-    from criteo_api_retailmedia_experimental.model.sponsored_products_attributes import SponsoredProductsAttributes
-    globals()['ConquestingSettings'] = ConquestingSettings
     globals()['FlightDates'] = FlightDates
     globals()['OnsiteDisplayAttributes'] = OnsiteDisplayAttributes
-    globals()['SponsoredProductsAttributes'] = SponsoredProductsAttributes
 
 
 class LineItem(ModelNormal):
@@ -109,7 +105,6 @@ class LineItem(ModelNormal):
             'budget_status': (str, none_type,),  # noqa: E501
             'buy_type': (str, none_type,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
-            'conquesting_settings': (ConquestingSettings,),  # noqa: E501
             'flight_dates': (FlightDates,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
@@ -118,7 +113,6 @@ class LineItem(ModelNormal):
             'onsite_display': (OnsiteDisplayAttributes,),  # noqa: E501
             'retailer_id': (str, none_type,),  # noqa: E501
             'serve_to_opt_out_user': (bool, none_type,),  # noqa: E501
-            'sponsored_products': (SponsoredProductsAttributes,),  # noqa: E501
         }
 
     @cached_property
@@ -131,7 +125,6 @@ class LineItem(ModelNormal):
         'budget_status': 'budgetStatus',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
-        'conquesting_settings': 'conquestingSettings',  # noqa: E501
         'flight_dates': 'flightDates',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
@@ -140,7 +133,6 @@ class LineItem(ModelNormal):
         'onsite_display': 'onsiteDisplay',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'serve_to_opt_out_user': 'serveToOptOutUser',  # noqa: E501
-        'sponsored_products': 'sponsoredProducts',  # noqa: E501
     }
 
     read_only_vars = {
@@ -188,7 +180,6 @@ class LineItem(ModelNormal):
             budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             buy_type (str, none_type): The buy type of the line item.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            conquesting_settings (ConquestingSettings): [optional]  # noqa: E501
             flight_dates (FlightDates): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
@@ -197,7 +188,6 @@ class LineItem(ModelNormal):
             onsite_display (OnsiteDisplayAttributes): [optional]  # noqa: E501
             retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
-            sponsored_products (SponsoredProductsAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -287,7 +277,6 @@ class LineItem(ModelNormal):
             budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             buy_type (str, none_type): The buy type of the line item.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            conquesting_settings (ConquestingSettings): [optional]  # noqa: E501
             flight_dates (FlightDates): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
@@ -296,7 +285,6 @@ class LineItem(ModelNormal):
             onsite_display (OnsiteDisplayAttributes): [optional]  # noqa: E501
             retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
-            sponsored_products (SponsoredProductsAttributes): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
