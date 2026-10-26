@@ -89,6 +89,7 @@ class SyncAttributedTransactionsReport(ModelNormal):
             'ADVENGAGEMENT': "advEngagement",
             'ADVTOPURCHASEDPRODUCTRELATIONSHIP': "advToPurchasedProductRelationship",
             'SALESCHANNEL': "salesChannel",
+            'RETAILERID': "retailerId",
             'RETAILERNAME': "retailerName",
             'PAGETYPENAME': "pageTypeName",
             'KEYWORD': "keyword",

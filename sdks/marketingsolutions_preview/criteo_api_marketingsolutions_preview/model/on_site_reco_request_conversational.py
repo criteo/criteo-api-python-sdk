@@ -61,6 +61,13 @@ class OnSiteRecoRequestConversational(ModelNormal):
     """
 
     allowed_values = {
+        ('identity_type',): {
+            'CTOBUNDLE': "CtoBundle",
+            'IDFA': "Idfa",
+            'GAID': "Gaid",
+            'INTERNALUSERID': "InternalUserId",
+            'AGENTICUSERID': "AgenticUserId",
+        },
     }
 
     validations = {
@@ -95,7 +102,9 @@ class OnSiteRecoRequestConversational(ModelNormal):
             'partner_id': (int,),  # noqa: E501
             'user_id': (str,),  # noqa: E501
             'ad_id': (int,),  # noqa: E501
+            'identity_type': (str,),  # noqa: E501
             'product': (ProductContext,),  # noqa: E501
+            'user_id_origin': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -110,7 +119,9 @@ class OnSiteRecoRequestConversational(ModelNormal):
         'partner_id': 'partnerId',  # noqa: E501
         'user_id': 'userId',  # noqa: E501
         'ad_id': 'adId',  # noqa: E501
+        'identity_type': 'identityType',  # noqa: E501
         'product': 'product',  # noqa: E501
+        'user_id_origin': 'userIdOrigin',  # noqa: E501
     }
 
     read_only_vars = {
@@ -128,7 +139,7 @@ class OnSiteRecoRequestConversational(ModelNormal):
             conversation ([OnSiteRecoChatMessage]): Conversation between the user and the agent.
             nb_requested_products (int): Amount of products to recommend.
             partner_id (int): Id of the partner.
-            user_id (str): Used to retrieve user events from Criteo trackers.
+            user_id (str): One user identifier: a Criteo bundle, GAID, IDFA, internal user id, or an agentic partner user id.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -162,7 +173,9 @@ class OnSiteRecoRequestConversational(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             ad_id (int): Id of the Ad. This field is optional, it allows to setup Reco controls at Ad level.. [optional]  # noqa: E501
+            identity_type (str): Type of the user identifier (CtoBundle, Idfa, Gaid, AgenticUserId...) Optional if its type is CtoBundle. [optional]  # noqa: E501
             product (ProductContext): [optional]  # noqa: E501
+            user_id_origin (str): When IdentityType is AgenticUserId, the issuer should recognize themselves with their organization name issued by Criteo.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,7 +240,7 @@ class OnSiteRecoRequestConversational(ModelNormal):
             conversation ([OnSiteRecoChatMessage]): Conversation between the user and the agent.
             nb_requested_products (int): Amount of products to recommend.
             partner_id (int): Id of the partner.
-            user_id (str): Used to retrieve user events from Criteo trackers.
+            user_id (str): One user identifier: a Criteo bundle, GAID, IDFA, internal user id, or an agentic partner user id.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -261,7 +274,9 @@ class OnSiteRecoRequestConversational(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             ad_id (int): Id of the Ad. This field is optional, it allows to setup Reco controls at Ad level.. [optional]  # noqa: E501
+            identity_type (str): Type of the user identifier (CtoBundle, Idfa, Gaid, AgenticUserId...) Optional if its type is CtoBundle. [optional]  # noqa: E501
             product (ProductContext): [optional]  # noqa: E501
+            user_id_origin (str): When IdentityType is AgenticUserId, the issuer should recognize themselves with their organization name issued by Criteo.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

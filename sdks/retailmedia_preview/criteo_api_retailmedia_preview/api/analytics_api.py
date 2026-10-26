@@ -901,7 +901,7 @@ class AnalyticsApi(object):
     ):
         """/preview/retail-media/reports/accounts  # noqa: E501
 
-        Returns an asynchronous Accounts Report <br /> This endpoint is subject to specific rate limits.  # noqa: E501
+        Returns an asynchronous Accounts Report  Returns 403 for access issues, such as when access to a requested account is refused. <br /> This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1067,7 +1067,7 @@ class AnalyticsApi(object):
     ):
         """/preview/retail-media/reports/fillrate  # noqa: E501
 
-        Returns an asynchronous Fill Rate Report <br /> This endpoint is subject to specific rate limits.  # noqa: E501
+        Returns an asynchronous Fill Rate Report  Returns 403 for access issues, such as when access to a requested account is refused. <br /> This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -1316,7 +1316,7 @@ class AnalyticsApi(object):
     ):
         """/preview/retail-media/reports/unfilled-placements  # noqa: E501
 
-        Returns an asynchronous Unfilled Placements Report <br /> This endpoint is subject to specific rate limits.  # noqa: E501
+        Returns an asynchronous Unfilled Placements Report  Returns 403 for access issues, such as when access to a requested account is refused. <br /> This endpoint is subject to specific rate limits.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

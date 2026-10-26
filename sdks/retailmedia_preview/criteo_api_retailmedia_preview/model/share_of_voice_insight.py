@@ -61,6 +61,10 @@ class ShareOfVoiceInsight(ModelNormal):
     allowed_values = {
         ('dimensions',): {
             'DATE': "date",
+            'WEEK': "week",
+            'MONTH': "month",
+            'QUARTER': "quarter",
+            'YEAR': "year",
             'ACCOUNTID': "accountId",
             'ACCOUNTNAME': "accountName",
             'RETAILERID': "retailerId",
@@ -183,7 +187,7 @@ class ShareOfVoiceInsight(ModelNormal):
 
         Args:
             account_id (str): Account ID the insight report is generated for.
-            dimensions ([str]): Dimensions to report on.
+            dimensions ([str]): Dimensions to report on. `week`, `month`, `quarter` and `year` return the first day of the period  (weeks start on Monday), which may be earlier than `startDate`; values cover only the requested range.
             end_date (str): End date of the report, in ISO 8601 format (YYYY-MM-DD).
             metrics ([str]): Metrics to report on.
             start_date (str): Start date of the report, in ISO 8601 format (YYYY-MM-DD).
@@ -283,7 +287,7 @@ class ShareOfVoiceInsight(ModelNormal):
 
         Args:
             account_id (str): Account ID the insight report is generated for.
-            dimensions ([str]): Dimensions to report on.
+            dimensions ([str]): Dimensions to report on. `week`, `month`, `quarter` and `year` return the first day of the period  (weeks start on Monday), which may be earlier than `startDate`; values cover only the requested range.
             end_date (str): End date of the report, in ISO 8601 format (YYYY-MM-DD).
             metrics ([str]): Metrics to report on.
             start_date (str): Start date of the report, in ISO 8601 format (YYYY-MM-DD).
