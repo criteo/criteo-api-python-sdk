@@ -77,13 +77,7 @@ class SyncRealTimePerformanceReport(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -102,11 +96,11 @@ class SyncRealTimePerformanceReport(ModelNormal):
             'account_ids': ([str],),  # noqa: E501
             'campaign_ids': ([str],),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
-            'end_date': (datetime,),  # noqa: E501
+            'end_date': (datetime, none_type,),  # noqa: E501
             'line_item_ids': ([str],),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'retailer_ids': ([str],),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -173,11 +167,11 @@ class SyncRealTimePerformanceReport(ModelNormal):
             account_ids ([str]): Account ids to filter (plural; base has AccountId for single account).. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter.. [optional]  # noqa: E501
             dimensions ([str]): List of dimensions to report on (real-time: at least one required). Only the supported dimension values are valid.. [optional]  # noqa: E501
-            end_date (datetime): Optional end date/time (inclusive in the request timezone). If empty or not provided, no end date filter is applied.  When provided, used as the inclusive upper bound for the report range.  Hides base Report.EndDate so this report can treat end date as optional (no [Required]).. [optional]  # noqa: E501
+            end_date (datetime, none_type): Optional end date/time (inclusive in the request timezone). If empty or not provided, no end date filter is applied.  When provided, used as the inclusive upper bound for the report range.  Hides base Report.EndDate so this report can treat end date as optional (no [Required]).. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter.. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on (real-time: at least one required). Only the supported metric values are valid.. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. This is not used for security, so no need to check for > 0 elements. [optional]  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -270,11 +264,11 @@ class SyncRealTimePerformanceReport(ModelNormal):
             account_ids ([str]): Account ids to filter (plural; base has AccountId for single account).. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter.. [optional]  # noqa: E501
             dimensions ([str]): List of dimensions to report on (real-time: at least one required). Only the supported dimension values are valid.. [optional]  # noqa: E501
-            end_date (datetime): Optional end date/time (inclusive in the request timezone). If empty or not provided, no end date filter is applied.  When provided, used as the inclusive upper bound for the report range.  Hides base Report.EndDate so this report can treat end date as optional (no [Required]).. [optional]  # noqa: E501
+            end_date (datetime, none_type): Optional end date/time (inclusive in the request timezone). If empty or not provided, no end date filter is applied.  When provided, used as the inclusive upper bound for the report range.  Hides base Report.EndDate so this report can treat end date as optional (no [Required]).. [optional]  # noqa: E501
             line_item_ids ([str]): Line item ids to filter.. [optional]  # noqa: E501
             metrics ([str]): List of metrics to report on (real-time: at least one required). Only the supported metric values are valid.. [optional]  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. This is not used for security, so no need to check for > 0 elements. [optional]  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

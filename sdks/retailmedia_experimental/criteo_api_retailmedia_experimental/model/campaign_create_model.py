@@ -106,7 +106,7 @@ class CampaignCreateModel(ModelNormal):
         """
         lazy_import()
         return {
-            'budget': (DynamicBudgetCreateModel,),  # noqa: E501
+            'budget_details': (DynamicBudgetCreateModel,),  # noqa: E501
             'buy_type': (str,),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
             'name': (str,),  # noqa: E501
@@ -126,7 +126,7 @@ class CampaignCreateModel(ModelNormal):
 
 
     attribute_map = {
-        'budget': 'budget',  # noqa: E501
+        'budget_details': 'budgetDetails',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'name': 'name',  # noqa: E501
@@ -147,11 +147,11 @@ class CampaignCreateModel(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, budget, campaign_type, name, objective, schedule_details, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget_details, campaign_type, name, objective, schedule_details, *args, **kwargs):  # noqa: E501
         """CampaignCreateModel - a model defined in OpenAPI
 
         Args:
-            budget (DynamicBudgetCreateModel):
+            budget_details (DynamicBudgetCreateModel):
             campaign_type (str): Type of campaign, set only on creation.
             name (str):
             objective (str): Objective the campaign is optimized for. The platform derives the line item budgets from the  campaign budget to serve it. SponsoredProducts accepts clicks, conversion and revenue;  OnsiteDisplay accepts impressions.
@@ -227,7 +227,7 @@ class CampaignCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.budget = budget
+        self.budget_details = budget_details
         self.buy_type = buy_type
         self.campaign_type = campaign_type
         self.name = name
@@ -253,11 +253,11 @@ class CampaignCreateModel(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, budget, campaign_type, name, objective, schedule_details, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget_details, campaign_type, name, objective, schedule_details, *args, **kwargs):  # noqa: E501
         """CampaignCreateModel - a model defined in OpenAPI
 
         Args:
-            budget (DynamicBudgetCreateModel):
+            budget_details (DynamicBudgetCreateModel):
             campaign_type (str): Type of campaign, set only on creation.
             name (str):
             objective (str): Objective the campaign is optimized for. The platform derives the line item budgets from the  campaign budget to serve it. SponsoredProducts accepts clicks, conversion and revenue;  OnsiteDisplay accepts impressions.
@@ -331,7 +331,7 @@ class CampaignCreateModel(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.budget = budget
+        self.budget_details = budget_details
         self.buy_type = buy_type
         self.campaign_type = campaign_type
         self.name = name

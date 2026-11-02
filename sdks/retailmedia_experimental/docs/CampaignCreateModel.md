@@ -5,7 +5,7 @@ An object that represents the available options to set when creating a Retail Me
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**budget** | [**DynamicBudgetCreateModel**](DynamicBudgetCreateModel.md) |  | 
+**budget_details** | [**DynamicBudgetCreateModel**](DynamicBudgetCreateModel.md) |  | 
 **campaign_type** | **str** | Type of campaign, set only on creation. | 
 **name** | **str** |  | 
 **objective** | **str** | Objective the campaign is optimized for. The platform derives the line item budgets from the  campaign budget to serve it. SponsoredProducts accepts clicks, conversion and revenue;  OnsiteDisplay accepts impressions. | 

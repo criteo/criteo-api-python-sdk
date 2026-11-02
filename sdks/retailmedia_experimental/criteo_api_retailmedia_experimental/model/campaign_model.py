@@ -121,7 +121,7 @@ class CampaignModel(ModelNormal):
             'account_id': (str, none_type,),  # noqa: E501
             'attribution_settings': (AttributionSettingsModel,),  # noqa: E501
             'bill_by_retailer_id': (str, none_type,),  # noqa: E501
-            'budget': (CampaignBudgetModel,),  # noqa: E501
+            'budget_details': (CampaignBudgetModel,),  # noqa: E501
             'buy_type': (str, none_type,),  # noqa: E501
             'campaign_type': (str, none_type,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
@@ -145,7 +145,7 @@ class CampaignModel(ModelNormal):
         'account_id': 'accountId',  # noqa: E501
         'attribution_settings': 'attributionSettings',  # noqa: E501
         'bill_by_retailer_id': 'billByRetailerId',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
+        'budget_details': 'budgetDetails',  # noqa: E501
         'buy_type': 'buyType',  # noqa: E501
         'campaign_type': 'campaignType',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
@@ -204,7 +204,7 @@ class CampaignModel(ModelNormal):
             account_id (str, none_type): Account ID associated with the campaign, generated internally by Criteo.. [optional]  # noqa: E501
             attribution_settings (AttributionSettingsModel): [optional]  # noqa: E501
             bill_by_retailer_id (str, none_type): The retailer this campaign is associated with, set only on creation. Required when using a  retailer budget balance.. [optional]  # noqa: E501
-            budget (CampaignBudgetModel): [optional]  # noqa: E501
+            budget_details (CampaignBudgetModel): [optional]  # noqa: E501
             buy_type (str, none_type): Buy type of campaign, set only on creation.. [optional]  # noqa: E501
             campaign_type (str, none_type): Type of campaign, set only on creation.. [optional]  # noqa: E501
             company_name (str, none_type): This optional field, exclusively accessible to marketplaces within the European Union (in  compliance with the Digital Service Act - DSA), will display the name of the company  associated with the advertisement.. [optional]  # noqa: E501
@@ -305,7 +305,7 @@ class CampaignModel(ModelNormal):
             account_id (str, none_type): Account ID associated with the campaign, generated internally by Criteo.. [optional]  # noqa: E501
             attribution_settings (AttributionSettingsModel): [optional]  # noqa: E501
             bill_by_retailer_id (str, none_type): The retailer this campaign is associated with, set only on creation. Required when using a  retailer budget balance.. [optional]  # noqa: E501
-            budget (CampaignBudgetModel): [optional]  # noqa: E501
+            budget_details (CampaignBudgetModel): [optional]  # noqa: E501
             buy_type (str, none_type): Buy type of campaign, set only on creation.. [optional]  # noqa: E501
             campaign_type (str, none_type): Type of campaign, set only on creation.. [optional]  # noqa: E501
             company_name (str, none_type): This optional field, exclusively accessible to marketplaces within the European Union (in  compliance with the Digital Service Act - DSA), will display the name of the company  associated with the advertisement.. [optional]  # noqa: E501

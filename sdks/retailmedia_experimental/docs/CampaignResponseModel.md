@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **status** | **str** | Campaign status, derived from the status of Line Items it holds; active if at least  one line item is active. | 
 **updated_at** | **datetime** |  | 
 **bill_by_retailer_id** | **str, none_type** |  | [optional] 
-**budget** | [**CampaignBudgetModel**](CampaignBudgetModel.md) |  | [optional] 
+**budget_details** | [**CampaignBudgetModel**](CampaignBudgetModel.md) |  | [optional] 
 **company_name** | **str, none_type** |  | [optional] 
 **id** | **str, none_type** |  | [optional] 
 **on_behalf_company_name** | **str, none_type** |  | [optional] 

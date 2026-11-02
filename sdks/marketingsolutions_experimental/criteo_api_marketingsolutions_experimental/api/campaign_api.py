@@ -25,7 +25,7 @@ from criteo_api_marketingsolutions_experimental.model.ad_set_audience_link_entit
 from criteo_api_marketingsolutions_experimental.model.ad_set_audience_link_input_entity_v1 import AdSetAudienceLinkInputEntityV1
 from criteo_api_marketingsolutions_experimental.model.ad_set_category_bid_list_response import AdSetCategoryBidListResponse
 from criteo_api_marketingsolutions_experimental.model.ad_set_display_multiplier_list_response import AdSetDisplayMultiplierListResponse
-from criteo_api_marketingsolutions_experimental.model.ad_set_search_request_v26_q1 import AdSetSearchRequestV26Q1
+from criteo_api_marketingsolutions_experimental.model.ad_set_search_request_v27_q1 import AdSetSearchRequestV27Q1
 from criteo_api_marketingsolutions_experimental.model.ad_set_targeting_deal_ids_disable_result_response import AdSetTargetingDealIdsDisableResultResponse
 from criteo_api_marketingsolutions_experimental.model.ad_set_targeting_deal_ids_response import AdSetTargetingDealIdsResponse
 from criteo_api_marketingsolutions_experimental.model.ad_set_targeting_deal_ids_set_result_response import AdSetTargetingDealIdsSetResultResponse
@@ -34,9 +34,9 @@ from criteo_api_marketingsolutions_experimental.model.ad_set_targeting_video_pos
 from criteo_api_marketingsolutions_experimental.model.ad_set_targeting_video_positioning_set_result_response import AdSetTargetingVideoPositioningSetResultResponse
 from criteo_api_marketingsolutions_experimental.model.api_request_of_targeting_entity import ApiRequestOfTargetingEntity
 from criteo_api_marketingsolutions_experimental.model.api_response_of_targeting_entity import ApiResponseOfTargetingEntity
-from criteo_api_marketingsolutions_experimental.model.campaign_search_request_v23_q1 import CampaignSearchRequestV23Q1
-from criteo_api_marketingsolutions_experimental.model.campaign_v23_q1_list_response import CampaignV23Q1ListResponse
+from criteo_api_marketingsolutions_experimental.model.campaign_search_request_v27_q1 import CampaignSearchRequestV27Q1
 from criteo_api_marketingsolutions_experimental.model.campaign_v23_q1_response import CampaignV23Q1Response
+from criteo_api_marketingsolutions_experimental.model.campaign_v27_q1_list_response import CampaignV27Q1ListResponse
 from criteo_api_marketingsolutions_experimental.model.create_ad_set_v26_q1_request import CreateAdSetV26Q1Request
 from criteo_api_marketingsolutions_experimental.model.create_campaign_request import CreateCampaignRequest
 from criteo_api_marketingsolutions_experimental.model.patch_ad_set_category_bid_list_request import PatchAdSetCategoryBidListRequest
@@ -50,7 +50,7 @@ from criteo_api_marketingsolutions_experimental.model.requests_patch_ad_set_v26_
 from criteo_api_marketingsolutions_experimental.model.response_read_ad_set_v26_q1 import ResponseReadAdSetV26Q1
 from criteo_api_marketingsolutions_experimental.model.responses_ad_set_id import ResponsesAdSetId
 from criteo_api_marketingsolutions_experimental.model.responses_ad_set_id_v26_q1 import ResponsesAdSetIdV26Q1
-from criteo_api_marketingsolutions_experimental.model.responses_read_ad_set_v26_q1 import ResponsesReadAdSetV26Q1
+from criteo_api_marketingsolutions_experimental.model.responses_read_ad_set_v27_q1 import ResponsesReadAdSetV27Q1
 from criteo_api_marketingsolutions_experimental.model.seller_report_data_response import SellerReportDataResponse
 from criteo_api_marketingsolutions_experimental.model.seller_report_request_request import SellerReportRequestRequest
 from criteo_api_marketingsolutions_experimental.model.set_ad_set_targeting_deal_ids_request import SetAdSetTargetingDealIdsRequest
@@ -1828,7 +1828,7 @@ class CampaignApi(object):
         )
         self.search_ad_sets_endpoint = _Endpoint(
             settings={
-                'response_type': (ResponsesReadAdSetV26Q1,),
+                'response_type': (ResponsesReadAdSetV27Q1,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1840,7 +1840,7 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'ad_set_search_request_v26_q1',
+                    'ad_set_search_request_v27_q1',
                 ],
                 'required': [],
                 'nullable': [
@@ -1856,13 +1856,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'ad_set_search_request_v26_q1':
-                        (AdSetSearchRequestV26Q1,),
+                    'ad_set_search_request_v27_q1':
+                        (AdSetSearchRequestV27Q1,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'ad_set_search_request_v26_q1': 'body',
+                    'ad_set_search_request_v27_q1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -1879,7 +1879,7 @@ class CampaignApi(object):
         )
         self.search_campaigns_endpoint = _Endpoint(
             settings={
-                'response_type': (CampaignV23Q1ListResponse,),
+                'response_type': (CampaignV27Q1ListResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
@@ -1891,7 +1891,7 @@ class CampaignApi(object):
             },
             params_map={
                 'all': [
-                    'campaign_search_request_v23_q1',
+                    'campaign_search_request_v27_q1',
                 ],
                 'required': [],
                 'nullable': [
@@ -1907,13 +1907,13 @@ class CampaignApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'campaign_search_request_v23_q1':
-                        (CampaignSearchRequestV23Q1,),
+                    'campaign_search_request_v27_q1':
+                        (CampaignSearchRequestV27Q1,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'campaign_search_request_v23_q1': 'body',
+                    'campaign_search_request_v27_q1': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -4918,7 +4918,7 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            ad_set_search_request_v26_q1 (AdSetSearchRequestV26Q1): [optional]
+            ad_set_search_request_v27_q1 (AdSetSearchRequestV27Q1): [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4951,7 +4951,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ResponsesReadAdSetV26Q1
+            ResponsesReadAdSetV27Q1
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4997,7 +4997,7 @@ class CampaignApi(object):
 
 
         Keyword Args:
-            campaign_search_request_v23_q1 (CampaignSearchRequestV23Q1): Filters for searching for campaigns. [optional]
+            campaign_search_request_v27_q1 (CampaignSearchRequestV27Q1): Filters for searching for campaigns. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -5030,7 +5030,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            CampaignV23Q1ListResponse
+            CampaignV27Q1ListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

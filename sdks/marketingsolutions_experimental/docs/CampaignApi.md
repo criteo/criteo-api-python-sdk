@@ -3287,7 +3287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_ad_sets**
-> ResponsesReadAdSetV26Q1 search_ad_sets()
+> ResponsesReadAdSetV27Q1 search_ad_sets()
 
 /experimental/marketing-solutions/ad-sets/search
 
@@ -3302,8 +3302,8 @@ Search for ad sets based on provided criteria.  This returns the full configurat
 import time
 import criteo_api_marketingsolutions_experimental
 from criteo_api_marketingsolutions_experimental.api import campaign_api
-from criteo_api_marketingsolutions_experimental.model.responses_read_ad_set_v26_q1 import ResponsesReadAdSetV26Q1
-from criteo_api_marketingsolutions_experimental.model.ad_set_search_request_v26_q1 import AdSetSearchRequestV26Q1
+from criteo_api_marketingsolutions_experimental.model.ad_set_search_request_v27_q1 import AdSetSearchRequestV27Q1
+from criteo_api_marketingsolutions_experimental.model.responses_read_ad_set_v27_q1 import ResponsesReadAdSetV27Q1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3332,30 +3332,33 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    ad_set_search_request_v26_q1 = AdSetSearchRequestV26Q1(
-        filters=AdSetSearchFilterV26Q1(
-            ad_set_ids=[
-                "ad_set_ids_example",
-            ],
-            advertiser_ids=[
-                "advertiser_ids_example",
-            ],
-            campaign_ids=[
-                "campaign_ids_example",
-            ],
+    ad_set_search_request_v27_q1 = AdSetSearchRequestV27Q1(
+        data=ValueResourceAdSetSearchInputV27Q1(
+            attributes=AdSetSearchInputV27Q1(
+                ad_set_ids=[
+                    "ad_set_ids_example",
+                ],
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+            ),
+            type="type_example",
         ),
-        meta=AdSetSearchRequestMetadataV26Q1(
+        meta=AdSetSearchRequestMetadataV27Q1(
             fields=[
                 "Name",
             ],
         ),
-    ) # AdSetSearchRequestV26Q1 |  (optional)
+    ) # AdSetSearchRequestV27Q1 |  (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # /experimental/marketing-solutions/ad-sets/search
-        api_response = api_instance.search_ad_sets(ad_set_search_request_v26_q1=ad_set_search_request_v26_q1)
+        api_response = api_instance.search_ad_sets(ad_set_search_request_v27_q1=ad_set_search_request_v27_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_experimental.ApiException as e:
         print("Exception when calling CampaignApi->search_ad_sets: %s\n" % e)
@@ -3366,11 +3369,11 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ad_set_search_request_v26_q1** | [**AdSetSearchRequestV26Q1**](AdSetSearchRequestV26Q1.md)|  | [optional]
+ **ad_set_search_request_v27_q1** | [**AdSetSearchRequestV27Q1**](AdSetSearchRequestV27Q1.md)|  | [optional]
 
 ### Return type
 
-[**ResponsesReadAdSetV26Q1**](ResponsesReadAdSetV26Q1.md)
+[**ResponsesReadAdSetV27Q1**](ResponsesReadAdSetV27Q1.md)
 
 ### Authorization
 
@@ -3391,7 +3394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_campaigns**
-> CampaignV23Q1ListResponse search_campaigns()
+> CampaignV27Q1ListResponse search_campaigns()
 
 /experimental/marketing-solutions/campaigns/search
 
@@ -3406,8 +3409,8 @@ Search endpoint for campaigns                A campaign, or in other words a mar
 import time
 import criteo_api_marketingsolutions_experimental
 from criteo_api_marketingsolutions_experimental.api import campaign_api
-from criteo_api_marketingsolutions_experimental.model.campaign_v23_q1_list_response import CampaignV23Q1ListResponse
-from criteo_api_marketingsolutions_experimental.model.campaign_search_request_v23_q1 import CampaignSearchRequestV23Q1
+from criteo_api_marketingsolutions_experimental.model.campaign_v27_q1_list_response import CampaignV27Q1ListResponse
+from criteo_api_marketingsolutions_experimental.model.campaign_search_request_v27_q1 import CampaignSearchRequestV27Q1
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3436,22 +3439,25 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    campaign_search_request_v23_q1 = CampaignSearchRequestV23Q1(
-        filters=CampaignSearchFiltersV23Q1(
-            advertiser_ids=[
-                "advertiser_ids_example",
-            ],
-            campaign_ids=[
-                "campaign_ids_example",
-            ],
+    campaign_search_request_v27_q1 = CampaignSearchRequestV27Q1(
+        data=ValueResourceCampaignSearchInputV27Q1(
+            attributes=CampaignSearchInputV27Q1(
+                advertiser_ids=[
+                    "advertiser_ids_example",
+                ],
+                campaign_ids=[
+                    "campaign_ids_example",
+                ],
+            ),
+            type="type_example",
         ),
-    ) # CampaignSearchRequestV23Q1 | Filters for searching for campaigns (optional)
+    ) # CampaignSearchRequestV27Q1 | Filters for searching for campaigns (optional)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
         # /experimental/marketing-solutions/campaigns/search
-        api_response = api_instance.search_campaigns(campaign_search_request_v23_q1=campaign_search_request_v23_q1)
+        api_response = api_instance.search_campaigns(campaign_search_request_v27_q1=campaign_search_request_v27_q1)
         pprint(api_response)
     except criteo_api_marketingsolutions_experimental.ApiException as e:
         print("Exception when calling CampaignApi->search_campaigns: %s\n" % e)
@@ -3462,11 +3468,11 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **campaign_search_request_v23_q1** | [**CampaignSearchRequestV23Q1**](CampaignSearchRequestV23Q1.md)| Filters for searching for campaigns | [optional]
+ **campaign_search_request_v27_q1** | [**CampaignSearchRequestV27Q1**](CampaignSearchRequestV27Q1.md)| Filters for searching for campaigns | [optional]
 
 ### Return type
 
-[**CampaignV23Q1ListResponse**](CampaignV23Q1ListResponse.md)
+[**CampaignV27Q1ListResponse**](CampaignV27Q1ListResponse.md)
 
 ### Authorization
 

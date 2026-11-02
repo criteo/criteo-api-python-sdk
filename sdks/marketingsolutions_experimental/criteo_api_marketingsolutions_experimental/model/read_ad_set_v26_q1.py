@@ -36,12 +36,14 @@ def lazy_import():
     from criteo_api_marketingsolutions_experimental.model.read_ad_set_budget_v26_q1 import ReadAdSetBudgetV26Q1
     from criteo_api_marketingsolutions_experimental.model.read_ad_set_schedule_v26_q1 import ReadAdSetScheduleV26Q1
     from criteo_api_marketingsolutions_experimental.model.read_ad_set_scheduled_budget_v26_q1 import ReadAdSetScheduledBudgetV26Q1
+    from criteo_api_marketingsolutions_experimental.model.server_to_server_tracking_v26_q1 import ServerToServerTrackingV26Q1
     globals()['AdSetTargetingV26Q1'] = AdSetTargetingV26Q1
     globals()['ReadAdSetAttributionConfigurationV26Q1'] = ReadAdSetAttributionConfigurationV26Q1
     globals()['ReadAdSetBiddingV26Q1'] = ReadAdSetBiddingV26Q1
     globals()['ReadAdSetBudgetV26Q1'] = ReadAdSetBudgetV26Q1
     globals()['ReadAdSetScheduleV26Q1'] = ReadAdSetScheduleV26Q1
     globals()['ReadAdSetScheduledBudgetV26Q1'] = ReadAdSetScheduledBudgetV26Q1
+    globals()['ServerToServerTrackingV26Q1'] = ServerToServerTrackingV26Q1
 
 
 class ReadAdSetV26Q1(ModelNormal):
@@ -69,6 +71,12 @@ class ReadAdSetV26Q1(ModelNormal):
     """
 
     allowed_values = {
+        ('ad_set_type',): {
+            'None': None,
+            'STANDARD': "standard",
+            'APPRETARGETING': "appRetargeting",
+            'UNKNOWN': "unknown",
+        },
         ('destination_environment',): {
             'None': None,
             'UNDEFINED': "undefined",
@@ -127,6 +135,7 @@ class ReadAdSetV26Q1(ModelNormal):
         """
         lazy_import()
         return {
+            'ad_set_type': (str, none_type,),  # noqa: E501
             'advertiser_id': (str, none_type,),  # noqa: E501
             'attribution_configuration': (ReadAdSetAttributionConfigurationV26Q1,),  # noqa: E501
             'bidding': (ReadAdSetBiddingV26Q1,),  # noqa: E501
@@ -139,6 +148,7 @@ class ReadAdSetV26Q1(ModelNormal):
             'objective': (str, none_type,),  # noqa: E501
             'schedule': (ReadAdSetScheduleV26Q1,),  # noqa: E501
             'scheduled_budgets': ([ReadAdSetScheduledBudgetV26Q1], none_type,),  # noqa: E501
+            'server_to_server_trackings': ([ServerToServerTrackingV26Q1], none_type,),  # noqa: E501
             'targeting': (AdSetTargetingV26Q1,),  # noqa: E501
             'video_channel': (str, none_type,),  # noqa: E501
         }
@@ -149,6 +159,7 @@ class ReadAdSetV26Q1(ModelNormal):
 
 
     attribute_map = {
+        'ad_set_type': 'adSetType',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
         'attribution_configuration': 'attributionConfiguration',  # noqa: E501
         'bidding': 'bidding',  # noqa: E501
@@ -161,6 +172,7 @@ class ReadAdSetV26Q1(ModelNormal):
         'objective': 'objective',  # noqa: E501
         'schedule': 'schedule',  # noqa: E501
         'scheduled_budgets': 'scheduledBudgets',  # noqa: E501
+        'server_to_server_trackings': 'serverToServerTrackings',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
         'video_channel': 'videoChannel',  # noqa: E501
     }
@@ -206,6 +218,7 @@ class ReadAdSetV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_set_type (str, none_type): Type of the ad set.  Not returned when field projection (meta.fields) is used in a search.. [optional]  # noqa: E501
             advertiser_id (str, none_type): Advertiser id of the campaign this ad set belongs to  This value is a string-encoded integer.. [optional]  # noqa: E501
             attribution_configuration (ReadAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
             bidding (ReadAdSetBiddingV26Q1): [optional]  # noqa: E501
@@ -218,6 +231,7 @@ class ReadAdSetV26Q1(ModelNormal):
             objective (str, none_type): Ad set objective.                Possible values:  - customAction (previously \"Actions\")  - clicks  - conversions  - displays  - appPromotion (previously \"Installs\")  - revenue  - storeConversions  - value  - reach (previously \"ViewedImpressions\")  - visits  - videoViews (previously \"CompletedVideoViews\"). [optional]  # noqa: E501
             schedule (ReadAdSetScheduleV26Q1): [optional]  # noqa: E501
             scheduled_budgets ([ReadAdSetScheduledBudgetV26Q1], none_type): [optional]  # noqa: E501
+            server_to_server_trackings ([ServerToServerTrackingV26Q1], none_type): MMP / server-to-server tracking URLs. Always present on GET ad-sets/{id} (null when not app retargeting, empty, or unavailable).  Always omitted on search.. [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
         """
@@ -305,6 +319,7 @@ class ReadAdSetV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_set_type (str, none_type): Type of the ad set.  Not returned when field projection (meta.fields) is used in a search.. [optional]  # noqa: E501
             advertiser_id (str, none_type): Advertiser id of the campaign this ad set belongs to  This value is a string-encoded integer.. [optional]  # noqa: E501
             attribution_configuration (ReadAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
             bidding (ReadAdSetBiddingV26Q1): [optional]  # noqa: E501
@@ -317,6 +332,7 @@ class ReadAdSetV26Q1(ModelNormal):
             objective (str, none_type): Ad set objective.                Possible values:  - customAction (previously \"Actions\")  - clicks  - conversions  - displays  - appPromotion (previously \"Installs\")  - revenue  - storeConversions  - value  - reach (previously \"ViewedImpressions\")  - visits  - videoViews (previously \"CompletedVideoViews\"). [optional]  # noqa: E501
             schedule (ReadAdSetScheduleV26Q1): [optional]  # noqa: E501
             scheduled_budgets ([ReadAdSetScheduledBudgetV26Q1], none_type): [optional]  # noqa: E501
+            server_to_server_trackings ([ServerToServerTrackingV26Q1], none_type): MMP / server-to-server tracking URLs. Always present on GET ad-sets/{id} (null when not app retargeting, empty, or unavailable).  Always omitted on search.. [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
             video_channel (str, none_type): [optional]  # noqa: E501
         """

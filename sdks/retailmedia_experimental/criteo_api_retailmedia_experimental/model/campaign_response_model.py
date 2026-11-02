@@ -129,7 +129,7 @@ class CampaignResponseModel(ModelNormal):
             'status': (str,),  # noqa: E501
             'updated_at': (datetime,),  # noqa: E501
             'bill_by_retailer_id': (str, none_type,),  # noqa: E501
-            'budget': (CampaignBudgetModel,),  # noqa: E501
+            'budget_details': (CampaignBudgetModel,),  # noqa: E501
             'company_name': (str, none_type,),  # noqa: E501
             'id': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (str, none_type,),  # noqa: E501
@@ -154,7 +154,7 @@ class CampaignResponseModel(ModelNormal):
         'status': 'status',  # noqa: E501
         'updated_at': 'updatedAt',  # noqa: E501
         'bill_by_retailer_id': 'billByRetailerId',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
+        'budget_details': 'budgetDetails',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'id': 'id',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
@@ -216,7 +216,7 @@ class CampaignResponseModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bill_by_retailer_id (str, none_type): [optional]  # noqa: E501
-            budget (CampaignBudgetModel): [optional]  # noqa: E501
+            budget_details (CampaignBudgetModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501
@@ -331,7 +331,7 @@ class CampaignResponseModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bill_by_retailer_id (str, none_type): [optional]  # noqa: E501
-            budget (CampaignBudgetModel): [optional]  # noqa: E501
+            budget_details (CampaignBudgetModel): [optional]  # noqa: E501
             company_name (str, none_type): [optional]  # noqa: E501
             id (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (str, none_type): [optional]  # noqa: E501

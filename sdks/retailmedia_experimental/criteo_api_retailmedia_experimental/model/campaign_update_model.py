@@ -87,7 +87,7 @@ class CampaignUpdateModel(ModelNormal):
         lazy_import()
         return {
             'attribution_settings': (AttributionSettingsUpdateModel,),  # noqa: E501
-            'budget': (DynamicBudgetUpdateModel,),  # noqa: E501
+            'budget_details': (DynamicBudgetUpdateModel,),  # noqa: E501
             'company_name': (StringNillableV2,),  # noqa: E501
             'name': (str, none_type,),  # noqa: E501
             'on_behalf_company_name': (StringNillableV2,),  # noqa: E501
@@ -101,7 +101,7 @@ class CampaignUpdateModel(ModelNormal):
 
     attribute_map = {
         'attribution_settings': 'attributionSettings',  # noqa: E501
-        'budget': 'budget',  # noqa: E501
+        'budget_details': 'budgetDetails',  # noqa: E501
         'company_name': 'companyName',  # noqa: E501
         'name': 'name',  # noqa: E501
         'on_behalf_company_name': 'onBehalfCompanyName',  # noqa: E501
@@ -150,7 +150,7 @@ class CampaignUpdateModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attribution_settings (AttributionSettingsUpdateModel): [optional]  # noqa: E501
-            budget (DynamicBudgetUpdateModel): [optional]  # noqa: E501
+            budget_details (DynamicBudgetUpdateModel): [optional]  # noqa: E501
             company_name (StringNillableV2): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (StringNillableV2): [optional]  # noqa: E501
@@ -241,7 +241,7 @@ class CampaignUpdateModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             attribution_settings (AttributionSettingsUpdateModel): [optional]  # noqa: E501
-            budget (DynamicBudgetUpdateModel): [optional]  # noqa: E501
+            budget_details (DynamicBudgetUpdateModel): [optional]  # noqa: E501
             company_name (StringNillableV2): [optional]  # noqa: E501
             name (str, none_type): [optional]  # noqa: E501
             on_behalf_company_name (StringNillableV2): [optional]  # noqa: E501

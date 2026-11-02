@@ -5,6 +5,7 @@ Ad set read model.                The ad set is the configuration unit that defi
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ad_set_type** | **str, none_type** | Type of the ad set.  Not returned when field projection (meta.fields) is used in a search. | [optional] 
 **advertiser_id** | **str, none_type** | Advertiser id of the campaign this ad set belongs to  This value is a string-encoded integer. | [optional] 
 **attribution_configuration** | [**ReadAdSetAttributionConfigurationV26Q1**](ReadAdSetAttributionConfigurationV26Q1.md) |  | [optional] 
 **bidding** | [**ReadAdSetBiddingV26Q1**](ReadAdSetBiddingV26Q1.md) |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **objective** | **str, none_type** | Ad set objective.                Possible values:  - customAction (previously \&quot;Actions\&quot;)  - clicks  - conversions  - displays  - appPromotion (previously \&quot;Installs\&quot;)  - revenue  - storeConversions  - value  - reach (previously \&quot;ViewedImpressions\&quot;)  - visits  - videoViews (previously \&quot;CompletedVideoViews\&quot;) | [optional] 
 **schedule** | [**ReadAdSetScheduleV26Q1**](ReadAdSetScheduleV26Q1.md) |  | [optional] 
 **scheduled_budgets** | [**[ReadAdSetScheduledBudgetV26Q1], none_type**](ReadAdSetScheduledBudgetV26Q1.md) |  | [optional] 
+**server_to_server_trackings** | [**[ServerToServerTrackingV26Q1], none_type**](ServerToServerTrackingV26Q1.md) | MMP / server-to-server tracking URLs. Always present on GET ad-sets/{id} (null when not app retargeting, empty, or unavailable).  Always omitted on search. | [optional] 
 **targeting** | [**AdSetTargetingV26Q1**](AdSetTargetingV26Q1.md) |  | [optional] 
 **video_channel** | **str, none_type** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

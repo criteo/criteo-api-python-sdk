@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **account_id** | **str, none_type** | Account ID associated with the campaign, generated internally by Criteo. | [optional] 
 **attribution_settings** | [**AttributionSettingsModel**](AttributionSettingsModel.md) |  | [optional] 
 **bill_by_retailer_id** | **str, none_type** | The retailer this campaign is associated with, set only on creation. Required when using a  retailer budget balance. | [optional] 
-**budget** | [**CampaignBudgetModel**](CampaignBudgetModel.md) |  | [optional] 
+**budget_details** | [**CampaignBudgetModel**](CampaignBudgetModel.md) |  | [optional] 
 **buy_type** | **str, none_type** | Buy type of campaign, set only on creation. | [optional] 
 **campaign_type** | **str, none_type** | Type of campaign, set only on creation. | [optional] 
 **company_name** | **str, none_type** | This optional field, exclusively accessible to marketplaces within the European Union (in  compliance with the Digital Service Act - DSA), will display the name of the company  associated with the advertisement. | [optional] 

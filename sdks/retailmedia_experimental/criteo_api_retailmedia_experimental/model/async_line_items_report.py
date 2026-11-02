@@ -74,6 +74,7 @@ class AsyncLineItemsReport(ModelNormal):
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('click_attribution_window',): {
+            'None': None,
             'NONE': "none",
             '7D': "7D",
             '14D': "14D",
@@ -174,6 +175,7 @@ class AsyncLineItemsReport(ModelNormal):
             'MAKEGOODSPEND': "makeGoodSpend",
         },
         ('report_type',): {
+            'None': None,
             'SUMMARY': "summary",
             'PAGETYPE': "pageType",
             'KEYWORD': "keyword",
@@ -206,6 +208,7 @@ class AsyncLineItemsReport(ModelNormal):
             'CONQUESTING': "conquesting",
         },
         ('view_attribution_window',): {
+            'None': None,
             'NONE': "none",
             '1D': "1D",
             '7D': "7D",
@@ -217,13 +220,7 @@ class AsyncLineItemsReport(ModelNormal):
     validations = {
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -244,20 +241,20 @@ class AsyncLineItemsReport(ModelNormal):
             'budget_models': ([str],),  # noqa: E501
             'buy_types': ([str],),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
-            'click_attribution_window': (str,),  # noqa: E501
+            'click_attribution_window': (str, none_type,),  # noqa: E501
             'dimensions': ([str],),  # noqa: E501
             'format': (str,),  # noqa: E501
-            'id': (str,),  # noqa: E501
+            'id': (str, none_type,),  # noqa: E501
             'ids': ([str],),  # noqa: E501
             'media_type': (str,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
-            'report_type': (str,),  # noqa: E501
+            'report_type': (str, none_type,),  # noqa: E501
             'sales_channel': (str,),  # noqa: E501
             'search_term_targetings': ([str],),  # noqa: E501
             'search_term_types': ([str],),  # noqa: E501
             'targeted_keyword_types': ([str],),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
-            'view_attribution_window': (str,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
+            'view_attribution_window': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -337,20 +334,20 @@ class AsyncLineItemsReport(ModelNormal):
             budget_models ([str]): Filter on the budget model: CriteoBudget, RetailerBudget. [optional]  # noqa: E501
             buy_types ([str]): Filter on the buy type: auction, preferredDeals, sponsorship. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            id (str): Line Item id to report on. [optional]  # noqa: E501
+            id (str, none_type): Line Item id to report on. [optional]  # noqa: E501
             ids ([str]): Line Item ids to report on. [optional]  # noqa: E501
             media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            report_type (str, none_type): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
             targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -446,20 +443,20 @@ class AsyncLineItemsReport(ModelNormal):
             budget_models ([str]): Filter on the budget model: CriteoBudget, RetailerBudget. [optional]  # noqa: E501
             buy_types ([str]): Filter on the buy type: auction, preferredDeals, sponsorship. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             dimensions ([str]): List of dimensions to report on. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
-            id (str): Line Item id to report on. [optional]  # noqa: E501
+            id (str, none_type): Line Item id to report on. [optional]  # noqa: E501
             ids ([str]): Line Item ids to report on. [optional]  # noqa: E501
             media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             metrics ([str]): List of metrics to report on. [optional]  # noqa: E501
-            report_type (str): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
+            report_type (str, none_type): Type of report, if no dimensions and metrics are provided, falls back to summary reportType. [optional] if omitted the server will use the default value of "summary"  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             search_term_targetings ([str]): Filter on the type of search term targeting: unknown, automatic, manual. [optional]  # noqa: E501
             search_term_types ([str]): Filter on the type of search term type: unknown, searched, entered. [optional]  # noqa: E501
             targeted_keyword_types ([str]): Filter on targeted keyword type: unknown, generic, branded, conquesting. [optional]  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -41,6 +41,7 @@ from criteo_api_retailmedia_experimental.model.delete_line_item_products_list_re
 from criteo_api_retailmedia_experimental.model.demand_search_request import DemandSearchRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_enriched_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchEnrichedResponseAndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_creative_search_response_and_metadata import EntityResourceCollectionOutcomeCreativeSearchResponseAndMetadata
+from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_of_retailer_result_v2_and_metadata import EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_collection_outcome_v2_of_change_history_entry_response_and_sdk_page_metadata import EntityResourceCollectionOutcomeV2OfChangeHistoryEntryResponseAndSdkPageMetadata
 from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_search_enriched_request import EntityResourceInputCreativeSearchEnrichedRequest
 from criteo_api_retailmedia_experimental.model.entity_resource_input_creative_search_request import EntityResourceInputCreativeSearchRequest
@@ -48,6 +49,7 @@ from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_catalo
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_experimental.model.external_create_line_item_model_request import ExternalCreateLineItemModelRequest
 from criteo_api_retailmedia_experimental.model.external_patch_line_item_model_request import ExternalPatchLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.line_item_check_collection_response import LineItemCheckCollectionResponse
 from criteo_api_retailmedia_experimental.model.line_item_creatives_response import LineItemCreativesResponse
 from criteo_api_retailmedia_experimental.model.line_item_details_response import LineItemDetailsResponse
 from criteo_api_retailmedia_experimental.model.line_item_list_response_with_pagination import LineItemListResponseWithPagination
@@ -66,6 +68,7 @@ from criteo_api_retailmedia_experimental.model.target_list_response_with_page_me
 from criteo_api_retailmedia_experimental.model.upsert_line_item_creatives_request import UpsertLineItemCreativesRequest
 from criteo_api_retailmedia_experimental.model.upsert_line_item_creatives_response import UpsertLineItemCreativesResponse
 from criteo_api_retailmedia_experimental.model.value_resource_input_line_item_budget_cap_out_history_request import ValueResourceInputLineItemBudgetCapOutHistoryRequest
+from criteo_api_retailmedia_experimental.model.value_resource_input_of_retailer_search_request_v2 import ValueResourceInputOfRetailerSearchRequestV2
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_sponsored_products_line_item_create_request_model import ValueResourceInputOfSponsoredProductsLineItemCreateRequestModel
 from criteo_api_retailmedia_experimental.model.value_resource_input_of_sponsored_products_line_item_update_request_model import ValueResourceInputOfSponsoredProductsLineItemUpdateRequestModel
 from criteo_api_retailmedia_experimental.model.value_resource_outcome_line_item_budget_cap_out_history_response import ValueResourceOutcomeLineItemBudgetCapOutHistoryResponse
@@ -606,6 +609,64 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
+        self.delete_targets_by_line_item_id_endpoint = _Endpoint(
+            settings={
+                'response_type': (TargetListResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/targets/delete',
+                'operation_id': 'delete_targets_by_line_item_id',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'line_item_id',
+                    'target_list_request',
+                ],
+                'required': [
+                    'line_item_id',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'line_item_id':
+                        (str,),
+                    'target_list_request':
+                        (TargetListRequest,),
+                },
+                'attribute_map': {
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'line_item_id': 'path',
+                    'target_list_request': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
         self.fetch_creatives_endpoint = _Endpoint(
             settings={
                 'response_type': (LineItemCreativesResponse,),
@@ -993,6 +1054,66 @@ class CampaignApi(object):
                 'location_map': {
                     'account_id': 'path',
                     'creative_id': 'path',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.get_external_line_item_checks_endpoint = _Endpoint(
+            settings={
+                'response_type': (LineItemCheckCollectionResponse,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/diagnostics/line-item-checks',
+                'operation_id': 'get_external_line_item_checks',
+                'http_method': 'GET',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'as_approved',
+                    'fields',
+                    'line_item_id',
+                ],
+                'required': [],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'as_approved':
+                        (bool,),
+                    'fields':
+                        (str,),
+                    'line_item_id':
+                        (str,),
+                },
+                'attribute_map': {
+                    'as_approved': 'as-approved',
+                    'fields': 'fields',
+                    'line_item_id': 'line-item-id',
+                },
+                'location_map': {
+                    'as_approved': 'query',
+                    'fields': 'query',
+                    'line_item_id': 'query',
                 },
                 'collection_format_map': {
                 }
@@ -1637,6 +1758,87 @@ class CampaignApi(object):
                 'location_map': {
                     'account_id': 'path',
                     'entity_resource_input_creative_search_enriched_request': 'body',
+                    'limit': 'query',
+                    'offset': 'query',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    'application/json'
+                ],
+                'content_type': [
+                    'application/json'
+                ]
+            },
+            api_client=api_client
+        )
+        self.search_account_retailers_endpoint = _Endpoint(
+            settings={
+                'response_type': (EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata,),
+                'auth': [
+                    'oauth',
+                    'oauth'
+                ],
+                'endpoint_path': '/experimental/retail-media/accounts/{accountId}/retailers/search',
+                'operation_id': 'search_account_retailers',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'account_id',
+                    'value_resource_input_of_retailer_search_request_v2',
+                    'limit',
+                    'offset',
+                ],
+                'required': [
+                    'account_id',
+                    'value_resource_input_of_retailer_search_request_v2',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                    'limit',
+                    'offset',
+                ]
+            },
+            root_map={
+                'validations': {
+                    ('limit',): {
+
+                        'inclusive_maximum': 100,
+                        'inclusive_minimum': 1,
+                    },
+                    ('offset',): {
+
+                        'inclusive_maximum': 2147483647,
+                        'inclusive_minimum': 0,
+                    },
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'account_id':
+                        (str,),
+                    'value_resource_input_of_retailer_search_request_v2':
+                        (ValueResourceInputOfRetailerSearchRequestV2,),
+                    'limit':
+                        (int,),
+                    'offset':
+                        (int,),
+                },
+                'attribute_map': {
+                    'account_id': 'accountId',
+                    'limit': 'limit',
+                    'offset': 'offset',
+                },
+                'location_map': {
+                    'account_id': 'path',
+                    'value_resource_input_of_retailer_search_request_v2': 'body',
                     'limit': 'query',
                     'offset': 'query',
                 },
@@ -3020,6 +3222,90 @@ class CampaignApi(object):
             delete_line_item_products_list_request
         return self.delete_products_endpoint.call_with_http_info(**kwargs)
 
+    def delete_targets_by_line_item_id(
+        self,
+        line_item_id,
+        **kwargs
+    ):
+        """/experimental/retail-media/line-items/{line-item-id}/targets/delete  # noqa: E501
+
+        Deletes Targets  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.delete_targets_by_line_item_id(line_item_id, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            line_item_id (str): Unique identifier for the line item
+
+        Keyword Args:
+            target_list_request (TargetListRequest): [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TargetListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['line_item_id'] = \
+            line_item_id
+        return self.delete_targets_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+
     def fetch_creatives(
         self,
         line_item_id,
@@ -3610,6 +3896,87 @@ class CampaignApi(object):
         kwargs['creative_id'] = \
             creative_id
         return self.get_creative_endpoint.call_with_http_info(**kwargs)
+
+    def get_external_line_item_checks(
+        self,
+        **kwargs
+    ):
+        """/experimental/retail-media/diagnostics/line-item-checks  # noqa: E501
+
+        Retrieve external diagnostics for a line item <br /> Retrieves a diagnostic report for a line item accessible to the caller.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.get_external_line_item_checks(async_req=True)
+        >>> result = thread.get()
+
+
+        Keyword Args:
+            as_approved (bool): When true, evaluates the approved Onsite Display line item when one exists. This parameter has no effect for Sponsored Products line items.. [optional] if omitted the server will use the default value of True
+            fields (str): A comma-separated list of optional attributes to return: context, issues, and parameters. Fixed attributes status and systemData are always returned; requesting them produces a warning.. [optional]
+            line_item_id (str): The external identifier of the line item to evaluate.. [optional]
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            LineItemCheckCollectionResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        return self.get_external_line_item_checks_endpoint.call_with_http_info(**kwargs)
 
     def get_line_item(
         self,
@@ -4388,6 +4755,95 @@ class CampaignApi(object):
             entity_resource_input_creative_search_enriched_request
         return self.search_account_creatives_enriched_endpoint.call_with_http_info(**kwargs)
 
+    def search_account_retailers(
+        self,
+        account_id,
+        value_resource_input_of_retailer_search_request_v2,
+        **kwargs
+    ):
+        """/experimental/retail-media/accounts/{accountId}/retailers/search  # noqa: E501
+
+        Searches for retailers associated with the specified account and returns budget model availability for each retailer  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.search_account_retailers(account_id, value_resource_input_of_retailer_search_request_v2, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            account_id (str): The external account identifier
+            value_resource_input_of_retailer_search_request_v2 (ValueResourceInputOfRetailerSearchRequestV2): The search request containing filtering parameters
+
+        Keyword Args:
+            limit (int): The maximum number of items to return. Must be between 1 and 100. Default is 5.. [optional] if omitted the server will use the default value of 5
+            offset (int): The number of items to skip before starting to collect the result set. Default is 0.. [optional] if omitted the server will use the default value of 0
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            EntityResourceCollectionOutcomeOfRetailerResultV2AndMetadata
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['account_id'] = \
+            account_id
+        kwargs['value_resource_input_of_retailer_search_request_v2'] = \
+            value_resource_input_of_retailer_search_request_v2
+        return self.search_account_retailers_endpoint.call_with_http_info(**kwargs)
+
     def search_campaigns(
         self,
         account_id,
@@ -4395,7 +4851,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/accounts/{account-id}/campaigns/search  # noqa: E501
 
-        Searches campaigns under an account using optional filters and pagination.  Budgets are sourced from the search index, so they lag a campaign that has just changed.  Search does not perform Kobalos enrichment, so drawable balance ids are not included.  # noqa: E501
+        Searches campaigns under an account using optional filters and pagination.  Budgets and their status come from the search index.  Search does not perform Kobalos enrichment, so drawable balance ids are not included.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

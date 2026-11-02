@@ -110,6 +110,7 @@ class AsyncOffsiteReport(ModelNormal):
             'LANDINGRATE': "landingRate",
         },
         ('buy_type',): {
+            'None': None,
             'AUCTION': "auction",
             'PREFERREDDEALS': "preferredDeals",
             'SPONSORSHIP': "sponsorship",
@@ -120,6 +121,7 @@ class AsyncOffsiteReport(ModelNormal):
             'ONSITEDISPLAYS': "onSiteDisplays",
         },
         ('click_attribution_window',): {
+            'None': None,
             'NONE': "none",
             '7D': "7D",
             '14D': "14D",
@@ -143,6 +145,7 @@ class AsyncOffsiteReport(ModelNormal):
             'ALL': "all",
         },
         ('view_attribution_window',): {
+            'None': None,
             'NONE': "none",
             '1D': "1D",
             '7D': "7D",
@@ -160,13 +163,7 @@ class AsyncOffsiteReport(ModelNormal):
         },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -186,18 +183,18 @@ class AsyncOffsiteReport(ModelNormal):
             'end_date': (datetime,),  # noqa: E501
             'metrics': ([str],),  # noqa: E501
             'start_date': (datetime,),  # noqa: E501
-            'buy_type': (str,),  # noqa: E501
+            'buy_type': (str, none_type,),  # noqa: E501
             'campaign_ids': ([str],),  # noqa: E501
             'campaign_type': (str,),  # noqa: E501
-            'click_attribution_window': (str,),  # noqa: E501
+            'click_attribution_window': (str, none_type,),  # noqa: E501
             'creative_ids': ([str],),  # noqa: E501
             'format': (str,),  # noqa: E501
             'line_item_ids': ([str],),  # noqa: E501
             'media_type': (str,),  # noqa: E501
             'retailer_ids': ([str],),  # noqa: E501
             'sales_channel': (str,),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
-            'view_attribution_window': (str,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
+            'view_attribution_window': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -273,18 +270,18 @@ class AsyncOffsiteReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            buy_type (str): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             creative_ids ([str]): Creative ids to filter. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
             media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -382,18 +379,18 @@ class AsyncOffsiteReport(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            buy_type (str): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
+            buy_type (str, none_type): Filter on buy type: Auction, Preferred Deals or Sponsorship. [optional]  # noqa: E501
             campaign_ids ([str]): Campaign ids to filter. [optional]  # noqa: E501
             campaign_type (str): Filter the type of campaigns to report on: sponsoredProducts or onSiteDisplays. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            click_attribution_window (str): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            click_attribution_window (str, none_type): Click attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
             creative_ids ([str]): Creative ids to filter. [optional]  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json-compact"  # noqa: E501
             line_item_ids ([str]): Line item ids to filter. [optional]  # noqa: E501
             media_type (str): Filter on the type of media: unknown, display, video. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             retailer_ids ([str]): Retailer ids to filter. [optional]  # noqa: E501
             sales_channel (str): Filter on specific sales channel: offline or online. [optional] if omitted the server will use the default value of "all"  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
-            view_attribution_window (str): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            view_attribution_window (str, none_type): View attribution window. [optional] if omitted the server will use the default value of "none"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

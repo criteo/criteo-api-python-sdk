@@ -118,13 +118,7 @@ class AsyncFillRateReport(ModelNormal):
         },
     }
 
-    @cached_property
-    def additional_properties_type():
-        """
-        This must be a method because a model may have properties that are
-        of type self, this must run after the class is loaded
-        """
-        return (bool, date, datetime, dict, float, int, list, str, none_type,)  # noqa: E501
+    additional_properties_type = None
 
     _nullable = False
 
@@ -146,7 +140,7 @@ class AsyncFillRateReport(ModelNormal):
             'supply_account_ids': ([str],),  # noqa: E501
             'ad_server_type': (str,),  # noqa: E501
             'format': (str,),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
+            'timezone': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -215,7 +209,7 @@ class AsyncFillRateReport(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             ad_server_type (str): Filter on the type of the ad server: criteo, gam, all. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -315,7 +309,7 @@ class AsyncFillRateReport(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             ad_server_type (str): Filter on the type of the ad server: criteo, gam, all. [optional] if omitted the server will use the default value of "all"  # noqa: E501
             format (str): Format of the output. [optional] if omitted the server will use the default value of "json"  # noqa: E501
-            timezone (str): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
+            timezone (str, none_type): Time zone : see criteo developer portal for supported time zones. [optional] if omitted the server will use the default value of "UTC"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

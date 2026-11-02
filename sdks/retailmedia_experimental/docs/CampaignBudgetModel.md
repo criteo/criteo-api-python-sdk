@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **pacing** | [**PacingModel**](PacingModel.md) |  | [optional] 
 **remaining** | **float, none_type** | Amount left under the cap. Null when the campaign is uncapped. | [optional] 
 **spent** | **float, none_type** | Amount spent so far. | [optional] 
+**status** | **str, none_type** | Which budget cap, if any, stops the campaign from spending. Omitted when no status is indexed, Unknown when the indexed one is not recognized. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -55,11 +55,6 @@ class DeleteLineItemProductsInput(ModelNormal):
     """
 
     allowed_values = {
-        ('product_type',): {
-            'UNKNOWN': "Unknown",
-            'DISPLAYPRODUCT': "DisplayProduct",
-            'SPONSOREDPRODUCT': "SponsoredProduct",
-        },
     }
 
     validations = {
@@ -80,7 +75,6 @@ class DeleteLineItemProductsInput(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'product_type': (str,),  # noqa: E501
             'product_ids': ([str], none_type,),  # noqa: E501
         }
 
@@ -90,7 +84,6 @@ class DeleteLineItemProductsInput(ModelNormal):
 
 
     attribute_map = {
-        'product_type': 'productType',  # noqa: E501
         'product_ids': 'productIds',  # noqa: E501
     }
 
@@ -101,11 +94,8 @@ class DeleteLineItemProductsInput(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, product_type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, *args, **kwargs):  # noqa: E501
         """DeleteLineItemProductsInput - a model defined in OpenAPI
-
-        Args:
-            product_type (str): The type of the products being deleted.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -170,7 +160,6 @@ class DeleteLineItemProductsInput(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.product_type = product_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -191,11 +180,8 @@ class DeleteLineItemProductsInput(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, product_type, *args, **kwargs):  # noqa: E501
+    def __init__(self, *args, **kwargs):  # noqa: E501
         """DeleteLineItemProductsInput - a model defined in OpenAPI
-
-        Args:
-            product_type (str): The type of the products being deleted.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -258,7 +244,6 @@ class DeleteLineItemProductsInput(ModelNormal):
         self._configuration = _configuration
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
-        self.product_type = product_type
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

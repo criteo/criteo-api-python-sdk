@@ -30,10 +30,8 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.external_conquesting_settings import ExternalConquestingSettings
     from criteo_api_retailmedia_experimental.model.external_flight_dates_model import ExternalFlightDatesModel
     from criteo_api_retailmedia_experimental.model.onsite_display_line_item_details import OnsiteDisplayLineItemDetails
-    globals()['ExternalConquestingSettings'] = ExternalConquestingSettings
     globals()['ExternalFlightDatesModel'] = ExternalFlightDatesModel
     globals()['OnsiteDisplayLineItemDetails'] = OnsiteDisplayLineItemDetails
 
@@ -100,7 +98,6 @@ class ExternalLineItem(ModelNormal):
         return {
             'budget_status': (str, none_type,),  # noqa: E501
             'campaign_id': (str, none_type,),  # noqa: E501
-            'conquesting_settings': (ExternalConquestingSettings,),  # noqa: E501
             'effective_flight_dates': (ExternalFlightDatesModel,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
@@ -119,7 +116,6 @@ class ExternalLineItem(ModelNormal):
     attribute_map = {
         'budget_status': 'budgetStatus',  # noqa: E501
         'campaign_id': 'campaignId',  # noqa: E501
-        'conquesting_settings': 'conquestingSettings',  # noqa: E501
         'effective_flight_dates': 'effectiveFlightDates',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
@@ -173,7 +169,6 @@ class ExternalLineItem(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            conquesting_settings (ExternalConquestingSettings): [optional]  # noqa: E501
             effective_flight_dates (ExternalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
@@ -269,7 +264,6 @@ class ExternalLineItem(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             budget_status (str, none_type): Indicates whether the line item has budget headroom to serve ads.. [optional]  # noqa: E501
             campaign_id (str, none_type): The campaign id of the associated campaign.. [optional]  # noqa: E501
-            conquesting_settings (ExternalConquestingSettings): [optional]  # noqa: E501
             effective_flight_dates (ExternalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501

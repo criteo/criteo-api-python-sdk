@@ -61,6 +61,14 @@ class CampaignBudgetModel(ModelNormal):
     """
 
     allowed_values = {
+        ('status',): {
+            'None': None,
+            'UNKNOWN': "Unknown",
+            'BUDGETAVAILABLE': "BudgetAvailable",
+            'DAILYBUDGETREACHED': "DailyBudgetReached",
+            'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
+            'TOTALBUDGETREACHED': "TotalBudgetReached",
+        },
     }
 
     validations = {
@@ -88,6 +96,7 @@ class CampaignBudgetModel(ModelNormal):
             'pacing': (PacingModel,),  # noqa: E501
             'remaining': (float, none_type,),  # noqa: E501
             'spent': (float, none_type,),  # noqa: E501
+            'status': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -102,6 +111,7 @@ class CampaignBudgetModel(ModelNormal):
         'pacing': 'pacing',  # noqa: E501
         'remaining': 'remaining',  # noqa: E501
         'spent': 'spent',  # noqa: E501
+        'status': 'status',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,6 +161,7 @@ class CampaignBudgetModel(ModelNormal):
             pacing (PacingModel): [optional]  # noqa: E501
             remaining (float, none_type): Amount left under the cap. Null when the campaign is uncapped.. [optional]  # noqa: E501
             spent (float, none_type): Amount spent so far.. [optional]  # noqa: E501
+            status (str, none_type): Which budget cap, if any, stops the campaign from spending. Omitted when no status is indexed, Unknown when the indexed one is not recognized.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -242,6 +253,7 @@ class CampaignBudgetModel(ModelNormal):
             pacing (PacingModel): [optional]  # noqa: E501
             remaining (float, none_type): Amount left under the cap. Null when the campaign is uncapped.. [optional]  # noqa: E501
             spent (float, none_type): Amount spent so far.. [optional]  # noqa: E501
+            status (str, none_type): Which budget cap, if any, stops the campaign from spending. Omitted when no status is indexed, Unknown when the indexed one is not recognized.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

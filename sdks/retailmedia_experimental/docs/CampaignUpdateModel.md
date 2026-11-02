@@ -6,7 +6,7 @@ Fields of a campaign that may be changed after creation.  Omitted fields remain 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attribution_settings** | [**AttributionSettingsUpdateModel**](AttributionSettingsUpdateModel.md) |  | [optional] 
-**budget** | [**DynamicBudgetUpdateModel**](DynamicBudgetUpdateModel.md) |  | [optional] 
+**budget_details** | [**DynamicBudgetUpdateModel**](DynamicBudgetUpdateModel.md) |  | [optional] 
 **company_name** | [**StringNillableV2**](StringNillableV2.md) |  | [optional] 
 **name** | **str, none_type** |  | [optional] 
 **on_behalf_company_name** | [**StringNillableV2**](StringNillableV2.md) |  | [optional] 

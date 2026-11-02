@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **duration** | **str, none_type** | Duration of the column | [optional] 
 **timezone** | **str, none_type** | Timezone of the column | [optional] 
 **title** | **str, none_type** | Title of the exported column | [optional] 
-**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
