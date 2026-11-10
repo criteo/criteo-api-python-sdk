@@ -23,8 +23,6 @@ from criteo_api_retailmedia_experimental.model_utils import (  # noqa: F401
 )
 from criteo_api_retailmedia_experimental.model.add_line_item_products_list_request import AddLineItemProductsListRequest
 from criteo_api_retailmedia_experimental.model.add_line_item_products_list_response import AddLineItemProductsListResponse
-from criteo_api_retailmedia_experimental.model.bidding_settings_request import BiddingSettingsRequest
-from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
 from criteo_api_retailmedia_experimental.model.campaign_create_model_request import CampaignCreateModelRequest
 from criteo_api_retailmedia_experimental.model.campaign_model_response import CampaignModelResponse
 from criteo_api_retailmedia_experimental.model.campaign_response_model_list_response_with_campaign_search_metadata_model import CampaignResponseModelListResponseWithCampaignSearchMetadataModel
@@ -49,11 +47,13 @@ from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_catalo
 from criteo_api_retailmedia_experimental.model.entity_resource_outcome_of_sponsored_products_line_item import EntityResourceOutcomeOfSponsoredProductsLineItem
 from criteo_api_retailmedia_experimental.model.external_create_line_item_model_request import ExternalCreateLineItemModelRequest
 from criteo_api_retailmedia_experimental.model.external_patch_line_item_model_request import ExternalPatchLineItemModelRequest
+from criteo_api_retailmedia_experimental.model.line_item_bidding_request_request import LineItemBiddingRequestRequest
+from criteo_api_retailmedia_experimental.model.line_item_bidding_response_response import LineItemBiddingResponseResponse
 from criteo_api_retailmedia_experimental.model.line_item_check_collection_response import LineItemCheckCollectionResponse
 from criteo_api_retailmedia_experimental.model.line_item_creatives_response import LineItemCreativesResponse
 from criteo_api_retailmedia_experimental.model.line_item_details_response import LineItemDetailsResponse
 from criteo_api_retailmedia_experimental.model.line_item_list_response_with_pagination import LineItemListResponseWithPagination
-from criteo_api_retailmedia_experimental.model.line_item_min_bids_response import LineItemMinBidsResponse
+from criteo_api_retailmedia_experimental.model.line_item_min_bid_response_response import LineItemMinBidResponseResponse
 from criteo_api_retailmedia_experimental.model.line_item_product_list_response_v2_with_pagination_meta import LineItemProductListResponseV2WithPaginationMeta
 from criteo_api_retailmedia_experimental.model.line_item_response_v2 import LineItemResponseV2
 from criteo_api_retailmedia_experimental.model.outcome import Outcome
@@ -793,15 +793,15 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_bidding_strategy_by_line_item_id_endpoint = _Endpoint(
+        self.get_bidding_by_line_item_id_endpoint = _Endpoint(
             settings={
-                'response_type': (BiddingSettingsResponse,),
+                'response_type': (LineItemBiddingResponseResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/bidding-strategy',
-                'operation_id': 'get_bidding_strategy_by_line_item_id',
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/bidding',
+                'operation_id': 'get_bidding_by_line_item_id',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1178,15 +1178,15 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.get_min_bids_by_line_item_id_endpoint = _Endpoint(
+        self.get_min_bid_by_line_item_id_endpoint = _Endpoint(
             settings={
-                'response_type': (LineItemMinBidsResponse,),
+                'response_type': (LineItemMinBidResponseResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/min-bids',
-                'operation_id': 'get_min_bids_by_line_item_id',
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/min-bid',
+                'operation_id': 'get_min_bid_by_line_item_id',
                 'http_method': 'GET',
                 'servers': None,
             },
@@ -1443,6 +1443,7 @@ class CampaignApi(object):
                     },
                     ('offset',): {
 
+                        'inclusive_maximum': 9999,
                         'inclusive_minimum': 0,
                     },
                 },
@@ -1550,6 +1551,7 @@ class CampaignApi(object):
                     },
                     ('offset',): {
 
+                        'inclusive_maximum': 9999,
                         'inclusive_minimum': 0,
                     },
                 },
@@ -1913,22 +1915,22 @@ class CampaignApi(object):
             },
             api_client=api_client
         )
-        self.set_bidding_strategy_by_line_item_id_endpoint = _Endpoint(
+        self.set_bidding_by_line_item_id_endpoint = _Endpoint(
             settings={
-                'response_type': (BiddingSettingsResponse,),
+                'response_type': (LineItemBiddingResponseResponse,),
                 'auth': [
                     'oauth',
                     'oauth'
                 ],
-                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy',
-                'operation_id': 'set_bidding_strategy_by_line_item_id',
+                'endpoint_path': '/experimental/retail-media/line-items/{line-item-id}/set-bidding',
+                'operation_id': 'set_bidding_by_line_item_id',
                 'http_method': 'POST',
                 'servers': None,
             },
             params_map={
                 'all': [
                     'line_item_id',
-                    'bidding_settings_request',
+                    'line_item_bidding_request_request',
                 ],
                 'required': [
                     'line_item_id',
@@ -1948,15 +1950,15 @@ class CampaignApi(object):
                 'openapi_types': {
                     'line_item_id':
                         (str,),
-                    'bidding_settings_request':
-                        (BiddingSettingsRequest,),
+                    'line_item_bidding_request_request':
+                        (LineItemBiddingRequestRequest,),
                 },
                 'attribute_map': {
                     'line_item_id': 'line-item-id',
                 },
                 'location_map': {
                     'line_item_id': 'path',
-                    'bidding_settings_request': 'body',
+                    'line_item_bidding_request_request': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -2454,7 +2456,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}/products/add  # noqa: E501
 
-        Add products to a line item.  # noqa: E501
+        Add products to a line item. <br />    Add products to a line item. The add is all-or-nothing.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -2801,7 +2803,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items  # noqa: E501
 
-        Create a new line item.  # noqa: E501
+        Create a line item. <br />    Creates the line item under its parent campaign, then sets up its dynamic budgets when the campaign requires  them. If setting up the dynamic budgets fails, the request fails and the line item that was created is renamed  with a [FAILED] prefix.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3056,7 +3058,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}/creatives/delete  # noqa: E501
 
-        Delete creatives and their product collections from a line item.  # noqa: E501
+        Delete creatives from a line item. <br />    Delete creatives and their product collections from a line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3143,7 +3145,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}/products/delete  # noqa: E501
 
-        Delete products from a line item.  # noqa: E501
+        Delete products from a line item. <br />    Delete products from a line item. The products are soft deleted.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3313,7 +3315,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}/creatives  # noqa: E501
 
-        Retrieve the creatives and product collections associated with a line item.  # noqa: E501
+        Retrieve the creatives and product collections associated with a line item. <br />    Returns each creative of the line item with its product collections.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3396,7 +3398,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}/products  # noqa: E501
 
-        Retrieve a page of products configured on a line item.  # noqa: E501
+        Fetch the products of a line item. <br />    Retrieve a page of products configured on a line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -3474,22 +3476,22 @@ class CampaignApi(object):
             line_item_id
         return self.fetch_products_endpoint.call_with_http_info(**kwargs)
 
-    def get_bidding_strategy_by_line_item_id(
+    def get_bidding_by_line_item_id(
         self,
         line_item_id,
         **kwargs
     ):
-        """/experimental/retail-media/line-items/{line-item-id}/bidding-strategy  # noqa: E501
+        """/experimental/retail-media/line-items/{line-item-id}/bidding  # noqa: E501
 
-        Returns the current bidding configuration for a Display auction line item, including the active  bidding strategy and any preserved Standard and Adaptive strategy settings. Other line item types are  not currently supported by this endpoint.  # noqa: E501
+        Returns the Adaptive bidding configuration of a line item under an adaptive budget campaign.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_bidding_strategy_by_line_item_id(line_item_id, async_req=True)
+        >>> thread = api.get_bidding_by_line_item_id(line_item_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): The identifier of the line item whose bidding settings are requested.
+            line_item_id (str): The identifier of the line item whose bidding is requested.
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -3524,7 +3526,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BiddingSettingsResponse
+            LineItemBiddingResponseResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -3555,7 +3557,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        return self.get_bidding_strategy_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+        return self.get_bidding_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def get_campaign(
         self,
@@ -3985,7 +3987,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}  # noqa: E501
 
-        Retrieves a consolidated line item view from the line item domain services.  # noqa: E501
+        Get a line item. <br />    Returns the line item with its bidding settings, products, creatives and targets. A part that cannot be retrieved is left out and  reported as a warning.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4061,18 +4063,18 @@ class CampaignApi(object):
             line_item_id
         return self.get_line_item_endpoint.call_with_http_info(**kwargs)
 
-    def get_min_bids_by_line_item_id(
+    def get_min_bid_by_line_item_id(
         self,
         line_item_id,
         **kwargs
     ):
-        """/experimental/retail-media/line-items/{line-item-id}/min-bids  # noqa: E501
+        """/experimental/retail-media/line-items/{line-item-id}/min-bid  # noqa: E501
 
-        Returns page-type minimum bids and derived bidding thresholds for a Display auction line item.  # noqa: E501
+        Returns the Adaptive minimum bid guidance of a line item.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.get_min_bids_by_line_item_id(line_item_id, async_req=True)
+        >>> thread = api.get_min_bid_by_line_item_id(line_item_id, async_req=True)
         >>> result = thread.get()
 
         Args:
@@ -4111,7 +4113,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            LineItemMinBidsResponse
+            LineItemMinBidResponseResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -4142,7 +4144,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        return self.get_min_bids_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+        return self.get_min_bid_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def get_targets_by_line_item_id(
         self,
@@ -4236,7 +4238,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/demand-search  # noqa: E501
 
-        Search line items accessible from demand accounts.  # noqa: E501
+        Search line items of demand accounts. <br />    Search line items accessible from demand accounts.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4319,7 +4321,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/supply-search  # noqa: E501
 
-        Search line items accessible from a supply account and its retailers.  # noqa: E501
+        Search line items of a supply account. <br />    Search line items accessible from a supply account and its retailers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -4419,7 +4421,7 @@ class CampaignApi(object):
             event_types ([str]): Restrict results to specific change-event types (see `eventType`). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array. . [optional]
             limit (int): Maximum number of change-history entries to return in a single page.. [optional] if omitted the server will use the default value of 25
             line_item_ids ([str]): When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's account access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array. . [optional]
-            offset (int): Zero-based index of the first change-history entry to return.. [optional] if omitted the server will use the default value of 0
+            offset (int): Zero-based index of the first change-history entry to return. The sum of offset and limit must not exceed 10000; narrow the time range to page through more history.. [optional] if omitted the server will use the default value of 0
             start_time (datetime): Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4510,7 +4512,7 @@ class CampaignApi(object):
             event_types ([str]): Restrict results to specific change-event types (see `eventType`). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array. . [optional]
             limit (int): Maximum number of change-history entries to return in a single page.. [optional] if omitted the server will use the default value of 25
             line_item_ids ([str]): When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's retailer access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array. . [optional]
-            offset (int): Zero-based index of the first change-history entry to return.. [optional] if omitted the server will use the default value of 0
+            offset (int): Zero-based index of the first change-history entry to return. The sum of offset and limit must not exceed 10000; narrow the time range to page through more history.. [optional] if omitted the server will use the default value of 0
             start_time (datetime): Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
@@ -4928,25 +4930,25 @@ class CampaignApi(object):
             account_id
         return self.search_campaigns_endpoint.call_with_http_info(**kwargs)
 
-    def set_bidding_strategy_by_line_item_id(
+    def set_bidding_by_line_item_id(
         self,
         line_item_id,
         **kwargs
     ):
-        """/experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy  # noqa: E501
+        """/experimental/retail-media/line-items/{line-item-id}/set-bidding  # noqa: E501
 
-        Replaces the submitted Standard page-type bids and updates the supplied strategy settings. Omitted  settings are preserved. Other line item types are not currently supported by this endpoint.  # noqa: E501
+        Sets the Adaptive bidding configuration of a line item under an adaptive budget campaign.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.set_bidding_strategy_by_line_item_id(line_item_id, async_req=True)
+        >>> thread = api.set_bidding_by_line_item_id(line_item_id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            line_item_id (str): The identifier of the line item whose bidding settings are being updated.
+            line_item_id (str): The identifier of the line item whose bidding is being set.
 
         Keyword Args:
-            bidding_settings_request (BiddingSettingsRequest): The bidding settings to apply.. [optional]
+            line_item_bidding_request_request (LineItemBiddingRequestRequest): The bidding configuration to apply.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -4979,7 +4981,7 @@ class CampaignApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            BiddingSettingsResponse
+            LineItemBiddingResponseResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -5010,7 +5012,7 @@ class CampaignApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         kwargs['line_item_id'] = \
             line_item_id
-        return self.set_bidding_strategy_by_line_item_id_endpoint.call_with_http_info(**kwargs)
+        return self.set_bidding_by_line_item_id_endpoint.call_with_http_info(**kwargs)
 
     def submit_line_item(
         self,
@@ -5369,7 +5371,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}  # noqa: E501
 
-        Update an existing line item.  # noqa: E501
+        Update a line item. <br />    Updates the supplied fields of an existing line item. Omitted fields are left unchanged.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -5627,7 +5629,7 @@ class CampaignApi(object):
     ):
         """/experimental/retail-media/line-items/{line-item-id}/creatives/upsert  # noqa: E501
 
-        Resolves each supplied stable creative identifier to its latest revision and  associates those revisions with the line item's proposal.  # noqa: E501
+        Add or update creatives on a line item. <br />    Resolves each supplied stable creative identifier to its latest revision and  associates those revisions with the line item's proposal.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

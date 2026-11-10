@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **name** | **str, none_type** | Name of the ad set. | [optional] 
 **scheduled_budget** | [**PatchAdSetScheduledBudgetV26Q1**](PatchAdSetScheduledBudgetV26Q1.md) |  | [optional] 
 **scheduling** | [**PatchAdSetSchedulingV26Q1**](PatchAdSetSchedulingV26Q1.md) |  | [optional] 
+**server_to_server_trackings** | [**[ServerToServerTrackingV26Q1], none_type**](ServerToServerTrackingV26Q1.md) | MMP server-to-server tracking URLs. Only allowed for app retargeting ad sets. Replaces the existing URLs when provided, clears them when empty, and leaves them unchanged when omitted | [optional] 
 **targeting** | [**AdSetTargetingV26Q1**](AdSetTargetingV26Q1.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

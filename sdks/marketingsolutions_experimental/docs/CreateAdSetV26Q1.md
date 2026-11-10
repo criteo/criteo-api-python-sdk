@@ -14,8 +14,10 @@ Name | Type | Description | Notes
 **schedule** | [**CreateAdSetScheduleV26Q1**](CreateAdSetScheduleV26Q1.md) |  | 
 **targeting** | [**CreateAdSetTargetingV26Q1**](CreateAdSetTargetingV26Q1.md) |  | 
 **tracking_code** | **str, none_type** | The click tracking code associated to this Ad Set. | 
+**ad_set_type** | **str, none_type** | Type of the ad set. Optional, defaults to standard if omitted.  \&quot;unknown\&quot; is read-only and is rejected on create. | [optional] 
 **attribution_configuration** | [**CreateAdSetAttributionConfigurationV26Q1**](CreateAdSetAttributionConfigurationV26Q1.md) |  | [optional] 
 **budget** | [**CreateAdSetBudgetV26Q1**](CreateAdSetBudgetV26Q1.md) |  | [optional] 
+**server_to_server_trackings** | [**[ServerToServerTrackingV26Q1], none_type**](ServerToServerTrackingV26Q1.md) | MMP server-to-server tracking URLs. Optional, only allowed for app retargeting ad sets. | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

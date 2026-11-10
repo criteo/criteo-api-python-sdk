@@ -30,9 +30,7 @@ from criteo_api_retailmedia_experimental.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from criteo_api_retailmedia_experimental.model.external_frequency_capping_model import ExternalFrequencyCappingModel
     from criteo_api_retailmedia_experimental.model.onsite_display_auction_line_item_details_v2 import OnsiteDisplayAuctionLineItemDetailsV2
-    globals()['ExternalFrequencyCappingModel'] = ExternalFrequencyCappingModel
     globals()['OnsiteDisplayAuctionLineItemDetailsV2'] = OnsiteDisplayAuctionLineItemDetailsV2
 
 
@@ -83,7 +81,6 @@ class OnsiteDisplayLineItemDetailsV2(ModelNormal):
         lazy_import()
         return {
             'auction_details': (OnsiteDisplayAuctionLineItemDetailsV2,),  # noqa: E501
-            'frequency_capping': (ExternalFrequencyCappingModel,),  # noqa: E501
         }
 
     @cached_property
@@ -93,7 +90,6 @@ class OnsiteDisplayLineItemDetailsV2(ModelNormal):
 
     attribute_map = {
         'auction_details': 'auctionDetails',  # noqa: E501
-        'frequency_capping': 'frequencyCapping',  # noqa: E501
     }
 
     read_only_vars = {
@@ -138,7 +134,6 @@ class OnsiteDisplayLineItemDetailsV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (OnsiteDisplayAuctionLineItemDetailsV2): [optional]  # noqa: E501
-            frequency_capping (ExternalFrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -225,7 +220,6 @@ class OnsiteDisplayLineItemDetailsV2(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             auction_details (OnsiteDisplayAuctionLineItemDetailsV2): [optional]  # noqa: E501
-            frequency_capping (ExternalFrequencyCappingModel): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

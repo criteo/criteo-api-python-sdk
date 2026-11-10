@@ -5,7 +5,7 @@ Configuration of a recommended behavioral segment.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **str** |  | 
+**category** | **str** | Category of a behavioral segment. | 
 **country** | **str, none_type** |  | [optional] 
 **end_date** | **str, none_type** |  | [optional] 
 **start_date** | **str, none_type** |  | [optional] 

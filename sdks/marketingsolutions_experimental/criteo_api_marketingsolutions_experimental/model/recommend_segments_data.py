@@ -142,7 +142,7 @@ class RecommendSegmentsData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str, none_type): [optional] if omitted the server will use the default value of "SegmentRecommendation"  # noqa: E501
+            type (str, none_type): Type of recommended segment data object.. [optional] if omitted the server will use the default value of "SegmentRecommendation"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,7 +232,7 @@ class RecommendSegmentsData(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            type (str, none_type): [optional] if omitted the server will use the default value of "SegmentRecommendation"  # noqa: E501
+            type (str, none_type): Type of recommended segment data object.. [optional] if omitted the server will use the default value of "SegmentRecommendation"  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -8,7 +8,7 @@
 """
 
 
-__version__ = "0.0.261102"
+__version__ = "0.0.261110"
 
 # import ApiClient
 from criteo_api_commercegrid_experimental.api_client import ApiClient

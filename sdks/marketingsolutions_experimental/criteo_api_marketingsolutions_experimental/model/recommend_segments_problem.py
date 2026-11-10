@@ -55,6 +55,17 @@ class RecommendSegmentsProblem(ModelNormal):
     """
 
     allowed_values = {
+        ('type',): {
+            'None': None,
+            'UNKNOWN': "unknown",
+            'ACCESS-CONTROL': "access-control",
+            'AUTHENTICATION': "authentication",
+            'AUTHORIZATION': "authorization",
+            'AVAILABILITY': "availability",
+            'DEPRECATION': "deprecation",
+            'QUOTA': "quota",
+            'VALIDATION': "validation",
+        },
     }
 
     validations = {
@@ -75,8 +86,14 @@ class RecommendSegmentsProblem(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'code': (str, none_type,),  # noqa: E501
             'detail': (str, none_type,),  # noqa: E501
+            'instance': (str, none_type,),  # noqa: E501
+            'source': ({str: (str,)}, none_type,),  # noqa: E501
+            'stack_trace': (str, none_type,),  # noqa: E501
             'title': (str, none_type,),  # noqa: E501
+            'trace_id': (str, none_type,),  # noqa: E501
+            'type': (str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -85,8 +102,14 @@ class RecommendSegmentsProblem(ModelNormal):
 
 
     attribute_map = {
+        'code': 'code',  # noqa: E501
         'detail': 'detail',  # noqa: E501
+        'instance': 'instance',  # noqa: E501
+        'source': 'source',  # noqa: E501
+        'stack_trace': 'stackTrace',  # noqa: E501
         'title': 'title',  # noqa: E501
+        'trace_id': 'traceId',  # noqa: E501
+        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -130,8 +153,14 @@ class RecommendSegmentsProblem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            detail (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
+            code (str, none_type): A machine-readable error code, expressed as a string value.. [optional]  # noqa: E501
+            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            instance (str, none_type): A URI that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
+            source ({str: (str,)}, none_type): A machine-readable structure to reference to the exact location(s) causing the error(s).. [optional]  # noqa: E501
+            stack_trace (str, none_type): . [optional]  # noqa: E501
+            title (str, none_type): A short human-readable description of the problem type.. [optional]  # noqa: E501
+            trace_id (str, none_type): The request correlation ID this problem comes from.. [optional]  # noqa: E501
+            type (str, none_type): The problem's category.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -217,8 +246,14 @@ class RecommendSegmentsProblem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            detail (str, none_type): [optional]  # noqa: E501
-            title (str, none_type): [optional]  # noqa: E501
+            code (str, none_type): A machine-readable error code, expressed as a string value.. [optional]  # noqa: E501
+            detail (str, none_type): A human-readable explanation specific to this occurrence of the problem.. [optional]  # noqa: E501
+            instance (str, none_type): A URI that identifies the specific occurrence of the problem.. [optional]  # noqa: E501
+            source ({str: (str,)}, none_type): A machine-readable structure to reference to the exact location(s) causing the error(s).. [optional]  # noqa: E501
+            stack_trace (str, none_type): . [optional]  # noqa: E501
+            title (str, none_type): A short human-readable description of the problem type.. [optional]  # noqa: E501
+            trace_id (str, none_type): The request correlation ID this problem comes from.. [optional]  # noqa: E501
+            type (str, none_type): The problem's category.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

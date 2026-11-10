@@ -147,7 +147,7 @@ class SegmentConfigurationV1(ModelNormal):
         Args:
             already_created (bool):
             description (str):
-            segment_type (str):
+            segment_type (str): Type of recommended segment.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -250,7 +250,7 @@ class SegmentConfigurationV1(ModelNormal):
         Args:
             already_created (bool):
             description (str):
-            segment_type (str):
+            segment_type (str): Type of recommended segment.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

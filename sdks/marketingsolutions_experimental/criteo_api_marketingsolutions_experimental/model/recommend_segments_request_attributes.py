@@ -96,6 +96,7 @@ class RecommendSegmentsRequestAttributes(ModelNormal):
         return {
             'brief': (str,),  # noqa: E501
             'advertiser_id': (str,),  # noqa: E501
+            'country': (str,),  # noqa: E501
             'nb_segments': (int,),  # noqa: E501
             'segment_status_to_recommend': (str,),  # noqa: E501
             'segment_types_to_recommend': ([str],),  # noqa: E501
@@ -109,6 +110,7 @@ class RecommendSegmentsRequestAttributes(ModelNormal):
     attribute_map = {
         'brief': 'brief',  # noqa: E501
         'advertiser_id': 'advertiserId',  # noqa: E501
+        'country': 'country',  # noqa: E501
         'nb_segments': 'nbSegments',  # noqa: E501
         'segment_status_to_recommend': 'segmentStatusToRecommend',  # noqa: E501
         'segment_types_to_recommend': 'segmentTypesToRecommend',  # noqa: E501
@@ -158,10 +160,11 @@ class RecommendSegmentsRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str): Advertiser ID the caller has access to.. [optional]  # noqa: E501
-            nb_segments (int): Number of segments to recommend, between 1 and 20 (defaults to 5).. [optional] if omitted the server will use the default value of 5  # noqa: E501
-            segment_status_to_recommend (str): Recommend existing segments or suggest new ones.. [optional] if omitted the server will use the default value of "new"  # noqa: E501
-            segment_types_to_recommend ([str]): [optional]  # noqa: E501
+            advertiser_id (str): [Optional] AdvertiserId this requestor has access to.. [optional]  # noqa: E501
+            country (str): [Optional] Country code. Must be a supported country. When `advertiserId` is set, it must also match the country of the advertiser.. [optional]  # noqa: E501
+            nb_segments (int): Number of segments to recommend, between 1 and 20 (default to 5).. [optional] if omitted the server will use the default value of 5  # noqa: E501
+            segment_status_to_recommend (str): [Optional] Recommend only existing segments or suggest the new ones. Default to new.. [optional] if omitted the server will use the default value of "new"  # noqa: E501
+            segment_types_to_recommend ([str]): [Optional] Restrict the recommended segment types.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,10 +254,11 @@ class RecommendSegmentsRequestAttributes(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            advertiser_id (str): Advertiser ID the caller has access to.. [optional]  # noqa: E501
-            nb_segments (int): Number of segments to recommend, between 1 and 20 (defaults to 5).. [optional] if omitted the server will use the default value of 5  # noqa: E501
-            segment_status_to_recommend (str): Recommend existing segments or suggest new ones.. [optional] if omitted the server will use the default value of "new"  # noqa: E501
-            segment_types_to_recommend ([str]): [optional]  # noqa: E501
+            advertiser_id (str): [Optional] AdvertiserId this requestor has access to.. [optional]  # noqa: E501
+            country (str): [Optional] Country code. Must be a supported country. When `advertiserId` is set, it must also match the country of the advertiser.. [optional]  # noqa: E501
+            nb_segments (int): Number of segments to recommend, between 1 and 20 (default to 5).. [optional] if omitted the server will use the default value of 5  # noqa: E501
+            segment_status_to_recommend (str): [Optional] Recommend only existing segments or suggest the new ones. Default to new.. [optional] if omitted the server will use the default value of "new"  # noqa: E501
+            segment_types_to_recommend ([str]): [Optional] Restrict the recommended segment types.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

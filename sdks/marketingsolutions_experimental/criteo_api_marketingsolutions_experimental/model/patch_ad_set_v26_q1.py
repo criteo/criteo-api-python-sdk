@@ -36,12 +36,14 @@ def lazy_import():
     from criteo_api_marketingsolutions_experimental.model.patch_ad_set_budget_v26_q1 import PatchAdSetBudgetV26Q1
     from criteo_api_marketingsolutions_experimental.model.patch_ad_set_scheduled_budget_v26_q1 import PatchAdSetScheduledBudgetV26Q1
     from criteo_api_marketingsolutions_experimental.model.patch_ad_set_scheduling_v26_q1 import PatchAdSetSchedulingV26Q1
+    from criteo_api_marketingsolutions_experimental.model.server_to_server_tracking_v26_q1 import ServerToServerTrackingV26Q1
     globals()['AdSetTargetingV26Q1'] = AdSetTargetingV26Q1
     globals()['PatchAdSetAttributionConfigurationV26Q1'] = PatchAdSetAttributionConfigurationV26Q1
     globals()['PatchAdSetBiddingV26Q1'] = PatchAdSetBiddingV26Q1
     globals()['PatchAdSetBudgetV26Q1'] = PatchAdSetBudgetV26Q1
     globals()['PatchAdSetScheduledBudgetV26Q1'] = PatchAdSetScheduledBudgetV26Q1
     globals()['PatchAdSetSchedulingV26Q1'] = PatchAdSetSchedulingV26Q1
+    globals()['ServerToServerTrackingV26Q1'] = ServerToServerTrackingV26Q1
 
 
 class PatchAdSetV26Q1(ModelNormal):
@@ -103,6 +105,7 @@ class PatchAdSetV26Q1(ModelNormal):
             'name': (str, none_type,),  # noqa: E501
             'scheduled_budget': (PatchAdSetScheduledBudgetV26Q1,),  # noqa: E501
             'scheduling': (PatchAdSetSchedulingV26Q1,),  # noqa: E501
+            'server_to_server_trackings': ([ServerToServerTrackingV26Q1], none_type,),  # noqa: E501
             'targeting': (AdSetTargetingV26Q1,),  # noqa: E501
         }
 
@@ -118,6 +121,7 @@ class PatchAdSetV26Q1(ModelNormal):
         'name': 'name',  # noqa: E501
         'scheduled_budget': 'scheduledBudget',  # noqa: E501
         'scheduling': 'scheduling',  # noqa: E501
+        'server_to_server_trackings': 'serverToServerTrackings',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
     }
 
@@ -168,6 +172,7 @@ class PatchAdSetV26Q1(ModelNormal):
             name (str, none_type): Name of the ad set.. [optional]  # noqa: E501
             scheduled_budget (PatchAdSetScheduledBudgetV26Q1): [optional]  # noqa: E501
             scheduling (PatchAdSetSchedulingV26Q1): [optional]  # noqa: E501
+            server_to_server_trackings ([ServerToServerTrackingV26Q1], none_type): MMP server-to-server tracking URLs. Only allowed for app retargeting ad sets. Replaces the existing URLs when provided, clears them when empty, and leaves them unchanged when omitted. [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
         """
 
@@ -260,6 +265,7 @@ class PatchAdSetV26Q1(ModelNormal):
             name (str, none_type): Name of the ad set.. [optional]  # noqa: E501
             scheduled_budget (PatchAdSetScheduledBudgetV26Q1): [optional]  # noqa: E501
             scheduling (PatchAdSetSchedulingV26Q1): [optional]  # noqa: E501
+            server_to_server_trackings ([ServerToServerTrackingV26Q1], none_type): MMP server-to-server tracking URLs. Only allowed for app retargeting ad sets. Replaces the existing URLs when provided, clears them when empty, and leaves them unchanged when omitted. [optional]  # noqa: E501
             targeting (AdSetTargetingV26Q1): [optional]  # noqa: E501
         """
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **already_created** | **bool** |  | 
 **description** | **str** |  | 
-**segment_type** | **str** |  | 
+**segment_type** | **str** | Type of recommended segment. | 
 **advertiser_id** | **str, none_type** |  | [optional] 
 **affinity_configuration** | [**AffinityRecommendationV1**](AffinityRecommendationV1.md) |  | [optional] 
 **behavioral_configuration** | [**BehavioralRecommendationV1**](BehavioralRecommendationV1.md) |  | [optional] 

@@ -1408,6 +1408,7 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
             attributes=RecommendSegmentsRequestAttributes(
                 advertiser_id="advertiser_id_example",
                 brief="brief_example",
+                country="country_example",
                 nb_segments=5,
                 segment_status_to_recommend="new",
                 segment_types_to_recommend=[
@@ -1452,7 +1453,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Recommended audience segments. |  -  |
+**200** | Successful Response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

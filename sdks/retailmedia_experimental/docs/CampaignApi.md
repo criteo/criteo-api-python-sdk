@@ -16,14 +16,14 @@ Method | HTTP request | Description
 [**delete_targets_by_line_item_id**](CampaignApi.md#delete_targets_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/targets/delete | /experimental/retail-media/line-items/{line-item-id}/targets/delete
 [**fetch_creatives**](CampaignApi.md#fetch_creatives) | **GET** /experimental/retail-media/line-items/{line-item-id}/creatives | /experimental/retail-media/line-items/{line-item-id}/creatives
 [**fetch_products**](CampaignApi.md#fetch_products) | **GET** /experimental/retail-media/line-items/{line-item-id}/products | /experimental/retail-media/line-items/{line-item-id}/products
-[**get_bidding_strategy_by_line_item_id**](CampaignApi.md#get_bidding_strategy_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/bidding-strategy
+[**get_bidding_by_line_item_id**](CampaignApi.md#get_bidding_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/bidding | /experimental/retail-media/line-items/{line-item-id}/bidding
 [**get_campaign**](CampaignApi.md#get_campaign) | **GET** /experimental/retail-media/campaigns/{campaign-id} | /experimental/retail-media/campaigns/{campaign-id}
 [**get_capout_history**](CampaignApi.md#get_capout_history) | **POST** /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history | /experimental/retail-media/accounts/{account-id}/line-items/cap-out-history
 [**get_catalog_status**](CampaignApi.md#get_catalog_status) | **GET** /experimental/retail-media/catalogs/{catalogId}/status | /experimental/retail-media/catalogs/{catalogId}/status
 [**get_creative**](CampaignApi.md#get_creative) | **GET** /experimental/retail-media/accounts/{account-id}/creatives/{creative-id} | /experimental/retail-media/accounts/{account-id}/creatives/{creative-id}
 [**get_external_line_item_checks**](CampaignApi.md#get_external_line_item_checks) | **GET** /experimental/retail-media/diagnostics/line-item-checks | /experimental/retail-media/diagnostics/line-item-checks
 [**get_line_item**](CampaignApi.md#get_line_item) | **GET** /experimental/retail-media/line-items/{line-item-id} | /experimental/retail-media/line-items/{line-item-id}
-[**get_min_bids_by_line_item_id**](CampaignApi.md#get_min_bids_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/min-bids | /experimental/retail-media/line-items/{line-item-id}/min-bids
+[**get_min_bid_by_line_item_id**](CampaignApi.md#get_min_bid_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/min-bid | /experimental/retail-media/line-items/{line-item-id}/min-bid
 [**get_targets_by_line_item_id**](CampaignApi.md#get_targets_by_line_item_id) | **GET** /experimental/retail-media/line-items/{line-item-id}/targets | /experimental/retail-media/line-items/{line-item-id}/targets
 [**line_items_demand_search**](CampaignApi.md#line_items_demand_search) | **POST** /experimental/retail-media/line-items/demand-search | /experimental/retail-media/line-items/demand-search
 [**line_items_supply_search**](CampaignApi.md#line_items_supply_search) | **POST** /experimental/retail-media/line-items/supply-search | /experimental/retail-media/line-items/supply-search
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 [**search_account_creatives_enriched**](CampaignApi.md#search_account_creatives_enriched) | **POST** /experimental/retail-media/accounts/{account-id}/creatives/search-enriched | /experimental/retail-media/accounts/{account-id}/creatives/search-enriched
 [**search_account_retailers**](CampaignApi.md#search_account_retailers) | **POST** /experimental/retail-media/accounts/{accountId}/retailers/search | /experimental/retail-media/accounts/{accountId}/retailers/search
 [**search_campaigns**](CampaignApi.md#search_campaigns) | **POST** /experimental/retail-media/accounts/{account-id}/campaigns/search | /experimental/retail-media/accounts/{account-id}/campaigns/search
-[**set_bidding_strategy_by_line_item_id**](CampaignApi.md#set_bidding_strategy_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy | /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy
+[**set_bidding_by_line_item_id**](CampaignApi.md#set_bidding_by_line_item_id) | **POST** /experimental/retail-media/line-items/{line-item-id}/set-bidding | /experimental/retail-media/line-items/{line-item-id}/set-bidding
 [**submit_line_item**](CampaignApi.md#submit_line_item) | **POST** /experimental/retail-media/line-items/{line-item-id}/submit | /experimental/retail-media/line-items/{line-item-id}/submit
 [**update_auction_line_item**](CampaignApi.md#update_auction_line_item) | **PUT** /experimental/retail-media/auction-line-items/{lineItemId} | /experimental/retail-media/auction-line-items/{lineItemId}
 [**update_campaign**](CampaignApi.md#update_campaign) | **PATCH** /experimental/retail-media/campaigns/{campaign-id} | /experimental/retail-media/campaigns/{campaign-id}
@@ -49,7 +49,7 @@ Method | HTTP request | Description
 
 /experimental/retail-media/line-items/{line-item-id}/products/add
 
-Add products to a line item.
+Add products to a line item. <br />    Add products to a line item. The add is all-or-nothing.
 
 ### Example
 
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items
 
-Create a new line item.
+Create a line item. <br />    Creates the line item under its parent campaign, then sets up its dynamic budgets when the campaign requires  them. If setting up the dynamic budgets fails, the request fails and the line item that was created is renamed  with a [FAILED] prefix.
 
 ### Example
 
@@ -851,7 +851,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}/creatives/delete
 
-Delete creatives and their product collections from a line item.
+Delete creatives from a line item. <br />    Delete creatives and their product collections from a line item.
 
 ### Example
 
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}/products/delete
 
-Delete products from a line item.
+Delete products from a line item. <br />    Delete products from a line item. The products are soft deleted.
 
 ### Example
 
@@ -1168,7 +1168,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}/creatives
 
-Retrieve the creatives and product collections associated with a line item.
+Retrieve the creatives and product collections associated with a line item. <br />    Returns each creative of the line item with its product collections.
 
 ### Example
 
@@ -1253,7 +1253,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}/products
 
-Retrieve a page of products configured on a line item.
+Fetch the products of a line item. <br />    Retrieve a page of products configured on a line item.
 
 ### Example
 
@@ -1346,12 +1346,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_bidding_strategy_by_line_item_id**
-> BiddingSettingsResponse get_bidding_strategy_by_line_item_id(line_item_id)
+# **get_bidding_by_line_item_id**
+> LineItemBiddingResponseResponse get_bidding_by_line_item_id(line_item_id)
 
-/experimental/retail-media/line-items/{line-item-id}/bidding-strategy
+/experimental/retail-media/line-items/{line-item-id}/bidding
 
-Returns the current bidding configuration for a Display auction line item, including the active  bidding strategy and any preserved Standard and Adaptive strategy settings. Other line item types are  not currently supported by this endpoint.
+Returns the Adaptive bidding configuration of a line item under an adaptive budget campaign.
 
 ### Example
 
@@ -1362,7 +1362,7 @@ Returns the current bidding configuration for a Display auction line item, inclu
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
+from criteo_api_retailmedia_experimental.model.line_item_bidding_response_response import LineItemBiddingResponseResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -1391,15 +1391,15 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | The identifier of the line item whose bidding settings are requested.
+    line_item_id = "line-item-id_example" # str | The identifier of the line item whose bidding is requested.
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/line-items/{line-item-id}/bidding-strategy
-        api_response = api_instance.get_bidding_strategy_by_line_item_id(line_item_id)
+        # /experimental/retail-media/line-items/{line-item-id}/bidding
+        api_response = api_instance.get_bidding_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CampaignApi->get_bidding_strategy_by_line_item_id: %s\n" % e)
+        print("Exception when calling CampaignApi->get_bidding_by_line_item_id: %s\n" % e)
 ```
 
 
@@ -1407,11 +1407,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The identifier of the line item whose bidding settings are requested. |
+ **line_item_id** | **str**| The identifier of the line item whose bidding is requested. |
 
 ### Return type
 
-[**BiddingSettingsResponse**](BiddingSettingsResponse.md)
+[**LineItemBiddingResponseResponse**](LineItemBiddingResponseResponse.md)
 
 ### Authorization
 
@@ -1883,7 +1883,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}
 
-Retrieves a consolidated line item view from the line item domain services.
+Get a line item. <br />    Returns the line item with its bidding settings, products, creatives and targets. A part that cannot be retrieved is left out and  reported as a warning.
 
 ### Example
 
@@ -1963,12 +1963,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_min_bids_by_line_item_id**
-> LineItemMinBidsResponse get_min_bids_by_line_item_id(line_item_id)
+# **get_min_bid_by_line_item_id**
+> LineItemMinBidResponseResponse get_min_bid_by_line_item_id(line_item_id)
 
-/experimental/retail-media/line-items/{line-item-id}/min-bids
+/experimental/retail-media/line-items/{line-item-id}/min-bid
 
-Returns page-type minimum bids and derived bidding thresholds for a Display auction line item.
+Returns the Adaptive minimum bid guidance of a line item.
 
 ### Example
 
@@ -1979,7 +1979,7 @@ Returns page-type minimum bids and derived bidding thresholds for a Display auct
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.line_item_min_bids_response import LineItemMinBidsResponse
+from criteo_api_retailmedia_experimental.model.line_item_min_bid_response_response import LineItemMinBidResponseResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -2012,11 +2012,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/line-items/{line-item-id}/min-bids
-        api_response = api_instance.get_min_bids_by_line_item_id(line_item_id)
+        # /experimental/retail-media/line-items/{line-item-id}/min-bid
+        api_response = api_instance.get_min_bid_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CampaignApi->get_min_bids_by_line_item_id: %s\n" % e)
+        print("Exception when calling CampaignApi->get_min_bid_by_line_item_id: %s\n" % e)
 ```
 
 
@@ -2028,7 +2028,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineItemMinBidsResponse**](LineItemMinBidsResponse.md)
+[**LineItemMinBidResponseResponse**](LineItemMinBidResponseResponse.md)
 
 ### Authorization
 
@@ -2151,7 +2151,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/demand-search
 
-Search line items accessible from demand accounts.
+Search line items of demand accounts. <br />    Search line items accessible from demand accounts.
 
 ### Example
 
@@ -2255,7 +2255,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/supply-search
 
-Search line items accessible from a supply account and its retailers.
+Search line items of a supply account. <br />    Search line items accessible from a supply account and its retailers.
 
 ### Example
 
@@ -2415,7 +2415,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     line_item_ids = [
         "line-item-ids_example",
     ] # [str] | When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's account access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  (optional)
-    offset = 0 # int | Zero-based index of the first change-history entry to return. (optional) if omitted the server will use the default value of 0
+    offset = 0 # int | Zero-based index of the first change-history entry to return. The sum of offset and limit must not exceed 10000; narrow the time range to page through more history. (optional) if omitted the server will use the default value of 0
     start_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2448,7 +2448,7 @@ Name | Type | Description  | Notes
  **event_types** | **[str]**| Restrict results to specific change-event types (see &#x60;eventType&#x60;). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  | [optional]
  **limit** | **int**| Maximum number of change-history entries to return in a single page. | [optional] if omitted the server will use the default value of 25
  **line_item_ids** | **[str]**| When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller&#39;s account access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  | [optional]
- **offset** | **int**| Zero-based index of the first change-history entry to return. | [optional] if omitted the server will use the default value of 0
+ **offset** | **int**| Zero-based index of the first change-history entry to return. The sum of offset and limit must not exceed 10000; narrow the time range to page through more history. | [optional] if omitted the server will use the default value of 0
  **start_time** | **datetime**| Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. | [optional]
 
 ### Return type
@@ -2533,7 +2533,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     line_item_ids = [
         "line-item-ids_example",
     ] # [str] | When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller's retailer access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  (optional)
-    offset = 0 # int | Zero-based index of the first change-history entry to return. (optional) if omitted the server will use the default value of 0
+    offset = 0 # int | Zero-based index of the first change-history entry to return. The sum of offset and limit must not exceed 10000; narrow the time range to page through more history. (optional) if omitted the server will use the default value of 0
     start_time = dateutil_parser('1970-01-01T00:00:00.00Z') # datetime | Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. (optional)
 
     # example passing only required values which don't have defaults set
@@ -2566,7 +2566,7 @@ Name | Type | Description  | Notes
  **event_types** | **[str]**| Restrict results to specific change-event types (see &#x60;eventType&#x60;). When omitted, all supported event types may be returned. Unknown values are not errors; they simply match no entries. Omission is equivalent to an empty array.  | [optional]
  **limit** | **int**| Maximum number of change-history entries to return in a single page. | [optional] if omitted the server will use the default value of 25
  **line_item_ids** | **[str]**| When provided, only changes for these external opaque line-item identifiers are returned. Entries for line items outside the caller&#39;s retailer access are excluded without revealing whether the line item exists. Omission is equivalent to an empty array.  | [optional]
- **offset** | **int**| Zero-based index of the first change-history entry to return. | [optional] if omitted the server will use the default value of 0
+ **offset** | **int**| Zero-based index of the first change-history entry to return. The sum of offset and limit must not exceed 10000; narrow the time range to page through more history. | [optional] if omitted the server will use the default value of 0
  **start_time** | **datetime**| Inclusive lower bound on change time, in UTC (ISO-8601 date-time). Defaults to 7 days before the request time when omitted. | [optional]
 
 ### Return type
@@ -3069,12 +3069,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **set_bidding_strategy_by_line_item_id**
-> BiddingSettingsResponse set_bidding_strategy_by_line_item_id(line_item_id)
+# **set_bidding_by_line_item_id**
+> LineItemBiddingResponseResponse set_bidding_by_line_item_id(line_item_id)
 
-/experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy
+/experimental/retail-media/line-items/{line-item-id}/set-bidding
 
-Replaces the submitted Standard page-type bids and updates the supplied strategy settings. Omitted  settings are preserved. Other line item types are not currently supported by this endpoint.
+Sets the Adaptive bidding configuration of a line item under an adaptive budget campaign.
 
 ### Example
 
@@ -3085,8 +3085,8 @@ Replaces the submitted Standard page-type bids and updates the supplied strategy
 import time
 import criteo_api_retailmedia_experimental
 from criteo_api_retailmedia_experimental.api import campaign_api
-from criteo_api_retailmedia_experimental.model.bidding_settings_response import BiddingSettingsResponse
-from criteo_api_retailmedia_experimental.model.bidding_settings_request import BiddingSettingsRequest
+from criteo_api_retailmedia_experimental.model.line_item_bidding_request_request import LineItemBiddingRequestRequest
+from criteo_api_retailmedia_experimental.model.line_item_bidding_response_response import LineItemBiddingResponseResponse
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.criteo.com
 # See configuration.py for a list of all supported configuration parameters.
@@ -3115,45 +3115,32 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = campaign_api.CampaignApi(api_client)
-    line_item_id = "line-item-id_example" # str | The identifier of the line item whose bidding settings are being updated.
-    bidding_settings_request = BiddingSettingsRequest(
-        data=BiddingSettingsResource(
-            attributes=BiddingSettings(
-                cpm=CpmBiddingSettings(
-                    adaptive_bidding_settings=AdaptiveBiddingSettings(
-                        max_bid=3.14,
-                    ),
-                    bid_strategy="Standard",
-                    standard_bidding_settings=StandardBiddingSettings(
-                        auction_bids=[
-                            LineItemAuctionBid(
-                                bid=3.14,
-                                page_type="Unknown",
-                            ),
-                        ],
-                    ),
-                ),
+    line_item_id = "line-item-id_example" # str | The identifier of the line item whose bidding is being set.
+    line_item_bidding_request_request = LineItemBiddingRequestRequest(
+        data=LineItemBiddingRequestResource(
+            attributes=LineItemBiddingRequest(
+                max_bid=3.14,
             ),
             type="type_example",
         ),
-    ) # BiddingSettingsRequest | The bidding settings to apply. (optional)
+    ) # LineItemBiddingRequestRequest | The bidding configuration to apply. (optional)
 
     # example passing only required values which don't have defaults set
     try:
-        # /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy
-        api_response = api_instance.set_bidding_strategy_by_line_item_id(line_item_id)
+        # /experimental/retail-media/line-items/{line-item-id}/set-bidding
+        api_response = api_instance.set_bidding_by_line_item_id(line_item_id)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CampaignApi->set_bidding_strategy_by_line_item_id: %s\n" % e)
+        print("Exception when calling CampaignApi->set_bidding_by_line_item_id: %s\n" % e)
 
     # example passing only required values which don't have defaults set
     # and optional values
     try:
-        # /experimental/retail-media/line-items/{line-item-id}/set-bidding-strategy
-        api_response = api_instance.set_bidding_strategy_by_line_item_id(line_item_id, bidding_settings_request=bidding_settings_request)
+        # /experimental/retail-media/line-items/{line-item-id}/set-bidding
+        api_response = api_instance.set_bidding_by_line_item_id(line_item_id, line_item_bidding_request_request=line_item_bidding_request_request)
         pprint(api_response)
     except criteo_api_retailmedia_experimental.ApiException as e:
-        print("Exception when calling CampaignApi->set_bidding_strategy_by_line_item_id: %s\n" % e)
+        print("Exception when calling CampaignApi->set_bidding_by_line_item_id: %s\n" % e)
 ```
 
 
@@ -3161,12 +3148,12 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **line_item_id** | **str**| The identifier of the line item whose bidding settings are being updated. |
- **bidding_settings_request** | [**BiddingSettingsRequest**](BiddingSettingsRequest.md)| The bidding settings to apply. | [optional]
+ **line_item_id** | **str**| The identifier of the line item whose bidding is being set. |
+ **line_item_bidding_request_request** | [**LineItemBiddingRequestRequest**](LineItemBiddingRequestRequest.md)| The bidding configuration to apply. | [optional]
 
 ### Return type
 
-[**BiddingSettingsResponse**](BiddingSettingsResponse.md)
+[**LineItemBiddingResponseResponse**](LineItemBiddingResponseResponse.md)
 
 ### Authorization
 
@@ -3649,7 +3636,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}
 
-Update an existing line item.
+Update a line item. <br />    Updates the supplied fields of an existing line item. Omitted fields are left unchanged.
 
 ### Example
 
@@ -3699,12 +3686,6 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                 onsite_display_details=ExternalPatchOnsiteDisplayLineItemDetails(
                     auction_details=ExternalPatchOnsiteDisplayAuctionLineItemDetails(
                         is_dynamic_match=True,
-                    ),
-                    frequency_capping=ExternalFrequencyCappingModelNillableV2(
-                        value=ExternalFrequencyCappingModel(
-                            capping_count=1,
-                            capping_duration_type="Unknown",
-                        ),
                     ),
                 ),
                 serve_to_opt_out_user=True,
@@ -3998,7 +3979,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/line-items/{line-item-id}/creatives/upsert
 
-Resolves each supplied stable creative identifier to its latest revision and  associates those revisions with the line item's proposal.
+Add or update creatives on a line item. <br />    Resolves each supplied stable creative identifier to its latest revision and  associates those revisions with the line item's proposal.
 
 ### Example
 

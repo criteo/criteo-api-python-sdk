@@ -94,6 +94,7 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
     create_ad_set_v26_q1_request = CreateAdSetV26Q1Request(
         data=CreateAdSetV26Q1Resource(
             attributes=CreateAdSetV26Q1(
+                ad_set_type="standard",
                 attribution_configuration=CreateAdSetAttributionConfigurationV26Q1(
                     attribution_method="unknown",
                     lookback_window="unknown",
@@ -119,6 +120,11 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
                     end_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                     start_date=dateutil_parser('1970-01-01T00:00:00.00Z'),
                 ),
+                server_to_server_trackings=[
+                    ServerToServerTrackingV26Q1(
+                        url="url_example",
+                    ),
+                ],
                 targeting=CreateAdSetTargetingV26Q1(
                     delivery_limitations=AdSetDeliveryLimitationsV26Q1(
                         devices=[
@@ -2168,6 +2174,11 @@ with criteo_api_marketingsolutions_experimental.ApiClient(configuration) as api_
                             value=dateutil_parser('1970-01-01T00:00:00.00Z'),
                         ),
                     ),
+                    server_to_server_trackings=[
+                        ServerToServerTrackingV26Q1(
+                            url="url_example",
+                        ),
+                    ],
                     targeting=AdSetTargetingV26Q1(
                         delivery_limitations=AdSetDeliveryLimitationsV26Q1(
                             devices=[

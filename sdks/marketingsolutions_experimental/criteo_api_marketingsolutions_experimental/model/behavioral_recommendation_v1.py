@@ -117,7 +117,7 @@ class BehavioralRecommendationV1(ModelNormal):
         """BehavioralRecommendationV1 - a model defined in OpenAPI
 
         Args:
-            category (str):
+            category (str): Category of a behavioral segment.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -209,7 +209,7 @@ class BehavioralRecommendationV1(ModelNormal):
         """BehavioralRecommendationV1 - a model defined in OpenAPI
 
         Args:
-            category (str):
+            category (str): Category of a behavioral segment.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

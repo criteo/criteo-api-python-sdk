@@ -1,11 +1,11 @@
-# ExternalFrequencyCappingModelNillableV2
+# LineItemBiddingRequestRequest
 
-Wraps an update value. Omit the containing property to leave it unchanged, or set `value` to null to remove the existing value.
+A top-level object that encapsulates a Criteo API request for a single value object.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**ExternalFrequencyCappingModel**](ExternalFrequencyCappingModel.md) |  | [optional] 
+**data** | [**LineItemBiddingRequestResource**](LineItemBiddingRequestResource.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

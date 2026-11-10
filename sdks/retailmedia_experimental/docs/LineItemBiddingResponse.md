@@ -1,11 +1,11 @@
-# BiddingSettingsRequest
+# LineItemBiddingResponse
 
-A top-level object that encapsulates a Criteo API request for a single value object.
+Represents the external bidding configuration for a line item.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**BiddingSettingsResource**](BiddingSettingsResource.md) |  | [optional] 
+**max_bid** | **float, none_type** | The maximum bid that the Adaptive strategy may use. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

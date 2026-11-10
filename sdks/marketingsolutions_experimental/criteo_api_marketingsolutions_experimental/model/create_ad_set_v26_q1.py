@@ -35,11 +35,13 @@ def lazy_import():
     from criteo_api_marketingsolutions_experimental.model.create_ad_set_budget_v26_q1 import CreateAdSetBudgetV26Q1
     from criteo_api_marketingsolutions_experimental.model.create_ad_set_schedule_v26_q1 import CreateAdSetScheduleV26Q1
     from criteo_api_marketingsolutions_experimental.model.create_ad_set_targeting_v26_q1 import CreateAdSetTargetingV26Q1
+    from criteo_api_marketingsolutions_experimental.model.server_to_server_tracking_v26_q1 import ServerToServerTrackingV26Q1
     globals()['CreateAdSetAttributionConfigurationV26Q1'] = CreateAdSetAttributionConfigurationV26Q1
     globals()['CreateAdSetBiddingV26Q1'] = CreateAdSetBiddingV26Q1
     globals()['CreateAdSetBudgetV26Q1'] = CreateAdSetBudgetV26Q1
     globals()['CreateAdSetScheduleV26Q1'] = CreateAdSetScheduleV26Q1
     globals()['CreateAdSetTargetingV26Q1'] = CreateAdSetTargetingV26Q1
+    globals()['ServerToServerTrackingV26Q1'] = ServerToServerTrackingV26Q1
 
 
 class CreateAdSetV26Q1(ModelNormal):
@@ -84,6 +86,12 @@ class CreateAdSetV26Q1(ModelNormal):
             'VISITS': "visits",
             'VIDEOVIEWS': "videoViews",
         },
+        ('ad_set_type',): {
+            'None': None,
+            'STANDARD': "standard",
+            'APPRETARGETING': "appRetargeting",
+            'UNKNOWN': "unknown",
+        },
     }
 
     validations = {
@@ -121,8 +129,10 @@ class CreateAdSetV26Q1(ModelNormal):
             'schedule': (CreateAdSetScheduleV26Q1,),  # noqa: E501
             'targeting': (CreateAdSetTargetingV26Q1,),  # noqa: E501
             'tracking_code': (str, none_type,),  # noqa: E501
+            'ad_set_type': (str, none_type,),  # noqa: E501
             'attribution_configuration': (CreateAdSetAttributionConfigurationV26Q1,),  # noqa: E501
             'budget': (CreateAdSetBudgetV26Q1,),  # noqa: E501
+            'server_to_server_trackings': ([ServerToServerTrackingV26Q1], none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -140,8 +150,10 @@ class CreateAdSetV26Q1(ModelNormal):
         'schedule': 'schedule',  # noqa: E501
         'targeting': 'targeting',  # noqa: E501
         'tracking_code': 'trackingCode',  # noqa: E501
+        'ad_set_type': 'adSetType',  # noqa: E501
         'attribution_configuration': 'attributionConfiguration',  # noqa: E501
         'budget': 'budget',  # noqa: E501
+        'server_to_server_trackings': 'serverToServerTrackings',  # noqa: E501
     }
 
     read_only_vars = {
@@ -196,8 +208,10 @@ class CreateAdSetV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_set_type (str, none_type): Type of the ad set. Optional, defaults to standard if omitted.  \"unknown\" is read-only and is rejected on create.. [optional]  # noqa: E501
             attribution_configuration (CreateAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
             budget (CreateAdSetBudgetV26Q1): [optional]  # noqa: E501
+            server_to_server_trackings ([ServerToServerTrackingV26Q1], none_type): MMP server-to-server tracking URLs. Optional, only allowed for app retargeting ad sets.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -303,8 +317,10 @@ class CreateAdSetV26Q1(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            ad_set_type (str, none_type): Type of the ad set. Optional, defaults to standard if omitted.  \"unknown\" is read-only and is rejected on create.. [optional]  # noqa: E501
             attribution_configuration (CreateAdSetAttributionConfigurationV26Q1): [optional]  # noqa: E501
             budget (CreateAdSetBudgetV26Q1): [optional]  # noqa: E501
+            server_to_server_trackings ([ServerToServerTrackingV26Q1], none_type): MMP server-to-server tracking URLs. Optional, only allowed for app retargeting ad sets.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

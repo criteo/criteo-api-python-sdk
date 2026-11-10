@@ -1,12 +1,11 @@
-# LineItemMinBidsResource
+# CpcMinBidDetails
 
-A value resource exposed by the API.
+Represents the CPC minimum bid guidance of a Sponsored Products line item.
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**LineItemMinBids**](LineItemMinBids.md) |  | [optional] 
-**type** | **str, none_type** | Type of the resource. | [optional] 
+**min_bid** | **float** | The lowest allowed max CPC for the line item.  It is the lowest minimum bid across the line item SKUs.  A bid below this value is rejected. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
