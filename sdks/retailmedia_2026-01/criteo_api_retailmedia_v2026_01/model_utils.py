@@ -1130,15 +1130,22 @@ def get_discriminated_classes(cls):
     Returns all the classes that a discriminator converts to
     TODO: lru_cache this
     """
-    possible_classes = []
-    key = list(cls.discriminator.keys())[0]
-    if is_type_nullable(cls):
-        possible_classes.append(cls)
-    for discr_cls in cls.discriminator[key].values():
-        if hasattr(discr_cls, 'discriminator') and discr_cls.discriminator is not None:
-            possible_classes.extend(get_discriminated_classes(discr_cls))
-        else:
+    # The generator copies a base type's discriminator mapping into each of its
+    # subtypes, so subtypes map to themselves, which would recurse forever. Add
+    # each mapped class once, before walking its own discriminator, and skip
+    # classes already found.
+    possible_classes = [cls] if is_type_nullable(cls) else []
+
+    def add_mapped_classes(discriminated_cls):
+        key = list(discriminated_cls.discriminator.keys())[0]
+        for discr_cls in discriminated_cls.discriminator[key].values():
+            if discr_cls in possible_classes:
+                continue
             possible_classes.append(discr_cls)
+            if hasattr(discr_cls, 'discriminator') and discr_cls.discriminator is not None:
+                add_mapped_classes(discr_cls)
+
+    add_mapped_classes(cls)
     return possible_classes
 
 
@@ -1529,12 +1536,14 @@ def is_valid_type(input_class_simple, valid_classes):
                 return True
             if not (issubclass(valid_class, OpenApiModel) and valid_class.discriminator):
                 continue
-            discr_propertyname_py = list(valid_class.discriminator.keys())[0]
-            discriminator_classes = (
-                valid_class.discriminator[discr_propertyname_py].values()
-            )
-            valid_type = is_valid_type(input_class_simple, discriminator_classes)
-            if valid_type:
+            # get_discriminated_classes walks the nested discriminators once
+            # each. Recursing into is_valid_type instead would never end, since
+            # subtypes' discriminators map to themselves.
+            discriminator_classes = get_discriminated_classes(valid_class)
+            if input_class_simple in discriminator_classes:
+                return True
+            if input_class_simple is none_type and \
+                    any(is_type_nullable(c) for c in discriminator_classes):
                 return True
     return valid_type
 
