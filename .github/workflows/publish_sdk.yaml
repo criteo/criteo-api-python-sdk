@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v7
@@ -31,13 +31,13 @@ jobs:
           chmod +x ./scripts/build_sdk.sh
           ./scripts/build_sdk.sh
         shell: bash
-        
+
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_TOKEN }}
           packages_dir: packages/
-        
+
       - name: Send success notification
         if: ${{ success() }}
         uses: slackapi/slack-github-action@v4.0.0
@@ -51,7 +51,7 @@ jobs:
             color: "#80FF00"
             text: "Python SDK publishing succeeded. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>."
             icon_emoji: ":green_check_mark:"
-            
+
       - name: Send failure notification
         if: ${{ failure() }}
         uses: slackapi/slack-github-action@v4.0.0
