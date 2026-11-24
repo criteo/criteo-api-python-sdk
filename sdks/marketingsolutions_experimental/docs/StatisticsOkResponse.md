@@ -1,6 +1,6 @@
 # StatisticsOkResponse
 
-The statistics reports
+The statistics successful reports response
 
 ## Properties
 Name | Type | Description | Notes

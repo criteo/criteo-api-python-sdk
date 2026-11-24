@@ -98,7 +98,7 @@ class LineItemV2(ModelNormal):
             'campaign_id': (str, none_type,),  # noqa: E501
             'is_paused': (bool,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
+            'line_item_name': (str, none_type,),  # noqa: E501
             'retailer_id': (str, none_type,),  # noqa: E501
             'serve_to_opt_out_user': (bool,),  # noqa: E501
             'type': (str,),  # noqa: E501
@@ -116,7 +116,7 @@ class LineItemV2(ModelNormal):
         'campaign_id': 'campaignId',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
-        'name': 'name',  # noqa: E501
+        'line_item_name': 'lineItemName',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'serve_to_opt_out_user': 'serveToOptOutUser',  # noqa: E501
         'type': 'type',  # noqa: E501
@@ -131,7 +131,7 @@ class LineItemV2(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, budget_status, campaign_id, is_paused, line_item_id, name, retailer_id, serve_to_opt_out_user, type, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, budget_status, campaign_id, is_paused, line_item_id, line_item_name, retailer_id, serve_to_opt_out_user, type, *args, **kwargs):  # noqa: E501
         """LineItemV2 - a model defined in OpenAPI
 
         Args:
@@ -139,7 +139,7 @@ class LineItemV2(ModelNormal):
             campaign_id (str, none_type): The campaign id of the associated campaign.
             is_paused (bool): Indicates whether the line item is paused.
             line_item_id (str, none_type): The unique identifier of the line item.
-            name (str, none_type): The name of the line item.
+            line_item_name (str, none_type): The name of the line item.
             retailer_id (str, none_type): The retailer id of the associated retailer.
             serve_to_opt_out_user (bool): Whether ads are served to users who have opted out of personalization.
             type (str): The type of the line item.
@@ -212,7 +212,7 @@ class LineItemV2(ModelNormal):
         self.campaign_id = campaign_id
         self.is_paused = is_paused
         self.line_item_id = line_item_id
-        self.name = name
+        self.line_item_name = line_item_name
         self.retailer_id = retailer_id
         self.serve_to_opt_out_user = serve_to_opt_out_user
         self.type = type
@@ -236,7 +236,7 @@ class LineItemV2(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, budget_status, campaign_id, is_paused, line_item_id, name, retailer_id, serve_to_opt_out_user, type, *args, **kwargs):  # noqa: E501
+    def __init__(self, budget_status, campaign_id, is_paused, line_item_id, line_item_name, retailer_id, serve_to_opt_out_user, type, *args, **kwargs):  # noqa: E501
         """LineItemV2 - a model defined in OpenAPI
 
         Args:
@@ -244,7 +244,7 @@ class LineItemV2(ModelNormal):
             campaign_id (str, none_type): The campaign id of the associated campaign.
             is_paused (bool): Indicates whether the line item is paused.
             line_item_id (str, none_type): The unique identifier of the line item.
-            name (str, none_type): The name of the line item.
+            line_item_name (str, none_type): The name of the line item.
             retailer_id (str, none_type): The retailer id of the associated retailer.
             serve_to_opt_out_user (bool): Whether ads are served to users who have opted out of personalization.
             type (str): The type of the line item.
@@ -315,7 +315,7 @@ class LineItemV2(ModelNormal):
         self.campaign_id = campaign_id
         self.is_paused = is_paused
         self.line_item_id = line_item_id
-        self.name = name
+        self.line_item_name = line_item_name
         self.retailer_id = retailer_id
         self.serve_to_opt_out_user = serve_to_opt_out_user
         self.type = type

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | 
 **is_paused** | **bool** | Indicates whether the line item is paused. | 
 **line_item_id** | **str, none_type** | The unique identifier of the line item. | 
-**name** | **str, none_type** | The name of the line item. | 
+**line_item_name** | **str, none_type** | The name of the line item. | 
 **retailer_id** | **str, none_type** | The retailer id of the associated retailer. | 
 **serve_to_opt_out_user** | **bool** | Whether ads are served to users who have opted out of personalization. | 
 **type** | **str** | The type of the line item. | 

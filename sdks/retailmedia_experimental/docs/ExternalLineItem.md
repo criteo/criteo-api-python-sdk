@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **effective_flight_dates** | [**ExternalFlightDatesModel**](ExternalFlightDatesModel.md) |  | [optional] 
 **is_paused** | **bool, none_type** | Indicates whether the line item is paused. | [optional] 
 **line_item_id** | **str, none_type** | The unique identifier of the line item. | [optional] 
-**name** | **str, none_type** | The name of the line item. | [optional] 
+**line_item_name** | **str, none_type** | The name of the line item. | [optional] 
 **onsite_display_details** | [**OnsiteDisplayLineItemDetails**](OnsiteDisplayLineItemDetails.md) |  | [optional] 
 **retailer_id** | **str, none_type** | The retailer id of the associated retailer. | [optional] 
 **serve_to_opt_out_user** | **bool, none_type** | Whether ads are served to users who have opted out of personalization. | [optional] 

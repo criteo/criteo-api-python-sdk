@@ -6,7 +6,7 @@ The settings to create a line item with.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **campaign_id** | **str, none_type** | The campaign id of the associated campaign. | 
-**name** | **str, none_type** | The name of the line item. | 
+**line_item_name** | **str, none_type** | The name of the line item. | 
 **retailer_id** | **str, none_type** | The retailer id of the associated retailer. | 
 **onsite_display_details** | [**ExternalCreateOnsiteDisplayLineItemDetails**](ExternalCreateOnsiteDisplayLineItemDetails.md) |  | [optional] 
 **serve_to_opt_out_user** | **bool, none_type** | Whether to serve ads to users who have opted out of personalization. | [optional] 

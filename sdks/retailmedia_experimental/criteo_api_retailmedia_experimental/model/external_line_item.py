@@ -101,7 +101,7 @@ class ExternalLineItem(ModelNormal):
             'effective_flight_dates': (ExternalFlightDatesModel,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
+            'line_item_name': (str, none_type,),  # noqa: E501
             'onsite_display_details': (OnsiteDisplayLineItemDetails,),  # noqa: E501
             'retailer_id': (str, none_type,),  # noqa: E501
             'serve_to_opt_out_user': (bool, none_type,),  # noqa: E501
@@ -119,7 +119,7 @@ class ExternalLineItem(ModelNormal):
         'effective_flight_dates': 'effectiveFlightDates',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
-        'name': 'name',  # noqa: E501
+        'line_item_name': 'lineItemName',  # noqa: E501
         'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'serve_to_opt_out_user': 'serveToOptOutUser',  # noqa: E501
@@ -172,7 +172,7 @@ class ExternalLineItem(ModelNormal):
             effective_flight_dates (ExternalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
+            line_item_name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (OnsiteDisplayLineItemDetails): [optional]  # noqa: E501
             retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether ads are served to users who have opted out of personalization.. [optional]  # noqa: E501
@@ -267,7 +267,7 @@ class ExternalLineItem(ModelNormal):
             effective_flight_dates (ExternalFlightDatesModel): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The unique identifier of the line item.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
+            line_item_name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (OnsiteDisplayLineItemDetails): [optional]  # noqa: E501
             retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether ads are served to users who have opted out of personalization.. [optional]  # noqa: E501

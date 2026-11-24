@@ -554,7 +554,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
         data=ExternalCreateLineItemModelResource(
             attributes=ExternalCreateLineItemModel(
                 campaign_id="campaign_id_example",
-                name="name_example",
+                line_item_name="line_item_name_example",
                 onsite_display_details=ExternalCreateOnsiteDisplayLineItemDetails(
                     auction_details=ExternalCreateOnsiteDisplayAuctionLineItemDetails(
                         is_dynamic_match=True,
@@ -3002,6 +3002,9 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
     campaign_search_model_request = CampaignSearchModelRequest(
         data=CampaignSearchModelResource(
             attributes=CampaignSearchModel(
+                budget_status_filter=[
+                    "BudgetAvailable",
+                ],
                 buy_type_filter=[
                     "Auction",
                 ],
@@ -3682,7 +3685,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
         data=ExternalPatchLineItemModelResource(
             attributes=ExternalPatchLineItemModel(
                 is_paused=True,
-                name="name_example",
+                line_item_name="line_item_name_example",
                 onsite_display_details=ExternalPatchOnsiteDisplayLineItemDetails(
                     auction_details=ExternalPatchOnsiteDisplayAuctionLineItemDetails(
                         is_dynamic_match=True,

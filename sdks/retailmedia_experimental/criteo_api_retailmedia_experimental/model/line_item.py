@@ -108,8 +108,8 @@ class LineItem(ModelNormal):
             'flight_dates': (FlightDates,),  # noqa: E501
             'is_paused': (bool, none_type,),  # noqa: E501
             'line_item_id': (str, none_type,),  # noqa: E501
+            'line_item_name': (str, none_type,),  # noqa: E501
             'line_item_type': (str, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
             'onsite_display': (OnsiteDisplayAttributes,),  # noqa: E501
             'retailer_id': (str, none_type,),  # noqa: E501
             'serve_to_opt_out_user': (bool, none_type,),  # noqa: E501
@@ -128,8 +128,8 @@ class LineItem(ModelNormal):
         'flight_dates': 'flightDates',  # noqa: E501
         'is_paused': 'isPaused',  # noqa: E501
         'line_item_id': 'lineItemId',  # noqa: E501
+        'line_item_name': 'lineItemName',  # noqa: E501
         'line_item_type': 'lineItemType',  # noqa: E501
-        'name': 'name',  # noqa: E501
         'onsite_display': 'onsiteDisplay',  # noqa: E501
         'retailer_id': 'retailerId',  # noqa: E501
         'serve_to_opt_out_user': 'serveToOptOutUser',  # noqa: E501
@@ -183,8 +183,8 @@ class LineItem(ModelNormal):
             flight_dates (FlightDates): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
+            line_item_name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             line_item_type (str, none_type): The type of the line item.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display (OnsiteDisplayAttributes): [optional]  # noqa: E501
             retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
@@ -280,8 +280,8 @@ class LineItem(ModelNormal):
             flight_dates (FlightDates): [optional]  # noqa: E501
             is_paused (bool, none_type): Indicates whether the line item is paused.. [optional]  # noqa: E501
             line_item_id (str, none_type): The id of the line item.. [optional]  # noqa: E501
+            line_item_name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             line_item_type (str, none_type): The type of the line item.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display (OnsiteDisplayAttributes): [optional]  # noqa: E501
             retailer_id (str, none_type): The retailer id of the associated retailer.. [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501

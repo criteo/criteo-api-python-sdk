@@ -97,12 +97,12 @@ class ReportOkResponse(ModelNormal):
         lazy_import()
         return {
             'error_details': ([ReportDetailErrors],),  # noqa: E501
-            'import_request_timestamp': (str, none_type,),  # noqa: E501
-            'number_of_products_deleted': (str, none_type,),  # noqa: E501
-            'number_of_products_in_the_batch': (str, none_type,),  # noqa: E501
-            'number_of_products_upserted': (str, none_type,),  # noqa: E501
-            'number_of_products_with_errors': (str, none_type,),  # noqa: E501
-            'number_of_products_with_warnings': (str, none_type,),  # noqa: E501
+            'import_request_timestamp': (str,),  # noqa: E501
+            'number_of_products_deleted': (str,),  # noqa: E501
+            'number_of_products_in_the_batch': (str,),  # noqa: E501
+            'number_of_products_upserted': (str,),  # noqa: E501
+            'number_of_products_with_errors': (str,),  # noqa: E501
+            'number_of_products_with_warnings': (str,),  # noqa: E501
             'status': (str,),  # noqa: E501
             'warning_details': ([ReportDetailWarnings],),  # noqa: E501
         }
@@ -136,14 +136,14 @@ class ReportOkResponse(ModelNormal):
 
         Args:
             error_details ([ReportDetailErrors]): The list of errors with details.
-            import_request_timestamp (str, none_type): The date when the original batch request was sent.
-            number_of_products_deleted (str, none_type): The number of products deleted.
-            number_of_products_in_the_batch (str, none_type): The number of products present in the batch.
-            number_of_products_upserted (str, none_type): The number of products upserted.
-            number_of_products_with_errors (str, none_type): The number of products with errors.
-            number_of_products_with_warnings (str, none_type): The number of products with Warnings.
+            import_request_timestamp (str): The date when the original batch request was sent.
+            number_of_products_deleted (str): The number of products deleted.
+            number_of_products_in_the_batch (str): The number of products present in the batch.
+            number_of_products_upserted (str): The number of products upserted.
+            number_of_products_with_errors (str): The number of products with errors.
+            number_of_products_with_warnings (str): The number of products with warnings.
             status (str): The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED)
-            warning_details ([ReportDetailWarnings]): The list of Warnings with details.
+            warning_details ([ReportDetailWarnings]): The list of warnings with details.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -241,14 +241,14 @@ class ReportOkResponse(ModelNormal):
 
         Args:
             error_details ([ReportDetailErrors]): The list of errors with details.
-            import_request_timestamp (str, none_type): The date when the original batch request was sent.
-            number_of_products_deleted (str, none_type): The number of products deleted.
-            number_of_products_in_the_batch (str, none_type): The number of products present in the batch.
-            number_of_products_upserted (str, none_type): The number of products upserted.
-            number_of_products_with_errors (str, none_type): The number of products with errors.
-            number_of_products_with_warnings (str, none_type): The number of products with Warnings.
+            import_request_timestamp (str): The date when the original batch request was sent.
+            number_of_products_deleted (str): The number of products deleted.
+            number_of_products_in_the_batch (str): The number of products present in the batch.
+            number_of_products_upserted (str): The number of products upserted.
+            number_of_products_with_errors (str): The number of products with errors.
+            number_of_products_with_warnings (str): The number of products with warnings.
             status (str): The status of the operation. The operation is completed when the status is one of (VALIDATED,VALIDATED_WITH_ERRORS,FAILED)
-            warning_details ([ReportDetailWarnings]): The list of Warnings with details.
+            warning_details ([ReportDetailWarnings]): The list of warnings with details.
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types

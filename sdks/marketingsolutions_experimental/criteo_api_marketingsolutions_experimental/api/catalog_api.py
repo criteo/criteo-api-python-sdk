@@ -498,7 +498,7 @@ class CatalogApi(object):
     ):
         """/experimental/catalog/stats/merchants/{merchant-id}  # noqa: E501
 
-        get an stats request  # noqa: E501
+        Get the statistics of the catalog of a merchant over the last `lastNumHours` hours (24 hours by default)  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -506,10 +506,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         Args:
-            merchant_id (str): merchant-id to get
+            merchant_id (str): The id of the merchant whose catalog statistics are requested.
 
         Keyword Args:
-            last_num_hours (int): the last number of hours. [optional]
+            last_num_hours (int): The number of past hours covered by the statistics (1 to 1000, 24 by default).. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.
             _preload_content (bool): if False, the urllib3.HTTPResponse object
@@ -665,7 +665,7 @@ class CatalogApi(object):
     ):
         """/experimental/catalog/products/batch  # noqa: E501
 
-        Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.  # noqa: E501
+        Used to publish a batch of operations to insert, update and delete products.  The batch is processed asynchronously. The response provides an operation id in `operationToken`  which can be used to track the status of the report of the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

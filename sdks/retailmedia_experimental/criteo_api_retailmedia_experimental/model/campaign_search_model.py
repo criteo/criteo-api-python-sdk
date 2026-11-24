@@ -55,6 +55,13 @@ class CampaignSearchModel(ModelNormal):
     """
 
     allowed_values = {
+        ('budget_status_filter',): {
+            'None': None,
+            'BUDGETAVAILABLE': "BudgetAvailable",
+            'DAILYBUDGETREACHED': "DailyBudgetReached",
+            'MONTHLYBUDGETREACHED': "MonthlyBudgetReached",
+            'TOTALBUDGETREACHED': "TotalBudgetReached",
+        },
         ('buy_type_filter',): {
             'None': None,
             'AUCTION': "Auction",
@@ -91,6 +98,7 @@ class CampaignSearchModel(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'budget_status_filter': ([str], none_type,),  # noqa: E501
             'buy_type_filter': ([str], none_type,),  # noqa: E501
             'campaign_id_filter': ([str], none_type,),  # noqa: E501
             'campaign_status_filter': ([str], none_type,),  # noqa: E501
@@ -105,6 +113,7 @@ class CampaignSearchModel(ModelNormal):
 
 
     attribute_map = {
+        'budget_status_filter': 'budgetStatusFilter',  # noqa: E501
         'buy_type_filter': 'buyTypeFilter',  # noqa: E501
         'campaign_id_filter': 'campaignIdFilter',  # noqa: E501
         'campaign_status_filter': 'campaignStatusFilter',  # noqa: E501
@@ -154,6 +163,7 @@ class CampaignSearchModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget_status_filter ([str], none_type): [optional]  # noqa: E501
             buy_type_filter ([str], none_type): [optional]  # noqa: E501
             campaign_id_filter ([str], none_type): [optional]  # noqa: E501
             campaign_status_filter ([str], none_type): [optional]  # noqa: E501
@@ -245,6 +255,7 @@ class CampaignSearchModel(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            budget_status_filter ([str], none_type): [optional]  # noqa: E501
             buy_type_filter ([str], none_type): [optional]  # noqa: E501
             campaign_id_filter ([str], none_type): [optional]  # noqa: E501
             campaign_status_filter ([str], none_type): [optional]  # noqa: E501

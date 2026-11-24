@@ -5,6 +5,7 @@ Optional filters and pagination applied when searching campaigns under an accoun
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**budget_status_filter** | **[str], none_type** |  | [optional] 
 **buy_type_filter** | **[str], none_type** |  | [optional] 
 **campaign_id_filter** | **[str], none_type** |  | [optional] 
 **campaign_status_filter** | **[str], none_type** |  | [optional] 

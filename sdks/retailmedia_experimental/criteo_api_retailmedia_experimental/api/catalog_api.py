@@ -818,7 +818,7 @@ class CatalogApi(object):
     ):
         """/experimental/retail-media/catalog/products/batch  # noqa: E501
 
-        Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.  # noqa: E501
+        Used to publish a batch of operations to insert, update and delete products.  The batch is processed asynchronously. The response provides an operation id in `operationToken`  which can be used to track the status of the report of the operation.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

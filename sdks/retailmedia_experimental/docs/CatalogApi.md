@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 /experimental/retail-media/catalog/products/batch
 
-Used to publish a batch of operations to insert, update and deletes products.  The batch is processed asynchronously.The response provides an operationToken which can be used to track  the status of the report of the operation.
+Used to publish a batch of operations to insert, update and delete products.  The batch is processed asynchronously. The response provides an operation id in `operationToken`  which can be used to track the status of the report of the operation.
 
 ### Example
 
@@ -532,7 +532,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                 batch_id=1,
                 feed_id="feed_id_example",
                 item_group_id="item_group_id_example",
-                merchant_id=1,
+                merchant_id="merchant_id_example",
                 method="delete",
                 product=Product(
                     additional_image_links=[
@@ -545,11 +545,11 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     ads_redirect="ads_redirect_example",
                     adult=True,
                     age_group="age_group_example",
-                    availability="availability_example",
+                    availability="in_stock",
                     availability_date="availability_date_example",
                     badge="badge_example",
                     brand="brand_example",
-                    channel="online",
+                    channel="channel_example",
                     color="color_example",
                     condition="condition_example",
                     content_language="content_language_example",
@@ -577,6 +577,9 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                     display_ads_title="display_ads_title_example",
                     display_ads_value=3.14,
                     energy_efficiency_class="energy_efficiency_class_example",
+                    excluded_channels=[
+                        "excluded_channels_example",
+                    ],
                     excluded_destinations=[
                         "excluded_destinations_example",
                     ],
@@ -605,6 +608,7 @@ with criteo_api_retailmedia_experimental.ApiClient(configuration) as api_client:
                         months=1,
                     ),
                     is_bundle=True,
+                    is_buybox=True,
                     item_group_id="item_group_id_example",
                     kind="kind_example",
                     link="link_example",
@@ -744,7 +748,7 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Batch accepted. The status of the operation can be tracked using the report endpoint and the operationToken. |  -  |
+**202** | Batch accepted. The status of the operation can be tracked using the report endpoint and the operation id in &#x60;operationToken&#x60;. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

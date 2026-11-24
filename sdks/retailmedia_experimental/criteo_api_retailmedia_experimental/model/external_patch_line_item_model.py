@@ -81,7 +81,7 @@ class ExternalPatchLineItemModel(ModelNormal):
         lazy_import()
         return {
             'is_paused': (bool, none_type,),  # noqa: E501
-            'name': (str, none_type,),  # noqa: E501
+            'line_item_name': (str, none_type,),  # noqa: E501
             'onsite_display_details': (ExternalPatchOnsiteDisplayLineItemDetails,),  # noqa: E501
             'serve_to_opt_out_user': (bool, none_type,),  # noqa: E501
         }
@@ -93,7 +93,7 @@ class ExternalPatchLineItemModel(ModelNormal):
 
     attribute_map = {
         'is_paused': 'isPaused',  # noqa: E501
-        'name': 'name',  # noqa: E501
+        'line_item_name': 'lineItemName',  # noqa: E501
         'onsite_display_details': 'onsiteDisplayDetails',  # noqa: E501
         'serve_to_opt_out_user': 'serveToOptOutUser',  # noqa: E501
     }
@@ -140,7 +140,7 @@ class ExternalPatchLineItemModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_paused (bool, none_type): Whether the line item is paused.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
+            line_item_name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExternalPatchOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
         """
@@ -229,7 +229,7 @@ class ExternalPatchLineItemModel(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             is_paused (bool, none_type): Whether the line item is paused.. [optional]  # noqa: E501
-            name (str, none_type): The name of the line item.. [optional]  # noqa: E501
+            line_item_name (str, none_type): The name of the line item.. [optional]  # noqa: E501
             onsite_display_details (ExternalPatchOnsiteDisplayLineItemDetails): [optional]  # noqa: E501
             serve_to_opt_out_user (bool, none_type): Whether to serve ads to users who have opted out of personalization.. [optional]  # noqa: E501
         """

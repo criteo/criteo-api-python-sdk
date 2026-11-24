@@ -6,7 +6,7 @@ The line item settings to change. Omitted fields are left unchanged.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_paused** | **bool, none_type** | Whether the line item is paused. | [optional] 
-**name** | **str, none_type** | The name of the line item. | [optional] 
+**line_item_name** | **str, none_type** | The name of the line item. | [optional] 
 **onsite_display_details** | [**ExternalPatchOnsiteDisplayLineItemDetails**](ExternalPatchOnsiteDisplayLineItemDetails.md) |  | [optional] 
 **serve_to_opt_out_user** | **bool, none_type** | Whether to serve ads to users who have opted out of personalization. | [optional] 
 
