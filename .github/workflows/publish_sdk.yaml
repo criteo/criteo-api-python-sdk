@@ -49,7 +49,7 @@ jobs:
             channel: "C02J0CWR789"
             username: "sdk-generation-bot"
             color: "#80FF00"
-            text: "Python SDK publishing succeeded. <https://github.com/criteo/criteo-api-java-sdk/actions/runs/${{github.run_id}}|Link to build>."
+            text: "Python SDK publishing succeeded. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>."
             icon_emoji: ":green_check_mark:"
             
       - name: Send failure notification
@@ -63,5 +63,5 @@ jobs:
             channel: "C02J0CWR789"
             username: "sdk-generation-bot"
             color: "#FF0000"
-            text: "Python SDK publishing failed. <https://github.com/criteo/criteo-api-java-sdk/actions/runs/${{github.run_id}}|Link to build>."
+            text: "Python SDK publishing failed. <https://github.com/criteo/criteo-api-python-sdk/actions/runs/${{github.run_id}}|Link to build>."
             icon_emoji: ":x:"
